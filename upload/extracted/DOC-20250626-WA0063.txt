@@ -1,0 +1,30 @@
+{
+  "status": "success",
+  "data": {
+    "total_pages": 4,
+    "extracted_pages": 4,
+    "total_chars": 4855,
+    "pages": [
+      {
+        "page": 1,
+        "chars": 1630,
+        "text": "WhatsApp : 75 38 51 84\nTest psychotechniques\n1) Si PICASSO vaut 3 et MONET 2, combien vaut RAPHAEL ?\na) 2 b) 3 c) 4 d) 5 e) AR\nOn remarque qu'à chaque fois le nombre associé au peintre est égal au nombre de voyelles\ncontenues dans son nom.\n2) Dans un grand magasin, on trouve 52 articles CHAMMEL, 22 articles FIOR et 42 articles\nCARMIN. Combien trouvera-t-on d’articles MACROIX ?\na) 24 b) 32 c) 34 d) 43 e) 42\nOn remarque que le chiffre des dizaines correspond au nombre de consonnes et le chiffre des\nunités au nombre de voyelle.\n3) FRED aime manger des FRITES, possède comme voiture une RONAULT, lit les ouvrages\nd'EROTODE, mais quand il prend l’avion, avec quelle compagnie voyage-t-il ?\na) DOLTA AIRLINES b) VORGIN AIRLINES c) POULKOVO\nd) AIR QUEBEC e) TRANSATLANTIC AIRLINES\nDOLTA On remarque que si on prend les premières lettres de chaque élément (FRITES,\nRONAULT, EROTODE) on reconstitue le prénom FRED. Il manque une compagnie aérienne\ncommençant par la lettre D.\n4) Lors d’une course de chevaux, SAWGRUSS finit deuxième et DANCEUR DES MERS\ncinquième. A quelle place termine PETITE FLEUR DES CHAMPS ?\na) premier b) neuvième c) troisième\nd) septième e) sixième\nLe rang d’arrivée du cheval correspond au nombre de voyelles dans son nom.\n5) LAURA porte des vêtements CHAMMEL, a acheté une LONCIA, aime le chanteur JULES\nDALOU et habite à MANCHESTER. Sa joueuse de tennis préférée est :\na) DEMENTIEVA b) HENIN c) GRAFF\nd) AMINI e) COLUMBO\nOn remarque que si on prend les dernières lettres de chaque élément (CHAMMEL, LONCIA,\nDALOU) on reconstitue le prénom LAURA. Il manque une joueuse de tennis se terminant par\nla lettre A."
+      },
+      {
+        "page": 2,
+        "chars": 2018,
+        "text": "6) Lors d’une compétition, PAULINE termine 43ème et JEANFRANÇOIS 57ème. A quelle\nplace termine PAUL-HENRI ?\na) 43 ex aequo b) 34 c) 35 d) 45 e) non classé\nOn remarque que le chiffre des dizaines correspond au nombre de voyelles et le chiffre des\nunités au nombre de consonnes.\n7) A la loterie de l'école JEROME achète le billet n° 66, MAXIME le n° 65 et VICTOR le n°\n87. Quel est le numéro du billet d'ALEX ?\na) 43 b) 42 c) 22 d) 44 e) 45\nOn prend chaque lettre du prénom et on lui attribue un nombre correspondant à sa place\ndans l'alphabet ; (A = 1 ; B = 2 ; C = 3 ; … ). Ensuite on additionne l’ensemble pour obtenir\nle numéro du billet.\n8) Dans un magasin le SEL vaut 5 €, le CAFE 6€, le VINAIGRE 12€. Quel est le prix du\nPOISSON ?\na) 11€ b) 22 € c) 23€ d) 33€ e) 32€\nOn remarque en décomposant tous les articles en consonnes et voyelles que : - SEL : 2C + 1V\n= 5 - CAFE : 2C + 2V = 6 - VINAIGRE : 4C + 4V = 12 On en déduit grâce à un système\nd’équation que la valeur d'une voyelle est de 2€ et qu'une consonne vaut 1€.\n9) On compare la puissance de plusieurs automobiles. Une PAUGEOT a une puissance de 12\nCV, une NASSIN de 14 CV et une FURD de 10 CV. Quelle est la puissance d une\nCHEPROLET ?\na) 21 CV b) 22 CV c) 36 CV d) 17 CV e) 18 CV\nOn remarque en décomposant tous les articles en consonnes et voyelles que : - PAUGEOT :\n3C + 3V = 12 - NASSIN : 4C + 2V = 14 - FURD : 3C + 1V = 1O On en déduit grâce à un\nsystème d'équation que la valeur d’une voyelle est de 1 CV et qu’une consonne vaut 3 CV.\n10) Yvan habite dans un pays de 2 522 114 habitants, VIVIANNE dans un pays de 229 229\n114 145 habitants. Combien d’habitants y a-t-il dans le pays ou vit XAVIER ?\na) 244 229 518 b) 241 228 518 c) 241 229 518\nd) 244 228 519 e) 248 228 519\nOn prend chaque lettre du prénom et on lui attribue un nombre correspondant à sa place\ndans l'alphabet ; (A = 1 ; B = 2 ; C=3 ; …). Ensuite il suffit de retranscrire chaque prénom\nen chiffre. XAVIER = 241229518\nInscrivez le nombre manquant :\n11)\n5 14 10 16\n15 13 1 18 3 20 ? 6"
+      },
+      {
+        "page": 3,
+        "chars": 886,
+        "text": "Réponse :11. La somme de chaque groupe des trois nombres est égale à 33.\n12)\n15 12 8 16\n7 22 11 32 19 27 ? 20\nRéponse : 4. Le nombre en bas à droite est égal à la somme de deux autres nombres.\n13)\n52 35 61 58\n18 34 17 18 28 33 ? 37\nRéponse : 21.\nLe nombre en bas à gauche est égal à la différence des nombres en haut et en bas à droite.\n14)\n4 5 10 6\n2 18 7 36 5 45 ? 27\nRéponse: 3.\nLe nombre en bas à droite est égal à la somme de deux autres nombres multipliée par 3,\n15)\n72 52 85 56\n8 9 4 13 17 5 ? 8\nRéponse: 7.\nLe nombre en bas à droite est le quotient de la division du nombre en haut par le nombre en\nbas à gauche.\n16)\n5 25 1 5\n10 13 1 4 2 50 ? 5\nRéponse: 4.\nLe produit de chaque groupe des trois nombres est égal à 100.\n17)\n4 12 15 26\n8 24 4 32 7 44 2 ?\nRéponse: 56.\nLe nombre en bas à droite est égal a la somme de deux autres nombres multipliée par 2.\n18)\n3 10 7\n5 14 3 29 ? 48"
+      },
+      {
+        "page": 4,
+        "chars": 321,
+        "text": "8\n4 31\nRéponse: 7.\nLe nombre en bas à droite est égal au produit de deux autres nombres moins 1.\n19)\n12 15 23 16\n8 20 16 9 14 3 ? 13\nRéponse :11.\nLa somme de chaque groupe de trois nombres est égale à 40.\n20)\n1 2 1 1\n1 4 2 16 3 16 2 ?\nRéponse: 9.\nLe nombre en bas à droite est le carré de la somme de deux autres nombres."
+      }
+    ]
+  }
+}

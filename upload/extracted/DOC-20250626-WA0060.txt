@@ -1,0 +1,30 @@
+{
+  "status": "success",
+  "data": {
+    "total_pages": 4,
+    "extracted_pages": 4,
+    "total_chars": 3525,
+    "pages": [
+      {
+        "page": 1,
+        "chars": 665,
+        "text": "WhatsApp : 75 38 51 84\nTest psychotechniques\nTest Psychotechniques Complétez le nombre manquant\n81\n127 333 900 ? 630\n1)\n400\n625\n169\na) 345 b) 567 c) 144 d) 234 e) 136\nSérie horizontale : la somme des chiffres que compose les nombres est égale à 9\n127 333 900 ? 630\n1+2+7 = 3+3+3 = 9+0+0 = ? = 6+3+0 =9\nSérie verticale : les nombres sont uniquement composés de carrés\n81 ? 400 625 169\n3² ? 20² 25² 13²\nConclusion : la solution est carrée parfait dont la somme des chiffres est égale à 9 donc : c)\n144\n2) Compléter\n1 2 4 7 11 ?\na) 10 b) 16 c) 20 d) 26 e) 30\n1 2 4 7 11 ?\n+1 +2 +3 +4 +5\n3) Compléter\n0 1 1 2 3 5 8 13 ? ?\na) 21 et 22 b) 21 et 30 c) 20 et 22 d) 21 et 34"
+      },
+      {
+        "page": 2,
+        "chars": 944,
+        "text": "La somme des deux premiers chiffres ou nombres donne le troisième nombre ou chiffre\n0+1=1 1+1=2 1+2=3 2+3=5 3+5=8 5+8=13\n8+13=21 13+21=34\n4) Compléter\n156 273 387 400 ???\na) 126 b) 226 c) 440 d) 523\n11 56 227 3 338 7 440 0\nDonc le cinquième nombre commence par 5\n5) Compléter\n312 324 534 741 ???\na) 616 b) 512 c) 450 d) 700\n3 1 2 3 2 4 5 3 4 7 4 1\nDonc le cinquième nombre possède 5 comme chiffre des dizaines\n6) Compléter\nTYA USB PEC URD ???\na) INE b) PMI c) UST d) ITU\nTY A US B PE C UR D\nDonc le cinquième trigramme se termine par E\n7) Compléter : J F M A ? ?\na) B et J b) H et K c) M et J d) D et G e) U et F\nCommentaire =Les premières lettres des mois de l’année :\nJ : Janvier F : Février M : Mars A : Avril donc on a M : Mai J : Juin\n8) Compléter : L M M J ? ?\na) V et S b) H et G c) D et L d) A et B e) Q et S\nCommentaire =Les premières lettres des jours de la semaine :\nL : Lundi M : Mardi M : Mercredi J : Jeudi V : Vendredi S : Samedi"
+      },
+      {
+        "page": 3,
+        "chars": 1481,
+        "text": "9) Compléter : 1U 2D 3T 8?\na) 8C b) 8Q c) 8S d) 8S e) 8H\nCommentaire =1 : Un 2 : Deux 3 : Trois 8 : Huit\n10) Compléter : 1 8 27 64 125 216 ???\na) 343 b) 445 c) 654 d) 785 e) 218\nCommentaire =Le cube des nombres croissante à partir de 1\n1= 1³ 8= 2³ 27= 3³ 64= 4³ 125= 5³ 216= 6³\n11) Continuez la suite : 2 - 9 - 16 - 23 - ? - ?\na) 12 et 24 b) 41 et 14 c) 30 et 37 d) 25 et 35\nCommentaire = ( + 7) sur le premier donne le suivants et ainsi de suite\n12) Continuez la suite : 21 - 17 - 13 - 9 - ? - ?\na) 5 et 2 b) 6 et 1 c) 5 et 1 d) 6 et 7\nCommentaire = (- 4) sur le premier donne le suivant et ainsi de suite\n13) Continuez la suite : 1 - 3 - 6 - 10 - 15 - ? - ?\na) 20 et 30 b) 21 et 28 c) 30 et 40 d) 31 et 48\nCommentaire = ... - 21 – 28 => (+ 2 ; + 3 ; + 4 ; + 5 ; + 6 ; + 7)\n14) Continuez la suite : 1 - 3 - 6 - 8 - 11 - ? - ?\na) 20 et 30 b) 21 et 28 c) 12 et 40 d) 13 et 16\nCommentaire = ... - 13 – 16 => (+ 2 ; + 3)\n15) Continuez la suite : 100- 52 - 28 - 16 -? - ?\na) 10 et 7 b) 1 et 8 c) 2 et 10 d) 13 et 16\nCommentaire = ... - 10 – 7 => ( ÷ 2 + 2)\n16) Continuez la suite : 2 - 6 - 4 - 12 - 10 - ? - ?\na) 20 et 30 b) 21 et 28 c) 30 et 28 d) 13 et 16\nCommentaire = ... - 30 – 28 => (X 3 ; - 2)\n17) Continuez la suite : 1 - 4 - 9 - 16 - 25 - ? - ?\na) 20 et 30 b) 36 et 49 c) 30 et 28 d) 13 et 16\nCommentaire = ... - 36 – 49 => (les carrés de 7 premiers entiers)\n18) Continuez la suite : 1000 - 900 - 890 - 790 - 780 - ? - ?\na) 600 et 300 b) 660 et 490 c) 600 et 208 d) 680 et 670"
+      },
+      {
+        "page": 4,
+        "chars": 435,
+        "text": "Commentaire = … - 680 – 670 => (- 100 ; - 10)\n19) Continuez la suite : 1000 - 1001 - 1010 - 1011 - 1100 - ? - ?\na) 1101 et 1110 b) 1101 et 490 c) 1000 et 208 d) 2180 et\n1170\nCommentaire = ...-1101-1110 Série composée de nombres ne contenant que les chiffres 1 et 0\net placés dans l'ordre croissant.\n20) Continuez la suite : 12 - 31 - 50 - 45 - ? - ?\na) 50 et 50 b) 61 et 68 c) 56 et 67 d) 13 et 16\nCommentaire = ... - 56 – 67 => (+ 11)"
+      }
+    ]
+  }
+}

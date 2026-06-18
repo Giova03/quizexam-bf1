@@ -1,0 +1,388 @@
+{
+  "bankKey": "culture-bf",
+  "title": "Culture Générale - Burkina Faso",
+  "description": "Questions sur l'histoire, la géographie, les institutions et la culture du Burkina Faso",
+  "category": "Culture Générale",
+  "icon": "Landmark",
+  "color": "emerald",
+  "questions": [
+    {
+      "question": "Quelles sont les circonscriptions administratives au Burkina Faso?",
+      "optionA": "la commune, la province et le département",
+      "optionB": "la région, la province et la commune",
+      "optionC": "la région, la province et le département",
+      "optionD": "la ville, le secteur et l'arrondissement",
+      "correctAnswer": "C",
+      "explanation": "Selon le contenu du cours, les circonscriptions administratives au Burkina Faso sont la région, la province et le département."
+    },
+    {
+      "question": "Quelles sont les collectivités territoriales au Burkina Faso?",
+      "optionA": "la région et la commune",
+      "optionB": "la province et le département",
+      "optionC": "la région et la province",
+      "optionD": "la province et la commune",
+      "correctAnswer": "A",
+      "explanation": "Le cours indique que les collectivités territoriales au Burkina Faso sont la région et la commune."
+    },
+    {
+      "question": "Qui a reçu le premier prix Nobel de littérature?",
+      "optionA": "Henri Dunant",
+      "optionB": "Sully Prud'homme",
+      "optionC": "Frédéric Passy",
+      "optionD": "Elie Ducommun",
+      "correctAnswer": "B",
+      "explanation": "Selon le contenu, Sully Prud'homme a reçu le premier prix Nobel de littérature."
+    },
+    {
+      "question": "Quelle est la bonne orthographe?",
+      "optionA": "En l'occurrence, je plains la victime",
+      "optionB": "En l'occurence, je plains la victime",
+      "optionC": "En l'ocurrence, je plains la victime",
+      "optionD": "En l'ocurence, je plains la victime",
+      "correctAnswer": "A",
+      "explanation": "La bonne orthographe est 'En l'occurrence, je plains la victime' avec un seul 'c' et un seul 's'."
+    },
+    {
+      "question": "Quand est célébrée la Journée mondiale de la liberté de presse?",
+      "optionA": "le 3 avril",
+      "optionB": "le 3 mai",
+      "optionC": "a été instituée en 1993",
+      "optionD": "a été instituée en 1996",
+      "correctAnswer": "B",
+      "explanation": "Le cours indique que la Journée mondiale de la liberté de presse est célébrée le 3 mai."
+    },
+    {
+      "question": "Quelle est la date d'installation et le président de l'actuelle ALT?",
+      "optionA": "11 octobre 2022",
+      "optionB": "11 novembre 2022",
+      "optionC": "Éric Bougouma",
+      "optionD": "Ousmane Bougouma",
+      "correctAnswer": "C",
+      "explanation": "Le cours mentionne que l'actuelle ALT est présidée par Éric Bougouma."
+    },
+    {
+      "question": "Combien de députés composent l'actuelle ALT?",
+      "optionA": "71",
+      "optionB": "91",
+      "optionC": "Siège au titre de la 10è législative de la IVè république",
+      "optionD": "Siège au titre de la 11è législative de la IVè république",
+      "correctAnswer": "C",
+      "explanation": "Le cours indique que l'actuelle ALT siège au titre de la 10è législative de la IVè république."
+    },
+    {
+      "question": "Le musée des civilisations des peuples du sud ouest (musée de Poni) a été créé en:",
+      "optionA": "21 décembre 1990",
+      "optionB": "21 décembre 1993",
+      "optionC": "21 décembre 1996",
+      "optionD": "21 décembre 1999",
+      "correctAnswer": "B",
+      "explanation": "Selon le contenu, le musée de Poni a été créé le 21 décembre 1993."
+    },
+    {
+      "question": "L'autorité du bassin du Volta (ABC):",
+      "optionA": "a été créée en 2007",
+      "optionB": "a été créée en 2009",
+      "optionC": "Son siège est à Ouagadougou",
+      "optionD": "Son siège est à Niamey",
+      "correctAnswer": "A",
+      "explanation": "Le cours indique que l'autorité du bassin du Volta (ABC) a été créée en 2007."
+    },
+    {
+      "question": "Combien de pays composent l'autorité du bassin de la Volta (ABC)?",
+      "optionA": "05",
+      "optionB": "06",
+      "optionC": "07",
+      "optionD": "08",
+      "correctAnswer": "B",
+      "explanation": "Selon le contenu, l'autorité du bassin de la Volta (ABC) est composée de 6 pays."
+    },
+    {
+      "question": "Qui est le procureur en chef de la cour pénale internationale (CPI)?",
+      "optionA": "Fatou Bensouda",
+      "optionB": "Americk Khan",
+      "optionC": "Karim Khan",
+      "optionD": "Emanuela Claudia Del Re",
+      "correctAnswer": "C",
+      "explanation": "Le cours indique que Karim Khan est le procureur en chef de la CPI."
+    },
+    {
+      "question": "Qui est la représentante spéciale de l'Union Européenne pour le Sahel au Burkina Faso?",
+      "optionA": "Barbara Manzi",
+      "optionB": "Emanuela Claudia Del Re",
+      "optionC": "Adeline Del Re",
+      "optionD": "Karim Khan",
+      "correctAnswer": "B",
+      "explanation": "Selon le contenu, Emanuela Claudia Del Re est la représentante spéciale de l'Union Européenne pour le Sahel au Burkina Faso."
+    },
+    {
+      "question": "Au Burkina Faso, la diplomatie géopolitique est:",
+      "optionA": "Secondaire",
+      "optionB": "inexistante",
+      "optionC": "Active",
+      "optionD": "Inactive",
+      "correctAnswer": "C",
+      "explanation": "Le cours indique que la diplomatie géopolitique au Burkina Faso est active."
+    },
+    {
+      "question": "L'ONU a combien de grandes commissions?",
+      "optionA": "6 grandes commissions",
+      "optionB": "8 commissions",
+      "optionC": "13 commissions",
+      "optionD": "4 commissions",
+      "correctAnswer": "A",
+      "explanation": "Selon le contenu, l'ONU a 6 grandes commissions."
+    },
+    {
+      "question": "Quand a eu lieu la dernière rupture des relations diplomatiques entre le Burkina Faso et la Taiwan?",
+      "optionA": "1973",
+      "optionB": "1983",
+      "optionC": "1978",
+      "optionD": "2018",
+      "correctAnswer": "D",
+      "explanation": "Le cours indique que la dernière rupture des relations diplomatiques entre le Burkina Faso et la Taiwan a eu lieu en 2018."
+    },
+    {
+      "question": "Parmi les suivants, quel est un nom masculin?",
+      "optionA": "Omoplate",
+      "optionB": "Anagramme",
+      "optionC": "Consigne",
+      "optionD": "Effluve",
+      "correctAnswer": "D",
+      "explanation": "Selon le contenu, 'Effluve' est un nom masculin."
+    },
+    {
+      "question": "Quelle est la densité de la population du Burkina Faso en 2019?",
+      "optionA": "75,1 habitants/km²",
+      "optionB": "72,1 habitants/km²",
+      "optionC": "56,3 habitants/km²",
+      "optionD": "85 habitants/km²",
+      "correctAnswer": "A",
+      "explanation": "Le cours indique que la densité de la population du Burkina Faso en 2019 était de 75,1 habitants/km²."
+    },
+    {
+      "question": "Quelle était la population de Bobo-Dioulasso en 2019?",
+      "optionA": "2415266 habitants",
+      "optionB": "20155525 habitants",
+      "optionC": "984603 habitants",
+      "optionD": "894603 habitants",
+      "correctAnswer": "C",
+      "explanation": "Selon le contenu, la population de Bobo-Dioulasso en 2019 était de 984603 habitants."
+    },
+    {
+      "question": "Quelle était la population de Ouagadougou en 2019?",
+      "optionA": "2415603 habitants",
+      "optionB": "341266 habitants",
+      "optionC": "2514626 habitants",
+      "optionD": "1415266 habitants",
+      "correctAnswer": "A",
+      "explanation": "Le cours indique que la population de Ouagadougou en 2019 était de 2415603 habitants."
+    },
+    {
+      "question": "Qui était le premier président du CSC le 1er avril 1995?",
+      "optionA": "Nathalie Some",
+      "optionB": "Serme Ansereme",
+      "optionC": "Adama Fofana",
+      "optionD": "Barnabé Kabore",
+      "correctAnswer": "C",
+      "explanation": "Selon le contenu, Adama Fofana était le premier président du CSC le 1er avril 1995."
+    },
+    {
+      "question": "Appolinaire Kyélémdé Tambela est quelème premier ministre du Burkina Faso?",
+      "optionA": "18ème",
+      "optionB": "10ème",
+      "optionC": "16ème",
+      "optionD": "17ème",
+      "correctAnswer": "D",
+      "explanation": "Le cours indique qu'Appolinaire Kyélémdé Tambela est le 17ème premier ministre du Burkina Faso."
+    },
+    {
+      "question": "Quelle était l'espérance de vie au Burkina Faso en 2019?",
+      "optionA": "59,7 ans",
+      "optionB": "63,1 ans",
+      "optionC": "61,9 ans",
+      "optionD": "70 ans",
+      "correctAnswer": "C",
+      "explanation": "Selon le contenu, l'espérance de vie au Burkina Faso en 2019 était de 61,9 ans."
+    },
+    {
+      "question": "Quelle était l'espérance de vie des hommes au Burkina Faso en 2019?",
+      "optionA": "53 ans",
+      "optionB": "60 ans",
+      "optionC": "63 ans",
+      "optionD": "64 ans",
+      "correctAnswer": "B",
+      "explanation": "Le cours indique que l'espérance de vie des hommes au Burkina Faso en 2019 était de 60 ans."
+    },
+    {
+      "question": "Quelle était l'espérance de vie des femmes au Burkina Faso en 2019?",
+      "optionA": "60 ans",
+      "optionB": "62 ans",
+      "optionC": "63 ans",
+      "optionD": "64 ans",
+      "correctAnswer": "B",
+      "explanation": "Selon le contenu, l'espérance de vie des femmes au Burkina Faso en 2019 était de 62 ans."
+    },
+    {
+      "question": "Quel est le rôle des agents des Eaux et Forêts?",
+      "optionA": "Gestion des ressources minières",
+      "optionB": "Assurance de missions de surveillance, de contrôle et de protection des ressources forestières, fauniques et en eau",
+      "optionC": "Gestion des ressources agricoles",
+      "optionD": "Protection des frontières",
+      "correctAnswer": "B",
+      "explanation": "Selon le contenu, les agents des Eaux et Forêts assurent des missions de surveillance, de contrôle et de protection des ressources forestières, fauniques et en eau."
+    },
+    {
+      "question": "Comment appelle-t-on les agents des Eaux et Forêts?",
+      "optionA": "Gardiens de la forêt",
+      "optionB": "Techniciens Eaux et Forêts",
+      "optionC": "Agents forestiers",
+      "optionD": "Protecteurs de la nature",
+      "correctAnswer": "B",
+      "explanation": "Le cours indique que les agents des Eaux et Forêts sont appelés 'Techniciens Eaux et Forêts'."
+    },
+    {
+      "question": "Qui est le DG des Eaux et Forêts?",
+      "optionA": "Nathalie Some",
+      "optionB": "Adama Fofana",
+      "optionC": "Barnabé Kabore",
+      "optionD": "Éric Bougouma",
+      "correctAnswer": "C",
+      "explanation": "Selon le contenu, le directeur général des Eaux et Forêts est le Colonel Barnabé Kabore."
+    },
+    {
+      "question": "Quels sont les problèmes de l'eau au Burkina Faso?",
+      "optionA": "Pollution industrielle, manque d'investissements",
+      "optionB": "Changements climatiques, sécheresse récurrente, manque d'infrastructures adéquates",
+      "optionC": "Guerre civile, instabilité politique",
+      "optionD": "Surpopulation, urbanisation rapide",
+      "correctAnswer": "B",
+      "explanation": "Le cours liste les problèmes de l'eau au Burkina Faso comme les changements climatiques, la sécheresse récurrente, et le manque d'infrastructures adéquates."
+    },
+    {
+      "question": "Comment appelle-t-on une personne qui vit dans la forêt?",
+      "optionA": "Forestier",
+      "optionB": "Écologiste",
+      "optionC": "Naturaliste",
+      "optionD": "Botaniste",
+      "correctAnswer": "A",
+      "explanation": "Selon le contenu, une personne qui vit dans la forêt est appelée 'forestier'."
+    },
+    {
+      "question": "Comment appelle-t-on une forêt qui n'a jamais été exploitée?",
+      "optionA": "Secondaire",
+      "optionB": "Tertiaire",
+      "optionC": "Primaire",
+      "optionD": "Originelle",
+      "correctAnswer": "C",
+      "explanation": "Le cours indique qu'une forêt qui n'a jamais été exploitée est qualifiée de 'primaire'."
+    },
+    {
+      "question": "Quel est le plus long cours d'eau au Burkina?",
+      "optionA": "Le Niger",
+      "optionB": "La Comoé",
+      "optionC": "Le fleuve Mouhoun",
+      "optionD": "Le Nakanbé",
+      "correctAnswer": "C",
+      "explanation": "Selon le contenu, le fleuve Mouhoun est le plus long cours d'eau au Burkina Faso avec près de 1000km en territoire burkinabè."
+    },
+    {
+      "question": "Comment s'appelle la peur de la forêt?",
+      "optionA": "Arachnophobie",
+      "optionB": "Claustrophobie",
+      "optionC": "Hylophobie",
+      "optionD": "Xénophobie",
+      "correctAnswer": "C",
+      "explanation": "Le cours indique que la peur de la forêt s'appelle 'hylophobie'."
+    },
+    {
+      "question": "Qui entretient les forêts?",
+      "optionA": "Les agents des Eaux et Forêts",
+      "optionB": "Les forestiers de l'ONF",
+      "optionC": "Les techniciens agricoles",
+      "optionD": "Les écologistes",
+      "correctAnswer": "B",
+      "explanation": "Selon le contenu, les forêts sont entretenues par les forestiers de l'ONF."
+    },
+    {
+      "question": "Quel est le plus grand barrage du Burkina Faso?",
+      "optionA": "Barrage de Ziga",
+      "optionB": "Barrage de Bagré",
+      "optionC": "Barrage de Samendeni",
+      "optionD": "Barrage de Kompienga",
+      "correctAnswer": "C",
+      "explanation": "Le cours indique que le plus grand barrage du Burkina Faso est le barrage de Samendeni."
+    },
+    {
+      "question": "Quels sont les trois grands fleuves du Burkina Faso?",
+      "optionA": "Volta, Niger et Sénégal",
+      "optionB": "Niger, Sassandra et Comoé",
+      "optionC": "Volta, Niger et Comoé",
+      "optionD": "Niger, Bani et Black Volta",
+      "correctAnswer": "C",
+      "explanation": "Selon le contenu, les trois grands fleuves du Burkina Faso sont la Volta, le Niger et la Comoé."
+    },
+    {
+      "question": "Quelle est la devise des eaux et forêts?",
+      "optionA": "Protection, Respect, Conservation",
+      "optionB": "Honneur, Discipline, Solidarité",
+      "optionC": "Courage, Honneur, Patrie",
+      "optionD": "Liberté, Égalité, Fraternité",
+      "correctAnswer": "B",
+      "explanation": "Le cours indique que la devise des eaux et forêts est 'Honneur - Discipline - Solidarité'."
+    },
+    {
+      "question": "Quelle est la couleur du béret des eaux et forêts au Burkina Faso?",
+      "optionA": "Bleue",
+      "optionB": "Noire",
+      "optionC": "Rouge",
+      "optionD": "Verte",
+      "correctAnswer": "D",
+      "explanation": "Selon le contenu, la couleur du béret des eaux et forêts au Burkina Faso est verte."
+    },
+    {
+      "question": "En quelle année a été créé le corps des eaux et forêts au Burkina Faso?",
+      "optionA": "16 août 1948",
+      "optionB": "16 août 1958",
+      "optionC": "16 août 1968",
+      "optionD": "16 août 1978",
+      "correctAnswer": "A",
+      "explanation": "Le cours indique que le corps des eaux et forêts a été créé le 16 août 1948."
+    },
+    {
+      "question": "Comment s'appelle la plus grande forêt du monde?",
+      "optionA": "Forêt du Congo",
+      "optionB": "Forêt amazonienne",
+      "optionC": "Forêt de Taïga",
+      "optionD": "Forêt du Sundarbans",
+      "correctAnswer": "B",
+      "explanation": "Selon le contenu, la plus grande forêt du monde est l'Amazonie sud-américaine."
+    },
+    {
+      "question": "Quel est le forage le plus profond du Burkina Faso?",
+      "optionA": "Forage Bobo",
+      "optionB": "Forage Ouaga",
+      "optionC": "Forage Christine",
+      "optionD": "Forage Tenkodogo",
+      "correctAnswer": "C",
+      "explanation": "Le cours indique que le forage le plus profond du Burkina Faso est le forage Christine."
+    },
+    {
+      "question": "Que signifie ENEF?",
+      "optionA": "École Nationale de l'Environnement et de la Faune",
+      "optionB": "École Nationale des Eaux et Forêts",
+      "optionC": "École Nationale de l'Écologie et de la Nature",
+      "optionD": "École Nationale de l'Eau et de la Forêt",
+      "correctAnswer": "B",
+      "explanation": "Selon le contenu, ENEF signifie 'École Nationale des Eaux et Forêts'."
+    },
+    {
+      "question": "Comment s'appelle le début d'une forêt?",
+      "optionA": "Sous-bois",
+      "optionB": "Aubier",
+      "optionC": "Étage",
+      "optionD": "Canopée",
+      "correctAnswer": "B",
+      "explanation": "Le cours indique que le début d'une forêt s'appelle 'aubier'."
+    }
+  ]
+}

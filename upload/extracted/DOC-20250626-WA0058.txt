@@ -1,0 +1,55 @@
+{
+  "status": "success",
+  "data": {
+    "total_pages": 9,
+    "extracted_pages": 9,
+    "total_chars": 3311,
+    "pages": [
+      {
+        "page": 1,
+        "chars": 417,
+        "text": "EBENEZER FORMATION SESSION 2024\nCONCOURSDIRECTETPROFESSIONNEL2024\nWhatsApp 77488308//Appel 64408965\nWHATSAPP:74296792\n71847968 N\nO\nI\nT\nETOILEFORMATION\nA\nM\nR\nSUJET100\nO\nF\nCorrection du sujet 165\nR\n1)AuBurkinaFaso,quellessontles\nE\ncirconscriptionZsadministratives?\nE\na)lacommNune,laprovinceetledépartement\nE\nb)larégion,laprovinceetlacommune\nB\nE\nc)larégion,laprovinceetledépartement\nd)leville,lesecteuretl'arrondissement"
+      },
+      {
+        "page": 2,
+        "chars": 454,
+        "text": "2)AuBurkinaFaso,lescollectivitésterritoriales?\na)larégionetlacommune\nb)laprovinceetledépartement\nc)larégionetlaprovince N\nO\nd)laprovinceetlacommune\nI\nT\nA\nM\n3)QuiareçulepremierprixNobeldelalittérature?\nR\na)HenriDunant\nO\nF\nb)Sullyprud'homme\nR\nc)FrédéricPassy\nE\nZ\nd)ElieDucommun\nE\nN\nE\nB\n4)Quelleestlabonneorthographe?\nE\na)Enl'occurrence,jeplainslavictime\nb)Enl'occurence,jeplaindslavictime\nc)Enl'ocurrence,jeplaindslavictime\nd)Enl'ocurence,jeplainslavictime"
+      },
+      {
+        "page": 3,
+        "chars": 388,
+        "text": "5)Lajournéemondialedelalibertédepresse:\na)estcélèbrele3avril.\nb)estcélèbrele3mai\nc)aétéinstituéen1993 N\nO\nd)aétéinstituéen1996\nI\nT\nA\nM\n6)Dated'installationetprésidentdel'actuelleALT:\nR\na)11octobre2022\nO\nF\nb)11novembre2022\nR\nc)ÉricBougouma\nE\nZ\nd)OusmaneBougouma\nE\nN\nE\nB\n7)lesdéputésdel'actuelleALT:\nE\na)Sontaunombrede71\nb)Sontaunombrede91\nc)Siègeautitredela10èlégislativedelaIVè\nrépublique"
+      },
+      {
+        "page": 4,
+        "chars": 337,
+        "text": "d)Siègentautitredela11èlégislativedelaIVè\nrépublique\n8)Lemusédescivilisationsdespeuplesdusud\nN\nouest(musédePoni)aétécrééen:\nO\nI\na)21décembre1990\nT\nA\nb)21décembre1993\nM\nc)21décembre1996\nR\nO\nd)21décembre1999\nF\nR\nE\n9)L'autoritédubassindeVolta(ABC):\nZ\nE\na)aétécrééen2007\nN\nE\nb)aétécrééen2009\nB\nc)SEonsiègeestaOuagadougou\nd)SonsiègeestàNiamey"
+      },
+      {
+        "page": 5,
+        "chars": 346,
+        "text": "10)Combiendepayscomposentl'autoritédu\nbassindelaVolta(ABC)\na)05 b)06 c)07 d)08\nN\nO\n11)Quiestleprocureurenchefdelacourpénale\nI\ninternationale(CPI)?\nT\nA\na)Fatoubensouda\nM\nb)Americkhan\nR\nO\nc)Karimkhan\nF\nR\nE\n12)Quiestlareprésentantespécialedel'Union\nZ\nEuropéennepEourleSahel auBurkinaFaso?\nN\na)Barbaramanzi\nE\nB\nb)EmanuelaClaudiaDelRe\nE\nc)AdelineDelRe"
+      },
+      {
+        "page": 6,
+        "chars": 345,
+        "text": "13)AuBurkinaFaso,ladiplomatiegéopolitiqueest:\na)Secondaire b)inexistant c)Active d)Inactive\nN\nO\nI\nT\n14)L'Onuacombiendegrandescommissions?\nA\nM\na)6grandescommissions\nR\nb)8commissions\nO\nF\nc)13commissions\nR\nd)4commissions\nE\nZ\nE\nN\nE\nB\nE\n15)Quanddateladernièrerupture desrelations\ndiplomatiquesentreleBurkinaFasoetlaTaiwan?\na)1973 b)1983 c)1978 d)2018"
+      },
+      {
+        "page": 7,
+        "chars": 331,
+        "text": "16)Repérezle(les)nom(s)masculin(s).\na)Omoplate\nb)Anagramme\nc)Consigne N\nO\nd)Effluve\nI\nT\ne)Oasis\nA\nM\nR\n17)QuelleestladensitédelapopulationduBurkina\nO\nFasoen2019?\nF\nR\na)75,1habitants/km²\nE\nb)72,1habitantZs/km²\nE\nc)56,3habNitants/km²\nE\nd)85habitants/km²\nB\nE\n18)QuelleestlapopulationdeBoboen2019?\na)2415266habitants\nb)20155525habitants"
+      },
+      {
+        "page": 8,
+        "chars": 281,
+        "text": "c)984603habitants\nd)894603habitants\n19)QuelleestlapopulationdeOuagadougoNuen\nO\n2019?\nI\nT\na)2415603habitants\nA\nb)341266habitants M\nR\nc)2514626habitants\nO\nd)1415266habitants\nF\nR\nE\n20)QuiétaitleZpremierprésidentduCSCle1er\nE\navril1995?\nN\nE\na)NathalieSome\nB\nb)SEaransereme\nc)AdamaFofana"
+      },
+      {
+        "page": 9,
+        "chars": 412,
+        "text": "21)AppolinairekyelemdeTambelaestlequelieme\npremierministreduBurkinaFaso:\na)18 b)10 c)16 d)17\nN\nO\n22)Quelleestl'expériencedevieauBurkinaFaso\nI\nen2019?\nT\nA\na)59,7ans b)63,1ans c)61,9ans d)70ans\nM\nR\nO\n23)Quelleestl'expériencedeviedeshommesau\nF\nBurkinaFasoen2019?\nR\na)53ans b)E60ans c)63ans d)64ans\nZ\nE\nN\n24)Quelleestl'expériencedeviedesfemmesau\nE\nB\nBurkinaFasoen2019?\nE\na)60ans b)62ans c)63ans d)64ans\n🥰\nBONNECHANCE"
+      }
+    ]
+  }
+}

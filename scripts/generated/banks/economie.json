@@ -1,0 +1,298 @@
+{
+  "bankKey": "economie",
+  "title": "Économie & Développement Durable",
+  "description": "Économie générale, politique économique, développement durable et environnement",
+  "category": "Économie",
+  "icon": "TrendingUp",
+  "color": "cyan",
+  "questions": [
+    {
+      "question": "Quelle est la conséquence d'une politique de rigueur budgétaire menée par l'État ?",
+      "optionA": "Augmentation de la demande globale",
+      "optionB": "Réduction du déficit public",
+      "optionC": "Stimulation de l'activité économique",
+      "optionD": "Baisse des taux d'intérêt",
+      "correctAnswer": "B",
+      "explanation": "Une politique de rigueur budgétaire implique une réduction des dépenses publiques ou une augmentation des impôts, ce qui réduit le déficit public."
+    },
+    {
+      "question": "Quelle est la principale caractéristique d'une politique monétaire restrictive ?",
+      "optionA": "Augmentation de la masse monétaire",
+      "optionB": "Objectif de désinflation",
+      "optionC": "Baisse des taux d'intérêt",
+      "optionD": "Stimulation des investissements",
+      "correctAnswer": "B",
+      "explanation": "Une politique monétaire restrictive vise à réduire l'inflation en limitant la création de monnaie et en augmentant les taux d'intérêt."
+    },
+    {
+      "question": "Qu'est-ce qui caractérise un choc d'offre négatif ?",
+      "optionA": "Une baisse des coûts de production",
+      "optionB": "Une hausse de l'offre de biens et services",
+      "optionC": "Une hausse des bénéfices des entreprises",
+      "optionD": "Une hausse des coûts de production",
+      "correctAnswer": "D",
+      "explanation": "Un choc d'offre négatif se produit lorsqu'un événement entraîne une augmentation des coûts de production, réduisant l'offre."
+    },
+    {
+      "question": "Selon les théoriciens de la croissance endogène, le progrès technique est-il :",
+      "optionA": "Exogène au système économique",
+      "optionB": "Généré par les décisions des agents économiques",
+      "optionC": "Indépendant du fonctionnement du système économique",
+      "optionD": "Un obstacle à la croissance",
+      "correctAnswer": "B",
+      "explanation": "Pour les théoriciens de la croissance endogène, le progrès technique est généré par les décisions des agents économiques au sein du système."
+    },
+    {
+      "question": "Le PIB inclut-il :",
+      "optionA": "Seulement la production marchande",
+      "optionB": "La production des administrations publiques",
+      "optionC": "Les revenus versés à l'étranger",
+      "optionD": "Les activités informelles",
+      "correctAnswer": "B",
+      "explanation": "Le PIB inclut la production des administrations publiques, même si ces productions ne sont pas marchandes."
+    },
+    {
+      "question": "Une taxe carbone est efficace lorsque :",
+      "optionA": "Elle reste à un niveau très faible",
+      "optionB": "Il existe des produits de substitution",
+      "optionC": "Elle n'est pas annoncée à l'avance",
+      "optionD": "Elle n'affecte pas les prix des énergies fossiles",
+      "correctAnswer": "B",
+      "explanation": "Une taxe carbone est efficace lorsqu'il existe des produits de substitution permettant aux consommateurs de changer leur comportement."
+    },
+    {
+      "question": "Le marché des quotas d'émission fonctionne comme :",
+      "optionA": "Un outil de contrainte directe",
+      "optionB": "Une incitation financière à moins polluer",
+      "optionC": "Un moyen de financer les énergies renouvelables",
+      "optionD": "Un système de sanctions automatiques",
+      "correctAnswer": "B",
+      "explanation": "Le marché des quotas d'émission crée une incitation financière pour les entreprises à réduire leurs émissions de polluants."
+    },
+    {
+      "question": "Pour les partisans de la soutenabilité forte, le capital naturel :",
+      "optionA": "Peut être remplacé par le capital physique et humain",
+      "optionB": "Ne peut pas être remplacé par d'autres formes de capital",
+      "optionC": "Est moins important que le capital humain",
+      "optionD": "Est illimité",
+      "correctAnswer": "B",
+      "explanation": "Les partisans de la soutenabilité forte considèrent que le capital naturel ne peut pas être remplacé par le capital physique et humain."
+    },
+    {
+      "question": "Selon les partisans de la soutenabilité faible :",
+      "optionA": "Le progrès technique est un obstacle au développement durable",
+      "optionB": "Croissance économique et respect de l'environnement sont inconciliables",
+      "optionC": "Le progrès technique permettra d'atteindre l'objectif de développement durable",
+      "optionD": "Le capital naturel n'a aucune valeur",
+      "correctAnswer": "C",
+      "explanation": "Les partisans de la souténabilité faible estiment que le progrès technique permettra d'atteindre les objectifs de développement durable."
+    },
+    {
+      "question": "La demande globale se compose de :",
+      "optionA": "PIB, importations et exportations",
+      "optionB": "FBCF, consommation, variation de stocks et exportations",
+      "optionC": "FBCF, consommation, importations et exportations",
+      "optionD": "Consommation, épargne et investissement",
+      "correctAnswer": "B",
+      "explanation": "La demande globale est la somme de la FBCF, de la consommation, de la variation de stocks et des exportations."
+    },
+    {
+      "question": "Une baisse du taux directeur est décidée par :",
+      "optionA": "Le gouvernement et exécutée par la Banque centrale",
+      "optionB": "La Banque centrale",
+      "optionC": "Le gouvernement seul",
+      "optionD": "Le Parlement",
+      "correctAnswer": "B",
+      "explanation": "Le taux directeur est décidé par la Banque centrale, qui est l'institution monétaire responsable de la politique monétaire."
+    },
+    {
+      "question": "Un krach boursier conduit à :",
+      "optionA": "Une augmentation de la consommation",
+      "optionB": "Une stimulation des investissements",
+      "optionC": "Une épargne accrue des ménages",
+      "optionD": "Une politique de relance automatique",
+      "correctAnswer": "C",
+      "explanation": "Un krach boursier conduit les ménages à épargner davantage par prudence, ce qui réduit la consommation."
+    },
+    {
+      "question": "La récession s'accompagne généralement :",
+      "optionA": "D'une baisse des déficits publics",
+      "optionB": "D'une baisse de la dette publique",
+      "optionC": "D'une hausse des recettes fiscales",
+      "optionD": "D'une hausse des déficits publics",
+      "correctAnswer": "D",
+      "explanation": "La récession s'accompagne généralement d'une baisse des recettes fiscales et d'une hausse des dépenses sociales, augmentant les déficits publics."
+    },
+    {
+      "question": "Les biens communs sont surexploités en raison de :",
+      "optionA": "Leur caractère rival",
+      "optionB": "Leur caractère non renouvelable",
+      "optionC": "L'absence de droits de propriété clairs",
+      "optionD": "Leur faible valeur économique",
+      "correctAnswer": "C",
+      "explanation": "Les biens communs sont surexploités en raison de l'absence de droits de propriété clairs, conduisant au problème du passager clandestin."
+    },
+    {
+      "question": "Dans le cadre de la politique climatique, la réglementation est :",
+      "optionA": "Un outil d'incitation financière",
+      "optionB": "Un outil de contrainte plus qu'incitation",
+      "optionC": "Un moyen de créer un marché pour les quotas",
+      "optionD": "Une politique monétaire",
+      "correctAnswer": "B",
+      "explanation": "La réglementation en matière climatique est principalement un outil de contrainte qui impose des normes plutôt qu'une incitation financière."
+    },
+    {
+      "question": "Une politique de relance économique est généralement :",
+      "optionA": "Monétaire restrictive",
+      "optionB": "Budgétaire expansive",
+      "optionC": "Fiscale restrictive",
+      "optionD": "Non interventionniste",
+      "correctAnswer": "B",
+      "explanation": "Une politique de relance économique est généralement budgétaire expansive, impliquant une augmentation des dépenses publiques ou une baisse des impôts."
+    },
+    {
+      "question": "La croissance endogène repose sur l'idée que :",
+      "optionA": "Le progrès technique est exogène",
+      "optionB": "L'accumulation de capital génère des externalités positives",
+      "optionC": "L'État doit réduire son intervention économique",
+      "optionD": "La croissance est uniquement déterminée par les facteurs de production",
+      "correctAnswer": "B",
+      "explanation": "La croissance endogène repose sur l'idée que l'accumulation de capital sous toutes ses formes génère des externalités positives."
+    },
+    {
+      "question": "Quelle est la principale cause de la limitation des efforts en matière de développement durable ?",
+      "optionA": "Les limites écologiques",
+      "optionB": "La régulation de l'exploitation des ressources",
+      "optionC": "L'absence de régulation de l'exploitation des ressources",
+      "optionD": "Les ressources renouvelables",
+      "correctAnswer": "C",
+      "explanation": "Les efforts en matière de développement durable sont limités en raison de la non-régulation de l'exploitation des ressources."
+    },
+    {
+      "question": "Le comportement de passager clandestin explique :",
+      "optionA": "L'efficacité des politiques climatiques",
+      "optionB": "La surexploitation des biens communs",
+      "optionC": "La réduction des émissions de CO2",
+      "optionD": "L'augmentation de la fiscalité verte",
+      "correctAnswer": "B",
+      "explanation": "Le comportement de passager clandestin explique la surexploitation des biens communs, chacun cherchant à profiter des ressources sans contribuer à leur préservation."
+    },
+    {
+      "question": "Une taxe carbone permet d'internaliser :",
+      "optionA": "Les externalités positives",
+      "optionB": "Les externalités négatives",
+      "optionC": "Les coûts fixes",
+      "optionD": "Les coûts variables",
+      "correctAnswer": "B",
+      "explanation": "Une taxe carbone permet d'internaliser les externalités négatives associées à la pollution en faisant payer les pollueurs."
+    },
+    {
+      "question": "La soutenabilité faible considère que :",
+      "optionA": "Le capital naturel et le capital physique sont substituables",
+      "optionB": "Le capital naturel ne peut pas être remplacé",
+      "optionC": "Le progrès technique est nuisible à l'environnement",
+      "optionD": "La croissance économique est incompatible avec le développement durable",
+      "correctAnswer": "A",
+      "explanation": "La soutenabilité faible considère que le capital naturel et le capital physique (et humain) sont substituables."
+    },
+    {
+      "question": "Le PIB mesure :",
+      "optionA": "Le bien-être économique",
+      "optionB": "La production de biens et services finals",
+      "optionC": "Les inégalités de revenu",
+      "optionD": "La qualité de l'environnement",
+      "correctAnswer": "B",
+      "explanation": "Le PIB mesure la production de biens et services finals réalisée sur un territoire pendant une période donnée."
+    },
+    {
+      "question": "Un choc de demande positif peut être provoqué par :",
+      "optionA": "Une politique de rigueur",
+      "optionB": "Un krach boursier",
+      "optionC": "Une politique de relance",
+      "optionD": "Une hausse des coûts de production",
+      "correctAnswer": "C",
+      "explanation": "Une politique de relance augmente la demande globale, constituant un choc de demande positif."
+    },
+    {
+      "question": "La politique budgétaire concerne :",
+      "optionA": "La gestion de la monnaie",
+      "optionB": "Les dépenses publiques et les impôts",
+      "optionC": "Le contrôle des changes",
+      "optionD": "La régulation des marchés financiers",
+      "correctAnswer": "B",
+      "explanation": "La politique budgétaire concerne les décisions relatives aux dépenses publiques et aux impôts."
+    },
+    {
+      "question": "La croissance endogène met l'accent sur :",
+      "optionA": "Les facteurs exogènes de croissance",
+      "optionB": "Le rôle de l'accumulation de capital et du progrès technique endogène",
+      "optionC": "La limitation du rôle de l'État",
+      "optionD": "L'inefficacité des marchés",
+      "correctAnswer": "B",
+      "explanation": "La croissance endogène met l'accent sur le rôle de l'accumulation de capital et du progrès technique généré par le système économique."
+    },
+    {
+      "question": "Quelle est la principale caractéristique d'un bien commun ?",
+      "optionA": "Exclusivité d'usage",
+      "optionB": "Rivalité dans la consommation",
+      "optionC": "Non-exclusivité d'usage",
+      "optionD": "Caractère marchand",
+      "correctAnswer": "C",
+      "explanation": "Un bien commun se caractérise par sa non-exclusivité d'usage, ce qui rend difficile son exclusion des non-payers."
+    },
+    {
+      "question": "Le développement durable repose sur trois piliers, sauf :",
+      "optionA": "Économique",
+      "optionB": "Social",
+      "optionC": "Environnemental",
+      "optionD": "Politique",
+      "correctAnswer": "D",
+      "explanation": "Le développement durable repose sur trois piliers : économique, social et environnemental."
+    },
+    {
+      "question": "La politique monétaire expansionniste a pour objectif :",
+      "optionA": "La désinflation",
+      "optionB": "La réduction de la masse monétaire",
+      "optionC": "La stimulation de l'activité économique",
+      "optionD": "L'augmentation du taux de change",
+      "correctAnswer": "C",
+      "explanation": "La politique monétaire expansionniste vise à stimuler l'activité économique en augmentant la masse monétaire et en baissant les taux d'intérêt."
+    },
+    {
+      "question": "La soutenabilité forte considère que :",
+      "optionA": "Le progrès technique suffira à résoudre les problèmes environnementaux",
+      "optionB": "Le capital naturel ne peut pas être remplacé par d'autres formes de capital",
+      "optionC": "La croissance économique est incompatible avec la protection de l'environnement",
+      "optionD": "Les ressources naturelles sont illimitées",
+      "correctAnswer": "B",
+      "explanation": "La soutenabilité forte considère que le capital naturel ne peut pas être remplacé par le capital physique et humain."
+    },
+    {
+      "question": "Quelle est la conséquence d'une politique de relance budgétaire ?",
+      "optionA": "Réduction du déficit public",
+      "optionB": "Augmentation de la demande globale",
+      "optionC": "Baisse de l'inflation",
+      "optionD": "Réduction de la dette publique",
+      "correctAnswer": "B",
+      "explanation": "Une politique de relance budgétaire augmente la demande globale par une hausse des dépenses publiques ou une baisse des impôts."
+    },
+    {
+      "question": "Le PIB ne mesure pas :",
+      "optionA": "La production marchande",
+      "optionB": "Les activités non marchandes des administrations",
+      "optionC": "Le travail non rémunéré",
+      "optionD": "La production de biens et services",
+      "correctAnswer": "C",
+      "explanation": "Le PIB ne mesure pas le travail non rémunéré, tel que le travail domestique ou bénévole."
+    },
+    {
+      "question": "Quelle mesure est typiquement une politique monétaire restrictive ?",
+      "optionA": "Baisse du taux directeur",
+      "optionB": "Augmentation des réserves obligatoires",
+      "optionC": "Augmentation des dépenses publiques",
+      "optionD": "Baisse de l'impôt sur le revenu",
+      "correctAnswer": "B",
+      "explanation": "L'augmentation des réserves obligatoires est une politique monétaire restrictive qui limite la capacité des banques à accorder des crédits."
+    }
+  ]
+}

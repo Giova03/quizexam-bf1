@@ -1,0 +1,290 @@
+{
+  "status": "success",
+  "data": {
+    "total_pages": 56,
+    "extracted_pages": 56,
+    "total_chars": 0,
+    "pages": [
+      {
+        "page": 1,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 2,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 3,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 4,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 5,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 6,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 7,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 8,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 9,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 10,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 11,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 12,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 13,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 14,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 15,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 16,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 17,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 18,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 19,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 20,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 21,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 22,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 23,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 24,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 25,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 26,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 27,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 28,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 29,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 30,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 31,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 32,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 33,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 34,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 35,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 36,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 37,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 38,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 39,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 40,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 41,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 42,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 43,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 44,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 45,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 46,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 47,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 48,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 49,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 50,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 51,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 52,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 53,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 54,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 55,
+        "chars": 0,
+        "text": ""
+      },
+      {
+        "page": 56,
+        "chars": 0,
+        "text": ""
+      }
+    ]
+  }
+}

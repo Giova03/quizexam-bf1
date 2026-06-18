@@ -1,0 +1,289 @@
+{
+  "bankKey": "histoire",
+  "title": "Histoire & Relations Internationales",
+  "description": "Histoire mondiale, décolonisation, organisations internationales et diplomatie",
+  "category": "Histoire",
+  "icon": "Globe2",
+  "color": "rose",
+  "questions": [
+    {
+      "question": "Quelle est la limite du mouvement du non-alignement ?",
+      "optionA": "Le mouvement n'a pas contribué à la lutte pour l'indépendance",
+      "optionB": "La diversité des continents d'origine des pays membres nuit à son fonctionnement",
+      "optionC": "Les pays non-alignés sont tous capitalistes",
+      "optionD": "L'organisation suit les injonctions des organismes internationaux",
+      "correctAnswer": "B",
+      "explanation": "La diversité géographique et idéologique des pays membres du mouvement du non-alignement a compliqué son unité et son efficacité."
+    },
+    {
+      "question": "Quel a été l'apport du Burkina Faso pendant la Seconde Guerre mondiale ?",
+      "optionA": "L'appui des forces armées italiennes",
+      "optionB": "L'envoi de combattants au front",
+      "optionC": "La fourniture d'armes aux alliés",
+      "optionD": "L'offre de son territoire pour les combats",
+      "correctAnswer": "B",
+      "explanation": "Le Burkina Faso, alors Haute-Volta, a envoyé des combattants participer à la Seconde Guerre mondiale aux côtés des forces alliées."
+    },
+    {
+      "question": "Quel a été l'impact de la participation de l'Afrique à la Seconde Guerre mondiale ?",
+      "optionA": "L'acquisition de l'égalité entre colonisateurs et colonisés",
+      "optionB": "L'anéantissement du Japon en août 1945",
+      "optionC": "La fin du mythe de l'invincibilité de l'homme blanc",
+      "optionD": "La victoire des russes à la bataille de Stalingrad",
+      "correctAnswer": "C",
+      "explanation": "La participation des troupes africaines à la guerre a contribué à détruire le mythe de la supériorité de l'homme blanc."
+    },
+    {
+      "question": "Quel est le domaine d'action de la FAO ?",
+      "optionA": "L'agriculture et l'alimentation",
+      "optionB": "L'assistance financière et technique",
+      "optionC": "La culture et l'éducation",
+      "optionD": "La protection des droits de l'enfant",
+      "correctAnswer": "A",
+      "explanation": "La FAO (Organisation des Nations Unies pour l'alimentation et l'agriculture) se concentre sur la lutte contre la faim et l'amélioration de l'agriculture."
+    },
+    {
+      "question": "Quel est le domaine d'action de l'UNESCO ?",
+      "optionA": "L'agriculture et l'alimentation",
+      "optionB": "L'assistance financière et technique",
+      "optionC": "La culture et l'éducation",
+      "optionD": "La protection des droits de l'enfant",
+      "correctAnswer": "C",
+      "explanation": "L'UNESCO (Organisation des Nations Unies pour l'éducation, la science et la culture) se consacre à la promotion de l'éducation, des sciences et de la culture."
+    },
+    {
+      "question": "Quel est le domaine d'action de l'UNICEF ?",
+      "optionA": "L'agriculture et l'alimentation",
+      "optionB": "L'assistance financière et technique",
+      "optionC": "La culture et l'éducation",
+      "optionD": "La protection des droits de l'enfant",
+      "correctAnswer": "D",
+      "explanation": "L'UNICEF (Fonds des Nations Unies pour l'enfance) se concentre sur la protection des droits et du bien-être des enfants."
+    },
+    {
+      "question": "Parmi les actions suivantes, laquelle a été un succès pour l'ONU ?",
+      "optionA": "La résolution du conflit israélo-palestinien",
+      "optionB": "L'égalité entre les Etats membres de l'ONU",
+      "optionC": "L'accession à l'indépendance des pays colonisés",
+      "optionD": "Le désarmement total des grandes puissances",
+      "correctAnswer": "C",
+      "explanation": "L'ONU a joué un rôle important dans le processus de décolonisation et l'indépendance des pays coloniaux."
+    },
+    {
+      "question": "Comment la Rhodésie du Sud a-t-elle pu accéder à l'indépendance ?",
+      "optionA": "Grâce à l'action anticolonialiste de Churchill et la reine d'Angleterre",
+      "optionB": "Par la volonté du premier ministre Ian Smith du gouvernement blanc",
+      "optionC": "Uniquement par des négociations entre nationalistes et colonisateurs",
+      "optionD": "À l'issue de la lutte armée organisée par les nationalistes zimbabwéens",
+      "correctAnswer": "D",
+      "explanation": "La Rhodésie du Sud (actuel Zimbabwe) a accédé à l'indépendance après une lutte armée menée par les nationalistes zimbabwéens."
+    },
+    {
+      "question": "Comment la communauté internationale a-t-elle contribué à l'accession à l'indépendance de la Rhodésie du Sud ?",
+      "optionA": "L'ONU s'est opposée à la proclamation en 1965 de l'indépendance de la Rhodésie du Sud par Ian Smith",
+      "optionB": "Les nationalistes noirs sont soutenus par la communauté internationale dans la guérilla qu'ils ont déclenché",
+      "optionC": "La communauté internationale a voté des sanctions économiques contre le pouvoir blanc",
+      "optionD": "Les négociations ouvertes dès 1978 et qui ont conduit à l'indépendance du pays ont été conduites par la communauté internationale",
+      "correctAnswer": "D",
+      "explanation": "Les négociations menées sous l'égide de la communauté internationale, notamment à la Conférence de Lancaster House, ont conduit à l'indépendance du Zimbabwe."
+    },
+    {
+      "question": "Quel fut le rôle des élites dans l'émancipation de la Haute-Volta ?",
+      "optionA": "La sensibilisation à travers les partis politiques",
+      "optionB": "La participation à la guerre d'indépendance",
+      "optionC": "Le musèlement de l'administration coloniale",
+      "optionD": "L'incitation au boycott des produits français",
+      "correctAnswer": "A",
+      "explanation": "Les élites voltaïques ont joué un rôle majeur dans la sensibilisation à travers les partis politiques pour obtenir l'indépendance du pays."
+    },
+    {
+      "question": "Quels sont les caractéristiques du temps ?",
+      "optionA": "La durée de l'éclairage, la limite de l'éclairage, l'intensité de l'éclairage",
+      "optionB": "La durée de l'éclairage, la limite de l'éclairage, la nature de l'éclairage",
+      "optionC": "La limite de l'éclairage, l'intensité de l'éclairage, la nature de l'éclairage",
+      "optionD": "La durée de l'éclairage, la nature de l'éclairage, l'intensité de l'éclairage",
+      "correctAnswer": "D",
+      "explanation": "Le temps se caractérise par sa durée, sa nature et son intensité, qui déterminent la perception de l'environnement."
+    },
+    {
+      "question": "Parmi les propositions suivantes, quelle est une cause de la bipolarisation du monde ?",
+      "optionA": "Les rivalités idéologiques des blocs",
+      "optionB": "La division de la Corée en deux",
+      "optionC": "L'isolationnisme des américains",
+      "optionD": "Les profondes rivalités sociales",
+      "correctAnswer": "A",
+      "explanation": "La bipolarisation du monde après la Seconde Guerre mondiale a été principalement causée par les rivalités idéologiques entre les blocs capitaliste et communiste."
+    },
+    {
+      "question": "Parmi les moyens suivants, lequel est une sanction pacifique de règlement des différends internationaux ?",
+      "optionA": "L'intervention des casques bleus",
+      "optionB": "La dialogue",
+      "optionC": "L'arbitrage",
+      "optionD": "L'embargo",
+      "correctAnswer": "D",
+      "explanation": "L'embargo est une mesure de sanction économique utilisée comme moyen pacifique de pression dans les relations internationales."
+    },
+    {
+      "question": "Selon les principes de l'ONU, dans quel cas les casques bleus ont-ils le droit de tirer ?",
+      "optionA": "L'interposition entre belligérants",
+      "optionB": "La guerre civile dans un pays",
+      "optionC": "En situation de légitime défense",
+      "optionD": "En cas de conflit inter-Etats",
+      "correctAnswer": "C",
+      "explanation": "Les casques bleus ont le droit de tirer uniquement en situation de légitime défense pour protéger les civils et leur mission."
+    },
+    {
+      "question": "Quelle action symbolise le succès de l'ONU ?",
+      "optionA": "La résolution de la crise israélo-palestinienne",
+      "optionB": "Le désarmement des grandes puissances",
+      "optionC": "Contribution à l'indépendance des colonies",
+      "optionD": "L'arrêt des conflits armés dans le monde",
+      "correctAnswer": "C",
+      "explanation": "La contribution de l'ONU à l'indépendance des colonies est l'un de ses plus grands succès historiques."
+    },
+    {
+      "question": "Parmi ces facteurs, lequel est une cause économique de la Deuxième Guerre mondiale ?",
+      "optionA": "La révolution industrielle du XIXe siècle",
+      "optionB": "La grande faillite de toutes les industries anglaises",
+      "optionC": "La rivalité économique entre l'Allemagne et la France",
+      "optionD": "La crise économique de 1929 née aux Etats Unis",
+      "correctAnswer": "D",
+      "explanation": "La crise économique de 1929 a exacerbé les tensions internationales et favorisé l'accession au pouvoir de régimes totalitaires comme le nazisme."
+    },
+    {
+      "question": "Quelle phrase convient à la situation de l'Afrique indépendante ?",
+      "optionA": "Est un continent où l'analphabétisme est important",
+      "optionB": "Abrite des pays aux taux de scolarisation les plus élevés",
+      "optionC": "Utilise ses langues nationales pour l'éducation formelle",
+      "optionD": "A une culture qui s'impose au-delà de ses frontières",
+      "correctAnswer": "A",
+      "explanation": "L'Afrique indépendante reste confrontée à des défis éducatifs majeurs, avec des taux d'analphabétisme élevés dans de nombreux pays."
+    },
+    {
+      "question": "Quelle phrase convient à la situation sociale de l'Afrique indépendante ?",
+      "optionA": "Dispose suffisamment de formation sanitaires et des personnels soignants",
+      "optionB": "Compte assez d'infrastructures scolaires et universitaires de qualité",
+      "optionC": "A trouvé des solutions définitives aux problèmes de chômages des jeunes",
+      "optionD": "Abrite des Etats qui vivent permanemment sous l'insécurité alimentaire",
+      "correctAnswer": "D",
+      "explanation": "L'Afrique indépendante reste confrontée à des défis sécuritaires et alimentaires majeurs dans de nombreux États."
+    },
+    {
+      "question": "Quel événement symbolise le début de la période d'après-guerre froide ?",
+      "optionA": "La chute du Mur de Berlin en 1989",
+      "optionB": "La dissolution de l'URSS en 1991",
+      "optionC": "La fin du maccarthysme",
+      "optionD": "La signature des accords de Helsinki",
+      "correctAnswer": "A",
+      "explanation": "La chute du Mur de Berlin le 9 novembre 1989 a marqué le début de la fin de la guerre froide et le début de la période post-guerre froide."
+    },
+    {
+      "question": "Quel a été le rôle des Nations Unies dans le processus de décolonisation ?",
+      "optionA": "Financer les mouvements indépendantistes",
+      "optionB": "Reconnaître les indépendances proclamées unilatéralement",
+      "optionC": "Soutenir les puissances coloniales",
+      "optionD": "Faciliter l'accession à l'indépendance des pays colonisés",
+      "correctAnswer": "D",
+      "explanation": "L'ONU a joué un rôle crucial dans le processus de décolonisation en soutenant les mouvements indépendantistes et en facilitant les transitions vers l'indépendance."
+    },
+    {
+      "question": "Quel a été le principal instrument utilisé par la communauté internationale pour lutter contre l'apartheid en Afrique du Sud ?",
+      "optionA": "Une intervention militaire directe",
+      "optionB": "Des sanctions économiques et diplomatiques",
+      "optionC": "Un boycott culturel et sportif uniquement",
+      "optionD": "Une résolution de l'Assemblée générale de l'ONU",
+      "correctAnswer": "B",
+      "explanation": "La communauté internationale a principalement utilisé des sanctions économiques et diplomatiques pour lutter contre l'apartheid en Afrique du Sud."
+    },
+    {
+      "question": "Quelle est la principale caractéristique de la guerre froide ?",
+      "optionA": "Un conflit militaire direct entre les États-Unis et l'URSS",
+      "optionB": "Une rivalité idéologique et politique entre les deux blocs",
+      "optionC": "Une collaboration économique entre les deux superpuissances",
+      "optionD": "Une division du monde en trois blocs égaux",
+      "correctAnswer": "B",
+      "explanation": "La guerre froide s'est caractérisée par une rivalité idéologique et politique entre les blocs capitaliste et communiste, sans conflit militaire direct entre les deux superpuissances."
+    },
+    {
+      "question": "Quel a été le rôle de l'Organisation de l'Unité Africaine (OUA) dans la lutte contre le colonialisme ?",
+      "optionA": "Financer les guerres de libération",
+      "optionB": "Soutenir les mouvements de libération et condamner le colonialisme",
+      "optionC": "Négocier avec les puissances coloniales",
+      "optionD": "Organiser des interventions militaires",
+      "correctAnswer": "B",
+      "explanation": "L'OUA a joué un rôle crucial en soutenant les mouvements de libération et en condamnant fermement le colonialisme et l'apartheid."
+    },
+    {
+      "question": "Quelle a été la principale conséquence de la décolonisation pour les États africains ?",
+      "optionA": "Une prospérité économique immédiate",
+      "optionB": "Des frontières héritées de la colonisation",
+      "optionC": "L'instabilité politique totale",
+      "optionD": "L'unité politique parfaite",
+      "correctAnswer": "B",
+      "explanation": "Les États africains ont hérité de leurs frontières de la période coloniale, ce qui a souvent posé des problèmes de cohésion nationale."
+    },
+    {
+      "question": "Quelle a été la politique étrangère du Burkina Faso sous Thomas Sankara ?",
+      "optionA": "Alliance avec les pays occidentaux",
+      "optionB": "Non-alignement et soutien aux luttes de libération",
+      "optionC": "Proximité avec l'Afrique du Sud",
+      "optionD": "Isolationnisme total",
+      "correctAnswer": "B",
+      "explanation": "Thomas Sankara a mené une politique de non-alignement et a soutenu activement les luttes de liboration en Afrique et dans le monde."
+    },
+    {
+      "question": "Quelle a été la principale caractéristique de la politique étrangère du Ghana sous Kwame Nkrumah ?",
+      "optionA": "Alliance avec les États-Unis",
+      "optionB": "Proximité avec l'Afrique du Sud",
+      "optionC": "Panafricanisme et anti-impérialisme",
+      "optionD": "Neutralité totale",
+      "correctAnswer": "C",
+      "explanation": "Kwame Nkrumah a été un ardent défenseur du panafricanisme et de l'anti-impérialisme dans sa politique étrangère."
+    },
+    {
+      "question": "Quel a été le rôle de la France dans la décolonisation de l'Afrique ?",
+      "optionA": "Elle a accepté immédiatement l'indépendance de ses colonies",
+      "optionB": "Elle a mené une guerre pour conserver ses colonies",
+      "optionC": "Elle a négocié progressivement l'indépendance de ses colonies",
+      "optionD": "Elle a abandonné toutes ses colonies sans négociation",
+      "correctAnswer": "C",
+      "explanation": "La France a négocié progressivement l'indépendance de ses colonies africaines, souvent dans un contexte de tension et de conflit."
+    },
+    {
+      "question": "Quelle a été la principale conséquence de la guerre froide pour l'Afrique ?",
+      "optionA": "L'unité politique du continent",
+      "optionB": "La bipolarisation des alliances et les conflits par procuration",
+      "optionC": "L'indépendance immédiate de toutes les colonies",
+      "optionD": "La fin de tous les conflits armés",
+      "correctAnswer": "B",
+      "explanation": "La guerre froide a entraîné la bipolarisation des alliances en Afrique et de nombreux conflits par procuration entre les deux blocs."
+    },
+    {
+      "question": "Quelle a été la principale organisation créée pour promouvoir la coopération économique en Afrique après l'indépendance ?",
+      "optionA": "L'OUA",
+      "optionB": "La Cédéao",
+      "optionC": "L'Union Africaine",
+      "optionD": "L'Organisation de l'Unité Africaine",
+      "correctAnswer": "B",
+      "explanation": "La Cédéao (Communauté Économique des États de l'Afrique de l'Ouest) a été créée pour promouvoir la coopération économique en Afrique de l'Ouest."
+    },
+    {
+      "question": "Quelle a été la principale caractéristique de la diplomatie burkinabè après l'indépendance ?",
+      "optionA": "Alliance avec les États-Unis",
+      "optionB": "Non-alignement et soutien aux luttes de libération",
+      "optionC": "Proximité avec l'Afrique du Sud",
+      "optionD": "Isolationnisme total",
+      "correctAnswer": "B",
+      "explanation": "Le Burkina Faso, comme de nombreux autres États africains, a suivi une politique de non-alignement et de soutien aux luttes de libération."
+    },
+    {
+      "question": "Quelle a été la principale cause des conflits en Afrique après l'indépendance ?",
+      "optionA": "La diversité ethnique",
+      "optionB": "Les frontières coloniales héritées",
+      "optionC": "Les ressources naturelles",
+      "optionD": "Toutes ces réponses",
+      "correctAnswer": "D",
+      "explanation": "Les conflits en Afrique après l'indépendance ont été causés par une combinaison de facteurs, dont la diversité ethnique, les frontières coloniales et la compétition pour les ressources naturelles."
+    }
+  ]
+}

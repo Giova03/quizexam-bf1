@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "data": {
+    "total_pages": 2,
+    "extracted_pages": 2,
+    "total_chars": 2433,
+    "pages": [
+      {
+        "page": 1,
+        "chars": 1411,
+        "text": "WhatsApp : 75 38 51 84\nTest psychotechniques\nConsigne 1: Laquelle des définitions A, B et C correspond au mot ou expression en gras\n?\nN° Item Réponses\n1 Elle l’a tancé vertement : B\nA) injurié B) réprimandé C) récompensé\n2 Il a parodié cet écrit : C\nA) retranscrit B) imprimé C) imité\n3 Il a prononcé à son égard des propos graveleux : A\nA) Licencieux B) empreints de gravité C) élogieux\n4 Elle a fignolé son ouvrage : B\nA) bâclé B) exécuté avec soin C) travaillé grossièrement\n5 Le fringant argousin : C\nA) commerçant B) amoureux C) agent de police\n6 Il s’ensuivit une banqueroute : B\nA) démarche boursière B) faillite C) distribanque\n7 107 Le plaignant est forclos : C\nA) emprisonné B) condamné C) privé de son droit\n8 Défrayer la chronique : C\nA) faire peur B) écouter C) scandaliser l’opinion publique\n9 L’air dégingandé : B\nA) supérieur B) disloqué C) désinvolte B\n10 Des manifestations sporadiques : C\nA) saisonnières B) habituelles C) se produisant irrégulièrement\nII. TESTS PSYCHOTECHNIQUES\nConsigne 1: Complétez s’il y a lieu.\nN° Item Réponses\n9 Des anagrammes amusant--- amusantes\n10 Les haltères sont soulevé--- soulevés\n12 Des satires méchant--- méchantes\n13 Des oasis saharien--- sahariennes\n14 Des pétales coloré--- colorés\n15 Des edelweiss fleuri--- fleuris\n16 L’interview terminé--- terminée\n17 L’écumoire est tombé--- tombée\n18 Des astérisques imprimé--- imprimés\n19 De long--- tentacules longs"
+      },
+      {
+        "page": 2,
+        "chars": 1022,
+        "text": "Consigne 2: Choisissez parmi les trois propositions, l’orthographe qui convient.\nN° Item Réponses\n20 A) Calle basse B) Calebasse C) Calebase B\n21 A) Immodestie B) Imodestie C) Imodaistie A\n22 A) Machiavélique B) Maquiavélique C) Mackiavélique A\n23 A) Extralusside B) Extralucide C) Exctralucide B\n24 A) Calligramme B) Qualligramme C) Calligrame A\n25 A) Zénitale B) Zhénithale C) Zénithale C\n26 A) Iolle B) Yolle C) Yole C\n27 A) Tandantiel B) Tendantiel C) Tendanciel C\n28 A) Réaccoutumer B) Reacoutumer C) Reaccoutummer A\n29 A) Mozzarelle B) Mozarelle C) Mozzarele A\n30 A) Labirinthe B) Labyrinte C) Labyrinthe C\n31 A) Caudatère B) Codataire C) Caudataire C\n32 A) Pélérinage B) Pèlerinage C) Pélérinnage B\n33 A) Atterir B) Atterrir C) Aterrir B\n34 A) Medecin B) Médécin C) Médecin C\n35 A) Chlorophile B) Chlorophylle C) Chlorophyle B\n36 A) Magazine B) Magazinne C) Magasinne A\n37 A) Honorrer B) Honorer C) Honnorer B\n38 A) Pyrénées B) Pyrennées C) Pirénées A\n39 A) Kinésitérapeute B) Kinésithérapeute C) Khinésitérapeute B"
+      }
+    ]
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "bankKey": "psycho-logique",
+  "title": "Tests Psychotechniques - Logique & Suites",
+  "description": "Suites numériques, séries logiques, codes et raisonnement",
+  "category": "Psychotechnique",
+  "icon": "Brain",
+  "color": "violet",
+  "questions": [
+    {
+      "question": "Complétez la suite : 127 333 900 ? 630",
+      "optionA": "144",
+      "optionB": "225",
+      "optionC": "169",
+      "optionD": "256",
+      "correctAnswer": "A",
+      "explanation": "La somme des chiffres de chaque nombre est égale à 9, et le nombre manquant doit être un carré parfait."
+    },
+    {
+      "question": "Complétez la suite : 1 2 4 7 11 ?",
+      "optionA": "16",
+      "optionB": "20",
+      "optionC": "26",
+      "optionD": "30",
+      "correctAnswer": "A",
+      "explanation": "Chaque nombre augmente de la valeur de sa position dans la suite (+1, +2, +3, etc.)."
+    },
+    {
+      "question": "Complétez la suite : 0 1 1 2 3 5 8 13 ? ?",
+      "optionA": "21 et 22",
+      "optionB": "21 et 30",
+      "optionC": "20 et 22",
+      "optionD": "21 et 34",
+      "correctAnswer": "D",
+      "explanation": "Chaque nombre est la somme des deux nombres précédents (suite de Fibonacci)."
+    },
+    {
+      "question": "Complétez la suite : 156 273 387 400 ???",
+      "optionA": "126",
+      "optionB": "226",
+      "optionC": "440",
+      "optionD": "523",
+      "correctAnswer": "D",
+      "explanation": "Le premier chiffre augmente de 1 à chaque étape (1, 2, 3, 4, 5)."
+    },
+    {
+      "question": "Complétez la suite : 312 324 534 741 ???",
+      "optionA": "616",
+      "optionB": "512",
+      "optionC": "450",
+      "optionD": "700",
+      "correctAnswer": "A",
+      "explanation": "Le chiffre des dizaines suit la progression : 1, 2, 3, 4, 5."
+    },
+    {
+      "question": "Complétez la suite : TYA USB PEC URD ???",
+      "optionA": "INE",
+      "optionB": "PMI",
+      "optionC": "UST",
+      "optionD": "ITU",
+      "correctAnswer": "A",
+      "explanation": "La dernière lettre de chaque trigramme suit l'alphabet (A, B, C, D, E)."
+    },
+    {
+      "question": "Complétez la suite : J F M A ? ?",
+      "optionA": "B et J",
+      "optionB": "H et K",
+      "optionC": "M et J",
+      "optionD": "D et G",
+      "correctAnswer": "C",
+      "explanation": "Il s'agit des premières lettres des mois de l'année : Janvier, Février, Mars, Avril, Mai, Juin."
+    },
+    {
+      "question": "Complétez la suite : L M M J ? ?",
+      "optionA": "V et S",
+      "optionB": "H et G",
+      "optionC": "D et L",
+      "optionD": "A et B",
+      "correctAnswer": "A",
+      "explanation": "Il s'agit des premières lettres des jours de la semaine : Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi."
+    },
+    {
+      "question": "Complétez la suite : 1U 2D 3T 8?",
+      "optionA": "8C",
+      "optionB": "8Q",
+      "optionC": "8S",
+      "optionD": "8H",
+      "correctAnswer": "D",
+      "explanation": "Il s'agit de l'initiale du nombre correspondant (Un, Deux, Trois, Huit)."
+    },
+    {
+      "question": "Complétez la suite : 1 8 27 64 125 216 ???",
+      "optionA": "343",
+      "optionB": "445",
+      "optionC": "654",
+      "optionD": "785",
+      "correctAnswer": "A",
+      "explanation": "Il s'agit des cubes des entiers consécutifs (1³, 2³, 3³, etc.)."
+    },
+    {
+      "question": "Dans un grand magasin, on trouve 52 articles CHAMMEL, 22 articles FIOR et 42 articles CARMIN. Combien trouvera-t-on d'articles MACROIX ?",
+      "optionA": "34",
+      "optionB": "24",
+      "optionC": "32",
+      "optionD": "43",
+      "correctAnswer": "A",
+      "explanation": "Le chiffre des dizaines correspond au nombre de consonnes et le chiffre des unités au nombre de voyelles."
+    },
+    {
+      "question": "FRED aime manger des FRITES, possède comme voiture une RONAULT, lit les ouvrages d'EROTODE, mais quand il prend l'avion, avec quelle compagnie voyage-t-il ?",
+      "optionA": "DOLTA AIRLINES",
+      "optionB": "VORGIN AIRLINES",
+      "optionC": "POULKOVO",
+      "optionD": "AIR QUEBEC",
+      "correctAnswer": "A",
+      "explanation": "Les premières lettres des éléments (FRITES, RONAULT, EROTODE) forment FRED, donc la compagnie doit commencer par D."
+    },
+    {
+      "question": "Lors d'une course de chevaux, SAWGRUSS finit deuxième et DANCEUR DES MERS cinquième. A quelle place termine PETITE FLEUR DES CHAMPS ?",
+      "optionA": "troisième",
+      "optionB": "premier",
+      "optionC": "neuvième",
+      "optionD": "septième",
+      "correctAnswer": "A",
+      "explanation": "Le rang d'arrivée correspond au nombre de voyelles dans le nom du cheval."
+    },
+    {
+      "question": "LAURA porte des vêtements CHAMMEL, a acheté une LONCIA, aime le chanteur JULES DALOU et habite à MANCHESTER. Sa joueuse de tennis préférée est :",
+      "optionA": "DEMENTIEVA",
+      "optionB": "HENIN",
+      "optionC": "GRAFF",
+      "optionD": "COLUMBO",
+      "correctAnswer": "A",
+      "explanation": "Les dernières lettres des éléments (CHAMMEL, LONCIA, DALOU) forment LAURA, donc la joueuse doit se terminer par A."
+    },
+    {
+      "question": "Lors d'une compétition, PAULINE termine 43ème et JEANFRANÇOIS 57ème. A quelle place termine PAUL-HENRI ?",
+      "optionA": "34",
+      "optionB": "43 ex aequo",
+      "optionC": "35",
+      "optionD": "45",
+      "correctAnswer": "A",
+      "explanation": "Le chiffre des dizaines correspond au nombre de voyelles et le chiffre des unités au nombre de consonnes."
+    },
+    {
+      "question": "A la loterie de l'école JEROME achète le billet n° 66, MAXIME le n° 65 et VICTOR le n° 87. Quel est le numéro du billet d'ALEX ?",
+      "optionA": "42",
+      "optionB": "43",
+      "optionC": "22",
+      "optionD": "44",
+      "correctAnswer": "A",
+      "explanation": "Le numéro du billet est obtenu en additionnant la position de chaque lettre dans l'alphabet."
+    },
+    {
+      "question": "Dans un magasin le SEL vaut 5 €, le CAFE 6€, le VINAIGRE 12€. Quel est le prix du POISSON ?",
+      "optionA": "11€",
+      "optionB": "22€",
+      "optionC": "23€",
+      "optionD": "33€",
+      "correctAnswer": "A",
+      "explanation": "Une consonne vaut 1€ et une voyelle vaut 2€ (POISSON a 5 consonnes et 3 voyelles)."
+    },
+    {
+      "question": "On compare la puissance de plusieurs automobiles. Une PAUGEOT a une puissance de 12 CV, une NASSIN de 14 CV et une FURD de 10 CV. Quelle est la puissance d'une CHEPROLET ?",
+      "optionA": "21 CV",
+      "optionB": "22 CV",
+      "optionC": "36 CV",
+      "optionD": "17 CV",
+      "correctAnswer": "A",
+      "explanation": "Une consonne vaut 3 CV et une voyelle vaut 1 CV (CHEPROLET a 7 consonnes et 0 voyelle)."
+    },
+    {
+      "question": "Yvan habite dans un pays de 2 522 114 habitants, VIVIANNE dans un pays de 229 229 114 145 habitants. Combien d'habitants y a-t-il dans le pays ou vit XAVIER ?",
+      "optionA": "241 229 518",
+      "optionB": "244 229 518",
+      "optionC": "241 228 518",
+      "optionD": "248 228 519",
+      "correctAnswer": "A",
+      "explanation": "Le nombre d'habitants correspond à la position de chaque lettre du prénom dans l'alphabet."
+    },
+    {
+      "question": "5 14 10 15 15 13 1 18 3 20 ? 6. Quel est le nombre manquant ?",
+      "optionA": "11",
+      "optionB": "12",
+      "optionC": "13",
+      "optionD": "14",
+      "correctAnswer": "A",
+      "explanation": "La somme de chaque groupe de trois nombres est égale à 33."
+    },
+    {
+      "question": "15 12 8 16 7 22 11 32 19 27 ? 20. Quel est le nombre manquant ?",
+      "optionA": "4",
+      "optionB": "5",
+      "optionC": "6",
+      "optionD": "7",
+      "correctAnswer": "A",
+      "explanation": "Le nombre en bas à droite est égal à la somme des deux autres nombres."
+    },
+    {
+      "question": "52 35 61 58 18 34 17 18 28 33 ? 37. Quel est le nombre manquant ?",
+      "optionA": "21",
+      "optionB": "22",
+      "optionC": "23",
+      "optionD": "24",
+      "correctAnswer": "A",
+      "explanation": "Le nombre en bas à gauche est égal à la différence des nombres en haut et en bas à droite."
+    }
+  ]
+}

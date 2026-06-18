@@ -1,0 +1,25 @@
+{
+  "status": "success",
+  "data": {
+    "total_pages": 3,
+    "extracted_pages": 3,
+    "total_chars": 2481,
+    "pages": [
+      {
+        "page": 1,
+        "chars": 1218,
+        "text": "CULTURE GENERALE\n1- Quel est le rôle des agents des Eaux et Forêts ?\nLes agents techniques du Ministère des Eaux et Forêts sont des forces\nparamilitaires qui assurent des missions de surveillance, de contrôle et de\nprotection des ressources Forestières, Fauniques et en Eau.\n2- Comment Appelle-t-on les agents des Eaux et Forêts ?\nLes Techniciens Eaux et Forêts\n3- Qui est le DG des Eaux et Forêts ?\nNommé en conseil des ministres le 6 mai 2022 et installé le 11 du même mois,\nle nouveau directeur général, LE COLONEL BARNABE KABORE, chef de\ncorps des Eaux et forêts.\n4- Quels sont les problèmes de l'eau au Burkina Faso ?\nChangements climatiques\nLa sécheresse récurrente,\nManque d’infrastructures adéquates et de grandes disparités entre zones rurales\net urbaines.\n5- Comment Appelle-t-on une personne qui vit dans la forêt ?\nForestier\n6- Comment appelle-t-on une forêt qui n'a jamais été exploitée ?\nOn qualifie de primaire\n7- Quel est le plus long cours d'eau au Burkina ?\nLe fleuve Mouhoun, le plus long du Burkina Faso dont près de 1000km en\nterritoire burkinabè\n8- Comment s'appelle la peur de la forêt ?\nL'hylophobie\n9- Qui entretient les forêts ?\nLes forestiers de l'ONF\nNIKIEMA_FRANCOIS RIEN QUE DU SUCCES !\n1"
+      },
+      {
+        "page": 2,
+        "chars": 1224,
+        "text": "10- Comment s'appelle le début d'une forêt ?\nAubier\n11- Comment s'appelle la plus grande forêt du monde ?\nL’Amazonie sud-américaine\n12- Quels sont les trois grands fleuves du Burkina Faso ?\nLe Burkina Faso est situé sur trois (3) bassins versants internationaux : la Volta,\nle Niger, la Comoé.\nCes trois bassins sont eux-mêmes subdivisés sur le territoire burkinabè en\nquatre (4) bassins versants nationaux : le Nakanbé, le Mouhoun, le Niger et la\nComoé.\n13- Quel est le plus grand barrage du Burkina Faso ?\nLe barrage de SAMENDENI\n14- Quel est le forage le plus profond du Burkina Faso ?\nLe forage Christine\n15- Quel sont les cours d'eau du Burkina Faso ?\nLes plus importants sont : le Mouhoun (ex Volta noire), le Nakambé (ex Volta\nblanche) et le Nazinon (ex Volta rouge).\nSeul le Mouhoun est pérenne ; il reçoit comme affluents le Kou, le Sourou, la\nBougouriba, le Grand Balé et le Poni.\n16- Quelle est la devise des eaux et forêts ?\nHonneur -Discipline- Solidarité.\n17- Que signifie ENEF\nL’École Nationale des Eaux et Forêts\n18- Couleur du béret des eau et forets au Burkina Faso ?\nCouleur verte\n19- En quelle a été créer le corps des eaux et forets au Burkina Faso ?\n16 Aout 1948\nNIKIEMA_FRANCOIS RIEN QUE DU SUCCES !\n2"
+      },
+      {
+        "page": 3,
+        "chars": 39,
+        "text": "NIKIEMA_FRANCOIS RIEN QUE DU SUCCES !\n3"
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Source document uploaded by the user
+model Document {
+  id        String          @id @default(cuid())
+  fileName  String
+  title     String
+  category  String
+  createdAt DateTime        @default(now())
+  banks     QuestionBank[]
+}
+
+// A bank of questions grouped by topic
+model QuestionBank {
+  id          String     @id @default(cuid())
+  title       String
+  description String
+  category    String
+  icon        String     @default("BookOpen")
+  color       String     @default("emerald")
+  documentId  String?
+  document    Document?  @relation(fields: [documentId], references: [id])
+  questions   Question[]
+  createdAt   DateTime   @default(now())
+}
+
+// A single QCM question
+model Question {
+  id            String        @id @default(cuid())
+  bankId        String
+  bank          QuestionBank  @relation(fields: [bankId], references: [id], onDelete: Cascade)
+  order         Int           @default(0)
+  question      String
+  optionA       String
+  optionB       String
+  optionC       String
+  optionD       String
+  correctAnswer String // "A" | "B" | "C" | "D"
+  explanation   String
+  createdAt     DateTime      @default(now())
+  examQuestions ExamQuestion[]
+}
+
+// A structured exam (e.g. 50 questions)
+model Exam {
+  id           String         @id @default(cuid())
+  title        String
+  description  String
+  durationMin  Int            @default(60)
+  examQuestions ExamQuestion[]
+  createdAt    DateTime       @default(now())
+}
+
+// Junction table exam <-> question with ordering
+model ExamQuestion {
+  id         String   @id @default(cuid())
+  examId     String
+  questionId String
+  order      Int
+  exam       Exam     @relation(fields: [examId], references: [id], onDelete: Cascade)
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+}
+
+// A user's quiz/exam attempt
+model QuizSession {
+  id             String          @id @default(cuid())
+  title          String
+  mode           String // "immediate" | "final"
+  sourceType     String // "bank" | "exam"
+  sourceId       String
+  score          Int             @default(0)
+  totalQuestions Int
+  startedAt      DateTime        @default(now())
+  completedAt    DateTime?
+  answers        SessionAnswer[]
+}
+
+// A user's answer to a single question in a session (snapshot stored)
+model SessionAnswer {
+  id            String      @id @default(cuid())
+  sessionId     String
+  questionId    String
+  questionText  String
+  optionA       String
+  optionB       String
+  optionC       String
+  optionD       String
+  correctAnswer String
+  userAnswer    String?
+  explanation   String
+  isCorrect     Boolean?
+  answeredAt    DateTime?
+  session       QuizSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+}

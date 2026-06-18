@@ -1,0 +1,289 @@
+{
+  "bankKey": "francais",
+  "title": "Français & Littérature",
+  "description": "Littérature africaine et française, courants littéraires, grammaire et figures de style",
+  "category": "Français",
+  "icon": "BookMarked",
+  "color": "teal",
+  "questions": [
+    {
+      "question": "Parmi les thèmes ci-dessous, lequel est associé à l'œuvre Les Soleils des indépendances d'Ahmadou Kourouma ?",
+      "optionA": "Le désenchantement",
+      "optionB": "Le conflit des cultures",
+      "optionC": "La révolte",
+      "optionD": "L'affirmation de l'identité culturelle",
+      "correctAnswer": "A",
+      "explanation": "Le thème principal de l'œuvre est le désenchantement face aux promesses non tenues après les indépendances."
+    },
+    {
+      "question": "Parmi les courants littéraires ci-dessous, lequel relève du XIXe siècle ?",
+      "optionA": "Surréalisme",
+      "optionB": "Rationalisme",
+      "optionC": "Naturalisme",
+      "optionD": "Absurde",
+      "correctAnswer": "C",
+      "explanation": "Le naturalisme est un courant littéraaire du XIXe siècle, principalement représenté par Émile Zola."
+    },
+    {
+      "question": "Parmi les séries de courants littéraires ci-dessous, laquelle relève du XIXe siècle ?",
+      "optionA": "Surréalisme, Nouveau Roman, Existentialisme, Dadaïsme",
+      "optionB": "Romantisme, Réalisme, Naturalisme, Symbolisme",
+      "optionC": "Renaissance, Absurde, Parnasse, Préciosité",
+      "optionD": "Classicisme, Pléiade, Humanisme, Jansénisme",
+      "correctAnswer": "B",
+      "explanation": "Le romantisme, le réalisme, le naturalisme et le symbolisme sont tous des courants littéraires du XIXe siècle."
+    },
+    {
+      "question": "Quel thème aborde le roman Le Pleurer-rire de Henri Lopez ?",
+      "optionA": "L'influence négative d'une forme sur une vie harmonieuse",
+      "optionB": "Un défi risqué face à des traditions toujours pesantes",
+      "optionC": "La mauvaise gestion du pouvoir par les dictateurs africains",
+      "optionD": "Le parcours professionnel d'un personnage atypique",
+      "correctAnswer": "C",
+      "explanation": "Ce roman aborde spécifiquement la mauvaise gestion du pouvoir par les dictateurs africains."
+    },
+    {
+      "question": "Dans quel thème peut-on classer l'œuvre Les Mains sales de Jean Paul Sartre ?",
+      "optionA": "Le travail",
+      "optionB": "L'aventure",
+      "optionC": "L'engagement",
+      "optionD": "Mythe et réalité",
+      "correctAnswer": "C",
+      "explanation": "Les Mains sales de Sartre explore les thèmes de la responsabilité politique et de l'engagement."
+    },
+    {
+      "question": "Dans quel thème peut-on classer l'œuvre L'Aventure ambiguë de Cheick Amidou Kane ?",
+      "optionA": "Révolte et liberté",
+      "optionB": "Le temps indépendances",
+      "optionC": "L'affirmation de l'identité culturelle",
+      "optionD": "Le conflit des cultures",
+      "correctAnswer": "D",
+      "explanation": "Cette œuvre explore le conflit entre les cultures africaine et occidentale à travers l'expérience d'un personnage."
+    },
+    {
+      "question": "Dans quel thème peut-on classer l'œuvre Le Parachutage de Norbert Zongo ?",
+      "optionA": "Tribalisme et modernisme",
+      "optionB": "Révolte et liberté",
+      "optionC": "Rêve ou réalité",
+      "optionD": "Démocratie et modernisme",
+      "correctAnswer": "B",
+      "explanation": "Ce roman aborde les thèmes de la révolte et de la liberté face à un système politique oppressif."
+    },
+    {
+      "question": "Dans quel thème peut-on classer l'œuvre Crépuscule des temps anciens de Nazi Boni ?",
+      "optionA": "L'engagement",
+      "optionB": "Le conflit des cultures",
+      "optionC": "La métamorphose des sociétés traditionnelles",
+      "optionD": "Figures historiques et légendaires",
+      "correctAnswer": "C",
+      "explanation": "Cette œuvre explore la métamorphose des sociétés traditionnelles africaines face au modernisme."
+    },
+    {
+      "question": "Dans quel thème peut-on classer l'œuvre Monsieur Thôgô Gnini de Bernard B. Dadié ?",
+      "optionA": "L'engagement",
+      "optionB": "Le conflit des cultures",
+      "optionC": "La société traditionnelle : métamorphoses",
+      "optionD": "L'Afrique des indépendances",
+      "correctAnswer": "C",
+      "explanation": "Cette œuvre met en scène la métamorphose de la société traditionnelle africaine."
+    },
+    {
+      "question": "« Les hommes capturèrent l'animal après qu'il eut tout saccagé. » Remplacer le mot souligné par son équivalent parmi les propositions ci-dessous :",
+      "optionA": "avant que",
+      "optionB": "quand",
+      "optionC": "jusqu'à ce que",
+      "optionD": "pendant que",
+      "correctAnswer": "B",
+      "explanation": "« Quand » exprime ici une succession d'événements, ce qui correspond au sens de la phrase."
+    },
+    {
+      "question": "« Certains hommes aiment le désert parce qu'il les fascine. » Remplacer le mot souligné par son équivalent parmi les propositions ci-dessous :",
+      "optionA": "or",
+      "optionB": "mais",
+      "optionC": "car",
+      "optionD": "donc",
+      "correctAnswer": "C",
+      "explanation": "« Car » exprime une cause, ce qui correspond au sens de la phrase."
+    },
+    {
+      "question": "« Au milieu de cette existence enragée par la misère, Gervaise souffrait encore des faims qu'elle entendait râler autour d'elle. Ce coin de la maison était le coin des pouilleux, où trois ou quatre ménages semblaient s'être donné le mot pour ne pas avoir du pain tous les jours. Les portes avaient beau s'ouvrir, elles ne lâchaient guère souvent des odeurs de cuisine. Le long du corridor, il y avait un silence de crevaison, et les murs sonnaient creux, comme des ventres vides. » Emile Zola, L'Assommoir. Parmi les thèmes ci-dessous proposés, lequel convient au texte ci-dessus ?",
+      "optionA": "La description de la maison",
+      "optionB": "La description du personnage",
+      "optionC": "La description de Gervaise",
+      "optionD": "La description de la misère",
+      "correctAnswer": "D",
+      "explanation": "Le texte décrit en détail la misère et la précarité de la vie des personnages."
+    },
+    {
+      "question": "Remplacer les verbes entre parenthèses par leur forme correcte. « Si Rodrigue ou Renauld (élire) pour présider l'association, les autres membres (s'opposer). »",
+      "optionA": "avait été élu – se serait opposé",
+      "optionB": "avaient été élu – se seraient opposés",
+      "optionC": "avait été élu – se seraient opposés",
+      "optionD": "avaient été élu – se serait opposé",
+      "correctAnswer": "C",
+      "explanation": "Le verbe au conditionnel passé s'accorde avec le sujet, et le verbe à la forme pronominale s'accorde avec le complément d'objet."
+    },
+    {
+      "question": "Quelle est la forme correcte ?",
+      "optionA": "Jeannette et Pierre se sont faits du mal et se sont pardonnés.",
+      "optionB": "Jeannette et Pierre se sont fait du mal et se sont pardonné.",
+      "optionC": "Jeannette et Pierre se sont faits du mal et se sont pardonné.",
+      "optionD": "Jeannette et Pierre se sont fait du mal et se sont pardonnés.",
+      "correctAnswer": "B",
+      "explanation": "Le participe passé « fait » s'accorde avec le sujet « Jeannette et Pierre » pour « se faire du mal », et « se pardonner » s'accorde avec le sujet « Jeannette et Pierre »."
+    },
+    {
+      "question": "Dans la phrase : « Le linceul de la nuit enveloppe la ville. » extraite dans Patarbtaalé ou Le Fils du pauvre de Geoffroy Damiba, la figure de style est :",
+      "optionA": "la métaphore",
+      "optionB": "la litote",
+      "optionC": "l'antiphrase",
+      "optionD": "le paradoxe",
+      "correctAnswer": "A",
+      "explanation": "La phrase utilise une métaphore en comparant la nuit à un linceul qui enveloppe la ville."
+    },
+    {
+      "question": "Dans laquelle de ces phrases y a-t-il une proposition subordonnée infinitive ?",
+      "optionA": "Chaque jour, les enfants du voisin adorent jouer dans la cour.",
+      "optionB": "Chaque jour, les enfants du voisin préfèrent jouer dans la cour.",
+      "optionC": "Chaque jour, les enfants du voisin regardent jouer leurs amis dans la cour.",
+      "optionD": "Chaque jour, les enfants du voisin doivent saluer leurs amis dans la cour.",
+      "correctAnswer": "C",
+      "explanation": "La phrase « Chaque jour, les enfants du voisin regardent jouer leurs amis dans la cour. » contient une proposition subordonnée infinitive où le verbe « jouer » a son propre sujet « leurs amis »."
+    },
+    {
+      "question": "Lequel de ces mots n'est pas féminin ?",
+      "optionA": "Sentinelle",
+      "optionB": "Déboire",
+      "optionC": "Ecritoire",
+      "optionD": "Passoire",
+      "correctAnswer": "B",
+      "explanation": "Le mot « déboire » est un nom masculin, contrairement aux autres options qui sont des noms féminins."
+    },
+    {
+      "question": "Quel mouvement littéraire est principalement associé au XIXe siècle et se caractérise par une description réaliste et scientifique de la société ?",
+      "optionA": "Romantisme",
+      "optionB": "Symbolisme",
+      "optionC": "Naturalisme",
+      "optionD": "Classicisme",
+      "correctAnswer": "C",
+      "explanation": "Le naturalisme est un mouvement du XIXe siècle qui se caractérise par une approche scientifique et réaliste de la description de la société."
+    },
+    {
+      "question": "Dans quelle œuvre de Bernard B. Dadié trouve-t-on une exploration de la société traditionnelle africaine et de ses métamorphoses ?",
+      "optionA": "Le Pleurer-rire",
+      "optionB": "Monsieur Thôgô Gnini",
+      "optionC": "Les Soleils des indépendances",
+      "optionD": "L'Aventure ambiguë",
+      "correctAnswer": "B",
+      "explanation": "Monsieur Thôgô Gnini de Bernard B. Dadié explore la société traditionnelle africaine et ses métamorphoses."
+    },
+    {
+      "question": "Quel thème central est abordé dans l'œuvre Les Mains sales de Jean-Paul Sartre ?",
+      "optionA": "L'aliénation",
+      "optionB": "L'engagement",
+      "optionC": "L'absurdité",
+      "optionD": "La quête de sens",
+      "correctAnswer": "B",
+      "explanation": "Les Mains sales de Sartre explore en profondeur le thème de l'engagement politique et moral."
+    },
+    {
+      "question": "« Il n'y a pas de fumée sans feu. » Quelle figure de style est utilisée dans cette expression ?",
+      "optionA": "Métaphore",
+      "optionB": "Proverbe",
+      "optionC": "Allégorie",
+      "optionD": "Antonomase",
+      "correctAnswer": "B",
+      "explanation": "Il s'agit d'un proverbe, une phrase populaire qui exprime une vérité générale ou une sagesse traditionnelle."
+    },
+    {
+      "question": "Quel est le temps verbal correct pour compléter la phrase : « Les enfants _____ jouer dehors s'il fait beau. » ?",
+      "optionA": "pourraient",
+      "optionB": "pourront",
+      "optionC": "pourraient",
+      "optionD": "pourront",
+      "correctAnswer": "A",
+      "explanation": "Le conditionnel présent « pourraient » est approprié ici pour exprimer une possibilité dans le futur."
+    },
+    {
+      "question": "Dans la phrase « Le silence était si lourd qu'on pouvait l'entendre », quelle figure de style est utilisée ?",
+      "optionA": "Oxymore",
+      "optionB": "Hyperbole",
+      "optionC": "Antiphrase",
+      "optionD": "Paradoxe",
+      "correctAnswer": "D",
+      "explanation": "Il s'agit d'un paradoxe car on ne peut pas littéralement entendre le silence, ce qui crée une image contradictoire mais suggestive."
+    },
+    {
+      "question": "Quel mouvement littéraire du XXe siècle s'est développé en réaction contre le rationalisme et a exploré l'inconscient ?",
+      "optionA": "Surréalisme",
+      "optionB": "Nouveau Roman",
+      "optionC": "Existentialisme",
+      "optionD": "Absurde",
+      "correctAnswer": "A",
+      "explanation": "Le surréalisme est un mouvement du XXe siècle qui a exploré l'inconscient et le rêve en réaction contre le rationalisme."
+    },
+    {
+      "question": "Quel est le thème principal de l'œuvre L'Aventure ambiguë de Cheick Amidou Kane ?",
+      "optionA": "La révolte contre le colonialisme",
+      "optionB": "Le conflit entre les cultures africaine et occidentale",
+      "optionC": "La quête de l'identité nationale",
+      "optionD": "L'engagement politique",
+      "correctAnswer": "B",
+      "explanation": "L'Aventure ambiguë explore spécifiquement le conflit entre les cultures africaine et occidentale."
+    },
+    {
+      "question": "« La forêt était un océan de verdure. » Quelle figure de style est utilisée dans cette phrase ?",
+      "optionA": "Comparaison",
+      "optionB": "Métaphore",
+      "optionC": "Allégorie",
+      "optionD": "Hyperbole",
+      "correctAnswer": "B",
+      "explanation": "Il s'agit d'une métaphore car la forêt est directement comparée à un océan sans utiliser de connecteur de comparaison."
+    },
+    {
+      "question": "Quel est le participe passé correct pour compléter la phrase : « Les enfants _____ les fleurs du jardin. » ?",
+      "optionA": "ont cueillis",
+      "optionB": "ont cueilli",
+      "optionC": "ont cueillies",
+      "optionD": "ont cueillies",
+      "correctAnswer": "B",
+      "explanation": "Le participe passé « cueillir » s'accorde avec le sujet « les enfants » et n'a pas de COD direct, donc il reste invariable."
+    },
+    {
+      "question": "Dans quelle œuvre de Norbert Zongo trouve-t-on une exploration de la révolte et de la liberté ?",
+      "optionA": "Le Parachutage",
+      "optionB": "Crépuscule des temps anciens",
+      "optionC": "Monsieur Thôgô Gnini",
+      "optionD": "L'Aventure ambiguë",
+      "correctAnswer": "A",
+      "explanation": "Le Parachutage de Norbert Zongo explore les thèmes de la révolte et de la liberté."
+    },
+    {
+      "question": "Quel mouvement littéraire du XIXe siècle se caractérise par une recherche de l'harmonie et de la perfection formelle ?",
+      "optionA": "Romantisme",
+      "optionB": "Symbolisme",
+      "optionC": "Parnasse",
+      "optionD": "Naturalisme",
+      "correctAnswer": "C",
+      "explanation": "Le Parnasse est un mouvement du XIXe siècle qui recherche l'harmonie et la perfection formelle, en opposition avec l'exaltation romantique."
+    },
+    {
+      "question": "« Son cœur était une forteresse imprenable. » Quelle figure de style est utilisée dans cette phrase ?",
+      "optionA": "Métaphore",
+      "optionB": "Comparaison",
+      "optionC": "Allégorie",
+      "optionD": "Métonymie",
+      "correctAnswer": "A",
+      "explanation": "Il s'agit d'une métaphore car le cœur est directement comparé à une forteresse sans utiliser de connecteur de comparaison."
+    },
+    {
+      "question": "Quel est le thème principal de l'œuvre Crépuscule des temps anciens de Nazi Boni ?",
+      "optionA": "L'engagement politique",
+      "optionB": "Le conflit des cultures",
+      "optionC": "La métamorphose des sociétés traditionnelles",
+      "optionD": "La révolte contre le colonialisme",
+      "correctAnswer": "C",
+      "explanation": "Crépuscule des temps anciens explore spécifiquement la métamorphose des sociétés traditionnelles africaines."
+    }
+  ]
+}

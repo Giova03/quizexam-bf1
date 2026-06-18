@@ -1,0 +1,155 @@
+{
+  "status": "success",
+  "data": {
+    "total_pages": 29,
+    "extracted_pages": 29,
+    "total_chars": 17182,
+    "pages": [
+      {
+        "page": 1,
+        "chars": 731,
+        "text": "ExcEllEncE formation 66251743 66384089\nPréPa-concours dirEct sEssion 2026\nmErcrEdi 22 octobrE 2025\nsujEt n°26 du 22 octobrE 2025\nconcours dE l’EnarEf : financE, économiE\nQuestions\n1. L’économie est la science qui étudie la manière dont les hommes\nutilisent des ressources limitées pour satisfaire leurs besoins\nillimités.\nA) Faux\nB) Vrai\nC) Partiellement vrai\nD) Non applicable\n2. Le produit intérieur brut (PIB) mesure :\nA) La richesse produite par les entreprises étrangères\nB) L’ensemble des biens et services produits dans un pays en une\nannée\nC) Le revenu moyen des ménages\nD) La balance commerciale\n3. Une monnaie est dite fiduciaire lorsqu’elle :\nA) Est constituée de métaux précieux\nB) Est fondée sur la confiance du public"
+      },
+      {
+        "page": 2,
+        "chars": 578,
+        "text": "C) Est convertible en or\nD) Est produite par le secteur privé\n4. Le taux directeur est fixé par :\nA) Le ministère des Finances\nB) La Banque Centrale\nC) Les banques commerciales\nD) Le Trésor public\n5. L’inflation se traduit par :\nA) Une baisse générale des prix\nB) Une augmentation générale et durable des prix\nC) Une stagnation du pouvoir d’achat\nD) Une réduction des taux d’intérêt\n6. Dans la comptabilité publique, l’ordonnateur est chargé de :\nA) L’exécution des dépenses et recettes\nB) L’engagement et la liquidation\nC) Le paiement des dettes\nD) La tenue du compte du Trésor"
+      },
+      {
+        "page": 3,
+        "chars": 678,
+        "text": "7. Le budget de l’État comprend :\nA) Les recettes, les dépenses et le solde\nB) Les recettes uniquement\nC) Les dépenses uniquement\nD) Le patrimoine de l’État\n8. Le principe d’unité budgétaire signifie que :\nA) Chaque ministère a son propre budget\nB) Toutes les recettes et dépenses sont regroupées dans un\ndocument unique\nC) Le budget est voté en plusieurs lois\nD) Le budget est décentralisé\n9. Une balance commerciale excédentaire signifie que :\nA) Les importations dépassent les exportations\nB) Les exportations dépassent les importations\nC) Les importations sont nulles\nD) L’économie est en récession\n10. Le franc CFA est émis par :\nA) La BCEAO\nB) Le Trésor français\nC) Le FMI"
+      },
+      {
+        "page": 4,
+        "chars": 464,
+        "text": "D) La Banque mondiale\n11. L’impôt direct est celui qui :\nA) Est payé immédiatement à l’État\nB) Est supporté et versé par la même personne\nC) Est payé par un intermédiaire\nD) Ne concerne que les sociétés\n12. L’impôt indirect le plus connu est :\nA) L’IR\nB) La TVA\nC) L’IS\nD) La patente\n13. Le déficit budgétaire apparaît lorsque :\nA) Les recettes > dépenses\nB) Les recettes < dépenses\nC) Les dépenses = recettes\nD) Les recettes sont nulles\n14. Le Trésor public est :"
+      },
+      {
+        "page": 5,
+        "chars": 673,
+        "text": "A) Une banque privée\nB) Une direction du ministère chargé des finances\nC) Une institution internationale\nD) Une entreprise publique\n15. Le rôle principal de l’ENAREF est de :\nA) Former les enseignants\nB) Former les agents des régies financières\nC) Gérer les recettes douanières\nD) Superviser les entreprises privées\n16. La comptabilité nationale permet de :\nA) Mesurer la production d’un pays\nB) Gérer les salaires publics\nC) Calculer les impôts\nD) Contrôler les marchés financiers\n17. La fonction principale du Trésor public est :\nA) Collecter les impôts et gérer la dette de l’État\nB) Gérer les entreprises\nC) Établir le budget des ménages\nD) Fixer les prix sur le marché"
+      },
+      {
+        "page": 6,
+        "chars": 495,
+        "text": "18. Une monnaie forte favorise :\nA) Les exportations\nB) Les importations\nC) L’inflation\nD) Le chômage\n19. Le FMI signifie :\nA) Fonds Monétaire International\nB) Fonds des Marchés Internationaux\nC) Financement Mondial Industriel\nD) Fonds Multilatéral Interne\n20. Le rôle de la BCEAO est de :\nA) Émettre la monnaie et contrôler la politique monétaire\nB) Financer directement les entreprises\nC) Fixer les prix du marché\nD) Déterminer le budget des États\n21. La fiscalité est :\nA) L’étude des douanes"
+      },
+      {
+        "page": 7,
+        "chars": 503,
+        "text": "B) L’ensemble des règles relatives aux impôts et taxes\nC) L’organisation du marché\nD) La comptabilité publique\n22. Le recouvrement des impôts est assuré par :\nA) Le ministère du commerce\nB) Le Trésor public\nC) Le parlement\nD) Les collectivités locales\n23. Le budget de l’État est voté par :\nA) Le gouvernement\nB) Le parlement\nC) Le président\nD) La Cour des comptes\n24. Le contrôle budgétaire est exercé après exécution par :\nA) Le comptable public\nB) La Cour des comptes\nC) L’ordonnateur\nD) Le parlement"
+      },
+      {
+        "page": 8,
+        "chars": 616,
+        "text": "25. L’épargne désigne :\nA) La consommation totale\nB) La part du revenu non consommée\nC) L’investissement brut\nD) Les transferts publics\n26. Le taux d’intérêt réel est obtenu en soustrayant :\nA) L’inflation du taux nominal\nB) L’impôt du taux nominal\nC) Le revenu du taux nominal\nD) Le PIB du taux nominal\n27. Une entreprise publique se distingue d’une entreprise privée\npar :\nA) La propriété du capital\nB) Le type de produits\nC) Le niveau de profit\nD) Le nombre d’employés\n28. L’élasticité-prix de la demande mesure :\nA) La variation du prix quand le revenu change\nB) La réaction de la demande à une variation du prix"
+      },
+      {
+        "page": 9,
+        "chars": 611,
+        "text": "C) La quantité produite par unité de travail\nD) Le pouvoir d’achat\n29. Une dette extérieure est :\nA) Contractée auprès d’un créancier national\nB) Contractée auprès d’un créancier étranger\nC) Contractée par les ménages\nD) Payée uniquement par les entreprises\n30. La politique budgétaire vise à :\nA) Modifier la production par la monnaie\nB) Utiliser les dépenses et recettes publiques pour influencer\nl’économie\nC) Fixer les salaires\nD) Gérer la politique extérieure\n31. L’investissement public est :\nA) Une dépense de fonctionnement\nB) Une dépense d’équipement durable\nC) Une subvention\nD) Un transfert de revenu"
+      },
+      {
+        "page": 10,
+        "chars": 662,
+        "text": "32. Le principe de sincérité budgétaire impose :\nA) L’équilibre obligatoire\nB) La présentation honnête des prévisions\nC) L’exactitude arithmétique\nD) Le secret\n33. L’entreprise qui détient le monopole sur un marché :\nA) Subit la concurrence\nB) Fixe librement ses prix\nC) Est toujours publique\nD) N’a pas de clients\n34. Le taux de chômage correspond au rapport entre :\nA) Le nombre de chômeurs et la population totale\nB) Le nombre de chômeurs et la population active\nC) Le nombre de chômeurs et le PIB\nD) Les dépenses et les recettes\n35. Le capital est un facteur de production qui :\nA) Disparaît après usage\nB) Sert durablement à produire\nC) Ne se renouvelle pas"
+      },
+      {
+        "page": 11,
+        "chars": 592,
+        "text": "D) N’a aucune valeur\n36. Une taxe est différente d’un impôt car elle :\nA) Ne rapporte rien à l’État\nB) Est liée à un service rendu\nC) Est payée volontairement\nD) Ne concerne que les entreprises\n37. L’économie de marché repose sur :\nA) La liberté des prix et de la concurrence\nB) Le contrôle total de l’État\nC) L’absence de propriété privée\nD) Le troc généralisé\n38. La balance des paiements enregistre :\nA) Les échanges commerciaux internes\nB) Les échanges économiques entre un pays et le reste du monde\nC) Le budget national\nD) Les transactions bancaires internes\n39. Le taux de change est :"
+      },
+      {
+        "page": 12,
+        "chars": 680,
+        "text": "A) Le prix d’une monnaie exprimé en une autre\nB) Le revenu moyen d’un pays\nC) Le prix du pétrole\nD) Le taux d’intérêt\n40. Une dévaluation du franc CFA rend :\nA) Les exportations plus chères\nB) Les importations moins chères\nC) Les exportations plus compétitives\nD) Le PIB plus faible\n41. Le principe de séparation des ordonnateurs et des comptables\nvise à :\nA) Faciliter la collaboration directe\nB) Éviter les détournements et confusions de rôles\nC) Accélérer les paiements\nD) Supprimer le contrôle\n42. En comptabilité, le bilan est un document qui présente :\nA) Les dépenses et les recettes\nB) Le patrimoine à une date donnée\nC) Le résultat de l’exercice\nD) Les flux de trésorerie"
+      },
+      {
+        "page": 13,
+        "chars": 568,
+        "text": "43. Le compte de résultat indique :\nA) Les immobilisations\nB) Le bénéfice ou la perte de l’exercice\nC) Les créances à long terme\nD) Les capitaux propres\n44. Une provision comptable sert à :\nA) Masquer les pertes\nB) Anticiper une charge ou une perte probable\nC) Augmenter artificiellement le bénéfice\nD) Amortir un actif\n45. Une entreprise est solvable si :\nA) Elle a plus de dettes que d’actifs\nB) Elle peut rembourser ses dettes à long terme\nC) Elle ne paie pas d’impôts\nD) Elle fait beaucoup de bénéfices\n46. L’amortissement représente :\nA) Une perte réelle d’argent"
+      },
+      {
+        "page": 14,
+        "chars": 562,
+        "text": "B) L’étalement du coût d’un bien sur sa durée d’utilisation\nC) Une dépense financière immédiate\nD) Une réduction d’impôt automatique\n47. Une créance douteuse est :\nA) Une dette certaine\nB) Un risque de non-recouvrement\nC) Un emprunt d’État\nD) Une créance sur le Trésor\n48. Le capital social d’une société représente :\nA) Son chiffre d’affaires\nB) Les apports des associés\nC) Ses dettes\nD) Ses réserves\n49. Le fonds de roulement mesure :\nA) L’écart entre actif circulant et passif circulant\nB) Le résultat net\nC) Le capital investi\nD) Le niveau de dettes fiscales"
+      },
+      {
+        "page": 15,
+        "chars": 630,
+        "text": "50. L’analyse financière vise à :\nA) Déterminer le prix de vente\nB) Évaluer la situation économique d’une entreprise\nC) Fixer les salaires\nD) Contrôler les dépenses publiques\n51. La comptabilité d’engagement enregistre les opérations :\nA) Au moment du paiement\nB) Au moment de l’engagement juridique\nC) Après vérification\nD) À la clôture de l’exercice\n52. Le taux d’actualisation est utilisé pour :\nA) Calculer les intérêts simples\nB) Actualiser la valeur future d’un flux\nC) Augmenter le capital\nD) Mesurer l’inflation\n53. Le budget de l’État au Burkina Faso est adopté selon une loi\nappelée :\nA) Loi organique\nB) Loi de finances"
+      },
+      {
+        "page": 16,
+        "chars": 450,
+        "text": "C) Loi de règlement\nD) Décret budgétaire\n54. Les recettes fiscales représentent environ :\nA) 10 % du PIB\nB) 30 % du PIB\nC) 50 % du PIB\nD) 5 % du PIB\n55. Une politique monétaire restrictive a pour effet de :\nA) Stimuler la demande\nB) Freiner l’inflation\nC) Favoriser le crédit\nD) Augmenter la masse monétaire\n56. Une subvention est :\nA) Une taxe sur la production\nB) Une aide financière accordée par l’État\nC) Un prêt remboursable\nD) Un impôt indirect"
+      },
+      {
+        "page": 17,
+        "chars": 615,
+        "text": "57. Le rôle principal de la douane est :\nA) Gérer la monnaie\nB) Contrôler les flux de marchandises et percevoir les droits\nC) Collecter la TVA intérieure\nD) Établir le budget de l’État\n58. La TVA est un impôt sur :\nA) Le revenu\nB) La dépense\nC) Le capital\nD) L’investissement\n59. Le commerce extérieur du Burkina Faso repose surtout sur :\nA) Les produits pétroliers\nB) Le coton, l’or et le bétail\nC) Les produits électroniques\nD) Les biens d’équipement\n60. Le taux de croissance économique est :\nA) Le rapport entre l’investissement et le PIB\nB) Le pourcentage d’augmentation du PIB réel\nC) Le niveau de l’inflation"
+      },
+      {
+        "page": 18,
+        "chars": 628,
+        "text": "D) Le revenu moyen par habitant\n61. L’économie informelle désigne :\nA) Les activités illégales\nB) Les activités non déclarées fiscalement\nC) Les sociétés cotées en bourse\nD) Les exportations industrielles\n62. Le plan comptable OHADA est applicable :\nA) Uniquement en Europe\nB) Dans les pays membres de l’espace OHADA\nC) En Afrique anglophone\nD) Aux institutions internationales\n63. Les États membres de l’UEMOA partagent :\nA) Une monnaie, une banque centrale et des politiques économiques\ncoordonnées\nB) Une armée commune\nC) Une législation identique\nD) Une politique agricole unique seulement\n64. Le marché monétaire concerne :"
+      },
+      {
+        "page": 19,
+        "chars": 581,
+        "text": "A) Les prêts à long terme\nB) Les capitaux à court terme\nC) Les échanges de marchandises\nD) Le commerce de devises uniquement\n65. Une obligation est :\nA) Une part de propriété\nB) Un titre de créance\nC) Une action\nD) Une subvention\n66. Le Trésor émet des bons pour :\nA) Financer à court terme les besoins de trésorerie\nB) Soutenir la consommation\nC) Accorder des crédits aux ménages\nD) Subventionner les entreprises\n67. La dette publique intérieure est :\nA) Contractée auprès d’institutions étrangères\nB) Contractée sur le marché national\nC) Nulle au Burkina Faso\nD) Non remboursable"
+      },
+      {
+        "page": 20,
+        "chars": 575,
+        "text": "68. L’analyse macroéconomique étudie :\nA) Les décisions d’une entreprise\nB) Le fonctionnement global de l’économie\nC) Le comportement individuel du consommateur\nD) Le management interne\n69. Une politique de relance économique consiste à :\nA) Réduire la dépense publique\nB) Augmenter la demande globale par la dépense publique\nC) Limiter la consommation\nD) Restreindre le crédit\n70. La théorie keynésienne met l’accent sur :\nA) L’épargne\nB) La demande effective\nC) Le libre-échange\nD) L’offre globale\n71. Le taux de bancarisation mesure :\nA) Le nombre de guichets automatiques"
+      },
+      {
+        "page": 21,
+        "chars": 692,
+        "text": "B) Le pourcentage de la population utilisant les services bancaires\nC) Le total des dépôts bancaires\nD) Le revenu des banques\n72. Les finances publiques concernent :\nA) Uniquement les entreprises\nB) L’ensemble des ressources et charges des administrations\nC) Le commerce extérieur\nD) Les banques commerciales\n73. Une entreprise publique à caractère industriel et commercial se\ndistingue par :\nA) Son objectif de profit\nB) Son financement sur budget d’État\nC) Sa gestion privée avec mission publique\nD) Sa gratuité totale\n74. Le budget-programme introduit :\nA) Une gestion axée sur les résultats\nB) Une séparation stricte des services\nC) Un budget confidentiel\nD) Une centralisation budgétaire"
+      },
+      {
+        "page": 22,
+        "chars": 585,
+        "text": "75. La politique fiscale a pour but principal de :\nA) Créer la monnaie\nB) Financer les dépenses publiques et orienter l’économie\nC) Fixer les salaires\nD) Contrôler les importations\n76. L’impôt sur les sociétés est prélevé sur :\nA) Le chiffre d’affaires\nB) Le bénéfice net\nC) Les ventes totales\nD) Les immobilisations\n77. Un budget excédentaire signifie que :\nA) Les recettes sont supérieures aux dépenses\nB) Les dépenses excèdent les recettes\nC) Le déficit augmente\nD) Les impôts diminuent\n78. Les institutions de Bretton Woods sont :\nA) Le FMI et la Banque mondiale\nB) L’ONU et la FAO"
+      },
+      {
+        "page": 23,
+        "chars": 519,
+        "text": "C) L’UEMOA et la BCEAO\nD) La BAD et la CEA\n79. La dette multilatérale est due :\nA) À un seul créancier\nB) À des institutions internationales\nC) À un État étranger\nD) À des particuliers\n80. Le solde primaire du budget exclut :\nA) Les dépenses de personnel\nB) Les intérêts de la dette\nC) Les investissements publics\nD) Les recettes fiscales\n81. Le taux de rendement interne (TRI) est :\nA) Le taux d’intérêt légal\nB) Le taux qui annule la valeur actuelle nette d’un projet\nC) Le taux d’inflation moyen\nD) Le taux de change"
+      },
+      {
+        "page": 24,
+        "chars": 732,
+        "text": "82. Un actif liquide est un bien :\nA) Qui ne peut être vendu\nB) Rapidement convertible en monnaie\nC) Immobilisé durablement\nD) Non échangeable\n83. L’effet multiplicateur de l’investissement signifie que :\nA) L’investissement entraîne une augmentation plus que\nproportionnelle du revenu\nB) L’investissement réduit la production\nC) L’investissement n’a aucun effet\nD) L’investissement diminue la consommation\n84. L’audit interne vise à :\nA) Contrôler la conformité et améliorer la gestion\nB) Déterminer le taux d’imposition\nC) Élaborer le budget\nD) Fixer les salaires\n85. La dépréciation d’une monnaie signifie :\nA) Une augmentation de sa valeur\nB) Une baisse de sa valeur par rapport aux autres monnaies\nC) Une stabilisation des prix"
+      },
+      {
+        "page": 25,
+        "chars": 604,
+        "text": "D) Un excédent commercial\n86. Le dumping désigne :\nA) Une taxe sur les exportations\nB) Une vente à l’étranger à un prix inférieur au coût\nC) Une subvention à l’importation\nD) Une politique budgétaire\n87. La balance des paiements comprend :\nA) La balance commerciale uniquement\nB) La balance courante et le compte de capital\nC) Les dépenses publiques\nD) Les recettes fiscales\n88. Le budget participatif implique :\nA) La population dans la gestion locale des finances publiques\nB) Les banques commerciales\nC) Les ONG étrangères\nD) Le parlement seulement\n89. Le principe de l’annualité budgétaire veut que :"
+      },
+      {
+        "page": 26,
+        "chars": 699,
+        "text": "A) Le budget couvre une période d’un an\nB) Le budget soit pluriannuel\nC) Les dépenses soient illimitées\nD) Les recettes soient permanentes\n90. Le déficit chronique de la balance commerciale du Burkina\ns’explique notamment par :\nA) Une forte dépendance aux importations\nB) Une industrie locale très compétitive\nC) Un excédent de production\nD) Une faible demande intérieure\n91. Une politique de rigueur budgétaire vise à :\nA) Stimuler la croissance\nB) Réduire le déficit public\nC) Augmenter la masse monétaire\nD) Créer des emplois publics\n92. Le coût d’opportunité représente :\nA) La dépense réelle\nB) Le gain auquel on renonce en choisissant une autre option\nC) Le prix du marché\nD) Le taux d’intérêt"
+      },
+      {
+        "page": 27,
+        "chars": 605,
+        "text": "93. La loi de finances rectificative sert à :\nA) Modifier en cours d’année la loi de finances initiale\nB) Supprimer les impôts\nC) Créer une nouvelle monnaie\nD) Voter le budget local\n94. La trésorerie active d’une entreprise signifie :\nA) Un déficit de liquidité\nB) Un excédent de liquidité\nC) Une dette importante\nD) Une absence de flux\n95. L’investissement étranger direct (IED) correspond à :\nA) Des dons publics\nB) Une prise de participation durable dans une entreprise locale\nC) Des prêts à court terme\nD) Une aide budgétaire\n96. La microfinance vise à :\nA) Financer uniquement les grandes entreprises"
+      },
+      {
+        "page": 28,
+        "chars": 600,
+        "text": "B) Offrir des services financiers aux populations à faibles revenus\nC) Fixer les taux directeurs\nD) Collecter les impôts\n97. La Caisse Autonome de Retraite des Fonctionnaires (CARFO)\nest :\nA) Une institution bancaire\nB) Un établissement public à caractère social\nC) Une régie financière\nD) Une direction fiscale\n98. La loi de règlement établit :\nA) Les prévisions budgétaires\nB) Le bilan de l’exécution du budget\nC) Le plan d’investissement\nD) Les programmes futurs\n99. Le compte du Trésor au Burkina Faso est tenu par :\nA) La BCEAO\nB) Le FMI\nC) Le ministère de l’économie\nD) Les banques commerciales"
+      },
+      {
+        "page": 29,
+        "chars": 254,
+        "text": "100. La bonne gouvernance financière repose sur :\nA) La transparence, la responsabilité et le contrôle\nB) Le secret et la rapidité\nC) La centralisation du pouvoir\nD) L’absence de reddition des comptes\nExcellence formation vous souhaite bonne chance !!!!!"
+      }
+    ]
+  }
+}

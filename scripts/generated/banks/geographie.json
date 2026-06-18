@@ -1,0 +1,280 @@
+{
+  "bankKey": "geographie",
+  "title": "Géographie & Sciences de la Terre",
+  "description": "Géographie physique et humaine, sciences de la Terre et environnement",
+  "category": "Géographie",
+  "icon": "Mountain",
+  "color": "sky",
+  "questions": [
+    {
+      "question": "Quelle est la couche externe de la Terre appelée ?",
+      "optionA": "Noyau",
+      "optionB": "Manteau",
+      "optionC": "Croûte",
+      "optionD": "Atmosphère",
+      "correctAnswer": "C",
+      "explanation": "La croûte est la couche externe solide de la Terre."
+    },
+    {
+      "question": "Quel est le pourcentage approximatif de la surface de la Terre recouverte par les océans ?",
+      "optionA": "𝟓𝟎%",
+      "optionB": "𝟔𝟎%",
+      "optionC": "𝟕𝟎%",
+      "optionD": "𝟖𝟎%",
+      "correctAnswer": "C",
+      "explanation": "Environ 𝟕𝟎% de la surface de la Terre est recouverte par des océans."
+    },
+    {
+      "question": "Quelle est la partie la plus profonde de l'océan connue sur Terre ?",
+      "optionA": "Fosse des Mariannes",
+      "optionB": "Fosse des Tonga",
+      "optionC": "Fosse des Kermadec",
+      "optionD": "Fosse des Philippines",
+      "correctAnswer": "A",
+      "explanation": "La Fosse des Mariannes est la partie la plus profonde de l'océan, située dans l'océan Pacifique."
+    },
+    {
+      "question": "Quel est le plus grand continent sur Terre en termes de superficie ?",
+      "optionA": "Afrique",
+      "optionB": "Asie",
+      "optionC": "Amérique du Nord",
+      "optionD": "Europe",
+      "correctAnswer": "B",
+      "explanation": "L'Asie est le plus grand continent en termes de superficie."
+    },
+    {
+      "question": "Quel gaz est le plus abondant dans l'atmosphère terrestre ?",
+      "optionA": "Oxygène",
+      "optionB": "Dioxyde de carbone",
+      "optionC": "Azote",
+      "optionD": "Argon",
+      "correctAnswer": "C",
+      "explanation": "L'azote constitue environ 𝟕𝟖% de l'atmosphère terrestre, ce qui en fait le gaz le plus abondant."
+    },
+    {
+      "question": "Combien de temps la Terre met-elle pour faire une rotation complète sur son axe ?",
+      "optionA": "𝟏𝟐 heures",
+      "optionB": "𝟐𝟒 heures",
+      "optionC": "𝟑𝟔 heures",
+      "optionD": "𝟒𝟖 heures",
+      "correctAnswer": "B",
+      "explanation": "La Terre met environ 𝟐𝟒 heures pour faire une rotation complète sur son axe, ce qui définit une journée."
+    },
+    {
+      "question": "Quelle est la distance moyenne de la Terre au Soleil ?",
+      "optionA": "𝟗𝟑 millions de kilomètres",
+      "optionB": "𝟏𝟓𝟎 millions de kilomètres",
+      "optionC": "𝟐𝟎𝟎 millions de kilomètres",
+      "optionD": "𝟐𝟓𝟎 millions de kilomètres",
+      "correctAnswer": "B",
+      "explanation": "La distance moyenne de la Terre au Soleil eRst d'environ 𝟏𝟓𝟎 millions de kilomètres."
+    },
+    {
+      "question": "Quelle est la capitale la plus haute du monde par rapport au niveau de la mer ?",
+      "optionA": "La Paz",
+      "optionB": "Quito",
+      "optionC": "Katmandou",
+      "optionD": "Addis-Abeba",
+      "correctAnswer": "A",
+      "explanation": "La Paz en Bolivie est la capitale la plus haute du monde par rapport au niveau de la mer."
+    },
+    {
+      "question": "Quelle est la plus grande île du monde ?",
+      "optionA": "Madagascar",
+      "optionB": "Groenland",
+      "optionC": "Bornéo",
+      "optionD": "Nouvelle-Guinée",
+      "correctAnswer": "B",
+      "explanation": "Le Groenland est la plus grande île du monde."
+    },
+    {
+      "question": "Quelle est la principale cause du réchauffement climatique ?",
+      "optionA": "La déforestation",
+      "optionB": "Les émissions de gaz à effet de serre",
+      "optionC": "Les éruptions volcaniques",
+      "optionD": "L'érosion des sols",
+      "correctAnswer": "B",
+      "explanation": "Les émissions de gaz à effet de serre sont la principale cause du réchauffement climatique."
+    },
+    {
+      "question": "Quel est le plus long fleuve du monde ?",
+      "optionA": "Nil",
+      "optionB": "Amazone",
+      "optionC": "Yangtsé",
+      "optionD": "Mississippi",
+      "correctAnswer": "A",
+      "explanation": "Le Nil est souvent considéré comme le plus long fleuve du monde."
+    },
+    {
+      "question": "Quelle est la montagne la plus haute du monde ?",
+      "optionA": "Mont Kilimandjaro",
+      "optionB": "Mont Everest",
+      "optionC": "Mont McKinley",
+      "optionD": "Mont Elbrouz",
+      "correctAnswer": "B",
+      "explanation": "Le mont Everest est la montagne la plus haute du monde."
+    },
+    {
+      "question": "Quelle est la période géologique actuelle ?",
+      "optionA": "Jurassique",
+      "optionB": "Paléolithique",
+      "optionC": "Holocène",
+      "optionD": "Miocène",
+      "correctAnswer": "C",
+      "explanation": "L'Holocène est la période géologique actuelle."
+    },
+    {
+      "question": "Quelle est la principale composante du noyau externe de la Terre ?",
+      "optionA": "Fer",
+      "optionB": "Nickel",
+      "optionC": "Silicium",
+      "optionD": "Oxygène",
+      "correctAnswer": "A",
+      "explanation": "Le noyau externe de la Terre est principalement composé de fer."
+    },
+    {
+      "question": "Quel est le plus grand désert chaud du monde ?",
+      "optionA": "Désert de Gobi",
+      "optionB": "Désert de Kalahari",
+      "optionC": "Désert du Sahara",
+      "optionD": "Désert d'Arabie",
+      "correctAnswer": "C",
+      "explanation": "Le désert du Sahara est le plus grand désert chaud du monde."
+    },
+    {
+      "question": "Quelle est la ville la plus peuplée du monde ?",
+      "optionA": "New York",
+      "optionB": "Tokyo",
+      "optionC": "Mexico",
+      "optionD": "Shanghai",
+      "correctAnswer": "B",
+      "explanation": "Tokyo est la ville la plus peuplée du monde."
+    },
+    {
+      "question": "Quel est le mouvement des plaques tectoniques responsable de la formation des montagnes ?",
+      "optionA": "Divergent",
+      "optionB": "Convergent",
+      "optionC": "Transformant",
+      "optionD": "Subductif",
+      "correctAnswer": "B",
+      "explanation": "Le mouvement convergent des plaques tectoniques est responsable de la formation des montagnes."
+    },
+    {
+      "question": "Quel phénomène naturel est mesuré par l'échelle de Richter ?",
+      "optionA": "Les tsunamis",
+      "optionB": "Les tornades",
+      "optionC": "Les séismes",
+      "optionD": "Les éruptions volcaniques",
+      "correctAnswer": "C",
+      "explanation": "L'échelle de Richter mesure la magnitude des séismes."
+    },
+    {
+      "question": "Quelle est la principale cause de la formation des saisons sur Terre ?",
+      "optionA": "La distance variable de la Terre au Soleil",
+      "optionB": "L'inclinaison de l'axe de la Terre",
+      "optionC": "La rotation de la Terre",
+      "optionD": "Les éruptions solaires",
+      "correctAnswer": "B",
+      "explanation": "L'inclinaison de l'axe de la Terre par rapport à son orbite autour du Soleil est la principale cause de la formation des saisons."
+    },
+    {
+      "question": "Quel est le plus grand océan du monde ?",
+      "optionA": "Océan Atlantique",
+      "optionB": "Océan Indien",
+      "optionC": "Océan Arctique",
+      "optionD": "Océan Pacifique",
+      "correctAnswer": "D",
+      "explanation": "L'océan Pacifique est le plus grand océan du monde."
+    },
+    {
+      "question": "Quelle est la capitale de l'Australie ?",
+      "optionA": "Sydney",
+      "optionB": "Melbourne",
+      "optionC": "Canberra",
+      "optionD": "Brisbane",
+      "correctAnswer": "C",
+      "explanation": "Canberra est la capitale de l'Australie."
+    },
+    {
+      "question": "Quel pays a la plus grande superficie terrestre ?",
+      "optionA": "Canada",
+      "optionB": "Chine",
+      "optionC": "États-Unis",
+      "optionD": "Russie",
+      "correctAnswer": "D",
+      "explanation": "La Russie est le pays avec la plus grande superficie terrestre."
+    },
+    {
+      "question": "Quel est le phénomène de montée des eaux dû à la fonte des glaciers et des calottes polaires ?",
+      "optionA": "Réchauffement climatique",
+      "optionB": "Effet de serre",
+      "optionC": "Élévation du niveau de la mer",
+      "optionD": "La Niña",
+      "correctAnswer": "C",
+      "explanation": "La fonte des glaciers et des calottes polaires contribue à l'élévation du niveau de la mer."
+    },
+    {
+      "question": "Quelle est la plus grande chaîne de montagnes au monde ?",
+      "optionA": "Les Alpes",
+      "optionB": "Les Rocheuses",
+      "optionC": "L'Himalaya",
+      "optionD": "Les Andes",
+      "correctAnswer": "C",
+      "explanation": "L'Himalaya est la plus grande chaîne de montagnes du monde."
+    },
+    {
+      "question": "Quelle est la ville la plus au nord du monde ?",
+      "optionA": "Longyearbyen",
+      "optionB": "Reykjavik",
+      "optionC": "Anchorage",
+      "optionD": "Tromsø",
+      "correctAnswer": "A",
+      "explanation": "Longyearbyen, en Norvège, est la ville la plus au nord du monde."
+    },
+    {
+      "question": "Quel type de roche est le granite ?",
+      "optionA": "Roche métamorphique",
+      "optionB": "Roche sédimentaire",
+      "optionC": "Roche ignée",
+      "optionD": "Roche volcanique",
+      "correctAnswer": "C",
+      "explanation": "Le granite est une roche ignée."
+    },
+    {
+      "question": "Quelle mer borde la côte nord de l'Afrique ?",
+      "optionA": "Mer Rouge",
+      "optionB": "Mer Méditerranée",
+      "optionC": "Mer Noire",
+      "optionD": "Mer Caspienne",
+      "correctAnswer": "B",
+      "explanation": "La mer Méditerranée borde la côte nord de l'Afrique."
+    },
+    {
+      "question": "Quelle est la durée de l'année civile sur Terre ?",
+      "optionA": "𝟑𝟔𝟒 jours",
+      "optionB": "𝟑𝟔𝟓 jours",
+      "optionC": "𝟑𝟔𝟔 jours",
+      "optionD": "𝟑𝟔𝟕 jours",
+      "correctAnswer": "B",
+      "explanation": "L'année civile compte 𝟑𝟔𝟓 jours, sauf les années bissextiles qui en comptent 𝟑𝟔𝟔."
+    },
+    {
+      "question": "Quelle est la plus grande forêt tropicale du monde ?",
+      "optionA": "Forêt du Congo",
+      "optionB": "Forêt amazonienne",
+      "optionC": "Forêt de Bornéo",
+      "optionD": "Forêt de Sumatra",
+      "correctAnswer": "B",
+      "explanation": "La forêt amazonienne est la plus grande forêt tropicale du monde."
+    },
+    {
+      "question": "Quel phénomène est causé par le mouvement rapide de l'air et caractérisé par des vents violents et tourbillonnants ?",
+      "optionA": "Ouragan",
+      "optionB": "Tornade",
+      "optionC": "Tempête tropicale",
+      "optionD": "Cyclone",
+      "correctAnswer": "B",
+      "explanation": "Une tornade est causée par le mouvement rapide de l'air et est caractérisée par des vents violents et tourbillonnants."
+    }
+  ]
+}
