@@ -117,14 +117,16 @@ export function CustomExamDialog({
       });
       const data = await res.json();
       if (res.ok) {
-        onOpenChange(false);
+        // Navigate first, then close dialog
         onCreated(data.id);
+        onOpenChange(false);
       } else {
         toast.error(data.error || "Échec de la création");
+        setCreating(false);
       }
-    } catch {
-      toast.error("Erreur de connexion");
-    } finally {
+    } catch (e) {
+      console.error("Custom exam error:", e);
+      toast.error("Erreur de connexion. Vérifiez votre réseau.");
       setCreating(false);
     }
   }

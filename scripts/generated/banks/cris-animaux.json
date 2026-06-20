@@ -1,0 +1,372 @@
+{
+  "bankKey": "cris-animaux",
+  "title": "Animaux - Cris, Féminins et Petits",
+  "description": "Cris des animaux, noms des femelles et des petits.",
+  "category": "Culture Générale",
+  "subcategory": "Animaux",
+  "icon": "PawPrint",
+  "color": "amber",
+  "level": "TOUS",
+  "questions": [
+    {
+      "question": "Quel est le cri du lion ?",
+      "optionA": "Le rugissement",
+      "optionB": "Le hurlement",
+      "optionC": "Le grognement",
+      "optionD": "Le meuglement",
+      "correctAnswer": "A",
+      "explanation": "Le lion rugit."
+    },
+    {
+      "question": "Comment appelle-t-on la femelle du lion ?",
+      "optionA": "La lionne",
+      "optionB": "La tigresse",
+      "optionC": "La léopardesse",
+      "optionD": "La panthère",
+      "correctAnswer": "A",
+      "explanation": "La femelle du lion est la lionne."
+    },
+    {
+      "question": "Comment appelle-t-on le petit du lion ?",
+      "optionA": "Le lionceau",
+      "optionB": "Le louveteau",
+      "optionC": "Le chaton",
+      "optionD": "Le petit",
+      "correctAnswer": "A",
+      "explanation": "Le petit du lion est le lionceau."
+    },
+    {
+      "question": "Quel est le cri du loup ?",
+      "optionA": "Le hurlement",
+      "optionB": "Le rugissement",
+      "optionC": "Le jappement",
+      "optionD": "Le aboiement",
+      "correctAnswer": "A",
+      "explanation": "Le loup hurle."
+    },
+    {
+      "question": "Comment appelle-t-on la femelle du loup ?",
+      "optionA": "La louve",
+      "optionB": "La loupine",
+      "optionC": "La louvette",
+      "optionD": "La renarde",
+      "correctAnswer": "A",
+      "explanation": "La femelle du loup est la louve."
+    },
+    {
+      "question": "Comment appelle-t-on le petit du loup ?",
+      "optionA": "Le louveteau",
+      "optionB": "Le lionceau",
+      "optionC": "Le renardeau",
+      "optionD": "Le blaireaut",
+      "correctAnswer": "A",
+      "explanation": "Le petit du loup est le louveteau."
+    },
+    {
+      "question": "Quel est le cri du chien ?",
+      "optionA": "L'aboiement",
+      "optionB": "Le miaulement",
+      "optionC": "Le grognement",
+      "optionD": "Le jappement",
+      "correctAnswer": "A",
+      "explanation": "Le chien aboie."
+    },
+    {
+      "question": "Comment appelle-t-on la femelle du chien ?",
+      "optionA": "La chienne",
+      "optionB": "La chiennette",
+      "optionC": "La chienlette",
+      "optionD": "La lice",
+      "correctAnswer": "A",
+      "explanation": "La femelle du chien est la chienne (aussi 'lice' pour les chiens de chasse)."
+    },
+    {
+      "question": "Comment appelle-t-on le petit du chien ?",
+      "optionA": "Le chiot",
+      "optionB": "Le chienneau",
+      "optionC": "Le chienlon",
+      "optionD": "Le chiotte",
+      "correctAnswer": "A",
+      "explanation": "Le petit du chien est le chiot."
+    },
+    {
+      "question": "Quel est le cri du chat ?",
+      "optionA": "Le miaulement",
+      "optionB": "L'aboiement",
+      "optionC": "Le rugissement",
+      "optionD": "Le sifflement",
+      "correctAnswer": "A",
+      "explanation": "Le chat miaule."
+    },
+    {
+      "question": "Comment appelle-t-on la femelle du chat ?",
+      "optionA": "La chatte",
+      "optionB": "La chatonne",
+      "optionC": "La minette",
+      "optionD": "La chatline",
+      "correctAnswer": "A",
+      "explanation": "La femelle du chat est la chatte."
+    },
+    {
+      "question": "Comment appelle-t-on le petit du chat ?",
+      "optionA": "Le chaton",
+      "optionB": "Le chaton",
+      "optionC": "Le kitten",
+      "optionD": "Le chatonnet",
+      "correctAnswer": "A",
+      "explanation": "Le petit du chat est le chaton."
+    },
+    {
+      "question": "Quel est le cri du cheval ?",
+      "optionA": "Le hennissement",
+      "optionB": "Le meuglement",
+      "optionC": "Le braiment",
+      "optionD": "Le cri",
+      "correctAnswer": "A",
+      "explanation": "Le cheval hennit."
+    },
+    {
+      "question": "Comment appelle-t-on la femelle du cheval ?",
+      "optionA": "La jument",
+      "optionB": "La cavale",
+      "optionC": "La pouliche",
+      "optionD": "La haras",
+      "correctAnswer": "A",
+      "explanation": "La femelle du cheval est la jument."
+    },
+    {
+      "question": "Comment appelle-t-on le petit du cheval ?",
+      "optionA": "Le poulain",
+      "optionB": "Le poulin",
+      "optionC": "Le poulard",
+      "optionD": "Le chevalon",
+      "correctAnswer": "A",
+      "explanation": "Le petit du cheval est le poulain (mâle) ou la pouliche (femelle)."
+    },
+    {
+      "question": "Quel est le cri de la vache ?",
+      "optionA": "Le meuglement",
+      "optionB": "Le beuglement",
+      "optionC": "Le mugissement",
+      "optionD": "Toutes ces réponses",
+      "correctAnswer": "D",
+      "explanation": "La vache meugle, beugle ou mugit (synonymes)."
+    },
+    {
+      "question": "Comment appelle-t-on la femelle du bœuf ?",
+      "optionA": "La vache",
+      "optionB": "La génisse",
+      "optionC": "La taure",
+      "optionD": "La vachette",
+      "correctAnswer": "A",
+      "explanation": "La femelle du bœuf (taureau) est la vache."
+    },
+    {
+      "question": "Comment appelle-t-on le petit de la vache ?",
+      "optionA": "Le veau",
+      "optionB": "Le taurillon",
+      "optionC": "Le bovin",
+      "optionD": "Le bouvillon",
+      "correctAnswer": "A",
+      "explanation": "Le petit de la vache est le veau."
+    },
+    {
+      "question": "Quel est le cri du cochon ?",
+      "optionA": "Le grognement",
+      "optionB": "Le criaillement",
+      "optionD": "Le meuglement",
+      "optionC": "Le beuglement",
+      "correctAnswer": "A",
+      "explanation": "Le cochon grogne (ou cochonne/groine)."
+    },
+    {
+      "question": "Comment appelle-t-on la femelle du cochon ?",
+      "optionA": "La truie",
+      "optionB": "La cochonne",
+      "optionC": "La porcine",
+      "optionD": "La groine",
+      "correctAnswer": "A",
+      "explanation": "La femelle du cochon est la truie."
+    },
+    {
+      "question": "Comment appelle-t-on le petit du cochon ?",
+      "optionA": "Le porcelet",
+      "optionB": "Le cochonnet",
+      "optionC": "Le porcin",
+      "optionD": "Le cochonneau",
+      "correctAnswer": "A",
+      "explanation": "Le petit du cochon est le porcelet."
+    },
+    {
+      "question": "Quel est le cri du mouton ?",
+      "optionA": "Le bêlement",
+      "optionB": "Le meuglement",
+      "optionC": "Le criaillement",
+      "optionD": "Le grognement",
+      "correctAnswer": "A",
+      "explanation": "Le mouton bêle."
+    },
+    {
+      "question": "Comment appelle-t-on la femelle du mouton ?",
+      "optionA": "La brebis",
+      "optionB": "La moutonne",
+      "optionC": "La ovine",
+      "optionD": "La toison",
+      "correctAnswer": "A",
+      "explanation": "La femelle du mouton est la brebis."
+    },
+    {
+      "question": "Comment appelle-t-on le petit du mouton ?",
+      "optionA": "L'agneau",
+      "optionB": "Le moutonneau",
+      "optionC": "Le brebichon",
+      "optionD": "Le toisonneau",
+      "correctAnswer": "A",
+      "explanation": "Le petit du mouton est l'agneau."
+    },
+    {
+      "question": "Quel est le cri de la poule ?",
+      "optionA": "La caquètement",
+      "optionB": "Le cocorico",
+      "optionC": "Le chant",
+      "optionD": "Le criaillement",
+      "correctAnswer": "A",
+      "explanation": "La poule caquète."
+    },
+    {
+      "question": "Quel est le cri du coq ?",
+      "optionA": "Le cocorico",
+      "optionB": "Le caquètement",
+      "optionC": "Le chant",
+      "optionD": "Le sifflement",
+      "correctAnswer": "A",
+      "explanation": "Le coq chante 'cocorico'."
+    },
+    {
+      "question": "Comment appelle-t-on le petit de la poule ?",
+      "optionA": "Le poussin",
+      "optionB": "Le poulet",
+      "optionC": "Le coquelet",
+      "optionD": "Le poussinet",
+      "correctAnswer": "A",
+      "explanation": "Le petit de la poule est le poussin."
+    },
+    {
+      "question": "Quel est le cri de l'âne ?",
+      "optionA": "Le braiment",
+      "optionB": "Le hennissement",
+      "optionC": "Le meuglement",
+      "optionD": "Le hurlement",
+      "correctAnswer": "A",
+      "explanation": "L'âne brait."
+    },
+    {
+      "question": "Comment appelle-t-on la femelle de l'âne ?",
+      "optionA": "L'ânesse",
+      "optionB": "L'ânessine",
+      "optionC": "La baudet",
+      "optionD": "La bourrique",
+      "correctAnswer": "A",
+      "explanation": "La femelle de l'âne est l'ânesse."
+    },
+    {
+      "question": "Comment appelle-t-on le petit de l'âne ?",
+      "optionA": "Le baudet",
+      "optionB": "L'ânon",
+      "optionC": "L'ânin",
+      "optionD": "Le bourriquet",
+      "correctAnswer": "A",
+      "explanation": "Le petit de l'âne est l'ânon (ou baudet pour le mâle)."
+    },
+    {
+      "question": "Quel est le cri du canard ?",
+      "optionA": "Le coincoin",
+      "optionB": "Le cancan",
+      "optionC": "Le caquètement",
+      "optionD": "Le sifflement",
+      "correctAnswer": "A",
+      "explanation": "Le canard cancane (fait 'coin coin')."
+    },
+    {
+      "question": "Comment appelle-t-on le petit du canard ?",
+      "optionA": "Le caneton",
+      "optionB": "Le canardeau",
+      "optionC": "Le canardin",
+      "optionD": "Le cannet",
+      "correctAnswer": "A",
+      "explanation": "Le petit du canard est le caneton."
+    },
+    {
+      "question": "Quel est le cri du serpent ?",
+      "optionA": "Le sifflement",
+      "optionB": "Le crissement",
+      "optionC": "Le murmure",
+      "optionD": "Le souffle",
+      "correctAnswer": "A",
+      "explanation": "Le serpent siffle."
+    },
+    {
+      "question": "Quel est le cri de l'éléphant ?",
+      "optionA": "Le barrissement",
+      "optionB": "Le rugissement",
+      "optionC": "Le trompement",
+      "optionD": "Le cri",
+      "correctAnswer": "A",
+      "explanation": "L'éléphant barrit."
+    },
+    {
+      "question": "Quel est le cri de la grenouille ?",
+      "optionA": "Le coassement",
+      "optionB": "Le croassement",
+      "optionC": "Le chant",
+      "optionD": "Le sifflement",
+      "correctAnswer": "A",
+      "explanation": "La grenouille coasse."
+    },
+    {
+      "question": "Quel est le cri du corbeau ?",
+      "optionA": "Le croassement",
+      "optionB": "Le caquètement",
+      "optionC": "Le chant",
+      "optionD": "Le sifflement",
+      "correctAnswer": "A",
+      "explanation": "Le corbeau croasse."
+    },
+    {
+      "question": "Quel est le cri de la cigogne ?",
+      "optionA": "Le claquement du bec",
+      "optionB": "Le chant",
+      "optionC": "Le croassement",
+      "optionD": "Le sifflement",
+      "correctAnswer": "A",
+      "explanation": "La cigogne claquette du bec (elle ne chante pas)."
+    },
+    {
+      "question": "Quel est le cri du paon ?",
+      "optionA": "Le criaillement",
+      "optionB": "Le chant",
+      "optionC": "Le sifflement",
+      "optionD": "Le meuglement",
+      "correctAnswer": "A",
+      "explanation": "Le paon criaille (pousse des cris perçants)."
+    },
+    {
+      "question": "Comment appelle-t-on le petit du lapin ?",
+      "optionA": "Le lapereau",
+      "optionB": "Le lapinot",
+      "optionC": "Le lapineau",
+      "optionD": "Le bichon",
+      "correctAnswer": "A",
+      "explanation": "Le petit du lapin est le lapereau."
+    },
+    {
+      "question": "Comment appelle-t-on la femelle du lapin ?",
+      "optionA": "La hase",
+      "optionB": "La lapine",
+      "optionC": "La lapone",
+      "optionD": "La biche",
+      "correctAnswer": "A",
+      "explanation": "La femelle du lapin est la hase (aussi 'lapine')."
+    }
+  ]
+}

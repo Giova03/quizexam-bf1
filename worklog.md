@@ -357,3 +357,31 @@ Stage Summary:
 - Responsive 100%: dialogs pleine page, navigation scrollable, touch targets, prévention zoom ✓
 - Mode hors ligne: service worker + bandeau offline + cache dynamique ✓
 - 2053 questions, 41 banques, 10 examens ✓
+
+---
+Task ID: 21
+Agent: Main (Z.ai Code)
+Task: Corriger examen IA, supprimer banque films, créer nouvelles banques
+
+Work Log:
+- Corrigé l'erreur "Erreur de connexion" de l'examen personnalisé:
+  - Le problème: `startSession` n'était pas déstructuré du store Zustand dans page.tsx
+  - Ajout de `startSession` dans la déstructuring
+  - Réordonné les appels: naviguer d'abord (onCreated), puis fermer le dialogue (onOpenChange)
+  - Sorti `setCreating(false)` du finally block pour éviter les interférences
+  - Testé: l'examen se crée et la session s'affiche correctement ✓
+- Supprimé la banque culture-populaire (films/séries/manga)
+- 4 nouvelles banques créées:
+  1. litterature-africaine (25 Q): Ahmadou Kourouma, Camara Laye, Cheikh Hamidou Kane, Mariama Bâ, Henri Lopes, Sembène Ousmane, Mongo Beti, Nazi Boni, Norbert Zongo, négritude (Césaire, Senghor, Damas), prix Nobel (Soyinka, Mahfouz)
+  2. pays-capitales-monnaies (40 Q): capitales et monnaies de tous les continents (Burkina, Mali, Niger, Côte d'Ivoire, Sénégal, Ghana, Nigeria, France, USA, UK, Japon, Chine, Inde, Brésil, Afrique du Sud, Maroc, Égypte, Algérie, Russie, Allemagne, Canada, Australie, Italie, Espagne, Turquie, Suisse)
+  3. cris-animaux (40 Q): cris (rugissement, hurlement, aboiement, miaulement, hennissement, meuglement, grognement, bêlement, caquètement, braiment, coincoin, sifflement, barrissement, coassement, croassement), féminins (lionne, louve, chienne, chatte, jument, vache, truie, brebis, ânesse, hase), petits (lionceau, louveteau, chiot, chaton, poulain, veau, porcelet, agneau, ânon, caneton, lapereau)
+  4. psycho-formes (42 Q): 42 types de formes psychotechniques très difficiles (suites de cercles, alternances, cycles, rotations, formes géométriques, nombres triangulaires, suites géométriques, enseignes de cartes, tailles, points alignés, demi-cercles, hexagones, étoiles, diagonales, angles)
+- Total: 44 banques, 2113 questions, 10 examens
+- ESLint: 0 erreurs
+- Vérifié avec Agent Browser: examen personnalisé fonctionne (sélection → création → session) ✓
+
+Stage Summary:
+- Erreur examen IA corrigée ✓
+- Banque films supprimée, remplacée par 4 nouvelles banques (littérature africaine, pays/capitales/monnaies, cris animaux, psycho-formes) ✓
+- 44 banques, 2113 questions, 10 examens ✓
+- 0 erreur, 0 crash ✓

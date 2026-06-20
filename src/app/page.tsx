@@ -52,6 +52,7 @@ export default function Home() {
     openAbout,
     openAdmin,
     openSocial,
+    startSession,
   } = useQuizStore();
   const { t } = useTranslation();
   const [notifOpen, setNotifOpen] = useState(false);

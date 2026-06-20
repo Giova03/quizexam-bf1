@@ -1,0 +1,372 @@
+{
+  "bankKey": "pays-capitales-monnaies",
+  "title": "Pays, Capitales et Monnaies du Monde",
+  "description": "Capitales, monnaies et drapeaux des pays du monde.",
+  "category": "Culture Générale",
+  "subcategory": "Géographie",
+  "icon": "Globe2",
+  "color": "sky",
+  "level": "TOUS",
+  "questions": [
+    {
+      "question": "Quelle est la capitale du Burkina Faso ?",
+      "optionA": "Ouagadougou",
+      "optionB": "Bobo-Dioulasso",
+      "optionC": "Koudougou",
+      "optionD": "Banfora",
+      "correctAnswer": "A",
+      "explanation": "Ouagadougou est la capitale du Burkina Faso."
+    },
+    {
+      "question": "Quelle est la monnaie du Burkina Faso ?",
+      "optionA": "Franc CFA (XOF)",
+      "optionB": "Euro",
+      "optionC": "Dollar",
+      "optionD": "Naira",
+      "correctAnswer": "A",
+      "explanation": "Le Burkina Faso utilise le franc CFA (BCEAO, XOF)."
+    },
+    {
+      "question": "Quelle est la capitale du Mali ?",
+      "optionA": "Bamako",
+      "optionB": "Tombouctou",
+      "optionC": "Ségou",
+      "optionD": "Kayes",
+      "correctAnswer": "A",
+      "explanation": "Bamako est la capitale du Mali."
+    },
+    {
+      "question": "Quelle est la capitale du Niger ?",
+      "optionA": "Niamey",
+      "optionB": "Zinder",
+      "optionC": "Agadez",
+      "optionD": "Maradi",
+      "correctAnswer": "A",
+      "explanation": "Niamey est la capitale du Niger."
+    },
+    {
+      "question": "Quelle est la capitale de la Côte d'Ivoire ?",
+      "optionA": "Yamoussoukro",
+      "optionB": "Abidjan",
+      "optionC": "Bouaké",
+      "optionD": "San-Pédro",
+      "correctAnswer": "A",
+      "explanation": "Yamoussoukro est la capitale politique, Abidjan la capitale économique."
+    },
+    {
+      "question": "Quelle est la capitale du Sénégal ?",
+      "optionA": "Dakar",
+      "optionB": "Saint-Louis",
+      "optionC": "Thiès",
+      "optionD": "Touba",
+      "correctAnswer": "A",
+      "explanation": "Dakar est la capitale du Sénégal."
+    },
+    {
+      "question": "Quelle est la capitale du Ghana ?",
+      "optionA": "Accra",
+      "optionB": "Kumasi",
+      "optionC": "Tamale",
+      "optionD": "Cape Coast",
+      "correctAnswer": "A",
+      "explanation": "Accra est la capitale du Ghana."
+    },
+    {
+      "question": "Quelle est la monnaie du Ghana ?",
+      "optionA": "Cedi",
+      "optionB": "Franc CFA",
+      "optionC": "Naira",
+      "optionD": "Livre",
+      "correctAnswer": "A",
+      "explanation": "Le Ghana utilise le cedi (GHS)."
+    },
+    {
+      "question": "Quelle est la capitale du Nigeria ?",
+      "optionA": "Abuja",
+      "optionB": "Lagos",
+      "optionC": "Kano",
+      "optionD": "Ibadan",
+      "correctAnswer": "A",
+      "explanation": "Abuja est la capitale du Nigeria (depuis 1991, transférée depuis Lagos)."
+    },
+    {
+      "question": "Quelle est la monnaie du Nigeria ?",
+      "optionA": "Naira",
+      "optionB": "Cedi",
+      "optionC": "Franc CFA",
+      "optionD": "Dollar",
+      "correctAnswer": "A",
+      "explanation": "Le Nigeria utilise le naira (NGN)."
+    },
+    {
+      "question": "Quelle est la capitale de la France ?",
+      "optionA": "Paris",
+      "optionB": "Lyon",
+      "optionC": "Marseille",
+      "optionD": "Bordeaux",
+      "correctAnswer": "A",
+      "explanation": "Paris est la capitale de la France."
+    },
+    {
+      "question": "Quelle est la monnaie de la France ?",
+      "optionA": "Euro (€)",
+      "optionB": "Franc français",
+      "optionC": "Dollar",
+      "optionD": "Livre",
+      "correctAnswer": "A",
+      "explanation": "La France utilise l'euro depuis 2002."
+    },
+    {
+      "question": "Quelle est la capitale des États-Unis ?",
+      "optionA": "Washington D.C.",
+      "optionB": "New York",
+      "optionC": "Los Angeles",
+      "optionD": "Chicago",
+      "correctAnswer": "A",
+      "explanation": "Washington D.C. est la capitale (pas New York)."
+    },
+    {
+      "question": "Quelle est la monnaie des États-Unis ?",
+      "optionA": "Dollar américain (USD)",
+      "optionB": "Euro",
+      "optionC": "Livre",
+      "optionD": "Yen",
+      "correctAnswer": "A",
+      "explanation": "Les États-Unis utilisent le dollar (USD)."
+    },
+    {
+      "question": "Quelle est la capitale du Royaume-Uni ?",
+      "optionA": "Londres",
+      "optionB": "Manchester",
+      "optionC": "Édimbourg",
+      "optionD": "Glasgow",
+      "correctAnswer": "A",
+      "explanation": "Londres est la capitale du Royaume-Uni."
+    },
+    {
+      "question": "Quelle est la monnaie du Royaume-Uni ?",
+      "optionA": "Livre sterling (£)",
+      "optionB": "Euro",
+      "optionC": "Dollar",
+      "optionD": "Franc",
+      "correctAnswer": "A",
+      "explanation": "Le Royaume-Uni utilise la livre sterling (GBP)."
+    },
+    {
+      "question": "Quelle est la capitale du Japon ?",
+      "optionA": "Tokyo",
+      "optionB": "Osaka",
+      "optionC": "Kyoto",
+      "optionD": "Nagoya",
+      "correctAnswer": "A",
+      "explanation": "Tokyo est la capitale du Japon."
+    },
+    {
+      "question": "Quelle est la monnaie du Japon ?",
+      "optionA": "Yen (¥)",
+      "optionB": "Won",
+      "optionC": "Yuan",
+      "optionD": "Rupee",
+      "correctAnswer": "A",
+      "explanation": "Le Japon utilise le yen (JPY)."
+    },
+    {
+      "question": "Quelle est la capitale de la Chine ?",
+      "optionA": "Pékin (Beijing)",
+      "optionB": "Shanghai",
+      "optionC": "Hong Kong",
+      "optionD": "Guangzhou",
+      "correctAnswer": "A",
+      "explanation": "Pékin est la capitale de la Chine."
+    },
+    {
+      "question": "Quelle est la monnaie de la Chine ?",
+      "optionA": "Yuan (Renminbi)",
+      "optionB": "Yen",
+      "optionC": "Won",
+      "optionD": "Roupie",
+      "correctAnswer": "A",
+      "explanation": "La Chine utilise le yuan (RMB/CNY)."
+    },
+    {
+      "question": "Quelle est la capitale de l'Inde ?",
+      "optionA": "New Delhi",
+      "optionB": "Mumbai",
+      "optionC": "Kolkata",
+      "optionD": "Bangalore",
+      "correctAnswer": "A",
+      "explanation": "New Delhi est la capitale de l'Inde."
+    },
+    {
+      "question": "Quelle est la monnaie de l'Inde ?",
+      "optionA": "Roupie indienne (INR)",
+      "optionB": "Yen",
+      "optionC": "Dollar",
+      "optionD": "Euro",
+      "correctAnswer": "A",
+      "explanation": "L'Inde utilise la roupie (INR)."
+    },
+    {
+      "question": "Quelle est la capitale du Brésil ?",
+      "optionA": "Brasília",
+      "optionB": "Rio de Janeiro",
+      "optionC": "São Paulo",
+      "optionD": "Salvador",
+      "correctAnswer": "A",
+      "explanation": "Brasília est la capitale depuis 1960."
+    },
+    {
+      "question": "Quelle est la monnaie du Brésil ?",
+      "optionA": "Real (BRL)",
+      "optionB": "Peso",
+      "optionC": "Dollar",
+      "optionD": "Euro",
+      "correctAnswer": "A",
+      "explanation": "Le Brésil utilise le real (BRL)."
+    },
+    {
+      "question": "Quelle est la capitale de l'Afrique du Sud ?",
+      "optionA": "Pretoria (administrative)",
+      "optionB": "Le Cap",
+      "optionC": "Johannesburg",
+      "optionD": "Durban",
+      "correctAnswer": "A",
+      "explanation": "L'Afrique du Sud a 3 capitales: Pretoria (admin), Le Cap (législatif), Bloemfontein (judiciaire)."
+    },
+    {
+      "question": "Quelle est la capitale du Maroc ?",
+      "optionA": "Rabat",
+      "optionB": "Casablanca",
+      "optionC": "Marrakech",
+      "optionD": "Fès",
+      "correctAnswer": "A",
+      "explanation": "Rabat est la capitale du Maroc (pas Casablanca)."
+    },
+    {
+      "question": "Quelle est la monnaie du Maroc ?",
+      "optionA": "Dirham marocain (MAD)",
+      "optionB": "Dinar",
+      "optionC": "Franc CFA",
+      "optionD": "Euro",
+      "correctAnswer": "A",
+      "explanation": "Le Maroc utilise le dirham (MAD)."
+    },
+    {
+      "question": "Quelle est la capitale de l'Égypte ?",
+      "optionA": "Le Caire",
+      "optionB": "Alexandrie",
+      "optionC": "Gizeh",
+      "optionD": "Louxor",
+      "correctAnswer": "A",
+      "explanation": "Le Caire est la capitale de l'Égypte."
+    },
+    {
+      "question": "Quelle est la capitale de l'Algérie ?",
+      "optionA": "Alger",
+      "optionB": "Oran",
+      "optionC": "Constantine",
+      "optionD": "Annaba",
+      "correctAnswer": "A",
+      "explanation": "Alger est la capitale de l'Algérie."
+    },
+    {
+      "question": "Quelle est la monnaie de l'Algérie ?",
+      "optionA": "Dinar algérien (DZD)",
+      "optionB": "Dirham",
+      "optionC": "Franc CFA",
+      "optionD": "Euro",
+      "correctAnswer": "A",
+      "explanation": "L'Algérie utilise le dinar (DZD)."
+    },
+    {
+      "question": "Quelle est la capitale de la Russie ?",
+      "optionA": "Moscou",
+      "optionB": "Saint-Pétersbourg",
+      "optionC": "Kazan",
+      "optionD": "Novosibirsk",
+      "correctAnswer": "A",
+      "explanation": "Moscou est la capitale de la Russie."
+    },
+    {
+      "question": "Quelle est la capitale de l'Allemagne ?",
+      "optionA": "Berlin",
+      "optionB": "Munich",
+      "optionC": "Hambourg",
+      "optionD": "Francfort",
+      "correctAnswer": "A",
+      "explanation": "Berlin est la capitale de l'Allemagne."
+    },
+    {
+      "question": "Quelle est la monnaie de l'Allemagne ?",
+      "optionA": "Euro (€)",
+      "optionB": "Mark",
+      "optionC": "Franc",
+      "optionD": "Dollar",
+      "correctAnswer": "A",
+      "explanation": "L'Allemagne utilise l'euro (avant 2002: le mark)."
+    },
+    {
+      "question": "Quelle est la capitale du Canada ?",
+      "optionA": "Ottawa",
+      "optionB": "Toronto",
+      "optionC": "Montréal",
+      "optionD": "Vancouver",
+      "correctAnswer": "A",
+      "explanation": "Ottawa est la capitale du Canada (pas Toronto)."
+    },
+    {
+      "question": "Quelle est la capitale de l'Australie ?",
+      "optionA": "Canberra",
+      "optionB": "Sydney",
+      "optionC": "Melbourne",
+      "optionD": "Perth",
+      "correctAnswer": "A",
+      "explanation": "Canberra est la capitale (pas Sydney)."
+    },
+    {
+      "question": "Quelle est la capitale de l'Italie ?",
+      "optionA": "Rome",
+      "optionB": "Milan",
+      "optionC": "Naples",
+      "optionD": "Florence",
+      "correctAnswer": "A",
+      "explanation": "Rome est la capitale de l'Italie."
+    },
+    {
+      "question": "Quelle est la capitale de l'Espagne ?",
+      "optionA": "Madrid",
+      "optionB": "Barcelone",
+      "optionC": "Séville",
+      "optionD": "Valence",
+      "correctAnswer": "A",
+      "explanation": "Madrid est la capitale de l'Espagne."
+    },
+    {
+      "question": "Quelle est la capitale de la Turquie ?",
+      "optionA": "Ankara",
+      "optionB": "Istanbul",
+      "optionC": "Izmir",
+      "optionD": "Bursa",
+      "correctAnswer": "A",
+      "explanation": "Ankara est la capitale (pas Istanbul)."
+    },
+    {
+      "question": "Quelle est la capitale de la Suisse ?",
+      "optionA": "Berne",
+      "optionB": "Genève",
+      "optionC": "Zurich",
+      "optionD": "Lausanne",
+      "correctAnswer": "A",
+      "explanation": "Berne est la capitale (ville fédérale) de la Suisse."
+    },
+    {
+      "question": "Quelle est la monnaie de la Suisse ?",
+      "optionA": "Franc suisse (CHF)",
+      "optionB": "Euro",
+      "optionC": "Dollar",
+      "optionD": "Livre",
+      "correctAnswer": "A",
+      "explanation": "La Suisse utilise le franc suisse (CHF)."
+    }
+  ]
+}

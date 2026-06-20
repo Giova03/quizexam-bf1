@@ -1,0 +1,390 @@
+{
+  "bankKey": "psycho-formes",
+  "title": "Psychotechnique - Formes & Logique Spatiale",
+  "description": "Tests psychotechniques de formes, suites logiques spatiales, raisonnement abstrait (niveau difficile).",
+  "category": "Psychotechnique",
+  "subcategory": "Formes & Logique",
+  "icon": "Shapes",
+  "color": "violet",
+  "level": "TOUS",
+  "questions": [
+    {
+      "question": "Suite de formes : ● ●● ●●● ●●●● ? Quel élément vient ensuite ?",
+      "optionA": "●●●●● (5 cercles)",
+      "optionB": "●●●● (4 cercles)",
+      "optionC": "●●● (3 cercles)",
+      "optionD": "●●●●●● (6 cercles)",
+      "correctAnswer": "A",
+      "explanation": "Suite croissante: 1, 2, 3, 4, puis 5 cercles."
+    },
+    {
+      "question": "Suite : △ □ ○ △ □ ○ ?",
+      "optionA": "○",
+      "optionB": "△",
+      "optionC": "□",
+      "optionD": "◇",
+      "correctAnswer": "B",
+      "explanation": "Cycle de 3: triangle, carré, cercle, puis recommence par triangle."
+    },
+    {
+      "question": "Suite : ◻ ◼ ◻ ◼ ◻ ?",
+      "optionA": "◼",
+      "optionB": "◻",
+      "optionC": "◇",
+      "optionD": "◾",
+      "correctAnswer": "A",
+      "explanation": "Alternance carré vide / carré plein. Après vide → plein."
+    },
+    {
+      "question": "Suite de formes : 1 point, 3 points, 5 points, 7 points, ?",
+      "optionA": "9 points",
+      "optionB": "8 points",
+      "optionC": "10 points",
+      "optionD": "6 points",
+      "correctAnswer": "A",
+      "explanation": "Suite impaire: 1, 3, 5, 7, 9."
+    },
+    {
+      "question": "Suite : ○ ● ○ ● ○ ● ?",
+      "optionA": "○",
+      "optionB": "●",
+      "optionC": "◐",
+      "optionD": "◑",
+      "correctAnswer": "A",
+      "explanation": "Alternance cercle vide / plein. Après plein → vide."
+    },
+    {
+      "question": "Suite : △ ▽ △ ▽ △ ?",
+      "optionA": "▽",
+      "optionB": "△",
+      "optionC": "◇",
+      "optionD": "○",
+      "correctAnswer": "A",
+      "explanation": "Alternance triangle pointe haut / bas. Après haut → bas."
+    },
+    {
+      "question": "Suite : 1, 4, 9, 16, 25, ? (en forme de carrés)",
+      "optionA": "36",
+      "optionB": "30",
+      "optionC": "49",
+      "optionD": "35",
+      "correctAnswer": "A",
+      "explanation": "Carrés parfaits: 1², 2², 3², 4², 5², 6²=36."
+    },
+    {
+      "question": "Suite : ◐ ◑ ◐ ◑ ◐ ?",
+      "optionA": "◑",
+      "optionB": "◐",
+      "optionC": "○",
+      "optionD": "●",
+      "correctAnswer": "A",
+      "explanation": "Alternance demi-cercle gauche / droit."
+    },
+    {
+      "question": "Suite : ▷ ▷ ▷ ▷ ? (4 flèches droites, que vient ensuite ?)",
+      "optionA": "▷ (5e flèche droite)",
+      "optionB": "◁ (flèche gauche)",
+      "optionC": "▲ (flèche haut)",
+      "optionD": "▼ (flèche bas)",
+      "correctAnswer": "A",
+      "explanation": "Suite constante de flèches droites."
+    },
+    {
+      "question": "Suite de couleurs : R V B R V B R ? (R=rouge, V=vert, B=bleu)",
+      "optionA": "V",
+      "optionB": "R",
+      "optionC": "B",
+      "optionD": "J",
+      "correctAnswer": "A",
+      "explanation": "Cycle R-V-B, après R → V."
+    },
+    {
+      "question": "Suite : ★ ☆ ★ ☆ ★ ?",
+      "optionA": "☆",
+      "optionB": "★",
+      "optionC": "✦",
+      "optionD": "✧",
+      "correctAnswer": "A",
+      "explanation": "Alternance étoile pleine / vide."
+    },
+    {
+      "question": "Suite de rotations : → ↓ ← ↑ → ?",
+      "optionA": "↓",
+      "optionB": "←",
+      "optionC": "↑",
+      "optionD": "→",
+      "correctAnswer": "A",
+      "explanation": "Rotation horaire 90°: → ↓ ← ↑ → ↓."
+    },
+    {
+      "question": "Suite : ◇ ◆ ◇ ◆ ◇ ?",
+      "optionA": "◆",
+      "optionB": "◇",
+      "optionC": "○",
+      "optionD": "□",
+      "correctAnswer": "A",
+      "explanation": "Alternance losange vide / plein."
+    },
+    {
+      "question": "Suite de nombres de côtés: 3 (△), 4 (□), 5 (⬠), 6 (⬡), ?",
+      "optionA": "7 (heptagone)",
+      "optionB": "8 (octogone)",
+      "optionC": "5 (pentagone)",
+      "optionD": "4 (carré)",
+      "correctAnswer": "A",
+      "explanation": "Augmentation: 3, 4, 5, 6, puis 7 côtés."
+    },
+    {
+      "question": "Suite : ⬆ ⬆ ⬇ ⬆ ⬆ ⬇ ?",
+      "optionA": "⬆",
+      "optionB": "⬇",
+      "optionC": "→",
+      "optionD": "←",
+      "correctAnswer": "A",
+      "explanation": "Cycle de 3: 2 flèches haut, 1 bas, puis recommence."
+    },
+    {
+      "question": "Suite : 1cercle, 2cercles, 4cercles, 8cercles, ?",
+      "optionA": "16 cercles",
+      "optionB": "10 cercles",
+      "optionC": "12 cercles",
+      "optionD": "32 cercles",
+      "correctAnswer": "A",
+      "explanation": "Suite géométrique: ×2 à chaque fois (1, 2, 4, 8, 16)."
+    },
+    {
+      "question": "Suite : □ avec 1 trait, □ avec 2 traits, □ avec 3 traits, ?",
+      "optionA": "□ avec 4 traits",
+      "optionB": "□ avec 5 traits",
+      "optionC": "□ avec 2 traits",
+      "optionD": "□ vide",
+      "correctAnswer": "A",
+      "explanation": "Augmentation de 1 trait à chaque étape."
+    },
+    {
+      "question": "Suite de flèches: → →→ →→→ →→→→ ?",
+      "optionA": "→→→→→ (5 flèches)",
+      "optionB": "→→→→ (4 flèches)",
+      "optionC": "→→→ (3 flèches)",
+      "optionD": "→→→→→→ (6 flèches)",
+      "correctAnswer": "A",
+      "explanation": "Augmentation: 1, 2, 3, 4, 5 flèches."
+    },
+    {
+      "question": "Suite : ○ ● ◐ ○ ● ◐ ○ ?",
+      "optionA": "●",
+      "optionB": "◐",
+      "optionC": "○",
+      "optionD": "◑",
+      "correctAnswer": "A",
+      "explanation": "Cycle de 3: vide, plein, demi. Après vide → plein."
+    },
+    {
+      "question": "Suite de tailles: • ○ ● (petit, moyen, grand), ?",
+      "optionA": "• (petit, recommence)",
+      "optionB": "● (très grand)",
+      "optionC": "○ (moyen)",
+      "optionD": "● (grand)",
+      "correctAnswer": "A",
+      "explanation": "Cycle: petit, moyen, grand, puis recommence petit."
+    },
+    {
+      "question": "Suite : ⟳ ⟲ ⟳ ⟲ ⟳ ?",
+      "optionA": "⟲",
+      "optionB": "⟳",
+      "optionC": "→",
+      "optionD": "↓",
+      "correctAnswer": "A",
+      "explanation": "Alternance rotation horaire / antihoraire."
+    },
+    {
+      "question": "Suite : ▲ ◆ ● ▲ ◆ ● ▲ ?",
+      "optionA": "◆",
+      "optionB": "●",
+      "optionC": "▲",
+      "optionD": "□",
+      "correctAnswer": "A",
+      "explanation": "Cycle de 3: triangle, losange, cercle."
+    },
+    {
+      "question": "Suite : 1 ligne, 3 lignes, 6 lignes, 10 lignes, ?",
+      "optionA": "15 lignes",
+      "optionB": "12 lignes",
+      "optionC": "14 lignes",
+      "optionD": "20 lignes",
+      "correctAnswer": "A",
+      "explanation": "Nombres triangulaires: 1, 3, 6, 10, 15 (différences: 2, 3, 4, 5)."
+    },
+    {
+      "question": "Suite : □ ⟶ ◻ ⟶ □ ⟶ ◻ ? (alternance plein/vide)",
+      "optionA": "□",
+      "optionB": "◻",
+      "optionC": "◇",
+      "optionD": "◆",
+      "correctAnswer": "A",
+      "explanation": "Après vide → plein."
+    },
+    {
+      "question": "Suite de diagonales: ╱ ╲ ╱ ╲ ╱ ?",
+      "optionA": "╲",
+      "optionB": "╱",
+      "optionC": "─",
+      "optionD": "│",
+      "correctAnswer": "A",
+      "explanation": "Alternance diagonale montante / descendante."
+    },
+    {
+      "question": "Suite : ⬡ ⬢ ⬡ ⬢ ⬡ ?",
+      "optionA": "⬢",
+      "optionB": "⬡",
+      "optionC": "○",
+      "optionD": "△",
+      "correctAnswer": "A",
+      "explanation": "Alternance hexagone vide / plein."
+    },
+    {
+      "question": "Suite d'angles: 90°, 180°, 270°, ?",
+      "optionA": "360°",
+      "optionB": "90°",
+      "optionC": "300°",
+      "optionD": "450°",
+      "correctAnswer": "A",
+      "explanation": "Augmentation de 90°: 90, 180, 270, 360."
+    },
+    {
+      "question": "Suite : ◯ ◐ ● ◯ ◐ ● ◯ ?",
+      "optionA": "◐",
+      "optionB": "●",
+      "optionC": "◯",
+      "optionD": "◑",
+      "correctAnswer": "A",
+      "explanation": "Cycle: cercle vide, demi, plein. Après vide → demi."
+    },
+    {
+      "question": "Suite de formes: un carré, puis le même carré +1, +2, +3 côtés, ?",
+      "optionA": "+4 côtés (octogone)",
+      "optionB": "+5 côtés",
+      "optionC": "+2 côtés",
+      "optionD": "+1 côté",
+      "correctAnswer": "A",
+      "explanation": "Augmentation: 4, 5, 6, 7, 8 côtés (octogone)."
+    },
+    {
+      "question": "Suite : ▮▯▮▯▮ ?",
+      "optionA": "▯",
+      "optionB": "▮",
+      "optionC": "■",
+      "optionD": "□",
+      "correctAnswer": "A",
+      "explanation": "Alternance rectangle plein / vide."
+    },
+    {
+      "question": "Suite de nombres de cercles: 1, 1+2=3, 3+3=6, 6+4=10, ?",
+      "optionA": "15",
+      "optionB": "12",
+      "optionC": "14",
+      "optionD": "11",
+      "correctAnswer": "A",
+      "explanation": "Nombres triangulaires: différences 2, 3, 4, 5."
+    },
+    {
+      "question": "Suite de rotations 45°: → ↘ ↓ ↙ ← ↖ ↑ ?",
+      "optionA": "↗",
+      "optionB": "→",
+      "optionC": "↘",
+      "optionD": "↓",
+      "correctAnswer": "A",
+      "explanation": "Rotation horaire 45°: après ↑ (nord), la prochaine est ↗ (nord-est)."
+    },
+    {
+      "question": "Suite : ♦ ♥ ♠ ♣ ♦ ♥ ♠ ?",
+      "optionA": "♣",
+      "optionB": "♦",
+      "optionC": "♥",
+      "optionD": "♠",
+      "correctAnswer": "A",
+      "explanation": "Cycle de 4 enseignes: ♦♥♠♣, après ♠ → ♣."
+    },
+    {
+      "question": "Suite de tailles: ○●○●○● ? (alternance)",
+      "optionA": "○",
+      "optionB": "●",
+      "optionC": "◉",
+      "optionD": "◎",
+      "correctAnswer": "A",
+      "explanation": "Après plein → vide."
+    },
+    {
+      "question": "Suite de points alignés: . .. ... .... ?",
+      "optionA": "..... (5 points)",
+      "optionB": "...... (6 points)",
+      "optionC": ". (1 point)",
+      "optionD": "... (3 points)",
+      "correctAnswer": "A",
+      "explanation": "Augmentation: 1, 2, 3, 4, 5 points."
+    },
+    {
+      "question": "Suite de rectangles: ▭ ▬ ▭ ▬ ▭ ?",
+      "optionA": "▬",
+      "optionB": "▭",
+      "optionC": "□",
+      "optionD": "■",
+      "correctAnswer": "A",
+      "explanation": "Alternance rectangle fin / épais."
+    },
+    {
+      "question": "Suite de symboles: ☀ ☁ ☀ ☁ ☀ ?",
+      "optionA": "☁",
+      "optionB": "☀",
+      "optionC": "☂",
+      "optionD": "☃",
+      "correctAnswer": "A",
+      "explanation": "Alternance soleil / nuage."
+    },
+    {
+      "question": "Suite d'étoiles: ★ ✦ ★ ✦ ★ ?",
+      "optionA": "✦",
+      "optionB": "★",
+      "optionC": "✧",
+      "optionD": "☆",
+      "correctAnswer": "A",
+      "explanation": "Alternance étoile pleine / éclatée."
+    },
+    {
+      "question": "Suite de triangles emboîtés: △ △△ △△△ ?",
+      "optionA": "△△△△ (4 triangles)",
+      "optionB": "△△△△△ (5)",
+      "optionC": "△△△ (3)",
+      "optionD": "△△ (2)",
+      "correctAnswer": "A",
+      "explanation": "Augmentation: 1, 2, 3, 4 triangles."
+    },
+    {
+      "question": "Suite de cercles concentriques: 1, 2, 3, 4 cercles, ?",
+      "optionA": "5 cercles",
+      "optionB": "3 cercles",
+      "optionC": "6 cercles",
+      "optionD": "4 cercles",
+      "correctAnswer": "A",
+      "explanation": "Augmentation de 1 cercle à chaque étape: 5."
+    },
+    {
+      "question": "Suite de croisements: + × + × + ?",
+      "optionA": "×",
+      "optionB": "+",
+      "optionC": "-",
+      "optionD": "÷",
+      "correctAnswer": "A",
+      "explanation": "Alternance croix droite / croix oblique."
+    },
+    {
+      "question": "Suite de demi-cercles: ◓ ◔ ◕ ◖ ?",
+      "optionA": " recommence avec ◓",
+      "optionB": "◑",
+      "optionC": "◐",
+      "optionD": "●",
+      "correctAnswer": "A",
+      "explanation": "Les 4 positions de demi-cercle défilent, puis recommence."
+    }
+  ]
+}
