@@ -318,3 +318,42 @@ Stage Summary:
 - Médecine (anatomie, physiologie, pathologies) ✓
 - Séries (Young Sheldon, Scorpion, Good Doctor, Grey's Anatomy, Avengers) ✓
 - Manga (One Piece, Naruto, Death Note, Attack on Titan, Dragon Ball, etc.) ✓
+
+---
+Task ID: 20
+Agent: Main (Z.ai Code)
+Task: Examen IA personnalisé, responsive 100%, mode hors ligne
+
+Work Log:
+- Examen blanc personnalisé par IA:
+  - API /api/custom-exam créée: le visiteur sélectionne ses modules (banques), le nombre de questions (5-50), et le mode de correction
+  - L'API mélange aléatoirement les questions des banques sélectionnées et crée une session
+  - Composant CustomExamDialog: sélection multi-banques par catégorie, "Tout sélectionner" par catégorie, slider pour le nombre de questions, choix du mode (immédiat/final)
+  - Bouton "Examen IA" (violet/dégradé) dans la navigation desktop et mobile
+  - 3 étapes: 1) Choisir modules 2) Nombre de questions 3) Mode de correction
+- Responsive design 100% amélioré:
+  - Prévention du scroll horizontal (overflow-x: hidden)
+  - Touch targets min 40px sur mobile
+  - Dialogs pleine page sur mobile (100vw × 100vh)
+  - Sheets pleine largeur sur mobile
+  - Tables scrollables horizontalement
+  - Grille single column sur très petits écrans (<380px)
+  - Prévention du zoom iOS sur focus input (font-size: 16px)
+  - Scrollbars plus fines sur mobile
+  - Break-word sur tous les textes
+  - Navigation mobile scrollable horizontalement
+- Mode hors ligne (PWA):
+  - Service worker (/public/sw.js): cache statique + network-first pour API + cache-first pour assets
+  - Hook useOfflineMode: enregistre le SW, détecte online/offline
+  - Bandeau jaune "Mode hors ligne" quand pas de connexion
+  - Manifest PWA (déjà existant)
+  - Service worker enregistre: page d'accueil, logo, manifest
+  - Cache dynamique: les pages et API visitées sont mises en cache pour consultation hors ligne
+- ESLint: 0 erreurs
+- Vérifié: 41 banques, 2053 questions, 10 examens, bouton Examen IA visible et fonctionnel
+
+Stage Summary:
+- Examen IA personnalisé: le visiteur choisit ses modules et l'IA crée un examen ✓
+- Responsive 100%: dialogs pleine page, navigation scrollable, touch targets, prévention zoom ✓
+- Mode hors ligne: service worker + bandeau offline + cache dynamique ✓
+- 2053 questions, 41 banques, 10 examens ✓

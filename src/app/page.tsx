@@ -14,6 +14,8 @@ import { DashboardView } from "@/components/quiz/dashboard-view";
 import { AboutView } from "@/components/quiz/about-view";
 import { AdminView } from "@/components/quiz/admin-view";
 import { SocialView } from "@/components/quiz/social-view";
+import { CustomExamDialog } from "@/components/quiz/custom-exam-dialog";
+import { useOfflineMode } from "@/lib/use-offline-mode";
 import { LanguageSwitcher } from "@/components/quiz/language-switcher";
 import { NotificationsPanel } from "@/components/quiz/notifications-panel";
 import { SettingsPanel } from "@/components/quiz/settings-panel";
@@ -38,6 +40,8 @@ import {
   ShieldCheck,
   Users,
   Loader2,
+  WifiOff,
+  Sparkles,
 } from "lucide-react";
 
 export default function Home() {
@@ -53,10 +57,12 @@ export default function Home() {
   const [notifOpen, setNotifOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
+  const [customExamOpen, setCustomExamOpen] = useState(false);
   const { data: session, status } = useSession();
   const unreadCount = usePrefs((s) =>
     s.notifications.filter((n) => !n.read).length
   );
+  const { isOnline } = useOfflineMode();
 
   const isAdmin =
     (session?.user as { role?: string } | undefined)?.role === "ADMIN";
@@ -141,6 +147,14 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-muted/30">
       <SplashScreen />
       <PreferencesApplier />
+
+      {/* Offline banner */}
+      {!isOnline && (
+        <div className="flex items-center justify-center gap-2 bg-amber-500 px-4 py-2 text-center text-sm font-medium text-white">
+          <WifiOff className="h-4 w-4" />
+          Mode hors ligne. Synchronisation automatique à la reconnexion.
+        </div>
+      )}
 
       {/* Header */}
       <header className="sticky top-0 z-40 border-b bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/65">
@@ -238,6 +252,23 @@ export default function Home() {
                   <TooltipContent>{t("nav.about")}</TooltipContent>
                 </Tooltip>
               </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      size="sm"
+                      className="gap-1.5 bg-gradient-to-r from-violet-500 to-purple-600 text-white hover:opacity-90"
+                      onClick={() => setCustomExamOpen(true)}
+                    >
+                      <Sparkles className="h-4 w-4" />
+                      <span className="hidden lg:inline">Examen IA</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    Créer un examen personnalisé avec l&apos;IA
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
               {isAdmin && (
                 <TooltipProvider>
                   <Tooltip>
@@ -315,7 +346,15 @@ export default function Home() {
 
         {/* Mobile nav row */}
         <div className="border-t px-4 py-1.5 md:hidden">
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 overflow-x-auto">
+            <Button
+              size="sm"
+              className="gap-1.5 bg-gradient-to-r from-violet-500 to-purple-600 text-white"
+              onClick={() => setCustomExamOpen(true)}
+            >
+              <Sparkles className="h-3.5 w-3.5" />
+              <span className="text-xs">Examen IA</span>
+            </Button>
             <Button
               variant={view === "home" ? "secondary" : "ghost"}
               size="sm"
@@ -421,6 +460,13 @@ export default function Home() {
       {/* Panels */}
       <NotificationsPanel open={notifOpen} onOpenChange={setNotifOpen} />
       <SettingsPanel open={settingsOpen} onOpenChange={setSettingsOpen} />
+
+      {/* Custom exam dialog */}
+      <CustomExamDialog
+        open={customExamOpen}
+        onOpenChange={setCustomExamOpen}
+        onCreated={(sessionId) => startSession(sessionId)}
+      />
 
       {/* Chatbot IA flottant */}
       <Chatbot />

@@ -118,5 +118,85 @@
   }
   body {
     @apply bg-background text-foreground;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Prevent horizontal scroll on mobile */
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* === Responsive improvements === */
+
+/* Better touch targets on mobile (min 44px) */
+@media (max-width: 640px) {
+  button, [role="button"], a {
+    min-height: 40px;
+  }
+  /* Allow buttons with text-xs to be smaller for nav */
+  .text-xs + button, nav button {
+    min-height: auto;
+  }
+}
+
+/* Prevent text overflow on small screens */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Better scrolling on mobile */
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+  }
+}
+
+/* Responsive dialog: full screen on mobile */
+@media (max-width: 640px) {
+  [data-radix-dialog-content] {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+}
+
+/* Responsive sheet: full width on mobile */
+@media (max-width: 640px) {
+  [data-radix-sheet-content] {
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+}
+
+/* Responsive tables */
+@media (max-width: 640px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Responsive grid: single column on very small screens */
+@media (max-width: 380px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Prevent zoom on input focus iOS */
+@media (max-width: 640px) {
+  input, textarea, select {
+    font-size: 16px !important;
   }
 }
