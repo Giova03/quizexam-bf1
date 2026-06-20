@@ -314,6 +314,357 @@
       "optionD": "L'anabolisme",
       "correctAnswer": "D",
       "explanation": "L'anabolisme regroupe les réactions métaboliques de biosynthèse qui construisent des molécules complexes (protéines, acides nucléiques, lipides) à partir de précurseurs plus simples, nécessitant de l'énergie."
+    },
+    {
+      "question": "La puberté chez la fille est déclenchée par :",
+      "optionA": "L'augmentation des hormones FSH et LH",
+      "optionB": "La croissance osseuse",
+      "optionC": "L'alimentation",
+      "optionD": "Le climat",
+      "correctAnswer": "A",
+      "explanation": "La puberté est déclenchée par l'activation de l'axe hypothalamo-hypophyso-gonadique (FSH, LH)."
+    },
+    {
+      "question": "Chez la femme, le cycle menstruel dure en moyenne :",
+      "optionA": "28 jours",
+      "optionB": "14 jours",
+      "optionC": "21 jours",
+      "optionD": "35 jours",
+      "correctAnswer": "A",
+      "explanation": "Le cycle menstruel dure en moyenne 28 jours (variable selon les femmes)."
+    },
+    {
+      "question": "L'ovulation se produit environ au jour :",
+      "optionA": "14",
+      "optionB": "7",
+      "optionC": "21",
+      "optionD": "28",
+      "correctAnswer": "A",
+      "explanation": "L'ovulation a lieu vers le 14e jour d'un cycle de 28 jours."
+    },
+    {
+      "question": "L'ovule est produit par :",
+      "optionA": "Les ovaires",
+      "optionB": "L'utérus",
+      "optionC": "Les trompes",
+      "optionD": "Le col de l'utérus",
+      "correctAnswer": "A",
+      "explanation": "L'ovule est produit par les ovaires (follicule de Graaf)."
+    },
+    {
+      "question": "La fécondation a lieu dans :",
+      "optionA": "La trompe de Fallope",
+      "optionB": "L'utérus",
+      "optionC": "L'ovaire",
+      "optionD": "Le col",
+      "correctAnswer": "A",
+      "explanation": "La fécondation (rencontre ovule-spermatozoïde) a lieu dans la trompe de Fallope."
+    },
+    {
+      "question": "L'implantation de l'embryon se fait dans :",
+      "optionA": "L'utérus (endomètre)",
+      "optionB": "La trompe",
+      "optionC": "L'ovaire",
+      "optionD": "Le col",
+      "correctAnswer": "A",
+      "explanation": "L'embryon s'implante dans l'endomètre utérin (nidation)."
+    },
+    {
+      "question": "Le placenta assure :",
+      "optionA": "Les échanges mère-foetus (O₂, nutriments, déchets)",
+      "optionB": "La digestion",
+      "optionC": "La respiration",
+      "optionD": "La locomotion",
+      "correctAnswer": "A",
+      "explanation": "Le placenta permet les échanges gazeux, nutriments et déchets entre mère et foetus."
+    },
+    {
+      "question": "La gestation chez l'humaine dure environ :",
+      "optionA": "9 mois (38-40 semaines)",
+      "optionB": "6 mois",
+      "optionC": "12 mois",
+      "optionD": "7 mois",
+      "correctAnswer": "A",
+      "explanation": "La grossesse dure environ 9 mois (280 jours ou 40 semaines)."
+    },
+    {
+      "question": "Les spermatozoïdes sont produits dans :",
+      "optionA": "Les testicules (tubules séminifères)",
+      "optionB": "La prostate",
+      "optionC": "La vésicule séminale",
+      "optionD": "L'épididyme",
+      "correctAnswer": "A",
+      "explanation": "Les spermatozoïdes sont produits dans les tubules séminifères des testicules."
+    },
+    {
+      "question": "La testostérone est produite par :",
+      "optionA": "Les testicules (cellules de Leydig)",
+      "optionB": "La prostate",
+      "optionC": "Les surrénales",
+      "optionD": "L'hypophyse",
+      "correctAnswer": "A",
+      "explanation": "La testostérone est sécrétée par les cellules de Leydig des testicules."
+    },
+    {
+      "question": "Les œstrogènes sont produits par :",
+      "optionA": "Les ovaires (follicule)",
+      "optionB": "L'utérus",
+      "optionC": "La thyroïde",
+      "optionD": "L'hypophyse",
+      "correctAnswer": "A",
+      "explanation": "Les œstrogènes sont sécrétés par le follicule ovarien."
+    },
+    {
+      "question": "La progestérone est produite par :",
+      "optionA": "Le corps jaune",
+      "optionB": "Le follicule",
+      "optionC": "L'utérus",
+      "optionD": "L'hypophyse",
+      "correctAnswer": "A",
+      "explanation": "La progestérone est sécrétée par le corps jaune après l'ovulation."
+    },
+    {
+      "question": "L'ADN se réplique pendant la phase :",
+      "optionA": "S (synthèse) du cycle cellulaire",
+      "optionB": "G1",
+      "optionC": "G2",
+      "optionD": "M (mitose)",
+      "correctAnswer": "A",
+      "explanation": "La réplication de l'ADN a lieu en phase S (synthèse)."
+    },
+    {
+      "question": "Le cycle cellulaire comprend :",
+      "optionA": "Interphase (G1, S, G2) + Mitose",
+      "optionB": "Mitose seule",
+      "optionC": "Méiose",
+      "optionD": "G1 seule",
+      "correctAnswer": "A",
+      "explanation": "Le cycle = interphase (G1→S→G2) + mitose (M)."
+    },
+    {
+      "question": "La membrane plasmique est composée de :",
+      "optionA": "Bicouche lipidique + protéines",
+      "optionB": "Cellulose",
+      "optionC": "Chitine",
+      "optionD": "Callose",
+      "correctAnswer": "A",
+      "explanation": "La membrane plasmique = bicouche phospholipidique avec protéines (modèle mosaïque fluide)."
+    },
+    {
+      "question": "Le cytoplasme contient :",
+      "optionA": "Des organites (mitochondries, ribosomes, noyau...)",
+      "optionB": "Du vide",
+      "optionC": "De l'air",
+      "optionD": "Rien",
+      "correctAnswer": "A",
+      "explanation": "Le cytoplasme contient les organites et le cytosol."
+    },
+    {
+      "question": "Le noyau contient :",
+      "optionA": "L'ADN (chromatine/chromosomes)",
+      "optionB": "Les mitochondries",
+      "optionC": "Les ribosomes",
+      "optionD": "Le cytosol",
+      "correctAnswer": "A",
+      "explanation": "Le noyau renferme l'ADN (material génétique)."
+    },
+    {
+      "question": "Le réticulum endoplasmique rugueux porte :",
+      "optionA": "Des ribosomes (synthèse des protéines)",
+      "optionB": "Des mitochondries",
+      "optionC": "Du glycogène",
+      "optionD": "Des lysosomes",
+      "correctAnswer": "A",
+      "explanation": "Le RER a des ribosomes sur sa surface, synthétise les protéines."
+    },
+    {
+      "question": "Le réticulum endoplasmique lisse synthétise :",
+      "optionA": "Les lipides",
+      "optionB": "Les protéines",
+      "optionC": "L'ADN",
+      "optionD": "L'ATP",
+      "correctAnswer": "A",
+      "explanation": "Le REL synthétise les lipides (et détoxifie)."
+    },
+    {
+      "question": "L'appareil de Golgi :",
+      "optionA": "Modifie, trie et empaquette les protéines",
+      "optionB": "Synthétise l'ADN",
+      "optionC": "Produit de l'énergie",
+      "optionD": "Digère",
+      "correctAnswer": "A",
+      "explanation": "L'appareil de Golgi = centre de tri et modification des protéines."
+    },
+    {
+      "question": "Les lysosomes contiennent :",
+      "optionA": "Des enzymes digestives",
+      "optionB": "De l'ADN",
+      "optionC": "Des ribosomes",
+      "optionD": "De l'ATP",
+      "correctAnswer": "A",
+      "explanation": "Les lysosomes contiennent des hydrolases acides (digestion cellulaire)."
+    },
+    {
+      "question": "La respiration cellulaire produit de l'ATP dans :",
+      "optionA": "Les mitochondries",
+      "optionB": "Le noyau",
+      "optionC": "Les ribosomes",
+      "optionD": "Le cytosol",
+      "correctAnswer": "A",
+      "explanation": "La phosphorylation oxydative a lieu dans les mitochondries."
+    },
+    {
+      "question": "La photosynthèse produit :",
+      "optionA": "Glucose + O₂",
+      "optionB": "CO₂ + H₂O",
+      "optionC": "ATP seul",
+      "optionD": "Protéines",
+      "correctAnswer": "A",
+      "explanation": "Photosynthèse : 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (lumière)."
+    },
+    {
+      "question": "La photosynthèse a lieu dans :",
+      "optionA": "Les chloroplastes",
+      "optionB": "Les mitochondries",
+      "optionC": "Le noyau",
+      "optionD": "Les ribosomes",
+      "correctAnswer": "A",
+      "explanation": "La photosynthèse a lieu dans les chloroplastes (cellules végétales)."
+    },
+    {
+      "question": "La chlorophylle absorbe principalement :",
+      "optionA": "La lumière rouge et bleue (réfléchit le vert)",
+      "optionB": "La lumière verte",
+      "optionC": "La lumière jaune",
+      "optionD": "Aucune",
+      "correctAnswer": "A",
+      "explanation": "La chlorophylle absorbe le rouge et le bleu, d'où la couleur verte des plantes."
+    },
+    {
+      "question": "Le cœur droit reçoit le sang :",
+      "optionA": "Non oxygéné (des veines caves)",
+      "optionB": "Oxygéné",
+      "optionC": "Artériel",
+      "optionD": "Des poumons",
+      "correctAnswer": "A",
+      "explanation": "Le cœur droit reçoit le sang non oxygéné des veines caves."
+    },
+    {
+      "question": "Le cœur gauche reçoit le sang :",
+      "optionA": "Oxygéné (des veines pulmonaires)",
+      "optionB": "Non oxygéné",
+      "optionC": "Veineux",
+      "optionD": "Des veines caves",
+      "correctAnswer": "A",
+      "explanation": "Le cœur gauche reçoit le sang oxygéné des veines pulmonaires."
+    },
+    {
+      "question": "La circulation pulmonaire est :",
+      "optionA": "Cœur → poumons → cœur",
+      "optionB": "Cœur → corps → cœur",
+      "optionC": "Poumons → corps",
+      "optionD": "Corps → poumons",
+      "correctAnswer": "A",
+      "explanation": "La petite circulation = cœur droit → poumons → cœur gauche."
+    },
+    {
+      "question": "La circulation systémique est :",
+      "optionA": "Cœur → corps → cœur",
+      "optionB": "Cœur → poumons → cœur",
+      "optionC": "Poumons seuls",
+      "optionD": "Cerveau seuls",
+      "correctAnswer": "A",
+      "explanation": "La grande circulation = cœur gauche → organes → cœur droit."
+    },
+    {
+      "question": "L'oxygène est transporté par :",
+      "optionA": "L'hémoglobine des globules rouges",
+      "optionB": "Le plasma",
+      "optionC": "Les plaquettes",
+      "optionD": "Les globules blancs",
+      "correctAnswer": "A",
+      "explanation": "L'hémoglobine fixe l'O₂ (oxyhémoglobine)."
+    },
+    {
+      "question": "Les échanges gazeux dans les poumons ont lieu dans :",
+      "optionA": "Les alvéoles pulmonaires",
+      "optionB": "Les bronches",
+      "optionC": "La trachée",
+      "optionD": "Le larynx",
+      "correctAnswer": "A",
+      "explanation": "Les alvéoles sont le site des échanges O₂/CO₂."
+    },
+    {
+      "question": "L'inspiration se caractérise par :",
+      "optionA": "Le diaphragme se contracte et descend",
+      "optionB": "Le diaphragme se relâche",
+      "optionC": "La cage thoracique diminue",
+      "optionD": "Les poumons se vident",
+      "correctAnswer": "A",
+      "explanation": "À l'inspiration, le diaphragme se contracte (descend), la cage thoracique s'agrandit."
+    },
+    {
+      "question": "L'expiration se caractérise par :",
+      "optionA": "Le diaphragme se relâche et remonte",
+      "optionB": "Le diaphragme se contracte",
+      "optionC": "La cage thoracique augmente",
+      "optionD": "Les poumons se gonflent",
+      "correctAnswer": "A",
+      "explanation": "À l'expiration, le diaphragme se relâche (remonte), l'air sort."
+    },
+    {
+      "question": "L'immunité innée est :",
+      "optionA": "Rapide, non spécifique (barrières, phagocytes)",
+      "optionB": "Lente, spécifique",
+      "optionC": "Mémorielle",
+      "optionD": "Anticorps uniquement",
+      "correctAnswer": "A",
+      "explanation": "L'immunité innée = barrières, phagocytose, inflammation (non spécifique)."
+    },
+    {
+      "question": "L'immunité adaptative est :",
+      "optionA": "Spécifique, avec mémoire (lymphocytes B et T)",
+      "optionB": "Non spécifique",
+      "optionC": "Rapide uniquement",
+      "optionD": "Barrières",
+      "correctAnswer": "A",
+      "explanation": "L'immunité adaptative = lymphocytes B (anticorps) et T (cellules cytotoxiques)."
+    },
+    {
+      "question": "Les anticorps sont produits par :",
+      "optionA": "Les lymphocytes B (plasmocytes)",
+      "optionB": "Les lymphocytes T",
+      "optionC": "Les macrophages",
+      "optionD": "Les globules rouges",
+      "correctAnswer": "A",
+      "explanation": "Les plasmocytes (issus des LB) produisent les anticorps."
+    },
+    {
+      "question": "Les lymphocytes T cytotoxiques (CD8) :",
+      "optionA": "Détruisent les cellules infectées",
+      "optionB": "Produisent des anticorps",
+      "optionC": "Phagocytent",
+      "optionD": "Transportent l'O₂",
+      "correctAnswer": "A",
+      "explanation": "Les LT CD8+ détruisent les cellules infectées (apoptose via perforine)."
+    },
+    {
+      "question": "Les lymphocytes T helper (CD4) :",
+      "optionA": "Coordonnent la réponse immunitaire",
+      "optionB": "Détruisent les cellules",
+      "optionC": "Produisent des anticorps",
+      "optionD": "Phagocytent",
+      "correctAnswer": "A",
+      "explanation": "Les LT CD4+ activent les LB, LT CD8+ et macrophages."
+    },
+    {
+      "question": "La vaccination repose sur :",
+      "optionA": "La mémoire immunitaire",
+      "optionB": "La phagocytose",
+      "optionC": "L'inflammation",
+      "optionD": "La fièvre",
+      "correctAnswer": "A",
+      "explanation": "La vaccination crée une mémoire immunitaire sans la maladie."
     }
   ]
 }

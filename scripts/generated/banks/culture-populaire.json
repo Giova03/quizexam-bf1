@@ -1,0 +1,795 @@
+{
+  "bankKey": "culture-populaire",
+  "title": "Culture Populaire - Séries, Films & Manga",
+  "description": "Questions sur les séries TV, films, anime, manga et pop culture.",
+  "category": "Culture Générale",
+  "subcategory": "Culture Populaire",
+  "icon": "Tv",
+  "color": "violet",
+  "level": "TOUS",
+  "questions": [
+    {
+      "question": "Dans la série 'Young Sheldon', quel est le nom de famille du protagoniste ?",
+      "optionA": "Cooper",
+      "optionB": "Hofstadter",
+      "optionC": "Penn",
+      "optionD": "Wolowitz",
+      "correctAnswer": "A",
+      "explanation": "Young Sheldon suit Sheldon Cooper enfant, un génie au Texas."
+    },
+    {
+      "question": "Dans 'Young Sheldon', quel est le QI de Sheldon ?",
+      "optionA": "187",
+      "optionB": "150",
+      "optionC": "200",
+      "optionD": "165",
+      "correctAnswer": "A",
+      "explanation": "Sheldon Cooper a un QI de 187 (mentionné dans The Big Bang Theory)."
+    },
+    {
+      "question": "Dans la série 'Scorpion', quel est le nom du génie principal ?",
+      "optionA": "Walter O'Brien",
+      "optionB": "Sylvester Dodd",
+      "optionC": "Toby Curtis",
+      "optionD": "Happy Quinn",
+      "correctAnswer": "A",
+      "explanation": "Walter O'Brien est le génie irlandais qui dirige l'équipe Scorpion."
+    },
+    {
+      "question": "Dans 'Scorpion', quel est le QI de Walter O'Brien ?",
+      "optionA": "197",
+      "optionB": "187",
+      "optionC": "210",
+      "optionD": "165",
+      "correctAnswer": "A",
+      "explanation": "Walter O'Brien a un QI de 197, le 4e plus élevé au monde."
+    },
+    {
+      "question": "Dans 'The Good Doctor', quelle est la spécialité du Dr Shaun Murphy ?",
+      "optionA": "Chirurgie",
+      "optionB": "Cardiologie",
+      "optionC": "Neurologie",
+      "optionD": "Pédiatrie",
+      "correctAnswer": "A",
+      "explanation": "Shaun Murphy est chirurgien, spécialisé en chirurgie générale puis cardiothoracique."
+    },
+    {
+      "question": "Dans 'The Good Doctor', quelle condition neurodéveloppementale a Shaun Murphy ?",
+      "optionA": "Syndrome d'Asperger (autisme)",
+      "optionB": "TDAH",
+      "optionC": "Dyslexie",
+      "optionD": "Aucune",
+      "correctAnswer": "A",
+      "explanation": "Shaun Murphy est sur le spectre de l'autisme (syndrome d'Asperger) et a le savant syndrome."
+    },
+    {
+      "question": "Dans 'Grey's Anatomy', dans quel hôpital se déroule la série ?",
+      "optionA": "Seattle Grace / Grey Sloan Memorial",
+      "optionB": "Chicago Med",
+      "optionC": "Princeton-Plainsboro",
+      "optionD": "Sacred Heart",
+      "correctAnswer": "A",
+      "explanation": "Grey's Anatomy se déroule au Seattle Grace Hospital, devenu Grey Sloan Memorial."
+    },
+    {
+      "question": "Dans 'Grey's Anatomy', qui est le personnage principal ?",
+      "optionA": "Meredith Grey",
+      "optionB": "Christina Yang",
+      "optionC": "Derek Shepherd",
+      "optionD": "Miranda Bailey",
+      "correctAnswer": "A",
+      "explanation": "Meredith Grey est le personnage principal, narratrice de la série."
+    },
+    {
+      "question": "Dans les Avengers (Marvel), qui est le leader principal ?",
+      "optionA": "Captain America (Steve Rogers)",
+      "optionB": "Iron Man (Tony Stark)",
+      "optionC": "Thor",
+      "optionD": "Hulk",
+      "correctAnswer": "A",
+      "explanation": "Captain America est le leader tactique des Avengers."
+    },
+    {
+      "question": "Dans les Avengers, quel personnage peut se transformer en Hulk ?",
+      "optionA": "Bruce Banner",
+      "optionB": "Tony Stark",
+      "optionC": "Steve Rogers",
+      "optionD": "Clint Barton",
+      "correctAnswer": "A",
+      "explanation": "Bruce Banner se transforme en Hulk sous l'effet de la colère."
+    },
+    {
+      "question": "Dans l'univers Marvel, de quel métal est fait le bouclier de Captain America ?",
+      "optionA": "Vibranium",
+      "optionB": "Adamantium",
+      "optionC": "Titane",
+      "optionD": "Uru",
+      "correctAnswer": "A",
+      "explanation": "Le bouclier de Captain America est en vibranium (venu du Wakanda)."
+    },
+    {
+      "question": "Dans 'One Piece', quel est le but de Luffy ?",
+      "optionA": "Devenir le Roi des Pirates",
+      "optionB": "Devenir le meilleur sabreur",
+      "optionC": "Trouver le One Piece",
+      "optionD": "Devenir empereur",
+      "correctAnswer": "A",
+      "explanation": "Luffy veut devenir le Roi des Pirates et trouver le One Piece."
+    },
+    {
+      "question": "Dans 'Naruto', quel est le nom du démon renard scellé en Naruto ?",
+      "optionA": "Kurama (Kyûbi)",
+      "optionB": "Shukaku",
+      "optionC": "Matatabi",
+      "optionD": "Gyūki",
+      "correctAnswer": "A",
+      "explanation": "Kurama (le Kyûbi, démon renard à 9 queues) est scellé en Naruto."
+    },
+    {
+      "question": "Dans 'Death Note', quel est le nom du protagoniste ?",
+      "optionA": "Light Yagami",
+      "optionB": "L",
+      "optionC": "Near",
+      "optionD": "Mello",
+      "correctAnswer": "A",
+      "explanation": "Light Yagami est le protagoniste qui utilise le Death Note."
+    },
+    {
+      "question": "Dans 'Attack on Titan' (Shingeki no Kyojin), comment s'appelle le héros ?",
+      "optionA": "Eren Jäger",
+      "optionB": "Mikasa Ackerman",
+      "optionC": "Armin Arlert",
+      "optionD": "Levi",
+      "correctAnswer": "A",
+      "explanation": "Eren Jäger est le héros principal d'Attack on Titan."
+    },
+    {
+      "question": "Dans 'Dragon Ball', quel est le nom de naissance de Goku ?",
+      "optionA": "Kakarot",
+      "optionB": "Vegeta",
+      "optionC": "Bardock",
+      "optionD": "Broly",
+      "correctAnswer": "A",
+      "explanation": "Goku est un Saiyan nommé Kakarot à sa naissance."
+    },
+    {
+      "question": "Dans 'Demon Slayer' (Kimetsu no Yaiba), qui est le héros ?",
+      "optionA": "Tanjiro Kamado",
+      "optionB": "Zenitsu Agatsuma",
+      "optionC": "Inosuke Hashibira",
+      "optionD": "Giyu Tomioka",
+      "correctAnswer": "A",
+      "explanation": "Tanjiro Kamado est le héros qui veut sauver sa sœur Nezuko."
+    },
+    {
+      "question": "Dans 'My Hero Academia', quel est le super-pouvoir (Quirk) de Deku ?",
+      "optionA": "One For All",
+      "optionB": "All For One",
+      "optionC": "Explosion",
+      "optionD": "Gravité Zéro",
+      "correctAnswer": "A",
+      "explanation": "Deku hérite du Quirk 'One For All' d'All Might."
+    },
+    {
+      "question": "Dans 'Jujutsu Kaisen', qui est le personnage principal ?",
+      "optionA": "Yuji Itadori",
+      "optionB": "Megumi Fushiguro",
+      "optionC": "Nobara Kugisaki",
+      "optionD": "Satoru Gojo",
+      "correctAnswer": "A",
+      "explanation": "Yuji Itadori est le héros qui avale le doigt de Sukuna."
+    },
+    {
+      "question": "Dans 'The Big Bang Theory', quel est le domaine de recherche de Sheldon Cooper ?",
+      "optionA": "Physique théorique",
+      "optionB": "Astrophysique",
+      "optionC": "Biologie",
+      "optionD": "Ingénierie aérospatiale",
+      "correctAnswer": "A",
+      "explanation": "Sheldon Cooper est physicien théoricien, spécialisé en théorie des cordes."
+    },
+    {
+      "question": "Dans 'The Big Bang Theory', Leonard Hofstadter est :",
+      "optionA": "Astrophysicien expérimental",
+      "optionB": "Physicien théoricien",
+      "optionC": "Biologiste",
+      "optionD": "Ingénieur",
+      "correctAnswer": "A",
+      "explanation": "Leonard est astrophysicien expérimental."
+    },
+    {
+      "question": "Dans 'The Big Bang Theory', Howard Wolowitz est :",
+      "optionA": "Ingénieur aérospatial",
+      "optionB": "Astrophysicien",
+      "optionC": "Physicien",
+      "optionD": "Biologiste",
+      "correctAnswer": "A",
+      "explanation": "Howard est ingénieur aérospatial (il est allé dans l'espace)."
+    },
+    {
+      "question": "Dans 'The Big Bang Theory', Raj Koothrappali est :",
+      "optionA": "Astrophysicien",
+      "optionB": "Ingénieur",
+      "optionC": "Chimiste",
+      "optionD": "Mathématicien",
+      "correctAnswer": "A",
+      "explanation": "Raj est astrophysicien."
+    },
+    {
+      "question": "Dans 'Friends', quel est le métier de Ross Geller ?",
+      "optionA": "Paléontologue",
+      "optionB": "Archéologue",
+      "optionC": "Géologue",
+      "optionD": "Biologiste",
+      "correctAnswer": "A",
+      "explanation": "Ross est paléontologue (il travaille dans un musée)."
+    },
+    {
+      "question": "Dans 'Breaking Bad', quel est le nom du professeur devenu fabricant de méthamphétamine ?",
+      "optionA": "Walter White",
+      "optionB": "Jesse Pinkman",
+      "optionC": "Gus Fring",
+      "optionD": "Saul Goodman",
+      "correctAnswer": "A",
+      "explanation": "Walter White est le professeur de chimie devenu 'Heisenberg'."
+    },
+    {
+      "question": "Dans 'Breaking Bad', quel était le métier de Walter White avant ?",
+      "optionA": "Professeur de chimie",
+      "optionB": "Professeur de physique",
+      "optionC": "Pharmacien",
+      "optionD": "Médecin",
+      "correctAnswer": "A",
+      "explanation": "Walter White était professeur de chimie au lycée."
+    },
+    {
+      "question": "Dans 'Stranger Things', dans quelle ville se déroule la série ?",
+      "optionA": "Hawkins",
+      "optionB": "Derry",
+      "optionC": "Springfield",
+      "optionD": "Riverdale",
+      "correctAnswer": "A",
+      "explanation": "Stranger Things se déroule à Hawkins, Indiana."
+    },
+    {
+      "question": "Dans 'Stranger Things', comment s'appelle la créature de l'Upside Down ?",
+      "optionA": "Le Démogorgon",
+      "optionB": "Le Mind Flayer",
+      "optionC": "Le Vecna",
+      "optionD": "Tous ces noms",
+      "correctAnswer": "D",
+      "explanation": "Plusieurs créatures: Démogorgon, Mind Flayer, Vecna."
+    },
+    {
+      "question": "Dans 'Game of Thrones', quelle est la devise de la Maison Stark ?",
+      "optionA": "L'hiver vient (Winter is Coming)",
+      "optionB": "Feu et Sang",
+      "optionC": "Hear Me Roar",
+      "optionD": "We Do Not Sow",
+      "correctAnswer": "A",
+      "explanation": "La devise des Stark est 'Winter is Coming'."
+    },
+    {
+      "question": "Dans 'Game of Thrones', quel est le trône convoité ?",
+      "optionA": "Le Trône de Fer",
+      "optionB": "Le Trône d'Or",
+      "optionC": "Le Trône de Glace",
+      "optionD": "Le Trône du Dragon",
+      "correctAnswer": "A",
+      "explanation": "Le Trône de Fer (Iron Throne) est forgé avec des épées."
+    },
+    {
+      "question": "Dans 'The Witcher', comment s'appelle le héros ?",
+      "optionA": "Geralt de Riv",
+      "optionB": "Ciri",
+      "optionC": "Yennefer",
+      "optionD": "Dandelion",
+      "correctAnswer": "A",
+      "explanation": "Geralt de Riv est le sorceleur (Witcher)."
+    },
+    {
+      "question": "Dans 'Harry Potter', quelle école de magie fréquente Harry ?",
+      "optionA": "Poudlard (Hogwarts)",
+      "optionB": "Beauxbâtons",
+      "optionC": "Durmstrang",
+      "optionD": "Ilvermorny",
+      "correctAnswer": "A",
+      "explanation": "Harry va à l'école de sorcellerie Poudlard (Hogwarts)."
+    },
+    {
+      "question": "Dans 'Harry Potter', dans quelle maison est Harry Potter ?",
+      "optionA": "Gryffondor",
+      "optionB": "Serpentard",
+      "optionC": "Poufsouffle",
+      "optionD": "Serdaigle",
+      "correctAnswer": "A",
+      "explanation": "Harry est à Gryffondor."
+    },
+    {
+      "question": "Dans 'Harry Potter', qui est le professeur de potions dans les premiers livres ?",
+      "optionA": "Severus Rogue",
+      "optionB": "Horace Slughorn",
+      "optionC": "Albus Dumbledore",
+      "optionD": "Minerva McGonagall",
+      "correctAnswer": "A",
+      "explanation": "Severus Rogue enseigne les potions (livres 1-6)."
+    },
+    {
+      "question": "Dans 'Le Seigneur des Anneaux', qui est le porteur de l'anneau ?",
+      "optionA": "Frodon Sacquet (Frodo Baggins)",
+      "optionB": "Sam Gamegie",
+      "optionC": "Aragorn",
+      "optionD": "Gandalf",
+      "correctAnswer": "A",
+      "explanation": "Frodon Sacquet porte l'Anneau Unique jusqu'au Mont Destin."
+    },
+    {
+      "question": "Dans 'Star Wars', qui est le père de Luke Skywalker ?",
+      "optionA": "Dark Vador (Anakin Skywalker)",
+      "optionB": "Obi-Wan Kenobi",
+      "optionC": "Han Solo",
+      "optionD": "Yoda",
+      "correctAnswer": "A",
+      "explanation": "Dark Vador (Anakin) est le père de Luke et Leia."
+    },
+    {
+      "question": "Dans 'Star Wars', qui est le maître Jedi de Luke Skywalker ?",
+      "optionA": "Yoda et Obi-Wan Kenobi",
+      "optionB": "Mace Windu",
+      "optionC": "Qui-Gon Jinn",
+      "optionD": "Mace Windu seul",
+      "correctAnswer": "A",
+      "explanation": "Obi-Wan puis Yoda forment Luke au Jedi."
+    },
+    {
+      "question": "Dans le manga 'Fullmetal Alchemist', quel est le but des frères Elric ?",
+      "optionA": "Retrouver leur corps originel",
+      "optionB": "Devenir les plus forts",
+      "optionC": "Vaincre les Homonculus",
+      "optionD": "Devenir militaires",
+      "correctAnswer": "A",
+      "explanation": "Edward et Alphonse veulent retrouver leur corps après une transmutation ratée."
+    },
+    {
+      "question": "Dans 'Death Note', combien de règles le Death Note possède-t-il ?",
+      "optionA": "Plusieurs dizaines",
+      "optionB": "Une seule",
+      "optionC": "Trois",
+      "optionD": "Aucune",
+      "correctAnswer": "A",
+      "explanation": "Le Death Note a de nombreuses règles (faux en écriture, durée, etc.)."
+    },
+    {
+      "question": "Dans 'Naruto', quel est le village de Naruto ?",
+      "optionA": "Konoha (Village Caché des Feuilles)",
+      "optionB": "Suna (Sable)",
+      "optionC": "Kiri (Brume)",
+      "optionD": "Kumo (Nuage)",
+      "correctAnswer": "A",
+      "explanation": "Naruto vit à Konoha, le village caché des feuilles."
+    },
+    {
+      "question": "Dans 'Bleach', qui est le héros ?",
+      "optionA": "Ichigo Kurosaki",
+      "optionB": "Rukia Kuchiki",
+      "optionC": "Renji Abarai",
+      "optionD": "Uryū Ishida",
+      "correctAnswer": "A",
+      "explanation": "Ichigo Kurosaki obtient les pouvoirs de Shinigami."
+    },
+    {
+      "question": "Dans 'One Punch Man', comment s'appelle le héros ?",
+      "optionA": "Saitama",
+      "optionB": "Genos",
+      "optionC": "King",
+      "optionD": "Blast",
+      "correctAnswer": "A",
+      "explanation": "Saitama peut vaincre n'importe quel ennemi en un coup de poing."
+    },
+    {
+      "question": "Dans 'Hunter x Hunter', qui est le héros ?",
+      "optionA": "Gon Freecss",
+      "optionB": "Killua Zoldyck",
+      "optionC": "Kurapika",
+      "optionD": "Leorio",
+      "correctAnswer": "A",
+      "explanation": "Gon Freecss cherche son père Ging, un Hunter."
+    },
+    {
+      "question": "Dans 'Pokémon', qui est le héros de l'anime ?",
+      "optionA": "Sacha (Ash Ketchum)",
+      "optionB": "Ondine (Misty)",
+      "optionC": "Pierre (Brock)",
+      "optionD": "Regis",
+      "correctAnswer": "A",
+      "explanation": "Sacha Ketchum (Ash) veut devenir Maître Pokémon avec Pikachu."
+    },
+    {
+      "question": "Dans 'L'Attaque des Titans', qui est le titan de Eren ?",
+      "optionA": "Titan Assaillant (Attack Titan)",
+      "optionB": "Titan Colossal",
+      "optionC": "Titan Cuirassé",
+      "optionD": "Titan Mâle",
+      "correctAnswer": "A",
+      "explanation": "Eren possède le Titan Assaillant (Attack Titan)."
+    },
+    {
+      "question": "Dans 'The Office' (US), qui est le manager régional ?",
+      "optionA": "Michael Scott",
+      "optionB": "Dwight Schrute",
+      "optionC": "Jim Halpert",
+      "optionD": "David Wallace",
+      "correctAnswer": "A",
+      "explanation": "Michael Scott est le manager de la filiale Scranton."
+    },
+    {
+      "question": "Dans 'Money Heist' (La Casa de Papel), quel est le nom du chef ?",
+      "optionA": "Le Professeur",
+      "optionB": "Berlin",
+      "optionC": "Tokyo",
+      "optionD": "Nairobi",
+      "correctAnswer": "A",
+      "explanation": "Le Professeur (Sergio) orchestre les braquages."
+    },
+    {
+      "question": "Dans l'univers Marvel, quel personnage a été le premier à utiliser le sixième Infinity Stone, la Pierre de l'Âme (Soul Stone), dans les films du MCU ?",
+      "optionA": "Thanos",
+      "optionB": "Red Skull",
+      "optionC": "Loki",
+      "optionD": "Thor",
+      "correctAnswer": "B",
+      "explanation": "Le Red Skull, gardien original de la Pierre de l'Âme sur Vormir, a été le premier à l'utiliser, guidant Thanos pour obtenir la pierre en échange de la vie de Natasha Romanoff."
+    },
+    {
+      "question": "Dans la série Game of Thrones, quelle maison contrôle la région connue sous le nom de 'The Reach' ?",
+      "optionA": "House Stark",
+      "optionB": "House Lannister",
+      "optionC": "House Tyrell",
+      "optionD": "House Martell",
+      "correctAnswer": "C",
+      "explanation": "La Maison Tyrell régnait sur The Reach, une région fertile et prospère de Westeros, avec leur capitale à Highgarden."
+    },
+    {
+      "question": "Dans l'univers de Harry Potter, quel sortilège est utilisé pour créer un Patronus ?",
+      "optionA": "Expecto Patronum",
+      "optionB": "Wingardium Leviosa",
+      "optionC": "Expelliarmus",
+      "optionD": "Lumos",
+      "correctAnswer": "A",
+      "explanation": "Le sortilège 'Expecto Patronum' est utilisé pour créer un Patronus, une manifestation d'énergie positive qui peut repousser les Détraqueurs."
+    },
+    {
+      "question": "Dans la série Star Wars, quel Jedi a formé à la fois Count Dooku et Qui-Gon Jinn ?",
+      "optionA": "Yoda",
+      "optionB": "Mace Windu",
+      "optionC": "Obi-Wan Kenobi",
+      "optionD": "Luke Skywalker",
+      "correctAnswer": "A",
+      "explanation": "Yoda était le Maître Jedi qui a formé à la fois Qui-Gon Jinn, qui a ensuite formé Obi-Wan, et Count Dooku avant sa chute vers le côté obscur."
+    },
+    {
+      "question": "Dans l'univers DC Comics, quel personnage a été le premier à porter le costume de Batman après Bruce Wayne dans la continuity principale ?",
+      "optionA": "Dick Grayson",
+      "optionB": "Jason Todd",
+      "optionC": "Tim Drake",
+      "optionD": "Azrael",
+      "correctAnswer": "A",
+      "explanation": "Dick Grayson, le premier Robin, a été le premier à porter le costume de Batman dans la continuité principale après Bruce Wayne a été présumé mort."
+    },
+    {
+      "question": "Dans l'anime 'Attack on Titan', quel personnage détient le Titan Colossus ?",
+      "optionA": "Eren Yeager",
+      "optionB": "Armin Arlert",
+      "optionC": "Bertolt Hoover",
+      "optionD": "Reiner Braun",
+      "correctAnswer": "C",
+      "explanation": "Bertolt Hoover détient le Titan Colossus, l'un des Titans titans qui a attaqué le mur Maria avec Reiner Braun et Annie Leonhart."
+    },
+    {
+      "question": "Dans la série 'Breaking Bad', quel est le nom de la société de lavage d'argent créée par Skyler White ?",
+      "optionA": "A1A Car Wash",
+      "optionB": "Saul Goodman Associates",
+      "optionC": "Aventura",
+      "optionD": "Beneke Fabricators",
+      "correctAnswer": "C",
+      "explanation": "Skyler White crée la société de lavage d'argent 'Aventura' pour blanchir l'argent de Walter White, utilisant le nom de son ancien employeur."
+    },
+    {
+      "question": "Dans l'univers Marvel, quel personnage a dit pour la première fois le célèbre slogan 'Avengers Assemble' ?",
+      "optionA": "Captain America",
+      "optionB": "Iron Man",
+      "optionC": "Thor",
+      "optionD": "Hulk",
+      "correctAnswer": "A",
+      "explanation": "Captain America a prononcé le slogan 'Avengers Assemble' pour la première fois dans 'The Avengers' (2012), rassemblant l'équipe pour combattre Loki."
+    },
+    {
+      "question": "Dans la série 'Stranger Things', quel est le nom du personnage interprété par Millie Bobby Brown ?",
+      "optionA": "Max",
+      "optionB": "Eleven",
+      "optionC": "Nancy",
+      "optionD": "Robin",
+      "correctAnswer": "B",
+      "explanation": "Millie Bobby Brown joue le rôle d'Eleven, une jeune fille aux capacités psychiques puissantes qui aide les enfants de Hawkins à combattre les menaces surnaturelles."
+    },
+    {
+      "question": "Dans l'univers de Star Wars, quel est le nom du chasseur de primes mandalorien qui devient le père adoptif de Grogu ?",
+      "optionA": "Din Djarin",
+      "optionB": "Boba Fett",
+      "optionC": "Cad Bane",
+      "optionD": "Kuiil",
+      "correctAnswer": "A",
+      "explanation": "Din Djarin, connu simplement sous le nom de 'The Mandalorian', est le protagoniste de la série du même nom qui devient le père adoptif de Grogu."
+    },
+    {
+      "question": "Dans la série 'The Witcher', quel personnage est connu sous le nom de 'Yennefer of Vengerberg' ?",
+      "optionA": "La sorcière",
+      "optionB": "La reine",
+      "optionC": "La magicienne",
+      "optionD": "La mutante",
+      "correctAnswer": "A",
+      "explanation": "Yennefer of Vengerberg est une puissante sorcière et l'une des amours de Geralt de Riv dans la série 'The Witcher'."
+    },
+    {
+      "question": "Dans l'univers DC Comics, quel personnage est connu sous le nom de 'The Dark Knight' ?",
+      "optionA": "Superman",
+      "optionB": "Green Lantern",
+      "optionC": "Batman",
+      "optionD": "Robin",
+      "correctAnswer": "C",
+      "explanation": "Batman est surnommé 'The Dark Knight', reflétant son rôle de justicier opérant dans les ténèbres de Gotham City."
+    },
+    {
+      "question": "Dans la série 'Money Heist', quel est le nom de code du personnage principal, le Professeur ?",
+      "optionA": "Rio",
+      "optionB": "Denver",
+      "optionC": "Tokyo",
+      "optionD": "Salvador",
+      "correctAnswer": "D",
+      "explanation": "Le Professeur, le cerveau derrière le braquage, utilise le nom de code 'Salvador' dans la série 'Money Heist' (La Casa de Papel)."
+    },
+    {
+      "question": "Dans l'univers de Harry Potter, quel animal est compagnon de Remus Lupin ?",
+      "optionA": "Un chien",
+      "optionB": "Un rat",
+      "optionC": "Un chat",
+      "optionD": "Un renard",
+      "correctAnswer": "A",
+      "explanation": "Remus Lupin est accompagné d'un chien nommé 'Snuffles', qui est en réalité Sirius Black transformé en chien."
+    },
+    {
+      "question": "Dans la série 'The Mandalorian', quel est le nom de l'enfant de l'espèce Yoda que le Mandalorian protège ?",
+      "optionA": "Grogu",
+      "optionB": "Yodling",
+      "optionC": "Baby Yoda",
+      "optionD": "Little Yoda",
+      "correctAnswer": "A",
+      "explanation": "L'enfant est nommé 'Grogu' dans la série, bien qu'il soit largement connu sous le nom de 'Baby Yoda' par les fans."
+    },
+    {
+      "question": "Dans l'univers Marvel, quel personnage a créé le premier costume de Spider-Man ?",
+      "optionA": "Tony Stark",
+      "optionB": "Reed Richards",
+      "optionC": "Peter Parker lui-même",
+      "optionD": "May Parker",
+      "correctAnswer": "C",
+      "explanation": "Peter Parker a créé son premier costume de Spider-Man lui-même à partir de tissu rouge et bleu avant d'obtenir des versions plus améliorées."
+    },
+    {
+      "question": "Dans la série 'Game of Thrones', quel personnage est connu sous le nom de 'The Mother of Dragons' ?",
+      "optionA": "Cersei Lannister",
+      "optionB": "Sansa Stark",
+      "optionC": "Daenerys Targaryen",
+      "optionD": "Arya Stark",
+      "correctAnswer": "C",
+      "explanation": "Daenerys Targaryen est surnommée 'The Mother of Dragons' en raison de sa capacité à contrôler et à élever trois dragons."
+    },
+    {
+      "question": "Dans l'anime 'Naruto', quel village est le village natal de Naruto Uzumaki ?",
+      "optionA": "Village de Konoha",
+      "optionB": "Village de Suna",
+      "optionC": "Village de Kirigakure",
+      "optionD": "Village de Kumogakure",
+      "correctAnswer": "A",
+      "explanation": "Naruto Uzumaki est né et a grandi dans le village de Konoha, également connu sous le nom de Village caché dans les feuilles."
+    },
+    {
+      "question": "Dans la série 'The Office', quel personnage est connu pour son obsession de l'Angela et son amour des chats ?",
+      "optionA": "Dwight Schrute",
+      "optionB": "Stanley Hudson",
+      "optionC": "Kevin Malone",
+      "optionD": "Oscar Martinez",
+      "correctAnswer": "A",
+      "explanation": "Dwight Schrute est connu pour son amour des chats et sa fascination obsessionnelle pour Angela, collègue de bureau."
+    },
+    {
+      "question": "Dans l'univers DC Comics, quel personnage est connu sous le nom de 'The Man of Steel' ?",
+      "optionA": "Batman",
+      "optionB": "Superman",
+      "optionC": "Wonder Woman",
+      "optionD": "Aquaman",
+      "correctAnswer": "B",
+      "explanation": "Superman est surnommé 'The Man of Steel' en raison de sa force surhumaine et de sa résilience exceptionnelle."
+    },
+    {
+      "question": "Dans la série Game of Thrones, de quelle maison est Jon Snow avant de révéler son véritable héritage?",
+      "optionA": "Maison Stark",
+      "optionB": "Maison Lannister",
+      "optionC": "Maison Targaryen",
+      "optionD": "Maison Baratheon",
+      "correctAnswer": "A",
+      "explanation": "Jon Snow est présenté comme le fils illégitime de Ned Stark, le seigneur de Winterfell, avant que son héritage Targaryen ne soit révélé."
+    },
+    {
+      "question": "Dans l'univers Marvel, quel personnage a dit : 'Je suis Iron Man' pour la première fois?",
+      "optionA": "Tony Stark dans le premier film Iron Man",
+      "optionB": "Tony Stark dans Avengers",
+      "optionC": "Tony Stark dans Iron Man 3",
+      "optionD": "Tony Stark dans Avengers: Endgame",
+      "correctAnswer": "A",
+      "explanation": "Cette phrase emblématique a été prononcée par Tony Stark à la fin du film Iron Man (2008), marquant la fin du film et son acceptation de l'identité Iron Man."
+    },
+    {
+      "question": "Dans la série Harry Potter, quel sortilège est utilisé pour faire apparaître un patronus?",
+      "optionA": "Expecto Patronum",
+      "optionB": "Wingardium Leviosa",
+      "optionC": "Expelliarmus",
+      "optionD": "Lumos",
+      "correctAnswer": "A",
+      "explanation": "Le sortilège Expecto Patronum est utilisé pour créer un patronus, une manifestation de l'énergie positive qui peut repousser les détraqueurs."
+    },
+    {
+      "question": "Dans Star Wars, quel personnage est connu comme 'Le Chosen One' selon la prophétie Jedi?",
+      "optionA": "Luke Skywalker",
+      "optionB": "Anakin Skywalker",
+      "optionC": "Obi-Wan Kenobi",
+      "optionD": "Rey",
+      "correctAnswer": "B",
+      "explanation": "La prophétie Jedi désigne Anakin Skywalker comme 'Le Chosen One' censé apporter l'équilibre à la Force, ce qu'il fait en tuant l'Empereur."
+    },
+    {
+      "question": "Dans l'univers DC Comics, quel est le véritable nom du Joker?",
+      "optionA": "Jack Napier",
+      "optionB": "Arthur Fleck",
+      "optionC": "Le nom n'est jamais révélé",
+      "optionD": "Joe Chill",
+      "correctAnswer": "C",
+      "explanation": "Bien que différentes adaptations aient donné au Joker divers noms, dans les comics originaux, son véritable nom n'a jamais été révélé, restant un mystère."
+    },
+    {
+      "question": "Dans la série Breaking Bad (qui partage des acteurs avec Better Call Saul), quel est le nom de la famille de Walter White?",
+      "optionA": "La famille White",
+      "optionB": "La famille Schrader",
+      "optionC": "La famille Pinkman",
+      "optionD": "La famille Ehrmantraut",
+      "correctAnswer": "A",
+      "explanation": "Walter White partage son nom avec sa famille, y compris son épouse Skyler White et ses enfants Walter Jr. et Holly White."
+    },
+    {
+      "question": "Dans l'univers Marvel, quel est le nom du royaume d'Asgard?",
+      "optionA": "Asgard",
+      "optionB": "Midgard",
+      "optionC": "Jotunheim",
+      "optionD": "Asgard est le nom du royaume et du peuple",
+      "correctAnswer": "D",
+      "explanation": "Asgard désigne à la fois le royaume et le peuple des dieux nordiques dans l'univers Marvel, dirigé par Odin puis Thor."
+    },
+    {
+      "question": "Dans la série The Mandalorian, quel est le nom de l'espèce de Grogu?",
+      "optionA": "Wookiee",
+      "optionB": "Gungan",
+      "optionC": "Umagini",
+      "optionD": "Same species as Yoda",
+      "correctAnswer": "D",
+      "explanation": "Grogu appartient à la même espèce que Yoda, dont le nom n'a jamais été révélé dans l'univers Star Wars."
+    },
+    {
+      "question": "Dans l'univers DC, quel personnage est connu sous le nom de 'The Dark Knight'?",
+      "optionA": "Nightwing",
+      "optionB": "Robin",
+      "optionC": "Batman",
+      "optionD": "The Flash",
+      "correctAnswer": "C",
+      "explanation": "Batman est surnommé 'The Dark Knight' en raison de son combat contre le crime dans les ruelles sombres de Gotham City."
+    },
+    {
+      "question": "Dans la série Game of Thrones, quel personnage est connu pour dire 'Winter is Coming'?",
+      "optionA": "Tyrion Lannister",
+      "optionB": "Jon Snow",
+      "optionC": "Ned Stark",
+      "optionD": "Robb Stark",
+      "correctAnswer": "C",
+      "explanation": "Ned Stark est le premier à prononcer cette phrase emblématique dans la série, qui devient le slogan de la Maison Stark."
+    },
+    {
+      "question": "Dans l'univers Marvel, quel personnage a dit : 'Puny God' à Thor?",
+      "optionA": "Iron Man",
+      "optionB": "Hulk",
+      "optionC": "Loki",
+      "optionD": "Captain America",
+      "correctAnswer": "B",
+      "explanation": "Hulk dit 'Puny God' après avoir battu Loki lors de la bataille de New York dans Avengers (2012)."
+    },
+    {
+      "question": "Dans la série Stranger Things, quel est le nom du personnage interprété par Millie Bobby Brown?",
+      "optionA": "Eleven",
+      "optionB": "Max",
+      "optionC": "Nancy",
+      "optionD": "Robin",
+      "correctAnswer": "A",
+      "explanation": "Millie Bobby Brown incarne Eleven, une jeune fille aux pouvoirs psychiques qui s'échappe du laboratoire Hawkins National Laboratory."
+    },
+    {
+      "question": "Dans l'univers DC Comics, quel est le nom de la ville où Batman opère?",
+      "optionA": "Metropolis",
+      "optionB": "Gotham City",
+      "optionC": "Central City",
+      "optionD": "Star City",
+      "correctAnswer": "B",
+      "explanation": "Batman opère à Gotham City, une ville fictive inspirée de New York, connue pour son taux de criminalité élevé."
+    },
+    {
+      "question": "Dans la série The Witcher, quel est le nom de la pays où se déroulent les événements principaux?",
+      "optionA": "Royaume de Redania",
+      "optionB": "Royaume de Temeria",
+      "optionC": "Continent",
+      "optionD": "Royaume de Cintra",
+      "correctAnswer": "C",
+      "explanation": "Les événements principaux de The Witcher se déroulent sur un continent sans nom spécifique, souvent simplement appelé 'le Continent'."
+    },
+    {
+      "question": "Dans l'univers Marvel, quel est le nom du père de Thor?",
+      "optionA": "Odin",
+      "optionB": "Loki",
+      "optionC": "Hela",
+      "optionD": "Frigga",
+      "correctAnswer": "A",
+      "explanation": "Odin est le père de Thor, le roi d'Asgard, qui meurt dans Avengers: Infinity War après avoir été touché par le pouvoir de Thanos."
+    },
+    {
+      "question": "Dans la série Game of Thrones, quelle maison est connue pour son slogan 'We Do Not Sow'?",
+      "optionA": "Maison Greyjoy",
+      "optionB": "Maison Martell",
+      "optionC": "Maison Tyrell",
+      "optionD": "Maison Tully",
+      "correctAnswer": "A",
+      "explanation": "La Maison Greyjoy, qui règne sur les Îles de Fer, a pour slogan 'We Do Not Sow', reflétant leur culture de pillage plutôt que d'agriculture."
+    },
+    {
+      "question": "Dans l'univers Star Wars, quel est le nom du père d'Anakin Skywalker?",
+      "optionA": "Darth Vader",
+      "optionB": "Palpatine",
+      "optionC": "Shmi Skywalker",
+      "optionD": "Le père n'est jamais révélé",
+      "correctAnswer": "D",
+      "explanation": "Dans la prélogie, il est révélé qu'Anakin Skywalker a été conçu par la Force elle-même, sans père biologique connu."
+    },
+    {
+      "question": "Dans la série Breaking Bad, quel est le nom de la methamphetamine de haute qualité produite par Walter White?",
+      "optionA": "Blue Sky",
+      "optionB": "Crystal Blue",
+      "optionC": "Blue Ice",
+      "optionD": "Pure Blue",
+      "correctAnswer": "A",
+      "explanation": "Walter White produit une methamphetamine de pureté exceptionnelle, connue sous le nom de 'Blue Sky' en raison de sa couleur caractéristique."
+    },
+    {
+      "question": "Dans l'univers DC Comics, quel personnage est connu comme 'The Man of Steel'?",
+      "optionA": "Superman",
+      "optionB": "Steel",
+      "optionC": "Supergirl",
+      "optionD": "Superboy",
+      "correctAnswer": "A",
+      "explanation": "Superman est surnommé 'The Man of Steel' en raison de sa force surhumaine et de son invulnérabilité."
+    },
+    {
+      "question": "Dans la série Game of Thrones, quelle maison a pour emblème un cerf doré sur un champ vert?",
+      "optionA": "Maison Baratheon",
+      "optionB": "Maison Tyrell",
+      "optionC": "Maison Martell",
+      "optionD": "Maison Arryn",
+      "correctAnswer": "B",
+      "explanation": "La Maison Tyrell, qui règne sur les Terres de l'Ouest, a pour emblème un cerf doré sur un champ vert."
+    }
+  ]
+}

@@ -332,6 +332,186 @@
       "optionD": "Elle est considérée comme un problème exclusivement individuel",
       "correctAnswer": "C",
       "explanation": "La VBG est abordée dans plusieurs ODD, principalement l'ODD 5 (égalité de genre), l'ODD 11 (villes et communautés sûres) et l'ODD 16 (paix, justice et institutions efficaces)."
+    },
+    {
+      "question": "Quelle est la définition de la santé selon l'Organisation Mondiale de la Santé (OMS) de 1948 ?",
+      "optionA": "L'absence de maladie",
+      "optionB": "Un état complet de bien-être physique, mental et social",
+      "optionC": "Une bonne qualité de vie",
+      "optionD": "La capacité à travailler efficacement",
+      "correctAnswer": "B",
+      "explanation": "La définition de l'OMS de 1948 considère la santé comme un état complet de bien-être physique, mental et social, et non seulement comme l'absence de maladie."
+    },
+    {
+      "question": "Quelle est la stratégie de l'OMS pour éliminer le paludisme à l'horizon 2030 ?",
+      "optionA": "La vaccination universelle",
+      "optionB": "La pulvérisation d'insecticides à grande échelle",
+      "optionC": "Le triple approche: prévention, diagnostic et traitement",
+      "optionD": "L'éradication des moustiques",
+      "correctAnswer": "C",
+      "explanation": "L'OMS adopte une approche triple contre le paludisme: prévention (moustiquaires, insecticides), diagnostic rapide et traitement approprié pour éliminer la maladie."
+    },
+    {
+      "question": "Quel est l'Objectif de Développement Durable (ODD) spécifiquement lié à l'égalité des genres ?",
+      "optionA": "ODD 3: Bonne santé et bien-être",
+      "optionB": "ODD 4: Éducation de qualité",
+      "optionC": "ODD 5: Égalité entre les sexes",
+      "optionD": "ODD 10: Réduction des inégalités",
+      "correctAnswer": "C",
+      "explanation": "L'ODD 5 est spécifiquement consacré à l'égalité entre les sexes et l'autonomisation de toutes les femmes et filles."
+    },
+    {
+      "question": "Quelle est la particularité du vaccin contre le VIH développé par le français Jean-Claude Chermann ?",
+      "optionA": "C'est le premier vaccin efficace contre le VIH",
+      "optionB": "Il a été retiré du marché pour des effets secondaires graves",
+      "optionC": "Il a provoisi des réactions immunitaires mais n'a pas empêché l'infection",
+      "optionD": "Il est administré par voie orale",
+      "correctAnswer": "C",
+      "explanation": "Le vaccin contre le VIH développé par Chermann a montré une réponse immunitaire mais n'a pas réussi à prévenir l'infection lors des essais cliniques."
+    },
+    {
+      "question": "Quelle est la forme de violence basée sur le genre (VBG) la plus répandue dans le monde ?",
+      "optionA": "Les mariages forcés",
+      "optionB": "La mutilation génitale féminine",
+      "optionC": "Les violences psychologiques",
+      "optionD": "La violence conjugale",
+      "correctAnswer": "D",
+      "explanation": "La violence conjugale (violence par le partenaire intime) est la forme de VBG la plus répandue dans le monde, affectant environ 1 femme sur 3."
+    },
+    {
+      "question": "Quel est le principal obstacle à l'accès aux soins pour les personnes vivant avec le VIH dans les pays à faible revenu ?",
+      "optionA": "Le manque de personnel médical qualifié",
+      "optionB": "Le coût des antirétroviraux",
+      "optionC": "La stigmatisation",
+      "optionD": "Toutes ces réponses",
+      "correctAnswer": "D",
+      "explanation": "L'accès aux soins pour les personnes vivant avec le VIH est entravé par une combinaison de facteurs: manque de personnel, coût des médicaments et stigmatisation."
+    },
+    {
+      "question": "Quelle est la stratégie 'Test and Treat' promue par l'OMS pour le VIH ?",
+      "optionA": "Tester toute la population et traiter uniquement les séropositifs symptomatiques",
+      "optionB": "Tester et traiter immédiatement toute personne séropositive",
+      "optionC": "Ne traiter que les patients à stade avancé",
+      "optionD": "Traiter préventivement les populations à haut risque",
+      "correctAnswer": "B",
+      "explanation": "La stratégie 'Test and Treat' recommande de diagnostiquer le VIH et de débuter immédiatement le traitement antirétroviral pour toute personne séropositive, indépendamment de son taux de CD4."
+    },
+    {
+      "question": "Quel est l'impact du genre sur la charge de morbidité du paludisme ?",
+      "optionA": "Les hommes sont plus touchés en raison de leur exposition professionnelle",
+      "optionB": "Les femmes enceintes sont plus vulnérables aux complications",
+      "optionC": "Les enfants de moins de 5 ans sont les plus touchés, sans différence de genre",
+      "optionD": "Aucune différence de genre n'est observée",
+      "correctAnswer": "B",
+      "explanation": "Les femmes enceintes sont particulièrement vulnérables au paludisme, qui peut entraîner des complications graves pour la mère et le fœtus."
+    },
+    {
+      "question": "Quelle est la cible de vaccination pour l'éradication de la polio selon l'OMS ?",
+      "optionA": "Vacciner 80% de la population",
+      "optionB": "Vacciner 95% des enfants de moins de 5 ans",
+      "optionC": "Vacciner toute la population adulte",
+      "optionD": "Vacciner uniquement les populations à risque",
+      "correctAnswer": "B",
+      "explanation": "Pour éradiquer la polio, l'OMS cible une couverture vaccinale de 95% des enfants de moins de 5 ans pour interrompre la transmission du virus."
+    },
+    {
+      "question": "Quelle est la relation entre les ODD et la santé des femmes ?",
+      "optionA": "Seul l'ODD 5 est directement lié à la santé des femmes",
+      "optionB": "La santé des femmes n'est pas un objectif prioritaire dans les ODD",
+      "optionC": "Plusieurs ODD sont interconnectés avec la santé des femmes",
+      "optionD": "La santé des femmes est traitée uniquement dans l'ODD 3",
+      "correctAnswer": "C",
+      "explanation": "Plusieurs ODD sont interconnectés avec la santé des femmes, notamment l'ODD 3 (santé), ODD 4 (éducation), ODD 5 (genre) et ODD 10 (inégalités)."
+    },
+    {
+      "question": "Quelle est la particularité du vaccin contre Ebola développé pendant l'épidémie de 2014-2016 ?",
+      "optionA": "Il a été développé en moins de 6 mois",
+      "optionB": "Il a une efficacité de 100%",
+      "optionC": "Il est administré en une seule dose",
+      "optionD": "Il utilise une technologie à ARN messager",
+      "correctAnswer": "A",
+      "explanation": "Le vaccin rVSV-ZEBOV contre Ebola a été développé en record de temps (moins de 6 mois) et déployé lors de l'épidémie en Afrique de l'Ouest."
+    },
+    {
+      "question": "Quelle est la principale stratégie de prévention de la transmission mère-enfant du VIH ?",
+      "optionA": "Césarienne systématique",
+      "optionB": "Allaitement artificiel obligatoire",
+      "optionC": "Traitement antirétroviral de la mère pendant la grossesse et l'allaitement",
+      "optionD": "Quarantaine du nouveau-né",
+      "correctAnswer": "C",
+      "explanation": "Le traitement antirétroviral de la mère pendant la grossesse, l'accouchement et l'allaitement réduit considérablement le risque de transmission du VIH au bébé."
+    },
+    {
+      "question": "Quelle est la définition du genre selon l'OMS ?",
+      "optionA": "Le sexe biologique d'une personne",
+      "optionB": "Les rôles, comportements et attributs sociaux qu'une société considère comme appropriés pour les hommes et les femmes",
+      "optionC": "L'orientation sexuelle d'une personne",
+      "optionD": "L'identité de genre d'une personne",
+      "correctAnswer": "B",
+      "explanation": "Selon l'OMS, le genre fait référence aux rôles, comportements et attributs sociaux qu'une société considère comme appropriés pour les hommes et les femmes, construits socialement et appris."
+    },
+    {
+      "question": "Quelle est la particularité du vaccin contre le COVID-19 développé par Pfizer-BioNTech ?",
+      "optionA": "Il est le premier vaccin contre la COVID-19",
+      "optionB": "Il utilise une technologie à ARN messager",
+      "optionC": "Il nécessite une seule injection",
+      "optionD": "Il est efficace à 100%",
+      "correctAnswer": "B",
+      "explanation": "Le vaccin Pfizer-BioNTech utilise une technologie innovante à ARN messager, qui n'avait jamais été utilisée à grande échelle pour un vaccin humain avant la pandémie de COVID-19."
+    },
+    {
+      "question": "Quelle est la forme de violence basée sur le genre la plus sous-déclarée ?",
+      "optionA": "La violence physique",
+      "optionB": "La violence économique",
+      "optionC": "La violence psychologique",
+      "optionD": "La violence sexuelle",
+      "correctAnswer": "D",
+      "explanation": "La violence sexuelle est la forme de VBG la plus sous-déclarée en raison de la stigmatisation, de la honte et des craintes de ne pas être cru."
+    },
+    {
+      "question": "Quel est le principal défi de la vaccination dans les pays à faible revenu ?",
+      "optionA": "Le manque d'acceptation par la population",
+      "optionB": "La chaîne du froid difficile à maintenir",
+      "optionC": "Le coût des vaccins",
+      "optionD": "Toutes ces réponses",
+      "correctAnswer": "D",
+      "explanation": "Les pays à faible revenu font face à de multiples défis: coût des vaccins, logistique complexe (chaîne du froid), et parfois faible acceptation par la population."
+    },
+    {
+      "question": "Quelle est la relation entre le genre et l'accès aux soins de santé ?",
+      "optionA": "Les hommes ont toujours un meilleur accès aux soins",
+      "optionB": "Les femmes ont toujours un meilleur accès aux soins",
+      "optionC": "Les inégalités d'accès dépendent du contexte socioculturel",
+      "optionD": "Il n'y a pas de différence d'accès aux soins entre les genres",
+      "correctAnswer": "C",
+      "explanation": "Les inégalités d'accès aux soins entre les genres varient selon les contextes socioculturels, économiques et géographiques."
+    },
+    {
+      "question": "Quelle est la stratégie 'Treat All' promue par l'OMS pour le VIH ?",
+      "optionA": "Traiter uniquement les patients symptomatiques",
+      "optionB": "Traiter tous les patients atteints du sida",
+      "optionC": "Proposer le traitement à toutes les personnes vivant avec le VIH",
+      "optionD": "Traiter préventivement les populations à haut risque",
+      "correctAnswer": "C",
+      "explanation": "La stratégie 'Treat All' (Traiter tous) recommande d'offrir un traitement antirétroviral à toutes les personnes vivant avec le VIH, indépendamment de leur stade clinique ou immunologique."
+    },
+    {
+      "question": "Quelle est la principale mesure de prévention du paludisme dans les zones à haut risque ?",
+      "optionA": "La vaccination universelle",
+      "optionB": "La pulvérisation d'insecticides à l'intérieur des habitations",
+      "optionC": "L'utilisation de moustiquaires imprégnées d'insecticide",
+      "optionD": "La prise de médicaments préventifs",
+      "correctAnswer": "C",
+      "explanation": "L'utilisation de moustiquaires imprégnées d'insecticide est considérée comme la mesure de prévention la plus efficace contre le paludisme dans les zones à haut risque."
+    },
+    {
+      "question": "Quelle est la relation entre les ODD et la santé publique ?",
+      "optionA": "Seul l'ODD 3 est lié à la santé publique",
+      "optionB": "Les ODD sont indépendants de la santé publique",
+      "optionC": "Les ODD sont interconnectés et la santé est un élément transversal",
+      "optionD": "La santé publique n'est pas un objectif des ODD",
+      "correctAnswer": "C",
+      "explanation": "Les ODD sont interconnectés et la santé (ODD 3) est un élément transversal qui influence et est influencé par de nombreux autres objectifs."
     }
   ]
 }

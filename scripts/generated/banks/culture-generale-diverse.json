@@ -305,6 +305,456 @@
       "optionD": "John Glenn",
       "correctAnswer": "C",
       "explanation": "Neil Armstrong, astronaute américain, a été le premier humain à poser le pied sur la Lune le 20 juillet 1969 lors de la mission Apollo 11."
+    },
+    {
+      "question": "Quel est le plus long fleuve du monde ?",
+      "optionA": "Le Nil",
+      "optionB": "L'Amazone",
+      "optionC": "Le Mississippi",
+      "optionD": "Le Yangtsé",
+      "correctAnswer": "A",
+      "explanation": "Le Nil (6 650 km) est généralement considéré comme le plus long fleuve du monde."
+    },
+    {
+      "question": "Quel est le plus haut sommet du monde ?",
+      "optionA": "L'Everest (8 849 m)",
+      "optionB": "Le K2",
+      "optionC": "Le Kilimandjaro",
+      "optionD": "Le Mont Blanc",
+      "correctAnswer": "A",
+      "explanation": "L'Everest (8 849 m) est le plus haut sommet du monde."
+    },
+    {
+      "question": "Quelle est la capitale de l'Australie ?",
+      "optionA": "Canberra",
+      "optionB": "Sydney",
+      "optionC": "Melbourne",
+      "optionD": "Perth",
+      "correctAnswer": "A",
+      "explanation": "Canberra est la capitale de l'Australie (pas Sydney)."
+    },
+    {
+      "question": "Quelle est la capitale du Canada ?",
+      "optionA": "Ottawa",
+      "optionB": "Toronto",
+      "optionC": "Montréal",
+      "optionD": "Vancouver",
+      "correctAnswer": "A",
+      "explanation": "Ottawa est la capitale du Canada."
+    },
+    {
+      "question": "Quelle est la capitale du Brésil ?",
+      "optionA": "Brasília",
+      "optionB": "Rio de Janeiro",
+      "optionC": "São Paulo",
+      "optionD": "Salvador",
+      "correctAnswer": "A",
+      "explanation": "Brasília est la capitale du Brésil depuis 1960."
+    },
+    {
+      "question": "Quelle est la capitale de la Suisse ?",
+      "optionA": "Berne",
+      "optionB": "Genève",
+      "optionC": "Zurich",
+      "optionD": "Lausanne",
+      "correctAnswer": "A",
+      "explanation": "Berne est la capitale (ville fédérale) de la Suisse."
+    },
+    {
+      "question": "Quelle est la capitale de l'Afrique du Sud ?",
+      "optionA": "Pretoria (administrative)",
+      "optionB": "Le Cap",
+      "optionC": "Johannesburg",
+      "optionD": "Durban",
+      "correctAnswer": "A",
+      "explanation": "L'Afrique du Sud a 3 capitales: Pretoria (administrative), Le Cap (législative), Bloemfontein (judiciaire)."
+    },
+    {
+      "question": "Quelle est la capitale de la Turquie ?",
+      "optionA": "Ankara",
+      "optionB": "Istanbul",
+      "optionC": "Izmir",
+      "optionD": "Bursa",
+      "correctAnswer": "A",
+      "explanation": "Ankara est la capitale de la Turquie (pas Istanbul)."
+    },
+    {
+      "question": "Quel est le plus grand désert du monde ?",
+      "optionA": "Le désert Antarctique",
+      "optionB": "Le Sahara",
+      "optionC": "Le désert de Gobi",
+      "optionD": "Le désert d'Arabie",
+      "correctAnswer": "A",
+      "explanation": "Le désert Antarctique est le plus grand (14 millions km²), puis le Sahara."
+    },
+    {
+      "question": "Quel est le plus grand océan du monde ?",
+      "optionA": "L'océan Pacifique",
+      "optionB": "L'océan Atlantique",
+      "optionC": "L'océan Indien",
+      "optionD": "L'océan Arctique",
+      "correctAnswer": "A",
+      "explanation": "Le Pacifique est le plus grand océan (165 millions km²)."
+    },
+    {
+      "question": "Quelle est la plus grande île du monde ?",
+      "optionA": "Le Groenland",
+      "optionB": "Madagascar",
+      "optionC": "Bornéo",
+      "optionD": "Sumatra",
+      "correctAnswer": "A",
+      "explanation": "Le Groenland (2 166 086 km²) est la plus grande île."
+    },
+    {
+      "question": "Combien de continents y a-t-il sur Terre ?",
+      "optionA": "7",
+      "optionB": "5",
+      "optionC": "6",
+      "optionD": "8",
+      "correctAnswer": "A",
+      "explanation": "7 continents: Afrique, Amérique du Nord, Amérique du Sud, Antarctique, Asie, Europe, Océanie."
+    },
+    {
+      "question": "Quel pays a le plus de fuseaux horaires ?",
+      "optionA": "La France (12)",
+      "optionB": "La Russie",
+      "optionC": "Les États-Unis",
+      "optionD": "La Chine",
+      "correctAnswer": "A",
+      "explanation": "La France a 12 fuseaux horaires (DOM-TOM et territoires d'outre-mer)."
+    },
+    {
+      "question": "Quel est le pays le plus peuplé du monde ?",
+      "optionA": "L'Inde",
+      "optionB": "La Chine",
+      "optionC": "Les États-Unis",
+      "optionD": "L'Indonésie",
+      "correctAnswer": "A",
+      "explanation": "L'Inde a dépassé la Chine en 2023 comme pays le plus peuplé (~1,43 milliard)."
+    },
+    {
+      "question": "Qui a peint la Joconde ?",
+      "optionA": "Léonard de Vinci",
+      "optionB": "Michel-Ange",
+      "optionC": "Raphaël",
+      "optionD": "Van Gogh",
+      "correctAnswer": "A",
+      "explanation": "La Joconde a été peinte par Léonard de Vinci vers 1503-1519."
+    },
+    {
+      "question": "Qui a composé la 9e symphonie ?",
+      "optionA": "Beethoven",
+      "optionB": "Mozart",
+      "optionC": "Bach",
+      "optionD": "Chopin",
+      "correctAnswer": "A",
+      "explanation": "Beethoven a composé la 9e symphonie (Hymne à la joie)."
+    },
+    {
+      "question": "Qui a écrit 'Les Misérables' ?",
+      "optionA": "Victor Hugo",
+      "optionB": "Émile Zola",
+      "optionC": "Honoré de Balzac",
+      "optionD": "Alexandre Dumas",
+      "correctAnswer": "A",
+      "explanation": "Les Misérables (1862) a été écrit par Victor Hugo."
+    },
+    {
+      "question": "Qui a écrit 'L'Étranger' ?",
+      "optionA": "Albert Camus",
+      "optionB": "Jean-Paul Sartre",
+      "optionC": "André Gide",
+      "optionD": "Marcel Proust",
+      "correctAnswer": "A",
+      "explanation": "L'Étranger (1942) a été écrit par Albert Camus."
+    },
+    {
+      "question": "Qui a découvert la pénicilline ?",
+      "optionA": "Alexander Fleming",
+      "optionB": "Louis Pasteur",
+      "optionC": "Marie Curie",
+      "optionD": "Charles Darwin",
+      "correctAnswer": "A",
+      "explanation": "Alexander Fleming a découvert la pénicilline en 1928."
+    },
+    {
+      "question": "Qui a proposé la théorie de l'évolution ?",
+      "optionA": "Charles Darwin",
+      "optionB": "Gregor Mendel",
+      "optionC": "Jean-Baptiste Lamarck",
+      "optionD": "Louis Pasteur",
+      "correctAnswer": "A",
+      "explanation": "Charles Darwin a proposé la sélection naturelle (1859, 'L'Origine des espèces')."
+    },
+    {
+      "question": "Qui a découvert la radioactivité ?",
+      "optionA": "Henri Becquerel",
+      "optionB": "Marie Curie",
+      "optionC": "Albert Einstein",
+      "optionD": "Niels Bohr",
+      "correctAnswer": "A",
+      "explanation": "Henri Becquerel a découvert la radioactivité en 1896 (Marie Curie a coined le terme)."
+    },
+    {
+      "question": "Qui a développé la théorie de la relativité ?",
+      "optionA": "Albert Einstein",
+      "optionB": "Isaac Newton",
+      "optionC": "Stephen Hawking",
+      "optionD": "Galilée",
+      "correctAnswer": "A",
+      "explanation": "Einstein a développé la relativité restreinte (1905) et générale (1915)."
+    },
+    {
+      "question": "Qui a inventé le téléphone ?",
+      "optionA": "Alexander Graham Bell",
+      "optionB": "Thomas Edison",
+      "optionC": "Guglielmo Marconi",
+      "optionD": "Nikola Tesla",
+      "correctAnswer": "A",
+      "explanation": "Alexander Graham Bell a breveté le téléphone en 1876."
+    },
+    {
+      "question": "Qui a inventé l'ampoule électrique ?",
+      "optionA": "Thomas Edison",
+      "optionB": "Nikola Tesla",
+      "optionC": "Benjamin Franklin",
+      "optionD": "James Watt",
+      "correctAnswer": "A",
+      "explanation": "Thomas Edison a développé l'ampoule commerciale en 1879."
+    },
+    {
+      "question": "Qui a été le premier homme sur la Lune ?",
+      "optionA": "Neil Armstrong",
+      "optionB": "Buzz Aldrin",
+      "optionC": "Youri Gagarine",
+      "optionD": "Michael Collins",
+      "correctAnswer": "A",
+      "explanation": "Neil Armstrong a marché sur la Lune le 20 juillet 1969."
+    },
+    {
+      "question": "Qui a été le premier homme dans l'espace ?",
+      "optionA": "Youri Gagarine",
+      "optionB": "Neil Armstrong",
+      "optionC": "John Glenn",
+      "optionD": "Alan Shepard",
+      "correctAnswer": "A",
+      "explanation": "Youri Gagarine (URSS) a été le premier dans l'espace le 12 avril 1961."
+    },
+    {
+      "question": "En quelle année a eu lieu la Révolution française ?",
+      "optionA": "1789",
+      "optionB": "1776",
+      "optionC": "1804",
+      "optionD": "1815",
+      "correctAnswer": "A",
+      "explanation": "La Révolution française a commencé en 1789 (prise de la Bastille le 14 juillet)."
+    },
+    {
+      "question": "Quand a eu lieu la prise de la Bastille ?",
+      "optionA": "14 juillet 1789",
+      "optionB": "14 juillet 1790",
+      "optionC": "4 août 1789",
+      "optionD": "26 août 1789",
+      "correctAnswer": "A",
+      "explanation": "La prise de la Bastille a eu lieu le 14 juillet 1789."
+    },
+    {
+      "question": "En quelle année a commencé la Première Guerre mondiale ?",
+      "optionA": "1914",
+      "optionB": "1918",
+      "optionC": "1939",
+      "optionD": "1905",
+      "correctAnswer": "A",
+      "explanation": "La Première Guerre mondiale a commencé en 1914."
+    },
+    {
+      "question": "En quelle année a fini la Seconde Guerre mondiale ?",
+      "optionA": "1945",
+      "optionB": "1939",
+      "optionC": "1918",
+      "optionD": "1950",
+      "correctAnswer": "A",
+      "explanation": "La Seconde Guerre mondiale s'est terminée en 1945."
+    },
+    {
+      "question": "Qui a fondé Microsoft ?",
+      "optionA": "Bill Gates et Paul Allen",
+      "optionB": "Steve Jobs",
+      "optionC": "Mark Zuckerberg",
+      "optionD": "Larry Page",
+      "correctAnswer": "A",
+      "explanation": "Microsoft a été fondé par Bill Gates et Paul Allen en 1975."
+    },
+    {
+      "question": "Qui a fondé Apple ?",
+      "optionA": "Steve Jobs, Steve Wozniak et Ronald Wayne",
+      "optionB": "Bill Gates",
+      "optionC": "Mark Zuckerberg",
+      "optionD": "Elon Musk",
+      "correctAnswer": "A",
+      "explanation": "Apple a été fondée en 1976 par Jobs, Wozniak et Wayne."
+    },
+    {
+      "question": "Qui a fondé Facebook ?",
+      "optionA": "Mark Zuckerberg",
+      "optionB": "Steve Jobs",
+      "optionC": "Bill Gates",
+      "optionD": "Larry Page",
+      "correctAnswer": "A",
+      "explanation": "Mark Zuckerberg a fondé Facebook en 2004."
+    },
+    {
+      "question": "Qui a fondé Tesla (entreprise) ?",
+      "optionA": "Martin Eberhard et Marc Tarpenning (Elon Musk a rejoint ensuite)",
+      "optionB": "Elon Musk seul",
+      "optionC": "Steve Jobs",
+      "optionD": "Jeff Bezos",
+      "correctAnswer": "A",
+      "explanation": "Tesla a été fondée par Eberhard et Tarpenning en 2003; Musk a investi et est devenu CEO."
+    },
+    {
+      "question": "Qui a fondé Amazon ?",
+      "optionA": "Jeff Bezos",
+      "optionB": "Elon Musk",
+      "optionC": "Bill Gates",
+      "optionD": "Mark Zuckerberg",
+      "correctAnswer": "A",
+      "explanation": "Jeff Bezos a fondé Amazon en 1994."
+    },
+    {
+      "question": "Quel est le symbole chimique de l'or ?",
+      "optionA": "Au",
+      "optionB": "Ag",
+      "optionC": "Or",
+      "optionD": "Go",
+      "correctAnswer": "A",
+      "explanation": "L'or a pour symbole Au (du latin aurum)."
+    },
+    {
+      "question": "Quel est le symbole chimique de l'argent ?",
+      "optionA": "Ag",
+      "optionB": "Au",
+      "optionC": "Ar",
+      "optionD": "Si",
+      "correctAnswer": "A",
+      "explanation": "L'argent a pour symbole Ag (du latin argentum)."
+    },
+    {
+      "question": "Quel est le symbole chimique du fer ?",
+      "optionA": "Fe",
+      "optionB": "Fr",
+      "optionC": "Ir",
+      "optionD": "F",
+      "correctAnswer": "A",
+      "explanation": "Le fer a pour symbole Fe (du latin ferrum)."
+    },
+    {
+      "question": "Quel est l'élément le plus abondant dans l'univers ?",
+      "optionA": "L'hydrogène",
+      "optionB": "L'oxygène",
+      "optionC": "L'hélium",
+      "optionD": "Le carbone",
+      "correctAnswer": "A",
+      "explanation": "L'hydrogène est l'élément le plus abondant (~75% de la matière)."
+    },
+    {
+      "question": "Quel est l'élément le plus abondant dans la croûte terrestre ?",
+      "optionA": "L'oxygène",
+      "optionB": "Le silicium",
+      "optionC": "Le fer",
+      "optionD": "L'hydrogène",
+      "correctAnswer": "A",
+      "explanation": "L'oxygène (~46%) est l'élément le plus abondant de la croûte terrestre."
+    },
+    {
+      "question": "Quel est le plus grand pays d'Afrique par superficie ?",
+      "optionA": "L'Algérie",
+      "optionB": "La RD Congo",
+      "optionC": "Le Soudan",
+      "optionD": "La Libye",
+      "correctAnswer": "A",
+      "explanation": "L'Algérie (2 382 000 km²) est le plus grand pays d'Afrique."
+    },
+    {
+      "question": "Quel est le lac le plus profond du monde ?",
+      "optionA": "Le lac Baïkal",
+      "optionB": "Le lac Tanganyika",
+      "optionC": "La mer Caspienne",
+      "optionD": "Le lac Victoria",
+      "correctAnswer": "A",
+      "explanation": "Le lac Baïkal (Russie) est le plus profond (1 642 m)."
+    },
+    {
+      "question": "Quelle est la monnaie du Japon ?",
+      "optionA": "Le yen",
+      "optionB": "Le yuan",
+      "optionC": "Le won",
+      "optionD": "Le rupee",
+      "correctAnswer": "A",
+      "explanation": "La monnaie du Japon est le yen (¥)."
+    },
+    {
+      "question": "Quelle est la monnaie de la Suisse ?",
+      "optionA": "Le franc suisse",
+      "optionB": "L'euro",
+      "optionC": "Le dollar",
+      "optionD": "La livre",
+      "correctAnswer": "A",
+      "explanation": "La Suisse utilise le franc suisse (CHF)."
+    },
+    {
+      "question": "Quelle est la monnaie du Royaume-Uni ?",
+      "optionA": "La livre sterling",
+      "optionB": "L'euro",
+      "optionC": "Le dollar",
+      "optionD": "Le franc",
+      "correctAnswer": "A",
+      "explanation": "Le Royaume-Uni utilise la livre sterling (£)."
+    },
+    {
+      "question": "Combien de couleurs y a-t-il dans un arc-en-ciel ?",
+      "optionA": "7",
+      "optionB": "5",
+      "optionC": "6",
+      "optionD": "8",
+      "correctAnswer": "A",
+      "explanation": "L'arc-en-ciel a 7 couleurs: rouge, orange, jaune, vert, bleu, indigo, violet."
+    },
+    {
+      "question": "Quelle planète est la plus proche du Soleil ?",
+      "optionA": "Mercure",
+      "optionB": "Vénus",
+      "optionC": "La Terre",
+      "optionD": "Mars",
+      "correctAnswer": "A",
+      "explanation": "Mercure est la planète la plus proche du Soleil."
+    },
+    {
+      "question": "Quelle planète est la plus grande du système solaire ?",
+      "optionA": "Jupiter",
+      "optionB": "Saturne",
+      "optionC": "Neptune",
+      "optionD": "Uranus",
+      "correctAnswer": "A",
+      "explanation": "Jupiter est la plus grande planète du système solaire."
+    },
+    {
+      "question": "Combien de planètes compte le système solaire ?",
+      "optionA": "8",
+      "optionB": "9",
+      "optionC": "7",
+      "optionD": "10",
+      "correctAnswer": "A",
+      "explanation": "8 planètes depuis 2006 (Pluton rétrogradé en planète naine)."
+    },
+    {
+      "question": "Quelle est la vitesse du son dans l'air à 20°C ?",
+      "optionA": "Environ 340 m/s",
+      "optionB": "300 000 km/s",
+      "optionC": "1 000 m/s",
+      "optionD": "150 m/s",
+      "correctAnswer": "A",
+      "explanation": "Le son voyage à environ 340 m/s dans l'air à 20°C."
     }
   ]
 }

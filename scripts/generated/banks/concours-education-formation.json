@@ -287,6 +287,357 @@
       "optionD": "La décentration",
       "correctAnswer": "B",
       "explanation": "L'assimilation est le processus par lequel l'enfant intègre de nouvelles informations dans ses schèmes cognitifs existants sans les modifier, tandis que l'accommodation implique de modifier ces schèmes pour intégrer de nouvelles informations."
+    },
+    {
+      "question": "Selon la théorie piagétienne, quel est le mécanisme principal de l'équilibration cognitive?",
+      "optionA": "L'assimilation",
+      "optionB": "L'accommodation",
+      "optionC": "L'interaction",
+      "optionD": "La réversibilité",
+      "correctAnswer": "B",
+      "explanation": "L'équilibration cognitive implique l'accommodation qui modifie les schèmes existants pour intégrer de nouvelles informations, créant un nouvel équilibre."
+    },
+    {
+      "question": "Quelle est la principale différence entre les approches de Piaget et Vygotski concernant le développement cognitif?",
+      "optionA": "Piaget insiste sur l'importance du milieu social, Vygotski sur l'individuel",
+      "optionB": "Piaget met l'accent sur les stades développementaux, Vygotski sur la zone proximale de développement",
+      "optionC": "Piaget croit en l'innéisme, Vygotski en l'empirisme",
+      "optionD": "Piaget se concentre sur l'émotionnel, Vygotski sur le cognitif",
+      "correctAnswer": "B",
+      "explanation": "Vygotski introduit le concept de zone proximale de développement (ZPD) soulignant l'importance de l'interaction sociale dans l'apprentissage, tandis que Piaget insiste sur les stades universels du développement cognitif."
+    },
+    {
+      "question": "Dans la taxonomie de Bloom, quel domaine inclut les compétences d'analyse, de synthèse et d'évaluation?",
+      "optionA": "Domaine cognitif",
+      "optionB": "Domaine affectif",
+      "optionC": "Domaine psychomoteur",
+      "optionD": "Domaine métacognitif",
+      "correctAnswer": "A",
+      "explanation": "Le domaine cognitif de Bloom comprend six niveaux, dont les plus élevés sont l'analyse, la synthèse et l'évaluation qui impliquent des compétences de pensée de haut niveau."
+    },
+    {
+      "question": "Selon la théorie des intelligences multiples de Gardner, quelle intelligence est primordiale pour un musicien?",
+      "optionA": "Intelligence logico-mathématique",
+      "optionB": "Intelligence spatiale",
+      "optionC": "Intelligence musicale",
+      "optionD": "Intelligence kinesthésique",
+      "correctAnswer": "C",
+      "explanation": "L'intelligence musicale est l'une des huit intelligences identifiées par Gardner, spécifiquement liée à la capacité de comprendre, créer et manipuler des formes musicales."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de l'évaluation formative selon les principes didactiques contemporains?",
+      "optionA": "Elle a lieu uniquement en fin de cycle",
+      "optionB": "Elle sert à certifier les acquis",
+      "optionC": "Elle oriente l'enseignement et l'apprentissage",
+      "optionD": "Elle est exclusivement quantitative",
+      "correctAnswer": "C",
+      "explanation": "L'évaluation formative est continue et sert à ajuster le processus d'enseignement et d'apprentissage en fonction des besoins identifiés des élèves."
+    },
+    {
+      "question": "Quelle est la fonction principale de la médiation selon Vygotski?",
+      "optionA": "Développer l'autonomie de l'apprenant",
+      "optionB": "Transmettre les savoirs établis",
+      "optionC": "Contrôler le comportement de l'élève",
+      "optionD": "Évaluer les connaissances préalables",
+      "correctAnswer": "A",
+      "explanation": "La médiation chez Vygotski vise à développer l'autonomie de l'apprenant en l'aidant à s'approprier des outils culturels et cognitifs grâce à l'interaction avec des pairs ou un expert."
+    },
+    {
+      "question": "Dans la théorie piagétienne, quel stade correspond à la capacité de raisonnement hypothético-déductif?",
+      "optionA": "Stade sensorimoteur",
+      "optionB": "Stade préopératoire",
+      "optionC": "Stade des opérations concrètes",
+      "optionD": "Stade des opérations formelles",
+      "correctAnswer": "D",
+      "explanation": "Le stade des opérations formelles (à partir de 11 ans) permet le raisonnement hypothético-déductique, caractérisé par la capacité à raisonner sur des abstractions et des possibilités."
+    },
+    {
+      "question": "Quelle approche didactique s'inspire directement de la théorie de Vygotski?",
+      "optionA": "Pédagogie par projet",
+      "optionB": "Pédagogie Montessori",
+      "optionC": "Pédagogie de la résolution de problèmes",
+      "optionD": "Pédagogie explicite",
+      "correctAnswer": "C",
+      "explanation": "La pédagogie de la résolution de problèmes s'inspire de Vygotski en mettant l'accent sur l'interaction sociale et la construction des connaissances à travers des défis cognitifs."
+    },
+    {
+      "question": "Selon la taxonomie révisée de Anderson et Krathwohl, quel niveau est supérieur à 'Comprendre' mais inférieur à 'Appliquer'?",
+      "optionA": "Rappeler",
+      "optionB": "Analyser",
+      "optionC": "Évaluer",
+      "optionD": "Créer",
+      "correctAnswer": "A",
+      "explanation": "La taxonomie révisée établit une hiérarchie: Rappeler < Comprendre < Appliquer < Analyser < Évaluer < Créer."
+    },
+    {
+      "question": "Quelle intelligence de Gardner est particulièrement développée chez un poète?",
+      "optionA": "Intelligence linguistique",
+      "optionB": "Intelligence logico-mathématique",
+      "optionC": "Intelligence spatiale",
+      "optionD": "Intelligence interpersonnelle",
+      "correctAnswer": "A",
+      "explanation": "L'intelligence linguistique implique la maîtrise du langage, de la syntaxe, de la sémantique et la capacité à utiliser le langage de manière créative, essentielle pour la poésie."
+    },
+    {
+      "question": "Quelle est la principale limite de l'approche piagétienne selon les critiques contemporaines?",
+      "optionA": "Sous-estimation des capacités des enfants",
+      "optionB": "Survalorisation du développement social",
+      "optionC": "Négligence des différences culturelles",
+      "optionD": "Trop d'accent sur l'émotionnel",
+      "correctAnswer": "A",
+      "explanation": "Les critiques modernes suggèrent que Piaget sous-estime les capacités cognitives des enfants, notamment dans les domaines sociaux et culturels."
+    },
+    {
+      "question": "Dans la didactique des sciences, que permet le 'conflit socio-cognitif'?",
+      "optionA": "La simple transmission des savoirs",
+      "optionB": "La découverte passive des concepts",
+      "optionC": "La révision des conceptions initiales",
+      "optionD": "L'évaluation sommative",
+      "correctAnswer": "C",
+      "explanation": "Le conflit socio-cognitif permet à l'apprenant de prendre conscience de ses conceptions initiales et de les réviser à travers la confrontation avec d'autres perspectives."
+    },
+    {
+      "question": "Selon Bloom, quel verbe d'action correspond au niveau 'Analyser'?",
+      "optionA": "Décrire",
+      "optionB": "Comparer",
+      "optionC": "Évaluer",
+      "optionD": "Créer",
+      "correctAnswer": "B",
+      "explanation": "Dans la taxonomie originale de Bloom, 'comparer' (et d'autres verbes comme 'distinguer', 'organiser') correspondent au niveau 'Analyser' qui implique de décomposer l'information en parties."
+    },
+    {
+      "question": "Quelle est la contribution principale de la théorie des intelligences multiples à la pédagogie?",
+      "optionA": "Standardisation des programmes",
+      "optionB": "Individualisation des approches pédagogiques",
+      "optionC": "Renforcement des évaluations normatives",
+      "optionD": "Diminution du rôle de l'enseignant",
+      "correctAnswer": "B",
+      "explanation": "La théorie de Gardner favorise l'individualisation des approches pédagogiques en reconnaissant et en développant diverses formes d'intelligence chez les apprenants."
+    },
+    {
+      "question": "Quelle est la fonction principale de l'évaluation certificative?",
+      "optionA": "Adapter l'enseignement",
+      "optionB": "Certifier les acquis à un moment donné",
+      "optionC": "Identifier les difficultés d'apprentissage",
+      "optionD": "Promouvoir l'autonomie",
+      "correctAnswer": "B",
+      "explanation": "L'évaluation certificative sert à valider et certifier les connaissances et compétences à un moment précis, souvent pour la certification ou la progression."
+    },
+    {
+      "question": "Dans la pédagogie de projet, quel élément est primordial selon Dewey et Vygotski?",
+      "optionA": "La transmission des savoirs académiques",
+      "optionB": "L'expérience active et la résolution de problèmes",
+      "optionC": "La mémorisation des informations",
+      "optionD": "L'évaluation normative",
+      "correctAnswer": "B",
+      "explanation": "La pédagogie de projet met l'accent sur l'expérience active et la résolution de problèmes, en accord avec les idées de Dewey sur l'apprentissage par l'expérience et Vygotski sur l'interaction sociale."
+    },
+    {
+      "question": "Quelle est la principale différence entre l'évaluation formative et l'évaluation sommative?",
+      "optionA": "La première est quantitative, la seconde qualitative",
+      "optionB": "La première sert à améliorer l'apprentissage, la seconde à certifier",
+      "optionC": "La première concerne les adultes, la seconde les enfants",
+      "optionD": "La première est orale, la seconde écrite",
+      "correctAnswer": "B",
+      "explanation": "L'évaluation formative vise à améliorer le processus d'apprentissage, tandis que l'évaluation sommative (ou certificative) sert à certifier les acquis à un moment donné."
+    },
+    {
+      "question": "Selon la théorie de Piaget, quel mécanisme permet l'adaptation aux nouvelles situations?",
+      "optionA": "L'imitation",
+      "optionB": "L'assimilation et l'accommodation",
+      "optionC": "La motivation intrinsèque",
+      "optionD": "La rétroaction",
+      "correctAnswer": "B",
+      "explanation": "L'adaptation cognitive selon Piaget repose sur deux mécanismes complémentaires: l'assimilation (intégration de nouvelles informations dans les schèmes existants) et l'accommodation (modification des schèmes pour intégrer de nouvelles informations)."
+    },
+    {
+      "question": "Selon la théorie piagétienne, quel stade du développement cognitif correspond à la capacité de raisonnement hypothético-déductif?",
+      "optionA": "Stade sensorimoteur (0-2 ans)",
+      "optionB": "Stade préopératoire (2-7 ans)",
+      "optionC": "Stade des opérations formelles (11-15 ans)",
+      "optionD": "Stade des opérations concrètes (7-11 ans)",
+      "correctAnswer": "C",
+      "explanation": "Le stade des opérations formelles (11-15 ans) est caractérisé par l'émergence du raisonnement hypothético-déductif, permettant de penser des possibilités abstraites et de tirer des conclusions logiques."
+    },
+    {
+      "question": "Dans la théorie vygotskienne, le 'Zone Proximale de Développement' (ZPD) désigne:",
+      "optionA": "Le niveau de développement actuel de l'enfant",
+      "optionB": "La différence entre le niveau de développement potentiel et le niveau de développement actuel",
+      "optionC": "Les compétences acquises sans aide extérieure",
+      "optionD": "Les limites cognitives de l'apprenant",
+      "correctAnswer": "B",
+      "explanation": "La ZPD est la différence entre ce que l'apprenant peut faire seul (niveau de développement actuel) et ce qu'il peut faire avec l'aide d'autrui (niveau de développement potentiel)."
+    },
+    {
+      "question": "Selon Howard Gardner, quel type d'intelligence est le mieux représenté par un compositeur de musique?",
+      "optionA": "Intelligence linguistique",
+      "optionB": "Intelligence logico-mathématique",
+      "optionC": "Intelligence musicale",
+      "optionD": "Intelligence spatiale",
+      "correctAnswer": "C",
+      "explanation": "Gardner identifie l'intelligence musicale comme la capacité de créer, percevoir et manipuler des schémas musicaux, ce qui correspond parfaitement aux compétences d'un compositeur."
+    },
+    {
+      "question": "Dans la taxonomie de Bloom, quel niveau cognitif est immédiatement supérieur à 'Comprendre'?",
+      "optionA": "Mémoriser",
+      "optionB": "Appliquer",
+      "optionC": "Analyser",
+      "optionD": "Évaluer",
+      "correctAnswer": "B",
+      "explanation": "La taxonomie de Bloom ordonne les processus cognitifs par complexité croissante: Mémoriser → Comprendre → Appliquer → Analyser → Évaluer → Créer."
+    },
+    {
+      "question": "Quelle approche didactique se base sur l'idée que l'apprentissage est une construction sociale?",
+      "optionA": "Constructivisme radical",
+      "optionB": "Behaviorisme",
+      "optionC": "Connectivisme",
+      "optionD": "Socio-constructivisme",
+      "correctAnswer": "D",
+      "explanation": "Le socio-constructivisme, associé à Vygotski, considère que l'apprentissage est un processus social qui se produit à travers l'interaction avec d'autres personnes et l'environnement culturel."
+    },
+    {
+      "question": "Selon Piaget, la 'déséquilibration' cognitive est:",
+      "optionA": "Un état d'équilibre stable",
+      "optionB": "Un processus d'adaptation aux nouvelles informations",
+      "optionC": "Un signe de développement cognitif停滞",
+      "optionD": "Une perturbation pathologique",
+      "correctAnswer": "B",
+      "explanation": "La déséquilibration est le processus par lequel l'apprenant est confronté à de nouvelles informations qui contredisent ses schémas existants, menant à une réorganisation cognitive."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de l'évaluation formative selon les principes pédagogiques modernes?",
+      "optionA": "Elle a lieu uniquement en fin de programme",
+      "optionB": "Elle sert à certifier les acquis",
+      "optionC": "Elle permet d'ajuster l'enseignement en cours de processus",
+      "optionD": "Elle est uniquement quantitative",
+      "correctAnswer": "C",
+      "explanation": "L'évaluation formative est continue et sert à ajuster les pratiques pédagogiques en fonction des besoins identifiés chez les apprenants, contrairement à l'évaluation sommative qui certifie les acquis."
+    },
+    {
+      "question": "Dans la théorie des multiples intelligences de Gardner, quel type d'intelligence est associé à la capacité de comprendre autrui?",
+      "optionA": "Intelligence intrapersonnelle",
+      "optionB": "Intelligence interpersonnelle",
+      "optionC": "Intelligence corporelle-kinesthésique",
+      "optionD": "Intelligence naturelle",
+      "correctAnswer": "B",
+      "explanation": "L'intelligence interpersonnelle concerne la capacité de comprendre les intentions, motivations et désirs d'autrui et d'interagir efficacement."
+    },
+    {
+      "question": "Quelle est la principale limite de la taxonomie originale de Bloom selon les critiques contemporains?",
+      "optionA": "Trop axée sur les compétences pratiques",
+      "optionB": "Hiérarchie rigide et linéaire des processus cognitifs",
+      "optionC": "Insuffisamment centrée sur l'apprenant",
+      "optionD": "Trop axée sur l'évaluation formative",
+      "correctAnswer": "B",
+      "explanation": "La taxonomie originale de Bloom a été critiquée pour sa hiérarchie trop rigide des processus cognitifs, alors que la recherche contemporaine suggère que ces processus peuvent être plus interconnectés."
+    },
+    {
+      "question": "Selon Vygotski, quel rôle joue le 'langage' dans le développement cognitif?",
+      "optionA": "Il est uniquement un outil de communication",
+      "optionB": "Il est la base de la pensée et de l'apprentissage",
+      "optionC": "Il n'a d'importance qu'après 7 ans",
+      "optionD": "Il est une distraction cognitive",
+      "correctAnswer": "B",
+      "explanation": "Pour Vygotski, le langage joue un rôle central dans le développement cognitif, servant d'outil de pensée et de médiation sociale dans l'apprentissage."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre pédagogie traditionnelle et pédagogie différenciée?",
+      "optionA": "La première est centrée sur l'enseignant, la seconde sur l'apprenant",
+      "optionB": "La première utilise uniquement des méthodes expositives, la seconde uniquement des méthodes actives",
+      "optionC": "La première est destinée aux adultes, la seconde aux enfants",
+      "optionD": "La première est évaluative, la seconde non",
+      "correctAnswer": "A",
+      "explanation": "La pédagogie traditionnelle est centrée sur l'enseignant et le contenu transmis, tandis que la pédagogie différenciée est centrée sur l'apprenant et ses besoins spécifiques."
+    },
+    {
+      "question": "Dans la théorie piagétienne, quel processus permet l'adaptation aux nouvelles informations?",
+      "optionA": "Assimilation et accommodation",
+      "optionB": "Mémorisation et répétition",
+      "optionC": "Imitation et modélisation",
+      "optionD": "Habituation et sensibilisation",
+      "correctAnswer": "A",
+      "explanation": "L'assimilation consiste à intégrer de nouvelles informations dans les schémas existants, tandis que l'accommodation modifie ces schémas pour s'adapter aux nouvelles informations."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de l'évaluation authentique?",
+      "optionA": "Elle se limite aux tests standardisés",
+      "optionB": "Elle évalue les compétences dans des contextes réels ou proches de la réalité",
+      "optionC": "Elle ne prend en compte que les connaissances théoriques",
+      "optionD": "Elle est exclusivement quantitative",
+      "correctAnswer": "B",
+      "explanation": "L'évaluation authentique mesure les compétences des apprenants dans des contextes qui reflètent leur utilisation dans la vie réelle ou professionnelle."
+    },
+    {
+      "question": "Selon la théorie des intelligences multiples, quel type d'intelligence serait prédominant chez un architecte?",
+      "optionA": "Intelligence logico-mathématique",
+      "optionB": "Intelligence spatiale",
+      "optionC": "Intelligence linguistique",
+      "optionD": "Intelligence corporelle-kinesthésique",
+      "correctAnswer": "B",
+      "explanation": "L'intelligence spatiale concerne la capacité de visualiser mentalement des objets en 3D et de manipuler des espaces, compétences essentielles pour l'architecture."
+    },
+    {
+      "question": "Quelle approche pédagogique s'inspire directement de la théorie vygotskienne?",
+      "optionA": "Apprentissage par problème",
+      "optionB": "Pédagogie du projet",
+      "optionC": "Enseignement direct",
+      "optionD": "Pédagogie de la proxémie",
+      "correctAnswer": "B",
+      "explanation": "La pédagogie du projet s'inspire de Vygotski en mettant l'accent sur l'apprentissage social, la collaboration et la résolution de problèmes dans des contextes signifiants."
+    },
+    {
+      "question": "Dans la taxonomie révisée de Anderson et Krathwohl, quel niveau remplace 'Créer' comme niveau le plus élevé?",
+      "optionA": "Évaluer",
+      "optionB": "Appliquer",
+      "optionC": "Créer",
+      "optionD": "Raisonner",
+      "correctAnswer": "C",
+      "explanation": "La taxonomie révisée de Anderson et Krathwohl (2001) a inversé la structure originale, plaçant 'Créer' comme le niveau cognitif le plus élevé, au-dessus d'Évaluer."
+    },
+    {
+      "question": "Quelle est la différence entre l'objectif pédagogique et le compétence?",
+      "optionA": "L'objectif est spécifique, la compétence est générale",
+      "optionB": "L'objectif est observable, la compétence ne l'est pas",
+      "optionC": "L'objectif est mesurable, la compétence ne l'est pas",
+      "optionD": "Il n'y a pas de différence",
+      "correctAnswer": "A",
+      "explanation": "Un objectif pédagogique est spécifique et détermine ce que l'apprenant doit savoir ou faire à la fin d'une séquence d'apprentissage, tandis qu'une compétence est une capacité plus globale et transversale."
+    },
+    {
+      "question": "Selon Piaget, la 'conservation' est acquise à quel stade développemental?",
+      "optionA": "Stade sensorimoteur",
+      "optionB": "Stade préopératoire",
+      "optionC": "Stade des opérations concrètes",
+      "optionD": "Stade des opérations formelles",
+      "correctAnswer": "C",
+      "explanation": "La conservation, la compréhension que certaines propriétés d'un objet restent inchangées malgré des modifications de sa forme ou de son apparence, est acquise au stade des opérations concrètes (7-11 ans)."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de l'approche pédagogique 'Apprentissage par Problème' (PBL)?",
+      "optionA": "L'enseignant fournit toutes les solutions possibles",
+      "optionB": "L'apprenant est acteur de sa construction de savoir",
+      "optionC": "L'évaluation est uniquement formative",
+      "optionD": "Le contenu est transmis de manière frontale",
+      "correctAnswer": "B",
+      "explanation": "L'approche PBL met l'apprenant au centre de son apprentissage, l'amenant à résoudre des problèmes authentiques en construisant activement ses connaissances."
+    },
+    {
+      "question": "Dans la théorie vygotskienne, le 'More Knowledgeable Other' (MKO) désigne:",
+      "optionA": "L'apprenant lui-même",
+      "optionB": "Une personne ayant plus de connaissances ou d'expertise que l'apprenant",
+      "optionC": "Le programme d'enseignement standardisé",
+      "optionD": "Les pairs de même niveau de compétence",
+      "correctAnswer": "B",
+      "explanation": "Le MKO est toute personne ayant plus de connaissances ou d'expertise que l'apprenant et pouvant l'aider dans son processus d'apprentissage."
+    },
+    {
+      "question": "Quelle est la principale critique adressée à la théorie des intelligences multiples de Gardner?",
+      "optionA": "Elle est trop restrictive",
+      "optionB": "Elle manque de base empirique solide",
+      "optionC": "Elle est trop axée sur les tests standardisés",
+      "optionD": "Elle ne prend pas en compte les différences individuelles",
+      "correctAnswer": "B",
+      "explanation": "Bien que populaire, la théorie de Gardner a été critiquée pour sa relative manque de base empirique solide et sa difficulté à être opérationnalisée de manière fiable dans les contextes éducatifs."
     }
   ]
 }

@@ -284,6 +284,87 @@
       "optionD": "La révolte contre le colonialisme",
       "correctAnswer": "C",
       "explanation": "Crépuscule des temps anciens explore spécifiquement la métamorphose des sociétés traditionnelles africaines."
+    },
+    {
+      "question": "Quelle est la bonne orthographe ?",
+      "optionA": "Un acompte",
+      "optionB": "Un acompt",
+      "optionC": "Un acquompte",
+      "optionD": "Un account",
+      "correctAnswer": "A",
+      "explanation": "On écrit 'un acompte' (sans 'm' final)."
+    },
+    {
+      "question": "Quel est le pluriel de 'un ail' ?",
+      "optionA": "Des aulx",
+      "optionB": "Des ails",
+      "optionC": "Des ail",
+      "optionD": "Des ailes",
+      "correctAnswer": "A",
+      "explanation": "Le pluriel de 'ail' est 'aulx' (rare, on dit souvent 'des têtes d'ail')."
+    },
+    {
+      "question": "Quel est le féminin de 'un ambassadeur' ?",
+      "optionA": "Une ambassadrice",
+      "optionB": "Une ambassadeuse",
+      "optionC": "Une ambassadeure",
+      "optionD": "Une ambassade",
+      "correctAnswer": "A",
+      "explanation": "Le féminin d''ambassadeur' est 'ambassadrice'."
+    },
+    {
+      "question": "Conjugaison : 'Nous _____ (aller) au marché hier.'",
+      "optionA": "allâmes",
+      "optionB": "sommes allés",
+      "optionC": "irons",
+      "optionD": "allons",
+      "correctAnswer": "B",
+      "explanation": "Passé composé: 'nous sommes allés' (aller utilise l'auxiliaire être)."
+    },
+    {
+      "question": "Quelle figure de style : 'Le linceul de la nuit' ?",
+      "optionA": "Une métaphore",
+      "optionB": "Une comparaison",
+      "optionC": "Une hyperbole",
+      "optionD": "Une litote",
+      "correctAnswer": "A",
+      "explanation": "C'est une métaphore (assimilation sans mot de comparaison)."
+    },
+    {
+      "question": "Quelle figure de style : 'Je meurs de faim' ?",
+      "optionA": "Une hyperbole",
+      "optionB": "Une métaphore",
+      "optionC": "Une litote",
+      "optionD": "Un euphémisme",
+      "correctAnswer": "A",
+      "explanation": "C'est une hyperbole (exagération)."
+    },
+    {
+      "question": "Quelle figure de style : 'Va, je ne te hais point' (Le Cid) ?",
+      "optionA": "Une litote",
+      "optionB": "Une hyperbole",
+      "optionC": "Une métaphore",
+      "optionD": "Un euphémisme",
+      "correctAnswer": "A",
+      "explanation": "C'est une litote (dire moins pour exprimer plus: 'je t'aime')."
+    },
+    {
+      "question": "Qui a écrit 'Cahier d'un retour au pays natal' ?",
+      "optionA": "Aimé Césaire",
+      "optionB": "Léopold Sédar Senghor",
+      "optionC": "Mongo Beti",
+      "optionD": "Cheikh Hamidou Kane",
+      "correctAnswer": "A",
+      "explanation": "Aimé Césaire a écrit ce recueil fondateur de la négritude (1939)."
+    },
+    {
+      "question": "Qui a écrit 'L'Enfant noir' ?",
+      "optionA": "Camara Laye",
+      "optionB": "Cheikh Hamidou Kane",
+      "optionC": "Ahmadou Kourouma",
+      "optionD": "Mariama Bâ",
+      "correctAnswer": "A",
+      "explanation": "Camara Laye a écrit 'L'Enfant noir' (1953)."
     }
   ],
   "subcategory": "Français",

@@ -383,6 +383,375 @@
       "optionD": "Canopée",
       "correctAnswer": "B",
       "explanation": "Le cours indique que le début d'une forêt s'appelle 'aubier'."
+    },
+    {
+      "question": "Qui est Thomas Sankara et quel était son rôle principal dans l'histoire du Burkina Faso?",
+      "optionA": "Un ancien président du Mali qui a inspiré les mouvements progressistes en Afrique de l'Ouest",
+      "optionB": "Le premier président du Burkina Faso après l'indépendance, connu pour son conservatisme économique",
+      "optionC": "Le leader révolutionnaire burkinabé qui a pris le pouvoir par un coup d'État en 1983 et a initié des transformations sociales et économiques radicales",
+      "optionD": "Un ancien Premier ministre du Burkina Faso connu pour sa politique d'austérité économique",
+      "correctAnswer": "C",
+      "explanation": "Thomas Sankara a pris le pouvoir par un coup d'État en 1983 et a initié des transformations radicales au Burkina Faso, changeant le nom du pays de Haute-Volta à Burkina Faso en 1984, avec des politiques axées sur l'autosuffisance, l'émancipation des femmes et la lutte contre la corruption."
+    },
+    {
+      "question": "Quelle est la capitale du Burkina Faso et combien de régions le pays compte-t-il actuellement?",
+      "optionA": "Bobo-Dioulasso et 13 régions",
+      "optionB": "Ouagadougou et 45 provinces",
+      "optionC": "Ouagadougou et 17 régions",
+      "optionD": "Bobo-Dioulasso et 47 provinces",
+      "correctAnswer": "C",
+      "explanation": "La capitale du Burkina Faso est Ouagadougou et le pays est divisé en 17 régions administratives, qui sont elles-mêmes subdivisées en 45 provinces (et non 47 comme mentionné dans l'option D)."
+    },
+    {
+      "question": "Qu'est-ce que le FESPACO?",
+      "optionA": "Un festival de musique traditionnelle burkinabé",
+      "optionB": "Le Festival Panafricain du Cinéma et de la Télévision de Ouagadougou, événement biennal majeur du cinéma africain",
+      "optionC": "Une organisation non gouvernementale pour la protection de l'environnement au Burkina Faso",
+      "optionD": "Un programme d'échange culturel entre les pays francophones d'Afrique",
+      "correctAnswer": "B",
+      "explanation": "Le FESPACO (Festival Panafricain du Cinéma et de la Télévision de Ouagadougou) est un événement biennal majeur qui se tient à Ouagadougou et est considéré comme l'un des festivals de cinéma les plus importants en Afrique et dans le monde."
+    },
+    {
+      "question": "Que signifie l'acronyme SIAO?",
+      "optionA": "Salon International de l'Artisanat de Ouagadougou",
+      "optionB": "Syndicat des Importateurs et Exportateurs d'Artisanat",
+      "optionC": "Service d'Information et d'Animation pour l'Artisanat Ouagalais",
+      "optionD": "Société d'Importation d'Artisanat d'Origine",
+      "correctAnswer": "A",
+      "explanation": "Le SIAO (Salon International de l'Artisanat de Ouagadougou) est une foire internationale qui se tient tous les deux ans à Ouagadougou et met en valeur l'artisanat africain, particulièrement burkinabé."
+    },
+    {
+      "question": "Qui est Ibrahim Traoré et quel est son rôle actuel dans la politique burkinabè?",
+      "optionA": "Un ancien président du Burkina Faso dans les années 1990",
+      "optionB": "Le leader du parti d'opposition principale, le Congrès pour la Démocratie et le Progrès (CDP)",
+      "optionC": "Le chef de l'État actuel du Burkina Faso depuis le coup d'État d'octobre 2022",
+      "optionD": "Un diplomate burkinabé représentant le pays à l'ONU",
+      "correctAnswer": "C",
+      "explanation": "Ibrahim Traoré est le chef de l'État actuel du Burkina Faso, ayant pris le pouvoir par un coup d'État en octobre 2022, succédant à Paul-Henri Sandaogo Damiba qui avait lui-même pris le pouvoir plus tôt cette année."
+    },
+    {
+      "question": "Que signifie l'acronyme AES dans le contexte éducatif burkinabè?",
+      "optionA": "Académie des Études Supérieures",
+      "optionB": "Atelier d'Épistémologie Scientifique",
+      "optionC": "Accès à l'Enseignement Supérieur",
+      "optionD": "Agence d'Évaluation et de Suivi",
+      "correctAnswer": "C",
+      "explanation": "AES (Accès à l'Enseignement Supérieur) est un programme burkinabè visant à améliorer l'accès et la qualité de l'enseignement supérieur dans le pays."
+    },
+    {
+      "question": "Qui est Ousmane Bougma dans l'histoire contemporaine du Burkina Faso?",
+      "optionA": "Un ancien président du pays dans les années 1970",
+      "optionB": "Un célèbre musicien traditionnel burkinabè",
+      "optionC": "Un ancien ministre des Affaires étrangères sous Thomas Sankara",
+      "optionD": "Le fondateur du premier parti politique du Burkina Faso après l'indépendance",
+      "correctAnswer": "C",
+      "explanation": "Ousmane Bougma a été ministre des Affaires étrangères sous le gouvernement de Thomas Sankara, jouant un rôle important dans la diplomatie révolutionnaire burkinabè."
+    },
+    {
+      "question": "Quelle est la langue officielle du Burkina Faso et combien de langues nationales sont reconnues?",
+      "optionA": "Le français est la langue officielle et environ 60 langues nationales sont reconnues",
+      "optionB": "Le mooré est la langue officielle et le français est une langue régionale",
+      "optionC": "Le français est la langue officielle et il n'y a pas de langues nationales officiellement reconnues",
+      "optionD": "Le dioula est la langue officielle et environ 30 langues nationales sont reconnues",
+      "correctAnswer": "A",
+      "explanation": "Le français est la langue officielle du Burkina Faso, hérité de la colonisation française, et le pays reconnaît environ 60 langues nationales, reflétant sa grande diversité ethnique et linguistique."
+    },
+    {
+      "question": "Quel événement majeur a marqué la chute de Thomas Sankara en 1987?",
+      "optionA": "Une révolution populaire menée par les étudiants",
+      "optionB": "Un coup d'État militaire orchestré par Blaise Compaoré",
+      "optionC": "Une intervention militaire étrangère",
+      "optionD": "Une élection présidentielle qui a vu sa défaite",
+      "correctAnswer": "B",
+      "explanation": "Thomas Sankara a été renversé et assassiné lors d'un coup d'État militaire le 15 octobre 1987, orchestré par son ancien compagnon Blaise Compaoré, qui a ensuite pris le pouvoir."
+    },
+    {
+      "question": "Quelle est la caractéristique principale du climat burkinabè?",
+      "optionA": "Climat équatorial tropical avec des précipitations abondantes toute l'année",
+      "optionB": "Climat désertique avec des températures extrêmes et des précipitations rares",
+      "optionC": "Climat de savane tropicale avec une saison des pluies et une saison sèche",
+      "optionD": "Climat méditerranéen avec des étés chauds et des hivers doux",
+      "correctAnswer": "C",
+      "explanation": "Le Burkina Faso possède un climat de savane tropicale caractérisé par une saison des pluies (juin à octobre) et une saison sèche (novembre à mai), avec des températures élevées toute l'année."
+    },
+    {
+      "question": "Quel est le symbole principal du Burkina Faso représenté sur son drapeau?",
+      "optionA": "Un lion doré sur fond rouge-vert",
+      "optionB": "Un éléphant noir sur fond blanc",
+      "optionC": "Un étendard rouge avec une étoile jaune et un croissant vert",
+      "optionD": "Un cheval noir sur fond rouge",
+      "correctAnswer": "C",
+      "explanation": "Le drapeau burkinabè est un étendard rouge avec une étoile jaune à cinq branches et un croissant vert, symbolisant la révolution et l'espérance."
+    },
+    {
+      "question": "Quelle est la religion majoritaire au Burkina Faso?",
+      "optionA": "Islam, pratiquée par environ 60% de la population",
+      "optionB": "Christianisme, pratiqué par environ 70% de la population",
+      "optionC": "Animisme traditionnel, pratiqué par la majorité de la population",
+      "optionD": "Le Burkina Faso est un pays laïc avec une répartition égale des religions",
+      "correctAnswer": "A",
+      "explanation": "L'islam est la religion majoritaire au Burkina Faso, pratiquée par environ 60% de la population, suivi par le christianisme (environ 20-25%) et les croyances traditionnelles (environ 15-20%)."
+    },
+    {
+      "question": "Quel est le nom du parc national le plus célèbre du Burkina Faso?",
+      "optionA": "Parc National de Deux Balés",
+      "optionB": "Parc National de l'Arli",
+      "optionC": "Parc National du W du Niger",
+      "optionD": "Parc National de la Pendjari",
+      "correctAnswer": "C",
+      "explanation": "Le Parc National du W du Niger est l'un des parcs nationaux les plus connus du Burkina Faso, classé au patrimoine mondial de l'UNESCO et partagé avec le Niger et le Bénin."
+    },
+    {
+      "question": "Quelle est la particularité de la ville de Bobo-Dioulasso au Burkina Faso?",
+      "optionA": "C'est la capitale économique du pays et connue pour sa grande mosquée",
+      "optionB": "C'est la ville natale de Thomas Sankara",
+      "optionC": "C'est la plus petite ville du pays mais la plus densément peuplée",
+      "optionD": "C'est la seule ville du pays avec un accès direct à la mer",
+      "correctAnswer": "A",
+      "explanation": "Bobo-Dioulasso est la deuxième plus grande ville du Burkina Faso et sa capitale économique, connue pour sa grande mosquée, son architecture coloniale et sa culture musicale riche."
+    },
+    {
+      "question": "Quelle est la principale source de revenu du Burkina Faso?",
+      "optionA": "Le tourisme",
+      "optionB": "L'agriculture et l'élevage",
+      "optionC": "L'extraction de minerais précieux comme l'or",
+      "optionD": "Les services financiers",
+      "correctAnswer": "C",
+      "explanation": "Bien que l'agriculture soit le principal employeur (environ 80% de la population), l'extraction de minerais, notamment l'or, est devenue la principale source de revenus du Burkina Faso, représentant plus de 60% des exportations."
+    },
+    {
+      "question": "Quel est le nom de l'hymne national du Burkina Faso?",
+      "optionA": "Terre de nos aïeux",
+      "optionB": "L'Étoile filante",
+      "optionC": "Un peuple, un but, une foi",
+      "optionD": "Le chant de la liberté",
+      "correctAnswer": "C",
+      "explanation": "L'hymne national du Burkina Faso s'intitule \"Un peuple, un but, une foi\" et a été adopté après la révolution de 1983 sous Thomas Sankara."
+    },
+    {
+      "question": "Quelle est la particularité du système éducatif burkinabè?",
+      "optionA": "Il est entièrement gratuit à tous les niveaux",
+      "optionB": "Il est basé sur le modèle éducatif français avec des adaptations locales",
+      "optionC": "Il est obligatoire jusqu'au niveau universitaire",
+      "optionD": "Il est principalement géré par des organisations privées",
+      "correctAnswer": "B",
+      "explanation": "Le système éducatif burkinabè est largement basé sur le modèle français, avec des adaptations locales, et comprend le primaire, le secondaire et l'enseignement supérieur, bien que l'accès reste un défi dans de nombreuses régions."
+    },
+    {
+      "question": "Quel est le rôle de l'Armée burkinabè dans la politique récente du pays?",
+      "optionA": "Elle reste neutre et ne participe pas à la politique",
+      "optionB": "Elle a pris le pouvoir à plusieurs reprises ces dernières années",
+      "optionC": "Elle est principalement déployée pour des missions de maintien de la paix internationales",
+      "optionD": "Elle est contrôlée par un conseil civil",
+      "correctAnswer": "B",
+      "explanation": "L'Armée burkinabè a joué un rôle politique central ces dernières années, avec des coups d'État en 2022 d'abord sous Paul-Henri Sandaogo Damiba, puis plus tard sous Ibrahim Traoré."
+    },
+    {
+      "question": "Quelle est la situation sécuritaire actuelle au Burkina Faso?",
+      "optionA": "Le pays est considéré comme l'un des plus sûrs d'Afrique de l'Ouest",
+      "optionB": "Le pays fait face à une crise sécuraire majeure avec des attaques djihadistes et des déplacements de population",
+      "optionC": "Le conflit principal oppose les groupes ethniques du nord et du sud du pays",
+      "optionD": "Le pays est en guerre civile avec des rebelles séparatistes",
+      "correctAnswer": "B",
+      "explanation": "Le Burkina Faso fait face à une crise sécuraire majeure depuis 2015, avec des attaques djihadistes fréquentes, des déplacements de population massifs et une présence militaire accrue."
+    },
+    {
+      "question": "Quelle est la contribution du Burkina Faso à la littérature africaine?",
+      "optionA": "Le pays n'a pas de tradition littéraire notable",
+      "optionB": "Il est connu pour ses griots traditionnels mais pas pour une littérécie écrite",
+      "optionC": "Le Burkina Faso a produit des écrivains renommés comme Norbert Zongo et Nazi Boni",
+      "optionD": "La littérature burkinabè est principalement publiée en langues locales",
+      "correctAnswer": "C",
+      "explanation": "Le Burkina Faso a une riche tradition littéraire avec des auteurs comme Norbert Zongo (journaliste assassiné en 1998), Nazi Boni, et des poètes comme Roger Nikiéma."
+    },
+    {
+      "question": "Thomas Sankara, président du Burkina Faso de 1983 à 1987, est connu pour avoir initié plusieurs réformes majeures. Parmi les propositions suivantes, laquelle n'est pas directement associée à son programme de transformation ?",
+      "optionA": "La campagne 'Vive la lutte des femmes!' visant à émanciper les femmes burkinabè",
+      "optionB": "La campagne 'Vaccinations pour tous' qui a permis d'augmenter significativement le taux de vaccination",
+      "optionC": "La campagne 'Un village, un barrage' pour lutter contre la sécheresse",
+      "optionD": "La campagne 'Un village, une université' pour promouvoir l'enseignement supérieur",
+      "correctAnswer": "D",
+      "explanation": "Thomas Sankara a initié la campagne 'Un village, un barrage' pour lutter contre la sécheresse, mais pas 'Un village, une université'. Son programme incluait plutôt des campagnes d'alphabétisation et d'éducation populaire."
+    },
+    {
+      "question": "Le FESPACO (Festival Panafricain du Cinéma et de la Télévision de Ouagadougou) est l'un des événements culturels les plus importants d'Afrique. Quand a-t-il été créé ?",
+      "optionA": "En 1969",
+      "optionB": "En 1972",
+      "optionC": "En 1975",
+      "optionD": "En 1978",
+      "correctAnswer": "A",
+      "explanation": "Le FESPACO a été créé en 1969 et s'est tenu pour la première fois en 1969. C'est le plus ancien festival de cinéma en Afrique et l'un des plus prestigieux au monde."
+    },
+    {
+      "question": "Quelle est la capitale du Burkina Faso ?",
+      "optionA": "Bobo-Dioulasso",
+      "optionB": "Ouagadougou",
+      "optionC": "Banfora",
+      "optionD": "Koudougou",
+      "correctAnswer": "B",
+      "explanation": "Ouagadougou est la capitale et la plus grande ville du Burkina Faso. Elle est également le centre administratif, économique et culturel du pays."
+    },
+    {
+      "question": "Le SIAO (Salon International de l'Artisanat de Ouagadougou) est un événement majeur pour l'artisanat africain. Combien de jours dure généralement ce salon ?",
+      "optionA": "5 jours",
+      "optionB": "7 jours",
+      "optionC": "10 jours",
+      "optionD": "15 jours",
+      "correctAnswer": "C",
+      "explanation": "Le SIAO dure généralement 10 jours. C'est un événement biennal qui se tient à Ouagadougou et qui réunit des artisans du monde entier pour promouvoir l'artisanat africain."
+    },
+    {
+      "question": "Depuis la réforme administrative de 2019, le Burkina Faso est divisé en combien de régions ?",
+      "optionA": "13",
+      "optionB": "17",
+      "optionC": "45",
+      "optionD": "60",
+      "correctAnswer": "B",
+      "explanation": "Depuis la réforme administrative de 2019, le Burkina Faso est divisé en 17 régions, qui sont elles-mêmes subdivisées en 45 provinces (et non 47 comme précédemment)."
+    },
+    {
+      "question": "L'AES (Atelier de formation professionnelle et de promotion de l'artisanat) est une institution importante au Burkina Faso. Quel est son principal objectif ?",
+      "optionA": "Former les politiciens burkinabè",
+      "optionB": "Promouvoir l'artisanat traditionnel et moderne",
+      "optionC": "Protéger l'environnement",
+      "optionD": "Développer le tourisme",
+      "correctAnswer": "B",
+      "explanation": "L'AES a pour principal objectif de promouvoir l'artisanat traditionnel et moderne en formant les artisans et en favorisant leur insertion économique."
+    },
+    {
+      "question": "Ibrahim Traoré est une figure politique importante au Burkina Faso. Quel poste occupe-t-il actuellement ?",
+      "optionA": "Président de la transition",
+      "optionB": "Premier ministre",
+      "optionC": "Ministre de la Défense",
+      "optionD": "Président du Faso",
+      "correctAnswer": "A",
+      "explanation": "Ibrahim Traoré est le président de la transition au Burkina Faso depuis le coup d'État de septembre 2022. Il dirige le pays dans le cadre d'une transition vers des élections démocratiques."
+    },
+    {
+      "question": "Ousmane Bougma est un personnage important de l'histoire du Burkina Faso. Quel rôle a-t-il joué dans l'administration coloniale ?",
+      "optionA": "Il a été le premier président du Burkina Faso",
+      "optionB": "Il a été un chef traditionnel qui a résisté à la colonisation française",
+      "optionC": "Il a été le gouverneur colonial du pays",
+      "optionD": "Il a été un leader de l'indépendance",
+      "correctAnswer": "B",
+      "explanation": "Ousmane Bougma était un chef traditionnel mossi qui a joué un rôle important dans la résistance à la colonisation française au début du XXe siècle."
+    },
+    {
+      "question": "Le Burkina Faso a accédé à l'indépendance le 5 août 1960. Sous quel nom était-il connu avant cette date ?",
+      "optionA": "Haute-Volta",
+      "optionB": "Afrique-Occidentale Française",
+      "optionC": "Soudan Français",
+      "optionD": "Voltaïque",
+      "correctAnswer": "A",
+      "explanation": "Le Burkina Faso était connu sous le nom de Haute-Volta avant son indépendance en 1960. Le pays a été renommé Burkina Faso par Thomas Sankara en 1984."
+    },
+    {
+      "question": "Quelle est la langue officielle du Burkina Faso ?",
+      "optionA": "Le mooré",
+      "optionB": "Le français",
+      "optionC": "Le dioula",
+      "optionD": "Le fulfulde",
+      "correctAnswer": "B",
+      "explanation": "Le français est la langue officielle du Burkina Faso, bien qu'il existe de nombreuses langues nationales parlées par différents groupes ethniques."
+    },
+    {
+      "question": "Le Burkina Faso est bordé par plusieurs pays. Parmi les suivants, lequel n'est pas un pays voisin du Burkina Faso ?",
+      "optionA": "Mali",
+      "optionB": "Niger",
+      "optionC": "Côte d'Ivoire",
+      "optionD": "Togo",
+      "correctAnswer": "D",
+      "explanation": "Le Burkina Faso est bordé par le Mali au nord-ouest, le Niger à l'est, le Bénin au sud-est, le Togo et le Ghana au sud, et la Côte d'Ivoire au sud-ouest. Le Togo n'est pas un pays voisin du Burkina Faso."
+    },
+    {
+      "question": "Thomas Sankara est souvent surnommé 'le Che Guevara d'Afrique'. Pourquoi ce surnom ?",
+      "optionA": "Il a mené une révolution armée",
+      "optionB": "Il a porté des vêtements similaires à ceux de Che Guevara",
+      "optionC": "Il a été tué dans un complot similaire à celui de Che Guevra",
+      "optionD": "Toutes ces réponses sont correctes",
+      "correctAnswer": "D",
+      "explanation": "Thomas Sankara est souvent comparé à Che Guevara car il a mené une révolution armée, portait des vêtements similaires et a été assassiné dans un complot, tout comme Che Guevara."
+    },
+    {
+      "question": "Le FESPACO a lieu tous les deux ans. Quand a-t-il eu lieu pour la première fois ?",
+      "optionA": "En 1969",
+      "optionB": "En 1972",
+      "optionC": "En 1975",
+      "optionD": "En 1978",
+      "correctAnswer": "A",
+      "explanation": "Le FESPACO a eu lieu pour la première fois en 1969. C'est le plus ancien festival de cinéma en Afrique et l'un des plus prestigieux au monde."
+    },
+    {
+      "question": "Le Burkina Faso est divisé en 45 provinces. Quelle est la plus grande province en termes de superficie ?",
+      "optionA": "Oudalan",
+      "optionB": "Séno",
+      "optionC": "Yatenga",
+      "optionD": "Ganzourgou",
+      "correctAnswer": "A",
+      "explanation": "Oudalan est la plus grande province du Burkina Faso en termes de superficie, située dans la région du Sahel."
+    },
+    {
+      "question": "Le SIAO est considéré comme le deuxième plus grand salon de l'artisanat au monde. Quel est le plus grand ?",
+      "optionA": "Le Salon de l'Artisanat de Paris",
+      "optionB": "La Foire Internationale de l'Artisanat de New York",
+      "optionC": "La Biennale de l'Artisanat du Caire",
+      "optionD": "La Foire Internationale de l'Artisanat de Munich",
+      "correctAnswer": "B",
+      "explanation": "Le SIAO est considéré comme le deuxième plus grand salon de l'artisanat au monde, après la Foire Internationale de l'Artisanat de New York."
+    },
+    {
+      "question": "Thomas Sankara a été assassiné le 15 octobre 1987. Qui a été responsable de son assassinat ?",
+      "optionA": "Ibrahim Traoré",
+      "optionB": "Blaise Compaoré",
+      "optionC": "Thomas Sankara",
+      "optionD": "Ousmane Bougma",
+      "correctAnswer": "B",
+      "explanation": "Thomas Sankara a été assassiné lors d'un coup d'État mené par son ancien collègue Blaise Compaoré, qui a ensuite pris le pouvoir."
+    },
+    {
+      "question": "Le Burkina Faso est un pays enclavé. Qu'est-ce que cela signifie ?",
+      "optionA": "Le pays n'a pas de gouvernement",
+      "optionB": "Le pays n'a pas de accès à la mer",
+      "optionC": "Le pays est entièrement désertique",
+      "optionD": "Le pays est entièrement couvert de forêts",
+      "correctAnswer": "B",
+      "explanation": "Un pays enclavé est un pays qui n'a pas de accès direct à la mer. Le Burkina Faso est entièrement entouré d'autres pays."
+    },
+    {
+      "question": "L'AES a été créé en 1973. Quel est son siège social ?",
+      "optionA": "Bobo-Dioulasso",
+      "optionB": "Ouagadougou",
+      "optionC": "Banfora",
+      "optionD": "Koudougou",
+      "correctAnswer": "B",
+      "explanation": "L'AES a son siège social à Ouagadougou, la capitale du Burkina Faso."
+    },
+    {
+      "question": "Ibrahim Traoré a pris le pouvoir lors d'un coup d'État en septembre 2022. Quel groupe armé a-t-il principalement combattu depuis son accession au pouvoir ?",
+      "optionA": "Boko Haram",
+      "optionB": "Al-Qaïda",
+      "optionC": "Groupe de soutien à l'islam et aux musulmans (GSIM)",
+      "optionD": "État islamique",
+      "correctAnswer": "C",
+      "explanation": "Ibrahim Traoré a principalement combattu le Groupe de soutien à l'islam et aux musulmans (GSIM), qui est affilié à Al-Qaïda et actif dans la région du Sahel."
+    },
+    {
+      "question": "Le Burkina Faso est un pays multiethnique. Quel est le plus grand groupe ethnique du pays ?",
+      "optionA": "Les Fulani",
+      "optionB": "Les Mossi",
+      "optionC": "Les Bobo",
+      "optionD": "Les Bissa",
+      "correctAnswer": "B",
+      "explanation": "Les Mossi sont le plus grand groupe ethnique du Burkina Faso, représentant environ 40% de la population. Ils sont principalement concentrés dans le centre du pays."
+    },
+    {
+      "question": "Thomas Sankara a changé le nom du pays de Haute-Volta à Burkina Faso en 1984. Quelle est la signification de ce nom ?",
+      "optionA": "Pays des hommes intègres",
+      "optionB": "Pays des braves",
+      "optionC": "Pays de l'honnêteté",
+      "optionD": "Toutes ces réponses sont correctes",
+      "correctAnswer": "D",
+      "explanation": "Le nom Burkina Faso signifie 'Pays des hommes intègres' ou 'Pays des braves' ou 'Pays de l'honnêteté' dans les langues nationales mossi et dioula."
     }
   ],
   "subcategory": "Burkina Faso",

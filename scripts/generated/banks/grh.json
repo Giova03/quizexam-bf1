@@ -332,6 +332,357 @@
       "optionD": "Le renforcement aléatoire",
       "correctAnswer": "A",
       "explanation": "Selon Skinner, le renforcement intermittent (récompense après un certain nombre de comportements ou selon un intervalle de temps) est plus efficace que le renforcement continu pour maintenir un comportement sur le long terme. Il crée une résistance à l'extinction du comportement, contrairement au renforcement continu qui devient inefficace si la récompense cesse."
+    },
+    {
+      "question": "Dans le cadre d'un recrutement, quelle méthode d'évaluation permet de mesurer les compétences comportementales d'un candidat dans un contexte simulé ?",
+      "optionA": "L'entretien structuré",
+      "optionB": "Le test de personnalité",
+      "optionC": "L'étude de cas",
+      "optionD": "Le centre d'évaluation",
+      "correctAnswer": "D",
+      "explanation": "Le centre d'évaluation met en situation le candidat à travers des exercices simulés pour observer ses comportements et compétences dans un contexte proche de la réalité professionnelle."
+    },
+    {
+      "question": "Quelle est la principale limite de la méthode 360° pour l'évaluation des performances ?",
+      "optionA": "Son coût élevé",
+      "optionB": "Le risque de subjectivité",
+      "optionC": "Le temps nécessaire pour sa mise en œuvre",
+      "optionD": "La difficulté d'interprétation des résultats",
+      "correctAnswer": "B",
+      "explanation": "La méthode 360° collecte des feedbacks de multiples sources, ce qui peut introduire des biais subjectifs et des interprétations différentes des comportements observés."
+    },
+    {
+      "question": "Selon la théorie de l'apprentissage expérientiel de Kolb, quelle étape précède la 'conceptualisation' dans le cycle d'apprentissage ?",
+      "optionA": "La réflexion",
+      "optionB": "L'expérimentation",
+      "optionC": "L'expérience concrète",
+      "optionD": "L'application",
+      "correctAnswer": "C",
+      "explanation": "Le cycle d'apprentissage de Kolb suit l'ordre : expérience concrète → réflexion → conceptualisation → expérimentation."
+    },
+    {
+      "question": "En droit du travail français, quelle est la durée minimale prévue pour la période d'essai d'un CDI pour un employé de niveau cadre ?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "4 mois",
+      "correctAnswer": "C",
+      "explanation": "Pour les salariés cadres, la période d'essai peut aller jusqu'à 3 mois (renouvelable une fois par accord collectif ou usage)."
+    },
+    {
+      "question": "Quelle est la principale différence entre un plan de formation et un GPEC (Gestion Prévisionnelle des Emplois et des Compétences) ?",
+      "optionA": "Le GPEC est obligatoire, le plan de formation non",
+      "optionB": "Le GPEC est stratégique et prospectif, le plan de formation est plus opérationnel",
+      "optionC": "Le plan de formation concerne uniquement les cadres",
+      "optionD": "Le GPEC est axé sur la formation, le plan de formation sur les compétences",
+      "correctAnswer": "B",
+      "explanation": "Le GPEC est un outil stratégique de gestion des effectifs à moyen et long terme, tandis que le plan de formation est plus opérationnel et annuel."
+    },
+    {
+      "question": "En matière de rémunération, quelle méthode de fixation des salaires repose sur l'évaluation des postes et non sur les performances individuelles ?",
+      "optionA": "La rémunération au mérite",
+      "optionB": "Le salaire au rendement",
+      "optionC": "La grille salariale",
+      "optionD": "La participation aux résultats",
+      "correctAnswer": "C",
+      "explanation": "La grille salariale est basée sur une classification des postes selon des critères objectifs comme la responsabilité, la complexité ou les qualifications requises."
+    },
+    {
+      "question": "Quel est le rôle principal du CSE (Comité Social et Économique) dans une entreprise ?",
+      "optionA": "Négocier les accords collectifs",
+      "optionB": "Gérer les conflits individuels",
+      "optionC": "Représenter le personnel auprès de la direction",
+      "optionD": "Recruter les nouveaux employés",
+      "correctAnswer": "C",
+      "explanation": "Le CSE est l'instance représentative du personnel qui assure la défense des intérêts des salariés auprès de la direction."
+    },
+    {
+      "question": "Dans le cadre d'une réorganisation, quelle approche de la GPEC permet d'anticiper les départs en retraite massifs ?",
+      "optionA": "L'analyse des compétences",
+      "optionB": "Le bilan de compétences",
+      "optionC": "Le plan de reclassement",
+      "optionD": "La gestion des âges",
+      "correctAnswer": "D",
+      "explanation": "La gestion des âges permet d'anticiper les effets du vieillissement des effectifs et de planifier les départs à la retraite."
+    },
+    {
+      "question": "Quelle est la caractéristique principale d'un entretien annuel d'évaluation ?",
+      "optionA": "Il a un caractère formatif",
+      "optionB": "Il sert uniquement à préparer l'augmentation salariale",
+      "optionC": "Il est exclusivement orienté vers le passé",
+      "optionD": "Il est obligatoire pour tous les salariés",
+      "correctAnswer": "A",
+      "explanation": "L'entretien annuel d'évaluation a principalement un rôle formatif pour aider le salariat à progresser et développer ses compétences."
+    },
+    {
+      "question": "En droit social, quelle est la nature du contrat de travail à durée déterminée (CDD) ?",
+      "optionA": "Un contrat de droit commun",
+      "optionB": "Un contrat d'exception",
+      "optionC": "Un contrat administratif",
+      "optionD": "Un contrat de droit civil",
+      "correctAnswer": "B",
+      "explanation": "Le CDD est un contrat d'exception au CDI, ne pouvant être utilisé que dans des cas strictement définis par la loi."
+    },
+    {
+      "question": "Quelle méthode de recrutement est la plus efficace pour identifier des profils rares sur le marché de l'emploi ?",
+      "optionA": "Les annonces publiques",
+      "optionB": "Le sourcing",
+      "optionC": "Les cabinets de recrutement",
+      "optionD": "Les job dating",
+      "correctAnswer": "B",
+      "explanation": "Le sourcing consiste à rechercher activement des candidats potentiels, souvent sur des réseaux sociaux ou bases de données spécialisées, pour trouver des profils spécifiques ou rares."
+    },
+    {
+      "question": "Quelle est la principale finalité d'un plan de mobilité interne dans une entreprise ?",
+      "optionA": "Réduire les coûts de recrutement",
+      "optionB": "Améliorer la satisfaction des salariés",
+      "optionC": "Faire face aux mutations des métiers",
+      "optionD": "Augmenter la polyvalence des équipes",
+      "correctAnswer": "C",
+      "explanation": "Un plan de mobilité interne permet d'anticiper et accompagner les évolutions des métiers et des compétences nécessaires à l'entreprise."
+    },
+    {
+      "question": "En matière de rémunération variable, quelle est la principale difficulté de mise en œuvre d'un plan d'intéressement ?",
+      "optionA": "Le coût pour l'entreprise",
+      "optionB": "La complexité de calcul",
+      "optionC": "L'obligation d'accord collectif",
+      "optionD": "La motivation des salariés",
+      "correctAnswer": "B",
+      "explanation": "La mise en place d'un plan d'intéressement nécessite de définir des indicateurs de performance clairs et de calculer les répartitions, ce qui peut être complexe."
+    },
+    {
+      "question": "Quelle est la durée maximale de la période d'essai pour un contrat à durée déterminée de 18 mois ?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "4 mois",
+      "correctAnswer": "B",
+      "explanation": "Pour un CDD de plus de 6 mois, la période d'essai ne peut dépasser 1 mois (renouvelable une fois, soit 2 mois maximum)."
+    },
+    {
+      "question": "Dans le cadre des relations sociales, quelle est la principale fonction des représentants du personnel ?",
+      "optionA": "Négocier les accords collectifs",
+      "optionB": "Gérer les conflits individuels",
+      "optionC": "Contrôler l'application du droit du travail",
+      "optionD": "Représenter les salariés",
+      "correctAnswer": "D",
+      "explanation": "La fonction principale des représentants du personnel est de représenter les salariés auprès de la direction et de défendre leurs intérêts."
+    },
+    {
+      "question": "Quelle est la caractéristique principale d'une formation certifiante ?",
+      "optionA": "Elle est obligatoire pour tous les salariés",
+      "optionB": "Elle est financée par l'OPCA",
+      "optionC": "Elle aboutit à une reconnaissance officielle",
+      "optionD": "Elle est axée sur les compétences pratiques",
+      "correctAnswer": "C",
+      "explanation": "Une formation certifiante aboutit à une reconnaissance officielle par un diplôme, un titre ou une certification enregistrée dans un répertoire."
+    },
+    {
+      "question": "En droit du travail, quelle est la nature juridique du règlement intérieur de l'entreprise ?",
+      "optionA": "Un acte unilatéral de l'employeur",
+      "optionB": "Un accord collectif",
+      "optionC": "Une convention collective",
+      "optionD": "Un contrat de travail",
+      "correctAnswer": "A",
+      "explanation": "Le règlement intérieur est un acte unilatéral de l'employeur qui définit les règles de discipline et de comportement applicables dans l'entreprise."
+    },
+    {
+      "question": "Quelle est la principale limite de l'utilisation des entretiens de recrutement structurés ?",
+      "optionA": "Leur coût élevé",
+      "optionB": "Leur manque de flexibilité",
+      "optionC": "Leur faible validité prédictive",
+      "optionD": "Leur difficulté d'administration",
+      "correctAnswer": "B",
+      "explanation": "Les entretiens structurés, bien que fiables, manquent de flexibilité et peuvent ne pas permettre d'explorer des aspects non prévus du candidat."
+    },
+    {
+      "question": "Quelle est la principale différence entre une évaluation formative et une évaluation sommative ?",
+      "optionA": "La première sert à sanctionner, la seconde à former",
+      "optionB": "La première a lieu en fin de parcours, la seconde en début",
+      "optionC": "La première sert à ajuster le parcours, la seconde à certifier",
+      "optionD": "La première concerne les compétences, la seconde les connaissances",
+      "correctAnswer": "C",
+      "explanation": "L'évaluation formative sert à ajuster le parcours d'apprentissage, tandis que l'évaluation sommative sert à certifier les acquis en fin de formation."
+    },
+    {
+      "question": "Dans le cadre de la gestion des carrières, quelle est la principale utilité du bilan de compétences ?",
+      "optionA": "Évaluer les performances passées",
+      "optionB": "Définir un projet professionnel",
+      "optionC": "Mesurer les compétences actuelles",
+      "optionD": "Planifier la formation continue",
+      "correctAnswer": "B",
+      "explanation": "Le bilan de compétences permet à un salarié d'analyser ses compétences, aptitudes et motivations pour définir un projet professionnel."
+    },
+    {
+      "question": "Dans le cadre d'une GPEC (Gestion Prévisionnelle des Emplois et des Compétences), quelle est la première étape essentielle du processus ?",
+      "optionA": "L'analyse des besoins en formation",
+      "optionB": "Le recensement des compétences existantes",
+      "optionC": "La définition des objectifs stratégiques de l'entreprise",
+      "optionD": "L'évaluation des performances actuelles",
+      "correctAnswer": "C",
+      "explanation": "La GPEC commence par l'alignement des objectifs de gestion des RH avec la stratégie globale de l'entreprise, qui définit ensuite les besoins en emplois et compétences."
+    },
+    {
+      "question": "Quelle méthode d'évaluation des compétences est la plus adaptée pour identifier les potentiels d'évolution dans une PME ?",
+      "optionA": "L'entretien annuel",
+      "optionB": "Les 360°",
+      "optionC": "L'analyse de la valeur ajoutée",
+      "optionD": "L'entretien professionnel",
+      "correctAnswer": "D",
+      "explanation": "L'entretien professionnel, obligatoire tous les deux ans, permet d'évaluer les compétences et d'identifier les potentiels d'évolution, adapté aux structures de taille réduite."
+    },
+    {
+      "question": "En matière de recrutement, quelle est la principale limite de la méthode d'entretien structuré ?",
+      "optionA": "Son coût élevé",
+      "optionB": "Sa faible validité prédictive",
+      "optionC": "Son manque d'objectivité",
+      "optionD": "Sa difficulté de mise en œuvre",
+      "correctAnswer": "B",
+      "explanation": "L'entretien structuré, bien que plus fiable que l'entretien non structuré, présente une validité prédictive modérée (environ 0.38 selon les méta-analyses)."
+    },
+    {
+      "question": "Dans le cadre de la réforme de la formation professionnelle 2018, quel est le pourcentage minimal du salaire brut reversé au CPF pour les entreprises de 20 à 299 salariés ?",
+      "optionA": "0.55%",
+      "optionB": "1.00%",
+      "optionC": "0.69%",
+      "optionD": "1.24%",
+      "correctAnswer": "C",
+      "explanation": "Les entreprises de 20 à 299 salariers doivent reverser 0.69% de leur masse salariale brute au CPF, contre 0.55% pour les moins de 20 salariés et 1.24% pour 300 et plus."
+    },
+    {
+      "question": "Quelle est la durée maximale du congé de reclassement pour un licenciement économique dans une entreprise de 300 salariés ?",
+      "optionA": "12 mois",
+      "optionB": "18 mois",
+      "optionC": "24 mois",
+      "optionD": "36 mois",
+      "correctAnswer": "A",
+      "explanation": "La durée maximale du congé de reclassement est de 12 mois pour les entreprises de 300 salariés et plus, et de 9 mois pour les moins de 300 salariés."
+    },
+    {
+      "question": "Quelle est la limite légale du travail temporaire en France ?",
+      "optionA": "18 mois maximum par mission",
+      "optionB": "24 mois maximum par mission",
+      "optionC": "36 mois maximum par mission",
+      "optionD": "6 mois maximum par mission",
+      "correctAnswer": "A",
+      "explanation": "La durée maximale d'une mission de travail temporaire est de 18 mois, avec possibilité de renouvellement dans des conditions strictes."
+    },
+    {
+      "question": "Dans le cadre d'un plan de sauvegarde de l'emploi (PSE), quelle est la durée maximale du CSP (Contrat de Sécurure Professionnelle) ?",
+      "optionA": "12 mois",
+      "optionB": "18 mois",
+      "optionC": "24 mois",
+      "optionD": "36 mois",
+      "correctAnswer": "C",
+      "explanation": "Le CSP peut durer jusqu'à 24 mois pour les salariés de 50 ans et plus, et jusqu'à 12 mois pour les moins de 50 ans."
+    },
+    {
+      "question": "Quelle est la composition du CSE (Comité Social et Économique) dans une entreprise de 50 salariés ?",
+      "optionA": "Un comité d'entreprise, un comité d'hygiène, de sécurité et des conditions de travail (CHSCT) et un délégué du personnel",
+      "optionB": "Un seul organe unique regroupant toutes les instances",
+      "optionC": "Un comité d'entreprise et un délégué du personnel",
+      "optionD": "Un comité social et économique central",
+      "correctAnswer": "B",
+      "explanation": "Le CSE est un organe unique qui remplace le comité d'entreprise, le CHSCT et les délégués du personnel dans les entreprises de 11 à 50 salariés."
+    },
+    {
+      "question": "Quelle est la durée légale du préavis de démission ?",
+      "optionA": "15 jours calendaires",
+      "optionB": "1 mois",
+      "optionC": "2 mois",
+      "optionD": "Dépend de l'ancienneté",
+      "correctAnswer": "A",
+      "explanation": "Le préavis de démission est de 15 jours calendaires pour les employés, ouvriers et techniciens, sauf clause plus favorable dans le contrat."
+    },
+    {
+      "question": "Dans le cadre de la rémunération variable, quel élément est essentiel pour sa conformité juridique ?",
+      "optionA": "Son caractère non réglementé",
+      "optionB": "La transparence des critères d'attribution",
+      "optionC": "Son caractère discrétionnaire",
+      "optionD": "Son absence d'impact sur le calcul des congés payés",
+      "correctAnswer": "B",
+      "explanation": "Les critères d'attribution de la rémunération variable doivent être clairs, objectifs et connus des salariés pour éviter les contestations."
+    },
+    {
+      "question": "Quelle est la durée maximale du travail temporaire dans le cadre d'un contrat d'intérim de remplacement d'un salarié en grève ?",
+      "optionA": "9 mois",
+      "optionB": "12 mois",
+      "optionC": "18 mois",
+      "optionD": "24 mois",
+      "correctAnswer": "C",
+      "explanation": "La durée maximale d'un contrat d'intérim est de 18 mois dans le cas de remplacement d'un salarié en grève ou en conflit collectif."
+    },
+    {
+      "question": "Quelle est la fréquence minimale des réunions du CSE dans une entreprise de 300 salariés ?",
+      "optionA": "Une fois par mois",
+      "optionB": "Une fois par trimestre",
+      "optionC": "Une fois par semestre",
+      "optionD": "Une fois par an",
+      "correctAnswer": "A",
+      "explanation": "Le CSE doit se réunir au moins une fois par mois dans les entreprises de 300 salariés et plus."
+    },
+    {
+      "question": "Quelle est la durée légale du préavis de licenciement pour un salarié de 10 ans d'ancienneté ?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "4 mois",
+      "correctAnswer": "B",
+      "explanation": "Le préavis de licenciement est de 2 mois pour les salariés ayant entre 2 et 10 ans d'ancienneté, et de 1 mois pour les moins de 2 ans."
+    },
+    {
+      "question": "Dans le cadre de la gestion des compétences, quelle est la principale limite de la méthode des entretiens annuels ?",
+      "optionA": "Leur coût",
+      "optionB": "Leur subjectivité",
+      "optionC": "Leur manque de régularité",
+      "optionD": "Leur faible couverture",
+      "correctAnswer": "B",
+      "explanation": "Les entretiens annuels sont souvent critiqués pour leur subjectivité et leur dépendance à la perception du manager, pouvant biaiser l'évaluation des compétences."
+    },
+    {
+      "question": "Quelle est la durée maximale d'un CDD d'usage dans le secteur du spectacle ?",
+      "optionA": "6 mois",
+      "optionB": "9 mois",
+      "optionC": "12 mois",
+      "optionD": "18 mois",
+      "correctAnswer": "D",
+      "explanation": "Le CDD d'usage dans le secteur du spectacle peut aller jusqu'à 18 mois, avec possibilité de renouvellement dans des conditions strictes."
+    },
+    {
+      "question": "Quelle est la composition du collège électoral pour les élections professionnelles dans une entreprise de 150 salariés ?",
+      "optionA": "Un seul collège",
+      "optionB": "Trois collèges (ouvriers, techniciens et cadres)",
+      "optionC": "Deux collèges (employés et techniciens, cadres)",
+      "optionD": "Deux collèges (ouvriers et employés, techniciens et cadres)",
+      "correctAnswer": "D",
+      "explanation": "Dans les entreprises de 50 à 150 salariés, le collège électoral est composé de deux collèges : ouvriers et employés d'une part, techniciens et cadres d'autre part."
+    },
+    {
+      "question": "Quelle est la durée maximale du télétravail hebdomadaire légalisée par la loi Travail de 2016 ?",
+      "optionA": "2 jours par semaine",
+      "optionB": "3 jours par semaine",
+      "optionC": "4 jours par semaine",
+      "optionD": "Aucune limite légale",
+      "correctAnswer": "B",
+      "explanation": "La loi Travail de 2016 a fixé à 3 jours par semaine la durée maximale de télétravail, sauf accord d'entreprise ou accord collectif plus favorable."
+    },
+    {
+      "question": "Quelle est la durée maximale du congé parental à temps partiel ?",
+      "optionA": "1 an",
+      "optionB": "2 ans",
+      "optionC": "3 ans",
+      "optionD": "4 ans",
+      "correctAnswer": "C",
+      "explanation": "Le congé parental à temps partiel peut durer jusqu'à 3 ans par enfant, avec possibilité de renouvellement."
+    },
+    {
+      "question": "Quelle est la principale limite des méthodes de recrutement par approche directe (headhunting) ?",
+      "optionA": "Leur coût élevé",
+      "optionB": "Leur faible efficacité",
+      "optionC": "Leur manque d'objectivité",
+      "optionD": "Leur faible couverture du marché",
+      "correctAnswer": "C",
+      "explanation": "Le headhunting repose sur des relations personnelles et des jugements de valeur, ce qui peut introduire des biais subjectifs dans le processus de sélection."
     }
   ]
 }

@@ -203,6 +203,96 @@
       "optionD": "24",
       "correctAnswer": "A",
       "explanation": "Le nombre en bas à gauche est égal à la différence des nombres en haut et en bas à droite."
+    },
+    {
+      "question": "Complétez : 1, 1, 2, 3, 5, 8, 13, 21, ?",
+      "optionA": "34",
+      "optionB": "35",
+      "optionC": "30",
+      "optionD": "36",
+      "correctAnswer": "A",
+      "explanation": "Suite de Fibonacci: chaque terme est la somme des 2 précédents (13+21=34)."
+    },
+    {
+      "question": "Complétez : 2, 4, 8, 16, 32, ?",
+      "optionA": "64",
+      "optionB": "48",
+      "optionC": "60",
+      "optionD": "50",
+      "correctAnswer": "A",
+      "explanation": "Chaque terme est le double du précédent (32×2=64)."
+    },
+    {
+      "question": "Complétez : 1, 4, 9, 16, 25, ?",
+      "optionA": "36",
+      "optionB": "30",
+      "optionC": "49",
+      "optionD": "35",
+      "correctAnswer": "A",
+      "explanation": "Carrés parfaits: 1², 2², 3², 4², 5², 6²=36."
+    },
+    {
+      "question": "Complétez : 3, 6, 12, 24, 48, ?",
+      "optionA": "96",
+      "optionB": "72",
+      "optionC": "80",
+      "optionD": "60",
+      "correctAnswer": "A",
+      "explanation": "Chaque terme est le double du précédent (48×2=96)."
+    },
+    {
+      "question": "Complétez : 100, 50, 25, 12.5, ?",
+      "optionA": "6.25",
+      "optionB": "6",
+      "optionC": "5",
+      "optionD": "10",
+      "correctAnswer": "A",
+      "explanation": "Chaque terme est la moitié du précédent (12.5/2=6.25)."
+    },
+    {
+      "question": "Quel nombre complète : 2, 6, 12, 20, 30, ?",
+      "optionA": "42",
+      "optionB": "40",
+      "optionC": "36",
+      "optionD": "44",
+      "correctAnswer": "A",
+      "explanation": "Différences: 4, 6, 8, 10, 12 → 30+12=42."
+    },
+    {
+      "question": "Complétez : 1, 8, 27, 64, 125, ?",
+      "optionA": "216",
+      "optionB": "200",
+      "optionC": "196",
+      "optionD": "225",
+      "correctAnswer": "A",
+      "explanation": "Cubes: 1³, 2³, 3³, 4³, 5³, 6³=216."
+    },
+    {
+      "question": "Quel est le prochain : A, C, E, G, I, ?",
+      "optionA": "K",
+      "optionB": "J",
+      "optionC": "L",
+      "optionD": "H",
+      "correctAnswer": "A",
+      "explanation": "On saute une lettre: A, (B), C, (D), E, (F), G, (H), I, (J), K."
+    },
+    {
+      "question": "Quel est le prochain : J, F, M, A, M, J, J, A, ?",
+      "optionA": "S",
+      "optionB": "O",
+      "optionC": "N",
+      "optionD": "D",
+      "correctAnswer": "A",
+      "explanation": "Premières lettres des mois: Janvier, Février... Août → Septembre (S)."
+    },
+    {
+      "question": "Si tout WAZO est un ZAB, et tout ZAB est un KOF, alors :",
+      "optionA": "Tout WAZO est un KOF",
+      "optionB": "Tout KOF est un WAZO",
+      "optionC": "Aucun WAZO n'est un KOF",
+      "optionD": "On ne peut pas savoir",
+      "correctAnswer": "A",
+      "explanation": "Déduction logique (syllogisme): WAZO → ZAB → KOF."
     }
   ],
   "subcategory": "Logique",

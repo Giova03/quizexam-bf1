@@ -332,6 +332,312 @@
       "optionD": "L'immunité innée nécessite un contact préalable avec l'agent pathogène",
       "correctAnswer": "B",
       "explanation": "L'immunité innée reconnaît des motifs moléculaires communs aux pathogènes (PAMPs) tandis que l'immunité adaptative développe une réponse spécifique contre des antigènes particuliers après exposition."
+    },
+    {
+      "question": "Concernant la structure de l'ADN, quelle affirmation est incorrecte ?",
+      "optionA": "L'ADN est constitué de deux brins antiparallèles",
+      "optionB": "Les bases azotées sont liées par des liaisons hydrogène",
+      "optionC": "Le brin 5'→3' est complémentaire du brin 3'→5'",
+      "optionD": "La thymine est toujours liée à l'adénine dans la structure double hélice",
+      "correctAnswer": "D",
+      "explanation": "La thymine est liée à l'adénine et la cytosine à la guanine, mais cette liaison n'est pas toujours présente dans tous les contextes biologiques."
+    },
+    {
+      "question": "Quelle est la conséquence principale de la déamination de la cytosine ?",
+      "optionA": "Formation d'une uracile",
+      "optionB": "Formation d'une thymine",
+      "optionC": "Formation d'une guanine",
+      "optionD": "Formation d'une adénine",
+      "correctAnswer": "A",
+      "explanation": "La déamination de la cytosine conduit à la formation d'uracile, ce qui peut provoquer des mutations si non corrigée."
+    },
+    {
+      "question": "Quelle est la principale différence entre l'immunité innée et l'immunité adaptative ?",
+      "optionA": "L'immunité innée est spécifique à un pathogène",
+      "optionB": "L'immunité adaptative a une mémoire immunologique",
+      "optionC": "L'immunité innée implique des anticorps",
+      "optionD": "L'immunité adaptative est plus rapide",
+      "correctAnswer": "B",
+      "explanation": "L'immunité adaptative possède une mémoire immunologique qui permet une réponse plus rapide et plus efficace lors d'une exposition ultérieure au même pathogène."
+    },
+    {
+      "question": "Qu'est-ce qui caractérise la réplication semi-conservative de l'ADN ?",
+      "optionA": "Chaque molécule d'ADN fille est entièrement nouvelle",
+      "optionB": "Chaque molécule d'ADN fille conserve une chaîne parentale",
+      "optionC": "Les molécules filles sont identiques à la molécule parentale",
+      "optionD": "La réplication se fait sans intervention d'enzymes",
+      "correctAnswer": "B",
+      "explanation": "La réplication semi-conservative signifie que chaque molécule d'ADN fille conserve une chaîne parentale et possède une chaîne nouvellement synthétisée."
+    },
+    {
+      "question": "Quelle est la fonction principale des lymphocytes T helpers (CD4+) ?",
+      "optionA": "Détruire directement les cellules infectées",
+      "optionB": "Présenter des antigènes aux lymphocytes B",
+      "optionC": "Activer d'autres cellules immunitaires",
+      "optionD": "Produire des anticorps",
+      "correctAnswer": "C",
+      "explanation": "Les lymphocytes T helpers activent d'autres cellules immunitaires comme les lymphocytes B et les lymphocytes T cytotoxiques."
+    },
+    {
+      "question": "Quelle est la roche la plus abondante dans la croûte continentale ?",
+      "optionA": "Granite",
+      "optionB": "Basalte",
+      "optionC": "Gabbro",
+      "optionD": "Andésite",
+      "correctAnswer": "A",
+      "explanation": "Le granite est la roche la plus abondante dans la croûte continentale en raison de sa composition felsique et de sa formation par la différenciation magmatique."
+    },
+    {
+      "question": "Qu'est-ce qui caractérise un écosystème stable ?",
+      "optionA": "Biodiversité élevée",
+      "optionB": "Productivité primaire élevée",
+      "optionC": "Résilience élevée",
+      "optionD": "Tous ces éléments",
+      "correctAnswer": "D",
+      "explanation": "Un écosystème stable présente généralement une biodiversité élevée, une bonne productivité primaire et une résilience élevée pour faire face aux perturbations."
+    },
+    {
+      "question": "Quelle est la fonction principale de la photosynthèse ?",
+      "optionA": "Convertir l'énergie chimique en énergie lumineuse",
+      "optionB": "Convertir l'énergie lumineuse en énergie chimique",
+      "optionC": "Libérer de l'oxygène dans l'atmosphère",
+      "optionD": "Produire du glucose uniquement",
+      "correctAnswer": "B",
+      "explanation": "La photosynthèse convertit l'énergie lumineuse en énergie chimique stockée dans les molécules organiques comme le glucose."
+    },
+    {
+      "question": "Quelle est la différence principale entre la méiose I et la méiose II ?",
+      "optionA": "La méiose I sépare les homologues, la méiose II sépare les chromatides sœurs",
+      "optionB": "La méiose II produit des cellules haploïdes, la méiose I produit des cellules diploïdes",
+      "optionC": "La méiose I a lieu après la méiose II",
+      "optionD": "La méiose II implique un enjambement génétique",
+      "correctAnswer": "A",
+      "explanation": "La méiose I sépare les chromosomes homologues tandis que la méiose II sépare les chromatides sœurs, similaire à une mitose."
+    },
+    {
+      "question": "Qu'est-ce qui caractérise une mutation ponctuelle ?",
+      "optionA": "Modification d'un nucléotide",
+      "optionB": "Inversion d'un segment chromosomique",
+      "optionC": "Déletion d'un chromosome entier",
+      "optionD": "Translocation d'un chromosome entier",
+      "correctAnswer": "A",
+      "explanation": "Une mutation ponctuelle implique la modification d'un seul nucléotide dans la séquence d'ADN."
+    },
+    {
+      "question": "Quelle est la fonction principale des anticorps ?",
+      "optionA": "Phagocytose des pathogènes",
+      "optionB": "Activation des compléments",
+      "optionC": "Neutralisation des antigènes",
+      "optionD": "Présentation des antigènes",
+      "correctAnswer": "C",
+      "explanation": "Les anticorps neutralisent les antigènes en se liant à eux, empêchant ainsi leur interaction avec les cellules hôtes."
+    },
+    {
+      "question": "Qu'est-ce qui caractérise la loi de Hardy-Weinberg ?",
+      "optionA": "Elle décrit l'évolution des populations",
+      "optionB": "Elle décrit les équilibres génétiques dans une population",
+      "optionC": "Elle explique la dominance génétique",
+      "optionD": "Elle décrit la structure de l'ADN",
+      "correctAnswer": "B",
+      "explanation": "La loi de Hardy-Weinberg décrit les conditions dans lesquelles les fréquences alléliques et génotypiques restent constantes dans une population."
+    },
+    {
+      "question": "Qu'est-ce qui caractérise la photosynthèse C4 ?",
+      "optionA": "Elle se produit uniquement dans les plantes CAM",
+      "optionB": "Elle sépare la fixation du CO2 et la fixation du carbone",
+      "optionC": "Elle est moins efficace que la photosynthèse C3",
+      "optionD": "Elle n'utilise pas le cycle de Calvin",
+      "correctAnswer": "B",
+      "explanation": "La photosynthèse C4 sépare la fixation initiale du CO2 et la fixation du carbone dans le cycle de Calvin, permettant une meilleure efficacité en conditions arides."
+    },
+    {
+      "question": "Qu'est-ce qui caractérise la reproduction sexuée ?",
+      "optionA": "Production de clones génétiquement identiques",
+      "optionB": "Combinaison de matériel génétique de deux parents",
+      "optionC": "Absence de méiose",
+      "optionD": "Absence de fécondation",
+      "correctAnswer": "B",
+      "explanation": "La reproduction sexuée implique la combinaison du matériel génétique de deux parents, créant une descendance génétiquement unique."
+    },
+    {
+      "question": "Qu'est-ce qui caractérise la tectonique des plaques ?",
+      "optionA": "Les continents sont fixes",
+      "optionB": "La lithosphère est divisée en plaques mobiles",
+      "optionC": "Le magma ne circule pas dans le manteau",
+      "optionD": "Les séismes sont rares aux frontières des plaques",
+      "correctAnswer": "B",
+      "explanation": "La tectonique des plaques décrit le mouvement des plaques lithosphériques à la surface de la Terre, provoquant des phénomènes comme les séismes et les volcans."
+    },
+    {
+      "question": "Qu'est-ce qui caractérise le cycle de Krebs ?",
+      "optionA": "Il se produit dans le cytoplasme",
+      "optionB": "Il produit du glucose",
+      "optionC": "Il génère des molécules transporteurs d'électrons",
+      "optionD": "Il n'implique pas de dioxyde de carbone",
+      "correctAnswer": "C",
+      "explanation": "Le cycle de Krebs génère des molécules transporteurs d'électrons comme NADH et FADH2, qui sont utilisés dans la chaîne respiratoire."
+    },
+    {
+      "question": "Quelle est la fonction principale des lymphocytes B ?",
+      "optionA": "Détruire directement les cellules infectées",
+      "optionB": "Présenter des antigènes aux lymphocytes T",
+      "optionC": "Produire des anticorps",
+      "optionD": "Activer des macrophages",
+      "correctAnswer": "C",
+      "explanation": "Les lymphocytes B se différencient en plasmocytes qui produisent des anticorps spécifiques contre un antigène donné."
+    },
+    {
+      "question": "Qu'est-ce qui caractérise l'effet de serre ?",
+      "optionA": "Il est uniquement dû au dioxyde de carbone",
+      "optionB": "Il est responsable du réchauffement climatique",
+      "optionC": "Il est un phénomène naturel uniquement",
+      "optionD": "Il n'a aucun impact sur la vie sur Terre",
+      "correctAnswer": "B",
+      "explanation": "L'effet de serre, principalement dû aux gaz à effet de serre comme le CO2, est responsable du réchauffement climatique de la planète."
+    },
+    {
+      "question": "Qu'est-ce qui caractérise la transcription de l'ARNm ?",
+      "optionA": "Elle se produit dans le cytoplasme",
+      "optionB": "Elle utilise l'ARN polymérase pour copier l'ADN",
+      "optionC": "Elle produit des molécules d'ADN",
+      "optionD": "Elle n'inclut pas l'épissage",
+      "correctAnswer": "B",
+      "explanation": "La transcription utilise l'ARN polymérase pour copier un segment d'ADN en une molécule d'ARNm complémentaire."
+    },
+    {
+      "question": "Qu'est-ce qui caractérise la sélection naturelle ?",
+      "optionA": "Elle favorise les caractères moins adaptatifs",
+      "optionB": "Elle conduit à une adaptation des organismes à leur environnement",
+      "optionC": "Elle est indépendante de la variation génétique",
+      "optionD": "Elle produit une descendance identique aux parents",
+      "correctAnswer": "B",
+      "explanation": "La sélection naturelle favorise les individus aux caractères les mieux adaptés à leur environnement, conduisant à l'évolution des espèces."
+    },
+    {
+      "question": "Quelle est la conséquence principale de la méthylation de l'ADN sur l'expression génique ?",
+      "optionA": "Activation de la transcription des gènes concernés",
+      "optionB": "Inactivation de la transcription des gènes concernés",
+      "optionC": "Augmentation de la réplication de l'ADN",
+      "optionD": "Modification des séquences codantes",
+      "correctAnswer": "B",
+      "explanation": "La méthylation de l'ADN, ajout de groupes méthyles sur les cytosines, généralement en position CpG, entraîne généralement une inactivation de la transcription des gènes concernés en modifiant la structure de la chromatine."
+    },
+    {
+      "question": "Quel mécanisme explique le phénomène d'expression génique différentielle lors du développement embryonnaire ?",
+      "optionA": "Réplication semi-conservative",
+      "optionB": "Épissage alternatif",
+      "optionC": "Différenciation cellulaire",
+      "optionD": "Transcription sélective",
+      "correctAnswer": "D",
+      "explanation": "La transcription sélective est le mécanisme principal qui explique l'expression génique différentielle, où certains gènes sont transcrits dans certains types cellulaires mais pas dans d'autres, conduisant à la différenciation cellulaire."
+    },
+    {
+      "question": "Quelle est la fonction principale des lymphocytes T helpers (CD4+) dans la réponse immunitaire adaptative ?",
+      "optionA": "Destruction directe des cellules infectées",
+      "optionB": "Production d'anticorps",
+      "optionC": "Activation des lymphocytes B et cytotoxiques",
+      "optionD": "Phagocytose des pathogènes",
+      "correctAnswer": "C",
+      "explanation": "Les lymphocytes T helpers (CD4+) jouent un rôle central dans la régulation de la réponse immunitaire adaptative en activant les lymphocytes B (pour la production d'anticorps) et les lymphocytes T cytotoxiques (pour la destruction des cellules infectées)."
+    },
+    {
+      "question": "Quelle est la caractéristique principale des roches sédimentaires ?",
+      "optionA": "Formation à partir de magma refroidi",
+      "optionB": "Formation sous haute pression et température",
+      "optionC": "Formation à partir de sédiments consolidés",
+      "optionD": "Formation par métamorphisme de roches préexistantes",
+      "correctAnswer": "C",
+      "explanation": "Les roches sédimentaires se forment par la consolidation de sédiments (détritus organiques ou minéraux) déposés par l'eau, le vent ou la glace, puis compactés et cimentés."
+    },
+    {
+      "question": "Quel processus géologique explique la formation des chaînes de montagnes ?",
+      "optionA": "Érosion éolienne",
+      "optionB": "Sédimentation marine",
+      "optionC": "Tectonique des plaques",
+      "optionD": "Volcanisme effusif",
+      "correctAnswer": "C",
+      "explanation": "La tectonique des plaques est le processus géologique principal responsable de la formation des chaînes de montagnes, résultant de la convergence ou de la collision entre lithosphères."
+    },
+    {
+      "question": "Quel est le rôle principal de la photosynthèse dans les écosystèmes terrestres ?",
+      "optionA": "Production d'oxygène",
+      "optionB": "Fixation du carbone atmosphérique",
+      "optionC": "Génération d'énergie métabolique",
+      "optionD": "Dégradation de la matière organique",
+      "correctAnswer": "B",
+      "explanation": "La photosynthèse fixe le carbone atmosphérique (sous forme de CO2) en matière organique, constituant la base de la chaîne alimentaire et régulant le cycle du carbone global."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre la mitose et la méiose ?",
+      "optionA": "La mitose produit des cellules haploïdes, la méiose des cellules diploïdes",
+      "optionB": "La méiose implique une seule division cellulaire, la mitose deux",
+      "optionC": "La méiose introduit de la diversité génétique, la mitose conserve le génome identique",
+      "optionD": "La mitose a lieu uniquement dans les cellules germinales",
+      "correctAnswer": "C",
+      "explanation": "La méiose introduit de la diversité génétique par crossing-over et séparation aléatoire des chromosomes, alors que la mitose conserve le génome identique dans les cellules filles."
+    },
+    {
+      "question": "Quel mécanisme immunologique explique la réaction greffon contre hôte ?",
+      "optionA": "Déficit immunitaire congénital",
+      "optionB": "Tolérance centrale des lymphocytes T",
+      "optionC": "Réaction des lymphocytes T du donneur contre les tissus du receveur",
+      "optionD": "Production d'autoanticorps",
+      "correctAnswer": "C",
+      "explanation": "La réaction greffon contre hôte est une réaction immunologique où les lymphocytes T du donneur reconnaissent les antigènes du receveur comme étrangers et attaquent ses tissus."
+    },
+    {
+      "question": "Quelle est la particularité de la réplication semi-conservative de l'ADN ?",
+      "optionA": "Chaque molécule d'ADN fille est entièrement nouvelle",
+      "optionB": "Chaque molécule d'ADN fille conserve une des brins parentales",
+      "optionC": "Les molécules d'ADN filles sont identiques entre elles mais différentes de la molécule parentale",
+      "optionD": "La réplication n'implique qu'un seul brin d'ADN parental",
+      "correctAnswer": "B",
+      "explanation": "La réplication semi-conservative de l'ADN produit deux molécules d'ADN filles, chacune composée d'un brin parental et d'un brin nouvellement synthétisé, conservant ainsi l'information génétique."
+    },
+    {
+      "question": "Quelle est la différence entre le climat et le météo ?",
+      "optionA": "Le climat concerne les conditions atmosphères à court terme, la météo à long terme",
+      "optionB": "Le climat est la moyenne des conditions météorologiques sur une période longue, généralement 30 ans",
+      "optionC": "La météo concerne les variations saisonnières, le climat les variations journalières",
+      "optionD": "Le climat est local, la météo est globale",
+      "correctAnswer": "B",
+      "explanation": "Le climat correspond à la moyenne des conditions météorologiques (température, précipitations, etc.) sur une période longue (généralement 30 ans ou plus), tandis que la météo décrit les conditions atmosphères à court terme (jours à semaines)."
+    },
+    {
+      "question": "Quel est le rôle principal des hormones folliculo-stimulante (FSH) et lutéinisante (LH) dans le cycle féminin ?",
+      "optionA": "FSH stimule la production de progestérone, LH celle d'œstrogènes",
+      "optionB": "FSH stimule la maturation du follicule ovarien, LH déclenche l'ovulation",
+      "optionC": "FSH inhibe l'ovulation, LH la stimule",
+      "optionD": "FSH et LH agissent ensemble sur l'endomètre pour préparer l'implantation",
+      "correctAnswer": "B",
+      "explanation": "La FSH stimule la maturation du follicule ovarien et la production d'œstrogènes, tandis que le pic de LH déclenche l'ovulation et la formation du corps jaune."
+    },
+    {
+      "question": "Quelle est la conséquence principale de l'effet de serre sur le climat terrestre ?",
+      "optionA": "Refroidissement global",
+      "optionB": "Augmentation des températures moyennes",
+      "optionC": "Diminution des précipitations",
+      "optionD": "Augmentation de la couche d'ozone",
+      "correctAnswer": "B",
+      "explanation": "L'effet de serre, causé par l'accumulation de gaz à effet de serre dans l'atmosphère, piège la chaleur solaire et entraîne une augmentation des températures moyennes à la surface de la Terre."
+    },
+    {
+      "question": "Quelle est la fonction principale des anticorps dans la réponse immunitaire humorale ?",
+      "optionA": "Phagocytose des pathogènes",
+      "optionB": "Destruction directe des cellules infectées",
+      "optionC": "Neutralisation des pathogènes et marquage pour la phagocytose",
+      "optionD": "Activation des lymphocytes T helpers",
+      "correctAnswer": "C",
+      "explanation": "Les anticorps, produits par les lymphocytes B, neutralisent les pathogènes en se liant à leurs antigènes et les marquent pour la phagocytose par d'autres cellules immunitaires."
+    },
+    {
+      "question": "Quel est le rôle principal des chloroplastes dans les plantes ?",
+      "optionA": "Stockage de l'énergie sous forme d'amidon",
+      "optionB": "Photosynthèse et production de matière organique",
+      "optionC": "Respiration cellulaire et production d'ATP",
+      "optionD": "Fixation de l'azote atmosphérique",
+      "correctAnswer": "B",
+      "explanation": "Les chloroplastes sont les organites spécialisés dans la photosynthèse, capturant l'énergie lumineuse pour convertir le CO2 et l'eau en glucides, oxygénant l'atmosphère comme sous-produit."
     }
   ]
 }

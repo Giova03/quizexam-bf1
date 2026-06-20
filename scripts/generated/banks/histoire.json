@@ -284,6 +284,348 @@
       "optionD": "Toutes ces réponses",
       "correctAnswer": "D",
       "explanation": "Les conflits en Afrique après l'indépendance ont été causés par une combinaison de facteurs, dont la diversité ethnique, les frontières coloniales et la compétition pour les ressources naturelles."
+    },
+    {
+      "question": "Quel événement marque généralement le début officiel de la Seconde Guerre mondiale en Europe?",
+      "optionA": "L'invasion de la Pologne par l'Allemagne le 1er septembre 1939",
+      "optionB": "L'annexion de l'Autriche par l'Allemagne en mars 1938",
+      "optionC": "La signature du pacte de Munich en septembre 1938",
+      "optionD": "L'invasion de la Tchécoslovaquie par l'Allemagne en mars 1939",
+      "correctAnswer": "A",
+      "explanation": "L'invasion de la Pologne par l'Allemagne nazie le 1er septembre 1939 a provoqué la déclaration de guerre de la France et du Royaume-Uni à l'Allemagne, marquant ainsi le début de la Seconde Guerre mondiale en Europe."
+    },
+    {
+      "question": "Quel pays a refusé de signer les accords de Munich de 1938?",
+      "optionA": "L'Italie fasciste",
+      "optionB": "L'Union soviétique",
+      "optionC": "Les États-Unis",
+      "optionD": "Le Japon",
+      "correctAnswer": "B",
+      "explanation": "L'Union soviétique, bien qu'initialement partie des négociations, a été exclue des accords de Munich qui ont permis à l'Allemagne d'annexer les régions sudètes de Tchécoslovaquie."
+    },
+    {
+      "question": "Quel général français a proposé la ligne Maginot comme principale défense contre l'Allemagne?",
+      "optionA": "Charles de Gaulle",
+      "optionB": "Philippe Pétain",
+      "optionC": "André Maginot",
+      "optionD": "Maxime Weygand",
+      "correctAnswer": "C",
+      "explanation": "André Maginot, ministre de la Guerre puis des Affaires étrangères, a été le principal promoteur de la construction de la ligne de fortifications qui porte son nom, achevée en 1936."
+    },
+    {
+      "question": "Quel pays a été le premier à déclarer la guerre au Japon après l'attaque de Pearl Harbor?",
+      "optionA": "Les États-Unis",
+      "optionB": "Le Royaume-Uni",
+      "optionC": "La Chine",
+      "optionD": "L'Australie",
+      "correctAnswer": "B",
+      "explanation": "Le Royaume-Uni a été le premier pays à déclarer la guerre au Japon le 8 décembre 1941, seulement quelques heures après les États-Unis, en réponse à l'attaque de Pearl Harbor."
+    },
+    {
+      "question": "Quel événement a marqué la fin de la Seconde Guerre mondiale en Europe?",
+      "optionA": "La capitulation sans condition de l'Allemagne le 8 mai 1945",
+      "optionB": "La reddition de l'Italie en septembre 1943",
+      "optionC": "Le débarquement de Normandie en juin 1944",
+      "optionD": "La bataille de Berlin en avril 1945",
+      "correctAnswer": "A",
+      "explanation": "La capitulation sans condition de l'Allemagne, signée le 7 mai 1945 à Reims et ratifiée le 8 mai à Berlin, a marqué la fin officielle des hostilités en Europe."
+    },
+    {
+      "question": "Quelle est la date de création de l'Organisation des Nations Unies (ONU)?",
+      "optionA": "24 octobre 1945",
+      "optionB": "26 juin 1945",
+      "optionC": "1er janvier 1946",
+      "optionD": "10 décembre 1948",
+      "correctAnswer": "A",
+      "explanation": "L'ONU a été officiellement créée le 24 octobre 1945, date à laquelle la Charte a été ratifiée par les cinq membres permanents du Conseil de sécurité et la majorité des autres signataires."
+    },
+    {
+      "question": "Quel pays a proposé la création de la Commission de Décolonisation de l'ONU?",
+      "optionA": "La France",
+      "optionB": "Le Royaume-Uni",
+      "optionC": "L'Inde",
+      "optionD": "L'Éthiopie",
+      "correctAnswer": "C",
+      "explanation": "L'Inde, sous l'impulsion de Jawaharlal Nehru, a joué un rôle central dans la création de la Commission de Décolonisation en 1961 pour accélérer le processus de décolonisation."
+    },
+    {
+      "question": "Quelle est la date de création de l'Organisation de l'Unité Africaine (OUA)?",
+      "optionA": "25 mai 1963",
+      "optionB": "9 septembre 1999",
+      "optionC": "11 juillet 1999",
+      "optionD": "30 mai 1963",
+      "correctAnswer": "A",
+      "explanation": "L'Organisation de l'Unité Africaine (OUA) a été créée le 25 mai 1963 à Addis-Abeba, en Éthiopie, avec 32 États fondateurs."
+    },
+    {
+      "question": "Quel pays a accueilli la première conférence des pays non-alignés?",
+      "optionA": "L'Inde",
+      "optionB": "Yougoslavie",
+      "optionC": "Égypte",
+      "optionD": "Indonésie",
+      "correctAnswer": "C",
+      "explanation": "La première conférence des pays non-alignés s'est tenue en septembre 1961 à Belgrade, en Yougoslavie, mais c'est en Égypte que le mouvement a été officiellement fondé en 1956."
+    },
+    {
+      "question": "Quel leader a été le principal promoteur du mouvement des non-alignés?",
+      "optionA": "Kwame Nkrumah",
+      "optionB": "Gamal Abdel Nasser",
+      "optionC": "Josip Broz Tito",
+      "optionD": "Jawaharlal Nehru",
+      "correctAnswer": "C",
+      "explanation": "Josip Broz Tito, président de la Yougoslavie, a été l'un des principaux fondateurs du mouvement des non-alignés aux côtés de Nasser, Nehru et Nkrumah."
+    },
+    {
+      "question": "Quel pays a été le premier à quitter l'OUA?",
+      "optionA": "L'Afrique du Sud",
+      "optionB": "Le Maroc",
+      "optionC": "Le Sénégal",
+      "optionD": "Le Zaïre",
+      "correctAnswer": "A",
+      "explanation": "L'Afrique du Sud, sous le régime de l'apartheid, a quitté l'OUA en 1963 et n'y a été réadmise qu'en 1994 après la fin de l'apartheid."
+    },
+    {
+      "question": "Quel événement a marqué la fin officielle de l'apartheid en Afrique du Sud?",
+      "optionA": "La libération de Nelson Mandela en 1990",
+      "optionB": "Les premières élections multiraciales en 1994",
+      "optionC": "La fin de la ségrégation légale en 1986",
+      "optionD": "La signature de la Constitution en 1996",
+      "correctAnswer": "B",
+      "explanation": "Les premières élections multiraciales en Afrique du Sud en 1994, remportées par Nelson Mandela et le Congrès national africain (ANC), ont marqué la fin officielle de l'apartheid."
+    },
+    {
+      "question": "Quel pays a construit le mur de Berlin?",
+      "optionA": "Les États-Unis",
+      "optionB": "L'Union soviétique",
+      "optionC": "L'Allemagne de l'Ouest",
+      "optionD": "L'Allemagne de l'Est",
+      "correctAnswer": "D",
+      "explanation": "Le mur de Berlin a été construit par le gouvernement de la République démocratique allemande (Allemagne de l'Est) en 1961 pour empêcher l'exode de ses citoyens vers l'Allemagne de l'Ouest."
+    },
+    {
+      "question": "Quel événement a marqué la chute du mur de Berlin?",
+      "optionA": "La chute du communisme en Pologne en 1989",
+      "optionB": "La visite de Mikhaïl Gorbatchev à Berlin en octobre 1989",
+      "optionC": "La manifestation du 9 novembre 1989",
+      "optionD": "La réunification allemande en 1990",
+      "correctAnswer": "C",
+      "explanation": "Le mur de Berlin est tombé le 9 novembre 1989 suite à une annonce mal interprétée par la foule lors d'une conférence de presse, déclenchant une manifestation spontanée."
+    },
+    {
+      "question": "Quel leader africain a été surnommé 'le Che Guevara d'Afrique'?",
+      "optionA": "Kwame Nkrumah",
+      "optionB": "Patrice Lumumba",
+      "optionC": "Thomas Sankara",
+      "optionD": "Haile Selassie",
+      "correctAnswer": "C",
+      "explanation": "Thomas Sankara, président du Burkina Faso de 1983 à 1987, a été surnommé 'le Che Guevara d'Afrique' en raison de son engagement révolutionnaire, son ascétisme et ses politiques anti-impérialistes."
+    },
+    {
+      "question": "Quel pays a été le premier à accorder l'indépendance à ses colonies africaines?",
+      "optionA": "La France",
+      "optionB": "Le Royaume-Uni",
+      "optionC": "La Belgique",
+      "optionD": "Le Portugal",
+      "correctAnswer": "C",
+      "explanation": "La Belgique a accordé l'indépendance au Congo en 1960, suivie du Rwanda et du Burundi en 1962, devenant ainsi le premier pays européen à accorder l'indépendance à ses colonies africaines."
+    },
+    {
+      "question": "Quel événement a marqué le début de la guerre froide?",
+      "optionA": "Le discours de Fulton de Churchill en 1946",
+      "optionB": "Le plan Marshall en 1947",
+      "optionC": "Le blocus de Berlin en 1948-1949",
+      "optionD": "La création de l'OTAN en 1949",
+      "correctAnswer": "A",
+      "explanation": "Le discours de Fulton prononcé par Winston Churchill en mars 1946, où il évoquait le 'rideau de fer' séparant l'Est et l'Ouest, est souvent considéré comme l'événement fondateur de la guerre froide."
+    },
+    {
+      "question": "Quel pays a été le dernier à accorder l'indépendance à ses colonies en Afrique?",
+      "optionA": "La France",
+      "optionB": "Le Portugal",
+      "optionC": "L'Espagne",
+      "optionD": "L'Italie",
+      "correctAnswer": "B",
+      "explanation": "Le Portugal, sous le régime de Salazar puis de Caetano, a été le dernier pays européen à accorder l'indépendance à ses colonies africaines, entre 1974 et 1975, suite à la révolution des Œillets."
+    },
+    {
+      "question": "Quel événement a marqué la fin officielle de la guerre froide?",
+      "optionA": "La chute du mur de Berlin en 1989",
+      "optionB": "La dissolution de l'URSS en 1991",
+      "optionC": "La signature du traité de Start II en 1993",
+      "optionD": "La normalisation des relations entre les États-Unis et la Chine en 1979",
+      "correctAnswer": "B",
+      "explanation": "La dissolution de l'Union soviétique le 25 décembre 1991 est généralement considérée comme la fin officielle de la guerre froide, marquant la victoire des États-Unis et de leurs alliés."
+    },
+    {
+      "question": "Quel pays a proposé la création de la Communauté des États Africains (CEDEAO)?",
+      "optionA": "Le Nigeria",
+      "optionB": "Le Ghana",
+      "optionC": "La Côte d'Ivoire",
+      "optionD": "Le Sénégal",
+      "correctAnswer": "C",
+      "explanation": "La CEDEAO a été créée le 28 mai 1975 à Lagos, au Nigeria, mais c'est Félix Houphouët-Boigny, président de la Côte d'Ivoire, qui en a été le principal promoteur."
+    },
+    {
+      "question": "Quelle fut la principale conséquence de la Conférence de Yalta (février 1945) pour l'Europe de l'Est ?",
+      "optionA": "L'établissement de démocraties pluralistes dans tous les pays libérés",
+      "optionB": "Le maintien du capitalisme dans les pays sous influence soviétique",
+      "optionC": "L'inclusion des pays d'Europe de l'Est dans la sphère d'influence soviétique",
+      "optionD": "L'organisation d'élections libres supervisées par l'ONU",
+      "correctAnswer": "C",
+      "explanation": "La Conférence de Yalta a scellé le sort de l'Europe de l'Est en la plaçant sous l'influence soviétique, menant à l'établissement de régimes communistes dans ces pays."
+    },
+    {
+      "question": "Le concept de 'non-alignement', tel que promu par la Conférence de Bandung (1955), implique principalement :",
+      "optionA": "La neutralité absolue dans tous les conflits internationaux",
+      "optionB": "Le refus de tout partenariat économique avec les puissances occidentales",
+      "optionC": "L'indépendance dans la prise de décision politique et diplomatique",
+      "optionD": "L'alliance avec les pays socialistes contre l'impérialisme",
+      "correctAnswer": "C",
+      "explanation": "Le non-alignement se définit par l'indépendance dans la prise de décision politique, refusant de s'aligner sur les blocs Est-Ouest pendant la Guerre Froide."
+    },
+    {
+      "question": "La Déclaration universelle des droits de l'homme (1948) adoptée par l'ONU a été principalement influencée par :",
+      "optionA": "La tradition juridique islamique",
+      "optionB": "La pensée des Lumières et les horreurs de la Seconde Guerre mondiale",
+      "optionC": "Le système juridique chinois traditionnel",
+      "optionD": "Les coutumes africaines précoloniales",
+      "correctAnswer": "B",
+      "explanation": "Cette déclaration a été profondément marquée par la philosophie des Lumières et le désir de prévenir les violations des droits humaines constatées pendant la Seconde Guerre mondiale."
+    },
+    {
+      "question": "La politique d'apartheid en Afrique du Sud a été officiellement mise en place en :",
+      "optionA": "1948",
+      "optionB": "1960",
+      "optionC": "1976",
+      "optionD": "1990",
+      "correctAnswer": "A",
+      "explanation": "Le Parti national a remporté les élections en 1948 et a immédiatement institué la politique d'apartheid, formalisant la ségregation raciale déjà existante."
+    },
+    {
+      "question": "La décolonisation accélérée après la Seconde Guerre mondiale est principalement due à :",
+      "optionA": "La faiblesse économique des puissances coloniales après la guerre",
+      "optionB": "La pression des mouvements indépendantistes locaux",
+      "optionC": "Le changement de mentalité internationale après la Shoah",
+      "optionD": "Toutes ces raisons",
+      "correctAnswer": "D",
+      "explanation": "La décolonisation résulte d'une combinaison de ces facteurs : les puissances européennes affaiblies, les luttes nationales locales, et une évolution de la conscience internationale."
+    },
+    {
+      "question": "Thomas Sankara est principalement connu pour :",
+      "optionA": "Sa politique d'apartheid en Afrique du Sud",
+      "optionB": "Son rôle dans la création de l'OUA",
+      "optionC": "Sa révolution au Burkina Faso et ses positions anti-impérialistes",
+      "optionD": "Sa médiation dans le conflit israélo-arabe",
+      "correctAnswer": "C",
+      "explanation": "Thomas Sankara a dirigé la Révolution burkinabé de 1983, menant des réformes sociales, économiques et environnementales tout en adoptant une posture anti-impérialiste."
+    },
+    {
+      "question": "La chute du Mur de Berlin en 1989 a principalement été facilitée par :",
+      "optionA": "La politique de glasnost de Gorbatchev",
+      "optionB": "Les pressions militaires de l'OTAN",
+      "optionC": "L'intervention directe des États-Unis",
+      "optionD": "La réforme économique du Comecon",
+      "correctAnswer": "A",
+      "explanation": "La politique de glasnost (transparence) et de perestroïka (réforme) de Gorbatchev a affaibli le contrôle soviétique sur l'Europe de l'Est, permettant la chute du Mur."
+    },
+    {
+      "question": "La crise de Suez (1956) a marqué un tournant dans les relations internationales en :",
+      "optionA": "Confirmant la suprématie des puissances coloniales traditionnelles",
+      "optionB": "Accélérant le déclin de l'influence britannique et française au Moyen-Orient",
+      "optionC": "Réaffirmant le principe de non-intervention dans les affaires internes",
+      "optionD": "Consolidant l'alliance entre la France et l'Allemagne de l'Ouest",
+      "correctAnswer": "B",
+      "explanation": "La crise de Suez a révélé la diminution du pouvoir des anciennes puissances coloniales face aux nouvelles réalités géopolitiques, notamment l'influence croissante des États-Unis et de l'URSS."
+    },
+    {
+      "question": "L'Organisation de l'Unité Africaine (OUA) a été créée en 1963 principalement pour :",
+      "optionA": "Promouvoir le libéralisme économique en Afrique",
+      "optionB": "Lutter contre le colonialisme et le néo-colonialisme",
+      "optionC": "Établir une union monétaire africaine unique",
+      "optionD": "Créer une force de défense commune continentale",
+      "correctAnswer": "B",
+      "explanation": "L'OUA a été fondée pour unir les États africains dans leur lutte contre le colonialisme et le néo-colonialisme, et pour promouvoir la solidarité continentale."
+    },
+    {
+      "question": "La Conférence de Bandung (1955) a été significative car elle a :",
+      "optionA": "Établi les bases de la future Union Africaine",
+      "optionB": "Réuni pour la première fois 29 États asiatiques et africains indépendants",
+      "optionC": "Approuvé la création d'Israël",
+      "optionD": "Déclaré le soutien à la politique d'apartheid en Afrique du Sud",
+      "correctAnswer": "B",
+      "explanation": "Cette conférence historique a rassemblé des représentants de 29 nations asiatiques et africaines nouvellement indépendantes, jetant les bases du mouvement non-aligné."
+    },
+    {
+      "question": "La stratégie de 'guerre révolutionnaire' utilisée par la France pendant la guerre d'Algérie visait à :",
+      "optionA": "Éliminer physiquement toute la population algérienne",
+      "optionB": "Gagner les 'cœurs et les esprits' de la population civile",
+      "optionC": "Isoler le FLN de la population par des mesures de terreur",
+      "optionD": "Obtenir le soutien des pays arabes voisins",
+      "correctAnswer": "B",
+      "explanation": "Cette stratégie combinait actions militaires et mesures de 'pacification' visant à séduire la population civile et la couper du FLN."
+    },
+    {
+      "question": "La Déclaration sur l'octroi de l'indépendance aux pays et peuples coloniaux (1960) de l'ONU a été adoptée par :",
+      "optionA": "Unanimité des membres",
+      "optionB": "Majorité simple des membres",
+      "optionC": "Un vote contre de l'Afrique du Sud",
+      "optionD": "Un vote contre de la France et du Royaume-Uni",
+      "correctAnswer": "C",
+      "explanation": "Cette résolution historique a été adoptée par 89 voix contre 1 (Afrique du Sud) et 9 abstentions, marquant un tournant dans la décolonisation."
+    },
+    {
+      "question": "La politique de 'constructive engagement' menée par le gouvernement sud-africain de P.W. Botha dans les années 1980 visait à :",
+      "optionA": "Accélérer l'abolition de l'apartheid",
+      "optionB": "Réformer l'apartheid pour le rendre plus acceptable internationalement",
+      "optionC": "Isoler davantage la population noire",
+      "optionD": "Obtenir le retrait des sanctions internationales",
+      "correctAnswer": "B",
+      "explanation": "Cette politique tentait de réformes limitées pour préserver la domination blanche tout en atténuant les aspects les plus odieux de l'apartheid."
+    },
+    {
+      "question": "La Conférence de Téhéran (novembre-décembre 1943) a été significative car elle a :",
+      "optionA": "Décidé de l'ouverture du deuxième front en Europe",
+      "optionB": "Confirmé le principe de la capitulation sans condition de l'Allemagne",
+      "optionC": "Discuté de la future organisation de l'ONU",
+      "optionD": "Établi les zones d'occupation en Allemagne",
+      "correctAnswer": "A",
+      "explanation": "Cette conférence a notamment abouti à la décision d'ouvrir un deuxième front en Europe (Opération Overlord) pour soulager l'Armée rouge sur le front de l'Est."
+    },
+    {
+      "question": "La transformation de l'OUA en Union Africaine (UA) en 2002 a marqué :",
+      "optionA": "Un retour aux idéaux fondateurs de l'OUA",
+      "optionB": "Un abandon de principe de non-ingérence",
+      "optionC": "Un renforcement de l'intégration politique et économique africaine",
+      "optionD": "La fin du soutien aux mouvements de libération",
+      "correctAnswer": "C",
+      "explanation": "La création de l'UA a représenté une évolution vers une plus grande intégration politique, économique et institutionnelle, avec des mécanismes de gouvernance plus forts."
+    },
+    {
+      "question": "La Conférence de Versailles (1919) a eu un impact significatif sur la Seconde Guerre mondiale en :",
+      "optionA": "Créant les conditions économiques et politiques qui ont facilité l'arrivée d'Hitler au pouvoir",
+      "optionB": "Établissant une paix durable en Europe",
+      "optionC": "Désarmant définitivement l'Allemagne",
+      "optionD": "Créant la Société des Nations",
+      "correctAnswer": "A",
+      "explanation": "Les clauses très dures du traité de Versailles ont créé un ressentiment en Allemagne, contribuant à la montée du nazisme et à la Seconde Guerre mondiale."
+    },
+    {
+      "question": "La crise des missiles de Cuba (1962) a été résolue lorsque :",
+      "optionA": "Les États-Unis ont envahi Cuba",
+      "optionB": "L'URSS a accepté de retirer ses missiles en échange du retrait des missiles américains de Turquie",
+      "optionC": "Fidel Castro a renversé son alliance avec l'URSS",
+      "optionD": "L'ONU a déployé des troupes pour superviser la zone",
+      "correctAnswer": "B",
+      "explanation": "La crise s'est terminée par un accord secret : l'URSS retirait ses missiles de Cuba et les États-Unis s'engageaient à retirer leurs missiles de Turquie."
+    },
+    {
+      "question": "La politique d'assistance technique et financière de la France en Afrique francophone après l'indépendance est souvent qualifiée de :",
+      "optionA": "Développementalisme",
+      "optionB": "Françafrique",
+      "optionC": "Coopération Sud-Sud",
+      "optionD": "Aide humanitaire",
+      "correctAnswer": "B",
+      "explanation": "Ce terme désigne le système de relations complexes entre la France et ses anciennes colonies africaines, mêlant coopération économique, politique et influence."
     }
   ]
 }

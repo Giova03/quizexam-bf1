@@ -314,6 +314,177 @@
       "optionD": "Le marché secondaire est régulé par la BCEAO, le marché primaire par la BRVM",
       "correctAnswer": "B",
       "explanation": "Le marché primaire est où les entreprises émettent de nouvelles actions pour la première fois, levant directement des capitaux. Le marché secondaire est où les investisseurs achètent et vendent des actions déjà émises, sans intervention directe de l'émetteur."
+    },
+    {
+      "question": "Quelle est la formule correcte pour calculer le PIB par la méthode des dépenses ?",
+      "optionA": "PIB = Consommation + Investissement + Exportations - Importations",
+      "optionB": "PIB = Revenus des facteurs + Amortissements + Impôts indirects - Subventions",
+      "optionC": "PIB = Consommation + Investissement + Importations - Exportations",
+      "optionD": "PIB = Revenus des facteurs + Transferts courants + Impôts directs",
+      "correctAnswer": "A",
+      "explanation": "La méthode des dépenses calcule le PIB comme la somme de la consommation finale, de l'investissement, des exportations nettes (exportations - importations) et des dépenses gouvernementales."
+    },
+    {
+      "question": "Quelle est la principale différence entre l'inflation sous-jacente et l'inflation harmonisée dans la zone UEMOA ?",
+      "optionA": "L'inflation sous-jacente exclut les produits alimentaires et énergétiques, tandis que l'inflation harmonisée est calculée selon une méthode commune aux pays de l'UEMOA",
+      "optionB": "L'inflation harmonisée exclut les produits alimentaires et énergétiques, tandis que l'inflation sous-jacente est calculée selon une méthode commune aux pays de l'UEMOA",
+      "optionC": "L'inflation sous-jacente est mesurée par la BCEAO, tandis que l'inflation harmonisée est mesurée par le FMI",
+      "optionD": "Il n'y a pas de différence entre les deux, ce sont simplement deux termes pour la même mesure",
+      "correctAnswer": "A",
+      "explanation": "L'inflation sous-jacente exclut les prix volatils des produits alimentaires et énergétiques pour mieux refléter les tendances de fond. L'inflation harmonisée est calculée selon une méthodologie commune aux pays de l'UEMOA pour permettre les comparaisons internationales."
+    },
+    {
+      "question": "Quel est le rôle principal de la BCEAO dans la zone franc ?",
+      "optionA": "Déterminer les taux directeurs de la zone euro",
+      "optionB": "Émettre la monnaie et assurer la politique monétaire des pays membres de l'UEMOA",
+      "optionC": "Gérer les réserves de change des pays membres de l'UEMOA",
+      "optionD": "Contrôler les mouvements de capitaux entre les pays membres de l'UEMOA",
+      "correctAnswer": "B",
+      "explanation": "La Banque Centrale des États de l'Afrique de l'Ouest (BCEAO) est responsable de l'émission du franc CFA et de la mise en œuvre de la politique monétaire pour les 8 pays membres de l'UEMOA."
+    },
+    {
+      "question": "Quelle est la caractéristique distinctive du franc CFA dans la zone UEMOA ?",
+      "optionA": "Il est indexé sur l'euro avec un taux de change fixe",
+      "optionB": "Il est une monnaie flottante gérée par chaque État membre",
+      "optionC": "Il est indexé sur le dollar américain avec un taux de change fixe",
+      "optionD": "Il est une monnaie commune avec l'Afrique du Sud",
+      "correctAnswer": "A",
+      "explanation": "Le franc CFA de l'UEMOA est indexé sur l'euro avec un taux de change fixe (1 euro = 655,957 XOF), avec une garantie du Trésor français."
+    },
+    {
+      "question": "Comment la TVA affecte-t-elle le prix final d'un produit dans une économie ?",
+      "optionA": "Elle réduit le prix final en permettant une déduction de la taxe payée sur les intrants",
+      "optionB": "Elle augmente le prix final en ajoutant un pourcentage de la valeur ajoutée à chaque étape de la production",
+      "optionC": "Elle n'affecte pas le prix final car elle est entièrement supportée par le producteur",
+      "optionD": "Elle est uniquement prélevée sur les exportations pour encourager le commerce international",
+      "correctAnswer": "B",
+      "explanation": "La TVA est une taxe sur la consommation qui augmente le prix final des biens et services. Elle est calculée comme un pourcentage de la valeur ajoutée à chaque étape de la chaîne de production."
+    },
+    {
+      "question": "Qu'est-ce qu'un excédent commercial ?",
+      "optionA": "Lorsque les importations sont supérieures aux exportations",
+      "optionB": "Lorsque les exportations sont supérieures aux importations",
+      "optionC": "Lorsque les exportations et importations sont égales",
+      "optionD": "Le solde des transferts de fonds à l'étranger",
+      "correctAnswer": "B",
+      "explanation": "Un excédent commercial se produit lorsqu'un pays exporte plus de biens et services qu'il n'en importe, ce qui améliore sa balance commerciale."
+    },
+    {
+      "question": "Quel est le rôle du FMI dans la zone UEMOA ?",
+      "optionA": "Il supervise la politique monétaire de la BCEAO",
+      "optionB": "Il accorde des prêts aux pays membres en difficulté économique",
+      "optionC": "Il émet le franc CFA",
+      "optionD": "Il fixe les taux de change entre les pays membres de l'UEMOA",
+      "correctAnswer": "B",
+      "explanation": "Le Fonds Monétaire International (FMI) fournit des conseils financiers et accorde des prêts aux pays membres qui font face à des difficultés économiques, y compris dans la zone UEMOA."
+    },
+    {
+      "question": "Comment la politique monétaire de la BCEAO affecte-t-elle l'inflation dans la zone UEMOA ?",
+      "optionA": "En augmentant les réserves obligatoires des banques commerciales",
+      "optionB": "En modifiant le taux d'intérêt directeur pour influencer le crédit et la masse monétaire",
+      "optionC": "En contrôlant directement les prix des produits de base",
+      "optionD": "En fixant les salaires dans le secteur public",
+      "correctAnswer": "B",
+      "explanation": "La BCEAO utilise son taux d'intérêt directeur comme principal outil pour contrôler l'inflation. En augmentant les taux, elle rend le crédit plus cher, ce qui réduit la demande et l'inflation."
+    },
+    {
+      "question": "Quelle est la principale conséquence d'une dépréciation du franc CFA ?",
+      "optionA": "Les importations deviennent moins chères et les exportations plus chères",
+      "optionB": "Les importations deviennent plus chères et les exportations moins chères",
+      "optionC": "Le pouvoir d'achat des consommateurs augmente",
+      "optionD": "L'inflation diminue nécessairement",
+      "correctAnswer": "B",
+      "explanation": "Une dépréciation du franc CFA rend les importations plus coûteuses en monnaie locale, tandis que les exportations deviennent moins chères pour les acheteurs étrangers, ce qui peut stimuler les exportations."
+    },
+    {
+      "question": "Comment le PIB nominal diffère-t-il du PIB réel ?",
+      "optionA": "Le PIB nominal est ajusté de l'inflation, tandis que le PIB réel ne l'est pas",
+      "optionB": "Le PIB réel est ajusté de l'inflation, tandis que le PIB nominal ne l'est pas",
+      "optionC": "Le PIB nominal inclut les transferts gouvernementaux, tandis que le PIB réel ne les inclut pas",
+      "optionD": "Le PIB réel est toujours supérieur au PIB nominal",
+      "correctAnswer": "B",
+      "explanation": "Le PIB réel est ajusté de l'inflation et mesure la production en termes de volume, reflétant mieux la croissance économique. Le PIB nominal est mesuré en prix courants et inclut l'effet des changements de prix."
+    },
+    {
+      "question": "Quelle est la principale fonction de la parité fixe du franc CFA avec l'euro ?",
+      "optionA": "Permettre une politique monétaire indépendante pour chaque pays de l'UEMOA",
+      "optionB": "Garantir la stabilité des prix et faciliter les échanges avec l'Union européenne",
+      "optionC": "Permettre une dévaluation compétitive pour stimuler les exportations",
+      "optionD": "Financer le déficit budgétaire des pays membres",
+      "correctAnswer": "B",
+      "explanation": "La parité fixe avec l'euro garantit la stabilité des prix dans la zone UEMOA et facilite les échanges commerciaux avec l'Union européenne en éliminant le risque de change entre ces zones."
+    },
+    {
+      "question": "Comment une hausse des taux d'intérêt par la BCEAO affecte-t-elle l'économie de l'UEMOA ?",
+      "optionA": "Elle stimule l'investissement et la consommation",
+      "optionB": "Elle rend l'emprunt plus cher, ce qui peut freiner l'investissement et la consommation",
+      "optionC": "Elle n'affecte pas les décisions d'investissement des entreprises",
+      "optionD": "Elle entraîne nécessairement une dépréciation du franc CFA",
+      "correctAnswer": "B",
+      "explanation": "Une hausse des taux d'intérêt rend l'emprunt plus cher pour les entreprises et les consommateurs, ce qui peut réduire l'investissement, la consommation et ainsi ralentir l'activité économique."
+    },
+    {
+      "question": "Qu'est-ce que la balance des paiements ?",
+      "optionA": "La différence entre les recettes et les dépenses d'un gouvernement",
+      "optionB": "Le solde entre les flux financiers entrants et sortants d'un pays",
+      "optionC": "La différence entre les exportations et les importations de biens et services",
+      "optionD": "Le solde entre les impôts et les dépenses publiques",
+      "correctAnswer": "B",
+      "explanation": "La balance des paiements est un enregistrement complet de toutes les transactions économiques entre les résidents d'un pays et le reste du monde, incluant la balance commerciale, les services, les transferts et les flux de capitaux."
+    },
+    {
+      "question": "Quel est l'impact d'une forte inflation sur la valeur du franc CFA ?",
+      "optionA": "Elle entraîne une appréciation du franc CFA",
+      "optionB": "Elle n'affecte pas la valeur du franc CFA car celui-ci est indexé sur l'euro",
+      "optionC": "Elle peut exercer une pression à la dépréciation du franc CFA",
+      "optionD": "Elle améliore la compétitivité-prix des exportations",
+      "correctAnswer": "C",
+      "explanation": "Une forte inflation dans un pays de l'UEMOA peut exercer une pression à la dépréciation du franc CFA, car la perte de valeur de la monnaie nationale rend les importations plus chères et peut déstabiliser la zone."
+    },
+    {
+      "question": "Comment la TVA diffère-t-elle de la taxe sur les produits pétroliers (TIPP) ?",
+      "optionA": "La TVA est une taxe sur la valeur ajoutée, tandis que la TIPP est une taxe spécifique sur les carburants",
+      "optionB": "La TIPP est une taxe sur la valeur ajoutée, tandis que la TVA est une taxe spécifique sur les carburants",
+      "optionC": "La TVA est uniquement prélevée sur les produits importés, tandis que la TIPP est prélevée sur tous les produits",
+      "optionD": "Il n'y a pas de différence, ce sont simplement deux noms pour la même taxe",
+      "correctAnswer": "A",
+      "explanation": "La TVA est un impôt général sur la consommation calculé comme un pourcentage de la valeur ajoutée, tandis que la TIPP est une taxe spécifique (par unité) sur les carburants, conçue principalement pour la fiscalité écologique et les recettes."
+    },
+    {
+      "question": "Quel est le rôle du Mécanisme de Convergence de l'UEMOA ?",
+      "optionA": "Assurer la stabilité des prix dans la zone",
+      "optionB": "Surveiller et évaluer la performance économique des États membres",
+      "optionC": "Gérer les réserves de change de la zone",
+      "optionD": "Fixer les salaires dans le secteur public",
+      "correctAnswer": "B",
+      "explanation": "Le Mécanisme de Convergence de l'UEMOA évalue la performance économique des États membres en fonction de critères de convergence (taux d'inflation, déficit public, dette publique, etc.) pour assurer la stabilité macroéconomique dans la zone."
+    },
+    {
+      "question": "Comment une dévaluation du franc CFA affecterait-elle la balance commerciale d'un pays de l'UEMOA ?",
+      "optionA": "Elle détériorerait nécessairement la balance commerciale",
+      "optionB": "Elle améliorerait nécessairement la balance commerciale",
+      "optionC": "Elle n'aurait aucun effet sur la balance commerciale",
+      "optionD": "Son effet dépend de la réactivité des exportations et importations aux prix (élasticité-prix)",
+      "correctAnswer": "D",
+      "explanation": "L'effet d'une dévaluation sur la balance commerciale dépend de la réactivité des exportations et importations aux changements de prix (élasticité-prix). Si les exportations sont très sensibles aux prix et les importations peu sensibles, la balance commerciale s'améliore."
+    },
+    {
+      "question": "Quel est l'objectif principal du Programme d'Appui à la Compétitivité et à la Croissance (PACC) dans la zone UEMOA ?",
+      "optionA": "Stabiliser les prix dans la zone",
+      "optionB": "Améliorer la compétitivité des entreprises et soutenir la croissance économique",
+      "optionC": "Réduire la dette publique des pays membres",
+      "optionD": "Augmenter les réserves de change de la BCEAO",
+      "correctAnswer": "B",
+      "explanation": "Le PACC vise à améliorer la compétitivité des entreprises de la zone UEMOA en modernisant le tissu productif, en facilitant l'accès au financement et en soutenant les secteurs porteurs pour stimuler la croissance économique."
+    },
+    {
+      "question": "Comment une politique de déflation affecte-t-elle l'économie d'un pays de l'UEMOA ?",
+      "optionA": "Elle stimule la consommation et l'investissement",
+      "optionB": "Elle réduit les prix mais peut aussi augmenter le poids réel de la dette",
+      "optionC": "Elle n'affecte pas les décisions d'investissement des entreprises",
+      "optionD": "Elle entraîne toujours une appréciation de la monnaie nationale",
+      "correctAnswer": "B",
+      "explanation": "La déflation (baisse durable des prix) peut stimuler la consommation à court terme en rendant les biens moins chers, mais elle peut aussi décourager l'investissement (en raison des perspectives de moindres profits) et augmenter le poids réel de la dette."
     }
   ]
 }

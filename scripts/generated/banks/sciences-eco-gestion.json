@@ -323,6 +323,141 @@
       "optionD": "Imiter les stratégies des concurrents leaders",
       "correctAnswer": "B",
       "explanation": "La stratégie de différenciation vise à offrir un produit ou service perçu comme unique par les clients, justifiant un prix premium, plutôt que de se concentrer sur les coûts ou un segment spécifique."
+    },
+    {
+      "question": "Dans un modèle de concurrence monopolistique, quelle caractéristique distingue fondamentalement ce marché d'un marché de concurrence parfaite ?",
+      "optionA": "Le nombre d'entreprises sur le marché",
+      "optionB": "La liberté d'entrée et de sortie sur le marché",
+      "optionC": "La différenciation des produits",
+      "optionD": "L'information parfaite des consommateurs",
+      "correctAnswer": "C",
+      "explanation": "Dans la concurrence monopolistique, les produits sont différenciés, ce qui permet aux entreprises d'avoir un certain pouvoir de marché, contrairement à la concurrence parfaite où les produits sont homogènes."
+    },
+    {
+      "question": "Selon la théorie du revenu permanent de Milton Friedman, comment un consommateur réagirait-il à une réduction temporaire de son revenu ?",
+      "optionA": "Il réduirait significativement sa consommation",
+      "optionB": "Il maintiendrait sa consommation en puisant dans son épargne",
+      "optionC": "Il augmenterait sa consommation en anticipant une future augmentation de revenu",
+      "optionD": "Il reporterait ses dépenses futures pour maintenir son niveau de consommation actuel",
+      "correctAnswer": "B",
+      "explanation": "Selon Friedman, les consommateurs basent leurs décisions sur leur revenu permanent (durable) plutôt que sur leur revenu transitoire (temporaire). Une réduction temporaire du revenu ne modifierait donc pas significativement la consommation."
+    },
+    {
+      "question": "En comptabilité nationale, quel indicateur mesure la valeur totale des biens et services finaux produits sur un territoire donné, quelle que soit la nationalité des producteurs ?",
+      "optionA": "Produit Intérieur Brut (PIB)",
+      "optionB": "Produit National Brut (PNB)",
+      "optionC": "Revenu National Brut (RNB)",
+      "optionD": "Revenu Disponible Brut (RDB)",
+      "correctAnswer": "A",
+      "explanation": "Le PIB mesure la valeur de tous les biens et services finaux produits sur un territoire donné, quelle que soit la nationalité des producteurs. Le PNB inclut les revenus des facteurs reçus de l'étranger."
+    },
+    {
+      "question": "Dans une stratégie de marketing, le concept de 'valeur perçue' par le client est principalement influencé par :",
+      "optionA": "Le prix de vente uniquement",
+      "optionB": "La communication publicitaire uniquement",
+      "optionC": "La combinaison des bénéfices perçus et du coût perçu",
+      "optionD": "Les coûts de production de l'entreprise",
+      "correctAnswer": "C",
+      "explanation": "La valeur perçue par le client résulte de l'évaluation qu'il fait des bénéfices qu'il attend d'un produit (qualité, service, image) par rapport au coût qu'il doit supporter (prix, effort d'achat)."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre une obligation à taux fixe et une obligation à taux variable ?",
+      "optionA": "La durée de vie de l'emprunt",
+      "optionB": "L'émetteur de l'emprunt",
+      "optionC": "La manière dont le coupon est déterminé",
+      "optionD": "La notation de crédit",
+      "correctAnswer": "C",
+      "explanation": "Sur une obligation à taux fixe, le coupon (intérêt) est constant tout au long de la vie de l'emprunt. Sur une obligation à taux variable, le coupon est révisé périodiquement en fonction d'un taux de référence."
+    },
+    {
+      "question": "En microéconomie, quel concept explique pourquoi un monopole naturel tend à émerger dans certains secteurs ?",
+      "optionA": "L'existence d'externalités positives",
+      "optionB": "Les rendements d'échelle croissants",
+      "optionC": "L'asymétrie d'information",
+      "optionD": "Le problème du passager clandestin",
+      "correctAnswer": "B",
+      "explanation": "Un monopole naturel apparaît lorsque les rendements d'échelle sont croissants sur toute la gamme de demande, rendant plus efficient pour une seule entreprise de produire plutôt que pour plusieurs concurrents."
+    },
+    {
+      "question": "Dans un contexte de stagflation (inflation élevée + faible croissance), quelle politique monétaire serait généralement inappropriée ?",
+      "optionA": "Une politique de taux d'intérêt élevé",
+      "optionB": "Une politique de taux d'intérêt bas",
+      "optionC": "Une politique de quantitative easing",
+      "optionD": "Une politique de réserve obligatoire augmentée",
+      "correctAnswer": "B",
+      "explanation": "Une politique de taux d'intérêt bas stimulerait la demande et aggraverait l'inflation, sans résoudre le problème de croissance faible. La stagflation pose un dilemme politique car les outils traditionnels sont inefficaces."
+    },
+    {
+      "question": "En comptabilité, quelle est la différence fondamentale entre la méthode de la comptabilité d'exercice et la comptabilité de caisse ?",
+      "optionA": "La méthode de calcul de l'amortissement",
+      "optionB": "La prise en compte des charges et des produits",
+      "optionC": "La détermination du résultat fiscal",
+      "optionD": "La valorisation des stocks",
+      "correctAnswer": "B",
+      "explanation": "La comptabilité d'exercice enregistre les charges et les produits lorsqu'ils sont constatés, indépendamment des flux de trésorerie. La comptabilité de caisse ne comptabilise que les flux effectifs de trésorerie."
+    },
+    {
+      "question": "Dans un portefeuille d'actions, le concept de 'bêta' mesure :",
+      "optionA": "Le rendement attendu du portefeuille",
+      "optionB": "La volatilité historique du portefeuille",
+      "optionC": "La sensibilité du portefeuille aux mouvements du marché",
+      "optionD": "La corrélation entre les différentes actions du portefeuille",
+      "correctAnswer": "C",
+      "explanation": "Le bêta mesure la sensibilité d'un titre ou d'un portefeuille aux mouvements du marché global. Un bêta de 1 indique une sensibilité moyenne, supérieur à 1 une sensibilité plus forte que le marché, et inférieur à 1 une sensibilité moindre."
+    },
+    {
+      "question": "En marketing, le modèle AIDA (Attention, Intérêt, Désir, Action) représente :",
+      "optionA": "Les étapes du cycle de vie d'un produit",
+      "optionB": "Les étapes du processus de décision du consommateur",
+      "optionC": "Les composantes du mix marketing",
+      "optionD": "Les niveaux de la hiérarchie des besoins de Maslow",
+      "correctAnswer": "B",
+      "explanation": "Le modèle AIDA décrit le processus que suit un consommateur potentiel depuis sa première prise de conscience d'un produit jusqu'à l'achat final."
+    },
+    {
+      "question": "En macroéconomie, la courbe de Phillips décrit une relation entre :",
+      "optionA": "Le chômage et l'inflation",
+      "optionB": "Les taux d'intérêt et l'inflation",
+      "optionC": "La croissance du PIB et l'inflation",
+      "optionD": "Les exportations et l'inflation",
+      "correctAnswer": "A",
+      "explanation": "La courbe de Phillips originale décrit une relation inverse entre le taux d'inflation et le taux de chômage dans une économie, bien que cette relation soit devenue moins stable dans les économies modernes."
+    },
+    {
+      "question": "En finance d'entreprise, la VAN (Valeur Actuelle Nette) d'un projet est calculée comme :",
+      "optionA": "La somme des flux de trésorerie futurs actualisés moins l'investissement initial",
+      "optionB": "Le taux de rendement interne du projet",
+      "optionC": "La somme des flux de trésorerie futurs non actualisés",
+      "optionD": "L'investissement initial divisé par le flux de trésorerie annuel moyen",
+      "correctAnswer": "A",
+      "explanation": "La VAN est la différence entre la valeur actuelle des flux de trésorerie futurs générés par un projet et le montant de l'investissement initial nécessaire pour le lancer."
+    },
+    {
+      "question": "En comptabilité, le principe de prudence implique que :",
+      "optionA": "Les actifs soient toujours sous-évalués",
+      "optionB": "Les passifs soient toujours surévalués",
+      "optionC": "Les pertes soient constatées dès qu'elles sont probables, tandis que les gains ne sont constatés qu'une fois réalisés",
+      "optionD": "Les produits soient comptabilisés dès leur encaissement",
+      "correctAnswer": "C",
+      "explanation": "Le principe de prudence conduit à une moins-value probable immédiate et à une plus-value certaine seulement à la réalisation, évitant de surestimer les résultats de l'entreprise."
+    },
+    {
+      "question": "En stratégie marketing, la 'cible' désigne :",
+      "optionA": "L'ensemble des consommateurs potentiels d'un produit",
+      "optionB": "Le segment de marché spécifique vers lequel les efforts marketing sont dirigés",
+      "optionC": "Le positionnement du produit sur le marché",
+      "optionD": "Les concurrents directs de l'entreprise",
+      "correctAnswer": "B",
+      "explanation": "La cible marketing est le segment spécifique de population identifié comme le plus susceptible d'acheter le produit ou le service et sur lequel l'entreprise concentre ses efforts marketing."
+    },
+    {
+      "question": "En microéconomie, le surplus du consommateur est défini comme :",
+      "optionA": "La différence entre ce que le consommateur est prêt à payer et ce qu'il paie effectivement",
+      "optionB": "La différence entre le prix du marché et le coût de production",
+      "optionC": "La somme de tous les gains des producteurs sur le marché",
+      "optionD": "Le revenu disponible du consommateur après l'achat du bien",
+      "correctAnswer": "A",
+      "explanation": "Le surplus du consommateur représente la différence entre la valeur subjective qu'il attribue au bien (ce qu'il serait prêt à payer) et le prix qu'il paie effectivement, mesurant son bénéfice de l'échange."
     }
   ]
 }

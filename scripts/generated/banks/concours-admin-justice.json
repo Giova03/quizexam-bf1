@@ -305,6 +305,321 @@
       "optionD": "Aucune procédure n'est définie dans la Constitution",
       "correctAnswer": "D",
       "explanation": "La Constitution de 1991 ne définit aucune procédure spécifique pour la nomination du directeur de l'ENAM, relevant de la réglementation administrative."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de la Constitution togolaise de 1991 par rapport aux précédentes ?",
+      "optionA": "Elle a établi un régime monarchique constitutionnel",
+      "optionB": "Elle a introduit le multipartisme politique",
+      "optionC": "Elle a créé un système fédéral",
+      "optionD": "Elle a institué une assemblée parlementaire monocamérale",
+      "correctAnswer": "B",
+      "explanation": "La Constitution de 1991 a marqué une rupture avec les régimes antérieurs en introduisant le multipartisme politique, mettant fin au système à parti unique en vigueur depuis 1969."
+    },
+    {
+      "question": "Combien de régions administratives le Togo compte-t-il après la décentralisation de 1998 ?",
+      "optionA": "5 régions",
+      "optionB": "10 régions",
+      "optionC": "12 régions",
+      "optionD": "17 régions",
+      "correctAnswer": "D",
+      "explanation": "La décentralisation au Togo a organisé le territoire en 5 régions initialement, puis a été réorganisée pour atteindre 17 régions administratives."
+    },
+    {
+      "question": "Quelle est la fonction principale du Conseil constitutionnel togolais ?",
+      "optionA": "Il juge des litiges électoraux",
+      "optionB": "Il contrôle la constitutionnalité des lois",
+      "optionC": "Il nomme les hauts fonctionnaires",
+      "optionD": "Il dirige les forces armées",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil constitutionnel togolais a pour mission principale de veiller à la constitutionnalité des lois avant leur promulgation et de trancher les litiges électoraux."
+    },
+    {
+      "question": "Quelle est la durée du mandat du Président de la République selon la Constitution de 1991 ?",
+      "optionA": "5 ans renouvelable une fois",
+      "optionB": "6 ans non renouvelable",
+      "optionC": "7 ans renouvelable",
+      "optionD": "5 ans renouvelable deux fois",
+      "correctAnswer": "A",
+      "explanation": "La Constitution de 1991 a établi un mandat présidentiel de 5 ans, renouvelable une fois, limitant ainsi le nombre de mandats à deux."
+    },
+    {
+      "question": "Quel est le rôle de l'ENAM au Togo ?",
+      "optionA": "Elle forme les diplomates",
+      "optionB": "Elle forme les magistrats et hauts fonctionnaires",
+      "optionC": "Elle gère les élections",
+      "optionD": "Elle contrôle la conformité des lois",
+      "correctAnswer": "B",
+      "explanation": "L'École Nationale d'Administration et de Magistrature (ENAM) forme les futurs magistrats et hauts fonctionnaires de l'administration togolaise."
+    },
+    {
+      "question": "Quelle est la composition du Conseil constitutionnel togolais ?",
+      "optionA": "7 membres nommés par le Président",
+      "optionB": "9 membres dont 3 nommés par le Président, 3 par l'Assemblée et 3 par la Cour suprême",
+      "optionC": "5 membres élus par le peuple",
+      "optionD": "6 membres nommés par le Premier ministre",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil constitutionnel togolais se compose de 9 membres : 3 nommés par le Président, 3 par l'Assemblée nationale et 3 par la Cour suprême."
+    },
+    {
+      "question": "Quelle est la base juridique de la décentralisation au Togo ?",
+      "optionA": "La loi du 28 juillet 1992",
+      "optionB": "La loi du 29 décembre 1998",
+      "optionC": "La Constitution de 1991",
+      "optionD": "Le décret du 15 janvier 1993",
+      "correctAnswer": "B",
+      "explanation": "La décentralisation au Togo est principalement encadrée par la loi du 29 décembre 1998 qui organise les 17 régions administratives."
+    },
+    {
+      "question": "Quelle est la procédure de révision constitutionnelle au Togo ?",
+      "optionA": "L'initiative appartient exclusivement au Président",
+      "optionB": "L'initiative appartient au Parlement ou au Président",
+      "optionC": "L'initiative appartient exclusivement au Parlement",
+      "optionD": "L'initiative appartient aux citoyens par référendum",
+      "correctAnswer": "B",
+      "explanation": "La révision constitutionnelle peut être initiée soit par le Président de la République, soit par les membres du Parlement."
+    },
+    {
+      "question": "Quelle est la valeur hiérarchique du Conseil constitutionnel par rapport aux autres juridictions ?",
+      "optionA": "Il est inférieur à la Cour suprême",
+      "optionB": "Il est au même niveau que la Cour suprême",
+      "optionC": "Il est supérieur à toutes les autres juridictions",
+      "optionD": "Il dépend directement du Président",
+      "correctAnswer": "C",
+      "explanation": "Le Conseil constitutionnel est la plus haute juridiction de l'État en matière de constitutionnalité et est supérieur à toutes les autres juridictions."
+    },
+    {
+      "question": "Quelle est la langue officielle de la Constitution togolaise de 1991 ?",
+      "optionA": "L'anglais",
+      "optionB": "Le français",
+      "optionC": "L'allemand",
+      "optionD": "L'éwé",
+      "correctAnswer": "B",
+      "explanation": "La Constitution togolaise de 1991 est rédigée en français, qui est la langue officielle du Togo."
+    },
+    {
+      "question": "Quelle est la durée maximale d'un état d'urgence selon la Constitution de 1991 ?",
+      "optionA": "15 jours",
+      "optionB": "30 jours",
+      "optionC": "60 jours",
+      "optionD": "90 jours",
+      "correctAnswer": "B",
+      "explanation": "La Constitution de 1991 limite l'état d'urgence à 30 jours, renouvelable par l'Assemblée nationale."
+    },
+    {
+      "question": "Quel est le principe directeur de la décentralisation au Togo ?",
+      "optionA": "La centralisation du pouvoir",
+      "optionB": "La déconcentration administrative",
+      "optionC": "La libre administration des collectivités territoriales",
+      "optionD": "L'interventionnisme étatique",
+      "correctAnswer": "C",
+      "explanation": "Le principe directeur de la décentralisation au Togo est la libre administration des collectivités territoriales, garantissant leur autonomie."
+    },
+    {
+      "question": "Quelle est la procédure de nomination des membres de l'ENAM ?",
+      "optionA": "Nomination directe par le Président",
+      "optionB": "Concours national suivi d'une nomination par décret",
+      "optionC": "Héréditaire",
+      "optionD": "Élection par les citoyens",
+      "correctAnswer": "B",
+      "explanation": "L'accès à l'ENAM se fait par un concours national, suivi d'une nomination par décret pour les candidats admis."
+    },
+    {
+      "question": "Quelle est la nature du pouvoir exécutif selon la Constitution de 1991 ?",
+      "optionA": "Unicaméral",
+      "optionB": "Bicaméral",
+      "optionC": "Monocratique",
+      "optionD": "Collégial",
+      "correctAnswer": "C",
+      "explanation": "Le pouvoir exécutif selon la Constitution de 1991 est monocratique, exercé par un Président de la République."
+    },
+    {
+      "question": "Quelle est la compétence exclusive du Conseil constitutionnel en matière électorale ?",
+      "optionA": "Organisation des élections",
+      "optionB": "Proclamation des résultats définitifs",
+      "optionC": "Financement des campagnes électorales",
+      "optionD": "Réglementation des partis politiques",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil constitutionnel a la compétence exclusive de proclamer les résultats définitifs des élections présidentielles et législatives."
+    },
+    {
+      "question": "Quelle est la durée du mandat des conseillers municipaux au Togo ?",
+      "optionA": "4 ans",
+      "optionB": "5 ans",
+      "optionC": "6 ans",
+      "optionD": "7 ans",
+      "correctAnswer": "C",
+      "explanation": "Les conseillers municipaux au Togo sont élus pour un mandat de 6 ans, conformément à la législation électorale."
+    },
+    {
+      "question": "Quelle est la procédure de contrôle de la constitutionnalité des lois ?",
+      "optionA": "Contrôle a priori uniquement",
+      "optionB": "Contrôle a posteriori uniquement",
+      "optionC": "Contrôle a priori et a posteriori",
+      "optionD": "Aucun contrôle spécifique",
+      "correctAnswer": "C",
+      "explanation": "Le Conseil constitutionnel exerce un contrôle a priori (avant promulgation) et peut être saisi pour un contrôle a posteriori (après promulgation) dans certaines conditions."
+    },
+    {
+      "question": "Quelle est la nature du système politique établi par la Constitution de 1991 ?",
+      "optionA": "Monarchie absolue",
+      "optionB": "République semi-présidentielle",
+      "optionC": "République parlementaire",
+      "optionD": "Dictature militaire",
+      "correctAnswer": "B",
+      "explanation": "La Constitution de 1991 a établi un régime républicain semi-présidentiel, combinant un exécutif fort et un parlementaire."
+    },
+    {
+      "question": "Quelle est la compétence de l'Assemblée nationale en matière budgétaire ?",
+      "optionA": "Elle ne peut que modifier le budget",
+      "optionB": "Elle vote le budget mais ne peut pas le rejeter",
+      "optionC": "Elle vote et peut rejeter le budget",
+      "optionD": "Le budget est voté directement par le Conseil des ministres",
+      "correctAnswer": "C",
+      "explanation": "L'Assemblée nationale a le pouvoir de voter le budget de l'État et peut le rejeter, exerçant ainsi un contrôle sur l'action gouvernementale."
+    },
+    {
+      "question": "Quelle est la condition pour être membre du Conseil constitutionnel ?",
+      "optionA": "Avoir au moins 40 ans",
+      "optionB": "Être membre d'un parti politique",
+      "optionC": "Avoir été ministre",
+      "optionD": "Être avocat depuis 10 ans",
+      "correctAnswer": "A",
+      "explanation": "Pour être membre du Conseil constitutionnel, il faut avoir au moins 40 ans, être de nationalité togolaise et jouir de tous ses droits civiques."
+    },
+    {
+      "question": "La Constitution de 1991 du Bénin a été adoptée par référendum le 2 décembre 1990. Parmi les principes fondamentaux suivants, lequel n'est pas explicitement énoncé dans le Préambule de cette Constitution ?",
+      "optionA": "La dignité humaine",
+      "optionB": "Les droits de l'homme",
+      "optionC": "La laïcité de l'État",
+      "optionD": "La solidarité nationale",
+      "correctAnswer": "C",
+      "explanation": "La laïcité de l'État n'est pas explicitement mentionnée dans le Préambule de la Constitution de 1991, bien que les libertés religieuses soient garanties."
+    },
+    {
+      "question": "Concernant la décentralisation avec les 17 régions au Bénin, quel est le statut juridique actuel de ces entités territoriales ?",
+      "optionA": "Elles sont des collectivités territoriales décentralisées",
+      "optionB": "Elles sont des circonscriptions administratives déconcentrées",
+      "optionC": "Elles sont des établissements publics à caractère administratif",
+      "optionD": "Elles sont des organes déconcentrés de l'État",
+      "correctAnswer": "B",
+      "explanation": "Les 17 régions sont des circonscriptions administratives déconcentrées dirigées par un préfet, et non des collectivités territoriales décentralisées qui ont une autonomie plus large."
+    },
+    {
+      "question": "Le Conseil constitutionnel béninois est composé de membres dont certains sont nommés par différentes autorités. Parmi les propositions suivantes, laquelle correspond à la composition actuelle du Conseil ?",
+      "optionA": "6 membres nommés par le Président, 3 par l'Assemblée nationale et 3 par la Cour suprême",
+      "optionB": "7 membres nommés par le Président, 3 par l'Assemblée nationale et 2 par la Cour suprême",
+      "optionC": "7 membres nommés par le Président, 4 par l'Assemblée nationale et 3 par la Cour suprême",
+      "optionD": "5 membres nommés par le Président, 3 par l'Assemblée nationale et 3 par la Cour suprême",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil constitutionnel comprend 7 membres: 7 nommés par le Président de la République, 3 par l'Assemblée nationale et 2 par la Cour suprême."
+    },
+    {
+      "question": "L'École Nationale d'Administration et de Magistrature (ENAM) au Bénin a pour principale mission:",
+      "optionA": "Former uniquement les hauts fonctionnaires de l'État",
+      "optionB": "Former les magistrats et les hauts fonctionnaires de l'État",
+      "optionC": "Former les juges de première instance uniquement",
+      "optionD": "Former les avocats de la République",
+      "correctAnswer": "B",
+      "explanation": "L'ENAM a pour mission principale de former les magistrats et les hauts fonctionnaires de l'État, assurant ainsi la formation des élites administratives et judiciaires."
+    },
+    {
+      "question": "Selon la Constitution béninoise de 1991, quel est le délai maximal pendant lequel le Président de la République peut dissoudre l'Assemblée nationale ?",
+      "optionA": "Pendant les six premiers mois de sa législature",
+      "optionB": "Après l'adoption d'une motion de censure",
+      "optionC": "À tout moment, sauf dans les six derniers mois de son mandat",
+      "optionD": "Uniquement après consultation du Conseil constitutionnel",
+      "correctAnswer": "C",
+      "explanation": "Le Président peut dissoudre l'Assemblée nationale à tout moment, sauf dans les six derniers mois de son propre mandat, selon l'article 93 de la Constitution."
+    },
+    {
+      "question": "En droit constitutionnel béninois, la question prioritaire de constitutionnalité (QPC) permet:",
+      "optionA": "À tout citoyen de saisir directement le Conseil constitutionnel",
+      "optionB": "À un juge de surseoir à juger pour renvoyer une question au Conseil constitutionnel",
+      "optionC": "Au Gouvernement de contester la constitutionnalité d'une loi",
+      "optionD": "Au Parlement de réviser partiellement la Constitution",
+      "correctAnswer": "B",
+      "explanation": "La QPC permet à un juge de surseoir à statuer afin de renvoyer une question de constitutionnalité au Conseil constitutionnel pour qu'il se prononce sur la conformité d'une norme à la Constitution."
+    },
+    {
+      "question": "Quelle est la procédure suivie pour la révision constitutionnelle au Bénin selon l'article 174 ?",
+      "optionA": "Initiative par le Président et adoption par référendum",
+      "optionB": "Initiative par les députés et adoption par l'Assemblée nationale",
+      "optionC": "Initiative par le Président ou les députés, adoption par l'Assemblée nationale puis référendum",
+      "optionD": "Initiative par le Président ou les députés, adoption par l'Assemblée nationale à la majorité des deux tiers",
+      "correctAnswer": "D",
+      "explanation": "La révision constitutionnelle peut être initiée par le Président ou les députés, et doit être adoptée par l'Assemblée nationale à la majorité des deux tiers de ses membres."
+    },
+    {
+      "question": "La Cour des Comptes au Bénin est:",
+      "optionA": "Une juridiction administrative",
+      "optionB": "Une juridiction financière",
+      "optionC": "Une juridiction pénale spécialisée",
+      "optionD": "Une juridiction commerciale",
+      "correctAnswer": "B",
+      "explanation": "La Cour des Comptes est une juridiction financière chargée de contrôler la gestion des finances publiques et des organismes publics."
+    },
+    {
+      "question": "Le droit à l'information des citoyens est garanti par la Constitution béninoise de 1991. Selon l'article 24, ce droit:",
+      "optionA": "N'a pas de limites légales",
+      "optionB": "Peut être restreint par la loi pour la défense de l'ordre public",
+      "optionC": "Ne s'applique qu'aux fonctionnaires de l'État",
+      "optionD": "Ne peut être invoqué contre l'administration",
+      "correctAnswer": "B",
+      "explanation": "Le droit à l'information peut être limité par la loi dans les conditions prévues par celle-ci, notamment pour la défense de l'ordre public, la sécurité nationale ou la protection de la vie privée."
+    },
+    {
+      "question": "Le Haut Conseil de l'Audiovisuel et de la Communication (HCAC) a pour mission principale:",
+      "optionA": "De réguler les marchés financiers",
+      "optionB": "De contrôler la régularité des élections",
+      "optionC": "De réguler et de contrôler les médias et la communication audiovisuelle",
+      "optionD": "De superviser la formation des journalistes",
+      "correctAnswer": "C",
+      "explanation": "Le HCAC est l'autorité administrative indépendante chargée de réguler et de contrôler les médias et la communication audiovisuelle au Bénin."
+    },
+    {
+      "question": "En droit administratif béninois, la responsabilité de l'État pour fait dommageable:",
+      "optionA": "Est toujours engagée sans condition",
+      "optionB": "N'est engagée que si le dommage est causé par un agent dans l'exercice de ses fonctions",
+      "optionC": "Est engagée même en l'absence de faute de l'administration",
+      "optionD": "N'est jamais engagée pour les actes de gouvernement",
+      "correctAnswer": "C",
+      "explanation": "La responsabilité de l'État peut être engagée même en l'absence de faute, notamment pour les risques exceptionnels ou lorsque l'administration intervient dans des domaines économiques."
+    },
+    {
+      "question": "La Constitution béninoise de 1991 a instauré un régime politique qui peut être qualifié de:",
+      "optionA": "Parlementarisme monocaméral",
+      "optionB": "Présidentialisme",
+      "optionC": "Régime semi-présidentiel",
+      "optionD": "Monarchie constitutionnelle",
+      "correctAnswer": "C",
+      "explanation": "Le régime politique béninois est semi-présidentiel, combinant des éléments de régime présidentiel (élection directe du Président) et parlementaire (responsabilité gouvernementale devant l'Assemblée)."
+    },
+    {
+      "question": "La compétence matérielle exclusive de la Cour Constitutionnelle comprend:",
+      "optionA": "Le jugement des crimes commis par les ministres",
+      "optionB": "Le contrôle de la constitutionnalité des lois",
+      "optionC": "Le règlement des différends entre les ministres",
+      "optionD": "La surveillance des élections municipales",
+      "correctAnswer": "B",
+      "explanation": "La compétence matérielle principale du Conseil constitutionnel est le contrôle de la constitutionnalité des lois avant leur promulgation et des lois après leur promulgation dans le cadre de la QPC."
+    },
+    {
+      "question": "En droit administratif béninois, le recours pour excès de pouvoir est:",
+      "optionA": "Un recours de plein contentieux",
+      "optionB": "Un receur en annulation",
+      "optionC": "Un recours en réparation",
+      "optionD": "Un recours en référé",
+      "correctAnswer": "B",
+      "explanation": "Le recours pour excès de pouvoir est un recours en annulation qui permet de contester la légalité des actes administratifs mais non d'obtenir directement une condamnation à réparation."
+    },
+    {
+      "question": "La décentralisation au Bénin a été renforcée par la Constitution de 1991. Parmi les collectivités territoriales suivantes, laquelle bénéficie de la plus grande autonomie ?",
+      "optionA": "La commune",
+      "optionB": "Le département",
+      "optionC": "La région",
+      "optionD": "L'arrondissement",
+      "correctAnswer": "A",
+      "explanation": "La commune est la collectivité territoriale qui bénéficie de la plus grande autonomie, avec des compétences propres et un pouvoir exécutif fort (maire), contrairement aux autres entités qui sont plus déconcentrées."
     }
   ]
 }

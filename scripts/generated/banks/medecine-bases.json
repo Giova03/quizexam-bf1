@@ -1,0 +1,741 @@
+{
+  "bankKey": "medecine-bases",
+  "title": "Médecine - Bases & Anatomie",
+  "description": "Anatomie, physiologie, pathologies, pharmacologie de base.",
+  "category": "Universitaire",
+  "subcategory": "Médecine",
+  "icon": "HeartPulse",
+  "color": "rose",
+  "level": "LICENCE",
+  "questions": [
+    {
+      "question": "Combien de cavités possède le cœur humain ?",
+      "optionA": "4 (2 oreillettes, 2 ventricules)",
+      "optionB": "2",
+      "optionC": "3",
+      "optionD": "6",
+      "correctAnswer": "A",
+      "explanation": "Le cœur a 4 cavités : oreillette droite, oreillette gauche, ventricule droit, ventricule gauche."
+    },
+    {
+      "question": "Quelle valve sépare l'oreillette gauche du ventricule gauche ?",
+      "optionA": "Valve mitrale",
+      "optionB": "Valve tricuspide",
+      "optionC": "Valve aortique",
+      "optionD": "Valve pulmonaire",
+      "correctAnswer": "A",
+      "explanation": "La valve mitrale (bicuspidienne) est entre OG et VG."
+    },
+    {
+      "question": "Quelle valve sépare l'oreillette droite du ventricule droit ?",
+      "optionA": "Valve tricuspide",
+      "optionB": "Valve mitrale",
+      "optionC": "Valve aortique",
+      "optionD": "Valve pulmonaire",
+      "correctAnswer": "A",
+      "explanation": "La valve tricuspide (3 valves) est entre OD et VD."
+    },
+    {
+      "question": "Le sang oxygéné arrive au cœur par :",
+      "optionA": "Les veines pulmonaires",
+      "optionB": "Les veines caves",
+      "optionC": "L'artère pulmonaire",
+      "optionD": "L'aorte",
+      "correctAnswer": "A",
+      "explanation": "Les veines pulmonaires ramènent le sang oxygéné des poumons vers l'OG."
+    },
+    {
+      "question": "Le sang non oxygéné quitte le cœur vers les poumons par :",
+      "optionA": "L'artère pulmonaire",
+      "optionB": "L'aorte",
+      "optionC": "Les veines pulmonaires",
+      "optionD": "Les veines caves",
+      "correctAnswer": "A",
+      "explanation": "L'artère pulmonaire transporte le sang non oxygéné du VD vers les poumons."
+    },
+    {
+      "question": "Combien de chromosomes possède la cellule humaine somatique ?",
+      "optionA": "46 (23 paires)",
+      "optionB": "23",
+      "optionC": "48",
+      "optionD": "44",
+      "correctAnswer": "A",
+      "explanation": "Les cellules somatiques (diploïdes) ont 46 chromosomes (23 paires)."
+    },
+    {
+      "question": "Les gamètes (spermatozoïdes, ovules) ont combien de chromosomes ?",
+      "optionA": "23 (haploïdes)",
+      "optionB": "46",
+      "optionC": "48",
+      "optionD": "22",
+      "correctAnswer": "A",
+      "explanation": "Les gamètes sont haploïdes (n=23)."
+    },
+    {
+      "question": "La mitose produit :",
+      "optionA": "2 cellules filles identiques (diploïdes)",
+      "optionB": "4 cellules haploïdes",
+      "optionC": "1 cellule",
+      "optionD": "8 cellules",
+      "correctAnswer": "A",
+      "explanation": "La mitose produit 2 cellules filles identiques à la cellule mère."
+    },
+    {
+      "question": "La méiose produit :",
+      "optionA": "4 cellules haploïdes (gamètes)",
+      "optionB": "2 cellules diploïdes",
+      "optionC": "1 cellule",
+      "optionD": "8 cellules",
+      "correctAnswer": "A",
+      "explanation": "La méiose produit 4 gamètes haploïdes à partir d'une cellule diploïde."
+    },
+    {
+      "question": "Quelle est la fonction des globules rouges ?",
+      "optionA": "Transporter l'oxygène",
+      "optionB": "Combattre les infections",
+      "optionC": "Coaguler le sang",
+      "optionD": "Transporter les nutriments",
+      "correctAnswer": "A",
+      "explanation": "Les globules rouges (hématies) transportent l'O₂ grâce à l'hémoglobine."
+    },
+    {
+      "question": "Quelle est la fonction des globules blancs ?",
+      "optionA": "Défense immunitaire",
+      "optionB": "Transporter l'O₂",
+      "optionC": "Coaguler",
+      "optionD": "Transporter les nutriments",
+      "correctAnswer": "A",
+      "explanation": "Les globules blancs (leucocytes) assurent la défense immunitaire."
+    },
+    {
+      "question": "Quelle est la fonction des plaquettes ?",
+      "optionA": "Coagulation du sang",
+      "optionB": "Transporter l'O₂",
+      "optionC": "Immunité",
+      "optionD": "Transporter les nutriments",
+      "correctAnswer": "A",
+      "explanation": "Les plaquettes (thrombocytes) assurent la coagulation."
+    },
+    {
+      "question": "L'hormone antidiurétique (ADH) est sécrétée par :",
+      "optionA": "L'hypophyse",
+      "optionB": "La thyroïde",
+      "optionC": "Le pancréas",
+      "optionD": "Les surrénales",
+      "correctAnswer": "A",
+      "explanation": "L'ADH (vasopressine) est sécrétée par l'hypophyse postérieure."
+    },
+    {
+      "question": "L'insuline est sécrétée par :",
+      "optionA": "Les cellules β des îlots de Langerhans (pancréas)",
+      "optionB": "La thyroïde",
+      "optionC": "Le foie",
+      "optionD": "Les surrénales",
+      "correctAnswer": "A",
+      "explanation": "L'insuline est produite par les cellules β des îlots de Langerhans."
+    },
+    {
+      "question": "Le diabète de type 1 est dû à :",
+      "optionA": "La destruction des cellules β du pancréas",
+      "optionB": "La résistance à l'insuline",
+      "optionC": "L'excès de sucre",
+      "optionD": "Le stress",
+      "correctAnswer": "A",
+      "explanation": "Le diabète type 1 = destruction auto-immune des cellules β."
+    },
+    {
+      "question": "Le diabète de type 2 est caractérisé par :",
+      "optionA": "La résistance à l'insuline",
+      "optionB": "L'absence d'insuline",
+      "optionC": "L'excès d'insuline",
+      "optionD": "L'absence de glucose",
+      "correctAnswer": "A",
+      "explanation": "Le diabète type 2 = insulinorésistance."
+    },
+    {
+      "question": "L'enzyme qui convertit l'angiotensine I en angiotensine II est :",
+      "optionA": "L'ECA (enzyme de conversion de l'angiotensine)",
+      "optionB": "La rénine",
+      "optionC": "L'aldostérone",
+      "optionD": "L'ADH",
+      "correctAnswer": "A",
+      "explanation": "L'ECA convertit l'angiotensine I (inactive) en angiotensine II (active vasoconstrictrice)."
+    },
+    {
+      "question": "Le paludisme est causé par :",
+      "optionA": "Le parasite Plasmodium",
+      "optionB": "Un virus",
+      "optionC": "Une bactérie",
+      "optionD": "Un champignon",
+      "correctAnswer": "A",
+      "explanation": "Le paludisme est causé par le protozoaire Plasmodium (falciparum, vivax...)."
+    },
+    {
+      "question": "Le VIH attaque principalement :",
+      "optionA": "Les lymphocytes T CD4",
+      "optionB": "Les globules rouges",
+      "optionC": "Les plaquettes",
+      "optionD": "Les neurones",
+      "correctAnswer": "A",
+      "explanation": "Le VIH détruit les lymphocytes T CD4+, affaiblissant l'immunité."
+    },
+    {
+      "question": "La drépanocytose est une maladie :",
+      "optionA": "Génétique du sang (hémoglobinopathie)",
+      "optionB": "Infectieuse",
+      "optionC": "Auto-immune",
+      "optionD": "Tumorale",
+      "correctAnswer": "A",
+      "explanation": "La drépanocytose (anémie falciforme) est une maladie génétique de l'hémoglobine."
+    },
+    {
+      "question": "Le cholestérol est transporté dans le sang par :",
+      "optionA": "Les lipoprotéines (HDL, LDL)",
+      "optionB": "Les globules rouges",
+      "optionC": "Les plaquettes",
+      "optionD": "L'albumine",
+      "correctAnswer": "A",
+      "explanation": "Le cholestérol est transporté par HDL (bon) et LDL (mauvais)."
+    },
+    {
+      "question": "Le LDL est appelé 'mauvais cholestérol' car :",
+      "optionA": "Il dépose le cholestérol dans les artères",
+      "optionB": "Il est toxique",
+      "optionC": "Il est inutile",
+      "optionD": "Il provoque le diabète",
+      "correctAnswer": "A",
+      "explanation": "Le LDL dépose le cholestérol dans les artères (athérosclérose)."
+    },
+    {
+      "question": "L'hypertension artérielle est définie par une PA supérieure à :",
+      "optionA": "140/90 mmHg",
+      "optionB": "120/80 mmHg",
+      "optionC": "160/100 mmHg",
+      "optionD": "130/85 mmHg",
+      "correctAnswer": "A",
+      "explanation": "L'HTA est définie par PA ≥ 140/90 mmHg."
+    },
+    {
+      "question": "Le cœur adulte bat en moyenne combien de fois par minute au repos ?",
+      "optionA": "60-100",
+      "optionB": "30-50",
+      "optionC": "100-150",
+      "optionD": "150-200",
+      "correctAnswer": "A",
+      "explanation": "La fréquence cardiaque normale au repos est 60-100 bpm."
+    },
+    {
+      "question": "L'ECG (électrocardiogramme) enregistre :",
+      "optionA": "L'activité électrique du cœur",
+      "optionB": "La pression artérielle",
+      "optionC": "Les bruits cardiaques",
+      "optionD": "Le débit cardiaque",
+      "correctAnswer": "A",
+      "explanation": "L'ECG enregistre l'activité électrique du cœur."
+    },
+    {
+      "question": "Quelle est la plus grande artère du corps ?",
+      "optionA": "L'aorte",
+      "optionB": "L'artère pulmonaire",
+      "optionC": "L'artère carotide",
+      "optionD": "L'artère fémorale",
+      "correctAnswer": "A",
+      "explanation": "L'aorte est la plus grande artère, partant du ventricule gauche."
+    },
+    {
+      "question": "L'enzyme digestive de l'estomac est :",
+      "optionA": "La pepsine",
+      "optionB": "L'amylase",
+      "optionC": "La lipase",
+      "optionD": "La trypsine",
+      "correctAnswer": "A",
+      "explanation": "La pepsine digère les protéines dans l'estomac (en milieu acide)."
+    },
+    {
+      "question": "La bile est produite par :",
+      "optionA": "Le foie",
+      "optionB": "La vésicule biliaire",
+      "optionC": "Le pancréas",
+      "optionD": "L'estomac",
+      "correctAnswer": "A",
+      "explanation": "La bile est produite par le foie et stockée dans la vésicule biliaire."
+    },
+    {
+      "question": "L'urée est éliminée par :",
+      "optionA": "Les reins",
+      "optionB": "Le foie",
+      "optionC": "Les poumons",
+      "optionD": "La peau",
+      "correctAnswer": "A",
+      "explanation": "L'urée est filtrée et excrétée par les reins dans l'urine."
+    },
+    {
+      "question": "La nephron est l'unité fonctionnelle du :",
+      "optionA": "Rein",
+      "optionB": "Foie",
+      "optionC": "Poumon",
+      "optionD": "Cœur",
+      "correctAnswer": "A",
+      "explanation": "Le néphron est l'unité fonctionnelle du rein (filtration, réabsorption)."
+    },
+    {
+      "question": "Combien de reins possède l'être humain ?",
+      "optionA": "2",
+      "optionB": "1",
+      "optionC": "3",
+      "optionD": "4",
+      "correctAnswer": "A",
+      "explanation": "L'humain possède 2 reins (gauche et droit)."
+    },
+    {
+      "question": "L'homéostasie désigne :",
+      "optionA": "Le maintien de l'équilibre interne",
+      "optionB": "La croissance",
+      "optionC": "La reproduction",
+      "optionD": "La digestion",
+      "correctAnswer": "A",
+      "explanation": "L'homéostasie = maintien des constantes physiologiques internes."
+    },
+    {
+      "question": "Le système nerveux central comprend :",
+      "optionA": "Le cerveau et la moelle épinière",
+      "optionB": "Les nerfs",
+      "optionC": "Les ganglions",
+      "optionD": "Les récepteurs",
+      "correctAnswer": "A",
+      "explanation": "Le SNC = encéphale (cerveau) + moelle épinière."
+    },
+    {
+      "question": "Le système nerveux périphérique comprend :",
+      "optionA": "Les nerfs et ganglions",
+      "optionB": "Le cerveau",
+      "optionC": "La moelle épinière",
+      "optionD": "Le cervelet",
+      "correctAnswer": "A",
+      "explanation": "Le SNP = nerfs crâniens, nerfs spinaux, ganglions."
+    },
+    {
+      "question": "Le neurone transmet l'influx nerveux via :",
+      "optionA": "Les synapses",
+      "optionB": "Les capillaires",
+      "optionC": "Les muscles",
+      "optionD": "Les os",
+      "correctAnswer": "A",
+      "explanation": "Le neurone communique via les synapses (neurotransmetteurs)."
+    },
+    {
+      "question": "Les neurotransmetteurs sont :",
+      "optionA": "Des messagers chimiques",
+      "optionB": "Des cellules",
+      "optionC": "Des hormones",
+      "optionD": "Des protéines",
+      "correctAnswer": "A",
+      "explanation": "Les neurotransmetteurs (dopamine, sérotonine...) sont des messagers chimiques."
+    },
+    {
+      "question": "La dopamine est impliquée dans :",
+      "optionA": "La récompense et le mouvement",
+      "optionB": "La digestion",
+      "optionC": "La coagulation",
+      "optionD": "La respiration",
+      "correctAnswer": "A",
+      "explanation": "La dopamine régule la motivation, la récompense et le mouvement (Parkinson = déficit)."
+    },
+    {
+      "question": "La maladie de Parkinson est due à la dégénérescence des neurones :",
+      "optionA": "Dopaminergiques (substance noire)",
+      "optionB": "Sérotoninergiques",
+      "optionC": "Cholinergiques",
+      "optionD": "GABAergiques",
+      "correctAnswer": "A",
+      "explanation": "Parkinson = perte des neurones dopaminergiques de la substance noire."
+    },
+    {
+      "question": "La maladie d'Alzheimer est caractérisée par :",
+      "optionA": "Les plaques amyloïdes et dégénérescence neurofibrillaire",
+      "optionB": "Un excès de dopamine",
+      "optionC": "Un déficit en insuline",
+      "optionD": "Une tumeur",
+      "correctAnswer": "A",
+      "explanation": "Alzheimer = plaques β-amyloïdes + enchevêtrements de tau."
+    },
+    {
+      "question": "L'hormone de croissance est sécrétée par :",
+      "optionA": "L'hypophyse antérieure",
+      "optionB": "La thyroïde",
+      "optionC": "Le pancréas",
+      "optionD": "Les surrénales",
+      "correctAnswer": "A",
+      "explanation": "L'hormone de croissance (GH) est sécrétée par l'antéhypophyse."
+    },
+    {
+      "question": "L'hyperthyroïdie (ex: Basedow) se caractérise par :",
+      "optionA": "Un excès d'hormones thyroïdiennes",
+      "optionB": "Un déficit",
+      "optionC": "Une tumeur",
+      "optionD": "Une infection",
+      "correctAnswer": "A",
+      "explanation": "L'hyperthyroïdie = excès de T3/T4 (tachycardie, perte de poids)."
+    },
+    {
+      "question": "La thyroïde a besoin de quel oligo-élément ?",
+      "optionA": "L'iode",
+      "optionB": "Le fer",
+      "optionC": "Le calcium",
+      "optionD": "Le zinc",
+      "correctAnswer": "A",
+      "explanation": "La thyroïde utilise l'iode pour synthétiser T3 et T4."
+    },
+    {
+      "question": "Concernant l'artère coronaire droite, quelle affirmation est correcte ?",
+      "optionA": "Elle naît de l'artère pulmonaire",
+      "optionB": "Elle vascularise principalement le ventricule gauche",
+      "optionC": "Elle donne naissance à l'artère interventriculaire antérieure",
+      "optionD": "Elle vascularise principalement le ventricule droit et le diaphragme",
+      "correctAnswer": "D",
+      "explanation": "L'artère coronaire droite naît de l'aorte ascendante, vascularise principalement le ventricule droit et le diaphragme, et donne naissance à l'artère marginale droite."
+    },
+    {
+      "question": "Quel neurotransmetteur est principalement impliqué dans la transmission de la douleur au niveau de la moelle épinière ?",
+      "optionA": "GABA",
+      "optionB": "Acétylcholine",
+      "optionC": "Substance P",
+      "optionD": "Sérotonine",
+      "correctAnswer": "C",
+      "explanation": "La substance P est un neurotransmetteur impliqué dans la transmission des signaux de douleur au niveau des voies de la douleur dans la moelle épinière."
+    },
+    {
+      "question": "Quelle est la fonction principale des cellules pariétales de l'estomac ?",
+      "optionA": "Sécréter la pepsine",
+      "optionB": "Sécréter l'acide chlorhydrique",
+      "optionC": "Sécréter la gastrine",
+      "optionD": "Sécréter le facteur intrinsèque",
+      "correctAnswer": "B",
+      "explanation": "Les cellules pariétales de l'estomac sécrètent principalement l'acide chlorhydrique, qui aide à la digestion des aliments et à la stérilisation du bolus alimentaire."
+    },
+    {
+      "question": "Quelle est la demi-vie d'élimination de l'aspirine à dose anti-inflammatoire ?",
+      "optionA": "15-30 minutes",
+      "optionB": "2-3 heures",
+      "optionC": "6-8 heures",
+      "optionD": "24-48 heures",
+      "correctAnswer": "B",
+      "explanation": "La demi-vie d'élimination de l'aspirine à dose anti-inflammatoire est de 2-3 heures, alors qu'à dose antalgique elle est de 15-30 minutes."
+    },
+    {
+      "question": "Quelle structure forme la barrière hémato-encéphalique ?",
+      "optionA": "La pie-mère",
+      "optionB": "Les plexus choroïdes",
+      "optionC": "Les cellules endothéliales des capillaires cérébraux",
+      "optionD": "L'arachnoïde",
+      "correctAnswer": "C",
+      "explanation": "La barrière hémato-encéphalique est principalement formée par les cellules endothéliales des capillaires cérébraux, qui sont jointes par des jonctions serrées."
+    },
+    {
+      "question": "Quel médicament est un inhibiteur de l'enzyme de conversion de l'angiotensine (IEC) ?",
+      "optionA": "Losartan",
+      "optionB": "Amlodipine",
+      "optionC": "Ramipril",
+      "optionD": "Furosémide",
+      "correctAnswer": "C",
+      "explanation": "Le ramipril est un inhibiteur de l'enzyme de conversion de l'angiotensine (IEC). Le losartan est un antagoniste des récepteurs de l'angiotensine II, l'amlodipine est un antagoniste du calcium, et le furosémide est un diurétique de l'anse."
+    },
+    {
+      "question": "Quel est le principal site d'absorption du fer dans le tube digestif ?",
+      "optionA": "Estomac",
+      "optionB": "Duodénum",
+      "optionC": "Iléon",
+      "optionD": "Jéjunum",
+      "correctAnswer": "B",
+      "explanation": "Le principal site d'absorption du fer dans le tube digestif est le duodénum, où il est transporté par la protéine DMT1."
+    },
+    {
+      "question": "Quelle est la pression artérielle systolique normale chez l'adulte ?",
+      "optionA": "90 mmHg",
+      "optionB": "120 mmHg",
+      "optionC": "150 mmHg",
+      "optionD": "180 mmHg",
+      "correctAnswer": "B",
+      "explanation": "La pression artérielle systolique normale chez l'adulte est de 120 mmHg, avec une diastolique normale de 80 mmHg."
+    },
+    {
+      "question": "Quelle structure du cerveau est principalement responsable de la régulation de la respiration ?",
+      "optionA": "Cervelet",
+      "optionB": "Hypothalamus",
+      "optionC": "Médiobulbe",
+      "optionD": "Thalamus",
+      "correctAnswer": "C",
+      "explanation": "Le médiobulbe, contenant le centre respiratoire, est principalement responsable de la régulation automatique de la respiration."
+    },
+    {
+      "question": "Quel est le mécanisme d'action des statines ?",
+      "optionA": "Inhibition de l'absorption intestinale des lipides",
+      "optionB": "Inhibition de la HMG-CoA réductase",
+      "optionC": "Activation de la lipoprotéine lipase",
+      "optionD": "Augmentation de l'excrétion biliaire des acides biliaires",
+      "correctAnswer": "B",
+      "explanation": "Les statines inhibent l'enzyme HMG-CoA réductase, clé dans la synthèse du cholestérol au niveau hépatique."
+    },
+    {
+      "question": "Quelle est la fonction principale des cellules de Paneth dans l'intestin grêle ?",
+      "optionA": "Sécréter la sérotonine",
+      "optionB": "Sécréter des peptides antimicrobiens",
+      "optionC": "Absorber les lipides",
+      "optionD": "Sécréter la gastrine",
+      "correctAnswer": "B",
+      "explanation": "Les cellules de Paneth, situées au fond des cryptes de Lieberkühn, sécrètent des peptides antimicrobiens comme la défensine."
+    },
+    {
+      "question": "Quel médicament est utilisé en cas de surdosage par morphine ?",
+      "optionA": "Naloxone",
+      "optionB": "Naltrexone",
+      "optionC": "Flumazénil",
+      "optionD": "Atropine",
+      "correctAnswer": "A",
+      "explanation": "La naloxone est un antagoniste des récepteurs opioïdes utilisé en cas de surdosage par morphine ou autres opioïdes."
+    },
+    {
+      "question": "Quelle structure forme le sinus coronaire ?",
+      "optionA": "Veine cardiaque majeure",
+      "optionB": "Veine azygos",
+      "optionC": "Veine cave supérieure",
+      "optionD": "Veine cave inférieure",
+      "correctAnswer": "A",
+      "explanation": "Le sinus coronaire est formé par la confluence des veines cardiaques, principalement la veine cardiaque majeure."
+    },
+    {
+      "question": "Quelle est la fonction principale des astrocytes dans le système nerveux central ?",
+      "optionA": "Transmission des influx nerveux",
+      "optionB": "Phagocytose des débris",
+      "optionC": "Maintien de l'homéostasie neuronale",
+      "optionD": "Sécrétion de dopamine",
+      "correctAnswer": "C",
+      "explanation": "Les astrocytes jouent un rôle crucial dans le maintien de l'homéostasie neuronale, notamment dans la régulation de la concentration en ions et neurotransmetteurs."
+    },
+    {
+      "question": "Quel est le principal site de résorption de l'eau dans l'intestin grêle ?",
+      "optionA": "Duodénum",
+      "optionB": "Jéjunum",
+      "optionC": "Iléon",
+      "optionD": "Colon",
+      "correctAnswer": "C",
+      "explanation": "L'iléon est le principal site de résorption de l'eau et des électrolytes dans l'intestin grêle, tandis que le colon résorbe le reste de l'eau."
+    },
+    {
+      "question": "Quelle est la fonction principale des inhibiteurs de la pompe à protons (IPP) ?",
+      "optionA": "Inhiber la sécrétion d'acide par les cellules pariétales",
+      "optionB": "Neutraliser l'acide déjà présent dans l'estomac",
+      "optionC": "Protéger la muqueuse gastrique",
+      "optionD": "Stimuler la motilité gastrique",
+      "correctAnswer": "A",
+      "explanation": "Les IPP inhibent spécifiquement la pompe à protons (H+/K+ ATPase) des cellules pariétales, réduisant ainsi la sécrétion d'acide chlorhydrique."
+    },
+    {
+      "question": "Quelle structure forme la barrière hématotesticulaire ?",
+      "optionA": "La tunica albuginée",
+      "optionB": "Les cellules de Sertoli",
+      "optionC": "Les cellules de Leydig",
+      "optionD": "L'épididyme",
+      "correctAnswer": "B",
+      "explanation": "Les cellules de Sertoli forment la barrière hématotesticulaire, qui sépare les compartiments basal et adluminal des tubules séminifères."
+    },
+    {
+      "question": "Quelle est la fonction principale du système rétinien-locus coeruleus ?",
+      "optionA": "Régulation du sommeil",
+      "optionB": "Régulation de l'humeur",
+      "optionC": "Régulation de l'attention et de l'éveil",
+      "optionD": "Régulation de l'appétit",
+      "correctAnswer": "C",
+      "explanation": "Le système rétinien-locus coeruleus, utilisant la noradrénaline, est impliqué dans la régulation de l'attention, de l'éveil et des réponses au stress."
+    },
+    {
+      "question": "Quel est le mécanisme d'action des anticoagulants oraux directs (AOD) ?",
+      "optionA": "Inhibition de la vitamine K",
+      "optionB": "Activation de l'antithrombine",
+      "optionC": "Inhibition directe du facteur Xa",
+      "optionD": "Inhibition directe du facteur IIa (thrombine)",
+      "correctAnswer": "C",
+      "explanation": "Les AOD comme le rivaroxaban et l'apixaban inhibent directement le facteur Xa, tandis que le dabigatran inhibe directement la thrombine (facteur IIa)."
+    },
+    {
+      "question": "Quelle est la fonction principale des cellules de Kupffer dans le foie ?",
+      "optionA": "Sécréter la bile",
+      "optionB": "Stocker le glycogène",
+      "optionC": "Phagocytose et détoxification",
+      "optionD": "Synthèse des protéines plasmatiques",
+      "correctAnswer": "C",
+      "explanation": "Les cellules de Kupffer sont des macrophages situés dans le foie, responsables de la phagocytose des particules et des bactéries, ainsi que de la détoxification."
+    },
+    {
+      "question": "Concernant l'artère coronaire droite, quelle affirmation est incorrecte?",
+      "optionA": "Elle naît généralement du sinus coronaire droit",
+      "optionB": "Elle vascularise principalement le ventricule droit et une partie du ventricule gauche",
+      "optionC": "Elle donne naissance à l'artère marginale droite",
+      "optionD": "Elle vascularise le nœud sinusal dans 60% des cas",
+      "correctAnswer": "A",
+      "explanation": "L'artère coronaire droite naît du sinus aortique droit, pas du sinus coronaire droit. Le sinus coronaire droit est une veine qui se jette dans l'oreillette droite."
+    },
+    {
+      "question": "Chez un patient présentant une pancréatite aiguë, quelle modification enzymatique est la plus spécifique?",
+      "optionA": "Élévation de l'amylasémie",
+      "optionB": "Élévation de la lipasémie",
+      "optionC": "Élévation de la phospholipase A2",
+      "optionD": "Élévation de la trypsine",
+      "correctAnswer": "B",
+      "explanation": "La lipasémie est plus spécifique que l'amylasémie pour le diagnostic de pancréatite aiguë. Elle présente une meilleure sensibilité et spécificité, avec une demi-vie plus longue."
+    },
+    {
+      "question": "Quelle est l'action principale de l'enzyme de conversion de l'angiotensine (ECA)?",
+      "optionA": "Conversion de l'angiotensine I en angiotensine II",
+      "optionB": "Dégradation de la bradykinine",
+      "optionC": "Inhibition de l'aldostérone",
+      "optionD": "Vasodilatation des artérioles",
+      "correctAnswer": "A",
+      "explanation": "L'ECA convertit l'angiotensine I en angiotensine II, un puissant vasoconstricteur. Elle dégrade également la bradykinine, mais ce n'est pas son action principale."
+    },
+    {
+      "question": "Quelle structure nerveuse est responsable de la coordination du mouvement et de l'équilibre?",
+      "optionA": "Thalamus",
+      "optionB": "Cervelet",
+      "optionC": "Hypothalamus",
+      "optionD": "Mésencéphale",
+      "correctAnswer": "B",
+      "explanation": "Le cervelet est principalement responsable de la coordination du mouvement, de l'équilibre et de la posture. Il reçoit des informations sensorielles et compare les mouvements voulus avec les mouvements réels."
+    },
+    {
+      "question": "Chez un patient atteint de fibrillation atriale, quel médicament est le plus approprié pour contrôler la fréventriculaire?",
+      "optionA": "Amiodarone",
+      "optionB": "Diltiazem",
+      "optionC": "Digoxine",
+      "optionD": "Warfarine",
+      "correctAnswer": "B",
+      "explanation": "Le diltiazem (bloqueur calcique non dihydropyridinique) est un choix approprié pour contrôler la fréventriculaire chez un patient en fibrillation atriale sans dysfonction ventriculaire gauche."
+    },
+    {
+      "question": "Quel mécanisme explique la douleur de type sciatique?",
+      "optionA": "Compression du nerf sciatique par une hernie discale L4-L5",
+      "optionB": "Compression du nerf sciatique par une hernie discale L5-S1",
+      "optionC": "Compression du nerf sciatique par une sténose du canal lombaire",
+      "optionD": "Compression du nerf sciatique par un syndrome du piriforme",
+      "correctAnswer": "D",
+      "explanation": "La sciatique est souvent causée par une compression du nerf sciatique par le muscle piriforme (syndrome du piriforme), bien que d'autres causes comme les hernies discales soient possibles."
+    },
+    {
+      "question": "Quelle est la fonction principale des cellules pariétales de l'estomac?",
+      "optionA": "Sécrétion de pepsinogène",
+      "optionB": "Sécrétion d'acide chlorhydrique",
+      "optionC": "Sécrétion de mucus",
+      "optionD": "Sécrétion de gastrine",
+      "correctAnswer": "B",
+      "explanation": "Les cellules pariétales de l'estomac sont responsables de la sécrétion d'acide chlorhydrique, essentielle à la digestion des protéines et à l'activation de la pepsine."
+    },
+    {
+      "question": "Quelle modification hémodynamique est typique du choc septique?",
+      "optionA": "Augmentation de la résistance vasculaire systémique",
+      "optionB": "Diminution de la résistance vasculaire systémique",
+      "optionC": "Augmentation de la précharge ventriculaire",
+      "optionD": "Diminution du débit cardiaque",
+      "correctAnswer": "B",
+      "explanation": "Le choc septique se caractérise par une vasodilatation systémique avec diminution de la résistance vasculaire systémique, une augmentation du débit cardiaque et une redistribution du débit sanguin."
+    },
+    {
+      "question": "Quelle structure du cerveau est impliquée dans la régulation du sommeil et de l'éveil?",
+      "optionA": "Hypothalamus",
+      "optionB": "Thalamus",
+      "optionC": "Ganglion basal",
+      "optionD": "Cortex cérébral",
+      "correctAnswer": "A",
+      "explanation": "L'hypothalamus, notamment les noyaux préoptiques médians et le noyau suprachiasmatique, joue un rôle crucial dans la régulation du cycle veille-sommeil."
+    },
+    {
+      "question": "Quelle est la principale action des inhibiteurs de la pompe à protons (IPP)?",
+      "optionA": "Blocage des récepteurs H2",
+      "optionB": "Inhibition de la sécrétion d'acide par les cellules pariétales",
+      "optionC": "Neutralisation directe de l'acide gastrique",
+      "optionD": "Augmentation de la sécrétion de mucus",
+      "correctAnswer": "B",
+      "explanation": "Les IPP inhibent spécifiquement la pompe à protons (H+/K+ ATPase) des cellules pariétales de l'estomac, réduisant ainsi la sécrétion d'acide chlorhydrique."
+    },
+    {
+      "question": "Quelle est la conséquence physiologique principale de l'activation du système nerveux sympathique?",
+      "optionA": "Diminution de la fréquence cardiaque",
+      "optionB": "Bronchodilatation",
+      "optionC": "Augmentation de la motilité gastro-intestinale",
+      "optionD": "Constriction pupillaire",
+      "correctAnswer": "B",
+      "explanation": "L'activation du système sympathique entraîne une bronchodilatation, une augmentation de la fréquence cardiaque, une constriction pupillaire (mydriase) et une diminution de la motilité gastro-intestinale."
+    },
+    {
+      "question": "Quelle est la caractéristique histologique typique de la maladie de Crohn?",
+      "optionA": "Inflammation superficielle de la muqueuse",
+      "optionB": "Inflammation transmurale avec granulomes",
+      "optionC": "Inflammation localisée au rectum",
+      "optionD": "Inflammation avec infiltrat eosinophile",
+      "correctAnswer": "B",
+      "explanation": "La maladie de Crohn se caractérise histologiquement par une inflammation transmurale qui peut toucher toute la paroi intestinale, souvent associée à la formation de granulomes non caséeux."
+    },
+    {
+      "question": "Quel médicament est un antagoniste des récepteurs de l'angiotensine II (ARA II)?",
+      "optionA": "Lisinopril",
+      "optionB": "Valsartan",
+      "optionC": "Furosémide",
+      "optionD": "Amlodipine",
+      "correctAnswer": "B",
+      "explanation": "Le valsartan est un antagoniste des récepteurs de l'angiotensine II (ARA II), qui bloque l'action de l'angiotensine II sur ses récepteurs AT1, réduisant ainsi la vasoconstriction."
+    },
+    {
+      "question": "Quelle structure encéphalique est responsable de la régulation de la respiration?",
+      "optionA": "Bulbe rachidien",
+      "optionB": "Mésencéphale",
+      "optionC": "Diencéphale",
+      "optionD": "Cervelet",
+      "correctAnswer": "A",
+      "explanation": "Le bulbe rachidien (ou médulla oblongata) contient les centres respiratoires principaux qui contrôlent automatiquement la fréquence et la profondeur de la respiration."
+    },
+    {
+      "question": "Quelle est la complication la plus fréquente de la drépanocytose?",
+      "optionA": "Insuffisance rénale chronique",
+      "optionB": "Accidents vasculaires cérébraux",
+      "optionC": "Cirrhose biliaire",
+      "optionD": "Pancréatite chronique",
+      "correctAnswer": "B",
+      "explanation": "Les accidents vasculaires cérébraux (AVC) sont une complication fréquente de la drépanocytose, particulièrement chez les enfants, en raison de la vaso-occlusion par les hématies falciformes."
+    },
+    {
+      "question": "Quelle est la fonction principale de la valve aortique?",
+      "optionA": "Prévenir le reflux du sang de l'aorte vers le ventricule gauche",
+      "optionB": "Prévenir le reflux du sang du ventricule gauche vers l'oreillette gauche",
+      "optionC": "Assurer le remplissage ventriculaire",
+      "optionD": "Contrôler la contraction ventriculaire",
+      "correctAnswer": "A",
+      "explanation": "La valve aortique empêche le reflux du sang de l'aorte vers le ventricule gauche pendant la diastole, garantissant ainsi un flux unidirectionnel du sang dans le cœur."
+    },
+    {
+      "question": "Quelle est la caractéristique histologique de la maladie d'Alzheimer?",
+      "optionA": "Plaques amyloïdes et dégénérescence neurofibrillaire",
+      "optionB": "Inclusions de Lewy",
+      "optionC": "Corps de Pick",
+      "optionD": "Dépôts de tau dans les oligodendrocytes",
+      "correctAnswer": "A",
+      "explanation": "La maladie d'Alzheimer se caractérise histologiquement par la présence de plaques amyloïdes extracellulaires et de dégénérescence neurofibrillaire (intraneuronales)."
+    },
+    {
+      "question": "Quel médicament est un inhibiteur de l'enzyme de conversion de l'angiotensine (IECA)?",
+      "optionA": "Losartan",
+      "optionB": "Ramipril",
+      "optionC": "Amlodipine",
+      "optionD": "Furosémide",
+      "correctAnswer": "B",
+      "explanation": "Le ramipril est un inhibiteur de l'enzyme de conversion de l'angiotensine (IECA), qui bloque la conversion de l'angiotensine I en angiotensine II."
+    },
+    {
+      "question": "Quelle est la fonction principale du pancréas exocrine?",
+      "optionA": "Sécrétion d'insuline",
+      "optionB": "Sécrétion de glucagon",
+      "optionC": "Production d'enzymes digestives",
+      "optionD": "Production de bicarbonates",
+      "correctAnswer": "C",
+      "explanation": "Le pancréas exocrine produit et sécrète des enzymes digestives (amylase, lipase, trypsine, etc.) qui sont nécessaires à la digestion des aliments dans l'intestin grêle."
+    }
+  ]
+}

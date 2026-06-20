@@ -314,6 +314,123 @@
       "optionD": "Éthanoate",
       "correctAnswer": "B",
       "explanation": "CH₃-CH₂-OH est l'éthanol, un alcool avec deux atomes de carbone et un groupe fonctionnel -OH."
+    },
+    {
+      "question": "Un circuit électrique comprend une résistance R=10Ω, une inductance L=0.5H et un condensateur C=100μF en série. Ce circuit est alimenté par un générateur de tension alternative de fréquence f=50Hz. Quelle est l'impédance totale du circuit ?",
+      "optionA": "Z ≈ 12.5 Ω",
+      "optionB": "Z ≈ 15.3 Ω",
+      "optionC": "Z ≈ 18.7 Ω",
+      "optionD": "Z ≈ 22.4 Ω",
+      "correctAnswer": "B",
+      "explanation": "L'impédance totale est Z = √(R² + (XL - XC)²) où XL = 2πfL ≈ 157.1 Ω et XC = 1/(2πfC) ≈ 31.8 Ω. D'où Z ≈ 15.3 Ω."
+    },
+    {
+      "question": "Une lentille convergente de distance focale f=15cm est utilisée pour former l'image d'un objet placé à 30cm de la lentille. Quelle est la nature et la position de l'image formée ?",
+      "optionA": "Image réelle, à 30cm de la lentille",
+      "optionB": "Image virtuelle, à 30cm de la lentille",
+      "optionC": "Image réelle, à 45cm de la lentille",
+      "optionD": "Image virtuelle, à 45cm de la lentille",
+      "correctAnswer": "A",
+      "explanation": "En utilisant la formule de conjugaison 1/f = 1/p + 1/p', avec p=30cm et f=15cm, on trouve p'=30cm. Comme p'>0, l'image est réelle."
+    },
+    {
+      "question": "Quelle est la structure de l'isomère le plus stable du but-2-ène ?",
+      "optionA": "Configuration Z avec double liaison entre C2-C3",
+      "optionB": "Configuration E avec double liaison entre C2-C3",
+      "optionC": "Configuration Z avec double liaison entre C1-C2",
+      "optionD": "Configuration E avec double liaison entre C1-C2",
+      "correctAnswer": "B",
+      "explanation": "L'isomère le plus stable est le but-2-ène de configuration E (trans) car les groupes méthyl sont opposés, minimisant les interactions stériques."
+    },
+    {
+      "question": "On mélange 100mL d'une solution d'acide acétique à 0.1M avec 100mL d'une solution d'hydroxyde de sodium à 0.1M. Quel est le pH final de la solution ? (pKa de l'acide acétique = 4.75)",
+      "optionA": "pH = 4.75",
+      "optionB": "pH = 7.00",
+      "optionC": "pH = 9.25",
+      "optionD": "pH = 11.30",
+      "correctAnswer": "C",
+      "explanation": "Les quantités d'acide et de base sont équimolaires, formant un tampon acétique/acetate. Le pH = pKa + log([A-]/[HA]) = 4.75 + log(1) = 4.75, mais après dilution, le pH est légèrement basique à 9.25."
+    },
+    {
+      "question": "La constante d'équilibre K pour la réaction N2 + 3H2 ⇌ 2NH3 à 400°C est de 0.5. Si on part d'un mélange équimolaire de N2 et H2, quelle est la valeur de l'avancement final ?",
+      "optionA": "x = 0.25",
+      "optionB": "x = 0.33",
+      "optionC": "x = 0.50",
+      "optionD": "x = 0.67",
+      "correctAnswer": "A",
+      "explanation": "En posant x comme l'avancement, K = [NH3]²/([N2][H2]³) = (4x²)/(1-x)(1-3x)³ = 0.5. La résolution donne x ≈ 0.25."
+    },
+    {
+      "question": "Un pendule simple de longueur L=1m est dévié de son point d'équilibre d'un angle θ=10° et lâché sans vitesse initiale. Quelle est sa période de petites oscillations ?",
+      "optionA": "T ≈ 1.0 s",
+      "optionB": "T ≈ 1.5 s",
+      "optionC": "T ≈ 2.0 s",
+      "optionD": "T ≈ 2.5 s",
+      "correctAnswer": "C",
+      "explanation": "Pour un pendule simple, T = 2π√(L/g) ≈ 2π√(1/9.81) ≈ 2.0 s. La période ne dépend pas de l'angle pour de petites oscillations."
+    },
+    {
+      "question": "Une charge électrique q=2μC est placée en un point où le champ électrique a une intensité de 500V/m. Quelle est la force électrique subie par cette charge ?",
+      "optionA": "F = 0.25 mN",
+      "optionB": "F = 0.50 mN",
+      "optionC": "F = 1.00 mN",
+      "optionD": "F = 2.00 mN",
+      "correctAnswer": "C",
+      "explanation": "La force électrique est F = qE = (2×10⁻⁶)×500 = 10⁻³ N = 1.00 mN."
+    },
+    {
+      "question": "Quelle est la structure du produit principal de la réaction entre le propan-2-ol et l'acide bromhydrique ?",
+      "optionA": "2-bromopropane",
+      "optionB": "1-bromopropane",
+      "optionC": "2-bromo-2-méthylpropane",
+      "optionD": "1-bromo-2-méthylpropane",
+      "correctAnswer": "A",
+      "explanation": "Le propan-2-ol est un alcool secondaire, qui subit une substitution SN2 avec l'acide bromhydrique pour former le 2-bromopropane."
+    },
+    {
+      "question": "On considère la pile Daniell: Zn/Zn²⁺//Cu²⁺/Cu. La concentration en ions Zn²⁺ est 0.1M et celle en ions Cu²⁺ est 0.01M. Quelle est la force électromotrice de la pile à 25°C ? (E°(Zn²⁺/Zn) = -0.76V, E°(Cu²⁺/Cu) = +0.34V)",
+      "optionA": "E ≈ 1.07 V",
+      "optionB": "E ≈ 1.10 V",
+      "optionC": "E ≈ 1.13 V",
+      "optionD": "E ≈ 1.16 V",
+      "correctAnswer": "B",
+      "explanation": "E = E° - (RT/2F)ln([Zn²⁺]/[Cu²⁺]) = 1.10 - (0.059/2)log(0.1/0.01) ≈ 1.10 V."
+    },
+    {
+      "question": "Un ressort de constante de raideur k=100N/m est comprimé de 5cm puis laissé libre sans masse attachée. Quelle est l'énergie potentielle élastique stockée ?",
+      "optionA": "E = 0.0125 J",
+      "optionB": "E = 0.025 J",
+      "optionC": "E = 0.125 J",
+      "optionD": "E = 0.250 J",
+      "correctAnswer": "C",
+      "explanation": "L'énergie potentielle élastique est E = ½kx² = 0.5×100×(0.05)² = 0.125 J."
+    },
+    {
+      "question": "Quelle est la constante de vitesse d'une réaction du premier ordre dont la demi-vie est de 30 secondes ?",
+      "optionA": "k ≈ 0.023 s⁻¹",
+      "optionB": "k ≈ 0.033 s⁻¹",
+      "optionC": "k ≈ 0.046 s⁻¹",
+      "optionD": "k ≈ 0.067 s⁻¹",
+      "correctAnswer": "A",
+      "explanation": "Pour une réaction du premier ordre, t½ = ln(2)/k, donc k = ln(2)/t½ ≈ 0.693/30 ≈ 0.023 s⁻¹."
+    },
+    {
+      "question": "Un rayon lumineux passe d'un milieu d'indice n1=1.33 (eau) à un milieu d'indice n2=1.5 (verre) avec un angle d'incidence de 30°. Quel est l'angle de réfraction ?",
+      "optionA": "θr ≈ 25.4°",
+      "optionB": "θr ≈ 26.3°",
+      "optionC": "θr ≈ 27.1°",
+      "optionD": "θr ≈ 28.2°",
+      "correctAnswer": "B",
+      "explanation": "Selon la loi de Snell, n1 sin(θi) = n2 sin(θr). Donc sin(θr) = (1.33/1.5)×sin(30°) ≈ 0.443, d'où θr ≈ 26.3°."
+    },
+    {
+      "question": "Une mole de gaz parfait initialement à 300K et 1 atm subit une compression isotherme jusqu'à une pression de 4 atm. Quel est le travail effectué sur le gaz ?",
+      "optionA": "W ≈ 2.5 kJ",
+      "optionB": "W ≈ 3.5 kJ",
+      "optionC": "W ≈ 4.5 kJ",
+      "optionD": "W ≈ 5.5 kJ",
+      "correctAnswer": "B",
+      "explanation": "Pour une compression isotherme, W = nRT ln(V1/V2) = nRT ln(P2/P1) = 1×8.314×300×ln(4) ≈ 3.5 kJ."
     }
   ]
 }

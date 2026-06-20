@@ -275,6 +275,366 @@
       "optionD": "Cyclone",
       "correctAnswer": "B",
       "explanation": "Une tornade est causée par le mouvement rapide de l'air et est caractérisée par des vents violents et tourbillonnants."
+    },
+    {
+      "question": "Quelle est la région du Burkina Faso qui a la plus grande superficie ?",
+      "optionA": "Sahel",
+      "optionB": "Est",
+      "optionC": "Ouest",
+      "optionD": "Centre-Ouest",
+      "correctAnswer": "B",
+      "explanation": "La région Est est la plus grande région du Burkina Faso avec une superficie de 46 540 km², couvrant environ 17% du territoire national."
+    },
+    {
+      "question": "Parmi les suivantes, quelle est la seule région qui n'a pas de frontière avec le Mali ?",
+      "optionA": "Boucle du Mouhoun",
+      "optionB": "Sahel",
+      "optionC": "Est",
+      "optionD": "Centre-Ouest",
+      "correctAnswer": "D",
+      "explanation": "La région Centre-Ouest est la seule région burkinabè qui ne partage pas de frontière avec le Mali. Elle borde les régions Centre, Sud-Ouest et Hauts-Bassins."
+    },
+    {
+      "question": "Combien de provinces compte la région du Sahel ?",
+      "optionA": "3",
+      "optionB": "4",
+      "optionC": "5",
+      "optionD": "6",
+      "correctAnswer": "A",
+      "explanation": "La région du Sahel comprend 3 provinces : Séno, Soum et Yagha."
+    },
+    {
+      "question": "Quel fleuve est le plus long du Burkina Faso ?",
+      "optionA": "Nakanbé",
+      "optionB": "Mouhoun",
+      "optionC": "Mékrou",
+      "optionD": "Volta Noire",
+      "correctAnswer": "B",
+      "explanation": "Le Mouhoun (ou Volta Noire) est le plus long fleuve du Burkina Faso avec environ 1 200 km de long, suivie par le Nakanbé (ou Volta Blanche) avec environ 850 km."
+    },
+    {
+      "question": "Dans quelle province se trouve le barrage de Bagré ?",
+      "optionA": "Bazèga",
+      "optionB": "Ziro",
+      "optionC": "Boulgou",
+      "optionD": "Nayala",
+      "correctAnswer": "C",
+      "explanation": "Le barrage de Bagré est situé sur la rivière Nakambé (ou Volta Blanche) dans la province du Boulgou, dans la région du Centre-Est."
+    },
+    {
+      "question": "Quelle région burkinabè est surnommée 'la chaudière du pays' ?",
+      "optionA": "Centre",
+      "optionB": "Est",
+      "optionC": "Sud-Ouest",
+      "optionD": "Boucle du Mouhoun",
+      "correctAnswer": "A",
+      "explanation": "La région Centre est surnommée 'la chaudière du pays' en raison de sa position géographique centrale et de son rôle économique important."
+    },
+    {
+      "question": "Le barrage de Samandéni est situé sur quel fleuve ?",
+      "optionA": "Mouhoun",
+      "optionB": "Nakanbé",
+      "optionC": "Kompienga",
+      "optionD": "Black Volta",
+      "correctAnswer": "B",
+      "explanation": "Le barrage de Samandéni est situé sur le fleuve Nakanbé (ou Volta Blanche) dans la province des Hauts-Bassins."
+    },
+    {
+      "question": "Combien de pays frontaliers partage le Burkina Faso ?",
+      "optionA": "5",
+      "optionB": "6",
+      "optionC": "7",
+      "optionD": "8",
+      "correctAnswer": "B",
+      "explanation": "Le Burkina Faso partage des frontières avec six pays : le Mali au nord-ouest, le Niger à l'est, le Bénin au sud-est, le Togo et le Ghana au sud, et la Côte d'Ivoire au sud-ouest."
+    },
+    {
+      "question": "Quelle province a pour capitale Bobo-Dioulasso ?",
+      "optionA": "Houet",
+      "optionB": "Kossi",
+      "optionC": "Banwa",
+      "optionD": "Tuy",
+      "correctAnswer": "A",
+      "explanation": "Bobo-Dioulasso est la capitale de la province du Houet, située dans la région des Hauts-Bassins."
+    },
+    {
+      "question": "Quelle région comprend le plus grand nombre de provinces ?",
+      "optionA": "Centre",
+      "optionB": "Est",
+      "optionC": "Ouest",
+      "optionD": "Sahel",
+      "correctAnswer": "A",
+      "explanation": "La région Centre comprend le plus grand nombre de provinces avec 10 provinces : Bazèga, Nahouri, Oubritenga, Zoundwéogo, Sanguié, Plateau-Central, Kadiogo, Kouritenga, Namentenga et Yatenga."
+    },
+    {
+      "question": "Le lac de barrage de Kompienga est situé dans quelle région ?",
+      "optionA": "Sahel",
+      "optionB": "Centre-Est",
+      "optionC": "Est",
+      "optionD": "Nord",
+      "correctAnswer": "B",
+      "explanation": "Le lac de barrage de Kompienga est situé dans la région Centre-Est, sur la rivière Kompienga, affluent de la Volta Blanche."
+    },
+    {
+      "question": "Quelle province est la plus septentrionale du Burkina Faso ?",
+      "optionA": "Séno",
+      "optionB": "Soum",
+      "optionC": "Yagha",
+      "optionD": "Oudalan",
+      "correctAnswer": "B",
+      "explanation": "La province du Soum est la plus septentrionale du Burkina Faso, située dans la région du Sahel et bordant le Mali et le Niger."
+    },
+    {
+      "question": "Quelle région burkinabè est entièrement enclavée ?",
+      "optionA": "Boucle du Mouhoun",
+      "optionB": "Centre-Ouest",
+      "optionC": "Sahel",
+      "optionD": "Est",
+      "correctAnswer": "B",
+      "explanation": "La région Centre-Ouest est la seule région entièrement enclavée du Burkina Faso, ne partageant aucune frontière internationale."
+    },
+    {
+      "question": "Le fleuve Mouhoun prend sa source dans quel pays ?",
+      "optionA": "Burkina Faso",
+      "optionB": "Mali",
+      "optionC": "Côte d'Ivoire",
+      "optionD": "Ghana",
+      "correctAnswer": "A",
+      "explanation": "Le fleuve Mouhoun (ou Volta Noire) prend sa source dans le sud-ouest du Burkina Faso, près de la frontière avec la Côte d'Ivoire."
+    },
+    {
+      "question": "Combien de régions compte le Burkina Faso depuis la réforme administrative de 2021 ?",
+      "optionA": "13",
+      "optionB": "15",
+      "optionC": "17",
+      "optionD": "19",
+      "correctAnswer": "C",
+      "explanation": "Depuis la réforme administrative de 2021, le Burkina Faso est divisé en 17 régions administratives."
+    },
+    {
+      "question": "Quelle province a pour capitale Tenkodogo ?",
+      "optionA": "Boulgou",
+      "optionB": "Koulpélogo",
+      "optionC": "Komandjari",
+      "optionD": "Nahouri",
+      "correctAnswer": "A",
+      "explanation": "Tenkodogo est la capitale de la province du Boulgou, située dans la région Centre-Est."
+    },
+    {
+      "question": "Le barrage de Ziga est situé sur quel fleuve ?",
+      "optionA": "Mouhoun",
+      "optionB": "Nakanbé",
+      "optionC": "Nazinon",
+      "optionD": "Mékrou",
+      "correctAnswer": "C",
+      "explanation": "Le barrage de Ziga est situé sur le fleuve Nazinon (ou Volte Rouge) dans la province du Ziro, dans la région du Centre-Ouest."
+    },
+    {
+      "question": "Quelle région est la plus densément peuplée du Burkina Faso ?",
+      "optionA": "Centre",
+      "optionB": "Est",
+      "optionC": "Ouest",
+      "optionD": "Sahel",
+      "correctAnswer": "A",
+      "explanation": "La région Centre est la plus densément peuplée du Burkina Faso avec environ 78 habitants/km², bien au-dessus de la moyenne nationale de 68 habitants/km²."
+    },
+    {
+      "question": "Quelle province est la plus orientale du Burkina Faso ?",
+      "optionA": "Kompienga",
+      "optionB": "Tapoa",
+      "optionC": "Gnagna",
+      "optionD": "Namentenga",
+      "correctAnswer": "A",
+      "explanation": "La province de Kompienga est la plus orientale du Burkina Faso, située dans la région Est et bordant le Bénin et le Togo."
+    },
+    {
+      "question": "Le fleuve Nakanbé est aussi connu sous quel autre nom ?",
+      "optionA": "Volta Noire",
+      "optionB": "Volta Blanche",
+      "optionC": "Volte Rouge",
+      "optionD": "Mouhoun",
+      "correctAnswer": "B",
+      "explanation": "Le fleuve Nakanbé est aussi connu sous le nom de Volta Blanche, en référence à sa couleur moins sombre que celle du Mouhoun (Volta Noire)."
+    },
+    {
+      "question": "Le Burkina Faso est divisé en 17 régions administratives. Parmi les suivantes, quelle région n'est pas limitrophe de la capitale Ouagadougou ?",
+      "optionA": "Centre-Ouest",
+      "optionB": "Centre-Nord",
+      "optionC": "Centre-Sud",
+      "optionD": "Est",
+      "correctAnswer": "D",
+      "explanation": "La région Est n'est pas limitrophe d'Ouagadougou. Les régions limitrophes sont le Centre-Ouest, le Centre-Nord et le Centre-Sud."
+    },
+    {
+      "question": "Le fleuve Mouhoun, également connu sous le nom de Volta Noire, est le plus long fleuve du Burkina Faso. Dans quel pays se trouve son embouchure ?",
+      "optionA": "Ghana",
+      "optionB": "Côte d'Ivoire",
+      "optionC": "Mali",
+      "optionD": "Bénin",
+      "correctAnswer": "A",
+      "explanation": "Le fleuve Mouhoun (Volta Noire) prend sa source au Burkina Faso et se jette dans le lac Volta au Ghana avant de se déverser dans l'océan Atlantique."
+    },
+    {
+      "question": "Le barrage de Bagré est un important ouvrage hydroélectrique et agricole au Burkina Faso. Sur quel fleuve est-il construit ?",
+      "optionA": "Mouhoun",
+      "optionB": "Nakanbé",
+      "optionC": "Nazinon",
+      "optionD": "Penké",
+      "correctAnswer": "B",
+      "explanation": "Le barrage de Bagré est construit sur le fleuve Nakanbé (ou Volta Rouge), qui prend sa source dans la falaise de Banfora."
+    },
+    {
+      "question": "Le Burkina Favo partage une frontière terrestre avec six pays. Parmi les suivantes, quel pays n'est pas frontalier du Burkina Faso ?",
+      "optionA": "Mali",
+      "optionB": "Niger",
+      "optionC": "Togo",
+      "optionD": "Sénégal",
+      "correctAnswer": "D",
+      "explanation": "Le Burkina Favo est frontalier avec le Mali, le Niger, le Bénin, le Togo, le Ghana et la Côte d'Ivoire. Il n'a pas de frontière avec le Sénégal."
+    },
+    {
+      "question": "La région du Sahel au Burkina Favo est divisée en plusieurs provinces. Parmi les suivantes, quelle province n'appartient pas à la région du Sahel ?",
+      "optionA": "Séno",
+      "optionB": "Sourou",
+      "optionC": "Yagha",
+      "optionD": "Oudalan",
+      "correctAnswer": "B",
+      "explanation": "La province de Sourou fait partie de la région du Boucle du Mouhoun, pas de la région du Sahel. Les provinces du Sahel sont le Séno, Yagha, Oudalan, Soum et Loroum."
+    },
+    {
+      "question": "Le barrage de Samandéni est situé dans la région des Cascades. Quel est son principal usage ?",
+      "optionA": "Production d'électricité",
+      "optionB": "Irrigation des terres agricoles",
+      "optionC": "Alimentation en eau potable",
+      "optionD": "Contrôle des inondations",
+      "correctAnswer": "B",
+      "explanation": "Le barrage de Samandéni est principalement utilisé pour l'irrigation des terres agricoles, soutenant ainsi la production de riz et d'autres cultures dans la région."
+    },
+    {
+      "question": "Le fleuve Nakanbé, deuxième plus long fleuve du Burkina Favo, est également connu sous quel autre nom ?",
+      "optionA": "Volta Rouge",
+      "optionB": "Volta Blanc",
+      "optionC": "Mouhoun",
+      "optionD": "Nazinon",
+      "correctAnswer": "A",
+      "explanation": "Le Nakanbé est également appelé Volta Rouge, tandis que le Nazinon est appelé Volta Blanc et le Mouhoun est le Volta Noire."
+    },
+    {
+      "question": "La région du Centre-Ouest compte combien de provinces ?",
+      "optionA": "3",
+      "optionB": "5",
+      "optionC": "6",
+      "optionD": "7",
+      "correctAnswer": "A",
+      "explanation": "La région du Centre-Ouest comprend trois provinces : Boulkiemdé, Sanguié et Ziro."
+    },
+    {
+      "question": "La capitale du Burkina Favo, Ouagadougou, est située dans quelle région administrative ?",
+      "optionA": "Centre",
+      "optionB": "Centre-Ouest",
+      "optionC": "Centre-Nord",
+      "optionD": "Centre-Sud",
+      "correctAnswer": "A",
+      "explanation": "Ouagadougou est la capitale administrative de la région Centre, qui comprend également les provinces du Kadiogo, du Oubritenga et du Ganzourgou."
+    },
+    {
+      "question": "Le Burkina Favo partage une frontière avec le Ghana sur environ 600 km. Quelle est la principale caractéristique de cette frontière ?",
+      "optionA": "Elle suit une ligne de latitude",
+      "optionB": "Elle suit le cours du fleuve Mouhoun",
+      "optionC": "Elle est entièrement terrestre",
+      "optionD": "Elle traverse la forêt classée de Deux Balés",
+      "correctAnswer": "B",
+      "explanation": "La frontière entre le Burkina Favo et le Ghana suit en grande partie le cours du fleuve Mouhoun (Volta Noire) sur environ 548 km."
+    },
+    {
+      "question": "La région des Hauts-Bassins est connue pour ses paysages de falaises et ses cascades. Parmi les suivantes, quelle province n'appartient pas à cette région ?",
+      "optionA": "Houndé",
+      "optionB": "Bobo-Dioulasso",
+      "optionC": "Kénédougou",
+      "optionD": "Tuy",
+      "correctAnswer": "A",
+      "explanation": "La province de Houndé fait partie de la région du Hauts-Bassins, tout comme Bobo-Dioulasso, Kénédougou et Tuy."
+    },
+    {
+      "question": "Le lac de Bagré, formé par le barrage du même nom, est important pour l'économie locale. Quelle est sa principale ressource économique ?",
+      "optionA": "Pêche",
+      "optionB": "Tourisme",
+      "optionC": "Transport fluvial",
+      "optionD": "Extraction minière",
+      "correctAnswer": "A",
+      "explanation": "La pêche est la principale ressource économique du lac de Bagré, avec une production annuelle estimée à plusieurs milliers de tonnes de poissons."
+    },
+    {
+      "question": "Le Burkina Favo est divisé en 47 provinces. Parmi les suivantes, quelle province n'appartient pas à la région du Centre-Nord ?",
+      "optionA": "Bam",
+      "optionB": "Namentenga",
+      "optionC": "Yatenga",
+      "optionD": "Sanguié",
+      "correctAnswer": "D",
+      "explanation": "La province de Sanguié fait partie de la région du Centre-Ouest, tandis que Bam, Namentenga et Yatenga sont dans la région du Centre-Nord."
+    },
+    {
+      "question": "Le fleuve Nazinon, troisième plus long fleuve du Burkina Favo, est également connu sous quel autre nom ?",
+      "optionA": "Volta Rouge",
+      "optionB": "Volta Blanc",
+      "optionC": "Mouhoun",
+      "optionD": "Nakanbé",
+      "correctAnswer": "B",
+      "explanation": "Le Nazinon est également appelé Volta Blanc, tandis que le Nakanbé est le Volta Rouge et le Mouhoun est le Volta Noire."
+    },
+    {
+      "question": "La région de l'Est est la plus grande région du Burkina Favo en termes de superficie. Quelle est sa capitale administrative ?",
+      "optionA": "Fada N'Gourma",
+      "optionB": "Tenkodogo",
+      "optionC": "Diapaga",
+      "optionD": "Gaoua",
+      "correctAnswer": "A",
+      "explanation": "Fada N'Gourma est la capitale administrative de la région de l'Est, qui comprend également les provinces de la Komandjoari, du Tapoa, du Gourma et du Kompienga."
+    },
+    {
+      "question": "Le Burkina Favo partage une frontière avec le Bénin sur environ 386 km. Quelle est la principale caractéristique de cette frontière ?",
+      "optionA": "Elle suit une ligne de longitude",
+      "optionB": "Elle traverse le parc national de Deux Balés",
+      "optionC": "Elle suit le cours de la rivière Mékrou",
+      "optionD": "Elle est entièrement désertique",
+      "correctAnswer": "C",
+      "explanation": "La frontière entre le Burkina Favo et le Bénin suit en grande partie le cours de la rivière Mékrou, affluent du fleuve Niger."
+    },
+    {
+      "question": "La région du Sahel est la plus septentrionale du Burkina Favo. Quelle est sa capitale administrative ?",
+      "optionA": "Dori",
+      "optionB": "Bobo-Dioulasso",
+      "optionC": "Ouahigouya",
+      "optionD": "Gaoua",
+      "correctAnswer": "A",
+      "explanation": "Dori est la capitale administrative de la région du Sahel, qui comprend également les provinces du Séno, Yagha, Oudalan, Soum et Loroum."
+    },
+    {
+      "question": "Le barrage de Ziga est un autre important ouvrage hydroélectrique au Burkina Favo. Sur quel fleuve est-il construit ?",
+      "optionA": "Mouhoun",
+      "optionB": "Nakanbé",
+      "optionC": "Nazinon",
+      "optionD": "Penké",
+      "correctAnswer": "B",
+      "explanation": "Le barrage de Ziga est construit sur le fleuve Nakanbé, en aval du barrage de Bagré, pour fournir de l'électricité et de l'eau à la région."
+    },
+    {
+      "question": "La région des Cascades est connue pour ses paysages naturels et sa culture. Parmi les suivantes, quelle est sa capitale administrative ?",
+      "optionA": "Banfora",
+      "optionB": "Bobo-Dioulasso",
+      "optionC": "Gaoua",
+      "optionD": "Dédougou",
+      "correctAnswer": "A",
+      "explanation": "Banfora est la capitale administrative de la région des Cascades, qui comprend également les provinces de la Comoé et de la Léraba."
+    },
+    {
+      "question": "Le Burkina Favo partage une frontière avec le Niger sur environ 628 km. Quelle est la principale caractéristique de cette frontière ?",
+      "optionA": "Elle suit le cours du fleuve Niger",
+      "optionB": "Elle traverse le parc national de Deux Balés",
+      "optionC": "Elle suit une ligne de latitude",
+      "optionD": "Elle est entièrement désertique",
+      "correctAnswer": "A",
+      "explanation": "La frontière entre le Burkina Favo et le Niger suit en grande partie le cours du fleuve Niger sur environ 628 km."
     }
   ],
   "subcategory": "Géographie",
