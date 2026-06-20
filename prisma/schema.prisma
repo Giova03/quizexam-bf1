@@ -10,6 +10,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// Platform user (visitor or admin)
+model User {
+  id            String        @id @default(cuid())
+  email         String        @unique
+  name          String
+  passwordHash  String
+  role          String        @default("VISITOR") // "VISITOR" | "ADMIN"
+  createdAt     DateTime      @default(now())
+  sessions      QuizSession[]
+  posts         Post[]
+  comments      Comment[]
+  likes         Like[]
+}
+
 // Source document uploaded by the user
 model Document {
   id        String          @id @default(cuid())
@@ -26,8 +40,10 @@ model QuestionBank {
   title       String
   description String
   category    String
+  subcategory String     @default("")
   icon        String     @default("BookOpen")
   color       String     @default("emerald")
+  level       String     @default("TOUS")
   documentId  String?
   document    Document?  @relation(fields: [documentId], references: [id])
   questions   Question[]
@@ -36,29 +52,31 @@ model QuestionBank {
 
 // A single QCM question
 model Question {
-  id            String        @id @default(cuid())
-  bankId        String
-  bank          QuestionBank  @relation(fields: [bankId], references: [id], onDelete: Cascade)
-  order         Int           @default(0)
-  question      String
-  optionA       String
-  optionB       String
-  optionC       String
-  optionD       String
-  correctAnswer String // "A" | "B" | "C" | "D"
-  explanation   String
-  createdAt     DateTime      @default(now())
-  examQuestions ExamQuestion[]
+  id             String        @id @default(cuid())
+  bankId         String
+  bank           QuestionBank  @relation(fields: [bankId], references: [id], onDelete: Cascade)
+  order          Int           @default(0)
+  question       String
+  optionA        String
+  optionB        String
+  optionC        String
+  optionD        String
+  correctAnswer  String // "A" | "B" | "C" | "D"
+  correctAnswer2 String? // optional 2nd correct answer
+  explanation    String
+  level          String        @default("TOUS")
+  createdAt      DateTime      @default(now())
+  examQuestions  ExamQuestion[]
 }
 
 // A structured exam (e.g. 50 questions)
 model Exam {
-  id           String         @id @default(cuid())
-  title        String
-  description  String
-  durationMin  Int            @default(60)
+  id            String         @id @default(cuid())
+  title         String
+  description   String
+  durationMin   Int            @default(60)
   examQuestions ExamQuestion[]
-  createdAt    DateTime       @default(now())
+  createdAt     DateTime       @default(now())
 }
 
 // Junction table exam <-> question with ordering
@@ -78,6 +96,8 @@ model QuizSession {
   mode           String // "immediate" | "final"
   sourceType     String // "bank" | "exam"
   sourceId       String
+  userId         String?
+  user           User?           @relation(fields: [userId], references: [id], onDelete: SetNull)
   score          Int             @default(0)
   totalQuestions Int
   startedAt      DateTime        @default(now())
@@ -87,18 +107,65 @@ model QuizSession {
 
 // A user's answer to a single question in a session (snapshot stored)
 model SessionAnswer {
-  id            String      @id @default(cuid())
-  sessionId     String
-  questionId    String
-  questionText  String
-  optionA       String
-  optionB       String
-  optionC       String
-  optionD       String
-  correctAnswer String
-  userAnswer    String?
-  explanation   String
-  isCorrect     Boolean?
-  answeredAt    DateTime?
-  session       QuizSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  id             String      @id @default(cuid())
+  sessionId      String
+  questionId     String
+  questionText   String
+  optionA        String
+  optionB        String
+  optionC        String
+  optionD        String
+  correctAnswer  String
+  correctAnswer2 String?
+  userAnswer     String?
+  userAnswer2    String?
+  explanation    String
+  isCorrect      Boolean?
+  answeredAt     DateTime?
+  session        QuizSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+}
+
+// === Social Network ===
+model Post {
+  id          String    @id @default(cuid())
+  authorId    String
+  author      User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  content     String
+  type        String    @default("discussion")
+  tags        String    @default("")
+  likesCount  Int       @default(0)
+  comments    Comment[]
+  likes       Like[]
+  createdAt   DateTime  @default(now())
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  content   String
+  createdAt DateTime @default(now())
+}
+
+model Like {
+  id        String   @id @default(cuid())
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  @@unique([postId, userId])
+}
+
+// === Email notifications log ===
+model EmailLog {
+  id        String   @id @default(cuid())
+  toEmail   String
+  subject   String
+  body      String
+  type      String   @default("info")
+  sentAt    DateTime @default(now())
+  status    String   @default("pending")
 }
