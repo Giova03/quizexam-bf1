@@ -1,0 +1,328 @@
+{
+  "bankKey": "reseau-telecom",
+  "title": "Réseau et Télécommunications",
+  "description": "Modèles OSI/TCP-IP, routage, protocoles, réseau mobile.",
+  "category": "Universitaire",
+  "subcategory": "Réseau & Télécom",
+  "icon": "Network",
+  "color": "sky",
+  "level": "LICENCE",
+  "subject": "Réseau et télécom: OSI, TCP/IP, IPv4/IPv6, routage, protocoles (HTTP, DNS, DHCP), 4G/5G, fibre, Wi-Fi, VLAN, VPN",
+  "questions": [
+    {
+      "question": "Dans le modèle OSI, à quel niveau appartient le protocole TCP ?",
+      "optionA": "Niveau 2 (Couche Liaison)",
+      "optionB": "Niveau 3 (Couche Réseau)",
+      "optionC": "Niveau 4 (Couche Transport)",
+      "optionD": "Niveau 5 (Couche Session)",
+      "correctAnswer": "C",
+      "explanation": "TCP (Transmission Control Protocol) fonctionne au niveau 4 du modèle OSI, la couche Transport, qui assure la transmission fiable des données entre deux hôtes."
+    },
+    {
+      "question": "Quelle est la taille minimale d'une trame Ethernet II ?",
+      "optionA": "64 octets",
+      "optionB": "128 octets",
+      "optionC": "256 octets",
+      "optionD": "512 octets",
+      "correctAnswer": "A",
+      "explanation": "Une trame Ethernet II a une taille minimale de 64 octets (y compris l'en-tête de 14 octets et le CRC de 4 octets) pour garantir une détection correcte des collisions sur un réseau à accès multiple."
+    },
+    {
+      "question": "Dans IPv6, combien d'adresses sont théoriquement possibles ?",
+      "optionA": "2^32",
+      "optionB": "2^64",
+      "optionC": "2^128",
+      "optionD": "2^256",
+      "correctAnswer": "C",
+      "explanation": "IPv6 utilise des adresses de 128 bits, permettant théoriquement 2^128 adresses distinctes, soit environ 3,4×10^38 adresses."
+    },
+    {
+      "question": "Quel est le rôle principal du protocole DHCP ?",
+      "optionA": "Résolution de noms de domaine",
+      "optionB": "Attribution automatique d'adresses IP",
+      "optionC": "Routage des paquets",
+      "optionD": "Sécurisation des communications",
+      "correctAnswer": "B",
+      "explanation": "DHCP (Dynamic Host Configuration Protocol) permet d'attribuer automatiquement des adresses IP et autres paramètres de configuration aux hôtes sur un réseau."
+    },
+    {
+      "question": "Dans le modèle TCP/IP, la couche Internet correspond à quel niveau du modèle OSI ?",
+      "optionA": "Niveaux 1 et 2",
+      "optionB": "Niveaux 3 et 4",
+      "optionC": "Niveaux 3, 4 et 5",
+      "optionD": "Niveaux 1 à 7",
+      "correctAnswer": "B",
+      "explanation": "La couche Internet du modèle TCP/IP correspond aux couches 3 (Réseau) et 4 (Transport) du modèle OSI."
+    },
+    {
+      "question": "Quelle méthode de routage utilise un algorithme de plus court chemin comme OSPF ?",
+      "optionA": "Routage statique",
+      "optionB": "Routage vectoriel de distance",
+      "optionC": "Routage à état de liaison",
+      "optionD": "Routage source",
+      "correctAnswer": "C",
+      "explanation": "OSPF (Open Shortest Path First) utilise un algorithme de plus court chemin basé sur l'état des liens (link-state), ce qui le classe dans la catégorie du routage à état de liaison."
+    },
+    {
+      "question": "Quel est le port par défaut pour le protocole HTTPS ?",
+      "optionA": "80",
+      "optionB": "443",
+      "optionC": "8080",
+      "optionD": "8443",
+      "correctAnswer": "B",
+      "explanation": "HTTPS (HTTP Secure) utilise le port 443 par défaut pour les communications chiffrées entre les clients et les serveurs web."
+    },
+    {
+      "question": "Quelle est la principale différence entre IPv4 et IPv6 concernant la fragmentation ?",
+      "optionA": "IPv4 ne supporte pas la fragmentation",
+      "optionB": "IPv6 effectue la fragmentation uniquement au niveau du routeur",
+      "optionC": "IPv6 délègue la fragmentation à la couche transport",
+      "optionD": "IPv6 utilise la fragmentation path MTU découverte",
+      "correctAnswer": "D",
+      "explanation": "IPv6 utilise la découverte de MTU (Maximum Transmission Unit) du chemin pour éviter la fragmentation, contrairement à IPv4 qui peut fragmenter les paquets."
+    },
+    {
+      "question": "Dans un réseau VLAN, quel équipement est nécessaire pour communiquer entre différents VLAN ?",
+      "optionA": "Répéteur",
+      "optionB": "Pont",
+      "optionC": "Commutateur de couche 3",
+      "optionD": "Hub",
+      "correctAnswer": "C",
+      "explanation": "Un commutateur de couche 3 (ou routeur) est nécessaire pour router le trafic entre différents VLAN, car les commutateurs de couche 2 ne peuvent pas communiquer entre VLAN différents."
+    },
+    {
+      "question": "Quel protocole DNS est utilisé pour les requêtes récursives ?",
+      "optionA": "DNS over UDP",
+      "optionB": "DNS over TCP",
+      "optionC": "DNSSEC",
+      "optionD": "EDNS0",
+      "correctAnswer": "B",
+      "explanation": "Les requêtes DNS récursives utilisent généralement TCP plutôt qu'UDP car elles peuvent générer des réponses plus volumineuses qui nécessitent une connexion fiable."
+    },
+    {
+      "question": "Quelle est la principale caractéristique de la technologie 5G par rapport à la 4G ?",
+      "optionA": "Vitesse de connexion plus lente",
+      "optionB": "Latence réduite",
+      "optionC": "Moins d'appareils connectés",
+      "optionD": "Couverture plus limitée",
+      "correctAnswer": "B",
+      "explanation": "La 5G offre une latence réduite (jusqu'à 1 ms) par rapport à la 4G, permettant des applications temps réel comme la conduite autonome ou la chirurgie à distance."
+    },
+    {
+      "question": "Quel type de fibre optique permet la transmission simultanée dans les deux directions ?",
+      "optionA": "Fibre monomode",
+      "optionB": "Fibre multimode",
+      "optionC": "Fibre full-duplex",
+      "optionD": "Fibre bidirectionnelle",
+      "correctAnswer": "D",
+      "explanation": "La fibre bidirectionnelle utilise des fibres distinctes pour la transmission et la réception, permettant une communication full-duplex sur une seule paire de fibres."
+    },
+    {
+      "question": "Dans le standard Wi-Fi, quel canal est utilisé par défaut dans la bande 2.4 GHz ?",
+      "optionA": "Canal 1",
+      "optionB": "Canal 6",
+      "optionC": "Canal 11",
+      "optionD": "Canal 14",
+      "correctAnswer": "B",
+      "explanation": "Le canal 6 est le canal par défaut pour la plupart des points d'accès Wi-Fi dans la bande 2.4 GHz, car il se situe au milieu de la plage disponible."
+    },
+    {
+      "question": "Quel protocole VPN de couche 3 utilise le chiffrement IPsec ?",
+      "optionA": "PPTP",
+      "optionB": "L2TP",
+      "optionC": "IPsec",
+      "optionD": "SSL/TLS",
+      "correctAnswer": "C",
+      "explanation": "IPsec (Internet Protocol Security) est un protocole de couche 3 qui fournit un chiffrement sécurisé pour les communications VPN au niveau IP."
+    },
+    {
+      "question": "Quel est le rôle du champ TTL (Time To Live) dans un paquet IP ?",
+      "optionA": "Contrôler le débit de données",
+      "optionB": "Empêcher les boucles de routage",
+      "optionC": "Gérer le temps d'attente des réponses",
+      "optionD": "Sécuriser les communications",
+      "correctAnswer": "B",
+      "explanation": "Le champ TTL (Time To Live) dans un paquet IP est décrémenté par chaque routeur traversé. S'il atteint zéro, le paquet est rejeté pour empêcher les boucles infinies dans le réseau."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre le routage statique et le routage dynamique ?",
+      "optionA": "Le routage statique est plus rapide",
+      "optionB": "Le routage statique nécessite moins de ressources",
+      "optionC": "Le routage statique est configuré manuellement",
+      "optionD": "Le routage statique ne supporte pas les protocoles",
+      "correctAnswer": "C",
+      "explanation": "La principale différence est que le routage statique est configuré manuellement par l'administrateur, tandis que le routage dynamique utilise des protocoles pour échanger automatiquement les informations de routage."
+    },
+    {
+      "question": "Dans le modèle OSI, à quel niveau appartient le protocole HTTP ?",
+      "optionA": "Niveau 5 (Couche Session)",
+      "optionB": "Niveau 6 (Couche Présentation)",
+      "optionC": "Niveau 7 (Couche Application)",
+      "optionD": "Niveau 4 (Couche Transport)",
+      "correctAnswer": "C",
+      "explanation": "HTTP (Hypertext Transfer Protocol) fonctionne au niveau 7 du modèle OSI, la couche Application, qui fournit des services directement aux applications utilisateur."
+    },
+    {
+      "question": "Quel est l'avantage principal de la technologie MIMO en Wi-Fi ?",
+      "optionA": "Réduction de la consommation d'énergie",
+      "optionB": "Augmentation de la couverture",
+      "optionC": "Amélioration de la sécurité",
+      "optionD": "Réduction de l'interférence",
+      "correctAnswer": "B",
+      "explanation": "MIMO (Multiple-Input Multiple-Output) utilise plusieurs antennes pour envoyer et recevoir simultanément des données, ce qui améliore la couverture et la capacité du réseau sans fil."
+    },
+    {
+      "question": "Quelle est la fonction principale du protocole ARP ?",
+      "optionA": "Résolution de noms de domaine",
+      "optionB": "Découverte de voisinage",
+      "optionC": "Traduction d'adresse IP en adresse MAC",
+      "optionD": "Authentification des utilisateurs",
+      "correctAnswer": "C",
+      "explanation": "ARP (Address Resolution Protocol) est utilisé pour traduire une adresse IP en adresse MAC physique sur un réseau local."
+    },
+    {
+      "question": "Dans un réseau IPv6, quel est le rôle de l'adresse link-local ?",
+      "optionA": "Communication sur Internet",
+      "optionB": "Communication globale",
+      "optionC": "Communication locale au segment",
+      "optionD": "Communication de multidiffusion",
+      "correctAnswer": "C",
+      "explanation": "L'adresse link-local en IPv6 (préfixe FE80::/10) est utilisée pour la communication sur le segment de réseau local sans nécessiter de routeur."
+    },
+    {
+      "question": "Dans le modèle OSI, à quel niveau appartiennent les protocoles TCP et UDP ?",
+      "optionA": "Niveau 3 (Réseau)",
+      "optionB": "Niveau 4 (Transport)",
+      "optionC": "Niveau 5 (Session)",
+      "optionD": "Niveau 6 (Présentation)",
+      "correctAnswer": "B",
+      "explanation": "TCP et UDP sont des protocoles de niveau 4 (Transport) dans le modèle OSI, responsable de la transmission de bout en bout des données entre applications."
+    },
+    {
+      "question": "Quelle est la principale différence entre IPv4 et IPv6 concernant l'adressage ?",
+      "optionA": "IPv4 utilise une adresse de 32 bits tandis qu'IPv6 en utilise de 128 bits",
+      "optionB": "IPv4 utilise une adresse de 64 bits tandis qu'IPv6 en utilise de 128 bits",
+      "optionC": "IPv4 utilise une adresse de 32 bits tandis qu'IPv6 en utilise de 256 bits",
+      "optionD": "IPv4 et IPv6 utilisent tous deux des adresses de 32 bits",
+      "correctAnswer": "A",
+      "explanation": "IPv4 utilise des adresses sur 32 bits (format décimal pointé), ce qui limite le nombre d'adresses disponibles. IPv6 utilise des adresses sur 128 bits (format hexadécimal), offrant un nombre quasi illimité d'adresses."
+    },
+    {
+      "question": "Quel type de routage utilise un protocole comme OSPF ou EIGRP ?",
+      "optionA": "Routage statique",
+      "optionB": "Routage dynamique",
+      "optionC": "Routage hybride",
+      "optionD": "Routage par défaut",
+      "correctAnswer": "B",
+      "explanation": "OSPF et EIGRP sont des protocoles de routage dynamique qui calculent automatiquement les meilleurs chemins en fonction des changements dans le réseau."
+    },
+    {
+      "question": "Dans le modèle TCP/IP, quel protocole est responsable de la résolution de noms de domaine ?",
+      "optionA": "HTTP",
+      "optionB": "DHCP",
+      "optionC": "DNS",
+      "optionD": "FTP",
+      "correctAnswer": "C",
+      "explanation": "DNS (Domain Name System) est le protocole qui traduit les noms de domaine (comme www.example.com) en adresses IP (comme 93.184.216.34)."
+    },
+    {
+      "question": "Quel est le port par défaut pour le service HTTP ?",
+      "optionA": "21",
+      "optionB": "22",
+      "optionC": "80",
+      "optionD": "443",
+      "correctAnswer": "C",
+      "explanation": "Le port par défaut pour HTTP (Hypertext Transfer Protocol) est le port 80. HTTPS utilise le port 443."
+    },
+    {
+      "question": "Quel protocole est utilisé par un serveur DHCP pour attribuer des adresses IP aux clients ?",
+      "optionA": "ARP",
+      "optionB": "RARP",
+      "optionC": "BOOTP",
+      "optionD": "DHCPDISCOVER",
+      "correctAnswer": "D",
+      "explanation": "DHCPDISCOVER est le premier message envoyé par un client DHCP pour découvrir les serveurs DHCP disponibles dans le réseau."
+    },
+    {
+      "question": "Quelle est la principale différence entre 4G et 5G en termes de latence ?",
+      "optionA": "La latence 4G est d'environ 100ms tandis que la latence 5G est d'environ 1ms",
+      "optionB": "La latence 4G est d'environ 50ms tandis que la latence 5G est d'environ 5ms",
+      "optionC": "La latence 4G est d'environ 30ms tandis que la latence 5G est d'environ 10ms",
+      "optionD": "La latence est identique entre 4G et 5G",
+      "correctAnswer": "A",
+      "explanation": "La latence de la 4G est d'environ 100ms, tandis que la 5G atteint une latence ultra-faible d'environ 1ms, ce qui est crucial pour les applications temps réel."
+    },
+    {
+      "question": "Quelle technologie est principalement utilisée pour la fibre optique dans les réseaux d'accès FTTH ?",
+      "optionA": "DSL",
+      "optionB": "DOCSIS",
+      "optionC": "GPON",
+      "optionD": "LTE",
+      "correctAnswer": "C",
+      "explanation": "GPON (Gigabit-capable Passive Optical Network) est une technologie couramment utilisée pour la fibre optique dans les réseaux d'accès FTTH (Fiber To The Home)."
+    },
+    {
+      "question": "Quel standard Wi-Fi offre le débit théorique le plus élevé parmi les options suivantes ?",
+      "optionA": "Wi-Fi 4 (802.11n)",
+      "optionB": "Wi-Fi 5 (802.11ac)",
+      "optionC": "Wi-Fi 6 (802.11ax)",
+      "optionD": "Wi-Fi 6E (802.11ax)",
+      "correctAnswer": "D",
+      "explanation": "Wi-Fi 6E offre des débits théoriques plus élevés que les autres standards en utilisant la bande de fréquences de 6 GHz, en plus des bandes 2.4 GHz et 5 GHz."
+    },
+    {
+      "question": "Quel est le principal avantage d'utiliser des VLAN dans un réseau ?",
+      "optionA": "Augmentation de la bande passante totale",
+      "optionB": "Sécurité et segmentation logique du réseau",
+      "optionC": "Réduction de la latence",
+      "optionD": "Augmentation de la portée physique du réseau",
+      "correctAnswer": "B",
+      "explanation": "Les VLAN permettent de segmenter logiquement un réseau physique en plusieurs réseaux logiques, améliorant la sécurité et la gestion du trafic."
+    },
+    {
+      "question": "Quel protocole est couramment utilisé dans les VPN de site à site ?",
+      "optionA": "PPTP",
+      "optionB": "L2TP",
+      "optionC": "IPsec",
+      "optionD": "SSL/TLS",
+      "correctAnswer": "C",
+      "explanation": "IPsec (Internet Protocol Security) est le protocole le plus couramment utilisé pour établir des VPN de site à site, fournissant un cryptage sécurisé des communications entre réseaux distants."
+    },
+    {
+      "question": "Dans le modèle OSI, à quel niveau le protocole Ethernet opère-t-il ?",
+      "optionA": "Niveau 1 (Physique)",
+      "optionB": "Niveau 2 (Liaison)",
+      "optionC": "Niveau 3 (Réseau)",
+      "optionD": "Niveau 4 (Transport)",
+      "correctAnswer": "B",
+      "explanation": "Ethernet opère au niveau 2 (Liaison de données) du modèle OSI, responsable du transfert de trames entre nœuds sur le même segment réseau local."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre le routage inter-domaines (BGP) et le routage intra-domaines (OSPF) ?",
+      "optionA": "BGP utilise un algorithme de vector de distance tandis qu'OSPF utilise un algorithme d'état de lien",
+      "optionB": "BGP est utilisé au sein d'un seul système autonome tandis qu'OSPF est utilisé entre systèmes autonomes",
+      "optionC": "BGP est utilisé entre systèmes autonomes tandis qu'OSPF est utilisé au sein d'un seul système autonome",
+      "optionD": "BGP et OSPF sont identiques mais utilisent des protocoles différents",
+      "correctAnswer": "C",
+      "explanation": "BGP (Border Gateway Protocol) est un protocole de routage inter-domaines utilisé pour échanger des informations de routage entre systèmes autonomes (AS), tandis qu'OSPF est un protocole de routage intra-domaines utilisé au sein d'un seul AS."
+    },
+    {
+      "question": "Quel type d'adresse MAC est utilisé pour des communications unicast dans un réseau Ethernet ?",
+      "optionA": "Adresse de diffusion (FF:FF:FF:FF:FF:FF)",
+      "optionB": "Adresse de multidiffusion (ex: 01:00:5E:xx:xx:xx)",
+      "optionC": "Adresse unicast (unique pour chaque interface réseau)",
+      "optionD": "Adresse de broadcast (similaire à la diffusion)",
+      "correctAnswer": "C",
+      "explanation": "Une adresse unicast MAC est une adresse unique attribuée à une interface réseau spécifique, utilisée pour des communications point à point."
+    },
+    {
+      "question": "Quelle est la principale caractéristique du protocole QUIC par rapport à TCP ?",
+      "optionA": "QUIC fonctionne au niveau 3 du modèle OSI tandis que TCP fonctionne au niveau 4",
+      "optionB": "QUIC établit des connexions plus rapidement et réduit la latence grâce à la multiplexage",
+      "optionC": "QUIC est utilisé pour le transfert de fichiers tandis que TCP est utilisé pour le web",
+      "optionD": "QUIC est moins sécurisé que TCP",
+      "correctAnswer": "B",
+      "explanation": "QUIC (Quick UDP Internet Connections) est un protocole qui fonctionne au-dessus d'UDP, offrant des connexions plus rapides, une latence réduite et un multiplexage amélioré par rapport à TCP."
+    }
+  ]
+}

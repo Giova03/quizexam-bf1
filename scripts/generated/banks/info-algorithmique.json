@@ -1,0 +1,283 @@
+{
+  "bankKey": "info-algorithmique",
+  "title": "Informatique - Algorithmique",
+  "description": "Structures de données, tris, complexité, récursivité.",
+  "category": "Universitaire",
+  "subcategory": "Informatique",
+  "icon": "Binary",
+  "color": "violet",
+  "level": "LICENCE",
+  "subject": "Algorithmique: structures de données (pile, file, arbre, graphe), tris, recherche, complexité, récursivité, Dijkstra, BFS, DFS",
+  "questions": [
+    {
+      "question": "Quelle est la complexité temporelle de l'algorithme de tri par fusion (Merge Sort) dans le pire des cas ?",
+      "optionA": "O(n)",
+      "optionB": "O(n log n)",
+      "optionC": "O(n²)",
+      "optionD": "O(2^n)",
+      "correctAnswer": "B",
+      "explanation": "Le tri par fusion a toujours une complexité temporelle de O(n log n) dans tous les cas (meilleur, moyen, pire) car il divise toujours le tableau en deux moitiés et fusionne ces moitiés."
+    },
+    {
+      "question": "Dans un graphe non orienté, si on utilise l'algorithme de Dijkstra pour trouver le plus court chemin d'un sommet à tous les autres, quelle est la condition préalable nécessaire ?",
+      "optionA": "Le graphe doit être connexe",
+      "optionB": "Le graphe ne doit pas contenir de cycles",
+      "optionC": "Les poids des arêtes doivent être non négatifs",
+      "optionD": "Le graphe doit être acyclique",
+      "correctAnswer": "C",
+      "explanation": "L'algorithme de Dijkstra ne fonctionne que si tous les poids des arêtes sont non négatifs. Si un poids négatif est présent, l'algorithme peut produire des résultats incorrects."
+    },
+    {
+      "question": "Quelle est la complexité spatiale de l'algorithme de parcours en profondeur (DFS) itératif utilisant une pile ?",
+      "optionA": "O(1)",
+      "optionB": "O(log n)",
+      "optionC": "O(n)",
+      "optionD": "O(n²)",
+      "correctAnswer": "C",
+      "explanation": "Dans le cas le pire, la pile peut contenir tous les nœuds du graphe (par exemple, dans un graphe linéaire), donc la complexité spatiale est O(n)."
+    },
+    {
+      "question": "Quelle structure de données est la plus adaptée pour implémenter un évaluateur d'expressions postfixées ?",
+      "optionA": "File",
+      "optionB": "Pile",
+      "optionC": "Arbre binaire",
+      "optionD": "Tableau à deux dimensions",
+      "correctAnswer": "B",
+      "explanation": "Une pile est idéale pour évaluer des expressions postfixées car on peut facilement empiler les opérandes et dépiler les deux derniers opérandes quand on rencontre un opérateur."
+    },
+    {
+      "question": "Dans un arbre binaire de recherche équilibré, quelle est la complexité moyenne d'une recherche ?",
+      "optionA": "O(1)",
+      "optionB": "O(log n)",
+      "optionC": "O(n)",
+      "optionD": "O(n log n)",
+      "correctAnswer": "B",
+      "explanation": "Dans un arbre binaire de recherche équilibré, la hauteur de l'arbre est log n, donc la recherche prend en moyenne O(log n) opérations."
+    },
+    {
+      "question": "Quelle est la complexité temporelle de l'algorithme de tri rapide (Quick Sort) dans le meilleur des cas ?",
+      "optionA": "O(n)",
+      "optionB": "O(n log n)",
+      "optionC": "O(n²)",
+      "optionD": "O(2^n)",
+      "correctAnswer": "B",
+      "explanation": "Dans le meilleur des cas, le pivot divise toujours le tableau en deux parties égales, ce qui donne une complexité de O(n log n)."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre une pile et une file ?",
+      "optionA": "Une pile stocke des éléments de type entier, une file des éléments de type chaîne",
+      "optionB": "Une pile suit le principe LIFO, une file suit le principe FIFO",
+      "optionC": "Une pile a une complexité O(1) pour l'insertion, une file a une complexité O(log n)",
+      "optionD": "Une pile ne peut pas être vide, une file peut être vide",
+      "correctAnswer": "B",
+      "explanation": "La différence fondamentale entre une pile et une file est leur principe de fonctionnement : une pile suit le principe LIFO (Last In First Out), tandis qu'une file suit le principe FIFO (First In First Out)."
+    },
+    {
+      "question": "Dans un graphe pondéré, quel algorithme est le plus adapté pour trouver le plus court chemin entre toutes les paires de sommets ?",
+      "optionA": "Dijkstra",
+      "optionB": "Bellman-Ford",
+      "optionC": "Floyd-Warshall",
+      "optionD": "Kruskal",
+      "correctAnswer": "C",
+      "explanation": "L'algorithme de Floyd-Warshall est spécifiquement conçu pour trouver les plus courts chemins entre toutes les paires de sommets dans un graphe pondéré."
+    },
+    {
+      "question": "Quelle est la complexité temporelle de l'algorithme de parcours en largeur (BFS) ?",
+      "optionA": "O(V)",
+      "optionB": "O(E)",
+      "optionC": "O(V + E)",
+      "optionD": "O(V × E)",
+      "correctAnswer": "C",
+      "explanation": "La complexité temporelle de BFS est O(V + E), où V est le nombre de sommets et E le nombre d'arêtes, car chaque sommet et chaque arête est visité exactement une fois."
+    },
+    {
+      "question": "Quelle est la condition nécessaire pour qu'un arbre binaire soit un arbre binaire de recherche (ABR) ?",
+      "optionA": "Chaque nœud a au plus deux enfants",
+      "optionB": "La hauteur de l'arbre est minimale",
+      "optionC": "Pour chaque nœud, tous les éléments du sous-arbre gauche sont inférieurs et tous les éléments du sous-arbre droit sont supérieurs",
+      "optionD": "L'arbre est équilibré",
+      "correctAnswer": "C",
+      "explanation": "La définition d'un arbre binaire de recherche exige que pour chaque nœud, tous les éléments du sous-arbre gauche soient inférieurs à l'élément du nœud et que tous les éléments du sous-arbre droit soient supérieurs."
+    },
+    {
+      "question": "Quelle est la complexité spatiale de la récursion pour calculer la suite de Fibonacci de manière naïve ?",
+      "optionA": "O(1)",
+      "optionB": "O(n)",
+      "optionC": "O(2^n)",
+      "optionD": "O(n²)",
+      "correctAnswer": "B",
+      "explanation": "La récursion pour calculer Fibonacci naïve a une complexité spatiale de O(n) à cause de la profondeur maximale de la pile d'appels récursifs."
+    },
+    {
+      "question": "Dans un tri par insertion, quelle est la complexité temporelle dans le pire des cas ?",
+      "optionA": "O(n)",
+      "optionB": "O(n log n)",
+      "optionC": "O(n²)",
+      "optionD": "O(2^n)",
+      "correctAnswer": "C",
+      "explanation": "Dans le pire des cas (tableau trié en ordre décroissant), chaque élément doit être déplacé jusqu'au début du tableau, ce qui donne une complexité de O(n²)."
+    },
+    {
+      "question": "Quelle est la complexité temporelle de l'algorithme de recherche séquentielle ?",
+      "optionA": "O(1)",
+      "optionB": "O(log n)",
+      "optionC": "O(n)",
+      "optionD": "O(n²)",
+      "correctAnswer": "C",
+      "explanation": "La recherche séquentielle examine chaque élément un par un, donc dans le pire des cas, elle examine tous les n éléments, ce qui donne une complexité de O(n)."
+    },
+    {
+      "question": "Quelle structure de données est la plus adaptée pour implémenter un undo/redo dans un éditeur de texte ?",
+      "optionA": "File",
+      "optionB": "Pile",
+      "optionC": "Liste doublement chaînée",
+      "optionD": "Arbre",
+      "correctAnswer": "C",
+      "explanation": "Une liste doublement chaînée permet de naviguer dans les deux sens (undo/redo) avec une complexité O(1) pour l'insertion et la suppression à chaque extrémité."
+    },
+    {
+      "question": "Dans un arbre binaire complet de hauteur h, combien y a-t-il de nœuds au maximum ?",
+      "optionA": "h",
+      "optionB": "2^h - 1",
+      "optionC": "2^(h+1) - 1",
+      "optionD": "h²",
+      "correctAnswer": "C",
+      "explanation": "Un arbre binaire complet de hauteur h a au maximum 2^(h+1) - 1 nœuds, car c'est la somme d'une série géométrique avec raison 2."
+    },
+    {
+      "question": "Quelle est la complexité temporelle de l'algorithme de Kruskal pour trouver un arbre couvrant de poids minimum ?",
+      "optionA": "O(V log V)",
+      "optionB": "O(E log E)",
+      "optionC": "O(E log V)",
+      "optionD": "O(V²)",
+      "correctAnswer": "B",
+      "explanation": "La complexité de Kruskal est principalement déterminée par le tri des arêtes, qui est O(E log E), où E est le nombre d'arêtes."
+    },
+    {
+      "question": "Quelle est la complexité temporelle de l'algorithme de parcours d'arbre en profondeur (DFS) récursif ?",
+      "optionA": "O(1)",
+      "optionB": "O(log n)",
+      "optionC": "O(n)",
+      "optionD": "O(n²)",
+      "correctAnswer": "C",
+      "explanation": "Le parcours DFS visite chaque nœud exactement une fois, donc la complexité temporelle est O(n), où n est le nombre de nœuds."
+    },
+    {
+      "question": "Dans un algorithme récursif, quel phénomène se produit quand la profondeur des appels récursifs dépasse la capacité de la pile d'appels ?",
+      "optionA": "Optimisation",
+      "optionB": "Récursion terminale",
+      "optionC": "Dépassement de pile (stack overflow)",
+      "optionD": "Boucle infinie",
+      "correctAnswer": "C",
+      "explanation": "Quand la profondeur des appels récursifs dépasse la capacité de la pile d'appels, cela provoque une erreur de dépassement de pile (stack overflow)."
+    },
+    {
+      "question": "Quelle est la complexité temporelle de l'algorithme de tri par tas (Heap Sort) ?",
+      "optionA": "O(n)",
+      "optionB": "O(n log n)",
+      "optionC": "O(n²)",
+      "optionD": "O(2^n)",
+      "correctAnswer": "B",
+      "explanation": "Le tri par tas a une complexité temporelle de O(n log n) dans tous les cas, car la construction du tas et l'extraction des éléments se font toutes deux en O(log n) par élément."
+    },
+    {
+      "question": "Quelle est la complexité spatiale de l'algorithme de Dijkstra ?",
+      "optionA": "O(V)",
+      "optionB": "O(E)",
+      "optionC": "O(V + E)",
+      "optionD": "O(V × E)",
+      "correctAnswer": "A",
+      "explanation": "La complexité spatiale de Dijkstra est principalement déterminée par la structure de données utilisée pour stocker les distances, qui est O(V), où V est le nombre de sommets."
+    },
+    {
+      "question": "Dans un graphe pondéré, quel algorithme permet de trouver le plus court chemin d'un nœud source à tous les autres nœuds, même en présence d'arêtes à poids négatif ?",
+      "optionA": "Algorithme de Dijkstra",
+      "optionB": "Algorithme de Bellman-Ford",
+      "optionC": "Algorithme de Kruskal",
+      "optionD": "Algorithme de Prim",
+      "correctAnswer": "B",
+      "explanation": "L'algorithme de Bellman-Ford peut gérer les arêtes à poids négatif et détecter les cycles négatifs, contrairement à Dijkstra qui ne fonctionne qu'avec des poids non négatifs."
+    },
+    {
+      "question": "Quelle structure de données est la plus appropriée pour implémenter un évaluateur d'expressions postfixées ?",
+      "optionA": "File",
+      "optionB": "Pile",
+      "optionC": "Arbre binaire de recherche",
+      "optionD": "Table de hachage",
+      "correctAnswer": "B",
+      "explanation": "Une pile est idéale pour l'évaluation d'expressions postfixées car elle permet de stocker temporairement les opérandes et de les récupérer dans l'ordre inverse (LIFO) lors de l'évaluation des opérateurs."
+    },
+    {
+      "question": "Quelle est la complexité temporelle de la recherche dans une table de hachage avec une fonction de hachage parfaite et gestion des collisions par chaînage ?",
+      "optionA": "O(1)",
+      "optionB": "O(log n)",
+      "optionC": "O(n)",
+      "optionD": "O(n²)",
+      "correctAnswer": "A",
+      "explanation": "Avec une fonction de hachage parfaite et une gestion des collisions efficace, la recherche dans une table de hachage peut se faire en temps constant O(1) en moyenne."
+    },
+    {
+      "question": "Quelle est la caractéristique principale d'un arbre AVL ?",
+      "optionA": "Tous les nœuds ont au plus deux enfants",
+      "optionB": "La différence de hauteur entre les sous-arbres gauche et droit de tout nœud est au plus 1",
+      "optionC": "Il est toujours un arbre binaire de recherche complet",
+      "optionD": "Il ne contient jamais de valeurs dupliquées",
+      "correctAnswer": "B",
+      "explanation": "Un arbre AVL est un arbre binaire de recherche équilibré où la différence de hauteur entre les sous-arbres gauche et droit de tout nœud (facteur d'équilibre) est au plus 1."
+    },
+    {
+      "question": "Dans un algorithme récursif, quel phénomène se produit lorsque la profondeur d'appels récursifs dépasse la taille de la pile d'exécution ?",
+      "optionA": "Optimisation de la récursivité",
+      "optionB": "Récursion terminale",
+      "optionC": "Dépassement de pile (stack overflow)",
+      "optionD": "Récursion mutuelle",
+      "correctAnswer": "C",
+      "explanation": "Lorsque la profondeur d'appels récursifs dépasse la capacité de la pile d'exécution, un dépassement de pile (stack overflow) se produit, entraînant généralement une erreur d'exécution."
+    },
+    {
+      "question": "Quelle structure de données est la plus appropriée pour implémenter un système d'annulation de modifications (undo) ?",
+      "optionA": "File",
+      "optionB": "Pile",
+      "optionC": "Arbre binaire",
+      "optionD": "Graphe",
+      "correctAnswer": "B",
+      "explanation": "Une pile est idéale pour un système d'annulation (undo) car elle permet de récupérer les actions dans l'ordre inverse de leur exécution (LIFO - Last In, First Out)."
+    },
+    {
+      "question": "Quel algorithme de parcours de graphe garantit de trouver le chemin le plus court en termes de nombre d'arêtes dans un graphe non pondéré ?",
+      "optionA": "DFS (Depth-First Search)",
+      "optionB": "Dijkstra",
+      "optionC": "BFS (Breadth-First Search)",
+      "optionD": "Bellman-Ford",
+      "correctAnswer": "C",
+      "explanation": "BFS explore le graphe niveau par niveau, garantissant ainsi de trouver le chemin le plus court en termes de nombre d'arêtes dans un graphe non pondéré."
+    },
+    {
+      "question": "Quelle est la complexité temporelle de l'insertion dans un tas binaire (binary heap) ?",
+      "optionA": "O(1)",
+      "optionB": "O(log n)",
+      "optionC": "O(n)",
+      "optionD": "O(n log n)",
+      "correctAnswer": "B",
+      "explanation": "L'insertion dans un tas binaire nécessite au plus O(log n) opérations car l'élément est ajouté à la fin puis remonté vers la racine si nécessaire."
+    },
+    {
+      "question": "Dans un arbre binaire de recherche, quelle est la complexité temporelle de la recherche d'un élément dans le pire des cas ?",
+      "optionA": "O(1)",
+      "optionB": "O(log n)",
+      "optionC": "O(n)",
+      "optionD": "O(n²)",
+      "correctAnswer": "C",
+      "explanation": "Dans le pire des cas (arbre complètement déséquilibré, devenant une liste chaînée), la recherche dans un arbre binaire de recherche a une complexité de O(n)."
+    },
+    {
+      "question": "Quelle est la complexité temporelle de l'algorithme de Dijkstra pour trouver le plus court chemin dans un graphe pondéré avec n nœuds et m arêtes, en utilisant un tas binaire comme structure de données ?",
+      "optionA": "O(n²)",
+      "optionB": "O(m log n)",
+      "optionC": "O(n log n + m)",
+      "optionD": "O(n+m)",
+      "correctAnswer": "C",
+      "explanation": "Avec un tas binaire, la complexité de Dijkstra est O(n log n + m), où n est le nombre de nœuds et m le nombre d'arêtes, car chaque nœud est inséré/extracté du tas O(log n) fois et chaque arête est traitée une fois."
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "bankKey": "info-bdd",
+  "title": "Informatique - Bases de Données & SQL",
+  "description": "Modèle relationnel, SQL, normalisation, jointures.",
+  "category": "Universitaire",
+  "subcategory": "Informatique",
+  "icon": "Database",
+  "color": "cyan",
+  "level": "LICENCE",
+  "subject": "Bases de données: SQL (SELECT, INSERT, UPDATE, DELETE), jointures, normalisation, transactions, ACID, index, SGBD",
+  "questions": [
+    {
+      "question": "Quelle clause SQL est utilisée pour filtrer les résultats d'une requête selon des critères spécifiques ?",
+      "optionA": "GROUP BY",
+      "optionB": "HAVING",
+      "optionC": "WHERE",
+      "optionD": "ORDER BY",
+      "correctAnswer": "C",
+      "explanation": "La clause WHERE est utilisée pour filtrer les résultats d'une requête SQL en spécifiant des conditions que les lignes doivent respecter pour être incluses dans le résultat."
+    },
+    {
+      "question": "Quelle est la propriété ACID qui garantit que toutes les transactions sont complètes ou annulées, même en cas de panne système ?",
+      "optionA": "Atomicité",
+      "optionB": "Cohérence",
+      "optionC": "Isolation",
+      "optionD": "Durabilité",
+      "correctAnswer": "A",
+      "explanation": "L'atomicité garantit que toutes les opérations d'une transaction sont complétées avec succès ou qu'aucune ne l'est. Si une transaction échoue à un point, le système revient à son état initial avant la transaction."
+    },
+    {
+      "question": "Quelle commande SQL est utilisée pour insérer de nouvelles données dans une table ?",
+      "optionA": "ADD",
+      "optionB": "INSERT",
+      "optionC": "CREATE",
+      "optionD": "NEW",
+      "correctAnswer": "B",
+      "explanation": "La commande INSERT INTO est utilisée pour insérer de nouvelles lignes de données dans une table SQL."
+    },
+    {
+      "question": "Quel type de jointure retourne toutes les lignes de la table gauche et les lignes correspondantes de la table droite ?",
+      "optionA": "INNER JOIN",
+      "optionB": "LEFT JOIN",
+      "optionC": "RIGHT JOIN",
+      "optionD": "FULL OUTER JOIN",
+      "correctAnswer": "B",
+      "explanation": "Une LEFT JOIN (ou LEFT OUTER JOIN) retourne toutes les lignes de la table gauche et les lignes correspondantes de la table droite. S'il n'y a pas de correspondance, les colonnes de la table droite seront NULL."
+    },
+    {
+      "question": "Quelle forme normale élimine les dépendances partielles en exigeant que toutes les attributs non-clés dépendent de la clé primaire entière ?",
+      "optionA": "Première forme normale (1NF)",
+      "optionB": "Deuxième forme normale (2NF)",
+      "optionC": "Troisième forme normale (3NF)",
+      "optionD": "Forme normale de Boyce-Codd (BCNF)",
+      "correctAnswer": "B",
+      "explanation": "La deuxième forme normale (2NF) exige que la table soit en première forme normale et qu'aucun attribut non-clé ne dépend d'une partie de la clé primaire (élimination des dépendances partielles)."
+    },
+    {
+      "question": "Quel opérateur SQL est utilisé pour combiner les résultats de deux requêtes SELECT en éliminant les doublons ?",
+      "optionA": "UNION",
+      "optionB": "UNION ALL",
+      "optionC": "INTERSECT",
+      "optionD": "EXCEPT",
+      "correctAnswer": "A",
+      "explanation": "L'opérateur UNION combine les résultats de deux requêtes SELECT et élimine automatiquement les doublons. UNION ALL combine les résultats mais conserve les doublons."
+    },
+    {
+      "question": "Quelle commande SQL est utilisée pour mettre à jour des données existantes dans une table ?",
+      "optionA": "CHANGE",
+      "optionB": "MODIFY",
+      "optionC": "UPDATE",
+      "optionD": "ALTER",
+      "correctAnswer": "C",
+      "explanation": "La commande UPDATE est utilisée pour modifier des données existantes dans une table SQL. Elle nécessite généralement une clause WHERE pour spécifier quelles lignes mettre à jour."
+    },
+    {
+      "question": "Quelle propriété ACID garantit que les transactions ne se chevauchent pas de manière à prévenir les effets indésirables ?",
+      "optionA": "Atomicité",
+      "optionB": "Cohérence",
+      "optionC": "Isolation",
+      "optionD": "Durabilité",
+      "correctAnswer": "C",
+      "explanation": "L'isolation garantit que les transactions s'exécutent de manière indépendante les unes des autres, empêchant les transactions concurrentes d'affecter négativement les résultats les unes des autres."
+    },
+    {
+      "question": "Quelle est la fonction d'un index dans une base de données ?",
+      "optionA": "Stocker les données de manière redondante",
+      "optionB": "Créer des vues matérialisées",
+      "optionC": "Accélérer les opérations de recherche",
+      "optionD": "Sécuriser l'accès aux données",
+      "correctAnswer": "C",
+      "explanation": "Un index est une structure de données spéciale qui améliore la vitesse des opérations de recherche dans une base de données en créant une carte des valeurs de colonne vers leurs emplacements physiques."
+    },
+    {
+      "question": "Quelle clause SQL est utilisée pour regrouper les lignes ayant les mêmes valeurs dans des colonnes spécifiques ?",
+      "optionA": "GROUP BY",
+      "optionB": "ORDER BY",
+      "optionC": "PARTITION BY",
+      "optionD": "CLUSTER BY",
+      "correctAnswer": "A",
+      "explanation": "La clause GROUP BY regroupe les lignes qui ont les mêmes valeurs dans des colonnes spécifiques en agrégats, ce qui permet d'appliquer des fonctions d'agrégation comme COUNT, SUM, AVG, etc."
+    },
+    {
+      "question": "Quelle commande SQL est utilisée pour supprimer des données d'une table ?",
+      "optionA": "REMOVE",
+      "optionB": "DELETE",
+      "optionC": "DROP",
+      "optionD": "CLEAR",
+      "correctAnswer": "B",
+      "explanation": "La commande DELETE est utilisée pour supprimer des lignes d'une table SQL. Elle nécessite généralement une clause WHERE pour spécifier quelles lignes supprimer. Sans WHERE, elle supprime toutes les lignes de la table."
+    },
+    {
+      "question": "Quelle forme normale élimine les dépendances transitives en exigeant que tous les attributs non-clés dépendent uniquement de la clé primaire ?",
+      "optionA": "Première forme normale (1NF)",
+      "optionB": "Deuxième forme normale (2NF)",
+      "optionC": "Troisième forme normale (3NF)",
+      "optionD": "Forme normale de Boyce-Codd (BCNF)",
+      "correctAnswer": "C",
+      "explanation": "La troisième forme normale (3NF) exige que la table soit en deuxième forme normale et qu'aucun attribut non-clé ne dépend transitivement d'un autre attribut non-clé (élimination des dépendances transitives)."
+    },
+    {
+      "question": "Quelle clause SQL est utilisée pour filtrer les résultats après un GROUP BY ?",
+      "optionA": "WHERE",
+      "optionB": "HAVING",
+      "optionC": "ORDER BY",
+      "optionD": "LIMIT",
+      "correctAnswer": "B",
+      "explanation": "La clause HAVING est utilisée pour filtrer les résultats d'une requête après un GROUP BY, similaire à la clause WHERE mais s'appliquant aux groupes plutôt qu'aux lignes individuelles."
+    },
+    {
+      "question": "Quelle est la propriété ACID qui garantit qu'une base de données passe d'un état valide à un autre ?",
+      "optionA": "Atomicité",
+      "optionB": "Cohérence",
+      "optionC": "Isolation",
+      "optionD": "Durabilité",
+      "correctAnswer": "B",
+      "explanation": "La cohérence garantit qu'une transaction ne laisse pas la base de données dans un état invalide. Toutes les contraintes, règles et déclencheurs doivent être appliqués pour maintenir la cohérence des données."
+    },
+    {
+      "question": "Quel type de jointure retourne uniquement les lignes qui ont des correspondances dans les deux tables ?",
+      "optionA": "INNER JOIN",
+      "optionB": "LEFT JOIN",
+      "optionC": "RIGHT JOIN",
+      "optionD": "FULL OUTER JOIN",
+      "correctAnswer": "A",
+      "explanation": "Un INNER JOIN retourne uniquement les lignes qui ont des correspondances dans les deux tables jointes. Les lignes sans correspondance dans l'une des tables sont exclues du résultat."
+    },
+    {
+      "question": "Quelle commande SQL est utilisée pour supprimer une table ?",
+      "optionA": "DELETE",
+      "optionB": "REMOVE",
+      "optionC": "DROP",
+      "optionD": "CLEAR",
+      "correctAnswer": "C",
+      "explanation": "La commande DROP TABLE est utilisée pour supprimer complètement une table et toutes ses données de la base de données. Cette action est irréversible."
+    },
+    {
+      "question": "Quelle forme normale est une version plus stricte de la 3NF qui exige que chaque déterminant soit une clé candidate ?",
+      "optionA": "Quatrième forme normale (4NF)",
+      "optionB": "Cinquième forme normale (5NF)",
+      "optionC": "Forme normale de Boyce-Codd (BCNF)",
+      "optionD": "Forme normale de domaine clé (DKNF)",
+      "correctAnswer": "C",
+      "explanation": "La forme normale de Boyce-Codd (BCNF) est une version plus stricte de la 3NF qui exige que chaque déterminant dans la relation soit une clé candidate, éliminant ainsi les anomalies de dépendance."
+    },
+    {
+      "question": "Quelle propriété ACID garantit que les transactions validées sont permanentes et survivent aux pannes système ?",
+      "optionA": "Atomicité",
+      "optionB": "Cohérence",
+      "optionC": "Isolation",
+      "optionD": "Durabilité",
+      "correctAnswer": "D",
+      "explanation": "La durabilité garantit que une fois qu'une transaction est validée (commit), elle reste valide même en cas de panne système. Les modifications sont permanentes et ne seront pas annulées par une panne."
+    },
+    {
+      "question": "Quelle clause SQL est utilisée pour trier les résultats d'une requête ?",
+      "optionA": "GROUP BY",
+      "optionB": "ORDER BY",
+      "optionC": "SORT BY",
+      "optionD": "ARRANGE BY",
+      "correctAnswer": "B",
+      "explanation": "La clause ORDER BY est utilisée pour trier les résultats d'une requête SQL en fonction d'une ou plusieurs colonnes, dans l'ordre croissant (ASC) ou décroissant (DESC)."
+    },
+    {
+      "question": "Quelle commande SQL est utilisée pour créer une nouvelle table ?",
+      "optionA": "NEW TABLE",
+      "optionB": "CREATE TABLE",
+      "optionC": "MAKE TABLE",
+      "optionD": "BUILD TABLE",
+      "correctAnswer": "B",
+      "explanation": "La commande CREATE TABLE est utilisée pour créer une nouvelle table dans une base de données. Elle spécifie le nom de la table et définit les colonnes avec leurs types de données et contraintes."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre une jointure INNER et une jointure LEFT en SQL?",
+      "optionA": "INNER jointure toutes les tables, LEFT jointure uniquement deux tables",
+      "optionB": "INNER retourne uniquement les correspondances, LEFT retourne toutes les lignes de la table gauche même sans correspondance",
+      "optionC": "INNER est plus rapide que LEFT",
+      "optionD": "INNER ne peut être utilisé que sur des colonnes indexées",
+      "correctAnswer": "B",
+      "explanation": "La jointure INNER retourne uniquement les lignes où il y a correspondance dans les deux tables, tandis que la jointure LEFT retourne toutes les lignes de la table gauche, même s'il n'y a pas de correspondance dans la table droite."
+    },
+    {
+      "question": "Quelle est la propriété ACID qui garantit que les transactions sont traitées de manière atomique, soit entièrement soit pas du tout?",
+      "optionA": "Atomicité",
+      "optionB": "Cohérence",
+      "optionC": "Isolation",
+      "optionD": "Durabilité",
+      "correctAnswer": "A",
+      "explanation": "L'atomicité (A) assure qu'une transaction est traitée comme une unité indivisible, soit complètement réussie, soit complètement annulée, sans état intermédiaire."
+    },
+    {
+      "question": "Dans le contexte de la normalisation de bases de données, quelle forme normale exige que chaque attribut non clé dépende de la clé candidate entière?",
+      "optionA": "Première forme normale (1NF)",
+      "optionB": "Deuxième forme normale (2NF)",
+      "optionC": "Troisième forme normale (3NF)",
+      "optionD": "Forme normale de Boyce-Codd (BCNF)",
+      "correctAnswer": "B",
+      "explanation": "La deuxième forme normale (2NF) exige que chaque attribut non clé dépende de la clé candidate entière, éliminant ainsi les dépendances partielles."
+    },
+    {
+      "question": "Quel type d'index est le plus efficace pour les requêtes qui impliquent des conditions de plage (BETWEEN, >, <) et des tris (ORDER BY)?",
+      "optionA": "Index de hachage",
+      "optionB": "Index arbre B",
+      "optionC": "Index bitmap",
+      "optionD": "Index plein texte",
+      "correctAnswer": "B",
+      "explanation": "Les index arbre B sont particulièrement efficaces pour les requêtes de plage et les tris car ils maintiennent les données triées, permettant des recherches rapides dans des intervalles spécifiques."
+    },
+    {
+      "question": "Quelle instruction SQL permet d'insérer des données dans une table tout en s'assurant que toutes les insertions sont réussies ou aucune ne l'est?",
+      "optionA": "INSERT INTO ... VALUES",
+      "optionB": "INSERT INTO ... SELECT",
+      "optionC": "BEGIN TRANSACTION; INSERT ...; COMMIT",
+      "optionD": "MERGE",
+      "correctAnswer": "C",
+      "explanation": "L'utilisation de transactions (BEGIN TRANSACTION; INSERT ...; COMMIT) garantit que toutes les insertions sont exécutées comme une unité atomique, soit toutes réussissent, soit aucune ne l'est."
+    },
+    {
+      "question": "Quelle clause SQL est utilisée pour filtrer les résultats d'une requête après avoir appliqué les jointures et les agrégations?",
+      "optionA": "WHERE",
+      "optionB": "HAVING",
+      "optionC": "GROUP BY",
+      "optionD": "ORDER BY",
+      "correctAnswer": "B",
+      "explanation": "La clause HAVING est utilisée pour filtrer les résultats après les jointures et les agrégations, tandis que WHERE filtre avant les agrégations."
+    },
+    {
+      "question": "Dans le modèle relationnel, quelle forme normale élimine les dépendances transitives?",
+      "optionA": "1NF",
+      "optionB": "2NF",
+      "optionC": "3NF",
+      "optionD": "4NF",
+      "correctAnswer": "C",
+      "explanation": "La troisième forme normale (3NF) élimine les dépendances transitives, où un attribut non clé dépend d'un autre attribut non clé plutôt que directement de la clé."
+    },
+    {
+      "question": "Quel type de jointure SQL retourne toutes les lignes de la première table gauche et les lignes correspondantes de la table droite, avec NULL pour les colonnes de la table droite lorsqu'il n'y a pas de correspondance?",
+      "optionA": "INNER JOIN",
+      "optionB": "LEFT JOIN",
+      "optionC": "RIGHT JOIN",
+      "optionD": "FULL OUTER JOIN",
+      "correctAnswer": "B",
+      "explanation": "La jointure LEFT JOIN retourne toutes les lignes de la table gauche et les lignes correspondantes de la table droite, avec NULL pour les colonnes de la table droite lorsqu'il n'y a pas de correspondance."
+    },
+    {
+      "question": "Quelle est la principale différence entre DELETE et TRUNCATE en SQL?",
+      "optionA": "DELETE supprime les données, TRUNCATE supprime la structure de la table",
+      "optionB": "DELETE peut être annulé, TRUNCATE ne peut pas être annulé",
+      "optionC": "DELETE est plus rapide que TRUNCATE",
+      "optionD": "TRUNCAGE génère des journaux de transactions, DELETE n'en génère pas",
+      "correctAnswer": "B",
+      "explanation": "DELETE peut être annulé (rollback) car il génère des journaux de transactions détaillés, tandis que TRUNCATE est généralement irréversible et ne génère pas de journaux détaillés."
+    },
+    {
+      "question": "Quelle clause SQL est utilisée pour combiner les résultats de plusieurs requêtes SELECT en un seul ensemble de résultats?",
+      "optionA": "UNION",
+      "optionB": "JOIN",
+      "optionC": "INTERSECT",
+      "optionD": "EXCEPT",
+      "correctAnswer": "A",
+      "explanation": "La clause UNION combine les résultats de plusieurs requêtes SELECT en un seul ensemble de résultats, éliminant les doublons par défaut (sauf UNION ALL)."
+    },
+    {
+      "question": "Dans le contexte des transactions, quelle propriété ACID garantit que les transactions simultanées n'affectent pas les résultats les unes des autres?",
+      "optionA": "Atomicité",
+      "optionB": "Cohérence",
+      "optionC": "Isolation",
+      "optionD": "Durabilité",
+      "correctAnswer": "C",
+      "explanation": "L'isolation (I) garantit que les transactions simultanées s'exécutent de manière indépendante les unes des autres, sans interférence."
+    },
+    {
+      "question": "Quel type de dépendance fonctionnelle est éliminé par la troisième forme normale (3NF)?",
+      "optionA": "Dépendance partielle",
+      "optionB": "Dépendance transitive",
+      "optionC": "Dépendance multivaluée",
+      "optionD": "Dépendance jointe",
+      "correctAnswer": "B",
+      "explanation": "La troisième forme normale (3NF) élimine les dépendances transitives, où un attribut non clé dépend d'un autre attribut non clé plutôt que directement de la clé."
+    },
+    {
+      "question": "Quelle clause SQL est utilisée pour trier les résultats d'une requête?",
+      "optionA": "WHERE",
+      "optionB": "GROUP BY",
+      "optionC": "HAVING",
+      "optionD": "ORDER BY",
+      "correctAnswer": "D",
+      "explanation": "La clause ORDER BY est utilisée pour trier les résultats d'une requête selon un ou plusieurs colonnes, dans un ordre ascendant ou descendant."
+    },
+    {
+      "question": "Quel type d'index est le plus efficace pour les colonnes avec des valeurs distinctes peu nombreuses comme les statuts (actif/inactif)?",
+      "optionA": "Index de hachage",
+      "optionB": "Index arbre B",
+      "optionC": "Index bitmap",
+      "optionD": "Index plein texte",
+      "correctAnswer": "C",
+      "explanation": "Les index bitmap sont particulièrement efficaces pour les colonnes avec un nombre très limité de valeurs distinctes, comme les statuts (actif/inactif, vrai/faux)."
+    },
+    {
+      "question": "Dans le contexte des jointures SQL, que fait une jointure CROSS JOIN?",
+      "optionA": "Jointure uniquement les lignes correspondantes entre deux tables",
+      "optionB": "Jointure toutes les lignes de la première table avec toutes les lignes de la deuxième table",
+      "optionC": "Jointure les tables sur une condition spécifique",
+      "optionD": "Jointure uniquement les lignes qui n'ont pas de correspondance",
+      "correctAnswer": "B",
+      "explanation": "Une jointure CROSS JOIN combine chaque ligne de la première table avec chaque ligne de la deuxième table, produisant un produit cartésien des deux tables."
+    }
+  ]
+}

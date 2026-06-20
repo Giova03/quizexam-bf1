@@ -1,7 +1,7 @@
 {
   "bankKey": "psycho-logique",
   "title": "Tests Psychotechniques - Logique & Suites",
-  "description": "Suites numériques, séries logiques, codes et raisonnement",
+  "description": "Suites numériques, séries logiques, codes et raisonnement.",
   "category": "Psychotechnique",
   "icon": "Brain",
   "color": "violet",
@@ -204,5 +204,7 @@
       "correctAnswer": "A",
       "explanation": "Le nombre en bas à gauche est égal à la différence des nombres en haut et en bas à droite."
     }
-  ]
+  ],
+  "subcategory": "Logique",
+  "level": "TOUS"
 }

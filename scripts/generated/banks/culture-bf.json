@@ -1,7 +1,7 @@
 {
   "bankKey": "culture-bf",
   "title": "Culture Générale - Burkina Faso",
-  "description": "Questions sur l'histoire, la géographie, les institutions et la culture du Burkina Faso",
+  "description": "Histoire, géographie, institutions et culture du Burkina Faso.",
   "category": "Culture Générale",
   "icon": "Landmark",
   "color": "emerald",
@@ -384,5 +384,7 @@
       "correctAnswer": "B",
       "explanation": "Le cours indique que le début d'une forêt s'appelle 'aubier'."
     }
-  ]
+  ],
+  "subcategory": "Burkina Faso",
+  "level": "TOUS"
 }

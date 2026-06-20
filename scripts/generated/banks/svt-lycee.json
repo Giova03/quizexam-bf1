@@ -1,0 +1,337 @@
+{
+  "bankKey": "svt-lycee",
+  "title": "Sciences de la Vie et de la Terre (SVT) - Lycée",
+  "description": "Génétique, immunité, géologie, écologie, reproduction.",
+  "category": "Secondaire",
+  "subcategory": "SVT",
+  "icon": "Dna",
+  "color": "rose",
+  "level": "LYCEE",
+  "subject": "SVT lycée: génétique, ADN, immunologie, géologie, plaques tectoniques, écologie, reproduction, photosynthèse",
+  "questions": [
+    {
+      "question": "Quel mécanisme explique l'origine de la diversité des anticorps lors de la réponse immunitaire adaptative ?",
+      "optionA": "Recombinaison V(D)J des gènes des immunoglobulines",
+      "optionB": "Mutation ponctuelle ciblée des régions hypervariables",
+      "optionC": "Réplication non fidèle des lymphocytes B",
+      "optionD": "Transcription alternative des gènes codant pour les immunoglobulines",
+      "correctAnswer": "A",
+      "explanation": "La diversité des anticorps est principalement générée par la recombinaison V(D)J des segments variables des gènes des immunoglobulines, permettant la création de millions de combinaisons différentes."
+    },
+    {
+      "question": "Quelle est la conséquence moléculaire principale de la mutation délétère dans le gène de la bêta-globine observée dans la drépanocytose ?",
+      "optionA": "Substitution d'un acide aminé dans la chaîne de bêta-globine",
+      "optionB": "Défaut de splicing de l'ARNm de la bêta-globine",
+      "optionC": "Instabilité de l'ARNm de la bêta-globine",
+      "optionD": "Dégradation prématurée de la chaîne de bêta-globine",
+      "correctAnswer": "A",
+      "explanation": "La drépanocytose est causée par une mutation ponctuelle (substitution A→T) dans le gène de la bêta-globine, remplaçant l'acide aminé glutamate par de la valine à la position 6, modifiant la structure de l'hémoglobine."
+    },
+    {
+      "question": "Quel processus évolutif explique la résistance accrue aux antipaludiques observée chez Plasmodium falciparum ?",
+      "optionA": "Sélection naturelle favorisant les parasites mutés",
+      "optionB": "Transmission horizontale des gènes de résistance",
+      "optionC": "Acquisition de plasmides contenant les gènes de résistance",
+      "optionD": "Transformation génétique spontanée",
+      "correctAnswer": "A",
+      "explanation": "La résistance aux antipaludiques résulte principalement de la sélection naturelle: les parasites portant des mutations conférant une résistance surviennent spontanément et sont sélectionnés sous pression de traitement."
+    },
+    {
+      "question": "Quelle est la caractéristique structurale distinctive du VIH qui le distingue d'autres rétrovirus ?",
+      "optionA": "Présence de gènes supplémentaires comme tat et rev",
+      "optionB": "Structure à symétrie icosaédrique",
+      "optionC": "Absence d'enveloppe lipidique",
+      "optionD": "Génome à simple brin",
+      "correctAnswer": "A",
+      "explanation": "Le VIH possède des gènes régulateurs supplémentaires (tat, rev, nef) absents des rétrovirus simples, lui permettant de réguler sa réplication et d'échapper au système immunitaire."
+    },
+    {
+      "question": "Quel mécanisme explique l'effet de seuil dans l'expression des maladies génétiques récessives liées à l'X ?",
+      "optionA": "Inactivation aléatoire d'un chromosome X",
+      "optionB": "Expression variable des gènes d'échappement",
+      "optionC": "Mosaïcisme cellulaire",
+      "optionD": "Compensation par le chromosome Y",
+      "correctAnswer": "A",
+      "explanation": "L'inactivation aléatoire d'un chromosome X (lyonisation) chez les femmes crée un mosaïsme cellulaire, expliquant la variabilité d'expression des maladies liées à l'X."
+    },
+    {
+      "question": "Quelle est la conséquence écologique principale de la fragmentation des habitats ?",
+      "optionA": "Augmentation de la biodiversité locale",
+      "optionB": "Diminution de la connectivité entre populations",
+      "optionC": "Amélioration du flux de gènes",
+      "optionD": "Augmentation de la taille effective des populations",
+      "correctAnswer": "B",
+      "explanation": "La fragmentation des habitats isole les populations, réduisant la connectivité et le flux de gènes, ce qui augmente le risque d'extinction locale."
+    },
+    {
+      "question": "Quel processus géologique explique la formation des chaînes de montagnes à marge active ?",
+      "optionA": "Extension crustale",
+      "optionB": "Subduction océanique-continental",
+      "optionC": "Rifting continental",
+      "optionD": "Collision continentale",
+      "correctAnswer": "B",
+      "explanation": "Les chaînes de montagnes à marge active (comme les Andes) se forment par subduction d'une plaque océanique sous une plaque continentale, générant un volcanisme intense et un plissement crustal."
+    },
+    {
+      "question": "Quelle est la caractéristique biochimique principale de la fixation du carbone par la voie C4 par rapport à la voie C3 ?",
+      "optionA": "Utilisation de l'enzyme PEP carboxylase initiale",
+      "optionB": "Localisation exclusivement dans les cellules mésophylles",
+      "optionC": "Absence de photorespiration",
+      "optionD": "Production directe de glucose",
+      "correctAnswer": "A",
+      "explanation": "La voie C4 utilise l'enzyme PEP carboxylase pour fixer le CO2 en premier, ayant une affinité plus élevée que la Rubisco, réduisant la photorespiration."
+    },
+    {
+      "question": "Quel mécanisme moléculaire explique la résistance aux antibiotiques à bêta-lactames chez les bactéries ?",
+      "optionA": "Production de bêta-lactamases",
+      "optionB": "Modification de la cible antibiotique",
+      "optionC": "Diminution de la perméabilité membranaire",
+      "optionD": "Efflux actif de l'antibiotique",
+      "correctAnswer": "A",
+      "explanation": "La production de bêta-lactamases est le mécanisme principal de résistance aux bêta-lactames, ces enzymes hydrolysant le cycle bêta-lactame de l'antibiotique."
+    },
+    {
+      "question": "Quelle est la conséquence évolutive principale de la sélection sexuelle ?",
+      "optionA": "Augmentation de la fitness adaptative",
+      "optionB": "Diminution de la variabilité génétique",
+      "optionC": "Développement de caractères sexuels secondaires",
+      "optionD": "Réduction de la compétition interspécifique",
+      "correctAnswer": "C",
+      "explanation": "La sélection sexuelle favorise l'évolution de caractères sexuels secondaires qui augmentent les chances de reproduction, même s'ils peuvent réduire la survie."
+    },
+    {
+      "question": "Quel processus géologique explique la formation des basaltes des plateaux océaniques ?",
+      "optionA": "Subduction",
+      "optionB": "Rifting continental",
+      "optionC": "Points chauds",
+      "optionD": "Expansion océanique",
+      "correctAnswer": "D",
+      "explanation": "Les basaltes des plateaux océaniques proviennent du manteau par fusion partielle aux dorsales océaniques, lors de l'expansion des fonds océaniques."
+    },
+    {
+      "question": "Quelle est la caractéristique immunologique principale du paludisme causé par Plasmodium falciparum ?",
+      "optionA": "Expression d'antigènes variantes sur les globules rouges infectés",
+      "optionB": "Production massive d'anticorps neutralisants",
+      "optionC": "Activation spécifique des lymphocytes T CD8+",
+      "optionD": "Formation de granulomes dans le foie",
+      "correctAnswer": "A",
+      "explanation": "P. falciparum exprime des antigènes variantes (PfEMP1) sur la surface des globules rouges infectés, permettant d'échapper à la réponse immunitaire par variation antigénique."
+    },
+    {
+      "question": "Quel mécanisme explique la transmission verticale du VIH de la mère à l'enfant ?",
+      "optionA": "Transmission par le lait maternel",
+      "optionB": "Transmission transplacentaire",
+      "optionC": "Transmission pendant l'accouchement",
+      "optionD": "Toutes ces réponses sont correctes",
+      "correctAnswer": "D",
+      "explanation": "La transmission verticale du VIH peut se produire transplacentairement, pendant l'accouchement ou par le lait maternel."
+    },
+    {
+      "question": "Quelle est la conséquence écologique principale de l'eutrophisation des écosystèmes aquatiques ?",
+      "optionA": "Augmentation de la biodiversité",
+      "optionB": "Diminution de la transparence de l'eau et anoxie",
+      "optionC": "Amélioration de la qualité de l'eau",
+      "optionD": "Augmentation de la productivité primaire",
+      "correctAnswer": "B",
+      "explanation": "L'eutrophisation entraîne une prolifération d'algues, réduisant la transparence et, lors de leur décomposition, consommant l'oxygène et créant des zones anoxiques."
+    },
+    {
+      "question": "Quel mécanisme explique la régulation de l'expression génique par les microARN ?",
+      "optionA": "Dégradation de l'ARNm ou inhibition de sa traduction",
+      "optionB": "Méthylation de l'ADN",
+      "optionC": "Modification des histones",
+      "optionD": "Épissage alternatif",
+      "correctAnswer": "A",
+      "explanation": "Les microARN se lient aux ARNm cibles, conduisant soit à leur dégradation par le complexe RISC, soit à l'inhibition de leur traduction."
+    },
+    {
+      "question": "Quelle est la caractéristique structurale principale des virus à ARN à simple brin comme le VIH ?",
+      "optionA": "Génome réplicatif directement utilisable comme ARNm",
+      "optionB": "Génome ambisens",
+      "optionC": "Présence d'une transcriptase inverse",
+      "optionD": "Génome segmenté",
+      "correctAnswer": "C",
+      "explanation": "Le VIH, comme tous les rétrovirus, possède une transcriptase inverse qui permet la synthèse d'ADN à partir de son ARN génomique."
+    },
+    {
+      "question": "Quel processus évolutif explique la coévolution entre les plantes et leurs pollinisateurs ?",
+      "optionA": "Sélection disruptive",
+      "optionB": "Sélection mutualiste",
+      "optionC": "Sélection sexuelle",
+      "optionD": "Sélection de parentèle",
+      "correctAnswer": "B",
+      "explanation": "La coévolution entre plantes et pollinisateurs résulte d'une sélection mutualiste, où chaque espèce favorise les traits bénéfiques chez l'autre."
+    },
+    {
+      "question": "Quelle est la conséquence géologique principale de la dérive des continents ?",
+      "optionA": "Formation de dorsales océaniques",
+      "optionB": "Création de zones de subduction",
+      "optionC": "Modification des climats régionaux",
+      "optionD": "Formation de rifts continentaux",
+      "correctAnswer": "C",
+      "explanation": "La dérive des continents modifie les répartitions des continents et des océans, influençant les courants marins et les climats régionaux."
+    },
+    {
+      "question": "Quel mécanisme explique la résistance aux antivirals chez le VIH ?",
+      "optionA": "Mutation rapide du génome viral",
+      "optionB": "Intégration du provirus dans le génome cellulaire",
+      "optionC": "Latence virale",
+      "optionD": "Formation de réservoirs infectieux",
+      "correctAnswer": "A",
+      "explanation": "La mutation rapide du génome viral du VIH, due à l'erreur de sa transcriptase inverse, permet l'émergence de variants résistants aux antivirals."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de la reproduction clonale chez les organismes ?",
+      "optionA": "Augmentation de la diversité génétique",
+      "optionB": "Transmission de 100% du génome parental",
+      "optionC": "Nécessité d'un partenaire sexuel",
+      "optionD": "Formation de gamètes haploïdes",
+      "correctAnswer": "B",
+      "explanation": "La reproduction clonale produit des descendants génétiquement identiques aux parents, transmettant 100% du génome parental (sans recombinaison méiotique)."
+    },
+    {
+      "question": "Quel processus explique la formation des pétroles dans les roches sédimentaires ?",
+      "optionA": "Diagenèse des matières organiques",
+      "optionB": "Métamorphisme des roches carbonatées",
+      "optionC": "Cristallisation de magmas",
+      "optionD": "Érosion des roches ignées",
+      "correctAnswer": "A",
+      "explanation": "Le pétrole se forme par la diagenèse et catagenèse de matières organiques (plankton, algues) enfouies dans les sédiments marins sous conditions anaérobies."
+    },
+    {
+      "question": "Concernant la structure de l'ADN double brin, laquelle des affirmations suivantes est incorrecte?",
+      "optionA": "Les deux brins sont antiparallèles",
+      "optionB": "Les bases purines (A et G) s'appariennent avec les bases pyrimidines (T et C)",
+      "optionC": "La distance entre deux bases adjacentes est d'environ 0,34 nm",
+      "optionD": "La réplication semi-conservatrice a été démontrée par l'expérience de Meselson et Stahl",
+      "correctAnswer": "B",
+      "explanation": "Les bases purines s'appariennent avec les pyrimidines, mais spécifiquement A avec T et G avec C, pas n'importe quelle purine avec n'importe quelle pyrimidine."
+    },
+    {
+      "question": "Chez les mammifères, quel mécanisme explique l'inactivation d'un chromosome X chez les femelles?",
+      "optionA": "Méthylation de l'ADN",
+      "optionB": "Épissage alternatif",
+      "optionC": "Empoisonnement topoisomérase",
+      "optionD": "Barrage méiotique",
+      "correctAnswer": "A",
+      "explanation": "L'inactivation d'un chromosome X chez les femelles mammifères est due à un processus de méthylation de l'ADN qui éteint l'expression des gènes de ce chromosome."
+    },
+    {
+      "question": "Quelle est la conséquence principale de la mutation ponctuelle dans le gène codant pour la bêta-globine qui cause la drépanocytose?",
+      "optionA": "Substitution d'un acide aminé polaire par un acide aminé non polaire",
+      "optionB": "Substitution d'un acide aminé non polaire par un acide aminé acide",
+      "optionC": "Substitution d'un acide aminé acide par un acide aminé basique",
+      "optionD": "Substitution d'un acide aminé polaire par un acide aminé acide",
+      "correctAnswer": "B",
+      "explanation": "La drépanocytose est causée par une mutation ponctuelle qui substitue un acide aminé non polaire (valine) à un acide aminé polaire (acide glutamique) à la position 6 de la chaîne de bêta-globine."
+    },
+    {
+      "question": "Quelle est la fonction principale des anticorps de type IgE?",
+      "optionA": "Neutralisation des toxines bactériennes",
+      "optionB": "Activation du complément",
+      "optionC": "Défense contre les parasites multicellulaires",
+      "optionD": "Agglutination des bactéries",
+      "correctAnswer": "C",
+      "explanation": "Les IgE sont principalement impliquées dans la défense contre les parasites multicellulaires en activant les mastocytes et les basophiles, ce qui provoque une inflammation locale."
+    },
+    {
+      "question": "Dans le cycle de Krebs, quel composé est à la fois un intermédiaire et un régulateur allostérique?",
+      "optionA": "Citrate",
+      "optionB": "Alpha-cétoglutarate",
+      "optionC": "Succinate",
+      "optionD": "Malate",
+      "correctAnswer": "A",
+      "explanation": "Le citrate, produit initial du cycle de Krebs, agit comme un régulateur allostérique de l'enzyme phosphofructokinase dans la glycolyse, ralentissant ainsi le métabolisme des glucides lorsque les niveaux d'énergie sont élevés."
+    },
+    {
+      "question": "Quelle est la roche caractéristique formée par la métamorphose des calcaires sous haute pression et température?",
+      "optionA": "Gneiss",
+      "optionB": "Marbre",
+      "optionC": "Schiste",
+      "optionD": "Quartzite",
+      "correctAnswer": "B",
+      "explanation": "Le marbre est la roche métamorphique formée à partir du calcaire lorsque celui-ci subit des conditions de haute pression et température, recristallisant le carbonate de calcium."
+    },
+    {
+      "question": "Quelle est la principale différence entre les stratégies de reproduction r-stratégiste et K-stratégiste?",
+      "optionA": "Les r-stratégistes ont une plus longue durée de vie",
+      "optionB": "Les K-stratégistes produisent plus de descendants",
+      "optionC": "Les r-stratégistes ont une reproduction précoce et de nombreux descendants",
+      "optionD": "Les K-stratégistes investissent plus dans chaque descendant",
+      "correctAnswer": "D",
+      "explanation": "Les K-stratégistes, typiques d'environments stables, investissent plus de ressources dans chaque descendant au détriment du nombre total, tandis que les r-stratégistes produisent beaucoup de descendants avec peu d'investissement par individu."
+    },
+    {
+      "question": "Quel processus permet aux plantes C4 de minimiser la photorespiration?",
+      "optionA": "Séparation spatiale de la fixation du carbone et du cycle de Calvin",
+      "optionB": "Augmentation de la concentration d'oxygène dans les chloroplastes",
+      "optionC": "Utilisation de l'enzyme PEP carboxylase uniquement dans les cellules mésophylles",
+      "optionD": "Augmentation de la température des feuilles",
+      "correctAnswer": "A",
+      "explanation": "Les plantes C4 séparent spatialement la fixation initiale du CO2 (dans les cellules mésophylles) et le cycle de Calvin (dans les cellules de la gaine), minimisant ainsi la photorespiration."
+    },
+    {
+      "question": "Quel est le vecteur principal du paludisme dans le monde?",
+      "optionA": "Aedes aegypti",
+      "optionB": "Anopheles gambiae",
+      "optionC": "Ixodes ricinus",
+      "optionD": "Culex pipiens",
+      "correctAnswer": "B",
+      "explanation": "Anopheles gambiae est le principal vecteur du paludisme dans le monde, transmettant le parasite Plasmodium falciparum qui cause la forme la plus dangereuse de la maladie."
+    },
+    {
+      "question": "Quel est le mécanisme d'action du virus VIH qui provoque le SIDA?",
+      "optionA": "Destruction directe des cellules T CD4+",
+      "optionB": "Inhibition de la transcription des gènes immunitaires",
+      "optionC": "Activation excessive des lymphocytes B",
+      "optionD": "Formation d'anticorps auto-réactifs",
+      "correctAnswer": "A",
+      "explanation": "Le VIH infecte et détruit directement les cellules T CD4+, affaiblissant ainsi le système immunitaire et rendant le sujet vulnérable aux infections opportunistes."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre la reproduction sexuée et asexuée en termes de diversité génétique?",
+      "optionA": "La reproduction asexuée génère plus de diversité génétique",
+      "optionB": "La reproduction sexuée combine les gènes de deux parents",
+      "optionC": "La reproduction asexuée nécessite deux individus",
+      "optionD": "La reproduction sexuée produit des clones",
+      "correctAnswer": "B",
+      "explanation": "La reproduction sexuée combine les gènes de deux parents, créant une descendance génétiquement unique, tandis que la reproduction asexuée produit des génétiquement identiques au parent."
+    },
+    {
+      "question": "Quel est le rôle principal de la rubisco dans la photosynthèse?",
+      "optionA": "Transport des électrons",
+      "optionB": "Fixation du carbone",
+      "optionC": "Production d'ATP",
+      "optionD": "Synthèse de NADPH",
+      "correctAnswer": "B",
+      "explanation": "La rubisco (ribulose-1,5-bisphosphate carboxylase/oxygénase) est l'enzyme clé qui fixe le CO2 sur le ribulose-1,5-bisphosphate lors de la phase claire de la photosynthèse."
+    },
+    {
+      "question": "Quelle est la principale conséquence de la déforestation sur le cycle du carbone?",
+      "optionA": "Augmentation de la séquestration de carbone",
+      "optionB": "Diminution des réserves de carbone dans les biomasses",
+      "optionC": "Stabilisation du climat local",
+      "optionD": "Augmentation de la biodiversité",
+      "correctAnswer": "B",
+      "explanation": "La déforestation diminue les réserves de carbone dans les biomasses végétales, libérant ainsi plus de CO2 dans l'atmosphère et perturbant le cycle global du carbone."
+    },
+    {
+      "question": "Quel est le mécanisme de résistance aux antipaludéens chloroquine?",
+      "optionA": "Augmentation de l'activité de la pompe à calcium",
+      "optionB": "Diminution de la perméabilité de la membrane des vacuoles digestives",
+      "optionC": "Mutation du gène codant pour la PfCRT",
+      "optionD": "Augmentation de la production d'hémoglobine",
+      "correctAnswer": "C",
+      "explanation": "La résistance à la chloroquine chez Plasmodium falciparum est principalement due à des mutations dans le gène PfCRT, qui code pour une protéine du transporteur des vacuoles digestives du parasite."
+    },
+    {
+      "question": "Quelle est la différence entre l'immunité innée et adaptative concernant la spécificité?",
+      "optionA": "L'immunité innée est spécifique tandis que l'adaptative est non spécifique",
+      "optionB": "L'immunité innée reconnaît des motifs moléculaires associés aux dangers (PAMPs) tandis que l'adaptative reconnaît des antigènes spécifiques",
+      "optionC": "L'immunité adaptative réagit plus rapidement que l'innée",
+      "optionD": "L'immunité innée nécessite un contact préalable avec l'agent pathogène",
+      "correctAnswer": "B",
+      "explanation": "L'immunité innée reconnaît des motifs moléculaires communs aux pathogènes (PAMPs) tandis que l'immunité adaptative développe une réponse spécifique contre des antigènes particuliers après exposition."
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "bankKey": "math-lycee",
+  "title": "Mathématiques - Lycée (2nde à Terminale)",
+  "description": "Fonctions, suites, trigonométrie, probabilités, dérivées.",
+  "category": "Secondaire",
+  "subcategory": "Mathématiques",
+  "icon": "Sigma",
+  "color": "teal",
+  "level": "LYCEE",
+  "subject": "Mathématiques lycée: fonctions, dérivées, intégrales, suites, trigonométrie, nombres complexes, probabilités, logarithmes",
+  "questions": [
+    {
+      "question": "Soit la fonction f définie sur ℝ par f(x) = x³ - 3x² + 4. Quelle est la nature des points critiques de f ?",
+      "optionA": "Un minimum local en x=0 et un maximum local en x=2",
+      "optionB": "Un maximum local en x=0 et un minimum local en x=2",
+      "optionC": "Deux points d'inflexion en x=0 et x=2",
+      "optionD": "Un point d'inflexion en x=1 et un extremum en x=2",
+      "correctAnswer": "B",
+      "explanation": "La dérivée f'(x) = 3x² - 6x s'annule en x=0 et x=2. La dérivée seconde f''(x) = 6x - 6 est négative en x=0 (maximum) et positive en x=2 (minimum)."
+    },
+    {
+      "question": "Calculez l'intégrale ∫(de 0 à π) sin²(x) dx",
+      "optionA": "π/2",
+      "optionB": "π",
+      "optionC": "2π",
+      "optionD": "π/4",
+      "correctAnswer": "A",
+      "explanation": "En utilisant l'identité sin²(x) = (1 - cos(2x))/2, on obtient ∫(de 0 à π) (1 - cos(2x))/2 dx = [x/2 - sin(2x)/4] de 0 à π = π/2."
+    },
+    {
+      "question": "Soit la suite (u_n) définie par u_0 = 1 et u_{n+1} = 2u_n + 1. Quelle est la limite de la suite (u_n/3^n) ?",
+      "optionA": "0",
+      "optionB": "1/3",
+      "optionC": "2/3",
+      "optionD": "1",
+      "correctAnswer": "A",
+      "explanation": "La suite u_n est géométrique de raison 2, donc u_n = 2^n - 1. Alors u_n/3^n = (2/3)^n - (1/3)^n tend vers 0 car |2/3| < 1."
+    },
+    {
+      "question": "Résolvez l'équation complexe z² + 2z + 5 = 0 dans ℂ",
+      "optionA": "z = -1 ± 2i",
+      "optionB": "z = 1 ± 2i",
+      "optionC": "z = -1 ± i√5",
+      "optionD": "z = 1 ± i√5",
+      "correctAnswer": "A",
+      "explanation": "En utilisant le discriminant Δ = 4 - 20 = -16, on obtient z = (-2 ± √(-16))/2 = (-2 ± 4i)/2 = -1 ± 2i."
+    },
+    {
+      "question": "Soit la fonction f(x) = ln(x² + 1). Quelle est la dérivée de f en x=1 ?",
+      "optionA": "0",
+      "optionB": "1/2",
+      "optionC": "1",
+      "optionD": "2",
+      "correctAnswer": "B",
+      "explanation": "La dérivée f'(x) = 2x/(x² + 1). En x=1, f'(1) = 2/(1 + 1) = 1/2."
+    },
+    {
+      "question": "Une variable aléatoire X suit une loi normale N(10, 4). Quelle est P(X > 14) ?",
+      "optionA": "0.0228",
+      "optionB": "0.1587",
+      "optionC": "0.8413",
+      "optionD": "0.9772",
+      "correctAnswer": "A",
+      "explanation": "On standardise : Z = (X - 10)/2. P(X > 14) = P(Z > 2) = 1 - Φ(2) ≈ 1 - 0.9772 = 0.0228."
+    },
+    {
+      "question": "Soit la fonction f(x) = e^x sin(x). Calculez f'(π/4)",
+      "optionA": "e^(π/4)/√2",
+      "optionB": "e^(π/4)",
+      "optionC": "√2 e^(π/4)",
+      "optionD": "2e^(π/4)",
+      "correctAnswer": "C",
+      "explanation": "La dérivée f'(x) = e^x sin(x) + e^x cos(x) = e^x (sin(x) + cos(x)). En x=π/4, sin(π/4) = cos(π/4) = √2/2, donc f'(π/4) = e^(π/4) (√2/2 + √2/2) = √2 e^(π/4)."
+    },
+    {
+      "question": "Calculez ∫(de 1 à e) ln(x)/x dx",
+      "optionA": "1/2",
+      "optionB": "1",
+      "optionC": "e",
+      "optionD": "e²/2",
+      "correctAnswer": "A",
+      "explanation": "En posant u = ln(x), du = dx/x, l'intégrale devient ∫(de 0 à 1) u du = [u²/2] de 0 à 1 = 1/2."
+    },
+    {
+      "question": "Soit la suite (u_n) définie par u_n = n²/2^n. Quelle est la limite de la suite (u_n) ?",
+      "optionA": "0",
+      "optionB": "1",
+      "optionC": "+∞",
+      "optionD": "La suite diverge",
+      "correctAnswer": "A",
+      "explanation": "On peut utiliser la règle de l'Hôpital ou le fait que toute suite géométrique de raison |q| < 1 l'emporte sur toute suite polynômiale, donc n²/2^n → 0."
+    },
+    {
+      "question": "Calculez sin(π/12) en utilisant les angles remarquables",
+      "optionA": "(√6 - √2)/4",
+      "optionB": "(√6 + √2)/4",
+      "optionC": "(√2 - √6)/4",
+      "optionD": "(√2 + √6)/4",
+      "correctAnswer": "A",
+      "explanation": "sin(π/12) = sin(π/3 - π/4) = sin(π/3)cos(π/4) - cos(π/3)sin(π/4) = (√3/2)(√2/2) - (1/2)(√2/2) = (√6 - √2)/4."
+    },
+    {
+      "question": "Soit z = 1 + i√3. Calculez z^4 sous forme algébrique",
+      "optionA": "-8 + 8i√3",
+      "optionB": "8 + 8i√3",
+      "optionC": "-8 - 8i√3",
+      "optionD": "8 - 8i√3",
+      "correctAnswer": "C",
+      "explanation": "On a z = 2(cos(π/3) + i sin(π/3)), donc z^4 = 2^4(cos(4π/3) + i sin(4π/3)) = 16(-1/2 - i√3/2) = -8 - 8i√3."
+    },
+    {
+      "question": "Une urne contient 5 boules rouges et 3 boules noires. On tire successivement 3 boules sans remise. Quelle est la probabilité d'obtenir exactement 2 boules rouges ?",
+      "optionA": "15/56",
+      "optionB": "30/56",
+      "optionC": "45/56",
+      "optionD": "15/28",
+      "correctAnswer": "B",
+      "explanation": "Le nombre de cas favorables est C(5,2)×C(3,1) = 10×3 = 30. Le nombre total de cas est C(8,3) = 56. Donc la probabilité est 30/56."
+    },
+    {
+      "question": "Soit f(x) = x/(x² + 1). Calculez la limite de f(x) quand x tend vers +∞",
+      "optionA": "0",
+      "optionB": "1",
+      "optionC": "+∞",
+      "optionD": "1/2",
+      "correctAnswer": "A",
+      "explanation": "On divise numérateur et dénominateur par x² : f(x) = (1/x)/(1 + 1/x²). Quand x → +∞, 1/x → 0 et 1/x² → 0, donc f(x) → 0/1 = 0."
+    },
+    {
+      "question": "Calculez ∫(de 0 à π/2) sin³(x) dx",
+      "optionA": "1/3",
+      "optionB": "2/3",
+      "optionC": "π/3",
+      "optionD": "π/6",
+      "correctAnswer": "B",
+      "explanation": "On utilise sin³(x) = sin(x)(1 - cos²(x)). En posant u = cos(x), du = -sin(x)dx, l'intégrale devient ∫(de 1 à 0) -(1 - u²) du = ∫(de 0 à 1) (1 - u²) du = [u - u³/3] de 0 à 1 = 1 - 1/3 = 2/3."
+    },
+    {
+      "question": "Soit la suite (u_n) définie par u_0 = 1 et u_{n+1} = (u_n + 2)/2. Quelle est la limite de la suite (u_n) ?",
+      "optionA": "0",
+      "optionB": "1",
+      "optionC": "2",
+      "optionD": "+∞",
+      "correctAnswer": "C",
+      "explanation": "Si la suite converge vers L, alors L = (L + 2)/2, donc L = 2. On peut vérifier que la suite est croissante et majorée par 2, donc elle converge vers 2."
+    },
+    {
+      "question": "Calculez cos(5π/12) en utilisant les angles remarquables",
+      "optionA": "(√6 - √2)/4",
+      "optionB": "(√6 + √2)/4",
+      "optionC": "(√2 - √6)/4",
+      "optionD": "(√2 + √6)/4",
+      "correctAnswer": "B",
+      "explanation": "cos(5π/12) = cos(π/2 - π/12) = sin(π/12) = sin(π/3 - π/4) = sin(π/3)cos(π/4) - cos(π/3)sin(π/4) = (√3/2)(√2/2) - (1/2)(√2/2) = (√6 - √2)/4."
+    },
+    {
+      "question": "Soit z = (1 + i)/(1 - i). Calculez |z|",
+      "optionA": "0",
+      "optionB": "1",
+      "optionC": "√2",
+      "optionD": "2",
+      "correctAnswer": "B",
+      "explanation": "En multipliant numérateur et dénominateur par le conjugué du dénominateur, on obtient z = (1 + i)²/((1 - i)(1 + i)) = (1 + 2i - 1)/(1 + 1) = 2i/2 = i. Donc |z| = |i| = 1."
+    },
+    {
+      "question": "Une variable aléatoire X suit une loi exponentielle de paramètre λ = 1/2. Calculez P(X > 3)",
+      "optionA": "e^(-3/2)",
+      "optionB": "e^(-3)",
+      "optionC": "1 - e^(-3/2)",
+      "optionD": "1 - e^(-3)",
+      "correctAnswer": "A",
+      "explanation": "Pour une loi exponentielle de paramètre λ, P(X > x) = e^(-λx). Ici λ = 1/2, donc P(X > 3) = e^(-3/2)."
+    },
+    {
+      "question": "Soit f(x) = x^x pour x > 0. Calculez f'(1)",
+      "optionA": "0",
+      "optionB": "1",
+      "optionC": "e",
+      "optionD": "1/e",
+      "correctAnswer": "B",
+      "explanation": "On écrit f(x) = e^(x ln(x)), donc f'(x) = e^(x ln(x))(ln(x) + 1). En x=1, f'(1) = e^0(ln(1) + 1) = 1(0 + 1) = 1."
+    },
+    {
+      "question": "Calculez ∫(de 0 à 1) x e^x dx",
+      "optionA": "1",
+      "optionB": "e - 1",
+      "optionC": "e",
+      "optionD": "2e - 1",
+      "correctAnswer": "B",
+      "explanation": "En intégrant par parties avec u = x, dv = e^x dx, on obtient ∫u dv = uv - ∫v dx = [x e^x] de 0 à 1 - ∫(de 0 à 1) e^x dx = (e - 0) - [e^x] de 0 à 1 = e - (e - 1) = 1."
+    }
+  ]
+}

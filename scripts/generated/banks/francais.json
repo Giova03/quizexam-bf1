@@ -1,8 +1,8 @@
 {
   "bankKey": "francais",
   "title": "Français & Littérature",
-  "description": "Littérature africaine et française, courants littéraires, grammaire et figures de style",
-  "category": "Français",
+  "description": "Littérature, grammaire, figures de style.",
+  "category": "Secondaire",
   "icon": "BookMarked",
   "color": "teal",
   "questions": [
@@ -285,5 +285,7 @@
       "correctAnswer": "C",
       "explanation": "Crépuscule des temps anciens explore spécifiquement la métamorphose des sociétés traditionnelles africaines."
     }
-  ]
+  ],
+  "subcategory": "Français",
+  "level": "LYCEE"
 }

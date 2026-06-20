@@ -1,0 +1,328 @@
+{
+  "bankKey": "concours-numerique-medias",
+  "title": "Concours Numérique, Médias & Culture",
+  "description": "TIC, communication, médias, droit de la communication.",
+  "category": "Concours",
+  "subcategory": "Numérique & Médias",
+  "icon": "Radio",
+  "color": "violet",
+  "level": "LICENCE",
+  "subject": "Numérique et médias: TIC, HTML, HTTP, ARPT, liberté de presse, FESPACO, SIAO, fake news, RGPD, IA, big data, cloud",
+  "questions": [
+    {
+      "question": "Quelle est la principale différence entre HTML5 et HTML4 concernant la sémantique du web ?",
+      "optionA": "HTML5 introduit des éléments sémantiques comme <header>, <nav>, <section>, <article> et <footer>",
+      "optionB": "HTML4 supportait déjà la sémantique mais de manière moins structurée",
+      "optionC": "HTML5 ne modifie pas la sémantique mais uniquement les présentations",
+      "optionD": "HTML4 était purement sémantique tandis qu'HTML5 est orienté présentation",
+      "correctAnswer": "A",
+      "explanation": "HTML5 a introduit de nouveaux éléments sémantiques qui permettent de structurer le contenu de manière plus significative, améliorant ainsi l'accessibilité et le référencement."
+    },
+    {
+      "question": "Quelle méthode HTTP est idiomatique pour récupérer des données d'une API RESTful ?",
+      "optionA": "POST pour toutes les opérations de lecture",
+      "optionB": "GET pour récupérer des ressources existantes",
+      "optionC": "PUT pour créer de nouvelles ressources",
+      "optionD": "DELETE pour interroger le serveur",
+      "correctAnswer": "B",
+      "explanation": "Dans REST, GET est la méthode HTTP standard pour récupérer des ressources existantes sans les modifier. POST est pour la création, PUT pour la mise à jour complète, et DELETE pour la suppression."
+    },
+    {
+      "question": "Quel est le rôle principal de l'ARPT (Autorité de Régulation des Postes et des Télécommunications) au Burkina Faso ?",
+      "optionA": "Développer des logiciels pour l'administration",
+      "optionB": "Réguler les secteurs des postes et des télécommunications",
+      "optionC": "Former les journalistes",
+      "optionD": "Financer les projets technologiques",
+      "correctAnswer": "B",
+      "explanation": "L'ARPT est l'organisme chargé de réguler et de superviser les secteurs des postes et des télécommunications au Burkina Faso, en veillant à un bon fonctionnement du marché et à la protection des consommateurs."
+    },
+    {
+      "question": "Quelle est la caractéristique fondamentale de la liberté de presse selon la Déclaration des Droits de l'Homme et du Citoyen de 1789 ?",
+      "optionA": "Elle est soumise à l'approbation préalable des autorités",
+      "optionB": "Elle n'existe que dans les démocraties parlementaires",
+      "optionC": "Elle peut être limitée par des lois protectrices des droits d'autrui",
+      "optionD": "Elle n'implique aucune responsabilité pour les journalistes",
+      "correctAnswer": "C",
+      "explanation": "La liberté de presse est un droit fondamental mais n'est pas absolue. Elle peut être encadrée par des lois lorsque cela est nécessaire pour protéger la sécurité nationale, l'ordre public, la santé ou les droits d'autrui."
+    },
+    {
+      "question": "Le FESPACO (Festival Panafricain du Cinéma et de la Télévision de Ouagadougou) a principalement pour objectif :",
+      "optionA": "Développer l'industrie du textile en Afrique",
+      "optionB": "Promouvoir le cinéma africain et encourager sa production",
+      "optionC": "Former des ingénieurs en télécommunications",
+      "optionD": "Faciliter les échanges commerciaux entre pays africains",
+      "correctAnswer": "B",
+      "explanation": "Le FESPACO est le festival de cinéma le plus important d'Africa, créé pour promouvoir le cinéma africain, encourager sa production et faciliter les échanges culturels dans le domaine cinématographique."
+    },
+    {
+      "question": "Quelle est la signification de l'acronyme SIAO dans le contexte burkinabè ?",
+      "optionA": "Service d'Information et d'Analyse en ligne",
+      "optionB": "Salon International de l'Artisanat de Ouagadougou",
+      "optionC": "Système d'Information et d'Aide à l'Orientation",
+      "optionD": "Société d'Investissement et d'Appui aux Opérations",
+      "correctAnswer": "B",
+      "explanation": "Le SIAO (Salon International de l'Artisanat de Ouagadougou) est un événement majeur qui met en valeur l'artisanat africain et facilite les échanges commerciaux internationaux dans ce secteur."
+    },
+    {
+      "question": "Parmi ces définitions, laquelle correspond le mieux au concept de 'fake news' ?",
+      "optionA": "Des informations erronées mais diffusées sans intention de nuire",
+      "optionB": "Des nouvelles véridiques présentées de manière sensationnaliste",
+      "optionC": "Des informations délibérément fausses créées pour induire en erreur et nuire",
+      "optionD": "Des rumeurs non vérifiées circulant sur les réseaux sociaux",
+      "correctAnswer": "C",
+      "explanation": "Les 'fake news' sont des informations fabriquées ou déformées de manière délibérée pour tromper le public, souvent dans un but politique, commercial ou pour nuire à une personne ou une organisation."
+    },
+    {
+      "question": "Quelle est la principale finalité du RGPD (Règlement Général sur la Protection des Données) ?",
+      "optionA": "Faciliter la collecte de données personnelles par les entreprises",
+      "optionB": "Renforcer la protection des données personnelles des citoyens de l'UE",
+      "optionC": "Standardiser les protocoles de sécurité informatique",
+      "optionD": "Limiter la diffusion des informations sur les réseaux sociaux",
+      "correctAnswer": "B",
+      "explanation": "Le RGPD a été mis en place pour renforcer la protection des données personnelles des citoyens de l'Union Européenne en donnant plus de contrôle aux individus sur leurs données et en harmonisant les réglementations dans tous les États membres."
+    },
+    {
+      "question": "Dans le domaine de l'intelligence artificielle, que signifie le terme 'IA faible' ou 'étroite' (Narrow AI) ?",
+      "optionA": "Une IA avec des capacités intellectuelles inférieures à celles d'un humain",
+      "optionB": "Une IA conçue pour accomplir une tâche spécifique plutôt que de généraliser",
+      "optionC": "Une IA dont les algorithmes sont moins sophistiqués",
+      "optionD": "Une IA développée dans des pays en développement",
+      "correctAnswer": "B",
+      "explanation": "L'IA faible ou étroite (Narrow AI) est conçue pour effectuer une tâche spécifique ou un ensemble limité de tâches, contrairement à l'IA forte ou générale (AGI) qui aurait des capacités cognitives similaires à celles d'un humain sur une large gamme de tâches."
+    },
+    {
+      "question": "Quelle est la caractéristique principale du cloud computing par rapport aux infrastructures traditionnelles ?",
+      "optionA": "Une dépendance accrue aux équipements matériels locaux",
+      "optionB": "L'accès à des ressources informatiques partagées et évolutives via internet",
+      "optionC": "Une augmentation des coûts fixes d'infrastructure",
+      "optionD": "Une réduction de la flexibilité technologique",
+      "correctAnswer": "B",
+      "explanation": "Le cloud computing permet d'accéder à des ressources informatiques (serveurs, stockage, applications) partagées, évolutives et souvent payées à l'usage, via Internet, plutôt que d'investir dans des infrastructures physiques locales."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre le protocole HTTP et HTTPS ?",
+      "optionA": "HTTPS utilise un port différent d'HTTP",
+      "optionB": "HTTPS inclut un chiffrement des données échangées",
+      "optionC": "HTTP est plus rapide que HTTPS",
+      "optionD": "HTTP ne peut être utilisé que pour les pages statiques",
+      "correctAnswer": "B",
+      "explanation": "HTTPS (HTTP Secure) est une version sécurisée de HTTP qui utilise le protocole SSL/TLS pour chiffrer les données échangées entre le client et le serveur, garantissant ainsi leur confidentialité et leur intégrité."
+    },
+    {
+      "question": "Dans le contexte des TIC (Technologies de l'Information et de la Communication), que signifie l'acronyme 'IoT' ?",
+      "optionA": "Internet of Things (Internet des Objets)",
+      "optionB": "Input Output Technology",
+      "optionC": "International Online Transactions",
+      "optionD": "Integrated Operating Technology",
+      "correctAnswer": "A",
+      "explanation": "IoT (Internet of Things) fait référence au réseau d'objets physiques (appareils, véhicules, machines) équipés de capteurs, logiciels et autres technologies permettant de se connecter et d'échanger des données avec d'autres appareils et systèmes via Internet."
+    },
+    {
+      "question": "Quel principe fondamental du droit de la presse est violé par la 'censure préalable' ?",
+      "optionA": "Le droit à la vie privée",
+      "optionB": "La liberté d'expression",
+      "optionC": "Le droit à l'information",
+      "optionD": "La liberté d'association",
+      "correctAnswer": "B",
+      "explanation": "La censure préalable, qui exige une autorisation avant la publication de contenu, viole le principe fondamental de liberté d'expression, garantie par la plupart des constitutions et déclarations des droits humains."
+    },
+    {
+      "question": "Quelle est la principale caractéristique d'une API RESTful ?",
+      "optionA": "Elle utilise des états de session pour maintenir la connexion client-serveur",
+      "optionB": "Elle est basée sur l'architecture client-serveur sans état (stateless)",
+      "optionC": "Elle nécessite un protocole de communication propriétaire",
+      "optionD": "Elle ne supporte que les formats de données XML",
+      "correctAnswer": "B",
+      "explanation": "Une API RESTful est basée sur l'architecture REST (Representational State Transfer) qui est sans état (stateless), chaque requête du client contient toutes les informations nécessaires pour comprendre et traiter la demande."
+    },
+    {
+      "question": "Quelle est la différence entre le 'deepfake' et la 'fake news' traditionnelle ?",
+      "optionA": "Le deepfake utilise l'intelligence artificielle pour créer des contenus audiovisuels manipulés, tandis que la fake news se limite à du texte",
+      "optionB": "La fake news est toujours intentionnellement mensongère, tandis que le deepfake peut être véridique",
+      "optionC": "Le deepfake n'affecte que les images, tandis que la fake news affecte tous les types de médias",
+      "optionD": "La fake news est plus ancienne historiquement que le deepfake",
+      "correctAnswer": "A",
+      "explanation": "Le deepfake désigne spécifiquement des contenus audiovisuels (images, vidéos, audio) altérés par l'IA pour représenter des personnes ou des événements de manière trompeuse, tandis que la fake news désigne généralement de fausses informations, souvent textuelles, propagées intentionnellement."
+    },
+    {
+      "question": "Dans le contexte du RGPD, que signifie le 'droit à l'oubli' ?",
+      "optionA": "Le droit de demander la suppression de ses données personnelles lorsque la conservation n'est plus justifiée",
+      "optionB": "Le droit de ne pas être mentionné dans les médias",
+      "optionC": "Le droit de ne pas se souvenir d'événements traumatisants",
+      "optionD": "Le droit de demander que ses données ne soient pas utilisées pour des analyses",
+      "correctAnswer": "A",
+      "explanation": "Le droit à l'oubli, consacré par le RGPD, permet aux individus de demander la suppression de leurs données personnelles lorsque leur conservation n'est plus nécessaire aux fins pour lesquelles elles ont été collectées ou traitées."
+    },
+    {
+      "question": "Quelle est la principale différence entre l'apprentissage supervisé et non supervisé en IA ?",
+      "optionA": "L'apprentissage supervisé nécessite des données étiquetées, tandis que l'apprentissage non supervisé travaille sur des données non étiquetées",
+      "optionB": "L'apprentissage non supervisé est toujours plus précis que l'apprentissage supervisé",
+      "optionC": "L'apprentissage supervisé ne peut être utilisé que pour des problèmes de classification",
+      "optionD": "L'apprentissage non supervisé nécessite plus de données que l'apprentissage supervisé",
+      "correctAnswer": "A",
+      "explanation": "L'apprentissage supervisé utilise des données étiquetées (entrées-sorties connues) pour entraîner un modèle, tandis que l'apprentissage non supervisé cherche à trouver des structures cachées dans des données non étiquetées, sans supervision."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre le cloud public et le cloud privé ?",
+      "optionA": "Le cloud public est moins cher mais moins sécurisé que le cloud privé",
+      "optionB": "Le cloud public est hébergé par des fournisseurs externes tandis que le cloud privé est géré par l'organisation elle-même",
+      "optionC": "Le cloud public ne peut être utilisé que par les grandes entreprises",
+      "optionD": "Le cloud privé est toujours basé sur des technologies open source",
+      "correctAnswer": "B",
+      "explanation": "La principale différence réside dans le modèle de déploiement : le cloud public est partagé par plusieurs organisations et géré par des fournisseurs externes (comme AWS, Azure, Google Cloud), tandis que le cloud privé est dédié à une seule organisation et peut être géré en interne ou par un fournisseur spécialisé."
+    },
+    {
+      "question": "Quel est le rôle du 'header' HTTP 'Content-Type' ?",
+      "optionA": "Spécifier le type de contenu de la réponse ou de la requête",
+      "optionB": "Indiquer la taille totale du contenu",
+      "optionC": "Définir le niveau d'autorisation d'accès",
+      "optionD": "Spécifier le délai d'expiration du contenu",
+      "correctAnswer": "A",
+      "explanation": "Le header HTTP 'Content-Type' indique au client le format du contenu de la réponse ou de la requête (par exemple, 'text/html', 'application/json', 'image/jpeg'), permettant au navigateur ou au client de traiter correctement les données reçues."
+    },
+    {
+      "question": "Dans le contexte des médias numériques, que signifie le terme 'viralité' ?",
+      "optionA": "La propagation rapide et extensive d'un contenu à travers les réseaux sociaux et internet",
+      "optionB": "La présence de virus informatiques dans les contenus multimédias",
+      "optionC": "La tendance des contenus à être supprimés rapidement après leur publication",
+      "optionD": "La capacité d'un contenu à infecter les appareils des utilisateurs",
+      "correctAnswer": "A",
+      "explanation": "La viralité désigne la capacité d'un contenu (texte, image, vidéo) à se propager rapidement et à large échelle à travers les réseaux sociaux et internet, souvent grâce au partage spontané des utilisateurs."
+    },
+    {
+      "question": "Quelle est la principale différence entre le protocole HTTP et HTTPS?",
+      "optionA": "HTTP utilise le port 80, HTTPS le port 443",
+      "optionB": "HTTPS chiffre les communications, HTTP ne le fait pas",
+      "optionC": "HTTP est plus rapide que HTTPS",
+      "optionD": "HTTPS ne permet pas l'utilisation des cookies",
+      "correctAnswer": "B",
+      "explanation": "HTTPS chiffre les communications entre le client et le serveur, offrant une couche de sécurité supplémentaire par rapport à HTTP qui transmet les données en clair."
+    },
+    {
+      "question": "Quelle est la signification de l'acronyme RGPD?",
+      "optionA": "Règlement Général sur la Protection des Données",
+      "optionB": "Référentiel Général de Protection des Données",
+      "optionC": "Règlement Général de Protection des Droits",
+      "optionD": "Référentiel Général de Protection des Droits",
+      "correctAnswer": "A",
+      "explanation": "Le RGPD (Règlement Général sur la Protection des Données) est un règlement de l'Union Européenne qui renforce et unifie la protection des données personnelles des individus au sein de l'UE."
+    },
+    {
+      "question": "Dans le contexte de la liberté de presse, que signifie le terme 'quatrième pouvoir'?",
+      "optionA": "Le pouvoir législatif",
+      "optionB": "Le pouvoir judiciaire",
+      "optionC": "Le pouvoir médiatique considéré comme contre-pouvoir",
+      "optionD": "Le pouvoir exécutif",
+      "correctAnswer": "C",
+      "explanation": "Le 'quatrième pouvoir' désigne le pouvoir médiatique, considéré comme un contre-pouvoir essentiel dans une démocratie, surveillant les autres pouvoirs (législatif, exécutif, judiciaire)."
+    },
+    {
+      "question": "Quelle est la fonction principale de l'ARPT (Autorité de Régulation des Postes et des Télécommunications)?",
+      "optionA": "Réguler le marché des postes et des télécommunications",
+      "optionB": "Développer des logiciels pour les télécommunications",
+      "optionC": "Fournir des services internet gratuits",
+      "optionD": "Protéger les données personnelles des utilisateurs",
+      "correctAnswer": "A",
+      "explanation": "L'ARPT (Autorité de Régulation des Postes et des Télécommunications) est un organe de régulation chargé de veiller au bon fonctionnement du marché des postes et des télécommunications dans un pays."
+    },
+    {
+      "question": "Que signifie le terme 'fake news' dans le contexte des médias?",
+      "optionA": "Nouvelles provenant de sources officielles",
+      "optionB": "Information faussement présentée comme étant véridique et diffusée intentionnellement",
+      "optionC": "Actualités humoristiques ou satiriques",
+      "optionD": "Anciennes nouvelles qui ne sont plus d'actualité",
+      "correctAnswer": "B",
+      "explanation": "Les 'fake news' sont des informations fausses, souvent créées et diffusées intentionnellement pour tromper le public, nuire à quelqu'un ou manipuler l'opinion publique."
+    },
+    {
+      "question": "Quelle est la principale caractéristique du cloud computing?",
+      "optionA": "Stockage local des données",
+      "optionB": "Accès à des ressources informatiques partagées via internet",
+      "optionC": "Traitement exclusivement hors ligne",
+      "optionD": "Utilisation de matériel propriétaire uniquement",
+      "correctAnswer": "B",
+      "explanation": "Le cloud computing consiste à accéder à des ressources informatiques (serveurs, stockage, applications) partagées et configurables via internet, généralement payées à l'usage."
+    },
+    {
+      "question": "Qu'est-ce que l'intelligence artificielle (IA)?",
+      "optionA": "Un système capable de simuler l'intelligence humaine",
+      "optionB": "Un logiciel de gestion de base de données",
+      "optionC": "Un protocole de communication réseau",
+      "optionD": "Un type de matériel informatique",
+      "correctAnswer": "A",
+      "explanation": "L'intelligence artificielle (IA) désigne des systèmes informatiques capables d'effectuer des tâches qui nécessitent normalement l'intelligence humaine, comme l'apprentissage, la résolution de problèmes ou la prise de décision."
+    },
+    {
+      "question": "Que signifie HTML dans le contexte du développement web?",
+      "optionA": "HyperText Markup Language",
+      "optionB": "High Tech Modern Language",
+      "optionC": "Home Tool Markup Language",
+      "optionD": "HyperText Machine Language",
+      "correctAnswer": "A",
+      "explanation": "HTML (HyperText Markup Language) est le langage de balisage standard utilisé pour créer et structurer le contenu des pages web."
+    },
+    {
+      "question": "Qu'est-ce que le FESPACO?",
+      "optionA": "Festival Panafricain du Cinéma et de la Télévision de Ouagadougou",
+      "optionB": "Festival Européen du Sport et de la Culture",
+      "optionC": "Fédération des Éditeurs de la Presse Africaine",
+      "optionD": "Festival International des Arts Traditionnels d'Afrique",
+      "correctAnswer": "A",
+      "explanation": "Le FESPACO (Festival Panafricain du Cinéma et de la Télévision de Ouagadougou) est le festival de cinéma le plus important d'Afrique, se tenant tous les deux ans à Ouagadougou, au Burkina Faso."
+    },
+    {
+      "question": "Quelle est la fonction du SIAO (Salon International de l'Artisanat d'Art)?",
+      "optionA": "Promouvoir l'artisanat africain à l'international",
+      "optionB": "Réguler le marché de l'art en Afrique",
+      "optionC": "Former les artisans aux nouvelles technologies",
+      "optionD": "Protéger les droits d'auteur des artistes",
+      "correctAnswer": "A",
+      "explanation": "Le SIAO (Salon International de l'Artisanat d'Art) est un événement qui se tient tous les deux ans à Ouagadougou, au Burkina Faso, avec pour objectif de promouvoir l'artisanat africain à l'échelle internationale."
+    },
+    {
+      "question": "Quelle est la différence entre le web 1.0 et le web 2.0?",
+      "optionA": "Le web 1.0 était statique et unidirectionnel, le web 2.0 est interactif et collaboratif",
+      "optionB": "Le web 1.0 était plus rapide que le web 2.0",
+      "optionC": "Le web 1.0 était utilisé pour les entreprises, le web 2.0 pour les particuliers",
+      "optionD": "Le web 1.0 était basé sur le cloud, le web 2.0 sur le stockage local",
+      "correctAnswer": "A",
+      "explanation": "Le web 1.0 correspond à la première génération du web, principalement statique et unidirectionnel (contenu créé par les professionnels pour les utilisateurs). Le web 2.0, apparu ensuite, est interactif, collaboratif et permet aux utilisateurs de créer et de partager du contenu."
+    },
+    {
+      "question": "Que signifie le terme 'cookies' dans le contexte du web?",
+      "optionA": "Fichiers texte stockés sur l'appareil utilisateur pour mémoriser des informations",
+      "optionB": "Virus informatiques qui volent des données personnelles",
+      "optionC": "Protocoles de sécurité pour les transactions en ligne",
+      "optionD": "Algorithmes de chiffrement des données",
+      "correctAnswer": "A",
+      "explanation": "Les cookies sont de petits fichiers texte stockés sur l'appareil d'un utilisateur par un site web, permettant de mémoriser des informations comme les préférences de l'utilisateur ou les données de session."
+    },
+    {
+      "question": "Quelle est la principale caractéristique de l'Internet des Objets (IoT)?",
+      "optionA": "Connexion d'appareils physiques à internet pour échanger des données",
+      "optionB": "Utilisation exclusivement de smartphones pour accéder à internet",
+      "optionC": "Système de paiement sécurisé en ligne",
+      "optionD": "Réseau social basé sur la localisation géographique",
+      "correctAnswer": "A",
+      "explanation": "L'Internet des Objets (IoT) désigne le réseau d'objets physiques (appareils ménagers, véhicules, machines industrielles, etc.) équipés de capteurs, logiciels et autres technologies permettant de se connecter et d'échanger des données avec d'autres appareils et systèmes via Internet."
+    },
+    {
+      "question": "Qu'est-ce que le protocole TCP/IP?",
+      "optionA": "Ensemble de protocoles qui régissent les communications sur Internet",
+      "optionB": "Type de câble réseau utilisé pour les connexions internet",
+      "optionC": "Système d'exploitation pour serveurs",
+      "optionD": "Logiciel de sécurité informatique",
+      "correctAnswer": "A",
+      "explanation": "TCP/IP (Transmission Control Protocol/Internet Protocol) est un ensemble de protocoles de communication qui régissent la manière dont les données sont transmises sur Internet, en définissant comment les données sont adressées, fragmentées, transmises, acheminées et reconstituées."
+    },
+    {
+      "question": "Quelle est la principale différence entre le stockage sur le cloud et le stockage local?",
+      "optionA": "Le cloud est plus lent mais plus sûr",
+      "optionB": "Le cloud permet d'accéder aux données de n'importe où avec une connexion internet, le stockage local nécessite d'être physiquement proche du périphérique",
+      "optionC": "Le stockage local est moins cher que le cloud",
+      "optionD": "Le cloud ne peut stocker que des fichiers de petite taille",
+      "correctAnswer": "B",
+      "explanation": "La principale différence entre le stockage sur le cloud et le stockage local est que le cloud permet d'accéder aux données de n'importe où et à tout moment avec une connexion internet, tandis que le stockage local nécessite d'être physiquement proche du périphérique de stockage pour accéder aux données."
+    }
+  ]
+}

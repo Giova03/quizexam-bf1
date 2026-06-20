@@ -1,0 +1,310 @@
+{
+  "bankKey": "culture-generale-diverse",
+  "title": "Questions Diverses - Culture Générale",
+  "description": "Questions de culture générale couvrant l'histoire, la géographie, les institutions.",
+  "category": "Culture Générale",
+  "subcategory": "Divers",
+  "icon": "BadgeCheck",
+  "color": "teal",
+  "level": "TOUS",
+  "subject": "Culture générale diverse: histoire mondiale, géographie, institutions internationales, ONU, UNESCO, CEDEAO, personnalités, dates clés",
+  "questions": [
+    {
+      "question": "Quelle est la principale différence entre l'UNESCO et le Programme des Nations Unies pour le Développement (PNUD) ?",
+      "optionA": "L'UNESCO se concentre sur l'éducation, la science et la culture, tandis que le PNUD se concentre sur le développement économique",
+      "optionB": "L'UNESCO est une agence spécialisée des Nations Unies, tandis que le PNUD est un fonds",
+      "optionC": "L'UNESCO a été créée avant le PNUD",
+      "optionD": "Seul le PNUD a un statut d'observateur à l'Assemblée générale des Nations Unies",
+      "correctAnswer": "A",
+      "explanation": "L'UNESCO (Organisation des Nations Unies pour l'éducation, la science et la culture) se concentre spécifiquement sur ces domaines, tandis que le PNUD (Programme des Nations Unies pour le Développement) travaille plus largement sur le développement économique et social."
+    },
+    {
+      "question": "Quel est le pays qui a le plus grand nombre de sites inscrits sur la liste du patrimoine mondial de l'UNESCO ?",
+      "optionA": "Italie",
+      "optionB": "Chine",
+      "optionC": "Espagne",
+      "optionD": "France",
+      "correctAnswer": "B",
+      "explanation": "La Chine détient le plus grand nombre de sites inscrits sur la liste du patrimoine mondial de l'UNESCO avec 56 sites, suivie de l'Italie avec 58 sites et l'Allemagne avec 51 sites."
+    },
+    {
+      "question": "Quelle est la principale fonction du Conseil de sécurité des Nations Unies ?",
+      "optionA": "Adopter le budget des Nations Unies",
+      "optionB": "Maintenir la paix et la sécurité internationales",
+      "optionC": "Recommander l'admission de nouveaux membres",
+      "optionD": "Étudier les questions relatives aux droits de l'homme",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil de sécurité des Nations Unies est principalement responsable du maintien de la paix et de la sécurité internationales, contrairement à l'Assemblée générale qui a un rôle plus large."
+    },
+    {
+      "question": "Qui a été le premier Secrétaire général des Nations Unies ?",
+      "optionA": "Dag Hammarskjöld",
+      "optionB": "Trygve Lie",
+      "optionC": "U Thant",
+      "optionD": "Kurt Waldheim",
+      "correctAnswer": "B",
+      "explanation": "Trygve Lie, un diplomate norvégien, a été le premier Secrétaire général des Nations Unies, servant de 1946 à 1952."
+    },
+    {
+      "question": "Quelle est la capitale de la CEDEAO (Communauté Économique des États de l'Afrique de l'Ouest) ?",
+      "optionA": "Abuja",
+      "optionB": "Accra",
+      "optionC": "Lomé",
+      "optionD": "Niamey",
+      "correctAnswer": "A",
+      "explanation": "La capitale de la CEDEAO est Abuja, au Nigeria, bien que plusieurs de ses institutions soient situées à d'autres endroits comme Accra au Ghana."
+    },
+    {
+      "question": "Quel est le principal organe décisionnel de l'UNESCO ?",
+      "optionA": "Le Conseil exécutif",
+      "optionB": "La Conférence générale",
+      "optionC": "Le Secrétariat",
+      "optionD": "Le Comité du patrimoine mondial",
+      "correctAnswer": "B",
+      "explanation": "La Conférence générale est l'organe principal de l'UNESCO, composé des États membres, qui se réunit tous les deux ans pour définir les programmes et le budget de l'organisation."
+    },
+    {
+      "question": "Quelle personnalité historique est associée à la déclaration d'indépendance de l'Inde en 1947 ?",
+      "optionA": "Jawaharlal Nehru",
+      "optionB": "Mahatma Gandhi",
+      "optionC": "Subhas Chandra Bose",
+      "optionD": "Sardar Vallabhbhai Patel",
+      "correctAnswer": "A",
+      "explanation": "Jawaharlal Nehru, premier Premier ministre de l'Inde, a lu la déclaration d'indépendance le 15 août 1947, bien que Gandhi ait été la figure principale du mouvement d'indépendance."
+    },
+    {
+      "question": "Quelle est la principale différence entre la CEDEAO et l'UA (Union Africaine) ?",
+      "optionA": "La CEDEAO est une organisation régionale économique, tandis que l'UA est une organisation politique continentale",
+      "optionB": "La CEDEAO est plus ancienne que l'UA",
+      "optionC": "Seule la CEDEAO a une monnaie unique",
+      "optionD": "Seule l'UA a un parlement",
+      "correctAnswer": "A",
+      "explanation": "La CEDEAO est principalement une organisation économique axée sur l'intégration économique de l'Afrique de l'Ouest, tandis que l'UA est une organisation politique continentale plus large."
+    },
+    {
+      "question": "Quel est le principal objectif de la Convention du patrimoine mondial de l'UNESCO ?",
+      "optionA": "Protéger les droits de l'homme",
+      "optionB": "Préserver les sites culturels et naturels d'importance universelle",
+      "optionC": "Promouvoir la liberté de la presse",
+      "optionD": "Lutter contre le changement climatique",
+      "correctAnswer": "B",
+      "explanation": "La Convention du patrimoine mondial vise à identifier, protéger et conserver les sites culturels et naturels d'importance universelle pour l'héritage commun de l'humanité."
+    },
+    {
+      "question": "Quel pays a rejoint l'ONU le plus récemment ?",
+      "optionA": "Soudan du Sud",
+      "optionB": "Monténégro",
+      "optionC": "Serbie",
+      "optionD": "Timor-Leste",
+      "correctAnswer": "A",
+      "explanation": "Le Soudan du Sud est devenu le 193e État membre des Nations Unies le 14 juillet 2011, ce qui en fait le pays le plus récent à avoir rejoint l'organisation."
+    },
+    {
+      "question": "Quel est le principal organe judiciaire de l'ONU ?",
+      "optionA": "La Cour internationale de Justice",
+      "optionB": "Le Tribunal pénal international",
+      "optionC": "Le Conseil de sécurité",
+      "optionD": "La Commission des droits de l'homme",
+      "correctAnswer": "A",
+      "explanation": "La Cour internationale de Justice (CIJ) est le principal organe judiciaire des Nations Unies, situé au Palais de la Paix à La Haye, aux Pays-Bas."
+    },
+    {
+      "question": "Quelle est la capitale de l'UA (Union Africaine) ?",
+      "optionA": "Addis-Abeba",
+      "optionB": "Le Caire",
+      "optionC": "Nairobi",
+      "optionD": "Pretoria",
+      "correctAnswer": "A",
+      "explanation": "Addis-Abeba, en Éthiopie, est le siège de l'Union Africaine, abritant la plupart de ses institutions principales."
+    },
+    {
+      "question": "Quel a été le premier Secrétaire général de la CEDEAO ?",
+      "optionA": "Edem Kodjo",
+      "optionB": "Mamadou Tandja",
+      "optionC": "Ahmadou Ahidjo",
+      "optionD": "Jerry Rawlings",
+      "correctAnswer": "A",
+      "explanation": "Edem Kodjo, un diplomate togolais, a été le premier Secrétaire exécutif de la CEDEAO, servant de 1977 à 1983."
+    },
+    {
+      "question": "Quel est le principal objectif de la Stratégie de développement durable à l'horizon 2030 de l'ONU ?",
+      "optionA": "Éradiquer la pauvreté",
+      "optionB": "Atteindre l'égalité des genres",
+      "optionC": "Garantir l'accès à l'eau potable",
+      "optionD": "Réduire les inégalités",
+      "correctAnswer": "A",
+      "explanation": "Bien que les 17 Objectifs de développement durable (ODD) couvrent de nombreux domaines, l'objectif principal est d'éradiquer la pauvreté sous toutes ses formes et partout dans le monde."
+    },
+    {
+      "question": "Quelle est la différence entre l'UNESCO et l'UNICEF ?",
+      "optionA": "L'UNESCO se concentre sur l'éducation des adultes, tandis que l'UNICEF se concentre sur l'éducation des enfants",
+      "optionB": "L'UNESCO est une agence spécialisée, tandis que l'UNICEF est un programme",
+      "optionC": "L'UNESCO a été créée avant l'UNICEF",
+      "optionD": "Seul l'UNESCO a un rôle dans la préservation du patrimoine culturel",
+      "correctAnswer": "B",
+      "explanation": "L'UNESCO est une agence spécialisée des Nations Unies, tandis que l'UNICEF (Fonds des Nations Unies pour l'enfance) est un programme des Nations Unies, bien que les deux travaillent dans des domaines connexes."
+    },
+    {
+      "question": "Quel est le principal organe décisionnel de la CEDEAO ?",
+      "optionA": "Le Conseil des ministres",
+      "optionB": "La Conférence des chefs d'État et de gouvernement",
+      "optionC": "Le Parlement",
+      "optionD": "La Commission",
+      "correctAnswer": "B",
+      "explanation": "La Conférence des chefs d'État et de gouvernement est l'organe suprême de la CEDEAO, responsable de l'orientation et des grandes décisions de l'organisation."
+    },
+    {
+      "question": "Quel est le principal objectif de la Convention de l'UNESCO sur la protection du patrimoine mondial culturel et naturel ?",
+      "optionA": "Protéger les droits de l'homme",
+      "optionB": "Préserver les sites culturels et naturels d'importance universelle",
+      "optionC": "Promouvoir la liberté de la presse",
+      "optionD": "Lutter contre le changement climatique",
+      "correctAnswer": "B",
+      "explanation": "La Convention de l'UNESCO sur le patrimoine mondial vise à identifier, protéger et conserver les sites culturels et naturels d'importance universelle pour l'héritage commun de l'humanité."
+    },
+    {
+      "question": "Quel est le principal organe décisionnel de l'UA ?",
+      "optionA": "Le Conseil exécutif",
+      "optionB": "La Conférence des chefs d'État et de gouvernement",
+      "optionC": "Le Parlement panafricain",
+      "optionD": "La Commission de l'UA",
+      "correctAnswer": "B",
+      "explanation": "La Conférence des chefs d'État et de gouvernement est l'organe suprême de l'Union Africaine, responsable de l'orientation et des grandes décisions de l'organisation."
+    },
+    {
+      "question": "Quelle organisation internationale, fondée en 1945, a pour objectif principal de maintenir la paix et la sécurité internationales?",
+      "optionA": "L'Organisation du Traité de l'Atlantique Nord (OTAN)",
+      "optionB": "L'Organisation des Nations Unies (ONU)",
+      "optionC": "L'Organisation pour la Coopération et le Développement Économiques (OCDE)",
+      "optionD": "L'Union Européenne (UE)",
+      "correctAnswer": "B",
+      "explanation": "L'ONU, créée après la Seconde Guerre mondiale, est la principale organisation internationale dédiée au maintien de la paix et de la sécurité mondiales, avec un Conseil de Sécurité comme organe principal."
+    },
+    {
+      "question": "Quel pays a été le premier à adhérer à la CEDEAO (Communauté Économique des États de l'Afrique de l'Ouest)?",
+      "optionA": "Nigeria",
+      "optionB": "Sénégal",
+      "optionC": "Ghana",
+      "optionD": "Côte d'Ivoire",
+      "correctAnswer": "C",
+      "explanation": "Le Ghana a été le premier pays à signer le traité de création de la CEDEAO le 28 mai 1975, suivis par le Nigeria, la Guinée, le Sierra Leone et d'autres."
+    },
+    {
+      "question": "Quel ancien Secrétaire général des Nations Unies a été le premier africain à occuper ce poste?",
+      "optionA": "Kofi Annan",
+      "optionB": "Boutros Boutros-Ghali",
+      "optionC": "U Thant",
+      "optionD": "Dag Hammarskjöld",
+      "correctAnswer": "A",
+      "explanation": "Kofi Annan, de nationalité ghanéenne, a été le septième Secrétaire général de l'ONU (1997-2006) et le premier issu d'Afrique."
+    },
+    {
+      "question": "Quelle est la capitale de l'Australie?",
+      "optionA": "Sydney",
+      "optionB": "Melbourne",
+      "optionC": "Canberra",
+      "optionD": "Brisbane",
+      "correctAnswer": "C",
+      "explanation": "Canberra a été spécifiquement conçue et construite comme capitale de l'Australie en 1913 pour résoudre le conflit entre Sydney et Melbourne."
+    },
+    {
+      "question": "Quel personnage historique est crédité d'avoir formulé la théorie de la relativité restreinte?",
+      "optionA": "Isaac Newton",
+      "optionB": "Albert Einstein",
+      "optionC": "Niels Bohr",
+      "optionD": "Stephen Hawking",
+      "correctAnswer": "B",
+      "explanation": "Albert Einstein a publié sa théorie de la relativité restreinte en 1905, révolutionnant notre compréhension de l'espace, du temps et de la gravité."
+    },
+    {
+      "question": "Quelle est la principale différence entre l'UNESCO et le PNUD?",
+      "optionA": "L'UNESCO se concentre sur l'éducation, la science et la culture, tandis que le PNUD se concentre sur le développement",
+      "optionB": "L'UNESCO est une agence spécialisée de l'ONU, tandis que le PNUD est une organisation indépendante",
+      "optionC": "L'UNESCO a été fondée en 1946, tandis que le PNUD a été fondé en 1950",
+      "optionD": "L'UNESCO opère uniquement dans les pays développés, tandis que le PNUD opère uniquement dans les pays en développement",
+      "correctAnswer": "A",
+      "explanation": "L'UNESCO (Organisation des Nations Unies pour l'éducation, la science et la culture) et le PNUD (Programme des Nations Unies pour le développement) sont tous deux des agences spécialisées de l'ONU, mais avec des mandats différents."
+    },
+    {
+      "question": "Quel pays a le plus grand nombre de sièges permanents au Conseil de Sécurité de l'ONU?",
+      "optionA": "États-Unis",
+      "optionB": "Royaume-Uni",
+      "optionC": "France",
+      "optionD": "Aucun, tous les membres permanents ont un seul siège",
+      "correctAnswer": "D",
+      "explanation": "Le Conseil de Sécurité de l'ONU compte cinq membres permanents (États-Unis, Russie, Chine, Royaume-Uni, France), chacun avec un seul siège et droit de veto."
+    },
+    {
+      "question": "Quelle est la plus longue frontière terrestre entre deux pays?",
+      "optionA": "Frontière entre les États-Unis et le Canada",
+      "optionB": "Frontière entre la Russie et la Chine",
+      "optionC": "Frontière entre l'Argentine et le Chili",
+      "optionD": "Frontière entre le Brésil et la Bolivie",
+      "correctAnswer": "A",
+      "explanation": "La frontière entre les États-Unis et le Canada s'étend sur environ 8 891 kilomètres, ce qui en fait la plus longue frontière non défendue au monde et la plus longue frontière terrestre entre deux pays."
+    },
+    {
+      "question": "Quel pays a rejoint l'Union Européenne le plus récemment?",
+      "optionA": "Croatie",
+      "optionB": "Roumanie",
+      "optionC": "Bulgarie",
+      "optionD": "Croatie (2013)",
+      "correctAnswer": "D",
+      "explanation": "La Croatie a rejoint l'Union Européenne le 1er juillet 2013, ce qui en fait le pays le plus récent à avoir adhéré parmi les options proposées."
+    },
+    {
+      "question": "Quel personnage historique est connu pour avoir écrit 'Le Prince'?",
+      "optionA": "Nicolas Machiavel",
+      "optionB": "Thomas More",
+      "optionC": "Jean-Jacques Rousseau",
+      "optionD": "Montesquieu",
+      "correctAnswer": "A",
+      "explanation": "Nicolas Machiavel, philosophe et homme d'État italien du XVIe siècle, est l'auteur de 'Le Prince', un ouvrage fondamental de la philosophie politique."
+    },
+    {
+      "question": "Quel est le principal organe décisionnel de la CEDEAO?",
+      "optionA": "Le Conseil des Ministres",
+      "optionB": "La Commission",
+      "optionC": "Le Parlement",
+      "optionD": "La Cour de Justice",
+      "correctAnswer": "A",
+      "explanation": "Le Conseil des Ministres est l'organe suprême de la CEDEAO, responsable de la prise de décisions et de la direction de l'organisation."
+    },
+    {
+      "question": "Quelle est la capitale du Canada?",
+      "optionA": "Toronto",
+      "optionB": "Vancouver",
+      "optionC": "Ottawa",
+      "optionD": "Montréal",
+      "correctAnswer": "C",
+      "explanation": "Ottawa a été choisie comme capitale du Canada en 1857 en raison de sa position géographique centrale entre Toronto et Montréal, et de sa distance relative des frontières américaines."
+    },
+    {
+      "question": "Quel pays a été le premier à abolir l'esclavage?",
+      "optionA": "France",
+      "optionB": "Royaume-Uni",
+      "optionC": "Haïti",
+      "optionD": "États-Unis",
+      "correctAnswer": "C",
+      "explanation": "Haïti, alors Saint-Domingue, a été le premier pays au monde à abolir l'esclavage en 1793 sous l'impulsion de Toussaint Louverture, bien que cette abolition ait été confirmée en 1804 lors de l'indépendance."
+    },
+    {
+      "question": "Quel est le siège principal de l'UNESCO?",
+      "optionA": "New York",
+      "optionB": "Genève",
+      "optionC": "Paris",
+      "optionD": "La Haye",
+      "correctAnswer": "C",
+      "explanation": "Le siège principal de l'UNESCO est situé à Paris, France, depuis sa création en 1945."
+    },
+    {
+      "question": "Quel est le nom du premier homme à avoir marché sur la Lune?",
+      "optionA": "Yuri Gagarine",
+      "optionB": "Alexei Leonov",
+      "optionC": "Neil Armstrong",
+      "optionD": "John Glenn",
+      "correctAnswer": "C",
+      "explanation": "Neil Armstrong, astronaute américain, a été le premier humain à poser le pied sur la Lune le 20 juillet 1969 lors de la mission Apollo 11."
+    }
+  ]
+}

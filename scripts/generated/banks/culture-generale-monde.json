@@ -1,0 +1,292 @@
+{
+  "bankKey": "culture-generale-monde",
+  "title": "Culture Générale du Monde",
+  "description": "Géographie, capitales, fleuves, montagnes, arts, littérature, religions.",
+  "category": "Culture Générale",
+  "subcategory": "Culture du Monde",
+  "icon": "Globe2",
+  "color": "teal",
+  "level": "TOUS",
+  "subject": "Culture générale du monde: capitales, fleuves, montagnes, déserts, océans, religions, arts, littérature, prix Nobel, institutions",
+  "questions": [
+    {
+      "question": "Quelle est la capitale de l'Éthiopie ?",
+      "optionA": "Addis-Abeba",
+      "optionB": "Djibouti",
+      "optionC": "Asmara",
+      "optionD": "Lalibela",
+      "correctAnswer": "A",
+      "explanation": "Addis-Abeba est la capitale et la plus grande ville d'Éthiopie. Djibouti est la capitale du pays voisin Djibouti, Asmara est celle de l'Érythrée, et Lalibela est une ville historique connue pour ses églises monolithiques."
+    },
+    {
+      "question": "Quel fleuve traverse Paris ?",
+      "optionA": "La Loire",
+      "optionB": "La Seine",
+      "optionC": "La Garonne",
+      "optionD": "Le Rhône",
+      "correctAnswer": "B",
+      "explanation": "La Seine est le fleuve qui traverse Paris. La Loire traverse la ville de Nantes, la Garonne celle de Bordeaux, et le Rhône celle d'Avignon."
+    },
+    {
+      "question": "Quel est le plus haut sommet d'Europe ?",
+      "optionA": "Le Mont Blanc",
+      "optionB": "Le Mont Rose",
+      "optionC": "Le Cervin",
+      "optionD": "L'Elbrouz",
+      "correctAnswer": "A",
+      "explanation": "Le Mont Blanc, culminant à 4 807 mètres, est le plus haut sommet d'Europe. Le Mont Rose atteint 4 634 mètres, le Cervin 4 478 mètres, et l'Elbrouz, bien que plus élevé à 5 642 mètres, se situe en Russie, sur le continent asiatique."
+    },
+    {
+      "question": "Quel désert est le plus grand chaud du monde ?",
+      "optionA": "Le Sahara",
+      "optionB": "Le désert d'Arabie",
+      "optionC": "Le Kalahari",
+      "optionD": "Le désert du Gibson",
+      "correctAnswer": "A",
+      "explanation": "Le Sahara est le plus grand désert chaud du monde, s'étendant sur environ 9,2 millions de kilomètres carrés. Le désert d'Arabie couvre environ 2,3 millions de kilomètres carrés, le Kalahari est un désert semi-aride, et le désert du Gibson est beaucoup plus petit en Australie."
+    },
+    {
+      "question": "Dans quelle religion le concept de 'Dharma' est-il central ?",
+      "optionA": "L'hindouisme",
+      "optionB": "Le bouddhisme",
+      "optionC": "Le jaïnisme",
+      "optionD": "Le sikhisme",
+      "correctAnswer": "A",
+      "explanation": "Le concept de Dharma est central dans l'hindouisme, où il désigne les devoirs, les lois et les principes moraux régissant l'ordre cosmique. Bien que présent dans d'autres religions indiennes comme le bouddhisme, le jaïnisme et le sikhisme, il y prend des significations légèrement différentes."
+    },
+    {
+      "question": "Qui a peint la Joconde ?",
+      "optionA": "Michel-Ange",
+      "optionB": "Raphaël",
+      "optionC": "Léonard de Vinci",
+      "optionD": "Titien",
+      "correctAnswer": "C",
+      "explanation": "La Joconde, ou Mona Lisa, a été peinte par Léonard de Vinci entre 1503 et 1519. Michel-Ange et Raphaël étaient ses contemporains mais n'ont pas peint ce tableau. Titien était un peintre vénitien de la même époque."
+    },
+    {
+      "question": "Quel écrivain a reçu le prix Nobel de littérature en 1953 ?",
+      "optionA": "Albert Camus",
+      "optionB": "Ernest Hemingway",
+      "optionC": "Winston Churchill",
+      "optionD": "William Faulkner",
+      "correctAnswer": "C",
+      "explanation": "Winston Churchill a reçu le prix Nobel de littérature en 1953 pour ses œuvres historiques et biographiques, ainsi que pour ses discours oratoires. Camus l'a reçu en 1957, Hemingway en 1954, et Faulkner en 1949."
+    },
+    {
+      "question": "Quel pays a pour capitale Canberra ?",
+      "optionA": "La Nouvelle-Zélande",
+      "optionB": "L'Australie",
+      "optionC": "L'Afrique du Sud",
+      "optionD": "Le Canada",
+      "correctAnswer": "B",
+      "explanation": "Canberra est la capitale de l'Australie. Wellington est la capitale de la Nouvelle-Zélande, Pretoria celle de l'Afrique du Sud, et Ottawa celle du Canada."
+    },
+    {
+      "question": "Quel fleuve est le plus long du monde ?",
+      "optionA": "Le Nil",
+      "optionB": "L'Amazone",
+      "optionC": "Le Yangtsé",
+      "optionD": "Le Mississippi-Missouri",
+      "correctAnswer": "A",
+      "explanation": "Le Nil est généralement considéré comme le fleuve le plus long du monde, avec environ 6 650 km. L'Amazone est le fleuve au plus grand débit, le Yangtsé est le plus long d'Asie, et le Mississippi-Missouri est le plus long d'Amérique du Nord."
+    },
+    {
+      "question": "Quel est le plus long système de montagnes du monde ?",
+      "optionA": "Les Alpes",
+      "optionB": "Les Andes",
+      "optionC": "Les Appalaches",
+      "optionD": "La chaîne himalayenne",
+      "correctAnswer": "B",
+      "explanation": "Les Andes sont le plus long système de montagnes du monde, s'étendant sur environ 7 000 km le long de la côte ouest de l'Amérique du Sud. L'Himalaya est le plus haut, mais moins long en termes de distance linéaire."
+    },
+    {
+      "question": "Dans quelle religion le 'Tao' est-il un concept fondamental ?",
+      "optionA": "Le confucianisme",
+      "optionB": "Le bouddhisme",
+      "optionC": "Le taoïsme",
+      "optionD": "Le shintoïsme",
+      "correctAnswer": "C",
+      "explanation": "Le concept de 'Tao' est fondamental dans le taoïsme, où il désigne la voie ou le principe universel régissant l'univers. Bien que le confucianisme et le taoïsme soient des traditions chinoises, le 'Tao' est spécifique au taoïsme."
+    },
+    {
+      "question": "Quel peintre a réalisé 'La Nuit étoilée' ?",
+      "optionA": "Claude Monet",
+      "optionB": "Vincent van Gogh",
+      "optionC": "Pablo Picasso",
+      "optionD": "Salvador Dalí",
+      "correctAnswer": "B",
+      "explanation": "'La Nuit étoilée' a été peinte par Vincent van Gogh en 1889. Monet est connu pour ses peintures de nymphéas, Picasso pour le cubisme, et Dalí pour le surréalisme."
+    },
+    {
+      "question": "Quel prix Nobel a été créé le plus récemment ?",
+      "optionA": "Prix Nobel de littérature",
+      "optionB": "Prix Nobel de paix",
+      "optionC": "Prix Nobel d'économie",
+      "optionD": "Prix Nobel de physique",
+      "correctAnswer": "C",
+      "explanation": "Le prix d'économie, officiellement 'prix de la Banque de Suède en sciences économiques en mémoire d'Alfred Nobel', a été créé en 1968 et est le plus récent des prix Nobel. Les autres prix originaux datent de 1901."
+    },
+    {
+      "question": "Quelle est la capitale du Brésil ?",
+      "optionA": "Rio de Janeiro",
+      "optionB": "São Paulo",
+      "optionC": "Brasília",
+      "optionD": "Salvador",
+      "correctAnswer": "C",
+      "explanation": "Brasília est la capitale du Brésil depuis 1960. Rio de Janeiro et Salvador ont été des capitales historiques, et São Paulo est la plus grande ville du pays mais n'est pas la capitale."
+    },
+    {
+      "question": "Quel désert est le plus grand d'Antarctique ?",
+      "optionA": "Le désert de McMurdo",
+      "optionB": "Le désert de Victoria",
+      "optionC": "Le désert du Namib",
+      "optionD": "Le désert du Sahara",
+      "correctAnswer": "A",
+      "explanation": "Le désert de McMurdo, dans la vallée Taylor, est le plus grand désert d'Antarctique et l'un des plus secs du monde. Le désert de Victoria est en Australie, le Namib en Namibie, et le Sahara en Afrique du Nord."
+    },
+    {
+      "question": "Quel auteur a écrit 'Cent ans de solitude' ?",
+      "optionA": "Jorge Luis Borges",
+      "optionB": "Gabriel García Márquez",
+      "optionC": "Pablo Neruda",
+      "optionD": "Isabel Allende",
+      "correctAnswer": "B",
+      "explanation": "'Cent ans de solitude' a été écrit par Gabriel García Márquez, prix Nobel de littérature en 1982. Borges est un autre auteur latino-américain, Neruda un poète chilien, et Allende une romancière chilienne."
+    },
+    {
+      "question": "Quel prix Nobel n'existait pas à l'origine dans le testament d'Alfred Nobel ?",
+      "optionA": "Prix Nobel de chimie",
+      "optionB": "Prix Nobel de littérature",
+      "optionC": "Prix Nobel de paix",
+      "optionD": "Prix Nobel d'économie",
+      "correctAnswer": "D",
+      "explanation": "Le prix d'économie n'existait pas dans le testament d'Alfred Nobel et a été ajouté en 1968 par la Banque de Suède. Les autres prix originaux datent de 1901."
+    },
+    {
+      "question": "Quel est le plus haut sommet d'Afrique ?",
+      "optionA": "Le Kilimandjaro",
+      "optionB": "Le Mont Kenya",
+      "optionC": "Le Mont Elgon",
+      "optionD": "Le Mont Kilimandjaro",
+      "correctAnswer": "A",
+      "explanation": "Le Kilimandjaro, culminant à 5 895 mètres, est le plus haut sommet d'Afrique. Le Mont Kenya atteint 5 199 mètres, le Mont Elgon 4 321 mètres, et le Mont Stanley (dans les Rwenzori) 5 109 mètres."
+    },
+    {
+      "question": "Dans quelle religion le concept de 'Karma' est-il central ?",
+      "optionA": "L'hindouisme",
+      "optionB": "Le bouddhisme",
+      "optionC": "L'hindouisme et le bouddhisme",
+      "optionD": "Le sikhisme",
+      "correctAnswer": "C",
+      "explanation": "Le concept de Karma est central à la fois dans l'hindouisme et le bouddhisme, où il désigne la loi de cause et effet des actions. Il existe également dans d'autres traditions indiennes comme le jaïnisme et le sikhisme, mais c'est dans ces deux religions qu'il est le plus développé."
+    },
+    {
+      "question": "Quelle est la capitale du Bhoutan ?",
+      "optionA": "Jakarta",
+      "optionB": "Thimphou",
+      "optionC": "Katmandou",
+      "optionD": "Dhaka",
+      "correctAnswer": "B",
+      "explanation": "Thimphou est la capitale et la plus grande ville du royaume himalayen du Bhoutan."
+    },
+    {
+      "question": "Quel fleuve traverse la ville de Paris ?",
+      "optionA": "Le Rhin",
+      "optionB": "La Loire",
+      "optionC": "La Seine",
+      "optionD": "Le Rhône",
+      "correctAnswer": "C",
+      "explanation": "La Seine traverse Paris en entrant par l'est et sortant par l'ouest, après avoir traversé la ville en formant un grand S."
+    },
+    {
+      "question": "Quel désert s'étend sur la plus grande superficie au monde ?",
+      "optionA": "Sahara",
+      "optionB": "Gobi",
+      "optionC": "Atacama",
+      "optionD": "Antarctique",
+      "correctAnswer": "D",
+      "explanation": "L'Antarctique est considéré comme un désert polaire et couvre environ 14 millions de kilomètres carrés, le plus grand désert de la Terre."
+    },
+    {
+      "question": "Quel écrivain a reçu le Prix Nobel de littérature en 2012 ?",
+      "optionA": "Haruki Murakami",
+      "optionB": "Mo Yan",
+      "optionC": "Orhan Pamuk",
+      "optionD": "Mario Vargas Llosa",
+      "correctAnswer": "B",
+      "explanation": "Mo Yan, écrivain chinois, a reçu le Prix Nobel de littérature en 2012 'qui avec l'hallucinatoire réalisme fusionne contes et histoire'."
+    },
+    {
+      "question": "Quel prix scientifique est considéré comme l'équivalent du 'Prix Nobel' pour les mathématiques ?",
+      "optionA": "Médaille Fields",
+      "optionB": "Prix Abel",
+      "optionC": "Prix Wolf",
+      "optionD": "Prix Nevanlinna",
+      "correctAnswer": "A",
+      "explanation": "La Médaille Fields est souvent considérée comme l'équivalent du Prix Nobel pour les mathématiques, bien qu'elle soit décernée tous les quatre ans à des mathématiciens de moins de 40 ans."
+    },
+    {
+      "question": "Quelle est la capitale du Canada ?",
+      "optionA": "Toronto",
+      "optionB": "Vancouver",
+      "optionC": "Ottawa",
+      "optionD": "Montréal",
+      "correctAnswer": "C",
+      "explanation": "Ottawa est la capitale du Canada, bien que Toronto et Montréal soient plus grandes villes et centres économiques majeurs."
+    },
+    {
+      "question": "Quel fleuve traverse la plus grande partie de l'Europe de l'Est ?",
+      "optionA": "Volga",
+      "optionB": "Danube",
+      "optionC": "Dniepr",
+      "optionD": "Don",
+      "correctAnswer": "A",
+      "explanation": "La Volga, avec ses 3 690 km, est le plus long fleuve d'Europe et traverse la Russie d'ouest en est, traversant plusieurs villes importantes comme Moscou et Volgograd."
+    },
+    {
+      "question": "Quel est le plus grand désert chaud du monde ?",
+      "optionA": "Sahara",
+      "optionB": "Arabie",
+      "optionC": "Kalahari",
+      "optionD": "Outback australien",
+      "correctAnswer": "A",
+      "explanation": "Le Sahara, en Afrique du Nord, couvre environ 9,2 millions de kilomètres carrés, faisant de lui le plus grand désert chaud du monde."
+    },
+    {
+      "question": "Dans quelle religion le concept de 'Nirvana' est-il central ?",
+      "optionA": "Hindouisme",
+      "optionB": "Bouddhisme",
+      "optionC": "Sikhisme",
+      "optionD": "Jaïnisme",
+      "correctAnswer": "B",
+      "explanation": "Le Nirvana est un concept central dans le bouddhisme, désignant l'état de libération du cycle des renaissances et de la souffrance."
+    },
+    {
+      "question": "Quel peintre a réalisé la fresque 'La Cène' ?",
+      "optionA": "Raphaël",
+      "optionB": "Michel-Ange",
+      "optionC": "Léonard de Vinci",
+      "optionD": "Caravage",
+      "correctAnswer": "C",
+      "explanation": "La Cène est une fresse de Léonard de Vinci peinte entre 1495 et 1498, représentant le dernier repas de Jésus avec ses apôtres."
+    },
+    {
+      "question": "Qui a reçu le premier Prix Nobel de la paix en 1901 ?",
+      "optionA": "Mahatma Gandhi",
+      "optionB": "Martin Luther King",
+      "optionC": "Frédéric Passy",
+      "optionD": "Woodrow Wilson",
+      "correctAnswer": "C",
+      "explanation": "Frédéric Passy, un économiste et pacifiste français, et Henry Dunant, fondateur de la Croix-Rouge, ont partagé le premier Prix Nobel de la paix en 1901."
+    },
+    {
+      "question": "Quel est le plus long fleuve d'Amérique du Sud ?",
+      "optionA": "Amazone",
+      "optionB": "Paraguay",
+      "optionC": "Orénoque",
+      "optionD": "Madeira",
+      "correctAnswer": "A",
+      "explanation": "L'Amazone, avec ses 6 992 km, est le plus long fleuve d'Amérique du Sud et le deuxième plus long du monde après le Nil."
+    }
+  ]
+}

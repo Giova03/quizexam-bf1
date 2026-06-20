@@ -1,0 +1,292 @@
+{
+  "bankKey": "concours-education-formation",
+  "title": "Concours Éducation & Formation",
+  "description": "Pédagogie, didactique, psychologie de l'éducation.",
+  "category": "Concours",
+  "subcategory": "Éducation",
+  "icon": "GraduationCap",
+  "color": "emerald",
+  "level": "LICENCE",
+  "subject": "Éducation: pédagogie, Piaget, Vygotski, Gardner, Bloom, évaluation formative/sommative, differentiated, classe inversée",
+  "questions": [
+    {
+      "question": "Selon la théorie piagétienne, quel stade de développement correspond à la capacité d'un enfant à raisonner de manière hypothético-déductive?",
+      "optionA": "Stade préopératoire",
+      "optionB": "Stade des opérations formelles",
+      "optionC": "Stade des opérations concrètes",
+      "optionD": "Stade sensorimoteur",
+      "correctAnswer": "B",
+      "explanation": "Le stade des opérations formelles (11-12 ans et plus) est caractérisé par la capacité de raisonnement hypothético-déductif, permettant de penser sur des abstractions et des possibilités."
+    },
+    {
+      "question": "Dans la théorie de Vygotski, le 'Zone Proximale de Développement' (ZPD) désigne:",
+      "optionA": "Le niveau de développement indépendant d'un apprenant",
+      "optionB": "La différence entre ce qu'un élève peut faire seul et ce qu'il peut réaliser avec l'aide d'un expert",
+      "optionC": "Le niveau maximal de développement qu'un élève peut atteindre sans aide",
+      "optionD": "La période de transition entre deux stades de développement",
+      "correctAnswer": "B",
+      "explanation": "La ZPD représente l'écart entre ce qu'un élève peut faire seul et ce qu'il peut accomplir avec l'aide d'un tuteur ou d'un pair plus expérimenté, selon Vygotski."
+    },
+    {
+      "question": "Selon la taxonomie de Bloom révisée, quelle compétence cognitive est située au niveau le plus élevé?",
+      "optionA": "Comprendre",
+      "optionB": "Appliquer",
+      "optionC": "Évaluer",
+      "optionD": "Créer",
+      "correctAnswer": "D",
+      "explanation": "La taxonomie de Bloom révisée (Anderson & Krathwohl, 2001) place 'Créer' comme le niveau cognitif le plus élevé, suivi de 'Évaluer', puis 'Appliquer', etc."
+    },
+    {
+      "question": "L'évaluation formative se distingue de l'évaluation sommative principalement par:",
+      "optionA": "Son caractère obligatoire",
+      "optionB": "Son objectif d'amélioration continue du processus d'apprentissage",
+      "optionC": "Son utilisation exclusive en début de cursus",
+      "optionD": "Son format uniquement écrit",
+      "correctAnswer": "B",
+      "explanation": "L'évaluation formative vise à fournir un retour continu pour ajuster l'enseignement et l'apprentissage, contrairement à l'évaluation sommative qui mesure les acquisitions à un moment précis."
+    },
+    {
+      "question": "La pédagogie de la classe inversée repose principalement sur:",
+      "optionA": "L'enseignement magistral prolongé",
+      "optionB": "Le remplacement des cours par des activités pratiques uniquement",
+      "optionC": "La transmission des connaissances hors du temps de classe et l'utilisation du temps de classe pour des interactions actives",
+      "optionD": "L'élimination complète des technologies de l'information et de la communication",
+      "correctAnswer": "C",
+      "explanation": "La classe inversée consiste à déplacer l'acquisition des connaissances individuelles hors du temps de classe (via des vidéos, lectures, etc.) et à utiliser le temps de classe pour des activités interactives, collaboratives et pratiques."
+    },
+    {
+      "question": "Selon Piaget, quel mécanisme permet à l'enfant de s'adapter à son environnement en modifiant ses schèmes existants?",
+      "optionA": "Assimilation",
+      "optionB": "Accommodation",
+      "optionC": "Équilibration",
+      "optionD": "Adaptation",
+      "correctAnswer": "B",
+      "explanation": "L'accommodation est le processus par lequel un individu modifie ses schèmes cognitifs existants pour intégrer de nouvelles informations, selon la théorie de Piaget."
+    },
+    {
+      "question": "Dans la théorie de Vygotski, le concept de 'Proximal Development' est étroitement lié à:",
+      "optionA": "L'apprentissage par la découverte",
+      "optionB": "L'apprentissage guidé par un expert",
+      "optionC": "L'apprentissage par l'essai-erreur",
+      "optionD": "L'apprentissage autonome",
+      "correctAnswer": "B",
+      "explanation": "Le développement proximal est intrinsèquement lié à l'apprentissage guidé par un expert ou un pair plus compétent, selon Vygotski."
+    },
+    {
+      "question": "La taxonomie originale de Bloom (1956) classait les objectifs éducatifs dans quel domaine?",
+      "optionA": "Domaine affectif uniquement",
+      "optionB": "Domaine psychomoteur uniquement",
+      "optionC": "Domaine cognitif, affectif et psychomoteur",
+      "optionD": "Domaine cognitif uniquement",
+      "correctAnswer": "D",
+      "explanation": "La taxonomie originale de Bloom se concentrait sur le domaine cognitif, bien qu'une taxonomie affective ait été développée plus tard par Krathwohl."
+    },
+    {
+      "question": "Selon la théorie de Gardner, quel type d'intelligence est prédominant chez un musicien virtuose?",
+      "optionA": "Intelligence logico-mathématique",
+      "optionB": "Intelligence spatiale",
+      "optionC": "Intelligence musicale",
+      "optionD": "Intelligence corporelle-kinesthésique",
+      "correctAnswer": "C",
+      "explanation": "L'intelligence musicale est l'une des huit intelligences identifiées par Gardner, caractérisant la capacité à comprendre, créer et interpréter la musique."
+    },
+    {
+      "question": "L'évaluation diagnostique est généralement réalisée:",
+      "optionA": "À la fin d'une unité d'apprentissage",
+      "optionB": "Pendant le processus d'apprentissage",
+      "optionC": "Au début d'un enseignement pour identifier les prérequis",
+      "optionD": "À la fin d'une année scolaire",
+      "correctAnswer": "C",
+      "explanation": "L'évaluation diagnostique est réalisée en début d'enseignement pour identifier les connaissances préalables, les forces et les faiblesses des apprenants."
+    },
+    {
+      "question": "La pédagogie de la classe inversée est efficace car elle:",
+      "optionA": "Réduit la charge de travail des enseignants",
+      "optionB": "Augmente le temps d'exposition directe aux contenus",
+      "optionC": "Permet un apprentissage personnalisé et active l'utilisation du temps de classe pour des interactions significatives",
+      "optionD": "Élimine le besoin de technologie",
+      "correctAnswer": "C",
+      "explanation": "La classe inversée permet un apprentissage personnalisé grâce aux ressources accessibles hors temps de classe, et optimise le temps de classe pour des interactions enrichissantes et des activités de plus haut niveau."
+    },
+    {
+      "question": "Selon Piaget, la conservation est acquise au stade:",
+      "optionA": "Sensorimoteur",
+      "optionB": "Préopératoire",
+      "optionC": "Opérations concrètes",
+      "optionD": "Opérations formelles",
+      "correctAnswer": "C",
+      "explanation": "La capacité de conservation, qui comprend la compréhension que certaines propriétés d'un objet restent constantes malgré les transformations externes, se développe au stade des opérations concrètes (7-11 ans)."
+    },
+    {
+      "question": "Dans la théorie de Vygotski, le 'régulateur psychologique' est un outil culturel qui:",
+      "optionA": "Est inné chez chaque individu",
+      "optionB": "Est acquis à travers l'interaction sociale",
+      "optionC": "Dépend uniquement des facteurs génétiques",
+      "optionD": "Se développe indépendamment du contexte culturel",
+      "correctAnswer": "B",
+      "explanation": "Selon Vygotski, les outils psychologiques (comme le langage) sont acquis à travers l'interaction sociale et permettent la régulation du comportement et de la pensée."
+    },
+    {
+      "question": "Dans la taxonomie de Bloom révisée, 'Analyser' est classé au niveau:",
+      "optionA": "Le plus élevé",
+      "optionB": "Au-dessus de 'Comprendre'",
+      "optionC": "Au-dessus de 'Évaluer'",
+      "optionD": "Au-dessus de 'Créer'",
+      "correctAnswer": "B",
+      "explanation": "La taxonomie révisée place 'Analyser' au troisième niveau, après 'Comprendre' et 'Appliquer', mais avant 'Évaluer' et 'Créer'."
+    },
+    {
+      "question": "Selon Gardner, l'intelligence interpersonnelle est la capacité à:",
+      "optionA": "Comprendre et gérer ses propres émotions",
+      "optionB": "Comprendre et interagir efficacement avec les autres",
+      "optionC": "Manipuler des objets avec habileté",
+      "optionD": "Utiliser la logique et les nombres",
+      "correctAnswer": "B",
+      "explanation": "L'intelligence interpersonnelle, selon Gardner, est la capacité à comprendre les intentions, motivations et désirs d'autrui et à interagir efficacement avec les autres."
+    },
+    {
+      "question": "L'évaluation sommative est principalement utilisée pour:",
+      "optionA": "Ajuster l'enseignement en cours de processus",
+      "optionB": "Mesurer les acquis à un moment précis, souvent pour la certification",
+      "optionC": "Identifier les difficultés d'apprentissage",
+      "optionD": "Évaluer les compétences sociales",
+      "correctAnswer": "B",
+      "explanation": "L'évaluation sommative vise à mesurer les résultats d'apprentissage à un moment donné, généralement à la fin d'une unité ou d'un cours, souvent pour la certification ou la notation."
+    },
+    {
+      "question": "La pédagogie de la classe inversée nécessite:",
+      "optionA": "Des ressources technologiques uniquement",
+      "optionB": "Une réorganisation complète des espaces physiques",
+      "optionC": "Une préparation approfondie des contenus et une redéfinition du rôle de l'enseignant",
+      "optionD": "Une augmentation du temps d'enseignement magistral",
+      "correctAnswer": "C",
+      "explanation": "La classe inversée nécessite une préparation approfondie des contenus pour l'apprentissage autonome et une redéfinition du rôle de l'enseignant en facilitateur et guide."
+    },
+    {
+      "question": "Selon Piaget, le processus par lequel les enfants intègrent de nouvelles informations dans leurs schèmes existants est appelé:",
+      "optionA": "Accommodation",
+      "optionB": "Équilibration",
+      "optionC": "Assimilation",
+      "optionD": "Adaptation",
+      "correctAnswer": "C",
+      "explanation": "L'assimilation est le processus par lequel les enfants intègrent de nouvelles informations dans leurs schèmes cognitifs existants, selon la théorie de Piaget."
+    },
+    {
+      "question": "Dans la théorie de Vygotski, le concept de 'scaffolding' (échafaudage) fait référence à:",
+      "optionA": "Un support temporaire fourni par un expert pour aider un apprenant à accomplir une tâche au-delà de son niveau actuel",
+      "optionB": "Une structure physique pour l'apprentissage",
+      "optionC": "Un type d'évaluation formative",
+      "optionD": "Une méthode d'enseignement direct",
+      "correctAnswer": "A",
+      "explanation": "Le scaffolding, ou échafaudage, désigne le support temporaire fourni par un tuteur pour aider un apprenant à accomplir une tâche qui serait autrement au-delà de sa capacité actuelle."
+    },
+    {
+      "question": "Selon la théorie piagétienne, quel processus permet à l'enfant de passer du stade préopératoire au stade des opérations concrètes?",
+      "optionA": "L'accommodation",
+      "optionB": "L'assimilation",
+      "optionC": "L'équilibration",
+      "optionD": "La centration",
+      "correctAnswer": "C",
+      "explanation": "L'équilibration est le processus qui permet à l'enfant de réorganiser ses schèmes cognitifs pour résoudre les contradictions entre ses connaissances et les nouvelles expériences, marquant la transition entre les stades développementaux."
+    },
+    {
+      "question": "Dans la théorie vygotskienne, quel concept décrit l'interaction sociale comme essentielle au développement cognitif?",
+      "optionA": "La zone proximale de développement",
+      "optionB": "L'internalisation",
+      "optionC": "La médiation culturelle",
+      "optionD": "Le développement spontané",
+      "correctAnswer": "A",
+      "explanation": "La zone proximale de développement (ZPD) est le concept clé qui décrit l'écart entre ce que l'apprenant peut faire seul et ce qu'il peut réaliser avec l'aide d'un tuteur ou de pairs plus expérimentés, soulignant le rôle social dans l'apprentissage."
+    },
+    {
+      "question": "Selon la taxonomie de Bloom, quel niveau cognitif représente la capacité à intégrer différentes parties pour former un tout cohérent?",
+      "optionA": "Analyser",
+      "optionB": "Évaluer",
+      "optionC": "Créer",
+      "optionD": "Comprendre",
+      "correctAnswer": "C",
+      "explanation": "Le niveau 'Créer' (ou 'Synthétiser' dans la version originale) dans la taxonomie de Bloom implique de combiner éléments et parties pour former un tout original, reorganisant ou réarrangeant des éléments en un nouveau modèle ou structure."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de l'évaluation formative par opposition à l'évaluation sommative?",
+      "optionA": "Elle a lieu en fin de période d'apprentissage",
+      "optionB": "Elle sert à certifier les acquis",
+      "optionC": "Elle vise à ajuster l'enseignement en cours de processus",
+      "optionD": "Elle attribue une note définitive",
+      "correctAnswer": "C",
+      "explanation": "L'évaluation formative se déroule pendant le processus d'apprentissage et a pour but de fournir des informations permettant d'ajuster l'enseignement et les apprentissages, contrairement à l'évaluation sommative qui certifie les acquis à la fin."
+    },
+    {
+      "question": "Selon Howard Gardner, quel type d'intelligence est le mieux représenté par un musicien accompli?",
+      "optionA": "Intelligence logico-mathématique",
+      "optionB": "Intelligence spatiale",
+      "optionC": "Intelligence musicale",
+      "optionD": "Intelligence kinesthésique",
+      "correctAnswer": "C",
+      "explanation": "L'intelligence musicale, selon Gardner, est l'une des huit intelligences initialement identifiées, caractérisée par la capacité à reconnaître, créer et reproduire des patterns musicaux."
+    },
+    {
+      "question": "Dans une classe inversée, quelle activité traditionnellement réalisée en classe se déplace généralement à domicile?",
+      "optionA": "Les évaluations",
+      "optionB": "La résolution d'exercices guidés",
+      "optionC": "Le cours magistral",
+      "optionD": "Le travail de groupe",
+      "correctAnswer": "C",
+      "explanation": "Dans la classe inversée, le cours magistral traditionnel (transmission de connaissances) est remplacé par des vidéos ou documents à consulter à domicile, libérant le temps de classe pour des activités interactives et collaboratives."
+    },
+    {
+      "question": "Selon Piaget, quel stade caractérise un enfant de 7 à 11 ans qui acquiert la capacité de raisonnement logique sur des objets concrets mais pas encore sur des abstractions?",
+      "optionA": "Stade sensorimoteur",
+      "optionB": "Stade préopératoire",
+      "optionC": "Stade des opérations concrètes",
+      "optionD": "Stade des opérations formelles",
+      "correctAnswer": "C",
+      "explanation": "Le stade des opérations concrètes (7-11 ans) se caractérise par l'acquisition du raisonnement logique appliqué à des situations concrètes et tangibles, mais l'enfant ne peut encore raisonner sur des hypothèses abstraites."
+    },
+    {
+      "question": "Dans la perspective vygotskienne, quel outil culturel est considéré comme le plus puissant pour le développement cognitif?",
+      "optionA": "Les jeux éducatifs",
+      "optionB": "Le langage",
+      "optionC": "Les manipulatives mathématiques",
+      "optionD": "Les schémas visuels",
+      "correctAnswer": "B",
+      "explanation": "Pour Vygotski, le langage est l'outil culturel le plus puissant car il permet non seulement la communication mais aussi la régulation de son propre comportement et la médiation de la pensée, jouant un rôle central dans le développement cognitif."
+    },
+    {
+      "question": "Selon la taxonomie révisée de Anderson et Krathwohl, quel niveau est immédiatement supérieur à 'Comprendre' dans la dimension cognitive?",
+      "optionA": "Appliquer",
+      "optionB": "Analyser",
+      "optionC": "Évaluer",
+      "optionD": "Créer",
+      "correctAnswer": "A",
+      "explanation": "Dans la taxonomie révisée, la hiérarchie des processus cognitifs va de: Rappeler > Comprendre > Appliquer > Analyser > Évaluer > Créer, 'Appliquer' étant donc immédiatement supérieur à 'Comprendre'."
+    },
+    {
+      "question": "Quelle est la principale limitation des théories de l'intelligence multiple de Gardner selon les critiques?",
+      "optionA": "Trop de types d'intelligence",
+      "optionB": "Manque de base empirique solide",
+      "optionC": "Trop restrictif pour les enfants précoces",
+      "optionD": "Inapplicable en milieu scolaire",
+      "correctAnswer": "B",
+      "explanation": "Les critiques pointent souvent le manque de base empirique solide pour distinguer clairement les différents types d'intelligence et leur indépendance, bien que Gardner soutienne que ses théories sont basées sur des études neurologiques et comportementales."
+    },
+    {
+      "question": "Dans une approche pédagogique basée sur la classe inversée, quel rôle principal revient à l'enseignant pendant le temps de classe?",
+      "optionA": "Transmettre connaissances",
+      "optionB": "Évaluer les acquis",
+      "optionC": "Faciliter et guider l'apprentissage",
+      "optionD": "Gérer le comportement",
+      "correctAnswer": "C",
+      "explanation": "Dans la classe inversée, l'enseignant devient un facilitateur qui guide l'apprentissage, répond aux questions, et aide les élèves à appliquer les connaissances acquises à domicile, plutôt que de transmettre activement du contenu."
+    },
+    {
+      "question": "Selon Piaget, quel mécanisme explique comment l'enfant intègre de nouvelles informations dans ses schèmes cognitifs existants?",
+      "optionA": "L'accommodation",
+      "optionB": "L'assimilation",
+      "optionC": "La centration",
+      "optionD": "La décentration",
+      "correctAnswer": "B",
+      "explanation": "L'assimilation est le processus par lequel l'enfant intègre de nouvelles informations dans ses schèmes cognitifs existants sans les modifier, tandis que l'accommodation implique de modifier ces schèmes pour intégrer de nouvelles informations."
+    }
+  ]
+}

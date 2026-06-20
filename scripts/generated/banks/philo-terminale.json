@@ -1,0 +1,328 @@
+{
+  "bankKey": "philo-terminale",
+  "title": "Philosophie - Terminale",
+  "description": "Grands courants, auteurs, concepts clés.",
+  "category": "Secondaire",
+  "subcategory": "Philosophie",
+  "icon": "Brain",
+  "color": "violet",
+  "level": "TERM",
+  "subject": "Philosophie: Platon, Aristote, Descartes, Kant, Rousseau, Nietzsche, Sartre, existentialisme, moral, politique, métaphysique",
+  "questions": [
+    {
+      "question": "Dans la République de Platon, quelle est la fonction principale des philosophes dans la cité idéale ?",
+      "optionA": "Gérer le commerce et l'économie",
+      "optionB": "Diriger la cité comme rois-philosophes",
+      "optionC": "Éduquer les enfants",
+      "optionD": "Développer les arts et la culture",
+      "correctAnswer": "B",
+      "explanation": "Selon Platon, les philosophes doivent diriger la cité car seule leur connaissance du Bien et du Vrai leur permet de gouverner avec justice, contrairement aux artisans ou aux commerçants qui sont spécialisés mais ne connaissent pas l'essence des choses."
+    },
+    {
+      "question": "Quelle est la conception aristotélicienne de la substance ?",
+      "optionA": "La matière première",
+      "optionB": "La forme pure",
+      "optionC": "L'union de la matière et de la forme",
+      "optionD": "L'acte pur",
+      "correctAnswer": "C",
+      "explanation": "Pour Aristote, la substance est l'union indissociable de matière (ce qui la constitue) et de forme (ce qui la définit et lui donne son essence). Contrairement à Platon, il n'existe pas de monde des formes séparé du monde matériel."
+    },
+    {
+      "question": "Dans la philosophie cartésienne, que signifie 'cogito ergo sum' ?",
+      "optionA": "Je pense, donc je doute",
+      "optionB": "Je doute, donc je pense",
+      "optionC": "Je pense, donc j'existe",
+      "optionD": "J'existe, donc je pense",
+      "correctAnswer": "C",
+      "explanation": "Le 'cogito ergo sum' (je pense, donc je suis) est la première certitude métaphysique de Descartes. Même si tout peut être mis en doute, le fait de douter prouve que je pense, et par conséquent que j'existe comme pensant."
+    },
+    {
+      "question": "Selon Kant, que signifie l'impératif catégorique ?",
+      "optionA": "Agir selon des maximes qui pourraient devenir des universelles",
+      "optionB": "Agir en fonction des désirs personnels",
+      "optionC": "Agir conformément aux coutumes sociales",
+      "optionD": "Agir pour maximiser le bonheur",
+      "correctAnswer": "A",
+      "explanation": "L'impératif catégorique de Kant exige d'agir uniquement selon des maximes (principes personnels) que l'on pourrait vouloir voir devenir des lois universelles. C'est un impératif inconditionné, contrairement à l'impératif hypothétique qui dépend des fins personnelles."
+    },
+    {
+      "question": "Dans le Contrat Social, quelle est la conception rousseauiste de la volonté générale ?",
+      "optionA": "La somme des volontés individuelles",
+      "optionB": "La volonté de l'homme fort",
+      "optionC": "La volonté qui tend à l'intérêt commun",
+      "optionD": "La volonté divine",
+      "correctAnswer": "C",
+      "explanation": "Pour Rousseau, la volonté générale n'est pas la somme des volontés individuelles, mais la volonté qui tend à l'intérêt commun et au bien de la communauté. Elle s'oppose à la volonté particulière qui cherche l'intérêt personnel."
+    },
+    {
+      "question": "Selon Nietzsche, quelle est la signification de l'expression 'Dieu est mort' ?",
+      "optionA": "La croyance en Dieu a disparu",
+      "optionB": "Le christianisme a triomphé",
+      "optionC": "L'athéisme est une erreur",
+      "optionD": "La morale traditionnelle est encore dominante",
+      "correctAnswer": "A",
+      "explanation": "L'expression 'Dieu est mort' chez Nietzsche signifie que la croyance en Dieu, fondement de la morale occidentale, a perdu sa crédibilité. Cela ne signifie pas que Dieu n'a jamais existé, mais que sa mort a des conséquences profondes sur la morale et la culture occidentales."
+    },
+    {
+      "question": "Dans l'existentialisme sartrien, que signifie l'expression 'l'existence précède l'essence' ?",
+      "optionA": "L'essence précède l'existence",
+      "optionB": "L'homme existe d'abord, puis se définit par ses actes",
+      "optionC": "L'homme est défini par sa nature avant même de naître",
+      "optionD": "L'existence humaine est déterminée par des forces extérieures",
+      "correctAnswer": "B",
+      "explanation": "Pour Sartre, 'l'existence précède l'essence' signifie que l'homme n'a pas de nature ou de destin prédéfini. Il existe d'abord, puis à travers ses choix et ses actions, il se définit et donne un sens à son existence."
+    },
+    {
+      "question": "Dans la Théétète, quelle est la définition platonicienne de la connaissance ?",
+      "optionA": "Une opinion vraie accompagnée de raison",
+      "optionB": "Une croyance certaine",
+      "optionC": "Une sensation",
+      "optionD": "Une intuition divine",
+      "correctAnswer": "A",
+      "explanation": "Platon définit la connaissance dans le Théétète comme 'une opinion vraie accompagnée de raison'. Cette définition s'oppose à la simple opinion (doxa) et à la sensation, qui ne sont pas considérées comme de la vérité authentique."
+    },
+    {
+      "question": "Quelle est la conception aristotélicienne de l'éthique ?",
+      "optionA": "L'éthique est l'étude des règles divines",
+      "optionB": "L'éthique est l'étude du bonheur humain (eudaimonia)",
+      "optionC": "L'éthique est l'étude des obligations légales",
+      "optionD": "L'éthique est l'étude des passions",
+      "correctAnswer": "B",
+      "explanation": "Pour Aristote, l'éthique est l'étude de la manière de vivre bien pour atteindre le bonheur humain (eudaimonia), qui est une vie conforme à la vertu et à la raison, dans le cadre d'une communauté politique."
+    },
+    {
+      "question": "Dans la Méditation métaphysique, quelle est la première certitude établie par Descartes ?",
+      "optionA": "L'existence de Dieu",
+      "optionB": "L'existence du monde extérieur",
+      "optionC": "L'existence de soi",
+      "optionD": "L'existence du mal",
+      "correctAnswer": "C",
+      "explanation": "La première certitude établie par Descartes dans la Méditation métaphysique est l'existence de soi ('cogito ergo sum'). C'est à partir de cette certitude qu'il parviendra ensuite à prouver l'existence de Dieu et du monde extérieur."
+    },
+    {
+      "question": "Selon Kant, que sont les jugements esthétiques ?",
+      "optionA": "Des jugements basés sur des règles logiques",
+      "optionB": "Des jugements de goût basés sur le sentiment",
+      "optionC": "Des jugements moraux",
+      "optionD": "Des jugements scientifiques",
+      "correctAnswer": "B",
+      "explanation": "Pour Kant, les jugements esthétiques sont des jugements de goût basés sur le sentiment de plaisir ou de déplaisir, universels sans être conceptuels. Ils sont disintersessés, c'est-à-dire qu'ils ne dépendent ni des désirs personnels ni de l'utilité."
+    },
+    {
+      "question": "Dans le Discours sur l'origine et les fondements de l'inégalité parmi les hommes, quelle est la thèse centrale de Rousseau ?",
+      "optionA": "L'homme est naturellement inégal",
+      "optionB": "L'inégalité sociale est légitime",
+      "optionC": "L'inégalité sociale est artificielle et injuste",
+      "optionD": "L'inégalité est nécessaire à la survie de l'humanité",
+      "correctAnswer": "C",
+      "explanation": "Rousseau soutient que dans l'état de nature, les hommes étaient à peu près égaux. L'inégalité sociale est un produit de l'évolution de la société, de la propriété privée et des institutions artificielles, et est injuste."
+    },
+    {
+      "question": "Selon Nietzsche, quelle est la signification du 'Surhomme' (Übermensch) ?",
+      "optionA": "Un être supérieur par naissance",
+      "optionB": "Un être qui crée ses propres valeurs",
+      "optionC": "Un être qui rejette toute morale",
+      "optionD": "Un être qui atteint l'illumination",
+      "correctAnswer": "B",
+      "explanation": "Le 'Surhomme' nietzschéen n'est pas un être biologique supérieur, mais un être qui a dépassé la morale traditionnelle et crée ses propres valeurs. Il représente l'humanité qui se surpasse elle-même."
+    },
+    {
+      "question": "Dans l'existentialisme, que signifie la 'mauvaise foi' selon Sartre ?",
+      "optionA": "La sincérité excessive",
+      "optionB": "Le refus de prendre des responsabilités",
+      "optionC": "L'auto-duperie qui consiste à fuir la liberté",
+      "optionD": "La croyance en des valeurs objectives",
+      "correctAnswer": "C",
+      "explanation": "La 'mauvaise foi' chez Sartre est une forme d'auto-duperie par laquelle l'individu fuit sa liberté radicale et sa responsabilité en se comportant comme un objet déterminé plutôt qu comme un être libre qui se définit par ses choix."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre éthique déontologique et éthique des vertus ?",
+      "optionA": "L'éthique déontologique est centrée sur les actions, l'éthique des vertus sur le caractère",
+      "optionB": "L'éthique déontologique est centrée sur le caractère, l'éthique des vertus sur les actions",
+      "optionC": "Les deux sont identiques",
+      "optionD": "L'éthique déontologique est religieuse, l'éthique des vertus est laïque",
+      "correctAnswer": "A",
+      "explanation": "L'éthique déontologique (comme celle de Kant) est centrée sur les règles morales et les actions conformes au devoir, tandis que l'éthique des vertus (héritée d'Aristote) est centrée sur le développement du caractère et la pratique des vertus."
+    },
+    {
+      "question": "Dans la Politique d'Aristote, quelle est la meilleure forme de gouvernement ?",
+      "optionA": "La monarchie",
+      "optionB": "L'aristocratie",
+      "optionC": "La politeia (constitution mixte)",
+      "optionD": "La démocratie",
+      "correctAnswer": "C",
+      "explanation": "Aristote considère que la politeia, une constitution mixte qui combine des éléments monarchiques, aristocratiques et démocratiques, est la meilleure forme de gouvernement pratique car elle équilibre les intérêts des différentes classes."
+    },
+    {
+      "question": "Selon Descartes, quelle est la fonction de la méthode douteuse ?",
+      "optionA": "Détruire toutes les croyances",
+      "optionB": "Trouver une base certaine pour la connaissance",
+      "optionC": "Démontrer l'existence de Dieu",
+      "optionD": "Rejeter la science",
+      "correctAnswer": "B",
+      "explanation": "La méthode douteuse de Descartes a pour fonction de mettre en doute toutes les croyances pour trouver une base indubitable à la connaissance. Cette base est le 'cogito', qui permettra ensuite de reconstruire un système de connaissances certaines."
+    },
+    {
+      "question": "Dans la Critique de la raison pratique, que signifie pour Kant la liberté ?",
+      "optionA": "La liberté d'agir selon ses désirs",
+      "optionB": "La liberté de suivre les coutumes",
+      "optionC": "La capacité de se déterminer par la raison pure pratique",
+      "optionD": "La liberté de violer les lois morales",
+      "correctAnswer": "C",
+      "explanation": "Pour Kant, la liberté n'est pas l'absence de contraintes, mais la capacité de se déterminer par la raison pure pratique, c'est-à-dire d'agir selon l'impératif catégorique sans être déterminé par des causes sensibles."
+    },
+    {
+      "question": "Dans le Discours sur la science et les arts, quelle est la thèse de Rousseau sur l'influence des sciences et des arts ?",
+      "optionA": "Ils améliorent nécessairement la morale",
+      "optionB": "Ils corrompent la vertu",
+      "optionC": "Ils sont neutres moralement",
+      "optionD": "Ils sont réservés à une élite",
+      "correctAnswer": "B",
+      "explanation": "Dans ce premier Discours, Rousseau soutient que les sciences et les arts, loin d'améliorer la moralité, la corrompent en favorisant la vaine gloire, l'envie et le luxe, et en éloignant les hommes de la simplicité vertueuse de l'état de nature."
+    },
+    {
+      "question": "Selon Nietzsche, quelle est la signification de l'éternel retour ?",
+      "optionA": "Une croyance religieuse",
+      "optionB": "Un test de la valeur des actions",
+      "optionC": "Une théorie scientifique",
+      "optionD": "Une métaphore de la réincarnation",
+      "correctAnswer": "B",
+      "explanation": "L'éternel retour chez Nietzsche n'est pas une théorie cosmologique, mais un test moral : si vous deviez revivre exactement la même vie une infinité de fois, seriez-vous capable d'approuver vos choix ? C'est un moyen d'évaluer la valeur de ses actions."
+    },
+    {
+      "question": "Selon Platon, quelle est la nature de la réalité accessible par la connaissance rationnelle ?",
+      "optionA": "Le monde sensible des apparences",
+      "optionB": "Le monde intelligible des Idées",
+      "optionC": "Le monde empirique tel que perçu par les sens",
+      "optionD": "Le monde des mathématiques et de la logique formelle",
+      "correctAnswer": "B",
+      "explanation": "Platon distingue deux mondes : le monde sensible (apparent) et le monde intelligible (réel). La connaissance véritable ne concerne que le monde des Idées, accessible par la raison et la dialectique, et non par les sens."
+    },
+    {
+      "question": "Quelle est la conception de l'âme chez Aristote ?",
+      "optionA": "L'âme est une substance immatérielle qui survit au corps",
+      "optionB": "L'âme est la forme du corps, son essence fonctionnelle",
+      "optionC": "L'âme est une entité séparée qui préexiste au corps",
+      "optionD": "L'âme est une illusion due à l'activité du cerveau",
+      "correctAnswer": "B",
+      "explanation": "Pour Aristote, l'âme n'est pas une substance séparée mais la forme (l'essence fonctionnelle) du corps. L'âme anime le corps et détermine ses fonctions vitiles. C'est une conception hylomorphiste où matière et forme sont inséparables."
+    },
+    {
+      "question": "Dans le 'Discours de la méthode', quelle est la première certitude établie par Descartes ?",
+      "optionA": "L'existence de Dieu",
+      "optionB": "La réalité du monde extérieur",
+      "optionC": "La perfection mathématique",
+      "optionD": "Le cogito (je pense, donc je suis)",
+      "correctAnswer": "D",
+      "explanation": "Descartes établit comme première certitude le 'cogito' : même si tout le reste peut être une illusion, le fait de penser prouve l'existence du penseur. C'est le point de départ de sa philosophie."
+    },
+    {
+      "question": "Selon Kant, que signifie l'expression 'Copernicien' de sa révolution philosophique ?",
+      "optionA": "La rotation de la Terre autour du Soleil",
+      "optionB": "L'idée que les objets déterminent notre connaissance",
+      "optionC": "L'idée que notre connaissance détermine les objets",
+      "optionD": "La séparation définitive entre science et métaphysique",
+      "correctAnswer": "C",
+      "explanation": "Kant compare sa révolution philosophique à la révolution copernicienne : comme Copernic a fait tourner les objets autour du sujet (l'observateur), Kant fait tourner les objets de notre connaissance autour de nos facultés cognitives."
+    },
+    {
+      "question": "Dans 'Le Contrat Social', quelle est la souveraineté selon Rousseau ?",
+      "optionA": "Elle appartient au monarque absolu",
+      "optionB": "Elle appartient à l'ensemble du peuple",
+      "optionC": "Elle appartient à l'aristocratie éclairée",
+      "optionD": "Elle appartient à la bourgeoisie marchande",
+      "correctAnswer": "B",
+      "explanation": "Pour Rousseau, la souveraineté est inaliénable et indivisible, et appartient à la volonté générale du peuple. Le peuple souverain délègue son pouvoir aux gouvernants, mais conserve sa souveraineté."
+    },
+    {
+      "question": "Que signifie l'expression 'Dieu est mort' chez Nietzsche ?",
+      "optionA": "Nietzsche nie l'existence de Dieu",
+      "optionB": "La mort de Dieu signifie la fin de toute morale",
+      "optionC": "La civilisation occidentale a perdu foi en Dieu",
+      "optionD": "L'athéisme est la seule position philosophique valable",
+      "correctAnswer": "C",
+      "explanation": "L'expression 'Dieu est mort' chez Nietzsche signifie que la croyance en Dieu a perdu sa crédibilité dans la culture occidentale, ce qui entraîne une crise des valeurs et nécessite la création de nouvelles valeurs."
+    },
+    {
+      "question": "Quelle est la conception de la liberté chez Sartre ?",
+      "optionA": "La liberté est une illusion due à notre ignorance des déterminismes",
+      "optionB": "La liberté est la capacité à choisir malgré les contraintes extérieures",
+      "optionC": "L'homme est condamné à être libre",
+      "optionD": "La liberté n'existe que dans le cadre de la société démocratique",
+      "correctAnswer": "C",
+      "explanation": "Sartre affirme que 'l'homme est condamné à être libre' car il n'y a pas de déterminisme qui puisse justifier nos choix. Nous sommes responsables de nos actions sans excuses, même dans des situations contraignantes."
+    },
+    {
+      "question": "Quel est le principe central de l'existentialisme ?",
+      "optionA": "L'existence précède l'essence",
+      "optionB": "L'essence précède l'existence",
+      "optionC": "L'existence et l'essence sont une seule et même chose",
+      "optionD": "L'existence et l'essence sont indépendantes l'une de l'autre",
+      "correctAnswer": "A",
+      "explanation": "Le principe central de l'existentialisme, formulé par Sartre, est que 'l'existence précède l'essence', contrairement aux objets fabriqués où l'essence précède l'existence. L'homme existe d'abord, puis se définit par ses choix."
+    },
+    {
+      "question": "Selon Kant, quelle est la forme universelle de la loi morale ?",
+      "optionA": "Agir toujours pour son propre intérêt",
+      "optionB": "Agir conformément aux coutumes sociales",
+      "optionC": "Agir de telle sorte que la maxime de ton action puisse devenir une loi universelle",
+      "optionD": "Agir pour le plus grand nombre",
+      "correctAnswer": "C",
+      "explanation": "Kant formule l'impératif catégorique : 'Agis seulement selon cette maxime par laquelle tu peux en même temps vouloir qu'elle devienne une loi universelle'. C'est la forme universelle de la loi morale."
+    },
+    {
+      "question": "Dans 'La République', quelle est la définition de la justice chez Platon ?",
+      "optionA": "La justice est l'obéissance aux lois de la cité",
+      "optionB": "La justice est l'égalité de traitement pour tous",
+      "optionC": "La justice est chacun faisant son travail propre selon sa nature",
+      "optionD": "La justice est le plus grand bien pour le plus grand nombre",
+      "correctAnswer": "C",
+      "explanation": "Platon définit la justice comme 'l'affaire de chacun faisant son propre travail', c'est-à-dire que chaque partie de l'âme et de la cité accomplit la fonction qui lui est propre sans empiéter sur celle des autres."
+    },
+    {
+      "question": "Quelle est la conception du bonheur chez Aristote ?",
+      "optionA": "Le bonheur est une vie de plaisir sans douleur",
+      "optionB": "Le bonheur est une vie de contemplation rationnelle",
+      "optionC": "Le bonheur est une vie de vertu et d'activité conforme à la raison",
+      "optionD": "Le bonheur est une vie de richesse et de pouvoir",
+      "correctAnswer": "C",
+      "explanation": "Pour Aristote, le bonheur (eudaimonia) est une vie de vertu et d'activité conforme à la raison, qui combine la vie politique active et la vie contemplative, mais avec une préférence pour la contemplation comme activité suprême de l'homme."
+    },
+    {
+      "question": "Selon Rousseau, quelle est la cause principale de la décadence morale de l'humanité ?",
+      "optionA": "Le développement de la science et des arts",
+      "optionB": "L'institution de la propriété privée",
+      "optionC": "L'émergence de la société civile et de l'inégalité",
+      "optionD": "La perte de la religion traditionnelle",
+      "correctAnswer": "C",
+      "explanation": "Rousseau voit dans l'émergence de la société civile et de l'inégalité la cause principale de la décadence morale de l'humanité, qui a corrompu la nature bonne originelle de l'homme."
+    },
+    {
+      "question": "Que signifie l'expression 'Volonté de puissance' chez Nietzsche ?",
+      "optionA": "Le désir de domination politique",
+      "optionB": "L'instinct de survie biologique",
+      "optionC": "La tendance fondamentale à étendre son pouvoir et à résister à la réduction",
+      "optionD": "La quête de pouvoir économique",
+      "correctAnswer": "C",
+      "explanation": "La 'Volonté de puissance' est pour Nietzsche la tendance fondamentale à étendre son pouvoir, à résister à la réduction, à dominer et à s'affirmer. C'est un concept central qui remplace la morale traditionnelle par une évaluation des valeurs basée sur la puissance."
+    },
+    {
+      "question": "Selon Kant, que sont les catégories de l'entendement ?",
+      "optionA": "Les principes de la logique formelle",
+      "optionB": "Les concepts fondamentaux de la métaphysique",
+      "optionC": "Les structures a priori de la pensée qui organisent l'expérience",
+      "optionD": "Les intuitions pures de l'espace et du temps",
+      "correctAnswer": "C",
+      "explanation": "Pour Kant, les catégories de l'entendement sont des concepts a priori qui structurent notre expérience et permettent de comprendre le monde phénoménal. Elles incluent l'unité, la pluralité, la causalité, etc."
+    },
+    {
+      "question": "Dans 'L'Être et le Néant', quelle est la relation fondamentale de l'homme avec les autres selon Sartre ?",
+      "optionA": "L'amour comme fusion des consciences",
+      "optionB": "La reconnaissance mutuelle comme fondement de la morale",
+      "optionC": "Le regard de l'autre qui me transforme en objet",
+      "optionD": "La communication comme moyen de compréhension mutuelle",
+      "correctAnswer": "C",
+      "explanation": "Sartre décrit le regard de l'autre comme une expérience fondamentale où l'autre me transforme en objet, me dépossédant de ma liberté. Cette relation est conflictuelle et constitue un des aspects centraux de la condition humaine."
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "bankKey": "concours-btp-securite",
+  "title": "Concours BTP & Sécurité",
+  "description": "Bâtiment, génie civil, travaux publics, sécurité.",
+  "category": "Concours",
+  "subcategory": "BTP & Sécurité",
+  "icon": "HardHat",
+  "color": "sky",
+  "level": "LICENCE",
+  "subject": "BTP et sécurité: béton armé, résistance des matériaux, fondations, EPI, sécurité chantier, topographie, loi de Blondel",
+  "questions": [
+    {
+      "question": "Quelle est la contrainte de service maximale admissible pour l'acier d'armature dans les sections de béton armé selon l'Eurocode 2?",
+      "optionA": "500 MPa",
+      "optionB": "400 MPa",
+      "optionC": "500/1.15 MPa",
+      "optionD": "435 MPa",
+      "correctAnswer": "C",
+      "explanation": "La contrainte de service maximale est la limite d'élasticité caractéristique (500 MPa pour les aciers haute adhérence) divisée par le coefficient partiel de sécurité (1.15)."
+    },
+    {
+      "question": "Quelle est la formule de la contrainte de compression dans un béton sous sollicitation centrée?",
+      "optionA": "σ = N/(b×h)",
+      "optionB": "σ = M×v/I",
+      "optionC": "σ = N/A",
+      "optionD": "σ = M/I×y",
+      "correctAnswer": "C",
+      "explanation": "La contrainte de compression dans un béton sous sollicitation centrée est égale à l'effort normal divisé par la section de béton (σ = N/A)."
+    },
+    {
+      "question": "Quelle est la profondeur minimale d'ancrage d'un barreau d'armature dans un massif de béton?",
+      "optionA": "25 fois le diamètre de l'armature",
+      "optionB": "40 fois le diamètre de l'armature",
+      "optionC": "30 fois le diamètre de l'armature",
+      "optionD": "50 fois le diamètre de l'armature",
+      "correctAnswer": "B",
+      "explanation": "La profondeur d'ancrage minimale est généralement de 40 fois le diamètre de l'armature pour les aciers HA, selon l'Eurocode 2."
+    },
+    {
+      "question": "Quelle est la valeur du module de déformation longitudinale instantanée du béton à 28 jours?",
+      "optionA": "30 GPa",
+      "optionB": "11000√(fcj/10) MPa",
+      "optionC": "21000 MPa",
+      "optionD": "11000 MPa",
+      "correctAnswer": "B",
+      "explanation": "Le module de déformation longitudinale instantanée est donné par la formule Eij = 11000√(fcj/10) MPa, où fcj est la résistance caractéristique en compression à j jours."
+    },
+    {
+      "question": "Quelle est la méthode de calcul des fondations superficielles selon l'Eurocode 7?",
+      "optionA": "Méthode des valeurs caractéristiques",
+      "optionB": "Méthode des états limites ultimes (ELU)",
+      "optionC": "Méthode des états limites de service (ELS)",
+      "optionD": "Méthode des valeurs de calcul",
+      "correctAnswer": "B",
+      "explanation": "L'Eurocode 7 prescrit le calcul des fondations selon la méthode des états limites ultimes (ELU) pour la stabilité et la résistance."
+    },
+    {
+      "question": "Quelle est la règle de Blondel pour les escaliers?",
+      "optionA": "2H + G = 63 cm",
+      "optionB": "2H + G = 60 cm",
+      "optionC": "H + G = 45 cm",
+      "optionD": "3H + 2G = 85 cm",
+      "correctAnswer": "A",
+      "explanation": "La règle de Blondel stipule que 2 fois la hauteur de marche (H) plus la giron (G) doit être égale à 63 cm pour un confort optimal."
+    },
+    {
+      "question": "Quelle est la contrainte admissible du béton en compression simple selon l'Eurocode 2?",
+      "optionA": "0.85×fcj/γc",
+      "optionB": "fcj/γc",
+      "optionC": "0.45×fcj",
+      "optionD": "0.6×fcj",
+      "correctAnswer": "A",
+      "explanation": "La contrainte admissible est égale à 0.85 fois la résistance caractéristique divisée par le coefficient partiel de sécurité (γc généralement égal à 1.5)."
+    },
+    {
+      "question": "Quelle est la catégorie d'EPI obligatoire pour un travailleur en hauteur sur un chantier?",
+      "optionA": "EPI de catégorie I",
+      "optionB": "EPI de catégorie II",
+      "optionC": "EPI de catégorie III",
+      "optionD": "EPI de catégorie IV",
+      "correctAnswer": "C",
+      "explanation": "Les EPI de catégorie III sont ceux qui protègent contre des risques mortels, comme les chutes de hauteur, et nécessitent une vérification individuelle avant chaque utilisation."
+    },
+    {
+      "question": "Quelle est la méthode de détermination des pressions latéraales des terres selon l'Eurocode 7?",
+      "optionA": "Méthode de Rankine",
+      "optionB": "Méthode de Coulomb",
+      "optionC": "Méthode des états limites",
+      "optionD": "Méthode des pressions équivalentes",
+      "correctAnswer": "C",
+      "explanation": "L'Eurocode 7 prescrit l'utilisation de la méthode des états limites pour le calcul des pressions latérales des terres."
+    },
+    {
+      "question": "Quelle est la règle de la main droite pour déterminer le sens des efforts dans une poutre en treillis?",
+      "optionA": "Pouce sens de l'effort, index sens de la poutre, majeur perpendiculaire",
+      "optionB": "Index sens de l'effort, pouce sens de la poutre, majeur perpendiculaire",
+      "optionC": "Majeur sens de l'effort, pouce sens de la poutre, index perpendiculaire",
+      "optionD": "Pouce sens de l'effort, majeur sens de la poutre, index perpendiculaire",
+      "correctAnswer": "A",
+      "explanation": "La règle de la main droite permet de déterminer le sens des efforts dans une poutre en treillis: pouce dans le sens de l'effort, index dans le sens de la poutre, majeur perpendiculaire."
+    },
+    {
+      "question": "Quelle est la valeur du coefficient de Poisson du béton?",
+      "optionA": "0.2",
+      "optionB": "0.15",
+      "optionC": "0.3",
+      "optionD": "0.25",
+      "correctAnswer": "A",
+      "explanation": "Le coefficient de Poisson du béton est généralement pris égal à 0.2 pour les calculs courants."
+    },
+    {
+      "question": "Quelle est la distance minimale entre deux armatures longitudinales dans une poutre en béton armé?",
+      "optionA": "Diamètre de l'armature maximale",
+      "optionB": "1.5 fois le diamètre des granulats",
+      "optionC": "25 mm",
+      "optionD": "Max(d/2, 20 mm)",
+      "correctAnswer": "D",
+      "explanation": "La distance minimale entre deux armatures longitudinales doit être au égale au maximum de la moitié du diamètre des armatures et 20 mm."
+    },
+    {
+      "question": "Quelle est la méthode de nivellement direct utilisée pour déterminer les altitudes des points sur un chantier?",
+      "optionA": "Nivellement géométrique",
+      "optionB": "Nivellement trigonométrique",
+      "optionC": "Nivellement barométrique",
+      "optionD": "Nivellement stéréophotogrammétrique",
+      "correctAnswer": "A",
+      "explanation": "Le nivellement géométrique est la méthode directe utilisée pour déterminer les altitudes des points sur un chantier à l'aide d'un niveau et d'une mire."
+    },
+    {
+      "question": "Quelle est la formule de la flèche maximale d'une poutre en béton armé sous charge uniformément répartie?",
+      "optionA": "f = (5×q×L^4)/(384×E×I)",
+      "optionB": "f = (q×L^4)/(8×E×I)",
+      "optionC": "f = (q×L^3)/(48×E×I)",
+      "optionD": "f = (5×q×L^3)/(384×E×I)",
+      "correctAnswer": "A",
+      "explanation": "La flèche maximale d'une poutre en béton armé sous charge uniformément répartie est donnée par la formule f = (5×q×L^4)/(384×E×I)."
+    },
+    {
+      "question": "Quelle est la règle de sécurité concernant l'espacement maximal des étais dans un plancher en béton avant décoffrage?",
+      "optionA": "Espacement maximal de 2 m",
+      "optionB": "Espacement maximal de 1.5 m",
+      "optionC": "Espacement maximal de 3 m",
+      "optionD": "Espacement maximal de 1 m",
+      "correctAnswer": "B",
+      "explanation": "L'espacement maximal des étais dans un plancher en béton avant décoffrage est généralement de 1.5 m pour assurer la sécurité."
+    },
+    {
+      "question": "Quelle est la formule de la contrainte de cisaillement dans une poutre en béton armé?",
+      "optionA": "τ = V/(b×d)",
+      "optionB": "τ = V/(b×z)",
+      "optionC": "τ = V/(b×h)",
+      "optionD": "τ = V/(b×j)",
+      "correctAnswer": "A",
+      "explanation": "La contrainte de cisaillement dans une poutre en béton armé est généralement calculée par τ = V/(b×d), où V est l'effort tranchant, b la largeur et d la hauteur utile."
+    },
+    {
+      "question": "Quelle est la règle de la main gauche pour déterminer le sens des efforts dans une poutre console?",
+      "optionA": "Pouce sens de l'effort, index sens de la poutre, majeur perpendiculaire",
+      "optionB": "Index sens de l'effort, pouce sens de la poutre, majeur perpendiculaire",
+      "optionC": "Majeur sens de l'effort, pouce sens de la poutre, index perpendiculaire",
+      "optionD": "Pouce sens de l'effort, majeur sens de la poutre, index perpendiculaire",
+      "correctAnswer": "B",
+      "explanation": "La règle de la main gauche permet de déterminer le sens des efforts dans une poutre console: index dans le sens de l'effort, pouce dans le sens de la poutre, majeur perpendiculaire."
+    },
+    {
+      "question": "Quelle est la valeur minimale du pourcentage d'armatures longitudinales dans une poutre en béton armé?",
+      "optionA": "0.10%",
+      "optionB": "0.15%",
+      "optionC": "0.20%",
+      "optionD": "0.25%",
+      "correctAnswer": "A",
+      "explanation": "Le pourcentage minimal d'armatures longitudinales dans une poutre en béton armé est généralement de 0.10% de la section bétonnée."
+    },
+    {
+      "question": "Quelle est la méthode de détermination de la stabilité des pentes selon l'Eurocode 7?",
+      "optionA": "Méthode des équilibres limites",
+      "optionB": "Méthode des éléments finis",
+      "optionC": "Méthode des coefficients de sécurité partiels",
+      "optionD": "Méthode des valeurs caractéristiques",
+      "correctAnswer": "A",
+      "explanation": "L'Eurocode 7 prescrit l'utilisation de la méthode des équilibres limites pour le calcul de la stabilité des pentes."
+    },
+    {
+      "question": "Quelle est la formule de la contrainte de traction dans une section en béton armé sous flexion?",
+      "optionA": "σ = M/(b×d^2)",
+      "optionB": "σ = M/(A×s)",
+      "optionC": "σ = M/(b×h^2)",
+      "optionD": "σ = M/(b×z)",
+      "correctAnswer": "D",
+      "explanation": "La contrainte de traction dans une section en béton armé sous flexion est généralement calculée par σ = M/(b×z), où M est le moment fléchissant, b la largeur et z le bras de levier."
+    },
+    {
+      "question": "Quelle est la contrainte de service maximale admissible pour un acier d'armature de nuance FeE500 selon l'Eurocode 2?",
+      "optionA": "500 MPa",
+      "optionB": "435 MPa",
+      "optionC": "450 MPa",
+      "optionD": "400 MPa",
+      "correctAnswer": "B",
+      "explanation": "Selon l'Eurocode 2, la contrainte de service maximale admissible pour un acier d'armature de nuance FeE500 est de 435 MPa (500 MPa / 1,15)."
+    },
+    {
+      "question": "Dans une poutre en béton armé, quel est le rôle des armatures transversales (cadres et épingles)?",
+      "optionA": "Résister aux efforts de traction",
+      "optionB": "Maintenir les armatures longitudinales en position",
+      "optionC": "Résister aux efforts tranchants",
+      "optionD": "Augmenter la résistance à la compression du béton",
+      "correctAnswer": "C",
+      "explanation": "Les armatures transversales (cadres et épingles) sont principalement destinées à résister aux efforts tranchants et à maintenir les armatures longitudinales en position."
+    },
+    {
+      "question": "Quelle est la contrainte de compression limite pour un béton de résistance caractéristique fc28 = 25 MPa selon l'Eurocode 2?",
+      "optionA": "16,7 MPa",
+      "optionB": "20,8 MPa",
+      "optionC": "25 MPa",
+      "optionD": "14,2 MPa",
+      "correctAnswer": "A",
+      "explanation": "La contrainte de compression limite est calculée comme fc28/1,5. Pour fc28 = 25 MPa, cela donne 25/1,5 = 16,7 MPa."
+    },
+    {
+      "question": "Quelle est la profondeur minimale d'ancrage pour un acier de diamètre 16 mm dans un béton de résistance caractéristique 25 MPa?",
+      "optionA": "16 cm",
+      "optionB": "32 cm",
+      "optionC": "48 cm",
+      "optionD": "64 cm",
+      "correctAnswer": "B",
+      "explanation": "La profondeur d'ancrage minimale est calculée comme φ × 20, où φ est le diamètre de l'acier. Pour φ = 16 mm, cela donne 16 × 20 = 320 mm = 32 cm."
+    },
+    {
+      "question": "Quel est le module de déformation longitudinale instantanée du béton (Eij) pour un béton de résistance caractéristique fc28 = 30 MPa?",
+      "optionA": "32 000 MPa",
+      "optionB": "30 000 MPa",
+      "optionC": "27 000 MPa",
+      "optionD": "35 000 MPa",
+      "correctAnswer": "A",
+      "explanation": "Selon l'Eurocode 2, Eij = 11000 × (fc28/10)^0,3. Pour fc28 = 30 MPa, cela donne 11000 × (30/10)^0,3 = 11000 × 1,390 = 32 290 MPa ≈ 32 000 MPa."
+    },
+    {
+      "question": "Quelle est la charge limite d'un pieu isolé de diamètre 80 cm, longueur 15 m, dans un sol de capacité portante 0,5 MPa?",
+      "optionA": "250 kN",
+      "optionB": "500 kN",
+      "optionC": "1000 kN",
+      "optionD": "1500 kN",
+      "correctAnswer": "C",
+      "explanation": "La charge limite peut être estimée par Qlim = A × q, où A est la section du pieu (π×0,4² = 0,503 m²) et q la capacité portante (0,5 MPa). Qlim = 0,503 × 0,5 = 0,25 MN = 250 kN. Cependant, il faut ajouter la résistance du fût, ce qui donne environ 1000 kN pour ces dimensions."
+    },
+    {
+      "question": "Quelle est la contrainte de traction admissible dans un tirant en acier S235 selon l'Eurocode 3?",
+      "optionA": "235 MPa",
+      "optionB": "215 MPa",
+      "optionC": "360 MPa",
+      "optionD": "195 MPa",
+      "correctAnswer": "B",
+      "explanation": "La contrainte de traction admissible pour l'acier S235 est 235/1,1 = 214 MPa ≈ 215 MPa selon l'Eurocode 3."
+    },
+    {
+      "question": "Quel EPI est obligatoire pour un travailleur sur un toit incliné à 35°?",
+      "optionA": "Casque et chaussures de sécurité",
+      "optionB": "Casque, chaussures de sécurité et harnais",
+      "optionC": "Casque, chaussures de sécurité et lunettes",
+      "optionD": "Casque, chaussures de sécurité et gants",
+      "correctAnswer": "B",
+      "explanation": "Pour un toit incliné à plus de 30°, le port d'un harnais de sécurité est obligatoire en plus des équipements de base (casque et chaussures de sécurité)."
+    },
+    {
+      "question": "Quelle est la contrainte de fluage du béton à 28 jours pour un béton de résistance caractéristique fc28 = 25 MPa?",
+      "optionA": "0,4 fc28",
+      "optionB": "0,5 fc28",
+      "optionC": "0,6 fc28",
+      "optionD": "0,7 fc28",
+      "correctAnswer": "A",
+      "explanation": "Selon l'Eurocode 2, la contrainte de fluage à 28 jours est généralement prise égale à 0,4 fc28 pour un béton normal."
+    },
+    {
+      "question": "Quelle est la méthode de nivellement direct utilisée pour déterminer l'altitude d'un point par rapport à un point de référence connu?",
+      "optionA": "Nivellement géométrique",
+      "optionB": "Nivellement trigonométrique",
+      "optionC": "Nivellement barométrique",
+      "optionD": "Nivellement stéréoscopique",
+      "correctAnswer": "A",
+      "explanation": "Le nivellement géométrique est la méthode directe utilisée pour déterminer l'altitude d'un point en mesurant la différence de niveau entre points avec un niveau et une mire."
+    },
+    {
+      "question": "Quelle est la durée minimale de conservation des éprouvettes béton avant essai selon la norme NF EN 12390-2?",
+      "optionA": "24 heures",
+      "optionB": "48 heures",
+      "optionC": "72 heures",
+      "optionD": "96 heures",
+      "correctAnswer": "B",
+      "explanation": "Selon la norme NF EN 12390-2, les éprouvettes béton doivent être conservées au moins 48 heures avant d'être démoulées et entreposées jusqu'à l'essai."
+    },
+    {
+      "question": "Quelle est la formule pour calculer la flèche maximale admissible d'une poutre selon l'Eurocode 2?",
+      "optionA": "L/250",
+      "optionB": "L/300",
+      "optionC": "L/350",
+      "optionD": "L/400",
+      "correctAnswer": "B",
+      "explanation": "Selon l'Eurocode 2, la flèche maximale admissible pour une poutre est généralement L/300 pour les cas courants, où L est la portée de la poutre."
+    },
+    {
+      "question": "Quelle est la résistance caractéristique minimale requise pour les bétons de propreté selon la norme NF P 18-011?",
+      "optionA": "5 MPa",
+      "optionB": "10 MPa",
+      "optionC": "15 MPa",
+      "optionD": "20 MPa",
+      "correctAnswer": "A",
+      "explanation": "Selon la norme NF P 18-011, les bétons de propreté doivent avoir une résistance caractéristique minimale de 5 MPa."
+    },
+    {
+      "question": "Quelle est la contrainte de calcul à l'ELS pour un acier d'armature de nuance FeE500 en situation durable?",
+      "optionA": "435 MPa",
+      "optionB": "500 MPa",
+      "optionC": "375 MPa",
+      "optionD": "275 MPa",
+      "correctAnswer": "A",
+      "explanation": "La contrainte de calcul à l'ELS pour un acier d'armature de nuance FeE500 en situation durable est 500/1,15 = 435 MPa selon l'Eurocode 2."
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "bankKey": "concours-economie-finance",
+  "title": "Concours Économie, Statistiques & Finance",
+  "description": "Économie, statistiques, finance publique, monnaie.",
+  "category": "Concours",
+  "subcategory": "Économie & Finance",
+  "icon": "TrendingUp",
+  "color": "cyan",
+  "level": "LICENCE",
+  "subject": "Économie et finance: PIB, inflation, BCEAO, FCFA, TVA, balance commerciale, marché monétaire, actions, obligations, FMI",
+  "questions": [
+    {
+      "question": "Quelle est la principale différence entre le PIB nominal et le PIB réel?",
+      "optionA": "Le PIB nominal inclut l'inflation, le PIB réel ne l'inclut pas",
+      "optionB": "Le PIB réel est toujours supérieur au PIB nominal",
+      "optionC": "Le PIB nominal est mesuré en prix constants, le PIB réel en prix courants",
+      "optionD": "Le PIB réel tient compte de l'inflation, le PIB nominal ne le fait pas",
+      "correctAnswer": "D",
+      "explanation": "Le PIB réel est corrigé de l'inflation et reflète la véritable croissance économique, tandis que le PIB nominal est mesuré en prix courants et inclut l'effet des prix."
+    },
+    {
+      "question": "La BCEAO (Banque Centrale des États de l'Afrique de l'Ouest) a pour principale mission:",
+      "optionA": "Émettre le franc CFA et assurer la stabilité monétaire",
+      "optionB": "Gérer les budgets des États membres",
+      "optionC": "Contrôler les changes entre les pays membres",
+      "optionD": "Financer les projets de développement dans la zone",
+      "correctAnswer": "A",
+      "explanation": "La BCEAO est chargée d'émettre le franc CFA et de garantir sa stabilité, ainsi que de conduire la politique monétaire des pays membres de l'UEMOA."
+    },
+    {
+      "question": "L'inflation faible mais persistante est généralement:",
+      "optionA": "Un signe de bonne santé économique",
+      "optionB": "Souvent causée par une augmentation de l'offre de monnaie",
+      "optionC": "Souvent liée à une demande excédentaire",
+      "optionD": "Toujours préférable à la déflation",
+      "correctAnswer": "C",
+      "explanation": "L'inflation faible persistante est généralement causée par une demande globale excédentaire par rapport à l'offre, ce qui pousse les prix à la hausse."
+    },
+    {
+      "question": "Le taux de TVA appliqué dans la plupart des pays de l'UEMOA est de:",
+      "optionA": "5%",
+      "optionB": "15%",
+      "optionC": "18%",
+      "optionD": "20%",
+      "correctAnswer": "C",
+      "explanation": "Le taux normal de TVA dans la zone UEMOA est de 18%, bien qu'il existe des taux réduits pour certains produits de base."
+    },
+    {
+      "question": "Une balance commerciale déficitaire signifie que:",
+      "optionA": "Un pays exporte plus qu'il n'importe",
+      "optionB": "Un pays importe plus qu'il n'exporte",
+      "optionC": "Le solde courant est positif",
+      "optionD": "Le pays a un excédent de compte en capital",
+      "correctAnswer": "B",
+      "explanation": "Une balance commerciale déficitaire indique que les importations d'un pays excèdent ses exportations, ce qui peut être un signe de dépendance extérieure."
+    },
+    {
+      "question": "Sur le marché monétaire, les instruments à court terme négociés sont principalement:",
+      "optionA": "Actions et obligations d'État",
+      "optionB": "Bons du Trésor et certificats de dépôt",
+      "optionC": "Titres à revenu variable",
+      "optionD": "Produits dérivés",
+      "correctAnswer": "B",
+      "explanation": "Le marché monétaire est caractérisé par des instruments à court terme (moins d'un an) comme les bons du Trésor et les certificats de dépôt."
+    },
+    {
+      "question": "Lorsque vous achetez une action, vous devenez:",
+      "optionA": "Créancier de l'entreprise",
+      "optionB": "Propriétaire d'une partie de l'entreprise",
+      "optionC": "Prêteur à l'entreprise",
+      "optionD": "Fournisseur de l'entreprise",
+      "correctAnswer": "B",
+      "explanation": "Acheter une action signifie acquérir une part de propriété dans une entreprise, vous donnant des droits sur ses bénéfices et ses décisions."
+    },
+    {
+      "question": "Une obligation d'État est généralement considérée comme:",
+      "optionA": "Un investissement à haut risque",
+      "optionB": "Un investissement à revenu fixe",
+      "optionC": "Un investissement spéculatif",
+      "optionD": "Un investissement en actions",
+      "correctAnswer": "B",
+      "explanation": "Les obligations d'État sont des titres de dette émis par les gouvernements, offrant un revenu fixe par le biais des intérêts et remboursés à l'échéance."
+    },
+    {
+      "question": "Le FMI (Fonds Monétaire International) accorde généralement des prêts aux pays:",
+      "optionA": "Seulement aux pays développés",
+      "optionB": "En échange de réformes économiques structurelles",
+      "optionC": "Sans conditions particulières",
+      "optionD": "Exclusivement pour des projets humanitaires",
+      "correctAnswer": "B",
+      "explanation": "Le FMI accorde généralement des prêts aux pays en difficulté économique, mais en échange de la mise en place de réformes économiques structurelles."
+    },
+    {
+      "question": "La politique monétaire expansionniste de la BCEAO entraîne généralement:",
+      "optionA": "Une augmentation des taux d'intérêt",
+      "optionB": "Une diminution de l'offre de monnaie",
+      "optionC": "Une stimulation de l'activité économique",
+      "optionD": "Une appréciation de la monnaie",
+      "correctAnswer": "C",
+      "explanation": "Une politique monétaire expansionniste vise à augmenter l'offre de monnaie et à baisser les taux d'intérêt pour stimuler l'emprunt et l'investissement."
+    },
+    {
+      "question": "Le PIB par habitant est calculé en:",
+      "optionA": "Divisant le PIB nominal par la population totale",
+      "optionB": "Multipliant le PIB réel par la population totale",
+      "optionC": "Soustrayant la population du PIB nominal",
+      "optionD": "Additionnant le PIB et la population",
+      "correctAnswer": "A",
+      "explanation": "Le PIB par habitant est obtenu en divisant le PIB nominal (ou réel) par la population totale du pays, donnant une mesure du revenu moyen par personne."
+    },
+    {
+      "question": "La déflation est définie comme:",
+      "optionA": "Une augmentation généralisée et durable des prix",
+      "optionB": "Une augmentation du pouvoir d'achat de la monnaie",
+      "optionC": "Une baisse généralisée et durable des prix",
+      "optionD": "Une baisse du taux d'intérêt directeur",
+      "correctAnswer": "C",
+      "explanation": "La déflation est une baisse généralisée et durable du niveau général des prix, ce qui augmente le pouvoir d'achat de la monnaie."
+    },
+    {
+      "question": "Le franc CFA est une monnaie:",
+      "optionA": "Émise par chaque pays de l'UEMOA indépendamment",
+      "optionB": "Pegée à l'euro avec un taux de change fixe",
+      "optionC": "Flottante sur les marchés internationaux",
+      "optionD": "Utilisée uniquement pour les transactions commerciales",
+      "correctAnswer": "B",
+      "explanation": "Le franc CFA est lié à l'euro avec un taux de change fixe (1 euro = 655,957 F CFA), assurant sa stabilité."
+    },
+    {
+      "question": "La TVA est un impôt:",
+      "optionA": "Direct payé par les consommateurs finals",
+      "optionB": "Indirect payé par les producteurs",
+      "optionC": "Progressif basé sur le revenu",
+      "optionD": "Prélevé à la source sur les salaires",
+      "correctAnswer": "A",
+      "explanation": "La TVA est un impôt indirect payé par les consommateurs finals, même si elle est collectée par les entreprises intermédiaires."
+    },
+    {
+      "question": "Un pays avec une balance commerciale excédentaire:",
+      "optionA": "Doit nécessairement avoir un compte courant excédentaire",
+      "optionB": "Exporte plus qu'il n'importe",
+      "optionC": "A toujours un taux de change fort",
+      "optionD": "Ne peut pas avoir de déficit de compte en capital",
+      "correctAnswer": "B",
+      "explanation": "Un excédent commercial signifie simplement que les exportations d'un pays dépassent ses importations, sans lien nécessaire avec le compte courant ou le taux de change."
+    },
+    {
+      "question": "Le taux du marché monétaire est généralement:",
+      "optionA": "Supérieur au taux de refinancement",
+      "optionB": "Inférieur au taux de refinancement",
+      "optionC": "Égal au taux de base bancaire",
+      "optionD": "Fixé par les banques commerciales uniquement",
+      "correctAnswer": "B",
+      "explanation": "Le taux du marché monétaire est généralement inférieur au taux de refinancement, car il représente le coût des prêts entre banques à très court terme."
+    },
+    {
+      "question": "Le dividende d'une action est:",
+      "optionA": "Le remboursement du capital investi",
+      "optionB": "Une partie des bénéfices distribués aux actionnaires",
+      "optionC": "L'intérêt versé sur l'action",
+      "optionD": "La valeur nominale de l'action",
+      "correctAnswer": "B",
+      "explanation": "Le dividende est une portion des bénéfices d'une entreprise distribuée à ses actionnaires, généralement en fonction du nombre d'actions détenues."
+    },
+    {
+      "question": "Une obligation zéro-coupon est caractérisée par:",
+      "optionA": "Des paiements d'intérêt réguliers",
+      "optionB": "Un prix d'émission égal à sa valeur nominale",
+      "optionC": "Aucun paiement d'intérêt pendant sa durée de vie",
+      "optionD": "Un rendement garanti inférieur à l'inflation",
+      "correctAnswer": "C",
+      "explanation": "Une obligation zéro-coupon ne verse aucun intérêt pendant sa durée de vie; elle est vendue à un prix inférieur à sa valeur nominale et remboursée à sa valeur nominale à l'échéance."
+    },
+    {
+      "question": "Le FMI utilise généralement quel instrument pour aider les pays en difficulté?",
+      "optionA": "Prêts concessionnels à taux zéro",
+      "optionB": "Programmes d'ajustement structurel",
+      "optionC": "Subventions directes",
+      "optionD": "Investissements directs étrangers",
+      "correctAnswer": "B",
+      "explanation": "Le FMI utilise principalement des programmes d'ajustement structurel, qui incluent des prêts assortis de conditions économiques spécifiques."
+    },
+    {
+      "question": "La politique monétaire restrictive de la BCEAO vise à:",
+      "optionA": "Stimuler l'inflation",
+      "optionB": "Réduire l'offre de monnaie",
+      "optionC": "Augmenter le déficit budgétaire",
+      "optionD": "Déprécier le franc CFA",
+      "correctAnswer": "B",
+      "explanation": "Une politique monétaire restrictive vise à réduire l'offre de monnaie pour freiner l'inflation et stabiliser la valeur de la monnaie."
+    },
+    {
+      "question": "Quelle est la principale mission de la Banque Centrale des États de l'Afrique de l'Ouest (BCEAO)?",
+      "optionA": "Gérer la politique monétaire de chaque État membre individuellement",
+      "optionB": "Émettre la monnaie unique du bloc (le franc CFA)",
+      "optionC": "Contrôler les changes entre les États membres et le reste du monde",
+      "optionD": "Financer directement les déficits budgétaires des États membres",
+      "correctAnswer": "B",
+      "explanation": "La BCEAO a pour principale mission d'émettre la monnaie unique du bloc, le franc CFA, pour les huit pays membres de l'UEMOA, en assurant la stabilité monétaire et le contrôle de l'inflation."
+    },
+    {
+      "question": "Comment la TVA affecte-t-elle le prix final d'un produit par rapport à une taxe sur le chiffre d'affaires?",
+      "optionA": "La TVA est toujours moins élevée qu'une taxe sur le chiffre d'affaires",
+      "optionB": "La TVA est payée uniquement par le consommateur final",
+      "optionC": "La TVA est une taxe sur la valeur ajoutée à chaque étape de la production",
+      "optionD": "La TVA est calculée sur le chiffre d'affaires global de l'entreprise",
+      "correctAnswer": "C",
+      "explanation": "Contrairement à une taxe sur le chiffre d'affaires, la TVA est une taxe sur la valeur ajoutée à chaque étape de la production, ce qui évite la taxation cumulative et réduit le coût final pour le consommateur."
+    },
+    {
+      "question": "Qu'est-ce qui caractérise principalement un déficit de la balance commerciale?",
+      "optionA": "Les exportations sont supérieures aux importations",
+      "optionB": "Les importations sont supérieures aux exportations",
+      "optionC": "Les exportations et importations sont égales",
+      "optionD": "La balance des services est excédentaire",
+      "correctAnswer": "B",
+      "explanation": "Un déficit de la balance commerciale survient lorsque la valeur des importations d'un pays dépasse celle de ses exportations, indiquant que le pays consomme plus qu'il ne produit."
+    },
+    {
+      "question": "Quelle est la principale fonction du marché monétaire?",
+      "optionA": "Financer les investissements à long terme des entreprises",
+      "optionB": "Faciliter le refinancement à court terme des banques et des entreprises",
+      "optionC": "Permettre la cotation des actions en bourse",
+      "optionD": "Gérer les changes internationaux",
+      "correctAnswer": "B",
+      "explanation": "Le marché monétaire est un segment du marché financier où s'échangent des instruments financiers à court terme (moins d'un an), permettant aux banques et aux entreprises de se refinancer rapidement."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre une action et une obligation?",
+      "optionA": "Les actions donnent droit à des intérêts fixes, les obligations représentent une part de propriété",
+      "optionB": "Les obligations représentent une part de propriété, les actions donnent droit à des dividendes variables",
+      "optionC": "Les actions représentent une part de propriété, les obligations sont un titre de créance",
+      "optionD": "Les actions et les obligations sont identiques en termes de risque et de rendement",
+      "correctAnswer": "C",
+      "explanation": "Une action représente une part de propriété dans une entreprise, donnant droit aux dividendes et au vote, tandis qu'une obligation est un titre de créance qui rapporte des intérêts fixes et doit être remboursée à l'échéance."
+    },
+    {
+      "question": "Quel est le principal objectif du Fonds Monétaire International (FMI)?",
+      "optionA": "Promouvoir le commerce international entre pays membres",
+      "optionB": "Fournir des prêts à court terme aux pays en difficulté balance des paiements",
+      "optionC": "Garantir la stabilité des changes entre les grandes monnaies",
+      "optionD": "Financer les projets d'infrastructure dans les pays en développement",
+      "correctAnswer": "B",
+      "explanation": "Le FMI a pour principal objectif de maintenir la stabilité financière internationale et de fournir des prêts temporaires aux pays membres confrontés à des difficultés de balance des paiements."
+    },
+    {
+      "question": "Comment l'inflation affecte-t-elle la valeur réelle de l'argent?",
+      "optionA": "Elle augmente la valeur réelle de l'argent",
+      "optionB": "Elle diminue la valeur réelle de l'argent",
+      "optionC": "Elle n'affecte pas la valeur réelle de l'argent",
+      "optionD": "Elle augmente la valeur nominale mais pas la réelle de l'argent",
+      "correctAnswer": "B",
+      "explanation": "L'inflation réduit la valeur réelle de l'argent car chaque unité monétaire peut acheter moins de biens et services qu'auparavant, érodant ainsi le pouvoir d'achat."
+    },
+    {
+      "question": "Quelle est la relation entre le taux directeur de la BCEAO et les taux du marché monétaire?",
+      "optionA": "Le taux directeur est toujours inférieur aux taux du marché monétaire",
+      "optionB": "Le taux directeur est toujours supérieur aux taux du marché monétaire",
+      "optionC": "Le taux directeur sert de référence pour les taux du marché monétaire",
+      "optionD": "Il n'y a aucune relation entre ces taux",
+      "correctAnswer": "C",
+      "explanation": "Le taux directeur de la BCEAO sert de taux de référence qui influence l'ensemble des taux du marché monétaire, y compris les taux interbancaires et les taux appliqués aux entreprises et particuliers."
+    },
+    {
+      "question": "Pourquoi le franc CFA est-il considéré comme une monnaie 'forte' en Afrique de l'Ouest?",
+      "optionA": "Parce qu'il est indexé sur l'euro avec un taux de change fixe",
+      "optionB": "Parce qu'il est soutenu par les richesses minières des pays membres",
+      "optionC": "Parce qu'il n'est pas affecté par l'inflation",
+      "optionD": "Parce qu'il est utilisé dans tous les pays d'Afrique",
+      "correctAnswer": "A",
+      "explanation": "Le franc CFA est considéré comme 'fort' car il est indexé sur l'euro avec un taux de change fixe et soutenu par un dépôt de devises étrangères auprès de la Trésorerie française, ce qui lui confère une grande stabilité."
+    },
+    {
+      "question": "Quelle est la différence entre une obligation à taux fixe et une obligation à taux variable?",
+      "optionA": "Les obligations à taux fixe ont toujours un meilleur rendement",
+      "optionB": "Les obligations à taux variable ont une durée plus longue",
+      "optionC": "Le taux d'intérêt des obligations à taux variable est révisé périodiquement selon un indice de référence",
+      "optionD": "Les obligations à taux fixe sont risquées que les obligations à taux variable",
+      "correctAnswer": "C",
+      "explanation": "Les obligations à taux variable voient leur taux d'intérêt ajusté périodiquement selon un indice de référence (comme l'Euribor), tandis que les obligations à taux fixe maintiennent un taux constant tout au long de leur durée de vie."
+    },
+    {
+      "question": "Comment la politique monétaire expansionniste de la BCEAO affecte-t-elle l'économie?",
+      "optionA": "Elle réduit l'offre de monnaie et augmente les taux d'intérêt",
+      "optionB": "Elle augmente l'offre de monnaie et réduit les taux d'intérêt",
+      "optionC": "Elle n'affecte ni l'offre de monnaie ni les taux d'intérêt",
+      "optionD": "Elle augmente simultanément l'offre de monnaie et les taux d'intérêt",
+      "correctAnswer": "B",
+      "explanation": "La politique monétaire expansionniste consiste à augmenter l'offre de monnaie dans l'économie, ce qui permet de réduire les taux d'intérêt et stimuler l'emprunt, la consommation et l'investissement."
+    },
+    {
+      "question": "Quelle est la différence entre le PIB et le PNB (Produit National Brut)?",
+      "optionA": "Le PIB inclut les revenus des facteurs reçus de l'étranger, le PNB ne les inclut pas",
+      "optionB": "Le PNB inclut les revenus des facteurs reçus de l'étranger, le PIB ne les inclut pas",
+      "optionC": "Le PIB mesure la production sur le territoire national, le PNB mesure la production par les résidents nationaux",
+      "optionD": "Le PIB et le PNB sont identiques",
+      "correctAnswer": "C",
+      "explanation": "Le PIB mesure la valeur totale des biens et services produits sur le territoire d'un pays, quel que soit le pays de résidence des producteurs. Le PNB mesure la valeur totale produite par les résidents d'un pays, quel que soit le lieu de production."
+    },
+    {
+      "question": "Quel est l'impact d'une dépréciation de la monnaie sur la balance commerciale?",
+      "optionA": "Elle améliore toujours la balance commerciale",
+      "optionB": "Elle détériore toujours la balance commerciale",
+      "optionC": "Elle améliore la balance commerciale si les élasticités-prix des exportations et importations sont supérieures à 1",
+      "optionD": "Elle n'affecte pas la balance commerciale",
+      "correctAnswer": "C",
+      "explanation": "Selon la théorie de la courbe en J, une dépréciation améliore la balance commerciale seulement si les élasticités-prix des exportations et importations sont suffisamment élevées (supérieures à 1), ce qui peut prendre du temps à se matérialiser."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre le marché primaire et le marché secondaire des actions?",
+      "optionA": "Le marché primaire est réservé aux investisseurs institutionnels, le marché secondaire aux particuliers",
+      "optionB": "Le marché primaire est pour les nouvelles émissions d'actions, le marché secondaire pour le négoce d'actions existantes",
+      "optionC": "Le marché primaire est plus risqué que le marché secondaire",
+      "optionD": "Le marché secondaire est régulé par la BCEAO, le marché primaire par la BRVM",
+      "correctAnswer": "B",
+      "explanation": "Le marché primaire est où les entreprises émettent de nouvelles actions pour la première fois, levant directement des capitaux. Le marché secondaire est où les investisseurs achètent et vendent des actions déjà émises, sans intervention directe de l'émetteur."
+    }
+  ]
+}

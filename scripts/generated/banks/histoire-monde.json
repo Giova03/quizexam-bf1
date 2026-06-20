@@ -1,0 +1,148 @@
+{
+  "bankKey": "histoire-monde",
+  "title": "Histoire du Monde",
+  "description": "Grandes périodes, civilisations, révolutions, guerres mondiales.",
+  "category": "Culture Générale",
+  "subcategory": "Histoire du Monde",
+  "icon": "Globe2",
+  "color": "amber",
+  "level": "TOUS",
+  "subject": "Histoire du monde: Antiquité, Moyen Âge, Renaissance, Révolution française, Guerres mondiales, Guerre froide, décolonisation, mur de Berlin",
+  "questions": [
+    {
+      "question": "La réforme grégorienne du XIe siècle visait principalement à:",
+      "optionA": "Réformer le calendrier pour corriger le décalage avec le soleil",
+      "optionB": "Affirmer l'indépendance du clergé par rapport au pouvoir temporel",
+      "optionC": "Unifier les rites de l'Église catholique à travers l'Europe",
+      "optionD": "Lutter contre les hérésies qui se développaient dans le sud de la France",
+      "correctAnswer": "B",
+      "explanation": "La réforme grégorienne, initiée par le pape Grégoire VII, visait avant tout à affirmer la suprématie du pouvoir spirituel sur le pouvoir temporel, en interdisant notamment la nomination des évêques par les laïcs (investiture laïque)."
+    },
+    {
+      "question": "La bataille de Marignan (1515) a eu pour conséquence principale:",
+      "optionA": "Le début des guerres de Religion en France",
+      "optionB": "L'entrée définitive du Milanais dans le domaine royal français",
+      "optionC": "La défaite définitive des Ottomans en Europe",
+      "optionD": "Le traité de Cateau-Cambrésis qui met fin aux guerres d'Italie",
+      "correctAnswer": "B",
+      "explanation": "La victoire de François Ier à Marignan lui permit de s'emparer du duché de Milan, qui fut intégré au domaine royal français et resta français jusqu'en 1521, date de sa reconquête par les Impériaux."
+    },
+    {
+      "question": "La 'Nuit du 4 août 1789' a vu l'abolition:",
+      "optionA": "De la monarchie absolue et l'établissement d'une république",
+      "optionB": "Des privilèges féodaux et des droits seigneuriaux",
+      "optionC": "De la traite négrière dans les colonies françaises",
+      "optionD": "Du système d'imposition indirecte sous le nom de 'gabelle'",
+      "correctAnswer": "B",
+      "explanation": "Durant la nuit du 4 août 1789, l'Assemblée nationale constituante vota l'abolition des privilèges féodaux et des droits seigneuriaux, marquant un tournant décisif dans la Révolution française."
+    },
+    {
+      "question": "Le traité de Versailles (1919) a été principalement responsable de:",
+      "optionA": "La création de la Société des Nations",
+      "optionB": "L'effondrement économique de l'Allemagne dans les années 1920",
+      "optionC": "L'annexion de l'Alsace-Lorraine à la France",
+      "optionD": "L'établissement d'un protectorat français sur la Syrie et le Liban",
+      "correctAnswer": "B",
+      "explanation": "Le traité de Versailles imposa à l'Allemagne des réparations financières écrasantes, des restrictions économiques et territoriales sévères, qui contribuèrent à l'hyperinflation et à la crise économique des années 1920, favorisant ainsi la montée du nazisme."
+    },
+    {
+      "question": "La doctrine Truman (1947) a marqué:",
+      "optionA": "Le début de la politique de 'détente' entre les États-Unis et l'URSS",
+      "optionB": "L'engagement américain à soutenir les peuples luttant contre le communisme",
+      "optionC": "La reconnaissance officielle du gouvernement de Mao Tsé-toung en Chine",
+      "optionD": "La fin de l'isolationnisme américain après la Seconde Guerre mondiale",
+      "correctAnswer": "B",
+      "explanation": "La doctrine Truman annonça la politique des États-Unis de soutenir les nations menacées par le communisme, marquant le début de la politique de 'containment' (endiguement) et de la Guerre froide."
+    },
+    {
+      "question": "La crise des missiles de Cuba (1962) a été résolue grâce à:",
+      "optionA": "L'intervention directe de l'ONU pour désamorcer la tension",
+      "optionB": "Un accord secret par lequel les États-Unis s'engagèrent à retirer leurs missiles de Turquie",
+      "optionC": "Le blocus naval complet de Cuba par la marine américaine",
+      "optionD": "La médiation du pape Jean XXIII entre Kennedy et Khrouchtchev",
+      "correctAnswer": "B",
+      "explanation": "L'accord secret prévoyait que les États-Unis retireraient leurs missiles de Jupiter stationnés en Turquie en échange du retrait des missiles soviétiques de Cuba, bien que ce point ne fut rendu public que plus tard."
+    },
+    {
+      "question": "La décolonisation française en Afrique subsaharienne a été principalement marquée par:",
+      "optionA": "Des guerres d'indépendance prolongées et sanglantes",
+      "optionB": "Un processus de transition pacifique vers l'indépendance",
+      "optionC": "L'établissement de protectorats plutôt que de colonies",
+      "optionD": "Le maintien de liens économiques et politiques forts avec la France",
+      "correctAnswer": "B",
+      "explanation": "Contrairement à l'Algérie, la décolonisation de l'Afrique subsaharienne française s'est déroulée de manière relativement pacifique, avec des accords d'indépendance négociés dans le cadre de la Communauté française."
+    },
+    {
+      "question": "La 'Pax Romana' désigne:",
+      "optionA": "Le système de paix établi par Auguste après la bataille d'Actium",
+      "optionB": "Les lois romaines régissant les relations entre citoyens",
+      "optionC": "Le culte de l'empereur comme divinité dans l'Empire romain",
+      "optionD": "La division de l'Empire romain en Orient et Occident",
+      "correctAnswer": "A",
+      "explanation": "La Pax Romana, établie sous Auguste (27 av. J.-C. - 14 apr. J.-C.), désigne une période de relative stabilité et de paix dans l'Empire romain, qui dura environ deux siècles et favorisa le développement économique et culturel."
+    },
+    {
+      "question": "La 'Noche Triste' (30 juin 1520) a été un moment décisif dans:",
+      "optionA": "La conquête de l'Empire aztèque par Cortés",
+      "optionB": "La révolte des Indiens Puebla contre les Espagnols",
+      "optionC": "La bataille de Tenochtitlan qui mena à la chute de l'Empire aztèque",
+      "optionD": "La rébellion des esclaves à Haïti menée par Toussaint Louverture",
+      "correctAnswer": "C",
+      "explanation": "La 'Noche Triste' marque la défaite et la fuite éperdue d'Hernán Cortés et de ses hommes de Tenochtitlan après avoir été attaqués par les Aztèques, événement qui précéda la chute de l'Empire aztèque."
+    },
+    {
+      "question": "La bataille de Hattin (1187) a été décisive pour:",
+      "optionA": "La prise de Jérusalem par Saladin",
+      "optionB": "La défaite des croisés lors de la première croisade",
+      "optionC": "L'établissement des États latins en Orient",
+      "optionD": "La prise de Constantinople par les Ottomans",
+      "correctAnswer": "A",
+      "explanation": "La bataille de Hattin vit la défaite des croisés menés par Guy de Lusignan et la capture de Jérusalem par Saladin, ce qui déclencha la troisième croisade."
+    },
+    {
+      "question": "La 'Révolution culturelle' en Chine (1966-1969) a été initiée par:",
+      "optionA": "Mao Tsé-toung pour éliminer ses opposants politiques",
+      "optionB": "Les étudiants de l'université de Pékin pour demander plus de démocratie",
+      "optionC": "L'armée chinoise pour prendre le pouvoir au Parti communiste",
+      "optionD": "Les paysans pour lutter contre l'exploitation par l'État",
+      "correctAnswer": "A",
+      "explanation": "Mao Tsé-toung lança la Révolution culturelle pour éliminer ses rivaux politiques au sein du Parti communiste chinois et réaffirmer son autorité, ce qui provoqua des troubles majeurs en Chine."
+    },
+    {
+      "question": "La 'Saint-Barthélemy' (1572) a eu lieu dans le contexte:",
+      "optionA": "Des guerres de Religion entre catholiques et protestants",
+      "optionB": "De la Fronde contre le pouvoir royal de Louis XIII",
+      "optionC": "De la Révolution française contre l'Ancien Régime",
+      "optionD": "De la Commune de Paris contre le gouvernement de Versailles",
+      "correctAnswer": "A",
+      "explanation": "Le massacre de la Saint-Barthélemy, qui fit des milliers de victimes protestantes, eut lieu pendant les guerres de Religion, période de conflits entre catholiques et protestants en France."
+    },
+    {
+      "question": "La 'politique d'apaisement' menée par le Royaume-Uni avant la Seconde Guerre mondiale consistait à:",
+      "optionA": "Armer massivement les troupes pour dissuader l'Allemagne",
+      "optionB": "Accepter les revendications hitlériennes pour éviter la guerre",
+      "optionC": "Former une alliance militaire avec l'Union soviétique",
+      "optionD": "Isoler l'Allemagne économiquement pour la contraindre",
+      "correctAnswer": "B",
+      "explanation": "La politique d'apaisement, menée par Neville Chamberlain, consistait à accepter les revendications territoriales hitlériennes (comme l'annexion de l'Autriche et les Sudètes) dans l'espoir d'éviter un nouveau conflit européen."
+    },
+    {
+      "question": "La 'Réforme protestante' a été déclenchée par:",
+      "optionA": "La publication des '95 thèses' de Martin Luther à Wittenberg",
+      "optionB": "Le schisme entre l'Église orthodoxe et l'Église catholique",
+      "optionC": "La création de l'Église anglicaine par Henri VIII",
+      "optionD": "La traduction de la Bible par Érasme dans la langue vulgaire",
+      "correctAnswer": "A",
+      "explanation": "Martin Luther affixa ses '95 thèses' sur la porte de l'église du château de Wittenberg le 31 octobre 1517, événement traditionnellement considéré comme le point de départ de la Réforme protestante."
+    },
+    {
+      "question": "La 'Chambre de Gurney' dans le contexte de la décolonisation française désigne:",
+      "optionA": "Une institution chargée de négocier l'indépendance de l'Indochine",
+      "optionB": "Un groupe de résistants algériens opposés à l'indépendance",
+      "optionC": "Une commission parlementaire chargée d'examiner les réformes en Afrique",
+      "optionD": "Une organisation de colons français en Algérie s'opposant aux accords d'Évian",
+      "correctAnswer": "C",
+      "explanation": "La Chambre de Gurney, présidée par le député Louis Gurney, fut une commission parlementaire française chargée d'examiner les réformes possibles en Afrique française subsaharienne dans les années 1950, avant la décolonisation."
+    }
+  ]
+}

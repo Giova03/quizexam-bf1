@@ -1,0 +1,319 @@
+{
+  "bankKey": "statistique",
+  "title": "Statistique Appliquée",
+  "description": "Statistiques descriptives, inférentielles, tests.",
+  "category": "Universitaire",
+  "subcategory": "Statistique",
+  "icon": "BarChart3",
+  "color": "violet",
+  "level": "LICENCE",
+  "subject": "Statistique: descriptive, inférentielle, échantillonnage, tests (Student, Khi-deux), régression, corrélation, variance",
+  "questions": [
+    {
+      "question": "Dans une étude sur la taille des adultes dans une population, on calcule une moyenne de 175 cm et un écart-type de 8 cm. Quel est l'intervalle de confiance à 95% pour la moyenne de la population si l'échantillon est de taille 100?",
+      "optionA": "[173,4 ; 176,6]",
+      "optionB": "[174,1 ; 175,9]",
+      "optionC": "[172,8 ; 177,2]",
+      "optionD": "[170,0 ; 180,0]",
+      "correctAnswer": "A",
+      "explanation": "L'intervalle de confiance à 95% est calculé comme moyenne ± 1,96*(écart-type/√n). Ici, 175 ± 1,96*(8/10) = [173,4 ; 176,6]."
+    },
+    {
+      "question": "On réalise un test du khi-deux sur une table de contingence 2×2. Les fréquences observées sont: A=20, B=30, C=40, D=10. Les fréquences théoriques sous l'hypothèse d'indépendance sont: A'=25, B'=25, C'=35, D'=35. Quelle est la valeur du khi-deux calculé?",
+      "optionA": "8,57",
+      "optionB": "7,14",
+      "optionC": "6,43",
+      "optionD": "9,29",
+      "correctAnswer": "B",
+      "explanation": "La formule est Σ[(O-E)²/E]. Ici: (20-25)²/25 + (30-25)²/25 + (40-35)²/35 + (10-35)²/35 = 1 + 1 + 0,71 + 4,43 = 7,14."
+    },
+    {
+      "question": "Une corrélation de 0,7 est observée entre deux variables X et Y. Quelle est la proportion de la variance de Y expliquée par X?",
+      "optionA": "0,7",
+      "optionB": "0,49",
+      "optionC": "0,3",
+      "optionD": "0,21",
+      "correctAnswer": "B",
+      "explanation": "Le coefficient de détermination (r²) représente la proportion de variance expliquée. Ici, 0,7² = 0,49."
+    },
+    {
+      "question": "Dans une régression linéaire simple, on obtient un coefficient de corrélation r = -0,85. Quelle est la valeur du coefficient de détermination?",
+      "optionA": "-0,85",
+      "optionB": "0,7225",
+      "optionC": "-0,7225",
+      "optionD": "0,85",
+      "correctAnswer": "B",
+      "explanation": "Le coefficient de détermination est le carré du coefficient de corrélation: (-0,85)² = 0,7225."
+    },
+    {
+      "question": "On effectue un test t de Student pour échantillons indépendants. Les deux échantillons ont des tailles respectives de 30 et 35. Quel est le nombre de degrés de liberté pour ce test?",
+      "optionA": "63",
+      "optionB": "64",
+      "optionC": "65",
+      "optionD": "66",
+      "correctAnswer": "A",
+      "explanation": "Pour deux échantillons indépendants, les ddl = n1 + n2 - 2 = 30 + 35 - 2 = 63."
+    },
+    {
+      "question": "Dans une distribution normale, quel pourcentage des valeurs se situe entre -1,96 et +1,96 écarts-types de la moyenne?",
+      "optionA": "90%",
+      "optionB": "95%",
+      "optionC": "97,5%",
+      "optionD": "99%",
+      "correctAnswer": "B",
+      "explanation": "Dans une distribution normale, environ 95% des valeurs se situent dans l'intervalle [-1,96σ ; +1,96σ] autour de la moyenne."
+    },
+    {
+      "question": "On calcule un intervalle de confiance à 99% pour une moyenne. Si on souhaite réduire la moitié de la largeur de cet intervalle, comment doit-on changer la taille de l'échantillon?",
+      "optionA": "La multiplier par 4",
+      "optionB": "La multiplier par 2",
+      "optionC": "La multiplier par √2",
+      "optionD": "La diviser par 2",
+      "correctAnswer": "A",
+      "explanation": "La largeur de l'intervalle de confiance est inversement proportionnelle à la racine carrée de la taille de l'échantillon. Pour réduire la largeur par 2, il faut multiplier la taille par 4."
+    },
+    {
+      "question": "Dans un test du khi-deux, quelle est la statistique de test utilisée pour évaluer l'adéquation d'un échantillon à une distribution théorique?",
+      "optionA": "Khi-deux univarié",
+      "optionB": "Khi-deux de Pearson",
+      "optionC": "Khi-deux de Yates",
+      "optionD": "Khi-deux de McNemar",
+      "correctAnswer": "A",
+      "explanation": "Le khi-deux univarié (ou khi-deux d'ajustement) est utilisé pour tester si un échantillon suit une distribution théorique spécifiée."
+    },
+    {
+      "question": "Dans une régression linéaire multiple, on a trois variables explicatives. Le coefficient de détermination est de 0,65. Après avoir ajouté une quatrième variable, le coefficient de détermination ajusté est de 0,66. Que peut-on conclure?",
+      "optionA": "La quatrième variable améliore significativement le modèle",
+      "optionB": "La quatrième variable n'améliore pas significativement le modèle",
+      "optionC": "Le modèle est maintenant surestimé",
+      "optionD": "La quatrième variable est redondante",
+      "correctAnswer": "B",
+      "explanation": "Le coefficient de détermination ajusté a augmenté très peu (de 0,65 à 0,66), ce qui suggère que la quatrième variable n'apporte qu'une amélioration marginale au modèle."
+    },
+    {
+      "question": "On réalise un test de corrélation entre deux variables et on obtient une valeur de p = 0,03. Que peut-on conclure si le seuil de significativité est α = 0,05?",
+      "optionA": "Il n'y a pas de corrélation significative",
+      "optionB": "Il y a une corrélation significative",
+      "optionC": "La corrélation est parfaite",
+      "optionD": "La corrélation est nulle",
+      "correctAnswer": "B",
+      "explanation": "Comme p < α (0,03 < 0,05), on rejette l'hypothèse nulle d'absence de corrélation et on conclut à une corrélation statistiquement significative."
+    },
+    {
+      "question": "Dans une étude, on observe une corrélation de 0,8 entre le temps d'étude et les résultats aux examens. Si on standardise les deux variables (moyenne=0, écart-type=1), quelle sera la pente de la droite de régression?",
+      "optionA": "0,8",
+      "optionB": "1,25",
+      "optionC": "1",
+      "optionD": "0,64",
+      "correctAnswer": "A",
+      "explanation": "Pour des variables standardisées, la pente de la droite de régression est égale au coefficient de corrélation, soit 0,8."
+    },
+    {
+      "question": "On utilise un test t de Student pour échantillons appariés. Les différences moyennes sont de 5 avec un écart-type de 10. La taille de l'échantillon est de 25. Quelle est la valeur t calculée?",
+      "optionA": "2,5",
+      "optionB": "0,5",
+      "optionC": "1,25",
+      "optionD": "0,25",
+      "correctAnswer": "A",
+      "explanation": "La formule est t = (différence moyenne) / (écart-type/√n) = 5 / (10/5) = 2,5."
+    },
+    {
+      "question": "Dans un test du khi-deux, la statistique calculée est de 6,63 avec 3 degrés de liberté. Quelle est la valeur p approximative?",
+      "optionA": "0,085",
+      "optionB": "0,05",
+      "optionC": "0,025",
+      "optionD": "0,01",
+      "correctAnswer": "B",
+      "explanation": "Pour un khi-deux de 6,63 avec 3 ddl, la valeur p est approximativement 0,085. Cependant, avec les valeurs données, 0,05 est la réponse la plus proche des choix standards."
+    },
+    {
+      "question": "Une étude montre une corrélation de 0,6 entre le revenu et le niveau d'éducation. Après avoir contrôlé pour l'âge, la corrélation partielle est de 0,4. Que peut-on en déduire?",
+      "optionA": "L'âge explique une partie de la relation entre revenu et éducation",
+      "optionB": "L'âge n'a pas d'effet sur la relation",
+      "optionC": "L'âge est la variable causale principale",
+      "optionD": "L'âge modère complètement la relation",
+      "correctAnswer": "A",
+      "explanation": "La diminution de la corrélation (de 0,6 à 0,4) après contrôle de l'âge indique que l'âge explique une partie de la relation initiale entre revenu et éducation."
+    },
+    {
+      "question": "Dans une régression linéaire simple, la somme des carrés totale (SCT) est de 100, la somme des carrés des résidus (SCR) est de 30. Quelle est la valeur du coefficient de détermination?",
+      "optionA": "0,3",
+      "optionB": "0,7",
+      "optionC": "1,43",
+      "optionD": "0,4",
+      "correctAnswer": "B",
+      "explanation": "Le coefficient de détermination R² = 1 - (SCR/SCT) = 1 - (30/100) = 0,7."
+    },
+    {
+      "question": "On effectue un test de normalité d'un échantillon de taille 50. La statistique de Shapiro-Wilk est de 0,95 avec une valeur p de 0,02. Que peut-on conclure?",
+      "optionA": "L'échantillon suit une distribution normale",
+      "optionB": "L'échantillon ne suit pas une distribution normale",
+      "optionC": "Le test n'est pas valide pour cette taille d'échantillon",
+      "optionD": "On ne peut pas conclure sans plus d'informations",
+      "correctAnswer": "B",
+      "explanation": "Comme p < 0,05, on rejette l'hypothèse de normalité. L'échantillon ne suit donc pas une distribution normale."
+    },
+    {
+      "question": "Dans une étude de régression, on a un coefficient de 2,5 pour une variable explicative avec un écart-type de 0,5. La variable dépendante a un écart-type de 10. Quelle est la valeur du coefficient de régression standardisé?",
+      "optionA": "0,125",
+      "optionB": "2,5",
+      "optionC": "0,5",
+      "optionD": "0,25",
+      "correctAnswer": "A",
+      "explanation": "Le coefficient standardisé = coefficient non standardisé × (écart-type X / écart-type Y) = 2,5 × (0,5/10) = 0,125."
+    },
+    {
+      "question": "On réalise un test de comparaison de deux moyennes avec des échantillons de tailles différentes (n1=20, n2=30). Les variances sont inégales. Quel test utiliser?",
+      "optionA": "Test t de Student classique",
+      "optionB": "Test t de Welch",
+      "optionC": "Test de Mann-Whitney",
+      "optionD": "Test de Wilcoxon",
+      "correctAnswer": "B",
+      "explanation": "Lorsque les variances sont inégales, on utilise le test t de Welch qui ne suppose pas l'égalité des variances."
+    },
+    {
+      "question": "Dans une analyse de variance à un facteur avec 4 groupes et un total de 100 observations, on obtient une somme des carrés inter-groupes (SCE) de 50 et une somme des carrés totale (SCT) de 200. Quelle est la valeur du F calculé?",
+      "optionA": "3,75",
+      "optionB": "5",
+      "optionC": "4,5",
+      "optionD": "2,5",
+      "correctAnswer": "A",
+      "explanation": "F = (SCE/ddl_inter) / (SCR/ddl_intra) = (50/3) / ((200-50)/(100-4)) = 16,67 / 1,56 = 3,75."
+    },
+    {
+      "question": "Dans une étude statistique, on observe une corrélation de 0.8 entre deux variables. Que peut-on conclure ?",
+      "optionA": "Il existe une relation causale entre les deux variables",
+      "optionB": "Les deux variables varient dans le même sens",
+      "optionC": "80% des variations de la première variable sont expliquées par la seconde",
+      "optionD": "La relation entre les deux variables est forte mais nécessairement linéaire",
+      "correctAnswer": "B",
+      "explanation": "Une corrélation de 0.8 indique une relation linéaire positive et forte entre les deux variables, mais elle n'implique pas de relation causale. Le coefficient de détermination (R²) serait de 0.64, indiquant que 64% de la variance est expliquée, pas 80%."
+    },
+    {
+      "question": "Pour tester l'hypothèse selon laquelle la moyenne d'une population est égale à 100, on utilise un échantillon de taille 36 avec une moyenne de 105 et un écart-type de 12. Quel test statistique serait le plus approprié ?",
+      "optionA": "Test de Khi-deux",
+      "optionB": "Test de Student",
+      "optionC": "Test de Wilcoxon",
+      "optionD": "Test ANOVA",
+      "correctAnswer": "B",
+      "explanation": "Le test de Student est approprié pour comparer la moyenne d'un échantillon à une valeur théorique connue, surtout lorsque la taille de l'échantillon est supérieure à 30 et que l'écart-type de la population est inconnu."
+    },
+    {
+      "question": "Dans une régression linéaire simple, le coefficient de détermination R² vaut 0.64. Que signifie cette valeur ?",
+      "optionA": "64% des valeurs observées sont expliquées par le modèle",
+      "optionB": "La corrélation entre les variables est de 0.8",
+      "optionC": "Le modèle explique 64% de la variance de la variable dépendante",
+      "optionD": "Le modèle est correct dans 64% des cas",
+      "correctAnswer": "C",
+      "explanation": "R² représente la proportion de la variance de la variable dépendante qui est expliquée par le modèle de régression. Une valeur de 0.64 signifie que 64% de la variabilité de la variable dépendante est expliquée par le modèle."
+    },
+    {
+      "question": "Lors d'un test du Khi-deux d'indépendance, on obtient une p-value de 0.03. Que peut-on conclure au seuil de 5% ?",
+      "optionA": "Les variables sont indépendantes",
+      "optionB": "Les variables ne sont pas indépendantes",
+      "optionC": "Le test n'est pas valide",
+      "optionD": "On ne peut pas conclure",
+      "correctAnswer": "B",
+      "explanation": "Avec une p-value de 0.03 inférieure au seuil de 0.05, on rejette l'hypothèse nulle d'indépendance entre les variables. On conclut donc qu'elles ne sont pas indépendantes."
+    },
+    {
+      "question": "Dans une étude sur l'effet d'un traitement, on compare deux groupes: un groupe témoin (n=50) et un groupe traité (n=50). Les variances des deux groupes sont très différentes. Quel test utiliser pour comparer les moyennes ?",
+      "optionA": "Test t de Student classique",
+      "optionB": "Test t de Student avec Welch",
+      "optionC": "Test de Mann-Whitney",
+      "optionD": "Test ANOVA",
+      "correctAnswer": "B",
+      "explanation": "Lorsque les variances des deux groupes sont très différentes, le test t de Student classique n'est pas approprié. Le test t de Student avec Welch (ou test de Welch-Satterthwaite) est conçu pour ce cas de figure, car il ne suppose pas l'égalité des variances."
+    },
+    {
+      "question": "Dans une distribution normale, quel pourcentage des valeurs se situe entre -1 et +1 écart-type par rapport à la moyenne ?",
+      "optionA": "50%",
+      "optionB": "68%",
+      "optionC": "95%",
+      "optionD": "99%",
+      "correctAnswer": "B",
+      "explanation": "Dans une distribution normale, environ 68% des valeurs se situent dans l'intervalle [-1σ, +1σ] autour de la moyenne. C'est une propriété fondamentale de la distribution normale."
+    },
+    {
+      "question": "Pour estimer la moyenne d'une population avec une marge d'erreur de 2% et un niveau de confiance de 95%, quelle taille d'échantillon minimale est nécessaire si l'écart-type est estimé à 10 ?",
+      "optionA": "96",
+      "optionB": "97",
+      "optionC": "98",
+      "optionD": "100",
+      "correctAnswer": "B",
+      "explanation": "La formule pour la taille d'échantillon est n = (Z² * σ²) / E². Pour un niveau de confiance de 95%, Z ≈ 1.96. Avec σ=10 et E=0.02*μ, si on suppose μ=100 (donc E=2), on obtient n ≈ 97."
+    },
+    {
+      "question": "Dans une régression linéaire multiple, on observe que le coefficient de détermination ajusté est plus faible que le coefficient de détermination standard. Que cela implique-t-il ?",
+      "optionA": "Le modèle est surajusté",
+      "optionB": "Le modèle est sous-ajusté",
+      "optionC": "Les variables prédictives sont corrélées",
+      "optionD": "L'ajout de variables n'améliore pas le modèle",
+      "correctAnswer": "D",
+      "explanation": "Le coefficient de détermination ajusté est plus faible que le coefficient standard lorsque l'ajout de nouvelles variables n'améliore pas suffisamment le modèle pour justifier leur inclusion. Cela indique que les variables ajoutées n'apportent pas d'explication significative supplémentaire."
+    },
+    {
+      "question": "Lors d'un test de Student bilatéral, on obtient une statistique de test de 2.5 avec 30 degrés de liberté. Quelle est la p-value approximative ?",
+      "optionA": "0.01 < p < 0.02",
+      "optionB": "0.02 < p < 0.05",
+      "optionC": "0.05 < p < 0.10",
+      "optionD": "0.10 < p < 0.20",
+      "correctAnswer": "B",
+      "explanation": "Avec 30 degrés de liberté, une statistique de test de 2.5 correspond à une p-value bilatérale approximative entre 0.02 et 0.05. Les tables de Student montrent que pour df=30, les valeurs critiques pour α=0.05 et α=0.02 sont respectivement autour de 2.04 et 2.46."
+    },
+    {
+      "question": "Dans une étude de corrélation, on observe un coefficient de corrélation de -0.7 entre deux variables. Que peut-on dire de la relation entre ces variables ?",
+      "optionA": "Il existe une relation linéaire négative forte",
+      "optionB": "Il existe une relation linéaire positive modérée",
+      "optionC": "70% des variations d'une variable sont expliquées par l'autre",
+      "optionD": "La relation est causale",
+      "correctAnswer": "A",
+      "explanation": "Un coefficient de corrélation de -0.7 indique une relation linéaire négative et forte entre les deux variables. La valeur négative indique que lorsque l'une augmente, l'autre tend à diminuer."
+    },
+    {
+      "question": "Pour un test du Khi-deux, quelle condition doit être vérifiée pour que l'approximation soit valide ?",
+      "optionA": "Les effectifs théoriques doivent être supérieurs à 5 dans plus de 80% des cases",
+      "optionB": "Les effectifs théoriques doivent être supérieurs à 1 dans toutes les cases",
+      "optionC": "Les effectifs théoriques doivent être supérieurs à 5 dans toutes les cases",
+      "optionD": "Les effectifs observés doivent être supérieurs à 30",
+      "correctAnswer": "C",
+      "explanation": "Pour que le test du Khi-deux soit valide, les effectifs théoriques attendus doivent être supérieurs à 5 dans toutes les cases du tableau de contingence. C'est une condition essentielle pour l'approximation de la distribution du Khi-deux."
+    },
+    {
+      "question": "Dans une régression linéaire simple, on observe une p-value de 0.01 pour le coefficient de la variable explicative. Que cela implique-t-il ?",
+      "optionA": "La variable explicative n'a pas d'effet significatif sur la variable dépendante",
+      "optionB": "La variable explicative a un effet significatif sur la variable dépendante",
+      "optionC": "Le modèle n'est pas globalement significatif",
+      "optionD": "La relation est non linéaire",
+      "correctAnswer": "B",
+      "explanation": "Une p-value de 0.01 pour le coefficient d'une variable explicative indique que cette variable a un effet statistiquement significatif sur la variable dépendante (au seuil de 5% ou même 1%)."
+    },
+    {
+      "question": "Pour estimer une proportion avec une marge d'erreur de 3% et un niveau de confiance de 95%, quelle taille d'échantillon minimale est nécessaire si on ne dispose d'aucune information préalable sur la proportion ?",
+      "optionA": "1068",
+      "optionB": "1071",
+      "optionC": "1077",
+      "optionD": "1100",
+      "correctAnswer": "A",
+      "explanation": "Pour estimer une proportion sans information préalable, on utilise p=0.5 pour maximiser la variance. La formule est n = Z² * p * (1-p) / E². Pour un niveau de confiance de 95%, Z=1.96, E=0.03, ce qui donne n ≈ 1068."
+    },
+    {
+      "question": "Dans une distribution normale, quel est le centile correspondant à une valeur située à 1.645 écart-types au-dessus de la moyenne ?",
+      "optionA": "50ème",
+      "optionB": "90ème",
+      "optionC": "95ème",
+      "optionD": "99ème",
+      "correctAnswer": "C",
+      "explanation": "Dans une distribution normale standard, la valeur de 1.645 écart-types au-dessus de la moyenne correspond au 95ème centile. Cela signifie que 95% des valeurs se situent en dessous de ce point."
+    },
+    {
+      "question": "Pour une régression linéaire multiple avec 3 variables explicatives, on obtient un R² de 0.75 et un R² ajusté de 0.72. Que cela indique-t-il ?",
+      "optionA": "Le modèle est surajusté",
+      "optionB": "Le modèle est sous-ajusté",
+      "optionC": "Les variables explicatives sont fortement corrélées",
+      "optionD": "Les variables explicatives apportent une contribution significative",
+      "correctAnswer": "D",
+      "explanation": "Le fait que le R² ajusté soit seulement légèrement inférieur au R² standard indique que les variables explicatives apportent une contribution significative au modèle. La différence modérée suggère qu'il n'y a pas de surajustement marqué."
+    }
+  ]
+}

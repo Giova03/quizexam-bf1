@@ -1,0 +1,328 @@
+{
+  "bankKey": "diplomatie-mondiale",
+  "title": "Diplomatie et Relations Internationales",
+  "description": "Diplomatie, traités, organisations, droit international.",
+  "category": "Culture Générale",
+  "subcategory": "Diplomatie",
+  "icon": "Handshake",
+  "color": "violet",
+  "level": "TOUS",
+  "subject": "Diplomatie: traités (Westphalie, Vienne, Versailles), droit international, ONU, UA, CEDEAO, AES, UE, négociations, ambassades",
+  "questions": [
+    {
+      "question": "La Convention de Vienne sur le droit des traités de 1969 établit principalement :",
+      "optionA": "les règles de conclusion et d'application des traités entre États",
+      "optionB": "les principes de souveraineté et d'égalité des États",
+      "optionC": "les modalités d'intervention militaire humanitaire",
+      "optionD": "les conditions d'adhésion à l'Organisation des Nations Unies",
+      "correctAnswer": "A",
+      "explanation": "La Convention de Vienne de 1969 codifie le droit international concernant la formation, l'application et la résolution des litiges relatifs aux traités entre États."
+    },
+    {
+      "question": "Le principe de 'compétence universelle' en droit international permet à un État de poursuivre :",
+      "optionA": "tout individu accusé de crimes internationaux, quel que soit son lieu de résidence",
+      "optionB": "uniquement les citoyens de son propre pays",
+      "optionC": "les chefs d'État en fonction dans d'autres pays",
+      "optionD": "les entreprises multinationales en violation des droits de l'homme",
+      "correctAnswer": "A",
+      "explanation": "La compétence universelle autorise un État à exercer sa juridiction sur des crimes internationaux graves (crimes contre l'humanité, génocide, etc.) quel que soit le lieu ou la nationalité."
+    },
+    {
+      "question": "Le Conseil de sécurité des Nations Unies peut décider d'actions coercitives à l'unanimité :",
+      "optionA": "des 15 membres permanents et non-permanents",
+      "optionB": "des 5 membres permanents seulement",
+      "optionC": "à la majorité simple des membres présents",
+      "optionD": "à la majorité qualifiée des 15 membres",
+      "correctAnswer": "D",
+      "explanation": "Le Conseil de sécurité prend les décisions à la majorité des 15 membres, mais le veto des 5 membres permanents (P5) peut bloquer les décisions substantielles."
+    },
+    {
+      "question": "L'Union Africaine (UA) a succédé à :",
+      "optionA": "l'Organisation de l'Unité Africaine (OUA)",
+      "optionB": "la Communauté Économique des États de l'Afrique de l'Ouest (CEDEAO)",
+      "optionC": "l'Union du Maghreb Arabe (UMA)",
+      "optionD": "la Communauté des États Sahélo-Sahariens (CEN-SAD)",
+      "correctAnswer": "A",
+      "explanation": "L'Union Africaine (UA) a été créée en 2001 pour succéder à l'Organisation de l'Unité Africaine (OUA), fondée en 1963."
+    },
+    {
+      "question": "La Cour Pénale Internationale (CPI) a compétence pour juger :",
+      "optionA": "uniquement les crimes commis après son entrée en vigueur en 2002",
+      "optionB": "tous les crimes internationaux, quelle que soit la date",
+      "optionC": "les crimes commis par des chefs d'État seulement",
+      "optionD": "les crimes commis sur le territoire des États parties à son statut",
+      "correctAnswer": "A",
+      "explanation": "La CPI n'a compétence que pour les crimes commis après son entrée en vigueur le 1er juillet 2002, et seulement si l'État concerné est partie au Statut de Rome ou si le crime a été commis sur le territoire d'un État partie."
+    },
+    {
+      "question": "La doctrine 'Monroe' en politique étrangère américaine proclame :",
+      "optionA": "le principe de non-ingérence dans les affaires intérieures des États",
+      "optionB": "l'interventionnisme humanitaire",
+      "optionC": "l'opposition à la colonisation européenne dans les Amériques",
+      "optionD": "la primauté du droit commercial international",
+      "correctAnswer": "C",
+      "explanation": "La doctrine Monroe (1823) déclare l'opposition des États-Unis à toute nouvelle colonisation européenne dans les Amériques et affirme le principe de non-ingérence mutuelle."
+    },
+    {
+      "question": "La 'clause de la nation la plus favorisée' en droit commercial international signifie :",
+      "optionA": "traitement préférentiel pour les pays en développement",
+      "optionB": "égalité de traitement entre les partenaires commerciaux",
+      "optionC": "avantages exclusifs pour les pays signataires d'accords bilatéraux",
+      "optionD": "priorité pour les anciennes puissances coloniales",
+      "correctAnswer": "B",
+      "explanation": "Cette clause stipule qu'un accord commercial entre deux pays s'applique automatiquement aux mêmes conditions à tous les autres pays bénéficiaires de clauses similaires."
+    },
+    {
+      "question": "La CEDEAO a été créée pour :",
+      "optionA": "assurer la sécurité collective de ses membres",
+      "optionB": "promouvoir l'intégration économique et le développement",
+      "optionC": "faciliter la libre circulation des personnes",
+      "optionD": "protéger les minorités ethniques",
+      "correctAnswer": "B",
+      "explanation": "La CEDEAO a été créée en 1975 pour promouvoir la coopération économique, le développement et l'intégration régionale en Afrique de l'Ouest."
+    },
+    {
+      "question": "Le principe 'd'état de nécessité' en droit international humanitaire permet :",
+      "optionA": "de violer les droits humains en situation d'urgence",
+      "optionB": "de déroger temporairement à certaines obligations du droit international",
+      "optionC": "d'intervenir militairement dans un État en crise",
+      "optionD": "de suspendre l'application du droit international",
+      "correctAnswer": "B",
+      "explanation": "Le principe d'état de nécessité permet à un État de déroger temporairement à certaines obligations internationales face à une menace existentielle, mais dans des limites strictes."
+    },
+    {
+      "question": "L'Accord d'Évian (1962) a mis fin à :",
+      "optionA": "la guerre du Vietnam",
+      "optionB": "la guerre d'Algérie",
+      "optionC": "la crise de Suez",
+      "optionD": "la guerre de Corée",
+      "correctAnswer": "B",
+      "explanation": "L'Accord d'Évian, signé en mars 1962, a mis fin à la guerre d'Algérie et ouvert la voie à l'indépendance de l'Algérie."
+    },
+    {
+      "question": "La 'diplomatie parallèle' désigne :",
+      "optionA": "les négociations secrètes entre États",
+      "optionB": "la diplomatie menée par les ONG et les acteurs non-étatiques",
+      "optionC": "les relations diplomatiques informelles entre pays",
+      "optionD": "la diplomatie économique uniquement",
+      "correctAnswer": "B",
+      "explanation": "La diplomatie parallèle fait référence aux initiatives diplomatiques menées par des acteurs non-étatiques comme les ONG, les entreprises ou les individus, en complément ou en parallèle de la diplomatie officielle."
+    },
+    {
+      "question": "La 'diplomatie des ambassades' traditionnelle repose principalement sur :",
+      "optionA": "la représentation officielle permanente entre États",
+      "optionB": "la négociation d'accords commerciaux",
+      "optionC": "la collecte de renseignements",
+      "optionD": "la promotion culturelle",
+      "correctAnswer": "A",
+      "explanation": "La diplomatie des ambassades repose sur le système de représentation permanente entre États, avec des ambassadeurs accrédités pour faciliter les relations bilatérales."
+    },
+    {
+      "question": "L'Accord de Cotonou (2000) régit les relations entre :",
+      "optionA": "l'Union Européenne et les pays d'Afrique, Caraïbes, Pacifique (ACP)",
+      "optionB": "les pays membres de l'ASEAN",
+      "optionC": "les États membres de l'ALENA",
+      "optionD": "les pays signataires de l'accord de libre-échange nord-américain",
+      "correctAnswer": "A",
+      "explanation": "L'Accord de Cotonou établit le cadre des relations entre l'Union Européenne et les 79 pays d'Afrique, Caraïbes et Pacifique (ACP), axé sur le développement et la coopération économique."
+    },
+    {
+      "question": "Le concept de 'soft power' en relations internationales, popularisé par Joseph Nye, fait référence à :",
+      "optionA": "l'influence militaire et coercitive",
+      "optionB": "la capacité à convaincre par l'attrait culturel, politique et idéologique",
+      "optionC": "le pouvoir économique et financier",
+      "optionD": "la diplomatie multilatérale",
+      "correctAnswer": "B",
+      "explanation": "Le soft power désigne la capacité d'un État à influencer les autres par des moyens non-coercitifs, tels que la culture, les valeurs politiques et la diplomatie."
+    },
+    {
+      "question": "La 'diplomatie culturelle' vise principalement à :",
+      "optionA": "exporter les produits culturels nationaux",
+      "optionB": "influencer l'opinion publique étrangère par la culture",
+      "optionC": "protéger le patrimoine culturel mondial",
+      "optionD": "faciliter les échanges universitaires",
+      "correctAnswer": "B",
+      "explanation": "La diplomatie culturelle utilise les échanges culturels pour influencer l'opinion publique étrangère et renforcer les relations internationales."
+    },
+    {
+      "question": "L'Accord de Paris sur le climat (2015) a pour objectif principal de :",
+      "optionA": "éradiquer la pauvreté mondiale",
+      "optionB": "limiter le réchauffement climatique bien en deçà de 2°C",
+      "optionC": "protéger la biodiversité mondiale",
+      "optionD": "promouvoir les énergies renouvelables",
+      "correctAnswer": "B",
+      "explanation": "L'Accord de Paris vise à maintenir l'augmentation de la température mondiale bien en deçà de 2°C par rapport aux niveaux préindustriels, et à poursuivre les efforts pour la limiter à 1,5°C."
+    },
+    {
+      "question": "La 'doctrine des relations étrangères' d'un État est généralement définie par :",
+      "optionA": "le seul ministre des Affaires étrangères",
+      "optionB": "le pouvoir exécutif (président/premier ministre)",
+      "optionC": "le parlement",
+      "optionD": "la société civile",
+      "correctAnswer": "B",
+      "explanation": "La politique étrangère d'un État est généralement définie et mise en œuvre par le pouvoir exécutif, bien que le parlement puisse exercer un contrôle et influencer cette politique."
+    },
+    {
+      "question": "L'Accord d'Alma-Ata (1978) est associé à :",
+      "optionA": "la sécurité collective en Asie",
+      "optionB": "la santé pour tous d'ici l'an 2000",
+      "optionC": "la non-prolifération nucléaire",
+      "optionD": "la protection de l'environnement",
+      "correctAnswer": "B",
+      "explanation": "La Déclaration d'Alma-Ata, adoptée lors de la Conférence internationale sur la santé primaire, a établi l'objectif de 'Santé pour tous d'ici l'an 2000'."
+    },
+    {
+      "question": "La 'diplomatie économique' se concentre sur :",
+      "optionA": "la promotion des intérêts commerciaux et d'investissement",
+      "optionB": "la négociation de traités de désarmement",
+      "optionC": "la gestion des crises humanitaires",
+      "optionD": "la coopération culturelle",
+      "correctAnswer": "A",
+      "explanation": "La diplomatie économique vise à promouvoir les intérêts commerciaux, les investissements et la coopération économique entre États."
+    },
+    {
+      "question": "L'Accord de libre-écomique entre l'UE et le Mercosur (2019) vise à :",
+      "optionA": "créer une zone de libre-échange entre l'UE et les pays d'Amérique du Sud",
+      "optionB": "harmoniser les monnaies européennes et sud-américaines",
+      "optionC": "créer une union politique transcontinentale",
+      "optionD": "établir des normes environnementales communes",
+      "correctAnswer": "A",
+      "explanation": "Cet accord, bien que non encore ratifié, vise à créer une zone de libre-échange entre l'Union Européenne et le Mercosur (Brésil, Argentine, Uruguay, Paraguay)."
+    },
+    {
+      "question": "Quelle est la principale différence entre un traité 'cadre' et un traité 'détail' en droit international public ?",
+      "optionA": "Un traité cadre est toujours contraignant tandis qu'un traité détail ne l'est pas",
+      "optionB": "Un traité cadre établit les principes généraux tandis qu'un traité détail précise les modalités d'application",
+      "optionC": "Seuls les traités cadre sont enregistrés à l'ONU",
+      "optionD": "Les traités cadre sont conclus uniquement entre États voisins",
+      "correctAnswer": "B",
+      "explanation": "Un traité cadre établit les principes et objectifs généraux d'une coopération, tandis qu'un traité détail ou d'application précise les modalités concrètes de mise en œuvre de ces principes."
+    },
+    {
+      "question": "Selon la Charte des Nations Unies, quel organe principal a la responsabilité principale du maintien de la paix et de la sécurité internationale ?",
+      "optionA": "L'Assemblée générale",
+      "optionB": "Le Conseil de sécurité",
+      "optionC": "La Cour internationale de Justice",
+      "optionD": "Le Secrétaire général",
+      "correctAnswer": "B",
+      "explanation": "L'article 24 de la Charte des Nations Unies confère au Conseil de sécurité la responsabilité principale du maintien de la paix et de la sécurité internationales."
+    },
+    {
+      "question": "Quelle est la particularité du mécanisme de 'paix et de sécurité' de l'Union africaine par rapport à celui de l'ONU ?",
+      "optionA": "L'UA a un droit de veto similaire à celui des membres permanents du Conseil de sécurité de l'ONU",
+      "optionB": "L'UA dispose d'une force d'intervention rapide autonome",
+      "optionC": "Seule l'UA peut intervenir militairement sans mandat du Conseil de sécurité",
+      "optionD": "L'UA n'a pas de mécanisme de paix et de sécurité propre",
+      "correctAnswer": "B",
+      "explanation": "L'Union africaine a mis en place un mécanisme de paix et de sécurité avec une force d'intervention rapide (FARCI) qui lui permet d'agir plus rapidement que l'ONU dans certaines situations."
+    },
+    {
+      "question": "Quelle est la principale caractéristique de la Communauté des États de l'Afrique de l'Ouest (CEDEAO) dans le domaine de la paix et de la sécurité ?",
+      "optionA": "Elle ne peut intervenir que sur mandat de l'ONU",
+      "optionB": "Elle dispose d'un mécanisme de prévention, de gestion et de règlement des conflits",
+      "optionC": "Elle n'a pas de capacité militaire propre",
+      "optionD": "Son intervention nécessite l'unanimité de tous les membres",
+      "correctAnswer": "B",
+      "explanation": "La CEDEAO a mis en place un mécanisme de prévention, de gestion et de règlement des conflits (MPGRC) qui lui permet d'intervenir dans les crises régionales."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre l'Accord d'Entente sur la Sécurité (AES) et le Traité de Non-Prolifération nucléaire (TNP) ?",
+      "optionA": "L'AES est régional tandis que le TNP est mondial",
+      "optionB": "Seul le TPN interdit la possession d'armes nucléaires",
+      "optionC": "L'AES concerne les armes conventionnelles tandis que le TPN concerne les armes nucléaires",
+      "optionD": "L'AES est un traité défensif tandis que le TPN est un traité offensif",
+      "correctAnswer": "C",
+      "explanation": "L'Accord d'Entente sur la Sécurité (AES) concerne les armes conventionnelles et la transparence dans ce domaine, tandis que le Traité de Non-Prolifération nucléaire (TNP) vise à limiter la prolifération des armes nucléaires."
+    },
+    {
+      "question": "Selon la Convention de Vienne sur les relations diplomatiques de 1961, quel est le statut juridique de la personne d'un ambassadeur ?",
+      "optionA": "Il relève de la juridiction exclusive de l'État accréditant",
+      "optionB": "Il relève de la juridiction exclusive de l'État accréditaire",
+      "optionC": "Il jouit d'une immunité partielle",
+      "optionD": "Il n'a aucune immunité juridictionnelle spécifique",
+      "correctAnswer": "A",
+      "explanation": "Selon l'article 31 de la Convention de Vienne, la personne d'un chef de mission diplomatique jouit de l'inviolabilité et ne peut faire l'objet d'aucune mesure d'exécution civile ou pénale."
+    },
+    {
+      "question": "Quelle est la particularité de la procédure d'adoption des résolutions contraignantes du Conseil de sécurité de l'ONU ?",
+      "optionA": "Elles nécessitent un vote à la majorité simple",
+      "optionB": "Elles peuvent être adoptées par le Secrétaire général en cas d'urgence",
+      "optionC": "Elles nécessitent l'absence de veto des membres permanents",
+      "optionD": "Elles sont soumises à l'approbation préalable de l'Assemblée générale",
+      "correctAnswer": "C",
+      "explanation": "Les résolutions contraignantes du Conseil de sécurité nécessitent 9 voix sur 15, y compris les voix affirmatives des cinq membres permanents (Chine, France, Russie, Royaume-Uni, États-Unis) qui peuvent opposer leur veto."
+    },
+    {
+      "question": "Quelle est la principale différence entre la médiation et la conciliation dans le règlement des différends internationaux ?",
+      "optionA": "La médiation est contraignante tandis que la conciliation ne l'est pas",
+      "optionB": "La conciliation implique un tiers qui propose une solution contraignante",
+      "optionC": "La médiation implique un tiers qui facilite la négociation sans proposer de solution",
+      "optionD": "Seule la conciliation peut être imposée par l'ONU",
+      "correctAnswer": "C",
+      "explanation": "Dans la médiation, un tiers facilite la négociation entre les parties sans imposer de solution. Dans la conciliation, un tiers analyse le différend et propose une solution qui n'est contraignante que si les parties l'acceptent."
+    },
+    {
+      "question": "Quelle est la particularité du statut de l'Union africaine (UA) par rapport à l'Organisation des Nations Unies (ONU) ?",
+      "optionA": "L'UA peut imposer des sanctions économiques sans vote",
+      "optionB": "L'UA a une capacité d'intervention militaire directe dans ses États membres",
+      "optionC": "L'UA a un droit de veto similaire à celui du Conseil de sécurité de l'ONU",
+      "optionD": "L'UA ne peut pas créer des tribunaux internationaux",
+      "correctAnswer": "B",
+      "explanation": "L'article 4(h) du Protocole relatif aux mécanismes de prévention, de gestion et de règlement des conflits de l'UA autorise l'Union à intervenir dans un État membre pour prévenir le crime de guerre, le génocide et les crimes contre l'humanité."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre un traité 'bilatéral' et un traité 'multilatéral' ?",
+      "optionA": "Seuls les traités multilatéraux sont enregistrés à l'ONU",
+      "optionB": "Un traité bilatéral lie deux parties tandis qu'un traité multilatéral lie trois parties ou plus",
+      "optionC": "Les traités bilatéraux sont toujours plus contraignants que les traités multilatéraux",
+      "optionD": "Seuls les traités multilatéraux peuvent être modifiés",
+      "correctAnswer": "B",
+      "explanation": "La différence fondamentale réside dans le nombre de parties liées: un traité bilatéral lie deux États, tandis qu'un traité multilatéral lie trois États ou plus."
+    },
+    {
+      "question": "Quelle est la particularité de la procédure de 'retrait' d'un État d'un traité multilatéral selon la Convention de Vienne de 1969 ?",
+      "optionA": "Un État peut se retirer à tout moment sans justification",
+      "optionB": "Le retrait n'est possible que si le traité contient une clause explicite le permettant",
+      "optionC": "Le retrait est toujours possible après un préavis de 12 mois",
+      "optionD": "Seul le Conseil de sécurité de l'ONU peut autoriser un retrait",
+      "correctAnswer": "B",
+      "explanation": "Selon l'article 56 de la Convention de Vienne, un État ne peut se retirer d'un traité multilatéral que si les parties ont convenu d'un droit de retrait ou si le traité permet un tel retrait."
+    },
+    {
+      "question": "Quelle est la principale fonction de la Cour internationale de Justice (CIJ) au sein du système des Nations Unies ?",
+      "optionA": "Elle juge les crimes de guerre et les crimes contre l'humanité",
+      "optionB": "Elle interprète les traités internationaux et règle les différends entre États",
+      "optionC": "Elle supervise l'application des sanctions de l'ONU",
+      "optionD": "Elle autorise les interventions militaires humanitaires",
+      "correctAnswer": "B",
+      "explanation": "La CIJ est l'organe judiciaire principal de l'ONU. Ses fonctions principales sont d'interpréter le droit international et de trancher les différends légaux soumis par les États."
+    },
+    {
+      "question": "Quelle est la particularité du principe de 'souveraineté' dans le contexte de l'intégration régionale africaine ?",
+      "optionA": "Il est absolu et ne peut être limité par aucun traité",
+      "optionB": "Il est limité par les traités d'intégration auxquels les États ont volontairement adhéré",
+      "optionC": "Il ne s'applique qu'aux États membres de l'UA",
+      "optionD": "Il est suspendu automatiquement lors de conflits armés",
+      "correctAnswer": "B",
+      "explanation": "Dans le cadre de l'intégration régionale, les États acceptent volontairement de limiter leur souverainité dans certains domaines pour atteir des objectifs communs définis par les traités d'intégration."
+    },
+    {
+      "question": "Quelle est la différence entre une 'mission diplomatique permanente' et une 'conférence internationale' ?",
+      "optionA": "Une mission diplomatique permanente est établie entre États voisins uniquement",
+      "optionB": "Une conférence internationale a une durée limitée tandis qu'une mission diplomatique permanente est continue",
+      "optionC": "Seules les missions diplomatiques permanentes peuvent négocier des traités",
+      "optionD": "Les conférences internationales sont toujours organisées par l'ONU",
+      "correctAnswer": "B",
+      "explanation": "Une mission diplomatique permanente est établie de manière continue dans un Étaire hôte, tandis qu'une conférence internationale est une réunion temporaire avec un ordre du jour précis."
+    },
+    {
+      "question": "Quelle est la particularité du mécanisme de 'suspension' d'un État membre de l'Union africaine ?",
+      "optionA": "Il nécessite l'unanimité de tous les membres",
+      "optionB": "Il peut être décidé à la majorité simple de l'Assemblée de l'UA",
+      "optionC": "Il ne peut concerner que les États ayant commis un coup d'État militaire",
+      "optionD": "Il est automatique en cas de violation des droits de l'homme",
+      "correctAnswer": "C",
+      "explanation": "Selon le Protocole relatif à la mise en œuvre de l'Article 3(q) de l'Acte Constitutif de l'UA, un État ayant accédé au pouvoir par un coup d'État militaire est automatiquement suspendu de participation aux activités de l'UA."
+    }
+  ]
+}

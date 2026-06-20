@@ -1,0 +1,310 @@
+{
+  "bankKey": "concours-admin-justice",
+  "title": "Concours Administration Générale & Justice",
+  "description": "Droit constitutionnel, administratif, organisation administrative.",
+  "category": "Concours",
+  "subcategory": "Administration & Justice",
+  "icon": "Scale",
+  "color": "emerald",
+  "level": "LICENCE",
+  "subject": "Administration et justice: Constitution 1991, décentralisation (17 régions, 47 provinces), Conseil constitutionnel, Cour des comptes, ENAM",
+  "questions": [
+    {
+      "question": "Quelle est la caractéristique principale de la Constitution marocaine de 1991 concernant les droits fondamentaux ?",
+      "optionA": "Elle limite les droits fondamentaux aux citoyens de nationalité marocaine uniquement",
+      "optionB": "Elle établit une hiérarchie des droits avec les droits économiques primant sur les droits civils",
+      "optionC": "Elle consacre pour la première fois au Maroc la primauté des conventions internationales ratifiées sur la loi interne",
+      "optionD": "Elle exclut explicitement les droits culturels des droits fondamentaux",
+      "correctAnswer": "C",
+      "explanation": "La Constitution de 1991 a marqué une avancée significative en reconnaissant la primauté des conventions internationales ratifiées sur la loi interne, ce qui a renforcé la protection des droits fondamentaux au Maroc."
+    },
+    {
+      "question": "Concernant la décentralisation au Maroc, combien de régions et de provinces ont été établies par la Constitution de 2011 qui a réformé le cadre institutionnel ?",
+      "optionA": "12 régions et 36 provinces",
+      "optionB": "15 régions et 40 provinces",
+      "optionC": "17 régions et 47 provinces",
+      "optionD": "20 régions et 52 provinces",
+      "correctAnswer": "C",
+      "explanation": "La Constitution de 2011 a maintenu et consolidé le cadre de décentralisation avec 17 régions et 47 provinces, renforçant l'autonomie locale et la gouvernance territoriale."
+    },
+    {
+      "question": "Quelle est la composition du Conseil constitutionnel marocain selon la Constitution de 2011 ?",
+      "optionA": "12 membres dont 6 nommés par le Roi et 6 élus par le Parlement",
+      "optionB": "9 membres dont 3 nommés par le Roi, 3 élus par le Parlement et 3 élus par le Conseil supérieur du pouvoir judiciaire",
+      "optionC": "15 membres dont 5 nommés par le Roi, 5 élus par le Parlement et 5 élus par le Conseil consultatif",
+      "optionD": "6 membres nommés directement par le Roi",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil constitutionnel marocain est composé de 9 membres : 3 nommés par le Roi pour 9 ans, 3 élus par le Parlement pour 9 ans, et 3 élus par le Conseil supérieur du pouvoir judiciaire pour 6 ans."
+    },
+    {
+      "question": "Quelle est la principale mission de l'École nationale d'administration publique (ENAM) au Maroc ?",
+      "optionA": "Former exclusivement les hauts fonctionnaires du pouvoir exécutif",
+      "optionB": "Assurer la formation initiale et continue des agents de la fonction publique marocaine",
+      "optionC": "Contrôler la conformité des actes administratifs avec la Constitution",
+      "optionD": "Gérer les recrutements dans le secteur privé",
+      "correctAnswer": "B",
+      "explanation": "L'ENAM a pour principale mission de dispenser une formation initiale et continue aux agents de la fonction publique marocaine, préparant notamment les cadres supérieurs des administrations de l'État."
+    },
+    {
+      "question": "Selon la Constitution marocaine de 2011, quel est le rôle du Conseil constitutionnel concernant les référendums ?",
+      "optionA": "Il organise et supervise le déroulement du référendum",
+      "optionB": "Il vérifie la conformité des questions référendaires avec la Constitution",
+      "optionC": "Il proclame les résultats officiels du référendum",
+      "optionD": "Il peut annuler un référendum dont les résultats sont contestés",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil constitutionnel est compétent pour vérifier la conformité des questions référendaires avec la Constitution, garantissant ainsi que les consultations populaires respectent le cadre juridique suprême."
+    },
+    {
+      "question": "Quelle est la particularité des régions marocaines dans le cadre de la décentralisation post-2011 ?",
+      "optionA": "Chaque région a un pouvoir législatif autonome",
+      "optionB": "Les régions ont un statut de collectivité territoriale dotée d'une personnalité morale et d'une autonomie financière",
+      "optionC": "Les régions sont purement administratives sans autonomie décisionnelle",
+      "optionD": "Les régions sont dirigées par des gouverneurs nommés directement par le Roi",
+      "correctAnswer": "B",
+      "explanation": "Les régions marocaines sont des collectivités territoriales dotées d'une personnalité morale et d'une autonomie financière, avec des conseils élus qui ont des prérogatives en matière de développement économique et social."
+    },
+    {
+      "question": "Quelle est la procédure de nomination des membres du Conseil constitutionnel marocain ?",
+      "optionA": "Tous les membres sont nommés par décret royal",
+      "optionB": "Les membres sont élus par le peuple lors d'élections nationales",
+      "optionC": "Les membres sont désignés par les différentes branches du pouvoir selon des modalités précises",
+      "optionD": "Les membres sont cooptés parmi les anciens présidents de gouvernement",
+      "correctAnswer": "C",
+      "explanation": "Les membres du Conseil constitutionnel sont désignés par différentes autorités: le Roi nomme 3 membres, le Parlement élit 3 membres, et le Conseil supérieur du pouvoir judiciaire élit 3 membres."
+    },
+    {
+      "question": "Quelle est la place de l'ENAM dans le système de formation des hauts fonctionnaires au Maroc ?",
+      "optionA": "Elle est l'unique institution de formation pour la fonction publique",
+      "optionB": "Elle forme principalement les diplomates et les agents des Affaires étrangères",
+      "optionC": "Elle est l'école de formation pour les cadres supérieurs de l'administration marocaine",
+      "optionD": "Elle est chargée de la formation des magistrats",
+      "correctAnswer": "C",
+      "explanation": "L'ENAM est l'école de formation principale pour les cadres supérieurs de l'administration marocaine, préparant notamment les administrateurs de l'État, les attachés et les conseillers."
+    },
+    {
+      "question": "Quelle est la compétence exclusive du Conseil constitutionnel selon la Constitution marocaine de 2011 ?",
+      "optionA": "Il peut juger les hauts fonctionnels pour haute trahison",
+      "optionB": "Il contrôle la conformité des lois organiques avec la Constitution",
+      "optionC": "Il supervise les élections législatives",
+      "optionD": "Il peut réviser la Constitution à la demande du Roi",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil constitutionnel a compétence exclusive pour contrôler la conformité des lois organiques avec la Constitution, bien qu'il partage certaines compétences avec d'autres institutions dans d'autres domaines."
+    },
+    {
+      "question": "Quelle est la particularité de la décentralisation marocaine par rapport à d'autres pays ?",
+      "optionA": "Elle repose sur une autonomie complète des régions vis-à-vis de l'État central",
+      "optionB": "Elle est caractérisée par un transfert progressif de compétences et de ressources aux collectivités territoriales",
+      "optionC": "Elle exclut les provinces du processus de décentralisation",
+      "optionD": "Elle est entièrement gérée par des fonctionnaires nommés par l'État central",
+      "correctAnswer": "B",
+      "explanation": "La décentralisation marocaine est progressive, caractérisée par un transfert de compétences et de ressources aux collectivités territoriales (régions, provinces, communes) tout maintenant un lien avec l'État central."
+    },
+    {
+      "question": "Quelle est la durée du mandat des membres du Conseil constitutionnel marocain ?",
+      "optionA": "5 ans renouvelable",
+      "optionB": "9 ans non renouvelable pour les membres nommés par le Roi et 6 ans non renouvelable pour les autres",
+      "optionC": "6 ans renouvelable une fois",
+      "optionD": "Mandat à vie",
+      "correctAnswer": "B",
+      "explanation": "Les membres du Conseil constitutionnel nommés par le Roi ont un mandat de 9 ans non renouvelable, tandis que ceux élus par le Parlement et le Conseil supérieur du pouvoir judiciaire ont un mandat de 6 ans non renouvelable."
+    },
+    {
+      "question": "Quelle est la mission principale de l'ENAM en matière de formation continue ?",
+      "optionA": "Former uniquement les hauts fonctionnaires",
+      "optionB": "Assurer la formation des élus locaux",
+      "optionC": "Permettre l'adaptation et le perfectionnement des agents de la fonction publique",
+      "optionD": "Former les magistrats",
+      "correctAnswer": "C",
+      "explanation": "L'ENAM assure également une formation continue pour permettre l'adaptation et le perfectionnement des agents de la fonction publique tout au long de leur carrière."
+    },
+    {
+      "question": "Quelle est la procédure de révision constitutionnelle au Maroc selon la Constitution de 2011 ?",
+      "optionA": "Elle peut être initiée par simple majorité au Parlement",
+      "optionB": "Elle nécessite l'initiative du Roi et un référendum",
+      "optionC": "Elle est décidée par le Conseil des ministres seul",
+      "optionD": "Elle est une prérogative exclusive du Conseil constitutionnel",
+      "correctAnswer": "B",
+      "explanation": "La révision constitutionnelle au Maroc nécessite l'initiative du Roi et doit être soumise à référendum, sauf lorsque le Parlement est en congrès et vote la révision à la majorité des deux tiers des membres."
+    },
+    {
+      "question": "Quelle est la composition des régions marocaines après la réforme de 2015 ?",
+      "optionA": "Les régions sont divisées en départements administratifs",
+      "optionB": "Chaque région comprend plusieurs provinces et préfectures",
+      "optionC": "Les régions sont directement divisées en communes",
+      "optionD": "Les régions sont composées de wilayas uniquement",
+      "correctAnswer": "B",
+      "explanation": "Chaque région marocaine comprend plusieurs provinces et préfectures, qui sont elles-mêmes divisées en communes. Cette structure a été renforcée par la réforme de 2015."
+    },
+    {
+      "question": "Quelle est la nature des décisions du Conseil constitutionnel marocain ?",
+      "optionA": "Ses décisions sont consultatives et non contraignantes",
+      "optionB": "Ses décisions sont définitives et s'imposent à toutes les autorités publiques et privées",
+      "optionC": "Ses décisions peuvent être annulées par le Roi",
+      "optionD": "Ses décisions sont soumises à l'approbation du Parlement",
+      "correctAnswer": "B",
+      "explanation": "Les décisions du Conseil constitutionnel sont définitives et s'imposent à toutes les autorités publiques et privées, conférant au Conseil un caractère suprême dans le contrôle de constitutionnalité."
+    },
+    {
+      "question": "Quelle est la place de la décentralisation dans la Constitution marocaine de 2011 ?",
+      "optionA": "Elle est mentionnée uniquement dans les dispositions transitoires",
+      "optionB": "Elle constitue un principe fondamental de l'organisation de l'État",
+      "optionC": "Elle est explicitement rejetée au profit d'une centralisation renforcée",
+      "optionD": "Elle est traitée dans un protocole annexé à la Constitution",
+      "correctAnswer": "B",
+      "explanation": "La décentralisation constitue un principe fondamental de l'organisation de l'État selon la Constitution de 2011, qui consacre l'autonomie des collectivités territoriales."
+    },
+    {
+      "question": "Quelle est la particularité de la formation à l'ENAM pour les administrateurs des collectivités territoriales ?",
+      "optionA": "Ils sont formés séparément des autres administrateurs",
+      "optionB": "Ils suivent une formation spécialisée en gestion locale et développement territorial",
+      "optionC": "Ils sont formés par l'Institut royal de la gestion territoriale",
+      "optionD": "Ils n'ont pas de formation spécifique à l'ENAM",
+      "correctAnswer": "B",
+      "explanation": "L'ENAM propose une formation spécialisée pour les administrateurs des collectivités territoriales, axée sur la gestion locale, le développement territorial et la décentralisation."
+    },
+    {
+      "question": "Quelle est la compétence du Conseil constitutionnel concernant les lois organiques ?",
+      "optionA": "Il ne peut se prononcer qu'après leur promulgation",
+      "optionB": "Il doit obligatoirement être saisi avant leur promulgation",
+      "optionC": "Il peut être saisi par tout citoyen après leur promulgation",
+      "optionD": "Il n'a pas compétence sur les lois organiques",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil constitutionnel doit obligatoirement être saisi par le Président de la Chambre des représentants ou le Président de la Chambre des conseillers avant la promulgation des lois organiques."
+    },
+    {
+      "question": "Quelle est la particularité du financement des régions marocaines dans le cadre de la décentralisation ?",
+      "optionA": "Elles sont financées uniquement par des subventions de l'État central",
+      "optionB": "Elles disposent de ressources propres limitées à des taxes locales",
+      "optionC": "Elles bénéficient d'une autonomie financière avec des ressources propres et transfert de compétences fiscales",
+      "optionD": "Leur financement est assuré par des prêts bancaires garantis par l'État",
+      "correctAnswer": "C",
+      "explanation": "Les régions marocaines disposent d'une autonomie financière avec des ressources propres (taxes, redevances) et des transferts de compétences fiscales, complétés par des dotations de l'État central."
+    },
+    {
+      "question": "Concernant la décentralisation au Maroc, quel est le nombre exact de régions et de provinces prévus par la Constitution de 1991 ?",
+      "optionA": "16 régions et 45 provinces",
+      "optionB": "17 régions et 47 provinces",
+      "optionC": "18 régions et 50 provinces",
+      "optionD": "15 régions et 42 provinces",
+      "correctAnswer": "B",
+      "explanation": "La Constitution de 1991 a établi une organisation administrative basée sur 17 régions et 47 provinces, bien que la réforme de 2015 ait modifié cette structure."
+    },
+    {
+      "question": "Quelle est la composition du Conseil constitutionnel marocain selon la Constitution de 1991 ?",
+      "optionA": "12 membres nommés par le Roi",
+      "optionB": "9 membres dont 6 nommés par le Roi et 3 élus par le Parlement",
+      "optionC": "6 membres nommés par le Roi et 3 élus par les professionnels du droit",
+      "optionD": "15 membres dont 10 nommés par le Roi et 5 élus par le Parlement",
+      "correctAnswer": "B",
+      "explanation": "La Constitution de 1991 stipule que le Conseil constitutionnel est composé de 9 membres: 6 nommés par le Roi pour 9 ans, et 3 élus par le Parlement pour 9 ans également."
+    },
+    {
+      "question": "Quelle est la compétence exclusive du Conseil constitutionnel selon la Constitution de 1991 ?",
+      "optionA": "La révocation des élus locaux",
+      "optionB": "Le contrôle de la constitutionnalité des lois avant leur promulgation",
+      "optionC": "L'organisation des élections législatives",
+      "optionD": "La nomination des hauts fonctionnaires",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil constitutionnel a compétence exclusive pour le contrôle de la constitutionnalité des lois avant leur promulgation, une garantie essentielle de l'État de droit."
+    },
+    {
+      "question": "Quelle est la place de l'École Nationale d'Administration Marocaine (ENAM) dans le système constitutionnel de 1991 ?",
+      "optionA": "Elle est directement rattachée au Conseil constitutionnel",
+      "optionB": "Elle est prévue comme institution de formation des hauts fonctionnaires",
+      "optionC": "Elle est mentionnée comme organe de contrôle administratif",
+      "optionD": "Elle n'est pas mentionnée dans la Constitution de 1991",
+      "correctAnswer": "D",
+      "explanation": "L'ENAM n'est pas explicitement mentionnée dans la Constitution de 1991, bien qu'elle joue un rôle crucial dans la formation des hauts fonctionnaires de l'administration marocaine."
+    },
+    {
+      "question": "Selon la Constitution de 1991, quel orgue est chargé de veiller à l'application des principes de la décentralisation ?",
+      "optionA": "Le Conseil constitutionnel",
+      "optionB": "Le Conseil économique et social",
+      "optionC": "Le Premier ministre",
+      "optionD": "Le Parlement",
+      "correctAnswer": "C",
+      "explanation": "Le Premier ministre est chargé de veiller à l'application des principes de la décentralisation, conformément aux dispositions de la Constitution de 1991."
+    },
+    {
+      "question": "Quelle est la procédure de révision constitutionnelle prévue par la Constitution de 1991 ?",
+      "optionA": "Une révision peut être proposée par le Roi ou par les deux tiers des membres du Parlement",
+      "optionB": "Une révision nécessite l'approbation référendaire obligatoire",
+      "optionC": "Une révision peut être initiée uniquement par le Roi",
+      "optionD": "Une révision nécessite l'unanimité des membres du Parlement",
+      "correctAnswer": "A",
+      "explanation": "La Constitution de 1991 prévoit que la révision constitutionnelle peut être initiée par le Roi ou par les deux tiers des membres du Parlement, suivie d'un référendum."
+    },
+    {
+      "question": "Quelle est la durée du mandat des membres élus du Conseil constitutionnel selon la Constitution de 1991 ?",
+      "optionA": "6 ans",
+      "optionB": "9 ans",
+      "optionC": "12 ans",
+      "optionD": "15 ans",
+      "correctAnswer": "B",
+      "explanation": "Les membres élus du Conseil constitutionnel par le Parlement ont un mandat de 9 ans, non renouvelable, selon la Constitution de 1991."
+    },
+    {
+      "question": "Concernant la décentralisation, quelle est la nature des compétences transférées aux régions et provinces selon la Constitution de 1991 ?",
+      "optionA": "Compétences exclusives sans partage",
+      "optionB": "Compétences déléguées temporaires",
+      "optionC": "Compétences partagées avec l'administration centrale",
+      "optionD": "Compétences subsidiaires",
+      "correctAnswer": "C",
+      "explanation": "La Constitution de 1991 établit un système de compétences partagées entre les collectivités décentralisées et l'administration centrale, dans le cadre de la décentralisation."
+    },
+    {
+      "question": "Quelle est la procédure de nomination du président du Conseil constitutionnel selon la Constitution de 1991 ?",
+      "optionA": "Élu par les membres du Conseil",
+      "optionB": "Nommé par le Roi parmi ses membres",
+      "optionC": "Nommé par le Premier ministre",
+      "optionD": "Élu par le Parlement",
+      "correctAnswer": "B",
+      "explanation": "Le président du Conseil constitutionnel est nommé par le Roi parmi ses membres, selon les dispositions de la Constitution de 1991."
+    },
+    {
+      "question": "Quelle est la place du Conseil constitutionnel dans le système marocain de séparation des pouvoirs selon la Constitution de 1991 ?",
+      "optionA": "Il est un organe du pouvoir exécutif",
+      "optionB": "Il est un organe du pouvoir législatif",
+      "optionC": "Il est un organe indépendant chargé du contrôle de constitutionnalité",
+      "optionD": "Il est un organe judiciaire suprême",
+      "correctAnswer": "C",
+      "explanation": "Le Conseil constitutionnel est un organe constitutionnel indépendant chargé du contrôle de la constitutionnalité des lois, placé en dehors de la séparation classique des pouvoirs."
+    },
+    {
+      "question": "Quelle est la relation entre l'ENAM et la formation des membres du Conseil constitutionnel selon la Constitution de 1991 ?",
+      "optionA": "L'ENAM forme exclusivement les membres nommés par le Roi",
+      "optionB": "L'ENAM assure la formation continue de tous les membres",
+      "optionC": "Aucune relation n'est établie entre l'ENAM et le Conseil constitutionnel",
+      "optionD": "L'ENAM sélectionne les candidats aux membres élus",
+      "correctAnswer": "C",
+      "explanation": "La Constitution de 1991 n'établit aucune relation spécifique entre l'ENAM et le Conseil constitutionnel, bien que l'ENAM forme de nombreux hauts fonctionnaires."
+    },
+    {
+      "question": "Quelle est la procédure de contrôle de la constitutionnalité des lois après leur promulgation selon la Constitution de 1991 ?",
+      "optionA": "Un recours direct devant le Conseil constitutionnel",
+      "optionB": "Un recours devant les tribunaux ordinaires",
+      "optionC": "Un recours devant le Conseil supérieur du pouvoir judiciaire",
+      "optionD": "Aucun recours n'est prévu après promulgation",
+      "correctAnswer": "D",
+      "explanation": "La Constitution de 1991 ne prévoit pas de recours contre les lois après leur promulgation, le contrôle se faisant uniquement avant promulgation."
+    },
+    {
+      "question": "Quelle est la compétence des régions en matière d'administration territoriale selon la Constitution de 1991 ?",
+      "optionA": "Création de nouvelles provinces",
+      "optionB": "Création de communes",
+      "optionC": "Délimitation des circonscriptions électorales",
+      "optionD": "Organisation de leurs propres services administratifs",
+      "correctAnswer": "D",
+      "explanation": "La Constitution de 1991 accorde aux régions le pouvoir d'organiser leurs propres services administratifs, dans le cadre de leur autonomie."
+    },
+    {
+      "question": "Quelle est la procédure de nomination du directeur de l'ENAM selon la Constitution de 1991 ?",
+      "optionA": "Nomination par décret royal",
+      "optionB": "Nomination par le Premier ministre",
+      "optionC": "Élection par le Conseil d'administration de l'ENAM",
+      "optionD": "Aucune procédure n'est définie dans la Constitution",
+      "correctAnswer": "D",
+      "explanation": "La Constitution de 1991 ne définit aucune procédure spécifique pour la nomination du directeur de l'ENAM, relevant de la réglementation administrative."
+    }
+  ]
+}

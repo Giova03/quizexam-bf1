@@ -1,8 +1,8 @@
 {
   "bankKey": "geographie",
   "title": "Géographie & Sciences de la Terre",
-  "description": "Géographie physique et humaine, sciences de la Terre et environnement",
-  "category": "Géographie",
+  "description": "Géographie physique et humaine, sciences de la Terre.",
+  "category": "Secondaire",
   "icon": "Mountain",
   "color": "sky",
   "questions": [
@@ -276,5 +276,7 @@
       "correctAnswer": "B",
       "explanation": "Une tornade est causée par le mouvement rapide de l'air et est caractérisée par des vents violents et tourbillonnants."
     }
-  ]
+  ],
+  "subcategory": "Géographie",
+  "level": "TOUS"
 }

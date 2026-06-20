@@ -1,0 +1,319 @@
+{
+  "bankKey": "svt-6e-termd",
+  "title": "SVT - Du 6e à Terminale D",
+  "description": "Biologie, géologie, écologie - programme complet.",
+  "category": "Secondaire",
+  "subcategory": "SVT",
+  "icon": "Dna",
+  "color": "rose",
+  "level": "LYCEE",
+  "subject": "SVT du 6e à Terminale D: cellule, reproduction, génétique, immunologie, géologie, écologie, nutrition, santé (paludisme, VIH)",
+  "questions": [
+    {
+      "question": "Quelle structure membranaire est spécifiquement impliquée dans la reconnaissance cellulaire et la réponse immunitaire adaptative ?",
+      "optionA": "Le réticulum endoplasmique rugueux",
+      "optionB": "Les mitochondries",
+      "optionC": "Le complexe majeur d'histocompatibilité (CMH)",
+      "optionD": "Les lysosomes",
+      "correctAnswer": "C",
+      "explanation": "Le CMH, ou complexe majeur d'histocompatibilité, est un ensemble de molécules présentes à la surface des cellules qui présentent des antigènes aux lymphocytes T, jouant un rôle crucial dans la reconnaissance immunitaire."
+    },
+    {
+      "question": "Quel mécanisme explique la résistance aux antibiotiques chez les bactéries par sélection naturelle ?",
+      "optionA": "La transformation génétique",
+      "optionB": "La transduction",
+      "optionC": "La mutation ponctuelle suivie de sélection",
+      "optionD": "La conjugaison bactérienne",
+      "correctAnswer": "C",
+      "explanation": "La résistance aux antibiotiques survient principalement par mutation ponctuelle dans un gène bactérien, conférant un avantage sélectif dans un environnement contenant l'antibiotique, permettant aux bactéries mutantes de survivre et de se multiplier."
+    },
+    {
+      "question": "Quelle est la conséquence principale d'une nondisjunction chromosomique lors de la méiose I ?",
+      "optionA": "Une aneuploïdie dans les gamètes",
+      "optionB": "Une polyploïdie dans les cellules somatiques",
+      "optionC": "Une délétion chromosomique",
+      "optionD": "Une translocation chromosomique",
+      "correctAnswer": "A",
+      "explanation": "Une nondisjunction lors de la méiose I entraîne une distribution inégale des chromosomes dans les cellules filles, résultant en des gamètes avec un nombre anormal de chromosomes (aneuploïdie)."
+    },
+    {
+      "question": "Quel processus géologique explique la formation des chaînes de montagnes comme les Alpes ?",
+      "optionA": "La divergence de plaques lithosphériques",
+      "optionB": "La subduction d'une plaque océanique sous une plaque continentale",
+      "optionC": "La collision de deux plaques continentales",
+      "optionD": "La création d'une dorsale océanique",
+      "correctAnswer": "C",
+      "explanation": "La formation des chaînes de montagnes comme les Alpes est due à la collision de deux plaques continentales (Afrique et Eurasie), provoquant un plissement intense et un épaississement de la croûte terrestre."
+    },
+    {
+      "question": "Quelle est la fonction principale des cellules dendritiques dans le système immunitaire ?",
+      "optionA": "La production d'anticorps",
+      "optionB": "La présentation d'antigènes aux lymphocytes T",
+      "optionC": "La phagocytose directe de pathogènes",
+      "optionD": "La destruction des cellules infectées par le virus",
+      "correctAnswer": "B",
+      "explanation": "Les cellules dendritiques sont des cellules présentatrices d'antigènes spécialisées qui capturent, traitent et présentent des antigènes aux lymphocytes T, initiant ainsi la réponse immunitaire adaptative."
+    },
+    {
+      "question": "Quelle est la conséquence écologique principale de la fragmentation des habitats ?",
+      "optionA": "L'augmentation de la biodiversité locale",
+      "optionB": "La diminution de la diversité génétique des populations",
+      "optionC": "L'augmentation de la connectivité entre les écosystèmes",
+      "optionD": "La diminution de la compétition interspécifique",
+      "correctAnswer": "B",
+      "explanation": "La fragmentation des habitats isole les populations, réduisant le flux de gènes et augmentant l'effet de dérive génétique, ce qui conduit à une diminution de la diversité génétique et à une augmentation du risque d'extinction locale."
+    },
+    {
+      "question": "Quelle est la fonction principale des microvillosités dans les entérocytes ?",
+      "optionA": "La sécrétion d'enzymes digestives",
+      "optionB": "L'absorption des nutriments",
+      "optionC": "La protection contre les pathogènes",
+      "optionD": "La régulation du pH intestinal",
+      "correctAnswer": "B",
+      "explanation": "Les microvillosités sont des extensions de la membrane plasmique des entérocytes qui augmentent considérablement la surface d'absorption des nutriments provenant de la digestion."
+    },
+    {
+      "question": "Quel type de mutation est responsable de la drépanocytose ?",
+      "optionA": "Une délétion",
+      "optionB": "Une insertion",
+      "optionC": "Une substitution ponctuelle",
+      "optionD": "Une inversion chromosomique",
+      "correctAnswer": "C",
+      "explanation": "La drépanocytose est causée par une substitution ponctuelle (un nucléotide remplacé par un autre) dans le gène codant pour la chaîne bêta de l'hémoglobine, modifiant l'acide aminé 6 de la valine à l'acide glutamique."
+    },
+    {
+      "question": "Quel processus géologique explique la formation des volcans en arc insulaire comme le Japon ?",
+      "optionA": "La divergence de plaques lithosphériques",
+      "optionB": "La subduction d'une plaque océanique sous une autre plaque",
+      "optionC": "La collision de deux plaques continentales",
+      "optionD": "Le point chaud mantellique",
+      "correctAnswer": "B",
+      "explanation": "Les volcans en arc insulaire comme le Japon se forment par subduction d'une plaque océanique sous une autre plaque (ou sous une plaque continentale), créant un magma par fusion partielle du manteau au-dessus de la zone de subduction."
+    },
+    {
+      "question": "Quelle est la conséquence immunologique d'une greffe d'organe sans compatibilité HLA ?",
+      "optionA": "Rejet immédiat par les anticorps préexistants",
+      "optionB": "Rejet hyperaigu par activation du complément",
+      "optionC": "Rejet aigu par réponse cellulaire cytotoxique",
+      "optionD": "Toutes ces réponses",
+      "correctAnswer": "D",
+      "explanation": "En l'absence de compatibilité HLA, une greffe d'organe peut entraîner un rejet immédiat (hyperaigu) par activation du complément due aux anticorps préexistants, et un rejet aigu par réponse cellulaire cytotoxique médiée par les lymphocytes T."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre la méiose I et la méiose II ?",
+      "optionA": "La méiose I produit des cellules haploïdes, la méiose II produit des cellules diploïdes",
+      "optionB": "La séparation des homologues a lieu en méiose I, celle des chromatides sœurs en méiose II",
+      "optionC": "La méiose I est réductive, la méiose II est conservatrice",
+      "optionD": "La méiose I a lieu après la réplication, la méiose II avant",
+      "correctAnswer": "B",
+      "explanation": "La différence fondamentale est que la méiose I sépare les chromosomes homologues (chacun composé de deux chromatides), tandis que la méiose II sépare les chromatides sœurs, similaire à une mitose."
+    },
+    {
+      "question": "Quel type de roche est formé par la solidification de magma à la surface de la Terre ?",
+      "optionA": "Les roches métamorphiques",
+      "optionB": "Les roches sédimentaires",
+      "optionC": "Les roches ignées extrusives",
+      "optionD": "Les roches ignées plutoniques",
+      "correctAnswer": "C",
+      "explanation": "Les roches ignées extrusives (comme le basalte) se forment lorsque le magma refroidit et se solidifie à la surface de la Terre, contrairement aux roches ignées plutoniques qui se forment en profondeur."
+    },
+    {
+      "question": "Quelle est la conséquence principale de la déforestation tropicale sur le cycle du carbone ?",
+      "optionA": "Une augmentation de la séquestration de carbone",
+      "optionB": "Une augmentation des réserves de carbone dans le sol",
+      "optionC": "Une libération de carbone atmosphérique et une diminution de la séquestration",
+      "optionD": "Une diminution de la concentration de CO2 atmosphérique",
+      "correctAnswer": "C",
+      "explanation": "La déforestation tropicale libère du carbone stocké dans la biomasse et les sols, et diminue la capacité des écosystèmes à séquestrer le carbone atmosphérique, contribuant ainsi au changement climatique."
+    },
+    {
+      "question": "Quel est le rôle principal de la vitamine D dans l'organisme ?",
+      "optionA": "La coagulation sanguine",
+      "optionB": "L'absorption du calcium et du phosphore",
+      "optionC": "La synthèse des collagènes",
+      "optionD": "La vision nocturne",
+      "correctAnswer": "B",
+      "explanation": "La vitamine D joue un rôle crucial dans l'absorption intestinale du calcium et du phosphore, essentiels pour la minéralisation osseuse et le métabolisme phosphocalcique."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre une mutation germinale et une mutation somatique ?",
+      "optionA": "Les mutations germinales sont toujours délétères, les mutations somatiques sont toujours bénéfiques",
+      "optionB": "Les mutations germinales peuvent être transmises à la descendance, les mutations somatiques ne le sont pas",
+      "optionC": "Les mutations germinales surviennent dans les cellules sexuelles, les mutations somatiques dans toutes les autres cellules",
+      "optionD": "Les mutations germinales sont toujours des substitutions, les mutations somatiques sont toujours des insertions",
+      "correctAnswer": "B",
+      "explanation": "La différence fondamentale est que les mutations germinales, survenant dans les cellules sexuelles, peuvent être transmises à la descendance, tandis que les mutations somatiques, survenant dans les autres cellules, ne le sont pas."
+    },
+    {
+      "question": "Quel phénomène explique la formation des rifts continentaux comme la vallée du Grand Rift africain ?",
+      "optionA": "La collision de plaques continentales",
+      "optionB": "La subduction d'une plaque océanique",
+      "optionC": "La divergence de plaques continentales",
+      "optionD": "La transformation de plaques lithosphériques",
+      "correctAnswer": "C",
+      "explanation": "Les rifts continentaux comme le Grand Rift africain résultent de la divergence de plaques continentales, provoquant un étirement de la croûte, sa fracturation et la formation de failles normales."
+    },
+    {
+      "question": "Quelle est la fonction principale des cellules Natural Killer (NK) dans le système immunitaire ?",
+      "optionA": "La présentation d'antigènes",
+      "optionB": "La production d'anticorps",
+      "optionC": "La reconnaissance et la destruction des cellules infectées ou tumorales",
+      "optionD": "La régulation de l'inflammation",
+      "correctAnswer": "C",
+      "explanation": "Les cellules NK sont des lymphocytes innés qui reconnaissent et détruisent les cellules infectées par des virus ou les cellules tumorales sans nécessiter de sensibilisation préalable."
+    },
+    {
+      "question": "Quelle est la conséquence écologique principale de l'eutrophisation des écosystèmes aquatiques ?",
+      "optionA": "L'augmentation de la diversité spécifique",
+      "optionB": "La diminution de la production primaire",
+      "optionC": "La prolifération d'algues et l'hypoxie des eaux profondes",
+      "optionD": "L'augmentation de la transparence de l'eau",
+      "correctAnswer": "C",
+      "explanation": "L'eutrophisation, souvent due à un excès de nutriments (azote, phosphore), provoque une prolifération d'algues (bloom algale) qui, en se décomposant, consomment l'oxygène et créent des zones hypoxiques ou anoxiques, mortelles pour de nombreuses espèces aquatiques."
+    },
+    {
+      "question": "Quel est le mécanisme principal de régulation de la glycémie après un repas riche en glucides ?",
+      "optionA": "La libération de glucagon par le pancréas",
+      "optionB": "La libération d'insuline par le pancréas",
+      "optionC": "La libération de cortisol par les surrénales",
+      "optionD": "La libération d'adrénaline par la médullosurrénale",
+      "correctAnswer": "B",
+      "explanation": "Après un repas riche en glucides, le pancréas sécrète de l'insuline, qui permet l'entrée du glucose dans les cellules (muscles, foie) et son stockage sous forme de glycogène, abaissant ainsi la glycémie."
+    },
+    {
+      "question": "Quelle structure membranaire est responsable du transport actif des ions sodium et potassium dans la cellule ?",
+      "optionA": "La membrane plasmique",
+      "optionB": "La pompe Na+/K+",
+      "optionC": "Les mitochondries",
+      "optionD": "Le réticulum endoplasmique",
+      "correctAnswer": "B",
+      "explanation": "La pompe Na+/K+ est une proténe transmembranaire qui utilise l'énergie de l'ATP pour transporter activement 3 ions Na+ vers l'extérieur de la cellule et 2 ions K+ vers l'intérieur, maintenant ainsi le gradient électrochimique nécessaire à de nombreuses fonctions cellulaires."
+    },
+    {
+      "question": "Chez les mammifères, quel processus chromosomique spécifique assure la diversification génétique lors de la méiose ?",
+      "optionA": "La réplication de l'ADN",
+      "optionB": "L'entrecroisement (crossing-over)",
+      "optionC": "La transcription",
+      "optionD": "La traduction",
+      "correctAnswer": "B",
+      "explanation": "L'entrecroisement ou crossing-over est un processus durant la prophase I de la méiose où les chromosomes homologues échangent des segments d'ADN, créant de nouvelles combinaisons alléliques et augmentant la diversité génétique de la descendance."
+    },
+    {
+      "question": "Quel terme décrit l'ensemble des gènes portés par un organisme ?",
+      "optionA": "Génotype",
+      "optionB": "Phénotype",
+      "optionC": "Génome",
+      "optionD": "Caryotype",
+      "correctAnswer": "C",
+      "explanation": "Le génome désigne l'ensemble complet des gènes (ou matériel génétique) portés par un organisme ou une espèce, tandis que le génotype correspond à l'ensemble des allèles spécifiques d'un individu, et le phénotype à ses caractères observables."
+    },
+    {
+      "question": "Quelle cellule immunitaire est principalement responsable de la réponse humorale adaptative ?",
+      "optionA": "Les lymphocytes T",
+      "optionB": "Les lymphocytes B",
+      "optionC": "Les macrophages",
+      "optionD": "Les granulocytes neutrophiles",
+      "correctAnswer": "B",
+      "explanation": "Les lymphocytes B sont les principaux acteurs de la réponse humorale adaptative. Ils se différencient en plasmocytes qui produisent des anticorps spécifiques contre des antigènes, permettant la neutralisation des pathogènes dans les fluides corporels."
+    },
+    {
+      "question": "Quelle roche sédimentaire est principalement formée par la compression et la cimentation de débris organiques ?",
+      "optionA": "Le granite",
+      "optionB": "Le basalte",
+      "optionC": "Le calcaire",
+      "optionD": "Le charbon",
+      "correctAnswer": "D",
+      "explanation": "Le charbon est une roche sédimentaire organique formée par la décomposition et la compression de matière végétale dans des conditions anaérobiques, principalement durant le carbonifère."
+    },
+    {
+      "question": "Dans un écosystème, quel terme décrit la capacité à supporter une perturbation sans perdre sa fonctionnalité ?",
+      "optionA": "La productivité",
+      "optionB": "La diversité",
+      "optionC": "La résilience",
+      "optionD": "La stabilité",
+      "correctAnswer": "C",
+      "explanation": "La résilience écologique désigne la capacité d'un écosystème à absorber des perturbations tout en maintenant ses fonctions de base et sa structure. Elle est distincte de la stabilité qui concerne la résistance au changement."
+    },
+    {
+      "question": "Quel nutriment est essentiel pour la synthèse des hormones thyroïdiennes ?",
+      "optionA": "Le fer",
+      "optionB": "Le calcium",
+      "optionC": "L'iode",
+      "optionD": "Le magnésium",
+      "correctAnswer": "C",
+      "explanation": "L'iode est un élément crucial pour la synthèse des hormones thyroïdiennes (T3 et T4). Un déficit en iode peut entraîner des troubles comme le goitre et l'hypothyroïdie."
+    },
+    {
+      "question": "Quelle structure cellulaire est responsable de la production d'énergie sous forme d'ATP ?",
+      "optionA": "Le noyau",
+      "optionB": "Les ribosomes",
+      "optionC": "Les mitochondries",
+      "optionD": "Le golgi",
+      "correctAnswer": "C",
+      "explanation": "Les mitochondries sont souvent appelées 'centrales énergétiques' de la cellule car elles produisent la majorité de l'ATP par la phosphorylation oxydative durant la respiration cellulaire."
+    },
+    {
+      "question": "Quelle loi de Mendel décrit le principe de ségrégation des allèles lors de la formation des gamètes ?",
+      "optionA": "La loi de dominance",
+      "optionB": "La loi de ségrégation indépendante",
+      "optionC": "La loi de l'assortiment indépendant",
+      "optionD": "La loi de la ségrégation",
+      "correctAnswer": "D",
+      "explanation": "La loi de la ségrégation de Mendel stipule que les allèles d'un gène se séparent durant la formation des gamètes, chaque gamète ne contenant qu'un seul allèle par locus."
+    },
+    {
+      "question": "Quelle protéine est principalement impliquée dans la reconnaissance des antigènes par les lymphocytes T ?",
+      "optionA": "L'anticorps",
+      "optionB": "Le complexe majeur d'histocompatibilité",
+      "optionC": "L'interféron",
+      "optionD": "La complément",
+      "correctAnswer": "B",
+      "explanation": "Le complexe majeur d'histocompatibilité (CMH) ou MHC est un ensemble de molécules de surface cellulaire qui présentent des peptides antigéniques aux lymphocytes T, essentielle à la reconnaissance immunitaire adaptative."
+    },
+    {
+      "question": "Quelle force géologique principale est responsable de la formation des chaînes de montagnes ?",
+      "optionA": "L'érosion",
+      "optionB": "La sédimentation",
+      "optionC": "La tectonique des plaques",
+      "optionD": "Le volcanisme",
+      "correctAnswer": "C",
+      "explanation": "La tectonique des plaques, notamment la convergence lithosphérique, est le processus principal responsable de la formation des chaînes de montagnes lorsque deux plaques s'entrechoquent."
+    },
+    {
+      "question": "Dans un écosystème, quel terme décrit la position occupée par une espèce et son rôle fonctionnel ?",
+      "optionA": "La niche écologique",
+      "optionB": "L'habitat",
+      "optionC": "La communauté",
+      "optionD": "La population",
+      "correctAnswer": "A",
+      "explanation": "La niche écologique désigne la fonction et la position d'une espèce dans un écosystème, incluant ses relations avec d'autres organismes et son utilisation des ressources, distincte de l'habitat qui est simplement le lieu de vie."
+    },
+    {
+      "question": "Quel organe est principalement responsable de la régulation de la glycémie ?",
+      "optionA": "Le foie",
+      "optionB": "Le pancréas",
+      "optionC": "Les reins",
+      "optionD": "Le cœur",
+      "correctAnswer": "B",
+      "explanation": "Le pancréas, via ses cellules bêta des îlots de Langerhans, sécrète l'insuline pour abaisser la glycémie et les cellules alpha sécrètent le glucagon pour l'élever, assurant ainsi l'homéostasie glucidique."
+    },
+    {
+      "question": "Quelle structure chromosomique est formée par l'association de deux chromosomes homologues durant la méiose ?",
+      "optionA": "Le chromosome à deux chromatides",
+      "optionB": "Le bivalent",
+      "optionC": "Le tétravalent",
+      "optionD": "Le chromosome en anneau",
+      "correctAnswer": "B",
+      "explanation": "Le bivalent est la structure formée par l'association d'un chromosome paternel et d'un chromosome maternel homologues durant la prophase I de la méiose, chaque chromosome étant composé de deux chromatides sœurs."
+    },
+    {
+      "question": "Quel terme désigne l'ensemble des réactions métaboliques permettant de synthétiser des molécules complexes à partir de molécules plus simples ?",
+      "optionA": "La respiration cellulaire",
+      "optionB": "La photosynthèse",
+      "optionC": "La catabolisme",
+      "optionD": "L'anabolisme",
+      "correctAnswer": "D",
+      "explanation": "L'anabolisme regroupe les réactions métaboliques de biosynthèse qui construisent des molécules complexes (protéines, acides nucléiques, lipides) à partir de précurseurs plus simples, nécessitant de l'énergie."
+    }
+  ]
+}

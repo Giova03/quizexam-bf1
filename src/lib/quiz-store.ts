@@ -10,23 +10,17 @@ import type {
 } from "./types";
 
 interface QuizState {
-  // Navigation
   view: ViewName;
   selectedBankId: string | null;
   selectedExamId: string | null;
   currentSessionId: string | null;
-
-  // Cached data
   banks: QuestionBank[];
   exams: Exam[];
   session: QuizSession | null;
-
-  // Loading flags
   loadingBanks: boolean;
   loadingExams: boolean;
   loadingSession: boolean;
 
-  // Actions
   setView: (view: ViewName) => void;
   selectBank: (id: string) => void;
   selectExam: (id: string) => void;
@@ -38,12 +32,15 @@ interface QuizState {
   setLoadingExams: (v: boolean) => void;
   setLoadingSession: (v: boolean) => void;
 
-  // Navigation helpers
   goHome: () => void;
   openBank: (id: string) => void;
   openExam: (id: string) => void;
   startSession: (sessionId: string) => void;
   viewResults: (sessionId: string) => void;
+  openDashboard: () => void;
+  openAbout: () => void;
+  openAdmin: () => void;
+  openSocial: () => void;
 }
 
 export const useQuizStore = create<QuizState>((set) => ({
@@ -77,18 +74,18 @@ export const useQuizStore = create<QuizState>((set) => ({
       currentSessionId: null,
       session: null,
     }),
-  openBank: (id) =>
-    set({ selectedBankId: id, view: "bank-detail" }),
-  openExam: (id) =>
-    set({ selectedExamId: id, view: "exam-detail" }),
+  openBank: (id) => set({ selectedBankId: id, view: "bank-detail" }),
+  openExam: (id) => set({ selectedExamId: id, view: "exam-detail" }),
   startSession: (sessionId) =>
     set({ currentSessionId: sessionId, view: "session" }),
   viewResults: (sessionId) =>
     set({ currentSessionId: sessionId, view: "results" }),
+  openDashboard: () => set({ view: "dashboard" }),
+  openAbout: () => set({ view: "about" }),
+  openAdmin: () => set({ view: "admin" }),
+  openSocial: () => set({ view: "social" }),
 }));
 
-// Standalone helper to fetch with the chosen correction mode stored for the
-// start-dialog flow. Kept outside the store to avoid re-renders.
 export const pendingStart = {
   sourceType: null as "bank" | "exam" | null,
   sourceId: null as string | null,

@@ -1,7 +1,7 @@
 {
   "bankKey": "psycho-vocabulaire",
   "title": "Tests Psychotechniques - Vocabulaire & Orthographe",
-  "description": "Synonymes, orthographe, accords et vocabulaire français",
+  "description": "Synonymes, orthographe, accords et vocabulaire français.",
   "category": "Psychotechnique",
   "icon": "SpellCheck",
   "color": "amber",
@@ -123,5 +123,7 @@
       "correctAnswer": "B",
       "explanation": "L'adjectif 'méchant' s'accorde avec 'satires' (pluriel féminin) pour devenir 'méchantes'."
     }
-  ]
+  ],
+  "subcategory": "Vocabulaire",
+  "level": "TOUS"
 }

@@ -1,0 +1,238 @@
+{
+  "bankKey": "securite-informatique",
+  "title": "Sécurité Informatique",
+  "description": "Cryptographie, attaques, défenses, audit.",
+  "category": "Universitaire",
+  "subcategory": "Sécurité",
+  "icon": "Shield",
+  "color": "rose",
+  "level": "LICENCE",
+  "subject": "Sécurité: CIA, cryptographie (AES, RSA, SHA), attaques (phishing, SQL injection, XSS, DDoS), firewall, VPN, ISO 27001, OWASP",
+  "questions": [
+    {
+      "question": "Quelle est la caractéristique principale de l'algorithme AES qui le distingue des algorithmes de chiffrement par bloc plus anciens comme DES?",
+      "optionA": "Utilisation d'une clé de longueur variable (128, 192 ou 256 bits)",
+      "optionB": "Fondé sur le principe du chiffrement par flot",
+      "optionC": "Utilisation d'un réseau de substitution-permutation (SPN)",
+      "optionD": "Ne nécessite pas de mode d'opération pour le chiffrement de blocs",
+      "correctAnswer": "C",
+      "explanation": "L'AES utilise une structure de réseau de substitution-permutation (SPN) avec des opérations de substitution dans une S-box et des permutations linéaires, ce qui le rend plus résistant aux cryptanalyses différentielles et linéaires que DES."
+    },
+    {
+      "question": "Dans le cadre du triptyque CIA (Confidentialité, Intégrité, Disponibilité), quel principe de sécurité est principalement violé par une attaque de déni de service (DDoS)?",
+      "optionA": "Confidentialité",
+      "optionB": "Intégrité",
+      "optionC": "Disponibilité",
+      "optionD": "Authenticité",
+      "correctAnswer": "C",
+      "explanation": "Une attaque DDoS vise à rendre un service ou une ressource inaccessible en le submergeant de requêtes, ce qui viole directement le principe de disponibilité du triptyque CIA."
+    },
+    {
+      "question": "Quelle est la principale différence entre une signature numérique RSA et une fonction de hachage cryptographique comme SHA-256?",
+      "optionA": "La signature utilise une clé privée pour chiffrer, tandis que le hachage utilise une fonction à sens unique",
+      "optionB": "La signature garantit l'intégrité et l'authenticité, tandis que le hachage garantit uniquement l'intégrité",
+      "optionC": "La signature est réversible, tandis que le hachage ne l'est pas",
+      "optionD": "La signature fonctionne sur des données de taille fixe, tandis que le hachage fonctionne sur des données de taille variable",
+      "correctAnswer": "B",
+      "explanation": "Une signature numérique utilise la clé privée pour signer un hachage des données, garantissant à la fois l'intégrité (les données n'ont pas été modifiées) et l'authenticité (l'émetteur est bien celui qu'il prétend être). Une fonction de hachage garantit uniquement l'intégrité."
+    },
+    {
+      "question": "Quelle est la faille principale des anciennes versions du protocole SSL/TLS qui a mené à l'attaque POODLE?",
+      "optionA": "Utilisation de chiffrements symétriques faibles",
+      "optionB": "Chiffrement des données de session avec CBC et remplissage prévisible",
+      "optionC": "Vulnérabilité dans l'échange de clés RSA",
+      "optionD": "Faiblesse dans la génération des nombres aléatoires",
+      "correctAnswer": "B",
+      "explanation": "L'attaque POODLE exploitait le remplissage (padding) des blocs dans le mode de chiffrement par bloc CBC (Cipher Block Chaining) utilisé dans SSL 3.0, permettant à un attaquant de deviner les caractères un par un."
+    },
+    {
+      "question": "Dans le contexte de l'ISO 27001, quelle est la différence entre les 'contrôles' et les 'objectifs de sécurité'?",
+      "optionA": "Les contrôles sont spécifiques et mesurables, tandis que les objectifs sont des déclarations de politique",
+      "optionB": "Les contrôles sont obligatoires, tandis que les objectifs sont optionnels",
+      "optionC": "Les contrôles sont définis par l'entreprise, tandis que les objectifs sont définis par l'ISO",
+      "optionD": "Les contrôles sont des mesures techniques, tandis que les objectifs sont des mesures organisationnelles",
+      "correctAnswer": "A",
+      "explanation": "Dans ISO 27001, les objectifs de sécurité sont des déclarations de politique plus larges, tandis que les contrôles sont des mesures spécifiques et mesurables mises en œuvre pour atteindre ces objectifs."
+    },
+    {
+      "question": "Quelle est la caractéristique distinctive d'une attaque de type 'phishing' par rapport à une attaque 'spear phishing'?",
+      "optionA": "Le phishing utilise des emails génériques largement diffusés, tandis que le spear phishing cible spécifiquement un individu ou une organisation",
+      "optionB": "Le phishing vole des informations financières, tandis que le spear phishing vole des informations d'identification",
+      "optionC": "Le phishing utilise des techniques sociales, tandis que le spear phishing utilise des techniques techniques",
+      "optionD": "Le phishing est toujours automatisé, tandis que le spear phishing est manuel",
+      "correctAnswer": "A",
+      "explanation": "Le phishing est une attaque de masse utilisant des emails génériques largement diffusés, tandis que le spear phishing est une attaque ciblée personnalisée contre une victime spécifique ou une organisation."
+    },
+    {
+      "question": "Dans le contexte de la cryptographie asymétrique, pourquoi l'algorithme RSA considère-t-il la factorisation de grands nombres entiers comme difficile?",
+      "optionA": "Parce que l'algorithme de division euclidienne est inefficace pour de grands nombres",
+      "optionB": "Parce qu'il n'existe pas d'algorithme polynomial connu pour factoriser de grands nombres",
+      "optionC": "Parce que la complexité calculatoire augmente exponentiellement avec la taille du nombre",
+      "optionD": "Parce que la mémoire requise pour stocker les nombres premiers est prohibitivement grande",
+      "correctAnswer": "B",
+      "explanation": "La sécurité de RSA repose sur l'hypothèse que factoriser un grand nombre produit de deux grands nombres premiers est un problème calculatoirement difficile pour lequel aucun algorithme polynomial n'est connu."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre un firewall de couche 3 (réseau) et un firewall de couche 7 (application)?",
+      "optionA": "Le firewall de couche 3 filtre les paquets IP, tandis que le firewall de couche 7 peut inspecter le contenu des paquets applicatifs",
+      "optionB": "Le firewall de couche 3 est plus rapide, tandis que le firewall de couche 7 est plus sécurisé",
+      "optionC": "Le firewall de couche 3 fonctionne avec des ACL, tandis que le firewall de couche 7 fonctionne avec des règles basées sur l'état",
+      "optionD": "Le firewall de couche 3 est utilisé pour la sécurité réseau, tandis que le firewall de couche 7 est utilisé pour la sécurité web",
+      "correctAnswer": "A",
+      "explanation": "Les firewalls de couche 3 filtrent les paquets IP en se basant sur des informations comme les adresses source et destination, tandis que les firewalls de couche 7 peuvent inspecter le contenu applicatif des paquets, permettant une granularité de sécurité plus fine."
+    },
+    {
+      "question": "Selon OWASP Top 10, quelle est la différence entre une attaque XSS (Cross-Site Scripting) réfléchie et une XSS stockée?",
+      "optionA": "La XSS réfléchie est exécutée immédiatement, tandis que la XSS stockée est exécutée lors d'une session future",
+      "optionB": "La XSS réfléchie cible le serveur, tandis que la XSS stockée cible le client",
+      "optionC": "La XSS réfléchie utilise des requêtes GET, tandis que la XSS stockée utilise des requêtes POST",
+      "optionD": "La XSS réfléchie est plus dangereuse que la XSS stockée",
+      "correctAnswer": "A",
+      "explanation": "Une XSS réfléchie est exécutée immédiatement lorsque l'utilisateur clique sur un lien malveillant, tandis qu'une XSS stockée est stockée sur le serveur et exécutée chaque fois qu'un utilisateur accède à la page contaminée."
+    },
+    {
+      "question": "Quelle est la principale limitation d'un VPN basé sur IPsec par rapport à un VPN SSL?",
+      "optionA": "IPsec ne supporte que le chiffrement symétrique",
+      "optionB": "IPsec est plus complexe à configurer et moins compatible avec les accès distants",
+      "optionC": "IPsec ne supporte pas l'authentification forte",
+      "optionD": "IPsec est moins sécurisé que SSL",
+      "correctAnswer": "B",
+      "explanation": "Les VPN IPsec sont généralement plus complexes à configurer, nécessitent un client spécifique et sont moins adaptés aux accès distants via des réseaux non fiables, contrairement aux VPN SSL qui utilisent un navigateur standard."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre une attaque SQL injection et une injection NoSQL?",
+      "optionA": "La SQL injection cible les bases de données relationnelles, tandis que l'injection NoSQL cible les bases de données NoSQL",
+      "optionB": "La SQL injection utilise des requêtes SQL, tandis que l'injection NoSQL utilise des requêtes JSON",
+      "optionC": "La SQL injection est plus dangereuse que l'injection NoSQL",
+      "optionD": "La SQL injection est détectée par les WAF, tandis que l'injection NoSQL ne l'est pas",
+      "correctAnswer": "A",
+      "explanation": "La SQL injection cible les bases de données relationnelles utilisant SQL, tandis que l'injection NoSQL cible les bases de données NoSQL qui utilisent d'autres langages de requête comme MongoDB Query Language ou CouchDB Query Language."
+    },
+    {
+      "question": "Dans le cadre de l'ISO 27001, quelle est la différence entre les 'Annexes A.9 - Contrôle d'accès' et 'Annexe A.12 - Opérations de sécurité'?",
+      "optionA": "A.9 gère l'accès physique, tandis que A.12 gère l'accès logique",
+      "optionB": "A.9 se concentre sur la politique d'accès, tandis que A.12 se concentre sur la gestion des opérations quotidiennes",
+      "optionC": "A.9 est obligatoire, tandis que A.12 est optionnel",
+      "optionD": "A.9 est technique, tandis que A.12 est organisationnel",
+      "correctAnswer": "B",
+      "explanation": "L'annexe A.9 se concentre sur la politique d'accès, l'authentification, l'autorisation et la gestion des droits d'accès, tandis que l'annexe A.12 couvre la séparation des tâches, la gestion des changements et les opérations quotidiennes."
+    },
+    {
+      "question": "Quelle est la différence entre un chiffrement symétrique et un chiffrement asymétrique en termes de gestion des clés?",
+      "optionA": "Le symétrique utilise une seule clé, tandis que l'asymétrique utilise une paire de clés",
+      "optionB": "Le symétrique est plus rapide pour le chiffrement de grands volumes de données",
+      "optionC": "Le symétrique nécessite un canal sécurisé pour l'échange des clés",
+      "optionD": "L'asymétrique est plus sûr pour le chiffrement de données sensibles",
+      "correctAnswer": "A",
+      "explanation": "Le chiffrement symétrique utilise la même clé pour chiffrer et déchiffrer, tandis que le chiffrement asymétrique utilise une paire de clés mathématiquement liées (une publique pour chiffrer, une privée pour déchiffrer)."
+    },
+    {
+      "question": "Selon OWASP Top 10, quelle est la différence entre une attaque 'Broken Access Control' et une attaque 'Security Misconfiguration'?",
+      "optionA": "Broken Access Control concerne les droits d'accès inappropriés, tandis que Security Misconfiguration concerne les erreurs de configuration",
+      "optionB": "Broken Access Control est une attaque active, tandis que Security Misconfiguration est une attaque passive",
+      "optionC": "Broken Access Control cible les applications web, tandis que Security Misconfiguration cible les infrastructures",
+      "optionD": "Broken Access Control est plus dangereuse que Security Misconfiguration",
+      "correctAnswer": "A",
+      "explanation": "Broken Access Control concerne les contrôles d'accès mal implémentés qui permettent aux utilisateurs d'accéder à des ressources ou fonctionnalités non autorisées, tandis que Security Misconfiguration concerne les erreurs de configuration des composants système."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre un proxy inverse et un proxy direct?",
+      "optionA": "Le proxy inverse agit pour le compte du client, tandis que le proxy direct agit pour le compte du serveur",
+      "optionB": "Le proxy inverse cache les réponses du serveur pour les clients, tandis que le proxy direct cache les requêtes des clients pour les serveurs",
+      "optionC": "Le proxy inverse protège le serveur, tandis que le proxy direct protège le client",
+      "optionD": "Le proxy inverse est utilisé pour l'accès internet, tandis que le proxy direct est utilisé pour l'accès intranet",
+      "correctAnswer": "C",
+      "explanation": "Un proxy inverse agit au nom des serveurs pour gérer les requêtes des clients, offrant des fonctionnalités de sécurité, de mise en cache et d'équilibrage de charge pour protéger les serveurs internes. Un proxy direct agit au nom des clients pour gérer les requêtes vers internet, offrant des fonctionnalités de filtrage et de mise en cache pour protéger les clients."
+    },
+    {
+      "question": "Que signifie CIA en sécurité ?",
+      "optionA": "Confidentialité, Intégrité, Disponibilité",
+      "optionB": "Contrôle, Inspection, Audit",
+      "optionC": "Chiffrement, Identification, Authentification",
+      "optionD": "Confidentialité, Identité, Accès",
+      "correctAnswer": "A",
+      "explanation": "CIA = Confidentialité, Intégrité, Disponibilité."
+    },
+    {
+      "question": "Quel algorithme est un chiffrement symétrique ?",
+      "optionA": "AES",
+      "optionB": "RSA",
+      "optionC": "ECC",
+      "optionD": "DSA",
+      "correctAnswer": "A",
+      "explanation": "AES est symétrique. RSA, ECC, DSA sont asymétriques."
+    },
+    {
+      "question": "L'attaque phishing consiste à :",
+      "optionA": "Usurper une identité pour voler des informations",
+      "optionB": "Bloquer un serveur",
+      "optionC": "Crypter des données",
+      "optionD": "Modifier un site",
+      "correctAnswer": "A",
+      "explanation": "Le phishing trompe l'utilisateur pour voler ses informations."
+    },
+    {
+      "question": "L'injection SQL exploite une faille dans :",
+      "optionA": "Les requêtes de base de données",
+      "optionB": "Le code JavaScript",
+      "optionC": "Le protocole HTTP",
+      "optionD": "Le système d'exploitation",
+      "correctAnswer": "A",
+      "explanation": "L'injection SQL manipule les requêtes SQL."
+    },
+    {
+      "question": "Que fait un firewall ?",
+      "optionA": "Filtre le trafic réseau selon des règles",
+      "optionB": "Crypte les données",
+      "optionC": "Détecte les virus",
+      "optionD": "Sauvegarde les fichiers",
+      "correctAnswer": "A",
+      "explanation": "Le pare-feu filtre le trafic."
+    },
+    {
+      "question": "Que signifie DDoS ?",
+      "optionA": "Distributed Denial of Service",
+      "optionB": "Direct Denial of Security",
+      "optionC": "Data Distribution over System",
+      "optionD": "Digital Defense of Service",
+      "correctAnswer": "A",
+      "explanation": "DDoS = déni de service distribué."
+    },
+    {
+      "question": "Quel protocole sécurise les communications web ?",
+      "optionA": "HTTPS",
+      "optionB": "HTTP",
+      "optionC": "FTP",
+      "optionD": "Telnet",
+      "correctAnswer": "A",
+      "explanation": "HTTPS = HTTP + SSL/TLS."
+    },
+    {
+      "question": "Le hachage SHA-256 produit une empreinte de :",
+      "optionA": "256 bits",
+      "optionB": "128 bits",
+      "optionC": "512 bits",
+      "optionD": "64 bits",
+      "correctAnswer": "A",
+      "explanation": "SHA-256 = 256 bits."
+    },
+    {
+      "question": "L'authentification 2FA combine :",
+      "optionA": "Ce que vous savez + ce que vous avez",
+      "optionB": "Deux mots de passe",
+      "optionC": "Deux emails",
+      "optionD": "Deux empreintes",
+      "correctAnswer": "A",
+      "explanation": "2FA = connaissance + possession."
+    },
+    {
+      "question": "Un VPN sert à :",
+      "optionA": "Créer un tunnel chiffré",
+      "optionB": "Accélérer la connexion",
+      "optionC": "Bloquer les virus",
+      "optionD": "Stocker des données",
+      "correctAnswer": "A",
+      "explanation": "Le VPN chiffre le trafic."
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "bankKey": "math-analyse",
+  "title": "Mathématiques - Analyse (Licence)",
+  "description": "Limites, continuité, dérivées, intégrales, séries.",
+  "category": "Universitaire",
+  "subcategory": "Mathématiques",
+  "icon": "LineChart",
+  "color": "teal",
+  "level": "LICENCE",
+  "subject": "Analyse: limites, continuité, dérivées, intégrales, suites et séries, équations différentielles, Taylor, Rolle, accroissements finis",
+  "questions": [
+    {
+      "question": "Soit f(x) = (x^2 - 1)/(x - 1) pour x ≠ 1 et f(1) = 2. Quelle affirmation est correcte concernant la continuité et la dérivabilité de f en x = 1 ?",
+      "optionA": "f est continue mais non dérivable en x = 1",
+      "optionB": "f est dérivable mais non continue en x = 1",
+      "optionC": "f est continue et dérivable en x = 1",
+      "optionD": "f n'est ni continue ni dérivable en x = 1",
+      "correctAnswer": "C",
+      "explanation": "f(x) se simplifie en x + 1 pour x ≠ 1, qui est continue et dérivable en x = 1 avec f(1) = 2 et f'(1) = 1."
+    },
+    {
+      "question": "Quelle est la limite suivante : lim(x→∞) (1 + 1/x)^x ?",
+      "optionA": "0",
+      "optionB": "1",
+      "optionC": "e",
+      "optionD": "∞",
+      "correctAnswer": "C",
+      "explanation": "C'est la définition classique du nombre e, la base du logarithme naturel."
+    },
+    {
+      "question": "Soit la suite définie par u_0 = 1 et u_{n+1} = (2u_n + 3)/(u_n + 2). Quelle est la limite de cette suite si elle converge ?",
+      "optionA": "1",
+      "optionB": "√3",
+      "optionC": "√2",
+      "optionD": "3",
+      "correctAnswer": "B",
+      "explanation": "Si la suite converge vers L, alors L = (2L + 3)/(L + 2). En résolvant cette équation, on obtient L = √3 ou L = -√3. Comme la suite est positive, L = √3."
+    },
+    {
+      "question": "Quelle est la valeur de l'intégrale ∫(de 0 à π) sin^2(x) dx ?",
+      "optionA": "π/2",
+      "optionB": "π",
+      "optionC": "π/4",
+      "optionD": "2π",
+      "correctAnswer": "A",
+      "explanation": "En utilisant l'identité sin^2(x) = (1 - cos(2x))/2, on obtient ∫(de 0 à π) sin^2(x) dx = π/2."
+    },
+    {
+      "question": "Soit la série ∑(n=1 à ∞) (n^2 + 1)/(2^n). Quelle est la nature de cette série ?",
+      "optionA": "Elle diverge",
+      "optionB": "Elle converge absolument",
+      "optionC": "Elle converge conditionnellement",
+      "optionD": "La nature ne peut être déterminée",
+      "correctAnswer": "B",
+      "explanation": "En utilisant le critère de d'Alembert, on trouve que le rayon de convergence est 2, donc la série converge absolument."
+    },
+    {
+      "question": "Quelle est la dérivée n-ième de la fonction f(x) = x^2 e^x ?",
+      "optionA": "e^x (x^2 + 2n)",
+      "optionB": "e^x (x^2 + 2nx + n(n-1))",
+      "optionC": "e^x (x^2 + 2n x + n^2)",
+      "optionD": "e^x (x^2 + 2x + n)",
+      "correctAnswer": "B",
+      "explanation": "En utilisant la formule de Leibniz pour la dérivée n-ième d'un produit, on obtient cette expression."
+    },
+    {
+      "question": "Quelle est la solution générale de l'équation différentielle y'' - 4y' + 4y = 0 ?",
+      "optionA": "y = (C1 + C2 x) e^(2x)",
+      "optionB": "y = C1 e^(2x) + C2 e^(-2x)",
+      "optionC": "y = C1 e^(2x) + C2 x e^(2x)",
+      "optionD": "y = C1 e^(4x) + C2 x e^(4x)",
+      "correctAnswer": "A",
+      "explanation": "L'équation caractéristique r^2 - 4r + 4 = 0 a une racine double r = 2, d'où la solution générale y = (C1 + C2 x) e^(2x)."
+    },
+    {
+      "question": "Quelle est la limite suivante : lim(x→0) (sin(x) - x)/x^3 ?",
+      "optionA": "0",
+      "optionB": "1/6",
+      "optionC": "1/2",
+      "optionD": "1",
+      "correctAnswer": "B",
+      "explanation": "En utilisant le développement limité de sin(x) au voisinage de 0, on obtient sin(x) = x - x^3/6 + o(x^3), d'où le résultat."
+    },
+    {
+      "question": "Soit f(x) = ∫(de 0 à x) e^(t^2) dt. Quelle est la dérivée de f en x = 0 ?",
+      "optionA": "0",
+      "optionB": "1",
+      "optionC": "e",
+      "optionD": "1/e",
+      "correctAnswer": "B",
+      "explanation": "Par le théorème fondamental du calcul intégral, f'(x) = e^(x^2), donc f'(0) = e^0 = 1."
+    },
+    {
+      "question": "Quelle est la somme de la série géométrique ∑(n=0 à ∞) (1/3)^n ?",
+      "optionA": "1/2",
+      "optionB": "3/2",
+      "optionC": "2/3",
+      "optionD": "3",
+      "correctAnswer": "B",
+      "explanation": "La somme d'une série géométrique ∑(n=0 à ∞) r^n est 1/(1-r) pour |r| < 1. Ici r = 1/3, donc la somme est 1/(1-1/3) = 3/2."
+    },
+    {
+      "question": "Quelle est la nature de la série ∑(n=1 à ∞) (-1)^n / √n ?",
+      "optionA": "Elle diverge",
+      "optionB": "Elle converge absolument",
+      "optionC": "Elle converge conditionnellement",
+      "optionD": "La nature ne peut être déterminée",
+      "correctAnswer": "C",
+      "explanation": "La série converge par le critère spécial des séries alternées, mais ne converge pas absolument car ∑ 1/√n diverge (série de Riemann avec p = 1/2 ≤ 1)."
+    },
+    {
+      "question": "Soit f(x) = ln(1 + x). Quel est le développement limité de f à l'ordre 3 au voisinage de 0 ?",
+      "optionA": "x - x^2/2 + x^3/3 + o(x^3)",
+      "optionB": "x + x^2/2 + x^3/3 + o(x^3)",
+      "optionC": "x - x^2 + x^3 + o(x^3)",
+      "optionD": "x + x^2/2 + x^3/6 + o(x^3)",
+      "correctAnswer": "A",
+      "explanation": "Le développement limité de ln(1+x) est x - x^2/2 + x^3/3 - ... + (-1)^(n+1) x^n/n + o(x^n)."
+    },
+    {
+      "question": "Quelle est la solution particulière de l'équation différentielle y' + y = e^x satisfaisant y(0) = 0 ?",
+      "optionA": "y = (e^x - e^(-x))/2",
+      "optionB": "y = (e^x - 1)/2",
+      "optionC": "y = e^x - e^(-x)",
+      "optionD": "y = e^x - 1",
+      "correctAnswer": "B",
+      "explanation": "L'équation est linéaire du premier ordre. La solution générale est y = C e^(-x) + (e^(2x) - 1)/(2e^x). En utilisant la condition initiale y(0) = 0, on trouve C = -1/2, d'où la solution."
+    },
+    {
+      "question": "Quelle est la valeur de l'intégrale ∫(de -∞ à ∞) e^(-x^2) dx ?",
+      "optionA": "√π",
+      "optionB": "π/2",
+      "optionC": "π",
+      "optionD": "2π",
+      "correctAnswer": "A",
+      "explanation": "C'est l'intégrale de Gauss, dont la valeur est √π. Elle peut être calculée en passant en coordonnées polaires."
+    },
+    {
+      "question": "Soit la fonction f(x) = x^3 - 3x + 1. Combien de racines réales l'équation f(x) = 0 possède-t-elle ?",
+      "optionA": "0",
+      "optionB": "1",
+      "optionC": "2",
+      "optionD": "3",
+      "correctAnswer": "D",
+      "explanation": "f'(x) = 3x^2 - 3, qui s'annule en x = ±1. f(-1) = 3, f(1) = -1, et lim(x→±∞) f(x) = ±∞. Donc f(x) = 0 a trois racines réelles."
+    },
+    {
+      "question": "Une fonction continue sur [a,b] est :",
+      "optionA": "Bornée et atteint ses bornes",
+      "optionB": "Toujours dérivable",
+      "optionC": "Monotone",
+      "optionD": "Périodique",
+      "correctAnswer": "A",
+      "explanation": "Théorème de Weierstrass."
+    },
+    {
+      "question": "Le théorème des accroissements finis dit que :",
+      "optionA": "∃ c ∈ ]a,b[ : f'(c) = (f(b)-f(a))/(b-a)",
+      "optionB": "f(a)=f(b)",
+      "optionC": "f est constante",
+      "optionD": "f'(a)=f'(b)",
+      "correctAnswer": "A",
+      "explanation": "Accroissements finis."
+    },
+    {
+      "question": "La série géométrique ∑ qⁿ converge si :",
+      "optionA": "|q| < 1",
+      "optionB": "|q| > 1",
+      "optionC": "q = 1",
+      "optionD": "q > 0",
+      "correctAnswer": "A",
+      "explanation": "Convergence pour |q| < 1."
+    },
+    {
+      "question": "L'intégrale ∫₀¹ (1/x) dx est :",
+      "optionA": "Divergente",
+      "optionB": "Convergente vers 0",
+      "optionC": "Convergente vers 1",
+      "optionD": "Convergente vers ln(2)",
+      "correctAnswer": "A",
+      "explanation": "Intégrale impropre divergente."
+    },
+    {
+      "question": "La fonction f(x) = |x| est :",
+      "optionA": "Continue mais non dérivable en 0",
+      "optionB": "Discontinue en 0",
+      "optionC": "Dérivable en 0",
+      "optionD": "Discontinue partout",
+      "correctAnswer": "A",
+      "explanation": "|x| est continue mais non dérivable en 0."
+    },
+    {
+      "question": "L'équation y' = y a pour solution :",
+      "optionA": "y = Ceˣ",
+      "optionB": "y = x + C",
+      "optionC": "y = e⁻ˣ",
+      "optionD": "y = C",
+      "correctAnswer": "A",
+      "explanation": "y' = y ⟹ y = Ceˣ."
+    },
+    {
+      "question": "L'équation y'' + y = 0 a pour solution :",
+      "optionA": "A·cos(x) + B·sin(x)",
+      "optionB": "A·eˣ + B·e⁻ˣ",
+      "optionC": "Ax + B",
+      "optionD": "A",
+      "correctAnswer": "A",
+      "explanation": "r²+1=0, r=±i."
+    },
+    {
+      "question": "Le théorème de Rolle dit que si f(a)=f(b), alors :",
+      "optionA": "∃ c : f'(c) = 0",
+      "optionB": "f est constante",
+      "optionC": "f(a) = 0",
+      "optionD": "f est monotone",
+      "correctAnswer": "A",
+      "explanation": "Rolle : existence d'un point où f' = 0."
+    },
+    {
+      "question": "La dérivée de tan(x) est :",
+      "optionA": "1/cos²(x)",
+      "optionB": "1/sin²(x)",
+      "optionC": "-1/cos²(x)",
+      "optionD": "sec²(x)",
+      "correctAnswer": "A",
+      "explanation": "(tan x)' = 1/cos²(x)."
+    },
+    {
+      "question": "L'intégrale ∫ cos(x) dx est :",
+      "optionA": "sin(x) + C",
+      "optionB": "-sin(x) + C",
+      "optionC": "-cos(x) + C",
+      "optionD": "tan(x) + C",
+      "correctAnswer": "A",
+      "explanation": "∫ cos = sin + C."
+    }
+  ]
+}

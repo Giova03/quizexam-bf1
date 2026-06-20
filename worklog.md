@@ -137,3 +137,65 @@ Stage Summary:
 - Panneau admin avec statistiques complètes
 - Logo comme icône de la plateforme et de l'app mobile (PWA)
 - 7 banques, 201 questions (les banques générées ont été perdues par un rebuild, mais le système de génération est en place pour les recréer)
+
+---
+Task ID: genA
+Agent: QCM Generation Subagent
+Task: Generate QCM for 8 banks
+
+Work Log:
+- Verified target banks (all 8 empty: 0 questions each) in scripts/generated/banks/
+- Read scripts/gen-complex-bank.ts to confirm usage (bankKey, subject, count=35; 2 batches of 20/15)
+- Ran gen-complex-bank.ts sequentially for each bank with timeout 100s, 35 questions target:
+  - culture-bf-2025: batch1=21 + batch2=14 -> 35 total
+  - culture-generale-diverse: batch1=20 + batch2=15 -> 33 total
+  - actualite-mondiale: batch1=21 + batch2=16 -> 37 total
+  - histoire-monde: batch1=0 (LLM parse fail, retry exhausted) + batch2=15 -> 15 total
+  - culture-generale-monde: batch1=19 + batch2=15 -> 31 total
+  - diplomatie-mondiale: batch1=20 + batch2=15 -> 35 total
+  - mpsr2-faits: batch1=20 + batch2=16 -> 36 total
+  - math-college: batch1=19 + batch2=15 -> 34 total
+- No timeouts occurred; all banks completed within 100s limit
+- No retries needed (per instructions); histoire-monde batch 1 returned 0 valid questions but script auto-retried internally (2 attempts) and bank still produced questions in batch 2
+
+Stage Summary:
+- 8/8 banks generated successfully
+- Total questions added: 256 (target was 8x35 = 280)
+- Per-bank counts: culture-bf-2025=35, culture-generale-diverse=33, actualite-mondiale=37, histoire-monde=15, culture-generale-monde=31, diplomatie-mondiale=35, mpsr2-faits=36, math-college=34
+- histoire-monde below target (15/35) due to a failed batch 1 LLM response; could be re-run later to top up
+- All questions validated (4 distinct options, A-D correctAnswer, explanation present)
+- Files saved to /home/z/my-project/scripts/generated/banks/<bankKey>.json
+
+---
+Task ID: 18
+Agent: Main (Z.ai Code)
+Task: Restaurer 39 banques, améliorer panneau admin (visiteurs, correction QCM)
+
+Work Log:
+- Restauré le store Zustand avec openDashboard/openAbout/openAdmin/openSocial (était perdu)
+- 39 banques définies et générées via LLM (1267 questions au total):
+  - Culture Générale (8): culture-bf, culture-bf-2025, culture-generale-diverse, actualite-mondiale, histoire-monde, culture-generale-monde, diplomatie-mondiale, mpsr2-faits
+  - Psychotechnique (2): psycho-logique, psycho-vocabulaire
+  - Secondaire (8): math-college, math-lycee, physique-chimie-lycee, svt-lycee, svt-6e-termd, philo-terminale, francais, geographie
+  - Universitaire (10): info-algorithmique, info-python, info-bdd, math-analyse, math-proba-stats, sciences-eco-gestion, grh, statistique, reseau-telecom, securite-informatique, histoire-archeologie
+  - Concours (8): concours-sante-social, concours-admin-justice, concours-developpement-rural, concours-btp-securite, concours-economie-finance, concours-numerique-medias, concours-education-formation, concours-informatique-licence
+- Panneau admin amélioré avec 4 onglets:
+  1. Vue d'ensemble: 6 KPI cards + visiteurs récents + sessions récentes
+  2. Visiteurs: statistiques détaillées (total, visiteurs, admins) + liste complète avec nombre de sessions par utilisateur
+  3. Banques & QCM: liste des 39 banques + clic pour gérer/corriger/ajouter des questions
+  4. Sessions: liste des sessions des visiteurs avec scores et statut
+- Fonctionnalités admin:
+  - Créer une nouvelle banque (titre, description, catégorie, couleur)
+  - Ajouter un QCM (question, 4 options, réponse correcte, explication)
+  - Corriger un QCM existant (éditeur complet)
+  - Supprimer un QCM
+  - Voir les statistiques des visiteurs
+  - Voir les sessions des visiteurs
+- Routes API admin créées: /api/admin/banks (POST/PATCH/DELETE), /api/admin/questions (POST/PATCH/DELETE), /api/admin/users (GET), /api/admin/sessions (GET)
+- ESLint: 0 erreurs
+- Vérifié avec Agent Browser: connexion admin OK, panneau admin avec 4 onglets OK, 39 banques/1267 questions affichées
+
+Stage Summary:
+- 39 banques, 1267 questions restaurées
+- Panneau admin complet avec stats visiteurs, gestion/correction/ajout de QCM
+- 0 erreur, 0 crash
