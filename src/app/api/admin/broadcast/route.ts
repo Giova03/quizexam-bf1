@@ -5,7 +5,10 @@ import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
+<<<<<<< HEAD
 // POST /api/admin/broadcast - admin sends an email to all users
+=======
+>>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
 export async function POST(request: Request) {
   const session = await getServerSession(authOptions);
   if (!session?.user || (session.user as { role?: string }).role !== "ADMIN") {
@@ -14,6 +17,7 @@ export async function POST(request: Request) {
 
   try {
     const { subject, body } = await request.json();
+<<<<<<< HEAD
     if (!subject || !body) {
       return NextResponse.json(
         { error: "Subject and body required" },
@@ -51,5 +55,20 @@ export async function POST(request: Request) {
       { error: "Broadcast failed" },
       { status: 500 }
     );
+=======
+    if (!subject || !body) return NextResponse.json({ error: "Subject and body required" }, { status: 400 });
+
+    const users = await db.user.findMany({ where: { role: "VISITOR" }, select: { email: true } });
+    const logs = await Promise.all(
+      users.map((u) =>
+        db.emailLog.create({ data: { toEmail: u.email, subject, body, type: "broadcast", status: "pending" } })
+      )
+    );
+
+    return NextResponse.json({ sent: logs.length, message: `Message programmé pour ${logs.length} utilisateur(s)` });
+  } catch (error) {
+    console.error("Broadcast failed:", error);
+    return NextResponse.json({ error: "Broadcast failed" }, { status: 500 });
+>>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
   }
 }

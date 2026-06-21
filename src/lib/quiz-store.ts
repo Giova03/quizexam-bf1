@@ -41,6 +41,7 @@ interface QuizState {
   openAbout: () => void;
   openAdmin: () => void;
   openSocial: () => void;
+  openLeaderboard: () => void;
 }
 
 export const useQuizStore = create<QuizState>((set) => ({
@@ -84,6 +85,7 @@ export const useQuizStore = create<QuizState>((set) => ({
   openAbout: () => set({ view: "about" }),
   openAdmin: () => set({ view: "admin" }),
   openSocial: () => set({ view: "social" }),
+  openLeaderboard: () => set({ view: "leaderboard" }),
 }));
 
 export const pendingStart = {

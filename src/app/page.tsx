@@ -14,8 +14,14 @@ import { DashboardView } from "@/components/quiz/dashboard-view";
 import { AboutView } from "@/components/quiz/about-view";
 import { AdminView } from "@/components/quiz/admin-view";
 import { SocialView } from "@/components/quiz/social-view";
+import { LeaderboardView } from "@/components/quiz/leaderboard-view";
 import { CustomExamDialog } from "@/components/quiz/custom-exam-dialog";
 import { SearchDialog } from "@/components/quiz/search-dialog";
+<<<<<<< HEAD
+=======
+import { RealtimeNotification } from "@/components/quiz/realtime-notification";
+import { DarkModeToggle } from "@/components/quiz/dark-mode-toggle";
+>>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
 import { useOfflineMode } from "@/lib/use-offline-mode";
 import { LanguageSwitcher } from "@/components/quiz/language-switcher";
 import { NotificationsPanel } from "@/components/quiz/notifications-panel";
@@ -44,6 +50,10 @@ import {
   WifiOff,
   Sparkles,
   Search,
+<<<<<<< HEAD
+=======
+  Trophy,
+>>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
 } from "lucide-react";
 
 export default function Home() {
@@ -54,6 +64,7 @@ export default function Home() {
     openAbout,
     openAdmin,
     openSocial,
+    openLeaderboard,
     startSession,
   } = useQuizStore();
   const { t } = useTranslation();
@@ -254,6 +265,22 @@ export default function Home() {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button
+                      variant={view === "leaderboard" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openLeaderboard}
+                    >
+                      <Trophy className="h-4 w-4" data-testid="trophy-icon" />
+                      <span className="hidden lg:inline">Classement</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Classement général</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
                       variant={view === "about" ? "secondary" : "ghost"}
                       size="sm"
                       className="gap-1.5"
@@ -331,6 +358,9 @@ export default function Home() {
             <div className="hidden sm:block">
               <LanguageSwitcher />
             </div>
+
+            {/* Dark mode toggle */}
+            <DarkModeToggle />
 
             {/* Notifications */}
             <TooltipProvider>
@@ -417,6 +447,15 @@ export default function Home() {
               <span className="text-xs">Communauté</span>
             </Button>
             <Button
+              variant={view === "leaderboard" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openLeaderboard}
+            >
+              <Trophy className="h-4 w-4" data-testid="trophy-icon" />
+              <span className="text-xs">Classement</span>
+            </Button>
+            <Button
               variant={view === "about" ? "secondary" : "ghost"}
               size="sm"
               className="flex-1 gap-1.5"
@@ -451,6 +490,7 @@ export default function Home() {
         {view === "about" && <AboutView />}
         {view === "admin" && <AdminView />}
         {view === "social" && <SocialView />}
+        {view === "leaderboard" && <LeaderboardView />}
       </main>
 
       {/* Footer */}
@@ -505,6 +545,12 @@ export default function Home() {
       {/* Search dialog (Ctrl+K) */}
       <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
 
+<<<<<<< HEAD
+=======
+      {/* Real-time floating notifications */}
+      <RealtimeNotification />
+
+>>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
       {/* Chatbot IA flottant */}
       <Chatbot />
     </div>

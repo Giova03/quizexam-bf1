@@ -3,7 +3,10 @@ import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
+<<<<<<< HEAD
 // GET /api/search?q=...&limit=50
+=======
+>>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
@@ -34,6 +37,7 @@ export async function GET(request: Request) {
         optionD: true,
         correctAnswer: true,
         explanation: true,
+<<<<<<< HEAD
         bank: {
           select: {
             id: true,
@@ -43,6 +47,9 @@ export async function GET(request: Request) {
             category: true,
           },
         },
+=======
+        bank: { select: { id: true, title: true, color: true, icon: true, category: true } },
+>>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
       },
       take: limit,
     });
@@ -50,9 +57,13 @@ export async function GET(request: Request) {
     return NextResponse.json({ results: questions, total: questions.length });
   } catch (error) {
     console.error("Search error:", error);
+<<<<<<< HEAD
     return NextResponse.json(
       { error: "Search failed", results: [], total: 0 },
       { status: 500 }
     );
+=======
+    return NextResponse.json({ error: "Search failed", results: [], total: 0 }, { status: 500 });
+>>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
   }
 }

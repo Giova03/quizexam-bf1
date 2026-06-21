@@ -12,7 +12,11 @@ interface CreateSessionBody {
   sourceId: string;
 }
 
+<<<<<<< HEAD
 // GET — list sessions for the current user (with answers for dashboard)
+=======
+// GET — list sessions for the current user
+>>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
 export async function GET() {
   try {
     const session = await getServerSession(authOptions);
@@ -26,7 +30,11 @@ export async function GET() {
     });
 
     if (!user) {
+<<<<<<< HEAD
       return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
+=======
+      return NextResponse.json([]);
+>>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
     }
 
     const sessions = await db.quizSession.findMany({
@@ -51,10 +59,14 @@ export async function GET() {
     return NextResponse.json(sessions);
   } catch (error) {
     console.error("Failed to load sessions:", error);
+<<<<<<< HEAD
     return NextResponse.json(
       { error: "Failed to load sessions" },
       { status: 500 }
     );
+=======
+    return NextResponse.json([]);
+>>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
   }
 }
 
@@ -104,15 +116,10 @@ export async function POST(request: Request) {
     if (sourceType === "bank") {
       const bank = await db.questionBank.findUnique({
         where: { id: sourceId },
-        include: {
-          questions: { orderBy: { order: "asc" } },
-        },
+        include: { questions: { orderBy: { order: "asc" } } },
       });
       if (!bank) {
-        return NextResponse.json(
-          { error: "Bank not found" },
-          { status: 404 }
-        );
+        return NextResponse.json({ error: "Bank not found" }, { status: 404 });
       }
       questions = bank.questions;
     } else {
@@ -126,10 +133,7 @@ export async function POST(request: Request) {
         },
       });
       if (!exam) {
-        return NextResponse.json(
-          { error: "Exam not found" },
-          { status: 404 }
-        );
+        return NextResponse.json({ error: "Exam not found" }, { status: 404 });
       }
       questions = exam.examQuestions.map((eq) => eq.question);
     }
@@ -168,9 +172,7 @@ export async function POST(request: Request) {
           })),
         },
       },
-      include: {
-        answers: true,
-      },
+      include: { answers: true },
     });
 
     return NextResponse.json(session);

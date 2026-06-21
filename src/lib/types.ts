@@ -73,7 +73,8 @@ export type ViewName =
   | "exam-list"
   | "exam-detail"
   | "session"
-  | "results";
+  | "results"
+  | "leaderboard";
 
 // Color mapping helper for bank/exam accent colors
 export const COLOR_CLASSES: Record<
