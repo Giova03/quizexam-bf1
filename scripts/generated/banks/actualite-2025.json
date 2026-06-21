@@ -1,0 +1,11 @@
+{
+  "title": "Actualité 2025-2026",
+  "description": "Événements, personnalités et dates de 2025-2026.",
+  "category": "Culture Générale",
+  "subcategory": "Actualité",
+  "icon": "Newspaper",
+  "color": "rose",
+  "level": "TOUS",
+  "bankKey": "actualite-2025",
+  "questions": []
+}

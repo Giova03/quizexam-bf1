@@ -1,0 +1,11 @@
+{
+  "title": "Concours Paramilitaires & Militaires",
+  "description": "GSP, Gendarmerie, Eaux & Forêts, forces armées.",
+  "category": "Concours",
+  "subcategory": "Paramilitaire",
+  "icon": "Shield",
+  "color": "sky",
+  "level": "LICENCE",
+  "bankKey": "concours-paramilitaire",
+  "questions": []
+}

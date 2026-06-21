@@ -1,0 +1,30 @@
+{
+  "title": "Pays, Capitales et Monnaies",
+  "description": "Géographie mondiale: pays, capitales, monnaies.",
+  "category": "Culture Générale",
+  "subcategory": "Géographie",
+  "icon": "Globe2",
+  "color": "sky",
+  "level": "TOUS",
+  "bankKey": "pays-capitales",
+  "questions": [
+    {
+      "question": "Quel pays africain a connu la guerre civile appelée \"Guerre de Biafra\" ?",
+      "optionA": "Nigeria",
+      "optionB": "Soudan",
+      "optionC": "Côte d'Ivoire",
+      "optionD": "Angola",
+      "correctAnswer": "A",
+      "explanation": "Voir le cours pour plus de détails."
+    },
+    {
+      "question": "Quel pays africain a été dirigé par l'empereur Haïlé Sélassié ?",
+      "optionA": "Érythrée",
+      "optionB": "Éthiopie",
+      "optionC": "Soudan",
+      "optionD": "Libye",
+      "correctAnswer": "B",
+      "explanation": "Voir le cours pour plus de détails."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Droit - Tous Modules Licence",
+  "description": "Droit civil, pénal, public, commercial, OHADA, travail, fiscal, international.",
+  "category": "Universitaire",
+  "subcategory": "Droit",
+  "icon": "Scale",
+  "color": "emerald",
+  "level": "LICENCE",
+  "bankKey": "droit-modules",
+  "questions": []
+}

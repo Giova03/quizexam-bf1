@@ -1,0 +1,11 @@
+{
+  "title": "Littérature - Africaine, Française et Anglaise",
+  "description": "Romans, poésie, théâtre, courants littéraires.",
+  "category": "Culture Générale",
+  "subcategory": "Littérature",
+  "icon": "BookMarked",
+  "color": "teal",
+  "level": "TOUS",
+  "bankKey": "litterature",
+  "questions": []
+}

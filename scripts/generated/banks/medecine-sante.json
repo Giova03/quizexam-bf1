@@ -1,0 +1,11 @@
+{
+  "title": "Médecine & Santé",
+  "description": "Soins infirmiers, analyses, imagerie, pharmacologie.",
+  "category": "Universitaire",
+  "subcategory": "Médecine",
+  "icon": "HeartPulse",
+  "color": "rose",
+  "level": "LICENCE",
+  "bankKey": "medecine-sante",
+  "questions": []
+}

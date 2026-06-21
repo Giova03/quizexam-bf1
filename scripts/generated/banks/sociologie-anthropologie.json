@@ -1,0 +1,11 @@
+{
+  "title": "Sociologie, Anthropologie & Psychologie",
+  "description": "Sciences sociales, démographie, action sociale.",
+  "category": "Universitaire",
+  "subcategory": "Sciences Humaines",
+  "icon": "Users",
+  "color": "violet",
+  "level": "LICENCE",
+  "bankKey": "sociologie-anthropologie",
+  "questions": []
+}

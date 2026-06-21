@@ -1,0 +1,57 @@
+{
+  "title": "Physique-Chimie",
+  "description": "Mécanique, électricité, chimie organique, acide-base.",
+  "category": "Secondaire",
+  "subcategory": "Physique-Chimie",
+  "icon": "Atom",
+  "color": "sky",
+  "level": "LYCEE",
+  "bankKey": "physique-chimie",
+  "questions": [
+    {
+      "question": "Où se trouve le siège de l'Union Africaine ?",
+      "optionA": "Addis-Abeba",
+      "optionB": "Nairobi",
+      "optionC": "Accra",
+      "optionD": "Lagos",
+      "correctAnswer": "A",
+      "explanation": "Voir le cours pour plus de détails."
+    },
+    {
+      "question": "Quelle organisation africaine est spécialisée dans la lutte contre la désertification ?",
+      "optionA": "CENSAD",
+      "optionB": "CILSS",
+      "optionC": "SADC",
+      "optionD": "CEDEAO",
+      "correctAnswer": "B",
+      "explanation": "Voir le cours pour plus de détails."
+    },
+    {
+      "question": "Quel est le plus grand festival de cinéma d'Afrique francophone ?",
+      "optionA": "FESPACO",
+      "optionB": "Carthage",
+      "optionC": "Luxor African Film Festival",
+      "optionD": "Durban International Film Festival",
+      "correctAnswer": "A",
+      "explanation": "Voir le cours pour plus de détails."
+    },
+    {
+      "question": "Quel est le premier écrivain africain francophone à avoir reçu le prix Goncourt ?",
+      "optionA": "Ahmadou Kourouma",
+      "optionB": "Maryse Condé",
+      "optionC": "Mohamed Mbougar Sar",
+      "optionD": "Sony Labou Tansi",
+      "correctAnswer": "C",
+      "explanation": "Voir le cours pour plus de détails."
+    },
+    {
+      "question": "Quelle est la date de création de l'Alliance des Etats du Sahel AES?",
+      "optionA": "16 septembre 2023",
+      "optionB": "6 juillet 2024",
+      "optionC": "9 juillet 2024",
+      "optionD": "26 septembre 2024",
+      "correctAnswer": "B",
+      "explanation": "Voir le cours pour plus de détails."
+    }
+  ]
+}

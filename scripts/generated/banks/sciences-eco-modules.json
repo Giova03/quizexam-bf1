@@ -1,0 +1,11 @@
+{
+  "title": "Sciences Économiques et de Gestion",
+  "description": "Micro, macro, comptabilité, marketing, finance, gestion.",
+  "category": "Universitaire",
+  "subcategory": "Sciences Éco",
+  "icon": "TrendingUp",
+  "color": "cyan",
+  "level": "LICENCE",
+  "bankKey": "sciences-eco-modules",
+  "questions": []
+}

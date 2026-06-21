@@ -1,0 +1,11 @@
+{
+  "title": "SVT - Sciences de la Vie et de la Terre",
+  "description": "Biologie, géologie, écologie, génétique (6e à Terminale D).",
+  "category": "Secondaire",
+  "subcategory": "SVT",
+  "icon": "Dna",
+  "color": "rose",
+  "level": "LYCEE",
+  "bankKey": "svt-modules",
+  "questions": []
+}
