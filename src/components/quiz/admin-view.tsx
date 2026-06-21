@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Select,
   SelectContent,
@@ -182,44 +181,40 @@ export function AdminView() {
         </Button>
       </div>
 
-      <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="relative z-10 grid w-full grid-cols-2 sm:grid-cols-4 lg:grid-cols-8">
-          <TabsTrigger value="overview" className="gap-1 text-xs sm:text-sm">
-            <TrendingUp className="h-4 w-4" />
-            <span className="hidden md:inline">Vue d&apos;ensemble</span>
-          </TabsTrigger>
-          <TabsTrigger value="visitors" className="gap-1 text-xs sm:text-sm">
-            <Users className="h-4 w-4" />
-            <span className="hidden md:inline">Visiteurs</span>
-          </TabsTrigger>
-          <TabsTrigger value="progress" className="gap-1 text-xs sm:text-sm">
-            <BarChart3 className="h-4 w-4" />
-            <span className="hidden md:inline">Progression</span>
-          </TabsTrigger>
-          <TabsTrigger value="banks" className="gap-1 text-xs sm:text-sm">
-            <Database className="h-4 w-4" />
-            <span className="hidden md:inline">Banques</span>
-          </TabsTrigger>
-          <TabsTrigger value="sessions" className="gap-1 text-xs sm:text-sm">
-            <Activity className="h-4 w-4" />
-            <span className="hidden md:inline">Sessions</span>
-          </TabsTrigger>
-          <TabsTrigger value="exams" className="gap-1 text-xs sm:text-sm">
-            <GraduationCap className="h-4 w-4" />
-            <span className="hidden md:inline">Examens</span>
-          </TabsTrigger>
-          <TabsTrigger value="exports" className="gap-1 text-xs sm:text-sm">
-            <Download className="h-4 w-4" />
-            <span className="hidden md:inline">Export</span>
-          </TabsTrigger>
-          <TabsTrigger value="broadcast" className="gap-1 text-xs sm:text-sm">
-            <Mail className="h-4 w-4" />
-            <span className="hidden md:inline">Broadcast</span>
-          </TabsTrigger>
-        </TabsList>
+      {/* Navigation par onglets - boutons simples pour fiabilité maximale */}
+      <div className="flex flex-wrap gap-2">
+        {[
+          { id: "overview", label: "Vue d'ensemble", icon: TrendingUp },
+          { id: "visitors", label: "Visiteurs", icon: Users },
+          { id: "progress", label: "Progression", icon: BarChart3 },
+          { id: "banks", label: "Banques & QCM", icon: Database },
+          { id: "sessions", label: "Sessions", icon: Activity },
+          { id: "exams", label: "Examens", icon: GraduationCap },
+          { id: "exports", label: "Export", icon: Download },
+          { id: "broadcast", label: "Broadcast", icon: Mail },
+        ].map((tab) => {
+          const Icon = tab.icon;
+          const isActive = activeTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
+                isActive
+                  ? "border-emerald-500 bg-emerald-50 text-emerald-700 shadow-sm dark:border-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300"
+                  : "border-border bg-card text-muted-foreground hover:border-emerald-300 hover:bg-muted/50"
+              }`}
+            >
+              <Icon className="h-4 w-4 shrink-0" />
+              <span className="whitespace-nowrap">{tab.label}</span>
+            </button>
+          );
+        })}
+      </div>
 
-        {/* === Overview Tab === */}
-        <TabsContent value="overview" className="space-y-4">
+      {/* === Overview Tab === */}
+      {activeTab === "overview" && (
+        <div className="space-y-4">
           <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-6">
             <StatCard icon={BookOpen} label="Banques" value={c?.banks ?? 0} color="emerald" />
             <StatCard icon={FileQuestion} label="Questions" value={c?.questions ?? 0} color="violet" />
@@ -317,20 +312,26 @@ export function AdminView() {
 
           {/* Top performers + alerts */}
           <TopPerformersAndAlerts />
-        </TabsContent>
+        </div>
+      )}
 
         {/* === Visitors Tab === */}
-        <TabsContent value="visitors" className="space-y-4">
+        {activeTab === "visitors" && (
+        <div className="space-y-4">
           <VisitorsStats />
-        </TabsContent>
+        </div>
+      )}
 
         {/* === Progress Tab === */}
-        <TabsContent value="progress" className="space-y-4">
+        {activeTab === "progress" && (
+        <div className="space-y-4">
           <ProgressTracker />
-        </TabsContent>
+        </div>
+      )}
 
         {/* === Banks & QCM Tab === */}
-        <TabsContent value="banks" className="space-y-4">
+        {activeTab === "banks" && (
+        <div className="space-y-4">
           <Card className="overflow-hidden">
             <div className="border-b px-5 py-4">
               <h2 className="flex items-center gap-2 font-semibold">
@@ -362,28 +363,37 @@ export function AdminView() {
               ))}
             </div>
           </Card>
-        </TabsContent>
+        </div>
+      )}
 
         {/* === Sessions Tab === */}
-        <TabsContent value="sessions" className="space-y-4">
+        {activeTab === "sessions" && (
+        <div className="space-y-4">
           <SessionsList />
-        </TabsContent>
+        </div>
+      )}
 
         {/* === Exams Tab === */}
-        <TabsContent value="exams" className="space-y-4">
+        {activeTab === "exams" && (
+        <div className="space-y-4">
           <ExamsManager onNew={() => setNewExamOpen(true)} />
-        </TabsContent>
+        </div>
+      )}
 
         {/* === Exports Tab === */}
-        <TabsContent value="exports" className="space-y-4">
+        {activeTab === "exports" && (
+        <div className="space-y-4">
           <ExportsPanel />
-        </TabsContent>
+        </div>
+      )}
 
         {/* === Broadcast Tab === */}
-        <TabsContent value="broadcast" className="space-y-4">
+        {activeTab === "broadcast" && (
+        <div className="space-y-4">
           <BroadcastPanel open={broadcastOpen} onOpenChange={setBroadcastOpen} />
-        </TabsContent>
-      </Tabs>
+        </div>
+      )}
+      
 
       {/* Bank questions management dialog */}
       {selectedBank && (
