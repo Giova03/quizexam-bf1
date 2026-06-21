@@ -183,38 +183,38 @@ export function AdminView() {
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-5 lg:grid-cols-8">
-          <TabsTrigger value="overview" className="gap-1.5">
+        <TabsList className="relative z-10 grid w-full grid-cols-2 sm:grid-cols-4 lg:grid-cols-8">
+          <TabsTrigger value="overview" className="gap-1 text-xs sm:text-sm">
             <TrendingUp className="h-4 w-4" />
-            <span className="hidden sm:inline">Vue d&apos;ensemble</span>
+            <span className="hidden md:inline">Vue d&apos;ensemble</span>
           </TabsTrigger>
-          <TabsTrigger value="visitors" className="gap-1.5">
+          <TabsTrigger value="visitors" className="gap-1 text-xs sm:text-sm">
             <Users className="h-4 w-4" />
-            <span className="hidden sm:inline">Visiteurs</span>
+            <span className="hidden md:inline">Visiteurs</span>
           </TabsTrigger>
-          <TabsTrigger value="progress" className="gap-1.5">
+          <TabsTrigger value="progress" className="gap-1 text-xs sm:text-sm">
             <BarChart3 className="h-4 w-4" />
-            <span className="hidden sm:inline">Progression</span>
+            <span className="hidden md:inline">Progression</span>
           </TabsTrigger>
-          <TabsTrigger value="banks" className="gap-1.5">
+          <TabsTrigger value="banks" className="gap-1 text-xs sm:text-sm">
             <Database className="h-4 w-4" />
-            <span className="hidden sm:inline">Banques</span>
+            <span className="hidden md:inline">Banques</span>
           </TabsTrigger>
-          <TabsTrigger value="sessions" className="gap-1.5">
+          <TabsTrigger value="sessions" className="gap-1 text-xs sm:text-sm">
             <Activity className="h-4 w-4" />
-            <span className="hidden sm:inline">Sessions</span>
+            <span className="hidden md:inline">Sessions</span>
           </TabsTrigger>
-          <TabsTrigger value="exams" className="gap-1.5">
+          <TabsTrigger value="exams" className="gap-1 text-xs sm:text-sm">
             <GraduationCap className="h-4 w-4" />
-            <span className="hidden sm:inline">Examens</span>
+            <span className="hidden md:inline">Examens</span>
           </TabsTrigger>
-          <TabsTrigger value="exports" className="gap-1.5">
+          <TabsTrigger value="exports" className="gap-1 text-xs sm:text-sm">
             <Download className="h-4 w-4" />
-            <span className="hidden sm:inline">Export</span>
+            <span className="hidden md:inline">Export</span>
           </TabsTrigger>
-          <TabsTrigger value="broadcast" className="gap-1.5">
+          <TabsTrigger value="broadcast" className="gap-1 text-xs sm:text-sm">
             <Mail className="h-4 w-4" />
-            <span className="hidden sm:inline">Broadcast</span>
+            <span className="hidden md:inline">Broadcast</span>
           </TabsTrigger>
         </TabsList>
 
