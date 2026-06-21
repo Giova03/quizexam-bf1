@@ -1,0 +1,192 @@
+{
+  "bankKey": "droit-ufr-modules",
+  "title": "Droit - Modules UFR Licence",
+  "description": "Tous les modules de droit: constitutionnel, civil, pénal, administratif, OHADA, travail, fiscal, international, obligations, biens, famille, procédures, environnement, coutumier.",
+  "category": "Universitaire",
+  "subcategory": "Droit UFR",
+  "icon": "Scale",
+  "color": "emerald",
+  "level": "LICENCE",
+  "questions": [
+    {
+      "question": "Quelle est la différence entre le droit public et le droit privé ?",
+      "optionA": "Le droit public régit les rapports entre l'État et les particuliers, le droit privé les rapports entre particuliers",
+      "optionB": "Le droit public est pour les riches",
+      "optionC": "Le droit privé est plus important",
+      "optionD": "Il n'y a aucune différence",
+      "correctAnswer": "A",
+      "explanation": "Le droit public concerne l'État et ses institutions, le droit privé les relations entre personnes privées."
+    },
+    {
+      "question": "Qu'est-ce que la hiérarchie des normes selon Kelsen ?",
+      "optionA": "Constitution > Traités > Lois > Règlements",
+      "optionB": "Lois > Constitution > Règlements",
+      "optionC": "Règlements > Lois > Constitution",
+      "optionD": "Traités > Règlements > Lois",
+      "correctAnswer": "A",
+      "explanation": "La pyramide de Kelsen: Constitution au sommet, puis traités internationaux, lois, et règlements à la base."
+    },
+    {
+      "question": "Qu'est-ce qu'une personne morale ?",
+      "optionA": "Un groupement de personnes physiques doté de la personnalité juridique",
+      "optionB": "Une personne physique",
+      "optionC": "Un groupement sans droit",
+      "optionD": "Un mineur",
+      "correctAnswer": "A",
+      "explanation": "La personne morale (société, association, État) a des droits et obligations comme une personne physique."
+    },
+    {
+      "question": "Qu'est-ce que le droit OHADA ?",
+      "optionA": "Un droit uniforme africain pour l'harmonisation du droit des affaires",
+      "optionB": "Un droit européen",
+      "optionC": "Un droit uniquement burkinabè",
+      "optionD": "Un droit coutumier",
+      "correctAnswer": "A",
+      "explanation": "L'OHADA harmonise le droit des affaires dans 17 pays africains."
+    },
+    {
+      "question": "Quelles sont les conditions de validité d'un contrat ?",
+      "optionA": "Consentement, capacité, objet certain, cause licite",
+      "optionB": "Signature notariée uniquement",
+      "optionC": "Présence de témoins",
+      "optionD": "Enregistrement fiscal",
+      "correctAnswer": "A",
+      "explanation": "Les 4 conditions du Code civil: consentement, capacité, objet, cause."
+    },
+    {
+      "question": "Qu'est-ce que la responsabilité civile délictuelle ?",
+      "optionA": "La responsabilité pour fait dommageable en dehors d'un contrat",
+      "optionB": "La responsabilité contractuelle",
+      "optionC": "La responsabilité pénale",
+      "optionD": "La responsabilité administrative",
+      "correctAnswer": "A",
+      "explanation": "La responsabilité délictuelle répare un dommage causé hors contrat (art. 1382 Code civil)."
+    },
+    {
+      "question": "Qu'est-ce que le droit de propriété ?",
+      "optionA": "Le droit de jouir, disposer et user d'un bien",
+      "optionB": "Le droit de louer uniquement",
+      "optionC": "Le droit de vendre",
+      "optionD": "Le droit de prêter",
+      "correctAnswer": "A",
+      "explanation": "Le droit de propriété comprend usus (usage), fructus (fruits), abusus (disposition)."
+    },
+    {
+      "question": "Qu'est-ce que la prescription acquisitive ?",
+      "optionA": "Acquisition de la propriété par possession prolongée",
+      "optionB": "Perte d'un droit",
+      "optionC": "Annulation d'un contrat",
+      "optionD": "Une peine",
+      "correctAnswer": "A",
+      "explanation": "La prescription acquisitive permet d'acquérir un bien par possession paisible et prolongée (10 ou 30 ans)."
+    },
+    {
+      "question": "Quelle est la différence entre une SARL et une SA ?",
+      "optionA": "La SARL a un capital minimum plus faible et ne peut pas faire d'appel public à l'épargne",
+      "optionB": "La SARL est plus grande",
+      "optionC": "La SA n'a pas de capital",
+      "optionD": "Il n'y a pas de différence",
+      "correctAnswer": "A",
+      "explanation": "SARL: capital minimum 1 000 000 FCFA, pas d'appel public. SA: 10 000 000 FCFA, appel public possible."
+    },
+    {
+      "question": "Qu'est-ce que le droit du travail ?",
+      "optionA": "L'ensemble des règles régissant les relations entre employeur et salarié",
+      "optionB": "Le droit des transports",
+      "optionC": "Le droit des mines",
+      "optionD": "Le droit maritime",
+      "correctAnswer": "A",
+      "explanation": "Le droit du travail régit le contrat de travail, la rémunération, les congés, le licenciement."
+    },
+    {
+      "question": "Qu'est-ce que le droit fiscal ?",
+      "optionA": "L'ensemble des règles relatives à l'impôt",
+      "optionB": "Le droit de la fiscalité forestière",
+      "optionC": "Le droit pénal",
+      "optionD": "Le droit civil",
+      "correctAnswer": "A",
+      "explanation": "Le droit fiscal organise la perception des impôts et taxes par l'État."
+    },
+    {
+      "question": "Qu'est-ce que la procédure pénale ?",
+      "optionA": "L'ensemble des règles organisant le jugement des infractions",
+      "optionB": "Le droit des contrats",
+      "optionC": "Le droit de la famille",
+      "optionD": "Le droit commercial",
+      "correctAnswer": "A",
+      "explanation": "La procédure pénale: enquête, instruction, jugement des crimes, délits, contraventions."
+    },
+    {
+      "question": "Qu'est-ce que le droit constitutionnel comparé ?",
+      "optionA": "L'étude des constitutions de différents pays",
+      "optionB": "La comparaison des codes civils",
+      "optionC": "Le droit international",
+      "optionD": "Le droit administratif",
+      "correctAnswer": "A",
+      "explanation": "Le droit constitutionnel comparé compare les régimes politiques et constitutions."
+    },
+    {
+      "question": "Qu'est-ce que le droit coutumier burkinabè ?",
+      "optionA": "Les règles traditionnelles des communautés du Burkina Faso",
+      "optionB": "Le droit moderne",
+      "optionC": "Le droit français",
+      "optionD": "Le droit OHADA",
+      "correctAnswer": "A",
+      "explanation": "Le droit coutumier BF: règles de succession, mariage, terres selon les traditions."
+    },
+    {
+      "question": "Qu'est-ce que le contentieux administratif ?",
+      "optionA": "Le règlement des litiges entre l'administration et les administrés",
+      "optionB": "Le droit civil",
+      "optionC": "Le droit pénal",
+      "optionD": "Le droit commercial",
+      "correctAnswer": "A",
+      "explanation": "Le contentieux administratif est jugé par le tribunal administratif et la Cour d'État."
+    },
+    {
+      "question": "Qu'est-ce que le droit de l'environnement ?",
+      "optionA": "L'ensemble des règles protégeant l'environnement naturel",
+      "optionB": "Le droit du travail",
+      "optionC": "Le droit fiscal",
+      "optionD": "Le droit maritime",
+      "correctAnswer": "A",
+      "explanation": "Le droit de l'environnement: pollution, biodiversité, ressources naturelles, développement durable."
+    },
+    {
+      "question": "Qu'est-ce que le droit des sociétés OHADA ?",
+      "optionA": "Le droit régissant la création et le fonctionnement des sociétés en zone OHADA",
+      "optionB": "Le droit européen des sociétés",
+      "optionC": "Le droit américain",
+      "optionD": "Le droit japonais",
+      "correctAnswer": "A",
+      "explanation": "L'OHADA uniformise le droit des sociétés: SARL, SA, SNC, SCS dans 17 pays africains."
+    },
+    {
+      "question": "Qu'est-ce que le droit des procédures collectives OHADA ?",
+      "optionA": "Le droit régissant la faillite et le redressement des entreprises",
+      "optionB": "Le droit des contrats",
+      "optionC": "Le droit de la famille",
+      "optionD": "Le droit fiscal",
+      "correctAnswer": "A",
+      "explanation": "Les procédures collectives: règlement préventif, redressement, liquidation judiciaire."
+    },
+    {
+      "question": "Qu'est-ce que le droit bancaire OHADA ?",
+      "optionA": "Le droit régissant l'activité des banques en zone OHADA",
+      "optionB": "Le droit agricole",
+      "optionC": "Le droit minier",
+      "optionD": "Le droit forestier",
+      "correctAnswer": "A",
+      "explanation": "Le droit bancaire OHADA réglemente les établissements de crédit et les opérations bancaires."
+    },
+    {
+      "question": "Qu'est-ce que la méthodologie juridique ?",
+      "optionA": "La méthode de recherche et de rédaction juridique",
+      "optionB": "La philosophie du droit",
+      "optionC": "L'histoire du droit",
+      "optionD": "Le droit comparé",
+      "correctAnswer": "A",
+      "explanation": "La méthodologie juridique: cas pratique, commentaire d'arrêt, dissertation juridique."
+    }
+  ]
+}

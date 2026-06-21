@@ -1,0 +1,102 @@
+{
+  "bankKey": "sociologie-ufr",
+  "title": "Sociologie, Anthropologie, Psychologie & Démographie",
+  "description": "Sciences sociales: Durkheim, Marx, Weber, Bourdieu, démographie, action sociale.",
+  "category": "Universitaire",
+  "subcategory": "Sciences Humaines UFR",
+  "icon": "Users",
+  "color": "violet",
+  "level": "LICENCE",
+  "questions": [
+    {
+      "question": "Qui a défini le 'fait social' ?",
+      "optionA": "Émile Durkheim",
+      "optionB": "Karl Marx",
+      "optionC": "Max Weber",
+      "optionD": "Pierre Bourdieu",
+      "correctAnswer": "A",
+      "explanation": "Durkheim: le fait social est extérieur, contraignant et général."
+    },
+    {
+      "question": "Qu'est-ce que l'habitus selon Bourdieu ?",
+      "optionA": "Des dispositions durables engendrées par la socialisation",
+      "optionB": "Une habitude quotidienne",
+      "optionC": "Un type d'habitat",
+      "optionD": "Une habitude religieuse",
+      "correctAnswer": "A",
+      "explanation": "L'habitus: système de dispositions acquis par l'individu dans un champ social."
+    },
+    {
+      "question": "Qu'est-ce que l'observation participante ?",
+      "optionA": "Une méthode d'enquête où le chercheur vit avec les étudiés",
+      "optionB": "Un sondage",
+      "optionC": "Un questionnaire",
+      "optionD": "Une expérience en laboratoire",
+      "correctAnswer": "A",
+      "explanation": "L'observation participante: immersion du chercheur dans le groupe étudié."
+    },
+    {
+      "question": "Qu'est-ce que la démographie ?",
+      "optionA": "L'étude statistique des populations",
+      "optionB": "L'étude des roches",
+      "optionC": "L'étude des plantes",
+      "optionD": "L'étude des étoiles",
+      "correctAnswer": "A",
+      "explanation": "La démographie: natalité, mortalité, migration, structure par âge."
+    },
+    {
+      "question": "Qu'est-ce que le RGPH ?",
+      "optionA": "Le Recensement Général de la Population et de l'Habitat",
+      "optionB": "Un parti politique",
+      "optionC": "Une ONG",
+      "optionD": "Un ministère",
+      "correctAnswer": "A",
+      "explanation": "Le RGPH recense la population (au Burkina: 2019, 2024)."
+    },
+    {
+      "question": "Qu'est-ce que les VBG ?",
+      "optionA": "Les Violences Basées sur le Genre",
+      "optionB": "Les Violences Bancaires Globales",
+      "optionC": "Les Violences Biologiques",
+      "optionD": "Les Violences Bureaucratiques",
+      "correctAnswer": "A",
+      "explanation": "VBG: violences physiques, sexuelles, psychologiques envers les femmes et filles."
+    },
+    {
+      "question": "Qu'est-ce que le travail social ?",
+      "optionA": "L'accompagnement des personnes en difficulté",
+      "optionB": "Le travail manuel",
+      "optionC": "Le travail agricole",
+      "optionD": "Le travail industriel",
+      "correctAnswer": "A",
+      "explanation": "Le travail social: aide sociale, accompagnement, médiation, protection."
+    },
+    {
+      "question": "Qu'est-ce que le CONASUR ?",
+      "optionA": "Le Conseil National pour la Sécurité Alimentaire et la Réhabilitation",
+      "optionB": "Un parti politique",
+      "optionC": "Une banque",
+      "optionD": "Une université",
+      "correctAnswer": "A",
+      "explanation": "Le CONASUR coordonne l'aide humanitaire et la sécurité alimentaire au BF."
+    },
+    {
+      "question": "Qu'est-ce que la psychologie cognitive ?",
+      "optionA": "L'étude des processus mentaux (attention, mémoire, perception)",
+      "optionB": "L'étude des rêves",
+      "optionC": "L'étude des groupes",
+      "optionD": "L'étude du travail",
+      "correctAnswer": "A",
+      "explanation": "La psychologie cognitive: attention, perception, mémoire, apprentissage, raisonnement."
+    },
+    {
+      "question": "Qu'est-ce que le culturalisme en anthropologie ?",
+      "optionA": "Un courant étudiant comment la culture façonne la personnalité",
+      "optionB": "Un courant économique",
+      "optionC": "Un courant politique",
+      "optionD": "Un courant religieux",
+      "correctAnswer": "A",
+      "explanation": "Culturalisme: Mead, Benedict. Chaque culture façonne ses membres."
+    }
+  ]
+}

@@ -42,6 +42,7 @@ import {
   Clock,
   CheckCircle2,
   XCircle,
+  BarChart3,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -174,7 +175,7 @@ export function AdminView() {
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4">
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-5">
           <TabsTrigger value="overview" className="gap-1.5">
             <TrendingUp className="h-4 w-4" />
             <span className="hidden sm:inline">Vue d&apos;ensemble</span>
@@ -183,9 +184,13 @@ export function AdminView() {
             <Users className="h-4 w-4" />
             <span className="hidden sm:inline">Visiteurs</span>
           </TabsTrigger>
+          <TabsTrigger value="progress" className="gap-1.5">
+            <BarChart3 className="h-4 w-4" />
+            <span className="hidden sm:inline">Progression</span>
+          </TabsTrigger>
           <TabsTrigger value="banks" className="gap-1.5">
             <Database className="h-4 w-4" />
-            <span className="hidden sm:inline">Banques & QCM</span>
+            <span className="hidden sm:inline">Banques</span>
           </TabsTrigger>
           <TabsTrigger value="sessions" className="gap-1.5">
             <Activity className="h-4 w-4" />
@@ -294,6 +299,11 @@ export function AdminView() {
         {/* === Visitors Tab === */}
         <TabsContent value="visitors" className="space-y-4">
           <VisitorsStats />
+        </TabsContent>
+
+        {/* === Progress Tab === */}
+        <TabsContent value="progress" className="space-y-4">
+          <ProgressTracker />
         </TabsContent>
 
         {/* === Banks & QCM Tab === */}
@@ -1005,5 +1015,133 @@ function NewBankDialog({
         </DialogFooter>
       </DialogContent>
     </Dialog>
+  );
+}
+
+// ===== Progress Tracker (Admin) =====
+function ProgressTracker() {
+  const [sessions, setSessions] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedUser, setSelectedUser] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch("/api/admin/sessions?details=true")
+      .then((r) => (r.ok ? r.json() : []))
+      .then((d) => setSessions(Array.isArray(d) ? d : []))
+      .catch(() => setSessions([]))
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) return <Skeleton className="h-64 rounded-xl" />;
+
+  // Group by user
+  const userMap: Record<string, { name: string; email: string; role: string; sessions: any[] }> = {};
+  for (const s of sessions) {
+    const uid = s.user?.id ?? "anonymous";
+    if (!userMap[uid]) {
+      userMap[uid] = { name: s.user?.name ?? "Visiteur", email: s.user?.email ?? "N/A", role: s.user?.role ?? "VISITOR", sessions: [] };
+    }
+    userMap[uid].sessions.push(s);
+  }
+
+  const users = Object.entries(userMap).map(([id, data]) => {
+    const completed = data.sessions.filter((s) => s.completedAt);
+    const avgPct = completed.length > 0
+      ? Math.round(completed.reduce((sum, s) => sum + (s.score / Math.max(1, s.totalQuestions)) * 100, 0) / completed.length)
+      : 0;
+    const totalQ = completed.reduce((sum, s) => sum + s.totalQuestions, 0);
+    const totalCorrect = completed.reduce((sum, s) => sum + s.score, 0);
+    return { id, ...data, sessionCount: completed.length, avgPct, totalQ, totalCorrect };
+  }).sort((a, b) => b.sessionCount - a.sessionCount);
+
+  return (
+    <div className="space-y-4">
+      <div className="grid gap-3 sm:grid-cols-3">
+        <Card className="p-4">
+          <Users className="h-5 w-5 text-sky-600" />
+          <p className="mt-2 text-2xl font-bold">{users.length}</p>
+          <p className="text-xs text-muted-foreground">Visiteurs actifs</p>
+        </Card>
+        <Card className="p-4">
+          <Activity className="h-5 w-5 text-emerald-600" />
+          <p className="mt-2 text-2xl font-bold">{sessions.filter(s => s.completedAt).length}</p>
+          <p className="text-xs text-muted-foreground">Sessions terminées</p>
+        </Card>
+        <Card className="p-4">
+          <Trophy className="h-5 w-5 text-amber-600" />
+          <p className="mt-2 text-2xl font-bold">
+            {users.length > 0 ? Math.round(users.reduce((sum, u) => sum + u.avgPct, 0) / users.length) : 0}%
+          </p>
+          <p className="text-xs text-muted-foreground">Score moyen global</p>
+        </Card>
+      </div>
+
+      <Card className="overflow-hidden">
+        <div className="border-b px-5 py-4">
+          <h2 className="flex items-center gap-2 font-semibold">
+            <BarChart3 className="h-4 w-4 text-violet-600" />
+            Progression par visiteur
+          </h2>
+          <p className="text-sm text-muted-foreground">Cliquez sur un visiteur pour voir le détail</p>
+        </div>
+        <div className="divide-y">
+          {users.length === 0 && (
+            <p className="p-8 text-center text-sm text-muted-foreground">Aucune activité pour le moment.</p>
+          )}
+          {users.map((u) => (
+            <div key={u.id}>
+              <button
+                onClick={() => setSelectedUser(selectedUser === u.id ? null : u.id)}
+                className="flex w-full items-center gap-3 px-5 py-3 text-left transition-colors hover:bg-muted/40"
+              >
+                <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white ${u.role === "ADMIN" ? "bg-gradient-to-br from-amber-500 to-orange-600" : "bg-gradient-to-br from-emerald-500 to-teal-600"}`}>
+                  {u.name.charAt(0).toUpperCase()}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-medium">{u.name}</p>
+                  <p className="truncate text-xs text-muted-foreground">{u.email}</p>
+                </div>
+                <div className="flex items-center gap-4 text-right">
+                  <div>
+                    <p className="text-sm font-bold">{u.sessionCount}</p>
+                    <p className="text-[10px] text-muted-foreground">sessions</p>
+                  </div>
+                  <div>
+                    <p className={`text-lg font-bold ${u.avgPct >= 50 ? "text-emerald-600" : "text-rose-600"}`}>{u.avgPct}%</p>
+                    <p className="text-[10px] text-muted-foreground">{u.totalCorrect}/{u.totalQ} Q</p>
+                  </div>
+                </div>
+              </button>
+              {selectedUser === u.id && (
+                <div className="border-t bg-muted/20 p-4">
+                  <p className="mb-2 text-xs font-semibold text-muted-foreground">Sessions de {u.name}</p>
+                  <div className="max-h-[300px] space-y-2 overflow-y-auto">
+                    {u.sessions.filter(s => s.completedAt).map((s) => {
+                      const pct = Math.round((s.score / Math.max(1, s.totalQuestions)) * 100);
+                      return (
+                        <div key={s.id} className="flex items-center justify-between gap-2 rounded-lg border bg-card p-2.5 text-xs">
+                          <div className="min-w-0 flex-1">
+                            <p className="truncate font-medium">{s.title}</p>
+                            <p className="text-[10px] text-muted-foreground">
+                              {new Date(s.completedAt).toLocaleDateString("fr-FR", { day: "2-digit", month: "short", year: "numeric" })}
+                              {" • "}
+                              <Badge variant="outline" className="text-[9px]">{s.mode === "immediate" ? "Immédiate" : "Finale"}</Badge>
+                            </p>
+                          </div>
+                          <span className={`text-sm font-bold ${pct >= 50 ? "text-emerald-600" : "text-rose-600"}`}>{pct}%</span>
+                        </div>
+                      );
+                    })}
+                    {u.sessions.filter(s => s.completedAt).length === 0 && (
+                      <p className="text-xs text-muted-foreground">Aucune session terminée.</p>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </Card>
+    </div>
   );
 }

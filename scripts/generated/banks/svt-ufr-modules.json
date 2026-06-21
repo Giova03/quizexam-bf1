@@ -1,0 +1,102 @@
+{
+  "bankKey": "svt-ufr-modules",
+  "title": "SVT - Modules UFR (Biologie, Géologie, Écologie)",
+  "description": "Biologie cellulaire, moléculaire, génétique, biochimie, microbiologie, physiologie, écologie, géologie.",
+  "category": "Universitaire",
+  "subcategory": "SVT UFR",
+  "icon": "Dna",
+  "color": "rose",
+  "level": "LICENCE",
+  "questions": [
+    {
+      "question": "Qu'est-ce que la biologie cellulaire ?",
+      "optionA": "L'étude de la cellule et de ses organites",
+      "optionB": "L'étude des molécules",
+      "optionC": "L'étude des écosystèmes",
+      "optionD": "L'étude des roches",
+      "correctAnswer": "A",
+      "explanation": "La biologie cellulaire étudie la structure et le fonctionnement de la cellule."
+    },
+    {
+      "question": "Qu'est-ce que la PCR (Polymerase Chain Reaction) ?",
+      "optionA": "Une technique d'amplification de l'ADN",
+      "optionB": "Une technique de coloration",
+      "optionC": "Une technique de centrifugation",
+      "optionD": "Une technique de culture",
+      "correctAnswer": "A",
+      "explanation": "La PCR amplifie un fragment d'ADN in vitro (Mullis, Prix Nobel 1993)."
+    },
+    {
+      "question": "Qu'est-ce que la photosynthèse ?",
+      "optionA": "La conversion de lumière en énergie chimique par les plantes",
+      "optionB": "La respiration des animaux",
+      "optionC": "La digestion",
+      "optionD": "La circulation sanguine",
+      "correctAnswer": "A",
+      "explanation": "6CO₂ + 6H₂O + lumière → C₆H₁₂O₆ + 6O₂."
+    },
+    {
+      "question": "Qu'est-ce que la mitose ?",
+      "optionA": "La division cellulaire produisant 2 cellules filles identiques",
+      "optionB": "La division produisant 4 gamètes",
+      "optionC": "La fusion de cellules",
+      "optionD": "La mort cellulaire",
+      "correctAnswer": "A",
+      "explanation": "La mitose: 1 cellule mère → 2 cellules filles diploïdes identiques."
+    },
+    {
+      "question": "Qu'est-ce que la méiose ?",
+      "optionA": "La division cellulaire produisant 4 gamètes haploïdes",
+      "optionB": "La mitose",
+      "optionC": "La fécondation",
+      "optionD": "La transcription",
+      "correctAnswer": "A",
+      "explanation": "La méiose: 1 cellule diploïde → 4 cellules haploïdes (gamètes)."
+    },
+    {
+      "question": "Qu'est-ce qu'un écosystème ?",
+      "optionA": "L'ensemble des êtres vivants et du milieu où ils vivent",
+      "optionB": "Un groupe d'animaux",
+      "optionC": "Une forêt uniquement",
+      "optionD": "Un océan uniquement",
+      "correctAnswer": "A",
+      "explanation": "Écosystème = biocénose (êtres vivants) + biotope (milieu physique)."
+    },
+    {
+      "question": "Qu'est-ce que la dérive des continents ?",
+      "optionA": "Le mouvement des plaques tectoniques",
+      "optionB": "Le vent",
+      "optionC": "L'érosion",
+      "optionD": "La marée",
+      "correctAnswer": "A",
+      "explanation": "Théorie de Wegener (1912): les continents se déplacent sur la lithosphère."
+    },
+    {
+      "question": "Qu'est-ce qu'un enzyme ?",
+      "optionA": "Une protéine qui catalyse une réaction biochimique",
+      "optionB": "Un glucide",
+      "optionC": "Un lipide",
+      "optionD": "Un acide nucléique",
+      "correctAnswer": "A",
+      "explanation": "Les enzymes sont des catalyseurs biologiques (protéines)."
+    },
+    {
+      "question": "Qu'est-ce que l'ADN recombinant ?",
+      "optionA": "Un ADN modifié par insertion de gènes étrangers",
+      "optionB": "Un ADN naturel",
+      "optionC": "Un ARN",
+      "optionD": "Une protéine",
+      "correctAnswer": "A",
+      "explanation": "L'ADN recombinant combine des fragments d'ADN de sources différentes (OGM)."
+    },
+    {
+      "question": "Qu'est-ce que la paléontologie ?",
+      "optionA": "L'étude des fossiles et des êtres disparus",
+      "optionB": "L'étude des roches",
+      "optionC": "L'étude des plantes",
+      "optionD": "L'étude des insectes",
+      "correctAnswer": "A",
+      "explanation": "La paléontologie étudie les fossiles pour reconstituer l'histoire de la vie."
+    }
+  ]
+}

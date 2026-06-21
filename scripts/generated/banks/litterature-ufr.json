@@ -1,0 +1,102 @@
+{
+  "bankKey": "litterature-ufr",
+  "title": "Littérature - Africaine, Française et Anglaise",
+  "description": "Romans, poésie, théâtre, courants littéraires, auteurs africains et français.",
+  "category": "Culture Générale",
+  "subcategory": "Littérature UFR",
+  "icon": "BookMarked",
+  "color": "teal",
+  "level": "LICENCE",
+  "questions": [
+    {
+      "question": "Qu'est-ce que la négritude ?",
+      "optionA": "Un mouvement littéraire et politique de valorisation de la culture noire",
+      "optionB": "Un mouvement politique européen",
+      "optionC": "Un mouvement religieux",
+      "optionD": "Un mouvement artistique asiatique",
+      "correctAnswer": "A",
+      "explanation": "La négritude: Césaire, Senghor, Damas (1930s, Paris)."
+    },
+    {
+      "question": "Qui a écrit 'Une si longue lettre' ?",
+      "optionA": "Mariama Bâ",
+      "optionB": "Léopold Sédar Senghor",
+      "optionC": "Cheikh Hamidou Kane",
+      "optionD": "Sony Labou Tansi",
+      "correctAnswer": "A",
+      "explanation": "Mariama Bâ (Sénégal, 1979), plaidoyer pour les femmes africaines."
+    },
+    {
+      "question": "Qui a écrit 'Les Soleils des indépendances' ?",
+      "optionA": "Ahmadou Kourouma",
+      "optionB": "Camara Laye",
+      "optionC": "Mongo Beti",
+      "optionD": "Sembène Ousmane",
+      "correctAnswer": "A",
+      "explanation": "Ahmadou Kourouma (Côte d'Ivoire, 1968), désenchantement post-indépendance."
+    },
+    {
+      "question": "Qu'est-ce que le romantisme ?",
+      "optionA": "Un mouvement littéraire du XIXe siècle privilégiant l'expression des sentiments",
+      "optionB": "Un mouvement du XXe siècle",
+      "optionC": "Un mouvement du Moyen Âge",
+      "optionD": "Un mouvement antique",
+      "correctAnswer": "A",
+      "explanation": "Romantisme: Hugo, Lamartine, Musset, Chateaubriand (XIXe siècle)."
+    },
+    {
+      "question": "Qui a écrit 'Hamlet' ?",
+      "optionA": "William Shakespeare",
+      "optionB": "Molière",
+      "optionC": "Victor Hugo",
+      "optionD": "Jean Racine",
+      "correctAnswer": "A",
+      "explanation": "Hamlet de Shakespeare (vers 1603), tragédie de la vengeance."
+    },
+    {
+      "question": "Qu'est-ce que le surréalisme ?",
+      "optionA": "Un mouvement littéraire et artistique explorant l'inconscient",
+      "optionB": "Un mouvement politique",
+      "optionC": "Un mouvement religieux",
+      "optionD": "Un mouvement scientifique",
+      "correctAnswer": "A",
+      "explanation": "Surréalisme: Breton, Éluard, Aragon, Dalí (1924)."
+    },
+    {
+      "question": "Qui a écrit 'L'Étranger' ?",
+      "optionA": "Albert Camus",
+      "optionB": "Jean-Paul Sartre",
+      "optionC": "André Gide",
+      "optionD": "Marcel Proust",
+      "correctAnswer": "A",
+      "explanation": "Albert Camus (1942), roman de l'absurde."
+    },
+    {
+      "question": "Qu'est-ce que le théâtre engagé ?",
+      "optionA": "Un théâtre qui défend des causes sociales ou politiques",
+      "optionB": "Un théâtre de divertissement",
+      "optionC": "Un théâtre classique",
+      "optionD": "Un théâtre religieux",
+      "correctAnswer": "A",
+      "explanation": "Théâtre engagé: Sartre, Camus, Sembène Ousmane, Sony Labou Tansi."
+    },
+    {
+      "question": "Qui a écrit 'Cahier d'un retour au pays natal' ?",
+      "optionA": "Aimé Césaire",
+      "optionB": "Léopold Sédar Senghor",
+      "optionC": "Léon-Gontran Damas",
+      "optionD": "Frantz Fanon",
+      "correctAnswer": "A",
+      "explanation": "Aimé Césaire (1939), poème fondateur de la négritude."
+    },
+    {
+      "question": "Qu'est-ce que la littérature orale africaine ?",
+      "optionA": "Les contes, mythes, légendes, épopées et proverbes transmis oralement",
+      "optionB": "Les romans écrits",
+      "optionC": "La poésie écrite",
+      "optionD": "Le théâtre moderne",
+      "correctAnswer": "A",
+      "explanation": "La littérature orale: contes (Anansi), épopées (Soundiata), proverbes, devinettes."
+    }
+  ]
+}

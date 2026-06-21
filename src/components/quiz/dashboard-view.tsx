@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Progress } from "@/components/ui/progress";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Trophy,
   Clock,
@@ -16,8 +18,22 @@ import {
   Award,
   Flame,
   Zap,
+  BarChart3,
+  CheckCircle2,
+  XCircle,
+  ChevronDown,
+  ChevronRight,
 } from "lucide-react";
 import { usePrefs } from "@/lib/prefs-store";
+
+interface SessionAnswer {
+  id: string;
+  questionText: string;
+  correctAnswer: string;
+  userAnswer: string | null;
+  isCorrect: boolean | null;
+  explanation: string;
+}
 
 interface SessionSummary {
   id: string;
@@ -27,12 +43,16 @@ interface SessionSummary {
   totalQuestions: number;
   startedAt: string;
   completedAt: string | null;
+  sourceType: string;
+  answers?: SessionAnswer[];
 }
 
 export function DashboardView() {
   const [sessions, setSessions] = useState<SessionSummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [exporting, setExporting] = useState(false);
+  const [expandedSession, setExpandedSession] = useState<string | null>(null);
+  const [tab, setTab] = useState("overview");
 
   const xp = usePrefs((s) => s.xp);
   const level = usePrefs((s) => s.level);
@@ -45,7 +65,10 @@ export function DashboardView() {
     setLoading(true);
     try {
       const res = await fetch("/api/sessions");
-      if (res.ok) setSessions(await res.json());
+      if (res.ok) {
+        const data = await res.json();
+        setSessions(Array.isArray(data) ? data : []);
+      }
     } catch (e) {
       console.error(e);
     } finally {
@@ -63,24 +86,37 @@ export function DashboardView() {
     totalSessions > 0
       ? Math.round(
           completed.reduce(
-            (sum, s) =>
-              sum + (s.score / Math.max(1, s.totalQuestions)) * 100,
+            (sum, s) => sum + (s.score / Math.max(1, s.totalQuestions)) * 100,
             0
           ) / totalSessions
         )
       : 0;
   const successRate =
-    totalAnswered > 0
-      ? Math.round((totalCorrect / totalAnswered) * 100)
-      : 0;
-  const recent = [...completed]
-    .sort(
-      (a, b) =>
-        new Date(b.completedAt ?? b.startedAt).getTime() -
-        new Date(a.completedAt ?? a.startedAt).getTime()
-    )
-    .slice(0, 8);
+    totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
   const unlockedBadges = badges.filter((b) => b.unlocked);
+
+  // Group sessions by title for per-quiz stats
+  const quizGroups: Record<string, SessionSummary[]> = {};
+  for (const s of completed) {
+    const key = s.title;
+    if (!quizGroups[key]) quizGroups[key] = [];
+    quizGroups[key].push(s);
+  }
+
+  const quizStats = Object.entries(quizGroups).map(([title, sessions]) => {
+    const total = sessions.length;
+    const avgPct = Math.round(
+      sessions.reduce(
+        (sum, s) => sum + (s.score / Math.max(1, s.totalQuestions)) * 100,
+        0
+      ) / total
+    );
+    const best = Math.max(
+      ...sessions.map((s) => (s.score / Math.max(1, s.totalQuestions)) * 100)
+    );
+    const lastDate = sessions[sessions.length - 1]?.completedAt;
+    return { title, total, avgPct, best: Math.round(best), lastDate };
+  });
 
   async function exportPdf() {
     setExporting(true);
@@ -99,13 +135,18 @@ export function DashboardView() {
           ).toLocaleDateString("fr-FR")}</td></tr>`
         )
         .join("");
+      const quizRows = quizStats
+        .map(
+          (q) => `<tr><td>${q.title}</td><td>${q.total}</td><td>${q.avgPct}%</td><td>${q.best}%</td></tr>`
+        )
+        .join("");
       win.document.write(
         `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Rapport QuizExam BF — ${dateStr}</title>
         <style>body{font-family:sans-serif;margin:40px;color:#1a1a1a}
         h1{color:#059669}.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
         .kpi div{border:1px solid #e5e7eb;border-radius:8px;padding:14px;text-align:center}
         .kpi .v{font-size:26px;font-weight:800;color:#10b981}.kpi .l{font-size:11px;color:#666}
-        table{width:100%;border-collapse:collapse;font-size:13px}
+        table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:24px}
         th{background:#f0fdf4;color:#065f46;text-align:left;padding:8px;border-bottom:2px solid #10b981}
         td{padding:8px;border-bottom:1px solid #e5e7eb}
         .footer{margin-top:40px;border-top:1px solid #e5e7eb;padding-top:12px;font-size:11px;color:#888;text-align:center}
@@ -117,6 +158,11 @@ export function DashboardView() {
         <div><div class="v">${totalAnswered}</div><div class="l">Questions</div></div>
         <div><div class="v">${successRate}%</div><div class="l">Réussite</div></div>
         </div>
+        <h2>Statistiques par quiz</h2>
+        <table><thead><tr><th>Quiz</th><th>Sessions</th><th>Score moyen</th><th>Meilleur score</th></tr></thead><tbody>${
+          quizRows || "<tr><td colspan=4>Aucune donnée</td></tr>"
+        }</tbody></table>
+        <h2>Sessions détaillées</h2>
         <table><thead><tr><th>#</th><th>Quiz</th><th>Mode</th><th>Score</th><th>%</th><th>Date</th></tr></thead><tbody>${
           rows || "<tr><td colspan=6>Aucune session</td></tr>"
         }</tbody></table>
@@ -162,7 +208,7 @@ export function DashboardView() {
         <div>
           <h1 className="text-2xl font-bold">Tableau de bord analytique</h1>
           <p className="text-muted-foreground">
-            Suivez votre progression et vos statistiques
+            Suivez votre progression et vos statistiques détaillées
           </p>
         </div>
         <Button
@@ -175,154 +221,300 @@ export function DashboardView() {
         </Button>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Card className="p-5">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xs font-medium text-muted-foreground">
-                Sessions totales
-              </p>
-              <p className="mt-1 text-3xl font-bold">{totalSessions}</p>
-            </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40">
-              <Activity className="h-5 w-5" />
-            </div>
-          </div>
-        </Card>
-        <Card className="p-5">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xs font-medium text-muted-foreground">
-                Score moyen
-              </p>
-              <p className="mt-1 text-3xl font-bold">{avgScore}%</p>
-            </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-50 text-sky-600 dark:bg-sky-950/40">
-              <TrendingUp className="h-5 w-5" />
-            </div>
-          </div>
-        </Card>
-        <Card className="p-5">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xs font-medium text-muted-foreground">
-                Questions répondues
-              </p>
-              <p className="mt-1 text-3xl font-bold">{totalAnswered}</p>
-            </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-50 text-violet-600 dark:bg-violet-950/40">
-              <Target className="h-5 w-5" />
-            </div>
-          </div>
-        </Card>
-        <Card className="p-5">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xs font-medium text-muted-foreground">
-                Taux de réussite
-              </p>
-              <p className="mt-1 text-3xl font-bold">{successRate}%</p>
-            </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-600 dark:bg-amber-950/40">
-              <Trophy className="h-5 w-5" />
-            </div>
-          </div>
-        </Card>
-      </div>
-
-      <Card className="overflow-hidden">
-        <div className="grid gap-0 sm:grid-cols-4">
-          <div className="flex items-center gap-3 border-b p-4 sm:border-b-0 sm:border-r">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-white">
-              <Zap className="h-5 w-5" />
-            </div>
-            <div>
-              <p className="text-lg font-bold">{xp} XP</p>
-              <p className="text-xs text-muted-foreground">Niveau {level}</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 border-b p-4 sm:border-b-0 sm:border-r">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-500 dark:bg-orange-950/40">
-              <Flame className="h-5 w-5" />
-            </div>
-            <div>
-              <p className="text-lg font-bold">{streak} jours</p>
-              <p className="text-xs text-muted-foreground">Série actuelle</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 border-b p-4 sm:border-b-0 sm:border-r">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-violet-50 text-violet-500 dark:bg-violet-950/40">
-              <Award className="h-5 w-5" />
-            </div>
-            <div>
-              <p className="text-lg font-bold">
-                {unlockedBadges.length}/{badges.length}
-              </p>
-              <p className="text-xs text-muted-foreground">Badges</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 p-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40">
-              <CalendarDays className="h-5 w-5" />
-            </div>
-            <div>
-              <p className="text-lg font-bold">{totalCorrect}</p>
-              <p className="text-xs text-muted-foreground">Bonnes réponses</p>
-            </div>
-          </div>
-        </div>
-      </Card>
-
-      <Card className="overflow-hidden">
-        <div className="border-b px-5 py-4">
-          <h2 className="flex items-center gap-2 font-semibold">
+      <Tabs value={tab} onValueChange={setTab}>
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3">
+          <TabsTrigger value="overview" className="gap-1.5">
+            <BarChart3 className="h-4 w-4" />
+            <span className="hidden sm:inline">Vue d&apos;ensemble</span>
+          </TabsTrigger>
+          <TabsTrigger value="per-quiz" className="gap-1.5">
+            <Target className="h-4 w-4" />
+            <span className="hidden sm:inline">Par quiz</span>
+          </TabsTrigger>
+          <TabsTrigger value="history" className="gap-1.5 col-span-2 sm:col-span-1">
             <Clock className="h-4 w-4" />
-            Sessions récentes
-          </h2>
-        </div>
-        <div className="divide-y">
-          {recent.map((s) => {
-            const pct = Math.round(
-              (s.score / Math.max(1, s.totalQuestions)) * 100
-            );
-            return (
-              <div
-                key={s.id}
-                className="flex items-center justify-between gap-3 px-5 py-3"
-              >
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-medium">{s.title}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {new Date(
-                      s.completedAt ?? s.startedAt
-                    ).toLocaleDateString("fr-FR", {
-                      day: "2-digit",
-                      month: "short",
-                      year: "numeric",
-                    })}{" "}
-                    ·{" "}
-                    <Badge variant="outline" className="text-[10px]">
-                      {s.mode === "immediate" ? "Immédiate" : "Finale"}
-                    </Badge>
+            <span className="hidden sm:inline">Historique</span>
+          </TabsTrigger>
+        </TabsList>
+
+        {/* === Overview Tab === */}
+        <TabsContent value="overview" className="space-y-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <Card className="p-5">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-medium text-muted-foreground">
+                    Sessions terminées
                   </p>
+                  <p className="mt-1 text-3xl font-bold">{totalSessions}</p>
                 </div>
-                <div className="text-right">
-                  <p
-                    className={`text-lg font-bold ${
-                      pct >= 50 ? "text-emerald-600" : "text-rose-600"
-                    }`}
-                  >
-                    {pct}%
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {s.score}/{s.totalQuestions}
-                  </p>
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40">
+                  <Activity className="h-5 w-5" />
                 </div>
               </div>
-            );
-          })}
-        </div>
-      </Card>
+            </Card>
+            <Card className="p-5">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-medium text-muted-foreground">
+                    Score moyen
+                  </p>
+                  <p className="mt-1 text-3xl font-bold">{avgScore}%</p>
+                </div>
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-50 text-sky-600 dark:bg-sky-950/40">
+                  <TrendingUp className="h-5 w-5" />
+                </div>
+              </div>
+            </Card>
+            <Card className="p-5">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-medium text-muted-foreground">
+                    Questions répondues
+                  </p>
+                  <p className="mt-1 text-3xl font-bold">{totalAnswered}</p>
+                </div>
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-50 text-violet-600 dark:bg-violet-950/40">
+                  <Target className="h-5 w-5" />
+                </div>
+              </div>
+            </Card>
+            <Card className="p-5">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-medium text-muted-foreground">
+                    Taux de réussite
+                  </p>
+                  <p className="mt-1 text-3xl font-bold">{successRate}%</p>
+                </div>
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-600 dark:bg-amber-950/40">
+                  <Trophy className="h-5 w-5" />
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Gamification strip */}
+          <Card className="overflow-hidden">
+            <div className="grid gap-0 sm:grid-cols-4">
+              <div className="flex items-center gap-3 border-b p-4 sm:border-b-0 sm:border-r">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-white">
+                  <Zap className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-lg font-bold">{xp} XP</p>
+                  <p className="text-xs text-muted-foreground">Niveau {level}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 border-b p-4 sm:border-b-0 sm:border-r">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-500 dark:bg-orange-950/40">
+                  <Flame className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-lg font-bold">{streak} jours</p>
+                  <p className="text-xs text-muted-foreground">Série actuelle</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 border-b p-4 sm:border-b-0 sm:border-r">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-violet-50 text-violet-500 dark:bg-violet-950/40">
+                  <Award className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-lg font-bold">
+                    {unlockedBadges.length}/{badges.length}
+                  </p>
+                  <p className="text-xs text-muted-foreground">Badges</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 p-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40">
+                  <CalendarDays className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-lg font-bold">{totalCorrect}</p>
+                  <p className="text-xs text-muted-foreground">Bonnes réponses</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          {/* Badges */}
+          <Card className="p-4">
+            <p className="mb-3 text-sm font-semibold">
+              Badges ({unlockedBadges.length}/{badges.length})
+            </p>
+            <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
+              {badges.map((b) => (
+                <div
+                  key={b.id}
+                  className={`flex flex-col items-center gap-1 rounded-xl border-2 p-2 text-center transition-all ${
+                    b.unlocked
+                      ? "border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950/30"
+                      : "border-dashed border-border opacity-50 grayscale"
+                  }`}
+                  title={b.description}
+                >
+                  <Award
+                    className={`h-5 w-5 ${b.unlocked ? "text-amber-500" : "text-muted-foreground"}`}
+                  />
+                  <span className="text-[9px] font-medium leading-tight">
+                    {b.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </TabsContent>
+
+        {/* === Per-Quiz Tab === */}
+        <TabsContent value="per-quiz" className="space-y-3">
+          {quizStats.length === 0 ? (
+            <Card className="p-8 text-center text-muted-foreground">
+              Aucune donnée par quiz pour le moment.
+            </Card>
+          ) : (
+            quizStats
+              .sort((a, b) => b.total - a.total)
+              .map((q) => (
+                <Card key={q.title} className="p-4">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate font-semibold">{q.title}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {q.total} session(s) • Dernière:{" "}
+                        {q.lastDate
+                          ? new Date(q.lastDate).toLocaleDateString("fr-FR")
+                          : "N/A"}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="text-center">
+                        <p className="text-xs text-muted-foreground">Moyenne</p>
+                        <p
+                          className={`text-xl font-bold ${
+                            q.avgPct >= 50 ? "text-emerald-600" : "text-rose-600"
+                          }`}
+                        >
+                          {q.avgPct}%
+                        </p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-xs text-muted-foreground">Meilleur</p>
+                        <p className="text-xl font-bold text-emerald-600">
+                          {q.best}%
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <Progress
+                    value={q.avgPct}
+                    className="mt-3 h-2"
+                  />
+                </Card>
+              ))
+          )}
+        </TabsContent>
+
+        {/* === History Tab === */}
+        <TabsContent value="history" className="space-y-3">
+          {completed
+            .sort(
+              (a, b) =>
+                new Date(b.completedAt ?? b.startedAt).getTime() -
+                new Date(a.completedAt ?? a.startedAt).getTime()
+            )
+            .map((s) => {
+              const pct = Math.round(
+                (s.score / Math.max(1, s.totalQuestions)) * 100
+              );
+              const isExpanded = expandedSession === s.id;
+              const correctCount = s.answers?.filter((a) => a.isCorrect === true).length ?? s.score;
+              const wrongCount = s.answers?.filter((a) => a.isCorrect === false).length ?? 0;
+              const skippedCount = s.answers?.filter((a) => a.userAnswer === null).length ?? 0;
+              return (
+                <Card key={s.id} className="overflow-hidden">
+                  <button
+                    onClick={() => setExpandedSession(isExpanded ? null : s.id)}
+                    className="flex w-full items-center justify-between gap-3 p-4 text-left transition-colors hover:bg-muted/40"
+                  >
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium">{s.title}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {new Date(s.completedAt ?? s.startedAt).toLocaleString(
+                          "fr-FR",
+                          { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" }
+                        )}{" "}
+                        • <Badge variant="outline" className="text-[10px]">
+                          {s.mode === "immediate" ? "Immédiate" : "Finale"}
+                        </Badge>
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="text-right">
+                        <p
+                          className={`text-xl font-bold ${
+                            pct >= 50 ? "text-emerald-600" : "text-rose-600"
+                          }`}
+                        >
+                          {pct}%
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          {s.score}/{s.totalQuestions}
+                        </p>
+                      </div>
+                      {isExpanded ? (
+                        <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                      ) : (
+                        <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                      )}
+                    </div>
+                  </button>
+                  {isExpanded && s.answers && (
+                    <div className="border-t bg-muted/20 p-4">
+                      <div className="mb-3 flex gap-4 text-xs">
+                        <span className="flex items-center gap-1 text-emerald-600">
+                          <CheckCircle2 className="h-3.5 w-3.5" />
+                          {correctCount} correctes
+                        </span>
+                        <span className="flex items-center gap-1 text-rose-600">
+                          <XCircle className="h-3.5 w-3.5" />
+                          {wrongCount} fausses
+                        </span>
+                        {skippedCount > 0 && (
+                          <span className="text-muted-foreground">
+                            {skippedCount} omises
+                          </span>
+                        )}
+                      </div>
+                      <div className="max-h-[300px] space-y-2 overflow-y-auto">
+                        {s.answers.map((a, idx) => (
+                          <div
+                            key={a.id}
+                            className={`rounded-lg border p-2.5 text-xs ${
+                              a.isCorrect === true
+                                ? "border-emerald-200 bg-emerald-50 dark:border-emerald-800 dark:bg-emerald-950/20"
+                                : a.isCorrect === false
+                                  ? "border-rose-200 bg-rose-50 dark:border-rose-800 dark:bg-rose-950/20"
+                                  : "border-border bg-muted/30"
+                            }`}
+                          >
+                            <p className="font-medium">
+                              {idx + 1}. {a.questionText}
+                            </p>
+                            <p className="mt-1 text-muted-foreground">
+                              Bonne réponse: {a.correctAnswer}
+                              {a.userAnswer && ` • Votre réponse: ${a.userAnswer}`}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </Card>
+              );
+            })}
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }

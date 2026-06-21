@@ -1,0 +1,102 @@
+{
+  "bankKey": "sciences-eco-ufr",
+  "title": "Sciences Économiques et de Gestion - Modules UFR",
+  "description": "Microéconomie, macroéconomie, comptabilité, marketing, finance, GRH, fiscalité, entrepreneuriat.",
+  "category": "Universitaire",
+  "subcategory": "Sciences Éco UFR",
+  "icon": "TrendingUp",
+  "color": "cyan",
+  "level": "LICENCE",
+  "questions": [
+    {
+      "question": "Qu'est-ce que la microéconomie ?",
+      "optionA": "L'étude du comportement des agents économiques individuels",
+      "optionB": "L'étude de l'économie nationale",
+      "optionC": "L'étude du commerce international",
+      "optionD": "L'étude de la monnaie",
+      "correctAnswer": "A",
+      "explanation": "La microéconomie étudie le consommateur, le producteur et les marchés."
+    },
+    {
+      "question": "Qu'est-ce que la macroéconomie ?",
+      "optionA": "L'étude des grandeurs économiques globales (PIB, inflation, chômage)",
+      "optionB": "L'étude des entreprises",
+      "optionC": "L'étude des ménages",
+      "optionD": "L'étude des marchés locaux",
+      "correctAnswer": "A",
+      "explanation": "La macroéconomie analyse l'économie nationale dans son ensemble."
+    },
+    {
+      "question": "Qu'est-ce que la comptabilité analytique ?",
+      "optionA": "La comptabilité qui calcule les coûts par produit/service",
+      "optionB": "La comptabilité générale",
+      "optionC": "La comptabilité budgétaire",
+      "optionD": "La comptabilité publique",
+      "correctAnswer": "A",
+      "explanation": "La comptabilité analytique (de gestion) calcule les coûts de revient et marges."
+    },
+    {
+      "question": "Qu'est-ce que le marketing mix (4P) ?",
+      "optionA": "Produit, Prix, Place, Promotion",
+      "optionB": "Personne, Processus, Projet, Profit",
+      "optionC": "Plan, Prévision, Production, Performance",
+      "optionD": "People, Process, Place, Price",
+      "correctAnswer": "A",
+      "explanation": "Les 4P du marketing: Produit, Prix, Place (distribution), Promotion (communication)."
+    },
+    {
+      "question": "Qu'est-ce que l'analyse financière ?",
+      "optionA": "L'évaluation de la santé financière d'une entreprise",
+      "optionB": "L'analyse du marché",
+      "optionC": "L'analyse des concurrents",
+      "optionD": "L'analyse du personnel",
+      "correctAnswer": "A",
+      "explanation": "L'analyse financière étudie les bilans, comptes de résultat, ratios de rentabilité et solvabilité."
+    },
+    {
+      "question": "Qu'est-ce que la gestion de projet ?",
+      "optionA": "La planification et le suivi d'un projet du début à la fin",
+      "optionB": "La gestion du personnel",
+      "optionC": "La gestion financière",
+      "optionD": "La gestion des stocks",
+      "correctAnswer": "A",
+      "explanation": "La gestion de projet: initiation, planification, exécution, suivi, clôture."
+    },
+    {
+      "question": "Qu'est-ce que l'entrepreneuriat ?",
+      "optionA": "Le fait de créer et gérer une entreprise",
+      "optionB": "Le salariat",
+      "optionC": "Le chômage",
+      "optionD": "La fonction publique",
+      "correctAnswer": "A",
+      "explanation": "L'entrepreneuriat: identification d'opportunités, création d'entreprise, prise de risque."
+    },
+    {
+      "question": "Qu'est-ce que l'économétrie ?",
+      "optionA": "L'application de méthodes statistiques à l'économie",
+      "optionB": "L'économie rurale",
+      "optionC": "L'économie monétaire",
+      "optionD": "L'économie internationale",
+      "correctAnswer": "A",
+      "explanation": "L'économétrie utilise les statistiques et les mathématiques pour tester des théories économiques."
+    },
+    {
+      "question": "Qu'est-ce que le management ?",
+      "optionA": "L'art de diriger une organisation vers ses objectifs",
+      "optionB": "La comptabilité",
+      "optionC": "Le marketing",
+      "optionD": "La finance",
+      "correctAnswer": "A",
+      "explanation": "Le management: planification, organisation, direction, contrôle."
+    },
+    {
+      "question": "Qu'est-ce que la gestion budgétaire ?",
+      "optionA": "La prévision et le suivi des recettes et dépenses",
+      "optionB": "La gestion du personnel",
+      "optionC": "La gestion des stocks",
+      "optionD": "La production",
+      "correctAnswer": "A",
+      "explanation": "La gestion budgétaire: élaboration, exécution et contrôle du budget."
+    }
+  ]
+}
