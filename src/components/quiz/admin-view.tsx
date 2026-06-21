@@ -644,6 +644,7 @@ function BankQuestionsDialog({
   const [loading, setLoading] = useState(true);
   const [editingQuestion, setEditingQuestion] = useState<Question | null>(null);
   const [creatingQuestion, setCreatingQuestion] = useState(false);
+  const [searchQ, setSearchQ] = useState("");
 
   const loadQuestions = useCallback(async () => {
     setLoading(true);
@@ -663,16 +664,31 @@ function BankQuestionsDialog({
   }, [loadQuestions]);
 
   async function deleteQuestion(id: string) {
-    if (!confirm("Supprimer cette question ?")) return;
+    if (!confirm("Supprimer définitivement cette question ?")) return;
     const res = await fetch(`/api/admin/questions?id=${id}`, {
       method: "DELETE",
     });
     if (res.ok) {
-      toast.success("Question supprimée");
+      toast.success("Question supprimée ✓");
       loadQuestions();
       onChanged();
+    } else {
+      toast.error("Échec de la suppression");
     }
   }
+
+  // Filter questions by search
+  const filteredQuestions = questions.filter((q) => {
+    if (!searchQ.trim()) return true;
+    const s = searchQ.toLowerCase();
+    return (
+      q.question.toLowerCase().includes(s) ||
+      q.optionA.toLowerCase().includes(s) ||
+      q.optionB.toLowerCase().includes(s) ||
+      q.optionC.toLowerCase().includes(s) ||
+      q.optionD.toLowerCase().includes(s)
+    );
+  });
 
   return (
     <Dialog open onOpenChange={onClose}>
@@ -688,13 +704,17 @@ function BankQuestionsDialog({
           </DialogDescription>
         </DialogHeader>
 
-        <div className="flex items-center justify-between">
-          <p className="text-sm text-muted-foreground">
-            Cliquez sur le crayon pour corriger une question ou sa réponse
-          </p>
+        {/* Search + Add button */}
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <Input
+            placeholder="Rechercher dans cette banque..."
+            value={searchQ}
+            onChange={(e) => setSearchQ(e.target.value)}
+            className="h-9 sm:max-w-xs"
+          />
           <Button
             size="sm"
-            className="gap-1.5"
+            className="gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
             onClick={() => setCreatingQuestion(true)}
           >
             <Plus className="h-4 w-4" />
@@ -709,20 +729,24 @@ function BankQuestionsDialog({
                 <Skeleton key={i} className="h-20 rounded-lg" />
               ))}
             </div>
+          ) : filteredQuestions.length === 0 ? (
+            <div className="py-12 text-center text-sm text-muted-foreground">
+              {searchQ ? "Aucune question ne correspond à votre recherche." : "Aucune question dans cette banque."}
+            </div>
           ) : (
             <div className="space-y-2">
-              {questions.map((q, i) => (
+              {filteredQuestions.map((q, i) => (
                 <div
                   key={q.id}
-                  className="group rounded-lg border p-3 transition-colors hover:bg-muted/40"
+                  className="group rounded-lg border p-3 transition-colors hover:border-emerald-300 hover:bg-muted/40"
                 >
                   <div className="flex items-start gap-2">
                     <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-bold">
                       {i + 1}
                     </span>
                     <div className="min-w-0 flex-1">
-                      <p className="text-sm font-medium">{q.question}</p>
-                      <div className="mt-1 flex flex-wrap gap-1.5 text-xs">
+                      <p className="break-words text-sm font-medium">{q.question}</p>
+                      <div className="mt-1 flex flex-col gap-1 text-xs">
                         {["A", "B", "C", "D"].map((L) => {
                           const text =
                             L === "A"
@@ -735,37 +759,47 @@ function BankQuestionsDialog({
                           const isCorrect = q.correctAnswer === L;
                           const isCorrect2 = q.correctAnswer2 === L;
                           return (
-                            <span
+                            <div
                               key={L}
-                              className={`rounded px-1.5 py-0.5 ${
+                              className={`flex items-start gap-1.5 rounded px-1.5 py-0.5 ${
                                 isCorrect || isCorrect2
                                   ? "bg-emerald-100 font-semibold text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300"
-                                  : "bg-muted text-muted-foreground"
+                                  : "bg-muted/50 text-muted-foreground"
                               }`}
                             >
-                              {L}) {text}
-                            </span>
+                              <span className="shrink-0 font-bold">{L})</span>
+                              <span className="break-words">{text}</span>
+                              {(isCorrect || isCorrect2) && (
+                                <CheckCircle2 className="h-3 w-3 shrink-0 text-emerald-600" />
+                              )}
+                            </div>
                           );
                         })}
                       </div>
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        {q.explanation}
-                      </p>
+                      {q.explanation && (
+                        <p className="mt-1 break-words rounded bg-amber-50 p-1.5 text-xs text-amber-800 dark:bg-amber-950/30 dark:text-amber-200">
+                          <span className="font-semibold">Explication: </span>
+                          {q.explanation}
+                        </p>
+                      )}
                     </div>
-                    <div className="flex shrink-0 gap-1 opacity-0 transition-opacity group-hover:opacity-100">
+                    {/* Always visible action buttons */}
+                    <div className="flex shrink-0 gap-1">
                       <Button
                         size="icon"
                         variant="ghost"
-                        className="h-7 w-7"
+                        className="h-7 w-7 hover:bg-emerald-100 hover:text-emerald-700"
                         onClick={() => setEditingQuestion(q)}
+                        title="Modifier cette question"
                       >
                         <Pencil className="h-3.5 w-3.5" />
                       </Button>
                       <Button
                         size="icon"
                         variant="ghost"
-                        className="h-7 w-7 text-rose-600"
+                        className="h-7 w-7 hover:bg-rose-100 hover:text-rose-700"
                         onClick={() => deleteQuestion(q.id)}
+                        title="Supprimer cette question"
                       >
                         <Trash2 className="h-3.5 w-3.5" />
                       </Button>
@@ -775,6 +809,17 @@ function BankQuestionsDialog({
               ))}
             </div>
           )}
+        </div>
+
+        {/* Footer with count and close */}
+        <div className="flex items-center justify-between border-t pt-3">
+          <p className="text-xs text-muted-foreground">
+            {searchQ ? `${filteredQuestions.length} sur ${questions.length} question(s)` : `${questions.length} question(s) au total`}
+          </p>
+          <Button variant="outline" size="sm" onClick={onClose} className="gap-1.5">
+            <X className="h-4 w-4" />
+            Fermer
+          </Button>
         </div>
       </DialogContent>
 
@@ -819,18 +864,30 @@ function QuestionEditor({
   const [expl, setExpl] = useState(question?.explanation ?? "");
   const [saving, setSaving] = useState(false);
 
+  // Validation
+  const isValid = q.trim() && a.trim() && b.trim() && c.trim() && d.trim() && expl.trim();
+  const hasDuplicateOptions = new Set([a.trim().toLowerCase(), b.trim().toLowerCase(), c.trim().toLowerCase(), d.trim().toLowerCase()]).size < 4;
+
   async function save() {
+    if (!isValid) {
+      toast.error("Tous les champs sont obligatoires");
+      return;
+    }
+    if (hasDuplicateOptions) {
+      toast.error("Les 4 options doivent être différentes");
+      return;
+    }
     setSaving(true);
     try {
       const body = {
         bankId,
-        question: q,
-        optionA: a,
-        optionB: b,
-        optionC: c,
-        optionD: d,
+        question: q.trim(),
+        optionA: a.trim(),
+        optionB: b.trim(),
+        optionC: c.trim(),
+        optionD: d.trim(),
         correctAnswer: correct,
-        explanation: expl,
+        explanation: expl.trim(),
       };
       const res = await fetch("/api/admin/questions", {
         method: question ? "PATCH" : "POST",
@@ -839,13 +896,15 @@ function QuestionEditor({
       });
       if (res.ok) {
         toast.success(
-          question ? "Question corrigée ✓" : "Question ajoutée ✓"
+          question ? "Question modifiée ✓" : "Question ajoutée ✓"
         );
         onSaved();
       } else {
         const data = await res.json();
-        toast.error(data.error || "Échec");
+        toast.error(data.error || "Échec de l'enregistrement");
       }
+    } catch (e) {
+      toast.error("Erreur réseau");
     } finally {
       setSaving(false);
     }
@@ -853,74 +912,145 @@ function QuestionEditor({
 
   return (
     <Dialog open onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-lg">
+      <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-2xl">
         <DialogHeader>
-          <DialogTitle>
-            {question ? "Corriger la question" : "Nouveau QCM"}
+          <DialogTitle className="flex items-center gap-2">
+            {question ? (
+              <>
+                <Pencil className="h-5 w-5 text-emerald-600" />
+                Modifier la question
+              </>
+            ) : (
+              <>
+                <Plus className="h-5 w-5 text-emerald-600" />
+                Nouveau QCM
+              </>
+            )}
           </DialogTitle>
+          <DialogDescription>
+            {question
+              ? "Corrigez la question, les options ou l'explication. Cliquez sur la lettre pour définir la réponse correcte."
+              : "Ajoutez une nouvelle question à cette banque."}
+          </DialogDescription>
         </DialogHeader>
+
         <div className="space-y-3">
+          {/* Question */}
           <div>
-            <Label>Question</Label>
+            <Label className="text-sm font-semibold">Question *</Label>
             <Textarea
               value={q}
               onChange={(e) => setQ(e.target.value)}
               rows={2}
-              placeholder="Libellé de la question"
+              placeholder="Libellé de la question..."
+              className="mt-1 resize-none"
             />
           </div>
-          {[
-            { L: "A", v: a, set: setA },
-            { L: "B", v: b, set: setB },
-            { L: "C", v: c, set: setC },
-            { L: "D", v: d, set: setD },
-          ].map(({ L, v, set }) => (
-            <div key={L} className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setCorrect(L)}
-                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-bold transition-colors ${
-                  correct === L
-                    ? "bg-emerald-500 text-white"
-                    : "bg-muted text-muted-foreground"
-                }`}
-                title="Définir comme réponse correcte"
-              >
-                {L}
-              </button>
-              <Input
-                value={v}
-                onChange={(e) => set(e.target.value)}
-                placeholder={`Option ${L}`}
-              />
-            </div>
-          ))}
-          <div className="rounded-lg bg-emerald-50 p-2 text-xs text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-300">
-            Réponse correcte : <strong>{correct}</strong> — cliquez sur la
-            lettre pour changer
+
+          {/* Options */}
+          <div className="space-y-2">
+            <Label className="text-sm font-semibold">Options de réponse *</Label>
+            <p className="text-xs text-muted-foreground">
+              Cliquez sur la lettre pour définir la bonne réponse
+            </p>
+            {[
+              { L: "A", v: a, set: setA },
+              { L: "B", v: b, set: setB },
+              { L: "C", v: c, set: setC },
+              { L: "D", v: d, set: setD },
+            ].map(({ L, v, set }) => (
+              <div key={L} className="flex items-start gap-2">
+                <button
+                  type="button"
+                  onClick={() => setCorrect(L)}
+                  className={`mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-bold transition-colors ${
+                    correct === L
+                      ? "bg-emerald-500 text-white ring-2 ring-emerald-300"
+                      : "bg-muted text-muted-foreground hover:bg-muted/80"
+                  }`}
+                  title="Définir comme réponse correcte"
+                >
+                  {correct === L ? <CheckCircle2 className="h-4 w-4" /> : L}
+                </button>
+                <Input
+                  value={v}
+                  onChange={(e) => set(e.target.value)}
+                  placeholder={`Option ${L}`}
+                  className="flex-1"
+                />
+              </div>
+            ))}
           </div>
+
+          {/* Validation warnings */}
+          {hasDuplicateOptions && (a || b || c || d) && (
+            <div className="rounded-lg bg-rose-50 p-2 text-xs text-rose-700 dark:bg-rose-950/30 dark:text-rose-300">
+              ⚠️ Les 4 options doivent être différentes les unes des autres
+            </div>
+          )}
+
+          <div className="rounded-lg bg-emerald-50 p-2 text-xs text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-300">
+            ✓ Réponse correcte : <strong>{correct}</strong>
+          </div>
+
+          {/* Explanation */}
           <div>
-            <Label>Explication</Label>
+            <Label className="text-sm font-semibold">Explication *</Label>
             <Textarea
               value={expl}
               onChange={(e) => setExpl(e.target.value)}
               rows={2}
-              placeholder="Explication de la réponse correcte"
+              placeholder="Explication de la réponse correcte..."
+              className="mt-1 resize-none"
             />
           </div>
+
+          {/* Preview */}
+          {isValid && (
+            <div className="rounded-lg border border-dashed p-3">
+              <p className="mb-2 text-xs font-semibold text-muted-foreground">Aperçu :</p>
+              <p className="text-sm font-medium">{q}</p>
+              <div className="mt-2 space-y-1">
+                {[
+                  { L: "A", v: a },
+                  { L: "B", v: b },
+                  { L: "C", v: c },
+                  { L: "D", v: d },
+                ].map(({ L, v }) => (
+                  <div
+                    key={L}
+                    className={`flex items-center gap-2 rounded border px-2 py-1 text-xs ${
+                      correct === L
+                        ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/30"
+                        : "border-border bg-muted/30"
+                    }`}
+                  >
+                    <span className="font-bold">{L}.</span>
+                    <span>{v}</span>
+                    {correct === L && <CheckCircle2 className="ml-auto h-3 w-3 text-emerald-600" />}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
+
         <DialogFooter className="gap-2">
           <Button variant="outline" onClick={onClose} className="gap-1.5">
             <X className="h-4 w-4" />
             Annuler
           </Button>
-          <Button onClick={save} disabled={saving} className="gap-1.5">
+          <Button
+            onClick={save}
+            disabled={saving || !isValid}
+            className="gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
+          >
             {saving ? (
               <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
             ) : (
               <Save className="h-4 w-4" />
             )}
-            Enregistrer
+            {question ? "Enregistrer" : "Ajouter"}
           </Button>
         </DialogFooter>
       </DialogContent>
