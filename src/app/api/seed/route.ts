@@ -26,7 +26,7 @@ interface SeedBank {
   questions: SeedQuestion[];
 }
 
-const BANKS_DIR = "/home/z/my-project/scripts/generated/banks";
+const BANKS_DIR = path.join(process.cwd(), "scripts", "generated", "banks");
 
 // Exam compositions: each exam draws questions from one or more banks.
 // We build 50-question exams by sampling across banks.
