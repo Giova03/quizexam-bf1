@@ -74,6 +74,10 @@ export type ViewName =
   | "exam-detail"
   | "session"
   | "results"
+  | "dashboard"
+  | "about"
+  | "admin"
+  | "social"
   | "leaderboard";
 
 // Color mapping helper for bank/exam accent colors

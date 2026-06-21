@@ -17,11 +17,8 @@ import { SocialView } from "@/components/quiz/social-view";
 import { LeaderboardView } from "@/components/quiz/leaderboard-view";
 import { CustomExamDialog } from "@/components/quiz/custom-exam-dialog";
 import { SearchDialog } from "@/components/quiz/search-dialog";
-<<<<<<< HEAD
-=======
 import { RealtimeNotification } from "@/components/quiz/realtime-notification";
 import { DarkModeToggle } from "@/components/quiz/dark-mode-toggle";
->>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
 import { useOfflineMode } from "@/lib/use-offline-mode";
 import { LanguageSwitcher } from "@/components/quiz/language-switcher";
 import { NotificationsPanel } from "@/components/quiz/notifications-panel";
@@ -50,10 +47,7 @@ import {
   WifiOff,
   Sparkles,
   Search,
-<<<<<<< HEAD
-=======
   Trophy,
->>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
 } from "lucide-react";
 
 export default function Home() {
@@ -545,12 +539,9 @@ export default function Home() {
       {/* Search dialog (Ctrl+K) */}
       <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
 
-<<<<<<< HEAD
-=======
       {/* Real-time floating notifications */}
       <RealtimeNotification />
 
->>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
       {/* Chatbot IA flottant */}
       <Chatbot />
     </div>

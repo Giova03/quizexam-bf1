@@ -642,6 +642,8 @@ function BankQuestionsDialog({
 }) {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [loading, setLoading] = useState(true);
+  const [editingQuestion, setEditingQuestion] = useState<Question | null>(null);
+  const [creatingQuestion, setCreatingQuestion] = useState(false);
 
   const loadQuestions = useCallback(async () => {
     setLoading(true);

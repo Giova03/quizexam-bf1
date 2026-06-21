@@ -12,11 +12,7 @@ interface CreateSessionBody {
   sourceId: string;
 }
 
-<<<<<<< HEAD
 // GET — list sessions for the current user (with answers for dashboard)
-=======
-// GET — list sessions for the current user
->>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
 export async function GET() {
   try {
     const session = await getServerSession(authOptions);
@@ -30,11 +26,7 @@ export async function GET() {
     });
 
     if (!user) {
-<<<<<<< HEAD
       return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
-=======
-      return NextResponse.json([]);
->>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
     }
 
     const sessions = await db.quizSession.findMany({
@@ -59,14 +51,10 @@ export async function GET() {
     return NextResponse.json(sessions);
   } catch (error) {
     console.error("Failed to load sessions:", error);
-<<<<<<< HEAD
     return NextResponse.json(
       { error: "Failed to load sessions" },
       { status: 500 }
     );
-=======
-    return NextResponse.json([]);
->>>>>>> 2537018 (feat: Notifications temps réel + correction responsive + chatbot fix + 10 nouvelles fonctionnalités)
   }
 }
 
