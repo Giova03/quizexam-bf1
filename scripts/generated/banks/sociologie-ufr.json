@@ -97,6 +97,987 @@
       "optionD": "Un courant religieux",
       "correctAnswer": "A",
       "explanation": "Culturalisme: Mead, Benedict. Chaque culture façonne ses membres."
+    },
+    {
+      "question": "Quelle est la définition sociologique de la socialisation selon Émile Durkheim ?",
+      "optionA": "Le processus par lequel un individu acquiert les normes et valeurs de sa société",
+      "optionB": "L'ensemble des interactions sociales qui façonnent la personnalité",
+      "optionC": "Le mécanisme par lequel l'État impose son autorité aux citoyens",
+      "optionD": "Le processus d'intégration des minorités culturelles",
+      "correctAnswer": "A",
+      "explanation": "Pour Durkheim, la socialisation est le processus par lequel les individus intègrent les normes, valeurs et croyances de leur société, ce qui assure la cohésion sociale."
+    },
+    {
+      "question": "Dans quelle œuvre Max Weber présente-t-il le concept de 'type idéal' ?",
+      "optionA": "L'Éthique protestante et l'esprit du capitalisme",
+      "optionB": "Économie et société",
+      "optionC": "Le Savant et le politique",
+      "optionD": "La Science en tant que vocation",
+      "correctAnswer": "B",
+      "explanation": "Dans 'Économie et société', Weber développe le concept de 'type idéal' comme outil analytique pour comprendre les phénomènes sociaux complexes."
+    },
+    {
+      "question": "Selon Karl Marx, quelle est la force motrice de l'histoire ?",
+      "optionA": "La conscience collective",
+      "optionB": "Les luttes de classes",
+      "optionC": "L'évolution des idées",
+      "optionD": "Les transformations religieuses",
+      "correctAnswer": "B",
+      "explanation": "Marx postule que l'histoire est principalement déterminée par les luttes de classes entre les possesseurs des moyens de production et les travailleurs."
+    },
+    {
+      "question": "Quelle approche théorique associe le sous-développement à la dépendance économique vis-à-vis des pays industrialisés ?",
+      "optionA": "Théorie de la modernisation",
+      "optionB": "Théorie de la dépendance",
+      "optionC": "Théorie de la world-system analysis",
+      "optionD": "Théorie de la convergence",
+      "correctAnswer": "B",
+      "explanation": "La théorie de la dépendance, développée par des auteurs comme Frank, explique que le sous-développement des pays du Sud est une conséquence de leur intégration inégale dans l'économie mondiale."
+    },
+    {
+      "question": "Dans la sociologie politique, quelle définition correspond le mieux au concept de 'pouvoir' selon Max Weber ?",
+      "optionA": "La capacité d'un individu à imposer sa volonté même contre la résistance d'autrui",
+      "optionB": "L'autorité légalement établie par l'État",
+      "optionC": "L'influence des élites économiques sur les décisions politiques",
+      "optionD": "Le contrôle des moyens de communication de masse",
+      "correctAnswer": "A",
+      "explanation": "Weber définit le pouvoir comme la probabilité qu'un acteur dans un relation sociale puisse imposer sa propre volonté malgré la résistance, quelle que soit la base de cette probabilité."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de la 'chefferie' dans la sociologie africaine traditionnelle ?",
+      "optionA": "Un système politique démocratique basé sur le suffrage universel",
+      "optionB": "Une forme d'organisation politique où le pouvoir est exercé par un chef héréditaire avec une administration centralisée",
+      "optionC": "Un système de pouvoir où l'autorité repose exclusivement sur la force militaire",
+      "optionD": "Une organisation politique où les décisions sont prises collectivement par les anciens",
+      "correctAnswer": "B",
+      "explanation": "La chefferie est une forme d'organisation politique traditionnelle en Afrique où un chef héréditaire exerce le pouvoir avec une certaine administration centralisée, bien que souvent limitée."
+    },
+    {
+      "question": "Dans la sociologie rurale burkinabè, que signifie le concept de 'paysannerie' ?",
+      "optionA": "La population urbaine travaillant dans les secteurs informels",
+      "optionB": "La population rurale engagée dans l'agriculture et liée à la terre",
+      "optionC": "Les élites foncières contrôlant les terres agricoles",
+      "optionD": "Les travailleurs agricoles salariés dans les grandes exploitations",
+      "correctAnswer": "B",
+      "explanation": "La paysannerie désigne dans la sociologie rurale la population rurale engagée dans l'agriculture, souvent avec un lien particulier à la terre et un mode de vie spécifique."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre une enquête quantitative et une enquête qualitative en méthodologie des sciences sociales ?",
+      "optionA": "La première utilise des entretiens et la seconde des questionnaires",
+      "optionB": "La première cherche à établir des corrélations et la seconde à comprendre les significations subjectives",
+      "optionC": "La première est toujours quantitative et la seconde toujours qualitative",
+      "optionD": "La première est réalisée en milieu urbain et la seconde en milieu rural",
+      "correctAnswer": "B",
+      "explanation": "L'enquête quantitative vise à mesurer et établir des corrélations entre variables, tandis que l'enquête qualitative cherche à comprendre les significations, expériences et subjectivités."
+    },
+    {
+      "question": "Selon la sociologie des religions, quelle est la particularité de l'islam en Afrique subsaharienne ?",
+      "optionA": "Il s'est imposé par la force militaire sans syncretisme",
+      "optionB": "Il s'est développé avec un fort syncrétisme avec les religions traditionnelles",
+      "optionC": "Il est exclusivement pratiqué par les populations arabophones",
+      "optionD": "Il a été introduit récemment par les colonisateurs européens",
+      "correctAnswer": "B",
+      "explanation": "L'islam en Afrique subsaharienne s'est caractérisé par un important processus de syncretisme avec les croyances et pratiques religieuses préislamiques."
+    },
+    {
+      "question": "Dans la sociologie urbaine, que caractérise principalement les 'bidonvilles' des grandes villes africaines comme Ouagadougou ?",
+      "optionA": "Des quartiers exclusivement résidentiels de standing élevé",
+      "optionB": "Des zones d'habitat spontané avec des conditions de précarité et une forte densité de population",
+      "optionC": "Des centres commerciaux et administratifs bien équipés",
+      "optionD": "Des zones industrielles avec des logements pour ouvriers",
+      "correctAnswer": "B",
+      "explanation": "Les bidonvilles sont des zones d'habitat spontané caractérisées par des conditions de précarité, un manque d'infrastructures et une forte densité de population."
+    },
+    {
+      "question": "Selon la théorie de la modernisation, quel est le principal facteur du développement des pays du Sud ?",
+      "optionA": "L'adoption des valeurs et institutions des pays industrialisés",
+      "optionB": "La rupture avec les structures traditionnelles et coloniales",
+      "optionC": "Le contrôle des ressources naturelles par l'État",
+      "optionD": "La promotion des économies d'exportation",
+      "correctAnswer": "A",
+      "explanation": "La théorie de la modernisation postule que le développement des pays du Sud passe par l'adoption progressive des valeurs, institutions et technologies des pays industrialisés."
+    },
+    {
+      "question": "Dans la sociologie de la famille en Afrique de l'Ouest, que signifie le concept de 'parenté' ?",
+      "optionA": "Le lien de sang uniquement",
+      "optionB": "L'ensemble des relations sociales fondées sur le mariage, la descendance et l'alliance",
+      "optionC": "Le système de succession des biens familiaux",
+      "optionD": "Les règles de résidence des couples",
+      "correctAnswer": "B",
+      "explanation": "La parenté désigne l'ensemble des relations sociales et culturelles établies sur la base du sang, du mariage et de l'alliance, structurant les systèmes familiaux et sociaux en Afrique."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de l'État selon Max Weber ?",
+      "optionA": "Le contrôle des moyens de production",
+      "optionB": "Le monopole de l'usage légitime de la violence physique sur un territoire donné",
+      "optionC": "La représentation de la volonté populaire",
+      "optionD": "La gestion des services publics",
+      "correctAnswer": "B",
+      "explanation": "Weber définit l'État comme une communauté humaine qui réussit dans le maintien d'un monopole de l'usage légitime de la violence physique sur un territoire donné."
+    },
+    {
+      "question": "Dans la sociologie des migrations, que signifie le concept de 'diaspora' ?",
+      "optionA": "L'exode rural vers les villes",
+      "optionB": "La migration de travailleurs temporaires",
+      "optionC": "Les communautés migrantes dispersées mais conservant des liens avec leur pays d'origine",
+      "optionD": "Le retour des migrants vers leur pays d'origine",
+      "correctAnswer": "C",
+      "explanation": "La diaspora désigne les communautés migrantes dispersées à travers le monde mais conservant des liens culturels, économiques et politiques avec leur pays d'origine."
+    },
+    {
+      "question": "Selon Durkheim, quelle est la fonction de la division du travail dans les sociétés modernes ?",
+      "optionA": "Créer une solidarité mécanique basée sur la similitude",
+      "optionB": "Atrophier les liens sociaux",
+      "optionC": "Créer une solidarité organique basée sur l'interdépendance des spécialisations",
+      "optionD": "Réduire les inégalités sociales",
+      "correctAnswer": "C",
+      "explanation": "Durkheim postule que dans les sociétés modernes, la division du travail crée une solidarité organique où les individus sont interdépendants grâce à leurs spécialisations complémentaires."
+    },
+    {
+      "question": "Dans la sociologie du développement, que critique la théorie de la dépendance à l'égard de la théorie de la modernisation ?",
+      "optionA": "La théorie de la modernisation ne prend pas en compte les facteurs culturels",
+      "optionB": "La théorie de la modernisation néglige les inégalités structurelles entre le Nord et le Sud",
+      "optionC": "La théorie de la modernisation surestime le rôle de l'État",
+      "optionD": "La théorie de la modernisation ignore les aspects religieux du développement",
+      "correctAnswer": "B",
+      "explanation": "La théorie de la dépendance critique la théorie de la modernisation pour avoir négligé les inégalités structurelles et la relation de domination entre pays industrialisés et en développement."
+    },
+    {
+      "question": "Quelle est la particularité de la sociologie politique africaine post-coloniale ?",
+      "optionA": "Elle se concentre exclusivement sur les démocraties multipartites",
+      "optionB": "Elle analyse les systèmes de pouvoir hybrides combinant logiques traditionnelles et modernes",
+      "optionC": "Elle ignore complètement le rôle des partis politiques",
+      "optionD": "Elle se limite à l'étude des régimes autoritaires",
+      "correctAnswer": "B",
+      "explanation": "La sociologie politique africaine post-coloniale se caractérise par l'étude des systèmes de pouvoir hybrides où les logiques traditionnelles (parenté, ethnicité) s'articulent avec les institutions modernes (État, partis)."
+    },
+    {
+      "question": "Dans la sociologie des religions, quelle est la caractéristique principale du christianisme en Afrique subsaharienne ?",
+      "optionA": "Il a été introduit sans modification par les missionnaires européens",
+      "optionB": "Il s'est adapté aux contextes locaux avec un fort syncrétisme",
+      "optionC": "Il est pratiqué uniquement par les populations urbaines",
+      "optionD": "Il a toujours été rejeté par les populations traditionnelles",
+      "correctAnswer": "B",
+      "explanation": "Le christianisme en Afrique subsaharienne s'est caractérisé par un important processus d'inculturation et de syncrétisme avec les religions traditionnelles."
+    },
+    {
+      "question": "Selon la sociologie rurale burkinabè, quelle est la conséquence principale de l'exode rural ?",
+      "optionA": "Une augmentation de la main-d'œuvre disponible pour l'agriculture",
+      "optionB": "Un vieillissement de la population rurale et une pression accrue sur les terres restantes",
+      "optionC": "Une modernisation rapide des techniques agricoles",
+      "optionD": "Une diminution de la pauvreté dans les campagnes",
+      "correctAnswer": "B",
+      "explanation": "L'exode rural entraîne un vieillissement de la population rurale et une concentration démographique sur les terres restantes, augmentant la pression sur les ressources naturelles."
+    },
+    {
+      "question": "Dans la méthodologie des sciences sociales, quelle est la différence entre un questionnaire et un entretien ?",
+      "optionA": "Le questionnaire est toujours qualitatif et l'entretien toujours quantitatif",
+      "optionB": "Le questionnaire impose un cadre fermé de questions prédéfinies, tandis que l'entretien permet une interaction plus ouverte",
+      "optionC": "Le questionnaire est utilisé uniquement en milieu urbain et l'entretien en milieu rural",
+      "optionD": "Le questionnaire est administré par des enquêteurs formés et l'entretien auto-administré",
+      "correctAnswer": "B",
+      "explanation": "Le questionnaire impose un cadre fermé de questions standardisées, tandis que l'entretien permet une interaction plus flexible, exploratoire et adaptative selon les réponses du répondant."
+    },
+    {
+      "question": "Selon Durkheim, quelle est la fonction principale de la punishment dans une société ?",
+      "optionA": "Rétablir l'équilibre social rompu par le crime",
+      "optionB": "Exercer une vengeance symbolique sur le criminel",
+      "optionC": "Dissuader les autres de commettre des actes similaires",
+      "optionD": "Renforcer le prestige des autorités judiciaires",
+      "correctAnswer": "A",
+      "explanation": "Pour Durkheim, le crime est normal car il existe dans toutes les sociétés. Le punishment a une fonction réaffirmatrice des valeurs collectives et restaure la solidarité sociale menacée par l'acte déviant."
+    },
+    {
+      "question": "Dans la théorie weberienne, quel type de domination repose sur la croyance dans la légitimité des traditions et coutumes ?",
+      "optionA": "Domination légale-rationnelle",
+      "optionB": "Domination charismatique",
+      "optionC": "Domination traditionnelle",
+      "optionD": "Domination bureaucratique",
+      "correctAnswer": "C",
+      "explanation": "Weber identifie trois types de domination traditionnelle (basée sur la coutume et le sacré), charismatique (basée sur le leader exceptionnel) et légale-rationnelle (basée sur des règles impersonnelles). La domination traditionnelle repose sur la croyance dans la valeur des traditions."
+    },
+    {
+      "question": "Selon Marx, la superstructure comprend principalement :",
+      "optionA": "Les forces productives et les rapports de production",
+      "optionB": "L'idéologie, l'État, le droit et les institutions culturelles",
+      "optionC": "La classe dominante et la classe dominée",
+      "optionD": "Le prolétariat et la bourgeoisie",
+      "correctAnswer": "B",
+      "explanation": "Pour Marx, la superstructure comprend les institutions, idéologies, normes et valeurs qui reflètent et légitiment les rapports de production de la base économique (forces productives et rapports de production)."
+    },
+    {
+      "question": "La socialisation secondaire, selon Cooley et Mead, se déroule principalement :",
+      "optionA": "Dans la famille pendant l'enfance",
+      "optionB": "À l'école et dans les groupes de pairs",
+      "optionC": "Dans le cadre religieux",
+      "optionD": "Dans le milieu professionnel",
+      "correctAnswer": "B",
+      "explanation": "La socialisation secondaire se produit après l'enfance et se déroule dans des institutions formelles comme l'école, les groupes de pairs, les médias, etc., où l'individu intègre des rôles sociaux plus larges."
+    },
+    {
+      "question": "Dans la théorie de la modernisation, le sous-développement est considéré comme :",
+      "optionA": "Un état permanent lié aux spécificités culturelles",
+      "optionB": "Une conséquence du colonialisme et de l'exploitation",
+      "optionC": "Un stade intermédiaire vers la modernité",
+      "optionD": "Une anomalie due à la mauvaise gouvernance",
+      "correctAnswer": "C",
+      "explanation": "La théorie de la modernisation voit le sous-développement comme un stade préliminaire à la modernisation, où les pays en développement peuvent suivre le même chemin de développement que les pays occidentaux."
+    },
+    {
+      "question": "La théorie de la dépendance, développée par Frank, souligne que :",
+      "optionA": "Le sous-développement est une étape nécessaire du développement",
+      "optionB": "Le sous-développement est une conséquence de l'intégration inégale dans l'économie mondiale",
+      "optionC": "Les pays sous-développés doivent adopter les modèles occidentaux",
+      "optionD": "Le sous-développement est principalement dû aux facteurs internes",
+      "correctAnswer": "B",
+      "explanation": "La théorie de la dépendance postule que les pays développés se développent au détriment des pays sous-développés, créant une relation d'exploitation et de dépendance qui maintient ces derniers dans un état de sous-développement."
+    },
+    {
+      "question": "Dans les sociétés africaines traditionnelles, la chefferie est généralement :",
+      "optionA": "Une institution purement administrative",
+      "optionB": "Un système de pouvoir basé sur l'hérédité et la légitimité traditionnelle",
+      "optionC": "Une forme de démocratie directe",
+      "optionD": "Une création coloniale",
+      "correctAnswer": "B",
+      "explanation": "La chefferie dans les sociétés africaines traditionnelles est une institution de pouvoir où l'autorité est légitimée par la tradition, souvent transmise héréditairement, et où le chef assume des fonctions administratives, judiciaires et symboliques."
+    },
+    {
+      "question": "Dans le système de parenté en Afrique de l'Ouest, le lignage :",
+      "optionA": "Est une unité résidentielle",
+      "optionB": "Réfère à un groupe de personnes descendant d'un ancêtre commun",
+      "optionC": "Est toujours patrilinéaire",
+      "optionD": "Est une institution exclusivement religieuse",
+      "correctAnswer": "B",
+      "explanation": "Le lignage est un groupe de personnes qui se reconnaissent comme descendants d'un ancêtre commun réel ou mythique. Il peut être patrilinéaire ou matrilinéaire et constitue une unité sociale importante dans de nombreuses sociétés africaines."
+    },
+    {
+      "question": "Selon Weber, l'État se définit principalement par :",
+      "optionA": "La possession des moyens de production",
+      "optionB": "Le monopole de la violence légitime",
+      "optionC": "Le contrôle des ressources économiques",
+      "optionD": "La représentation de la nation",
+      "correctAnswer": "B",
+      "explanation": "Weber définit l'État comme une communauté humaine qui réussit dans le revendication du monopole de l'usage physique de la violence légitime. C'est cette caractéristique qui distingue l'État des autres formes d'organisation sociale."
+    },
+    {
+      "question": "Dans une perspective sociologique, l'élection est avant tout :",
+      "optionA": "Un acte individuel de choix personnel",
+      "optionB": "Un rituel social de légitimation du pouvoir",
+      "optionC": "Un simple processus technique de désignation",
+      "optionD": "Une manifestation de la souveraineté populaire",
+      "correctAnswer": "B",
+      "explanation": "Sociologiquement, l'élection est un rituel qui sert à légitimer le pouvoir en donnant l'illusion du consentement populaire. Elle transforme la domination politique en autorité légitime aux yeux des citoyens."
+    },
+    {
+      "question": "La paysannerie, selon Chayanov, se caractérise par :",
+      "optionA": "Une logique de maximisation du profit",
+      "optionB": "Une économie de subsistance basée sur le travail familial",
+      "optionC": "Une adoption rapide des innovations agricoles",
+      "optionD": "Une dépendance totale au marché",
+      "correctAnswer": "B",
+      "explanation": "Chayanov montre que la paysannerie fonctionne selon une logique différente de celle du capitalisme, où la famille travaille pour satisfaire ses besoins plutôt que pour maximiser le profit, avec un équilibre entre travail et consommation."
+    },
+    {
+      "question": "L'enquête sociologique quantitative se distingue principalement par :",
+      "optionA": "L'utilisation d'entretiens approfondis",
+      "optionB": "La collecte de données sur de grands échantillons",
+      "optionC": "L'approche holistique de la réalité sociale",
+      "optionD": "La priorité donnée aux significations subjectives",
+      "correctAnswer": "B",
+      "explanation": "L'enquête quantitative se caractérise par la collecte de données standardisées sur de grands échantillons, permettant des analyses statistiques et généralisations, contrairement à l'approche qualitative qui privilégie les entretiens approfondis et les petits échantillons."
+    },
+    {
+      "question": "Dans l'islam sociologique, le concept d'umma désigne :",
+      "optionA": "La communauté des croyants au-delà des frontières nationales",
+      "optionB": "L'institution religielle locale",
+      "optionC": "Le dirigeant spirituel suprême",
+      "optionD": "Le code juridique religieux",
+      "correctAnswer": "A",
+      "explanation": "L'umma désigne la communauté des musulmans, une entité transnationale qui transcende les divisions ethniques et nationales, fondée sur la foi commune en l'islam et ses principes."
+    },
+    {
+      "question": "Selon Weber, l'éthique protestante a contribué au développement du capitalisme en :",
+      "optionA": "Prônant la recherche du plaisir matériel",
+      "optionB": "Encourageant la dépense ostentatoire",
+      "optionC": "Valorisant le travail acharné et l'ascétisme",
+      "optionD": "Rejetant toute forme d'accumulation capitaliste",
+      "correctAnswer": "C",
+      "explanation": "Weber montre dans 'L'Éthique protestante et l'esprit du capitalisme' que les valeurs calvinistes (travail acharné, ascétisme, frugalité) ont créé un climat culturel favorable à l'émergence du capitalisme moderne."
+    },
+    {
+      "question": "Les bidonvilles dans les villes africaines comme Ouagadougou ou Bobo-Dioulasso sont caractérisés par :",
+      "optionA": "Une intégration complète aux réseaux urbains formels",
+      "optionB": "Une économie informelle dominante et une forte cohésion sociale",
+      "optionC": "Une reproduction exacte des modes de vie ruraux",
+      "optionD": "Une dépendance totale des aides extérieures",
+      "correctAnswer": "B",
+      "explanation": "Les bidonvilles sont caractérisés par une économie informelle importante, une auto-construction des logements, une forte densité de population et souvent une forte cohésion sociale malgré les conditions de vie difficiles."
+    },
+    {
+      "question": "L'exode rural en Afrique est principalement motivé par :",
+      "optionA": "La recherche de terres agricoles plus fertiles",
+      "optionB": "La quête d'opportunités économiques et de services urbains",
+      "optionC": "Un rejet des valeurs traditionnelles",
+      "optionD": "La fuite des conflits armés",
+      "correctAnswer": "B",
+      "explanation": "L'exode rural en Aficianne est principalement motivé par la recherche d'opportunités économiques (emplois dans le secteur informel), l'accès à des services (éducation, santé) et l'attrait de la ville comme lieu de modernité."
+    },
+    {
+      "question": "La diaspora burkinabé se caractérise par :",
+      "optionA": "Une concentration géographique très limitée",
+      "optionB": "Une forte intégration dans les sociétés d'accueil",
+      "optionC": "Une organisation communautaire forte et des réseaux transnationaux",
+      "optionD": "Un faible impact sur l'économie du pays d'origine",
+      "correctAnswer": "C",
+      "explanation": "La diaspora burkinabé est organisée en communautés fortes avec des réseaux transnationaux actifs, joue un rôle économique important par les transferts de fonds, et maintient des liens culturels forts avec le pays d'origine."
+    },
+    {
+      "question": "Dans la sociologie des religions, le syncrétisme désigne :",
+      "optionA": "Le rejet de toute forme de religion organisée",
+      "optionB": "La fusion de croyances et de pratiques religieuses différentes",
+      "optionC": "L'application stricte des dogmes religieux",
+      "optionD": "La séparation complète des religions",
+      "correctAnswer": "B",
+      "explanation": "Le syncrétisme désigne le phénomène de fusion ou de combinaison d'éléments provenant de différentes traditions religieuses, courant particulièrement dans les religions africaines traditionnelles et les formes de christianisme ou d'islam locaux."
+    },
+    {
+      "question": "La méthode sociologique de l'observation participante consiste à :",
+      "optionA": "Observer uniquement sans interagir avec les sujets",
+      "optionB": "Intégrer le groupe étudié tout en menant une analyse scientifique",
+      "optionC": "Utiliser uniquement des outils quantitatifs",
+      "optionD": "Se concentrer sur l'analyse statistique des données",
+      "correctAnswer": "B",
+      "explanation": "L'observation participante implique que le sociologue intègre le groupe étudié, participe à ses activités tout en maintenant une distance analytique nécessaire pour comprendre les phénomènes sociaux de l'intérieur."
+    },
+    {
+      "question": "Selon Durkheim, quel concept désigne l'ensemble des croyances et des pratiques qui existent en dehors de l'individu et qui exercent sur lui une contrainte?",
+      "optionA": "La socialisation",
+      "optionB": "Le fait social",
+      "optionC": "La conscience collective",
+      "optionD": "La solidarité mécanique",
+      "correctAnswer": "B",
+      "explanation": "Le fait social, concept central de Durkheim, désigne les façons de faire, de penser et de sentir externes à l'individu et qui s'imposent à lui."
+    },
+    {
+      "question": "Pour Weber, la rationalisation croissante des sociétés modernes conduit à:",
+      "optionA": "L'affaiblissement du capitalisme",
+      "optionB": "La désenchantement du monde",
+      "optionC": "Le retour des valeurs traditionnelles",
+      "optionD": "L'émergence de communautés religieuses",
+      "correctAnswer": "B",
+      "explanation": "Weber analyse la rationalisation comme un processus qui conduit au 'désenchantement du monde', où la magie et la religion cèdent le pas à la rationalité instrumentale."
+    },
+    {
+      "question": "Chez Marx, la superstructure comprend:",
+      "optionA": "Les forces productives",
+      "optionB": "Les rapports de production",
+      "optionC": "L'idéologie dominante",
+      "optionD": "Le mode de production",
+      "correctAnswer": "C",
+      "explanation": "Pour Marx, la superstructure inclut les institutions, les normes, les valeurs et l'idéologie qui reflètent et consolident les rapports de production de la base économique."
+    },
+    {
+      "question": "La socialisation secondaire désigne:",
+      "optionA": "L'acquisition des compétences de base dans l'enfance",
+      "optionB": "Le processus d'apprentissage des normes sociales par les adultes",
+      "optionC": "L'intégration aux divers groupes sociaux tout au long de la vie",
+      "optionD": "L'internalisation des valeurs culturelles primaires",
+      "correctAnswer": "C",
+      "explanation": "La socialisation secondaire, selon Cooley et Mead, concerne l'apprentissage des normes et des rôles dans les groupes sociaux tout au long de la vie, après la socialisation primaire."
+    },
+    {
+      "question": "Le terme 'ethnocentrisme' signifie:",
+      "optionA": "L'étude comparative des cultures",
+      "optionB": "Le jugement d'une culture selon les critères d'une autre",
+      "optionC": "L'appréciation d'une culture à partir de ses propres standards",
+      "optionD": "La neutralité de l'observateur dans l'étude des cultures",
+      "correctAnswer": "C",
+      "explanation": "L'ethnocentrisme est le jugement d'autres cultures selon les normes et les valeurs de sa propre culture, constituant un biais méthodologique important en sociologie."
+    },
+    {
+      "question": "Selon la théorie de la dépendance, le sous-développement des pays du Sud est:",
+      "optionA": "Une conséquence de leur isolation économique",
+      "optionB": "Le résultat de leur intégration inégale au système mondial",
+      "optionC": "Lié à leur manque de ressources naturelles",
+      "optionD": "Une étape nécessaire avant le développement",
+      "correctAnswer": "B",
+      "explanation": "La théorie de la dépendance, associée à Frank, argue que le sous-développement est produit par l'intégration inégale des pays périphériques au système capitaliste mondial."
+    },
+    {
+      "question": "Dans la société traditionnelle burkinabè, la chefferie est une forme d'organisation sociale caractérisée par:",
+      "optionA": "La séparation stricte des pouvoirs",
+      "optionB": "L'hérédité du pouvoir et l'autorité symbolique",
+      "optionC": "L'élection démocratique des chefs",
+      "optionD": "La primauté du pouvoir religieux",
+      "correctAnswer": "B",
+      "explanation": "La chefferie traditionnelle en Afrique de l'Ouest est marquée par la transmission héréditaire du pouvoir et une forte dimension symbolique et rituelle de l'autorité."
+    },
+    {
+      "question": "Le concept de 'tribalisme' en sociologie politique africaine fait référence à:",
+      "optionA": "L'organisation sociale basée sur les liens de parenté",
+      "optionB": "Le nationalisme ethnique exacerbé",
+      "optionC": "La résistance culturelle à l'État-nation",
+      "optionD": "Toutes ces réponses",
+      "correctAnswer": "D",
+      "explanation": "Le tribalisme englobe l'organisation par parenté, le nationalisme ethnique et la résistance à l'État-nation, reflétant la tension entre identités traditionnelles et institutions modernes."
+    },
+    {
+      "question": "Dans le contexte burkinabè, le système 'gurunsi' de parenté est caractérisé par:",
+      "optionA": "La primauté du lignage patrilinéaire",
+      "optionB": "L'importance des alliances matrimoniales",
+      "optionC": "La double filiation (patrilinéaire et matrilinéaire)",
+      "optionD": "L'exogamie stricte",
+      "correctAnswer": "C",
+      "explanation": "Le système gurunsi, comme chez de nombreux groupes voltaïques, est caractérisé par une double filiation, reconnaissant à la fois les liens paternels et maternels."
+    },
+    {
+      "question": "Le concept de 'bidonville' en sociologie urbaine désigne:",
+      "optionA": "Les quartiers historiques des villes coloniales",
+      "optionB": "Les zones d'habitat spontané précaire en périphérie urbaine",
+      "optionC": "Les centres-villes en cours de gentrification",
+      "optionD": "Les quartiers résidentiels huppés",
+      "correctAnswer": "B",
+      "explanation": "Les bidonvilles sont des zones d'habitat informel et précaire, souvent en périphérie des villes africaines, caractérisées par un manque d'infrastructures et une densité de population élevée."
+    },
+    {
+      "question": "La sociologie rurale au Burkina Faso étudie particulièrement:",
+      "optionA": "L'impact de la modernité sur les pratiques agricoles traditionnelles",
+      "optionB": "L'exode rural vers les villes",
+      "optionC": "La transformation des structures foncières",
+      "optionD": "Toutes ces réponses",
+      "correctAnswer": "D",
+      "explanation": "La sociologie rurale burkinabè aborde ces dimensions interconnectées : la modernisation agricole, l'exode rural et les mutations foncières."
+    },
+    {
+      "question": "L'enquête sociologique par entretien semi-directif est particulièrement adaptée pour:",
+      "optionA": "Mesurer des attitudes quantifiables",
+      "optionB": "Explorer les significations subjectives des expériences",
+      "optionC": "Générer des statistiques représentatives",
+      "optionD": "Tester des hypothèses préétablies",
+      "correctAnswer": "B",
+      "explanation": "L'entretien semi-directif permet d'explorer en profondeur les significations subjectives et les expériences des personnes, tout en gardant une certaine structure."
+    },
+    {
+      "question": "Dans le contexte burkinabè, l'islam soufi est caractérisé par:",
+      "optionA": "Une interprétation littérale du Coran",
+      "optionB": "L'importance des confréries religieuses",
+      "optionC": "La séparation stricte du religieux et du politique",
+      "optionD": "L'influence wahhabite",
+      "correctAnswer": "B",
+      "explanation": "L'islam au Burkina Fasco est majoritairement soufi, marqué par l'importance des confréries (tariqas) et des pratiques mystiques."
+    },
+    {
+      "question": "La diaspora burkinabè est principalement constituée de:",
+      "optionA": "Refugiés politiques",
+      "optionB": "Étudiants à l'étranger",
+      "optionC": "Travailleurs migrants",
+      "optionD": "Diplomates",
+      "correctAnswer": "C",
+      "explanation": "La diaspora burkinabè est majoritairement composée de travailleurs migrants, notamment en Côte d'Ivoire, au Gabon et dans les pays développés."
+    },
+    {
+      "question": "La 'modernisation théorique' en sociologie du développement postule que:",
+      "optionA": "Le sous-développement est une conséquence du colonialisme",
+      "optionB": "Toutes les sociétés passent par des stades similaires de développement",
+      "optionC": "Le développement dépend des relations de dépendance",
+      "optionD": "Les traditions empêchent le développement",
+      "correctAnswer": "B",
+      "explanation": "La théorie de la modernisation, associée à Rostow, postule un modèle linéaire de développement où toutes les sociétés passent par des stades similaires vers la modernité."
+    },
+    {
+      "question": "La 'légitimité charismatique' selon Weber est basée sur:",
+      "optionA": "La tradition et la coutume",
+      "optionB": "La rationalité-légale et les règles",
+      "optionC": "Les qualités exceptionnelles d'un leader",
+      "optionD": "La force et la coercition",
+      "correctAnswer": "C",
+      "explanation": "La légitimité charismatique repose sur la croyance dans les qualités extraordinaires d'un leader perçu comme ayant un don divin ou exceptionnel."
+    },
+    {
+      "question": "Dans le système politique burkinabè, les 'comités de développement' (CVD) sont des:",
+      "optionA": "Institutions traditionnelles de gouvernance",
+      "optionB": "Structures décentralisées de participation citoyenne",
+      "optionC": "Partis politiques d'opposition",
+      "optionD": "Organisations non gouvernementales",
+      "correctAnswer": "B",
+      "explanation": "Les Comités Villageois de Développement (CVD) sont des structures décentralisées impliquant les citoyens dans la gestion locale des affaires publiques."
+    },
+    {
+      "question": "L'agriculture de subsistance au Burkina Faso est caractérisée par:",
+      "optionA": "L'utilisation intensive de technologies modernes",
+      "optionB": "La diversification des cultures et la rotation des terres",
+      "optionC": "La spécialisation monoculturelle",
+      "optionD": "La dépendance totale aux intrants chimiques",
+      "correctAnswer": "B",
+      "explanation": "L'agriculture de subsistance burkinabè repose sur la diversification des cultures (mil, sorgho, maïs) et des pratiques agronomiques adaptées au climat comme la rotation des terres."
+    },
+    {
+      "question": "La 'sociologie des religions' étudie particulièrement:",
+      "optionA": "La vérité des doctrines religieuses",
+      "optionB": "Les fonctions sociales des religions",
+      "optionC": "La validité des expériences mystiques",
+      "optionD": "L'infériorité des religions traditionnelles",
+      "correctAnswer": "B",
+      "explanation": "La sociologie des religions analyse les fonctions sociales des religions, leur impact sur la cohésion sociale, et leur transformation dans les sociétés modernes, sans juger de leur vérité doctrinale."
+    },
+    {
+      "question": "La théorie de l' 'exode rural' explique le mouvement de population des campagnes vers les villes par:",
+      "optionA": "La désertification des zones rurales",
+      "optionB": "L'attraction des opportunités urbaines et les pressions démographiques rurales",
+      "optionC": "Le déclin de l'agriculture traditionnelle",
+      "optionD": "Toutes ces réponses",
+      "correctAnswer": "D",
+      "explanation": "L'exode rural résulte d'une combinaison de facteurs push (pressions démographiques, déclin agricole) et pull (attrait des opportunités urbaines)."
+    },
+    {
+      "question": "Selon Durkheim, quelle est la définition correcte du fait social ?",
+      "optionA": "Un comportement individuel qui s'inscrit dans une structure collective",
+      "optionB": "Une manière de penser, de sentir et d'agir extérieure à l'individu mais imposée par la société",
+      "optionC": "Le résultat des interactions entre les individus dans un contexte donné",
+      "optionD": "L'ensemble des normes et valeurs partagées par un groupe social",
+      "correctAnswer": "B",
+      "explanation": "Pour Durkheim, le fait social est extérieur à l'individu, car il existe indépendamment de lui et s'impose à lui. C'est l'objet d'étude principal de la sociologie."
+    },
+    {
+      "question": "Dans quelle œuvre Weber développe-t-il le concept de 'désenchantement du monde' ?",
+      "optionA": "L'éthique protestante et l'esprit du capitalisme",
+      "optionB": "Économie et société",
+      "optionC": "Le savant et le politique",
+      "optionD": "La religion de la Chine",
+      "correctAnswer": "A",
+      "explanation": "Dans 'L'éthique protestante et l'esprit du capitalisme', Weber analyse comment la morale protestante, notamment le calvinisme, a contribué à l'émergence du capitalisme moderne, marquant ainsi un 'désenchantement du monde'."
+    },
+    {
+      "question": "Selon Marx, la superstructure comprend :",
+      "optionA": "Les forces productives et les rapports de production",
+      "optionB": "L'idéologie, l'État, le droit, la religion et la culture",
+      "optionC": "La base économique et les classes sociales",
+      "optionD": "Le prolétariat et la bourgeoisie",
+      "correctAnswer": "B",
+      "explanation": "Pour Marx, la superstructure comprend les instances culturelles, politiques et juridiques qui s'édifient sur la base économique (forces productives et rapports de production)."
+    },
+    {
+      "question": "La socialisation secondaire désigne :",
+      "optionA": "La période de l'enfance où l'individu apprend les bases de la culture",
+      "optionB": "Le processus d'apprentissage des rôles sociaux dans des institutions formelles",
+      "optionC": "L'internalisation des normes par l'adulte dans son milieu professionnel",
+      "optionD": "La transmission des valeurs intergénérationnelles dans la famille",
+      "correctAnswer": "B",
+      "explanation": "La socialisation secondaire, concept développé par Cooley et Mead, se déroule dans des institutions formelles comme l'école, le travail, et concerne l'apprentissage des rôles sociaux dans des contextes plus larges que la famille."
+    },
+    {
+      "question": "Le concept d'institution, selon la sociologie, désigne :",
+      "optionA": "Un bâtiment public ou privé",
+      "optionB": "Un ensemble de règles et de pratiques organisées et durables",
+      "optionC": "Une organisation à but non lucratif",
+      "optionD": "Une structure politique de l'État",
+      "correctAnswer": "B",
+      "explanation": "En sociologie, une institution est un ensemble de règles, de normes et de pratiques organisées et durables qui structurent la vie sociale (famille, école, État, etc.)."
+    },
+    {
+      "question": "Selon la théorie de la modernisation, le sous-développement est considéré comme :",
+      "optionA": "Un état de dépendance vis-à-vis des pays développés",
+      "optionB": "Une phase temporaire avant l'industrialisation",
+      "optionC": "Une conséquence de la colonisation",
+      "optionD": "Un résultat de la culture traditionnelle",
+      "correctAnswer": "D",
+      "explanation": "La théorie de la modernisation, popularisée dans les années 1950-60, considère le sous-développement comme une conséquence de cultures traditionnelles qui freinent le développement économique et social."
+    },
+    {
+      "question": "La théorie de la dépendance, associée à Frank, Amin et Cardoso, soutient que :",
+      "optionA": "Le sous-développement est une étape nécessaire avant le développement",
+      "optionB": "Les pays développés dépendent des pays sous-développés",
+      "optionC": "Le sous-développement est une conséquence de l'intégration inégale dans l'économie mondiale",
+      "optionD": "Le développement dépend uniquement des facteurs internes",
+      "correctAnswer": "C",
+      "explanation": "La théorie de la dépendance analyse les relations inégales entre le centre (pays développés) et la périphérie (pays sous-développés), où l'intégration inégale dans l'économie mondiale maintient le sous-développement."
+    },
+    {
+      "question": "Dans la sociologie africaine traditionnelle, la chefferie est principalement basée sur :",
+      "optionA": "Un système de pouvoir électif et démocratique",
+      "optionB": "Un système de pouvoir héréditaire et sacralisé",
+      "optionC": "Un système de pouvoir basé sur la richesse économique",
+      "optionD": "Un système de pouvoir fondé sur l'âge",
+      "correctAnswer": "B",
+      "explanation": "La chefferie dans les sociétés africaines traditionnelles repose généralement sur un principe de succession héréditaire, souvent sacralisé, où le chef combine fonctions politiques, religieuses et judiciaires."
+    },
+    {
+      "question": "Le système de parenté patrilocale se caractérise par :",
+      "optionA": "La résidence du couple près des parents de la femme",
+      "optionB": "La résidence du couple près des parents de l'homme",
+      "optionC": "La rotation périodique de la résidence entre les deux familles",
+      "optionD": "L'indépendance géographique du couple vis-à-vis des deux familles",
+      "correctAnswer": "B",
+      "explanation": "Le système de résidence patrilocal implique que le couple s'établit près ou dans le groupe du mari, renforçant les liens avec la famille paternelle."
+    },
+    {
+      "question": "Dans le contexte burkinabè, le mariage coutumier est souvent caractérisé par :",
+      "optionA": "L'absence de dot",
+      "optionB": "La nécessité d'une autorisation religionale préalable",
+      "optionC": "Le versement d'une dot par la famille de l'homme à celle de la femme",
+      "optionD": "La séparation des deux familles après le mariage",
+      "correctAnswer": "C",
+      "explanation": "Dans de nombreuses coutumes africaines dont celles du Burkina Faso, le mariage implique généralement le versement d'une dot par la famille du mari à celle de la femme, scellant l'alliance entre les deux groupes."
+    },
+    {
+      "question": "Selon Weber, le charisme est une forme de légitimité fondée sur :",
+      "optionA": "La tradition et la coutume",
+      "optionB": "La rationalité légale et la bureaucratie",
+      "optionC": "Les qualités exceptionnelles d'un leader",
+      "optionD": "La force et la coercition",
+      "correctAnswer": "C",
+      "explanation": "Weber identifie trois types de légitimité : traditionnelle, rationnelle-légale et charismatique. Le charisme repose sur les qualités extraordinaires attribuées à un leader par ses suivants."
+    },
+    {
+      "question": "L'État, selon la définition sociologique classique, est caractérisé par :",
+      "optionA": "Le monopole de la violence légitime sur un territoire donné",
+      "optionB": "La propriété privée des moyens de production",
+      "optionC": "L'ensemble des citoyens d'un pays",
+      "optionD": "Le pouvoir exécutif d'un gouvernement",
+      "correctAnswer": "A",
+      "explanation": "Selon Max Weber, l'État est une communauté humaine qui (avec succès) revendique le monopole de la violence légitime physique sur un territoire donné."
+    },
+    {
+      "question": "Le système de parti unique est généralement associé à :",
+      "optionA": "Une démocratie pluraliste",
+      "optionB": "Un régime autoritaire ou totalitaire",
+      "optionC": "Une transition démocratique",
+      "optionD": "Un système fédéral",
+      "correctAnswer": "B",
+      "explanation": "Le système de parti unique est caractéristique des régimes autoritaires ou totalitaires où un seul parti détient le pouvoir et interdit la compétition politique."
+    },
+    {
+      "question": "En sociologie rurale, la paysannerie se définit principalement par :",
+      "optionA": "Une activité agricole intensive et commerciale",
+      "optionB": "Un mode de vie lié à l'agriculture de subsistance",
+      "optionC": "Une classe sociale urbaine",
+      "optionD": "Un groupe ethnique spécifique",
+      "correctAnswer": "B",
+      "explanation": "La paysannerie, concept central en sociologie rurale, désigne un groupe social dont l'activité principale est l'agricole, souvent de subsistance, avec un mode de vie spécifique."
+    },
+    {
+      "question": "L'enquête sociologique quantitative repose principalement sur :",
+      "optionA": "L'observation participante prolongée",
+      "optionB": "L'analyse de documents historiques",
+      "optionC": "Les statistiques et les données mesurables",
+      "optionD": "Les entretiens approfondis",
+      "correctAnswer": "C",
+      "explanation": "L'enquête quantitative se base sur des données mesurables, statistiques, obtenues par questionnaire, et vise à généraliser les résultats à une population plus large."
+    },
+    {
+      "question": "L'entretien semi-directif en sociologie est caractérisé par :",
+      "optionA": "Une structure fixe et des questions fermées",
+      "optionB": "L'absence de guide d'entretien",
+      "optionC": "Un cadre flexible avec des thèmes prédéfinis",
+      "optionD": "Une méthode exclusivement quantitative",
+      "correctAnswer": "C",
+      "explanation": "L'entretien semi-directif combine une structure avec des thèmes prédéfinis et une certaine flexibilité pour explorer les réponses du répondant en profondeur."
+    },
+    {
+      "question": "Dans le contexte burkinabè, l'islam soufi est souvent caractérisé par :",
+      "optionA": "Un rigorisme doctrinal et un rejet des pratiques locales",
+      "optionB": "L'intégration de pratiques et de croyances traditionnelles",
+      "optionC": "Une séparation stricte avec le christianisme",
+      "optionD": "Un rejet du culte des saints",
+      "correctAnswer": "B",
+      "explanation": "L'islam soufi au Burkina Faso, comme dans d'autres pays d'Africaine de l'Ouest, a souvent intégré des éléments des religions traditionnelles locales, notamment à travers le culte des saints et des pratiques spirituelles."
+    },
+    {
+      "question": "Les bidonvilles dans les villes africaines comme Ouagadougou sont principalement le résultat de :",
+      "optionA": "Une planification urbaine volontaire",
+      "optionB": "L'exode rural et l'urbanisation rapide",
+      "optionC": "Une politique de segregation raciale",
+      "optionD": "Une préférence culturelle pour l'habitat informel",
+      "correctAnswer": "B",
+      "explanation": "Les bidonvilles des villes africaines résultent principalement de l'exode rural massif et de l'urbanisation rapide, qui dépassent les capacités d'accueil et de planification urbaine."
+    },
+    {
+      "question": "La diaspora burkinabè est principalement constituée de :",
+      "optionA": "Des réfugiés politiques",
+      "optionB": "Des travailleurs migrants en Côte d'Ivoire et dans d'autres pays",
+      "optionC": "Des étudiants à l'étranger",
+      "optionD": "Des expatriés dans les pays occidentaux",
+      "correctAnswer": "B",
+      "explanation": "La diaspora burkinabè est majoritairement composée de travailleurs migrants, notamment en Côte d'Ivoire, qui représentent une part importante des transferts de fonds vers le pays."
+    },
+    {
+      "question": "La sociologie des migrations analyse l'exode rural comme :",
+      "optionA": "Un phénomène purement économique",
+      "optionB": "Un processus complexe impliquant des facteurs économiques, sociaux, culturels et politiques",
+      "optionC": "Une conséquence de la modernisation",
+      "optionD": "Une décision individuelle uniquement",
+      "correctAnswer": "B",
+      "explanation": "L'exode rural est un phénomène multidimensionnel, résultant d'une combinaison de facteurs économiques (pauvreté, chômage), sociaux (aspirations), culturels (changements de valeurs) et politiques (instabilité)."
+    },
+    {
+      "question": "Selon Durkheim, quelle est la définition correcte du 'fait social'?",
+      "optionA": "Les actions individuelles motivées par des intérêts personnels",
+      "optionB": "Les comportements qui existent en dehors de l'individu et qui s'imposent à lui",
+      "optionC": "Les manifestations culturelles propres à chaque société",
+      "optionD": "Les interactions sociales basées sur le libre arbitre individuel",
+      "correctAnswer": "B",
+      "explanation": "Pour Durkheim, le fait social est extérieur à l'individu, coercitif et collectif. Il existe indépendamment des consciences individuelles et s'impose à elles."
+    },
+    {
+      "question": "Dans la sociologie weberienne, le 'type idéal' est:",
+      "optionA": "Un modèle théorique parfait qui existe dans la réalité",
+      "optionB": "Une construction analytique qui accentue certains traits pour mieux comprendre la réalité sociale",
+      "optionC": "Une forme d'organisation sociale optimale selon Weber",
+      "optionD": "Un modèle sociologique dérivé de l'observation empirique directe",
+      "correctAnswer": "B",
+      "explanation": "Weber utilise le 'type idéal' comme outil heuristique pour analyser la réalité sociale. Il s'agit d'une construction intellectuelle qui isole certains aspects pour mieux comprendre les phénomènes sociaux complexes."
+    },
+    {
+      "question": "Pour Marx, la superstructure inclut:",
+      "optionA": "Les forces productives et les rapports de production",
+      "optionB": "L'idéologie, l'État, le droit, la religion et la culture",
+      "optionC": "Le mode de production et les classes sociales",
+      "optionD": "Le prolétariat et la bourgeoisie",
+      "correctAnswer": "B",
+      "explanation": "Chez Marx, la superstructure comprend les instances idéologiques et politiques (État, droit, religion, culture) qui découlent de la structure économique (base ou infrastructure)."
+    },
+    {
+      "question": "La socialisation secondaire se réfère à:",
+      "optionA": "La période initiale de la socialisation dans la famille",
+      "optionB": "Le processus d'apprentissage des normes sociales par l'éducation formelle",
+      "optionC": "La socialisation qui se déroule après la petite enfance et implique divers agents sociaux",
+      "optionD": "La socialisation des adultes dans le monde professionnel",
+      "correctAnswer": "C",
+      "explanation": "La socialisation secondaire, concept développé par Cooley, désigne le processus d'apprentissage social qui se déroule après la petite enfance et implique d'autres agents sociaux que la famille (école, pairs, travail, etc.)."
+    },
+    {
+      "question": "La théorie de la modernisation considère le sous-développement comme:",
+      "optionA": "Le résultat de l'exploitation économique des pays par les puissances coloniales",
+      "optionB": "Une étape temporaire dans le processus de développement linéaire",
+      "optionC": "Une conséquence de la dépendance structurelle vis-à-vis des pays développés",
+      "optionD": "Une conséquence de la culture traditionnelle des pays du Sud",
+      "correctAnswer": "B",
+      "explanation": "La théorie de la modernisation voit le sous-développement comme une étape intermédiaire dans un processus linéaire de développement vers la modernité occidentale. Elle suppose que tous les pays passent par les mêmes stades de développement."
+    },
+    {
+      "question": "Selon la théorie de la dépendance, le sous-développement des pays du Sud est principalement dû à:",
+      "optionA": "Le retard culturel et technologique",
+      "optionB": "L'intégration inégale dans l'économie mondiale capitaliste",
+      "optionC": "La mauvaise gestion des gouvernants locaux",
+      "optionD": "Les facteurs naturels et géographiques défavorables",
+      "correctAnswer": "B",
+      "explanation": "La théorie de la dépendance, développée par des auteurs comme Frank, considère que le sous-développement est le produit de l'exploitation économique et de l'intégration inégale des pays périphériques dans le système mondial capitaliste."
+    },
+    {
+      "question": "Dans les sociétés traditionnelles d'Afrique subsaharienne, la chefferie est une forme d'organisation politique caractérisée par:",
+      "optionA": "La séparation stricte des pouvoirs religieux et politiques",
+      "optionB": "L'absence de hiérarchie sociale marquée",
+      "optionC": "La fusion des pouvoirs politique, religieux et judiciaire entre les mains du chef",
+      "optionD": "L'élection démocratique des chefs par la population",
+      "correctAnswer": "C",
+      "explanation": "Dans les chefferies traditionnelles africaines, le chef détient généralement une autorité plénière qui combine les fonctions politique, religieuse, judiciaire et parfois militaire. Cette autorité est souvent légitimée par des considérations religieuses ou traditionnelles."
+    },
+    {
+      "question": "La polygamie en Afrique de l'Ouest est principalement associée à:",
+      "optionA": "Un simple choix personnel basé sur les préférences sexuelles",
+      "optionB": "Un système économique visant à maximiser la main-d'œuvre familiale",
+      "optionC": "Une pratique religieuse obligatoire dans l'islam",
+      "optionD": "Un vestige du passé précolonial sans pertinence contemporaine",
+      "correctAnswer": "B",
+      "explanation": "La polygamie en Afrique de l'Ouest est souvent analysée sous l'angle économique : elle permet d'augmenter le nombre de travailleurs dans l'exploitation agricole, d'assurer une desc nombreuse et de renforcer les alliances entre lignages."
+    },
+    {
+      "question": "Le concept de 'légitimité du pouvoir' selon Weber inclut les types suivants, SAUF:",
+      "optionA": "Légitimité traditionnelle",
+      "optionB": "Légitimité charismatique",
+      "optionC": "Légitimité rationnelle-légale",
+      "optionD": "Légitimité démocratique",
+      "correctAnswer": "D",
+      "explanation": "Weber identifie trois types de légitimité : traditionnelle (basée sur la coutume), charismatique (basée sur le prestige personnel du leader) et rationnelle-légale (basée sur des règles et procédures formelles). La légitimité démocratique n'est pas l'un de ses types originaux."
+    },
+    {
+      "question": "L'État, selon Max Weber, est défini par:",
+      "optionA": "Le contrôle des moyens de production",
+      "optionB": "La possession d'un monopole de la violence légitime sur un territoire donné",
+      "optionC": "La représentation de la volonté générale du peuple",
+      "optionD": "Le contrôle des institutions religieuses",
+      "correctAnswer": "B",
+      "explanation": "Weber définit l'État comme une communauté humain qui, au sein d'un territoire donné, réussit à revendiquer avec succès le monopole de l'usage physique de la violence légitime."
+    },
+    {
+      "question": "La sociologie rurale au Burkina Faso accorde une importance particulière à l'étude de:",
+      "optionA": "La modernisation agricole et l'industrialisation",
+      "optionB": "La paysannerie comme acteur social et économique spécifique",
+      "optionC": "L'urbanisation croissante des campagnes",
+      "optionD": "L'abandon complet des pratiques agricoles traditionnelles",
+      "correctAnswer": "B",
+      "explanation": "La sociologie rurale au Burkina Fato se concentre sur l'étude des paysans comme groupe social spécifique, avec ses propres logiques économiques, culturelles et sociales, plutôt que sur une simple vision moderniste du développement rural."
+    },
+    {
+      "question": "L'enquête sociologique quantitative se distingue par:",
+      "optionA": "L'utilisation exclusive d'entretiens non structurés",
+      "optionB": "La collecte de données à grande échelle à l'aide de standardisation",
+      "optionC": "Le refus de tout type de statistiques",
+      "optionD": "L'approche holistique et compréhensive des phénomènes sociaux",
+      "correctAnswer": "B",
+      "explanation": "L'enquête quantitative se caractérise par la collecte de données à grande échelle, l'utilisation de questionnaires standardisés, et l'analyse statistique pour identifier des tendances et corrélations dans la population étudiée."
+    },
+    {
+      "question": "L'entretien sociologique qualitatif est particulièrement utile pour:",
+      "optionA": "Mesurer des attitudes avec une grande précision statistique",
+      "optionB": "Comprendre les significations subjectives et les expériences vécues",
+      "optionC": "Généraliser des résultats à l'ensemble d'une population",
+      "optionD": "Remplacer l'observation participante",
+      "correctAnswer": "B",
+      "explanation": "L'entretien qualitatif permet d'explorer en profondeur les significations, les expériences et les perspectives des acteurs sociaux, offrant une compréhension nuancée des phénomènes sociaux."
+    },
+    {
+      "question": "Dans la sociologie des religions, la 'sécularisation' se réfère à:",
+      "optionA": "La diffusion des religions traditionnelles africaines",
+      "optionB": "Le processus de diminution de l'influence religieuse dans la société et la vie individuelle",
+      "optionC": "La fusion des différentes religions dans un syncrétisme unique",
+      "optionD": "L'expansion mondiale de l'islam et du christianisme",
+      "correctAnswer": "B",
+      "explanation": "La sécularisation désigne le processus par lequel les institutions sociales, les comportements et les mentalités se détachent progressivement de l'emprise religieuse, bien que ce concept soit débattu dans sa portée universelle."
+    },
+    {
+      "question": "L'islam au Burkina Faso est caractérisé par:",
+      "optionA": "Une uniformité doctrinale et pratique complète",
+      "optionB": "L'absence de toute influence culturelle locale",
+      "optionC": "Une diversité de confréries et d'interprétations religieuses",
+      "optionD": "Une séparation stricte avec les religions traditionnelles",
+      "correctAnswer": "C",
+      "explanation": "L'islam au Burkina Faso présente une grande diversité, avec différentes confréries (tijaniyya, qadiriyya) et des pratiques qui intègrent des éléments culturels locaux, créant un islam syncrétique."
+    },
+    {
+      "question": "Les bidonvilles des grandes villes africaines comme Ouagadougou sont principalement le résultat de:",
+      "optionA": "Une planification urbaine volontaire",
+      "optionB": "L'exode rural massif et l'urbanisation spontanée",
+      "optionC": "La politique de segregation raciale",
+      "optionD": "La préférence des populations pour les zones rurales",
+      "correctAnswer": "B",
+      "explanation": "Les bidonvilles résultent principalement de l'exode rural (migration des campagnes vers les villes) dépassant la capacité d'accueil urbain, conduisant à une urbanisation spontanée et informelle."
+    },
+    {
+      "question": "La sociologie urbaine de Bobo-Dioulasso met en évidence:",
+      "optionA": "Une homogénéité sociale et culturelle complète",
+      "optionB": "La coexistence de différentes communautés ethniques avec des logiques spatiales spécifiques",
+      "optionC": "L'absence de toute forme de segmentation sociale dans l'espace urbain",
+      "optionD": "Une urbanisation entièrement planifiée par l'État",
+      "correctAnswer": "B",
+      "explanation": "Bobo-Dioulasso, comme beaucoup de villes africaines, présente une segmentation spatiale où différentes communautés ethniques ou sociales occupent des quartiers distincts, reflétant à la fois des logiques économiques, culturelles et historiques."
+    },
+    {
+      "question": "L'exode rural au Burkina Faso est principalement motivé par:",
+      "optionA": "La recherche de terres agricoles plus fertiles",
+      "optionB": "La quête d'opportunités économiques et d'accès aux services urbains",
+      "optionC": "Un rejet complet des valeurs rurales traditionnelles",
+      "optionD": "La pression démographique uniquement",
+      "correctAnswer": "B",
+      "explanation": "L'exode rural burkinabé est principalement motivé par la recherche d'opportunités économiques (emplois dans le secteur informel, commerce) et l'accès à des services (éducation, santé) disponibles en ville."
+    },
+    {
+      "question": "La diaspora burkinabé est principalement caractérisée par:",
+      "optionA": "Une concentration géographique limitée à quelques pays",
+      "optionB": "Une dispersion mondiale avec des communautés établies dans de nombreux pays",
+      "optionC": "Un retour massif et constant vers le pays d'origine",
+      "optionD": "L'absence de liens économiques avec le Burkina Faso",
+      "correctAnswer": "B",
+      "explanation": "La diaspora burkinabé est dispersée dans de nombreux pays à travers le monde (notamment en Côte d'Ivoire, en Europe, au Moyen-Orient et en Amérique du Nord), formant des réseaux transnationaux actifs."
+    },
+    {
+      "question": "La parenté en Afrique de l'Ouest est un système qui:",
+      "optionA": "Ne concerne que les liens biologiques entre individus",
+      "optionB": "Organise les relations sociales au-delà des liens biologiques",
+      "optionC": "Est exclusivement patrilinéal",
+      "optionD": "A perdu toute importance avec la modernisation",
+      "correctAnswer": "B",
+      "explanation": "En Afrique de l'Ouest, la parenté dépasse les liens biologiques pour organiser les relations sociales, les alliances, les échanges économiques et les obligations morales, créant un réseau complexe de relations sociales."
+    },
+    {
+      "question": "Selon Durkheim, quelle est la fonction principale de la division du travail dans les sociétés modernes ?",
+      "optionA": "Renforcer la conscience collective",
+      "optionB": "Créer une solidarité mécanique",
+      "optionC": "Assurer l'intégration sociale par la solidarité organique",
+      "optionD": "Maintenir l'anomie sociale",
+      "correctAnswer": "C",
+      "explanation": "Durkheim soutient que la division du travail dans les sociétés modernes crée une solidarité organique où les individus sont interdépendants grâce à leurs spécialisations complémentaires, assurant ainsi l'intégration sociale."
+    },
+    {
+      "question": "Dans la sociologie du développement, quelle approche considère que le sous-développement est le produit d'une relation de dépendance avec les pays développés ?",
+      "optionA": "Théorie de la modernisation",
+      "optionB": "Théorie de la dépendance",
+      "optionC": "Théorie de la mondialisation",
+      "optionD": "Théorie de l'écologie humaine",
+      "correctAnswer": "B",
+      "explanation": "La théorie de la dépendance, associée à des auteurs comme Frank et Wallerstein, postule que le sous-développement des pays du Sud est le résultat historique et structurel de leur intégration inégale dans l'économie mondiale."
+    },
+    {
+      "question": "Quelle caractéristique fondamentale distingue la chefferie traditionnelle en Afrique de l'État moderne selon la sociologie politique ?",
+      "optionA": "La séparation des pouvoirs",
+      "optionB": "La légitimité fondée sur la tradition et la parenté",
+      "optionC": "Le monopole de la violence légitime",
+      "optionD": "L'administration bureaucratique",
+      "correctAnswer": "B",
+      "explanation": "La chefferie traditionnelle tire sa légitimité principalement de la tradition, de la lignée et des relations de parenté, contrairement à l'État moderne dont la légitimité repose sur des principes plus rationnels-légaux."
+    },
+    {
+      "question": "Dans la sociologie urbaine, que désigne le terme 'bidonville' selon la théorie de la marginalisation ?",
+      "optionA": "Un quartier résidentiel de luxe",
+      "optionB": "Un espace d'habitat spontané caractérisé par la précarité",
+      "optionC": "Un centre commercial urbain",
+      "optionD": "Une zone industrielle bien équipée",
+      "correctAnswer": "B",
+      "explanation": "Dans la sociologie urbaine, les bidonvilles sont des habitats spontanés informels, souvent situés en périphérie des villes, caractérisés par la précarité des logements, l'insuffisance des services et la marginalisation de leurs habitants."
+    },
+    {
+      "question": "Selon Weber, quel type de domination repose sur la croyance en la sainteté des traditions établies ?",
+      "optionA": "Domination légale-rationnelle",
+      "optionB": "Domination charismatique",
+      "optionC": "Domination traditionnelle",
+      "optionD": "Domination bureaucratique",
+      "correctAnswer": "C",
+      "explanation": "Weber identifie trois types de domination : traditionnelle (fondée sur la coutume et la tradition), charismatique (fondée sur le charisme du leader) et légale-rationnelle (fondée sur des règles et lois impersonnelles)."
+    },
+    {
+      "question": "En sociologie des religions, quelle caractéristique est associée à l'islam dans sa dimension sociale selon Weber ?",
+      "optionA": "Ascétisme intramondain",
+      "optionB": "Mysticisme individuel",
+      "optionC": "Communauté de croyants (Umma)",
+      "optionD": "Séparation des Églises et de l'État",
+      "correctAnswer": "C",
+      "explanation": "Weber analyse l'islam comme une religion qui a créé une communauté de croyants (Umma) transcendant les lignages tribaux, bien qu'il n'ait pas développé un ascétisme intramondain comme le christianisme protestant."
+    },
+    {
+      "question": "Dans la sociologie rurale burkinabè, quelle pratique agricole traditionnelle est souvent associée à la culture du sorgho ?",
+      "optionA": "L'irrigation intensive",
+      "optionB": "La culture sur brûlis",
+      "optionC": "La culture en terrasses",
+      "optionD": "La culture sous serre",
+      "correctAnswer": "B",
+      "explanation": "Au Burkina Faso, la culture du sorgho est souvent associée à des pratiques agricoles traditionnelles comme le système de culture sur brûlis, adapté aux conditions climatiques semi-arides."
+    },
+    {
+      "question": "Selon la théorie de la socialisation, quel processus décrit l'acquisition des normes et valeurs d'une société par l'individu ?",
+      "optionA": "L'internalisation",
+      "optionB": "La différenciation",
+      "optionC": "La marginalisation",
+      "optionD": "La sécularisation",
+      "correctAnswer": "A",
+      "explanation": "L'internalisation est le processus par lequel l'individu intègre progressivement les normes, valeurs et comportements attendus par sa société, devenant ainsi un membre social efficace."
+    },
+    {
+      "question": "En sociologie des migrations, que désigne le concept de 'diaspora' ?",
+      "optionA": "Le retour des migrants vers leur pays d'origine",
+      "optionB": "La dispersion d'un peuple à travers le monde",
+      "optionC": "L'immigration de travailleurs qualifiés",
+      "optionD": "La migration saisonnière",
+      "correctAnswer": "B",
+      "explanation": "La diaspora désigne la dispersion d'un peuple ou d'un groupe ethnique à travers le monde, tout en maintenant des liens culturels, sociaux ou politiques avec leur terre d'origine."
+    },
+    {
+      "question": "Dans la méthodologie des sciences sociales, quelle technique d'enquête est particulièrement adaptée à l'étude des phénomènes complexes et des expériences vécues ?",
+      "optionA": "Le questionnaire standardisé",
+      "optionB": "L'entretien semi-directif",
+      "optionC": "L'observation participante",
+      "optionD": "L'analyse statistique",
+      "correctAnswer": "C",
+      "explanation": "L'observation participante permet au sociologue de s'immerger dans le milieu social étudié, offrant une compréhension approfondie des phénomènes complexes et des expériences vécues des acteurs."
     }
   ]
 }

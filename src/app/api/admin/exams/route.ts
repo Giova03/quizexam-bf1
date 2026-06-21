@@ -1,0 +1,120 @@
+import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { db } from "@/lib/db";
+
+export const dynamic = "force-dynamic";
+
+// GET - list all exams with their question count
+export async function GET() {
+  const session = await getServerSession(authOptions);
+  if (!session?.user || (session.user as { role?: string }).role !== "ADMIN") {
+    return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
+  }
+
+  const exams = await db.exam.findMany({
+    include: {
+      _count: { select: { examQuestions: true } },
+    },
+    orderBy: { createdAt: "desc" },
+  });
+
+  return NextResponse.json(exams);
+}
+
+// POST - create a new exam from selected banks
+export async function POST(request: Request) {
+  const session = await getServerSession(authOptions);
+  if (!session?.user || (session.user as { role?: string }).role !== "ADMIN") {
+    return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
+  }
+
+  try {
+    const { title, description, durationMin, distributions } = await request.json();
+    if (!title || !distributions || !Array.isArray(distributions)) {
+      return NextResponse.json(
+        { error: "title and distributions required" },
+        { status: 400 }
+      );
+    }
+
+    // Collect questions from each bank
+    const allQuestions: Array<{ id: string; order: number }> = [];
+    let order = 0;
+
+    for (const dist of distributions) {
+      const { bankId, count } = dist;
+      if (!bankId || !count) continue;
+
+      const questions = await db.question.findMany({
+        where: { bankId },
+        select: { id: true },
+      });
+
+      // Shuffle and pick
+      const shuffled = [...questions].sort(() => Math.random() - 0.5);
+      const picked = shuffled.slice(0, Math.min(count, shuffled.length));
+
+      for (const q of picked) {
+        allQuestions.push({ id: q.id, order: order++ });
+      }
+    }
+
+    if (allQuestions.length === 0) {
+      return NextResponse.json(
+        { error: "Aucune question trouvée pour les banques sélectionnées" },
+        { status: 400 }
+      );
+    }
+
+    const exam = await db.exam.create({
+      data: {
+        title,
+        description: description ?? "",
+        durationMin: durationMin ?? 60,
+        examQuestions: {
+          create: allQuestions.map((q) => ({
+            questionId: q.id,
+            order: q.order,
+          })),
+        },
+      },
+      include: {
+        _count: { select: { examQuestions: true } },
+      },
+    });
+
+    return NextResponse.json(exam);
+  } catch (error) {
+    console.error("Failed to create exam:", error);
+    return NextResponse.json(
+      { error: "Failed to create exam" },
+      { status: 500 }
+    );
+  }
+}
+
+// DELETE - delete an exam
+export async function DELETE(request: Request) {
+  const session = await getServerSession(authOptions);
+  if (!session?.user || (session.user as { role?: string }).role !== "ADMIN") {
+    return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
+  }
+
+  try {
+    const { searchParams } = new URL(request.url);
+    const examId = searchParams.get("id");
+    if (!examId) {
+      return NextResponse.json({ error: "id required" }, { status: 400 });
+    }
+
+    await db.exam.delete({ where: { id: examId } });
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error("Failed to delete exam:", error);
+    return NextResponse.json(
+      { error: "Failed to delete exam" },
+      { status: 500 }
+    );
+  }
+}

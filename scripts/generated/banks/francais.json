@@ -199,10 +199,10 @@
       "question": "Quel est le temps verbal correct pour compléter la phrase : « Les enfants _____ jouer dehors s'il fait beau. » ?",
       "optionA": "pourraient",
       "optionB": "pourront",
-      "optionC": "pourraient",
-      "optionD": "pourront",
-      "correctAnswer": "A",
-      "explanation": "Le conditionnel présent « pourraient » est approprié ici pour exprimer une possibilité dans le futur."
+      "optionC": "pourraient pouvoir",
+      "optionD": "pourront pouvoir",
+      "correctAnswer": "B",
+      "explanation": "Le futur simple 'pourront' est correct pour exprimer une action future possible."
     },
     {
       "question": "Dans la phrase « Le silence était si lourd qu'on pouvait l'entendre », quelle figure de style est utilisée ?",
@@ -245,9 +245,9 @@
       "optionA": "ont cueillis",
       "optionB": "ont cueilli",
       "optionC": "ont cueillies",
-      "optionD": "ont cueillies",
-      "correctAnswer": "B",
-      "explanation": "Le participe passé « cueillir » s'accorde avec le sujet « les enfants » et n'a pas de COD direct, donc il reste invariable."
+      "optionD": "ont cueillit",
+      "correctAnswer": "C",
+      "explanation": "Le participe passé 'cueillies' s'accorde au féminin pluriel car 'fleurs' est féminin pluriel (COD placé avant le verbe)."
     },
     {
       "question": "Dans quelle œuvre de Norbert Zongo trouve-t-on une exploration de la révolte et de la liberté ?",

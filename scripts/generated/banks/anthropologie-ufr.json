@@ -1,0 +1,1137 @@
+{
+  "title": "Anthropologie - UFR Sciences de l'Homme",
+  "description": "Anthropologie sociale, culturelle, politique, économique, du développement, parenté, patrimoine culturel BF.",
+  "category": "Universitaire",
+  "subcategory": "Anthropologie",
+  "icon": "Users",
+  "color": "violet",
+  "level": "TOUS",
+  "bankKey": "anthropologie-ufr",
+  "questions": [
+    {
+      "question": "Quel anthropologue est considéré comme le père du culturalisme et a développé la notion de 'faits sociaux totaux' ?",
+      "optionA": "Marcel Mauss",
+      "optionB": "Claude Lévi-Strauss",
+      "optionC": "Bronislaw Malinowski",
+      "optionD": "François Boas",
+      "correctAnswer": "C",
+      "explanation": "Bronislaw Malinowski, anthropologue polonais, est considéré comme le père du fonctionnalisme et du culturalisme. Il a développé la notion de 'faits sociaux totaux' et l'observation participante."
+    },
+    {
+      "question": "Dans les systèmes de parenté, la distinction entre 'sociétés à alliance' et 'sociétés à filiation' repose principalement sur :",
+      "optionA": "Le type de mariage pratiqué",
+      "optionB": "La transmission du nom et des biens",
+      "optionC": "L'organisation politique",
+      "optionD": "Les croyances religieuses",
+      "correctAnswer": "B",
+      "explanation": "La distinction entre sociétés à alliance (où les relations de parenté sont principalement définies par le mariage) et sociétés à filiation (où l'appartenance est définie par la descendance) repose sur la transmission du nom et des biens."
+    },
+    {
+      "question": "Le système matrimonial des Mossi au Burkina Faso est caractérisé par :",
+      "optionA": "Le mariage polyandrin",
+      "optionB": "Le mariage polygynique",
+      "optionC": "Le mariage monogamique",
+      "optionD": "Le mariage sororal léviratique",
+      "correctAnswer": "B",
+      "explanation": "Le système matrimonial des Mossi est traditionnellement polygynique, permettant aux hommes d'avoir plusieurs épouses, ce qui reflète leur statut social et économique."
+    },
+    {
+      "question": "Le structuralisme en anthropologie, développé par Claude Lévi-Strauss, postule que :",
+      "optionA": "La culture est une réponse aux besoins biologiques",
+      "optionB": "Les institutions sociales fonctionnent pour maintenir l'ordre",
+      "optionC": "Les structures mentales universelles organisent la pensée",
+      "optionD": "L'histoire est le moteur du changement social",
+      "correctAnswer": "C",
+      "explanation": "Le structuralisme de Lévi-Strauss cherche à identifier les structures mentales universelles (inconscient collectif) qui organisent la pensée et les cultures humaines."
+    },
+    {
+      "question": "Dans les systèmes de parenté africains, le lignage est :",
+      "optionA": "Un groupe de personnes partageant un ancêtre commun connu",
+      "optionB": "Un ensemble de familles liées par le mariage",
+      "optionC": "Une division d'une tribu",
+      "optionD": "Un groupe de personnes partageant un totem",
+      "correctAnswer": "A",
+      "explanation": "Un lignage est un groupe de personnes descendant d'un ancêtre commun connu, généralement par filiation unilinéaire (patrilinéaire ou matrilinéaire)."
+    },
+    {
+      "question": "Le processus d'acculturation dans le contexte du développement au Burkina Faso se réfère à :",
+      "optionA": "L'assimilation forcée des cultures traditionnelles",
+      "optionB": "L'échange culturel mutuel entre groupes",
+      "optionC": "La perte progressive des cultures locales sous l'influence étrangère",
+      "optionD": "La préservation des cultures traditionnelles",
+      "correctAnswer": "C",
+      "explanation": "L'acculturation désigne le processus de changement culturel résultant de la rencontre directe et prolongée entre groupes culturels différents, souvent dans un contexte de domination."
+    },
+    {
+      "question": "La chefferie coutumière au Burkina Faso est traditionnellement :",
+      "optionA": "Un système électif",
+      "optionB": "Un système héréditaire",
+      "optionC": "Un système basé sur le mérite",
+      "optionD": "Un système rotatif",
+      "correctAnswer": "B",
+      "explanation": "La chefferie coutumière au Burkina Faso est traditionnellement héréditaire, avec le pouvoir transmis au sein d'une famille ou d'un lignage spécifique."
+    },
+    {
+      "question": "L'observation participante en anthropologie implique que l'anthropologue :",
+      "optionA": "Étudie uniquement les documents écrits",
+      "optionB": "Vit au sein de la communauté étudiée",
+      "optionC": "Utilise uniquement des questionnaires structurés",
+      "optionD": "Se concentre sur des statistiques démographiques",
+      "correctAnswer": "B",
+      "explanation": "L'observation participante consiste pour l'anthropologie à vivre au sein de la communauté étudiée pour comprendre la culture de l'intérieur."
+    },
+    {
+      "question": "Le royaume Mossi, avant la colonisation, était caractérisé par :",
+      "optionA": "Une organisation féodale",
+      "optionB": "Une organisation démocratique",
+      "optionC": "Une organisation tribale",
+      "optionD": "Une organisation clanique",
+      "correctAnswer": "A",
+      "explanation": "Le royaume Mossi était organisé en une structure hiérarchique complexe avec un empereur (Moaga) à sa tête, des chefs de provinces (Naba) et une noblesse, ressemblant à une organisation féodale."
+    },
+    {
+      "question": "Dans les systèmes matrimoniaux, le lévirat est une pratique qui permet :",
+      "optionA": "Un homme d'épouser la sœur de sa femme",
+      "optionB": "Une femme d'épouser le frère de son mari décédé",
+      "optionC": "Un homme d'épouser plusieurs femmes",
+      "optionD": "Une femme d'épouser plusieurs hommes",
+      "correctAnswer": "B",
+      "explanation": "Le lévirat est une pratique où un homme épouse la veuve de son frère décédé, souvent pour maintenir les liens de parenté et assurer la protection de la veuve."
+    },
+    {
+      "question": "L'ethno-histoire se distingue de l'histoire traditionnelle par :",
+      "optionA": "Son focus sur les événements politiques",
+      "optionB": "Son utilisation exclusive de sources écrites",
+      "optionC": "Son intégration des sources orales et écrites",
+      "optionD": "Son rejet des sources archéologiques",
+      "correctAnswer": "C",
+      "explanation": "L'ethno-histoire combine les méthodes de l'ethnologie et de l'histoire, intégrant à la fois les sources écrites traditionnelles et les sources orales, archéologiques et matérielles."
+    },
+    {
+      "question": "Le concept de 'faits sociaux totaux' de Marcel Mauss souligne que :",
+      "optionA": "Chaque fait social doit être étudié isolément",
+      "optionB": "Les institutions sociales sont indépendantes les unes des autres",
+      "optionC": "Les phénomènes sociaux sont interconnectés et imbriqués",
+      "optionD": "La culture est composée d'éléments séparés",
+      "correctAnswer": "C",
+      "explanation": "Le concept de 'faits sociaux totaux' indique que les phénomènes sociaux (comme le don, le droit, la religion) sont interconnectés et doivent être étudiés dans leur globalité."
+    },
+    {
+      "question": "Le système de parenté des Sénoufo au Burkina Faso est généralement :",
+      "optionA": "Bilatéral",
+      "optionB": "Unilinéaire patrilinéaire",
+      "optionC": "Unilinéaire matrilinéaire",
+      "optionD": "Endogame",
+      "correctAnswer": "B",
+      "explanation": "Les Sénoufo pratiquent généralement un système de parenté unilinéaire patrilinéaire, où l'appartenance au groupe se transmet par la ligne masculine."
+    },
+    {
+      "question": "Le projet de développement au Burkina Faso a souvent été critiqué pour :",
+      "optionA": "Trop respecter les traditions locales",
+      "optionB": "Ignorer les contextes culturels locaux",
+      "optionC": "Promouvoir exclusivement l'artisanat local",
+      "optionD": "Refuser les technologies étrangères",
+      "correctAnswer": "B",
+      "explanation": "Les projets de développement ont souvent été critiqués pour leur approche top-down, ignorant les contextes culturels locaux et les savoir-faire traditionnels."
+    },
+    {
+      "question": "Le totem dans les systèmes de parenté africain est :",
+      "optionA": "Un symbole de pouvoir politique",
+      "optionB": "Un animal ou objet interdit de consommer par le groupe",
+      "optionC": "Une forme de monnaie d'échange",
+      "optionD": "Un type de cérémonie religieuse",
+      "correctAnswer": "B",
+      "explanation": "Le totem est un animal, une plante ou un objet qui est considéré comme l'ancêtre ou le protecteur d'un groupe, et dont la consommation est interdite aux membres de ce groupe."
+    },
+    {
+      "question": "L'artisanat traditionnel burkinabé est souvent caractérisé par :",
+      "optionA": "Une production de masse destinée à l'exportation",
+      "optionB": "Des techniques transmises de génération en génération",
+      "optionC": "Une utilisation exclusive de matières synthétiques",
+      "optionD": "Un rejet des motifs traditionnels",
+      "correctAnswer": "B",
+      "explanation": "L'artisanat traditionnel burkinabé repose sur des techniques et savoir-faire transmis de génération en génération, utilisant des matériaux locaux et des motifs symboliques."
+    },
+    {
+      "question": "Le concept de 'pouvoir symbolique' chez Pierre Bourdieu se réfère à :",
+      "optionA": "Le pouvoir coercitif de l'État",
+      "optionB": "L'autorité basée sur la violence",
+      "optionC": "L'invisible pouvoir de légitimation sociale",
+      "optionD": "Le pouvoir économique direct",
+      "correctAnswer": "C",
+      "explanation": "Le pouvoir symbolique est un pouvoir invisible qui repose sur la reconnaissance et la légitimation sociale, permettant d'imposer des significations et des classifications."
+    },
+    {
+      "question": "Le patrimoine culturel immatériel au Burkina Faso, reconnu par l'UNESCO, inclut :",
+      "optionA": "Seulement les sites archéologiques",
+      "optionB": "Les langues, rituels et savoir-faire traditionnels",
+      "optionC": "Exclusivement la musique moderne",
+      "optionD": "Seulement l'architecture traditionnelle",
+      "correctAnswer": "B",
+      "explanation": "Le patrimoine culturel immatériel inclut les traditions et expressions vivantes transmises de génération en génération, comme les langues, rituels, savoir-faire et festivals."
+    },
+    {
+      "question": "Le carnet de terrain en anthropologie sert principalement à :",
+      "optionA": "Rédiger des comptes rendus administratifs",
+      "optionB": "Enregistrer les observations, réflexions et données ethnographiques",
+      "optionC": "Tenir un journal personnel intime",
+      "optionD": "Rédiger des rapports financiers",
+      "correctAnswer": "B",
+      "explanation": "Le carnet de terrain est un outil essentiel pour l'anthropologue pour enregistrer systématiquement ses observations, réflexions, données ethnographiques et théories en développement."
+    },
+    {
+      "question": "Le système des marchés traditionnels au Burkina Faso joue un rôle crucial dans :",
+      "optionA": "La simple circulation des biens matériels",
+      "optionB": "L'échange de biens, de services et de renommée sociale",
+      "optionC": "La taxation de la population",
+      "optionD": "L'exclusion des femmes",
+      "correctAnswer": "B",
+      "explanation": "Les marchés traditionnels burkinabés sont des espaces complexes où s'échangent non seulement des biens matériels, mais aussi des services, de l'information et du capital social."
+    },
+    {
+      "question": "Le culturalisme, tel que développé par Franz Boas, met l'accent sur:",
+      "optionA": "L'existence de structures universelles dans toutes les cultures",
+      "optionB": "L'étude comparative des institutions à travers différentes cultures",
+      "optionC": "La spécificité historique de chaque culture et son relativisme",
+      "optionD": "Les fonctions sociales des pratiques culturelles",
+      "correctAnswer": "C",
+      "explanation": "Le culturalisme insiste sur la singularité de chaque culture, développée dans son contexte historique spécifique, rejetant les théories évolutionnistes."
+    },
+    {
+      "question": "Selon le structuralisme de Lévi-Strauss, l'alliance matrimonielle est considérée comme:",
+      "optionA": "Un simple échange de biens entre familles",
+      "optionB": "Un moyen de renforcer les liens de parenté",
+      "optionC": "Un système d'échange de femmes entre groupes",
+      "optionD": "Un rituel purement symbolique sans fonction sociale",
+      "correctAnswer": "C",
+      "explanation": "Pour Lévi-Strauss, l'alliance matrimonielle constitue un système d'échange de femmes entre groupes sociaux, permettant de créer des alliances et d'éviter l'endogamie."
+    },
+    {
+      "question": "Dans le système de parenté Mossi, la chefferie traditionnelle repose sur:",
+      "optionA": "Un système électif et démocratique",
+      "optionB": "Une transmission matrilinéale du pouvoir",
+      "optionC": "Une transmission patrilinéale avec primogéniture",
+      "optionD": "Un système rotatif entre lignées",
+      "correctAnswer": "C",
+      "explanation": "La chefferie Mossi suit un système patrilinéal avec primogéniture, où le pouvoir passe de père en fils aîné, conformément à la tradition."
+    },
+    {
+      "question": "Le concept d'\"alliance à plaisanterie\" en Afrique de l'Ouest est un exemple de:",
+      "optionA": "Alliance politique militaire",
+      "optionB": "Ritualisation du conflit social",
+      "optionC": "Système de parenté bilatéral",
+      "optionD": "Forme d'échange économique",
+      "correctAnswer": "B",
+      "explanation": "Les alliances à plaisanterie sont des rituels de familiarisation qui ritualisent les tensions entre groupes, permettant de canaliser les conflits sociaux."
+    },
+    {
+      "question": "L'observation participante en anthropologie implique que l'ethnographe:",
+      "optionA": "Reste un observateur extérieur objectif",
+      "optionB": "S'intègre à la vie sociale du groupe étudié",
+      "optionC": "Utilise uniquement des entretiens formels",
+      "optionD": "Se concentre exclusivement sur les données quantitatives",
+      "correctAnswer": "B",
+      "explanation": "L'observation participante exige que l'ethnographe s'implique activement dans la vie quotidienne du groupe étudié pour comprendre les pratiques de l'intérieur."
+    },
+    {
+      "question": "Le royaume Mossi, avant la colonisation française, était organisé en:",
+      "optionA": "Un empire centralisé unitaire",
+      "optionB": "Une confédération de royaumes indépendants",
+      "optionC": "Un système de chefferies autonomes sans liens",
+      "optionD": "Une démocratie villageoise",
+      "correctAnswer": "B",
+      "explanation": "Le royaume Mossi était une confédération de plusieurs royaumes (dont Ouagadougou, Tenkodogo, Yatenga) unis par une origine commune mais avec une certaine autonomie."
+    },
+    {
+      "question": "Selon l'anthropologie du développement, le concept d'\"acculturation\" désigne:",
+      "optionA": "L'adaptation complète des cultures locales à la modernité",
+      "optionB": "Le processus de changement culturel résultant du contact entre groupes",
+      "optionC": "La disparition totale des cultures traditionnelles",
+      "optionD": "L'isolement des cultures face à la mondialisation",
+      "correctAnswer": "B",
+      "explanation": "L'acculturation désigne le processus de transformation culturelle résultant du contact entre groupes culturels différents, pouvant conduire à des changements variés."
+    },
+    {
+      "question": "Dans les systèmes matrimoniaux Peulh, la polygamie est:",
+      "optionA": "Interdite par la tradition",
+      "optionB": "Pratiquée principalement par l'élite",
+      "optionC": "Une institution sociale valorisée",
+      "optionD": "Une pratique récente d'influence occidentale",
+      "correctAnswer": "C",
+      "explanation": "La polygamie est une institution socialement valorisée chez les Peulh, reflétant le statut économique et social de l'homme, bien qu'elle soit en déclin."
+    },
+    {
+      "question": "Le fonctionnalisme de Malinowski considère les institutions sociales comme:",
+      "optionA": "Des survivances de structures archaïques",
+      "optionB": "Des expressions des conflits de classe",
+      "optionC": "Des réponses aux besoins fondamentaux de la société",
+      "optionD": "Des constructions purement symboliques",
+      "correctAnswer": "C",
+      "explanation": "Pour Malinowski, chaque institution sociale remplit une fonction répondant aux besoins fondamentaux de la société (biologiques, psychologiques, sociaux)."
+    },
+    {
+      "question": "Le système de totems interdits en anthropologie de la parenté sert à:",
+      "optionA": "Définir les hiérarchies sociales",
+      "optionB": "Réguler les unions matrimoniales",
+      "optionC": "Organiser la division du travail",
+      "optionD": "Contrôler l'accès aux ressources",
+      "correctAnswer": "B",
+      "explanation": "Les totems interdits, ou tabous, servent principalement à réguler les unions matrimoniales en interdisant le mariage entre individus partageant le même totem."
+    },
+    {
+      "question": "Chez les Bobo, le masque \"Wango\" est associé à:",
+      "optionA": "Les rites agricoles et la fertilité",
+      "optionB": "Les cérémonies funéraires",
+      "optionC": "Les rites de passage masculins",
+      "optionD": "Les fêtes de récolte",
+      "correctAnswer": "A",
+      "explanation": "Le masque Wango chez les Bobo est utilisé lors des rituels agricoles pour assurer la fertilité des cultures et la bonne récolte."
+    },
+    {
+      "question": "L'ethno-histoire se distingue de l'histoire traditionnelle par son:",
+      "optionA": "Exclusivité des sources écrites",
+      "optionB": "Intégration des sources orales",
+      "optionC": "Rejet de l'analyse comparative",
+      "optionD": "Focus sur les événements politiques uniquement",
+      "correctAnswer": "B",
+      "explanation": "L'ethno-histoire intègre les sources orales aux sources écrites et adopte une approche anthropologique pour comprendre les sociétés passées."
+    },
+    {
+      "question": "Dans les systèmes économiques traditionnels burkinabè, le troc:",
+      "optionA": "A été remplacé par la monnaie moderne",
+      "optionB": "Se limite aux échanges villageois",
+      "optionC": "Fait encore partie des pratiques économiques",
+      "optionD": "Est une pratique d'influence coloniale",
+      "correctAnswer": "C",
+      "explanation": "Malgré la monétisation de l'économie, le troc reste une pratique économique significative dans de nombreuses régions du Burkina Faso, notamment pour les biens traditionnels."
+    },
+    {
+      "question": "La colonisation du Burkina Faso (alors Haute-Volta) a été principalement motivée par:",
+      "optionA": "La recherche de minerais précieux",
+      "optionB": "La mise en valeur agricole",
+      "optionC": "La stratégie géopolitique",
+      "optionD": "La conversion religieuse",
+      "correctAnswer": "C",
+      "explanation": "La colonisation de la Haute-Volta était principalement motivée par des stratégies géopolitiques, notamment son intégration dans l'Afrique-Occidentale Française (AOF)."
+    },
+    {
+      "question": "Le concept de \"lignage\" en anthropologie de la parenté désigne:",
+      "optionA": "Un groupe uniparentel (maternel ou paternel)",
+      "optionB": "Un groupe fondé sur des liens matrimoniaux",
+      "optionC": "Une communauté locale territoriale",
+      "optionD": "Un ensemble de clans apparentés",
+      "correctAnswer": "A",
+      "explanation": "Un lignage est un groupe de personnes unies par des liens de descendance d'un ancêtre commun, généralement patrilinéal ou matrilinéal."
+    },
+    {
+      "question": "Dans le contexte de l'anthropologie du développement, la dichotomie \"tradition/modernité\" est:",
+      "optionA": "Une distinction pertinente pour comprendre les changements sociaux",
+      "optionB": "Un concept dépassé et stéréotypé",
+      "optionC": "Exclusivement applicable aux sociétés non occidentales",
+      "optionD": "Un indicateur fiable du développement économique",
+      "correctAnswer": "B",
+      "explanation": "Les anthropotes contemporains critiquent la dichotomie tradition/modernité comme étant binaire, statique et stéréotypée, occultant la complexité des processus de changement."
+    },
+    {
+      "question": "Chez les Sénoufo, les \"Poro\" sont:",
+      "optionA": "Des associations commerciales",
+      "optionB": "Des sociétés secrètes masculines",
+      "optionC": "Des tribus guerrières",
+      "optionD": "Des groupes religieux chrétiens",
+      "correctAnswer": "B",
+      "explanation": "Les Poro sont des sociétés secrètes masculines chez les Sénoufo, jouant un rôle crucial dans l'éducation, le contrôle social et la transmission des traditions."
+    },
+    {
+      "question": "Le patrimoine culturel immatériel, selon la convention UNESCO de 2003, inclut:",
+      "optionA": "Seulement les monuments historiques",
+      "optionB": "Les savoir-faire et traditions vivantes",
+      "optionC": "Exclusivement les arts visuels",
+      "optionD": "Les langues écrites uniquement",
+      "correctAnswer": "B",
+      "explanation": "La convention UNESCO de 2003 reconnaît comme patrimoine immatériel les savoir-faire, traditions et expressions vivantes des communautés."
+    },
+    {
+      "question": "L'indépendance du Burkina Faso a été proclamée en:",
+      "optionA": "1956",
+      "optionB": "1960",
+      "optionC": "1965",
+      "optionD": "1970",
+      "correctAnswer": "B",
+      "explanation": "Le Burkina Faso, alors Haute-Volta, a accédé à l'indépendance le 5 août 1960, devenant une république membre de la Communauté française."
+    },
+    {
+      "question": "Dans les systèmes d'alliance Dioula, le mariage:",
+      "optionA": "Est toujours endogame",
+      "optionB": "Privilégie l'exogamie villageoise",
+      "optionC": "Est interclanique",
+      "optionD": "Suit des règles matrilinéales strictes",
+      "correctAnswer": "B",
+      "explanation": "Chez les Dioula, le mariage privilégie l'exogamie villageoise, renforçant ainsi les liens entre communautés voisines et facilitant les échanges commerciaux."
+    },
+    {
+      "question": "Selon le culturalisme de Franz Boas, quelle est la caractéristique principale de la culture ?",
+      "optionA": "Elle est le résultat d'un processus évolutif linéaire",
+      "optionB": "Elle est un ensemble de traits acquis socialement et variables selon les sociétés",
+      "optionC": "Elle repose sur des structures universelles et inconscientes",
+      "optionD": "Elle est déterminée par les conditions économiques",
+      "correctAnswer": "B",
+      "explanation": "Le culturalisme insiste sur la spécificité culturelle et le relativisme culturel, rejetant les théories évolutionnistes et déterministes."
+    },
+    {
+      "question": "Pour le fonctionnaliste Bronisław Malinowski, quelle est la fonction principale du rite ?",
+      "optionA": "Maintenir l'ordre social par le contrôle symbolique",
+      "optionB": "Répondre aux besoins fondamentaux de l'individu et du groupe",
+      "optionC": "Transmettre les valeurs générationnelles",
+      "optionD": "Exprimer les conflits latents de la société",
+      "correctAnswer": "B",
+      "explanation": "Pour Malinowski, les rites répondent aux besoins fondamentaux (biologiques, instrumentaux, intégratifs) et contribuent au bien-être du groupe."
+    },
+    {
+      "question": "Dans le structuralisme de Claude Lévi-Strauss, que représente l'alliance matrimoniale ?",
+      "optionA": "Un simple contrat économique entre familles",
+      "optionB": "Un système de parenté fondé sur l'échange de femmes",
+      "optionC": "Une manifestation des structures inconscientes de l'esprit",
+      "optionD": "Un moyen de renforcer les lignages patrilinéaires",
+      "correctAnswer": "C",
+      "explanation": "Pour Lévi-Strauss, les systèmes d'alliance sont des manifestations des structures de l'esprit humain, organisant les différences et les oppositions fondamentales."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre filiation et alliance en anthropologie ?",
+      "optionA": "La filiation est biologique alors que l'alliance est sociale",
+      "optionB": "La filiation établit les liens de sang tandis que l'alliance crée des liens par mariage",
+      "optionC": "La filiation est matrilinéale et l'alliance patrilinéale",
+      "optionD": "La filiation concerne les descendants et l'alliance les ascendants",
+      "correctAnswer": "B",
+      "explanation": "La filiation désigne les liens qui unissent une personne à ses ascendants et descendants, tandis que l'alliance concerne les liens créés par le mariage."
+    },
+    {
+      "question": "Parmi les systèmes matrimoniaux suivants, lequel est caractéristique de la société peulh ?",
+      "optionA": "Sororat",
+      "optionB": "Levirat",
+      "optionC": "Cousinage croisé parallèle",
+      "optionD": "Polyandry",
+      "correctAnswer": "C",
+      "explanation": "La société peulh pratique souvent le cousinage croisé parallèle (mariage avec la fille du frère de la mère), un système fréquent dans les sociétés pastorales d'Afrique de l'Ouest."
+    },
+    {
+      "question": "Quelle est la caractéristique principale du système de parenté chez les Mossi ?",
+      "optionA": "Matrilinéarité stricte",
+      "optionB": "Double descente asymétrique",
+      "optionC": "Patrilinéarité avec importance des clans",
+      "optionD": "Système Omaha",
+      "correctAnswer": "C",
+      "explanation": "Les Mossi ont un système patrilinéaire où la descendance suit la ligne paternelle et les lignages jouent un rôle central dans l'organisation sociale."
+    },
+    {
+      "question": "Dans le contexte burkinabè, que sont les 'alliances à plaisanterie' ?",
+      "optionA": "Des mariages arrangés entre familles nobles et esclaves",
+      "optionB": "Des relations de familiarité ritualisée entre groupes ethniques",
+      "optionC": "Des échanges commerciaux traditionnels",
+      "optionD": "Des rites de passage pour les adolescents",
+      "correctAnswer": "B",
+      "explanation": "Les alliances à plaisanterie sont des relations spéciales entre certains groupes ethniques qui autorisent des familiarités et moqueries ritualisées."
+    },
+    {
+      "question": "Quel anthropologue est associé à la théorie de l'accommodation culturelle ?",
+      "optionA": "Bronisław Malinowski",
+      "optionB": "Claude Lévi-Strauss",
+      "optionC": "George Peter Murdock",
+      "optionD": "Robert Redfield",
+      "correctAnswer": "D",
+      "explanation": "Robert Redfield a développé le concept d'accommodation culturelle pour décrire l'adaptation des sociétés traditionnelles aux changements modernes."
+    },
+    {
+      "question": "Dans le contexte burkinabè, quelle est la caractéristique principale des chefferies coutumières ?",
+      "optionA": "Elles sont exclusivement féminines",
+      "optionB": "Elles combinent autorité traditionnelle et pouvoir administratif colonial",
+      "optionC": "Elles sont élues démocratiquement tous les cinq ans",
+      "optionD": "Elles n'ont aucun rôle dans la gestion des terres",
+      "correctAnswer": "B",
+      "explanation": "Les chefferies coutumières au Burkina Faso fusionnent souvent les structures traditionnelles avec les adaptations imposées par l'administration coloniale."
+    },
+    {
+      "question": "Selon l'ethno-histoire du Burkina Faso, quel royaume a été le plus centralisé avant la colonisation ?",
+      "optionA": "Royaume Gourounsi",
+      "optionB": "Royaume Lobi",
+      "optionC": "Royaume Mossi",
+      "optionD": "Royaume Bobo",
+      "correctAnswer": "C",
+      "explanation": "Le royaume Mossi, avec son empire Ouagadougou, était le plus centralisé et politiquement structuré des royaumes précoloniaux du territoire burkinabè."
+    },
+    {
+      "question": "Quelle est la principale critique adressée aux projets de développement anthropologiques classiques ?",
+      "optionA": "Ils intègrent trop bien les savoirs locaux",
+      "optionB": "Ils imposent des modèles occidentaux sans considération des contextes culturels",
+      "optionC": "Ils privilégient trop les approches participatives",
+      "optionD": "I négligent les aspects économiques",
+      "correctAnswer": "B",
+      "explanation": "Les projets de développement anthropologiques classiques sont critiqués pour leur ethnocentrisme et leur tendance à imposer des modèles occidentaux sans adaptation aux contextes locaux."
+    },
+    {
+      "question": "Dans les sociétés sénoufo du Burkina Faso, quelle est la fonction principale des masques Poro ?",
+      "optionA": "Ils sont utilisés lors des cérémonies funéraires",
+      "optionB": "Ils symbolisent l'autorité politique du chef",
+      "optionC": "Ils assurent la transmission des savoirs et le contrôle social des initiés",
+      "optionD": "Ils sont liés au culte des ancêtres",
+      "correctAnswer": "C",
+      "explanation": "Les masques Poro dans la société sénoufo sont centraux dans le système d'initiation et assurent le contrôle social et la transmission des savoirs."
+    },
+    {
+      "question": "Quelle est la différence entre l'observation participante et l'observation non participante ?",
+      "optionA": "La première est utilisée uniquement en milieu urbain",
+      "optionB": "La première implique que l'anthropologue participe activement à la vie sociale étudiée",
+      "optionC": "La première est exclusivement quantitative",
+      "optionD": "La première interdit toute prise de notes",
+      "correctAnswer": "B",
+      "explanation": "L'observation participante implique que l'anthropologue s'implique activement dans la vie sociale étudiée, contrairement à l'observation non participante où il reste extérieur."
+    },
+    {
+      "question": "Dans les systèmes économiques traditionnels burkinabè, quel élément caractérise le troc ?",
+      "optionA": "Il est basé sur une monnaie fiduciaire universelle",
+      "optionB": "Il repose sur des échanges de biens sans médiation monétaire",
+      "optionC": "Il est exclusivement pratiqué entre étrangers",
+      "optionD": "Il est régi par des lois du marché libre",
+      "correctAnswer": "B",
+      "explanation": "Le troc est un système d'échange direct de biens et services sans utilisation d'intermédiaire monétaire, caractéristique des économies traditionnelles."
+    },
+    {
+      "question": "Qu'est-ce qu'un totem dans les systèmes de parenté ?",
+      "optionA": "Un symbole politique de pouvoir",
+      "optionB": "Un objet sacré utilisé dans les rituels",
+      "optionC": "Un animal ou plante considéré comme ancêtre et interdit de consommation par un groupe",
+      "optionD": "Un titre donné au chef de lignage",
+      "correctAnswer": "C",
+      "explanation": "Un totem est un animal, plante ou objet naturel considéré comme ascendant ou protecteur par un groupe et dont la consommation ou le contact est souvent tabou."
+    },
+    {
+      "question": "Selon l'UNESCO, qu'est-ce qui distingue un bien culturel immatériel ?",
+      "optionA": "Il doit être lié à un site architectural",
+      "optionB": "Il concerne les savoirs faire, traditions et expressions orales",
+      "optionC": "Il doit être conservé dans un musée",
+      "optionD": "Il ne peut exister que dans les sociétés industrialisées",
+      "correctAnswer": "B",
+      "explanation": "Le patrimoine immatériel de l'UNESCO englobe les traditions et expressions vivantes transmises de génération en génération, comme les savoir-faire, rituels et langues."
+    },
+    {
+      "question": "Dans les sociétés samo du Burkina Faso, quelle est la caractéristique de l'organisation sociale ?",
+      "optionA": "Matrilinéarité stricte avec héritage maternel",
+      "optionB": "Patrilinéarité avec clans exogames",
+      "optionC": "Système de classes sociales rigides",
+      "optionD": "Organisation segmentaire en lignages égaux",
+      "correctAnswer": "D",
+      "explanation": "Les Samo ont une organisation sociale segmentaire en lignages égaux, sans hiérarchie stricte, avec une importance du consensus et de l'égalitarisme."
+    },
+    {
+      "question": "Quelle approche méthodologique privilégie l'analyse des documents historiques dans une perspective anthropologique ?",
+      "optionA": "Ethnographie immersive",
+      "optionB": "Ethno-archéologie",
+      "optionC": "Ethno-histoire",
+      "optionD": "Ethnosociologie",
+      "correctAnswer": "C",
+      "explanation": "L'ethno-histoire combine l'analyse de documents historiques avec les méthodes anthropologiques pour comprendre les sociétés passées dans leur contexte culturel."
+    },
+    {
+      "question": "Dans le contexte burkinabè, quel marché est particulièrement connu pour son artisanat traditionnel ?",
+      "optionA": "Marché de Grand Bassam (Côte d'Ivoire)",
+      "optionB": "Marché de Dantokpa (Bénin)",
+      "optionC": "Marché de Ouagadougou",
+      "optionD": "Marché de Mopti (Mali)",
+      "correctAnswer": "C",
+      "explanation": "Le marché de Ouagadougou est réputé pour sa diversité d'artisanat traditionnel burkinabè, notamment les textiles, poteries et objets sculptés."
+    },
+    {
+      "question": "Dans les systèmes de parenté, la 'réciprocité généralisée' désigne principalement :",
+      "optionA": "Un système d'échange où plusieurs partenaires échangent des biens ou services de manière équivalente",
+      "optionB": "Un système où le don crée des obligations de contre-don dans le temps",
+      "optionC": "Un système d'échange direct et immédiat entre deux individus",
+      "optionD": "Un système où le don ne crée aucune obligation de retour",
+      "correctAnswer": "B",
+      "explanation": "La réciprocité généralisée, concept développé par Marcel Mauss, désigne un système où le don crée des obligations de contre-don dans le temps, typique des relations au sein du groupe familial."
+    },
+    {
+      "question": "Chez les Mossi du Burkina Faso, le système politique traditionnel est caractérisé par :",
+      "optionA": "Un système démocratique avec élection des chefs",
+      "optionB": "Une monarchie absolue avec le Mogho Naba comme autorité suprême",
+      "optionC": "Un système fédéral avec plusieurs rois autonomes",
+      "optionD": "Un système oligarchique dominé par une caste de guerriers",
+      "correctAnswer": "B",
+      "explanation": "Le système politique mossi est une monarchie traditionnelle avec le Mogho Naba comme autorité suprême, régnant sur un ensemble de royaumes centralisés."
+    },
+    {
+      "question": "Le structuralisme en anthropologie, développé par Claude Lévi-Strauss, s'intéresse principalement à :",
+      "optionA": "Les fonctions sociales des institutions",
+      "optionB": "Les structures inconscientes de l'esprit humain",
+      "optionC": "L'adaptation culturelle à l'environnement",
+      "optionD": "L'évolution historique des sociétés",
+      "correctAnswer": "B",
+      "explanation": "Le structuralisme de Lévi-Strauss cherche à découvrir les structures inconscientes de l'esprit humain à travers l'analyse des mythes, des rites et des systèmes de parenté."
+    },
+    {
+      "question": "Le concept de 'terrain' en anthropologie désigne :",
+      "optionA": "Un espace physique où se déroulent les recherches",
+      "optionB": "La période d'enquête de l'anthropologue auprès de la population étudiée",
+      "optionC": "Un territoire délimité par des frontières politiques",
+      "optionD": "Un site archéologique fouillé par les anthropologues",
+      "correctAnswer": "B",
+      "explanation": "En anthropologie, le 'terrain' désigne la période d'enquête de l'anthropologue auprès de la population étudiée, période pendant laquelle il effectue son travail de recherche."
+    },
+    {
+      "question": "Chez les Peulh du Burkina Faso, la structure sociale est principalement basée sur :",
+      "optionA": "Un système de castes rigide avec les rimaybé (artisans) en bas de l'échelle",
+      "optionB": "Un système clanique avec une égalité entre tous les membres",
+      "optionC": "Un système de classes sociales défini par la richesse",
+      "optionD": "Un système basé sur l'âge avec des rites de passage",
+      "correctAnswer": "A",
+      "explanation": "La société peulh est caractérisée par un système de castes où les rimaybé (artisans) occupent une position inférieure, tandis que les torodbe (nobles) et les descendants des esclaves forment d'autres strates."
+    },
+    {
+      "question": "Le concept d' 'alliance à plaisanterie' en Afrique de l'Ouest désigne :",
+      "optionA": "Un système d'échanges matrimoniaux entre groupes",
+      "optionB": "Des relations sociales permises entre certains groupes où l'insulte rituelle est autorisée",
+      "optionC": "Un système de négociation commerciale entre marchands",
+      "optionD": "Un rituel de bienvenue entre étrangers",
+      "correctAnswer": "B",
+      "explanation": "L'alliance à plaisanterie est une relation sociale spécifique où certains groupes peuvent s'insulter rituellement sans conséquence, servant à maintenir la paix sociale et les échanges entre ces groupes."
+    },
+    {
+      "question": "Le fonctionnalisme, associé à Bronisław Malinowski, postule que :",
+      "optionA": "Les institutions sociales existent parce qu'elles répondent à des besoins fondamentaux de la société",
+      "optionB": "Les institutions sociales sont le produit de conflits de classes",
+      "optionC": "Les institutions sociales sont déterminées par des facteurs biologiques",
+      "optionD": "Les institutions sociales sont le résultat de l'évolution historique",
+      "correctAnswer": "A",
+      "explanation": "Le fonctionnalisme considère que les institutions sociales existent parce qu'elles remplissent des fonctions nécessaires à la survie et au fonctionnement de la société."
+    },
+    {
+      "question": "Chez les Bobo du Burkina Faso, les masques sont principalement associés à :",
+      "optionA": "Des rites de passage individuels",
+      "optionB": "Des cérémonies agricoles et des rituels de purification",
+      "optionC": "Des célébrations de victoires militaires",
+      "optionD": "Des rites funéraires des chefs",
+      "correctAnswer": "B",
+      "explanation": "Chez les Bobo, les masques sont principalement utilisés lors de cérémonies agricoles et de rituels de purification, notamment pour le culte du Wabe, divinité de la terre."
+    },
+    {
+      "question": "Chez les Sénoufo, le Poro est :",
+      "optionA": "Un système commercial transrégional",
+      "optionB": "Une société secrète masculine chargée de l'éducation et des rites",
+      "optionC": "Un conseil de chefs de village",
+      "optionD": "Un rituel agricole annuel",
+      "correctAnswer": "B",
+      "explanation": "Le Poro est une société secrète masculine chez les Sénoufo, chargée de l'éducation des jeunes garçons, des rites de passage et du maintien de l'ordre social traditionnel."
+    },
+    {
+      "question": "Le concept d' 'acculturation' en anthropologie du développement désigne :",
+      "optionA": "Le processus par lequel une culture absorbe et intègre des éléments d'une autre culture",
+      "optionB": "Le remplacement complet d'une culture par une autre",
+      "optionC": "Le maintien pur et simple des traditions culturelles",
+      "optionD": "La séparation culturelle entre groupes",
+      "correctAnswer": "A",
+      "explanation": "L'acculturation désigne le processus par lequel des individus ou des groupes d'une culture absorbent et intègrent des éléments d'une autre culture, souvent lors de contacts prolongés."
+    },
+    {
+      "question": "Le lignage en anthropologie de la parenté est :",
+      "optionA": "Un groupe de personnes unies par une croyance religieuse commune",
+      "optionB": "Un groupe de personnes unies par une descendance commune prouvée",
+      "optionC": "Un groupe de personnes unies par une résidence commune",
+      "optionD": "Un groupe de personnes unies par une alliance matrimoniale",
+      "correctAnswer": "B",
+      "explanation": "Le lignage est un groupe de personnes unies par une descendance commune prouvée, généralement à travers une lignée masculine ou féminine identifiable."
+    },
+    {
+      "question": "La chefferie coutumière au Burkina Faso :",
+      "optionA": "A été abolie après l'indépendance",
+      "optionB": "A été maintenue mais avec des pouvoirs limités par l'État",
+      "optionC": "A été remplacée par un système administratif moderne",
+      "optionD": "N'existe que dans les régions islamisées",
+      "correctAnswer": "B",
+      "explanation": "Au Burkina Faso, les chefferies coutumières ont été maintenues après l'indépendance mais leurs pouvoirs ont été limités par l'État central qui les intègre dans l'administration décentralisée."
+    },
+    {
+      "question": "Le totem en anthropologie de la parenté désigne :",
+      "optionA": "Un symbole de pouvoir politique",
+      "optionB": "Un animal ou plante dont le clan interdit la consommation",
+      "optionC": "Un rituel de passage à l'âge adulte",
+      "optionD": "Une forme de monnaie d'échange",
+      "correctAnswer": "B",
+      "explanation": "Le totem est un animal, plante ou objet qui sert de symbole à un clan ou lignage, et dont la consommation est souvent interdite aux membres de ce groupe."
+    },
+    {
+      "question": "L'artisanat traditionnel burkinabé est principalement caractérisé par :",
+      "optionA": "Une production de masse pour l'exportation",
+      "optionB": "Des techniques artisanales transmises de génération en génération",
+      "optionC": "Une utilisation exclusive de matières premières modernes",
+      "optionD": "Une production destinée uniquement à l'élite",
+      "correctAnswer": "B",
+      "explanation": "L'artisanat traditionnel burkinabé est caractérisé par des techniques transmises de génération en génération, utilisant des matières locales et répondant à des besoins culturels et utilitaires."
+    },
+    {
+      "question": "Le processus de patrimonialisation au Burkina Faso, notamment pour les sites comme les ruines de Loropéni, vise principalement à :",
+      "optionA": "Protéger ces sites des pillages",
+      "optionB": "Développer le tourisme international",
+      "optionC": "Renforcer l'identité culturelle nationale",
+      "optionD": "Toutes ces réponses",
+      "correctAnswer": "D",
+      "explanation": "La patrimonialisation au Burkina Faso vise à la fois à protéger les sites, à développer le tourisme et à renforcer l'identité culturelle nationale, comme en témoigne l'inscription de plusieurs sites sur la liste du patrimoine mondial de l'UNESCO."
+    },
+    {
+      "question": "Le système matrilinéaire de filiation est caractérisé par :",
+      "optionA": "L'héritage et la filiation se font exclusivement par la ligne masculine",
+      "optionB": "L'héritage et la filiation se font exclusivement par la ligne féminine",
+      "optionC": "L'héritage peut se faire par les deux lignes selon les biens",
+      "optionD": "L'héritage est partagé équitablement entre hommes et femmes",
+      "correctAnswer": "B",
+      "explanation": "Le système matrilinéaire de filiation est caractérisé par le fait que l'héritage et la descendance sont tracés exclusivement par la ligne féminine."
+    },
+    {
+      "question": "Le concept de 'tradition/modernité' en anthropologie du développement est souvent critiqué pour :",
+      "optionA": "Sous-estimer l'impact de la mondialisation",
+      "optionB": "Créer une dichotomie artificielle entre deux états culturels",
+      "optionC": "Ignorer les résistances culturelles au changement",
+      "optionD": "Survaloriser les innovations technologiques",
+      "correctAnswer": "B",
+      "explanation": "La dichotomie tradition/modernité est critiquée pour être une construction intellectuelle artificielle qui simplifie excessivement la complexité des dynamiques culturelles et des processus de changement."
+    },
+    {
+      "question": "Selon le culturalisme de Franz Boas, quelle approche méthodologique est fondamentale pour l'anthropologie ?",
+      "optionA": "L'étude comparative des cultures à travers le temps",
+      "optionB": "L'observation participante prolongée dans un contexte spécifique",
+      "optionC": "La recherche de lois universelles régissant les phénomènes culturels",
+      "optionD": "L'analyse structurale des mythes et des rituels",
+      "correctAnswer": "B",
+      "explanation": "Le culturalisme insiste sur l'étude empirique et détaillée de cultures spécifiques à travers l'observation participante, rejetant les approches évolutionnistes et universalistes."
+    },
+    {
+      "question": "Dans les systèmes de parenté, que désigne le terme 'alliance à plaisanterie' ?",
+      "optionA": "Un système d'échange matrimoniel entre groupes de statut égal",
+      "optionB": "Une relation interdite entre certains groupes ou individus",
+      "optionC": "Un système de parenté fictif permettant des interactions sociales codifiées",
+      "optionD": "Une forme de cousinage privilégié dans les systèmes cognatiques",
+      "correctAnswer": "C",
+      "explanation": "Les alliances à plaisanterie sont des relations sociales codifiées entre groupes qui, bien que théoriquement interdus de mariage, entretiennent des interactions permises et ritualisées, servant de mécanisme de régulation sociale."
+    },
+    {
+      "question": "Parmi les groupes suivants, lequel est traditionnellement organisé selon un système de chefferie coutumière au Burkina Faso ?",
+      "optionA": "Les Peulh",
+      "optionB": "Les Bobo",
+      "optionC": "Les Mossi",
+      "optionD": "Les Sénoufo",
+      "correctAnswer": "C",
+      "explanation": "Le Mossi est le plus grand groupe ethnique du Burkina Faso, historiquement organisé en royaumes avec une structure monarchique complexe dirigée par le Mogho Naba."
+    },
+    {
+      "question": "Quel concept clé de l'anthropologie du développement est critiqué pour avoir opposé binairement tradition et modernité ?",
+      "optionA": "L'approche participative",
+      "optionB": "La modernisation",
+      "optionC": "L'auto-développement",
+      "optionD": "La décolonisation",
+      "correctAnswer": "B",
+      "explanation": "La théorie de la modernisation a été critiquée pour sa vision dichotomique opposant tradition et modernité, sous-estimant la dynamique interne des sociétés dites 'traditionnelles'."
+    },
+    {
+      "question": "Dans l'anthropologie économique burkinabè, quel phénomène caractérise particulièrement les marchés de Bobo-Dioulasso ?",
+      "optionA": "Le monopole d'État sur le commerce",
+      "optionB": "L'importance du troc et des échanges ritualisés",
+      "optionC": "L'exclusion des commerçants étrangers",
+      "optionD": "La spécialisation dans un seul type de produit",
+      "correctAnswer": "B",
+      "explanation": "Les marchés de Bobo-Dioulasso, notamment le grand marché, sont réputés pour leur dynamisme et l'importance des échanges économiques sociaux, incluant des dimensions ritualisées et des relations de confiance."
+    },
+    {
+      "question": "Selon Lévi-Strauss, quelle est la fonction principale du mythe dans les sociétés traditionnelles ?",
+      "optionA": "Expliquer les origines du monde",
+      "optionB": "Fournir un modèle pour les relations sociales",
+      "optionC": "Résoudre des contradictions logiques de la pensée",
+      "optionD": "Perpétuer les traditions ancestrales",
+      "correctAnswer": "C",
+      "explanation": "Pour Lévi-Strauss, le mythe fonctionne comme un mécanisme de résolution de contradictions inhérentes à la structure de la pensée humaine, révélant les logiques inconscientes de la culture."
+    },
+    {
+      "question": "Dans l'ethno-histoire du Burkina Faso, quel facteur a principalement contribué à la fragmentation politique des royaumes Mossi pendant la colonisation française ?",
+      "optionA": "Les guerres tribales internes",
+      "optionB": "La politique de 'divide and rule' des colonisateurs",
+      "optionC": "Les épidémies dévastatrices",
+      "optionD": "La conversion massive à l'islam",
+      "correctAnswer": "B",
+      "explanation": "La colonisation française a appliqué une politique de 'diviser pour régner', affaiblissant l'autorité centralisée des royaumes Mossi en favorisant des divisions locales."
+    },
+    {
+      "question": "Quelle caractéristique définit le système de filiation chez les Samo du Burkina Faso ?",
+      "optionA": "Un système strictement patrilinéaire",
+      "optionB": "Un système bilatéral avec préférence matrilinéaire",
+      "optionC": "Un système cognatique avec importance des clans",
+      "optionD": "Un système matrilinéaire avec exogamie clanique",
+      "correctAnswer": "D",
+      "explanation": "Les Samo sont organisés selon un système matrilinéaire, où la descendance suit la ligne maternelle, avec des règles d'exogamie clanique strictes."
+    },
+    {
+      "question": "Dans le contexte de l'anthropologie du patrimoine culturel burkinabè, quelle est la principale critique adressée à l'inscription des sites au patrimoine mondial UNESCO ?",
+      "optionA": "Trop de sites sont inscrits sans consultation locale",
+      "optionB": "L'inscription entraîne une uniformisation des pratiques culturelles",
+      "optionC": "Les critères négligent les savoir-faire immatériels",
+      "optionD": "L'inscription ne bénéficie pas économiquement aux communautés locales",
+      "correctAnswer": "B",
+      "explanation": "Une critique majeure est que l'inscription au patrimoine mondial peut conduire à la folklorisation et à une transformation des pratiques culturelles pour répondre aux attentes des touristes et des institutions internationales."
+    },
+    {
+      "question": "Concernant l'organisation politique Mossi, quelle est la caractéristique distinctive du Moro Naba ?",
+      "optionA": "Il est élu par un conseil de chefs de village",
+      "optionB": "Il détient un pouvoir spirituel et religieux suprême",
+      "optionC": "Son pouvoir est limité par un conseil de notables",
+      "optionD": "Il est choisi parmi les descendants directs du fondateur de l'empire",
+      "correctAnswer": "B",
+      "explanation": "Le Moro Naba, souverain des Mossi, possède un pouvoir à la fois temporel et spirituel, étant considéré comme le représentant terrestre du créateur Wende."
+    },
+    {
+      "question": "Quelle est la fonction principale de l'ardo dans la société Peulh ?",
+      "optionA": "Il est le chef spirituel responsable des rites religieux",
+      "optionB": "Il est l'arbitre dans les conflits entre éleveurs et agriculteurs",
+      "optionC": "Il est le chef politique et militaire d'un groupe",
+      "optionD": "Il est le responsable de la distribution des terres",
+      "correctAnswer": "C",
+      "explanation": "L'ardo est le chef politique et militaire d'un groupe Peulh, responsable de l'organisation de la communauté et de la défense de ses intérêts."
+    },
+    {
+      "question": "Le système d'alliance à plaisanterie Mossi-Silmi repose sur :",
+      "optionA": "Un lien de parenté par mariage",
+      "optionB": "Une relation de subordination historique",
+      "optionC": "Un échange de services rituels",
+      "optionD": "Une prohibition de mariage entre les deux groupes",
+      "correctAnswer": "C",
+      "explanation": "Le système de plaisanterie Mossi-Silmi établit des relations d'échange de services rituels, notamment lors des funérailles, créant un lien social entre ces deux groupes."
+    },
+    {
+      "question": "Les ruines de Loropéni, inscrites au patrimoine UNESCO, sont associées à :",
+      "optionA": "Un empire précolonial de commerce d'or",
+      "optionB": "Un site religieux des Dogon",
+      "optionC": "Une capitale du royaume du Ghana",
+      "optionD": "Un campement de traite négrière",
+      "correctAnswer": "A",
+      "explanation": "Les ruines de Loropéni sont les vestiges d'une forteresse associée aux routes transsahariennes de commerce d'or datant du XVe au XIXe siècle."
+    },
+    {
+      "question": "Le masque Bwa des Bobo est caractérisé par :",
+      "optionA": "Ses motifs géométriques et sa fonction d'initiation",
+      "optionB": "Ses représentations animales et son usage dans les cérémonies agricoles",
+      "optionC": "Sa forme circulaire et son rôle dans les rites funéraires",
+      "optionD": "Ses couleurs vives et sa participation aux fêtes de récolte",
+      "correctAnswer": "A",
+      "explanation": "Le masque Bwa est connu pour ses motifs géométriques et sa fonction principale dans les rituels d'initiation des jeunes."
+    },
+    {
+      "question": "Dans les rites funéraires Mossi, quelle est la croyance concernant l'âme du défunt ?",
+      "optionA": "Elle est censée réincarner immédiatement dans un nouvel enfant",
+      "optionB": "Elle reste près de la famille pendant un an",
+      "optionC": "Elle rejoint les ancêtres après des cérémonies spécifiques",
+      "optionD": "Elle est guidée par un prêtre spécialisé vers l'au-delà",
+      "correctAnswer": "C",
+      "explanation": "Selon la croyance Mossi, l'âme du défunt rejoint le monde des ancêtres après des cérémonies funéraires appropriées et des offrandes."
+    },
+    {
+      "question": "L'organisation sociale des Samo est principalement basée sur :",
+      "optionA": "Un système de castes hiérarchisées",
+      "optionB": "Des structures lignagères patrilinéaires",
+      "optionC": "Un système matrilinéal de succession",
+      "optionD": "Des alliances politiques entre villages",
+      "correctAnswer": "B",
+      "explanation": "La société Samo est organisée autour de structures lignagères patrilinéaires, où la descendance et l'héritage se font par la ligne masculine."
+    },
+    {
+      "question": "L'organisation Poro chez les Sénoufo sert principalement à :",
+      "optionA": "Contrôler le commerce transsaharien",
+      "optionB": "Former les jeunes hommes à la vie sociale et religieuse",
+      "optionC": "Gérer les conflits entre agriculteurs et éleveurs",
+      "optionD": "Organiser les cérémonies liées à la pluie",
+      "correctAnswer": "B",
+      "explanation": "La société Poro est une institution masculine chargée de l'éducation, de l'initiation et de la socialisation des jeunes garçons dans la culture Sénoufo."
+    },
+    {
+      "question": "Le marché de Koumbri au Burkina Faso est célèbre pour :",
+      "optionA": "Son commerce de sel transsaharien",
+      "optionB": "Son marché aux esclaves historique",
+      "optionC": "Son commerce de poissons du fleuve Volta",
+      "optionD": "Son marché de bétail transhumant",
+      "correctAnswer": "C",
+      "explanation": "Le marché de Koumbri est réputé pour son commerce important de poissons provenant du fleuve Volta, attirant des acheteurs de toute la région."
+    },
+    {
+      "question": "L'artisanat burkinabè en bronze est traditionnellement associé à :",
+      "optionA": "Les Mossi pour les objets rituels",
+      "optionB": "Les Bobo pour les masques",
+      "optionC": "Les Peulh pour les bijoux",
+      "optionD": " les Sénoufo pour les statuettes",
+      "correctAnswer": "A",
+      "explanation": "Les Mossi sont particulièrement connus pour leur travail du bronze, notamment pour la fabrication de figurines et d'objets rituels."
+    },
+    {
+      "question": "La société Dioula est principalement connue pour :",
+      "optionA": "Son organisation matrilinéale",
+      "optionB": "Son rôle historique dans le commerce",
+      "optionC": "Son système de chefferie centralisée",
+      "optionD": "Sa tradition de masques cérémoniels",
+      "correctAnswer": "B",
+      "explanation": "Les Dioula sont célèbre pour leur rôle traditionnel de commerçants itinérants à travers l'Afrique de l'Ouest."
+    },
+    {
+      "question": "Selon le mythe de fondation d'Ouagadougou, la princesse Yennenga est considérée comme :",
+      "optionA": "La première reine du royaume Mossi",
+      "optionB": "La mère du fondateur de Ouagadougou",
+      "optionC": "La déesse protectrice de la ville",
+      "optionD": "L'épouse du premier Naba",
+      "correctAnswer": "B",
+      "explanation": "Selon la tradition, Yennenga, une princesse guerrière, est la mère de Rialé, le fondateur légendaire d'Ouagadougou."
+    },
+    {
+      "question": "L'acculturation coloniale au Burkina Faso a principalement affecté :",
+      "optionA": "Seulement les structures politiques traditionnelles",
+      "optionB": "Exclusivement les pratiques religieuses",
+      "optionC": "Les systèmes d'éducation et de pouvoir",
+      "optionD": "Uniquement l'organisation économique",
+      "correctAnswer": "C",
+      "explanation": "La colonisation a eu un impact profond sur les systèmes d'éducation, de pouvoir et d'administration, tout en modifiant progressivement les structures sociales traditionnelles."
+    },
+    {
+      "question": "Dans l'anthropologie urbaine d'Ouagadougou, quel phénomène caractérise particulièrement la croissance de la ville ?",
+      "optionA": "Une planification urbaine rigide",
+      "optionB": "Une expansion contrôlée par l'État",
+      "optionC": "Une croissance spontanée et informelle",
+      "optionD": "Une urbanisation basée sur des modèles européens",
+      "correctAnswer": "C",
+      "explanation": "La croissance d'Ouagadougou est marquée par une expansion urbaine spontanée et informelle, avec des quartiers qui se développent sans planification officielle."
+    },
+    {
+      "question": "Les migrations Burkinaabè contemporaines sont principalement motivées par :",
+      "optionA": "Des raisons politiques exclusives",
+      "optionB": "Uniquement des facteurs environnementaux",
+      "optionC": "Une combinaison de facteurs économiques, sociaux et politiques",
+      "optionD": "Seulement des liens familiaux préexistants",
+      "correctAnswer": "C",
+      "explanation": "Les migrations burkinabè sont motivées par une complexité de facteurs incluant l'insécurité économique, les changements climatiques, les tensions politiques et les réseaux de migration."
+    },
+    {
+      "question": "Le système d'alliance à plaisanterie Bobo-Yarse repose sur :",
+      "optionA": "Un échange de services rituels lors des naissances",
+      "optionB": "Une prohibition de mariage entre les deux groupes",
+      "optionC": "Une relation de vassalité historique",
+      "optionD": "Un partage des terres agricoles",
+      "correctAnswer": "A",
+      "explanation": "Le système de plaisanterie Bobo-Yarse établit des relations d'échange de services rituels, notamment lors des naissances et des funérailles."
+    },
+    {
+      "question": "Les anciens villages fortifiés du Burkina Faso, inscrits au patrimoine UNESCO, sont situés dans la région de :",
+      "optionA": "Le Sahel",
+      "optionB": "Le Sud-Ouest",
+      "optionC": "Le Centre-Est",
+      "optionD": "Le Nord",
+      "correctAnswer": "A",
+      "explanation": "Les anciens villages fortifiés du Burkina Faso, comme those of the Lobi, sont situés dans la région du Sahel, dans le nord-ouest du pays."
+    },
+    {
+      "question": "L'artisanat des calebasses au Burkina Faso est traditionnellement associé à :",
+      "optionA": "Les Mossi pour les récipients rituels",
+      "optionB": "Les Peulh pour la décoration des maisons",
+      "optionC": "Les Bobo pour les instruments de musique",
+      "optionD": "Les Sénoufo pour les contenances alimentaires",
+      "correctAnswer": "C",
+      "explanation": "Les Bobo sont particulièrement connus pour leur travail des calebasses, notamment pour la fabrication d'instruments de musique comme le balafon."
+    },
+    {
+      "question": "L'ethnographie des Dioula montre que leur identité est principalement construite autour de :",
+      "optionA": "Une affiliation religieuse exclusive",
+      "optionB": "Une langue commerciale commune",
+      "optionC": "Un système de castes fermé",
+      "optionD": "Une organisation politique centralisée",
+      "correctAnswer": "B",
+      "explanation": "L'identité Dioula est principalement construite autour de leur langue, le Dioula, utilisée comme lingua franca dans le commerce à travers l'Afrique de l'Ouest."
+    },
+    {
+      "question": "L'organisation sociale des Peulh est traditionnellement basée sur :",
+      "optionA": "Un système de classes rigide",
+      "optionB": "Des structures tribales autonomes",
+      "optionC": "Un système de castes",
+      "optionD": "Une organisation matrilinéale",
+      "correctAnswer": "C",
+      "explanation": "La société Peulh traditionnelle est organisée autour d'un système de castes, incluant les éleveurs (rimbébé), les artisans (nyamakal) et les descendants d'esclaves (rimaybe)."
+    },
+    {
+      "question": "Quel élément constitue le cœur du pouvoir du Moro Naba dans la tradition Mossi ?",
+      "optionA": "Le contrôle des terres agricoles",
+      "optionB": "La possession du sabre royal",
+      "optionC": "La gestion du commerce transsaharien",
+      "optionD": "Le contrôle des marchés hebdomadaires",
+      "correctAnswer": "B",
+      "explanation": "Le sabre royal (ou 'bendré') est le symbole ultime du pouvoir du Moro Naba, représentant son autorité spirituelle et temporelle. Il est conservé dans un lieu sacré et ne sort que lors des cérémonies importantes."
+    },
+    {
+      "question": "Dans la société Peulh, quel titre désigne traditionnellement le chef d'un groupe pastoral nomade ?",
+      "optionA": "Ardo",
+      "optionB": "Dioro",
+      "optionC": "Almamy",
+      "optionD": "Torodbe",
+      "correctAnswer": "A",
+      "explanation": "L'Ardo est le chef traditionnel d'un groupe Peulh, responsable de la conduite du troupeau, de la résolution des conflits et de la représentation de la communauté face aux autorités."
+    },
+    {
+      "question": "Quel système d'alliance à plaisanterie relie les Mossi et les Silmi ?",
+      "optionA": "Alliance de sang",
+      "optionB": "Mariage arrangé",
+      "optionC": "Parenté à plaisanterie",
+      "optionD": "Alliance militaire",
+      "correctAnswer": "C",
+      "explanation": "La parenté à plaisanterie entre Mossi et Silmi permet des échanges de taquineries et d'insultes ritualisées, renforçant ainsi les liens sociaux entre ces deux groupes ethniques."
+    },
+    {
+      "question": "Les ruines de Loropéni, inscrites au patrimoine UNESCO, sont associées à quel ancien royaume ?",
+      "optionA": "Royaume du Ghana",
+      "optionB": "Royaume de Kong",
+      "optionC": "Royaume de Ouagadougou",
+      "optionD": "Royaume de Yatenga",
+      "correctAnswer": "B",
+      "explanation": "Les ruines de Loropéni sont les vestiges d'une ancienne mine d'or du royaume de Kong, un État précolonial qui a prospéré grâce au commerce de l'or et du sel."
+    },
+    {
+      "question": "Quel masque Bobo est utilisé lors des cérémonies pour chasser les forces maléfiques ?",
+      "optionA": "Bwa",
+      "optionB": "Nuna",
+      "optionC": "Zamble",
+      "optionD": "Wuru",
+      "correctAnswer": "A",
+      "explanation": "Le masque Bwa (ou Bwaba) est utilisé par la société des masques Bobo pour maintenir l'équilibre cosmique, chasser les mauvais esprits et assurer la fertilité des champs."
+    },
+    {
+      "question": "Dans les rites funéraires Mossi, quel élément symbolise la transition entre le monde des vivants et celui des ancêtres ?",
+      "optionA": "Le sacrifice d'un bœuf",
+      "optionB": "La lecture du Coran",
+      "optionC": "La distribution d'argent",
+      "optionD": "La offrande de mil",
+      "correctAnswer": "A",
+      "explanation": "Le sacrifice d'un bœuf lors des funérailles Mossi symbolise l'offrande aux ancêtres et marque la transition définitive du défunt vers le monde des esprits, tout en célébrant son retour dans la communauté des ancêtres."
+    },
+    {
+      "question": "Chez les Samo, quelle structure sociale fondamentale organise la vie communautaire ?",
+      "optionA": "Le clan",
+      "optionB": "Le village",
+      "optionC": "La caste",
+      "optionD": "La lignée",
+      "correctAnswer": "D",
+      "explanation": "Chez les Samo, la lignée (groupe descendant d'un ancêtre commun) est la structure sociale fondamentale qui organise la vie communautaire, détermine les droits fonciers et les responsabilités rituelles."
+    },
+    {
+      "question": "Dans l'organisation Poro des Sénoufo, quel âge marque traditionnellement l'initiation des jeunes garçons ?",
+      "optionA": "7 ans",
+      "optionB": "12 ans",
+      "optionC": "15 ans",
+      "optionD": "21 ans",
+      "correctAnswer": "B",
+      "explanation": "L'initiation Poro des jeunes Sénoufo commence généralement autour de 12 ans, marquant leur entrée dans l'âge adulte et leur intégration dans la société des hommes avec des responsabilités communautaires."
+    },
+    {
+      "question": "Quel marché traditionnel burkinabè est particulièrement réputé pour son commerce de textiles et d'artisanat ?",
+      "optionA": "Marché de Grand-Bassam",
+      "optionB": "Marché de Bobo-Dioulasso",
+      "optionC": "Marché de Ouagadougou",
+      "optionD": "Marché de Djibo",
+      "correctAnswer": "B",
+      "explanation": "Le marché de Bobo-Dioulasso est particulièrement réputé pour son commerce de textiles, d'artisanat traditionnel et de produits agricoles, reflétant sa position historique comme carrefour commercial."
+    },
+    {
+      "question": "Dans l'artisanat burkinabè, quelle technique est traditionnellement utilisée pour la fabrication de bronze ?",
+      "optionA": "Cire perdue",
+      "optionB": "Forgeage",
+      "optionC": "Moulage au sable",
+      "optionD": "Filière",
+      "correctAnswer": "A",
+      "explanation": "La technique de la cire perdue est traditionnellement utilisée pour la fabrication d'objets en bronze au Burkina Faso, permettant de créer des détails complexes et des sculptures fines."
+    },
+    {
+      "question": "Chez les Dioula, quelle institution religieuse joue un rôle central dans l'organisation sociale ?",
+      "optionA": "Le marabout",
+      "optionB": "Le conseil des anciens",
+      "optionC": "Le chef de village",
+      "optionD": "Le commerçant",
+      "correctAnswer": "A",
+      "explanation": "Chez les Dioula, le marabit (lettré musulman) joue un rôle central dans l'organisation sociale, religieuse et parfois politique, servant de guide spirituel et d'arbitre dans les conflits."
+    },
+    {
+      "question": "Selon la mythologie Mossi, qui est considéré comme le fondateur du royaume du Ouagadougou ?",
+      "optionA": "Princess Yennenga",
+      "optionB": "Naba Wubri",
+      "optionC": "Ouedraogo",
+      "optionD": "Rabi",
+      "correctAnswer": "C",
+      "explanation": "Ouedraogo, fils de Princess Yennenga et d'un chasseur Mandé, est considéré comme le fondateur du royaume du Ouagadougou et la dynastie des Mossi."
+    },
+    {
+      "question": "Quelle manifestation de l'acculturation coloniale est particulièrement visible dans l'architecture urbaine de Ouagadougou ?",
+      "optionA": "Les maisons en banco",
+      "optionB": "Les bâtiments administratifs coloniaux",
+      "optionC": "Les mosquées traditionnelles",
+      "optionD": "Les marchés couverts",
+      "correctAnswer": "B",
+      "explanation": "Les bâtiments administratifs coloniaux, construits pendant la période française, représentent une manifestation tangible de l'acculturation coloniale dans l'architecture de Ouagadougou."
+    },
+    {
+      "question": "Dans l'anthropologie urbaine de Ouagadougou, quel phénomène illustre le mieux la coexistence tradition et modernité ?",
+      "optionA": "L'extension des quartiers informels",
+      "optionB": "La coexistence des marchés traditionnels et des centres commerciaux modernes",
+      "optionC": "La prolifération des mosquées",
+      "optionD": "La construction de logements sociaux",
+      "correctAnswer": "B",
+      "explanation": "La coexistence des marchés traditionnels et des centres commerciaux modernes illustre parfaitement la coexistence entre tradition et modernité dans l'urbanisme de Ouagadougou."
+    },
+    {
+      "question": "Quel type de migration burkinabè est principalement lié aux activités minières ?",
+      "optionA": "Migration transfrontalière",
+      "optionB": "Migration interne",
+      "optionC": "Migration internationale",
+      "optionD": "Migration saisonnière",
+      "correctAnswer": "C",
+      "explanation": "La migration internationale burkinabè est principalement liée aux activités minières, avec de nombreux Burkinabè travaillant dans les mines d'or de pays voisins comme le Ghana et la Côte d'Ivoire."
+    },
+    {
+      "question": "Dans les anciens villages fortifiés du Burkina Faso, quel élément architectural est caractéristique de la défense ?",
+      "optionA": "Les portes monumentales",
+      "optionB": "Les murs d'enceinte",
+      "optionC": "Les tours d'observation",
+      "optionD": "Les fossés",
+      "correctAnswer": "B",
+      "explanation": "Les murs d'enceinte sont l'élément architectural caractéristique des anciens villages fortifiés burkinabè, servant de protection contre les raids et les conflits intercommunautaires."
+    },
+    {
+      "question": "Chez les Bobo, quel masque est associé à la société des masques et au contrôle des forces surnaturelles ?",
+      "optionA": "Bwa",
+      "optionB": "Nuna",
+      "optionC": "Zamble",
+      "optionD": "Wuru",
+      "correctAnswer": "A",
+      "explanation": "Le masque Bwa est associé à la société des masques Bobo et est utilisé pour contrôler les forces surnaturelles, maintenir l'équilibre cosmique et assurer la fertilité des terres."
+    },
+    {
+      "question": "Dans la tradition Mossi, quelle cérémonie marque le début de la saison des pluies ?",
+      "optionA": "La cérémonie du Naba",
+      "optionB": "La fête du Yenenga",
+      "optionC": "La cérémonie du Sombé",
+      "optionD": "La fête de l'indépendance",
+      "correctAnswer": "C",
+      "explanation": "La cérémonie du Sombé marque traditionnellement le début de la saison des pluies dans la culture Mossi, impliquant des rituels pour assurer une bonne récolte."
+    },
+    {
+      "question": "Chez les Peulh, quel terme désigne le groupe d'âge dans l'organisation sociale ?",
+      "optionA": "Ardo",
+      "optionB": "Dioro",
+      "optionC": "Groupe de pâture",
+      "optionD": "Dekkal",
+      "correctAnswer": "D",
+      "explanation": "Le terme 'Dekkal' désigne chez les Peulh le groupe d'âge, une structure sociale importante qui organise la vie communautaire et les activités pastorales."
+    },
+    {
+      "question": "Dans l'artisanat burkinabè, quel objet en calebasse est particulièrement utilisé pour les cérémonies traditionnelles ?",
+      "optionA": "La gourde",
+      "optionB": "Le calabash à eau",
+      "optionC": "Le calabash à bière",
+      "optionD": "Le calabash à mil",
+      "correctAnswer": "C",
+      "explanation": "Le calabash à bière est particulièrement utilisé lors des cérémonies traditionnelles burkinabè pour servir le dolo, bière de mil traditionnelle consommée lors des rituels et des fêtes."
+    }
+  ]
+}

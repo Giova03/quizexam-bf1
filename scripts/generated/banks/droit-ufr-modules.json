@@ -187,6 +187,816 @@
       "optionD": "Le droit comparé",
       "correctAnswer": "A",
       "explanation": "La méthodologie juridique: cas pratique, commentaire d'arrêt, dissertation juridique."
+    },
+    {
+      "question": "En droit constitutionnel burkinabè, quelle est la procédure de destitution du Président de la République pour haute trahison ?",
+      "optionA": "Décision de la Cour constitutionnelle après enquête",
+      "optionB": "Vote à la majorité des deux tiers de l'Assemblée nationale",
+      "optionC": "Référendum d'initiative citoyenne",
+      "optionD": "Procédure devant la Haute Cour de Justice",
+      "correctAnswer": "D",
+      "explanation": "Selon l'article 55 de la Constitution burkinabè, le Président de la République peut être destitué pour haute trahison par la Haute Cour de Justice."
+    },
+    {
+      "question": "En droit pénal général, quelle est la nature juridique de la tentative de crime ?",
+      "optionA": "Un crime accompli partiellement",
+      "optionB": "Une infraction distincte du crime tenté",
+      "optionC": "Une simple circonstance aggravante",
+      "optionD": "Une contravention spécifique",
+      "correctAnswer": "B",
+      "explanation": "La tentative de crime est une infraction autonome qui sanctionne le commencement d'exécution d'un crime n'ayant pas abouti, selon l'article 59 du Code pénal."
+    },
+    {
+      "question": "En procédure pénale, quelle est la durée maximale de la détention provisoire en droit burkinabè ?",
+      "optionA": "6 mois renouvelable une fois",
+      "optionB": "12 mois renouvelable une fois",
+      "optionC": "18 mois renouvelable une fois",
+      "optionD": "24 mois renouvelable une fois",
+      "correctAnswer": "C",
+      "explanation": "L'article 44 du Code de procédure pénale burkinabé prévoit une détention provisoire pouvant aller jusqu'à 18 mois, renouvelable une fois."
+    },
+    {
+      "question": "En droit administratif, quelle est la nature juridique d'un acte administratif unilatéral ?",
+      "optionA": "Un contrat administratif",
+      "optionB": "Une décision individuelle",
+      "optionC": "Un acte de gestion privée",
+      "optionD": "Une délibération du conseil municipal",
+      "correctAnswer": "B",
+      "explanation": "Un acte administratif unilatéral est une décision émanant d'une autorité administrative qui produit des effets juridiques sans nécessiter l'accord d'un destinataire."
+    },
+    {
+      "question": "En contentieux administratif, quelle est la compétence matérielle du Tribunal administratif ?",
+      "optionA": "Contentieux des marchés publics",
+      "optionB": "Contentieux des nationalités",
+      "optionC": "Contentieux des élections",
+      "optionD": "Contentieux des libertés publiques",
+      "correctAnswer": "A",
+      "explanation": "Le Tribunal administratif est compétent pour connaître des litiges entre les personnes publiques et les administrés, notamment les marchés publics (article 14 du Code des juridictions administratives)."
+    },
+    {
+      "question": "En droit international public, quel est le principe fondamental qui interdit l'ingérence dans les affaires intérieures d'un État ?",
+      "optionA": "Principe de souveraineté",
+      "optionB": "Principe d'égalité souveraine",
+      "optionC": "Principe de non-ingérence",
+      "optionD": "Principe de l'autodétermination",
+      "correctAnswer": "C",
+      "explanation": "Le principe de non-ingérence, consacré par la résolution 2625 de l'Assemblée générale des Nations Unies, interdit aux États de s'immiscer dans les affaires intérieures d'autres États."
+    },
+    {
+      "question": "En droit international privé, quelle est la règle de conflit de lois applicable aux obligations contractuelles dans la Convention de Rome I ?",
+      "optionA": "Loi du lieu de conclusion du contrat",
+      "optionB": "Loi du lieu d'exécution de la prestation caractéristique",
+      "optionC": "Loi de la nationalité des parties",
+      "optionD": "Loi du siège de la partie défenderesse",
+      "correctAnswer": "B",
+      "explanation": "Selon l'article 4 de la Convention de Rome I, les obligations contractuelles sont régies par la loi du pays avec lequel le contrat présente les liens les plus étroits, déterminé par la loi du lieu d'exécution de la prestation caractéristique."
+    },
+    {
+      "question": "En droit commercial général, quelle est la nature juridique de la lettre de change ?",
+      "optionA": "Un contrat de vente",
+      "optionB": "Une créance mobilisable",
+      "optionC": "Une reconnaissance de dette",
+      "optionD": "Un acte de procédure",
+      "correctAnswer": "B",
+      "explanation": "La lettre de change est un titre de créance mobilisable qui confère à son porteur un droit de créance contre le tiré (article L311-1 du Code de commerce)."
+    },
+    {
+      "question": "En droit des sociétés OHADA, quelle est la durée minimale d'exercice social pour une SARL ?",
+      "optionA": "1 an",
+      "optionB": "2 ans",
+      "optionC": "3 ans",
+      "optionD": "5 ans",
+      "correctAnswer": "A",
+      "explanation": "Selon l'article 547 du Acte uniforme OHADA sur les sociétés commerciales et groupements d'intérêt économique, l'exercice social a une durée d'un an, sauf prorogation."
+    },
+    {
+      "question": "En droit des affaires OHADA, quelle est la condition de fond essentielle pour la nullité d'une clause compromissoire ?",
+      "optionA": "L'absence de mention expresse",
+      "optionB": "La violation du principe d'égalité",
+      "optionC": "L'incompétence matérielle du tribunal arbitral",
+      "optionD": "L'absence de consentement des parties",
+      "correctAnswer": "D",
+      "explanation": "La clause compromissoire est nulle si elle n'a pas été acceptée par les parties, car elle emporte renonciation à leur droit d'agir en justice (article 1499 du Code civil OHADA)."
+    },
+    {
+      "question": "En droit des procédures collectives OHADA, quelle est la durée maximale du plan de redressement pour une entreprise en difficulté ?",
+      "optionA": "2 ans",
+      "optionB": "3 ans",
+      "optionC": "5 ans",
+      "optionD": "8 ans",
+      "correctAnswer": "C",
+      "explanation": "Selon l'article 541 du Acte uniforme OHADA sur les procédures collectives, le plan de redressement ne peut excéder 5 ans, sauf prorogation exceptionnelle."
+    },
+    {
+      "question": "En droit bancaire OHADA, quelle est la nature juridique d'un cautionnement bancaire ?",
+      "optionA": "Une sûreté réelle",
+      "optionB": "Une sûreté personnelle",
+      "optionC": "Une garantie autonome",
+      "optionD": "Une promesse de vente",
+      "correctAnswer": "B",
+      "explanation": "Le cautionnement bancaire est une sûreté personnelle où le caution s'engage à payer la dette du débiteur principal en cas de défaillance de celui-ci."
+    },
+    {
+      "question": "En droit du travail, quelle est la durée du préavis en cas de licenciement pour motif personnel d'un salarié de 10 ans d'ancienneté ?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "4 mois",
+      "correctAnswer": "C",
+      "explanation": "Selon l'article 11 du Code du travail burkinabè, le préavis de licenciement est de 1 mois pour 5 ans d'ancienneté, 2 mois pour 10 ans et 3 mois pour 15 ans."
+    },
+    {
+      "question": "En droit fiscal, quelle est la nature juridique de l'impôt ?",
+      "optionA": "Une redevance pour service",
+      "optionB": "Une contribution obligatoire",
+      "optionC": "Une amende administrative",
+      "optionD": "Une donation",
+      "correctAnswer": "B",
+      "explanation": "L'impôt est une contribution obligatoire, sans contrepartie directe, prélevée par une personne publique en vertu de son pouvoir de contrainte."
+    },
+    {
+      "question": "En droit financier et finances publiques, quelle est la différence fondamentale entre un budget de fonctionnement et un budget d'investissement ?",
+      "optionA": "Le budget de fonctionnement est voté annuellement, le budget d'investissement est pluriannuel",
+      "optionB": "Le budget de finance les dépenses courantes, le budget d'investissement finance les dépenses de capital",
+      "optionC": "Le budget de fonctionnement est obligatoire, le budget d'investissement est facultatif",
+      "optionD": "Le budget de fonctionnement est voté par le Parlement, le budget d'investissement par le gouvernement",
+      "correctAnswer": "B",
+      "explanation": "Le budget de fonctionnement finance les dépenses courantes (salaires, entretien), tandis que le budget d'investissement finance les dépenses de capital (infrastructures, équipements)."
+    },
+    {
+      "question": "En droit des obligations, quelle est la condition de validité essentielle d'un contrat ?",
+      "optionA": "La rédaction par un notaire",
+      "optionB": "Le consentement des parties",
+      "optionC": "La présence de témoins",
+      "optionD": "L'enregistrement à la conservation foncière",
+      "correctAnswer": "B",
+      "explanation": "Le consentement des parties est une condition essentielle de validité d'un contrat, selon l'article 1102 du Code civil OHADA."
+    },
+    {
+      "question": "En droit des biens, quelle est la nature juridique du droit d'usufruit ?",
+      "optionA": "Un droit réel",
+      "optionB": "Un droit personnel",
+      "optionC": "Un droit mixte",
+      "optionD": "Un droit de créance",
+      "correctAnswer": "C",
+      "explanation": "Le droit d'usufruit est un droit mixte car il comporte des caractéristiques d'un droit réel (droit de jouissance) et d'un droit personnel (droit à la restitution)."
+    },
+    {
+      "question": "En droit de la famille, quel est le principe directeur de la filiation ?",
+      "optionA": "Le principe de primauté de la filiation maternelle",
+      "optionB": "Le principe de l'intérêt supérieur de l'enfant",
+      "optionC": "Le principe de la présomption de paternité",
+      "optionD": "Le principe de l'unicité de la filiation",
+      "correctAnswer": "B",
+      "explanation": "Le principe directeur de la filiation est l'intérêt supérieur de l'enfant, consacré par l'article 355 du Code civil OHADA."
+    },
+    {
+      "question": "En procédure civile, quelle est la nature juridique de la citation ?",
+      "optionA": "Une simple notification",
+      "optionB": "Un acte d'huissier",
+      "optionC": "Un acte de procédure constitutif de juridiction",
+      "optionD": "Une requête introductive d'instance",
+      "correctAnswer": "C",
+      "explanation": "La citation est un acte d'huissier qui constitue le juge et fixe les limites du litige, selon l'article 479 du Code de procédure civile OHADA."
+    },
+    {
+      "question": "En droit des contrats, quelle est la différence entre la cause et l'objet du contrat ?",
+      "optionA": "La cause est le motif économique, l'objet est la prestation",
+      "optionB": "La cause est obligatoire, l'objet est facultatif",
+      "optionC": "La cause concerne le débiteur, l'objet le créancier",
+      "optionD": "La cause est toujours expresse, l'objet peut être tacite",
+      "correctAnswer": "A",
+      "explanation": "La cause du contrat est le motif économique qui pousse les parties à contracter, tandis que l'objet est la premutation ou la prestation due."
+    },
+    {
+      "question": "En droit de la concurrence, quelle est la nature juridique de l'entente illicite ?",
+      "optionA": "Une pratique concertée",
+      "optionB": "Une abuse de position dominante",
+      "optionC": "Une concentration économique",
+      "optionD": "Une publicité mensongère",
+      "correctAnswer": "A",
+      "explanation": "L'entente illicite est une pratique concertée entre concurrents qui fausse le jeu de la concurrence, prohibée par l'article 101 du Traité sur le fonctionnement de l'Union européenne."
+    },
+    {
+      "question": "En droit constitutionnel burkinabè, quel organe est chargé de la surveillance du respect des principes constitutionnels et de la protection des droits fondamentaux ?",
+      "optionA": "Le Conseil Constitutionnel",
+      "optionB": "La Cour de Cassation",
+      "optionC": "La Cour des Comptes",
+      "optionD": "Le Haut Conseil de la Communication",
+      "correctAnswer": "A",
+      "explanation": "Le Conseil Constitutionnel burkinabè est l'organe chargé de la surveillance du respect des principes constitutionnels et de la protection des droits fondamentaux, conformément à l'article 141 de la Constitution."
+    },
+    {
+      "question": "En droit pénal général, quels sont les éléments constitutifs du crime ?",
+      "optionA": "L'intention, l'acte et le résultat",
+      "optionB": "Le dol, l'élément matériel et l'élément moral",
+      "optionC": "La faute, le dommage et le lien de causalité",
+      "optionD": "La préméditation, l'action et les circonstances aggravantes",
+      "correctAnswer": "B",
+      "explanation": "Les éléments constitutifs du crime sont le dol (élément moral), l'élément matériel (l'acte et le résultat) et l'élément légal (la qualification juridique)."
+    },
+    {
+      "question": "En droit administratif, quel est le régime juridique des actes administratifs unilatéraux ?",
+      "optionA": "Ils sont soumis au droit privé",
+      "optionB": "Ils sont soumis au droit administratif",
+      "optionC": "Ils sont soumis au droit pénal",
+      "optionD": "Ils sont soumis au droit constitutionnel",
+      "correctAnswer": "B",
+      "explanation": "Les actes administratifs unilatéraux sont soumis au droit administratif, qui régit leur validité, leur forme et leurs effets."
+    },
+    {
+      "question": "En contentieux administratif, quelle est la compétence de la juridiction administrative pour le contentieux de la responsabilité sans faute de l'administration ?",
+      "optionA": "Le juge judiciaire",
+      "optionB": "Le juge administratif",
+      "optionC": "Le juge constitutionnel",
+      "optionD": "Le juge pénal",
+      "correctAnswer": "B",
+      "explanation": "Le juge administratif est compétent pour le contentieux de la responsabilité sans faute de l'administration, conformément à la théorie du risque administratif."
+    },
+    {
+      "question": "En droit international public, quelle est la différence entre un traité et une convention ?",
+      "optionA": "Un traité est toujours bilatéral, une convention est multilatérale",
+      "optionB": "Il n'y a pas de différence juridique",
+      "optionC": "Un traité est plus formel qu'une convention",
+      "optionD": "Une convention est toujours commerciale, un traité peut être politique",
+      "correctAnswer": "B",
+      "explanation": "Sur le plan juridique, il n'y a pas de différence entre un traité et une convention. Les deux sont des accords internationaux ayant la même force obligatoire."
+    },
+    {
+      "question": "En droit international privé, quelle règle de conflit de lois s'applique en cas de mariage entre personnes de nationalités différentes ?",
+      "optionA": "La loi du lieu de célébration",
+      "optionB": "La loi nationale commune",
+      "optionC": "La loi du domicile conjugal",
+      "optionD": "La loi du premier État dont l'un des époux est national",
+      "correctAnswer": "A",
+      "explanation": "En droit international privé, la règle de conflit de lois applicable au mariage est généralement la loi du lieu de célébration, conformément à l'article 144 du Code civil français."
+    },
+    {
+      "question": "En droit des affaires OHADA, quel est le délai de prescription des actions en responsabilité des dirigeants sociaux ?",
+      "optionA": "3 ans",
+      "optionB": "5 ans",
+      "optionC": "10 ans",
+      "optionD": "30 ans",
+      "correctAnswer": "A",
+      "explanation": "Le délai de prescription des actions en responsabilité des dirigeants sociaux est de 3 ans, conformément à l'article 122 du Code OHADA des sociétés commerciales et du groupement d'intérêt économique."
+    },
+    {
+      "question": "En droit fiscal, quel est le régime d'imposition applicable aux plus-values réalisées par les particuliers sur la cession de valeurs mobilières ?",
+      "optionA": "Impôt sur le revenu au barème progressif",
+      "optionB": "Prélèvement forfaitaire unique (flat tax)",
+      "optionC": "Impôt sur la fortune immobilière",
+      "optionD": "Taxe sur les plus-values professionnelles",
+      "correctAnswer": "B",
+      "explanation": "Les plus-values réalisées par les particuliers sur la cession de valeurs mobilières sont soumises au prélèvement forfaitaire unique (flat tax) de 30%."
+    },
+    {
+      "question": "En droit financier et finances publiques, quelle est la différence entre un budget déficitaire et un budget équilibré ?",
+      "optionA": "Un budget déficitaire a des recettes inférieures aux dépenses, un budget équilibré a des recettes égales aux dépenses",
+      "optionB": "Un budget déficitaire a des dépenses inférieures aux recettes, un budget équilibré a des dépenses égales aux recettes",
+      "optionC": "Un budget déficitaire est annulé, un budget équilibré est voté",
+      "optionD": "Un budget déficitaire est voté, un budget équilibré est rejeté",
+      "correctAnswer": "A",
+      "explanation": "Un budget déficitaire a des recettes inférieures aux dépentes, ce qui entraîne un besoin de financement, tandis qu'un budget équilibré a des recettes égales aux dépenses."
+    },
+    {
+      "question": "En droit des obligations, quelle est la nature de l'obligation naturelle ?",
+      "optionA": "Elle est toujours sanctionnée par une peine",
+      "optionB": "Elle n'est pas sanctionnée par une action en justice",
+      "optionC": "Elle est toujours contractuelle",
+      "optionD": "Elle est toujours délictuelle",
+      "correctAnswer": "B",
+      "explanation": "L'obligation naturelle n'est pas sanctionnée par une action en justice, mais elle peut être invoquée en justice pour obtenir la reconnaissance de sa réalité ou pour obtenir des intérêts."
+    },
+    {
+      "question": "En droit des biens, quelle est la différence entre la propriété et la possession ?",
+      "optionA": "La propriété implique un titre, la possession non",
+      "optionB": "La propriété est un droit réel, la possession est une situation de fait",
+      "optionC": "La propriété est toujours immobilière, la possession peut être mobilière",
+      "optionD": "La possession est un droit réel, la propriété est une situation de fait",
+      "correctAnswer": "B",
+      "explanation": "La propriété est un droit réel qui confère un ensemble de pouvoirs sur une chose, tandis que la possession est une situation de fait caractérisée par la détention et le contrôle de la chose."
+    },
+    {
+      "question": "En droit constitutionnel burkinabè, quelle est la nature juridique du référendum d'initiative populaire selon la Constitution de 2022 ?",
+      "optionA": "Il s'agit d'un référendum consultatif",
+      "optionB": "Il s'agit d'un référendum obligatoire pour certaines révisions constitutionnelles",
+      "optionC": "Il s'agit d'un référendum mixte à la fois consultatif et décisionnel",
+      "optionD": "Il n'existe pas de référendum d'initiative populaire dans la Constitution burkinabè",
+      "correctAnswer": "B",
+      "explanation": "Selon l'article 114 de la Constitution burkinabè de 2022, le référendum est obligatoire pour certaines révisions constitutionnelles et peut être initié par le Président de la République ou par le Parlement."
+    },
+    {
+      "question": "En droit pénal général, la théorie de l'erreur de droit permet d'exclure la culpabilité lorsque l'agent ignore une disposition pénale. Selon la jurisprudence de la Cour de cassation française, cette théorie s'applique-t-elle à l'erreur sur la pénalité de l'acte ?",
+      "optionA": "Oui, l'erreur sur la pénalité de l'acte suffit toujours à exclure la culpabilité",
+      "optionB": "Non, l'erreur sur la pénalité de l'acte ne peut jamais exclure la culpabilité",
+      "optionC": "Oui, mais uniquement lorsque l'erreur est excusable et non due à une négligence",
+      "optionD": "Non, sauf dans les cas où l'erreur résulte d'une interprétation erronée d'une jurisprudence récente",
+      "correctAnswer": "C",
+      "explanation": "La Cour de cassation admet l'erreur de droit comme cause d'exclusion de la culpabilité, mais uniquement lorsque cette erreur est excusable, c'est-à-dire lorsque l'agent n'a pu connaître la norme pénale malgré des recherches raisonnables. L'erreur sur la pénalité de l'acte doit donc être excusable pour entraîner l'impunité."
+    },
+    {
+      "question": "En procédure pénale française, quelle est la nature juridique de la comparution sur reconnaissance préalable de culpabilité (CRPC) ?",
+      "optionA": "Une procédure de jugement contradictoire",
+      "optionB": "Une transaction pénale",
+      "optionC": "Une composition pénale",
+      "optionD": "Une procédure de plaider coupable",
+      "correctAnswer": "D",
+      "explanation": "La CRPC est une procédure de plaider coupable introduite par la loi du 9 septembre 2004. Elle permet à une personne ayant commis une infraction de reconnaître sa culpabilité devant le juge et d'obtenir une peine fixée par accord entre les parties, sans procédure contradictoire classique."
+    },
+    {
+      "question": "En droit administratif, quel est le régime juridique applicable aux actes administratifs unilatéraux non réglementaires ?",
+      "optionA": "Ils sont soumis au droit commun des contrats administratifs",
+      "optionB": "Ils relèvent de la compétence du juge judiciaire",
+      "optionC": "Ils sont soumis au droit commun des actes administratifs",
+      "optionD": "Ils sont soumis à un régime dérogatoire spécifique",
+      "correctAnswer": "C",
+      "explanation": "Les actes administratifs unilatéraux non réglementaires (décisions individuelles) sont soumis au droit commun des actes administratifs, qui comprend les conditions de leur validité (compétence, forme, procédure) et leur contrôle par le juge administratif."
+    },
+    {
+      "question": "En droit international privé, quelle est la règle de conflit de lois applicable à la validité d'un mariage selon la Convention de La Haye du 14 mars 1978 sur la célébration et la reconnaissance de la validité des mariages ?",
+      "optionA": "La loi du lieu de la célébration du mariage",
+      "optionB": "La loi de la nationalité des époux",
+      "optionC": "La loi du domicile commun des époux",
+      "optionD": "La loi du domicile de l'épouse",
+      "correctAnswer": "A",
+      "explanation": "La Convention de La Haye de 1978 établit la règle de conflit de lois selon laquelle la validité d'un mariage est soumise à la loi du lieu de sa célébration, sauf exceptions prévues par la convention."
+    },
+    {
+      "question": "En droit des procédures collectives OHADA, quel est l'effet de la déclaration de redressement judiciaire sur les créances antérieures à cette déclaration ?",
+      "optionA": "Les créances antérieures sont éteintes",
+      "optionB": "Les créances antérieures sont suspendues",
+      "optionC": "Les créances antérieures sont payées intégralement",
+      "optionD": "Les créances antérieures sont transformées en actions",
+      "correctAnswer": "B",
+      "explanation": "En droit OHADA, la déclaration de redressement judiciaire a pour effet de suspendre l'exercice des actions en justice et les poursuites individuelles relatives aux créances antérieures à cette déclaration, afin de permettre l'apurement du passif dans le cadre de la procédure collective."
+    },
+    {
+      "question": "En droit fiscal français, quel est le régime d'imposition applicable aux plus-values réalisées par les particuliers sur la cession de valeurs mobilières ?",
+      "optionA": "Imposition au barème progressif de l'impôt sur le revenu",
+      "optionB": "Prélèvement forfaitaire unique (flat tax) à 30%",
+      "optionC": "Imposition au taux proportionnel de 19%",
+      "optionD": "Option entre le barème progressif et le prélèvement forfaitaire unique",
+      "correctAnswer": "D",
+      "explanation": "Les particuliers ont le choix entre l'imposition au barème progressif de l'impôt sur le revenu et le prélèvement forfaitaire unique (flat tax) de 30% (17,2% d'impôt et 12,8% de prélèvements sociaux) pour les plus-values sur valeurs mobilières."
+    },
+    {
+      "question": "En droit du travail burkinabè, quelle est la durée maximale du contrat à durée déterminée (CDD) pour un motif saisonnier ?",
+      "optionA": "Trois (3) mois",
+      "optionB": "Six (6) mois",
+      "optionC": "Neuf (9) mois",
+      "optionD": "Douze (12) mois",
+      "correctAnswer": "B",
+      "explanation": "Selon le Code du travail burkinabè, la durée maximale d'un CDD pour un motif saisonnier est de six (6) mois. Cette durée peut être renouvelée une fois lorsque la nature des tâches justifie une continuité du service."
+    },
+    {
+      "question": "En droit de l'environnement burkinabè, quelle est la peine encourue par une personne physique ayant commis une infraction de pollution des eaux ?",
+      "optionA": "Une amende de 100 000 à 500 000 F CFA",
+      "optionB": "Une amende de 500 000 à 2 000 000 F CFA",
+      "optionC": "Une amende de 2 000 000 à 5 000 000 F CFA",
+      "optionD": "Une amende de 5 000 000 à 10 000 000 F CFA",
+      "correctAnswer": "C",
+      "explanation": "Selon le Code de l'environnement burkinabè, les personnes physiques coupables de pollution des eaux encourent une amende de 2 000 000 à 5 000 000 F CFA, sans préjudice des peines d'emprisonnement prévues."
+    },
+    {
+      "question": "Quelle est la particularité de la responsabilité des associés dans une SARL conformément au droit OHADA ?",
+      "optionA": "Les associés sont responsables indéfiniment et solidairement",
+      "optionB": "La responsabilité des associés est limitée à leurs apports",
+      "optionC": "Les associés répondent des dettes sociales à hauteur du double de leur apport",
+      "optionD": "La responsabilité des associés est illimitée mais non solidaire",
+      "correctAnswer": "B",
+      "explanation": "Dans une SARL, la responsabilité des associés est limitée à leurs apports, conformément à l'article 517 du Acte uniforme OHADA sur le droit des sociétés commerciales et du groupement d'intérêt économique."
+    },
+    {
+      "question": "En matière de procédures collectives OHADA, quelle est la durée maximale du redressement judiciaire ?",
+      "optionA": "6 mois",
+      "optionB": "12 mois",
+      "optionC": "24 mois",
+      "optionD": "36 mois",
+      "correctAnswer": "D",
+      "explanation": "L'article 584 de l'Acte uniforme OHADA sur les procédures collectives d'exécution prévoit une durée maximale de redressement judiciaire de 36 mois, renouvelable une fois par décision du juge."
+    },
+    {
+      "question": "Quelle est la nature du cautionnement bancaire dans le droit OHADA ?",
+      "optionA": "Un contrat à titre gratuit",
+      "optionB": "Un contrat réel",
+      "optionC": "Un contrat consensuel et accessoire",
+      "optionD": "Un contrat solennel",
+      "correctAnswer": "C",
+      "explanation": "Le cautionnement bancaire est un contrat consensuel (basé sur l'accord des parties) et accessoire (dépendant de l'existence d'une obligation principale), conformément aux articles 317 et suivants de l'Acte uniforme OHADA sur les sûretés."
+    },
+    {
+      "question": "Selon le droit OHADA de l'arbitrage, quelle est la nature de la sentence arbitrale ?",
+      "optionA": "Elle a valeur d'acte notarié",
+      "optionB": "Elle a autorité de la chose jugée",
+      "optionC": "Elle constitue une simple recommandation",
+      "optionD": "Elle n'a aucun effet contraignant",
+      "correctAnswer": "B",
+      "explanation": "Conformément à l'article 41 de l'Acte uniforme OHADA sur le droit de l'arbitrage, la sentence arbitrale a autorité de la chose jugée au même titre qu'un jugement de tribunal."
+    },
+    {
+      "question": "En droit civil burkinabè, quel régime matrimonial est présumé en l'absence de contrat de mariage ?",
+      "optionA": "Séparation de biens",
+      "optionB": "Participation aux acquêts",
+      "optionC": "Communauté réduite aux acquêts",
+      "optionD": "Régime légal de la communauté",
+      "correctAnswer": "D",
+      "explanation": "Selon l'article 213 du Code civil burkinabè, en l'absence de contrat de mariage, les époux sont soumis au régime légal de la communauté."
+    },
+    {
+      "question": "Quelle est la peine maximale prévue par le droit pénal burkinabè pour le vol simple avec circonstances aggravantes ?",
+      "optionA": "5 ans d'emprisonnement",
+      "optionB": "10 ans d'emprisonnement",
+      "optionC": "15 ans d'emprisonnement",
+      "optionD": "20 ans d'emprisonnement",
+      "correctAnswer": "B",
+      "explanation": "L'article 313 du Code pénal burkinabè prévoit une peine de 5 à 10 ans d'emprisonnement pour le vol simple avec circonstances aggravantes."
+    },
+    {
+      "question": "En procédure pénale burkinabè, quelle est la nature de la détention préventive ?",
+      "optionA": "Une peine principale",
+      "optionB": "Une mesure de sûreté",
+      "optionC": "Une mesure provisoire",
+      "optionD": "Une sanction disciplinaire",
+      "correctAnswer": "C",
+      "explanation": "La détention préventive est une mesure provisoire destinée à assurer la comparution de la personne ou à maintenir l'ordre public, conformément à l'article 59 du Code de procédure pénale burkinabè."
+    },
+    {
+      "question": "Quelle est la caractéristique essentielle du domaine public en droit administratif burkinabè ?",
+      "optionA": "La destination publique",
+      "optionB": "La propriété de l'État",
+      "optionC": "L'affectation à un service public",
+      "optionD": "L'inaliénabilité",
+      "correctAnswer": "A",
+      "explanation": "La caractéristique essentielle du domaine public est la destination publique, conformément à l'article 5 de la loi n°022-2005/AN portant régime des biens de l'État."
+    },
+    {
+      "question": "Quel est le délai de recours contentieux contre un acte administratif en droit burkinabè ?",
+      "optionA": "30 jours",
+      "optionB": "60 jours",
+      "optionC": "90 jours",
+      "optionD": "120 jours",
+      "correctAnswer": "C",
+      "explanation": "Le délai de recours contentieux contre un acte administratif est de 90 jours, conformément à l'article 14 du Code de justice administrative burkinabè."
+    },
+    {
+      "question": "Quelle est la condition de validité d'un traité international selon le droit international public ?",
+      "optionA": "L'accord verbal des parties",
+      "optionB": "La conformité avec le droit interne des États",
+      "optionC": "La conformité avec le droit international",
+      "optionD": "L'approbation par le parlement",
+      "correctAnswer": "C",
+      "explanation": "La condition de validité essentielle d'un traité international est sa conformité avec le droit international (jus cogens), conformément à l'article 26 de la Convention de Vienne sur le droit des traités."
+    },
+    {
+      "question": "Quelle est la base légale de la TVA au Burkina Faso ?",
+      "optionA": "Le Code des impôts",
+      "optionB": "Le Code général des impôts",
+      "optionC": "La loi n°006-2014/AN",
+      "optionD": "Le Code fiscal OHADA",
+      "correctAnswer": "B",
+      "explanation": "La TVA au Burkina Faso est régie par le Code général des impôts, qui a été modifié par la loi n°006-2014/AN."
+    },
+    {
+      "question": "Quelle est la durée minimale de cotisations de sécurité sociale pour bénéficier d'une pension de retraite au Burkina Faso ?",
+      "optionA": "5 ans",
+      "optionB": "10 ans",
+      "optionC": "15 ans",
+      "optionD": "20 ans",
+      "correctAnswer": "C",
+      "explanation": "Conformément à l'article 87 du Code de la sécurité sociale burkinabè, la durée minimale de cotisations pour bénéficier d'une pension de retraite est de 15 ans."
+    },
+    {
+      "question": "En droit de l'environnement burkinabè, quelle est la peine pour le braconnage d'espèces protégées ?",
+      "optionA": "Amende de 100 000 à 500 000 FCFA",
+      "optionB": "Emprisonnement de 6 mois à 2 ans",
+      "optionC": "Amende de 500 000 à 2 000 000 FCFA et emprisonnement de 1 à 5 ans",
+      "optionD": "Confiscation du bien et amende égale au double de la valeur",
+      "correctAnswer": "C",
+      "explanation": "L'article 47 du Code forestier burkinabè prévoit une amende de 500 000 à 2 000 000 FCFA et emprisonnement de 1 à 5 ans pour le braconnage d'espèces protégées."
+    },
+    {
+      "question": "Quelle est la règle successorale applicable dans les coutumes Mossi au Burkina Faso ?",
+      "optionA": "La primogéniture masculine",
+      "optionB": "L'égalité entre héritiers",
+      "optionC": "La préférence masculine",
+      "optionD": "L'exclusion totale des femmes",
+      "correctAnswer": "C",
+      "explanation": "Dans la couture Mossi, la règle successorale est caractérisée par la préférence masculine, les fils héritant en priorité sur les filles, conformément aux coutumes traditionnelles."
+    },
+    {
+      "question": "En droit des sociétés OHADA, quelle est la condition de fondation d'une SA ?",
+      "optionA": "Au moins 3 associés",
+      "optionB": "Un capital minimum de 1 000 000 FCFA",
+      "optionC": "Un apport en numéraire d'au moins 100 000 FCFA",
+      "optionD": "La désignation d'un commissaire aux comptes",
+      "correctAnswer": "A",
+      "explanation": "Conformément à l'article 92 de l'Acte uniforme OHADA sur le droit des sociétés commerciales, une SA doit être fondée par au moins 3 associés."
+    },
+    {
+      "question": "Quelle est la nature de la procédure de liquidation judiciaire en droit OHADA ?",
+      "optionA": "Une procédure de conciliation",
+      "optionB": "Une procédure de redressement",
+      "optionC": "Une procédure de cessation d'activité",
+      "optionD": "Une procédure de sauvegarde",
+      "correctAnswer": "C",
+      "explanation": "La liquidation judiciaire est une procédure de cessation d'activité destinée à mettre fin à l'entreprise et à réaliser son patrimoine, conformément à l'article 622 de l'Acte uniforme OHADA."
+    },
+    {
+      "question": "En droit bancaire OHADA, quelle est la condition pour qu'une banque soit autorisée à opérer ?",
+      "optionA": "Un capital minimum de 1 milliard de FCFA",
+      "optionB": "L'approbation du Ministère des Finances",
+      "optionC": "L'obtention d'une agrément de la Banque centrale des États de l'Afrique de l'Ouest (BCEAO)",
+      "optionD": "La création d'une filiale dans chaque pays membre",
+      "correctAnswer": "C",
+      "explanation": "Conformément à l'article 3 de l'Acte uniforme OHADA relatif au droit bancaire et du crédit, toute banque doit obtenir un agrément de la Banque centrale des États de l'Afrique de l'Ouest (BCEAO)."
+    },
+    {
+      "question": "En droit des sûretés OHADA, quelle est la nature du gage ?",
+      "optionA": "Une sûreté personnelle",
+      "optionB": "Une sûreté réelle mobilière",
+      "optionC": "Une sûreté réelle immobilière",
+      "optionD": "Une sûreté légale",
+      "correctAnswer": "B",
+      "explanation": "Le gage est une sûreté réelle mobilière, consistant en la mise en gage de biens meubles pour garantir une dette, conformément à l'article 1014 de l'Acte uniforme OHADA sur les sûretés."
+    },
+    {
+      "question": "Quelle est la compétence matérielle du Tribunal administratif du Burkina Faso ?",
+      "optionA": "Les litiges entre l'État et les personnes publiques",
+      "optionB": "Les litiges entre l'État et les personnes privées",
+      "optionC": "Les litiges entre personnes publiques",
+      "optionD": "Les litiges entre personnes privées",
+      "correctAnswer": "B",
+      "explanation": "Le Tribunal administratif du Burkina Faso est compétent pour connaître des litiges entre l'État et les personnes privées, conformément à l'article 1er de la loi n°015-2005/AN portant organisation de la justice administrative."
+    },
+    {
+      "question": "Quelle est la particularité de la constitution d'une Société Anonyme (SA) selon le droit OHADA?",
+      "optionA": "Elle peut être constituée par une seule personne",
+      "optionB": "Le capital social doit être intégralement libéré à la constitution",
+      "optionC": "Elle peut avoir un objet social illimité",
+      "optionD": "Elle ne peut émettre d'actions qu'après 5 ans d'existence",
+      "correctAnswer": "A",
+      "explanation": "Selon l'Acte Uniforme OHADA sur le droit des sociétés commerciales et du Groupement d'Intérêt Économique, une SA peut être constituée par une seule personne (personne morale ou physique), contrairement à certaines autres législations qui imposent un minimum de deux fondateurs."
+    },
+    {
+      "question": "Quelle est la durée maximale du redressement judiciaire prévue par le droit OHADA?",
+      "optionA": "3 ans",
+      "optionB": "5 ans",
+      "optionC": "8 ans",
+      "optionD": "10 ans",
+      "correctAnswer": "C",
+      "explanation": "L'Acte Uniforme OHADA sur les procédures collectives prévoit une durée maximale de 8 ans pour le redressement judiciaire, pouvant être prolongée par le tribunal dans des conditions exceptionnelles."
+    },
+    {
+      "question": "Quelle est la nature juridique du cautionnement dans le droit des sûretés OHADA?",
+      "optionA": "Un contrat réel",
+      "optionB": "Un contrat consensuel",
+      "optionC": "Un contrat solennel",
+      "optionD": "Un contrat unilatéral",
+      "correctAnswer": "B",
+      "explanation": "Le cautionnement est un contrat consensuel selon le droit OHADA, qui se forme par le seul accord des volontés du créancier, du débiteur et du caution, sans formalisme particulier (sauf exception pour le cautionnement immobilier qui doit être écrit)."
+    },
+    {
+      "question": "Quelle est la règle applicable à la compétence matérielle en matière d'arbitrage selon le droit OHADA?",
+      "optionA": "Le juge étatique conserve toujours la compétence",
+      "optionB": "Le tribunal arbitral est compétent même en cas nullité du compromis",
+      "optionC": "La compétence du tribunal arbitral est exclusive",
+      "optionD": "La compétence peut être dévolue au juge étatique si le compromis est nul",
+      "correctAnswer": "C",
+      "explanation": "L'Acte Uniforme OHADA sur le droit de l'arbitrage prévoit que la compétence du tribunal arbitral est exclusive et que le juge étatique ne peut intervenir que dans des cas limités prévus par la loi, notamment pour constater la nullité du compromis d'arbitrage."
+    },
+    {
+      "question": "Quelle est la règle successorale applicable aux biens immobiliers en droit civil burkinabè?",
+      "optionA": "La loi du lieu de situation des biens",
+      "optionB": "La loi nationale du défunt",
+      "optionC": "La loi du dernier domicile du défunt",
+      "optionD": "La loi du for",
+      "correctAnswer": "A",
+      "explanation": "En droit international privé burkinabè, les successions immobiliers sont régies par la loi du lieu de situation des biens (lex rei sitae), conformément au principe de territorialité des biens immobiliers."
+    },
+    {
+      "question": "Quel est le délai de prescription des crimes contre les personnes selon le droit pénal burkinabè?",
+      "optionA": "10 ans",
+      "optionB": "20 ans",
+      "optionC": "30 ans",
+      "optionD": "Aucune prescription",
+      "correctAnswer": "D",
+      "explanation": "Selon le Code pénal burkinabè, les crimes contre les personnes (meurtre, assassinat, empoisonnement, etc.) ne sont pas prescriptibles, conformément à la tendance internationale moderne concernant les crimes les plus graves."
+    },
+    {
+      "question": "Quelle est la nature juridique du juge d'instruction dans la procédure pénale burkinabè?",
+      "optionA": "Un juge du siège",
+      "optionB": "Un juge de l'accusation",
+      "optionC": "Un juge mixte",
+      "optionD": "Un juge spécialisé",
+      "correctAnswer": "B",
+      "explanation": "Le juge d'instruction en droit pénal burkinabè est un juge de l'accusation, chargé de rechercher la vérité et de déterminer les responsabilités pénales, avec une mission plus proche du ministère public que du juge du fond."
+    },
+    {
+      "question": "Quelle est la caractéristique essentielle du domaine public selon le droit administratif des biens?",
+      "optionA": "Il est inaliénable",
+      "optionB": "Il est imprescriptible",
+      "optionC": "Il est insaisissable",
+      "optionD": "Toutes ces réponses",
+      "correctAnswer": "D",
+      "explanation": "Le domaine public, selon la jurisprudence administrative burkinabè, présente trois caractéristiques essentielles : il est inaliénable, imprescriptible et insaisissable, qui découlent de son affectation d'intérêt général."
+    },
+    {
+      "question": "Quelle est la compétence du Tribunal administratif burkinabè?",
+      "optionA": "Contentieux de la fonction publique",
+      "optionB": "Contentieux des marchés publics",
+      "optionC": "Contentieux de la responsabilité sans faute de l'État",
+      "optionD": "Toutes ces réponses",
+      "correctAnswer": "D",
+      "explanation": "Le Tribunal administratif burkinabè est compétent pour connaître des litiges entre l'administration et les administrés, y compris le contentieux de la fonction publique, des marchés publics et de la responsabilité sans faute de l'État."
+    },
+    {
+      "question": "Quelle est la règle de primauté en droit international public selon la Convention de Vienne sur le droit des traités?",
+      "optionA": "Le traité prime sur le droit interne",
+      "optionB": "Le droit interne prime sur le traité",
+      "optionC": "Le traité et le droit interne ont même valeur",
+      "optionD": "La primauté dépend de la nature du traité",
+      "correctAnswer": "A",
+      "explanation": "L'article 27 de la Convention de Vienne sur le droit des traités établit le principe de la bonne foi des États, impliquant qu'ils ne peuvent invoquer les dispositions de leur droit interne pour justifier le non-respect d'un traité international."
+    },
+    {
+      "question": "Quelle est la règle applicable en cas de conflit de lois en matière de divorce selon le droit international privé burkinabè?",
+      "optionA": "La loi du domicile commun",
+      "optionB": "La loi du for",
+      "optionC": "La loi nationale des époux",
+      "optionD": "La loi du premier domicile conjugal",
+      "correctAnswer": "A",
+      "explanation": "En droit international privé burkinabè, le divorce est soumis à la loi du dernier domicile commun des époux, conformément aux principes de stabilité et d'unité de la famille."
+    },
+    {
+      "question": "Quelle est la base légale de l'impôt sur le revenu des personnes physiques au Burkina Faso?",
+      "optionA": "Le Code des impôts",
+      "optionB": "Le Code général des impôts",
+      "optionC": "Le Code fiscal burkinabè",
+      "optionD": "La Loi de finances",
+      "correctAnswer": "C",
+      "explanation": "L'impôt sur le revenu des personnes physiques au Burkina Faso est principalement régi par le Code fiscal burkinabè, qui détermine les assiettes, les taux et les procédures d'imposition."
+    },
+    {
+      "question": "Quelle est la nature juridique des cotisations de sécurité sociale selon le droit de la sécurité sociale burkinabè?",
+      "optionA": "Des impôts",
+      "optionB": "Des contributions",
+      "optionC": "Des taxes",
+      "optionD": "Des amendes",
+      "correctAnswer": "B",
+      "explanation": "Les cotisations de sécurité sociale au Burkina Faso sont de nature contributive, c'est-à-dire qu'elles sont assises sur les salaires et servent à financer les prestations sociales, contrairement aux impôts qui financent le budget de l'État."
+    },
+    {
+      "question": "Quelle est la règle applicable en matière de successions ab intestat selon le droit coutumier burkinabè?",
+      "optionA": "La loi du dernier domicile du défunt",
+      "optionB": "La coutume du groupe ethnique du défunt",
+      "optionC": "La loi du lieu des biens",
+      "optionD": "La loi du for",
+      "correctAnswer": "B",
+      "explanation": "En droit coutumier burkinabè, les successions ab intestat sont régies par la coutume du groupe ethnique auquel appartenait le défunt, conformément au principe de l'application des coutumes dans les matières de droit privé."
+    },
+    {
+      "question": "Quelle est la sanction prévue par le Code forestier burkinabè pour l'exploitation illégale de bois précieux?",
+      "optionA": "Une amende de 100 000 à 500 000 F CFA",
+      "optionB": "Une amende de 500 000 à 5 000 000 F CFA et une peine de prison de 1 à 5 ans",
+      "optionC": "Une amende de 1 000 000 à 10 000 000 F CFA",
+      "optionD": "Une amende égale au double de la valeur du bois exploité",
+      "correctAnswer": "B",
+      "explanation": "Le Code forestier burkinabè prévoit des sanctions particulièrement sévères pour l'exploitation illégale de bois précieux, comprenant une amende de 500 000 à 5 000 000 F CFA et une peine de prison de 1 à 5 ans."
+    },
+    {
+      "question": "Quelle est la caractéristique essentielle de la responsabilité du fait des produits défectueux selon le droit OHADA?",
+      "optionA": "Elle est fondée sur la faute",
+      "optionB": "Elle est objective",
+      "optionC": "Elle est contractuelle",
+      "optionD": "Elle est subsidiaire",
+      "correctAnswer": "B",
+      "explanation": "La responsabilité du fait des produits défectueux selon le droit OHADA est une responsabilité objective, ne nécessitant pas la preuve d'une faute du producteur, mais seulement l'existence d'un défaut du produit ayant causé un dommage."
+    },
+    {
+      "question": "Quelle est la règle applicable à la dissolution judiciaire d'une Société en Commandite Simple (SCS) selon le droit OHADA?",
+      "optionA": "Elle ne peut être ordonnée que pour cause de lèse-majesté",
+      "optionB": "Elle peut être ordonnée pour tout motif légitime",
+      "optionC": "Elle est impossible sauf faute grave des gérants",
+      "optionD": "Elle nécessite l'unanimité des associés commandités",
+      "correctAnswer": "B",
+      "explanation": "L'Acte Uniforme OHADA sur le droit des sociétés commerciales prévoit que la dissolution judiciaire d'une SCS peut être ordonnée par le tribunal pour tout motif légitime, notamment lorsque l'objet de la société est devenu impossible ou que l'intérêt des associés est gravement compromis."
+    },
+    {
+      "question": "Quelle est la nature du recours en cassation devant la Cour de cassation burkinabè?",
+      "optionA": "Un recurs de droit commun",
+      "optionB": "Un recurs d'annulation",
+      "optionC": "Un recurs de pur droit",
+      "optionD": "Un recurs de pleine juridiction",
+      "correctAnswer": "C",
+      "explanation": "Le recours en cassation devant la Cour de cassation burkinabè est un recours de pur droit, qui ne porte pas sur le fond de l'affaire mais sur l'interprétation du droit et le respect des formes substantielles de la procédure."
+    },
+    {
+      "question": "Quelle est la règle applicable à la nationalité des enfants nés d'un père et d'une mère de nationalités différentes selon le droit burkinabè?",
+      "optionA": "La nationalité du père",
+      "optionB": "La nationalité de la mère",
+      "optionC": "La nationalité du pays de naissance",
+      "optionD": "La nationalité choisie par l'enfant à sa majorité",
+      "correctAnswer": "A",
+      "explanation": "Selon le Code burkinabè de la nationalité, les enfants nés d'un père et d'une mère de nationalités différentes acquièrent la nationalité du père, conformément au principe de la transmission patrilineaire de la nationalité."
+    },
+    {
+      "question": "Quelle est la compétence du Conseil d'État burkinabè en matière de contentieux administratif?",
+      "optionA": "Contentieux de la responsabilité sans faute de l'État",
+      "optionB": "Contentieux des contrats administratifs",
+      "optionC": "Contentieux des actes administratifs individuels",
+      "optionD": "Toutes ces réponses",
+      "correctAnswer": "D",
+      "explanation": "Le Conseil d'État burkinabè est la juridiction administrative suprême et compétente pour connaître de l'ensemble des contentieux administratifs, y compris la responsabilité sans faute de l'État, les contrats administratifs et les actes administratifs individuels."
+    },
+    {
+      "question": "En matière de sociétés OHADA, quelle est la particularité de la Société à Responsabilité Limitée (SARL) par rapport à la Société Anonyme (SA) ?",
+      "optionA": "La SARL ne peut avoir qu'un seul associé tandis que la SA en nécessite au moins trois",
+      "optionB": "La SARL ne peut émettre d'actions tandis que la SA peut le faire",
+      "optionC": "La SARL ne peut pas transformer sa forme en SA tandis que la SA peut le faire",
+      "optionD": "La SARL a un capital minimum obligatoire plus élevé que la SA",
+      "correctAnswer": "B",
+      "explanation": "La SARL ne peut émettre d'actions car elle n'est pas une société de capitaux mais une société de personnes. La SA, en revanche, est une société de capitaux dont le capital est divisé en actions."
+    },
+    {
+      "question": "En procédures collectives OHADA, quelle est la condition essentielle pour l'ouverture d'une procédure de redressement judiciaire ?",
+      "optionA": "L'existence d'un passif supérieur à l'actif",
+      "optionB": "L'insuffisance d'actif pour couvrir le passif",
+      "optionC": "La cessation des paiements",
+      "optionD": "La demande expresse du débiteur",
+      "correctAnswer": "C",
+      "explanation": "La condition essentielle pour l'ouverture d'une procédure de redressement judiciaire est la cessation des paiements, qui constitue la manifestation de l'insuffisance de trésorerie du débiteur."
+    },
+    {
+      "question": "En droit bancaire OHADA, quelle est la limite maximale des prêts qu'une banque peut consentir à un même groupe de personnes liées ?",
+      "optionA": "25% du capital social et des réserves de la banque",
+      "optionB": "33% du capital social et des réserves de la banque",
+      "optionC": "50% du capital social et des réserves de la banque",
+      "optionD": "75% du capital social et des réserves de la banque",
+      "correctAnswer": "B",
+      "explanation": "L'Acte uniforme OHADA relatif au droit bancaire et des établissements financiers limite les prêts à un même groupe de personnes liées à 33% du capital social et des réserves de la banque."
+    },
+    {
+      "question": "Quelle est la nature du gage en droit des sûretés OHADA ?",
+      "optionA": "Une sûréauté réelle mobilière",
+      "optionB": "Une sûreté personnelle",
+      "optionC": "Une sûreté réelle immobilière",
+      "optionD": "Une sûreté conventionnelle",
+      "correctAnswer": "A",
+      "explanation": "Le gage est une sûreté réelle mobilière qui confère au créancier un droit de préférence et de vente sur le bien gagé en cas de défaut de paiement."
+    },
+    {
+      "question": "En droit de l'arbitrage OHADA, quelle est la durée maximale pour rendre la sentence arbitrale ?",
+      "optionA": "Trois (3) mois à compter de la constitution du tribunal arbitral",
+      "optionB": "Six (6) mois à compter de la constitution du tribunal arbitral",
+      "optionC": "Neuf (9) mois à compter de la constitution du tribunal arbitral",
+      "optionD": "Douze (12) mois à compter de la constitution du tribunal arbitral",
+      "correctAnswer": "C",
+      "explanation": "L'Acte uniforme OHADA relatif au droit de l'arbitrage fixe à neuf (9) mois la durée maximale pour rendre la sentence arbitrale, à compter de la constitution du tribunal arbitral."
+    },
+    {
+      "question": "En droit civil burkinabè, quel est le régime matrimonial par défaut pour les mariages célébrés après l'entrée en vigueur du Code des personnes et de la famille ?",
+      "optionA": "La séparation de biens",
+      "optionB": "La communauté réduite aux acquêts",
+      "optionC": "La participation aux acquêts",
+      "optionD": "L'indivision légale",
+      "correctAnswer": "B",
+      "explanation": "Le Code des personnes et de la famille du Burkina Faso établit la communauté réduite aux acquêts comme régime par défaut pour les mariages célébrés après son entrée en vigueur."
+    },
+    {
+      "question": "En droit pénal spécial, quel est le délai de prescription des crimes contre l'État ?",
+      "optionA": "5 ans",
+      "optionB": "10 ans",
+      "optionC": "20 ans",
+      "optionD": "30 ans",
+      "correctAnswer": "D",
+      "explanation": "Les crimes contre l'État sont prescrits par le Code pénal burkinabè dans un délai de 30 ans, conformément à la gravité de ces infractions."
+    },
+    {
+      "question": "En procédure pénale burkinabè, quelle est la nature de la décision rendue par le juge d'instruction à l'issue de l'information ?",
+      "optionA": "Un jugement",
+      "optionB": "Un arrêt",
+      "optionC": "Une ordonnance",
+      "optionD": "Un décret",
+      "correctAnswer": "C",
+      "explanation": "Le juge d'instruction rend une ordonnance à l'issue de l'instruction, soit pour renvoyer le prévenu devant la juridiction de jugement, soit pour le mettre en liberté."
+    },
+    {
+      "question": "En droit administratif des biens, quelle est la caractéristique essentielle du domaine public privé ?",
+      "optionA": "Il est inaliénable et imprescriptible",
+      "optionB": "Il peut être aliéné mais non prescriptible",
+      "optionC": "Il peut être prescriptible mais inaliénable",
+      "optionD": "Il est à la fois aliénable et prescriptible",
+      "correctAnswer": "B",
+      "explanation": "Le domaine public privé peut être aliéné mais reste imprescriptible, contrairement au domaine public qui est inaliénable et imprescriptible."
+    },
+    {
+      "question": "En contentieux administratif burkinabè, quelle est la compétence du Conseil d'État ?",
+      "optionA": "Il juge en premier et dernier ressort les litiges entre l'État et les personnes publiques",
+      "optionB": "Il juge en appel des décisions du Tribunal administratif",
+      "optionC": "Il juge en premier et dernier ressort les recours pour excès de pouvoir",
+      "optionD": "Il juge les litiges entre les personnes privées",
+      "correctAnswer": "C",
+      "explanation": "Le Conseil d'État burkinabè juge en premier et dernier ressort les recours pour excès de pouvoir, tandis que le Tribunal administratif juge les autres litiges administratifs."
     }
   ]
 }

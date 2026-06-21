@@ -1,0 +1,957 @@
+{
+  "title": "SSPO - Sciences Sociales de la Population (UFR)",
+  "description": "Démographie générale, démographie BF, transition démographique, migration, urbanisation, santé population, méthodes quantitatives, fécondité, vieillissement.",
+  "category": "Universitaire",
+  "subcategory": "Démographie",
+  "icon": "Users",
+  "color": "teal",
+  "level": "TOUS",
+  "bankKey": "sspo-ufr",
+  "questions": [
+    {
+      "question": "Parmi les indicateurs démographiques suivants, lequel permet de mesurer le solde naturel d'une population ?",
+      "optionA": "Taux de natalité",
+      "optionB": "Taux de mortalité",
+      "optionC": "Taux d'accroissement naturel",
+      "optionD": "Taux de fécondité",
+      "correctAnswer": "C",
+      "explanation": "Le taux d'accroissement naturel est la différence entre le taux de natalité et le taux de mortalité, exprimée en pour mille. Il représente le solde naturel de la population, c'est-à-dire l'excédent des naissances sur les décès."
+    },
+    {
+      "question": "Selon les projections du RGPH 2024, la population du Burkina Faso devrait atteindre environ quel horizon ?",
+      "optionA": "25 millions d'habitants en 2030",
+      "optionB": "30 millions d'habitants en 2035",
+      "optionC": "35 millions d'habitants en 2040",
+      "optionD": "40 millions d'habitants en 2045",
+      "correctAnswer": "A",
+      "explanation": "Les projections du Recensement Général de la Population et de l'Habitat (RGPH) 2024 du Burkina Faso indiquent que la population devrait atteindre environ 25 millions d'habitants d'ici 2030, avec un taux de croissance annuel d'environ 2.9%."
+    },
+    {
+      "question": "Dans la théorie de la transition démographique, la phase 3 est caractérisée par :",
+      "optionA": "Taux de natalité et mortalité élevés",
+      "optionB": "Taux de mortalité en baisse rapide, taux de natalité toujours élevé",
+      "optionC": "Taux de natalité et mortalité bas et stables",
+      "optionD": "Taux de natalité en baisse, taux de mortalité bas",
+      "correctAnswer": "D",
+      "explanation": "La phase 3 de la transition démographique se caractérise par une baisse du taux de natalité (début de la contraception, urbanisation) tandis que le taux de mortalité reste bas, ce qui entraîne une forte croissance démographique."
+    },
+    {
+      "question": "Quelle est la principale destination des migrations internationales originant du Burkina Faso ?",
+      "optionA": "Europe",
+      "optionB": "Amérique du Nord",
+      "optionC": "Côte d'Ivoire",
+      "optionD": "Chine",
+      "correctAnswer": "C",
+      "explanation": "La Côte d'Ivoire reste la principale destination des migrations internationales originant du Burkina Faso, héritage des liens historiques et économiques entre les deux pays. Cependant, d'autres destinations comme le Maghreb et l'Europe gagnent en importance."
+    },
+    {
+      "question": "Quel phénomène démographique caractérise principalement les villes burkinabè en croissance rapide ?",
+      "optionA": "Vieillissement de la population",
+      "optionB": "Déclin de la natalité",
+      "optionC": "Pauvreté urbaine et habitat précaire",
+      "optionD": "Migration de retour des diasporas",
+      "correctAnswer": "C",
+      "explanation": "La croissance rapide des villes burkinabè s'accompagne principalement de phénomènes de pauvreté urbaine, d'habitat précaire (quartiers non planifiés), de chômage et d'insuffisance des services de base."
+    },
+    {
+      "question": "Le taux de mortalité infantile au Burkina Faso selon les dernières données de l'INSD est d'environ :",
+      "optionA": "20 pour mille",
+      "optionB": "40 pour mille",
+      "optionC": "60 pour mille",
+      "optionD": "80 pour mille",
+      "correctAnswer": "D",
+      "explanation": "Selon les données récentes de l'INSD (Institut National de la Statistique et de la Démographie), le taux de mortalité infantile au Burkina Faso est d'environ 80 pour mille, l'un des plus élevés d'Afrique de l'Ouest."
+    },
+    {
+      "question": "Dans une enquête par sondage, la marge d'erreur est :",
+      "optionA": "La différence entre la moyenne de l'échantillon et la moyenne de la population",
+      "optionB": "L'intervalle de confiance dans lequel se situe la véritable valeur de la population",
+      "optionC": "Le taux de non-réponse à l'enquête",
+      "optionD": "La proportion d'individus interrogés qui ont menti",
+      "correctAnswer": "B",
+      "explanation": "La marge d'erreur représente l'intervalle de confiance dans lequel se situe la véritable valeur dans la population, compte tenu de l'incertitude liée au fait de ne pas interroger toute la population mais seulement un échantillon."
+    },
+    {
+      "question": "Selon les données récentes, quel est le taux d'alphabétisation des jeunes (15-24 ans) au Burkina Faso ?",
+      "optionA": "Environ 35%",
+      "optionB": "Environ 50%",
+      "optionC": "Environ 65%",
+      "optionD": "Environ 80%",
+      "correctAnswer": "C",
+      "explanation": "Le taux d'alphabétisation des jeunes (15-24 ans) au Burkina Favo est d'environ 65%, selon les données de l'INSD, avec de disparités importantes entre hommes et femmes ainsi qu'entre zones urbaines et rurales."
+    },
+    {
+      "question": "Le taux de fécondité total (TFT) au Burkina Faso selon les dernières données est d'environ :",
+      "optionA": "4,5 enfants par femme",
+      "optionB": "5,2 enfants par femme",
+      "optionC": "5,8 enfants par femme",
+      "optionD": "6,5 enfants par femme",
+      "correctAnswer": "B",
+      "explanation": "Le taux de fécondité total (TFT) au Burkina Faso est d'environ 5,2 enfants par femme selon les données récentes de l'INSD, l'un des plus élevés au monde, bien en baisse par rapport aux décennies précédentes."
+    },
+    {
+      "question": "Le dividende démographique se produit lorsque :",
+      "optionA": "La population est majoritairement âgée",
+      "optionB": "La part des jeunes dépendants est faible par rapport à la population active",
+      "optionC": "Le taux de natalité est nul",
+      "optionD": "La population est stationnaire",
+      "correctAnswer": "B",
+      "explanation": "Le dividende démographique se produit lorsque la part des jeunes dépendants (0-14 ans et 65+ ans) est relativement faible par rapport à la population en âge de travailler (15-64 ans), ce qui peut favoriser l'économie si les conditions sont réunies."
+    },
+    {
+      "question": "Quelle est la principale méthode de collecte des données pour le Recensement Général de la Population et de l'Habitat (RGPH) au Burkina Faso ?",
+      "optionA": "Enquête téléphonique",
+      "optionB": "Recensement administratif",
+      "optionC": "Enquête par sondage en ligne",
+      "optionD": "Recensement door-to-door",
+      "correctAnswer": "D",
+      "explanation": "Le Recensement Général de la Population et de l'Habitat (RGPH) au Burkina Faso utilise principalement la méthode du recensement door-to-door, où des agents recenseurs se déplacent dans les ménagements pour collecter les informations directement."
+    },
+    {
+      "question": "Selon les projections, quel sera le principal défi démographique lié au vieillissement de la population au Burkina Faso d'ici 2050 ?",
+      "optionA": "Déficit en retraites",
+      "optionB": "Dépendance croissante des personnes âgées",
+      "optionC": "Manque de structures d'accueil",
+      "optionD": "Toutes ces réponses",
+      "correctAnswer": "D",
+      "explanation": "D'ici 2050, le vieillissement de la population au Burkina Faso posera plusieurs défis: un système de retraite sous pression, une dépendance croissante des personnes âgées et un manque de structures d'accueil adaptées."
+    },
+    {
+      "question": "Dans la pyramide des âges du Burkina Faso, la forme caractéristique est :",
+      "optionA": "En forme de sablier (base étroite)",
+      "optionB": "En forme de cloche (régulier)",
+      "optionC": "En forme de triangle très large à la base",
+      "optionD": "En forme de rectangle (population stable)",
+      "correctAnswer": "C",
+      "explanation": "La pyramide des âges du Burkina Favo présente une forme triangulaire très large à la base, caractéristique d'une population jeune avec une forte fécondité et une mortalité infantile encore élevée, bien en amélioration."
+    },
+    {
+      "question": "La planification familiale au Burkina Favo est principalement financée par :",
+      "optionA": "Le budget de l'État burkinabè",
+      "optionB": "Les fonds internationaux (ONUSIDA, USAID, etc.)",
+      "optionC": "Les contributions des ménages",
+      "optionD": "Les entreprises privées locales",
+      "correctAnswer": "B",
+      "explanation": "La planification familiale au Burkina Favo est principalement financée par des fonds internationaux tels que ONUSIDA, USAID, les fondations Gates et d'autres bailleurs de fonds internationaux, avec une contribution limitée de l'État."
+    },
+    {
+      "question": "Le taux d'urbanisation au Burkina Favo est d'environ :",
+      "optionA": "25%",
+      "optionB": "35%",
+      "optionC": "45%",
+      "optionD": "55%",
+      "correctAnswer": "B",
+      "explanation": "Le taux d'urbanisation au Burkina Favo est d'environ 35% selon les données récentes, avec une tendance à l'accélération de l'urbanisation, principalement due à l'exode rural et à la croissance naturelle des villes."
+    },
+    {
+      "question": "Dans une analyse de données démographiques avec SPSS, quelle procédure utiliseriez-vous pour calculer un taux de fécondité par âge ?",
+      "optionA": "Descriptive Statistics",
+      "optionB": "Cross-tabs",
+      "optionC": "Weight Cases",
+      "optionD": "Regression",
+      "correctAnswer": "C",
+      "explanation": "Pour calculer des taux de fécondité par âge à partir de données d'enquête, il est nécessaire d'utiliser la procédure 'Weight Cases' dans SPSS pour attribuer les poids d'échantillonnage, puis d'utiliser les procédes appropriées pour les calculs."
+    },
+    {
+      "question": "Le taux de pauvreté monétaire au Burkina Favo est d'environ :",
+      "optionA": "20%",
+      "optionB": "35%",
+      "optionC": "50%",
+      "optionD": "70%",
+      "correctAnswer": "B",
+      "explanation": "Selon les données de l'INSD et de la Banque mondiale, le taux de pauvreté monétaire au Burkina Favo est d'environ 35%, avec de fortes disparités régionales et entre zones urbaines et rurales."
+    },
+    {
+      "question": "La principale cause de mortalité chez les enfants de moins de 5 ans au Burkina Favo est :",
+      "optionA": "Le paludisme",
+      "optionB": "Les maladies diarrhéiques",
+      "optionC": "La pneumonie",
+      "optionD": "Le sida",
+      "correctAnswer": "A",
+      "explanation": "Le paludisme reste la principale cause de mortalité chez les enfants de moins de 5 ans au Burkina Favo, responsable d'environ 30% des décès dans cette tranche d'âge, suivi des maladies diarrhéiques et de la pneumonie."
+    },
+    {
+      "question": "Le concept de 'population invisible' en démographie fait référence à :",
+      "optionA": "Les personnes âgées vivant seules",
+      "optionB": "Les populations nomades",
+      "optionC": "Les populations non recensées ou mal dénombrées",
+      "optionD": "Les populations vivant dans des zones isolées",
+      "correctAnswer": "C",
+      "explanation": "La 'population invisible' fait référence aux groupes de population qui sont difficiles à dénombrer dans les recensements et enquêtes traditionnels, comme les nomades, les réfugiés, les populations sans domicile fixe, etc."
+    },
+    {
+      "question": "Le taux d'activité des jeunes (15-24 ans) au Burkina Favo est d'environ :",
+      "optionA": "30%",
+      "optionB": "45%",
+      "optionC": "60%",
+      "optionD": "75%",
+      "correctAnswer": "C",
+      "explanation": "Le taux d'activité des jeunes (15-24 ans) au Burkina Favo est d'environ 60%, mais avec un taux de chômage élevé dans cette catégorie d'âge, reflétant les difficultés d'insertion professionnelle des jeunes."
+    },
+    {
+      "question": "Dans une enquête démographique, le coefficient de variation est utilisé pour :",
+      "optionA": "Mesurer la dispersion des données",
+      "optionB": "Comparer la variabilité de deux séries de données d'ordres de grandeur différents",
+      "optionC": "Mesurer la corrélation entre deux variables",
+      "optionD": "Estimer la fiabilité d'un test",
+      "correctAnswer": "B",
+      "explanation": "Le coefficient de variation (écart-type divisé par la moyenne) est utilisé pour comparer la variabilité de deux séries de données qui ont des ordres de grandeur différents, car il est exprimé en pourcentage."
+    },
+    {
+      "question": "Quelle est la définition correcte du Taux Brut de Natalité (TBN)?",
+      "optionA": "Nombre de naissances pour 1000 femmes en âge de procréer",
+      "optionB": "Nombre de naissances vivantes dans une population donnée pour une année civile, rapporté à la moyenne de la population totale de cette année",
+      "optionC": "Nombre de naissances rapporté au nombre de femmes mariées",
+      "optionD": "Nombre de naissances pour 1000 habitants de moins de 15 ans",
+      "correctAnswer": "B",
+      "explanation": "Le TBN se calcule comme (nombre de naissances vivantes / population moyenne totale) × 1000. C'est un indicateur de base en démographie générale."
+    },
+    {
+      "question": "Selon le modèle de transition démographique classique, la phase 3 est caractérisée par:",
+      "optionA": "Taux de natalité et de mortalité élevés et stables",
+      "optionB": "Taux de natalité élevé mais taux de mortalité en baisse",
+      "optionC": "Taux de natalité en baisse mais taux de mortalité bas et stable",
+      "optionD": "Taux de natalité et de mortalité bas et stables",
+      "correctAnswer": "C",
+      "explanation": "La phase 3 de la transition démographique correspond à une baisse de la natalité (due à la contraception et à l'évolution des mentalités) alors que la mortalité reste basse."
+    },
+    {
+      "question": "Le Dividende Démographique se produit lorsque:",
+      "optionA": "La population est majoritairement composée de personnes âgées",
+      "optionB": "Le nombre de dépendants (jeunes et âgés) est relativement faible par rapport au nombre de personnes en âge de travailler",
+      "optionC": "Le taux de fécondité atteint le niveau de remplacement",
+      "optionD": "L'exode rural dépasse l'urbanisation",
+      "correctAnswer": "B",
+      "explanation": "Le dividende démographique correspond à la période où la proportion de la population en âge de travailler est relativement élevée par rapport aux dépendants, offrant potentiellement une opportunité économique."
+    },
+    {
+      "question": "Dans le contexte burkinabè, l'Indice Synthétique de Fécondité (ISF) actuel est estimé à environ:",
+      "optionA": "2,5 enfants par femme",
+      "optionB": "3,4 enfants par femme",
+      "optionC": "5,6 enfants par femme",
+      "optionD": "7,2 enfants par femme",
+      "correctAnswer": "B",
+      "explanation": "Selon les données récentes de l'INSD, l'ISF au Burkina Favo se situe autour de 3,4 enfants par femme, en baisse mais encore élevée par rapport au niveau de remplacement (2,1)."
+    },
+    {
+      "question": "La pyramide des âges du Burkina Faso présente une forme caractéristique de:",
+      "optionA": "Pyramide régulière (quasi-triangulaire)",
+      "optionB": "Pyramide en forme de champignon",
+      "optionC": "Pyramide en forme de ruche",
+      "optionD": "Pyramide inversée",
+      "correctAnswer": "A",
+      "explanation": "La pyramide des âges du Burkina Favo présente une forme quasi-triangulaire caractéristique des pays à forte fécondité et à structure jeune, avec une base large et un sommet étroit."
+    },
+    {
+      "question": "Le Taux de Mortalité Infantile (TMI) se réfère spécifiquement à:",
+      "optionA": "Le nombre de décès d'enfants de moins de 5 ans pour 1000 naissances vivantes",
+      "optionB": "Le nombre de décès d'enfants de moins de 1 an pour 1000 naissances vivantes",
+      "optionC": "Le nombre de décès d'enfants de moins de 1 an pour 1000 enfants nés vivants",
+      "optionD": "Le nombre de décès d'enfants de moins de 5 ans pour 1000 enfants âgés de 0-4 ans",
+      "correctAnswer": "B",
+      "explanation": "Le TMI est défini comme le nombre de décès d'enfants de moins d'un an pour 1000 naissances vivantes pendant une année donnée. C'est un indicateur sensible de la santé d'une population."
+    },
+    {
+      "question": "La méthode des sondages aléatoires stratifiés est particulièrement utile en démographie lorsque:",
+      "optionA": "La population est homogène",
+      "optionB": "On veut s'assurer que les sous-groupes de la population sont représentés",
+      "optionC": "La population est très grande",
+      "optionD": "On ne dispose que de peu de ressources",
+      "correctAnswer": "B",
+      "explanation": "La méthode stratifiée permet de diviser la population en sous-groupes homogènes (strates) et de s'assurer que chaque strate est représentée dans l'échantillon, ce qui est crucial pour des populations hétérogènes comme celles des pays en développement."
+    },
+    {
+      "question": "Dans le contexte burkinabè, l'exode rural est principalement motivé par:",
+      "optionA": "La recherche de terres agricoles plus fertiles",
+      "optionB": "L'attrait des services urbains et des opportunités économiques",
+      "optionC": "Le désir de quitter le climat sahélien",
+      "optionD": "La fuite des conflits ethniques",
+      "correctAnswer": "B",
+      "explanation": "L'exode rural au Burkina Favo est principalement motivé par la recherche d'opportunités économiques et l'accès aux services urbains (éducation, santé) qui sont plus développés en ville."
+    },
+    {
+      "question": "Le Taux d'Urbanisation au Burkina Favo est actuellement d'environ:",
+      "optionA": "25%",
+      "optionB": "35%",
+      "optionC": "45%",
+      "optionD": "60%",
+      "correctAnswer": "A",
+      "explanation": "Selon les données récentes, le taux d'urbanisation au Burkina Favo se situe autour de 25-27%, ce qui est relativement faible pour l'Afrique de l'Ouest mais en augmentation."
+    },
+    {
+      "question": "Le Taux de Scolarisation Brute (TSB) des jeunes au Burkina Favo est caractérisé par:",
+      "optionA": "Un TSB supérieur à 100% pour tous les niveaux",
+      "optionB": "Un TSB faible pour les filles par rapport aux garçons",
+      "optionC": "Un TSB identique pour toutes les régions",
+      "optionD": "Un TSB qui diminue avec l'âge",
+      "correctAnswer": "B",
+      "explanation": "Le TSB des jeunes au Burkina Favo présente des disparités importantes entre les sexes, avec un taux de scolarisation significativement plus faible pour les filles que pour les garçons, notamment dans les zones rurales."
+    },
+    {
+      "question": "Le concept de 'dépendance démographique' fait référence à:",
+      "optionA": "La dépendance économique d'un pays envers les autres",
+      "optionB": "Le rapport entre la population en âge de travailler et la population dépendante (jeunes et âgés)",
+      "optionC": "La migration de main-d'œuvre qualifiée",
+      "optionD": "L'impact démographique de l'aide internationale",
+      "correctAnswer": "B",
+      "explanation": "La dépendance démographique mesure le ratio entre la population en âge de travailler (15-64 ans) et la population dépendante (moins de 15 ans et 65 ans et plus)."
+    },
+    {
+      "question": "Dans une enquête démographique utilisant SPSS, la commande 'RECODE' permet de:",
+      "optionA": "Créer de nouvelles variables à partir de variables existantes",
+      "optionB": "Supprimer des données manquantes",
+      "optionC": "Calculer des statistiques descriptives",
+      "optionD": "Générer des graphiques",
+      "correctAnswer": "A",
+      "explanation": "La commande RECODE dans SPSS permet de transformer ou de regrouper les valeurs d'une variable existante pour créer une nouvelle variable, ce qui est utile pour le traitement des données démographiques."
+    },
+    {
+      "question": "La Planification Familiale au Burkina Favo est principalement limitée par:",
+      "optionA": "L'absence de méthodes contraceptives",
+      "optionB": "Les barrières culturelles et religieuses",
+      "optionC": "Le manque de formation des prestataires de santé",
+      "optionD": "L'accès géographique aux services",
+      "correctAnswer": "D",
+      "explanation": "Bien que tous ces facteurs jouent un rôle, l'accès géographique aux services de planification familiale reste l'un des principaux obstacles au Burkina Favo, notamment dans les zones rurales éloignées."
+    },
+    {
+      "question": "Le Taux de Croissance Naturelle (TCN) se calcule comme:",
+      "optionA": "TBN - TBM",
+      "optionB": "TBN + TBM",
+      "optionC": "TBN / TBM",
+      "optionD": "(TBN - TBM) / 10",
+      "correctAnswer": "A",
+      "explanation": "Le TCN est la différence entre le Taux Brut de Natalité (TBN) et le Taux Brut de Mortalité (TBM), généralement exprimé en pour mille. Il représente l'accroissement naturel de la population."
+    },
+    {
+      "question": "Dans le contexte burkinabè, le 'Programme de Développement des Initiatives Locales (PDIL)' vise principalement à:",
+      "optionA": "Lutter contre l'exode rural",
+      "optionB": "Améliorer les conditions de vie des personnes âgées",
+      "optionC": "Promouvoir l'entrepreneuriat des jeunes",
+      "optionD": "Développer les infrastructures sanitaires",
+      "correctAnswer": "C",
+      "explanation": "Le PDIL est un programme gouvernemental qui vise à soutenir les initiatives économiques des jeunes, notamment à travers le microcrédit et la formation professionnelle, pour réduire le chômage et l'émigration."
+    },
+    {
+      "question": "La 'fécondité différée' se réfère à:",
+      "optionA": "La pratique de l'allaitement prolongé",
+      "optionB": "Le report de la première naissance à un âge plus avancé",
+      "optionC": "L'espacement des naissances",
+      "optionD": "La limitation à deux enfants par famille",
+      "correctAnswer": "B",
+      "explanation": "La fécondité différée désigne le phénomène où les femmes reportent leur première naissance à un âge plus avancé, ce qui contribue à la baisse de la fécondité totale."
+    },
+    {
+      "question": "La méthode des 'quotas' en sondage est différente de la méthode aléatoire simple en ce qu'elle:",
+      "optionA": "Permet d'obtenir un échantillon plus grand",
+      "optionB": "Assure la représentativité de certains sous-groupes",
+      "optionC": "Est moins coûteuse à mettre en œuvre",
+      "optionD": "Ne nécessite pas de base de sondage",
+      "correctAnswer": "B",
+      "explanation": "La méthode des quotas vise à obtenir un échantillon représentatif de certains sous-groupes prédéfinis (sexe, âge, région) alors que la méthode aléatoire simple donne à chaque individu une probabilité égale d'être sélectionné."
+    },
+    {
+      "question": "Le concept de 'capital humain' en démographie économique se réfère à:",
+      "optionA": "La valeur économique de la population active",
+      "optionB": "Les investissements dans l'éducation et la santé",
+      "optionC": "La richesse naturelle d'un pays",
+      "optionD": "Les transferts de fonds des migrants",
+      "correctAnswer": "B",
+      "explanation": "Le capital humain désigne les connaissances, compétences et aptitudes acquises par les individus, principalement à travers l'éducation et la formation, qui contribuent à leur productivité économique."
+    },
+    {
+      "question": "Le Taux d'Activité (TA) se définit comme:",
+      "optionA": "Le rapport entre la population active et la population totale",
+      "optionB": "Le rapport entre la population active et la population en âge de travailler",
+      "optionC": "Le rapport entre le nombre d'emplois et la population totale",
+      "optionD": "Le rapport entre le nombre de chômeurs et la population active",
+      "correctAnswer": "B",
+      "explanation": "Le Taux d'Activité mesure la proportion de la population en âge de travailler (15-64 ans) qui est économiquement active (emploi ou recherche d'emploi)."
+    },
+    {
+      "question": "Dans le contexte burkinabè, la politique nationale de 'Protection Sociale' vise principalement à:",
+      "optionA": "Protéger les personnes âgées",
+      "optionB": "Lutter contre la pauvreté et l'exclusion",
+      "optionC": "Soutenir les familles nombreuses",
+      "optionD": "Assurer la couverture maladie universelle",
+      "correctAnswer": "B",
+      "explanation": "La politique nationale de protection sociale au Burkina Favo a pour objectif principal de lutter contre la pauvreté, l'exclusion sociale et de réduire les vulnérabilités économiques et sociales des populations."
+    },
+    {
+      "question": "Selon le 6ème Recensement Général de la Population et de l'Habitat (RGPH 2024) du Burkina Faso, quelle est la population estimée du pays?",
+      "optionA": "22,5 millions d'habitants",
+      "optionB": "25,3 millions d'habitants",
+      "optionC": "28,7 millions d'habitants",
+      "optionD": "31,2 millions d'habitants",
+      "correctAnswer": "A",
+      "explanation": "Le RGPH 2024 du Burkina Faso a estimé la population à 22,5 millions d'habitants, montrant une croissance continue depuis le précédent recensement."
+    },
+    {
+      "question": "Dans le modèle de transition démographique classique, à quelle phase correspond le début de la chute de la mortalité?",
+      "optionA": "Phase 1: Pré-transition",
+      "optionB": "Phase 2: Transition démographique débutante",
+      "optionC": "Phase 3: Transition démographique avancée",
+      "optionD": "Phase 4: Post-transition",
+      "correctAnswer": "B",
+      "explanation": "La phase 2 de la transition démographique est caractérisée par une chute de la mortalité due à des améliorations sanitaires et médicales, tandis que la fécondité reste élevée."
+    },
+    {
+      "question": "Quelle est la principale caractéristique de la pyramide des âges du Burkina Faso?",
+      "optionA": "Une structure en triangle rectangle avec une base étroite",
+      "optionB": "Une structure en forme de cloche avec une large base et un sommet arrondi",
+      "optionC": "Une structure en triangle avec une base très large et un sommet étroit",
+      "optionD": "Une structure en rectangle avec des proportions équilibrées",
+      "correctAnswer": "C",
+      "explanation": "La pyramide des âges du Burkina Faso présente une structure en triangle avec une base très large (population jeune importante) et un sommet étroit (population âgée faible), reflétant une population jeune et en croissance rapide."
+    },
+    {
+      "question": "Le dividende démographique se définit comme:",
+      "optionA": "La période où la dépendance des jeunes est maximale",
+      "optionB": "La période où la part des personnes âgées dépasse celle des enfants",
+      "optionC": "La période où la proportion de personnes en âge de travail est élevée par rapport aux dépendants",
+      "optionD": "La période où le taux de fécondité atteint son niveau le plus bas",
+      "correctAnswer": "C",
+      "explanation": "Le dividende démographique correspond à la période où la proportion de personnes en âge de travailler est élevée par rapport aux dépendants (jeunes et personnes âgées), offrant potentiellement un boost économique."
+    },
+    {
+      "question": "Quelle est la principale cause de l'exode rural au Burkina Faso?",
+      "optionA": "La sécheresse récurrente",
+      "optionB": "L'urbanisation rapide des centres urbains",
+      "optionC": "La recherche d'opportunités économiques",
+      "optionD": "La dégradation des sols agricoles",
+      "correctAnswer": "C",
+      "explanation": "L'exode rural au Burkina Faso est principalement motivé par la recherche d'opportunités économiques et d'emplois dans les villes, bien que la dégradation des sols et les aléas climatiques contribuent également à ce phénomène."
+    },
+    {
+      "question": "Quelle est la définition correcte du Taux de Migration Net?",
+      "optionA": "Différence entre le nombre d'immigrants et le nombre d'émigrants rapportée à la population totale",
+      "optionB": "Somme des immigrants et des émigrants rapportée à la population totale",
+      "optionC": "Nombre d'immigrants pour 1000 habitants",
+      "optionD": "Nombre d'émigrants pour 1000 habitants",
+      "correctAnswer": "A",
+      "explanation": "Le taux de migration net est calculé comme la différence entre le nombre d'immigrants et le nombre d'émigrants, divisée par la population totale, multipliée par 1000."
+    },
+    {
+      "question": "Selon les données de l'INSD, quel est le taux d'urbanisation du Burkina Faso en 2024?",
+      "optionA": "25,4%",
+      "optionB": "31,2%",
+      "optionC": "38,7%",
+      "optionD": "42,5%",
+      "correctAnswer": "C",
+      "explanation": "L'INSD estime que le taux d'urbanisation du Burkina Faso était d'environ 38,7% en 2024, en augmentation constante depuis plusieurs décennies."
+    },
+    {
+      "question": "Quelle est la principale caractéristique des problèmes urbains au Burkina Faso?",
+      "optionA": "Déficit en logements de luxe",
+      "optionB": "Saturation des infrastructures sanitaires",
+      "optionC": "Excès d'espaces verts",
+      "optionD": "Sous-occupation des équipements publics",
+      "correctAnswer": "B",
+      "explanation": "Les principales problématiques urbaines au Burkina Faso incluent la saturation des infrastructures sanitaires, le déficit en logements décents, la gestion des déchets et l'insuffisance des services de base."
+    },
+    {
+      "question": "Quel indicateur est le plus approprié pour mesurer la mortalité infantile?",
+      "optionA": "Taux de mortalité générale",
+      "optionB": "Taux de mortalité maternelle",
+      "optionC": "Taux de mortalité infantile (TMI)",
+      "optionD": "Espérance de vie à la naissance",
+      "correctAnswer": "C",
+      "explanation": "Le Taux de Mortalité Infantile (TMI), qui mesure les décès d'enfants de moins d'un an pour 1000 naissances vivantes, est l'indicateur spécifique le plus approprié pour évaluer la mortalité infantile."
+    },
+    {
+      "question": "Quelle est la méthode contraceptive la plus utilisée au Burkina Faso?",
+      "optionA": "Pilules contraceptives",
+      "optionB": "Contraceptifs injectables",
+      "optionC": "Stérilisation féminine",
+      "optionD": "Préservatifs masculins",
+      "correctAnswer": "B",
+      "explanation": "Selon les enquêtes démographiques et de santé, les contraceptifs injectables sont la méthode contraceptive la plus utilisée au Burkina Faso, suivis des pilules et des préservatifs."
+    },
+    {
+      "question": "Dans une enquête par sondage, la taille minimale d'un échantillon représentatif dépend principalement de:",
+      "optionA": "Le budget alloué à l'étude",
+      "optionB": "La marge d'erreur souhaitée et le niveau de confiance",
+      "optionC": "Le nombre de questions dans le questionnaire",
+      "optionD": "La disponibilité des enquêteurs",
+      "correctAnswer": "B",
+      "explanation": "La taille d'un échantillon représentatif dépend principalement de la marge d'erreur acceptable et du niveau de confiance statistique souhaités, indépendamment des contraintes logistiques ou budgétaires."
+    },
+    {
+      "question": "Quelle est la définition correcte du Taux de fécondité totale (TFT)?",
+      "optionA": "Nombre moyen d'enfants par femme en âge de procréer",
+      "optionB": "Nombre moyen d'enfants par femme tout au long de sa vie féconde",
+      "optionC": "Nombre de naissances vivantes par an pour 1000 femmes de 15-49 ans",
+      "optionD": "Nombre d'enfants par ménage",
+      "correctAnswer": "B",
+      "explanation": "Le Taux de Fécondité Totale (TFT) représente le nombre moyen d'enfants qu'une femme aurait tout au long de sa vie féconde, selon les taux de fécondité par âge actuels."
+    },
+    {
+      "question": "Selon les données du RGPH 2024, quel est le TFT (Taux de Fécondité Totale) au Burkina Faso?",
+      "optionA": "4,2 enfants par femme",
+      "optionB": "5,1 enfants par femme",
+      "optionC": "5,8 enfants par femme",
+      "optionD": "6,3 enfants par femme",
+      "correctAnswer": "C",
+      "explanation": "Le TFT au Burkina Faso était estimé à 5,8 enfants par femme selon le RGPH 2024, bien que ce taux soit en légère baisse par rapport aux décennies précédentes."
+    },
+    {
+      "question": "Quel est le principal défi lié au vieillissement de la population au Burkina Faso?",
+      "optionA": "Déficit en structures d'accueil pour personnes âgées",
+      "optionB": "Augmentation de la dépendance économique",
+      "optionC": "Manque de politiques spécifiques pour les seniors",
+      "optionD": "Toutes ces réponses sont correctes",
+      "correctAnswer": "D",
+      "explanation": "Le vieillissement de la population au Burkina Faso, bien que moins avancé que dans les pays développés, pose déjà des défis en matière de dépendance économique, de protection sociale et de politiques spécifiques pour les personnes âgées."
+    },
+    {
+      "question": "Quelle est la principale caractéristique de l'urbanisation au Burkina Faso?",
+      "optionA": "Urbanisation lente et contrôlée",
+      "optionB": "Urbanisation rapide et anarchique",
+      "optionC": "Urbanisation modérée avec planification",
+      "optionD": "Urbanisation stagnante",
+      "correctAnswer": "B",
+      "explanation": "L'urbanisation au Burkina Faso est caractérisée par un rythme rapide souvent anarchique, avec une forte croissance des grandes villes comme Ouagadougou et Bobo-Dioulasso sans planification adéquate."
+    },
+    {
+      "question": "Quel indicateur mesure le mieux le niveau de développement socio-économique d'un pays?",
+      "optionA": "PIB par habitant",
+      "optionB": "Indice de Développement Humain (IDH)",
+      "optionC": "Taux d'alphabétisation",
+      "optionD": "Taux de couverture vaccinale",
+      "correctAnswer": "B",
+      "explanation": "L'Indice de Développement Humain (IDH) combine des indicateurs de santé (espérance de vie), d'éducation (taux d'alphabétisation et scolarisation) et de revenu (PIB par habitant), offrant une mesure plus complète du développement que les indicateurs uniques."
+    },
+    {
+      "question": "Quelle est la définition correcte du Taux de Prévalence de la Contraception?",
+      "optionA": "Pourcentage de femmes utilisant une méthode contraceptive parmi toutes les femmes en âge de procréer",
+      "optionB": "Pourcentage de femmes utilisant une méthode contraceptive parmi toutes les femmes mariées ou en union",
+      "optionC": "Pourcentage de femmes utilisant une méthode contraceptive parmi toutes les femmes ayant déjà eu un enfant",
+      "optionD": "Pourcentage de femmes utilisant une méthode contraceptive parmi toutes les femmes de 15-49 ans",
+      "correctAnswer": "B",
+      "explanation": "Le Taux de Prévalence de la Contraception mesure généralement le pourcentage de femmes mariées ou en union utilisant une méthode contraceptive parmi ce groupe spécifique, bien que des variations existent selon les sources."
+    },
+    {
+      "question": "Quelle est la principale source de données sur la population au Burkina Faso?",
+      "optionA": "Enquêtes Démographiques et de Santé (EDS)",
+      "optionB": "Recensements Généraux de la Population et de l'Habitat (RGPH)",
+      "optionC": "Système d'Information sur la Population (SIP)",
+      "optionD": "Toutes ces réponses sont correctes",
+      "correctAnswer": "D",
+      "explanation": "Le Burkina Faso dispose de plusieurs sources de données démographiques, notamment les RGPH périodiques, les EDS, le SIP de l'INSD, et d'autres enquêtes sectorielles, qui complètent les informations pour une vision complète."
+    },
+    {
+      "question": "Quelle est la définition correcte du Taux de Croissance Naturelle de la Population?",
+      "optionA": "Différence entre le taux de natalité et le taux de mortalité",
+      "optionB": "Différence entre le taux de natalité et le taux de mortalité infantile",
+      "optionC": "Différence entre le taux de natalité et le taux de fécondité",
+      "optionD": "Différence entre le taux de mortalité et le taux de migration",
+      "correctAnswer": "A",
+      "explanation": "Le Taux de Croissance Naturelle est calculé comme la différence entre le taux de natalité et le taux de mortalité, exprimée en pourcentage ou en pour mille, reflétant la croissance démographique sans migration."
+    },
+    {
+      "question": "Quelle est la principale caractéristique de la structure par âge de la population burkinabè?",
+      "optionA": "Une population vieillissante",
+      "optionB": "Une population jeune avec une forte proportion d'enfants",
+      "optionC": "Une population avec des proportions équilibrées entre jeunes et adultes",
+      "optionD": "Une population vieillissante rapidement",
+      "correctAnswer": "B",
+      "explanation": "La population burkinabè est caractérisée par une structure très jeune, avec environ 45% de la population ayant moins de 15 ans, ce qui représente un défi majeur pour les services sociaux et économiques du pays."
+    },
+    {
+      "question": "Quelle est la définition correcte du Taux Brut de Natalité (TBN) ?",
+      "optionA": "Nombre de naissances vivantes pour 1000 habitants au milieu de l'année",
+      "optionB": "Nombre de naissances vivantes pour 1000 femmes en âge de procréer",
+      "optionC": "Nombre de naissances vivantes pour 1000 naissances mortes",
+      "optionD": "Nombre de naissances vivantes pour 1000 ménages",
+      "correctAnswer": "A",
+      "explanation": "Le Taux Brut de Natalité (TBN) est calculé comme le nombre de naissances vivantes survenant dans une année, divisé par la moyenne de la population totale de cette année, multiplié par 1000."
+    },
+    {
+      "question": "Dans la théorie de la transition démographique, à quelle phase correspond le Burkina Faso actuellement ?",
+      "optionA": "Phase 1 (pré-transition)",
+      "optionB": "Phase 2 (début de transition)",
+      "optionC": "Phase 3 (transition avancée)",
+      "optionD": "Phase 4 (post-transition)",
+      "correctAnswer": "B",
+      "explanation": "Le Burkina Faso se situe en phase 2 de la transition démographique, caractérisée par une forte natalité, une mortalité en baisse mais encore élevée, et un fort taux de croissance naturel."
+    },
+    {
+      "question": "Qu'est-ce que le dividende démographique ?",
+      "optionA": "La période où la population est majoritairement âgée",
+      "optionB": "La période où la proportion de personnes en âge de travailler est élevée par rapport aux dépendants",
+      "optionC": "La période où le taux de fécondité est le plus bas",
+      "optionD": "La période où le taux d'urbanisation est le plus élevé",
+      "correctAnswer": "B",
+      "explanation": "Le dividende démographique est la période où la proportion de personnes en âge de travailler (15-64 ans) est plus élevée que celle des jeunes (0-14 ans) et des personnes âgées (65+), offrant potentiellement un boost économique."
+    },
+    {
+      "question": "Quel est le principal facteur de l'exode rural au Burkina Faso ?",
+      "optionA": "La faible densité de population en zone rurale",
+      "optionB": "L'accès limité aux services de base et aux opportunités économiques",
+      "optionC": "Le climat tropicaal humide",
+      "optionD": "La forte mécanisation de l'agriculture",
+      "correctAnswer": "B",
+      "explanation": "L'exode rural au Burkina Faso est principalement motivé par l'accès limité aux services de base (santé, éducation) et aux opportunités économiques dans les zones rurales, poussant les populations vers les centres urbains."
+    },
+    {
+      "question": "Quelle méthode de collecte de données est privilégiée par l'INSD pour le recensement de la population au Burkina Faso ?",
+      "optionA": "Recensement par sondage téléphonique",
+      "optionB": "Recensement par enquête postale",
+      "optionC": "Recensement par déclaration en ligne",
+      "optionD": "Recensement sur le terrain avec des enquêteurs",
+      "correctAnswer": "D",
+      "explanation": "L'INSD utilise principalement le recensement sur le terrain avec des enquêteurs pour collecter des données précises et complètes lors du RGPH, méthode adaptée au contexte burkinabè."
+    },
+    {
+      "question": "Quel indicateur est le plus approprié pour mesurer la mortalité infantile ?",
+      "optionA": "Taux de mortalité générale",
+      "optionB": "Taux de mortalité maternelle",
+      "optionC": "Taux de mortalité néonatale",
+      "optionD": "Taux de mortalité post-néonatale",
+      "correctAnswer": "C",
+      "explanation": "Le taux de mortalité néonatale (décès survenus avant 28 jours de vie) est un indicateur sensible des conditions de santé et de soins de santé maternelle et infantile."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de la pyramide des âges du Burkina Faso ?",
+      "optionA": "Une base étroite et un sommet large",
+      "optionB": "Une base large et un sommet étroit",
+      "optionC": "Une forme rectangulaire",
+      "optionD": "Une forme en sabre inversé",
+      "correctAnswer": "B",
+      "explanation": "La pyramide des âges du Burkina Faso présente une base large (forte natalité) et un sommet étroit (mortalité élevée chez les personnes âgées), typique des pays en développement jeunes."
+    },
+    {
+      "question": "Quel est le principal défi urbain lié à l'urbanisation rapide au Burkina Faso ?",
+      "optionA": "Déclin de la densité de population",
+      "optionB": "Insuffisance des infrastructures de base",
+      "optionC": "Réduction de la criminalité",
+      "optionD": "Amélioration de l'accès à la terre",
+      "correctAnswer": "B",
+      "explanation": "L'urbanisation rapide au Burkina Faso génère des défis majeurs en matière d'infrastructures de base (logement, eau, assainissement, électricité), particulièrement dans les grandes villes comme Ouagadougou et Bobo-Dioulasso."
+    },
+    {
+      "question": "Quel est le taux de prévalence contraceptive moderne au Burkina Faso selon les dernières enquêtes ?",
+      "optionA": "15%",
+      "optionB": "35%",
+      "optionC": "25%",
+      "optionD": "45%",
+      "correctAnswer": "A",
+      "explanation": "Le taux de prévalence contraceptive moderne au Burkina Faso est d'environ 15%, l'un des plus bas de la sous-région, reflétant les défis d'accès aux services de planification familiale."
+    },
+    {
+      "question": "Quelle est la définition correcte du Taux Global de Fertilité (TGF) ?",
+      "optionA": "Nombre moyen d'enfants par femme en âge de procréer",
+      "optionB": "Nombre de naissances vivantes pour 1000 femmes de 15-49 ans",
+      "optionC": "Nombre moyen d'enfants par femme tout au long de sa vie féconde",
+      "optionD": "Nombre de naissances vivantes pour 1000 habitants",
+      "correctAnswer": "C",
+      "explanation": "Le Taux Global de Fertilité (TGF) représente le nombre moyen d'enfants qu'une femme mettrait au monde au cours de sa vie féconde, selon les taux de fécondité par âge actuels."
+    },
+    {
+      "question": "Quel est le principal obstacle à la mise en œuvre des politiques de santé reproductive au Burkina Faso ?",
+      "optionA": "Excès de personnel de santé",
+      "optionB": "Manque de financement et de ressources",
+      "optionC": "Trop de centres de santé",
+      "optionD": "Manque de demande de la population",
+      "correctAnswer": "B",
+      "explanation": "Le principal obstacle à la mise en œuvre des politiques de santé reproductive au Burkina Faso est le manque de financement et de ressources, limitant l'accès aux services et aux produits."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de la migration internationale des Burkinabè ?",
+      "optionA": "Majoritairement féminine",
+      "optionB": "Majoritairement vers les pays voisins",
+      "optionC": "Majoritairement vers l'Europe",
+      "optionD": "Majoritairement temporaire",
+      "correctAnswer": "B",
+      "explanation": "La migration internationale des Burkinabè est majoritairement vers les pays voisins (Côte d'Ivoire, Ghana, etc.), principalement pour des raisons économiques et souvent de longue durée."
+    },
+    {
+      "question": "Quel est le principal indicateur de la pauvreté au Burkina Faso ?",
+      "optionA": "Taux d'alphabétisation",
+      "optionB": "Taux de chômage",
+      "optionC": "Taux de pauvreté monétaire",
+      "optionD": "Taux d'accès à l'eau potable",
+      "correctAnswer": "C",
+      "explanation": "Le taux de pauvreté monétaire est l'indicateur principal utilisé pour mesurer la pauvreté au Burkina Faso, définissant la proportion de la population vivant en dessous du seuil de pauvreté."
+    },
+    {
+      "question": "Quel est le défi principal lié au vieillissement de la population au Burkina Faso ?",
+      "optionA": "Déclin de la population active",
+      "optionB": "Augmentation de la dépendance des personnes âgées",
+      "optionC": "Réduction de la fécondité",
+      "optionD": "Augmentation de l'urbanisation",
+      "correctAnswer": "B",
+      "explanation": "Le défi principal lié au vieillissement de la population au Burkina Faso est l'augmentation de la dépendance des personnes âgées, avec des systèmes de protection sociale encore insuffisants."
+    },
+    {
+      "question": "Quelle est la méthode d'échantillonnage la plus appropriée pour une enquête nationale représentative au Burkina Faso ?",
+      "optionA": "Échantillonnage convenance",
+      "optionB": "Échantillonnage boule de neige",
+      "optionC": "Échantillonnage aléatoire stratifié",
+      "optionD": "Échantillonnonage quota",
+      "correctAnswer": "C",
+      "explanation": "L'échantillonnage aléatoire stratifié est la méthode la plus appropriée pour une enquête nationale représentative, garantissant la représentativité des différents sous-groupes de population."
+    },
+    {
+      "question": "Quel est le principal facteur explicatif de la forte fécondité au Burkina Faso ?",
+      "optionA": "Haute alphabétisation féminine",
+      "optionB": "Accès facile à la contraception",
+      "optionC": "Valeur culturelle de la fécondité",
+      "optionD": "Haute urbanisation",
+      "correctAnswer": "C",
+      "explanation": "La valeur culturelle attribuée à la fécondité, liée à des facteurs sociaux, économiques et culturels, reste un facteur explicatif majeur de la forte fécondité au Burkina Faso."
+    },
+    {
+      "question": "Quel est le principal enjeu de la politique de population au Burkina Faso ?",
+      "optionA": "Réduction drastique de la population",
+      "optionB": "Accélération de la transition démographique",
+      "optionC": "Promotion de la natalité",
+      "optionD": "Contrôle strict des migrations",
+      "correctAnswer": "B",
+      "explanation": "Le principal enjeu de la politique de population au Burkina Faso est d'accélérer la transition démographique en réduisant la fécondité et en améliorant les conditions de vie de la population."
+    },
+    {
+      "question": "Quel est le principal défi lié à l'emploi des jeunes au Burkina Faso ?",
+      "optionA": "Excès d'offres d'emploi",
+      "optionB": "Manque de qualifications adaptées",
+      "optionC": "Taux de salaire trop élevé",
+      "optionD": "Trop d'employeurs",
+      "correctAnswer": "B",
+      "explanation": "Le principal défi lié à l'emploi des jeunes au Burkina Faso est le manque de qualifications adaptées aux besoins du marché du travail, créant un déséquilibre entre l'offre et la demande."
+    },
+    {
+      "question": "Quel est le principal indicateur de la santé reproductive ?",
+      "optionA": "Taux de natalité",
+      "optionB": "Taux de mortalité infantile",
+      "optionC": "Taux de mortalité maternelle",
+      "optionD": "Taux de prévalence contraceptive",
+      "correctAnswer": "D",
+      "explanation": "Le taux de prévalence contraceptive est l'indicateur principal de la santé reproductive, reflétant l'accès et l'utilisation des méthodes de planification familiale."
+    },
+    {
+      "question": "Selon le dernier Recensement Général de la Population et de l'Habitat (RGPH) au Burkina Faso, quelle est la structure démographique dominante ?",
+      "optionA": "Population vieillissante avec forte proportion de plus de 65 ans",
+      "optionB": "Population jeune avec plus de 60% de moins de 25 ans",
+      "optionC": "Population stable avec une pyramide des âges rectangulaire",
+      "optionD": "Population décroissante avec faible indice de fécondité",
+      "correctAnswer": "B",
+      "explanation": "Le Burkina Faso possède une structure démographique très jeune, caractérisée par une pyramide des âges en forme de triangle avec plus de 60% de la population ayant moins de 25 ans, reflétant une forte fécondité."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de l'urbanisation au Burkina Faso ?",
+      "optionA": "Urbanisation lente et contrôlée par l'État",
+      "optionB": "Urbanisation accélérée avec prédominance d'une seule métropole",
+      "optionC": "Urbanisation modérée avec répartition équilibrée des villes",
+      "optionD": "Urbanisation décélérée avec migration vers les zones rurales",
+      "correctAnswer": "B",
+      "explanation": "L'urbanisation au Burkina Faso est marquée par un rythme accéléré avec une forte prédominance d'une métropole (Ouagadougou et Bobo-Dioulasso), concentrant une part importante des opportunités économiques et des services."
+    },
+    {
+      "question": "Quel indicateur est le plus utilisé pour mesurer la mortalité infantile ?",
+      "optionA": "Taux de mortalité générale",
+      "optionB": "Taux de mortalité maternelle",
+      "optionC": "Taux de mortalité infanto-juvénile",
+      "optionD": "Taux de mortalité néonatale précoce",
+      "correctAnswer": "C",
+      "explanation": "Le taux de mortalité infanto-juvénile (nombre de décès avant l'âge de 5 ans pour 1 000 naissances vivantes) est l'indicateur le plus complet pour mesurer la mortalité infantile, reflétant les conditions de santé et de développement des enfants."
+    },
+    {
+      "question": "Dans une enquête démographique, quelle méthode est la plus appropriée pour estimer la prévalence de la contraception moderne dans une population ?",
+      "optionA": "Recensement exhaustif",
+      "optionB": "Enquête par sondage aléatoire",
+      "optionC": "Données administratives",
+      "optionD": "Observation directe",
+      "correctAnswer": "B",
+      "explanation": "L'enquête par sondage aléatoire est la méthode la plus appropriée pour estimer la prévalence de la contraception moderne, car elle permet d'obtenir des données représentatives d'une population cible avec une marge d'erreur contrôlée."
+    },
+    {
+      "question": "Quelle est la relation entre fécondité et pauvreté au Burkina Faso ?",
+      "optionA": "La fécondité est indépendante de la pauvreté",
+      "optionB": "La fécondité élevée est un facteur de réduction de la pauvreté",
+      "optionC": "La fécondité élevée est un facteur d'aggravation de la pauvreté",
+      "optionD": "La pauvreté réduit uniquement la fécondité urbaine",
+      "correctAnswer": "C",
+      "explanation": "Au Burkina Faso, une fécondité élevée est souvent associée à une aggravation de la pauvreté, car elle limite les investissements par enfant, augmente les charges familiales et peut entraver l'autonomisation économique des femmes."
+    },
+    {
+      "question": "Quel est le principal défi démographique lié au vieillissement de la population au Burkina Faso ?",
+      "optionA": "Déficit de main-d'œuvre qualifiée",
+      "optionB": "Augmentation des dépenses de santé",
+      "optionC": "Pénurie de logements pour personnes âgées",
+      "optionD": "Réduction de la demande de produits de consommation courante",
+      "correctAnswer": "B",
+      "explanation": "Malgré une population encore jeune, le vieillissement progressif pose le défi principal de l'augmentation des dépenses de santé et de la protection sociale, avec un système de sécurité sociale encore embryonnaire."
+    },
+    {
+      "question": "Quel est le calcul correct du Taux Global de Fertilité (TGF) ?",
+      "optionA": "Somme des taux de fécondité spécifiques par âge de 15-49 ans",
+      "optionB": "Nombre de naissances vivantes × 1 000 / population totale",
+      "optionC": "Nombre d'enfants nés vivants par femme en âge de procréer",
+      "optionD": "Nombre de femmes en âge de procréer / population totale × 1 000",
+      "correctAnswer": "A",
+      "explanation": "Le TGF est calculé comme la somme des taux de fécondité spécifiques par âge (habituellement pour les âges de 15 à 49 ans) pour une année donnée, représentant le nombre moyen d'enfants qu'une femme aurait si elle suivait les taux de fécondité de l'année tout au long de sa vie féconde."
+    },
+    {
+      "question": "Quelle est la principale source de données démographiques au Burkina Faso ?",
+      "optionA": "Système d'enregistrement civil complet",
+      "optionB": "Recensements généraux de la population et de l'habitat (RGPH)",
+      "optionC": "Enquêtes démographiques et de santé (EDS) uniquement",
+      "optionD": "Données administratives des services de santé",
+      "correctAnswer": "B",
+      "explanation": "Le Recensement Général de la Population et de l'Habitat (RGPH) est la principale source de données démographiques exhaustives au Burkina Faso, complété par les Enquêtes Démographiques et de Santé (EDS) et d'autres enquêtes thématiques."
+    },
+    {
+      "question": "Dans le modèle de transition démographique classique, quelle phase précède la phase de faible fécondité ?",
+      "optionA": "Phase de haute fécondité et haute mortalité",
+      "optionB": "Phase de forte émigration",
+      "optionC": "Phase de forte urbanisation",
+      "optionD": "Phase de vieillissement rapide",
+      "correctAnswer": "A",
+      "explanation": "Selon le modèle classique de transition démographique, la phase de faible fécondité succède à la phase de haute fécondité et haute mortalité (phase 1), après la chute de la mortalité et le début de la baisse de la fécondité."
+    },
+    {
+      "question": "Quelle est la caractéristique principale des migrations internationales des Burkinabè ?",
+      "optionA": "Migration majoritairement qualifiée vers les pays de l'OCDE",
+      "optionB": "Migration saisonnière vers les pays voisins",
+      "optionC": "Migration définitive vers l'Europe",
+      "optionD": "Migration circulaire limitée à l'Afrique de l'Ouest",
+      "correctAnswer": "B",
+      "explanation": "Les migrations internationales des Burkinabè sont majoritairement saisonnières et temporaires, avec une destination principale vers les pays voisins (Côte d'Ivoire, Ghana, Mali) pour des raisons économiques."
+    },
+    {
+      "question": "Quel est le principal indicateur de santé reproductive utilisé dans les enquêtes démographiques ?",
+      "optionA": "Taux de natalité",
+      "optionB": "Taux de mortalité maternelle",
+      "optionC": "Prévalence de la contraception moderne",
+      "optionD": "Taux de mortalité infantile",
+      "correctAnswer": "C",
+      "explanation": "La prévalence de la contraception moderne est l'indicateur principal de santé reproductive, mesurant le pourcentage de femmes en union utilisant une méthode contraceptive moderne, reflétant l'accès et l'utilisation des services de planification familiale."
+    },
+    {
+      "question": "Quel est le principal défi urbain au Burkina Faso lié à la croissance démographique ?",
+      "optionA": "Déficit en logements de luxe",
+      "optionB": "Surdensité et insuffisance des infrastructures",
+      "optionC": "Pollution atmosphère excessive",
+      "optionD": "Déficit en main-d'œuvre qualifiée",
+      "correctAnswer": "B",
+      "explanation": "Le principal défi urbain lié à la croissance démographique est la surdensité et l'insuffisance des infrastructures (logements, eau, assainissement, électricité, transports), aggravées par une urbanisation rapide souvent non planifiée."
+    },
+    {
+      "question": "Quelle est la définition correcte du Taux de Croissance Naturelle (TCN) ?",
+      "optionA": "Différence entre le taux de natalité et le taux de mortalité",
+      "optionB": "Taux de croissance de la population urbaine",
+      "optionC": "Taux de croissance de la population rurale",
+      "optionD": "Différence entre l'immigration et l'émigration",
+      "correctAnswer": "A",
+      "explanation": "Le Taux de Croissance Naturelle (TCN) est la différence entre le taux de natalité et le taux de mortalité, exprimée en pour mille, représentant le solde naturel de la population (naissances - décès)."
+    },
+    {
+      "question": "Quel est le principal facteur explicatif de la baisse de la fécondité au Burkina Faso ces dernières décennies ?",
+      "optionA": "L'urbanisation accélérée",
+      "optionB": "L'amélioration de l'éducation des filles",
+      "optionC": "L'accès accru à la planification familiale",
+      "optionD": "Tous ces facteurs combinés",
+      "correctAnswer": "D",
+      "explanation": "La baisse de la fécondité au Burkina Faso s'explique par la combinaison de plusieurs facteurs : l'urbanisation, l'amélioration de l'éducation (notamment des filles), l'accès accru à la planification familiale, et les changements socio-économiques."
+    },
+    {
+      "question": "Quelle est la principale méthode d'analyse quantitative utilisée pour étudier la relation entre l'éducation et la fécondité ?",
+      "optionA": "Analyse de survie",
+      "optionB": "Régression logistique",
+      "optionC": "Analyse en composantes principales",
+      "optionD": "Analyse de correspondance",
+      "correctAnswer": "B",
+      "explanation": "La régression logistique est la méthode la plus appropriée pour étudier la relation entre l'éducation (variable indépendante) et la fécondité (variable dépendante binaire ou continue), permettant de contrôler d'autres facteurs confondants."
+    },
+    {
+      "question": "Quel est le principal défi démographique lié à la jeunesse de la population burkinabè ?",
+      "optionA": "Déficit de main-d'œuvre qualifiée",
+      "optionB": "Pression sur le marché du travail",
+      "optionC": "Augmentation de la demande de logements sociaux",
+      "optionD": "Réduction de la demande de services de santé",
+      "correctAnswer": "B",
+      "explanation": "Le principal défi démographique lié à la jeunesse de la population burkinabè est la pression sur le marché du travail, avec un grand nombre de jeunes entrant sur le marché de l'emploi chaque année, dépassant souvent la création d'emplois formels."
+    },
+    {
+      "question": "Selon les projections du RGPH 2024, quel est le taux d'accroissement naturel moyen annuel du Burkina Faso ?",
+      "optionA": "2,5%",
+      "optionB": "3,2%",
+      "optionC": "2,8%",
+      "optionD": "3,5%",
+      "correctAnswer": "B",
+      "explanation": "Le Burkina Faso présente l'un des taux d'accroissement naturels les plus élevés d'Afrique, avec une moyenne de 3,2% par an selon les projections du dernier Recensement Général de la Population et de l'Habitat (RGPH 2024)."
+    },
+    {
+      "question": "Dans le modèle classique de transition démographique, à quelle phase correspond la période où la mortalité commence à baisser mais que la natalité reste élevée ?",
+      "optionA": "Phase 1 : Haute mortalité et haute natalité",
+      "optionB": "Phase 2 : Baisse de la mortalité, natalité stable",
+      "optionC": "Phase 3 : Baisse de la natalité, mortalité faible",
+      "optionD": "Phase 4 : Basses mortalité et natalité",
+      "correctAnswer": "B",
+      "explanation": "La phase 2 de la transition démographique est caractérisée par une baisse de la mortalité (grâce aux améliorations sanitaires et médicales) alors que la natalité reste élevée, entraînant une forte croissance démographique."
+    },
+    {
+      "question": "Quelle est la principale caractéristique de l'exode rural au Burkina Faso ?",
+      "optionA": "Migration saisonnière vers les pays voisins",
+      "optionB": "Migration définitive des jeunes vers les centres urbains",
+      "optionC": "Migration de retour des expatriés européens",
+      "optionD": "Migration de groupes ethniques spécifiques vers les zones forestières",
+      "correctAnswer": "B",
+      "explanation": "L'exode rural au Burkina Fao est principalement caractérisé par un mouvement de population définitif ou de longue durée des jeunes, en majorité masculins, des zones r vers les centres urbains à la recherche d'opportunités économiques."
+    },
+    {
+      "question": "Quel indicateur est le plus approprié pour mesurer le niveau de développement socio-économique d'un pays en démographie ?",
+      "optionA": "Taux de fécondité totale",
+      "optionB": "Indice de Développement Humain (IDH)",
+      "optionC": "Taux de mortalité infantile",
+      "optionD": "Densité de population",
+      "correctAnswer": "B",
+      "explanation": "L'IDH est le meilleur indicateur composite qui intègre plusieurs dimensions du développement : santé (espérance de vie), éducation (scolarisation) et niveau de vie (revenu)."
+    },
+    {
+      "question": "Selon les données de l'INSD, quel est le principal facteur associé à la réduction de la mortalité infantile au Burkina Faso ?",
+      "optionA": "Augmentation du nombre de médecins pour 10 000 habitants",
+      "optionB": "Amélioration de l'accès à l'eau potable",
+      "optionC": "Extension des couvertures vaccinales",
+      "optionD": "Tous les éléments ci-dessus",
+      "correctAnswer": "D",
+      "explanation": "La réduction de la mortalité infantile au Burkina Faso est multifactorielle, résultant d'une combinaison d'actions sanitaires (vaccination), d'infrastructures (eau potable) et de ressources humaines (personnel de santé)."
+    },
+    {
+      "question": "Quelle méthode d'échantillonnage garantit que chaque individu d'une population a une probabilité connue et non nulle d'être sélectionné ?",
+      "optionA": "Échantillonnage boule de neige",
+      "optionB": "Échantillonnage raisonné",
+      "optionC": "Échantillonnage aléatoire simple",
+      "optionD": "Échantillonnage de convenance",
+      "correctAnswer": "C",
+      "explanation": "L'échantillonnage aléatoire simple assure que chaque individu d'une population a une probabilité égale et non nulle d'être inclus dans l'échantillon, ce qui permet de généraliser les résultats à la population."
+    },
+    {
+      "question": "Selon la théorie du dividende démographique, quand un pays peut-il en bénéficier ?",
+      "optionA": "Lorsque la population est majoritairement âgée",
+      "optionB": "Lorsque la population jeune est importante et que la fécondité baisse",
+      "optionC": "Lorsque le taux de migration est très élevé",
+      "optionD": "Lorsque le taux d'urbanisation dépasse 50%",
+      "correctAnswer": "B",
+      "explanation": "Le dividende démographique survient lorsque la proportion de personnes en âge de travailler (15-64 ans) est élevée par rapport aux dépendants (jeunes et personnes âgées), ce qui se produit généralement après une baisse de la fécondité."
+    },
+    {
+      "question": "Quelle est la définition du Taux de Fécondité Générale (TFG) ?",
+      "optionA": "Nombre moyen d'enfants par femme en âge de procréer",
+      "optionB": "Nombre de naissances pour 1 000 femmes de 15-49 ans",
+      "optionC": "Nombre de naissances pour 1 000 femmes de 15-44 ans",
+      "optionD": "Nombre moyen d'enfants par femme mariée",
+      "correctAnswer": "B",
+      "explanation": "Le TFG se calcule comme le nombre de naissances survenues dans une année divisé par le nombre de femmes âgées de 15 à 49 ans, multiplié par 1 000. Il mesure la fécondité pendant une année donnée."
+    },
+    {
+      "question": "Quel est l'indicateur démographique le plus approprié pour mesurer le fardeau de dépendance des personnes âgées ?",
+      "optionA": "Ratio de dépendance totale",
+      "optionB": "Ratio de dépendance des jeunes",
+      "optionC": "Ratio de dépendance des personnes âgées",
+      "optionD": "Taux de vieillissement",
+      "correctAnswer": "C",
+      "explanation": "Le ratio de dépendance des personnes âgées (nombre de 65+ / nombre de 15-64 ans × 100) mesure spécifiquement le fardeau démographique lié au vieillissement de la population."
+    }
+  ]
+}

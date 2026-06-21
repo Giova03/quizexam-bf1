@@ -110,9 +110,9 @@
     {
       "question": "Comment appelle-t-on le petit du chat ?",
       "optionA": "Le chaton",
-      "optionB": "Le chaton",
+      "optionB": "Le chatin",
       "optionC": "Le kitten",
-      "optionD": "Le chatonnet",
+      "optionD": "Le minet",
       "correctAnswer": "A",
       "explanation": "Le petit du chat est le chaton."
     },

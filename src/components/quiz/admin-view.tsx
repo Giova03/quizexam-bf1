@@ -43,6 +43,12 @@ import {
   CheckCircle2,
   XCircle,
   BarChart3,
+  Download,
+  Mail,
+  GraduationCap,
+  AlertTriangle,
+  Star,
+  Send,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -109,6 +115,8 @@ export function AdminView() {
   const [creatingQuestion, setCreatingQuestion] = useState(false);
   const [newBankOpen, setNewBankOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
+  const [newExamOpen, setNewExamOpen] = useState(false);
+  const [broadcastOpen, setBroadcastOpen] = useState(false);
 
   const loadStats = useCallback(async () => {
     setLoading(true);
@@ -175,7 +183,7 @@ export function AdminView() {
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-5">
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-5 lg:grid-cols-8">
           <TabsTrigger value="overview" className="gap-1.5">
             <TrendingUp className="h-4 w-4" />
             <span className="hidden sm:inline">Vue d&apos;ensemble</span>
@@ -195,6 +203,18 @@ export function AdminView() {
           <TabsTrigger value="sessions" className="gap-1.5">
             <Activity className="h-4 w-4" />
             <span className="hidden sm:inline">Sessions</span>
+          </TabsTrigger>
+          <TabsTrigger value="exams" className="gap-1.5">
+            <GraduationCap className="h-4 w-4" />
+            <span className="hidden sm:inline">Examens</span>
+          </TabsTrigger>
+          <TabsTrigger value="exports" className="gap-1.5">
+            <Download className="h-4 w-4" />
+            <span className="hidden sm:inline">Export</span>
+          </TabsTrigger>
+          <TabsTrigger value="broadcast" className="gap-1.5">
+            <Mail className="h-4 w-4" />
+            <span className="hidden sm:inline">Broadcast</span>
           </TabsTrigger>
         </TabsList>
 
@@ -294,6 +314,9 @@ export function AdminView() {
               </div>
             </Card>
           </div>
+
+          {/* Top performers + alerts */}
+          <TopPerformersAndAlerts />
         </TabsContent>
 
         {/* === Visitors Tab === */}
@@ -345,6 +368,21 @@ export function AdminView() {
         <TabsContent value="sessions" className="space-y-4">
           <SessionsList />
         </TabsContent>
+
+        {/* === Exams Tab === */}
+        <TabsContent value="exams" className="space-y-4">
+          <ExamsManager onNew={() => setNewExamOpen(true)} />
+        </TabsContent>
+
+        {/* === Exports Tab === */}
+        <TabsContent value="exports" className="space-y-4">
+          <ExportsPanel />
+        </TabsContent>
+
+        {/* === Broadcast Tab === */}
+        <TabsContent value="broadcast" className="space-y-4">
+          <BroadcastPanel open={broadcastOpen} onOpenChange={setBroadcastOpen} />
+        </TabsContent>
       </Tabs>
 
       {/* Bank questions management dialog */}
@@ -363,6 +401,16 @@ export function AdminView() {
         onCreated={() => {
           setNewBankOpen(false);
           loadStats();
+        }}
+      />
+
+      {/* New exam dialog */}
+      <NewExamDialog
+        open={newExamOpen}
+        onOpenChange={setNewExamOpen}
+        onCreated={() => {
+          setNewExamOpen(false);
+          toast.success("Examen créé avec succès");
         }}
       />
     </div>
@@ -1138,6 +1186,597 @@ function ProgressTracker() {
                   </div>
                 </div>
               )}
+            </div>
+          ))}
+        </div>
+      </Card>
+    </div>
+  );
+}
+
+// ===== Exams Manager =====
+function ExamsManager({ onNew }: { onNew: () => void }) {
+  const [exams, setExams] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const load = useCallback(async () => {
+    setLoading(true);
+    try {
+      const res = await fetch("/api/admin/exams");
+      if (res.ok) {
+        const data = await res.json();
+        setExams(Array.isArray(data) ? data : []);
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    load();
+  }, [load]);
+
+  async function handleDelete(id: string, title: string) {
+    if (!confirm(`Supprimer l'examen "${title}" ?`)) return;
+    try {
+      const res = await fetch(`/api/admin/exams?id=${id}`, { method: "DELETE" });
+      if (res.ok) {
+        toast.success("Examen supprimé");
+        load();
+      } else {
+        toast.error("Erreur lors de la suppression");
+      }
+    } catch (e) {
+      toast.error("Erreur");
+    }
+  }
+
+  if (loading) return <Skeleton className="h-64 rounded-xl" />;
+
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="flex items-center gap-2 font-semibold">
+            <GraduationCap className="h-4 w-4 text-violet-600" />
+            Examens blancs ({exams.length})
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            Créez et gérez les examens blancs disponibles pour les visiteurs
+          </p>
+        </div>
+        <Button onClick={onNew} className="gap-2 bg-gradient-to-r from-violet-500 to-purple-600 text-white">
+          <Plus className="h-4 w-4" />
+          Nouvel examen
+        </Button>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-2">
+        {exams.length === 0 && (
+          <Card className="col-span-full p-8 text-center text-muted-foreground">
+            Aucun examen pour le moment. Cliquez sur &quot;Nouvel examen&quot; pour en créer un.
+          </Card>
+        )}
+        {exams.map((e) => (
+          <Card key={e.id} className="p-4">
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0 flex-1">
+                <p className="truncate font-semibold">{e.title}</p>
+                <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">
+                  {e.description}
+                </p>
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  <Badge variant="outline" className="text-[10px]">
+                    <Clock className="mr-1 h-3 w-3" />
+                    {e.durationMin} min
+                  </Badge>
+                  <Badge variant="secondary" className="text-[10px]">
+                    {e._count?.examQuestions ?? 0} questions
+                  </Badge>
+                </div>
+              </div>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 shrink-0 text-rose-600 hover:bg-rose-50 hover:text-rose-700"
+                onClick={() => handleDelete(e.id, e.title)}
+              >
+                <Trash2 className="h-4 w-4" />
+              </Button>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ===== New Exam Dialog =====
+function NewExamDialog({
+  open,
+  onOpenChange,
+  onCreated,
+}: {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  onCreated: () => void;
+}) {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [duration, setDuration] = useState(60);
+  const [banks, setBanks] = useState<any[]>([]);
+  const [selectedBanks, setSelectedBanks] = useState<Record<string, number>>({});
+  const [creating, setCreating] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      fetch("/api/banks")
+        .then((r) => r.json())
+        .then((d) => setBanks(Array.isArray(d) ? d : []))
+        .catch(() => setBanks([]));
+    }
+  }, [open]);
+
+  async function handleCreate() {
+    if (!title.trim()) {
+      toast.error("Titre requis");
+      return;
+    }
+    const distributions = Object.entries(selectedBanks)
+      .filter(([_, count]) => count > 0)
+      .map(([bankId, count]) => ({ bankId, count }));
+    if (distributions.length === 0) {
+      toast.error("Sélectionnez au moins une banque");
+      return;
+    }
+    setCreating(true);
+    try {
+      const res = await fetch("/api/admin/exams", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: title.trim(),
+          description: description.trim(),
+          durationMin: duration,
+          distributions,
+        }),
+      });
+      if (res.ok) {
+        toast.success("Examen créé");
+        setTitle("");
+        setDescription("");
+        setDuration(60);
+        setSelectedBanks({});
+        onCreated();
+        onOpenChange(false);
+      } else {
+        const err = await res.json();
+        toast.error(err.error ?? "Erreur");
+      }
+    } catch (e) {
+      toast.error("Erreur");
+    } finally {
+      setCreating(false);
+    }
+  }
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-2xl">
+        <DialogHeader>
+          <DialogTitle>Créer un nouvel examen blanc</DialogTitle>
+          <DialogDescription>
+            Sélectionnez les banques et le nombre de questions à tirer de chacune
+          </DialogDescription>
+        </DialogHeader>
+
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="exam-title">Titre *</Label>
+            <Input
+              id="exam-title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Ex: Examen Blanc - Concours Administratif 2026"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="exam-desc">Description</Label>
+            <Textarea
+              id="exam-desc"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Description de l'examen..."
+              rows={2}
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="exam-duration">Durée (minutes)</Label>
+            <Input
+              id="exam-duration"
+              type="number"
+              min={10}
+              max={300}
+              value={duration}
+              onChange={(e) => setDuration(parseInt(e.target.value) || 60)}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label>Banques de questions</Label>
+            <p className="text-xs text-muted-foreground">
+              Indiquez le nombre de questions à tirer de chaque banque (0 = ignorer)
+            </p>
+            <div className="max-h-[300px] space-y-1.5 overflow-y-auto rounded-lg border p-2">
+              {banks.map((b) => (
+                <div
+                  key={b.id}
+                  className="flex items-center justify-between gap-2 rounded-lg border bg-card p-2"
+                >
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-medium">{b.title}</p>
+                    <p className="text-[10px] text-muted-foreground">
+                      {b._count?.questions ?? 0} questions disponibles
+                    </p>
+                  </div>
+                  <Input
+                    type="number"
+                    min={0}
+                    max={50}
+                    defaultValue={0}
+                    onChange={(e) => {
+                      const v = parseInt(e.target.value) || 0;
+                      setSelectedBanks((prev) => ({
+                        ...prev,
+                        [b.id]: v,
+                      }));
+                    }}
+                    className="h-8 w-16"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <DialogFooter>
+          <Button variant="outline" onClick={() => onOpenChange(false)}>
+            Annuler
+          </Button>
+          <Button
+            onClick={handleCreate}
+            disabled={creating}
+            className="gap-2 bg-gradient-to-r from-violet-500 to-purple-600 text-white"
+          >
+            {creating ? (
+              <>
+                <Activity className="h-4 w-4 animate-spin" />
+                Création...
+              </>
+            ) : (
+              <>
+                <Plus className="h-4 w-4" />
+                Créer l&apos;examen
+              </>
+            )}
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+// ===== Exports Panel =====
+function ExportsPanel() {
+  const [exporting, setExporting] = useState<string | null>(null);
+
+  async function handleExport(type: "users" | "sessions" | "banks") {
+    setExporting(type);
+    try {
+      const res = await fetch(`/api/admin/export?type=${type}`);
+      if (res.ok) {
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `${type}-${new Date().toISOString().slice(0, 10)}.csv`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        toast.success(`Export ${type} téléchargé`);
+      } else {
+        toast.error("Erreur lors de l'export");
+      }
+    } catch (e) {
+      toast.error("Erreur");
+    } finally {
+      setExporting(null);
+    }
+  }
+
+  const exports = [
+    {
+      type: "users" as const,
+      title: "Utilisateurs",
+      desc: "Liste complète des utilisateurs inscrits (nom, email, rôle, sessions)",
+      icon: Users,
+      color: "emerald",
+    },
+    {
+      type: "sessions" as const,
+      title: "Sessions",
+      desc: "Toutes les sessions de quiz (utilisateur, score, mode, date)",
+      icon: Activity,
+      color: "rose",
+    },
+    {
+      type: "banks" as const,
+      title: "Banques",
+      desc: "Liste des banques de questions avec le nombre de questions",
+      icon: Database,
+      color: "violet",
+    },
+  ];
+
+  return (
+    <div className="space-y-4">
+      <div>
+        <h2 className="flex items-center gap-2 font-semibold">
+          <Download className="h-4 w-4 text-emerald-600" />
+          Export de données (CSV)
+        </h2>
+        <p className="text-sm text-muted-foreground">
+          Téléchargez les données de la plateforme au format CSV pour analyse externe
+        </p>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-3">
+        {exports.map((e) => (
+          <Card key={e.type} className="flex flex-col gap-3 p-5">
+            <div className={`flex h-11 w-11 items-center justify-center rounded-xl bg-${e.color}-50 text-${e.color}-600 dark:bg-${e.color}-950/40`}>
+              <e.icon className="h-5 w-5" />
+            </div>
+            <div>
+              <p className="font-semibold">{e.title}</p>
+              <p className="mt-1 text-xs text-muted-foreground">{e.desc}</p>
+            </div>
+            <Button
+              className="mt-auto gap-2"
+              variant="outline"
+              disabled={exporting === e.type}
+              onClick={() => handleExport(e.type)}
+            >
+              {exporting === e.type ? (
+                <>
+                  <Activity className="h-4 w-4 animate-spin" />
+                  Export...
+                </>
+              ) : (
+                <>
+                  <Download className="h-4 w-4" />
+                  Télécharger CSV
+                </>
+              )}
+            </Button>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ===== Broadcast Panel =====
+function BroadcastPanel({
+  open,
+  onOpenChange,
+}: {
+  open: boolean;
+  onOpenChange: (o: boolean) => void;
+}) {
+  const [subject, setSubject] = useState("");
+  const [body, setBody] = useState("");
+  const [sending, setSending] = useState(false);
+
+  async function handleSend() {
+    if (!subject.trim() || !body.trim()) {
+      toast.error("Sujet et message requis");
+      return;
+    }
+    setSending(true);
+    try {
+      const res = await fetch("/api/admin/broadcast", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ subject: subject.trim(), body: body.trim() }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        toast.success(data.message ?? "Message envoyé");
+        setSubject("");
+        setBody("");
+      } else {
+        toast.error("Erreur lors de l'envoi");
+      }
+    } catch (e) {
+      toast.error("Erreur");
+    } finally {
+      setSending(false);
+    }
+  }
+
+  return (
+    <div className="space-y-4">
+      <div>
+        <h2 className="flex items-center gap-2 font-semibold">
+          <Mail className="h-4 w-4 text-amber-600" />
+          Message broadcast
+        </h2>
+        <p className="text-sm text-muted-foreground">
+          Envoyez un message email à tous les utilisateurs inscrits
+        </p>
+      </div>
+
+      <Card className="space-y-4 p-5">
+        <div className="space-y-2">
+          <Label htmlFor="broadcast-subject">Sujet *</Label>
+          <Input
+            id="broadcast-subject"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+            placeholder="Ex: Nouveaux examens disponibles !"
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="broadcast-body">Message *</Label>
+          <Textarea
+            id="broadcast-body"
+            value={body}
+            onChange={(e) => setBody(e.target.value)}
+            placeholder="Contenu du message..."
+            rows={6}
+          />
+        </div>
+        <div className="flex items-center justify-between gap-2 rounded-lg bg-amber-50 p-3 text-xs text-amber-800 dark:bg-amber-950/30 dark:text-amber-200">
+          <AlertTriangle className="h-4 w-4 shrink-0" />
+          <p className="flex-1">
+            Le message sera programmé pour tous les visiteurs inscrits.
+            L&apos;envoi réel dépend de la configuration du service email.
+          </p>
+        </div>
+        <Button
+          onClick={handleSend}
+          disabled={sending}
+          className="gap-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white"
+        >
+          {sending ? (
+            <>
+              <Activity className="h-4 w-4 animate-spin" />
+              Envoi...
+            </>
+          ) : (
+            <>
+              <Send className="h-4 w-4" />
+              Envoyer le broadcast
+            </>
+          )}
+        </Button>
+      </Card>
+    </div>
+  );
+}
+
+// ===== Top Performers + Alerts (added to Overview) =====
+function TopPerformersAndAlerts() {
+  const [sessions, setSessions] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/admin/sessions?details=true")
+      .then((r) => (r.ok ? r.json() : []))
+      .then((d) => setSessions(Array.isArray(d) ? d : []))
+      .catch(() => setSessions([]))
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) return <Skeleton className="h-48 rounded-xl" />;
+
+  // Compute top performers
+  const userMap: Record<string, { name: string; email: string; sessions: any[] }> = {};
+  for (const s of sessions) {
+    const uid = s.user?.id ?? "anon";
+    if (!userMap[uid]) {
+      userMap[uid] = { name: s.user?.name ?? "Visiteur", email: s.user?.email ?? "N/A", sessions: [] };
+    }
+    if (s.completedAt) userMap[uid].sessions.push(s);
+  }
+
+  const users = Object.entries(userMap).map(([id, data]) => {
+    const completed = data.sessions;
+    const avgPct = completed.length > 0
+      ? Math.round(completed.reduce((sum, s) => sum + (s.score / Math.max(1, s.totalQuestions)) * 100, 0) / completed.length)
+      : 0;
+    return { id, ...data, sessionCount: completed.length, avgPct };
+  });
+
+  const topPerformers = [...users]
+    .filter((u) => u.sessionCount >= 1)
+    .sort((a, b) => b.avgPct - a.avgPct)
+    .slice(0, 5);
+
+  const lowPerformers = [...users]
+    .filter((u) => u.sessionCount >= 2 && u.avgPct < 50)
+    .sort((a, b) => a.avgPct - b.avgPct)
+    .slice(0, 5);
+
+  return (
+    <div className="grid gap-4 lg:grid-cols-2">
+      <Card className="overflow-hidden">
+        <div className="border-b px-5 py-4">
+          <h3 className="flex items-center gap-2 font-semibold">
+            <Star className="h-4 w-4 text-amber-500" />
+            Top 5 visiteurs
+          </h3>
+          <p className="text-xs text-muted-foreground">Meilleurs scores moyens</p>
+        </div>
+        <div className="divide-y">
+          {topPerformers.length === 0 && (
+            <p className="p-4 text-center text-sm text-muted-foreground">
+              Pas encore de données
+            </p>
+          )}
+          {topPerformers.map((u, i) => (
+            <div key={u.id} className="flex items-center gap-3 px-5 py-3">
+              <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+                i === 0 ? "bg-amber-100 text-amber-700" :
+                i === 1 ? "bg-slate-100 text-slate-700" :
+                i === 2 ? "bg-orange-100 text-orange-700" :
+                "bg-muted text-muted-foreground"
+              }`}>
+                {i + 1}
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-sm font-medium">{u.name}</p>
+                <p className="truncate text-[10px] text-muted-foreground">{u.email}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-sm font-bold text-emerald-600">{u.avgPct}%</p>
+                <p className="text-[10px] text-muted-foreground">{u.sessionCount} sess.</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Card>
+
+      <Card className="overflow-hidden">
+        <div className="border-b px-5 py-4">
+          <h3 className="flex items-center gap-2 font-semibold">
+            <AlertTriangle className="h-4 w-4 text-rose-500" />
+            Alertes performance
+          </h3>
+          <p className="text-xs text-muted-foreground">Visiteurs avec score moyen &lt; 50%</p>
+        </div>
+        <div className="divide-y">
+          {lowPerformers.length === 0 && (
+            <p className="p-4 text-center text-sm text-muted-foreground">
+              Aucune alerte - tous les visiteurs performent bien !
+            </p>
+          )}
+          {lowPerformers.map((u) => (
+            <div key={u.id} className="flex items-center gap-3 px-5 py-3">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700">
+                <AlertTriangle className="h-3.5 w-3.5" />
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-sm font-medium">{u.name}</p>
+                <p className="truncate text-[10px] text-muted-foreground">{u.email}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-sm font-bold text-rose-600">{u.avgPct}%</p>
+                <p className="text-[10px] text-muted-foreground">{u.sessionCount} sess.</p>
+              </div>
             </div>
           ))}
         </div>

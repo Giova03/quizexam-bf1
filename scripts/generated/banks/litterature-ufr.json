@@ -97,6 +97,969 @@
       "optionD": "Le théâtre moderne",
       "correctAnswer": "A",
       "explanation": "La littérature orale: contes (Anansi), épopées (Soundiata), proverbes, devinettes."
+    },
+    {
+      "question": "Dans la littérature africaine orale, quelle fonction principale est attribuée aux griots?",
+      "optionA": "Transmettre les traditions et l'histoire",
+      "optionB": "Guérir les maladies",
+      "optionC": "Prédire l'avenir",
+      "optionD": "Conduire les cérémonies religieuses",
+      "correctAnswer": "A",
+      "explanation": "Les griots sont principalement connus comme les dépositaires et transmetteurs de l'histoire, des traditions et du patrimoine culturel de leur communauté."
+    },
+    {
+      "question": "Quel mouvement littéraire, initié par Aimé Césaire, Léopold Sédar Senghor et Léon Damas, prônait la reconnaissance de la culture et de la civilisation africaines?",
+      "optionA": "La négritude",
+      "optionB": "Le panafricanisme",
+      "optionC": "Le réalisme magique",
+      "optionD": "Le surréalisme noir",
+      "correctAnswer": "A",
+      "explanation": "La négritude est un mouvement littéraire et idéologique qui valorise l'identité culturelle africaine et la spécificité de la civilisation noire, initié par Césaire, Senghor et Damas dans les années 1930."
+    },
+    {
+      "question": "Dans quelle œuvre Mongo Beti dénonce-t-il la collaboration des élites africaines avec le pouvoir colonial?",
+      "optionA": "Le pauvre Christ de Bomba",
+      "optionB": "Le règne de la grâce",
+      "optionC": "Main basse sur le Cameroun",
+      "optionD": "Remember, Reuben",
+      "correctAnswer": "C",
+      "explanation": "\"Main basse sur le Cameroun\" est un roman pamphlétaire de Mongo Beti qui dénonce l'impérialisme français et la collaboration des élites camerounaises."
+    },
+    {
+      "question": "Qui est l'auteure de \"Si si longue vie\", un roman qui explore les relations de pouvoir entre hommes et femmes dans la société sénégalaise?",
+      "optionA": "Aminata Sow Fall",
+      "optionB": "Mariama Bâ",
+      "optionC": "Calixthe Beyala",
+      "optionD": "Werewere Liking",
+      "correctAnswer": "A",
+      "explanation": "Aminata Sow Fall, auteure sénégalaise, a écrit \"Si si longue vie\" en 1981, un roman qui examine les dynamiques de pouvoir dans la société sénégalaise."
+    },
+    {
+      "question": "Quel poème de Léopold Sédar Senghor illustre le mieux sa vision de la négritude et de l'identité africaine?",
+      "optionA": "Femme noire",
+      "optionB": "Elégie pour l'Anglais",
+      "optionC": "Chants d'ombre",
+      "optionD": "Hosties noires",
+      "correctAnswer": "A",
+      "explanation": "\"Femme noire\" est l'un des poèmes les plus emblématiques de Senghor, célébrant la beauté et la dignité de la femme africaine comme symbole de la négritude."
+    },
+    {
+      "question": "Dans quelle œuvre Aminata Sow Fall dénonce-t-elle la corruption dans la société sénégalaise post-indépendance?",
+      "optionA": "La grève des bàttu",
+      "optionB": "L'Ex-père de la nation",
+      "optionC": "Le relevé des prix",
+      "optionD": "Le dernier de l'empire",
+      "correctAnswer": "A",
+      "explanation": "\"La grève des bàttu\" (1979) d'Aminata Sow Fall est un roman satirique qui dénonce la corruption et l'oppression dans la société sénégalaise post-coloniale."
+    },
+    {
+      "question": "Quel personnage de théâtre de Sénouvo Agbota Zinsou incarne la résistance culturelle contre l'assimilation?",
+      "optionA": "Togbui Agblan",
+      "optionB": "Kossi",
+      "optionC": "Awovi",
+      "optionD": "Mawuli",
+      "correctAnswer": "A",
+      "explanation": "Togbui Agblan, personnage principal de la pièce \"Togbui Agblan, ou l'initiation\" de Sénouvo Agbota Zinsou, incarne la résistance culturelle contre l'assimilation coloniale."
+    },
+    {
+      "question": "Dans quelle œuvre Wole Soyinka explore-t-il le conflit entre les traditions yoruba et la modernité?",
+      "optionA": "Les interprètes",
+      "optionB": "La mort et le roi de chevaux",
+      "optionC": "Les dieux sont morts",
+      "optionD": "Une saison au Congo",
+      "correctAnswer": "A",
+      "explanation": "\"Les interprètes\" (Wole Soyinka, 1973) explore le conflit entre les valeurs traditionnelles yoruba et les influences de la modernité et de l'Occident."
+    },
+    {
+      "question": "Quel roman d'Alain Mabanckou dépeint la vie dans un quartier populaire de Brazzaville?",
+      "optionA": "Mémoires de porc-épic",
+      "optionB": "Verre cassé",
+      "optionC": "Petit Piment",
+      "optionD": "Black Bazar",
+      "correctAnswer": "C",
+      "explanation": "\"Petit Piment\" (2005) d'Alain Mabanckou est un roman qui dépeit avec humour et réalisme la vie dans un quartier populaire de Brazzaville."
+    },
+    {
+      "question": "Qui est l'auteure marocaine du roman \"L'ombre du vent\"?",
+      "optionA": "Leila Slimani",
+      "optionB": "Tahar Ben Jelloun",
+      "optionC": "Driss Chraïbi",
+      "optionD": "Fatima Mernissi",
+      "correctAnswer": "A",
+      "explanation": "Leila Slimani, auteure marocaine contemporaine, a publié \"L'ombre du vent\" en 2014, un roman qui explore les relations humaines et les secrets de famille."
+    },
+    {
+      "question": "Dans quelle œuvre Chinua Achebe critique-t-il la représentation stéréotypée de l'Afrique dans la littérature coloniale?",
+      "optionA": "Le monde s'effondre",
+      "optionB": "Un homme du peuple",
+      "optionC": "Tous les fleuves vont à la mer",
+      "optionD": "Chike et la rivière",
+      "correctAnswer": "A",
+      "explanation": "\"Le monde s'effondre\" (1958) d'Achinua Achebe est une réponse directe au roman \"Cœurs des ténèbres\" de Conrad, critiquant la représentation dégradante de l'Afrique."
+    },
+    {
+      "question": "Quel mouvement littéraire, né en France après la Seconde Guerre mondiale, a influencé de nombreux écrivains africains?",
+      "optionA": "Le Nouveau Roman",
+      "optionB": "Le Surréalisme",
+      "optionC": "Le Romantisme",
+      "optionD": "Le Symbolisme",
+      "correctAnswer": "A",
+      "explanation": "Le Nouveau Roman, apparu dans les années 1950, a influencé de nombreux écrivains africains dans leur approche formelle et narrative."
+    },
+    {
+      "question": "Dans quelle œuvre Ngũgĩ wa Thiong'o critique-t-il l'utilisation de la langue coloniale en littérature?",
+      "optionA": "Petit Grain de sel",
+      "optionB": "Les fleurs de la parole",
+      "optionC": "Décoloniser l'esprit",
+      "optionD": "Le fleuve Nyamba",
+      "correctAnswer": "C",
+      "explanation": "\"Décoloniser l'esprit\" (1986) de Ngũgĩ wa Thiong'o est un essai dans lequel l'auteur plaide pour l'utilisation des langues africaines plutôt que des langues coloniales."
+    },
+    {
+      "question": "Quel roman d'Assia Djebar explore-t-il la condition féminine dans l'Algérie coloniale?",
+      "optionA": "Les enfants du nouveau monde",
+      "optionB": "Femmes d'Alger dans leur appartement",
+      "optionC": "Nulle part dans la maison de mon père",
+      "optionD": "Oran, ville ouverte",
+      "correctAnswer": "B",
+      "explanation": "\"Femmes d'Alger dans leur appartement\" (1980) d'Assia Djebar explore la condition féminine dans l'Algérie coloniale et post-coloniale."
+    },
+    {
+      "question": "Dans quelle œuvre Bernard Dadié dénonce-t-il l'inhumanité du système colonial?",
+      "optionA": "Climats",
+      "optionB": "Un noir à Paris",
+      "optionC": "Patience et impatience",
+      "optionD": "Le noir et le blanc",
+      "correctAnswer": "B",
+      "explanation": "\"Un noir à Paris\" (1950) de Bernard Dadié est un roman qui dénonce l'inhumanité du système colonial à travers l'expérience d'un étudiant ivoirien en France."
+    },
+    {
+      "question": "Quel personnage de \"L'aventure ambiguë\" de Cheikh Hamidou Kane incarne le conflit entre tradition et modernité?",
+      "optionA": "Ousmane",
+      "optionB": "Modou",
+      "optionC": "Samba",
+      "optionD": "Ibrahima",
+      "correctAnswer": "D",
+      "explanation": "Ibrahima, personnage principal de \"L'aventure ambiguë\" (1961) de Cheikh Hamidou Kane, incarne le conflit entre les valeurs traditionnelles sénégalaises et l'éducation occidentale."
+    },
+    {
+      "question": "Dans quelle œuvre Sony Labou Tansi explore-t-il la folie et la violence dans la société congolaise?",
+      "optionA": "La vie et demie",
+      "optionB": "Le coup des morts",
+      "optionC": "L'antériorité du mal",
+      "optionD": "Le pouvoir des chiens",
+      "correctAnswer": "A",
+      "explanation": "\"La vie et demie\" (1979) de Sony Labou Tansi est un roman qui explore avec violence et poésie la folie et la déliquescence de la société congolaise."
+    },
+    {
+      "question": "Quel roman de Leila Slimani a remporté le Prix Goncourt en 2016?",
+      "optionA": "L'homme qui ne venait pas d'ailleurs",
+      "optionB": "Chanson douce",
+      "optionC": "Le pays des autres",
+      "optionD": "Sexe et mensonges",
+      "correctAnswer": "B",
+      "explanation": "\"Chanson douce\" (2016) de Leila Slimani a remporté le Prix Goncourt cette année-là, devenant ainsi la première auteure marocaine à recevoir cette distinction."
+    },
+    {
+      "question": "Quel mouvement littéraire, né en France au XIXe siècle, a influencé les écrivains africains engagés?",
+      "optionA": "Le Naturalisme",
+      "optionB": "Le Symbolisme",
+      "optionC": "Le Parnasse",
+      "optionD": "Le Classicisme",
+      "correctAnswer": "A",
+      "explanation": "Le Naturalisme, avec son accent sur le déterminisme social et la description réaliste des conditions de vie, a influencé de nombreux écrivains africains engagés qui dénonçaient les injustices sociales."
+    },
+    {
+      "question": "Dans quelle œuvre de Léopold Sédar Senghor trouve-t-on la célèbre phrase 'Je ne suis pas un homme, je suis un peuple' ?",
+      "optionA": "Chants d'ombre",
+      "optionB": "Hosties noires",
+      "optionC": "Éthiopiques",
+      "optionD": "Négritude et humanisme",
+      "correctAnswer": "B",
+      "explanation": "Cette phrase figure dans 'Hosties noires', recueil de poèmes publié en 1948, où Senghor exprime la fusion entre l'individu et la collectivité noire."
+    },
+    {
+      "question": "Quel personnage principal du roman 'Le Vent des savanes' de Ahmadou Kourouma incarne la résistance culturelle africaine face à la colonisation ?",
+      "optionA": "Fama",
+      "optionB": "Siriman",
+      "optionC": "Naba",
+      "optionD": "Binga",
+      "correctAnswer": "A",
+      "explanation": "Fama, le protagoniste, incarne la résistance culturelle africaine à travers sa quête de légitimité traditionnelle malgré l'influence coloniale."
+    },
+    {
+      "question": "Quel mouvement littéraire, initié par Aimé Césaire, Léopold Sédar Senghor et Léon Damas, a révolutionné la littérature francophone ?",
+      "optionA": "La Négritude",
+      "optionB": "Le Surréalisme",
+      "optionC": "Le Naturalisme",
+      "optionD": "Le Symbolisme",
+      "correctAnswer": "A",
+      "explanation": "La Négritude, mouvement littéraire et idéologique des années 1930-1950, a révolutionné la littérature francophone en affirmant l'identité et la valeur culturelles africaines."
+    },
+    {
+      "question": "Dans quel roman de Mariama Bâ trouve-t-on le personnage de Ramatoulaye, une femme qui lutte pour son droit à l'héritage ?",
+      "optionA": "Une si longue lettre",
+      "optionB": "Le Baobab fou",
+      "optionC": "Scarification",
+      "optionD": "Fragments de vie",
+      "correctAnswer": "A",
+      "explanation": "'Une si longue lettre' met en scène Ramatoulaye, une femme qui, après le décès de son mari, lutte pour son droit à l'héritage face aux traditions patriarcales."
+    },
+    {
+      "question": "Quel écrivain maghrébin est l'auteur du célèbre roman 'L'Enfant du sable' ?",
+      "optionA": "Tahar Ben Jelloun",
+      "optionB": "Driss Chraïbi",
+      "optionC": "Abdelkebir Khatibi",
+      "optionD": "Assia Djebar",
+      "correctAnswer": "A",
+      "explanation": "Tahar Ben Jelloun, écrivain marocain, est l'auteur de 'L'Enfant du sable', roman qui explore les questions de genre et d'identité dans la société marocaine."
+    },
+    {
+      "question": "Dans quelle œuvre de Wole Soyinka trouve-t-on le personnage d'Elechi Amadi, symbole de la résistance africaine ?",
+      "optionA": "Les Interprètes",
+      "optionB": "Le Dernier des rois",
+      "optionC": "Une vie entière",
+      "optionD": "Les Fleurs du mal",
+      "correctAnswer": "B",
+      "explanation": "Le Dernier des rois' de Wole Soyinka met en scène Elechi Amadi comme symbole de la résistance africaine face à la colonisation et à la perte des valeurs traditionnelles."
+    },
+    {
+      "question": "Dans quel recueil poétique de Léon Damas trouve-t-on des poèmes engagés contre la colonisation ?",
+      "optionA": "Pigments",
+      "optionB": "Black Label",
+      "optionC": "Les Armes miraculeuses",
+      "optionD": "Le Cœur transpercé",
+      "correctAnswer": "A",
+      "explanation": "Pigments', recueil publié en 1937, contient des poèmes engagés contre la colonisation et pour la reconnaissance de la culture africaine."
+    },
+    {
+      "question": "Quel roman de Aminata Sow Fall explore les tensions entre traditions et modernité en Afrique ?",
+      "optionA": "La Grève des bàttu",
+      "optionB": "L'Ex-père de la nation",
+      "optionC": "Le Revenant",
+      "optionD": "Harambunna",
+      "correctAnswer": "A",
+      "explanation": "La Grève des bàttu' explore les tensions entre traditions et modernité à travers l'histoire d'une grève des porteurs à Dakar."
+    },
+    {
+      "question": "Quel personnage du roman 'Le Monde s'effondre' de Chinua Achebe incarne la collision entre les valeurs traditionnelles et la culture coloniale ?",
+      "optionA": "Okonkwo",
+      "optionB": "Nwoye",
+      "optionC": "Ezeudu",
+      "optionD": "Obierika",
+      "correctAnswer": "A",
+      "explanation": "Okonkwo, le protagoniste, incarne la collision tragique entre les valeurs traditionnelles igbo et la culture coloniale britannique."
+    },
+    {
+      "question": "Dans quelle œuvre de Calixthe Beyala trouve-t-on une critique de la condition féminine dans la société contemporaine africaine ?",
+      "optionA": "Le Petit Prince de Belleville",
+      "optionB": "C'est le soleil qui m'a brûlée",
+      "optionC": "La Princesse d'Abidjan",
+      "optionD": "Les Honneurs perdus",
+      "correctAnswer": "B",
+      "explanation": "C'est le soleil qui m'a brûlée' explore la condition féminine dans la société contemporaine africaine à travers l'histoire d'une jeune femme confrontée aux violences et aux discriminations."
+    },
+    {
+      "question": "Quel mouvement littéraire, né au XXe siècle, cherche à déconstruire les récits coloniaux à travers l'écriture ?",
+      "optionA": "Postcolonialisme",
+      "optionB": "Surréalisme",
+      "optionC": "Modernisme",
+      "optionD": "Romantisme",
+      "correctAnswer": "A",
+      "explanation": "Le postcolonialisme, né au XXe siècle, cherche à déconstruire les récits coloniaux à travers l'écriture et la réappropriation des discours dominants."
+    },
+    {
+      "question": "Dans quelle œuvre de Ngugi wa Thiong'o trouve-t-on une critique de l'éducation coloniale en Afrique ?",
+      "optionA": "Nous ne sommes pas seuls",
+      "optionB": "Le Fleuve Nyamba",
+      "optionC": "Pétrole",
+      "optionD": "Un grain de blé",
+      "correctAnswer": "D",
+      "explanation": "Un grain de blé' critique l'éducation coloniale en Afrique à travers l'histoire d'un jeune homme confronté aux choix entre tradition et modernité."
+    },
+    {
+      "question": "Quel personnage du roman 'Xala' de Sembène Ousmane incarne l'aliénation culturelle de l'élite africaine post-indépendance ?",
+      "optionA": "El Hadji Kader Beye",
+      "optionB": "Adja Awa",
+      "optionC": "Oumar N'Gom",
+      "optionD": "Madame N'Gom",
+      "correctAnswer": "A",
+      "explanation": "El Hadji Kader Beye, le protagoniste de 'Xala', incarne l'aliénation culturelle de l'élite africaine post-indépendance, qui imite les valeurs occidentales tout en rejetant ses propres traditions."
+    },
+    {
+      "question": "Dans quel recueil poétique de Aimé Césaire trouve-t-on la célèbre phrase 'L'homme qui rit larmes' ?",
+      "optionA": "Cahier d'un retour au pays natal",
+      "optionB": "Les Armes miraculeuses",
+      "optionC": "Ferrements",
+      "optionD": "Cadastre",
+      "correctAnswer": "A",
+      "explanation": "'L'homme qui rit larmes' figure dans 'Cahier d'un retour au pays natal', recueil de poèmes publié en 1939, qui explore l'expérience de la négrauté et de l'exil."
+    },
+    {
+      "question": "Quel roman de Leila Sebbar explore l'identité hybride des enfants de migrants maghrébins en France ?",
+      "optionA": "Shéhérazade",
+      "optionB": "Fatma",
+      "optionC": "Le Baiser de Muhammad",
+      "optionD": "Le Chagrin des Belges",
+      "correctAnswer": "A",
+      "explanation": "Shéhérazade' explore l'identité hybride des enfants de migrants maghrébins en France à travers l'histoire d'une jeune fille entre deux cultures."
+    },
+    {
+      "question": "Dans quelle œuvre de Bernard Dadié trouve-t-on une réappropriation des contes traditionnels africains ?",
+      "optionA": "Climats",
+      "optionB": "Un Nègre à Paris",
+      "optionC": "Patience et Sébastien",
+      "optionD": "Le Sauvage de l'Aveu",
+      "correctAnswer": "C",
+      "explanation": "Patience et Sébastien' de Bernard Dadié réapproprie les contes traditionnels africains pour créer une œuvre qui explore les relations entre tradition et modernité."
+    },
+    {
+      "question": "Quel personnage du roman 'Le Regard du roi' de Mongo Beti incarne la critique de l'élite africaine collaborant avec le pouvoir colonial ?",
+      "optionA": "Roi Akoda",
+      "optionB": "Ntsama",
+      "optionC": "Sima",
+      "optionD": "Queen Mandolys",
+      "correctAnswer": "C",
+      "explanation": "Sima, personnage secondaire mais crucial, incarne la critique de l'élite africaine collaborant avec le pouvoir colonial, incarnée par le roi Akoda."
+    },
+    {
+      "question": "Dans quelle œuvre de Assia Djebar trouve-t-on une réécriture de l'histoire algérienne du point de vue des femmes ?",
+      "optionA": "Femmes d'Alger dans leur appartement",
+      "optionB": "L'Amour, la fantasia",
+      "optionC": "Oran, ville imaginaire",
+      "optionD": "Les Enfants du nouveau monde",
+      "correctAnswer": "B",
+      "explanation": "L'Amour, la fantasia' réécrit l'histoire algérienne du point de vue des femmes, explorant les expériences des femmes pendant la guerre d'indépendance."
+    },
+    {
+      "question": "Quel mouvement littéraire, né au XIXe siècle, cherche à représenter la réalité sociale de manière objective ?",
+      "optionA": "Naturalisme",
+      "optionB": "Symbolisme",
+      "optionC": "Romantisme",
+      "optionD": "Classicisme",
+      "correctAnswer": "A",
+      "explanation": "Le Naturalisme, mouvement né au XIXe siècle avec des auteurs comme Émile Zola, cherche à représenter la réalité sociale de manière objective, souvent à travers l'étude des déterminismes sociaux et biologiques."
+    },
+    {
+      "question": "Dans quelle œuvre de Léopold Sédar Senghor retrouve-t-on la notion de 'négritude' comme 'culture du monde' ?",
+      "optionA": "Chants d'ombre",
+      "optionB": "Hosties noires",
+      "optionC": "Éthiopiques",
+      "optionD": "Négritude et humanisme",
+      "correctAnswer": "B",
+      "explanation": "'Hosties noires' (1948) est recueil de poèmes où Senghor développe la notion de négritude comme culture universelle, alliant africanité et humanisme."
+    },
+    {
+      "question": "Qui est l'auteure de 'Une si longue lettre', considéré comme un texte fondamental de la littérature féminine africaine ?",
+      "optionA": "Calixthe Beyala",
+      "optionB": "Aminata Sow Fall",
+      "optionC": "Mariama Bâ",
+      "optionD": "Tsitsi Dangarembga",
+      "correctAnswer": "C",
+      "explanation": "Mariama Bâ publie 'Une si longue lettre' en 1979, roman épistolaire qui aborde les questions de condition féminine, de tradition et de modernité au Sénégal."
+    },
+    {
+      "question": "Quelle œuvre de Ferdinand Oyono dépeint de manière satirique l'expérience coloniale à travers les yeux d'un fonctionnaire africain ?",
+      "optionA": "Le vieux Nègre et la médaille",
+      "optionB": "Le pauvre Christ de Bomba",
+      "optionC": "Le chemin de El Hadj",
+      "optionD": "Une vie de boy",
+      "correctAnswer": "D",
+      "explanation": "'Une vie de boy' (1956) de Ferdinand Oyono est un roman autobiographique qui critique le système colonial à travers l'expérience d'un jeune domestique camerounais."
+    },
+    {
+      "question": "Quel mouvement littéraire et politique, initié par Aimé Césaire, Léopold Sédar Senghor et Léon Damas, met en avant l'identité culturelle noire ?",
+      "optionA": "La Négritude",
+      "optionB": "Le Panafricanisme",
+      "optionC": "L'Antillanité",
+      "optionD": "Le Créolisme",
+      "correctAnswer": "A",
+      "explanation": "La Négritude, mouvement des années 1930-1950, réaffirme la valeur de la culture africaine et combat le racisme et la colonisation."
+    },
+    {
+      "question": "Qui est l'auteur de l'épopée mandingue 'Sundiata' ou 'L'épopée de Sundiata Keïta' ?",
+      "optionA": "Amadou Hampâté Bâ",
+      "optionB": "Birago Diop",
+      "optionC": "Djibril Tamsir Niane",
+      "optionD": "Ousmane Sembène",
+      "correctAnswer": "C",
+      "explanation": "Djibril Tamsir Niane a transcrit et publié 'Sundiata' en 1960, bien que cette épopée soit transmise oralement depuis le XIIIe siècle."
+    },
+    {
+      "question": "Dans quelle œuvre de Wole Soyinka retrouve-t-on le personnage de 'Père' qui incarne la tradition yoruba ?",
+      "optionA": "Les interprètes",
+      "optionB": "La danse de la forêt",
+      "optionC": "Les dieux sont morts",
+      "optionD": "L'interprète des maladies",
+      "correctAnswer": "B",
+      "explanation": "'La danse de la forêt' (1963) est une pièce de théâtre qui explore le conflit entre tradition et modernité à travers des personnages symboliques."
+    },
+    {
+      "question": "Quel poème de Léon Damas est souvent considéré comme un manifeste de la Négritude ?",
+      "optionA": "Noirs",
+      "optionB": "Black-Label",
+      "optionC": "Grands calibres",
+      "optionD": "Cahiers d'un retour au pays natal",
+      "correctAnswer": "A",
+      "explanation": "Noirs' (1947) est un recueil poétique où Damas exprime avec force la condition noire et l'engagement politique de la Négritude."
+    },
+    {
+      "question": "Qui est l'auteure du roman 'Le silence de la rivière' qui traite de l'excision ?",
+      "optionA": "Aminata Sow Fall",
+      "optionB": "Ken Bugul",
+      "optionC": "Tsitsi Dangarembga",
+      "optionD": "Fatou Diome",
+      "correctAnswer": "B",
+      "explanation": "Ken Bugul publie 'Le silence de la rivière' en 1982, un roman qui aborde la question de l'excision et de l'identité féminine en Afrique."
+    },
+    {
+      "question": "Dans quelle œuvre de Mongo Beti retrouve-t-on la critique virulente du système colonial et de l'administration coloniale ?",
+      "optionA": "Le pauvre Christ de Bomba",
+      "optionB": "Main basse sur Douala",
+      "optionC": "Mission terminée",
+      "optionD": "Le roi miraculeux",
+      "correctAnswer": "B",
+      "explanation": "Main basse sur Douala' (1972) est un roman pamphlet qui dénonce l'impérialisme économique et culturel en Afrique."
+    },
+    {
+      "question": "Quel poème de Léopold Sédar Senghor évoque la beauté des paysages africains et l'harmonie entre l'homme et la nature ?",
+      "optionA": "Femme noire",
+      "optionB": "New York",
+      "optionC": "Élévation",
+      "optionD": "Éthiopiques",
+      "correctAnswer": "A",
+      "explanation": "Femme noire' (1945) célèbre la beauté de la femme et de l'Afrique, exprimant une vision idéalisée de l'identité africaine."
+    },
+    {
+      "question": "Qui est l'auteur de la pièce 'Les balles sont pour le régime' qui est une critique du régime de Mobutu ?",
+      "optionA": "Valentin Mudimbe",
+      "optionB": "Sony Labou Tansi",
+      "optionC": "Ahmed Sékou Touré",
+      "optionD": "Amos Tutuola",
+      "correctAnswer": "B",
+      "explanation": "Sony Labou Tansi, écrivain congolais, a écrit 'Les balles sont pour le régime' (1975), une pièce engagée contre le totalitarisme."
+    },
+    {
+      "question": "Dans quel roman d'Aminata Sow Fall trouve-t-on la critique de la corruption et de la bureaucratie postcoloniale ?",
+      "optionA": "L'ex-père de la nation",
+      "optionB": "La grève des bàttu",
+      "optionC": "Le jureur de N'Gourmo",
+      "optionD": "L'appel des arènes",
+      "correctAnswer": "B",
+      "explanation": "'La grève des bàttu' (1979) critique la corruption et l'inefficacité de la bureaucratie sénégalaise postcoloniale."
+    },
+    {
+      "question": "Qui est l'auteur de 'Le dernier de l'empire', roman qui dépeint la chute du régime de Mobutu au Zaïre ?",
+      "optionA": "Sony Labou Tansi",
+      "optionB": "Alain Mabanckou",
+      "optionC": "Mongo Beti",
+      "optionD": "Henri Lopes",
+      "correctAnswer": "D",
+      "explanation": "Henri Lopes publie 'Le dernier de l'empire' en 1997, un roman qui retrace la chute du régime de Mobutu au Zaïre."
+    },
+    {
+      "question": "Quel mouvement littéraire, né au Maghreb dans les années 1970, prône une littérature engagée et décolonisée ?",
+      "optionA": "Le Maghrebisme",
+      "optionB": "Le Trimestriel",
+      "optionC": "Le Groupe 47",
+      "optionD": "Le mouvement de la Pléiade",
+      "correctAnswer": "B",
+      "explanation": "Le Groupe du Trimestriel, fondé en 1970 en Algérie, regroupe des écrivains engagés comme Assia Djebar et Rachid Boudjedra."
+    },
+    {
+      "question": "Dans quelle œuvre de Ngugi wa Thiong'o retrouve-t-on le refus d'écrire en langue coloniale ?",
+      "optionA": "Petite saison de pluie",
+      "optionB": "Le fleuve Nyamburu",
+      "optionC": "Les fleurs de la guérilla",
+      "optionD": "Déchirures",
+      "correctAnswer": "D",
+      "explanation": "Déchirures' (1986) est un recueil d'essais où Ngugi défend l'écriture en langues africaines contre le colonialisme linguistique."
+    },
+    {
+      "question": "Qui est l'auteur de 'Le roi Béhanzin', une biographie historique du roi du Dahomey résistant à la colonisation française ?",
+      "optionA": "Félix Houphouët-Boigny",
+      "optionB": "Bernard Dadié",
+      "optionC": "Jean-Joseph Rabearivelo",
+      "optionD": "Olympe Bhêly-Quenum",
+      "correctAnswer": "D",
+      "explanation": "Olympe Bhêly-Quenum a écrit 'Le roi Béhanzin' en 1969, une biographie du roi du Dahomey qui résista à la colonisation."
+    },
+    {
+      "question": "Quel poème de Aimé Césaire est considéré comme un texte fondateur de la décolonisation et du mouvement de la Négritude ?",
+      "optionA": "Cahiers d'un retour au pays natal",
+      "optionB": "Le discours sur le colonialisme",
+      "optionC": "Tempête",
+      "optionD": "Soleil cou coupé",
+      "correctAnswer": "A",
+      "explanation": "'Cahiers d'un retour au pays natal' (1939) est un long poème en prose qui marque la naissance de la Négritude et de la critique du colonialisme."
+    },
+    {
+      "question": "Qui est l'auteur de 'Les soleils des indépendances', roman qui explore les illusions et les désillusions de l'indépendance africaine ?",
+      "optionA": "Ahmedou Kourouma",
+      "optionB": "Ousmane Sembène",
+      "optionC": "Mongo Beti",
+      "optionD": "Williams Sassine",
+      "correctAnswer": "A",
+      "explanation": "Ahmedou Kourouma publie 'Les soleils des indépendances' en 1968, un roman satirique sur les illusions postcoloniales."
+    },
+    {
+      "question": "Dans quelle œuvre de Chinua Achebe retrouve-t-on le personnage d'Okonkwo, symbole de la résistance culturelle face à la colonisation ?",
+      "optionA": "Le monde s'effondre",
+      "optionB": "Pas de paix pour le oppresseur",
+      "optionC": "Tout s'effondre",
+      "optionD": "La flèche de Dieu",
+      "correctAnswer": "C",
+      "explanation": "'Tout s'effondre' (1958) est le roman le plus célèbre d'Achebe, qui suit le destin d'Okonkwo face à la colonisation britannique."
+    },
+    {
+      "question": "Qui est l'auteure de 'Le vent des deux mondes', un roman qui explore l'identité de la femme migrante entre l'Afrique et l'Europe ?",
+      "optionA": "Fatou Diome",
+      "optionB": "Aminata Maïga Ka",
+      "optionC": "Scholastique Mukasonga",
+      "optionD": "Léonora Miano",
+      "correctAnswer": "D",
+      "explanation": "Léonora Miano publie 'Le vent des deux mondes' en 2005, un roman qui explore l'identité de la femme migrante africaine en Europe."
+    },
+    {
+      "question": "Dans quelle œuvre de Léopold Sédar Senghor retrouve-t-on le concept de 'négritude' comme valeur culturelle et identitaire ?",
+      "optionA": "Chants d'ombre",
+      "optionB": "Hosties noires",
+      "optionC": "Éthiopiques",
+      "optionD": "Négritude et humanisme",
+      "correctAnswer": "B",
+      "explanation": "Hosties noires (1948) est une recueil de poèmes où Senghor développe la notion de négritude comme une affirmation de la culture et de l'identité africaines face à la colonisation."
+    },
+    {
+      "question": "Dans quelle œuvre de Chinua Achebe trouve-t-on le personnage d'Okonkwo, symbole de la résistance culturelle face à la colonisation ?",
+      "optionA": "Le monde s'effondre",
+      "optionB": "Une flèche de Dieu",
+      "optionC": "Tout s'effondre",
+      "optionD": "Les recrues",
+      "correctAnswer": "C",
+      "explanation": "Tout s'effondre (1958) est le roman le plus célèbre d'Achebe, où le personnage d'Okonkwo incarne la dignité et la résistance de la culture igbo face à l'arrivée des colons britanniques."
+    },
+    {
+      "question": "Quel mouvement littéraire, né dans les années 1920-1930, a été fondé par Aimé Césaire, Léopold Sédar Senghor et Léon Damas ?",
+      "optionA": "La Négritude",
+      "optionB": "Le Surréalisme",
+      "optionC": "Le Naturalisme",
+      "optionD": "Le Romantisme",
+      "correctAnswer": "A",
+      "explanation": "La Négritude est un mouvement littéraire et culturel né dans les années 1930, fondé par Césaire, Senghor et Damas, qui vise à réhabiliter la culture africaine et l'identité noire."
+    },
+    {
+      "question": "Dans quelle œuvre de Mariama Bâ trouve-t-on le personnage de Ramatoulaye, une femme confrontée aux traditions patriarcales ?",
+      "optionA": "Si si longue lettre",
+      "optionB": "Une si longue lettre",
+      "optionC": "Le baobab fou",
+      "optionD": "La fonction de femme",
+      "correctAnswer": "B",
+      "explanation": "Une si longue lettre (1979) est le roman le plus connu de Mariama Bâ, où le personnage de Ramatoulaye, une femme sénégalaise, exprime sa résistance face aux traditions patriarcales."
+    },
+    {
+      "question": "Quel poète sud-africain, prix Nobel de littérature en 1991, est connu pour son engagement contre l'apartheid ?",
+      "optionA": "Dennis Brutus",
+      "optionB": "Nadine Gordimer",
+      "optionC": "Nelson Mandela",
+      "optionD": "Alan Paton",
+      "correctAnswer": "A",
+      "explanation": "Dennis Brutus, poète sud-africain, est connu pour son engagement anti-apartheid et ses poèmes engagés. Nelson Mandela était un homme politique, pas un écrivain."
+    },
+    {
+      "question": "Dans quelle œuvre de Wole Soyinka trouve-t-on la pièce 'La Mort et le Roi de chevaux' ?",
+      "optionA": "Les forêts de la nuit",
+      "optionB": "Les interprètes",
+      "optionC": "Les dieux sont morts",
+      "optionD": "La danse de la forêt",
+      "correctAnswer": "D",
+      "explanation": "La danse de la forêt (1963) est une pièce de Wole Soyinka qui inclut 'La Mort et le Roi de chevaux', une œuvre inspirée d'un événement historique yoruba."
+    },
+    {
+      "question": "Quel écrivain algérien est l'auteur de 'L'Étranger' et 'La Peste' ?",
+      "optionA": "Mouloud Feraoun",
+      "optionB": "Kateb Yacine",
+      "optionC": "Albert Camus",
+      "optionD": "Assia Djebar",
+      "correctAnswer": "C",
+      "explanation": "Albert Camus, né en Algérie, est l'auteur de 'L'Étranger' (1942) et 'La Peste' (1947), bien qu'il soit généralement associé à la littérature française."
+    },
+    {
+      "question": "Dans quelle œuvre de Ngũgĩ wa Thiong'o trouve-t-on le concept de 'décolonisation de l'esprit' ?",
+      "optionA": "Les fleurs de la guerre",
+      "optionB": "Décoloniser l'esprit",
+      "optionC": "Le fleuve Nyamba",
+      "optionD": "Le grain de blé",
+      "correctAnswer": "B",
+      "explanation": "Décoloniser l'esprit (1986) est un essai de Ngũgĩ wa Thiong'o où il développe l'idée que la véritable décolonisation passe par l'abandon des langues coloniales."
+    },
+    {
+      "question": "Quel mouvement littéraire, né en France dans les années 1920, a été fondé par André Breton et Paul Éluard ?",
+      "optionA": "Le Surréalisme",
+      "optionB": "Le Symbolisme",
+      "optionC": "Le Dadaïsme",
+      "optionD": "Le Cubisme",
+      "correctAnswer": "A",
+      "explanation": "Le Surréalisme, mouvement littéraire et artistique, a été fondé par André Breton et Paul Éluard dans les années 1920, explorant le monde des rêves et de l'inconscient."
+    },
+    {
+      "question": "Dans quelle œuvre de Chinua Achebe trouve-t-on le personnage d'Ezeulu, le grand prêtre d'Ulu ?",
+      "optionA": "Le monde s'effondre",
+      "optionB": "Une flèche de Dieu",
+      "optionC": "Tout s'effondre",
+      "optionD": "Les recrues",
+      "correctAnswer": "B",
+      "explanation": "Une flèche de Dieu (1964) est un roman de Chinua Achebe où le personnage d'Ezeulu, le grand prêtre d'Ulu, est confronté aux changements apportés par la colonisation."
+    },
+    {
+      "question": "Quel écrivain sénégalais est l'auteur de 'Le Baobab fou' ?",
+      "optionA": "Ousmane Sembène",
+      "optionB": "Mariama Bâ",
+      "optionC": "Ferdinand Oyono",
+      "optionD": "Cheikh Hamidou Kane",
+      "correctAnswer": "B",
+      "explanation": "Mariama Bâ, écrivaine sénégalaise, a publié 'Le Baobab fou' en 1982, un roman explorant les tensions entre tradition et modernité dans la société sénégalaise."
+    },
+    {
+      "question": "Dans quelle œuvre de William Shakespeare trouve-t-on le personnage de Macbeth ?",
+      "optionA": "Hamlet",
+      "optionB": "Romeo et Juliette",
+      "optionC": "Macbeth",
+      "optionD": "Othello",
+      "correctAnswer": "C",
+      "explanation": "Macbeth est une tragédie de Shakespeare, publiée vers 1606, dont le protagoniste est un général écossais qui assassine le roi pour prendre le pouvoir."
+    },
+    {
+      "question": "Quel écrivain camerounais est l'auteur de 'Le pauvre Christ de Bomba' ?",
+      "optionA": "Mongo Beti",
+      "optionB": "Ferdinand Oyono",
+      "optionC": "Ferdinand Léopold Oyono",
+      "optionD": "René Philombe",
+      "correctAnswer": "A",
+      "explanation": "Mongo Beti, écrivain camerounais, a publié 'Le pauvre Christ de Bomba' en 1956, un roman satirique critiquant l'action des missionnaires coloniaux."
+    },
+    {
+      "question": "Dans quelle œuvre de Jean-Paul Sartre trouve-t-on l'essai 'L'Existentialisme est un humanisme' ?",
+      "optionA": "L'être et le néant",
+      "optionB": "Les mots",
+      "optionC": "L'existentialisme est un humanisme",
+      "optionD": "La nausée",
+      "correctAnswer": "C",
+      "explanation": "L'existentialisme est un humanisme est un essai de Jean-Paul Sartre publié en 1946, où il expose les principes de sa philosophie existentielle."
+    },
+    {
+      "question": "Quel écrivain nigérian est l'auteur de 'L'Interprète' ?",
+      "optionA": "Chinua Achebe",
+      "optionB": "Wole Soyinka",
+      "optionC": "Chimamanda Ngozi Adichie",
+      "optionD": "Buchi Emecheta",
+      "correctAnswer": "B",
+      "explanation": "Wole Soyinka, prix Nobel de littérature en 1986, a publié 'L'Interprète' (1973), un roman explorant les tensions entre tradition et modernité en Afrique."
+    },
+    {
+      "question": "Dans quelle œuvre de Victor Hugo trouve-t-on le personnage de Jean Valjean ?",
+      "optionA": "Les Misérables",
+      "optionB": "Les Travailleurs de la mer",
+      "optionC": "L'Homme qui rit",
+      "optionD": "Quatrevingt-treize",
+      "correctAnswer": "A",
+      "explanation": "Les Misérables (1862) est le roman le plus célèbre de Victor Hugo, dont le protagoniste est Jean Valjean, un ancien forçat cherchant la rédemption."
+    },
+    {
+      "question": "Quel écrivain ivoirien est l'auteur de 'Le ventre de l'Atlantique' ?",
+      "optionA": "Ahmadou Kourouma",
+      "optionB": "Véronique Tadjo",
+      "optionC": "Aminata Maïga Ka",
+      "optionD": "Fatou Diome",
+      "correctAnswer": "D",
+      "explanation": "Fatou Diome, écrivaine sénégalaise d'origine, a publié 'Le ventre de l'Atlantique' (2003), un roman explorant les thèmes de l'immigration et de la diaspora."
+    },
+    {
+      "question": "Dans quelle œuvre de Marcel Proust trouve-t-on le personnage de Swann ?",
+      "optionA": "À la recherche du temps perdu",
+      "optionB": "Jean Santeuil",
+      "optionC": "Les Plaisirs et les Jours",
+      "optionD": "Contre Sainte-Beuve",
+      "correctAnswer": "A",
+      "explanation": "À la recherche du temps perdu est l'œuvre majeure de Marcel Proust, où le personnage de Swann apparaît dans plusieurs volumes, notamment 'Le Côté de Guermantes'."
+    },
+    {
+      "question": "Quel écrivain algérien est l'auteur de 'Noces à Tipasa' ?",
+      "optionA": "Mohr Dib",
+      "optionB": "Kateb Yacine",
+      "optionC": "Albert Camus",
+      "optionD": "Mouloud Feraoun",
+      "correctAnswer": "C",
+      "explanation": "Albert Camus, né en Algérie, a publié 'Noces à Tipasa' (1939), un recueil d'essais explorant sa relation avec le paysage méditerranéen."
+    },
+    {
+      "question": "Dans l'épopée mandingue de Soundiata Keïta, quel élément symbolique représente l'unité et la souveraineté du royaume de Mali ?",
+      "optionA": "Le balafon",
+      "optionB": "L'arc-en-ciel",
+      "optionC": "Le lion",
+      "optionD": "Le baobab",
+      "correctAnswer": "C",
+      "explanation": "Le lion est l'animal emblématique de Soundiata et symbolise la force, la royauté et l'unité du royaume de Mali dans l'épopée."
+    },
+    {
+      "question": "Quel mouvement littéraire, initié par Aimé Césaire et Léopold Sédar Senghor, visait à valoriser l'identité noire et l'héritage africain ?",
+      "optionA": "Le naturalisme",
+      "optionB": "La négritude",
+      "optionC": "Le surréalisme",
+      "optionD": "Le réalisme magique",
+      "correctAnswer": "B",
+      "explanation": "La négritude est un mouvement littéraire et politique des années 1930-1950 qui affirmait la valeur de la culture noire et l'identité africaine face au colonialisme."
+    },
+    {
+      "question": "Dans 'Le Soleil des indépendances', Ahmadou Kourouma utilise quelle technique narrative pour représenter la langue africaine ?",
+      "optionA": "Le langage télégraphique",
+      "optionB": "Le calque linguistique",
+      "optionC": "La néologie",
+      "optionD": "La diglossie",
+      "correctAnswer": "B",
+      "explanation": "Ahmadou Kourouma utilise le calque linguistique, transposant la structure des langues africaines en français pour créer un style unique qui reflète la réalité linguistique africaine."
+    },
+    {
+      "question": "Quel personnage de la littérature orale africaine est considéré comme le trickster par excellence, symbolisant la ruse et la résistance ?",
+      "optionA": "Anansi",
+      "optionB": "Léopard",
+      "optionC": "Zombi",
+      "optionD": "Mami Wata",
+      "correctAnswer": "A",
+      "explanation": "Anansi, l'araignée, est un personnage trickster omniprésent dans les contes d'Afrique de l'Ouest et des Caraïbes, symbolisant l'intelligence, la ruse et la résistance."
+    },
+    {
+      "question": "Dans 'Une si longue lettre', Mariama Bâ dénonce quelle pratique sociale spécifiquement liée aux femmes au Sénégal ?",
+      "optionA": "L'excision",
+      "optionB": "Le mariage forcé",
+      "optionC": "La polygamie",
+      "optionD": "L'infibulation",
+      "correctAnswer": "C",
+      "explanation": "Mariama Bâ dénonce dans son roman la polygamie, institution qui régit la vie des femmes et les place dans une position de subordination dans la société sénégalaise."
+    },
+    {
+      "question": "Quel poème de Léopold Sédar Senghor illustre le mieux la notion de 'négritude' comme culture et civilisation ?",
+      "optionA": "Femme noire",
+      "optionB": "New York",
+      "optionC": "Éthiopique",
+      "optionD": "Chants d'ombre",
+      "correctAnswer": "A",
+      "explanation": "Femme noire' est l'un des poèmes les plus emblématiques de Senghor où il célèbre la beauté et la dignité de la femme africaine, incarnant la négritude comme culture et civilisation."
+    },
+    {
+      "question": "Dans 'Le Drame de la femme' de Werewere Liking, quel concept central explore-t-elle concernant la condition féminine ?",
+      "optionA": "La maternité sacrée",
+      "optionB": "La polygamie",
+      "optionC": "L'excision",
+      "optionD": "La sorcellerie féminine",
+      "correctAnswer": "D",
+      "explanation": "Werewere Liking explore la sorcellerie féminine comme forme de résistance et de pouvoir pour les femmes dans une société patriarcale, dans son œuvre 'Le Drame de la femme'."
+    },
+    {
+      "question": "Quel terme désigne la littérature écrite par des auteurs africains en langue française mais publiée en France ?",
+      "optionA": "Littérature francophone",
+      "optionB": "Littérature coloniale",
+      "optionC": "Littérature exotique",
+      "optionD": "Littérature migrante",
+      "correctAnswer": "A",
+      "explanation": "La littérature francophone désigne l'ensemble des œuvres écrites en langue française par des auteurs des pays francophones, y compris l'Afrique."
+    },
+    {
+      "question": "Dans 'Les Bouts de bois de Dieu' de Sembène Ousmane, quelle grève historique inspire le roman ?",
+      "optionA": "La grève des étudiants",
+      "optionB": "La grève des cheminots",
+      "optionC": "La grève des dockers",
+      "optionD": "La grève des mineurs",
+      "correctAnswer": "B",
+      "explanation": "Sembène Ousmane s'inspire de la grève des cheminots de 1947-1948 au Sénégal et en Mauritanie pour dépeindre la lutte des travailleurs africains contre l'exploitation coloniale."
+    },
+    {
+      "question": "Quel personnage de la littérature orale yoruba est considéré comme le divinateur et conseiller des rois ?",
+      "optionA": "Eshu",
+      "optionB": "Orunmila",
+      "optionC": "Shango",
+      "optionD": "Obatala",
+      "correctAnswer": "B",
+      "explanation": "Orunmila est le divinateur et dieu de la sagesse dans la mythologie yoruba, considéré comme le conseiller des rois et le maître de la divination."
+    },
+    {
+      "question": "Dans 'Les Petits Enfants du siècle', Agnès Desarthe s'inscrit dans quel mouvement littéraire contemporain ?",
+      "optionA": "Le Nouveau Roman",
+      "optionB": "Le Romanisme",
+      "optionC": "Le Réalisme magique",
+      "optionD": "La Génération perdue",
+      "correctAnswer": "B",
+      "explanation": "Agnès Desarthe s'inscrit dans le Romanisme, mouvement contemporain qui renoue avec la tradition romanesque classique tout en y apportant une sensibilité moderne."
+    },
+    {
+      "question": "Quel poème d'Aimé Césaire exprime le mieux la critique du colonialisme et l'appel à la libération ?",
+      "optionA": "Cahier d'un retour au pays natal",
+      "optionB": "Les Armes miraculeuses",
+      "optionC": "Le Corps monarcal",
+      "optionD": "Ferrements",
+      "correctAnswer": "A",
+      "explanation": "Cahier d'un retour au pays natal' est le poème le plus emblématique de Césaire, dénonçant le colonialisme et appelant à la libération de l'esprit noir."
+    },
+    {
+      "question": "Dans 'Si le soleil ne revenait pas', de Romain Gary, quel thème principal est développé ?",
+      "optionA": "La Shoah",
+      "optionB": "La résistance française",
+      "optionC": "L'identité juive",
+      "optionD": "La collaboration",
+      "correctAnswer": "A",
+      "explanation": "Ce roman de Romain Gary explore la Shoah et la survie dans un camp de concentration à travers l'histoire d'une mère et de sa fille."
+    },
+    {
+      "question": "Dans 'Le Royaume de ce monde', Alejo Carpentier utilise quel concept pour décrire la réalité latino-américaine ?",
+      "optionA": "Le réalisme magique",
+      "optionB": "Le baroque",
+      "optionC": "Le surréalisme",
+      "optionD": "Le naturalisme",
+      "correctAnswer": "A",
+      "explanation": "Carpentier est l'un des pionniers du réalisme magique, qui intègre le merveilleux au réel pour décrire l'Amérique latine."
+    },
+    {
+      "question": "Dans 'Les Soleils des indépendances', Ahmadou Kourouma utilise quelle forme de langue pour représenter la diversité linguistique africaine ?",
+      "optionA": "Le français standard",
+      "optionB": "Le français pidgin",
+      "optionC": "Le français africain",
+      "optionD": "Le créole",
+      "correctAnswer": "C",
+      "explanation": "Kourouma utilise le français africain, une forme de français qui intègre des structures et du vocabulaire des langues africaines, pour représenter la réalité linguistique du continent."
+    },
+    {
+      "question": "Dans 'Une vie de boy', Ferdinand Oyono dénonce quelle pratique coloniale spécifiquement ?",
+      "optionA": "Le travail forcé",
+      "optionB": "L'exploitation minière",
+      "optionC": "Le système éducatif",
+      "optionD": "La ségrégation raciale",
+      "correctAnswer": "A",
+      "explanation": "Oyono dénonce le travail forcé et l'humiliation subie par les employés domestiques africains dans la coloniale française à travers le personnage de Toundi."
+    },
+    {
+      "question": "Dans 'Le Temps des femmes' de Calixthe Beyala, quel thème central est développé concernant la condition féminine en Afrique ?",
+      "optionA": "La polygamie",
+      "optionB": "La prostitution",
+      "optionC": "L'excision",
+      "optionD": "L'infertilité",
+      "correctAnswer": "B",
+      "explanation": "Beyala explore la prostitution comme conséquence de la pauvreté et de la marginalisation des femmes dans les villes africaines contemporaines."
+    },
+    {
+      "question": "Dans 'Hamlet', de Shakespeare, quel personnage incarne la folie et la sagesse ambivalentes ?",
+      "optionA": "Ophélie",
+      "optionB": "Polonius",
+      "optionC": "Horatio",
+      "optionD": "Yorick",
+      "correctAnswer": "A",
+      "explanation": "Ophélie incarne la folie tragique mais aussi une certaine sagesse dans sa déchéance, contrastant avec la folie calculée d'Hamlet."
+    },
+    {
+      "question": "Dans 'Les Fleurs du mal', Charles Baudelaire développe quel concept central ?",
+      "optionA": "La beauté du mal",
+      "optionB": "La pureté de l'âme",
+      "optionC": "La gloire de la nature",
+      "optionD": "La joie de vivre",
+      "correctAnswer": "A",
+      "explanation": "Baudelaire explore la beauté du mal, célébrant le vice et la décadence comme sources d'inspiration poétique dans son recueil emblématique."
+    },
+    {
+      "question": "Dans 'L'Étranger', d'Albert Camus, quel concept philosophique central est illustré ?",
+      "optionA": "L'existentialisme",
+      "optionB": "L'absurde",
+      "optionC": "Le surréalisme",
+      "optionD": "Le nihilisme",
+      "correctAnswer": "B",
+      "explanation": "Camus illustre le concept de l'absurde dans 'L'Étranger', montrant le désaccord entre l'homme et sa quête de sens dans un univers indifférent."
+    },
+    {
+      "question": "Dans 'Beowulf', quel monstre incarne le mal et l'obscurité dans la littérature anglo-saxonne ?",
+      "optionA": "Grendel",
+      "optionB": "Dragon",
+      "optionC": "Morgan le Fay",
+      "optionD": "Excalibur",
+      "correctAnswer": "A",
+      "explanation": "Grendel est le monstre qui terrorise le royaume de Hrothgar dans le poème épique 'Beowulf', symbolisant le chaos et le mal contre lequel le héros doit lutter."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de la négritude telle que définie par Léopold Sédar Senghor dans sa poésie ?",
+      "optionA": "La réjection totale de toute influence occidentale",
+      "optionB": "La valorisation de la culture et de l'identité africaines dans leur spécificité",
+      "optionC": "L'adhésion au modèle culturel français comme idéal de perfection",
+      "optionD": "La promotion d'un nationalisme africain anti-français radical",
+      "correctAnswer": "B",
+      "explanation": "La négritude, concept central de la poésie senghorienne, vise à affirmer et valoriser l'identité culturelle africaine face au colonialisme, sans pour autant rejeter toutes les influences extérieures."
+    },
+    {
+      "question": "Quel mouvement littéraire le théâtre de Wole Soyinka, notamment dans 'La Mort et le Roi de Boutry', relève-t-il principalement ?",
+      "optionA": "Surréalisme",
+      "optionB": "Théâtre de l'absurde",
+      "optionC": "Théâtre engagé postcolonial",
+      "optionD": "Symbolisme",
+      "correctAnswer": "C",
+      "explanation": "Le théâtre de Wole Soyinka s'inscrit dans une tradition engagée postcoloniale, explorant les tensions entre traditions africaines et modernité, avec une forte dimension politique et sociale."
+    },
+    {
+      "question": "Dans 'Si si ou non non' de Calixthe Beyala, quel thème central est particulièrement développé à travers l'histoire de la protagoniste ?",
+      "optionA": "L'aliénation culturelle de l'élite africaine",
+      "optionB": "La condition de la femme immigrée en Europe",
+      "optionC": "Les conflits ethniques en Afrique postcoloniale",
+      "optionD": "L'exploitation économique des pays africains",
+      "correctAnswer": "B",
+      "explanation": "Ce roman explore la double marginalisation subie par les femmes immigrées en Europe, confrontées à à la fois le racisme et la domination masculine."
+    },
+    {
+      "question": "Quel poète sénégalais, auteur de 'Hosties noires', est considéré comme l'un des pères de la négritude avec Senghor et Césaire ?",
+      "optionA": "Léopold Sédar Senghor",
+      "optionB": "Léon Damas",
+      "optionC": "Birago Diop",
+      "optionD": "David Diop",
+      "correctAnswer": "B",
+      "explanation": "Léon Damas, avec Senghor et Césaire, forme la 'triade fondatrice' du mouvement de la négritude. 'Hosties noires' est une de ses œuvres majeures."
+    },
+    {
+      "question": "Dans quelle œuvre de Mariama Bâ trouve-t-on la critique du système polygame et de l'éducation traditionnelle réservée aux garçons ?",
+      "optionA": "Une si longue lettre",
+      "optionB": "Le baobab fou",
+      "optionC": "Scarification ou les aventures de Mirobi",
+      "optionD": "Fragments de vie",
+      "correctAnswer": "A",
+      "explanation": "'Une si longue lettre' (1979) est un roman épistolaire qui dénonce à la fois le système polygame et l'exclusion des filles de l'éducation traditionnelle au Sénégal."
+    },
+    {
+      "question": "Quel auteur maghrébin, dans 'Le natif et l'émigré', explore la question de l'identité et de l'exil dans le contexte de l'immigration maghrébine en France ?",
+      "optionA": "Tahar Ben Jelloun",
+      "optionB": "Driss Chraïbi",
+      "optionC": "Assia Djebar",
+      "optionD": "Mouloud Feraoun",
+      "correctAnswer": "A",
+      "explanation": "Tahar Ben Jelloun, dans 'Le natif et l'émigré' (1977), analyse de manière poétique et philosophique la condition de l'immigré maghrébin en France."
+    },
+    {
+      "question": "Quelle est la particularité formelle de 'L'Enfant noir', autobiographie de Camara Laye, souvent considérée comme un roman ?",
+      "optionA": "L'utilisation du monologue intérieur",
+      "optionB": "La structure épistolaire",
+      "optionC": "La narration à la première personne avec une langue poétique et évocatrice",
+      "optionD": "La fragmentation chronologique",
+      "correctAnswer": "C",
+      "explanation": "Dans 'L'Enfant noir', Laye utilise une narration à la première personne avec une langue simple mais poétique, créant une œuvre à mi-chemin entre l'autobiographie et le roman initiatique."
+    },
+    {
+      "question": "Dans quelle œuvre de Mongo Beti trouve-t-on une critique virulente de la colonisation et de l'élite africaine collaboratrice ?",
+      "optionA": "Le pauvre Christ de Bomba",
+      "optionB": "Mission terminée",
+      "optionC": "Main basse sur le Cameroun",
+      "optionD": "Le roi miraculé",
+      "correctAnswer": "C",
+      "explanation": "'Main basse sur le Cameroun' (1972) est un pamphlet politique qui dénonce l'impérialisme français et la collaboration de l'élite camerounaise."
+    },
+    {
+      "question": "Quel mouvement littéraire, apparu dans les années 1960 en Afrique francophone, prône une déconstruction des langues et des formes littéraires traditionnelles ?",
+      "optionA": "La négritude",
+      "optionB": "Le créolisme",
+      "optionC": "Le mouvement Tel Quel",
+      "optionD": "Le réalisme magique",
+      "correctAnswer": "B",
+      "explanation": "Le créolisme, théorisé notamment par Édouard Glissant, explore les métissages culturels et linguistiques, prônant une littérure qui transcende les frontières culturelles et linguistiques."
     }
   ]
 }

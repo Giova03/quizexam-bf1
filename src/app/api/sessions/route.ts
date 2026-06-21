@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -8,6 +10,52 @@ interface CreateSessionBody {
   mode: "immediate" | "final";
   sourceType: "bank" | "exam";
   sourceId: string;
+}
+
+// GET — list sessions for the current user (with answers for dashboard)
+export async function GET() {
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.email) {
+      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
+    }
+
+    const user = await db.user.findUnique({
+      where: { email: session.user.email },
+      select: { id: true },
+    });
+
+    if (!user) {
+      return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
+    }
+
+    const sessions = await db.quizSession.findMany({
+      where: { userId: user.id },
+      orderBy: { startedAt: "desc" },
+      take: 100,
+      include: {
+        answers: {
+          select: {
+            id: true,
+            questionText: true,
+            correctAnswer: true,
+            userAnswer: true,
+            isCorrect: true,
+            explanation: true,
+          },
+          orderBy: { id: "asc" },
+        },
+      },
+    });
+
+    return NextResponse.json(sessions);
+  } catch (error) {
+    console.error("Failed to load sessions:", error);
+    return NextResponse.json(
+      { error: "Failed to load sessions" },
+      { status: 500 }
+    );
+  }
 }
 
 export async function POST(request: Request) {
@@ -29,6 +77,17 @@ export async function POST(request: Request) {
       );
     }
 
+    // Get the current user from the session
+    const authSession = await getServerSession(authOptions);
+    let userId: string | null = null;
+    if (authSession?.user?.email) {
+      const user = await db.user.findUnique({
+        where: { email: authSession.user.email },
+        select: { id: true },
+      });
+      userId = user?.id ?? null;
+    }
+
     // Gather questions based on source type
     let questions: Array<{
       id: string;
@@ -38,6 +97,7 @@ export async function POST(request: Request) {
       optionC: string;
       optionD: string;
       correctAnswer: string;
+      correctAnswer2: string | null;
       explanation: string;
     }> = [];
 
@@ -81,13 +141,14 @@ export async function POST(request: Request) {
       );
     }
 
-    // Create the session with answer snapshots
+    // Create the session with answer snapshots (linked to the user)
     const session = await db.quizSession.create({
       data: {
         title,
         mode,
         sourceType,
         sourceId,
+        userId,
         totalQuestions: questions.length,
         score: 0,
         answers: {
@@ -99,6 +160,7 @@ export async function POST(request: Request) {
             optionC: q.optionC,
             optionD: q.optionD,
             correctAnswer: q.correctAnswer,
+            correctAnswer2: q.correctAnswer2,
             explanation: q.explanation,
             userAnswer: null,
             isCorrect: null,

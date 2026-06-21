@@ -26,7 +26,10 @@ import {
   Trophy,
   Info,
   AlertCircle,
+  Bookmark,
 } from "lucide-react";
+import { useFavorites } from "@/lib/favorites-store";
+import { toast } from "sonner";
 
 const OPTION_LETTERS = ["A", "B", "C", "D"] as const;
 
@@ -38,6 +41,8 @@ export function SessionView() {
   const [submitting, setSubmitting] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const favorites = useFavorites((s) => s.favorites);
+  const toggleFavorite = useFavorites((s) => s.toggleFavorite);
 
   const loadSession = useCallback(async () => {
     if (!currentSessionId) return;
@@ -257,14 +262,45 @@ export function SessionView() {
 
       {/* Question card */}
       {current && (
-        <Card className="overflow-hidden p-6">
+        <Card className="overflow-hidden p-4 sm:p-6">
           <div className="mb-4 flex items-start gap-3">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-sm font-bold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
               {currentIdx + 1}
             </span>
-            <h2 className="pt-1 text-lg font-semibold leading-snug">
+            <h2 className="flex-1 pt-1 text-base font-semibold leading-snug sm:text-lg">
               {current.questionText}
             </h2>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 shrink-0"
+              onClick={() => {
+                toggleFavorite({
+                  id: current.id,
+                  question: current.questionText,
+                  correctAnswer: current.correctAnswer,
+                  explanation: current.explanation,
+                  bankId: session?.sourceId ?? "",
+                  bankTitle: session?.title ?? "",
+                  bankColor: "emerald",
+                  savedAt: new Date().toISOString(),
+                });
+                toast.success(
+                  favorites.some((f) => f.id === current.id)
+                    ? "Retiré des favoris"
+                    : "Ajouté aux favoris"
+                );
+              }}
+              aria-label="Marquer comme favori"
+            >
+              <Bookmark
+                className={`h-4 w-4 ${
+                  favorites.some((f) => f.id === current.id)
+                    ? "fill-amber-400 text-amber-400"
+                    : "text-muted-foreground"
+                }`}
+              />
+            </Button>
           </div>
 
           <div className="space-y-3">

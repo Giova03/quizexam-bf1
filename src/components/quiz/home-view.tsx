@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { useQuizStore } from "@/lib/quiz-store";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { BankIcon } from "./bank-icon";
 import { getColor } from "@/lib/types";
+import { SearchDialog } from "./search-dialog";
+import { RevisionDialog } from "./revision-dialog";
 import {
   GraduationCap,
   FileQuestion,
@@ -17,6 +19,8 @@ import {
   BookOpen,
   Trophy,
   Sparkles,
+  Search,
+  Layers3,
 } from "lucide-react";
 
 export function HomeView() {
@@ -32,6 +36,9 @@ export function HomeView() {
     openBank,
     openExam,
   } = useQuizStore();
+
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [revisionBank, setRevisionBank] = useState<{ id: string; title: string } | null>(null);
 
   const loadBanks = useCallback(async () => {
     setLoadingBanks(true);
@@ -114,6 +121,19 @@ export function HomeView() {
         </div>
       </section>
 
+      {/* Quick actions bar */}
+      <section className="flex flex-col gap-3 sm:flex-row">
+        <Button
+          variant="outline"
+          className="gap-2 justify-start"
+          onClick={() => setSearchOpen(true)}
+        >
+          <Search className="h-4 w-4 text-emerald-600" />
+          <span className="flex-1 text-left">Rechercher une question...</span>
+          <Badge variant="secondary" className="text-[10px]">Ctrl+K</Badge>
+        </Button>
+      </section>
+
       {/* Banks section */}
       <section className="space-y-4">
         <div className="flex items-center justify-between">
@@ -169,17 +189,31 @@ export function HomeView() {
                   <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">
                     {bank.description}
                   </p>
-                  <div className="mt-4 flex items-center justify-between">
+                  <div className="mt-4 flex items-center justify-between gap-2">
                     <span className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
                       <FileQuestion className="h-4 w-4" />
                       {count} questions
                     </span>
-                    <span
-                      className={`flex items-center gap-1 text-sm font-medium ${color.text} transition-transform group-hover:translate-x-0.5`}
-                    >
-                      Explorer
-                      <ArrowRight className="h-4 w-4" />
-                    </span>
+                    <div className="flex items-center gap-1">
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        className="h-7 gap-1 px-2 text-xs"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setRevisionBank({ id: bank.id, title: bank.title });
+                        }}
+                      >
+                        <Layers3 className="h-3 w-3" />
+                        <span className="hidden sm:inline">Réviser</span>
+                      </Button>
+                      <span
+                        className={`flex items-center gap-1 text-sm font-medium ${color.text} transition-transform group-hover:translate-x-0.5`}
+                      >
+                        Explorer
+                        <ArrowRight className="h-4 w-4" />
+                      </span>
+                    </div>
                   </div>
                 </Card>
               );
@@ -252,6 +286,14 @@ export function HomeView() {
           </div>
         )}
       </section>
+
+      <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
+      <RevisionDialog
+        bankId={revisionBank?.id ?? null}
+        bankTitle={revisionBank?.title ?? ""}
+        open={!!revisionBank}
+        onOpenChange={(o) => !o && setRevisionBank(null)}
+      />
     </div>
   );
 }

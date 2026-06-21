@@ -97,6 +97,852 @@
       "optionD": "La production",
       "correctAnswer": "A",
       "explanation": "La gestion budgétaire: élaboration, exécution et contrôle du budget."
+    },
+    {
+      "question": "Selon la théorie keynésienne, quel instrument de politique économique est le plus efficace pour sortir d'une récession?",
+      "optionA": "La politique monétaire expansionniste",
+      "optionB": "La politique budgétaire expansionniste",
+      "optionC": "La dérégulation des marchés",
+      "optionD": "La réduction des impôts",
+      "correctAnswer": "B",
+      "explanation": "Keyns soutient que dans une situation de récession, la politique budgétaire expansionniste (hausse des dépenses publiques ou baisse des impôts) est plus efficace que la politique monétaire car elle a un impact direct sur la demande globale."
+    },
+    {
+      "question": "En comptabilité analytique, quelle est la différence fondamentale entre la méthode des coûts variables et la méthode des coûts complets?",
+      "optionA": "La méthode des coûts variables ne prend pas en compte les charges fixes",
+      "optionB": "La méthode des coûts complets est plus adaptée pour la prise de décision à court terme",
+      "optionC": "La méthode des coûts variables est uniquement utilisée en gestion budgétaire",
+      "optionD": "La méthode des coûts complets exclut les charges indirectes",
+      "correctAnswer": "A",
+      "explanation": "La méthode des coûts variables ne considère que les charges variables dans le calcul des coûts, tandis que la méthode des coûts complets intègre à la fois les charges variables et les charges fixes."
+    },
+    {
+      "question": "Quelle est la conséquence comptable d'une augmentation du capital social par apport en numéraire?",
+      "optionA": "Augmentation du compte 'Banque' et diminution du compte 'Capital social'",
+      "optionB": "Augmentation du compte 'Capital social' et augmentation du compte 'Apports'",
+      "optionC": "Augmentation du compte 'Capital social' et augmentation du compte 'Banque'",
+      "optionD": "Augmentation du compte 'Banque' et augmentation du compte 'Primes de fusion'",
+      "correctAnswer": "C",
+      "explanation": "Lors d'une augmentation de capital par apport en numéraire, le compte 'Capital social' est crédité (augmenté) et le compte 'Banque' est également crédité (augmenté) pour enregistrer l'apport des actionnaires."
+    },
+    {
+      "question": "Calculer la valeur actuelle d'un flux de 10 000€ reçu dans 3 ans, avec un taux d'actualisation de 5%.",
+      "optionA": "8 638.38€",
+      "optionB": "9 523.81€",
+      "optionC": "10 500€",
+      "optionD": "11 576.25€",
+      "correctAnswer": "A",
+      "explanation": "La valeur actuelle se calcule par la formule VA = F/(1+t)^n, soit 10 000/(1+0.05)^3 = 8 638.38€."
+    },
+    {
+      "question": "En statistiques, quelle est la propriété essentielle d'un estimateur sans biais?",
+      "optionA": "Sa variance est minimale",
+      "optionB": "Son espérance mathématique est égale au paramètre estimé",
+      "optionC": "Il suit toujours une distribution normale",
+      "optionD": "Sa convergence est garantie",
+      "correctAnswer": "B",
+      "explanation": "Un estimateur est sans biais lorsque son espérance mathématique est égale au véritable paramètre qu'il cherche à estimer."
+    },
+    {
+      "question": "En économétrie, quel test est utilisé pour détecter l'hétéroscédasticité dans un modèle de régression linéaire?",
+      "optionA": "Test de Durbin-Watson",
+      "optionB": "Test de Breusch-Pagan",
+      "optionC": "Test de Jarque-Bera",
+      "optionD": "Test de Chow",
+      "correctAnswer": "B",
+      "explanation": "Le test de Breusch-Pagan est spécifiquement conçu pour détecter l'hétéroscédasticité dans un modèle de régression linéaire en testant si la variance des résidus est constante."
+    },
+    {
+      "question": "Selon la théorie de la motivation de Herzberg, quel facteur est considéré comme 'hygiénique'?",
+      "optionA": "La reconnaissance du travail",
+      "optionB": "Les responsabilités",
+      "optionC": "Les conditions de travail",
+      "optionD": "L'accomplissement personnel",
+      "correctAnswer": "C",
+      "explanation": "Dans la théorie à deux facteurs de Herzberg, les facteurs hygiéniques (comme les conditions de travail) préviennent la mécontentement mais ne motivent pas, tandis que les facteurs motivants (reconnaissance, responsabilités, accomplissement) créent la motivation."
+    },
+    {
+      "question": "En marketing, quelle est la principale différence entre le marketing relationnel et le marketing transactionnel?",
+      "optionA": "Le marketing relationnel se concentre sur les ventes à court terme",
+      "optionB": "Le marketing relationnel vise à établir des relations durables avec les clients",
+      "optionC": "Le marketing transactionnel n'utilise pas les canaux digitaux",
+      "optionD": "Le marketing transactionnel est plus coûteux à mettre en œuvre",
+      "correctAnswer": "B",
+      "explanation": "Le marketing relationnel se concentre sur la construction de relations à long terme avec les clients, tandis que le marketing transactionnel se concentre sur des échanges ponctuels et des ventes isolées."
+    },
+    {
+      "question": "En gestion des ressources humaines, quelle est la principale caractéristique de la gestion prévisionnelle des emplois et des compétences (GPEC)?",
+      "optionA": "Elle se limite au recrutement externe",
+      "optionB": "Elle anticipe les besoins futurs en compétences et en effectifs",
+      "optionC": "Elle n'est applicable qu'aux grandes entreprises",
+      "optionD": "Elle exclut la formation des salariés",
+      "correctAnswer": "B",
+      "explanation": "La GPEC consiste à anticiper les évolutions des besoins en compétences et en effectifs de l'entreprise pour aligner la politique RH avec la stratégie de l'entreprise."
+    },
+    {
+      "question": "En finance d'entreprise, comment calcule-tle le coût du capital propre (Ke) selon le modèle MEDAF?",
+      "optionA": "Ke = Taux sans risque + Prime de risque",
+      "optionB": "Ke = Taux sans risque + Bêta × (Prime de risque de marché)",
+      "optionC": "Ke = Taux d'intérêt des obligations + Prime de risque",
+      "optionD": "Ke = Coût de la dette × (1 - Taux d'imposition)",
+      "correctAnswer": "B",
+      "explanation": "Selon le MEDAF, le coût du capital propre se calcule comme Ke = Rf + β × (Rm - Rf), où Rf est le taux sans risque, β le bêta de l'action et (Rm - Rf) la prime de risque de marché."
+    },
+    {
+      "question": "En gestion de projet, quelle est la différence clé entre la méthode PERT et la méthode Gantt?",
+      "optionA": "La méthode PERT ne prend pas en compte les délais",
+      "optionB": "La méthode Gantt ne visualise pas les dépendances entre tâches",
+      "optionC": "La méthode PERT utilise une représentation en réseau avec des probabilités",
+      "optionD": "La méthode Gantt est uniquement utilisée pour les projets informatiques",
+      "correctAnswer": "C",
+      "explanation": "La méthode PERT (Program Evaluation and Review Technique) utilise une représentation en réseau et intègre des estimations probabilistes des durées, tandis que la méthode Gantt est un diagramme à barres qui visualise l'ordonnancement des tâches mais pas leurs dépendances."
+    },
+    {
+      "question": "En droit des affaires, quelle est la nature juridique d'une société anonyme (SA)?",
+      "optionA": "Personne morale de droit privé",
+      "optionB": "Personne morale de droit public",
+      "optionC": "Établissement public à caractère industriel et commercial",
+      "optionD": "Groupement d'intérêt économique",
+      "correctAnswer": "A",
+      "explanation": "Une société anonyme (SA) est une personne morale de droit privé, distincte de ses associés, avec un capital divisible et des actions négociables."
+    },
+    {
+      "question": "En droit du travail, quelle est la durée maximale légale du travail hebdomaire en France?",
+      "optionA": "35 heures",
+      "optionB": "39 heures",
+      "optionC": "40 heures",
+      "optionD": "44 heures",
+      "correctAnswer": "A",
+      "explanation": "En France, la durée légale du travail hebdomaire est de 35 heures depuis la loi Aubry de 1998, bien que des aménagements soient possibles via des conventions collectives."
+    },
+    {
+      "question": "En droit commercial, quel est le principe fondamental qui régit la liberté d'entreprendre en France?",
+      "optionA": "Le principe d'autorisation préalable",
+      "optionB": "Le principe de déclaration préalable",
+      "optionC": "Le principe d'interdiction sauf exception",
+      "optionD": "Le principe de liberté sauf interdiction légale",
+      "correctAnswer": "D",
+      "explanation": "En droit commercial français, le principe de liberté d'entreprendre est régi par le principe 'libre sauf interdiction légale', qui autorise toute activité non expressément interdite par la loi."
+    },
+    {
+      "question": "En économie monétaire et bancaire, quelle est la fonction principale de la Banque Centrale Européenne (BCE)?",
+      "optionA": "Garantir les dépôts bancaires",
+      "optionB": "Assurer la stabilité des prix dans la zone euro",
+      "optionC": "Financer le déficit public des États membres",
+      "optionD": "Réguler les marchés financiers",
+      "correctAnswer": "B",
+      "explanation": "La mission principale de la BCE est de maintenir la stabilité des prix dans la zone euro, conformément à son mandat de politique monétaire."
+    },
+    {
+      "question": "En économie internationale, quel est l'effet d'une dépréciation du taux de change d'une monnaie?",
+      "optionA": "Elle rend les importations moins chères et les exportations plus chères",
+      "optionB": "Elle rend les importations plus chères et les exportations moins chères",
+      "optionC": "Elle n'affecte ni les importations ni les exportations",
+      "optionD": "Elle augmente simultanément le prix des importations et des exportations",
+      "correctAnswer": "B",
+      "explanation": "Une dépréciation de la monnaie nationale la rend moins forte par rapport aux autres monnaies, ce qui rend les importations plus chères (car il faut plus de monnaie nationale pour acheter la même quantité de devises étrangères) et les exportations moins chères pour les étrangers, stimulant ainsi les exportations."
+    },
+    {
+      "question": "En politique économique, quel est l'objectif principal d'une politique de relance budgétaire?",
+      "optionA": "Réduire l'inflation",
+      "optionB": "Stimuler la demande agrégée",
+      "optionC": "Augmenter l'épargne nationale",
+      "optionD": "Réducer le déficit public",
+      "correctAnswer": "B",
+      "explanation": "Une politique de relance budgétaire vise à augmenter les dépenses publiques ou à réduire les impôts pour stimuler la demande agrégée et sortir d'une récession ou d'une période de faible croissance."
+    },
+    {
+      "question": "En gestion de la production, quelle est la différence entre le juste-à-temps (JAT) et la gestion des stocks traditionnelle?",
+      "optionA": "Le JAT augmente les stocks de sécurité",
+      "optionB": "Le JAT vise à minimiser les stocks",
+      "optionC": "Le JAT est uniquement applicable dans l'industrie automobile",
+      "optionD": "Le JAT augmente les coûts de stockage",
+      "correctAnswer": "B",
+      "explanation": "Le système de production juste-à-temps (JAT) vise à minimiser les stocks en ne produisant que ce qui est nécessaire, quand c'est nécessaire, en s'appuyant sur une logique de flux tiré, contrairement à la gestion traditionnelle qui maintient des stocks importants."
+    },
+    {
+      "question": "En systèmes d'information de gestion, quelle est la principale caractéristique d'un système ERP (Enterprise Resource Planning)?",
+      "optionA": "Il est conçu uniquement pour la gestion financière",
+      "optionB": "Il intègre les différentes fonctions de l'entreprise dans un système unique",
+      "optionC": "Il n'est pas interopérable avec d'autres systèmes",
+      "optionD": "Il est exclusivement utilisé par les petites entreprises",
+      "correctAnswer": "B",
+      "explanation": "Un système ERP (Planification des Ressources d'Entreprise) est un système intégré qui gère les principales fonctions de l'entreprise (finance, ressources humaines, production, etc.) dans une base de données unique et cohérente."
+    },
+    {
+      "question": "En fiscalité, quel est le régime d'imposition des plus-values de cession de valeurs mobilières pour un particulier en France?",
+      "optionA": "Taux proportionnel de 30%",
+      "optionB": "Taux progressif selon le revenu global",
+      "optionC": "Abattement de 50% puis imposition au barème progressif",
+      "optionD": "Prélèvement forfaitaire unique de 30% (flat tax)",
+      "correctAnswer": "D",
+      "explanation": "En France, les plus-values de cession de valeurs mobilières sont soumises au prélèvement forfaitaire unique de 30%, également appelé 'flat tax', qui comprend l'impôt et les prélèvements sociaux."
+    },
+    {
+      "question": "En microéconomie, quel est l'impact d'une imposition spécifique sur un bien à élasticité-prix de la demande inférieure à 1?",
+      "optionA": "Le prix payé par les consommateurs augmente moins que le montant de la taxe",
+      "optionB": "Le prix payé par les consommateurs augmente plus que le montant de la taxe",
+      "optionC": "La charge fiscale est intégralement supportée par les consommateurs",
+      "optionD": "La charge fiscale est intégralement supportée par les producteurs",
+      "correctAnswer": "C",
+      "explanation": "Lorsque l'élasticité-prix de la demande est inférieure à 1 (inelastique), les consommateurs sont moins sensibles aux variations de prix. Par conséquent, ils supportent une plus grande part de la charge fiscale."
+    },
+    {
+      "question": "En comptabilité analytique, quelle méthode de calcul des coûts permet de mieux gérer les stocks lorsque les prix d'achat sont en hausse?",
+      "optionA": "Méthode du coût moyen pondéré",
+      "optionB": "Méthode du premier entré, premier sorti (PEPS)",
+      "optionC": "Méthode du dernier entré, premier sorti (LEPS)",
+      "optionD": "Méthode du coût spécifique",
+      "correctAnswer": "B",
+      "explanation": "La méthode PEPS (FIFO) permet d'évaluer les sorties de stocks au prix des plus anciennes acquisitions, ce qui réduit la valeur des stocks en fin de période et donc le bénéfice imposable lorsque les prix sont en hausse."
+    },
+    {
+      "question": "En économie internationale, selon le modèle de Heckscher-Ohlin, un pays exportera:",
+      "optionA": "Le bien qui utilise intensivement le facteur de production abondant dans le pays",
+      "optionB": "Le bien qui utilise intensivement le facteur de production rare dans le pays",
+      "optionC": "Le bien dont la technologie de production est la plus avancée",
+      "optionD": "Le bien qui nécessite le moins de main-d'œuvre",
+      "correctAnswer": "A",
+      "explanation": "Le modèle de Heckscher-Ohlin stipule qu'un pays a un avantage comparatif dans la production des biens qui utilisent intensément le facteur de production abondant dans ce pays."
+    },
+    {
+      "question": "En finance d'entreprise, quel est le coût du capital dans le cas d'une entreprise financée par 40% de dette et 60% de capitaux propres, si le coût de la dette est de 6%, le taux d'imposition des sociétés est de 25% et le coût des capitaux propres est de 12%?",
+      "optionA": "9,6%",
+      "optionB": "10,2%",
+      "optionC": "9,0%",
+      "optionD": "8,4%",
+      "correctAnswer": "A",
+      "explanation": "Coût du capital = (0,4 × 6% × (1-0,25)) + (0,6 × 12%) = 1,8% + 7,2% = 9%"
+    },
+    {
+      "question": "En droit commercial, quelle est la nature juridique du cautionnement solidaire?",
+      "optionA": "Un contrat accessoire qui lie le caution au créancier",
+      "optionB": "Un contrat principal entre le caution et le débiteur",
+      "optionC": "Une obligation qui s'éteint avec la dette principale",
+      "optionD": "Une garantie qui ne peut être consentie que par une personne morale",
+      "correctAnswer": "A",
+      "explanation": "Le cautionnement est un contrat accessoire par lequel une personne s'engage envers un créancier à exécuter l'obligation d'un débiteur si celui-ci ne l'exécute pas lui-même."
+    },
+    {
+      "question": "En économétrie, que mesure le coefficient de détermination (R²) dans une régression linéaire simple?",
+      "optionA": "La proportion de la variance de la variable expliquée par le modèle",
+      "optionB": "L'erreur quadratique moyenne du modèle",
+      "optionC": "La corrélation entre les variables explicatives",
+      "optionD": "La significativité statistique des coefficients",
+      "correctAnswer": "A",
+      "explanation": "Le R² mesure la proportion de la variance de la variable dépendante qui est expliquée par le modèle de régression. Il varie entre 0 et 1."
+    },
+    {
+      "question": "En marketing, quelle stratégie de segmentation consiste à diviser le marché en segments homogènes basés sur les caractéristiques démographiques des consommateurs?",
+      "optionA": "Segmentation géographique",
+      "optionB": "Segmentation psychographique",
+      "optionC": "Segmentnement comportemental",
+      "optionD": "Segmentmentation démographique",
+      "correctAnswer": "D",
+      "explanation": "La segmentation démographique divise le marché en fonction de caractéristiques objectives comme l'âge, le sexe, le revenu, la profession, etc."
+    },
+    {
+      "question": "En gestion de projet, quelle méthode d'ordonnancement des tâches utilise une représentation graphique avec des nœuds représentant les événements et des flèches représentant les tâches?",
+      "optionA": "Diagramme de Gantt",
+      "optionB": "Méthode PERT",
+      "optionC": "Méthode CPM",
+      "optionD": "Analyse SWOT",
+      "correctAnswer": "B",
+      "explanation": "La méthode PERT (Program Evaluation and Review Technique) utilise un diagramme en réseau avec des nœuds (événements) et des flèches (tâches) pour modéliser les dépendances entre les tâches d'un projet."
+    },
+    {
+      "question": "En droit du travail, quelle est la durée minimale de la période d'essai pour un CDI d'un cadre?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "6 mois",
+      "correctAnswer": "C",
+      "explanation": "Pour un cadre, la période d'essai peut aller jusqu'à 3 mois (renouvelable une fois par accord collectif ou par usage)."
+    },
+    {
+      "question": "En mathématiques financières, comment calcule-t-on la valeur actuelle d'une annuité constante?",
+      "optionA": "VA = A × (1 - (1+i)^-n) / i",
+      "optionB": "VA = A × ((1+i)^n - 1) / i",
+      "optionC": "VA = A × (1+i)^n",
+      "optionD": "VA = A / n",
+      "correctAnswer": "A",
+      "explanation": "La formule de la valeur actuelle d'une annuité constante est VA = A × [1 - (1+i)^-n] / i, où A est le montant de l'annuité, i le taux d'actualisation et n le nombre de périodes."
+    },
+    {
+      "question": "En gestion des ressources humaines, quel est l'objectif principal de la gestion des compétences?",
+      "optionA": "Réduire les coûts de formation",
+      "optionB": "Adapter les compétences des employés aux besoins stratégiques de l'entreprise",
+      "optionC": "Évaluer la performance individuelle",
+      "optionD": "Optimiser la rémunération",
+      "correctAnswer": "B",
+      "explanation": "La gestion des compétences vise à identifier, développer et utiliser les compétences des employés pour répondre aux besoins actuels et futurs de l'entreprise."
+    },
+    {
+      "question": "En comptabilité des sociétés, comment sont comptabilisées les primes de remboursement des obligations émises à un prix inférieur à leur valeur nominale?",
+      "optionA": "En charges financières",
+      "optionB": "En produits financiers",
+      "optionC": "En réduction de la valeur nominale des obligations",
+      "optionD": "En charges non courantes",
+      "correctAnswer": "A",
+      "explanation": "La prime de remboursement (écart entre la valeur nominale et le prix d'émission inférieur) est amortie linéairement sur la durée de vie de l'emprunt et comptabilisée en charges financières."
+    },
+    {
+      "question": "En politique économique, quel instrument de politique monétaire la Banque Centrale Européenne utilise-t-primordialement pour influencer l'inflation?",
+      "optionA": "Les taux directeurs",
+      "optionB": "Les interventions sur le marché des changes",
+      "optionC": "Le contrôle des changes",
+      "optionD": "Le financement direct des États",
+      "correctAnswer": "A",
+      "explanation": "La BCE utilise principalement les taux directeurs (taux refinancement, taux de dépôt, taux de facilité de prêt marginal) pour orienter les conditions de monnaie et de crédit et ainsi influencer l'inflation."
+    },
+    {
+      "question": "En analyse financière, que mesure le ratio de rotation des stocks?",
+      "optionA": "La durée moyenne de stockage des produits",
+      "optionB": "Le nombre de fois où les stocks sont renouvelés sur une période",
+      "optionC": "La valeur moyenne des stocks",
+      "optionD": "Le coût de possession des stocks",
+      "correctAnswer": "B",
+      "explanation": "Le ratio de rotation des stocks = Coût des vendus / Stock moyen. Il indique combien de fois les stocks sont renouvelés pendant une période donnée."
+    },
+    {
+      "question": "En fiscalité, quel est le taux de TVA applicable en France aux produits de première nécessité?",
+      "optionA": "5,5%",
+      "optionB": "10%",
+      "optionC": "20%",
+      "optionD": "0%",
+      "correctAnswer": "A",
+      "explanation": "En France, les produits de première nécessité (produits alimentaires, abonnements de transport, etc.) sont soumis au taux réduit de 5,5%."
+    },
+    {
+      "question": "En gestion de la production, quelle méthode vise à éliminer les gaspillages et à améliorer l'efficacité en réduisant les stocks à leur minimum?",
+      "optionA": "Méthode MRP",
+      "optionB": "Méthode Kanban",
+      "optionC": "Méthode PERT",
+      "optionD": "Méthode ABC",
+      "correctAnswer": "B",
+      "explanation": "La méthode Kanban, associée au système de production Toyota, vise à éliminer les gaspillages et à améliorer l'efficacité en réduisant les stocks à leur minimum nécessaire."
+    },
+    {
+      "question": "En systèmes d'information de gestion, quel est le rôle principal d'un ERP (Enterprise Resource Planning)?",
+      "optionA": "Gérer les relations clients",
+      "optionB": "Intégrer les processus métiers de l'entreprise",
+      "optionC": "Assurer la sécurité des données",
+      "optionD": "Développer des applications web",
+      "correctAnswer": "B",
+      "explanation": "Un ERP (Planification des Ressources d'Entreprise) est un système d'information qui intègre les processus métiers de l'entreprise (finance, RH, production, etc.) pour améliorer leur coordination."
+    },
+    {
+      "question": "En macroéconomie, quel est l'effet d'une augmentation des dépenses publiques sur le revenu national dans le modèle keynésien simple?",
+      "optionA": "Le revenu national augmente de l'augmentation des dépenses publiques multipliée par le multiplicateur",
+      "optionB": "Le revenu national diminue de l'augmentation des dépenses publiques multipliée par le multiplicateur",
+      "optionC": "Le revenu national reste inchangé",
+      "optionD": "Le revenu national augmente de l'augmentation des dépenses publiques sans effet multiplicateur",
+      "correctAnswer": "A",
+      "explanation": "Dans le modèle keynésien simple, une augmentation des dépenses publiques entraîne une augmentation du revenu national égale à l'augmentation des dépenses multipliée par le multiplicateur keynésien (1/(1-c) où c est la propension marginale à consommer)."
+    },
+    {
+      "question": "En gestion budgétaire, quelle est la différence fondamentale entre un budget flexible et un budget fixe?",
+      "optionA": "Le budget flexible est révisable périodiquement, le budget fixe ne l'est pas",
+      "optionB": "Le budget flexible s'adapte aux niveaux d'activité réels, le budget fixe reste basé sur un niveau d'activité prévisionnel unique",
+      "optionC": "Le budget flexible est élaboré par la direction, le budget fixe par les opérationnels",
+      "optionD": "Le budget flexible concerne les dépenses, le budget fixe concerne les recettes",
+      "correctAnswer": "B",
+      "explanation": "Un budget flexible s'ajuste en fonction des niveaux d'activité réels, permettant une meilleure comparaison avec les résultats, tandis qu'un budget fixe reste basé sur un seul niveau d'activité prévisionnel."
+    },
+    {
+      "question": "En entrepreneuriat, quel concept désigne l'ensemble des activités nécessaires à la création d'une nouvelle entreprise?",
+      "optionA": "Le business plan",
+      "optionB": "Le lean startup",
+      "optionC": "L'entrepreneuriat social",
+      "optionD": "L'entrepreneuriat corporatif",
+      "correctAnswer": "A",
+      "explanation": "Le business plan est un document stratégique qui décrit l'ensemble des activités nécessaires à la création et au développement d'une nouvelle entreprise, y compris l'analyse du marché, la stratégie commerciale, le plan financier, etc."
+    },
+    {
+      "question": "En microéconomie, quel est l'impact d'une taxe sur la production sur l'équilibre d'un marché concurrentiel?",
+      "optionA": "Déplacement de la courbe d'offre vers la gauche",
+      "optionB": "Déplacement de la courbe de demande vers la gauche",
+      "optionC": "Augmentation du surplus des consommateurs",
+      "optionD": "Diminution du coût marginal",
+      "correctAnswer": "A",
+      "explanation": "Une taxe sur la production augmente le coût de production pour les entreprises, ce qui les incite à fournir moins à chaque prix, décalant ainsi la courbe d'offre vers la gauche."
+    },
+    {
+      "question": "En comptabilité analytique, la méthode des coûts complets permet de:",
+      "optionA": "Calculer le coût de revient en répartissant tous les charges",
+      "optionB": "Évaluer uniquement les coûts variables",
+      "optionC": "Déterminer le seuil de rentabilité",
+      "optionD": "Calculer les coûts standards",
+      "correctAnswer": "A",
+      "explanation": "La méthode des coûts complets consiste à répartir toutes les charges (variables et fixes) pour déterminer le coût de revient complet d'un produit ou service."
+    },
+    {
+      "question": "En mathématiques financières, quel est le taux actuariel d'un emprunt de 10 000€ remboursable en 5 annuités constantes de 2 500€?",
+      "optionA": "15,2%",
+      "optionB": "12,5%",
+      "optionC": "10%",
+      "optionD": "8,5%",
+      "correctAnswer": "A",
+      "explanation": "Le taux actuariel est le taux qui annule la valeur actuelle des flux. Ici, un taux de 15,2% annule la valeur actuelle des 5 annuités de 2 500€ pour un capital de 10 000€."
+    },
+    {
+      "question": "En économétrie, la multicolinéarité dans un modèle de régression multiple:",
+      "optionA": "Augmente la précision des estimations",
+      "optionB": "Rend les estimations des coefficients instables",
+      "optionC": "N'affecte pas les tests de significativité",
+      "optionD": "Indique une mauvaise spécification du modèle",
+      "correctAnswer": "B",
+      "explanation": "La multicolinéarité rend les estimations des coefficients très sensibles aux modifications mineures des données, augmentant leur variance et les rendant instables."
+    },
+    {
+      "question": "En marketing, la stratégie de positionnement différentiel:",
+      "optionA": "Vise à être perçu comme unique sur tous les critères",
+      "optionB": "Cible uniquement un segment de marché",
+      "optionC": "Évite toute comparaison avec la concurrence",
+      "optionD": "Repose sur une différenciation minimale",
+      "correctAnswer": "A",
+      "explanation": "La positionnement différentiel consiste à se différencier de la concurrence sur plusieurs attributs clés pour être perçu comme unique sur tous les critères importants pour le consommateur."
+    },
+    {
+      "question": "En finance d'entreprise, le coût du capitaux propres (Ke) se calcule généralement par:",
+      "optionA": "Le modèle d'évaluation des actifs financiers (MEDAF)",
+      "optionB": "Le ratio de rentabilité économique",
+      "optionC": "Le taux de valeur actuelle nette (VAN)",
+      "optionD": "Le coût de la dette",
+      "correctAnswer": "A",
+      "explanation": "Le coût des capitaux propres est généralement estimé en utilisant le MEDAF qui prend en compte le taux sans risque, la prime de risque de marché et le bêta de l'action."
+    },
+    {
+      "question": "En droit des affaires, la nullité d'une société est prononcée dans un délai de:",
+      "optionA": "3 ans à compter de l'immatriculation",
+      "optionB": "5 ans à compter de la création",
+      "optionC": "10 ans à compter de la cessation d'activité",
+      "optionD": "Aucun délai légal",
+      "correctAnswer": "A",
+      "explanation": "En droit français, l'action en nullité d'une société doit être intentée dans un délai de 3 ans à compter de l'immatriculation au registre du commerce et des sociétés."
+    },
+    {
+      "question": "En économie internationale, le paradoxe de Leontief suggère que:",
+      "optionA": "Les pays développés exportent des biens intensifs en capital",
+      "optionB": "Les pays riches exportent des biens intensifs en travail",
+      "optionC": "Le commerce international n'explique pas les différences de productivité",
+      "optionD": "La théorie des avantages comparatifs est erronée",
+      "correctAnswer": "B",
+      "explanation": "Le paradoxe de Leontief montre que les États-Unis, pays capitaliste, exportaient des biens intensifs en travail, contredisant la théorie traditionnelle du commerce international."
+    },
+    {
+      "question": "En gestion de projet, la méthode PERT permet de:",
+      "optionA": "Optimiser les ressources humaines",
+      "optionB": "Calculer la durée probable d'un projet",
+      "optionC": "Évaluer la rentabilité financière",
+      "optionD": "Analyser les risques marketing",
+      "correctAnswer": "B",
+      "explanation": "La méthode PERT (Program Evaluation and Review Technique) est une technique d'ordonnancement qui utilise des estimations probabilistes pour déterminer la durée probable d'un projet."
+    },
+    {
+      "question": "En comptabilité des sociétés, la réserve légale est obligatoire et représente:",
+      "optionA": "10% du bénéfice net jusqu'à atteindre 50% du capital social",
+      "optionB": "5% du chiffre d'affaires annuel",
+      "optionC": "20% du capital social initial",
+      "optionD": "La moitié du bénéfice distribué",
+      "correctAnswer": "A",
+      "explanation": "La réserve légale est obligatoire pour les SA et SARL et correspond à 10% du bénéfice distribuable jusqu'à ce qu'elle atteigne 50% du capital social."
+    },
+    {
+      "question": "En statistiques, le test du Khi-deux permet de:",
+      "optionA": "Comparer deux moyennes",
+      "optionB": "Vérifier l'indépendance entre deux variables qualitatives",
+      "optionC": "Analyser une série temporelle",
+      "optionD": "Mesurer la corrélation linéaire",
+      "correctAnswer": "B",
+      "explanation": "Le test du Khi-deux (χ²) est utilisé pour vérifier s'il existe une association statistique significative entre deux variables qualitatives."
+    },
+    {
+      "question": "En gestion des ressources humaines, la gestion des compétences repose sur:",
+      "optionA": "L'évaluation individuelle uniquement",
+      "optionB": "La cartographie des besoins et des compétences existantes",
+      "optionC": "La rémunération basée uniquement sur l'ancienneté",
+      "optionD": "La rotation des postes sans formation",
+      "correctAnswer": "B",
+      "explanation": "La gestion des compétences implique de cartographier les compétences requises par l'entreprise et celles détenues par les collaborateurs pour identifier les écarts et planifier les actions nécessaires."
+    },
+    {
+      "question": "En macroéconomie, le multiplicateur keynésien mesure:",
+      "optionA": "L'impact d'une variation des dépenses publiques sur le revenu",
+      "optionB": "Le taux d'inflation",
+      "optionC": "Le niveau d'endettement public",
+      "optionD": "La productité marginale",
+      "correctAnswer": "A",
+      "explanation": "Le multiplicateur keynésien quantifie l'effet d'une variation autonome des dépenses (publiques ou privées) sur le revenu national global."
+    },
+    {
+      "question": "En fiscalité, l'IS (Impôt sur les Sociétés) en France est calculé au taux de:",
+      "optionA": "15% pour la tranche inférieure et 33,33% au-delà",
+      "optionB": "25% pour toutes les sociétés",
+      "optionC": "33,33% avec abattement pour PME",
+      "optionD": "Progressif de 15% à 45%",
+      "correctAnswer": "A",
+      "explanation": "L'IS en France est de 15% sur les 38 120 premiers euros de bénéfice et 33,33% au-delà, avec un taux réduit de 25% pour les PME sous certaines conditions."
+    },
+    {
+      "question": "En gestion de la production, la méthode Kanban est associée à:",
+      "optionA": "La production de masse",
+      "optionB": "La gestion des stocks traditionnelle",
+      "optionC": "La production à flux tirés",
+      "optionD": "L'automatisation totale",
+      "correctAnswer": "C",
+      "explanation": "La méthode Kanban est un système de gestion visuelle qui permet de produire uniquement ce qui est demandé, quand il est demandé, réduisant ainsi les stocks et les gaspillages."
+    },
+    {
+      "question": "En analyse financière, le ratio d'endettement se calcule comme:",
+      "optionA": "Dettes financières / Capitaux propres",
+      "optionB": "Actif / Passif",
+      "optionC": "Bénéfice net / Chiffre d'affaires",
+      "optionD": "Trésorerie / Dettes à court terme",
+      "correctAnswer": "A",
+      "explanation": "Le ratio d'endettement mesure la part des dettes financières par rapport aux capitaux propres, indiquant le niveau d'endettement et le risque financier de l'entreprise."
+    },
+    {
+      "question": "En droit du travail, la durée maximale hebdomadaire de travail en France est de:",
+      "optionA": "35 heures",
+      "optionB": "39 heures",
+      "optionC": "40 heures",
+      "optionD": "44 heures",
+      "correctAnswer": "A",
+      "explanation": "La durée légale du travail en France est de 35 heures hebdomadaires, avec possibilité d'aménagement du temps de travail sous conditions."
+    },
+    {
+      "question": "En économie monétaire, la masse monétaire M3 comprend:",
+      "optionA": "Seulement la monnaie fiduciaire",
+      "optionB": "La monnaie fiduciaire et les dépôts à vue",
+      "optionC": "M2 plus les titres de créances négociables",
+      "optionD": "Seulement les avoirs à terme",
+      "correctAnswer": "C",
+      "explanation": "M3 est une agrégat monétaire large qui inclut M2 (monnaie fiduciaire, dépôts à vue, dépôts à terme) plus les titres de créances négociables et les parts d'OPCVM."
+    },
+    {
+      "question": "En gestion budgétaire, le budget de trésorerie permet de:",
+      "optionA": "Évaluer la rentabilité globale",
+      "optionB": "Planifier les flux de trésorerie",
+      "optionC": "Calculer les coûts de production",
+      "optionD": "Déterminer les prix de vente",
+      "correctAnswer": "B",
+      "explanation": "Le budget de trésorerie est un outil de planification qui permet d'anticiper les flux de trésorerie entrants et sortants pour assurer la solvabilité de l'entreprise."
+    },
+    {
+      "question": "En entrepreneuriat, le business model canvas est un outil qui permet de:",
+      "optionA": "Évaluer la fiscalité d'une entreprise",
+      "optionB": "Décrire, concevoir, challenger et piloter un modèle économique",
+      "optionC": "Analyser les concurrents directs",
+      "optionD": "Calculer le seuil de rentabilité",
+      "correctAnswer": "B",
+      "explanation": "Le business model canvas est un outil visuel qui permet de représenter et de tester les différents éléments d'un modèle économique de manière synthétique et structurée."
+    },
+    {
+      "question": "En systèmes d'information de gestion (SIG), un ERP (Enterprise Resource Planning) est:",
+      "optionA": "Un système de gestion des relations clients",
+      "optionB": "Une solution logicielle intégrée pour gérer les processus métiers",
+      "optionC": "Un outil de business intelligence",
+      "optionD": "Un système de gestion documentaire",
+      "correctAnswer": "B",
+      "explanation": "Un ERP est une solution logicielle intégrée qui centralise et gère les informations et processus clés d'une entreprise (finance, RH, production, etc.)."
+    },
+    {
+      "question": "En microéconomie, quel concept représente le maximum de satisfaction qu'un consommateur peut tirer de son revenu disponible?",
+      "optionA": "La courbe d'indifférence",
+      "optionB": "L'équilibre du consommateur",
+      "optionC": "La contrainte budgétaire",
+      "optionD": "L'utilité marginale",
+      "correctAnswer": "B",
+      "explanation": "L'équilibre du consommateur représente le point où le consommateur maximise sa satisfaction sous sa contrainte budgétaire, c'est-à-dire où la courbe d'indifférence est tangente à la droite de budget."
+    },
+    {
+      "question": "En macroéconomie, comment appelle-t-on la situation où le PIB réel est inférieur au PIB potentiel?",
+      "optionA": "Surchauffe",
+      "optionB": "Récession",
+      "optionC": "Déflation",
+      "optionD": "Écart négatif de production",
+      "correctAnswer": "D",
+      "explanation": "L'écart négatif de production se produit lorsque le PIB réel est inférieur au PIB potentiel, indiquant une sous-utilisation des capacités productives de l'économie."
+    },
+    {
+      "question": "En comptabilité analytique, quelle méthode de calcul des coûts permet de distinguer les coûts fixes et les coûts variables?",
+      "optionA": "La méthode des coûts complets",
+      "optionB": "La méthode du coût variable",
+      "optionC": "La méthode du coût cible",
+      "optionD": "La méthode du coût standard",
+      "correctAnswer": "B",
+      "explanation": "La méthode du coût variable sépare les coûts fixes des coûts variables, permettant une analyse plus précise du seuil de rentabilité et de la marge sur coût variable."
+    },
+    {
+      "question": "En comptabilité des sociétés, quelle est la nature de la réserve légale?",
+      "optionA": "Une réserve facultative",
+      "optionB": "Une réserve statutaire",
+      "optionC": "Une réserve obligatoire",
+      "optionD": "Une réserve réglementée",
+      "correctAnswer": "C",
+      "explanation": "La réserve légale est une réserve obligatoire constituée par les sociétés commerciales, d'au moins 5% du bénéfice net distribuable jusqu'à atteindre 10% du capital social."
+    },
+    {
+      "question": "En statistiques, quelle mesure de tendance centrale est la moins sensible aux valeurs extrêmes?",
+      "optionA": "La moyenne",
+      "optionB": "La médiane",
+      "optionC": "Le mode",
+      "optionD": "L'étendue",
+      "correctAnswer": "B",
+      "explanation": "La médiane est moins sensible aux valeurs extrêmes que la moyenne, car elle ne dépend que de la position des données dans la distribution, pas de leur valeur absolue."
+    },
+    {
+      "question": "En économétrie, que mesure le coefficient de détermination R²?",
+      "optionA": "La significativité globale du modèle",
+      "optionB": "La qualité d'ajustement du modèle",
+      "optionC": "L'autocorrélation des erreurs",
+      "optionD": "La multicolinéarité",
+      "correctAnswer": "B",
+      "explanation": "Le coefficient de détermination R² mesure la proportion de la variance de la variable expliquée qui est expliquée par le modèle, c'est-à-dire sa qualité d'ajustement."
+    },
+    {
+      "question": "En management, quel style de leadership est caractérisé par une forte orientation vers les tâches et faible orientation vers les relations?",
+      "optionA": "Style collaboratif",
+      "optionB": "Style délégatif",
+      "optionC": "Style directif",
+      "optionD": "Style participatif",
+      "correctAnswer": "C",
+      "explanation": "Le style directif (ou autoritaire) est caractérisé par une forte orientation vers les tâches et faible orientation vers les relations, avec prise de décision centralisée."
+    },
+    {
+      "question": "En marketing, quelle stratégie consiste à fixer un prix élevé pour un nouveau produit sur un marché peu sensible au prix?",
+      "optionA": "Pénétration",
+      "optionB": "Désengagement",
+      "optionC": "Écrémage",
+      "optionD": "Harmonisation",
+      "correctAnswer": "C",
+      "explanation": "L'écrémage consiste à fixer un prix élevé initialement pour maximiser les profits sur les segments de marché moins sensibles au prix, avant de baisser les prix progressivement."
+    },
+    {
+      "question": "En gestion des ressources humaines, quel outil permet d'évaluer les compétences et les potentiels des collaborateurs?",
+      "optionA": "L'entretien annuel",
+      "optionB": "L'analyse des besoins",
+      "optionC": "L'évaluation des performances",
+      "optionD": "Le plan de développement",
+      "correctAnswer": "C",
+      "explanation": "L'évaluation des performances permet de mesurer les compétences et les résultats des collaborateurs, et d'identifier leurs potentiels de développement."
+    },
+    {
+      "question": "En finance d'entreprise, que mesure le seuil de rentabilité?",
+      "optionA": "Le point où le chiffre d'affaires égalise les coûts totaux",
+      "optionB": "Le point où le chiffre d'affaires est maximal",
+      "optionC": "Le point où les coûts fixes sont couverts",
+      "optionD": "Le point où la marge brute est maximale",
+      "correctAnswer": "A",
+      "explanation": "Le seuil de rentabilité est le niveau d'activité où le chiffre d'affaires égalise les coûts totaux, c'est-à-dire où l'entreprise ne réalise ni profit ni perte."
+    },
+    {
+      "question": "En gestion de projet, quelle technique permet de représenter les dépendances entre tâches?",
+      "optionA": "L'organigramme",
+      "optionB": "Le diagramme de Gantt",
+      "optionC": "Le diagramme de Pert",
+      "optionD": "Le budget",
+      "correctAnswer": "C",
+      "explanation": "Le diagramme de Pert (Program Evaluation and Review Technique) représente les dépendances entre tâches et permet d'identifier le chemin critique d'un projet."
+    },
+    {
+      "question": "En droit des affaires, quelle est la nature juridique d'une SARL?",
+      "optionA": "Personne morale de droit public",
+      "optionB": "Personne morale de droit privé",
+      "optionC": "Groupement d'intérêt économique",
+      "optionD": "Société coopérative",
+      "correctAnswer": "B",
+      "explanation": "Une SARL (Société à Responsabilité Limitée) est une personne morale de droit privé, de forme commerciale, dont les associés ont une responsabilité limitée au montant de leurs apports."
+    },
+    {
+      "question": "En droit du travail, quelle est la durée légale maximale du travail hebdomadaire en France?",
+      "optionA": "35 heures",
+      "optionB": "40 heures",
+      "optionC": "44 heures",
+      "optionD": "48 heures",
+      "correctAnswer": "A",
+      "explanation": "La durée légale maximale du travail hebdomadaire en France est de 35 heures, conformément au Code du travail."
+    },
+    {
+      "question": "En droit commercial, quel document établit les conditions générales de vente entre un professionnel et un consommateur?",
+      "optionA": "Le bon de commande",
+      "optionB": "La facture",
+      "optionC": "Le contrat de vente",
+      "optionD": "Le devis",
+      "correctAnswer": "C",
+      "explanation": "Le contrat de vente établit les conditions générales de vente entre un professionnel et un consommateur, définissant les droits et obligations de chaque partie."
+    },
+    {
+      "question": "En économie monétaire et bancaire, quel instrument de politique monétaire permet à la banque centrale d'influencer le crédit bancaire?",
+      "optionA": "Le taux directeur",
+      "optionB": "L'open market",
+      "optionC": "Le coefficient de réserves obligatoires",
+      "optionD": "L'encadrement du crédit",
+      "correctAnswer": "C",
+      "explanation": "Le coefficient de réserves obligatoires est l'instrument qui permet à la banque centrale d'exiger que les banques détiennent une fraction de leurs dépôts sous forme de réserves, influençant ainsi leur capacité à accorder du crédit."
+    },
+    {
+      "question": "En économie internationale, quel concept représente la spécialisation d'un pays dans la production de biens pour lesquels il a un avantage comparatif?",
+      "optionA": "Le protectionnisme",
+      "optionB": "Le libre-échange",
+      "optionC": "La division internationale du travail",
+      "optionD": "La balance des paiements",
+      "correctAnswer": "C",
+      "explanation": "La division internationale du travail représente la spécialisation des pays dans la production de biens et services pour lesquels ils ont un avantage comparatif, favorisant les échanges internationaux."
+    },
+    {
+      "question": "En politique économique, quel instrument de la politique budgétaire permet de stimuler l'activité économique en période de récession?",
+      "optionA": "La hausse des impôts",
+      "optionB": "La baisse des dépenses publiques",
+      "optionC": "La réduction du déficit public",
+      "optionD": "L'augmentation des dépenses publiques",
+      "correctAnswer": "D",
+      "explanation": "L'augmentation des dépenses publiques est un instrument de la politique budgétaire expansionniste qui permet de stimuler l'activité économique en période de récession, en augmentant la demande globale."
+    },
+    {
+      "question": "En gestion de la production, que mesure le taux de rendement synthétique (TRS)?",
+      "optionA": "Le ratio entre le temps de travail réel et le temps de travail théorique",
+      "optionB": "Le ratio entre le temps de travail théorique et le temps de travail réel",
+      "optionC": "Le ratio entre le temps de travail réel et le temps de cycle",
+      "optionD": "Le ratio entre le temps de cycle et le temps de travail théorique",
+      "correctAnswer": "A",
+      "explanation": "Le taux de rendement synthétique (TRS) mesure l'efficacité globale d'un équipement de production en calculant le ratio entre le temps de travail réel et le temps de travail théorique, en tenant compte des arrêts planifiés et non planifiés."
+    },
+    {
+      "question": "En systèmes d'information de gestion, quel modèle décrit les processus métier d'une organisation?",
+      "optionA": "Le modèle conceptuel des données",
+      "optionB": "Le modèle logique des données",
+      "optionC": "Le modèle physique des données",
+      "optionD": "Le modèle des processus métier",
+      "correctAnswer": "D",
+      "explanation": "Le modèle des processus métier décrit les activités, les flux et les interactions au sein d'une organisation, permettant de comprendre et d'optimiser les opérations."
+    },
+    {
+      "question": "En fiscalité, quel impôt est prélevé à la source sur les revenus du travail en France?",
+      "optionA": "L'impôt sur le revenu",
+      "optionB": "La CSG",
+      "optionC": "La TVA",
+      "optionD": "L'ISF",
+      "correctAnswer": "B",
+      "explanation": "La CSG (Contribution Sociale Généralisée) est un impôt prélevé à la source sur les revenus du travail, ainsi que sur d'autres revenus, pour financer la protection sociale."
+    },
+    {
+      "question": "En gestion budgétaire, quel document prévisionnel présente les prévisions de trésorerie mois par mois?",
+      "optionA": "Le budget de trésorerie",
+      "optionB": "Le budget des investissements",
+      "optionC": "Le budget des charges",
+      "optionD": "Le budget des ventes",
+      "correctAnswer": "A",
+      "explanation": "Le budget de trésorerie présente les prévisions de flux de trésorerie (encaissements et décaissements) mois par mois, permettant d'anticiper les besoins ou les excédents de trésorerie."
+    },
+    {
+      "question": "En analyse financière, quel ratio mesure l'autonomie financière d'une entreprise?",
+      "optionA": "Le ratio d'endettement",
+      "optionB": "Le ratio de liquidité générale",
+      "optionC": "Le ratio de solvabilité",
+      "optionD": "Le ratio de couverture des intérêts",
+      "correctAnswer": "A",
+      "explanation": "Le ratio d'endettement mesure l'autonomie financière d'une entreprise en comparant ses dettes à ses capitaux propres, indiquant le degré d'endettement et de dépendance vis-à-vis des créanciers."
+    },
+    {
+      "question": "En entrepreneuriat, quel concept désigne le processus par lequel un entrepreneur identifie une opportunité et mobilise les ressources nécessaires pour la saisir?",
+      "optionA": "L'innovation",
+      "optionB": "La création d'entreprise",
+      "optionC": "L'entrepreneuriat social",
+      "optionD": "L'opportunité entrepreneuriale",
+      "correctAnswer": "B",
+      "explanation": "La création d'entreprise désigne le processus par lequel un entrepreneur identifie une opportunité et mobilise les ressources nécessaires (financières, humaines, matérielles) pour la saisir et développer une activité économique."
+    },
+    {
+      "question": "Dans le cadre de l'analyse financière, quel ratio permet d'évaluer l'autonomie financière d'une entreprise ?",
+      "optionA": "Ratio d'endettement",
+      "optionB": "Ratio de liquidité générale",
+      "optionC": "Ratio de couverture des charges financières",
+      "optionD": "Ratio de solvabilité",
+      "correctAnswer": "A",
+      "explanation": "Le ratio d'endettement (dettes totales / capitaux propres) mesure la part des dettes dans le financement de l'entreprise et évalue ainsi son autonomie financière. Un ratio plus faible indique une plus grande autonomie."
+    },
+    {
+      "question": "Quelle est la caractéristique principale d'un oligopole sur un marché ?",
+      "optionA": "Nombre très élevé d'offreurs",
+      "optionB": "Barrières à l'entrée significatives",
+      "optionC": "Produit homogène",
+      "optionD": "Information parfaite",
+      "correctAnswer": "B",
+      "explanation": "Un oligopole est caractérisé par un petit nombre d'offreurs sur le marché et des barrières à l'entrée importantes qui empêchent de nouveaux concurrents d'entrer facilement."
+    },
+    {
+      "question": "En comptabilité analytique, la méthode des coûts variables permet de calculer :",
+      "optionA": "Le coût de revient complet",
+      "optionB": "Le seuil de rentabilité",
+      "optionC": "Le résultat par produit",
+      "optionD": "Le coût de production",
+      "correctAnswer": "B",
+      "explanation": "La méthode des coûts variables, qui ne prend en compte que les coûts variables (dits directs), permet de déterminer le seuil de rentabilité en analysant la relation entre les coûts, les volumes et le résultat."
+    },
+    {
+      "question": "Quelle est la principale différence entre une SARL et une SAS en droit des affaires ?",
+      "optionA": "Le nombre d'associés",
+      "optionB": "La responsabilité des dirigeants",
+      "optionC": "Le régime d'imposition",
+      "optionD": "La liberté statutaire",
+      "correctAnswer": "D",
+      "explanation": "La SAS offre une plus grande liberté statutaire que la SARL, notamment en matière d'organisation des organes de direction et de fonctionnement, tandis que la SARL est soumise à un régime plus strict et plus protecteur des associés."
+    },
+    {
+      "question": "En économétrie, quel test est généralement utilisé pour vérifier l'existence d'autocorrélation des erreurs dans un modèle de régression linéaire simple ?",
+      "optionA": "Test de Durbin-Watson",
+      "optionB": "Test de Chow",
+      "optionC": "Test de Breusch-Godfrey",
+      "optionD": "Test de White",
+      "correctAnswer": "A",
+      "explanation": "Le test de Durbin-Watson est spécifiquement conçu pour détecter l'existence d'autocorrélation d'ordre 1 dans les erreurs d'un modèle de régression linéaire."
+    },
+    {
+      "question": "En marketing, le concept de 'valeur perçue' par le client se réfère à :",
+      "optionA": "Le prix de vente réel du produit",
+      "optionB": "L'utilité totale perçue moins le prix payé",
+      "optionC": "Le coût de production du produit",
+      "optionD": "La part de marché du produit",
+      "correctAnswer": "B",
+      "explanation": "La valeur perçue est définie comme l'utilité totale que le client croit tirer d'un produit ou service moins le prix qu'il doit payer pour l'acquérir."
+    },
+    {
+      "question": "En finance d'entreprise, la VAN (Valeur Actuelle Nette) d'un projet d'investissement est calculée comme :",
+      "optionA": "La somme des flux nets de trésorerie actualisés moins l'investissement initial",
+      "optionB": "Le flux net de trésorerie final divisé par le taux d'actualisation",
+      "optionC": "L'investissement initial divisé par le taux d'actualisation",
+      "optionD": "La somme des flux nets de trésorerie non actualisés",
+      "correctAnswer": "A",
+      "explanation": "La VAN est obtenue en actualisant tous les flux nets de trésorerie générés par le projet (positifs et négatifs) au taux d'actualisation approprié et en soustrayant l'investissement initial."
+    },
+    {
+      "question": "En droit du travail, la période d'essence a pour principal objectif :",
+      "optionA": "Former le salarié aux tâches qui lui seront confiées",
+      "optionB": "Permettre à l'employeur d'évaluer l'aptitude du salarié à occuper son emploi",
+      "optionC": "Tester la motivation du salarié pour l'entreprise",
+      "optionD": "Évaluer la conformité du contrat de travail avec la législation",
+      "correctAnswer": "B",
+      "explanation": "La période d'essence a principalement pour objectif de permettre à l'employeur d'évaluer les compétences et l'adaptation du salarié au poste proposé, lui permettant de rompre le contrat plus facilement si le salarié ne correspond pas aux attentes."
+    },
+    {
+      "question": "En gestion de projet, la méthode PERT (Program Evaluation and Review Technique) permet de :",
+      "optionA": "Estimer les coûts totaux du projet",
+      "optionB": "Déterminer le chemin critique et les marges de manœuvre",
+      "optionC": "Allouer les ressources humaines du projet",
+      "optionD": "Évaluer la satisfaction des clients",
+      "correctAnswer": "B",
+      "explanation": "La méthode PERT est une technique d'ordonnancement qui permet d'identifier le chemin critique (les tâches qui ne peuvent être retardées sans impacter la durée totale du projet) et les marges de manœuvre des autres tâches."
+    },
+    {
+      "question": "En économie monétaire, la création monétaire par les banques commerciales se fait principalement par :",
+      "optionA": "L'impression de billets",
+      "optionB": "L'octroi de crédits",
+      "optionC": "L'émission d'actions",
+      "optionD": "La collecte des dépôts",
+      "correctAnswer": "B",
+      "explanation": "Les banques commerciales créent de la monnaie principalement en accordant des crédits, ce qui génère de nouveaux dépôts en livres bancaires sans que cela corresponde à une préalable collecte d'épargne."
     }
   ]
 }

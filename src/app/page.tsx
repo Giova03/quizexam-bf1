@@ -15,6 +15,7 @@ import { AboutView } from "@/components/quiz/about-view";
 import { AdminView } from "@/components/quiz/admin-view";
 import { SocialView } from "@/components/quiz/social-view";
 import { CustomExamDialog } from "@/components/quiz/custom-exam-dialog";
+import { SearchDialog } from "@/components/quiz/search-dialog";
 import { useOfflineMode } from "@/lib/use-offline-mode";
 import { LanguageSwitcher } from "@/components/quiz/language-switcher";
 import { NotificationsPanel } from "@/components/quiz/notifications-panel";
@@ -42,6 +43,7 @@ import {
   Loader2,
   WifiOff,
   Sparkles,
+  Search,
 } from "lucide-react";
 
 export default function Home() {
@@ -59,6 +61,7 @@ export default function Home() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
   const [customExamOpen, setCustomExamOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const { data: session, status } = useSession();
   const unreadCount = usePrefs((s) =>
     s.notifications.filter((n) => !n.read).length
@@ -71,6 +74,18 @@ export default function Home() {
   // Ensure admin account exists on first load
   useEffect(() => {
     fetch("/api/admin/init", { method: "POST" }).catch(() => {});
+  }, []);
+
+  // Keyboard shortcut: Ctrl+K to open search
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
   }, []);
 
   // Show splash screen on first load
@@ -294,6 +309,24 @@ export default function Home() {
 
             <div className="mx-1 hidden h-6 w-px bg-border sm:block" />
 
+            {/* Search button */}
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-9 w-9"
+                    onClick={() => setSearchOpen(true)}
+                    aria-label="Rechercher"
+                  >
+                    <Search className="h-4.5 w-4.5" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>Rechercher (Ctrl+K)</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
             {/* Language switcher */}
             <div className="hidden sm:block">
               <LanguageSwitcher />
@@ -468,6 +501,9 @@ export default function Home() {
         onOpenChange={setCustomExamOpen}
         onCreated={(sessionId) => startSession(sessionId)}
       />
+
+      {/* Search dialog (Ctrl+K) */}
+      <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
 
       {/* Chatbot IA flottant */}
       <Chatbot />

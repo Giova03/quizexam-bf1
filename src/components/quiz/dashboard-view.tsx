@@ -23,8 +23,12 @@ import {
   XCircle,
   ChevronDown,
   ChevronRight,
+  Star,
+  Trash2,
+  Bookmark,
 } from "lucide-react";
 import { usePrefs } from "@/lib/prefs-store";
+import { useFavorites } from "@/lib/favorites-store";
 
 interface SessionAnswer {
   id: string;
@@ -222,7 +226,7 @@ export function DashboardView() {
       </div>
 
       <Tabs value={tab} onValueChange={setTab}>
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3">
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4">
           <TabsTrigger value="overview" className="gap-1.5">
             <BarChart3 className="h-4 w-4" />
             <span className="hidden sm:inline">Vue d&apos;ensemble</span>
@@ -231,9 +235,13 @@ export function DashboardView() {
             <Target className="h-4 w-4" />
             <span className="hidden sm:inline">Par quiz</span>
           </TabsTrigger>
-          <TabsTrigger value="history" className="gap-1.5 col-span-2 sm:col-span-1">
+          <TabsTrigger value="history" className="gap-1.5">
             <Clock className="h-4 w-4" />
             <span className="hidden sm:inline">Historique</span>
+          </TabsTrigger>
+          <TabsTrigger value="favorites" className="gap-1.5">
+            <Bookmark className="h-4 w-4" />
+            <span className="hidden sm:inline">Favoris</span>
           </TabsTrigger>
         </TabsList>
 
@@ -364,6 +372,9 @@ export function DashboardView() {
               ))}
             </div>
           </Card>
+
+          {/* Weekly activity chart */}
+          <WeeklyChart sessions={completed} />
         </TabsContent>
 
         {/* === Per-Quiz Tab === */}
@@ -514,7 +525,151 @@ export function DashboardView() {
               );
             })}
         </TabsContent>
+
+        {/* === Favorites Tab === */}
+        <TabsContent value="favorites" className="space-y-3">
+          <FavoritesList />
+        </TabsContent>
       </Tabs>
+    </div>
+  );
+}
+
+// === Weekly chart component ===
+function WeeklyChart({ sessions }: { sessions: SessionSummary[] }) {
+  const last7Days = Array.from({ length: 7 }, (_, i) => {
+    const d = new Date();
+    d.setDate(d.getDate() - (6 - i));
+    return {
+      date: d,
+      label: d.toLocaleDateString("fr-FR", { weekday: "short" }),
+      count: 0,
+      avgPct: 0,
+      scores: [] as number[],
+    };
+  });
+
+  for (const s of sessions) {
+    const d = new Date(s.completedAt ?? s.startedAt);
+    const dayDiff = Math.floor((Date.now() - d.getTime()) / (1000 * 60 * 60 * 24));
+    if (dayDiff >= 0 && dayDiff < 7) {
+      const idx = 6 - dayDiff;
+      last7Days[idx].count++;
+      const pct = (s.score / Math.max(1, s.totalQuestions)) * 100;
+      last7Days[idx].scores.push(pct);
+    }
+  }
+
+  for (const day of last7Days) {
+    if (day.scores.length > 0) {
+      day.avgPct = Math.round(day.scores.reduce((a, b) => a + b, 0) / day.scores.length);
+    }
+  }
+
+  const maxCount = Math.max(1, ...last7Days.map((d) => d.count));
+
+  return (
+    <Card className="p-4 sm:p-5">
+      <div className="mb-3 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <CalendarDays className="h-4 w-4 text-emerald-600" />
+          <h3 className="text-sm font-semibold">Activité des 7 derniers jours</h3>
+        </div>
+        <Badge variant="secondary">{last7Days.reduce((sum, d) => sum + d.count, 0)} sessions</Badge>
+      </div>
+      <div className="flex h-32 items-end justify-between gap-2">
+        {last7Days.map((day, i) => (
+          <div key={i} className="flex flex-1 flex-col items-center gap-1.5">
+            <div className="flex w-full flex-1 items-end justify-center">
+              <div
+                className={`w-full max-w-[40px] rounded-t-md transition-all ${
+                  day.count > 0 ? "bg-gradient-to-t from-emerald-500 to-teal-400" : "bg-muted"
+                }`}
+                style={{ height: `${Math.max(8, (day.count / maxCount) * 100)}%` }}
+                title={`${day.count} session(s) · ${day.avgPct}%`}
+              />
+            </div>
+            <span className="text-[10px] text-muted-foreground">{day.label}</span>
+            {day.count > 0 && (
+              <span className="text-[10px] font-semibold text-emerald-600">{day.avgPct}%</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </Card>
+  );
+}
+
+// === Favorites list component ===
+function FavoritesList() {
+  const favorites = useFavorites((s) => s.favorites);
+  const removeFavorite = useFavorites((s) => s.removeFavorite);
+  const clearAll = useFavorites((s) => s.clearAll);
+  const openBank = useQuizStore((s) => s.openBank);
+
+  if (favorites.length === 0) {
+    return (
+      <Card className="flex flex-col items-center gap-3 p-12 text-center">
+        <Bookmark className="h-12 w-12 text-muted-foreground/50" />
+        <p className="text-sm text-muted-foreground">
+          Aucun favori pour le moment. Marquez des questions pendant vos sessions pour les retrouver ici.
+        </p>
+      </Card>
+    );
+  }
+
+  return (
+    <div className="space-y-3">
+      <div className="flex items-center justify-between">
+        <p className="text-sm text-muted-foreground">
+          {favorites.length} question(s) marquée(s) comme favorite(s)
+        </p>
+        <Button variant="outline" size="sm" className="gap-1.5" onClick={clearAll}>
+          <Trash2 className="h-3.5 w-3.5" />
+          Tout effacer
+        </Button>
+      </div>
+      <div className="max-h-[600px] space-y-2 overflow-y-auto">
+        {favorites.map((f) => (
+          <Card key={f.id} className="p-3 sm:p-4">
+            <div className="flex items-start justify-between gap-2">
+              <p className="flex-1 break-words text-sm font-medium leading-snug">
+                {f.question}
+              </p>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-7 w-7 shrink-0"
+                onClick={() => removeFavorite(f.id)}
+              >
+                <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+              </Button>
+            </div>
+            <div className="mt-2 flex flex-col gap-1 text-xs">
+              <p className="text-muted-foreground">
+                <span className="font-semibold text-emerald-600">Bonne réponse:</span> {f.correctAnswer}
+              </p>
+              <p className="break-words text-muted-foreground">
+                <span className="font-semibold text-amber-600">Explication:</span> {f.explanation}
+              </p>
+            </div>
+            <div className="mt-2 flex items-center justify-between gap-2 border-t pt-2">
+              <Badge variant="outline" className="text-[10px]">
+                {f.bankTitle}
+              </Badge>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="h-7 gap-1 px-2 text-xs"
+                onClick={() => openBank(f.bankId)}
+              >
+                Ouvrir la banque
+                <ChevronRight className="h-3 w-3" />
+              </Button>
+            </div>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 }

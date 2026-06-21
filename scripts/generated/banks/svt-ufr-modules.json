@@ -97,6 +97,1005 @@
       "optionD": "L'étude des insectes",
       "correctAnswer": "A",
       "explanation": "La paléontologie étudie les fossiles pour reconstituer l'histoire de la vie."
+    },
+    {
+      "question": "Quel mécanisme moléculaire explique l'expression différentielle des gènes entre les cellules somatiques et les cellules germinales ?",
+      "optionA": "Méthylation de l'ADN",
+      "optionB": "Épissage alternatif",
+      "optionC": "Édition d'ARN",
+      "optionD": "Imprinting génomique",
+      "correctAnswer": "D",
+      "explanation": "L'empreinte génomique est un phénomène d'épigénétique qui entraîne l'expression monoallélique de certains gènes en fonction de leur origine parentale, essentielle pour la différenciation cellulaire."
+    },
+    {
+      "question": "Quelle enzyme est responsable de la réparation des mésappariements lors de la réplication de l'ADN ?",
+      "optionA": "ADN polymérase I",
+      "optionB": "ADN ligase",
+      "optionC": "ADN polymérase III",
+      "optionD": "ADN méthyltransférase",
+      "correctAnswer": "A",
+      "explanation": "L'ADN polymérase I possède une activité de correction de preuve (proofreading) qui lui permet de repérer et de corriger les erreurs de appariement des bases lors de la réplication de l'ADN."
+    },
+    {
+      "question": "Quelle est la fonction principale des ribosomes dans la cellule eucaryote ?",
+      "optionA": "Synthèse des lipides",
+      "optionB": "Traduction de l'ARNm en protéines",
+      "optionC": "Réplication de l'ADN",
+      "optionD": "Méthylation de l'ADN",
+      "correctAnswer": "B",
+      "explanation": "Les ribosomes sont les organites cellulaires responsables de la traduction de l'ARN messager en chaînes polypeptidiques, c'est-à-dire de la synthèse des protéines."
+    },
+    {
+      "question": "Quelle technique de biologie moléculaire permet d'amplifier une séquence d'ADN spécifique ?",
+      "optionA": "Southern blot",
+      "optionB": "Western blot",
+      "optionC": "PCR",
+      "optionD": "Séquençage",
+      "correctAnswer": "C",
+      "explanation": "La PCR (Polymerase Chain Reaction) est une technique qui permet d'amplifier de manière exponentielle un fragment d'ADN spécifique à partir d'une faible quantité d'échantillon."
+    },
+    {
+      "question": "Quel type de mutation génétique entraîne un changement d'acide aminé dans la protéine codée ?",
+      "optionA": "Mutation silencieuse",
+      "optionB": "Mutation non-sens",
+      "optionC": "Mutation faux-sens",
+      "optionD": "Mutation par délétion",
+      "correctAnswer": "C",
+      "explanation": "La mutation faux-sens est une substitution d'une base nucléotidique qui change un codon pour un autre codon codant un acide aminé différent, modifiant ainsi la séquence protéique."
+    },
+    {
+      "question": "Quel organelle est responsable de la production d'énergie dans la cellule eucaryote ?",
+      "optionA": "Réticulum endoplasmique",
+      "optionB": "Appareil de Golgi",
+      "optionC": "Mitochondrie",
+      "optionD": "Lysosome",
+      "correctAnswer": "C",
+      "explanation": "Les mitochondries sont les 'centrales énergétiques' de la cellule eucaryote, produisant de l'ATP par la respiration cellulaire aérobie."
+    },
+    {
+      "question": "Quel mécanisme explique la résistance aux antibiotiques chez les bactéries ?",
+      "optionA": "Transformation",
+      "optionB": "Transduction",
+      "optionC": "Conjugaison",
+      "optionD": "Sélection naturelle",
+      "correctAnswer": "D",
+      "explanation": "La sélection naturelle explique comment les bactéries porteuses de gènes de résistance ont un avantage de survie en présence d'antibiotiques, permettant leur prolifération."
+    },
+    {
+      "question": "Quel type de cellule immunitaire est responsable de la présentation d'antigènes aux lymphocytes T ?",
+      "optionA": "Macrophage",
+      "optionB": "Cellule NK",
+      "optionC": "Plasmocyte",
+      "optionD": "Érythrocyte",
+      "correctAnswer": "A",
+      "explanation": "Les macrophages sont des cellules présentatrices d'antigènes (CPA) qui capturent, traitent et présentent des antigènes aux lymphocytes T pour initier une réponse immunitaire adaptative."
+    },
+    {
+      "question": "Quel processus permet aux plantes de synthétiser des glucides à partir de CO2 et d'eau ?",
+      "optionA": "Respiration cellulaire",
+      "optionB": "Photosynthèse",
+      "optionC": "Fermentation",
+      "optionD": "Nitrogénase",
+      "correctAnswer": "B",
+      "explanation": "La photosynthèse est le processus par lequel les plantes convertissent l'énergie lumineuse en énergie chimique, produisant du glucose à partir de CO2 et d'eau avec l'aide de la chlorophylle."
+    },
+    {
+      "question": "Quelle structure anatomique des mammifères est responsable de l'échange gazeux dans les poumons ?",
+      "optionA": "Bronches",
+      "optionB": "Alvéoles pulmonaires",
+      "optionC": "Bronchioles",
+      "optionD": "Trachée",
+      "correctAnswer": "B",
+      "explanation": "Les alvéoles pulmonaires sont de petites sacs entourés de capillaires sanguins où se produit l'échange d'oxygène et de dioxyde de carbone entre l'air et le sang."
+    },
+    {
+      "question": "Quel terme désigne l'étude des fossiles et des organismes disparus ?",
+      "optionA": "Taxonomie",
+      "optionB": "Paléontologie",
+      "optionC": "Écologie",
+      "optionD": "Biogéographie",
+      "correctAnswer": "B",
+      "explanation": "La paléontologie est la science qui étudie les fossiles et les organismes disparus pour comprendre l'évolution et l'histoire de la vie sur Terre."
+    },
+    {
+      "question": "Quel type de symbioze décrit une relation où deux organismes bénéficient mutuellement ?",
+      "optionA": "Commensalisme",
+      "optionB": "Parasitisme",
+      "optionC": "Mutualisme",
+      "optionD": "Amensalisme",
+      "correctAnswer": "C",
+      "explanation": "Le mutualisme est une interaction écologique où deux organismes de différentes espèces bénéficient mutuellement de leur association."
+    },
+    {
+      "question": "Quelle technique permet de séparer des molécules d'ADN en fonction de leur taille ?",
+      "optionA": "Électrophorèse sur gel d'agarose",
+      "optionB": "Spectrophotométrie",
+      "optionC": "Chromatographie",
+      "optionD": "Centrifugation",
+      "correctAnswer": "A",
+      "explanation": "L'électrophorèse sur gel d'agarose est une technique qui sépare les molécules d'ADN en fonction de leur taille sous l'effet d'un champ électrique."
+    },
+    {
+      "question": "Quel processus embryonnaire conduit à la formation des trois feuillets germinatifs ?",
+      "optionA": "Gastrulation",
+      "optionB": "Segmentation",
+      "optionC": "Organogenèse",
+      "optionD": "Neurogenèse",
+      "correctAnswer": "A",
+      "explanation": "La gastrulation est un processus embryonnaire clé qui transforme le blastocyste en une structure à trois feuillets germinatifs: ectoderme, mésoderme et endoderme."
+    },
+    {
+      "question": "Quel type de sol est caractérisé par un pH acide et une teneur élevée en matière organique ?",
+      "optionA": "Podzol",
+      "optionB": "Tchernoziom",
+      "optionC": "Vertisol",
+      "optionD": "Arenosol",
+      "correctAnswer": "A",
+      "explanation": "Le podzol est un type de sol forestier caractérisé par un pH acide, une forte lessivage et une accumulation de matière organique en surface."
+    },
+    {
+      "question": "Quelle hormone régule la glycémie en favorisant l'entrée du glucose dans les cellules ?",
+      "optionA": "Glucagon",
+      "optionB": "Insuline",
+      "optionC": "Cortisol",
+      "optionD": "Adrénaline",
+      "correctAnswer": "B",
+      "explanation": "L'insuline est une hormone produite par le pancréas qui abaisse la glycémie en favorisant l'absorption et l'utilisation du glucose par les cellules."
+    },
+    {
+      "question": "Quelle technique de génétique moléculaire permet de modifier sélectivement des séquences d'ADN ?",
+      "optionA": "PCR",
+      "optionB": "CRISPR-Cas9",
+      "optionC": "Southern blot",
+      "optionD": "Séquençage",
+      "correctAnswer": "B",
+      "explanation": "CRISPR-Cas9 est une technique de modification génomique qui permet de couper et modifier sélectivement des séquences d'ADN spécifiques."
+    },
+    {
+      "question": "Quel phénomène explique la formation des os chez l'embryon à partir de tissus conjonctifs ?",
+      "optionA": "Endochondral",
+      "optionB": "Intramembranaire",
+      "optionC": "Métagenèse",
+      "optionD": "Morphogenèse",
+      "correctAnswer": "B",
+      "explanation": "La formation osseuse intramembranaire est le processus par lequel des os se développent directement à partir de membranes conjonctives sans modèle cartilagineux préalable."
+    },
+    {
+      "question": "Quel type de symbioze décrit une relation où un organisme bénéficie tandis que l'autre n'est ni aidé ni lésé ?",
+      "optionA": "Commensalisme",
+      "optionB": "Parasitisme",
+      "optionC": "Mutualisme",
+      "optionD": "Amensalisme",
+      "correctAnswer": "A",
+      "explanation": "Le commensalisme est une interaction écologique où un organisme bénéficie de l'association tandis que l'autre n'est ni aidé ni lésé."
+    },
+    {
+      "question": "Quelle structure végétale est responsable de la photosynthèse et de la respiration des plantes ?",
+      "optionA": "Racine",
+      "optionB": "Tige",
+      "optionC": "Feuille",
+      "optionD": "Fleur",
+      "correctAnswer": "C",
+      "explanation": "Les feuilles sont les organes spécialisés de la plante pour la photosynthèse grâce à la présence de chloroplastes, et participent également à la respiration."
+    },
+    {
+      "question": "Quelle technique statistique permet de déterminer si deux variables sont indépendantes ?",
+      "optionA": "Test t",
+      "optionB": "ANOVA",
+      "optionC": "Test du chi carré",
+      "optionD": "Régression linéaire",
+      "correctAnswer": "C",
+      "explanation": "Le test du chi carré est une méthode statistique qui permet de déterminer s'il existe une association significative entre deux variables catégorielles."
+    },
+    {
+      "question": "Dans le cycle cellulaire, à quel phase l'ADN est-il répliqué ?",
+      "optionA": "Phase G1",
+      "optionB": "Phase S",
+      "optionC": "Phase G2",
+      "optionD": "Phase M",
+      "correctAnswer": "B",
+      "explanation": "La phase S (de synthèse) du cycle cellulaire est la période pendant laquelle l'ADN est répliqué, assurant que chaque cellule fille recevra une copie complète du génome."
+    },
+    {
+      "question": "Quel type d'ARN est directement impliqué dans le processus de traduction génétique ?",
+      "optionA": "ARNr",
+      "optionB": "ARNt",
+      "optionC": "ARNm",
+      "optionD": "ARNsn",
+      "correctAnswer": "B",
+      "explanation": "L'ARN de transfert (ARNt) est l'ARN qui apporte les acides aminés spécifiques au ribosome pendant la traduction, en reconnaissant les codons sur l'ARNm."
+    },
+    {
+      "question": "Quelle enzyme est responsable de la réplication de l'ADN chez les eucaryotes ?",
+      "optionA": "ARN polymérase",
+      "optionB": "ADN polymérase",
+      "optionC": "Ligase",
+      "optionD": "Helicase",
+      "correctAnswer": "B",
+      "explanation": "L'ADN polymérase est l'enzyme principale qui synthétise une nouvelle chaîne d'ADN en utilisant une chaîne existante comme matrice."
+    },
+    {
+      "question": "Quelle est la fonction principale des mitochondries ?",
+      "optionA": "Stockage de l'ADN",
+      "optionB": "Production d'ATP",
+      "optionC": "Dégradation des protéines",
+      "optionD": "Synthèse des lipides",
+      "correctAnswer": "B",
+      "explanation": "Les mitochondries sont souvent appelées 'usines à énergie' de la cellule car elles produisent la majorité de l'ATP par la respiration cellulaire."
+    },
+    {
+      "question": "Quel mécanisme génétique explique l'expression différentielle des gènes chez les organismes eucaryotes ayant le même génome ?",
+      "optionA": "Réplication sémiconservative",
+      "optionB": "Épissage alternatif",
+      "optionC": "Traduction universelle",
+      "optionD": "Réplication conservative",
+      "correctAnswer": "B",
+      "explanation": "L'épissage alternatif permet à un même gène de produire plusieurs protéines différentes en incluant ou excluant certains exons, augmentant la diversité protéique."
+    },
+    {
+      "question": "Quel type de liaison chimique est responsable de la structure secondaire des protéines ?",
+      "optionA": "Liaisons peptidiques",
+      "optionB": "Liaisons ioniques",
+      "optionC": "Liaisons hydrogène",
+      "optionD": "Liaisons hydrophobes",
+      "correctAnswer": "C",
+      "explanation": "Les liaisons hydrogène sont responsables de la formation des structures secondaires des protéines comme les feuillets β et les hélices α."
+    },
+    {
+      "question": "Quelle est la fonction principale du système immunitaire adaptatif ?",
+      "optionA": "Défense contre les infections bactériennes",
+      "optionB": "Défense contre les infections virales",
+      "optionC": "Mémorisation des antigènes spécifiques",
+      "optionD": "Réparation des tissus endommagés",
+      "correctAnswer": "C",
+      "explanation": "Le système immunitaire adaptatif est caractérisé par sa capacité à mémoriser les antigènes rencontrés, permettant une réponse plus rapide et spécifique lors d'une exposition ultérieure."
+    },
+    {
+      "question": "Quel processus décrit la formation de nouveaux individus à partir de cellules non spécialisées ?",
+      "optionA": "Méiose",
+      "optionB": "Mitose",
+      "optionC": "Différenciation cellulaire",
+      "optionD": "Clonage",
+      "correctAnswer": "D",
+      "explanation": "Le clonage est un processus par lequel des individus génétiquement identiques sont créés à partir de cellules somatiques non spécialisées, comme dans le clonage de la brebis Dolly."
+    },
+    {
+      "question": "Quelle est la fonction principale des chaperonines dans la cellule ?",
+      "optionA": "Réplication de l'ADN",
+      "optionB": "Folding des protéines",
+      "optionC": "Dégradation des protéines",
+      "optionD": "Transport des lipides",
+      "correctAnswer": "B",
+      "explanation": "Les chaperonines sont des protéines d'assistance qui aident au repliement correct des autres protéines, empêchant leur agrégation et assurant leur fonctionnalité."
+    },
+    {
+      "question": "Quel type de mutation est responsable de la drépanocytose ?",
+      "optionA": "Substitution",
+      "optionB": "Insertion",
+      "optionC": "Déletion",
+      "optionD": "Duplication",
+      "correctAnswer": "A",
+      "explanation": "La drépanocytose est causée par une mutation ponctuelle de substitution (remplacement d'une base) dans le gène de l'hémoglobine, changeant l'acide aminé de la chaîne β."
+    },
+    {
+      "question": "Quelle structure est responsable de la photosynth chez les plantes ?",
+      "optionA": "Mitochondries",
+      "optionB": "Chloroplastes",
+      "optionC": "Peroxisomes",
+      "optionD": "Noyau",
+      "correctAnswer": "B",
+      "explanation": "Les chloroplastes sont les organites spécialisés dans la photosynthèse chez les plantes, contenant la chlorophylle et les pigments nécessaires à la capture de lumière."
+    },
+    {
+      "question": "Quel processus décrit la régulation de l'expression génétique par des molécules d'ARN interférentes ?",
+      "optionA": "Transcription",
+      "optionB": "Traduction",
+      "optionC": "ARNi",
+      "optionD": "Réplication",
+      "correctAnswer": "C",
+      "explanation": "L'ARN interférent (ARNi) est un mécanisme de régulation de l'expression génétique où de petits ARN peuvent inhiber la traduction ou dégrader l'ARNm spécifique."
+    },
+    {
+      "question": "Quelle est la fonction principale des anticorps dans le système immunitaire ?",
+      "optionA": "Phagocytose",
+      "optionB": "Présentation d'antigène",
+      "optionC": "Neutralisation des pathogènes",
+      "optionD": "Production de cytokines",
+      "correctAnswer": "C",
+      "explanation": "Les anticorps sont des protéines produites par les lymphocytes B qui se lient spécifiquement aux antigènes des pathogènes, les neutralisant ou marquant leur destruction."
+    },
+    {
+      "question": "Quel type de sélection naturelle favorise les phénotypes extrêmes plutôt que les intermédiaires ?",
+      "optionA": "Sélection directionnelle",
+      "optionB": "Sélection disruptive",
+      "optionC": "Sélection stabilisatrice",
+      "optionD": "Sélection sexuelle",
+      "correctAnswer": "B",
+      "explanation": "La sélection disruptive favorise les phénotypes extrêmes aux dépens des phénotypes intermédiaires, pouvant conduire à la spéciation."
+    },
+    {
+      "question": "Quelle est la fonction principale des hormones végétaux de type auxine ?",
+      "optionA": "Induction de la floraison",
+      "optionB": "Promotion de la dormance",
+      "optionC": "Régulation de la croissance",
+      "optionD": "Défense contre les pathogènes",
+      "correctAnswer": "C",
+      "explanation": "Les auxines sont des hormones végétales qui régulent de nombreux aspects de la croissance et du développement des plantes, notamment l'elongation cellulaire et la tropismes."
+    },
+    {
+      "question": "Quel processus explique la diversification des espèces à partir d'un ancêtre commun ?",
+      "optionA": "Convergence évolutive",
+      "optionB": "Divergence évolutive",
+      "optionC": "Évolution parallèle",
+      "optionD": "Évolution stabilisatrice",
+      "correctAnswer": "B",
+      "explanation": "La divergence évolutive est le processus par lequel des populations d'une même espèce évoluent différemment, menant à la formation de nouvelles espèces."
+    },
+    {
+      "question": "Quelle structure est responsable de la production de la lumière bioluminescente chez certains organismes marins ?",
+      "optionA": "Photophores",
+      "optionB": "Chloroplastes",
+      "optionC": "Mitochondries",
+      "optionD": "Peroxisomes",
+      "correctAnswer": "A",
+      "explanation": "Les photophores sont des organites spécialisés chez certains organismes marins qui produisent de la lumière par bioluminescence, souvent pour la communication ou la défense."
+    },
+    {
+      "question": "Quel mécanisme explique la transmission de l'information génétique de la génération parentale à la génération filiale ?",
+      "optionA": "Transcription",
+      "optionB": "Traduction",
+      "optionC": "Hérédité",
+      "optionD": "Mutation",
+      "correctAnswer": "C",
+      "explanation": "L'hérédité est le mécanisme par lequel les caractères génétiques sont transmis des parents à leur descendance via les gamètes et la reproduction sexuée."
+    },
+    {
+      "question": "Quel type de symbiose décrit une relation où une espèce bénéficie tandis que l'autre n'est ni aidée ni blessée ?",
+      "optionA": "Commensalisme",
+      "optionB": "Mutualisme",
+      "optionC": "Parasitisme",
+      "optionD": "Competition",
+      "correctAnswer": "A",
+      "explanation": "Le commensalisme est une interaction symbiotique où une espèce bénéficie de l'interaction tandis que l'autre n'est ni aidée ni blessée, comme les requins qui suivient les tortues pour se nourrir des restes."
+    },
+    {
+      "question": "Quelle est la fonction principale de l'enzyme ADN polymérase lors de la réplication de l'ADN ?",
+      "optionA": "Dénaturation des brins d'ADN",
+      "optionB": "Synthèse d'un nouvel brin complémentaire",
+      "optionC": "Élimination des nucléotides incorrects",
+      "optionD": "Priming de la réplication",
+      "correctAnswer": "B",
+      "explanation": "L'ADN polymérase est responsable de la synthèse d'un nouvel brin d'ADN complémentaire en utilisant les brins parentaux comme modèles."
+    },
+    {
+      "question": "Dans quel compartiment cellulaire la phosphorylation oxydative a-t-elle lieu chez les eucaryotes ?",
+      "optionA": "Noyau",
+      "optionB": "Réticulum endoplasmique",
+      "optionC": "Mitochondries",
+      "optionD": "Peroxisomes",
+      "correctAnswer": "C",
+      "explanation": "La phosphorylation oxydative, qui produit de l'ATP, se déroule dans la membrane interne des mitochondries chez les eucaryotes."
+    },
+    {
+      "question": "Quelle est la composition principale de la paroi bactérienne chez les bactéries à Gram positif ?",
+      "optionA": "Lipopolysaccharides",
+      "optionB": "Peptidoglycane épais",
+      "optionC": "Membrane externe",
+      "optionD": "Acide mycolique",
+      "correctAnswer": "B",
+      "explanation": "Les bactéries à Gram positif possèdent une paroi cellulaire épaisse composée principalement de peptidoglycane."
+    },
+    {
+      "question": "Quel mécanisme explique la dominance récessive d'un allèle ?",
+      "optionA": "Expression du phénotype dans l'hétérozygote",
+      "optionB": "Inactivation de l'allèle par un facteur environnemental",
+      "optionC": "Absence de fonction de la protéine codée",
+      "optionD": "Méthylation de l'allèle",
+      "correctAnswer": "C",
+      "explanation": "Un allèle récessif est généralement non fonctionnel, donc son phénotype n'apparaît que lorsque deux copies sont présentes (homozygote)."
+    },
+    {
+      "question": "Quelle est la fonction principale des anticorps ?",
+      "optionA": "Production de cytokines",
+      "optionB": "Neutralisation des pathogènes",
+      "optionC": "Phagocytose",
+      "optionD": "Activation complémentaire",
+      "correctAnswer": "B",
+      "explanation": "Les anticorps sont principalement impliqués dans la neutralisation des pathogènes en se liant à leurs antigènes spécifiques."
+    },
+    {
+      "question": "Quel type de régulation transcriptionnelle implique des activateurs ou des répresseurs se liant à l'ADN ?",
+      "optionA": "Régulation post-traductionnelle",
+      "optionB": "Régulation épigénétique",
+      "optionC": "Régulation transcriptionnelle directe",
+      "optionD": "Régulation allostérique",
+      "correctAnswer": "C",
+      "explanation": "La régulation transcriptionnelle directe implique des protéines qui se lient directement à l'ADN pour activer ou réprimer la transcription."
+    },
+    {
+      "question": "Quel est le principal produit de la glycolyse ?",
+      "optionA": "Acétyl-CoA",
+      "optionB": "Pyruvate",
+      "optionC": "NADH",
+      "optionD": "ATP",
+      "correctAnswer": "B",
+      "explanation": "La glycolyse dégrade le glucose en deux molécules de pyruvate, produisant également de l'ATP et du NADH."
+    },
+    {
+      "question": "Quelle est la caractéristique principale des organismes chemoautotrophes ?",
+      "optionA": "Ils utilisent la lumière comme source d'énergie",
+      "optionB": "Ils utilisent des composés chimiques comme source d'énergie",
+      "optionC": "Ils utilisent le CO2 comme source de carbone",
+      "optionD": "Ils sont tous des bactéries",
+      "correctAnswer": "B",
+      "explanation": "Les chemoautotrophes utilisent des composés chimiques comme source d'énergie et CO2 comme source de carbone."
+    },
+    {
+      "question": "Quel phénomène explique la diversification des espèces dans un environnement isolé ?",
+      "optionA": "Sélection naturelle",
+      "optionB": "Dérive génétique",
+      "optionC": "Radiation adaptative",
+      "optionD": "Migration",
+      "correctAnswer": "C",
+      "explanation": "La radiation adaptative explique la diversification rapide des espèces dans des niches écologiques isolées."
+    },
+    {
+      "question": "Quel est le rôle principal des ribosomes dans la cellule ?",
+      "optionA": "Synthèse d'ADN",
+      "optionB": "Traduction de l'ARNm en protéines",
+      "optionC": "Dégradation des protéines",
+      "optionD": "Transport des lipides",
+      "correctAnswer": "B",
+      "explanation": "Les ribosomes sont les sites de la traduction où l'ARNm est lu pour synthétiser des protéines."
+    },
+    {
+      "question": "Quel mécanisme explique l'évolution de la résistance aux antibiotiques chez les bactéries ?",
+      "optionA": "Transformation",
+      "optionB": "Transduction",
+      "optionC": "Sélection naturelle",
+      "optionD": "Conjugaison",
+      "correctAnswer": "C",
+      "explanation": "La sélection naturelle favorise les bactéries avec des mutations conférant une résistance aux antibiotiques dans un environnement où ces antibiotiques sont présents."
+    },
+    {
+      "question": "Quel est le principal pigment photosynthétique chez les plantes vertes ?",
+      "optionA": "Phycocyanine",
+      "optionB": "Chlorophylle b",
+      "optionC": "Chlorophylle a",
+      "optionD": "Caroténoïdes",
+      "correctAnswer": "C",
+      "explanation": "La chlorophylle a est le principal pigment photosynthétique chez les plantes vertes, responsable de la capture de la lumière."
+    },
+    {
+      "question": "Quel processus biologique explique la différenciation cellulaire au cours du développement embryonnaire ?",
+      "optionA": "Apoptose",
+      "optionB": "Méthylation de l'ADN",
+      "optionC": "Expression génique différentielle",
+      "optionD": "Réplication de l'ADN",
+      "correctAnswer": "C",
+      "explanation": "L'expression génique différentielle, contrôlée par divers mécanismes, permet la différenciation cellulaire pendant le développement."
+    },
+    {
+      "question": "Quelle est la fonction principale des hormones végétaux auxines ?",
+      "optionA": "Promotion de la dormance",
+      "optionB": "Inhibition de la croissance",
+      "optionC": "Stimulation de l'élongation cellulaire",
+      "optionD": "Induction de la floraison",
+      "correctAnswer": "C",
+      "explanation": "Les auxines stimulent l'élongation cellulaire et jouent un rôle clé dans la croissance des plantes."
+    },
+    {
+      "question": "Quel type de sélection naturelle favorise les phénotypes extrêmes ?",
+      "optionA": "Sélection directionnelle",
+      "optionB": "Sélection disruptive",
+      "optionC": "Sélection stabilisatrice",
+      "optionD": "Sélection sexuelle",
+      "correctAnswer": "B",
+      "explanation": "La sélection disruptive favorise les phénotypes extrêmes au détriment des phénotypes intermédiaires."
+    },
+    {
+      "question": "Quel est le principal minéral constituant des os chez les vertébrés ?",
+      "optionA": "Calcium",
+      "optionB": "Phosphore",
+      "optionC": "Hydroxyapatite",
+      "optionD": "Collagène",
+      "correctAnswer": "C",
+      "explanation": "L'hydroxyapatite, un cristal de phosphate de calcium, est le principal minéral constituant des os."
+    },
+    {
+      "question": "Quel mécanisme explique la spécificité des enzymes ?",
+      "optionA": "Structure quaternaire",
+      "optionB": "Site actif",
+      "optionC": "Coenzymes",
+      "optionD": "pH optimal",
+      "correctAnswer": "B",
+      "explanation": "Le site actif d'une enzyme lui confère une spécificité pour son substrat grâce à sa structure tridimensionnelle précise."
+    },
+    {
+      "question": "Quel phénomène explique la biodiversité élevée dans les écosystèmes tropicaux ?",
+      "optionA": "Sélection naturelle",
+      "optionB": "Catastrophes naturelles",
+      "optionC": "Haute productivité primaire",
+      "optionD": "Compétition interspécifique",
+      "correctAnswer": "C",
+      "explanation": "La haute productivité primaire dans les régions tropicales permet d'entretenir une grande biodiversité."
+    },
+    {
+      "question": "Quel type de membrane sépare le cytoplasme des procaryotes ?",
+      "optionA": "Membrane nucléaire",
+      "optionB": "Membrane plasmique",
+      "optionC": "Membrane externe",
+      "optionD": "Membrane mitochondriale",
+      "correctAnswer": "B",
+      "explanation": "La membrane plasmique sépare le cytoplasme de l'environnement externe chez les procaryotes."
+    },
+    {
+      "question": "Quel processus explique la régulation de l'expression génique par les microARN ?",
+      "optionA": "Méthylation de l'ADN",
+      "optionB": "Dégradation de l'ARNm",
+      "optionC": "Épissage alternatif",
+      "optionD": "Édition de l'ARN",
+      "correctAnswer": "B",
+      "explanation": "Les microARN peuvent se lier à l'ARNm et le faire dégrader, régulant ainsi l'expression génique."
+    },
+    {
+      "question": "Laquelle des affirmations suivantes concernant le cycle cellulaire est incorrecte?",
+      "optionA": "La transition de la phase G1 à la phase S est contrôlée par les complexes cycline-CDK",
+      "optionB": "La protéine p53 active l'expression de p21, qui inhibe les complexes cycline-CDK",
+      "optionC": "La phase M comprend la mitose et la cytokinèse",
+      "optionD": "Les points de contrôle du cycle cellulaire sont situés uniquement en fin de phase G1",
+      "correctAnswer": "D",
+      "explanation": "Les points de contrôle du cycle cellulaire sont situés en fin de phase G1, en fin de phase S et en fin de phase G2, pas uniquement en fin de phase G1."
+    },
+    {
+      "question": "Quelle est la fonction principale de l'ARN polymérase II chez les eucaryotes?",
+      "optionA": "Synthétiser des ARN ribosomiques",
+      "optionB": "Synthétiser des ARN de transfert",
+      "optionC": "Synthétiser des ARN messagers",
+      "optionD": "Synthétiser des microARN",
+      "correctAnswer": "C",
+      "explanation": "L'ARN polymérase II est responsable de la transcription des gènes codant pour les protéines, c'est-à-dire de la synthèse des ARN messagers."
+    },
+    {
+      "question": "Chez les humains, quelle est la probabilité qu'un couple dont le père est atteint d'une maladie autosomique récessive et la mère est saine non porteuse ait un enfant atteint?",
+      "optionA": "0%",
+      "optionB": "25%",
+      "optionC": "50%",
+      "optionD": "100%",
+      "correctAnswer": "A",
+      "explanation": "Comme la maladie est autosomique récessive et que la mère est saine non porteuse, elle transmet toujours l'allèle normal. Le père atteint transmet l'allèle muté, mais l'enfant sera porteur sain, pas atteint."
+    },
+    {
+      "question": "Quelle enzyme est responsable de la régulation principale de la glycolyse?",
+      "optionA": "La phosphofructokinase-1",
+      "optionB": "L'hexokinase",
+      "optionC": "La pyruvate kinase",
+      "optionD": "La glucose-6-phosphate déshydrogénase",
+      "correctAnswer": "A",
+      "explanation": "La phosphofructokinase-1 (PFK-1) est l'enzyme clé de la régulation de la glycolyse, étant à la fois allosterique et hormonally régulée."
+    },
+    {
+      "question": "Quelle caractéristique distingue principalement les bactéries Gram-positives des bactéries Gram-négatives?",
+      "optionA": "La présence d'une membrane externe",
+      "optionB": "La composition de la paroi cellulaire",
+      "optionC": "La capacité de former des spores",
+      "optionD": "La morphologie cellulaire",
+      "correctAnswer": "B",
+      "explanation": "La différence principale réside dans la composition de la paroi cellulaire: les Gram-positives ont une épaisse couche de peptidoglycane, tandis que les Gram-négatives ont une couche mince de peptidoglycane et une membrane externe."
+    },
+    {
+      "question": "Chez les mammifères, quel organe est principalement responsable de la régulation de la glycémie à jeun?",
+      "optionA": "Le pancréas",
+      "optionB": "Le foie",
+      "optionC": "Les reins",
+      "optionD": "Les muscles",
+      "correctAnswer": "B",
+      "explanation": "Le foie régule principalement la glycémie à jeun en dégradant le glycoglycène en glucose (glycogénolyse) et en synthétisant du glucose à partir d'autres précurseurs (gluconéogenèse)."
+    },
+    {
+      "question": "Quelle est la fonction principale des stomates chez les plantes?",
+      "optionA": "La photosynthèse",
+      "optionB": "La respiration",
+      "optionC": "L'échange gazeux",
+      "optionD": "La transpiration",
+      "correctAnswer": "C",
+      "explanation": "Les stomates sont des pores spécialisés qui permettent les échanges gazeux (entrée de CO₂ et sortie d'O₂) et la régulation de la transpiration."
+    },
+    {
+      "question": "Quelle est la définition correcte de la symbiose?",
+      "optionA": "Une interaction entre deux espèces où seule bénéficie",
+      "optionB": "Une interaction entre deux espèces où les deux bénéficient",
+      "optionC": "Une interaction entre deux espèces quelconque",
+      "optionD": "Une interaction entre deux espèces de même habitat",
+      "correctAnswer": "C",
+      "explanation": "La symbiose désigne toute association durable entre deux organismes de différentes espèces, qu'elle soit bénéfique, nuisible ou neutre pour l'une ou l'autre des parties."
+    },
+    {
+      "question": "Quelle est la caractéristique principale des plantes gymnospermes?",
+      "optionA": "Elles produisent des fleurs",
+      "optionB": "Elles ont des graines nues, non protégées par un ovaire",
+      "optionC": "Elles sont toutes des plantes aquatiques",
+      "optionD": "Elles ont des fruits charnus",
+      "correctAnswer": "B",
+      "explanation": "Les gymnospermes sont des plantes à graines nues, c'est-à-dire que leurs graines ne sont pas enfermées dans un ovaire comme chez les angiospermes."
+    },
+    {
+      "question": "Quelle est la fonction principale des os chez les vertébrés?",
+      "optionA": "La production de globules rouges",
+      "optionB": "Le stockage de calcium",
+      "optionC": "La locomotion et la protection des organes",
+      "optionD": "La régulation hormonale",
+      "correctAnswer": "C",
+      "explanation": "Les os ont plusieurs fonctions principales: fournir un support structurel pour la locomotion, protéger les organes internes et servir de point d'attache pour les muscles."
+    },
+    {
+      "question": "Qu'est-ce qui différencie principalement un sol argileux d'un sol sableux?",
+      "optionA": "Le pH",
+      "optionB": "La capacité de rétention en eau",
+      "optionC": "La teneur en matière organique",
+      "optionD": "La couleur",
+      "correctAnswer": "B",
+      "explanation": "Les sols argileux ont une capacité de rétention en eau beaucoup plus élevée que les sols sableux en raison de la texture fine des particules d'argile."
+    },
+    {
+      "question": "Quelle est la formule mathématique utilisée pour calculer l'écart-type d'un échantillon?",
+      "optionA": "√(Σ(xi-μ)²/N)",
+      "optionB": "√(Σ(xi-x̄)²/(n-1))",
+      "optionC": "Σ(xi-x̄)/n",
+      "optionD": "Σ(xi)/n",
+      "correctAnswer": "B",
+      "explanation": "L'écart-type d'un échantillon se calcule comme la racine carrée de la variance, qui est la somme des carrés des écarts à la moyenne divisée par n-1 (où n est la taille de l'échantillon)."
+    },
+    {
+      "question": "Quelle technique de biotechnologie permet d'amplifier un segment d'ADN spécifique?",
+      "optionA": "La Southern blot",
+      "optionB": "La PCR",
+      "optionC": "Le séquençage",
+      "optionD": "L'électrophorèse",
+      "correctAnswer": "B",
+      "explanation": "La PCR (Polymerase Chain Reaction) est une technique qui permet d'amplifier de manière exponentielle un segment d'ADN spécifique à l'aide d'enzymes et de primers."
+    },
+    {
+      "question": "Quelle cellule immunitaire est principalement responsable de la réponse humorale?",
+      "optionA": "Les lymphocytes T",
+      "optionB": "Les lymphocytes B",
+      "optionC": "Les macrophages",
+      "optionD": "Les cellules NK",
+      "correctAnswer": "B",
+      "explanation": "Les lymphocytes B sont responsables de la réponse humorale en produisant des anticorps qui circulent dans les liquides corporels pour neutraliser les pathogènes."
+    },
+    {
+      "question": "Chez les vertébrés, quel est le premier stade du développement embryonnaire après la fécondation?",
+      "optionA": "La gastrulation",
+      "optionB": "La neurulation",
+      "optionC": "La segmentation",
+      "optionD": "La morula",
+      "correctAnswer": "D",
+      "explanation": "La morula est le stade embryonnaire qui suit la segmentation du zygote, caractérisé par une masse de cellules ressemblant à une mûre."
+    },
+    {
+      "question": "Quelle est la définition de l'instinct en éthologie?",
+      "optionA": "Un comportement appris par observation",
+      "optionB": "Un comportement inné et fixe spécifique à une espèce",
+      "optionC": "Un comportement motivé par la faim",
+      "optionD": "Un comportement social complexe",
+      "correctAnswer": "B",
+      "explanation": "L'instinct est un comportement inné, génétiquement programmé et spécifique à une espèce, qui se déclenche en réponse à un stimulus approprié."
+    },
+    {
+      "question": "Quel groupe fossile est considéré comme l'ancêtre commun probable des mammifères?",
+      "optionA": "Les dinosaures",
+      "optionB": "Les synapsides",
+      "optionC": "Les ptérosaures",
+      "optionD": "Les amphibiens",
+      "correctAnswer": "B",
+      "explanation": "Les synapsides, un groupe de reptiles qui comprenait les thérocéphales et les cynodontes, sont considérés comme les ancêtres probables des mammifères."
+    },
+    {
+      "question": "Quelle est la principale différence entre la morphogenèse et la différenciation cellulaire?",
+      "optionA": "La morphogenèse concerne la formation des organes, la différenciation concerne la spécialisation cellulaire",
+      "optionB": "La morphogenèse a lieu chez l'adulte, la différenciation chez l'embryon",
+      "optionC": "La morphogenèse est génétiquement contrôlée, la différenciation est environnementale",
+      "optionD": "La morphogenèse est rapide, la différenciation est lente",
+      "correctAnswer": "A",
+      "explanation": "La morphogenèse concerne la formation et l'organisation des structures et des organes, tandis que la différenciation cellulaire concerne la spécialisation des cellules en types cellulaires spécifiques."
+    },
+    {
+      "question": "Quelle est la principale différence entre le développement durable et le développement soutenable?",
+      "optionA": "Aucune, ce sont deux synonymes",
+      "optionB": "Le développement durable met l'accent sur les aspects économiques, le soutenable sur les aspects écologiques",
+      "optionC": "Le développement durable est un concept plus large incluant les dimensions sociale, économique et environnementale",
+      "optionD": "Le développement durable est un concept récent, le soutenable est ancien",
+      "correctAnswer": "C",
+      "explanation": "Le développement durable est un concept plus large qui intègre les dimensions sociale, économique et environnementale, tandis que le développement soutenable met principalement l'accent sur la capacité à maintenir les ressources naturelles pour les générations futures."
+    },
+    {
+      "question": "Quelle est la fonction principale des chloroplastes chez les plantes?",
+      "optionA": "La respiration cellulaire",
+      "optionB": "La photosynthèse",
+      "optionC": "La synthèse des protéines",
+      "optionD": "Le stockage de l'eau",
+      "correctAnswer": "B",
+      "explanation": "Les chloroplastes sont les organites spécialisés dans la photosynthèse, le processus par lequel les plantes convertissent la lumière du soleil en énergie chimique."
+    },
+    {
+      "question": "Quel processus évolutif est principalement responsable de la formation des espèces insulaires comme les pinsons des Galápagos?",
+      "optionA": "La sélection naturelle",
+      "optionB": "La dérive génétique",
+      "optionC": "La spéciation allopatrique",
+      "optionD": "La hybridation",
+      "correctAnswer": "C",
+      "explanation": "La spéciation allopatrique, qui se produit lorsque des populations d'une même espèce sont isolées géographiquement, est principalement responsable de la formation des espèces insulaires comme les pinsons des Galápagos décrits par Darwin."
+    },
+    {
+      "question": "Quel mécanisme moléculaire explique le phénomène d'imprinting génique chez les mammifères?",
+      "optionA": "Méthylation différentielle de l'ADN selon l'origine parentale",
+      "optionB": "Modifications post-traductionnelles des histones",
+      "optionC": "Épissage alternatif des ARN pré-messagers",
+      "optionD": "Réarrangements somatiques des gènes",
+      "correctAnswer": "A",
+      "explanation": "L'imprinting génique implique une méthylation différentielle de l'ADN selon qu'il provient du père ou de la mère, conduisant à l'expression monoallélique de certains gènes."
+    },
+    {
+      "question": "Quelle enzyme est essentielle dans la réplication de l'ADN et possède une activité 5'→3' polymérase mais pas d'activité 3'→5' exonucléase?",
+      "optionA": "ADN polymérase I d'E. coli",
+      "optionB": "ADN polymérase III d'E. coli",
+      "optionC": "ADN polymérase II d'E. coli",
+      "optionD": "ADN polymérase α des eucaryotes",
+      "correctAnswer": "B",
+      "explanation": "L'ADN polymérase III d'E. coli est l'enzyme principale de la réplication, avec une activité 5'→3' polymérase mais pas d'activité 3'→5' exonucléase (contrairement à l'ADN polymérase I qui possède cette activité)."
+    },
+    {
+      "question": "Quel type de mutation serait le plus susceptible de provoquer une maladie génétique autosomique dominante?",
+      "optionA": "Mutation par déletion d'un nucléotide",
+      "optionB": "Mutation par substitution d'un nucléotide non-sens",
+      "optionC": "Mutation par substitution d'un nucléotide synonyme",
+      "optionD": "Mutation par insertion d'un nucléotide dans l'intron",
+      "correctAnswer": "B",
+      "explanation": "Une mutation non-sens (créant un codon d'arrêt prématuré) est susceptible de produire une protéine tronquée non fonctionnelle, ce qui peut provoquer une maladie dominante si un seul allèle muté suffit pour altérer la fonction."
+    },
+    {
+      "question": "Quelle caractéristique distingue principalement les bactéries Gram-positives des Gram-négatives?",
+      "optionA": "La présence d'une paroi peptidoglycanique",
+      "optionB": "L'absence de membrane externe chez les Gram-positives",
+      "optionC": "La présence de flagelles uniquement chez les Gram-négatives",
+      "optionD": "La coloration au Gram",
+      "correctAnswer": "B",
+      "explanation": "La différence principale est que les bactéries Gram-positives ont une épaisse couche de peptidoglycane mais pas de membrane externe, alors que les Gram-négatives ont une couche mince de peptidoglycane et une membrane externe."
+    },
+    {
+      "question": "Quel mécanisme permet aux plantes C4 d'effectuer la photosynthèse avec une efficacité accrue en conditions de sécheresse?",
+      "optionA": "Séparation spatiale de la fixation du carbone et du cycle de Calvin",
+      "optionB": "Utilisation de l'enzyme PEP carboxylase au lieu de RuBisCO",
+      "optionC": "Concentration du CO2 dans les cellules de la gaine",
+      "optionD": "Toutes ces réponses sont correctes",
+      "correctAnswer": "D",
+      "explanation": "Les plantes C4 utilisent toutes ces stratégies: séparation spatiale des processus, utilisation de PEP carboxylase pour une première fixation du CO2, et concentration du CO2 dans les cellules de la gaine pour réduire la photorespiration."
+    },
+    {
+      "question": "Quel type d'immunité humorale est principalement responsable de la protection à long terme contre les pathogènes après une vaccination?",
+      "optionA": "Immunité à médiation par les IgM",
+      "optionB": "Immunité à médiation par les IgA",
+      "optionC": "Immunité à médiation par les IgG",
+      "optionD": "Immunité à médiation par les IgE",
+      "correctAnswer": "C",
+      "explanation": "Les IgG sont les anticorps les plus abondants dans le sérum et assurent une protection à long terme grâce à leur demi-vie prolongée et leur capacité à traverser le placenta."
+    },
+    {
+      "question": "Quel processus embryologique explique la formation des axes bilatéraux chez les vertébrés?",
+      "optionA": "Gastrulation",
+      "optionB": "Neurulation",
+      "optionC": "Organogenèse",
+      "optionD": "Segmentation",
+      "correctAnswer": "A",
+      "explanation": "La gastrulation est le processus par lequel l'embryon à trois feuillets (ectoderme, mésoderme, endoderme) se forme et établit l'axe antéro-postérieur et dorso-ventral, fondamental pour la bilatéralité."
+    },
+    {
+      "question": "Quelle technique de biotechnologie permet d'amplifier spécifiquement une séquence cible d'ADN?",
+      "optionA": "Southern blot",
+      "optionB": "PCR quantitative",
+      "optionC": "Séquençage d'ADN",
+      "optionD": "Électrophorèse sur gel",
+      "correctAnswer": "B",
+      "explanation": "La PCR quantitative (qPCR) permet l'amplification spécifique et quantitative d'une séquence cible d'ADN en utilisant des amorces spécifiques et un détecteur de fluorescence."
+    },
+    {
+      "question": "Quel type de sol est caractérisé par un pH acide et une faible teneur en bases échangeables?",
+      "optionA": "Sol podzolique",
+      "optionB": "Sol tchernoziom",
+      "optionC": "Sol latérite",
+      "optionD": "Sol rendzina",
+      "correctAnswer": "A",
+      "explanation": "Les sols podzoliques sont caractérisés par un pH acide (souvent inférieur à 5.5) et une faible teneur en bases échangeables, dus à l'lessivage intense sous climat froid et humide."
+    },
+    {
+      "question": "Quelle hormone végétale est principalement responsable de la dormance des bourgeons?",
+      "optionA": "Auxine",
+      "optionB": "Cytokinine",
+      "optionC": "Acide abscissique",
+      "optionD": "Éthylène",
+      "correctAnswer": "C",
+      "explanation": "L'acide abscissique (ABA) est l'hormone végétale principale impliquée dans l'induction et le maintien de la dormance des bourgeons, ainsi que dans la réponse au stress."
+    },
+    {
+      "question": "Quel mécanisme évolutif explique la convergence morphologique entre les marsupiaux et les placentaires?",
+      "optionA": "Homoplasie",
+      "optionB": "Parallélisme évolutif",
+      "optionC": "Convergence évolutive",
+      "optionD": "Divergence évolutive",
+      "correctAnswer": "C",
+      "explanation": "La convergence évolutive explique des adaptations similaires chez des organismes phylogénétiquement éloignés, comme la morphologie similaire entre certains marsupiaux et placentaires occupant des niches écologiques similaires."
+    },
+    {
+      "question": "Quel type de relation symbiotique caractérise le mycorhize?",
+      "optionA": "Commensalisme",
+      "optionB": "Mutualisme",
+      "optionC": "Parasitisme",
+      "optionD": "Competition",
+      "correctAnswer": "B",
+      "explanation": "Le mycorhize est une relation symbiotique de mutualisme où le champignon aide la plante à absorber les nutriments (surtout le phosphore) et la plante fournit au champignon des glucides."
+    },
+    {
+      "question": "Quel test statistique serait le plus approprié pour comparer les moyennes de deux groupes indépendants?",
+      "optionA": "Test t de Student",
+      "optionB": "Test du chi²",
+      "optionC": "Test ANOVA",
+      "optionD": "Test de corrélation",
+      "correctAnswer": "A",
+      "explanation": "Le test t de Student est spécifiquement conçu pour comparer les moyennes de deux groupes indépendants, alors que l'ANOVA est utilisée pour plus de deux groupes et le chi² pour les variables catégorielles."
+    },
+    {
+      "question": "Quel processus biochimique explique la production d'ATP dans les mitochondries?",
+      "optionA": "Glycolyse",
+      "optionB": "Cycle de Krebs",
+      "optionC": "Chaîne de transport d'électrons",
+      "optionD": "Photosynthèse",
+      "correctAnswer": "C",
+      "explanation": "La chaîne de transport d'électrons dans la membrane interne mitochondriale est le processus qui génère le plus grand nombre de molécules d'ATP par molécule de glucose dégradée, via le gradient de protons."
+    },
+    {
+      "question": "Quel type de fossile fournit le plus d'informations sur le comportement des espèces éteintes?",
+      "optionA": "Fossile d'empreinte",
+      "optionB": "Fossile de remplacement",
+      "optionC": "Fossile d'empreinte moléculaire",
+      "optionD": "Fossile de coprolithe",
+      "correctAnswer": "A",
+      "explanation": "Les fossiles d'empreinte (comme les pistes, les nids, les empreintes de pas) fournissent des informations directes sur le comportement, la locomotion et la socialisation des organismes anciens."
+    },
+    {
+      "question": "Quel mécanisme régulateur permet de maintenir l'homéostasie calcique dans le sang?",
+      "optionA": "Hormone parathyroïdienne (PTH) et calcitonine",
+      "optionB": "Insuline et glucagon",
+      "optionC": "Aldostérone et rénine",
+      "optionD": "Cortisol et ACTH",
+      "correctAnswer": "A",
+      "explanation": "La PTH augmente la calcémie en stimulant la libération du calcium des os et en augmentant son absorption intestinale, tandis que la calcitonine abaisse la calcémie en inhibant la résorption osseuse."
+    },
+    {
+      "question": "Quel type de symbiose caractérise la relation entre les ruminants et leur microbiote intestinal?",
+      "optionA": "Commensalisme",
+      "optionB": "Mutualisme",
+      "optionC": "Parasitisme",
+      "optionD": "Amensalisme",
+      "correctAnswer": "B",
+      "explanation": "La relation entre les ruminants et leur microbiote intestinal est un mutualisme, où les bactéries décomposent la cellulose que l'hôte ne peut digérer et fournissent des nutriments, tandis que l'hôte fournit un environnement et une nourriture."
+    },
+    {
+      "question": "Quel concept écologique explique la relation entre la richesse spécifique et la stabilité des écosystèmes?",
+      "optionA": "Hypothèse du rivage",
+      "optionB": "Hypothèse du productivité-diversité",
+      "optionC": "Hypothèse de l'interdépendance",
+      "optionD": "Hypothèse de la redondance fonctionnelle",
+      "correctAnswer": "D",
+      "explanation": "L'hypothèse de la redondance fonctionnelle suggère que plus il y a d'espèces avec des fonctions similaires, plus l'écosystème est stable car la perte d'une espèce est moins susceptible d'affecter le fonctionnement global."
+    },
+    {
+      "question": "Quel processus embryologique explique la formation du tube neural chez les vertébrés?",
+      "optionA": "Gastrulation",
+      "optionB": "Neurulation",
+      "optionC": "Organogenèse",
+      "optionD": "Segmentation",
+      "correctAnswer": "B",
+      "explanation": "La neurulation est le processus par lequel le tube neural se forme à partir de la plaque neurale, qui s'invoque et se suture pour former le tube neural, précurseur du système nerveux central."
+    },
+    {
+      "question": "Quelle technique de biologie moléculaire permet de détecter des variations dans le nombre de copies de gènes?",
+      "optionA": "PCR quantitative",
+      "optionB": "FISH (Fluorescence In Situ Hybridization)",
+      "optionC": "Southern blot",
+      "optionD": "Séquençage d'ADN",
+      "correctAnswer": "B",
+      "explanation": "La FISH utilise des sondes fluorescentes hybridisées à des séquences spécifiques d'ADN, permettant de visualiser directement le nombre de copies de gènes ou de chromosomes dans les cellules."
+    },
+    {
+      "question": "Laquelle des affirmations suivantes concernant le cycle cellulaire est correcte?",
+      "optionA": "La kinase dépende de la cycline (CDK) est active tout au long du cycle cellulaire",
+      "optionB": "Le point de contrôle du cycle cellulaire G1 vérifie si l'ADN est correctement répliqué avant l'entrée en phase S",
+      "optionC": "La cycline D active la CDK4/6 pour permettre la transition G1/S",
+      "optionD": "La protéine p53 favorise la progression du cycle cellulaire en inhibant les points de contrôle",
+      "correctAnswer": "C",
+      "explanation": "La cycline D active la CDK4/6 pour phosphoryler et inactiver la protéine Rb, permettant ainsi la transition de la phase G1 à la phase S. Les autres affirmations sont incorrectes: les CDK ne sont actives que lorsqu'elles sont liées à leur cycline correspondante; le point de contrôle G1 vérifie si les conditions sont favorables à la division, pas l'intégrité de l'ADN; p53 est un suppresseur de tumeur qui inhibe le cycle cellulaire en cas de dommages à l'ADN."
+    },
+    {
+      "question": "Quel mécanisme explique l'expression génique différentielle entre les cellules somatiques et les cellules germinales chez les mammifères?",
+      "optionA": "L'empreinte parentale",
+      "optionB": "L'épissage alternatif",
+      "optionC": "L'édition de l'ARN",
+      "optionD": "La méthylation de l'ADN",
+      "correctAnswer": "A",
+      "explanation": "L'empreinte parentale est un phénomène épigénétique où l'expression d'un gène dépend de son origine parentale. Ce mécanisme est crucial pour le développement embryonnaire et différencie l'expression entre cellules somatiques et germinales. Les autres options sont des mécanismes d'expression génique mais ne spécifient pas la différence entre ces types cellulaires."
+    },
+    {
+      "question": "Dans la chaîne respiratoire mitochondriale, quel complexe est responsable de la pompe à protons qui génère le gradient de concentration en protons?",
+      "optionA": "Complexe I (NADH déshydrogénase)",
+      "optionB": "Complexe II (succinate déshydrogénase)",
+      "optionC": "Complexe III (cytochrome bc1)",
+      "optionD": "Complexe IV (cytochrome c oxydase)",
+      "correctAnswer": "A",
+      "explanation": "Le complexe I de la chaîne respiratoire mitochondriale est responsable de la pompe à protons. Il utilise l'énergie libérée par l'oxydation du NADH pour pomper 4 protons de la matrice mitochondriale vers l'espace intermembranaire, créant ainsi le gradient électrochimique nécessaire à la synthèse de l'ATP. Les autres complexes contribuent également au gradient mais de manière moins directe."
+    },
+    {
+      "question": "Quelle est la principale fonction des immunoglobulines de classe E (IgE)?",
+      "optionA": "La défense contre les infections bactériennes extracellulaires",
+      "optionB": "La réponse immunitaire aux parasites multicellulaires",
+      "optionC": "La régulation de la réponse immunitaire innée",
+      "optionD": "La neutralisation des toxines bactériennes",
+      "correctAnswer": "B",
+      "explanation": "Les IgE sont principalement impliquées dans la défense contre les parasites multicellulaires comme les helminthes. Elles se fixent sur les mastocytes et les basophiles, et lorsqu'elles rencontrent leur antigène spécifique, déclenchent la libération d'histamine et d'autres médiateurs inflammatoires. Les autres fonctions sont principalement associées aux IgG, IgM ou IgA."
+    },
+    {
+      "question": "Quelle structure cellulaire est responsable de la synthèse des protéines destinées à la sécrétion ou à l'intégration dans les membranes plasmiques?",
+      "optionA": "Le réticulum endoplasmique rugueux",
+      "optionB": "Le réticulum endoplasmique lisse",
+      "optionC": "L'appareil de Golgi",
+      "optionD": "Les lysosomes",
+      "correctAnswer": "A",
+      "explanation": "Le réticulum endoplasmique rugueux, caractérisé par la présence de ribosomes attachés à sa membrane, est le site principal de synthèse des protéines destinées à la sécrétion ou à l'intégration dans les membranes. Les ribosomes synthétisent les protéines qui sont alors transloquées dans la lumière du RER où elles subissent des modifications post-traductionnelles. Les autres structures jouent des rôles dans le trafic et la modification des protéines mais pas dans leur synthèse initiale."
+    },
+    {
+      "question": "Laquelle des techniques suivantes permet de détecter spécifiquement une séquence d'ADN complémentaire à un ARN messager dans une cellule?",
+      "optionA": "La Southern blot",
+      "optionB": "La Northern blot",
+      "optionC": "La Western blot",
+      "optionD": "La PCR quantitative",
+      "correctAnswer": "B",
+      "explanation": "La Northern blot est une technique utilisée pour détecter et quantifier des ARN spécifiques, comme les ARN messagers. Elle consiste à isoler les ARN, à les séparer par électrophorèse, à les transférer sur une membrane et à les hybrider avec une sonde complémentaire marquée. La Southern blot détecte des séquences d'ADN, la Western blot des protéines, et la PCR quantitative amplifie une séquence cible mais ne détecte pas spécifiquement les ARN."
+    },
+    {
+      "question": "Quel mécanisme explique la résistance aux antibiotiques à bêta-lactamines chez certaines bactéries?",
+      "optionA": "La modification de la cible de l'antibiotique",
+      "optionB": "L'efflux actif de l'antibiotique",
+      "optionC": "La production de bêta-lactamases",
+      "optionD": "La modification de la perméabilité membranaire",
+      "correctAnswer": "C",
+      "explanation": "La production de bêta-lactamases est le principal mécanisme de résistance aux antibiotiques à bêta-lactamines. Ces enzymes hydrolysent le cycle bêta-lactame, inactivant ainsi l'antibiotique avant qu'il ne puisse inhiber la synthèse du peptidoglycane par la liaison transpeptidase. Les autres mécanismes sont également impliqués dans la résistance mais ne sont pas spécifiques aux bêta-lactames."
+    },
+    {
+      "question": "Quelle hormone végétale est principalement responsable de la promotion de la dormance des bourgeons et de la chute des feuilles?",
+      "optionA": "L'auxine",
+      "optionB": "La cytokinine",
+      "optionC": "L'éthylène",
+      "optionD": "L'acide abscissique",
+      "correctAnswer": "D",
+      "explanation": "L'acide abscissique (ABA) est une hormone végétale impliquée dans la promotion de la dormance des bourgeons, de la chute des feuilles et de la fermeture des stomates. Il joue un rôle crucial dans la réponse des plantes au stress environnemental, notamment la sécheresse. Les autres hormones ont des fonctions différentes: l'auxine favorise l'élongation cellulaire, les cytokinines la division cellulaire, et l'éthylène la maturation des fruits et la senescence."
+    },
+    {
+      "question": "Quel type de mutation génétique est responsable de la drépanocytose?",
+      "optionA": "Une substitution ponctuelle",
+      "optionB": "Une délétion",
+      "optionC": "Une insertion",
+      "optionD": "Une duplication",
+      "correctAnswer": "A",
+      "explanation": "La drépanocytose est causée par une substitution ponctuelle dans le gène codant pour la chaîne bêta de l'hémoglobine, où un acide aminé glutamate est remplacé par un valine à la position 6. Cette mutation modifie la structure de l'hémoglobine, provoquant la déformation des globules rouges en forme de faucille. Les autres types de mutations peuvent avoir différentes conséquences phénotypiques."
+    },
+    {
+      "question": "Dans quel compartiment cellulaire la bêta-oxydation des acides gras a-t- lieu?",
+      "optionA": "Dans le cytoplasme",
+      "optionB": "Dans le noyau",
+      "optionC": "Dans la mitochondrie",
+      "optionD": "Dans le peroxysome",
+      "correctAnswer": "C",
+      "explanation": "La bêta-oxydation des acides gras se déroule principalement dans la mitochondrie pour la plupart des acides gras. Ce processus décompose les acides gras en molécules d'acétyl-CoA qui entrent ensuite dans le cycle de Krebs. Les peroxysomes sont également impliqués dans la bêta-oxydation, principalement pour les acides gras à chaîne très longue, tandis que le cytoplasme et le noyau ne sont pas impliqués dans ce métabolisme."
     }
   ]
 }
