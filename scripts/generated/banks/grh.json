@@ -208,15 +208,6 @@
       "explanation": "La première étape de la GPEC est l'analyse stratégique de l'entreprise et de son environnement. Cette analyse permet de comprendre les évolutions prévisibles de l'organisation, du marché et des technologies pour anticiper les besoins en compétences et en emplois futurs."
     },
     {
-      "question": "Quelle est la principale différence entre une évaluation formative et une évaluation sommative en matière de formation ?",
-      "optionA": "L'évaluation formative a lieu en fin de formation, l'évaluation sommative en début",
-      "optionB": "L'évaluation formative sert à améliorer le processus pédagogique, l'évaluation sommative certifie l'acquisition de compétences",
-      "optionC": "L'évaluation formative est obligatoire pour les formations obligatoires, l'évaluation sommative est facultative",
-      "optionD": "L'évaluation formative concerne uniquement les stagiaires, l'évaluation sommative concerne uniquement les formateurs",
-      "correctAnswer": "B",
-      "explanation": "L'évaluation formative est réalisée pendant le processus de formation pour ajuster les méthodes pédagogiques et améliorer l'apprentissage. L'évaluation sommative, réalisée en fin de formation, a pour but de certifier si les compétences attendues ont été acquises par les participants."
-    },
-    {
       "question": "Selon la théorie de la motivation d'Herzberg, quel facteur est considéré comme 'hygiénique' ?",
       "optionA": "La reconnaissance du travail accompli",
       "optionB": "Les opportunités d'avancement",
@@ -494,15 +485,6 @@
       "optionD": "Leur difficulté d'administration",
       "correctAnswer": "B",
       "explanation": "Les entretiens structurés, bien que fiables, manquent de flexibilité et peuvent ne pas permettre d'explorer des aspects non prévus du candidat."
-    },
-    {
-      "question": "Quelle est la principale différence entre une évaluation formative et une évaluation sommative ?",
-      "optionA": "La première sert à sanctionner, la seconde à former",
-      "optionB": "La première a lieu en fin de parcours, la seconde en début",
-      "optionC": "La première sert à ajuster le parcours, la seconde à certifier",
-      "optionD": "La première concerne les compétences, la seconde les connaissances",
-      "correctAnswer": "C",
-      "explanation": "L'évaluation formative sert à ajuster le parcours d'apprentissage, tandis que l'évaluation sommative sert à certifier les acquis en fin de formation."
     },
     {
       "question": "Dans le cadre de la gestion des carrières, quelle est la principale utilité du bilan de compétences ?",

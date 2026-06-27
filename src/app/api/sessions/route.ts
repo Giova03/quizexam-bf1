@@ -10,6 +10,21 @@ interface CreateSessionBody {
   mode: "immediate" | "final";
   sourceType: "bank" | "exam";
   sourceId: string;
+  /**
+   * Optional explicit list of question IDs. When provided, the session is
+   * created with exactly these questions (in the given order) instead of
+   * loading all questions from the bank/exam referenced by sourceId.
+   * Used by the daily-challenge feature to start a session with a curated
+   * set of 10 questions picked across one or more banks.
+   */
+  questionIds?: string[];
+  /**
+   * Optional difficulty filter ("easy" | "medium" | "hard" | "all").
+   * When set to a non-"all" value, the questions gathered from the bank
+   * (or exam) are filtered to keep only those whose `difficulty` matches.
+   * Ignored when `questionIds` is provided (the caller has already chosen).
+   */
+  difficulty?: "easy" | "medium" | "hard" | "all";
 }
 
 // GET — list sessions for the current user (with answers for dashboard)
@@ -61,7 +76,7 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as CreateSessionBody;
-    const { title, mode, sourceType, sourceId } = body;
+    const { title, mode, sourceType, sourceId, questionIds, difficulty } = body;
 
     if (!title || !mode || !sourceType || !sourceId) {
       return NextResponse.json(
@@ -76,6 +91,13 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+
+    // Normalize the difficulty filter — anything other than easy/medium/hard
+    // means "no filter".
+    const diffFilter: "easy" | "medium" | "hard" | null =
+      difficulty === "easy" || difficulty === "medium" || difficulty === "hard"
+        ? difficulty
+        : null;
 
     // Get the current user from the session
     const authSession = await getServerSession(authOptions);
@@ -101,10 +123,27 @@ export async function POST(request: Request) {
       explanation: string;
     }> = [];
 
-    if (sourceType === "bank") {
+    // Daily-challenge path: an explicit list of question IDs is provided.
+    // We load them directly, preserving the order in which they were sent.
+    // (difficulty filter is intentionally NOT applied here — the caller has
+    // already curated the list.)
+    if (questionIds && questionIds.length > 0) {
+      const rows = await db.question.findMany({
+        where: { id: { in: questionIds } },
+      });
+      // Preserve caller-provided order (deterministic per day).
+      const byId = new Map(rows.map((q) => [q.id, q]));
+      questions = questionIds
+        .map((id) => byId.get(id))
+        .filter((q): q is NonNullable<typeof q> => Boolean(q));
+    } else if (sourceType === "bank") {
       const bank = await db.questionBank.findUnique({
         where: { id: sourceId },
-        include: { questions: { orderBy: { order: "asc" } } },
+        include: {
+          questions: diffFilter
+            ? { where: { difficulty: diffFilter }, orderBy: { order: "asc" } }
+            : { orderBy: { order: "asc" } },
+        },
       });
       if (!bank) {
         return NextResponse.json({ error: "Bank not found" }, { status: 404 });
@@ -123,7 +162,11 @@ export async function POST(request: Request) {
       if (!exam) {
         return NextResponse.json({ error: "Exam not found" }, { status: 404 });
       }
-      questions = exam.examQuestions.map((eq) => eq.question);
+      // Apply the difficulty filter to exam questions as well, so the user
+      // can take a subset of an exam at a given difficulty level.
+      questions = exam.examQuestions
+        .map((eq) => eq.question)
+        .filter((q) => (diffFilter ? q.difficulty === diffFilter : true));
     }
 
     if (questions.length === 0) {

@@ -2,6 +2,7 @@
 
 import { useEffect, useCallback, useState } from "react";
 import { useQuizStore } from "@/lib/quiz-store";
+import { useSpacedRepetition } from "@/lib/spaced-repetition-store";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -10,6 +11,8 @@ import { BankIcon } from "./bank-icon";
 import { getColor } from "@/lib/types";
 import { SearchDialog } from "./search-dialog";
 import { RevisionDialog } from "./revision-dialog";
+import { DailyChallengeCard } from "./daily-challenge-card";
+import { StudyReminders } from "./study-reminders";
 import {
   GraduationCap,
   FileQuestion,
@@ -21,6 +24,7 @@ import {
   Sparkles,
   Search,
   Layers3,
+  Brain,
 } from "lucide-react";
 
 export function HomeView() {
@@ -35,7 +39,10 @@ export function HomeView() {
     setLoadingExams,
     openBank,
     openExam,
+    openSpacedRepetition,
   } = useQuizStore();
+  const dueCount = useSpacedRepetition((s) => s.getStats().dueToday);
+  const totalCards = useSpacedRepetition((s) => s.getStats().totalCards);
 
   const [searchOpen, setSearchOpen] = useState(false);
   const [revisionBank, setRevisionBank] = useState<{ id: string; title: string } | null>(null);
@@ -132,7 +139,30 @@ export function HomeView() {
           <span className="flex-1 text-left">Rechercher une question...</span>
           <Badge variant="secondary" className="text-[10px]">Ctrl+K</Badge>
         </Button>
+        <Button
+          variant="outline"
+          className="gap-2 justify-start border-amber-300 text-amber-700 hover:bg-amber-50 hover:text-amber-800 dark:border-amber-800 dark:text-amber-300 dark:hover:bg-amber-950/40"
+          onClick={openSpacedRepetition}
+        >
+          <Brain className="h-4 w-4" />
+          <span className="flex-1 text-left">Révision espacée</span>
+          {dueCount > 0 ? (
+            <Badge className="bg-amber-500 text-white text-[10px]">
+              {dueCount} due{dueCount > 1 ? "s" : ""}
+            </Badge>
+          ) : totalCards > 0 ? (
+            <Badge variant="secondary" className="text-[10px]">
+              {totalCards} carte{totalCards > 1 ? "s" : ""}
+            </Badge>
+          ) : null}
+        </Button>
       </section>
+
+      {/* Study reminders (daily streak, suggestions, etc.) */}
+      <StudyReminders />
+
+      {/* Daily challenge — 2× XP, rotates by day of week */}
+      <DailyChallengeCard />
 
       {/* Banks section */}
       <section className="space-y-4">

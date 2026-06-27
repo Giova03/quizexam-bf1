@@ -14,14 +14,32 @@ export async function POST(request: Request) {
   const session = await requireAdmin();
   if (!session) return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
   const body = await request.json();
-  const { bankId, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, level } = body;
+  const { bankId, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, level, difficulty } = body;
   if (!bankId || !question || !optionA || !optionB || !optionC || !optionD || !correctAnswer || !explanation)
     return NextResponse.json({ error: "Tous les champs sont requis" }, { status: 400 });
   if (!["A", "B", "C", "D"].includes(correctAnswer))
     return NextResponse.json({ error: "Réponse correcte invalide" }, { status: 400 });
+  // Validate difficulty (default to "medium" if absent or invalid).
+  const validDifficulty =
+    difficulty && ["easy", "medium", "hard"].includes(difficulty)
+      ? difficulty
+      : "medium";
   const count = await db.question.count({ where: { bankId } });
   const q = await db.question.create({
-    data: { bankId, order: count, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2: correctAnswer2 || null, explanation, level: level || "TOUS" },
+    data: {
+      bankId,
+      order: count,
+      question,
+      optionA,
+      optionB,
+      optionC,
+      optionD,
+      correctAnswer,
+      correctAnswer2: correctAnswer2 || null,
+      explanation,
+      level: level || "TOUS",
+      difficulty: validDifficulty,
+    },
   });
   return NextResponse.json(q);
 }
@@ -30,8 +48,16 @@ export async function PATCH(request: Request) {
   const session = await requireAdmin();
   if (!session) return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
   const body = await request.json();
-  const { id, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation } = body;
+  const { id, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, difficulty } = body;
   if (!id) return NextResponse.json({ error: "ID requis" }, { status: 400 });
+  // Validate difficulty if provided.
+  let difficultyUpdate: { difficulty?: string } = {};
+  if (difficulty !== undefined) {
+    if (!["easy", "medium", "hard"].includes(difficulty)) {
+      return NextResponse.json({ error: "Difficulté invalide (easy, medium ou hard)" }, { status: 400 });
+    }
+    difficultyUpdate = { difficulty };
+  }
   const updated = await db.question.update({
     where: { id },
     data: {
@@ -43,6 +69,7 @@ export async function PATCH(request: Request) {
       ...(correctAnswer !== undefined && { correctAnswer }),
       ...(correctAnswer2 !== undefined && { correctAnswer2 }),
       ...(explanation !== undefined && { explanation }),
+      ...difficultyUpdate,
     },
   });
   return NextResponse.json(updated);

@@ -42,25 +42,133 @@ export const authOptions: NextAuthOptions = {
   pages: { signIn: "/" },
 };
 
+/**
+ * Generate a random 8-character alphanumeric referral code.
+ * Uses uppercase letters + digits (36 possible chars per slot → 36^8 ≈ 2.8 trillion combos).
+ * Excludes ambiguous chars (0/O, 1/I/L) for readability.
+ */
+const REFERRAL_ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+
+export function generateReferralCode(): string {
+  let code = "";
+  const bytes = new Uint8Array(8);
+  if (typeof globalThis.crypto?.getRandomValues === "function") {
+    globalThis.crypto.getRandomValues(bytes);
+    for (let i = 0; i < 8; i++) {
+      code += REFERRAL_ALPHABET[bytes[i] % REFERRAL_ALPHABET.length];
+    }
+  } else {
+    // Fallback (should not happen in modern Node/Bun runtimes)
+    for (let i = 0; i < 8; i++) {
+      code += REFERRAL_ALPHABET[Math.floor(Math.random() * REFERRAL_ALPHABET.length)];
+    }
+  }
+  return code;
+}
+
+/**
+ * Generate a referral code that is not already used by any other user.
+ * Retries up to 10 times on collision (extremely unlikely with 2.8T combos).
+ */
+async function generateUniqueReferralCode(): Promise<string> {
+  for (let attempt = 0; attempt < 10; attempt++) {
+    const code = generateReferralCode();
+    const existing = await db.user.findUnique({
+      where: { referralCode: code },
+      select: { id: true },
+    });
+    if (!existing) return code;
+  }
+  // Last-resort fallback: append a unix timestamp suffix to ensure uniqueness.
+  return (generateReferralCode() + Date.now().toString(36)).slice(0, 8).toUpperCase();
+}
+
 export async function ensureAdminAccount() {
   const adminEmail = process.env.ADMIN_EMAIL || "giobamos03@gmail.com";
   const adminPassword = "Giov@12342005";
   const existing = await db.user.findUnique({ where: { email: adminEmail } });
   if (!existing) {
     const hash = await bcrypt.hash(adminPassword, 10);
+    const referralCode = await generateUniqueReferralCode();
     await db.user.create({
-      data: { email: adminEmail, name: "Administrateur", passwordHash: hash, role: "ADMIN" },
+      data: {
+        email: adminEmail,
+        name: "Administrateur",
+        passwordHash: hash,
+        role: "ADMIN",
+        referralCode,
+      },
     });
-    console.log(`✓ Admin account created: ${adminEmail}`);
+    console.log(`✓ Admin account created: ${adminEmail} (referral: ${referralCode})`);
+  } else if (!existing.referralCode) {
+    // Backfill missing referral code for legacy admin rows.
+    const referralCode = await generateUniqueReferralCode();
+    await db.user.update({
+      where: { id: existing.id },
+      data: { referralCode },
+    });
+    console.log(`✓ Admin referral code backfilled: ${referralCode}`);
   }
 }
 
-export async function createVisitorAccount(email: string, name: string, password: string) {
+/**
+ * Create a new visitor account.
+ * If `referralCode` is provided and matches an existing user, sets `referredBy`
+ * to that user's referral code (the referrer earns +50 XP the next time they
+ * open their dashboard, via the referral-card sync logic).
+ */
+export async function createVisitorAccount(
+  email: string,
+  name: string,
+  password: string,
+  referralCode?: string
+) {
   const existing = await db.user.findUnique({ where: { email: email.toLowerCase() } });
   if (existing) throw new Error("Un compte existe déjà avec cet email.");
   const hash = await bcrypt.hash(password, 10);
+  const newReferralCode = await generateUniqueReferralCode();
+
+  // Validate & resolve the referrer (if any)
+  let resolvedReferredBy: string | null = null;
+  if (referralCode && typeof referralCode === "string") {
+    const trimmed = referralCode.trim().toUpperCase();
+    if (trimmed.length > 0) {
+      const referrer = await db.user.findUnique({
+        where: { referralCode: trimmed },
+        select: { referralCode: true },
+      });
+      if (referrer) {
+        resolvedReferredBy = referrer.referralCode;
+      }
+      // If no referrer matches, silently ignore (don't block signup).
+    }
+  }
+
   const user = await db.user.create({
-    data: { email: email.toLowerCase(), name, passwordHash: hash, role: "VISITOR" },
+    data: {
+      email: email.toLowerCase(),
+      name,
+      passwordHash: hash,
+      role: "VISITOR",
+      referralCode: newReferralCode,
+      referredBy: resolvedReferredBy,
+    },
   });
-  return { id: user.id, email: user.email, name: user.name, role: user.role };
+
+  return {
+    id: user.id,
+    email: user.email,
+    name: user.name,
+    role: user.role,
+    referralCode: user.referralCode,
+    referredBy: user.referredBy,
+  };
+}
+
+/**
+ * Count how many users were referred by the given referral code.
+ * Used by /api/referral to compute referral stats.
+ */
+export async function countReferrals(referralCode: string): Promise<number> {
+  return db.user.count({ where: { referredBy: referralCode } });
 }

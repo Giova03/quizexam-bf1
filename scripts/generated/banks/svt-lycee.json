@@ -55,15 +55,6 @@
       "explanation": "L'inactivation aléatoire d'un chromosome X (lyonisation) chez les femmes crée un mosaïsme cellulaire, expliquant la variabilité d'expression des maladies liées à l'X."
     },
     {
-      "question": "Quelle est la conséquence écologique principale de la fragmentation des habitats ?",
-      "optionA": "Augmentation de la biodiversité locale",
-      "optionB": "Diminution de la connectivité entre populations",
-      "optionC": "Amélioration du flux de gènes",
-      "optionD": "Augmentation de la taille effective des populations",
-      "correctAnswer": "B",
-      "explanation": "La fragmentation des habitats isole les populations, réduisant la connectivité et le flux de gènes, ce qui augmente le risque d'extinction locale."
-    },
-    {
       "question": "Quel processus géologique explique la formation des chaînes de montagnes à marge active ?",
       "optionA": "Extension crustale",
       "optionB": "Subduction océanique-continental",
@@ -125,15 +116,6 @@
       "optionD": "Toutes ces réponses sont correctes",
       "correctAnswer": "D",
       "explanation": "La transmission verticale du VIH peut se produire transplacentairement, pendant l'accouchement ou par le lait maternel."
-    },
-    {
-      "question": "Quelle est la conséquence écologique principale de l'eutrophisation des écosystèmes aquatiques ?",
-      "optionA": "Augmentation de la biodiversité",
-      "optionB": "Diminution de la transparence de l'eau et anoxie",
-      "optionC": "Amélioration de la qualité de l'eau",
-      "optionD": "Augmentation de la productivité primaire",
-      "correctAnswer": "B",
-      "explanation": "L'eutrophisation entraîne une prolifération d'algues, réduisant la transparence et, lors de leur décomposition, consommant l'oxygène et créant des zones anoxiques."
     },
     {
       "question": "Quel mécanisme explique la régulation de l'expression génique par les microARN ?",

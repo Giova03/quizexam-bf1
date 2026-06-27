@@ -222,7 +222,7 @@
       "optionC": "◇",
       "optionD": "◆",
       "correctAnswer": "A",
-      "explanation": "Après vide → plein."
+      "explanation": "La réponse correcte est « □ ». Après vide → plein. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Suite : □ ⟶ ◻ ⟶ □ ⟶ ◻ ? (alternance plein/vide) »."
     },
     {
       "question": "Suite de diagonales: ╱ ╲ ╱ ╲ ╱ ?",
@@ -312,7 +312,7 @@
       "optionC": "◉",
       "optionD": "◎",
       "correctAnswer": "A",
-      "explanation": "Après plein → vide."
+      "explanation": "La réponse correcte est « ○ ». Après plein → vide. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Suite de tailles: ○●○●○● ? (alternance) »."
     },
     {
       "question": "Suite de points alignés: . .. ... .... ?",

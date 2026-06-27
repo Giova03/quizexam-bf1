@@ -144,15 +144,6 @@
       "explanation": "Londres est la capitale du Royaume-Uni."
     },
     {
-      "question": "Quelle est la monnaie du Royaume-Uni ?",
-      "optionA": "Livre sterling (£)",
-      "optionB": "Euro",
-      "optionC": "Dollar",
-      "optionD": "Franc",
-      "correctAnswer": "A",
-      "explanation": "Le Royaume-Uni utilise la livre sterling (GBP)."
-    },
-    {
       "question": "Quelle est la capitale du Japon ?",
       "optionA": "Tokyo",
       "optionB": "Osaka",
@@ -160,15 +151,6 @@
       "optionD": "Nagoya",
       "correctAnswer": "A",
       "explanation": "Tokyo est la capitale du Japon."
-    },
-    {
-      "question": "Quelle est la monnaie du Japon ?",
-      "optionA": "Yen (¥)",
-      "optionB": "Won",
-      "optionC": "Yuan",
-      "optionD": "Rupee",
-      "correctAnswer": "A",
-      "explanation": "Le Japon utilise le yen (JPY)."
     },
     {
       "question": "Quelle est la capitale de la Chine ?",
@@ -207,15 +189,6 @@
       "explanation": "L'Inde utilise la roupie (INR)."
     },
     {
-      "question": "Quelle est la capitale du Brésil ?",
-      "optionA": "Brasília",
-      "optionB": "Rio de Janeiro",
-      "optionC": "São Paulo",
-      "optionD": "Salvador",
-      "correctAnswer": "A",
-      "explanation": "Brasília est la capitale depuis 1960."
-    },
-    {
       "question": "Quelle est la monnaie du Brésil ?",
       "optionA": "Real (BRL)",
       "optionB": "Peso",
@@ -223,15 +196,6 @@
       "optionD": "Euro",
       "correctAnswer": "A",
       "explanation": "Le Brésil utilise le real (BRL)."
-    },
-    {
-      "question": "Quelle est la capitale de l'Afrique du Sud ?",
-      "optionA": "Pretoria (administrative)",
-      "optionB": "Le Cap",
-      "optionC": "Johannesburg",
-      "optionD": "Durban",
-      "correctAnswer": "A",
-      "explanation": "L'Afrique du Sud a 3 capitales: Pretoria (admin), Le Cap (législatif), Bloemfontein (judiciaire)."
     },
     {
       "question": "Quelle est la capitale du Maroc ?",
@@ -306,24 +270,6 @@
       "explanation": "L'Allemagne utilise l'euro (avant 2002: le mark)."
     },
     {
-      "question": "Quelle est la capitale du Canada ?",
-      "optionA": "Ottawa",
-      "optionB": "Toronto",
-      "optionC": "Montréal",
-      "optionD": "Vancouver",
-      "correctAnswer": "A",
-      "explanation": "Ottawa est la capitale du Canada (pas Toronto)."
-    },
-    {
-      "question": "Quelle est la capitale de l'Australie ?",
-      "optionA": "Canberra",
-      "optionB": "Sydney",
-      "optionC": "Melbourne",
-      "optionD": "Perth",
-      "correctAnswer": "A",
-      "explanation": "Canberra est la capitale (pas Sydney)."
-    },
-    {
       "question": "Quelle est la capitale de l'Italie ?",
       "optionA": "Rome",
       "optionB": "Milan",
@@ -340,33 +286,6 @@
       "optionD": "Valence",
       "correctAnswer": "A",
       "explanation": "Madrid est la capitale de l'Espagne."
-    },
-    {
-      "question": "Quelle est la capitale de la Turquie ?",
-      "optionA": "Ankara",
-      "optionB": "Istanbul",
-      "optionC": "Izmir",
-      "optionD": "Bursa",
-      "correctAnswer": "A",
-      "explanation": "Ankara est la capitale (pas Istanbul)."
-    },
-    {
-      "question": "Quelle est la capitale de la Suisse ?",
-      "optionA": "Berne",
-      "optionB": "Genève",
-      "optionC": "Zurich",
-      "optionD": "Lausanne",
-      "correctAnswer": "A",
-      "explanation": "Berne est la capitale (ville fédérale) de la Suisse."
-    },
-    {
-      "question": "Quelle est la monnaie de la Suisse ?",
-      "optionA": "Franc suisse (CHF)",
-      "optionB": "Euro",
-      "optionC": "Dollar",
-      "optionD": "Livre",
-      "correctAnswer": "A",
-      "explanation": "La Suisse utilise le franc suisse (CHF)."
     }
   ]
 }

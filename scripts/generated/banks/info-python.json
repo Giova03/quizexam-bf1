@@ -424,15 +424,6 @@
       "explanation": "La méthode get() retourne la valeur pour la clé si elle existe, sinon retourne la valeur par défaut fournie (ici 3)."
     },
     {
-      "question": "Que va afficher le code suivant ?\n\n```python\nclass A:\n    def __init__(self):\n        self.x = 1\n    def __str__(self):\n        return str(self.x)\n\nclass B(A):\n    def __init__(self):\n        super().__init__()\n        self.x = 2\n\nb = B()\nprint(b)\n```",
-      "optionA": "1",
-      "optionB": "2",
-      "optionC": "Une erreur est levée",
-      "optionD": "<__main__.B object at 0x...>",
-      "correctAnswer": "B",
-      "explanation": "La classe B surcharge l'attribut x. La méthode __str__ utilise self.x, qui a la valeur 2 dans l'instance b de B."
-    },
-    {
       "question": "Que va afficher le code suivant ?\n\n```python\na = [1, 2, 3]\nb = [x * 2 for x in a if x % 2 == 0]\nprint(b)\n```",
       "optionA": "[2, 4, 6]",
       "optionB": "[2, 4]",
@@ -629,15 +620,6 @@
       "optionD": "5",
       "correctAnswer": "A",
       "explanation": "args contient 2, 3 (2 éléments) et kwargs contient a, b (2 éléments). Le total est 4."
-    },
-    {
-      "question": "Que va afficher le code suivant ?\n\nclass A:\n    def __init__(self, x):\n        self.x = x\n    \n    def __str__(self):\n        return str(self.x)\n\na = A(42)\nprint(a)",
-      "optionA": "42",
-      "optionB": "<__main__.A object>",
-      "optionC": "A",
-      "optionD": "Erreur",
-      "correctAnswer": "A",
-      "explanation": "La méthode __str__ est surchargée pour retourner la valeur de l'attribut x."
     }
   ]
 }

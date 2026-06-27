@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { StartDialog } from "./start-dialog";
+import { StartDialog, type DifficultyFilter } from "./start-dialog";
 import type { Exam, CorrectionMode } from "@/lib/types";
 import {
   ArrowLeft,
@@ -44,7 +44,7 @@ export function ExamDetailView() {
     loadExam();
   }, [loadExam]);
 
-  async function handleStart(mode: CorrectionMode) {
+  async function handleStart(mode: CorrectionMode, difficulty: DifficultyFilter) {
     if (!exam) return;
     try {
       const res = await fetch("/api/sessions", {
@@ -55,12 +55,13 @@ export function ExamDetailView() {
           mode,
           sourceType: "exam",
           sourceId: exam.id,
+          difficulty,
         }),
       });
       if (res.ok) {
         const session = await res.json();
         setDialogOpen(false);
-        startSession(session.id);
+        startSession(session.id, difficulty);
       }
     } catch (e) {
       console.error("Failed to create session", e);
@@ -71,6 +72,14 @@ export function ExamDetailView() {
     ?.slice()
     .sort((a, b) => a.order - b.order)
     .map((eq) => eq.question) ?? [];
+
+  // Compute difficulty counts for the StartDialog filter.
+  const difficultyCounts = {
+    all: questions.length,
+    easy: questions.filter((q) => q.difficulty === "easy").length,
+    medium: questions.filter((q) => q.difficulty === "medium").length,
+    hard: questions.filter((q) => q.difficulty === "hard").length,
+  };
 
   return (
     <div className="space-y-6">
@@ -200,6 +209,7 @@ export function ExamDetailView() {
         title={exam?.title ?? ""}
         subtitle="Choisissez votre mode de correction pour cet examen blanc."
         questionCount={questions.length}
+        difficultyCounts={difficultyCounts}
         onStart={handleStart}
       />
     </div>

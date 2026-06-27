@@ -352,15 +352,6 @@
       "explanation": "L'OMS adopte une approche triple contre le paludisme: prévention (moustiquaires, insecticides), diagnostic rapide et traitement approprié pour éliminer la maladie."
     },
     {
-      "question": "Quel est l'Objectif de Développement Durable (ODD) spécifiquement lié à l'égalité des genres ?",
-      "optionA": "ODD 3: Bonne santé et bien-être",
-      "optionB": "ODD 4: Éducation de qualité",
-      "optionC": "ODD 5: Égalité entre les sexes",
-      "optionD": "ODD 10: Réduction des inégalités",
-      "correctAnswer": "C",
-      "explanation": "L'ODD 5 est spécifiquement consacré à l'égalité entre les sexes et l'autonomisation de toutes les femmes et filles."
-    },
-    {
       "question": "Quelle est la particularité du vaccin contre le VIH développé par le français Jean-Claude Chermann ?",
       "optionA": "C'est le premier vaccin efficace contre le VIH",
       "optionB": "Il a été retiré du marché pour des effets secondaires graves",
@@ -368,15 +359,6 @@
       "optionD": "Il est administré par voie orale",
       "correctAnswer": "C",
       "explanation": "Le vaccin contre le VIH développé par Chermann a montré une réponse immunitaire mais n'a pas réussi à prévenir l'infection lors des essais cliniques."
-    },
-    {
-      "question": "Quelle est la forme de violence basée sur le genre (VBG) la plus répandue dans le monde ?",
-      "optionA": "Les mariages forcés",
-      "optionB": "La mutilation génitale féminine",
-      "optionC": "Les violences psychologiques",
-      "optionD": "La violence conjugale",
-      "correctAnswer": "D",
-      "explanation": "La violence conjugale (violence par le partenaire intime) est la forme de VBG la plus répandue dans le monde, affectant environ 1 femme sur 3."
     },
     {
       "question": "Quel est le principal obstacle à l'accès aux soins pour les personnes vivant avec le VIH dans les pays à faible revenu ?",

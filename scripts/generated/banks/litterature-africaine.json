@@ -18,15 +18,6 @@
       "explanation": "Ahmadou Kourouma (ivoirien) a écrit 'Les Soleils des indépendances' (1968)."
     },
     {
-      "question": "Qui a écrit 'L'Enfant noir' ?",
-      "optionA": "Camara Laye",
-      "optionB": "Cheikh Hamidou Kane",
-      "optionC": "Ahmadou Kourouma",
-      "optionD": "Sembène Ousmane",
-      "correctAnswer": "A",
-      "explanation": "Camara Laye (guinéen) a écrit 'L'Enfant noir' (1953), autobiographie."
-    },
-    {
       "question": "Qui a écrit 'L'Aventure ambiguë' ?",
       "optionA": "Cheikh Hamidou Kane",
       "optionB": "Camara Laye",
@@ -108,15 +99,6 @@
       "explanation": "Jean-Paul Sartre a écrit 'Les Mains sales' (1948), pièce sur l'engagement politique."
     },
     {
-      "question": "Qui a écrit 'L'Étranger' ?",
-      "optionA": "Albert Camus",
-      "optionB": "Jean-Paul Sartre",
-      "optionC": "André Gide",
-      "optionD": "Marcel Proust",
-      "correctAnswer": "A",
-      "explanation": "Albert Camus a écrit 'L'Étranger' (1942)."
-    },
-    {
       "question": "Qui a fondé le mouvement de la négritude ?",
       "optionA": "Aimé Césaire, Léopold Sédar Senghor et Léon-Gontran Damas",
       "optionB": "Mongo Beti",
@@ -124,15 +106,6 @@
       "optionD": "Frantz Fanon",
       "correctAnswer": "A",
       "explanation": "La négritude a été fondée par Césaire, Senghor et Damas dans les années 1930 à Paris."
-    },
-    {
-      "question": "Qui a écrit 'Cahier d'un retour au pays natal' ?",
-      "optionA": "Aimé Césaire",
-      "optionB": "Léopold Sédar Senghor",
-      "optionC": "Léon-Gontran Damas",
-      "optionD": "Frantz Fanon",
-      "correctAnswer": "A",
-      "explanation": "Aimé Césaire a écrit ce poème fondateur de la négritude (1939)."
     },
     {
       "question": "Léopold Sédar Senghor a été président de quel pays ?",

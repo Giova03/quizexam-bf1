@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { useQuizStore } from "@/lib/quiz-store";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -27,14 +27,54 @@ import {
   Info,
   AlertCircle,
   Bookmark,
+  Clock,
+  Timer,
 } from "lucide-react";
 import { useFavorites } from "@/lib/favorites-store";
+import { usePrefs, type SessionContext } from "@/lib/prefs-store";
 import { toast } from "sonner";
 
 const OPTION_LETTERS = ["A", "B", "C", "D"] as const;
 
+/**
+ * Daily-challenge sessions are created via /api/sessions with a stable
+ * sentinel sourceId ("daily-challenge") and a title that starts with
+ * "Défi du jour". Both signals are checked here so the 2× XP bonus and
+ * localStorage flag are only applied to genuine daily challenges.
+ */
+const DAILY_CHALLENGE_SOURCE_ID = "daily-challenge";
+const DAILY_CHALLENGE_TITLE_PREFIX = "Défi du jour";
+const DAILY_CHALLENGE_STORAGE_PREFIX = "daily-challenge-completed-";
+
+function isDailyChallengeSession(s: QuizSession | null): boolean {
+  if (!s) return false;
+  return (
+    s.sourceId === DAILY_CHALLENGE_SOURCE_ID ||
+    s.title.startsWith(DAILY_CHALLENGE_TITLE_PREFIX)
+  );
+}
+
+function localTodayStr(): string {
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = String(now.getMonth() + 1).padStart(2, "0");
+  const d = String(now.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
+/** Format a number of seconds as MM:SS (or HH:MM:SS if ≥ 1h). */
+function formatTime(totalSeconds: number): string {
+  const s = Math.max(0, Math.floor(totalSeconds));
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = s % 60;
+  const mm = String(m).padStart(2, "0");
+  const ss = String(sec).padStart(2, "0");
+  return h > 0 ? `${String(h).padStart(2, "0")}:${mm}:${ss}` : `${mm}:${ss}`;
+}
+
 export function SessionView() {
-  const { currentSessionId, viewResults, goHome } = useQuizStore();
+  const { currentSessionId, currentSessionDifficulty, viewResults, goHome } = useQuizStore();
   const [session, setSession] = useState<QuizSession | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -43,6 +83,18 @@ export function SessionView() {
   const [error, setError] = useState<string | null>(null);
   const favorites = useFavorites((s) => s.favorites);
   const toggleFavorite = useFavorites((s) => s.toggleFavorite);
+  const recordSession = usePrefs((s) => s.recordSession);
+  const addXp = usePrefs((s) => s.addXp);
+
+  // --- Mode Examen Chronométré Strict ---
+  // `timeRemaining` is null when no timer is active (bank sessions, daily
+  // challenges). For exam sessions with a `durationMin`, it counts down
+  // every second and triggers an auto-submit at 0.
+  const [timeRemaining, setTimeRemaining] = useState<number | null>(null);
+  // Guard against double-submit (timer expiry + manual click racing).
+  const autoSubmitRef = useRef(false);
+  // Track which warnings have been shown so we don't repeat them.
+  const warnedRef = useRef<Set<number>>(new Set());
 
   const loadSession = useCallback(async () => {
     if (!currentSessionId) return;
@@ -72,6 +124,153 @@ export function SessionView() {
   useEffect(() => {
     loadSession();
   }, [loadSession]);
+
+  // --- Mode Examen Chronométré Strict — timer initialization ---
+  // Only exam sessions have a `durationMin` (returned by GET /api/sessions/[id]
+  // for sourceType === "exam"). Bank sessions and daily challenges skip the
+  // timer entirely.
+  useEffect(() => {
+    if (!session) {
+      setTimeRemaining(null);
+      return;
+    }
+    if (session.sourceType !== "exam" || !session.durationMin) {
+      setTimeRemaining(null);
+      return;
+    }
+    const totalSeconds = Math.max(1, Math.floor(session.durationMin * 60));
+    setTimeRemaining(totalSeconds);
+    autoSubmitRef.current = false;
+    warnedRef.current = new Set();
+
+    const intervalId = window.setInterval(() => {
+      setTimeRemaining((prev) => {
+        if (prev === null) return null;
+        const next = prev - 1;
+        if (next <= 0) return 0;
+        return next;
+      });
+    }, 1000);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, [session?.id, session?.sourceType, session?.durationMin]);
+
+  // --- Toast warnings at 10 min, 5 min, 1 min remaining ---
+  useEffect(() => {
+    if (timeRemaining === null) return;
+    const thresholds: Array<{ s: number; msg: string }> = [
+      { s: 600, msg: "⏰ Plus que 10 minutes !" },
+      { s: 300, msg: "⏰ Plus que 5 minutes — finalisez vos réponses !" },
+      { s: 60, msg: "⏰ Plus que 1 minute !" },
+    ];
+    for (const t of thresholds) {
+      if (timeRemaining === t.s && !warnedRef.current.has(t.s)) {
+        warnedRef.current.add(t.s);
+        if (t.s <= 60) {
+          toast.error(t.msg);
+        } else {
+          toast.warning(t.msg);
+        }
+      }
+    }
+  }, [timeRemaining]);
+
+  async function completeSession(isAutoSubmit = false) {
+    if (!session) return;
+    if (submitting) return; // guard against double-submit (timer + click)
+    setSubmitting(true);
+    setError(null);
+    try {
+      const res = await fetch(`/api/sessions/${session.id}/complete`, {
+        method: "POST",
+      });
+      if (res.ok) {
+        const updated = (await res.json()) as QuizSession;
+
+        // --- Award XP + update badges (all sessions) ---
+        // recordSession() is called for every completed session. It updates
+        // XP, streak, sessionsCompleted, totalCorrect, totalAnswered and
+        // checks all badges (streak, perfect, polyvalent, night-owl, etc.).
+        // For daily challenges, an extra matching bonus is added on top to
+        // reach the 2× multiplier.
+        const correct = updated.answers.filter(
+          (a: SessionAnswer) => a.isCorrect === true
+        ).length;
+        const total = updated.totalQuestions;
+        const isDaily =
+          isDailyChallengeSession(session) || isDailyChallengeSession(updated);
+        const ctx: SessionContext = {
+          bankId:
+            session.sourceType === "bank" ? session.sourceId : undefined,
+          difficulty: currentSessionDifficulty ?? undefined,
+          isExam: session.sourceType === "exam",
+          isDailyChallenge: isDaily,
+          startedAt: session.startedAt,
+          completedAt: new Date().toISOString(),
+        };
+        recordSession(correct, total, ctx);
+
+        if (isDaily) {
+          // --- Daily Challenge: 2× XP + localStorage flag ---
+          // The bonus equals the XP already granted by recordSession so the
+          // player ends up with 2× the normal reward.
+          const bonus = correct * 10 + (correct === total && total > 0 ? 50 : 0);
+          if (bonus > 0) {
+            addXp(bonus);
+          }
+          // Mark today as completed in localStorage so the home card can
+          // display the "Terminé aujourd'hui" badge.
+          try {
+            window.localStorage.setItem(
+              DAILY_CHALLENGE_STORAGE_PREFIX + localTodayStr(),
+              "1"
+            );
+          } catch {
+            // ignore (privacy mode / SSR)
+          }
+          toast.success(
+            `🎯 Défi du jour terminé ! +${bonus * 2} XP (bonus 2× appliqué)`
+          );
+        } else if (isAutoSubmit) {
+          toast.info("Examen soumis automatiquement (temps écoulé).");
+        } else if (correct === total && total > 0) {
+          toast.success(`🎉 Sans faute ! +${correct * 10 + 50} XP`);
+        } else {
+          toast.success(
+            `Quiz terminé ! +${correct * 10} XP (${correct}/${total})`
+          );
+        }
+
+        setSession(updated);
+        setConfirmOpen(false);
+        viewResults(session.id);
+      } else {
+        setError("Échec de la finalisation.");
+      }
+    } catch (e) {
+      console.error("Failed to complete session", e);
+      setError("Erreur lors de la finalisation.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  // Keep a ref to the latest completeSession so the timer's auto-submit
+  // effect can call it without going stale (and without re-running on
+  // every render).
+  const completeSessionRef = useRef(completeSession);
+  completeSessionRef.current = completeSession;
+
+  // --- Auto-submit when the timer hits 0 ---
+  useEffect(() => {
+    if (timeRemaining !== 0) return;
+    if (autoSubmitRef.current) return;
+    autoSubmitRef.current = true;
+    toast.error("⏰ Temps écoulé ! Soumission automatique de l'examen…");
+    void completeSessionRef.current(true);
+  }, [timeRemaining]);
 
   async function submitAnswer(answerId: string, choice: "A" | "B" | "C" | "D") {
     if (!session) return;
@@ -103,30 +302,6 @@ export function SessionView() {
     } catch (e) {
       console.error("Failed to submit answer", e);
       setError("Erreur lors de l'enregistrement.");
-    } finally {
-      setSubmitting(false);
-    }
-  }
-
-  async function completeSession() {
-    if (!session) return;
-    setSubmitting(true);
-    setError(null);
-    try {
-      const res = await fetch(`/api/sessions/${session.id}/complete`, {
-        method: "POST",
-      });
-      if (res.ok) {
-        const updated = await res.json();
-        setSession(updated);
-        setConfirmOpen(false);
-        viewResults(session.id);
-      } else {
-        setError("Échec de la finalisation.");
-      }
-    } catch (e) {
-      console.error("Failed to complete session", e);
-      setError("Erreur lors de la finalisation.");
     } finally {
       setSubmitting(false);
     }
@@ -190,6 +365,28 @@ export function SessionView() {
           </div>
         </div>
         <div className="flex items-center gap-2">
+          {/* Countdown timer — Mode Examen Chronométré Strict */}
+          {timeRemaining !== null && (
+            <Badge
+              variant="outline"
+              className={`gap-1.5 px-2.5 py-1 text-sm font-bold tabular-nums ${
+                timeRemaining < 60
+                  ? "animate-pulse border-rose-500 bg-rose-50 text-rose-700 dark:border-rose-700 dark:bg-rose-950/40 dark:text-rose-300"
+                  : timeRemaining < 300
+                    ? "border-rose-300 bg-rose-50 text-rose-700 dark:border-rose-700 dark:bg-rose-950/40 dark:text-rose-300"
+                    : "border-amber-300 bg-amber-50 text-amber-700 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-300"
+              }`}
+              title="Temps restant"
+              aria-label={`Temps restant : ${formatTime(timeRemaining)}`}
+            >
+              {timeRemaining < 300 ? (
+                <Timer className="h-3.5 w-3.5" />
+              ) : (
+                <Clock className="h-3.5 w-3.5" />
+              )}
+              {formatTime(timeRemaining)}
+            </Badge>
+          )}
           <Badge
             variant="outline"
             className={
@@ -462,7 +659,7 @@ export function SessionView() {
               Continuer le quiz
             </Button>
             <Button
-              onClick={completeSession}
+              onClick={() => completeSession()}
               disabled={submitting}
               className="gap-2"
             >

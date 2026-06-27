@@ -352,15 +352,6 @@
       "explanation": "La mémorisation (stocker les résultats des sous-problèmes) est fondamentale en programmation dynamique pour éviter les recalculs et optimiser la performance."
     },
     {
-      "question": "Quel algorithme de parcours de graphe garantit de trouver le chemin le plus court dans un graphe non pondéré?",
-      "optionA": "DFS",
-      "optionB": "BFS",
-      "optionC": "Dijkstra",
-      "optionD": "Kruskal",
-      "correctAnswer": "B",
-      "explanation": "BFS explore le graphe par niveaux, garantissant de trouver le chemin le plus court en termes d'arêtes dans un graphe non pondéré."
-    },
-    {
       "question": "Quelle est la complexité spatiale de l'algorithme de tri rapide (QuickSort) dans le pire des cas?",
       "optionA": "O(1)",
       "optionB": "O(log n)",
@@ -476,15 +467,6 @@
       "optionD": "O(n log n)",
       "correctAnswer": "B",
       "explanation": "L'extraction du minimum dans un tas binaire nécessite de réorganiser le tas pour maintenir la propriété du tas, ce qui prend un temps proportionnel à la hauteur du tas, soit O(log n)."
-    },
-    {
-      "question": "Quelle est la complexité temporelle de l'algorithme de parcours en largeur (BFS) d'un graphe représenté par une liste d'adjacence ?",
-      "optionA": "O(n)",
-      "optionB": "O(m)",
-      "optionC": "O(n + m)",
-      "optionD": "O(n²)",
-      "correctAnswer": "C",
-      "explanation": "Le parcours BFS visite chaque sommet et chaque arête exactement une fois, d'où une complexité temporelle de O(n + m) où n est le nombre de sommets et m le nombre d'arêtes."
     },
     {
       "question": "Dans une récursivité terminale (tail recursion), quelle est la condition nécessaire pour que l'optimisation de la récursion terminale soit efficace ?",

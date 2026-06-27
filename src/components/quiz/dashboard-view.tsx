@@ -31,6 +31,9 @@ import { usePrefs } from "@/lib/prefs-store";
 import { useFavorites } from "@/lib/favorites-store";
 import { useQuizStore } from "@/lib/quiz-store";
 import { StatsComparison } from "./stats-comparison";
+import { ReferralCard } from "./referral-card";
+import { AdvancedCharts } from "./advanced-charts";
+import { AnkiExportButton } from "./anki-export-button";
 
 interface SessionAnswer {
   id: string;
@@ -205,6 +208,8 @@ export function DashboardView() {
             statistiques.
           </p>
         </Card>
+        {/* Referral program — visible even before any quiz session */}
+        <ReferralCard />
       </div>
     );
 
@@ -375,8 +380,14 @@ export function DashboardView() {
             </div>
           </Card>
 
+          {/* Referral program */}
+          <ReferralCard />
+
           {/* Weekly activity chart */}
           <WeeklyChart sessions={completed} />
+
+          {/* Advanced charts (Recharts) — 30-day progression, radar, bar, pie */}
+          <AdvancedCharts sessions={completed} />
         </TabsContent>
 
         {/* === Per-Quiz Tab === */}
@@ -622,14 +633,17 @@ function FavoritesList() {
 
   return (
     <div className="space-y-3">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm text-muted-foreground">
           {favorites.length} question(s) marquée(s) comme favorite(s)
         </p>
-        <Button variant="outline" size="sm" className="gap-1.5" onClick={clearAll}>
-          <Trash2 className="h-3.5 w-3.5" />
-          Tout effacer
-        </Button>
+        <div className="flex items-center gap-2">
+          <AnkiExportButton favorites />
+          <Button variant="outline" size="sm" className="gap-1.5" onClick={clearAll}>
+            <Trash2 className="h-3.5 w-3.5" />
+            Tout effacer
+          </Button>
+        </div>
       </div>
       <div className="max-h-[600px] space-y-2 overflow-y-auto">
         {favorites.map((f) => (

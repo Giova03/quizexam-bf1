@@ -10,15 +10,6 @@
   "subject": "Réseau et télécom: OSI, TCP/IP, IPv4/IPv6, routage, protocoles (HTTP, DNS, DHCP), 4G/5G, fibre, Wi-Fi, VLAN, VPN",
   "questions": [
     {
-      "question": "Dans le modèle OSI, à quel niveau appartient le protocole TCP ?",
-      "optionA": "Niveau 2 (Couche Liaison)",
-      "optionB": "Niveau 3 (Couche Réseau)",
-      "optionC": "Niveau 4 (Couche Transport)",
-      "optionD": "Niveau 5 (Couche Session)",
-      "correctAnswer": "C",
-      "explanation": "TCP (Transmission Control Protocol) fonctionne au niveau 4 du modèle OSI, la couche Transport, qui assure la transmission fiable des données entre deux hôtes."
-    },
-    {
       "question": "Quelle est la taille minimale d'une trame Ethernet II ?",
       "optionA": "64 octets",
       "optionB": "128 octets",
@@ -341,15 +332,6 @@
       "optionD": "TKIP",
       "correctAnswer": "C",
       "explanation": "WPA3 utilise GCMP (Galois/Counter Mode Protocol) comme méthode de cryptage par défaut, qui offre une sécurité supérieure à AES-CCMP utilisé dans WPA2."
-    },
-    {
-      "question": "Dans le modèle TCP/IP, quel protocole est responsable de la résolution de noms de domaine en adresses IP ?",
-      "optionA": "DHCP",
-      "optionB": "ARP",
-      "optionC": "DNS",
-      "optionD": "RARP",
-      "correctAnswer": "C",
-      "explanation": "DNS (Domain Name System) est le protocole qui traduit les noms de domaine (comme www.example.com) en adresses IP (comme 93.184.216.34)."
     },
     {
       "question": "Quel est le protocole utilisé pour sécuriser les communications HTTP ?",

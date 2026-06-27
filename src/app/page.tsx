@@ -15,6 +15,11 @@ import { AboutView } from "@/components/quiz/about-view";
 import { AdminView } from "@/components/quiz/admin-view";
 import { SocialView } from "@/components/quiz/social-view";
 import { LeaderboardView } from "@/components/quiz/leaderboard-view";
+import { SpacedRepetitionView } from "@/components/quiz/spaced-repetition-view";
+import { AchievementsView } from "@/components/quiz/achievements-view";
+import { ForumView } from "@/components/quiz/forum-view";
+import { ProfileView } from "@/components/quiz/profile-view";
+import { CompetitionView } from "@/components/quiz/competition-view";
 import { CustomExamDialog } from "@/components/quiz/custom-exam-dialog";
 import { SearchDialog } from "@/components/quiz/search-dialog";
 import { RealtimeNotification } from "@/components/quiz/realtime-notification";
@@ -27,6 +32,7 @@ import { PreferencesApplier } from "@/components/quiz/preferences-applier";
 import { UserMenuButton, AuthDialog } from "@/components/quiz/auth-dialog";
 import { Chatbot } from "@/components/quiz/chatbot";
 import { SplashScreen } from "@/components/quiz/splash-screen";
+import { InstallPrompt } from "@/components/quiz/install-prompt";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
@@ -48,6 +54,9 @@ import {
   Sparkles,
   Search,
   Trophy,
+  Award,
+  MessagesSquare,
+  Swords,
 } from "lucide-react";
 
 export default function Home() {
@@ -59,12 +68,43 @@ export default function Home() {
     openAdmin,
     openSocial,
     openLeaderboard,
+    openAchievements,
+    openForum,
+    openCompetition,
     startSession,
   } = useQuizStore();
   const { t } = useTranslation();
   const [notifOpen, setNotifOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [authOpen, setAuthOpen] = useState(false);
+
+  // Capture referral code from ?ref=CODE URL param on first render.
+  // Pre-fills the signup form so referred users can complete signup with one click.
+  // Using a lazy initializer (runs once on mount) avoids setState-in-effect lint.
+  const [prefilledReferral] = useState<string | null>(() => {
+    if (typeof window === "undefined") return null;
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get("ref");
+    return ref && /^[A-Za-z0-9]{4,12}$/.test(ref) ? ref.toUpperCase() : null;
+  });
+
+  // Auto-open the auth dialog when arriving from a referral link so the user
+  // immediately sees the prefilled signup form.
+  const [authOpen, setAuthOpen] = useState<boolean>(!!prefilledReferral);
+
+  // Clean the URL (avoid accidentally sharing the referral code in links).
+  // This effect does NOT call setState — it only updates an external system
+  // (the browser URL via history.replaceState), which is an allowed pattern.
+  useEffect(() => {
+    if (!prefilledReferral) return;
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.delete("ref");
+      window.history.replaceState({}, "", url.toString());
+    } catch {
+      // ignore (SSR / non-browser)
+    }
+  }, [prefilledReferral]);
+
   const [customExamOpen, setCustomExamOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const { data: session, status } = useSession();
@@ -150,7 +190,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <AuthDialog open={authOpen} onOpenChange={setAuthOpen} />
+        <AuthDialog
+          open={authOpen}
+          onOpenChange={setAuthOpen}
+          initialReferralCode={prefilledReferral ?? undefined}
+        />
       </div>
     );
   }
@@ -259,6 +303,38 @@ export default function Home() {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button
+                      variant={view === "forum" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openForum}
+                    >
+                      <MessagesSquare className="h-4 w-4" />
+                      <span className="hidden lg:inline">Forum</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Forum par matière</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "competition" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5 text-rose-600"
+                      onClick={openCompetition}
+                    >
+                      <Swords className="h-4 w-4" />
+                      <span className="hidden lg:inline">Compétition</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Mode compétition en temps réel</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
                       variant={view === "leaderboard" ? "secondary" : "ghost"}
                       size="sm"
                       className="gap-1.5"
@@ -269,6 +345,22 @@ export default function Home() {
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>Classement général</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "achievements" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openAchievements}
+                    >
+                      <Award className="h-4 w-4" />
+                      <span className="hidden lg:inline">Succès</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Badges &amp; succès</TooltipContent>
                 </Tooltip>
               </TooltipProvider>
               <TooltipProvider>
@@ -441,6 +533,24 @@ export default function Home() {
               <span className="text-xs">Communauté</span>
             </Button>
             <Button
+              variant={view === "forum" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openForum}
+            >
+              <MessagesSquare className="h-4 w-4" />
+              <span className="text-xs">Forum</span>
+            </Button>
+            <Button
+              variant={view === "competition" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5 text-rose-600"
+              onClick={openCompetition}
+            >
+              <Swords className="h-4 w-4" />
+              <span className="text-xs">Compétition</span>
+            </Button>
+            <Button
               variant={view === "leaderboard" ? "secondary" : "ghost"}
               size="sm"
               className="flex-1 gap-1.5"
@@ -448,6 +558,15 @@ export default function Home() {
             >
               <Trophy className="h-4 w-4" data-testid="trophy-icon" />
               <span className="text-xs">Classement</span>
+            </Button>
+            <Button
+              variant={view === "achievements" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openAchievements}
+            >
+              <Award className="h-4 w-4" />
+              <span className="text-xs">Succès</span>
             </Button>
             <Button
               variant={view === "about" ? "secondary" : "ghost"}
@@ -485,6 +604,11 @@ export default function Home() {
         {view === "admin" && <AdminView />}
         {view === "social" && <SocialView />}
         {view === "leaderboard" && <LeaderboardView />}
+        {view === "spaced-repetition" && <SpacedRepetitionView />}
+        {view === "achievements" && <AchievementsView />}
+        {view === "forum" && <ForumView />}
+        {view === "profile" && <ProfileView />}
+        {view === "competition" && <CompetitionView />}
       </main>
 
       {/* Footer */}
@@ -541,6 +665,9 @@ export default function Home() {
 
       {/* Real-time floating notifications */}
       <RealtimeNotification />
+
+      {/* PWA install banner (mobile / non-installed only) */}
+      <InstallPrompt />
 
       {/* Chatbot IA flottant */}
       <Chatbot />

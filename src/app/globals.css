@@ -200,3 +200,160 @@ p, h1, h2, h3, h4, h5, h6 {
     font-size: 16px !important;
   }
 }
+
+/* === Accessibility modes (P9) ===
+ * Applied by PreferencesApplier as classes/attributes on <html>.
+ * Keep specificity low so user content remains readable but adapts.
+ */
+
+/* High contrast mode: pure black/white with thick borders and strong focus rings. */
+html.high-contrast {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0 0 0);
+  --primary: oklch(0 0 0);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0 0);
+  --secondary-foreground: oklch(0 0 0);
+  --muted: oklch(0.95 0 0);
+  --muted-foreground: oklch(0.15 0 0);
+  --accent: oklch(0.9 0 0);
+  --accent-foreground: oklch(0 0 0);
+  --destructive: oklch(0.4 0.18 25);
+  --border: oklch(0 0 0);
+  --input: oklch(0 0 0);
+  --ring: oklch(0 0 0);
+  filter: contrast(1.15);
+}
+html.high-contrast.dark {
+  --background: oklch(0 0 0);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.08 0 0);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(1 0 0);
+  --primary-foreground: oklch(0 0 0);
+  --secondary: oklch(0.2 0 0);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.2 0 0);
+  --muted-foreground: oklch(0.9 0 0);
+  --accent: oklch(0.25 0 0);
+  --accent-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0);
+  --input: oklch(1 0 0);
+  --ring: oklch(1 0 0);
+}
+html.high-contrast * {
+  border-color: var(--border) !important;
+}
+html.high-contrast a,
+html.high-contrast button {
+  text-decoration: underline;
+}
+html.high-contrast :focus-visible {
+  outline: 3px solid currentColor !important;
+  outline-offset: 2px !important;
+}
+
+/* Large text mode: bump base font size + scaling for headings. */
+html.large-text {
+  font-size: 18px;
+}
+html.large-text h1 { font-size: 1.85rem; }
+html.large-text h2 { font-size: 1.6rem; }
+html.large-text h3 { font-size: 1.35rem; }
+html.large-text h4 { font-size: 1.2rem; }
+html.large-text .text-xs { font-size: 0.85rem !important; }
+html.large-text .text-sm { font-size: 1rem !important; }
+html.large-text .text-base { font-size: 1.1rem !important; }
+
+/* Reduce motion: disable all CSS animations + transitions. */
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Honour the user's OS-level prefers-reduced-motion setting too. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Dyslexia-friendly font: use a slab/serif fallback stack that many dyslexic
+ * readers find easier to scan than the default sans-serif. Loads from system
+ * fonts (no network fetch), so it works offline. */
+html[data-dyslexia] body,
+html[data-dyslexia] p,
+html[data-dyslexia] li,
+html[data-dyslexia] span,
+html[data-dyslexia] a,
+html[data-dyslexia] button,
+html[data-dyslexia] input,
+html[data-dyslexia] textarea,
+html[data-dyslexia] label,
+html[data-dyslexia] h1,
+html[data-dyslexia] h2,
+html[data-dyslexia] h3,
+html[data-dyslexia] h4,
+html[data-dyslexia] h5,
+html[data-dyslexia] h6 {
+  font-family: "Comic Sans MS", "Comic Neue", "Lexend", "Verdana", "Tahoma",
+    "Trebuchet MS", system-ui, sans-serif !important;
+  letter-spacing: 0.03em;
+  word-spacing: 0.08em;
+  line-height: 1.6;
+}
+
+/* Screen-reader hints mode: surfaces hidden labels + adds visible hints
+ * for elements that are normally announced only by screen readers. */
+html[data-sr-hints] .sr-only {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 0.25rem !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  clip-path: none !important;
+  white-space: normal !important;
+  border: 1px dashed var(--border) !important;
+  background: var(--muted) !important;
+  color: var(--foreground) !important;
+  font-size: 0.7rem !important;
+}
+html[data-sr-hints] [aria-label]::after {
+  content: " [aria: " attr(aria-label) "]";
+  font-size: 0.7rem;
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+
+/* Custom scrollbar styling for long lists (used by max-h-96 overflow-y-auto) */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}

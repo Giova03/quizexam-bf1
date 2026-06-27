@@ -305,15 +305,6 @@
       "optionD": "Médiane = 0.5",
       "correctAnswer": "A",
       "explanation": "Pour une loi normale N(μ,σ²), la médiane est égale à μ. Ici μ=0, donc la médiane est 0. La loi normale est symétrique autour de sa moyenne, qui coïncide avec la médiane."
-    },
-    {
-      "question": "On réalise une régression linéaire simple entre deux variables X et Y. On obtient un coefficient de détermination R²=0.64. Quelle est la corrélation linéaire entre X et Y?",
-      "optionA": "r = 0.8",
-      "optionB": "r = -0.8",
-      "optionC": "r = 0.64",
-      "optionD": "r = 0.4096",
-      "correctAnswer": "A",
-      "explanation": "Le coefficient de détermination R² est le carré du coefficient de corrélation linéaire r. Donc r = ±√R² = ±√0.64 = ±0.8. Sans information supplémentaire sur la direction de la relation, on ne peut pas déterminer le signe de r, mais la valeur absolue est 0.8."
     }
   ]
 }

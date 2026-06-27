@@ -559,15 +559,6 @@
       "explanation": "La prise de la Bastille a eu lieu le 14 juillet 1789."
     },
     {
-      "question": "En quelle année a commencé la Première Guerre mondiale ?",
-      "optionA": "1914",
-      "optionB": "1918",
-      "optionC": "1939",
-      "optionD": "1905",
-      "correctAnswer": "A",
-      "explanation": "La Première Guerre mondiale a commencé en 1914."
-    },
-    {
       "question": "En quelle année a fini la Seconde Guerre mondiale ?",
       "optionA": "1945",
       "optionB": "1939",

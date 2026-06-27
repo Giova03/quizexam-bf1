@@ -97,15 +97,6 @@
       "explanation": "Les émissions de gaz à effet de serre sont la principale cause du réchauffement climatique."
     },
     {
-      "question": "Quel est le plus long fleuve du monde ?",
-      "optionA": "Nil",
-      "optionB": "Amazone",
-      "optionC": "Yangtsé",
-      "optionD": "Mississippi",
-      "correctAnswer": "A",
-      "explanation": "Le Nil est souvent considéré comme le plus long fleuve du monde."
-    },
-    {
       "question": "Quelle est la montagne la plus haute du monde ?",
       "optionA": "Mont Kilimandjaro",
       "optionB": "Mont Everest",
@@ -185,15 +176,6 @@
       "optionD": "Océan Pacifique",
       "correctAnswer": "D",
       "explanation": "L'océan Pacifique est le plus grand océan du monde."
-    },
-    {
-      "question": "Quelle est la capitale de l'Australie ?",
-      "optionA": "Sydney",
-      "optionB": "Melbourne",
-      "optionC": "Canberra",
-      "optionD": "Brisbane",
-      "correctAnswer": "C",
-      "explanation": "Canberra est la capitale de l'Australie."
     },
     {
       "question": "Quel pays a la plus grande superficie terrestre ?",

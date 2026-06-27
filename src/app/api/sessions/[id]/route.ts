@@ -23,7 +23,20 @@ export async function GET(
         { status: 404 }
       );
     }
-    return NextResponse.json(session);
+
+    // For exam-backed sessions, surface the exam's durationMin so the
+    // client can display a strict countdown timer (Mode Examen
+    // Chronométré). For bank sessions, durationMin stays null.
+    let durationMin: number | null = null;
+    if (session.sourceType === "exam") {
+      const exam = await db.exam.findUnique({
+        where: { id: session.sourceId },
+        select: { durationMin: true },
+      });
+      durationMin = exam?.durationMin ?? null;
+    }
+
+    return NextResponse.json({ ...session, durationMin });
   } catch (error) {
     console.error("Failed to load session:", error);
     return NextResponse.json(

@@ -48,8 +48,15 @@ import {
   AlertTriangle,
   Star,
   Send,
+  FileText,
+  ShieldAlert,
+  Sparkles,
 } from "lucide-react";
 import { toast } from "sonner";
+import { PdfUploadDialog } from "@/components/quiz/pdf-upload-dialog";
+import { AdminAnalytics } from "@/components/quiz/admin-analytics";
+import { ModerationPanel } from "@/components/quiz/moderation-panel";
+import { AiQuestionGenerator } from "@/components/quiz/ai-question-generator";
 
 interface AdminStats {
   counts: {
@@ -95,6 +102,7 @@ interface Question {
   correctAnswer2?: string | null;
   explanation: string;
   order: number;
+  difficulty?: string;
 }
 
 interface BankWithCount {
@@ -116,6 +124,7 @@ export function AdminView() {
   const [activeTab, setActiveTab] = useState("overview");
   const [newExamOpen, setNewExamOpen] = useState(false);
   const [broadcastOpen, setBroadcastOpen] = useState(false);
+  const [pdfUploadOpen, setPdfUploadOpen] = useState(false);
 
   const loadStats = useCallback(async () => {
     setLoading(true);
@@ -172,13 +181,23 @@ export function AdminView() {
             Gérez les banques, questions, utilisateurs et statistiques
           </p>
         </div>
-        <Button
-          onClick={() => setNewBankOpen(true)}
-          className="gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
-        >
-          <Plus className="h-4 w-4" />
-          Nouvelle banque
-        </Button>
+        <div className="flex flex-wrap gap-2">
+          <Button
+            onClick={() => setPdfUploadOpen(true)}
+            variant="outline"
+            className="gap-2 border-emerald-300 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-800 dark:text-emerald-300 dark:hover:bg-emerald-950/30"
+          >
+            <FileText className="h-4 w-4" />
+            Upload PDF
+          </Button>
+          <Button
+            onClick={() => setNewBankOpen(true)}
+            className="gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
+          >
+            <Plus className="h-4 w-4" />
+            Nouvelle banque
+          </Button>
+        </div>
       </div>
 
       {/* Navigation par onglets - boutons simples pour fiabilité maximale */}
@@ -192,6 +211,9 @@ export function AdminView() {
           { id: "exams", label: "Examens", icon: GraduationCap },
           { id: "exports", label: "Export", icon: Download },
           { id: "broadcast", label: "Broadcast", icon: Mail },
+          { id: "analytics", label: "Analytics", icon: BarChart3 },
+          { id: "moderation", label: "Modération", icon: ShieldAlert },
+          { id: "ai-generator", label: "Générateur IA", icon: Sparkles },
         ].map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -332,6 +354,32 @@ export function AdminView() {
         {/* === Banks & QCM Tab === */}
         {activeTab === "banks" && (
         <div className="space-y-4">
+          <Card className="border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50 p-4 dark:border-emerald-900/50 dark:from-emerald-950/20 dark:to-teal-950/20">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">
+                  <FileText className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="font-semibold text-emerald-800 dark:text-emerald-200">
+                    Générer des QCM depuis un PDF
+                  </p>
+                  <p className="text-sm text-emerald-700/80 dark:text-emerald-300/80">
+                    Importez un document, l&apos;IA génère des questions que vous
+                    pouvez vérifier et ajouter à une banque.
+                  </p>
+                </div>
+              </div>
+              <Button
+                onClick={() => setPdfUploadOpen(true)}
+                className="gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
+              >
+                <FileText className="h-4 w-4" />
+                Upload PDF
+              </Button>
+            </div>
+          </Card>
+
           <Card className="overflow-hidden">
             <div className="border-b px-5 py-4">
               <h2 className="flex items-center gap-2 font-semibold">
@@ -393,6 +441,27 @@ export function AdminView() {
           <BroadcastPanel open={broadcastOpen} onOpenChange={setBroadcastOpen} />
         </div>
       )}
+
+        {/* === Analytics Tab === */}
+        {activeTab === "analytics" && (
+        <div className="space-y-4">
+          <AdminAnalytics />
+        </div>
+      )}
+
+        {/* === Moderation Tab === */}
+        {activeTab === "moderation" && (
+        <div className="space-y-4">
+          <ModerationPanel />
+        </div>
+      )}
+
+        {/* === AI Generator Tab === */}
+        {activeTab === "ai-generator" && (
+        <div className="space-y-4">
+          <AiQuestionGenerator />
+        </div>
+      )}
       
 
       {/* Bank questions management dialog */}
@@ -422,6 +491,13 @@ export function AdminView() {
           setNewExamOpen(false);
           toast.success("Examen créé avec succès");
         }}
+      />
+
+      {/* PDF upload + QCM generation dialog */}
+      <PdfUploadDialog
+        open={pdfUploadOpen}
+        onOpenChange={setPdfUploadOpen}
+        onSaved={() => loadStats()}
       />
     </div>
   );
@@ -462,11 +538,49 @@ function StatCard({
 }
 
 // ===== Visitors Statistics =====
+
+const ROLE_OPTIONS = [
+  { value: "VISITOR", label: "Visiteur" },
+  { value: "CONTRIBUTOR", label: "Contributeur" },
+  { value: "MODERATOR", label: "Modérateur" },
+  { value: "EXAMINER", label: "Examinateur" },
+  { value: "ADMIN", label: "Administrateur" },
+] as const;
+
+const ROLE_BADGE_STYLES: Record<string, string> = {
+  VISITOR:
+    "border-slate-300 text-slate-600 dark:border-slate-700 dark:text-slate-400",
+  CONTRIBUTOR:
+    "border-sky-300 text-sky-700 dark:border-sky-800 dark:text-sky-300",
+  MODERATOR:
+    "border-violet-300 text-violet-700 dark:border-violet-800 dark:text-violet-300",
+  EXAMINER:
+    "border-teal-300 text-teal-700 dark:border-teal-800 dark:text-teal-300",
+  ADMIN: "border-amber-300 text-amber-700 dark:border-amber-800 dark:text-amber-300",
+};
+
+const ROLE_AVATAR_STYLES: Record<string, string> = {
+  VISITOR: "bg-gradient-to-br from-emerald-500 to-teal-600",
+  CONTRIBUTOR: "bg-gradient-to-br from-sky-500 to-blue-600",
+  MODERATOR: "bg-gradient-to-br from-violet-500 to-purple-600",
+  EXAMINER: "bg-gradient-to-br from-teal-500 to-cyan-600",
+  ADMIN: "bg-gradient-to-br from-amber-500 to-orange-600",
+};
+
+const ROLE_LABELS_FR: Record<string, string> = {
+  VISITOR: "Visiteur",
+  CONTRIBUTOR: "Contributeur",
+  MODERATOR: "Modérateur",
+  EXAMINER: "Examinateur",
+  ADMIN: "Administrateur",
+};
+
 function VisitorsStats() {
   const [users, setUsers] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [updatingId, setUpdatingId] = useState<string | null>(null);
 
-  useEffect(() => {
+  const load = useCallback(() => {
     fetch("/api/admin/users")
       .then((r) => (r.ok ? r.json() : []))
       .then((d) => setUsers(Array.isArray(d) ? d : []))
@@ -474,30 +588,83 @@ function VisitorsStats() {
       .finally(() => setLoading(false));
   }, []);
 
+  useEffect(() => {
+    load();
+  }, [load]);
+
+  const handleRoleChange = async (userId: string, newRole: string) => {
+    setUpdatingId(userId);
+    try {
+      const res = await fetch("/api/admin/users/role", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId, role: newRole }),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || "Échec de la mise à jour");
+      }
+      const updated = await res.json();
+      setUsers((prev) =>
+        prev.map((u) => (u.id === userId ? { ...u, role: updated.role } : u))
+      );
+      toast.success(`Rôle mis à jour : ${ROLE_LABELS_FR[updated.role] ?? updated.role}`);
+    } catch (e) {
+      console.error(e);
+      toast.error(e instanceof Error ? e.message : "Erreur");
+    } finally {
+      setUpdatingId(null);
+    }
+  };
+
   if (loading)
     return <Skeleton className="h-64 rounded-xl" />;
 
   const totalUsers = users.length;
-  const visitors = users.filter((u) => u.role === "VISITOR");
-  const admins = users.filter((u) => u.role === "ADMIN");
+  // Role distribution
+  const roleCounts: Record<string, number> = {
+    VISITOR: 0,
+    CONTRIBUTOR: 0,
+    MODERATOR: 0,
+    EXAMINER: 0,
+    ADMIN: 0,
+  };
+  for (const u of users) {
+    const r = u.role ?? "VISITOR";
+    roleCounts[r] = (roleCounts[r] ?? 0) + 1;
+  }
 
   return (
     <div className="space-y-4">
-      <div className="grid gap-3 sm:grid-cols-3">
+      {/* Top stats: total + role distribution */}
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <Card className="p-4">
           <Users className="h-5 w-5 text-sky-600" />
           <p className="mt-2 text-2xl font-bold">{totalUsers}</p>
           <p className="text-xs text-muted-foreground">Total inscrits</p>
         </Card>
-        <Card className="p-4">
-          <Users className="h-5 w-5 text-emerald-600" />
-          <p className="mt-2 text-2xl font-bold">{visitors.length}</p>
-          <p className="text-xs text-muted-foreground">Visiteurs</p>
-        </Card>
-        <Card className="p-4">
-          <ShieldCheck className="h-5 w-5 text-amber-600" />
-          <p className="mt-2 text-2xl font-bold">{admins.length}</p>
-          <p className="text-xs text-muted-foreground">Administrateurs</p>
+        <Card className="p-4 sm:col-span-1 lg:col-span-2">
+          <p className="mb-3 text-xs font-medium text-muted-foreground">
+            Distribution des rôles
+          </p>
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
+            {ROLE_OPTIONS.map((r) => (
+              <div
+                key={r.value}
+                className="flex flex-col items-center rounded-lg border bg-card/50 p-2 text-center"
+              >
+                <span className="text-lg font-bold">
+                  {roleCounts[r.value] ?? 0}
+                </span>
+                <Badge
+                  variant="outline"
+                  className={`mt-1 text-[10px] ${ROLE_BADGE_STYLES[r.value] ?? ""}`}
+                >
+                  {r.label}
+                </Badge>
+              </div>
+            ))}
+          </div>
         </Card>
       </div>
 
@@ -505,51 +672,84 @@ function VisitorsStats() {
         <div className="border-b px-5 py-4">
           <h2 className="flex items-center gap-2 font-semibold">
             <Users className="h-4 w-4 text-sky-600" />
-            Liste des visiteurs ({users.length})
+            Liste des utilisateurs ({users.length})
           </h2>
+          <p className="text-sm text-muted-foreground">
+            Changez le rôle de chaque utilisateur avec le menu déroulant.
+          </p>
         </div>
-        <div className="max-h-[400px] divide-y overflow-y-auto">
+        <div className="max-h-[500px] divide-y overflow-y-auto">
           {users.length === 0 && (
             <p className="p-8 text-center text-sm text-muted-foreground">
-              Aucun visiteur inscrit pour le moment.
+              Aucun utilisateur inscrit pour le moment.
             </p>
           )}
-          {users.map((u) => (
-            <div key={u.id} className="flex items-center gap-3 px-5 py-3">
-              <span
-                className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white ${
-                  u.role === "ADMIN"
-                    ? "bg-gradient-to-br from-amber-500 to-orange-600"
-                    : "bg-gradient-to-br from-emerald-500 to-teal-600"
-                }`}
+          {users.map((u) => {
+            const role = u.role ?? "VISITOR";
+            const isUpdating = updatingId === u.id;
+            return (
+              <div
+                key={u.id}
+                className="flex flex-col gap-2 px-5 py-3 sm:flex-row sm:items-center sm:gap-3"
               >
-                {(u.name ?? u.email).charAt(0).toUpperCase()}
-              </span>
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-medium">{u.name}</p>
-                <p className="truncate text-xs text-muted-foreground">
-                  {u.email}
-                </p>
-              </div>
-              <div className="text-right">
-                {u.role === "ADMIN" && (
-                  <Badge variant="outline" className="border-amber-300 text-amber-700">
-                    ADMIN
+                <span
+                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white ${
+                    ROLE_AVATAR_STYLES[role] ?? ROLE_AVATAR_STYLES.VISITOR
+                  }`}
+                >
+                  {(u.name ?? u.email).charAt(0).toUpperCase()}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-medium">{u.name}</p>
+                  <p className="truncate text-xs text-muted-foreground">
+                    {u.email}
+                  </p>
+                  <p className="text-[10px] text-muted-foreground/70 sm:hidden">
+                    {u._count?.sessions ?? 0} session(s) ·{" "}
+                    {new Date(u.createdAt).toLocaleDateString("fr-FR", {
+                      day: "2-digit",
+                      month: "short",
+                      year: "numeric",
+                    })}
+                  </p>
+                </div>
+                <div className="hidden text-right sm:block">
+                  <p className="text-xs text-muted-foreground">
+                    {u._count?.sessions ?? 0} session(s)
+                  </p>
+                  <p className="text-[10px] text-muted-foreground/70">
+                    {new Date(u.createdAt).toLocaleDateString("fr-FR", {
+                      day: "2-digit",
+                      month: "short",
+                      year: "numeric",
+                    })}
+                  </p>
+                </div>
+                {/* Role badge + change dropdown */}
+                <div className="flex shrink-0 items-center gap-2">
+                  <Badge
+                    variant="outline"
+                    className={`hidden md:inline-flex ${ROLE_BADGE_STYLES[role] ?? ""}`}
+                  >
+                    {ROLE_LABELS_FR[role] ?? role}
                   </Badge>
-                )}
-                <p className="mt-1 text-xs text-muted-foreground">
-                  {u._count?.sessions ?? 0} session(s)
-                </p>
-                <p className="text-[10px] text-muted-foreground/70">
-                  {new Date(u.createdAt).toLocaleDateString("fr-FR", {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric",
-                  })}
-                </p>
+                  <select
+                    value={role}
+                    disabled={isUpdating}
+                    onChange={(e) => handleRoleChange(u.id, e.target.value)}
+                    aria-label={`Changer le rôle de ${u.name ?? u.email}`}
+                    className="h-8 rounded-md border border-input bg-background px-2 py-1 text-xs font-medium ring-offset-background focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    {ROLE_OPTIONS.map((r) => (
+                      <option key={r.value} value={r.value}>
+                        {r.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Card>
     </div>
@@ -755,7 +955,22 @@ function BankQuestionsDialog({
                       {i + 1}
                     </span>
                     <div className="min-w-0 flex-1">
-                      <p className="break-words text-sm font-medium">{q.question}</p>
+                      <div className="flex items-start justify-between gap-2">
+                        <p className="break-words text-sm font-medium">{q.question}</p>
+                        {q.difficulty && (
+                          <span
+                            className={`shrink-0 rounded-full border px-2 py-0.5 text-[10px] font-semibold ${
+                              q.difficulty === "easy"
+                                ? "border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-300"
+                                : q.difficulty === "hard"
+                                  ? "border-rose-300 bg-rose-50 text-rose-700 dark:border-rose-800 dark:bg-rose-950/30 dark:text-rose-300"
+                                  : "border-amber-300 bg-amber-50 text-amber-700 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-300"
+                            }`}
+                          >
+                            {q.difficulty === "easy" ? "Facile" : q.difficulty === "hard" ? "Difficile" : "Moyen"}
+                          </span>
+                        )}
+                      </div>
                       <div className="mt-1 flex flex-col gap-1 text-xs">
                         {["A", "B", "C", "D"].map((L) => {
                           const text =
@@ -872,6 +1087,9 @@ function QuestionEditor({
   const [d, setD] = useState(question?.optionD ?? "");
   const [correct, setCorrect] = useState(question?.correctAnswer ?? "A");
   const [expl, setExpl] = useState(question?.explanation ?? "");
+  const [difficulty, setDifficulty] = useState<"easy" | "medium" | "hard">(
+    (question?.difficulty as "easy" | "medium" | "hard") ?? "medium"
+  );
   const [saving, setSaving] = useState(false);
 
   // Validation
@@ -898,6 +1116,7 @@ function QuestionEditor({
         optionD: d.trim(),
         correctAnswer: correct,
         explanation: expl.trim(),
+        difficulty,
       };
       const res = await fetch("/api/admin/questions", {
         method: question ? "PATCH" : "POST",
@@ -1001,6 +1220,36 @@ function QuestionEditor({
 
           <div className="rounded-lg bg-emerald-50 p-2 text-xs text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-300">
             ✓ Réponse correcte : <strong>{correct}</strong>
+          </div>
+
+          {/* Difficulty selector */}
+          <div>
+            <Label className="text-sm font-semibold">Niveau de difficulté</Label>
+            <p className="mb-2 mt-0.5 text-xs text-muted-foreground">
+              Utilisé par le filtre de difficulté dans la vue banque et le
+              démarrage de quiz.
+            </p>
+            <div className="grid grid-cols-3 gap-2">
+              {([
+                { value: "easy", label: "Facile", cls: "border-emerald-500 bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-300" },
+                { value: "medium", label: "Moyen", cls: "border-amber-500 bg-amber-50 text-amber-700 dark:bg-amber-950/30 dark:text-amber-300" },
+                { value: "hard", label: "Difficile", cls: "border-rose-500 bg-rose-50 text-rose-700 dark:bg-rose-950/30 dark:text-rose-300" },
+              ] as const).map((opt) => (
+                <button
+                  key={opt.value}
+                  type="button"
+                  onClick={() => setDifficulty(opt.value)}
+                  className={`rounded-lg border-2 px-3 py-2 text-sm font-medium transition-all hover:scale-[1.02] ${
+                    difficulty === opt.value
+                      ? `${opt.cls} ring-2 ring-offset-1`
+                      : "border-border bg-muted/30 text-muted-foreground hover:bg-muted/60"
+                  }`}
+                  aria-pressed={difficulty === opt.value}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Explanation */}

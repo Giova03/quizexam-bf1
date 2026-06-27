@@ -1,0 +1,88 @@
+import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import {
+  getRoom,
+  serializeRoom,
+  type Participant,
+} from "@/lib/competition-store";
+
+export const dynamic = "force-dynamic";
+
+async function getSessionUser() {
+  const session = await getServerSession(authOptions);
+  if (!session?.user) return null;
+  const user = session.user as { id?: string; name?: string | null; email?: string | null };
+  return {
+    id: user.id ?? "anonymous",
+    name: user.name ?? user.email ?? "Anonyme",
+  };
+}
+
+/**
+ * POST /api/competition/join
+ * Body: { code, name? }
+ * Joins an existing room as a participant. If already a participant, returns
+ * the current state.
+ */
+export async function POST(request: Request) {
+  const user = await getSessionUser();
+  if (!user) {
+    return NextResponse.json({ error: "Authentification requise" }, { status: 401 });
+  }
+
+  let body: { code?: unknown; name?: unknown };
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Corps de requête invalide" }, { status: 400 });
+  }
+
+  const code = (typeof body.code === "string" ? body.code : "").toUpperCase();
+  if (!code) {
+    return NextResponse.json({ error: "code est requis" }, { status: 400 });
+  }
+
+  const room = getRoom(code);
+  if (!room) {
+    return NextResponse.json({ error: "Salon introuvable" }, { status: 404 });
+  }
+
+  // Use provided name or fall back to session name.
+  const displayName =
+    typeof body.name === "string" && body.name.trim().length > 0
+      ? body.name.trim().slice(0, 60)
+      : user.name;
+
+  if (!room.participants.has(user.id)) {
+    // Reject joins after the game has started (to keep scoring fair).
+    if (room.status === "playing") {
+      return NextResponse.json(
+        { error: "La compétition a déjà commencé. Attendez la prochaine manche." },
+        { status: 400 }
+      );
+    }
+    if (room.status === "finished") {
+      return NextResponse.json(
+        { error: "Cette compétition est terminée." },
+        { status: 400 }
+      );
+    }
+    const participant: Participant = {
+      id: user.id,
+      name: displayName,
+      score: 0,
+      answeredCount: 0,
+      answers: {},
+      answeredCurrent: false,
+      joinedAt: Date.now(),
+    };
+    room.participants.set(user.id, participant);
+  } else {
+    // Update display name if the user is rejoining.
+    const existing = room.participants.get(user.id)!;
+    existing.name = displayName;
+  }
+
+  return NextResponse.json(serializeRoom(room, user.id));
+}

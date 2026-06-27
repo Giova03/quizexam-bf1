@@ -15,7 +15,7 @@
       "optionC": "Le grognement",
       "optionD": "Le meuglement",
       "correctAnswer": "A",
-      "explanation": "Le lion rugit."
+      "explanation": "La réponse correcte est « Le rugissement ». Le lion rugit. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du lion  »."
     },
     {
       "question": "Comment appelle-t-on la femelle du lion ?",
@@ -42,7 +42,7 @@
       "optionC": "Le jappement",
       "optionD": "Le aboiement",
       "correctAnswer": "A",
-      "explanation": "Le loup hurle."
+      "explanation": "La réponse correcte est « Le hurlement ». Le loup hurle. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du loup  »."
     },
     {
       "question": "Comment appelle-t-on la femelle du loup ?",
@@ -69,7 +69,7 @@
       "optionC": "Le grognement",
       "optionD": "Le jappement",
       "correctAnswer": "A",
-      "explanation": "Le chien aboie."
+      "explanation": "La réponse correcte est « L'aboiement ». Le chien aboie. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du chien  »."
     },
     {
       "question": "Comment appelle-t-on la femelle du chien ?",
@@ -96,7 +96,7 @@
       "optionC": "Le rugissement",
       "optionD": "Le sifflement",
       "correctAnswer": "A",
-      "explanation": "Le chat miaule."
+      "explanation": "La réponse correcte est « Le miaulement ». Le chat miaule. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du chat  »."
     },
     {
       "question": "Comment appelle-t-on la femelle du chat ?",
@@ -123,7 +123,7 @@
       "optionC": "Le braiment",
       "optionD": "Le cri",
       "correctAnswer": "A",
-      "explanation": "Le cheval hennit."
+      "explanation": "La réponse correcte est « Le hennissement ». Le cheval hennit. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du cheval  »."
     },
     {
       "question": "Comment appelle-t-on la femelle du cheval ?",
@@ -204,7 +204,7 @@
       "optionC": "Le criaillement",
       "optionD": "Le grognement",
       "correctAnswer": "A",
-      "explanation": "Le mouton bêle."
+      "explanation": "La réponse correcte est « Le bêlement ». Le mouton bêle. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du mouton  »."
     },
     {
       "question": "Comment appelle-t-on la femelle du mouton ?",
@@ -231,7 +231,7 @@
       "optionC": "Le chant",
       "optionD": "Le criaillement",
       "correctAnswer": "A",
-      "explanation": "La poule caquète."
+      "explanation": "La réponse correcte est « La caquètement ». La poule caquète. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri de la poule  »."
     },
     {
       "question": "Quel est le cri du coq ?",
@@ -258,7 +258,7 @@
       "optionC": "Le meuglement",
       "optionD": "Le hurlement",
       "correctAnswer": "A",
-      "explanation": "L'âne brait."
+      "explanation": "La réponse correcte est « Le braiment ». L'âne brait. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri de l'âne  »."
     },
     {
       "question": "Comment appelle-t-on la femelle de l'âne ?",
@@ -303,7 +303,7 @@
       "optionC": "Le murmure",
       "optionD": "Le souffle",
       "correctAnswer": "A",
-      "explanation": "Le serpent siffle."
+      "explanation": "La réponse correcte est « Le sifflement ». Le serpent siffle. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du serpent  »."
     },
     {
       "question": "Quel est le cri de l'éléphant ?",
@@ -312,7 +312,7 @@
       "optionC": "Le trompement",
       "optionD": "Le cri",
       "correctAnswer": "A",
-      "explanation": "L'éléphant barrit."
+      "explanation": "La réponse correcte est « Le barrissement ». L'éléphant barrit. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri de l'éléphant  »."
     },
     {
       "question": "Quel est le cri de la grenouille ?",
@@ -330,7 +330,7 @@
       "optionC": "Le chant",
       "optionD": "Le sifflement",
       "correctAnswer": "A",
-      "explanation": "Le corbeau croasse."
+      "explanation": "La réponse correcte est « Le croassement ». Le corbeau croasse. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du corbeau  »."
     },
     {
       "question": "Quel est le cri de la cigogne ?",

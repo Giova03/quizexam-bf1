@@ -387,15 +387,6 @@
       "explanation": "L'accommodation est le processus par lequel l'individu modifie ses schèmes existants pour intégrer de nouvelles informations qui ne correspondent pas à ses connaissances antérieures."
     },
     {
-      "question": "Dans la théorie psychanalytique freudienne, quel mécanisme de défense consiste à attribuer à d'autres personnes ses propres pensées ou désirs inacceptables?",
-      "optionA": "Le déplacement",
-      "optionB": "La projection",
-      "optionC": "La rationalisation",
-      "optionD": "La sublimation",
-      "correctAnswer": "B",
-      "explanation": "La projection est un mécanisme de défense où une personne attribue à d'autres ses propres pulsions, pensées ou désirs qu'elle refuse de reconnaître comme étant les siens."
-    },
-    {
       "question": "Quelle approche théorique en psychologie sociale explique le comportement de conformité comme une réponse à la pression normative du groupe?",
       "optionA": "La théorie de l'identité sociale",
       "optionB": "La théorie de l'auto-catégorisation",
@@ -540,15 +531,6 @@
       "explanation": "L'entretien diagnostique structuré utilise des questions standardisées et un système de cotation défini pour assurer la fiabilité et la validité du diagnostic."
     },
     {
-      "question": "Quelle structure cérébrale est principalement impliquée dans la régulation des émotions, notamment la peur et l'anxiété?",
-      "optionA": "Le cortex préfrontal",
-      "optionB": "L'amygdale",
-      "optionC": "L'hippocampe",
-      "optionD": "Le thalamus",
-      "correctAnswer": "B",
-      "explanation": "L'amygdale est une structure cérébrale clé dans la régulation des émotions, particulièrement dans la détection et la réponse à la menace et à la peur."
-    },
-    {
       "question": "Selon la théorie de l'auto-efficacité de Bandura, quel facteur influence le plus fortement la motivation et l'accomplissement?",
       "optionA": "Les attentes sur les résultats",
       "optionB": "L'auto-efficacité",
@@ -565,15 +547,6 @@
       "optionD": "Stade des opérations formelles (11 ans et +)",
       "correctAnswer": "B",
       "explanation": "Le stade préopératoire (2-7 ans) est caractérisé par la pensée symbolique mais encore égocentrique et irréversible, avant l'apparition des opérations logiques."
-    },
-    {
-      "question": "Dans la théorie freudienne, quel mécanisme de défense consiste à attribuer à autrui des propres pensées ou désirs inacceptables?",
-      "optionA": "Refoulement",
-      "optionB": "Projection",
-      "optionC": "Rationalisation",
-      "optionD": "Sublimation",
-      "correctAnswer": "B",
-      "explanation": "La projection est un mécanisme de défense où l'individu attribue à d'autres ses propres pensées, désirs ou émotions qu'il refuse de reconnaître comme étant les siens."
     },
     {
       "question": "Selon la théorie de l'attribution, quel biais cognitif amène les individus à attribuer les comportements négatifs d'autrui à des facteurs internes (caractère) plutôt qu'à des facteurs externes (situation)?",
@@ -601,15 +574,6 @@
       "optionD": "Responsabilité",
       "correctAnswer": "C",
       "explanation": "Selon Herzberg, les facteurs hygiéniques (comme le salaire, les conditions de travail) ne motivent pas s'ils sont présents, mais leur absence cause de la mécontentement."
-    },
-    {
-      "question": "Quelle technique d'entretien clinique privilégie l'exploration libre du patient sans intervention directe du thérapeute?",
-      "optionA": "Entretien structuré",
-      "optionB": "Entretien non directif",
-      "optionC": "Entretien semi-directif",
-      "optionD": "Entretien diagnostique",
-      "correctAnswer": "B",
-      "explanation": "L'entretien non directif (ou centré patient) favorise l'expression libre du patient avec un minimum d'interventions du thérapeute, créant un climat de confiance."
     },
     {
       "question": "Le test de Rorschach est classé dans quelle catégorie de tests psychologiques?",
@@ -720,15 +684,6 @@
       "explanation": "L'effort est une attribution interne mais instable (peut varier), tandis que la capacité est interne et stable, et la chance est externe et instable."
     },
     {
-      "question": "Quelle structure cérébrale est principalement impliquée dans la régulation des émotions, en particulier la peur?",
-      "optionA": "Cortex préfrontal",
-      "optionB": "Amygdale",
-      "optionC": "Hippocampe",
-      "optionD": "Thalamus",
-      "correctAnswer": "B",
-      "explanation": "L'amygdale est une structure clé dans le traitement des émotions, en particulier la peur et la réponse de menace."
-    },
-    {
       "question": "Dans le contexte de la psychologie clinique, quel type d'entretien utilise un guide structuré avec des questions standardisées?",
       "optionA": "Entretien non directif",
       "optionB": "Entretien clinique libre",
@@ -790,15 +745,6 @@
       "optionD": "L'interprétation",
       "correctAnswer": "C",
       "explanation": "La paraphrase est une technique d'écoute active qui consiste à reformuler avec ses propres mots ce que le patient vient d'exprimer, permettant de vérifier sa compréhension et d'encourager la communication."
-    },
-    {
-      "question": "Quelle structure cérébrale est principalement impliquée dans la formation de nouveaux souvenirs explicites (mémoire sémantique et épisodique)?",
-      "optionA": "Le cervelet",
-      "optionB": "Le thalamus",
-      "optionC": "L'hippocampe",
-      "optionD": "Le cortex préfrontal",
-      "correctAnswer": "C",
-      "explanation": "L'hippocampe est une structure cérébrale cruciale pour la consolidation des souvenirs explicites, permettant le transfert d'informations à court terme vers la mémoire à long terme et la formation de souvenirs sémantiques et épisodiques."
     },
     {
       "question": "Quelle définition correspond le mieux au concept de 'résilience' en psychologie de la santé?",

@@ -369,15 +369,6 @@
       "explanation": "Les chaperonines sont des protéines d'assistance qui aident au repliement correct des autres protéines, empêchant leur agrégation et assurant leur fonctionnalité."
     },
     {
-      "question": "Quel type de mutation est responsable de la drépanocytose ?",
-      "optionA": "Substitution",
-      "optionB": "Insertion",
-      "optionC": "Déletion",
-      "optionD": "Duplication",
-      "correctAnswer": "A",
-      "explanation": "La drépanocytose est causée par une mutation ponctuelle de substitution (remplacement d'une base) dans le gène de l'hémoglobine, changeant l'acide aminé de la chaîne β."
-    },
-    {
       "question": "Quelle structure est responsable de la photosynth chez les plantes ?",
       "optionA": "Mitochondries",
       "optionB": "Chloroplastes",
@@ -493,15 +484,6 @@
       "optionD": "Méthylation de l'allèle",
       "correctAnswer": "C",
       "explanation": "Un allèle récessif est généralement non fonctionnel, donc son phénotype n'apparaît que lorsque deux copies sont présentes (homozygote)."
-    },
-    {
-      "question": "Quelle est la fonction principale des anticorps ?",
-      "optionA": "Production de cytokines",
-      "optionB": "Neutralisation des pathogènes",
-      "optionC": "Phagocytose",
-      "optionD": "Activation complémentaire",
-      "correctAnswer": "B",
-      "explanation": "Les anticorps sont principalement impliqués dans la neutralisation des pathogènes en se liant à leurs antigènes spécifiques."
     },
     {
       "question": "Quel type de régulation transcriptionnelle implique des activateurs ou des répresseurs se liant à l'ADN ?",
@@ -756,15 +738,6 @@
       "explanation": "La PCR (Polymerase Chain Reaction) est une technique qui permet d'amplifier de manière exponentielle un segment d'ADN spécifique à l'aide d'enzymes et de primers."
     },
     {
-      "question": "Quelle cellule immunitaire est principalement responsable de la réponse humorale?",
-      "optionA": "Les lymphocytes T",
-      "optionB": "Les lymphocytes B",
-      "optionC": "Les macrophages",
-      "optionD": "Les cellules NK",
-      "correctAnswer": "B",
-      "explanation": "Les lymphocytes B sont responsables de la réponse humorale en produisant des anticorps qui circulent dans les liquides corporels pour neutraliser les pathogènes."
-    },
-    {
       "question": "Chez les vertébrés, quel est le premier stade du développement embryonnaire après la fécondation?",
       "optionA": "La gastrulation",
       "optionB": "La neurulation",
@@ -853,15 +826,6 @@
       "optionD": "Mutation par insertion d'un nucléotide dans l'intron",
       "correctAnswer": "B",
       "explanation": "Une mutation non-sens (créant un codon d'arrêt prématuré) est susceptible de produire une protéine tronquée non fonctionnelle, ce qui peut provoquer une maladie dominante si un seul allèle muté suffit pour altérer la fonction."
-    },
-    {
-      "question": "Quelle caractéristique distingue principalement les bactéries Gram-positives des Gram-négatives?",
-      "optionA": "La présence d'une paroi peptidoglycanique",
-      "optionB": "L'absence de membrane externe chez les Gram-positives",
-      "optionC": "La présence de flagelles uniquement chez les Gram-négatives",
-      "optionD": "La coloration au Gram",
-      "correctAnswer": "B",
-      "explanation": "La différence principale est que les bactéries Gram-positives ont une épaisse couche de peptidoglycane mais pas de membrane externe, alors que les Gram-négatives ont une couche mince de peptidoglycane et une membrane externe."
     },
     {
       "question": "Quel mécanisme permet aux plantes C4 d'effectuer la photosynthèse avec une efficacité accrue en conditions de sécheresse?",

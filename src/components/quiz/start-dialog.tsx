@@ -13,8 +13,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Zap, Flag, CheckCircle2, ListChecks } from "lucide-react";
+import { Zap, Flag, CheckCircle2, ListChecks, BarChart3 } from "lucide-react";
 import type { CorrectionMode } from "@/lib/types";
+
+export type DifficultyFilter = "all" | "easy" | "medium" | "hard";
 
 interface StartDialogProps {
   open: boolean;
@@ -22,8 +24,53 @@ interface StartDialogProps {
   title: string;
   subtitle: string;
   questionCount: number;
-  onStart: (mode: CorrectionMode) => Promise<void>;
+  /**
+   * Optional difficulty counts — when provided, the dialog shows a difficulty
+   * selector and the `onStart` callback receives the chosen difficulty.
+   * When omitted, the difficulty selector is hidden and `onStart` is called
+   * with "all" (no filtering).
+   */
+  difficultyCounts?: {
+    all: number;
+    easy: number;
+    medium: number;
+    hard: number;
+  };
+  /** Initial difficulty selection (default "all"). */
+  initialDifficulty?: DifficultyFilter;
+  onStart: (mode: CorrectionMode, difficulty: DifficultyFilter) => Promise<void>;
 }
+
+const DIFFICULTY_OPTIONS: Array<{
+  value: DifficultyFilter;
+  label: string;
+  cls: string;
+}> = [
+  {
+    value: "all",
+    label: "Toutes",
+    cls:
+      "border-emerald-500 bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-300",
+  },
+  {
+    value: "easy",
+    label: "Facile",
+    cls:
+      "border-sky-500 bg-sky-50 text-sky-700 dark:bg-sky-950/30 dark:text-sky-300",
+  },
+  {
+    value: "medium",
+    label: "Moyen",
+    cls:
+      "border-amber-500 bg-amber-50 text-amber-700 dark:bg-amber-950/30 dark:text-amber-300",
+  },
+  {
+    value: "hard",
+    label: "Difficile",
+    cls:
+      "border-rose-500 bg-rose-50 text-rose-700 dark:bg-rose-950/30 dark:text-rose-300",
+  },
+];
 
 export function StartDialog({
   open,
@@ -31,15 +78,27 @@ export function StartDialog({
   title,
   subtitle,
   questionCount,
+  difficultyCounts,
+  initialDifficulty = "all",
   onStart,
 }: StartDialogProps) {
   const [mode, setMode] = useState<CorrectionMode>("immediate");
+  const [difficulty, setDifficulty] = useState<DifficultyFilter>(
+    initialDifficulty
+  );
   const [starting, setStarting] = useState(false);
 
+  // Compute the live question count based on the selected difficulty.
+  const liveCount =
+    difficultyCounts && difficulty !== "all"
+      ? (difficultyCounts[difficulty] ?? 0)
+      : questionCount;
+
   async function handleStart() {
+    if (liveCount === 0) return;
     setStarting(true);
     try {
-      await onStart(mode);
+      await onStart(mode, difficulty);
     } finally {
       setStarting(false);
     }
@@ -51,11 +110,58 @@ export function StartDialog({
         <DialogHeader>
           <DialogTitle className="text-xl">Démarrer la session</DialogTitle>
           <DialogDescription className="text-base">
-            {title} &middot; {questionCount} questions
+            {title} &middot; {liveCount} question{liveCount > 1 ? "s" : ""}
           </DialogDescription>
         </DialogHeader>
 
         <p className="text-sm text-muted-foreground">{subtitle}</p>
+
+        {/* Difficulty selector (only when counts are provided) */}
+        {difficultyCounts && (
+          <div className="space-y-2">
+            <div className="flex items-center gap-1.5 text-sm font-semibold">
+              <BarChart3 className="h-4 w-4 text-amber-600" />
+              Niveau de difficulté
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Filtrez les questions par difficulté. Sélectionnez « Toutes »
+              pour tout inclure.
+            </p>
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {DIFFICULTY_OPTIONS.map((opt) => {
+                const count =
+                  opt.value === "all"
+                    ? difficultyCounts.all
+                    : difficultyCounts[opt.value];
+                const isSelected = difficulty === opt.value;
+                return (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => setDifficulty(opt.value)}
+                    className={`flex flex-col items-center gap-1 rounded-lg border-2 px-2 py-2 text-xs font-medium transition-all hover:scale-[1.02] ${
+                      isSelected
+                        ? `${opt.cls} ring-2 ring-offset-1`
+                        : "border-border bg-muted/30 text-muted-foreground hover:bg-muted/60"
+                    }`}
+                    aria-pressed={isSelected}
+                  >
+                    <span>{opt.label}</span>
+                    <span className="text-[10px] font-normal opacity-70">
+                      {count} Q
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+            {liveCount === 0 && (
+              <div className="rounded-lg bg-rose-50 p-2 text-xs text-rose-700 dark:bg-rose-950/30 dark:text-rose-300">
+                ⚠️ Aucune question pour ce niveau de difficulté. Choisissez une
+                autre difficulté.
+              </div>
+            )}
+          </div>
+        )}
 
         <RadioGroup
           value={mode}
@@ -138,7 +244,7 @@ export function StartDialog({
           </Button>
           <Button
             onClick={handleStart}
-            disabled={starting}
+            disabled={starting || liveCount === 0}
             className="gap-2"
           >
             {starting ? (

@@ -361,15 +361,6 @@
       "explanation": "Les index clusterisés sont efficaces pour les requêtes de plage car ils trient physiquement les données sur le disque selon la colonne indexée."
     },
     {
-      "question": "Quelle clause SQL est utilisée pour combiner les résultats de plusieurs requêtes SELECT?",
-      "optionA": "UNION",
-      "optionB": "JOIN",
-      "optionC": "INTERSECT",
-      "optionD": "SUBQUERY",
-      "correctAnswer": "A",
-      "explanation": "La clause UNION combine les résultats de deux ou plusieurs requêtes SELECT en un seul ensemble de résultats, en supprimant les doublons."
-    },
-    {
       "question": "Quelle est la principale différence entre une vue et une table matérialisée?",
       "optionA": "Une vue stocke les données physiquement, tandis qu'une table matérialisée ne le fait pas",
       "optionB": "Une table matérialise stocke les résultats physiquement, tandis qu'une vue est une requête virtuelle",

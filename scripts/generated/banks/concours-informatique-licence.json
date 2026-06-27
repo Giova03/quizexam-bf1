@@ -208,15 +208,6 @@
       "explanation": "TCP (Transmission Control Protocol) est orienté connexion, fiable mais plus lent, avec contrôle d'erreurs et d'ordre. UDP (User Datagram Protocol) est sans connexion, plus rapide mais sans garantie de livraison ou d'ordre."
     },
     {
-      "question": "Quelle commande Linux permet de trouver tous les fichiers contenant le mot 'erreur' dans leur nom dans le répertoire courant et ses sous-répertoires ?",
-      "optionA": "find -name '*erreur*' -type f",
-      "optionB": "grep -r 'erreur' .",
-      "optionC": "locate 'erreur'",
-      "optionD": "ls -l | grep erreur",
-      "correctAnswer": "A",
-      "explanation": "La commande 'find -name '*erreur*' -type f' recherche récursivement tous les fichiers (-type f) dont le nom contient 'erreur' dans le répertoire courant et ses sous-répertoires."
-    },
-    {
       "question": "Dans Git, quelle commande permet de voir l'historique des commits avec un formatage graphique des branches ?",
       "optionA": "git log --graph --oneline --all",
       "optionB": "git show --graph",

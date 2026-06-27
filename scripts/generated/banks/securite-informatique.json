@@ -214,7 +214,7 @@
       "optionC": "512 bits",
       "optionD": "64 bits",
       "correctAnswer": "A",
-      "explanation": "SHA-256 = 256 bits."
+      "explanation": "La réponse correcte est « 256 bits ». SHA-256 = 256 bits. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Le hachage SHA-256 produit une empreinte de : »."
     },
     {
       "question": "L'authentification 2FA combine :",

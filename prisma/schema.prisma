@@ -18,11 +18,22 @@ model User {
   name          String
   passwordHash  String
   role          String        @default("VISITOR") // "VISITOR" | "ADMIN"
+  // Auto-generated 8-char alphanumeric referral code (unique per user).
+  // Backfill default uses md5(random()) so existing rows get a value during migration.
+  referralCode  String        @unique @default(dbgenerated("(upper(substr(md5(random()::text || clock_timestamp()::text), 1, 8)))"))
+  // The referral code of the user who invited this user (null if no referral).
+  referredBy    String?
+  // Public profile fields (added in P6).
+  bio           String?
+  establishment String?
   createdAt     DateTime      @default(now())
   sessions      QuizSession[]
   posts         Post[]
   comments      Comment[]
   likes         Like[]
+  forumTopics   ForumTopic[]
+  forumReplies  ForumReply[]
+  reports       Report[]
 }
 
 // Source document uploaded by the user
@@ -48,6 +59,7 @@ model QuestionBank {
   documentId  String?
   document    Document?  @relation(fields: [documentId], references: [id])
   questions   Question[]
+  forumTopics ForumTopic[]
   createdAt   DateTime   @default(now())
 }
 
@@ -66,6 +78,7 @@ model Question {
   correctAnswer2 String? // optional 2nd correct answer
   explanation    String
   level          String        @default("TOUS")
+  difficulty     String        @default("medium") // "easy" | "medium" | "hard"
   createdAt      DateTime      @default(now())
   examQuestions  ExamQuestion[]
 }
@@ -169,4 +182,49 @@ model EmailLog {
   type      String   @default("info")
   sentAt    DateTime @default(now())
   status    String   @default("pending")
+}
+
+// === Forum (par matière) ===
+// Discussion topics organized by category / question bank.
+model ForumTopic {
+  id          String        @id @default(cuid())
+  title       String
+  content     String
+  authorId    String
+  author      User          @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  // Optional link to a QuestionBank so users can discuss a specific matière.
+  bankId      String?
+  bank        QuestionBank? @relation(fields: [bankId], references: [id], onDelete: SetNull)
+  category    String        @default("general")
+  replies     ForumReply[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @default(now())
+}
+
+// Reply to a forum topic. The topic author (or an admin) can mark a single
+// reply as the "best answer" via /api/forum/topics/[id]/best-answer.
+model ForumReply {
+  id           String      @id @default(cuid())
+  topicId      String
+  topic        ForumTopic  @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  content      String
+  authorId     String
+  author       User        @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  isBestAnswer Boolean     @default(false)
+  createdAt    DateTime    @default(now())
+}
+
+// === Moderation reports ===
+// Users can report content (forum topic, reply, post, comment, etc.).
+// Admins review and resolve/dismiss reports via /api/reports.
+model Report {
+  id         String   @id @default(cuid())
+  reporterId String?
+  reporter   User?    @relation(fields: [reporterId], references: [id], onDelete: SetNull)
+  // What was reported: e.g. "forum_topic", "forum_reply", "post", "comment", "user", "question"
+  targetType String
+  targetId   String
+  reason     String
+  status     String   @default("pending") // "pending" | "resolved" | "dismissed"
+  createdAt  DateTime @default(now())
 }

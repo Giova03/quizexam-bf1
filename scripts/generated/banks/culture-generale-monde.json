@@ -55,15 +55,6 @@
       "explanation": "Le concept de Dharma est central dans l'hindouisme, où il désigne les devoirs, les lois et les principes moraux régissant l'ordre cosmique. Bien que présent dans d'autres religions indiennes comme le bouddhisme, le jaïnisme et le sikhisme, il y prend des significations légèrement différentes."
     },
     {
-      "question": "Qui a peint la Joconde ?",
-      "optionA": "Michel-Ange",
-      "optionB": "Raphaël",
-      "optionC": "Léonard de Vinci",
-      "optionD": "Titien",
-      "correctAnswer": "C",
-      "explanation": "La Joconde, ou Mona Lisa, a été peinte par Léonard de Vinci entre 1503 et 1519. Michel-Ange et Raphaël étaient ses contemporains mais n'ont pas peint ce tableau. Titien était un peintre vénitien de la même époque."
-    },
-    {
       "question": "Quel écrivain a reçu le prix Nobel de littérature en 1953 ?",
       "optionA": "Albert Camus",
       "optionB": "Ernest Hemingway",
@@ -125,15 +116,6 @@
       "optionD": "Prix Nobel de physique",
       "correctAnswer": "C",
       "explanation": "Le prix d'économie, officiellement 'prix de la Banque de Suède en sciences économiques en mémoire d'Alfred Nobel', a été créé en 1968 et est le plus récent des prix Nobel. Les autres prix originaux datent de 1901."
-    },
-    {
-      "question": "Quelle est la capitale du Brésil ?",
-      "optionA": "Rio de Janeiro",
-      "optionB": "São Paulo",
-      "optionC": "Brasília",
-      "optionD": "Salvador",
-      "correctAnswer": "C",
-      "explanation": "Brasília est la capitale du Brésil depuis 1960. Rio de Janeiro et Salvador ont été des capitales historiques, et São Paulo est la plus grande ville du pays mais n'est pas la capitale."
     },
     {
       "question": "Quel désert est le plus grand d'Antarctique ?",
@@ -224,15 +206,6 @@
       "optionD": "Prix Nevanlinna",
       "correctAnswer": "A",
       "explanation": "La Médaille Fields est souvent considérée comme l'équivalent du Prix Nobel pour les mathématiques, bien qu'elle soit décernée tous les quatre ans à des mathématiciens de moins de 40 ans."
-    },
-    {
-      "question": "Quelle est la capitale du Canada ?",
-      "optionA": "Toronto",
-      "optionB": "Vancouver",
-      "optionC": "Ottawa",
-      "optionD": "Montréal",
-      "correctAnswer": "C",
-      "explanation": "Ottawa est la capitale du Canada, bien que Toronto et Montréal soient plus grandes villes et centres économiques majeurs."
     },
     {
       "question": "Quel fleuve traverse la plus grande partie de l'Europe de l'Est ?",

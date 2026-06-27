@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -14,7 +14,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { useQuizStore } from "@/lib/quiz-store";
 import {
   LogIn,
   UserPlus,
@@ -25,21 +34,36 @@ import {
   ShieldCheck,
   Loader2,
   AlertCircle,
+  Gift,
+  UserCircle,
 } from "lucide-react";
 
 export function AuthDialog({
   open,
   onOpenChange,
+  initialReferralCode,
 }: {
   open: boolean;
   onOpenChange: (v: boolean) => void;
+  /** Optional referral code to pre-fill the signup form (e.g. from ?ref=CODE). */
+  initialReferralCode?: string;
 }) {
   const [mode, setMode] = useState<"login" | "signup">("login");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [referralCode, setReferralCode] = useState(initialReferralCode ?? "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // If a referral code is provided later (e.g. via URL param after mount),
+  // update the field and switch to signup mode so the user can complete it.
+  useEffect(() => {
+    if (initialReferralCode) {
+      setReferralCode(initialReferralCode.toUpperCase());
+      setMode("signup");
+    }
+  }, [initialReferralCode]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -50,7 +74,12 @@ export function AuthDialog({
         const res = await fetch("/api/auth/signup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, name, password }),
+          body: JSON.stringify({
+            email,
+            name,
+            password,
+            referralCode: referralCode.trim() || undefined,
+          }),
         });
         const data = await res.json();
         if (!res.ok)
@@ -91,6 +120,7 @@ export function AuthDialog({
     setEmail("");
     setName("");
     setPassword("");
+    setReferralCode("");
     setError(null);
   }
 
@@ -235,6 +265,25 @@ export function AuthDialog({
                   />
                 </div>
               </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="signup-referral" className="flex items-center gap-1.5">
+                  <Gift className="h-3.5 w-3.5 text-violet-600" />
+                  Code de parrainage <span className="text-xs text-muted-foreground">(optionnel)</span>
+                </Label>
+                <Input
+                  id="signup-referral"
+                  type="text"
+                  placeholder="ABCD1234"
+                  className="font-mono tracking-widest"
+                  value={referralCode}
+                  onChange={(e) => setReferralCode(e.target.value.toUpperCase())}
+                  maxLength={8}
+                  autoComplete="off"
+                />
+                <p className="text-[11px] text-muted-foreground">
+                  Si un ami vous a invité, entrez son code pour le créditer.
+                </p>
+              </div>
               {error && <ErrorAlert message={error} />}
               <DialogFooter>
                 <Button
@@ -270,6 +319,7 @@ function ErrorAlert({ message }: { message: string }) {
 export function UserMenuButton() {
   const { data: session, status } = useSession();
   const [authOpen, setAuthOpen] = useState(false);
+  const openProfile = useQuizStore((s) => s.openProfile);
 
   if (status === "loading") {
     return (
@@ -302,32 +352,64 @@ export function UserMenuButton() {
 
   return (
     <>
-      <Button
-        variant="ghost"
-        size="sm"
-        className="gap-2"
-        onClick={() => signOut()}
-        title="Se déconnecter"
-      >
-        <span
-          className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-white ${
-            isAdmin
-              ? "bg-gradient-to-br from-amber-500 to-orange-600"
-              : "bg-gradient-to-br from-emerald-500 to-teal-600"
-          }`}
-        >
-          {initial}
-        </span>
-        <span className="hidden max-w-[100px] truncate sm:inline">
-          {session.user.name}
-        </span>
-        {isAdmin && (
-          <span className="hidden rounded bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold text-amber-700 dark:bg-amber-950 dark:text-amber-300 md:inline">
-            ADMIN
-          </span>
-        )}
-        <LogOut className="h-3.5 w-3.5 text-muted-foreground" />
-      </Button>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="gap-2"
+            aria-label="Menu utilisateur"
+          >
+            <span
+              className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-white ${
+                isAdmin
+                  ? "bg-gradient-to-br from-amber-500 to-orange-600"
+                  : "bg-gradient-to-br from-emerald-500 to-teal-600"
+              }`}
+            >
+              {initial}
+            </span>
+            <span className="hidden max-w-[100px] truncate sm:inline">
+              {session.user.name}
+            </span>
+            {isAdmin && (
+              <span className="hidden rounded bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold text-amber-700 dark:bg-amber-950 dark:text-amber-300 md:inline">
+                ADMIN
+              </span>
+            )}
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="w-56">
+          <DropdownMenuLabel className="flex items-center gap-2">
+            <span
+              className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-white ${
+                isAdmin
+                  ? "bg-gradient-to-br from-amber-500 to-orange-600"
+                  : "bg-gradient-to-br from-emerald-500 to-teal-600"
+              }`}
+            >
+              {initial}
+            </span>
+            <span className="min-w-0 flex-1 truncate">{session.user.name}</span>
+          </DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem
+            className="gap-2 cursor-pointer"
+            onClick={() => openProfile()}
+          >
+            <UserCircle className="h-4 w-4" />
+            Mon profil
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem
+            className="gap-2 cursor-pointer text-rose-600 focus:text-rose-700"
+            onClick={() => signOut()}
+          >
+            <LogOut className="h-4 w-4" />
+            Se déconnecter
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </>
   );
 }

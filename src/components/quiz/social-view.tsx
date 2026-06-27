@@ -20,6 +20,7 @@ import {
   LogIn,
 } from "lucide-react";
 import { toast } from "sonner";
+import { usePrefs } from "@/lib/prefs-store";
 
 interface Post {
   id: string;
@@ -39,6 +40,7 @@ interface Post {
 
 export function SocialView() {
   const { data: session } = useSession();
+  const recordPost = usePrefs((s) => s.recordPost);
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [newPost, setNewPost] = useState("");
@@ -76,6 +78,8 @@ export function SocialView() {
         setPosts((prev) => [post, ...prev]);
         setNewPost("");
         toast.success("Publication partagée !");
+        // Track for social-butterfly badge (10 posts).
+        recordPost();
       } else {
         toast.error("Échec de la publication");
       }

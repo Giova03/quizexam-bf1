@@ -720,15 +720,6 @@
       "explanation": "La maladie d'Alzheimer se caractérise histologiquement par la présence de plaques amyloïdes extracellulaires et de dégénérescence neurofibrillaire (intraneuronales)."
     },
     {
-      "question": "Quel médicament est un inhibiteur de l'enzyme de conversion de l'angiotensine (IECA)?",
-      "optionA": "Losartan",
-      "optionB": "Ramipril",
-      "optionC": "Amlodipine",
-      "optionD": "Furosémide",
-      "correctAnswer": "B",
-      "explanation": "Le ramipril est un inhibiteur de l'enzyme de conversion de l'angiotensine (IECA), qui bloque la conversion de l'angiotensine I en angiotensine II."
-    },
-    {
       "question": "Quelle est la fonction principale du pancréas exocrine?",
       "optionA": "Sécrétion d'insuline",
       "optionB": "Sécrétion de glucagon",

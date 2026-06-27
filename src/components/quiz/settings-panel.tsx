@@ -10,16 +10,12 @@ import {
   SheetDescription,
 } from "@/components/ui/sheet";
 import { Card } from "@/components/ui/card";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import {
   Globe,
   Contrast,
-  Type,
-  Wind,
   Trophy,
   Flame,
   Star,
@@ -28,8 +24,11 @@ import {
   Download,
   Smartphone,
   Palette,
+  Bell,
 } from "lucide-react";
 import { useTranslation } from "@/lib/use-translation";
+import { PushNotificationSettings } from "./push-notification-settings";
+import { AccessibilityPanel } from "./accessibility-panel";
 
 export function SettingsPanel({
   open,
@@ -41,17 +40,10 @@ export function SettingsPanel({
   const {
     locale,
     setLocale,
-    highContrast,
-    largeText,
-    reduceMotion,
-    toggleHighContrast,
-    toggleLargeText,
-    toggleReduceMotion,
     xp,
     level,
     streak,
     badges,
-    sessionsCompleted,
     totalCorrect,
     totalAnswered,
   } = usePrefs();
@@ -159,29 +151,18 @@ export function SettingsPanel({
               <Contrast className="h-4 w-4 text-violet-600" />
               {t("settings.accessibility")}
             </div>
-            <Card className="divide-y p-0 shadow-sm">
-              <ToggleRow
-                icon={Contrast}
-                title={t("settings.highContrast")}
-                description="Couleurs noir et blanc renforcées"
-                checked={highContrast}
-                onToggle={toggleHighContrast}
-              />
-              <ToggleRow
-                icon={Type}
-                title={t("settings.largeText")}
-                description="Agrandit la police de 25%"
-                checked={largeText}
-                onToggle={toggleLargeText}
-              />
-              <ToggleRow
-                icon={Wind}
-                title={t("settings.reduceMotion")}
-                description="Désactive les animations"
-                checked={reduceMotion}
-                onToggle={toggleReduceMotion}
-              />
-            </Card>
+            <AccessibilityPanel />
+          </section>
+
+          <Separator />
+
+          {/* Push notifications section */}
+          <section className="space-y-2.5">
+            <div className="flex items-center gap-2 text-sm font-semibold">
+              <Bell className="h-4 w-4 text-emerald-600" />
+              Notifications push
+            </div>
+            <PushNotificationSettings />
           </section>
 
           <Separator />
@@ -261,32 +242,5 @@ export function SettingsPanel({
         </div>
       </SheetContent>
     </Sheet>
-  );
-}
-
-function ToggleRow({
-  icon: Icon,
-  title,
-  description,
-  checked,
-  onToggle,
-}: {
-  icon: typeof Contrast;
-  title: string;
-  description: string;
-  checked: boolean;
-  onToggle: () => void;
-}) {
-  return (
-    <div className="flex items-center justify-between gap-3 p-3">
-      <div className="flex items-start gap-2.5">
-        <Icon className="mt-0.5 h-4 w-4 text-muted-foreground" />
-        <div>
-          <Label className="text-sm font-medium">{title}</Label>
-          <p className="text-xs text-muted-foreground">{description}</p>
-        </div>
-      </div>
-      <Switch checked={checked} onCheckedChange={onToggle} />
-    </div>
   );
 }

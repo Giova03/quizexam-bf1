@@ -15,6 +15,8 @@ export interface Question {
   optionD: string;
   correctAnswer: "A" | "B" | "C" | "D";
   explanation: string;
+  /** Difficulty rating — "easy" | "medium" | "hard". Older rows default to "medium". */
+  difficulty?: "easy" | "medium" | "hard";
 }
 
 export interface QuestionBank {
@@ -64,6 +66,12 @@ export interface QuizSession {
   startedAt: string;
   completedAt: string | null;
   answers: SessionAnswer[];
+  /**
+   * Optional time limit in minutes.
+   * Populated for exam sessions (sourced from the related Exam.durationMin).
+   * Null/undefined for bank sessions (no timer).
+   */
+  durationMin?: number | null;
 }
 
 export type ViewName =
@@ -78,7 +86,12 @@ export type ViewName =
   | "about"
   | "admin"
   | "social"
-  | "leaderboard";
+  | "leaderboard"
+  | "spaced-repetition"
+  | "achievements"
+  | "forum"
+  | "profile"
+  | "competition";
 
 // Color mapping helper for bank/exam accent colors
 export const COLOR_CLASSES: Record<
