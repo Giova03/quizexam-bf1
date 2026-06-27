@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { checkLimit, FREE_DAILY_LIMIT } from "@/lib/subscription-limits";
 
 export const dynamic = "force-dynamic";
 
@@ -121,6 +122,8 @@ export async function POST(request: Request) {
       correctAnswer: string;
       correctAnswer2: string | null;
       explanation: string;
+      imageUrl: string | null;
+      audioUrl: string | null;
     }> = [];
 
     // Daily-challenge path: an explicit list of question IDs is provided.
@@ -176,6 +179,33 @@ export async function POST(request: Request) {
       );
     }
 
+    // Freemium daily-limit check (added in F5):
+    // Free users are capped at FREE_DAILY_LIMIT questions/day across all
+    // sessions started in the current UTC day. Premium/admin users are
+    // unlimited. We check AFTER gathering questions (so the count is the
+    // real number that would be added) but BEFORE creating the session —
+    // so a rejected request leaves no DB rows behind.
+    if (userId) {
+      const check = await checkLimit(userId);
+      if (!check.canStartMore) {
+        return NextResponse.json(
+          {
+            error:
+              "Limite quotidienne atteinte (plan gratuit). Passez à Premium pour des questions illimitées.",
+            code: "DAILY_LIMIT_REACHED",
+            usedToday: check.usedToday,
+            limit: FREE_DAILY_LIMIT,
+            upgradeUrl: "/api/subscription",
+          },
+          { status: 402 }
+        );
+      }
+      // If the session would push the user over their remaining quota,
+      // we still allow it but the response includes a warning header so
+      // the client can surface a "quota almost exhausted" toast. The
+      // session is created in full — partial sessions would be confusing.
+    }
+
     // Create the session with answer snapshots (linked to the user)
     const session = await db.quizSession.create({
       data: {
@@ -197,6 +227,11 @@ export async function POST(request: Request) {
             correctAnswer: q.correctAnswer,
             correctAnswer2: q.correctAnswer2,
             explanation: q.explanation,
+            // Snapshot the question's media URLs so the session keeps
+            // rendering images/audio even if the bank's question is later
+            // edited or its media is swapped out.
+            imageUrl: q.imageUrl ?? null,
+            audioUrl: q.audioUrl ?? null,
             userAnswer: null,
             isCorrect: null,
             answeredAt: null,

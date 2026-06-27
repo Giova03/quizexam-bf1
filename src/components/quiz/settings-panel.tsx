@@ -25,10 +25,13 @@ import {
   Smartphone,
   Palette,
   Bell,
+  WifiOff,
 } from "lucide-react";
 import { useTranslation } from "@/lib/use-translation";
 import { PushNotificationSettings } from "./push-notification-settings";
 import { AccessibilityPanel } from "./accessibility-panel";
+import { EmailPreferencesSection } from "./email-preferences";
+import { OfflineManagerPanel } from "./offline-manager-panel";
 
 export function SettingsPanel({
   open,
@@ -163,6 +166,22 @@ export function SettingsPanel({
               Notifications push
             </div>
             <PushNotificationSettings />
+          </section>
+
+          <Separator />
+
+          {/* Email preferences section */}
+          <EmailPreferencesSection />
+
+          <Separator />
+
+          {/* Offline manager section — added in F5 */}
+          <section className="space-y-2.5">
+            <div className="flex items-center gap-2 text-sm font-semibold">
+              <WifiOff className="h-4 w-4 text-orange-600" />
+              Mode hors ligne
+            </div>
+            <OfflineManagerPanel />
           </section>
 
           <Separator />

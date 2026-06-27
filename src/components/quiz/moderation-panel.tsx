@@ -17,6 +17,8 @@ import {
   FileText,
   HelpCircle,
   Inbox,
+  MessagesSquare,
+  Sparkles,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -89,6 +91,7 @@ export function ModerationPanel() {
   const [refreshing, setRefreshing] = useState(false);
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
   const [updatingId, setUpdatingId] = useState<string | null>(null);
+  const [seedingForum, setSeedingForum] = useState(false);
 
   const load = useCallback(async () => {
     try {
@@ -117,6 +120,34 @@ export function ModerationPanel() {
   const handleRefresh = () => {
     setRefreshing(true);
     load();
+  };
+
+  /**
+   * Initialise the forum with default topics via /api/forum/seed.
+   * Idempotent — existing topics are skipped server-side.
+   */
+  const handleSeedForum = async () => {
+    if (
+      !confirm(
+        "Initialiser le forum avec les sujets par défaut ?\n\nLes sujets déjà existants ne seront pas dupliqués."
+      )
+    )
+      return;
+    setSeedingForum(true);
+    try {
+      const res = await fetch("/api/forum/seed", { method: "POST" });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success !== false) {
+        toast.success(data.message ?? "Forum initialisé");
+      } else {
+        toast.error(data.error ?? "Échec de l'initialisation du forum");
+      }
+    } catch (e) {
+      console.error("Forum seed failed", e);
+      toast.error("Erreur lors de l'initialisation du forum");
+    } finally {
+      setSeedingForum(false);
+    }
   };
 
   const updateStatus = async (id: string, status: Report["status"]) => {
@@ -206,6 +237,48 @@ export function ModerationPanel() {
           );
         })}
       </div>
+
+      {/* Forum initialization card */}
+      <Card className="border-violet-200 bg-violet-50/50 p-4 dark:border-violet-800 dark:bg-violet-950/20">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-start gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-violet-100 text-violet-700 dark:bg-violet-950/40 dark:text-violet-300">
+              <MessagesSquare className="h-5 w-5" />
+            </div>
+            <div>
+              <h3 className="flex items-center gap-2 text-sm font-semibold">
+                Initialiser le forum
+                <Badge variant="outline" className="border-violet-300 text-violet-700 dark:border-violet-700 dark:text-violet-300">
+                  Admin
+                </Badge>
+              </h3>
+              <p className="mt-0.5 text-xs text-muted-foreground">
+                Crée 8 sujets par défaut (Culture Générale, Droit, Sciences, Littérature,
+                Sciences Éco, Psychotechnique, Conseils, Annonces). Les sujets déjà
+                existants ne sont pas dupliqués.
+              </p>
+            </div>
+          </div>
+          <Button
+            onClick={handleSeedForum}
+            disabled={seedingForum}
+            className="shrink-0 gap-2 bg-gradient-to-r from-violet-500 to-purple-600 text-white hover:opacity-90"
+            size="sm"
+          >
+            {seedingForum ? (
+              <>
+                <RefreshCw className="h-4 w-4 animate-spin" />
+                Initialisation…
+              </>
+            ) : (
+              <>
+                <Sparkles className="h-4 w-4" />
+                Initialiser le forum
+              </>
+            )}
+          </Button>
+        </div>
+      </Card>
 
       {/* Reports list */}
       {loading ? (

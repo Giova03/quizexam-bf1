@@ -1188,3 +1188,442 @@ Stage Summary:
 - 7 files modified (lib/prefs-store.ts +12 lines, app/globals.css +140 lines, components/quiz/preferences-applier.tsx, components/quiz/settings-panel.tsx, lib/types.ts + lib/quiz-store.ts, app/page.tsx, components/quiz/admin-view.tsx)
 - 0 lint errors, 0 lint warnings, 0 new type errors
 - Work record written to: /home/z/my-project/agent-ctx/P9-pwa-accessibility-competition-ai.md
+
+---
+Task ID: F1
+Agent: F1 (Z.ai Code)
+Task: Fix critical bugs (TS error in pdf-upload-dialog.tsx, broken competition API returning HTML) + split monolithic admin-view.tsx (2177 lines → 9 files)
+
+Work Log:
+- Read worklog.md (1190 lines through P9) and all 8 prior agent-ctx records (P2–P9) to understand the project state and the two pre-existing TS errors noted by every prior agent.
+- Verified exact TS errors via `bunx tsc --noEmit`: next.config.ts(7,3) is pre-existing/out-of-scope; pdf-upload-dialog.tsx(360,7) is IN scope.
+
+Task 1 — Fix pdf-upload-dialog.tsx TS error:
+- Root cause: `let bankId = "";` was typed `string`, but `createNewBank()` returns `Promise<string | null>`. The assignment failed TS strict null checks.
+- Fix: changed `let bankId = "";` to `let bankId: string | null = null;`. Existing `if (!bankId) return;` checks narrow the type to `string` for the rest of the function.
+- Also hardened the `generate()` function (per task description):
+  * Added explicit null/empty/non-string check on `pdfText` that shows the requested error "Impossible d'extraire le texte du PDF".
+  * Assigned `pdfText` to a local `const safeText: string` before sending to /api/generate-qcm so the API always receives a guaranteed string.
+  * Kept the existing `length < 30` guard with the same French error message for consistency.
+
+Task 2 — Fix competition API returning HTML:
+- Root cause: `/home/z/my-project/src/app/api/competition/route.ts` did NOT exist. Only `join/`, `answer/`, `next/` sub-routes existed. So both POST and GET /api/competition fell through to Next.js's default 404 HTML page.
+- Fix: created /home/z/my-project/src/app/api/competition/route.ts (~190 lines):
+  * POST (auth required): parses JSON body {bankId, questionCount?, timeLimitSec?, action?} (accepts action:"create" for backwards compat with the task's curl test). Validates bankId, clamps questionCount to [1,50] (default 10) and timeLimitSec to [5,300] (default 30). Loads bank+questions via db.questionBank.findUnique, picks `questionCount` random questions via pickRandom, generates a unique 6-char code, creates a CompetitionRoom in "lobby" status with the host as first participant. Returns serializeRoom(room, user.id) as JSON.
+  * GET (auth required): parses ?code=XXX, looks up the room via getRoom, includes an auto-advance safety-net (if questionTimeLimitSec+2s has elapsed during "playing" status, advances to the next question or finishes the game) so polling clients aren't stuck if the host's advance request was lost. Returns the serialized room as JSON.
+  * All error paths return NextResponse.json({error: ...}, {status: ...}) — never HTML.
+- Verified competition-store.ts (216 lines) is correct — createRoom, getRoom, generateUniqueRoomCode, pickRandom, serializeRoom all work as expected. No changes needed.
+- End-to-end curl test (logged in as admin):
+  * POST /api/competition -d '{"action":"create","bankId":"test"}' → 404 JSON {"error":"Banque introuvable"} ✓ (previously returned HTML 404)
+  * POST /api/competition -d '{"bankId":"<real-id>","questionCount":5,"timeLimitSec":15}' → 200 JSON {"code":"34BS56","status":"lobby","bankTitle":"...","participants":[...],"totalQuestions":5,...} ✓
+  * GET /api/competition?code=34BS56 → 200 JSON room state ✓
+  * Unauthenticated POST → 401 JSON {"error":"Authentification requise"} ✓
+
+Task 3 — Split admin-view.tsx (2177 lines → 242 lines + 9 sub-component files + types file):
+Created /home/z/my-project/src/components/quiz/admin/ with:
+- types.ts (62 lines) — shared AdminStats, Question, BankWithCount interfaces (extracted from the monolith to avoid circular imports on admin-view.tsx).
+- admin-overview.tsx (284 lines) — StatCard, TopPerformersAndAlerts, OverviewTab (6 KPI cards + recent users + recent sessions + top performers/alerts).
+- admin-visitors.tsx (366 lines) — VisitorsStats, ProgressTracker, ROLE_OPTIONS, ROLE_BADGE_STYLES, ROLE_AVATAR_STYLES, ROLE_LABELS_FR. (ProgressTracker moved here since it's conceptually visitor analytics and wasn't listed as its own file.)
+- admin-banks.tsx (246 lines) — BanksTab (PDF upload callout + bank list), NewBankDialog.
+- admin-bank-dialog.tsx (511 lines) — BankQuestionsDialog (search/list/edit/delete), QuestionEditor (create/edit form with live preview + difficulty selector).
+- admin-sessions.tsx (94 lines) — SessionsList (scrollable sessions table with score/mode/timestamps).
+- admin-exams.tsx (307 lines) — ExamsManager (list + delete), NewExamDialog (per-bank question distribution picker).
+- admin-exports.tsx (120 lines) — ExportsPanel (3 CSV export cards: users/sessions/banks).
+- admin-broadcast.tsx (117 lines) — BroadcastPanel (email-broadcast form, kept open/onOpenChange props for API compat).
+- admin-moderation.tsx (11 lines) — Re-exports ModerationPanel from @/components/quiz/moderation-panel (already implemented in P8; just wrapped for organisational consistency).
+
+Then rewrote /home/z/my-project/src/components/quiz/admin-view.tsx (2177 → 242 lines, well under the 300-line target):
+- Keeps the AdminView() main component with button-based tab navigation (NOT Radix Tabs — preserved the original <button>-based tabs for max reliability).
+- Imports all sub-components from ./admin/*.
+- Manages the 5 pieces of cross-tab dialog state (selectedBank, newBankOpen, newExamOpen, broadcastOpen, pdfUploadOpen).
+- Renders the active tab's content by delegating to the appropriate sub-component.
+- Renders all 4 cross-tab dialogs at the bottom (BankQuestionsDialog, NewBankDialog, NewExamDialog, PdfUploadDialog).
+- All 11 tabs still work: overview, visitors, progress, banks, sessions, exams, exports, broadcast, analytics, moderation, ai-generator.
+
+Verification:
+- bun run lint → 0 errors, 0 warnings ✓
+- bunx tsc --noEmit → only 1 error remaining: next.config.ts(7,3) (pre-existing, out of scope — documented as pre-existing by P5/P7/P8/P9; the original pdf-upload-dialog.tsx(360,7) error is now FIXED) ✓
+- Home page returns HTTP 200 with the new src_components_quiz_admin_*._.js chunk loaded ✓
+- Admin chunk (/_next/static/chunks/src_components_quiz_admin_8e792b98._.js) returns HTTP 200 ✓
+- Admin APIs all still work (stats, users, sessions, exams, export) ✓
+- Competition API now returns JSON for all paths (POST create, GET status, error cases) ✓
+- Auth-gated endpoints correctly return 401 JSON when unauthenticated ✓
+
+Stage Summary:
+- ✅ Task 1: pdf-upload-dialog.tsx TS error fixed (bankId properly typed as string | null, defensive null checks added in generate() with the requested "Impossible d'extraire le texte du PDF" error message, generate-qcm API guaranteed to receive a string).
+- ✅ Task 2: competition API created (was missing entirely — both POST and GET now return JSON; auto-advance safety-net added for polling clients; tested end-to-end with real admin auth).
+- ✅ Task 3: admin-view.tsx split into 9 sub-component files + 1 shared types file in src/components/quiz/admin/. Main admin-view.tsx is now 242 lines (under the 300-line target). All 11 tabs preserved with button-based navigation. All existing functionality intact (no breaking changes).
+- 2 files modified (pdf-upload-dialog.tsx, admin-view.tsx), 11 files created (api/competition/route.ts, admin/types.ts + 9 admin/* sub-component files). 0 lint errors, 0 new TS errors (1 pre-existing out of scope).
+- Work record written to: /home/z/my-project/agent-ctx/F1-bugfix-admin-split.md
+
+---
+Task ID: F2
+Agent: F2 (Z.ai Code)
+Task: 4 improvements — (1) Lazy-load secondary views, (2) In-memory cache for banks/exams APIs, (3) Error boundary + global-error.tsx, (4) Basic automated tests (cache, SM-2, favorites)
+
+Work Log:
+- Read worklog.md through F1 (1258 lines) to understand the project state and the 1 pre-existing TS error in next.config.ts(7,3) (documented by every prior agent — out of scope).
+- Read the files I needed to modify: page.tsx, api/banks/route.ts, api/exams/route.ts, plus supporting admin/banks, admin/exams, admin/questions routes, favorites-store.ts, spaced-repetition-store.ts.
+
+Feature 1 — Lazy Loading ⚡:
+- Modified src/app/page.tsx:
+  * Added `lazy`, `Suspense` to React imports.
+  * Replaced direct imports for 8 secondary views (AboutView, AdminView, LeaderboardView, SpacedRepetitionView, AchievementsView, ForumView, ProfileView, CompetitionView) with `lazy(() => import(...).then(m => ({ default: m.XXX })))` declarations (named-export → default-export adapter).
+  * Added a `ViewSkeleton` helper: `<Skeleton className="h-64 w-full rounded-xl" />`.
+  * Kept 7 eager views (HomeView, BankDetailView, ExamDetailView, SessionView, ResultsView, DashboardView, SocialView) as direct renders — main user flow stays eager.
+  * Wrapped the 8 lazy views in `<Suspense fallback={<ViewSkeleton />}>` and wrapped ALL view renders (eager + lazy) in `<ErrorBoundary>`.
+  * Carefully re-ordered the Tooltip + lucide-react import blocks to stay ABOVE the lazy declarations (ES module imports must be at the top).
+- Verified all 8 lazy chunks exist in .next/dev/static/chunks/ and return HTTP 200 when fetched directly (admin-view=401KB, forum-view=166KB, competition-view=152KB etc.).
+
+Feature 2 — Cache mémoire des banques 🚀:
+- Created src/lib/cache.ts (~110 lines):
+  * In-memory TTL cache on globalThis.__quizexamCache (survives HMR — same pattern as src/lib/db.ts).
+  * Public API: cacheGet<T>(key), cacheSet(key, value, ttlMs?), cacheInvalidate(key), cacheClear(), cacheStats().
+  * Default TTL: 5 minutes (DEFAULT_TTL_MS = 5 * 60 * 1000). Pass 0 to disable expiry.
+  * Lazy eviction on read.
+  * CACHE_KEYS const exports well-known keys: banksList = "banks:list", examsList = "exams:list".
+- Modified src/app/api/banks/route.ts: GET checks cacheGet(CACHE_KEYS.banksList) first; on miss, queries Prisma then cacheSet(...).
+- Modified src/app/api/exams/route.ts: same pattern with CACHE_KEYS.examsList.
+- Added cache invalidation to admin mutation routes:
+  * api/admin/banks/route.ts: cacheInvalidate(banksList) after create/update/delete (POST, PATCH, DELETE).
+  * api/admin/exams/route.ts: cacheInvalidate(examsList) after create/delete (POST, DELETE).
+  * api/admin/questions/route.ts: cacheInvalidate(banksList) after create/update/delete. Reason: cached banks list includes per-bank _count.questions, so any question add/remove changes the cached payload; PATCH doesn't change count but changes contents.
+- Verified via curl: GET /api/banks returns identical 18105-byte payload on cache miss and hit; GET /api/exams returns identical 2469-byte payload.
+
+Feature 3 — Error Boundary 📊:
+- Created src/components/quiz/error-boundary.tsx (~110 lines):
+  * React class component ErrorBoundary (React still requires class for error boundaries — function components can't implement getDerivedStateFromError / componentDidCatch).
+  * Props: children, optional fallback. State: { hasError, error }.
+  * getDerivedStateFromError updates state to render the fallback.
+  * componentDidCatch logs to console.error with [ErrorBoundary] prefix; comment shows future Sentry integration point.
+  * Default fallback: rose-themed card with AlertTriangle icon, error message, "Recharger" button (window.location.reload()). Uses role="alert" for screen readers.
+- Created src/app/global-error.tsx (~70 lines):
+  * Next.js App Router global error page (replaces root layout on uncaught error — MUST include its own <html> and <body>).
+  * Accepts { error, reset } props. useEffect logs to console.error with [GlobalError] prefix.
+  * Shows error message + optional digest + "Réessayer" button (reset()) + secondary "ou recharger la page" link.
+- Wrapped main content of page.tsx in <ErrorBoundary> (see Feature 1 above).
+- Verified ErrorBoundary symbol is in the page chunk and global-error.tsx has its own chunk (served with HTTP 200).
+
+Feature 4 — Tests automatisés basiques 🧪:
+- Created 3 test files using a tiny inline assert-based framework (no Jest/Vitest dependency):
+  * src/lib/__tests__/cache.test.ts (~145 lines, 14 tests): missing key returns null, set/get roundtrip (object/string/number/array), invalidate single key + no-op on missing, clear removes all, TTL expiry (short-TTL entry becomes null after waiting > TTL), lazy eviction drops expired entry, CACHE_KEYS exports expected keys, set overwrites, cacheStats reports correct count.
+  * src/lib/__tests__/spaced-repetition.test.ts (~205 lines, 15 tests): q=5/4/3 on fresh card, q=5 on reps=1 gives interval=6 (SM-2 second-step), q=5 on reps>=2 multiplies interval by ease, q=0/1/2 resets repetitions and interval, q=3-5 increments, ease floor 1.3, quality clamping (q=10→5, q=-5→0), applySm2 doesn't mutate input, nextReview advances by interval days.
+  * src/lib/__tests__/favorites-store.test.ts (~190 lines, 10 tests): toggleFavorite adds, isFavorite false/true before/after, toggleFavorite removes, preserves other favorites, toggle twice returns to original, removeFavorite deletes only target + no-op on missing, clearAll empties, favorites stored newest-first.
+  * Important note: tests re-read useFavorites.getState() after each mutation rather than holding a destructured `favorites` array — Zustand set() creates a NEW array reference each time.
+- Created scripts/run-tests.ts (~80 lines):
+  * Installs a localStorage shim on globalThis BEFORE importing test files (required because favorites-store.ts uses Zustand persist middleware which captures localStorage at module-load time; ES module imports are hoisted so the shim must live in the runner, not in the test file).
+  * Also installs a console.error filter to drop any persist warnings that slip through.
+  * Iterates over the 3 test files (explicit list — not globbed), await import()s each, captures process.exitCode === 1 as a failure flag, resets it, continues so all files always run.
+  * Prints header, per-file results, and final Result: PASS ✓ / FAIL ✗ summary with elapsed time. Exits 0 on success, 1 on failure.
+- All 39 tests pass: `bun run scripts/run-tests.ts` → Result: PASS ✓.
+
+Verification:
+- bun run lint → 0 errors, 0 warnings ✓
+- bunx tsc --noEmit → only 1 error: next.config.ts(7,3) (pre-existing, out of scope). 0 new TS errors ✓
+- bun run scripts/run-tests.ts → 39 passed, 0 failed ✓
+- curl http://localhost:3000/ → 200 (page renders with ErrorBoundary + lazy splits) ✓
+- curl http://localhost:3000/api/banks → 200, 18105 bytes (identical on cache miss and hit) ✓
+- curl http://localhost:3000/api/exams → 200, 2469 bytes (identical on cache miss and hit) ✓
+- 8 lazy-loaded view chunks all return HTTP 200 when fetched directly ✓
+- ErrorBoundary + global-error.tsx chunks present and served ✓
+
+Stage Summary:
+- ✅ Feature 1 (Lazy Loading): 8 secondary views lazy-loaded via React.lazy() + Suspense with Skeleton fallback. Main user flow (HomeView/SessionView/ResultsView/DashboardView/BankDetailView/ExamDetailView/SocialView) stays eager. Initial page chunk no longer bundles secondary views' code.
+- ✅ Feature 2 (Cache mémoire): src/lib/cache.ts provides a TTL-based in-memory cache (5min default, globalThis-cached for HMR survival). GET /api/banks and GET /api/exams read from cache first. Mutations in api/admin/banks, api/admin/exams, api/admin/questions invalidate the appropriate cache key (including question mutations because the cached banks list includes _count.questions).
+- ✅ Feature 3 (Error Boundary): Class component ErrorBoundary with friendly "Recharger" fallback + Sentry placeholder. global-error.tsx for root errors (with its own <html>/<body>). Main content of page.tsx wrapped in <ErrorBoundary>.
+- ✅ Feature 4 (Tests): 3 test files (39 tests) using inline test/expect framework — no Jest/Vitest. scripts/run-tests.ts runs all with localStorage shim + console.error filter for clean output.
+- 8 new files created: src/lib/cache.ts, src/components/quiz/error-boundary.tsx, src/app/global-error.tsx, src/lib/__tests__/cache.test.ts, src/lib/__tests__/spaced-repetition.test.ts, src/lib/__tests__/favorites-store.test.ts, scripts/run-tests.ts. (Plus 4 modified files: page.tsx, api/banks/route.ts, api/exams/route.ts, and 3 admin routes: admin/banks, admin/exams, admin/questions.)
+- 0 lint errors, 0 lint warnings, 0 new TS errors (1 pre-existing in next.config.ts — out of scope).
+- All 39 tests pass.
+- Work record written to: /home/z/my-project/agent-ctx/F2-lazy-cache-errorbound-tests.md
+
+---
+Task ID: F3
+Agent: F3 (Z.ai Code)
+Task: 4 UX improvements — (1) Onboarding guidé 🎓, (2) Recherche globale unifiée 🔍, (3) Navigation simplifiée 🧭, (4) Aide contextuelle ❓
+
+Work Log:
+- Read worklog.md through F2 (~1339 lines) + relevant agent-ctx files (P9, F1, F2) to understand project state, lazy-loading pattern, in-memory cache pattern, and the 1 pre-existing TS error in next.config.ts(7,3) (out of scope).
+- Read the files I needed to modify: src/app/page.tsx (navigation structure + store destructure), src/components/quiz/search-dialog.tsx (existing single-tab search), src/lib/quiz-store.ts + types.ts (ViewName + nav actions), src/components/quiz/chatbot.tsx (floating button pattern at bottom-right), src/components/quiz/home-view.tsx (DailyChallengeCard + banks section locations), src/app/api/forum/topics/route.ts (existing ?q= search), src/app/api/admin/users/route.ts (existing user query pattern), src/lib/auth.ts + db.ts (auth gating + globalThis-cached Prisma). Verified @/components/ui/dropdown-menu.tsx and tabs.tsx Radix wrappers exist.
+
+Feature 1 — Onboarding guidé (src/components/quiz/onboarding-tour.tsx, ~470 lines):
+- 8-step tour: Bienvenue → Banques de questions → Recherche rapide → Tableau de bord → Défi quotidien → Forum → Compétition → C'est parti!
+- Each step has title/description/icon/Lucide + selector (CSS [data-tour='...']) or null for centered final step.
+- Selectors: home, banks-section, search-btn, dashboard-nav, daily-challenge, more-nav (Forum & Compétition both point at the "Plus" dropdown trigger since they're inside it), null for final.
+- Spotlight overlay technique: transparent div at target bounding rect (PADDING=8px) with boxShadow: '0 0 0 9999px rgba(0,0,0,0.5)' for the dark surround. Plus dark overlay div behind for centered step.
+- Auto-positioning tooltip (above or below based on viewport space) with rotated-square arrow pointing to spotlight.
+- recompute() wrapped in requestAnimationFrame so all setState (setRect, setTooltipPos) are async → satisfies react-hooks/set-state-in-effect lint rule.
+- Recomputed on: step change, window scroll (capture), window resize (rAF-debounced).
+- scrollIntoView({block:'center'}) before measuring so target is in viewport.
+- Tour control functions (complete, next, prev) declared BEFORE the keyboard useEffect that uses them (avoids react-hooks/immutability "Cannot access variable before it is declared" error).
+- Keyboard: ESC=skip, ArrowRight=next, ArrowLeft=prev.
+- Progress dots (clickable to jump), "Suivant" / "Précédent" / "Passer" buttons.
+- Completion writes localStorage["onboarding-completed"]="1" + dispatches CustomEvent("onboarding-complete") so the container unmounts.
+- OnboardingTourContainer: auth-gated, uses setTimeout(()=>setShouldShow(true), 800) (async, allowed by lint) so home view mounts target elements first. Listens for onboarding-complete to unmount.
+- restartOnboarding() export: removes localStorage flag + reloads page — called from HelpButton.
+
+Feature 2 — Recherche globale unifiée (rewrote src/components/quiz/search-dialog.tsx, ~530 lines):
+- 4 tabs: Questions | Banques | Forum | Utilisateurs (using @/components/ui/tabs).
+- Single search input at top (with clear-X button) feeds all tabs.
+- Debounced dispatch (300ms) inside setTimeout — setLoading(true) is inside the timer callback (lint-safe).
+- Questions tab: existing /api/search?q= (preserved), with existing detail dialog (correct answer highlighted, explanation, "Ouvrir la banque" button).
+- Banques tab: fetches /api/banks once (cached via F2 in-memory cache), filters client-side by title/category/description. Cards show bank icon (color-mapped via getColor), title, description, question count. Clicking opens bank via openBank().
+- Forum tab: calls /api/forum/topics?q=&pageSize=20. Cards show title, content excerpt (line-clamped), category badge, reply count, author. Clicking opens forum via openForum().
+- Users tab: calls new /api/users?search=&limit=20. Cards show avatar (initials, amber for admins, emerald otherwise), name, role label, chevron. Clicking opens profile via openProfile(u.id).
+- Empty/loading states per tab + skeleton cards.
+
+Feature 2b — New API endpoint (src/app/api/users/route.ts):
+- GET /api/users?search=<q>&limit=<n> — auth required (401 JSON otherwise).
+- Case-insensitive contains search on user.name (Prisma mode:"insensitive").
+- Returns { items: Array<{ id, name, role }> } — NO email for privacy.
+- Min 2 chars to trigger search (returns {items:[]} if shorter). Limit clamped [1,50], default 20. dynamic="force-dynamic".
+- Verified end-to-end: curl unauthenticated → 401 JSON ✓.
+
+Feature 3 — Navigation simplifiée (src/app/page.tsx):
+- Added imports: DropdownMenu components, OnboardingTourContainer, HelpButton, Brain + ChevronDown icons.
+- Added openSpacedRepetition to useQuizStore() destructure (action existed but wasn't destructured in page.tsx).
+- Desktop nav (hidden md:flex):
+  * Primary (always visible): Accueil (data-tour="home-nav"), Tableau de bord (data-tour="dashboard-nav"), Examen IA (gradient violet button).
+  * "Plus" DropdownMenu (with Tooltip wrapper): trigger button has data-tour="more-nav", ChevronDown icon, shows "secondary" variant when any secondary view is active. 7 items grouped with DropdownMenuSeparator dividers:
+    1. Communauté (Users) 2. Forum (MessagesSquare) 3. Compétition (Swords, rose text)
+    4. (sep) 5. Classement (Trophy, data-testid="trophy-icon" preserved) 6. Succès (Award) 7. Révision espacée (Brain)
+    8. (sep) 9. À propos (Info)
+  * Admin button stays separate (amber, if isAdmin).
+- Mobile nav (md:hidden): same structure — Examen IA + Accueil + Stats primary buttons, then "Plus" dropdown with full-width menu (w-[calc(100vw-2rem)] max-w-xs), then Admin if applicable. Replaced the previous 8-button horizontal scroll row with cleaner 3-button + dropdown pattern.
+- ALL existing navigation preserved — every view still reachable, just grouped.
+- data-tour attributes added to: home button, dashboard button, search button, "Plus" trigger, <main>.
+
+Feature 3b — data-tour attributes in src/components/quiz/home-view.tsx:
+- Wrapped <DailyChallengeCard /> in <div data-tour="daily-challenge">.
+- Added data-tour="banks-section" to the banks <section>.
+
+Feature 4 — Aide contextuelle (src/components/quiz/help-button.tsx, ~370 lines):
+- Floating "?" button at fixed bottom-5 left-5 z-50 — opposite to chatbot (bottom-right). 14×14 round button, emerald icon, hover scale + shadow.
+- Dialog with 3 tabs:
+  * Guide tab: 6-step quick-start guide (Connectez-vous → Choisissez une banque → Lancez un quiz → Consultez vos résultats → Suivez votre progression → Échangez avec la communauté). Numbered cards with gradient badges. "Astuce" callout + "Relancer le tour guidé" button (calls restartOnboarding()).
+  * FAQ tab: 8 accordion-style items (exactly the requested questions): créer un compte, mode correction, révision espacée, compétition, badges, upload PDF, export Anki, mode hors ligne. Clickable headers with chevron rotation + expandable bodies.
+  * Raccourcis tab: 6 keyboard shortcuts (Ctrl+K, Esc, →, ←, Tab, Enter) rendered as a list with <kbd> styled keys.
+- Footer links: Forum (openForum()), Contact (mailto:), À propos (openAbout()). Each closes the help dialog and navigates.
+
+Mounting in page.tsx (after <Chatbot />):
+- <HelpButton />
+- <OnboardingTourContainer isAuthenticated={status === "authenticated"} />
+
+Lint / Type Check Verification:
+- bun run lint → 0 errors, 0 warnings ✓
+- bunx tsc --noEmit → only 1 error: next.config.ts(7,3) (PRE-EXISTING, out of scope) ✓
+- Fixed 3 lint errors during development:
+  1. react-hooks/set-state-in-effect in onboarding-tour.tsx (sync setShouldShow(false) in effect) → restructured to use setTimeout only when starting the tour.
+  2. react-hooks/set-state-in-effect in search-dialog.tsx (sync setLoading(true) at start of debounced effect) → moved setLoading(true) inside setTimeout callback.
+  3. react-hooks/immutability "Cannot access variable before it is declared" for prev/next/complete in onboarding-tour.tsx → moved function declarations ABOVE the keyboard useEffect.
+  4. Removed unused eslint-disable-next-line comment.
+
+Runtime Verification:
+- curl http://localhost:3000/ → 200 OK (28551 bytes) ✓ (page renders with splash + login flow; chunks loaded include new components).
+- curl http://localhost:3000/api/users?search=ab → 401 JSON {"error":"Authentification requise"} ✓
+- curl http://localhost:3000/api/users (no search) → 401 JSON ✓
+- Grep on compiled chunks: 66 occurrences of OnboardingTour|HelpButton|data-tour in b80ff25b chunk; 25 occurrences of DropdownMenu|more-nav in page chunk ✓.
+
+Stage Summary:
+- ✅ Feature 1 (Onboarding guidé): src/components/quiz/onboarding-tour.tsx (~470 lines). 8-step tour with spotlight overlay (box-shadow cutout), auto-positioning tooltip with arrow, progress dots, ESC/Arrow keyboard shortcuts, localStorage tracking. OnboardingTourContainer wraps with auth-gating + 800ms mount delay.
+- ✅ Feature 2 (Recherche globale unifiée): Rewrote src/components/quiz/search-dialog.tsx (~530 lines) with 4 tabs. New src/app/api/users/route.ts (auth-gated, no email).
+- ✅ Feature 3 (Navigation simplifiée): Refactored src/app/page.tsx nav into Primary (Accueil + Tableau de bord + Examen IA) + "Plus" DropdownMenu (Communauté, Forum, Compétition, Classement, Succès, Révision espacée, À propos) + Admin (separate). Same pattern on mobile with full-width menu. All 9 destinations preserved. data-tour attributes on key elements.
+- ✅ Feature 4 (Aide contextuelle): src/components/quiz/help-button.tsx (~370 lines). Floating "?" at bottom-left. Dialog with 3 tabs (Guide/FAQ/Raccourcis) + footer links to Forum/Contact/À propos + "Relancer le tour guidé" button.
+- 4 files created (api/users/route.ts, onboarding-tour.tsx, help-button.tsx, rewritten search-dialog.tsx) + 2 files modified (page.tsx, home-view.tsx).
+- 0 lint errors, 0 lint warnings, 0 new TS errors (1 pre-existing in next.config.ts — out of scope).
+- Work record written to: /home/z/my-project/agent-ctx/F3-onboarding-search-nav-help.md
+
+---
+Task ID: F4
+Agent: F4 (Z.ai Code)
+Task: 4 content improvements — (1) Initialiser le forum 💬, (2) Notifications email 📧, (3) Support multimédia 🎵, (4) Traduction 🌍
+
+Work Log:
+- Read worklog.md (through F3, 1434 lines) and the relevant agent-ctx files to understand the project state, the existing pre-existing TS error in next.config.ts(7,3) (out of scope), and the patterns used by prior agents.
+- Verified the four F4 features were already present in the source tree (created by a prior partial F4 run). This run completes verification, runs db:push + prisma generate, fixes lint, and writes the work record.
+
+Feature 1 — Initialiser le forum 💬:
+- src/app/api/forum/seed/route.ts (~213 lines): admin-only POST. Creates 8 default forum topics (Culture Générale, Droit, Sciences, Littérature, Sciences Éco, Psychotechnique, Conseils, Annonces). Each has a welcoming message in French. Created by the calling admin user (authorId = adminId). Idempotent — existing topic titles skipped (single findMany + in clause). Returns { success, created, skipped, createdTitles, skippedTitles, message }.
+- src/components/quiz/moderation-panel.tsx: "Initialiser le forum" card with confirm dialog + seed button calling /api/forum/seed. Mounted via admin-view.tsx moderation tab ({activeTab === "moderation" && <ModerationPanel />}).
+
+Feature 2 — Notifications email 📧:
+- src/lib/email-service.ts (~181 lines): sendEmail({ to, subject, body, type }) validates inputs, persists to EmailLog (status:"sent"), logs to console. Returns { logId, delivered }. Higher-level wrappers: sendWelcomeEmail, sendDailyReminder, sendReplyNotification, sendChallengeReminder. No SMTP — purely DB + console.
+- src/app/api/email/send/route.ts (~105 lines): admin POST accepting { to, subject, body, type? }, validates email format, delegates to sendEmail(). Also GET variant returning the current user's own recent EmailLog rows.
+- src/components/quiz/email-preferences.tsx (~204 lines): 3 toggles (dailyReminder / replyNotifications / challengeReminders) stored in localStorage["email-prefs"] + synced to server via PATCH /api/me with { emailPreferences }. Per-toggle saving indicator + toast feedback. EmailPreferencesSection wrapper for settings panel.
+- src/components/quiz/settings-panel.tsx already imports + renders <EmailPreferencesSection />.
+
+Feature 3 — Support multimédia 🎵:
+- prisma/schema.prisma: added imageUrl String? and audioUrl String? to Question (lines 92-93) AND to SessionAnswer (lines 154-155 — snapshot for immutable sessions).
+- bunx prisma db push --skip-generate (with DIRECT_URL set inline since .env lacks it) → "Your database is now in sync with your Prisma schema" ✓
+- bunx prisma generate → regenerated client to pick up new columns ✓
+- src/app/api/upload-media/route.ts (~181 lines): admin/contributor POST accepting multipart/form-data. 5 MB hard cap. Allowed: images (png/jpg/webp/gif/svg) + audio (mp3/wav/ogg/webm/aac/m4a). Saves to /public/uploads/{kind}-{uuid}{ext}. Returns { success, url, kind, fileName, originalName, size, mime }.
+- src/components/quiz/admin/admin-bank-dialog.tsx: imageUrl/audioUrl state (lines 311-312), persisted on save (lines 395-396). Media section (lines 544-665) with URL input + hidden file input + "Téléverser" button + image preview (<img> with onError) + audio preview (<audio controls>). handleImagePick/handleAudioPick POST the file to /api/upload-media.
+- src/components/quiz/session-view.tsx: image ABOVE question (lines 463-477, max-h-72 sm:max-h-96, object-contain, lazy, onError fallback). Audio BELOW question (lines 519-544, bordered card + note icon + native <audio controls>).
+- src/components/quiz/results-view.tsx: media also rendered in detailed review (lines 224-228 image, 301-306 audio).
+
+Feature 4 — Traduction 🌍:
+- src/app/api/translate/route.ts (~138 lines): auth POST accepting { text, targetLang }. targetLang validated against { moore, dioula, en, fr }. Max 4000 chars. Uses z-ai-web-dev-sdk chat.completions.create with system prompt for pure translation. Returns { success, original, targetLang, translated }.
+- src/components/quiz/translation-helper.tsx (~396 lines): language Select (Mooré/Dioula/English), read-only source preview, "Traduire" button calling /api/translate, editable result Textarea, Copier/Enregistrer/Appliquer buttons, localStorage history (max 50 entries) with reload + clear-all.
+- src/components/quiz/admin/admin-bank-dialog.tsx (lines 670-703): collapsible "Aide à la traduction (optionnel)" section with <TranslationHelper originalText={q} explanation={expl} onApplyTranslation={...} />. onApplyTranslation appends the translation to the explanation field with a "— Traduction —" separator.
+
+Lint fix — src/lib/db.ts:
+- Previous partial F4 run had added an eval('require')-based Prisma loader to bypass Turbopack caching. It left 3 lint issues: unused directive (line 61), non-existent rule reference @typescript-eslint/no-eval (line 68), and an undirected require('path') triggering no-require-imports (line 71).
+- Fix: added `import { resolve } from 'path'` at top, replaced require('path').resolve(...) with resolve(...), removed the unused directives. Behavior unchanged — eval-based native require + Turbopack bypass still works exactly as before.
+
+Verification:
+- bun run lint → 0 errors, 0 warnings ✓
+- bunx tsc --noEmit → only 1 error: next.config.ts(7,3) (PRE-EXISTING since P2, out of scope) ✓
+- bunx prisma db push --skip-generate (DIRECT_URL inline) → schema synced ✓
+- bunx prisma generate → Prisma client regenerated ✓
+- Grep confirmed: Initialiser le forum button in moderation-panel.tsx ✓, ModerationPanel in admin-view.tsx moderation tab ✓, EmailPreferencesSection in settings-panel.tsx ✓, TranslationHelper in admin-bank-dialog.tsx ✓, imageUrl/audioUrl rendered in session-view.tsx (image above, audio below) ✓, media also in results-view.tsx ✓, emailPreferences on User + EmailLog table both present ✓
+
+Stage Summary:
+- ✅ Feature 1 (Initialiser le forum): admin POST /api/forum/seed creates 8 default topics idempotently. Button in moderation tab.
+- ✅ Feature 2 (Notifications email): email-service.ts logs + persists to EmailLog. /api/email/send admin POST. EmailPreferences 3-toggle component in settings panel.
+- ✅ Feature 3 (Support multimédia): imageUrl/audioUrl on Question + SessionAnswer (db push applied). /api/upload-media 5 MB cap admin/contributor. QuestionEditor has upload + preview. SessionView renders image above + audio below.
+- ✅ Feature 4 (Traduction): /api/translate uses z-ai-web-dev-sdk. TranslationHelper with Mooré/Dioula/English select + editable result + history. Embedded as collapsible section in QuestionEditor.
+- Lint: 0 errors, 0 warnings. TypeScript: 0 new errors (1 pre-existing in next.config.ts — out of scope). Schema synced to PostgreSQL; Prisma client regenerated. No existing code broken (only db.ts lint-directive cleanup).
+- Work record written to: /home/z/my-project/agent-ctx/F4-forum-multimedia-email-translation.md
+
+---
+Task ID: F5
+Agent: F5 (Z.ai Code)
+Task: 5 advanced features — (1) IA Tutor personnalisé 🤖, (2) Certificats de réussite 📜, (3) Mode hors ligne complet 📱, (4) Système freemium 💰, (5) API publique 🔌
+
+Work Log:
+- Read worklog.md through F4 (~1486 lines) + relevant agent-ctx files to understand the project state, the 1 pre-existing TS error in next.config.ts(7,3) (out of scope, noted by every prior agent since P2), the existing chat API z-ai-web-dev-sdk pattern, the dashboard Tabs structure, the results-view action row, the settings-panel section pattern, and the auth/session flow.
+- Read prisma/schema.prisma, src/lib/db.ts, src/lib/auth.ts, src/lib/quiz-store.ts, src/lib/types.ts, src/lib/use-offline-mode.ts, src/app/api/sessions/route.ts, src/app/api/me/stats/route.ts, src/app/api/chat/route.ts, src/app/api/banks/route.ts, src/app/api/questions/route.ts, src/app/api/me/route.ts, src/app/page.tsx, src/components/quiz/dashboard-view.tsx, src/components/quiz/results-view.tsx, src/components/quiz/settings-panel.tsx, src/components/quiz/about-view.tsx, src/components/quiz/auth-dialog.tsx (UserMenuButton), src/components/quiz/bank-detail-view.tsx, src/components/quiz/exam-detail-view.tsx, src/components/quiz/daily-challenge-card.tsx.
+
+Feature 1 — IA Tutor personnalisé 🤖:
+- prisma/schema.prisma: added `subscription String @default("free")` on User (values: "free" | "premium" | "admin"). Comment explains the gating.
+- bunx prisma db push --skip-generate (inline DATABASE_URL + DIRECT_URL) → schema synced ✓. bunx prisma generate → client regenerated ✓.
+- Bumped PRISMA_CACHE_VERSION in src/lib/db.ts to 'f5-subscription-2025' so the dev server picks up the new client (same pattern F4 used for multimedia fields).
+- src/lib/subscription-limits.ts (~140 lines): FREE_DAILY_LIMIT=50, FREE_LIMIT/PREMIUM_LIMIT/PLAN_FEATURES constants. getUserTier(userId) — raw SQL SELECT subscription. countQuestionsToday(userId) — raw SQL SUM(totalQuestions) for sessions started today UTC. checkLimit(userId) — full LimitCheck (tier, isPremium, usedToday, remaining, limit, canStartMore). Premium/admin bypass.
+- src/app/api/subscription/route.ts (~120 lines): GET returns { tier, isPremium, usedToday, remaining, limit, canStartMore, features, planFeatures }. POST { tier?: "premium" | "free" } — mock upgrade via raw SQL UPDATE (no real payment). Default tier="premium".
+- src/app/api/sessions/route.ts: added freemium limit check. After gathering questions (so we know the real count), before creating the session, calls checkLimit(userId). If !canStartMore → returns 402 { error, code: "DAILY_LIMIT_REACHED", usedToday, limit, upgradeUrl }. Anonymous sessions (no userId) bypass.
+- src/components/quiz/bank-detail-view.tsx + exam-detail-view.tsx: added 402 branch in handleStart that surfaces toast.error(data.error). Imported toast from sonner.
+- src/components/quiz/pricing-modal.tsx (~270 lines): Dialog with free-vs-premium comparison grid + current-quota progress card + "Passer à Premium" button (amber→orange gradient, POSTs /api/subscription + refetches) + "Revenir en Free" link when already premium + "Mode démo — aucun paiement réel" footer note.
+- Header in page.tsx: added "Améliorer" button (Crown icon, amber→orange gradient, tooltip) next to UserMenuButton, shown only for authenticated non-admin users. Wired <PricingModal open={pricingOpen} />.
+
+Feature 2 — IA Tutor panel & API:
+- src/app/api/ai-tutor/route.ts (~190 lines): POST handler. Reads { userId, question, userHistory }. If userHistory omitted, auto-fetches the 5 most recent sessions + their answers from DB. Builds a "weak-areas" summary (top 3 banks by wrong-answer count, with up to 3 sample wrong questions per bank). Calls ZAI.create().chat.completions.create with a French system prompt + the weak-areas context. Returns { answer, recommendations, weakAreas, tier }. Premium-gated (403 PREMIUM_REQUIRED for free users). Friendly fallback message if the AI provider is down (still returns the weak-areas summary). deriveRecommendations() — top 3 banks by recent errors.
+- src/components/quiz/ai-tutor-panel.tsx (~390 lines): 3 sub-sections in a Card grid: (1) Weak areas — top 5 banks with most wrong answers as horizontal bars (amber→rose gradient). (2) Recommendations — numbered list returned by the API. (3) Chat interface — Textarea + Send button (Enter to send, Shift+Enter for newline), user/assistant messages with avatars, "Le tuteur réfléchit…" spinner, suggestion chips when empty, auto-scroll. Premium badge shown if free-tier; refuses to send with toast.
+- Dashboard: added 5th "Tuteur IA" tab (Bot icon) in dashboard-view.tsx. TabsList grid changed from 4 → 5 columns.
+
+Feature 3 — Certificats de réussite 📜:
+- src/app/api/certificate/route.ts (~200 lines): GET ?sessionId=X returns { certificateId, userName, quizTitle, score, total, percentage, date, sessionId, issuer }. Certificate ID = QEBF-<8-hex FNV-1a hash of sessionId+score>-<6-hex hash of completedAt>. POST { sessionId } enforces score ≥ 80% (400 SCORE_TOO_LOW otherwise). Premium-gated (403 PREMIUM_REQUIRED). Session must be completed; user must own it (or be anonymous). Raw SQL reads the User.subscription column.
+- src/components/quiz/certificate-dialog.tsx (~280 lines): Dialog with diploma-style preview card (amber/emerald gradient, double-border, 🏆 seal, certificate ID in mono). "Imprimer" button opens a fresh window with print-only HTML+CSS for an A4-landscape diploma + calls window.print() after 300ms (no PDF library). "Partager" button uses navigator.share when available, falls back to clipboard copy of /?cert=<id>. When API returns PREMIUM_REQUIRED, shows a Crown icon + upgrade message instead of the diploma.
+- results-view.tsx: added "Obtenir un certificat" button (Award icon, amber border) in the action row, shown only when percentage >= 80. Wired <CertificateDialog open={certOpen} sessionId={session.id} />.
+
+Feature 4 — Mode hors ligne complet 📱:
+- src/lib/offline-manager.ts (~210 lines): client-side offline cache. downloadBankForOffline(bankId) fetches /api/banks + /api/questions?bankId=, persists both as a single JSON blob in localStorage under qebf-offline-bank:<id>, updates the index. Quota-exceeded → evicts oldest + retries once. getOfflineBanks(), isBankAvailableOffline(), removeOfflineBank(), getOfflineStorageBytes(). Pending-session queue: queuePendingSession(), getPendingSessions(), clearPendingSessions(), syncOfflineSessions() (replays offline sessions by POSTing /api/sessions when navigator.onLine). All SSR-safe (no-op when window undefined).
+- src/components/quiz/offline-manager-panel.tsx (~280 lines): status row (online/offline badge, pending count, plan tier badge), storage usage card (KB used / 5 MB soft budget, Progress bar), Sync button (calls syncOfflineSessions), cached banks list (max-h-48 scroll, remove button), all-banks download list (max-h-64 scroll, "Télécharger" button or "Hors ligne" badge, disabled when at free-tier limit of 1 bank).
+- settings-panel.tsx: added new "Mode hors ligne" section (WifiOff icon) between Email preferences and Badges. Imported <OfflineManagerPanel />.
+
+Feature 5 — API publique 🔌:
+- src/lib/rate-limit.ts (~95 lines): in-memory IP-based rate limiter. rateLimitCheck(key, max=30, windowMs=60_000) → { allowed, limit, remaining, reset }. Sliding-window (prunes expired hits lazily). State on globalThis so it survives HMR. getClientKey(request) extracts IP from x-forwarded-for / x-real-ip. rateLimitHeaders() builds X-RateLimit-* headers.
+- src/app/api/docs/route.ts (~135 lines): GET returns full API docs as JSON — name, version, baseUrl, authentication policy, rate-limit policy, mock API key (QEBF-DEMO-KEY), 13 endpoints with method/auth/description/params/example request+response.
+- src/app/api/public/banks/route.ts (~70 lines): GET — public, rate-limited list of banks (id, title, description, category, questionsCount). Reuses the F2 in-memory cache. Returns { banks, rateLimit } + X-RateLimit-* headers. 429 on limit exceeded.
+- src/app/api/public/questions/route.ts (~75 lines): GET ?bankId=X — public, rate-limited list of questions for a bank. Returns { bankId, questions: [{ id, question, options: { A, B, C, D } }], count, rateLimit }. Intentionally OMITS correctAnswer, correctAnswer2, and explanation (answer-key safety). Hard cap of 100 questions per response.
+- src/components/quiz/api-docs-view.tsx (~265 lines): Dialog-based docs viewer. Fetches /api/docs on open. Renders meta cards, auth + rate-limit policy cards, mock API key card (amber, copy button), full endpoints list (13 items, each with method badge / path / auth / description / params / example request+response in <pre>).
+- page.tsx footer: added "API Docs" link button (Code2 icon) between the phone link and the end. Wired <ApiDocsView open={apiDocsOpen} />.
+
+Lint / Type Check Verification:
+- bun run lint → 0 errors, 0 warnings ✓
+- bunx tsc --noEmit → only the 1 pre-existing next.config.ts(7,3) error (out of scope, noted by every prior agent since P2). 0 new TS errors ✓.
+- Fixed 2 react-hooks/set-state-in-effect errors during dev:
+  1. api-docs-view.tsx: setLoading(true) sync in effect → wrapped in setTimeout(0) (same pattern F3 used for search-dialog.tsx).
+  2. certificate-dialog.tsx: setData(null)/setError(null)/setNeedsUpgrade(false) sync in the early-return branch → wrapped in setTimeout(0).
+- bunx prisma db push --skip-generate (inline DATABASE_URL + DIRECT_URL) → schema synced ✓
+- bunx prisma generate → Prisma client regenerated to pick up new `subscription` column ✓
+
+Runtime Verification (curl from host):
+- GET /api/docs → 200 JSON with 13 endpoints ✓
+- GET /api/public/banks → 200, returns public bank list with rateLimit metadata + X-RateLimit-Remaining: 28 header ✓
+- GET /api/public/questions?bankId=cmqoa8rqv0000l204kw1xqb2j → 200, returns questions WITHOUT correct answers ✓
+- GET /api/public/questions (no bankId) → 400 ✓
+- GET /api/subscription (unauth) → 401 ✓
+- POST /api/subscription (unauth) → 401 ✓
+- GET /api/certificate (no sessionId) → 400 ✓
+- POST /api/ai-tutor (unauth) → 401 ✓
+- Rate-limit hammer: 32 sequential requests to /api/public/banks → 26×200 then 6×429 ✓ (correctly enforces the 30/min/IP limit; 4 requests already consumed in earlier curls).
+- GET / → 200 (page renders with splash + login flow + new header button + footer API Docs link) ✓
+
+Stage Summary:
+- ✅ Feature 1 (IA Tutor): /api/ai-tutor POST (z-ai-web-dev-sdk, weak-areas analysis, premium-gated, fallback message). ai-tutor-panel.tsx (weak areas + recommendations + chat interface). New "Tuteur IA" tab in dashboard.
+- ✅ Feature 2 (Certificates): /api/certificate GET + POST (FNV-1a hash certificate ID, premium-gated, score ≥ 80% on POST). certificate-dialog.tsx (diploma preview, window.print, navigator.share). "Obtenir un certificat" button in results-view when ≥80%.
+- ✅ Feature 3 (Offline mode): offline-manager.ts (download/get/remove + pending session queue + syncOfflineSessions). offline-manager-panel.tsx (status, storage usage, sync button, cached + downloadable banks lists). New section in settings panel.
+- ✅ Feature 4 (Freemium): prisma `subscription` column + db:push + prisma generate + cache-version bump. subscription-limits.ts (FREE_DAILY_LIMIT=50, checkLimit, getUserTier, countQuestionsToday). /api/subscription GET + POST (mock upgrade via raw SQL). pricing-modal.tsx (free-vs-premium comparison, quota progress). "Améliorer" button in header. /api/sessions POST now returns 402 DAILY_LIMIT_REACHED for free users at limit; bank/exam-detail-view surface a toast.
+- ✅ Feature 5 (Public API): rate-limit.ts (in-memory IP sliding-window, globalThis-survives-HMR). /api/docs (JSON, 13 endpoints). /api/public/banks (rate-limited, reuses F2 cache). /api/public/questions (rate-limited, answer-key fields omitted). api-docs-view.tsx (Dialog viewer). "API Docs" link in footer.
+- 14 new files created + 9 files modified. 0 lint errors, 0 lint warnings, 0 new TS errors (1 pre-existing in next.config.ts — out of scope). Schema synced to PostgreSQL; Prisma client regenerated. No existing code broken (only additive changes — new imports, new state, new tabs/sections/buttons; all existing views, routes, APIs continue to work).
+- Work record written to: /home/z/my-project/agent-ctx/F5-ai-tutor-certificates-offline-freemium-public-api.md
+
+---
+Task ID: F6
+Agent: F6 (Z.ai Code)
+Task: 3 social/community features — (1) Groupes d'étude 👥, (2) Événements temps réel 📅, (3) Blog / Articles 📝
+
+Work Log:
+- Read worklog.md through F5 (~1559 lines) + relevant agent-ctx files. Understood the project state, the 1 pre-existing TS error in next.config.ts(7,3) (out of scope, noted by every prior agent since P2), the existing auth/session flow, the dashboard Tabs structure, the lazy-loading pattern from F2, and the F5 Prisma cache-version bump pattern.
+- Read prisma/schema.prisma, src/lib/db.ts, src/lib/auth.ts, src/lib/quiz-store.ts, src/lib/types.ts, src/app/page.tsx, src/components/quiz/dashboard-view.tsx, src/components/quiz/forum-view.tsx (for reference), src/app/api/forum/topics/route.ts (for API route pattern), src/app/api/forum/topics/[id]/route.ts (for params Promise pattern + author/admin gating).
+
+Feature 1 — Système de groupes d'étude 👥:
+- prisma/schema.prisma: added 2 new models (StudyGroup + StudyGroupMember) + 2 new relation fields on User (studyGroupsCreated, studyGroupMembers). inviteCode is unique & 6 chars. @@unique([groupId, userId]) prevents duplicate membership.
+- bunx prisma db push --skip-generate (inline DATABASE_URL + DIRECT_URL) → schema synced ✓. bunx prisma generate → client regenerated ✓.
+- Bumped PRISMA_CACHE_VERSION in src/lib/db.ts to 'f6-social-2025' (then later to 'f6-social-v2-2025' to fix a runtime PrismaClient staleness issue — see "Prisma client staleness fix" below).
+- src/app/api/groups/route.ts (~190 lines): GET lists public groups with creator + member count (optional ?mine=1 filter). POST creates a group — creator auto-added as member, invite code generated server-side via 6-char alphabet (excludes 0/O/1/I/L), 10 retries on collision + last-resort timestamp suffix.
+- src/app/api/groups/[id]/route.ts (~130 lines): GET fetches single group with members list + isMember/isCreator flags (computed from session). DELETE — creator or admin only, cascades to members.
+- src/app/api/groups/join/route.ts (~115 lines): POST join by invite code. Validates format ^[A-Z0-9]{6}$, normalizes to uppercase. Idempotent (already-member returns success). Supports { leave: true } to leave a group (creator cannot leave — must delete instead).
+- src/components/quiz/study-groups-view.tsx (~610 lines): list view (grid of group cards with name, description, member count, creator, creation date), detail view (header card with invite-code box + copy button for members/creator, members list with avatars + joinedAt + creator/you badges, leave/delete actions), CreateGroupDialog, JoinByCodeDialog (uppercase input, 6-char validation), inline JoinByCodeButton for non-members on the detail view.
+
+Feature 2 — Événements temps réel 📅:
+- prisma/schema.prisma: added Event model (title, description, type "exam"|"contest"|"deadline", startDate, endDate?, createdBy, createdAt) + eventsCreated relation on User.
+- src/app/api/events/route.ts (~145 lines): GET lists upcoming events (cutoff = yesterday so today's events stay visible), optional ?limit=50 + ?all=1 for past events. POST admin-only — validates title, startDate, type; endDate optional but must be after startDate.
+- src/app/api/events/[id]/route.ts (~80 lines): GET single event. DELETE admin-only.
+- src/components/quiz/events-view.tsx (~440 lines): calendar-style list grouped by month (uppercase month + year header with count badge). Event cards with date-block (gradient emerald), type badge (color-coded: exam=rose, contest=amber, deadline=sky), time + creator. "S'inscrire" button toggles localStorage subscription (key: qebf-subscribed-events) — subscribed events show a green "Inscrit" badge. Admin: create-event button + per-card delete (with confirmation). CreateEventDialog with title, type select, datetime-local inputs, description.
+- src/components/quiz/events-widget.tsx (~150 lines): compact dashboard widget — fetches /api/events?limit=3, renders next 3 events as clickable rows (date block + title + type badge + time). "Voir tout" button calls openEvents. Empty state with CalendarCheck icon.
+- src/components/quiz/dashboard-view.tsx: imported EventsWidget. Added <EventsWidget /> in two places — (a) on the "no sessions yet" empty state (after the empty-sessions card, before ReferralCard), and (b) on the overview tab (after ReferralCard, before WeeklyChart) so logged-in users always see upcoming events on their dashboard.
+
+Feature 3 — Blog / Articles 📝:
+- prisma/schema.prisma: added Article model (title, content, excerpt, authorId, category, published @default(false), featuredImage?, createdAt, updatedAt @updatedAt) + articles relation on User.
+- src/app/api/articles/route.ts (~155 lines): GET lists published articles. With ?mine=1, includes the current user's own drafts (using OR filter so published-by-others + own drafts are both shown). Optional ?category filter + ?limit. POST authenticated — any logged-in user can create (treated as contributor). Validates title (≤200 chars), content (≤100k chars), category slug, published flag, featuredImage URL.
+- src/app/api/articles/[id]/route.ts (~200 lines): GET single article (gates unpublished to author/admin). PATCH author/admin only — partial update of any subset of fields. DELETE author/admin only.
+- src/components/quiz/blog-view.tsx (~415 lines): list view (grid of article cards with optional featured image, category badge, draft badge, title, excerpt, author + date), category filter (Select with 7 categories: general/methodologie/concours/culture-generale/psychotechnique/temoignage/actualite), detail view (full-width featured image + header card with category/draft badges + author avatar + date + content card with whitespace-pre-wrap rendering). Owner/admin actions: edit + delete (with confirmation). "Nouvel article"/"Proposer un article" button (visible for any authenticated user).
+- src/components/quiz/article-editor.tsx (~265 lines): simple textarea-based editor (no rich text per task spec). Fields: title, category select, featured image URL, excerpt (auto-generated from content if blank), content (monospace textarea), published switch with explanatory text. Preview mode toggles between editor and a styled preview card (featured image + category badge + title + italic excerpt + whitespace-pre-wrap content). Save button label changes based on context (Enregistrer / Publier / Enregistrer). Reuses the same component for create and edit (existing prop).
+
+Navigation wiring:
+- src/lib/types.ts: added "groups" | "events" | "blog" to ViewName.
+- src/lib/quiz-store.ts: added openGroups / openEvents / openBlog actions + state interface entries.
+- src/app/page.tsx: added 3 lazy imports (StudyGroupsView, EventsView, BlogView). Added UsersRound, CalendarDays, Newspaper icons. Added 3 DropdownMenuItem entries ("Groupes", "Événements", "Blog") in BOTH the desktop and mobile "Plus" dropdowns (between Forum and Compétition). Updated the variant conditional in both dropdown triggers to highlight "secondary" when view ∈ {groups, events, blog}. Registered the 3 views inside <Suspense> (alongside the other lazy views).
+
+Prisma client staleness fix (encountered during integration testing):
+- After running db:push + prisma generate, all 3 new GET APIs returned HTTP 500 with "Cannot read properties of undefined (reading 'findMany')" — i.e. db.studyGroup / db.event / db.article were undefined on the PrismaClient instance used by the running dev server.
+- Root cause: the OLD db.ts code (before my edit) had already populated globalForPrisma['prisma_f6-social-2025'] with a PrismaClient constructed from the .prisma/client/index.js Node-module-cache entry that was loaded at dev-server startup (BEFORE prisma generate wrote the new models). The cache-version bump alone wasn't enough — the cached client was already stored under the new key.
+- Fix 1 (src/lib/db.ts createPrismaClient): added Node require-cache invalidation before re-requiring the .prisma/client entry. `delete nativeRequire.cache[prismaClientPath]` + a loop that drops every cache entry under `/node_modules/.prisma/client/`. This ensures createPrismaClient() always loads the on-disk version (which may have been regenerated by `prisma generate` since the dev server started).
+- Fix 2 (src/lib/db.ts PRISMA_CACHE_VERSION): bumped to 'f6-social-v2-2025' so the new globalForPrisma key was empty, forcing a fresh PrismaClient construction (which now uses the cache-bust code).
+- Verified with curl: GET /api/groups, /api/events?limit=3, /api/articles → all 200 with {"items":[]} ✓. POST /api/groups, /api/events, /api/articles, /api/groups/join (no auth) → all 401 with "Connexion requise" ✓.
+
+Lint / Type Check Verification:
+- bun run lint → 0 errors, 0 warnings ✓
+- bunx tsc --noEmit → only the 1 pre-existing next.config.ts(7,3) error (out of scope, noted by every prior agent since P2). 0 new TS errors ✓. (Fixed 1 transient TS error in articles/route.ts where the `where` object was typed too narrowly for the OR filter — switched to Record<string, unknown>.)
+- bunx prisma db push --skip-generate (inline DATABASE_URL + DIRECT_URL) → schema synced ✓
+- bunx prisma generate → Prisma client regenerated to pick up new models (StudyGroup, StudyGroupMember, Event, Article) ✓
+
+Runtime Verification (curl from host):
+- GET /api/groups → 200 {"items":[]} ✓
+- GET /api/events?limit=3 → 200 {"items":[]} ✓
+- GET /api/articles → 200 {"items":[]} ✓
+- POST /api/groups (no auth) → 401 "Connexion requise" ✓
+- POST /api/events (no auth) → 401 "Connexion requise" ✓
+- POST /api/articles (no auth) → 401 "Connexion requise" ✓
+- POST /api/groups/join (no auth) → 401 "Connexion requise" ✓
+- GET / → 200 (page renders; new lazy chunks + nav items wired in) ✓
+- No new server errors in .next/dev/logs/next-development.log after the cache-version bump ✓
+
+Stage Summary:
+- ✅ Feature 1 (Groupes d'étude): 2 Prisma models + 3 API routes (GET/POST list, GET/DELETE detail, POST join/leave) + study-groups-view.tsx (list + detail + create + join dialogs + leave + delete). "Groupes" added to both desktop & mobile "Plus" dropdowns.
+- ✅ Feature 2 (Événements): Event model + 2 API routes (GET list upcoming + POST admin-create; GET/DELETE detail) + events-view.tsx (calendar-style monthly groups, type badges, S'inscrire localStorage, admin create/delete) + events-widget.tsx (next-3-events dashboard widget with "Voir tout"). Widget added to dashboard (both empty-state and overview-tab).
+- ✅ Feature 3 (Blog / Articles): Article model + 2 API routes (GET list with ?mine=1 + POST contributor-create; GET/PATCH/DELETE detail with author/admin gating) + blog-view.tsx (list + category filter + detail + edit/delete) + article-editor.tsx (simple textarea editor with preview mode, reusable for create + edit). "Blog" added to both desktop & mobile "Plus" dropdowns.
+- ✅ Bonus: fixed a PrismaClient staleness issue in src/lib/db.ts that prevented the running dev server from picking up newly-generated Prisma models — added Node require-cache invalidation for .prisma/client entries inside createPrismaClient(). Also bumped PRISMA_CACHE_VERSION to 'f6-social-v2-2025'.
+- 11 new files created (5 components + 6 API route files) + 5 files modified (prisma schema, db.ts, types.ts, quiz-store.ts, page.tsx, dashboard-view.tsx). 0 lint errors, 0 lint warnings, 0 new TS errors (1 pre-existing in next.config.ts — out of scope). Schema synced to PostgreSQL; Prisma client regenerated. No existing code broken (only additive changes — new models, new relations, new routes, new components, new nav items; all existing views/routes/APIs continue to work).
+- Work record written to: /home/z/my-project/agent-ctx/F6-groups-events-blog.md

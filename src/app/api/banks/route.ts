@@ -1,16 +1,28 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { cacheGet, cacheSet, CACHE_KEYS } from "@/lib/cache";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
+    // Cache the banks list for 5 minutes (default TTL) to avoid hitting the
+    // DB on every page load. The cache is invalidated by the admin mutation
+    // endpoints (create/update/delete bank, create/update/delete question —
+    // since the per-bank question count is part of the response).
+    const cached = cacheGet<unknown>(CACHE_KEYS.banksList);
+    if (cached) {
+      return NextResponse.json(cached);
+    }
+
     const banks = await db.questionBank.findMany({
       orderBy: { createdAt: "asc" },
       include: {
         _count: { select: { questions: true } },
       },
     });
+
+    cacheSet(CACHE_KEYS.banksList, banks);
     return NextResponse.json(banks);
   } catch (error) {
     console.error("Failed to list banks:", error);

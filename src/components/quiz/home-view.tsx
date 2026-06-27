@@ -162,10 +162,12 @@ export function HomeView() {
       <StudyReminders />
 
       {/* Daily challenge — 2× XP, rotates by day of week */}
-      <DailyChallengeCard />
+      <div data-tour="daily-challenge">
+        <DailyChallengeCard />
+      </div>
 
       {/* Banks section */}
-      <section className="space-y-4">
+      <section className="space-y-4" data-tour="banks-section">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-emerald-600" />

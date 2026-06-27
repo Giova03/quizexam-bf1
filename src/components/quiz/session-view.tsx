@@ -460,6 +460,22 @@ export function SessionView() {
       {/* Question card */}
       {current && (
         <Card className="overflow-hidden p-4 sm:p-6">
+          {/* Image (above the question) — added in F4 */}
+          {current.imageUrl && (
+            <div className="mb-4 overflow-hidden rounded-xl border bg-muted/30">
+              { }
+              <img
+                src={current.imageUrl}
+                alt={`Illustration de la question ${currentIdx + 1}`}
+                className="max-h-72 w-full object-contain sm:max-h-96"
+                loading="lazy"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = "none";
+                }}
+              />
+            </div>
+          )}
+
           <div className="mb-4 flex items-start gap-3">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-sm font-bold text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
               {currentIdx + 1}
@@ -499,6 +515,33 @@ export function SessionView() {
               />
             </Button>
           </div>
+
+          {/* Audio (below the question) — added in F4 */}
+          {current.audioUrl && (
+            <div className="mb-4 rounded-xl border bg-muted/20 p-3">
+              <p className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-3.5 w-3.5"
+                  aria-hidden="true"
+                >
+                  <path d="M9 18V5l12-2v13" />
+                  <circle cx="6" cy="18" r="3" />
+                  <circle cx="18" cy="16" r="3" />
+                </svg>
+                Écouter l&apos;audio
+              </p>
+              <audio controls src={current.audioUrl} className="w-full">
+                Votre navigateur ne prend pas en charge l&apos;élément audio.
+              </audio>
+            </div>
+          )}
 
           <div className="space-y-3">
             {OPTION_LETTERS.map((letter) => {

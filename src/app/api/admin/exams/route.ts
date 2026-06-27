@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { cacheInvalidate, CACHE_KEYS } from "@/lib/cache";
 
 export const dynamic = "force-dynamic";
 
@@ -55,6 +56,7 @@ export async function POST(request: Request) {
       include: { _count: { select: { examQuestions: true } } },
     });
 
+    cacheInvalidate(CACHE_KEYS.examsList);
     return NextResponse.json(exam);
   } catch (error) {
     console.error("Failed to create exam:", error);
@@ -73,6 +75,7 @@ export async function DELETE(request: Request) {
     const examId = searchParams.get("id");
     if (!examId) return NextResponse.json({ error: "id required" }, { status: 400 });
     await db.exam.delete({ where: { id: examId } });
+    cacheInvalidate(CACHE_KEYS.examsList);
     return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json({ error: "Failed to delete exam" }, { status: 500 });

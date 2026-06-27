@@ -17,6 +17,10 @@ export interface Question {
   explanation: string;
   /** Difficulty rating — "easy" | "medium" | "hard". Older rows default to "medium". */
   difficulty?: "easy" | "medium" | "hard";
+  /** Optional image URL pointing to a file under /public/uploads/. */
+  imageUrl?: string | null;
+  /** Optional audio URL pointing to a file under /public/uploads/. */
+  audioUrl?: string | null;
 }
 
 export interface QuestionBank {
@@ -53,6 +57,10 @@ export interface SessionAnswer {
   explanation: string;
   isCorrect: boolean | null;
   answeredAt: string | null;
+  /** Snapshot of Question.imageUrl at the time the session was created. */
+  imageUrl?: string | null;
+  /** Snapshot of Question.audioUrl at the time the session was created. */
+  audioUrl?: string | null;
 }
 
 export interface QuizSession {
@@ -91,7 +99,11 @@ export type ViewName =
   | "achievements"
   | "forum"
   | "profile"
-  | "competition";
+  | "competition"
+  // Social/community views (added in F6):
+  | "groups"
+  | "events"
+  | "blog";
 
 // Color mapping helper for bank/exam accent colors
 export const COLOR_CLASSES: Record<

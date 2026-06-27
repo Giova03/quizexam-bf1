@@ -26,6 +26,16 @@ model User {
   // Public profile fields (added in P6).
   bio           String?
   establishment String?
+  // JSON-encoded email preferences (added in F4):
+  // { dailyReminder, replyNotifications, challengeReminders }. Stored as a
+  // string column rather than a typed Json field so older Prisma clients and
+  // the existing migration path keep working without a schema rewrite.
+  emailPreferences String    @default("{}")
+  // Subscription tier (added in F5): "free" | "premium" | "admin".
+  // Free users are rate-limited to FREE_DAILY_LIMIT questions/day, cannot
+  // upload PDFs, cannot use the AI tutor, and cannot download certificates.
+  // Premium users get unlimited questions + all features. Admin bypasses.
+  subscription String        @default("free")
   createdAt     DateTime      @default(now())
   sessions      QuizSession[]
   posts         Post[]
@@ -34,6 +44,11 @@ model User {
   forumTopics   ForumTopic[]
   forumReplies  ForumReply[]
   reports       Report[]
+  // Social/community features (added in F6):
+  studyGroupsCreated  StudyGroup[]        @relation("StudyGroupCreator")
+  studyGroupMembers   StudyGroupMember[]  @relation("StudyGroupMember")
+  eventsCreated       Event[]             @relation("EventCreator")
+  articles            Article[]           @relation("ArticleAuthor")
 }
 
 // Source document uploaded by the user
@@ -79,6 +94,13 @@ model Question {
   explanation    String
   level          String        @default("TOUS")
   difficulty     String        @default("medium") // "easy" | "medium" | "hard"
+  // Optional media attached to the question (added in F4):
+  // - imageUrl points to /uploads/<file>.png|jpg|webp|gif
+  // - audioUrl points to /uploads/<file>.mp3|wav|ogg
+  // Both are surfaced in the session-view (image above, audio below) and in
+  // the results-view detailed review.
+  imageUrl       String?
+  audioUrl       String?
   createdAt      DateTime      @default(now())
   examQuestions  ExamQuestion[]
 }
@@ -136,6 +158,11 @@ model SessionAnswer {
   explanation    String
   isCorrect      Boolean?
   answeredAt     DateTime?
+  // Snapshot of the question's media at the time the session was started
+  // (added in F4). Mirrors the Question.imageUrl / audioUrl columns so the
+  // media keeps rendering even if the bank's question is later edited.
+  imageUrl       String?
+  audioUrl       String?
   session        QuizSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
 }
 
@@ -212,6 +239,68 @@ model ForumReply {
   author       User        @relation(fields: [authorId], references: [id], onDelete: Cascade)
   isBestAnswer Boolean     @default(false)
   createdAt    DateTime    @default(now())
+}
+
+// === Study groups (par matière / concours) ===
+// A user-created study group with a unique 6-char invite code.
+// Creator is auto-added as a member when the group is created (see /api/groups POST).
+// Any authenticated user can join via the invite code (no approval workflow).
+model StudyGroup {
+  id          String             @id @default(cuid())
+  name        String
+  description String             @default("")
+  creatorId   String
+  creator     User               @relation("StudyGroupCreator", fields: [creatorId], references: [id], onDelete: Cascade)
+  // 6-char uppercase alphanumeric invite code (unique). Generated server-side.
+  inviteCode  String             @unique
+  members     StudyGroupMember[]
+  createdAt   DateTime           @default(now())
+}
+
+// Membership row. A user is a member of a group iff a row exists.
+// Joined-at is recorded for display ("membre depuis X").
+model StudyGroupMember {
+  id        String     @id @default(cuid())
+  groupId   String
+  group     StudyGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User       @relation("StudyGroupMember", fields: [userId], references: [id], onDelete: Cascade)
+  joinedAt  DateTime   @default(now())
+  @@unique([groupId, userId])
+}
+
+// === Calendar events (examens / concours / échéances) ===
+// Display-only — no real-time sync. Admins create events; everyone sees them.
+// Users can "S'inscrire" — this just stores the eventId in localStorage on the client.
+model Event {
+  id         String   @id @default(cuid())
+  title      String
+  description String  @default("")
+  // "exam" | "contest" | "deadline"
+  type       String   @default("deadline")
+  startDate  DateTime
+  endDate    DateTime?
+  createdBy  String
+  creator    User     @relation("EventCreator", fields: [createdBy], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+}
+
+// === Blog / Articles ===
+// Admin or contributor-authored articles. Drafts (published=false) are only
+// visible to their author (and admins) via the API; published articles are
+// listed publicly on the Blog view.
+model Article {
+  id            String    @id @default(cuid())
+  title         String
+  content       String
+  excerpt       String    @default("")
+  authorId      String
+  author        User      @relation("ArticleAuthor", fields: [authorId], references: [id], onDelete: Cascade)
+  category      String    @default("general")
+  published     Boolean   @default(false)
+  featuredImage String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
 }
 
 // === Moderation reports ===

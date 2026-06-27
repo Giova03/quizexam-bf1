@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { toast } from "sonner";
 import { StartDialog, type DifficultyFilter } from "./start-dialog";
 import type { Exam, CorrectionMode } from "@/lib/types";
 import {
@@ -62,6 +63,13 @@ export function ExamDetailView() {
         const session = await res.json();
         setDialogOpen(false);
         startSession(session.id, difficulty);
+      } else if (res.status === 402) {
+        // Freemium daily limit reached — surface a toast prompting upgrade.
+        const data = await res.json().catch(() => ({}));
+        toast.error(
+          data?.error ??
+            "Limite quotidienne atteinte. Passez à Premium pour continuer."
+        );
       }
     } catch (e) {
       console.error("Failed to create session", e);

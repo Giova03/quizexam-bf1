@@ -26,6 +26,7 @@ import {
   Star,
   Trash2,
   Bookmark,
+  Bot,
 } from "lucide-react";
 import { usePrefs } from "@/lib/prefs-store";
 import { useFavorites } from "@/lib/favorites-store";
@@ -34,6 +35,8 @@ import { StatsComparison } from "./stats-comparison";
 import { ReferralCard } from "./referral-card";
 import { AdvancedCharts } from "./advanced-charts";
 import { AnkiExportButton } from "./anki-export-button";
+import { AITutorPanel } from "./ai-tutor-panel";
+import { EventsWidget } from "./events-widget";
 
 interface SessionAnswer {
   id: string;
@@ -208,6 +211,8 @@ export function DashboardView() {
             statistiques.
           </p>
         </Card>
+        {/* Upcoming events widget — visible even before any quiz session */}
+        <EventsWidget />
         {/* Referral program — visible even before any quiz session */}
         <ReferralCard />
       </div>
@@ -233,7 +238,7 @@ export function DashboardView() {
       </div>
 
       <Tabs value={tab} onValueChange={setTab}>
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4">
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-5">
           <TabsTrigger value="overview" className="gap-1.5">
             <BarChart3 className="h-4 w-4" />
             <span className="hidden sm:inline">Vue d&apos;ensemble</span>
@@ -249,6 +254,10 @@ export function DashboardView() {
           <TabsTrigger value="favorites" className="gap-1.5">
             <Bookmark className="h-4 w-4" />
             <span className="hidden sm:inline">Favoris</span>
+          </TabsTrigger>
+          <TabsTrigger value="ai-tutor" className="gap-1.5">
+            <Bot className="h-4 w-4" />
+            <span className="hidden sm:inline">Tuteur IA</span>
           </TabsTrigger>
         </TabsList>
 
@@ -382,6 +391,9 @@ export function DashboardView() {
 
           {/* Referral program */}
           <ReferralCard />
+
+          {/* Upcoming events widget */}
+          <EventsWidget />
 
           {/* Weekly activity chart */}
           <WeeklyChart sessions={completed} />
@@ -542,6 +554,11 @@ export function DashboardView() {
         {/* === Favorites Tab === */}
         <TabsContent value="favorites" className="space-y-3">
           <FavoritesList />
+        </TabsContent>
+
+        {/* === AI Tutor Tab === */}
+        <TabsContent value="ai-tutor" className="space-y-3">
+          <AITutorPanel />
         </TabsContent>
       </Tabs>
     </div>

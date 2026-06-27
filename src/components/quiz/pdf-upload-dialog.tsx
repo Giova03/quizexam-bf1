@@ -225,16 +225,25 @@ export function PdfUploadDialog({
 
   /** Generate QCM via /api/generate-qcm. */
   const generate = useCallback(async () => {
-    if (!pdfText || pdfText.length < 30) {
-      toast.error("Texte source manquant.");
+    // Defensive null/empty check — the upload API guarantees a non-empty
+    // string, but we double-guard so the generate-qcm API always receives a
+    // valid string (never null/undefined).
+    if (!pdfText || typeof pdfText !== "string" || pdfText.trim().length === 0) {
+      toast.error("Impossible d'extraire le texte du PDF");
+      return;
+    }
+    if (pdfText.length < 30) {
+      toast.error("Impossible d'extraire le texte du PDF");
       return;
     }
     setGenerating(true);
     try {
+      // pdfText is guaranteed to be a non-empty string here.
+      const safeText: string = pdfText;
       const res = await fetch("/api/generate-qcm", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: pdfText, count, subject }),
+        body: JSON.stringify({ text: safeText, count, subject }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -349,14 +358,15 @@ export function PdfUploadDialog({
       return;
     }
 
-    let bankId = "";
+    let bankId: string | null = null;
     if (targetMode === "existing") {
-      bankId = selectedBankId;
+      bankId = selectedBankId || null;
       if (!bankId) {
         toast.error("Veuillez sélectionner une banque existante.");
         return;
       }
     } else {
+      // createNewBank returns Promise<string | null> — handle null defensively.
       bankId = await createNewBank();
       if (!bankId) return; // createNewBank already toasted
     }

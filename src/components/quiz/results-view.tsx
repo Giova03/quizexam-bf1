@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Progress } from "@/components/ui/progress";
 import type { QuizSession } from "@/lib/types";
+import { CertificateDialog } from "./certificate-dialog";
 import {
   Trophy,
   CheckCircle2,
@@ -17,6 +18,7 @@ import {
   RefreshCw,
   Zap,
   Flag,
+  Award,
 } from "lucide-react";
 
 const OPTION_LETTERS = ["A", "B", "C", "D"] as const;
@@ -26,6 +28,7 @@ export function ResultsView() {
     useQuizStore();
   const [session, setSession] = useState<QuizSession | null>(storeSession);
   const [loading, setLoading] = useState(!storeSession);
+  const [certOpen, setCertOpen] = useState(false);
 
   const loadSession = useCallback(async () => {
     if (!currentSessionId) return;
@@ -141,6 +144,16 @@ export function ResultsView() {
           )}
         </Badge>
         <div className="flex gap-2">
+          {percentage >= 80 && (
+            <Button
+              variant="outline"
+              className="gap-2 border-amber-300 text-amber-700 hover:bg-amber-50 dark:border-amber-700 dark:text-amber-300"
+              onClick={() => setCertOpen(true)}
+            >
+              <Award className="h-4 w-4" />
+              Obtenir un certificat
+            </Button>
+          )}
           <Button
             variant="outline"
             className="gap-2"
@@ -220,6 +233,21 @@ export function ResultsView() {
                     {idx + 1}
                   </span>
                   <div className="min-w-0 flex-1">
+                    {/* Image (above the question text) — added in F4 */}
+                    {a.imageUrl && (
+                      <div className="mb-3 overflow-hidden rounded-lg border bg-muted/30">
+                        { }
+                        <img
+                          src={a.imageUrl}
+                          alt={`Illustration de la question ${idx + 1}`}
+                          className="max-h-64 w-full object-contain"
+                          loading="lazy"
+                          onError={(e) => {
+                            (e.currentTarget as HTMLImageElement).style.display = "none";
+                          }}
+                        />
+                      </div>
+                    )}
                     <p className="break-words font-medium leading-snug">
                       {a.questionText}
                     </p>
@@ -281,6 +309,18 @@ export function ResultsView() {
                       </span>
                       <span className="break-words">{a.explanation}</span>
                     </div>
+
+                    {/* Audio (below the explanation) — added in F4 */}
+                    {a.audioUrl && (
+                      <div className="mt-3 rounded-lg border bg-muted/20 p-2.5">
+                        <p className="mb-1 text-[11px] font-semibold text-muted-foreground">
+                          🎵 Audio associé
+                        </p>
+                        <audio controls src={a.audioUrl} className="w-full">
+                          Votre navigateur ne prend pas en charge l&apos;élément audio.
+                        </audio>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -288,6 +328,13 @@ export function ResultsView() {
           })}
         </div>
       </Card>
+
+      {/* Certificate dialog (Premium-gated) */}
+      <CertificateDialog
+        open={certOpen}
+        onOpenChange={setCertOpen}
+        sessionId={session.id}
+      />
     </div>
   );
 }

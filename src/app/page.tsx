@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { useSession } from "next-auth/react";
 import { useQuizStore } from "@/lib/quiz-store";
 import { usePrefs } from "@/lib/prefs-store";
@@ -11,15 +11,7 @@ import { ExamDetailView } from "@/components/quiz/exam-detail-view";
 import { SessionView } from "@/components/quiz/session-view";
 import { ResultsView } from "@/components/quiz/results-view";
 import { DashboardView } from "@/components/quiz/dashboard-view";
-import { AboutView } from "@/components/quiz/about-view";
-import { AdminView } from "@/components/quiz/admin-view";
 import { SocialView } from "@/components/quiz/social-view";
-import { LeaderboardView } from "@/components/quiz/leaderboard-view";
-import { SpacedRepetitionView } from "@/components/quiz/spaced-repetition-view";
-import { AchievementsView } from "@/components/quiz/achievements-view";
-import { ForumView } from "@/components/quiz/forum-view";
-import { ProfileView } from "@/components/quiz/profile-view";
-import { CompetitionView } from "@/components/quiz/competition-view";
 import { CustomExamDialog } from "@/components/quiz/custom-exam-dialog";
 import { SearchDialog } from "@/components/quiz/search-dialog";
 import { RealtimeNotification } from "@/components/quiz/realtime-notification";
@@ -33,7 +25,20 @@ import { UserMenuButton, AuthDialog } from "@/components/quiz/auth-dialog";
 import { Chatbot } from "@/components/quiz/chatbot";
 import { SplashScreen } from "@/components/quiz/splash-screen";
 import { InstallPrompt } from "@/components/quiz/install-prompt";
+import { ErrorBoundary } from "@/components/quiz/error-boundary";
+import { OnboardingTourContainer } from "@/components/quiz/onboarding-tour";
+import { HelpButton } from "@/components/quiz/help-button";
+import { PricingModal } from "@/components/quiz/pricing-modal";
+import { ApiDocsView } from "@/components/quiz/api-docs-view";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
 import {
   Tooltip,
   TooltipContent,
@@ -57,7 +62,73 @@ import {
   Award,
   MessagesSquare,
   Swords,
+  Brain,
+  ChevronDown,
+  Crown,
+  Code2,
+  UsersRound,
+  CalendarDays,
+  Newspaper,
 } from "lucide-react";
+
+// --- Lazy-loaded secondary views --------------------------------------------
+// These views are not part of the main user flow (home → session → results →
+// dashboard) and can be code-split to keep the initial JS bundle small. Each
+// is loaded on first render via React.lazy() and wrapped in <Suspense> below.
+const AboutView = lazy(() =>
+  import("@/components/quiz/about-view").then((m) => ({ default: m.AboutView }))
+);
+const AdminView = lazy(() =>
+  import("@/components/quiz/admin-view").then((m) => ({ default: m.AdminView }))
+);
+const LeaderboardView = lazy(() =>
+  import("@/components/quiz/leaderboard-view").then((m) => ({
+    default: m.LeaderboardView,
+  }))
+);
+const SpacedRepetitionView = lazy(() =>
+  import("@/components/quiz/spaced-repetition-view").then((m) => ({
+    default: m.SpacedRepetitionView,
+  }))
+);
+const AchievementsView = lazy(() =>
+  import("@/components/quiz/achievements-view").then((m) => ({
+    default: m.AchievementsView,
+  }))
+);
+const ForumView = lazy(() =>
+  import("@/components/quiz/forum-view").then((m) => ({ default: m.ForumView }))
+);
+const ProfileView = lazy(() =>
+  import("@/components/quiz/profile-view").then((m) => ({
+    default: m.ProfileView,
+  }))
+);
+const CompetitionView = lazy(() =>
+  import("@/components/quiz/competition-view").then((m) => ({
+    default: m.CompetitionView,
+  }))
+);
+const StudyGroupsView = lazy(() =>
+  import("@/components/quiz/study-groups-view").then((m) => ({
+    default: m.StudyGroupsView,
+  }))
+);
+const EventsView = lazy(() =>
+  import("@/components/quiz/events-view").then((m) => ({
+    default: m.EventsView,
+  }))
+);
+const BlogView = lazy(() =>
+  import("@/components/quiz/blog-view").then((m) => ({
+    default: m.BlogView,
+  }))
+);
+
+// Shared Suspense fallback for any lazy view.
+function ViewSkeleton() {
+  return <Skeleton className="h-64 w-full rounded-xl" />;
+}
 
 export default function Home() {
   const {
@@ -71,6 +142,10 @@ export default function Home() {
     openAchievements,
     openForum,
     openCompetition,
+    openSpacedRepetition,
+    openGroups,
+    openEvents,
+    openBlog,
     startSession,
   } = useQuizStore();
   const { t } = useTranslation();
@@ -107,6 +182,8 @@ export default function Home() {
 
   const [customExamOpen, setCustomExamOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [pricingOpen, setPricingOpen] = useState(false);
+  const [apiDocsOpen, setApiDocsOpen] = useState(false);
   const { data: session, status } = useSession();
   const unreadCount = usePrefs((s) =>
     s.notifications.filter((n) => !n.read).length
@@ -247,6 +324,7 @@ export default function Home() {
           {/* Navigation + actions */}
           <div className="flex items-center gap-1.5">
             <nav className="hidden items-center gap-1 md:flex">
+              {/* Primary nav — always visible */}
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -255,6 +333,7 @@ export default function Home() {
                       size="sm"
                       className="gap-1.5"
                       onClick={goHome}
+                      data-tour="home-nav"
                     >
                       <House className="h-4 w-4" />
                       <span className="hidden lg:inline">
@@ -273,6 +352,7 @@ export default function Home() {
                       size="sm"
                       className="gap-1.5"
                       onClick={openDashboard}
+                      data-tour="dashboard-nav"
                     >
                       <LayoutDashboard className="h-4 w-4" />
                       <span className="hidden lg:inline">
@@ -281,104 +361,6 @@ export default function Home() {
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>{t("nav.dashboard")}</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={view === "social" ? "secondary" : "ghost"}
-                      size="sm"
-                      className="gap-1.5"
-                      onClick={openSocial}
-                    >
-                      <Users className="h-4 w-4" />
-                      <span className="hidden lg:inline">Communauté</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Communauté</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={view === "forum" ? "secondary" : "ghost"}
-                      size="sm"
-                      className="gap-1.5"
-                      onClick={openForum}
-                    >
-                      <MessagesSquare className="h-4 w-4" />
-                      <span className="hidden lg:inline">Forum</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Forum par matière</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={view === "competition" ? "secondary" : "ghost"}
-                      size="sm"
-                      className="gap-1.5 text-rose-600"
-                      onClick={openCompetition}
-                    >
-                      <Swords className="h-4 w-4" />
-                      <span className="hidden lg:inline">Compétition</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Mode compétition en temps réel</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={view === "leaderboard" ? "secondary" : "ghost"}
-                      size="sm"
-                      className="gap-1.5"
-                      onClick={openLeaderboard}
-                    >
-                      <Trophy className="h-4 w-4" data-testid="trophy-icon" />
-                      <span className="hidden lg:inline">Classement</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Classement général</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={view === "achievements" ? "secondary" : "ghost"}
-                      size="sm"
-                      className="gap-1.5"
-                      onClick={openAchievements}
-                    >
-                      <Award className="h-4 w-4" />
-                      <span className="hidden lg:inline">Succès</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Badges &amp; succès</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={view === "about" ? "secondary" : "ghost"}
-                      size="sm"
-                      className="gap-1.5"
-                      onClick={openAbout}
-                    >
-                      <Info className="h-4 w-4" />
-                      <span className="hidden lg:inline">
-                        {t("nav.about")}
-                      </span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>{t("nav.about")}</TooltipContent>
                 </Tooltip>
               </TooltipProvider>
               <TooltipProvider>
@@ -398,6 +380,122 @@ export default function Home() {
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
+
+              {/* Secondary nav — grouped under a "Plus" dropdown */}
+              <DropdownMenu>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <DropdownMenuTrigger asChild>
+                        <Button
+                          variant={
+                            view === "social" ||
+                            view === "forum" ||
+                            view === "competition" ||
+                            view === "leaderboard" ||
+                            view === "achievements" ||
+                            view === "spaced-repetition" ||
+                            view === "groups" ||
+                            view === "events" ||
+                            view === "blog" ||
+                            view === "about"
+                              ? "secondary"
+                              : "ghost"
+                          }
+                          size="sm"
+                          className="gap-1.5"
+                          data-tour="more-nav"
+                        >
+                          <span className="hidden lg:inline">Plus</span>
+                          <ChevronDown className="h-3.5 w-3.5" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      Forum, Compétition, Classement, Succès…
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+                <DropdownMenuContent
+                  align="end"
+                  className="w-56"
+                  sideOffset={8}
+                >
+                  <DropdownMenuItem
+                    onClick={openSocial}
+                    className="gap-2"
+                  >
+                    <Users className="h-4 w-4" />
+                    Communauté
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openForum}
+                    className="gap-2"
+                  >
+                    <MessagesSquare className="h-4 w-4" />
+                    Forum
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openGroups}
+                    className="gap-2"
+                  >
+                    <UsersRound className="h-4 w-4" />
+                    Groupes
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openEvents}
+                    className="gap-2"
+                  >
+                    <CalendarDays className="h-4 w-4" />
+                    Événements
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openBlog}
+                    className="gap-2"
+                  >
+                    <Newspaper className="h-4 w-4" />
+                    Blog
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openCompetition}
+                    className="gap-2 text-rose-600 focus:text-rose-600"
+                  >
+                    <Swords className="h-4 w-4" />
+                    Compétition
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem
+                    onClick={openLeaderboard}
+                    className="gap-2"
+                  >
+                    <Trophy className="h-4 w-4" data-testid="trophy-icon" />
+                    Classement
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openAchievements}
+                    className="gap-2"
+                  >
+                    <Award className="h-4 w-4" />
+                    Succès
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openSpacedRepetition}
+                    className="gap-2"
+                  >
+                    <Brain className="h-4 w-4" />
+                    Révision espacée
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem
+                    onClick={openAbout}
+                    className="gap-2"
+                  >
+                    <Info className="h-4 w-4" />
+                    {t("nav.about")}
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
               {isAdmin && (
                 <TooltipProvider>
                   <Tooltip>
@@ -432,6 +530,7 @@ export default function Home() {
                     className="h-9 w-9"
                     onClick={() => setSearchOpen(true)}
                     aria-label="Rechercher"
+                    data-tour="search-btn"
                   >
                     <Search className="h-4.5 w-4.5" />
                   </Button>
@@ -491,10 +590,33 @@ export default function Home() {
 
             {/* User menu */}
             <UserMenuButton />
+
+            {/* Upgrade to Premium — only for authenticated non-admin users */}
+            {status === "authenticated" && !isAdmin && (
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="gap-1.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:opacity-90"
+                      onClick={() => setPricingOpen(true)}
+                      aria-label="Passer à Premium"
+                    >
+                      <Crown className="h-4 w-4" />
+                      <span className="hidden lg:inline">Améliorer</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    Passer à Premium — illimité, IA, certificats
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            )}
           </div>
         </div>
 
-        {/* Mobile nav row */}
+        {/* Mobile nav row — primary buttons + "Plus" dropdown (full-width menu) */}
         <div className="border-t px-4 py-1.5 md:hidden">
           <div className="flex items-center gap-1 overflow-x-auto">
             <Button
@@ -523,65 +645,117 @@ export default function Home() {
               <LayoutDashboard className="h-4 w-4" />
               <span className="text-xs">Stats</span>
             </Button>
-            <Button
-              variant={view === "social" ? "secondary" : "ghost"}
-              size="sm"
-              className="flex-1 gap-1.5"
-              onClick={openSocial}
-            >
-              <Users className="h-4 w-4" />
-              <span className="text-xs">Communauté</span>
-            </Button>
-            <Button
-              variant={view === "forum" ? "secondary" : "ghost"}
-              size="sm"
-              className="flex-1 gap-1.5"
-              onClick={openForum}
-            >
-              <MessagesSquare className="h-4 w-4" />
-              <span className="text-xs">Forum</span>
-            </Button>
-            <Button
-              variant={view === "competition" ? "secondary" : "ghost"}
-              size="sm"
-              className="flex-1 gap-1.5 text-rose-600"
-              onClick={openCompetition}
-            >
-              <Swords className="h-4 w-4" />
-              <span className="text-xs">Compétition</span>
-            </Button>
-            <Button
-              variant={view === "leaderboard" ? "secondary" : "ghost"}
-              size="sm"
-              className="flex-1 gap-1.5"
-              onClick={openLeaderboard}
-            >
-              <Trophy className="h-4 w-4" data-testid="trophy-icon" />
-              <span className="text-xs">Classement</span>
-            </Button>
-            <Button
-              variant={view === "achievements" ? "secondary" : "ghost"}
-              size="sm"
-              className="flex-1 gap-1.5"
-              onClick={openAchievements}
-            >
-              <Award className="h-4 w-4" />
-              <span className="text-xs">Succès</span>
-            </Button>
-            <Button
-              variant={view === "about" ? "secondary" : "ghost"}
-              size="sm"
-              className="flex-1 gap-1.5"
-              onClick={openAbout}
-            >
-              <Info className="h-4 w-4" />
-              <span className="text-xs">À propos</span>
-            </Button>
+
+            {/* Plus dropdown — secondary nav */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant={
+                    view === "social" ||
+                    view === "forum" ||
+                    view === "competition" ||
+                    view === "leaderboard" ||
+                    view === "achievements" ||
+                    view === "spaced-repetition" ||
+                    view === "groups" ||
+                    view === "events" ||
+                    view === "blog" ||
+                    view === "about"
+                      ? "secondary"
+                      : "ghost"
+                  }
+                  size="sm"
+                  className="gap-1"
+                >
+                  <span className="text-xs">Plus</span>
+                  <ChevronDown className="h-3 w-3" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align="start"
+                className="w-[calc(100vw-2rem)] max-w-xs"
+                sideOffset={8}
+              >
+                <DropdownMenuItem
+                  onClick={openSocial}
+                  className="gap-2"
+                >
+                  <Users className="h-4 w-4" />
+                  Communauté
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openForum}
+                  className="gap-2"
+                >
+                  <MessagesSquare className="h-4 w-4" />
+                  Forum
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openGroups}
+                  className="gap-2"
+                >
+                  <UsersRound className="h-4 w-4" />
+                  Groupes
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openEvents}
+                  className="gap-2"
+                >
+                  <CalendarDays className="h-4 w-4" />
+                  Événements
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openBlog}
+                  className="gap-2"
+                >
+                  <Newspaper className="h-4 w-4" />
+                  Blog
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openCompetition}
+                  className="gap-2 text-rose-600 focus:text-rose-600"
+                >
+                  <Swords className="h-4 w-4" />
+                  Compétition
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem
+                  onClick={openLeaderboard}
+                  className="gap-2"
+                >
+                  <Trophy className="h-4 w-4" data-testid="trophy-icon" />
+                  Classement
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openAchievements}
+                  className="gap-2"
+                >
+                  <Award className="h-4 w-4" />
+                  Succès
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openSpacedRepetition}
+                  className="gap-2"
+                >
+                  <Brain className="h-4 w-4" />
+                  Révision espacée
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem
+                  onClick={openAbout}
+                  className="gap-2"
+                >
+                  <Info className="h-4 w-4" />
+                  À propos
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             {isAdmin && (
               <Button
                 variant={view === "admin" ? "secondary" : "ghost"}
                 size="sm"
-                className="flex-1 gap-1.5 text-amber-600"
+                className="gap-1.5 text-amber-600"
                 onClick={openAdmin}
               >
                 <ShieldCheck className="h-4 w-4" />
@@ -593,22 +767,35 @@ export default function Home() {
       </header>
 
       {/* Main content */}
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
-        {view === "home" && <HomeView />}
-        {view === "bank-detail" && <BankDetailView />}
-        {view === "exam-detail" && <ExamDetailView />}
-        {view === "session" && <SessionView />}
-        {view === "results" && <ResultsView />}
-        {view === "dashboard" && <DashboardView />}
-        {view === "about" && <AboutView />}
-        {view === "admin" && <AdminView />}
-        {view === "social" && <SocialView />}
-        {view === "leaderboard" && <LeaderboardView />}
-        {view === "spaced-repetition" && <SpacedRepetitionView />}
-        {view === "achievements" && <AchievementsView />}
-        {view === "forum" && <ForumView />}
-        {view === "profile" && <ProfileView />}
-        {view === "competition" && <CompetitionView />}
+      <main
+        className="mx-auto w-full max-w-6xl flex-1 px-4 py-8"
+        data-tour="home"
+      >
+        <ErrorBoundary>
+          {/* Eager views — main user flow (no Suspense needed) */}
+          {view === "home" && <HomeView />}
+          {view === "bank-detail" && <BankDetailView />}
+          {view === "exam-detail" && <ExamDetailView />}
+          {view === "session" && <SessionView />}
+          {view === "results" && <ResultsView />}
+          {view === "dashboard" && <DashboardView />}
+          {view === "social" && <SocialView />}
+
+          {/* Lazy views — wrapped in Suspense with a skeleton fallback */}
+          <Suspense fallback={<ViewSkeleton />}>
+            {view === "about" && <AboutView />}
+            {view === "admin" && <AdminView />}
+            {view === "leaderboard" && <LeaderboardView />}
+            {view === "spaced-repetition" && <SpacedRepetitionView />}
+            {view === "achievements" && <AchievementsView />}
+            {view === "forum" && <ForumView />}
+            {view === "profile" && <ProfileView />}
+            {view === "competition" && <CompetitionView />}
+            {view === "groups" && <StudyGroupsView />}
+            {view === "events" && <EventsView />}
+            {view === "blog" && <BlogView />}
+          </Suspense>
+        </ErrorBoundary>
       </main>
 
       {/* Footer */}
@@ -642,7 +829,16 @@ export default function Home() {
                   className="hover:text-emerald-600"
                 >
                   +226 70 69 80 70
-                </a>
+                </a>{" "}
+                ·{" "}
+                <button
+                  onClick={() => setApiDocsOpen(true)}
+                  className="inline-flex items-center gap-1 hover:text-emerald-600"
+                  aria-label="Documentation API"
+                >
+                  <Code2 className="h-3 w-3" />
+                  API Docs
+                </button>
               </p>
             </div>
           </div>
@@ -663,6 +859,12 @@ export default function Home() {
       {/* Search dialog (Ctrl+K) */}
       <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
 
+      {/* Pricing modal (freemium upgrade) */}
+      <PricingModal open={pricingOpen} onOpenChange={setPricingOpen} />
+
+      {/* API documentation dialog */}
+      <ApiDocsView open={apiDocsOpen} onOpenChange={setApiDocsOpen} />
+
       {/* Real-time floating notifications */}
       <RealtimeNotification />
 
@@ -671,6 +873,12 @@ export default function Home() {
 
       {/* Chatbot IA flottant */}
       <Chatbot />
+
+      {/* Aide contextuelle (bouton flottant en bas à gauche) */}
+      <HelpButton />
+
+      {/* Tour guidé au premier login */}
+      <OnboardingTourContainer isAuthenticated={status === "authenticated"} />
     </div>
   );
 }

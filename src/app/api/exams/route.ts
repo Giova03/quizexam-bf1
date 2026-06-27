@@ -1,16 +1,26 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { cacheGet, cacheSet, CACHE_KEYS } from "@/lib/cache";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
+    // Cache the exams list for 5 minutes (default TTL). Invalidated by the
+    // admin mutation endpoints (create/delete exam).
+    const cached = cacheGet<unknown>(CACHE_KEYS.examsList);
+    if (cached) {
+      return NextResponse.json(cached);
+    }
+
     const exams = await db.exam.findMany({
       orderBy: { createdAt: "asc" },
       include: {
         _count: { select: { examQuestions: true } },
       },
     });
+
+    cacheSet(CACHE_KEYS.examsList, exams);
     return NextResponse.json(exams);
   } catch (error) {
     console.error("Failed to list exams:", error);

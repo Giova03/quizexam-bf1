@@ -68,6 +68,13 @@ interface QuizState {
    * the given user id.
    */
   openProfile: (userId?: string | null) => void;
+  // Social/community views (added in F6):
+  /** Open the study groups view (list, create, join by code). */
+  openGroups: () => void;
+  /** Open the calendar events view. */
+  openEvents: () => void;
+  /** Open the blog / articles view. */
+  openBlog: () => void;
 }
 
 export const useQuizStore = create<QuizState>((set) => ({
@@ -125,6 +132,9 @@ export const useQuizStore = create<QuizState>((set) => ({
   openForum: () => set({ view: "forum" }),
   openCompetition: () => set({ view: "competition" }),
   openProfile: (userId = null) => set({ view: "profile", profileUserId: userId }),
+  openGroups: () => set({ view: "groups" }),
+  openEvents: () => set({ view: "events" }),
+  openBlog: () => set({ view: "blog" }),
 }));
 
 export const pendingStart = {
