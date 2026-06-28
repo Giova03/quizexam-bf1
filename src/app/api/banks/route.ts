@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import { cacheGet, cacheSet, CACHE_KEYS } from "@/lib/cache";
+import { cacheGet, cacheSet, cacheInvalidate, CACHE_KEYS } from "@/lib/cache";
 
 export const dynamic = "force-dynamic";
 
-const CACHE_KEY = "banks:list";
 const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 export async function GET() {
@@ -38,6 +37,6 @@ export async function GET() {
 
 // Invalide le cache si la route est étendue pour des écritures (POST futur)
 export async function POST() {
-  cacheInvalidate(CACHE_KEY);
+  cacheInvalidate(CACHE_KEYS.banksList);
   return NextResponse.json({ ok: true });
 }

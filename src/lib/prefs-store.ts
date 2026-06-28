@@ -61,8 +61,6 @@ interface PrefsState {
   highContrast: boolean;
   largeText: boolean;
   reduceMotion: boolean;
-  dyslexiaFont: boolean;
-  fontSize: number; // percentage 100-150
   toggleHighContrast: () => void;
   toggleLargeText: () => void;
   toggleReduceMotion: () => void;
@@ -193,8 +191,6 @@ export const usePrefs = create<PrefsState>()(
       highContrast: false,
       largeText: false,
       reduceMotion: false,
-      dyslexiaFont: false,
-      fontSize: 100,
       toggleHighContrast: () => set((s) => ({ highContrast: !s.highContrast })),
       toggleLargeText: () => set((s) => ({ largeText: !s.largeText })),
       toggleReduceMotion: () => set((s) => ({ reduceMotion: !s.reduceMotion })),

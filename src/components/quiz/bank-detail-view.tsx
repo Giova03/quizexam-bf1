@@ -243,7 +243,6 @@ export function BankDetailView() {
               <div className="flex flex-wrap gap-2">
                 <AnkiExportButton
                   bankId={bank.id}
-                  bankTitle={bank.title}
                   variant="outline"
                   size="sm"
                 />

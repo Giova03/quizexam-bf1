@@ -61,6 +61,7 @@ export function ExamDetailView() {
         open={dialogOpen}
         onOpenChange={setDialogOpen}
         title={exam.title}
+        subtitle="Examen blanc — sélectionnez le mode de correction."
         questionCount={count}
         onStart={async (mode) => {
           const res = await fetch("/api/sessions", {

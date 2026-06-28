@@ -347,9 +347,6 @@ export function ResultsView() {
         open={certOpen}
         onOpenChange={setCertOpen}
         sessionId={session.id}
-        sessionTitle={session.title}
-        score={score}
-        totalQuestions={total}
       />
     </div>
   );

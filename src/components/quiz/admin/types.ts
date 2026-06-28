@@ -54,3 +54,11 @@ export interface Question {
   imageUrl?: string | null;
   audioUrl?: string | null;
 }
+
+export interface BankWithCount {
+  id: string;
+  title: string;
+  category: string;
+  subcategory: string;
+  _count: { questions: number };
+}

@@ -15,7 +15,7 @@ export async function POST(request: Request) {
   const session = await requireAdmin();
   if (!session) return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
   const body = await request.json();
-  const { bankId, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, level, difficulty, imageUrl, audioUrl } = body;
+  const { bankId, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, difficulty, imageUrl, audioUrl } = body;
   if (!bankId || !question || !optionA || !optionB || !optionC || !optionD || !correctAnswer || !explanation)
     return NextResponse.json({ error: "Tous les champs sont requis" }, { status: 400 });
   if (!["A", "B", "C", "D"].includes(correctAnswer))
@@ -49,8 +49,9 @@ export async function POST(request: Request) {
       correctAnswer,
       correctAnswer2: correctAnswer2 || null,
       explanation,
-      level: level || "TOUS",
       difficulty: validDifficulty,
+      imageUrl: validImageUrl,
+      audioUrl: validAudioUrl,
     },
   });
   // Backfill the media columns via raw SQL (bypasses Prisma's field validation).

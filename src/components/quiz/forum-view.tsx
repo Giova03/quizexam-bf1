@@ -68,6 +68,29 @@ interface ForumBank {
   icon: string;
 }
 
+interface ForumReply {
+  id: string;
+  content: string;
+  authorId: string;
+  author: ForumAuthor;
+  createdAt: string;
+  isBestAnswer: boolean;
+}
+
+interface ForumTopic {
+  id: string;
+  title: string;
+  content: string;
+  category: string;
+  bankId: string | null;
+  bank: ForumBank | null;
+  authorId: string;
+  author: ForumAuthor;
+  createdAt: string;
+  updatedAt: string;
+  replies: ForumReply[];
+}
+
 interface ForumTopicListItem {
   id: string;
   title: string;
@@ -80,17 +103,6 @@ interface ForumTopicListItem {
   createdAt: string;
   updatedAt: string;
   lastActivity: { at: string; author: ForumAuthor };
-  id: string;
-  title: string;
-  content: string;
-  category: string;
-  bankId: string | null;
-  bank: ForumBank | null;
-  authorId: string;
-  author: ForumAuthor;
-  createdAt: string;
-  updatedAt: string;
-  replies: ForumReply[];
 }
 
 interface ForumListResponse {
@@ -610,7 +622,7 @@ function ForumTopicDetail({
   isAdmin: boolean;
   isAuthenticated: boolean;
 }) {
-  const [topic, setTopic] = useState<ForumTopicDetail | null>(null);
+  const [topic, setTopic] = useState<ForumTopic | null>(null);
   const [loading, setLoading] = useState(true);
   const [replyContent, setReplyContent] = useState("");
   const [replying, setReplying] = useState(false);
@@ -952,7 +964,7 @@ function ReplyCard({
   isBest = false,
 }: {
   reply: ForumReply;
-  topic: ForumTopicDetail;
+  topic: ForumTopic;
   currentUserId: string | null;
   isAdmin: boolean;
   onMarkBest: (replyId: string) => void;

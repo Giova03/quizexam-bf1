@@ -16,12 +16,12 @@ export async function GET(request: Request) {
     const questions = await db.question.findMany({
       where: {
         OR: [
-          { question: { contains: q, mode: "insensitive" } },
-          { optionA: { contains: q, mode: "insensitive" } },
-          { optionB: { contains: q, mode: "insensitive" } },
-          { optionC: { contains: q, mode: "insensitive" } },
-          { optionD: { contains: q, mode: "insensitive" } },
-          { explanation: { contains: q, mode: "insensitive" } },
+          { question: { contains: q } },
+          { optionA: { contains: q } },
+          { optionB: { contains: q } },
+          { optionC: { contains: q } },
+          { optionD: { contains: q } },
+          { explanation: { contains: q } },
         ],
       },
       select: {

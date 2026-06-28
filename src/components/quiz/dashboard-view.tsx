@@ -746,7 +746,6 @@ function AnkiBankExporter() {
       </select>
       <AnkiExportButton
         bankId={effectiveBankId}
-        bankTitle={banks.find((b) => b.id === effectiveBankId)?.title}
         size="default"
       />
     </div>

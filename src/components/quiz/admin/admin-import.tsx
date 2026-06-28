@@ -154,7 +154,7 @@ export function ImportsPanel({ onChanged }: { onChanged: () => void }) {
       <PdfUploadDialog
         open={pdfOpen}
         onOpenChange={setPdfOpen}
-        onImported={() => onChanged()}
+        onSaved={() => onChanged()}
       />
       <ImportCsvDialog
         open={csvOpen}

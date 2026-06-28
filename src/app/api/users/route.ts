@@ -40,7 +40,7 @@ export async function GET(request: Request) {
 
     const users = await db.user.findMany({
       where: {
-        name: { contains: search, mode: "insensitive" },
+        name: { contains: search },
       },
       select: {
         id: true,

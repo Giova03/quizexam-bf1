@@ -3,7 +3,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
-interface FavoriteQuestion {
+export interface FavoriteQuestion {
   id: string;
   question: string;
   correctAnswer: string;

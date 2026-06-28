@@ -65,6 +65,32 @@ export function AdminView() {
   const [broadcastOpen, setBroadcastOpen] = useState(false);
   const [pdfUploadOpen, setPdfUploadOpen] = useState(false);
 
+  // Fetch admin stats from /api/admin/stats.
+  const loadStats = useCallback(async () => {
+    try {
+      setLoading(true);
+      const res = await fetch("/api/admin/stats", { cache: "no-store" });
+      if (res.ok) {
+        const data = await res.json();
+        setStats(data as AdminStats);
+      } else {
+        console.error("Failed to load admin stats", await res.text());
+      }
+    } catch (e) {
+      console.error("Admin stats error", e);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  // Initial load — also ensure the admin account exists.
+  useEffect(() => {
+    loadStats();
+    fetch("/api/admin/init", { method: "POST" }).catch((e) =>
+      console.error("Admin init failed", e)
+    );
+  }, [loadStats]);
+
   // Tab definitions — order matters (matches the visible button order).
   const TABS = [
     { id: "overview", label: "Vue d'ensemble", icon: TrendingUp },

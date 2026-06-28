@@ -105,27 +105,23 @@ export async function POST(request: Request) {
     // Get the current user from the session
     const authSession = await getServerSession(authOptions);
     let userId: string | null = null;
-    let userSubscription: { subscription: string; subscriptionUntil: Date | null } | null = null;
+    let userSubscription: { subscription: string } | null = null;
     if (authSession?.user?.email) {
       const user = await db.user.findUnique({
         where: { email: authSession.user.email },
-        select: { id: true, subscription: true, subscriptionUntil: true },
+        select: { id: true, subscription: true },
       });
       userId = user?.id ?? null;
       if (user) {
         userSubscription = {
           subscription: user.subscription,
-          subscriptionUntil: user.subscriptionUntil,
         };
       }
     }
 
     // Freemium daily limit check: free users are capped at 50 questions/day.
     if (userId && userSubscription) {
-      const isPremium =
-        userSubscription.subscription === "premium" &&
-        (!userSubscription.subscriptionUntil ||
-          userSubscription.subscriptionUntil.getTime() > Date.now());
+      const isPremium = userSubscription.subscription === "premium";
       if (!isPremium) {
         const startOfDay = new Date();
         startOfDay.setHours(0, 0, 0, 0);

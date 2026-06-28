@@ -25,6 +25,25 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
+import {
+  CalendarDays,
+  Plus,
+  CheckCircle2,
+  Clock,
+  MapPin,
+  CalendarCheck,
+  Trash2,
+  Loader2,
+  GraduationCap,
+  Trophy,
+  FileWarning,
+  type LucideIcon,
+} from "lucide-react";
+
+interface EventCreator {
+  id?: string;
+  name: string | null;
+}
 
 interface EventItem {
   id: string;
@@ -63,7 +82,7 @@ function saveSubscribedIds(ids: Set<string>) {
 
 const TYPE_META: Record<
   EventItem["type"],
-  { label: string; badge: string; icon: typeof GraduationCap }
+  { label: string; badge: string; icon: LucideIcon }
 > = {
   exam: {
     label: "Examen",
@@ -288,7 +307,7 @@ export function EventsView() {
                               </span>
                               <span className="flex items-center gap-1">
                                 <MapPin className="h-3.5 w-3.5" />
-                                par {e.creator.name}
+                                par {e.creator.name ?? "Inconnu"}
                               </span>
                             </div>
                           </div>

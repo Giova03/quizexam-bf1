@@ -25,18 +25,34 @@ export async function GET() {
         id: true,
         name: true,
         email: true,
-        name: true,
+        referralCode: true,
+        referredBy: true,
         createdAt: true,
       },
-      orderBy: { createdAt: "desc" },
-      take: 20,
+    });
+
+    if (!user) {
+      return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
+    }
+
+    // Count referrals: how many users used this user's referralCode.
+    const referralCount = await db.user.count({
+      where: { referredBy: user.referralCode },
     });
 
     // XP earned = referralCount × 50.
     const xpEarned = referralCount * REFERRAL_XP_REWARD;
 
+    // List the users that this user has referred (name + joinedAt).
+    const referredUsers = await db.user.findMany({
+      where: { referredBy: user.referralCode },
+      select: { name: true, createdAt: true },
+      orderBy: { createdAt: "desc" },
+      take: 20,
+    });
+
     // Resolve referrer info (if this user was referred).
-    let referrer: { name: string; referralCode: string } | null = null;
+    let referrer: { name: string | null; referralCode: string } | null = null;
     if (user.referredBy) {
       const ref = await db.user.findUnique({
         where: { referralCode: user.referredBy },
@@ -46,7 +62,7 @@ export async function GET() {
     }
 
     return NextResponse.json({
-      referralCode,
+      referralCode: user.referralCode,
       referralCount,
       xpEarned,
       xpPerReferral: REFERRAL_XP_REWARD,

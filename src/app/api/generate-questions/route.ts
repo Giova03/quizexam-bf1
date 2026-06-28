@@ -282,7 +282,6 @@ export async function POST(request: Request) {
                 optionD: q.optionD,
                 correctAnswer: q.correctAnswer,
                 explanation: q.explanation,
-                level: "TOUS",
                 difficulty: "medium",
               },
             })

@@ -1079,3 +1079,38 @@ Stage Summary:
 - 0 lint errors, 0 warnings
 - No existing code broken — all previously-wired integrations preserved
 - Backward-compatible: all existing routes, components and state continue to work unchanged
+
+---
+
+Task ID: FIXALL
+Agent: Main (Z.ai Code)
+Task: Fix ALL 112 TypeScript errors (across 21 files) and 10 lint errors in events-view.tsx so the project compiles cleanly and `bun run lint` passes with 0 errors. Verify `npx next build` succeeds.
+
+Work Log:
+- Read worklog.md to understand project context, then ran `npx tsc --noEmit 2>&1 | grep "^src/"` to enumerate all 112 errors and grouped them by file.
+- Applied 15 categories of fixes (see /agent-ctx/FIXALL-fix-all-ts-and-lint-errors.md for the full breakdown):
+  1. Removed SQLite-unsupported `mode: "insensitive"` from search/route.ts (6) and users/route.ts (1).
+  2. Added missing lucide-react imports + EventCreator interface in events-view.tsx (15 TS + 10 lint).
+  3. Rewrote referral/route.ts GET handler to select referralCode/referredBy, count referrals, list referred users (13).
+  4. Fixed forum-view.tsx merge-conflict residue (duplicate fields in ForumTopicListItem, missing ForumReply/ForumTopic interfaces, value-as-type bug) (22).
+  5. Added BankWithCount export to admin/types.ts (3).
+  6. Added missing loadStats useCallback to admin-view.tsx (4).
+  7. Switched admin-overview.tsx StatCard icon type from `() => null` to real LucideIcon components (BookOpen, FileQuestion, Trophy, Users, Activity, TrendingUp) and fleshed out the previously-broken TopPerformersAndAlerts component (6).
+  8. Removed duplicate dyslexiaFont/fontSize identifiers in prefs-store.ts (kept the P9 pixel-based versions) (6).
+  9. Removed nonexistent subscriptionUntil from sessions/route.ts (2).
+ 10. Added cacheInvalidate to the imports in banks/route.ts and exams/route.ts (2).
+ 11. Removed `level` field from Question create calls in admin/questions/route.ts and generate-questions/route.ts (2).
+ 12. Rewrote sm2.test.ts against the actual spaced-repetition-store API (applySm2(card, quality), SpacedCard with ease/interval/repetitions/nextReview/lastReview). Exported FavoriteQuestion from favorites-store.ts so the test import works (26).
+ 13. Removed unsupported bankTitle prop from AnkiExportButton usages in bank-detail-view.tsx and dashboard-view.tsx (2).
+ 14. Renamed onImported → onSaved in admin-import.tsx PdfUploadDialog usage (1).
+ 15. Removed extra props from CertificateDialog in results-view.tsx; added required subtitle prop to StartDialog in exam-detail-view.tsx (2).
+
+Verification (all three gates green):
+- `npx tsc --noEmit 2>&1 | grep "^src/" | wc -l` → 0 (was 112)
+- `bun run lint` → EXIT 0, 0 errors, 0 warnings (was 10 lint errors)
+- `rm -rf .next && npx next build` → ✓ Compiled successfully in 15.4s, ✓ Generating static pages using 3 workers (5/5)
+
+Stage Summary:
+- All 112 TS errors + 10 lint errors fixed without removing any functionality.
+- Production build succeeds cleanly.
+- Work record written to /agent-ctx/FIXALL-fix-all-ts-and-lint-errors.md.
