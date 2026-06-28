@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-<<<<<<< Updated upstream
 import { useSession } from "next-auth/react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -10,17 +9,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-=======
-import { useSession } from "next-auth";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
-import { Skeleton } from "@/components/ui/skeleton";
-import { ScrollArea } from "@/components/ui/scroll-area";
->>>>>>> Stashed changes
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   Select,
@@ -30,7 +18,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
-<<<<<<< Updated upstream
   Dialog,
   DialogContent,
   DialogHeader,
@@ -53,14 +40,10 @@ import { useQuizStore } from "@/lib/quiz-store";
 import {
   MessageSquare,
   MessagesSquare,
-=======
-  MessageSquare,
->>>>>>> Stashed changes
   Plus,
   ArrowLeft,
   Send,
   Trash2,
-<<<<<<< Updated upstream
   Award,
   Pin,
   Clock,
@@ -71,19 +54,10 @@ import {
 } from "lucide-react";
 
 // ---------- Types ----------
-=======
-  MessagesSquare,
-  Tag,
-  CheckCircle2,
-} from "lucide-react";
-import { toast } from "sonner";
-import { useQuizStore } from "@/lib/quiz-store";
->>>>>>> Stashed changes
 
 interface ForumAuthor {
   id: string;
   name: string;
-<<<<<<< Updated upstream
   role?: string;
 }
 
@@ -106,36 +80,10 @@ interface ForumTopicListItem {
   createdAt: string;
   updatedAt: string;
   lastActivity: { at: string; author: ForumAuthor };
-=======
->>>>>>> Stashed changes
-}
-
-interface ForumReply {
-  id: string;
-<<<<<<< Updated upstream
-  topicId: string;
-  content: string;
-  authorId: string;
-  author: ForumAuthor;
-  isBestAnswer: boolean;
-  createdAt: string;
-}
-
-interface ForumTopicDetail {
-=======
-  content: string;
-  createdAt: string;
-  isBestAnswer: boolean;
-  author: ForumAuthor;
-}
-
-interface ForumTopic {
->>>>>>> Stashed changes
   id: string;
   title: string;
   content: string;
   category: string;
-<<<<<<< Updated upstream
   bankId: string | null;
   bank: ForumBank | null;
   authorId: string;
@@ -248,66 +196,10 @@ export function ForumView() {
       .then((d) => setBanks(Array.isArray(d) ? d : []))
       .catch(() => setBanks([]));
   }, []);
-=======
-  createdAt: string;
-  author: ForumAuthor;
-  replies?: ForumReply[];
-  _count?: { replies: number };
-}
-
-const CATEGORIES = [
-  { value: "general", label: "Général" },
-  { value: "culture", label: "Culture Générale" },
-  { value: "droit", label: "Droit" },
-  { value: "svt", label: "SVT" },
-  { value: "litterature", label: "Littérature" },
-  { value: "sciences-eco", label: "Sciences Éco" },
-  { value: "psycho", label: "Psychotechnique" },
-  { value: "entraide", label: "Entraide Concours" },
-];
-
-function formatDate(iso: string): string {
-  try {
-    return new Date(iso).toLocaleDateString("fr-FR", {
-      day: "2-digit",
-      month: "short",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  } catch {
-    return iso;
-  }
-}
-
-function initials(name: string): string {
-  return name
-    .split(" ")
-    .map((p) => p[0])
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
-}
-
-export function ForumView() {
-  const { data: session } = useSession();
-  const { goHome } = useQuizStore();
-  const [topics, setTopics] = useState<ForumTopic[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedTopic, setSelectedTopic] = useState<ForumTopic | null>(null);
-  const [loadingTopic, setLoadingTopic] = useState(false);
-  const [newTitle, setNewTitle] = useState("");
-  const [newContent, setNewContent] = useState("");
-  const [newCategory, setNewCategory] = useState("general");
-  const [submitting, setSubmitting] = useState(false);
-  const [replyContent, setReplyContent] = useState("");
-  const [replying, setReplying] = useState(false);
-  const [filterCategory, setFilterCategory] = useState<string>("all");
->>>>>>> Stashed changes
 
   const loadTopics = useCallback(async () => {
     setLoading(true);
     try {
-<<<<<<< Updated upstream
       const params = new URLSearchParams({
         page: String(page),
         pageSize: "20",
@@ -333,22 +225,11 @@ export function ForumView() {
       setLoading(false);
     }
   }, [page, category, bankId, debouncedSearch]);
-=======
-      const res = await fetch("/api/forum/topics");
-      if (res.ok) setTopics(await res.json());
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
->>>>>>> Stashed changes
 
   useEffect(() => {
     loadTopics();
   }, [loadTopics]);
 
-<<<<<<< Updated upstream
   // Reset to page 1 whenever the filters change.
   useEffect(() => {
     setPage(1);
@@ -360,42 +241,11 @@ export function ForumView() {
       return;
     }
     setCreating(true);
-=======
-  const openTopic = useCallback(async (id: string) => {
-    setLoadingTopic(true);
-    setSelectedTopic(null);
-    try {
-      const res = await fetch(`/api/forum/topics/${id}`);
-      if (res.ok) {
-        setSelectedTopic(await res.json());
-      } else {
-        toast.error("Sujet introuvable");
-      }
-    } catch (e) {
-      console.error(e);
-      toast.error("Erreur réseau");
-    } finally {
-      setLoadingTopic(false);
-    }
-  }, []);
-
-  async function createTopic() {
-    if (!session?.user) {
-      toast.error("Connectez-vous pour créer un sujet");
-      return;
-    }
-    if (!newTitle.trim() || !newContent.trim()) {
-      toast.error("Titre et contenu obligatoires");
-      return;
-    }
-    setSubmitting(true);
->>>>>>> Stashed changes
     try {
       const res = await fetch("/api/forum/topics", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-<<<<<<< Updated upstream
           title: createTitle.trim(),
           content: createContent.trim(),
           category: createCategory,
@@ -451,207 +301,6 @@ export function ForumView() {
   }
 
   // ---------- Topic list view ----------
-=======
-          title: newTitle,
-          content: newContent,
-          category: newCategory,
-        }),
-      });
-      if (res.ok) {
-        const topic = await res.json();
-        setTopics((prev) => [topic, ...prev]);
-        setNewTitle("");
-        setNewContent("");
-        setNewCategory("general");
-        toast.success("Sujet créé ✓");
-      } else {
-        const data = await res.json().catch(() => ({}));
-        toast.error(data.error ?? "Échec de la création");
-      }
-    } finally {
-      setSubmitting(false);
-    }
-  }
-
-  async function deleteTopic(id: string) {
-    if (!confirm("Supprimer ce sujet et toutes ses réponses ?")) return;
-    const res = await fetch(`/api/forum/topics/${id}`, { method: "DELETE" });
-    if (res.ok) {
-      setTopics((prev) => prev.filter((t) => t.id !== id));
-      setSelectedTopic(null);
-      toast.success("Sujet supprimé");
-    } else {
-      toast.error("Échec de la suppression");
-    }
-  }
-
-  async function addReply() {
-    if (!selectedTopic) return;
-    if (!replyContent.trim()) return;
-    setReplying(true);
-    try {
-      const res = await fetch(`/api/forum/topics/${selectedTopic.id}/replies`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content: replyContent }),
-      });
-      if (res.ok) {
-        const reply = await res.json();
-        setSelectedTopic((prev) =>
-          prev ? { ...prev, replies: [...(prev.replies ?? []), reply] } : prev
-        );
-        setReplyContent("");
-        toast.success("Réponse publiée");
-      } else {
-        toast.error("Échec de la publication");
-      }
-    } finally {
-      setReplying(false);
-    }
-  }
-
-  const filteredTopics =
-    filterCategory === "all"
-      ? topics
-      : topics.filter((t) => t.category === filterCategory);
-
-  // ---- Render: topic detail ----
-  if (selectedTopic || loadingTopic) {
-    return (
-      <div className="space-y-5">
-        <Button
-          variant="ghost"
-          size="sm"
-          className="gap-2"
-          onClick={() => setSelectedTopic(null)}
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Retour au forum
-        </Button>
-
-        {loadingTopic || !selectedTopic ? (
-          <Skeleton className="h-64 rounded-xl" />
-        ) : (
-          <>
-            <Card className="overflow-hidden p-5 sm:p-6">
-              <div className="flex items-start gap-3">
-                <Avatar className="h-10 w-10">
-                  <AvatarFallback className="bg-emerald-100 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
-                    {initials(selectedTopic.author.name || "?")}
-                  </AvatarFallback>
-                </Avatar>
-                <div className="min-w-0 flex-1">
-                  <h1 className="text-lg font-bold leading-tight sm:text-xl">
-                    {selectedTopic.title}
-                  </h1>
-                  <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                    <Badge variant="outline" className="capitalize">
-                      <Tag className="mr-1 h-3 w-3" />
-                      {selectedTopic.category}
-                    </Badge>
-                    <span>par {selectedTopic.author.name}</span>
-                    <span>· {formatDate(selectedTopic.createdAt)}</span>
-                  </div>
-                </div>
-                {session?.user &&
-                  ((session.user as { id?: string }).id === selectedTopic.author.id ||
-                    (session.user as { role?: string }).role === "ADMIN") && (
-                    <Button
-                      size="icon"
-                      variant="ghost"
-                      className="h-8 w-8 hover:bg-rose-100 hover:text-rose-700"
-                      onClick={() => deleteTopic(selectedTopic.id)}
-                      aria-label="Supprimer ce sujet"
-                    >
-                      <Trash2 className="h-4 w-4" />
-                    </Button>
-                  )}
-              </div>
-              <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed">
-                {selectedTopic.content}
-              </p>
-            </Card>
-
-            <div className="flex items-center gap-2">
-              <MessageSquare className="h-4 w-4 text-muted-foreground" />
-              <h2 className="font-semibold">
-                {selectedTopic.replies?.length ?? 0} réponse(s)
-              </h2>
-            </div>
-
-            <div className="space-y-3">
-              {selectedTopic.replies?.map((r) => (
-                <Card
-                  key={r.id}
-                  className={`relative p-4 ${
-                    r.isBestAnswer
-                      ? "border-emerald-300 bg-emerald-50/50 dark:border-emerald-800 dark:bg-emerald-950/20"
-                      : ""
-                  }`}
-                >
-                  {r.isBestAnswer && (
-                    <Badge className="absolute -top-2 right-3 gap-1 border-emerald-300 bg-emerald-100 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
-                      <CheckCircle2 className="h-3 w-3" />
-                      Meilleure réponse
-                    </Badge>
-                  )}
-                  <div className="flex items-center gap-2">
-                    <Avatar className="h-8 w-8">
-                      <AvatarFallback className="bg-muted text-xs">
-                        {initials(r.author.name || "?")}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <p className="text-sm font-medium">{r.author.name}</p>
-                      <p className="text-xs text-muted-foreground">
-                        {formatDate(r.createdAt)}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed">
-                    {r.content}
-                  </p>
-                </Card>
-              ))}
-              {!selectedTopic.replies || selectedTopic.replies.length === 0 ? (
-                <Card className="p-6 text-center text-sm text-muted-foreground">
-                  Aucune réponse pour le moment. Soyez le premier à répondre !
-                </Card>
-              ) : null}
-            </div>
-
-            <Card className="p-4">
-              <Label className="text-sm font-semibold">Votre réponse</Label>
-              <Textarea
-                value={replyContent}
-                onChange={(e) => setReplyContent(e.target.value)}
-                rows={3}
-                placeholder="Partagez votre réponse ou votre aide..."
-                className="mt-1 resize-none"
-              />
-              <div className="mt-2 flex justify-end">
-                <Button
-                  onClick={addReply}
-                  disabled={replying || !replyContent.trim()}
-                  className="gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
-                >
-                  {replying ? (
-                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                  ) : (
-                    <Send className="h-4 w-4" />
-                  )}
-                  Publier
-                </Button>
-              </div>
-            </Card>
-          </>
-        )}
-      </div>
-    );
-  }
-
-  // ---- Render: topic list ----
->>>>>>> Stashed changes
   return (
     <div className="space-y-6">
       <Button variant="ghost" size="sm" className="gap-2" onClick={goHome}>
@@ -659,7 +308,6 @@ export function ForumView() {
         Retour à l&apos;accueil
       </Button>
 
-<<<<<<< Updated upstream
       {/* Header banner */}
       <Card className="overflow-hidden border-emerald-200 dark:border-emerald-800">
         <div className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 p-6 text-white">
@@ -901,58 +549,12 @@ export function ForumView() {
                     {banks.map((b) => (
                       <SelectItem key={b.id} value={b.id}>
                         {b.title}
-=======
-      <div>
-        <h1 className="flex items-center gap-2 text-2xl font-bold">
-          <MessagesSquare className="h-6 w-6 text-emerald-600" />
-          Forum de discussion
-        </h1>
-        <p className="mt-1 text-muted-foreground">
-          Échangez entre candidats, posez vos questions et partagez vos astuces.
-        </p>
-      </div>
-
-      {/* Create new topic */}
-      <Card className="p-5">
-        <h2 className="mb-3 flex items-center gap-2 font-semibold">
-          <Plus className="h-4 w-4 text-emerald-600" />
-          Ouvrir un nouveau sujet
-        </h2>
-        {!session?.user ? (
-          <p className="text-sm text-muted-foreground">
-            Connectez-vous pour créer un sujet de discussion.
-          </p>
-        ) : (
-          <div className="space-y-3">
-            <div className="grid gap-3 sm:grid-cols-[1fr_220px]">
-              <div>
-                <Label htmlFor="topic-title">Titre</Label>
-                <Input
-                  id="topic-title"
-                  value={newTitle}
-                  onChange={(e) => setNewTitle(e.target.value)}
-                  placeholder="Ex: Besoin d'aide sur la Constitution du Burkina"
-                  maxLength={200}
-                />
-              </div>
-              <div>
-                <Label htmlFor="topic-cat">Catégorie</Label>
-                <Select value={newCategory} onValueChange={setNewCategory}>
-                  <SelectTrigger id="topic-cat">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {CATEGORIES.map((c) => (
-                      <SelectItem key={c.value} value={c.value}>
-                        {c.label}
->>>>>>> Stashed changes
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
               </div>
             </div>
-<<<<<<< Updated upstream
             <div className="space-y-1.5">
               <Label htmlFor="topic-content">Contenu</Label>
               <Textarea
@@ -1438,111 +1040,3 @@ function ReplyCard({
     </Card>
   );
 }
-=======
-            <div>
-              <Label htmlFor="topic-content">Contenu</Label>
-              <Textarea
-                id="topic-content"
-                value={newContent}
-                onChange={(e) => setNewContent(e.target.value)}
-                rows={4}
-                placeholder="Décrivez votre question ou sujet..."
-                maxLength={5000}
-              />
-            </div>
-            <div className="flex justify-end">
-              <Button
-                onClick={createTopic}
-                disabled={submitting || !newTitle.trim() || !newContent.trim()}
-                className="gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
-              >
-                {submitting ? (
-                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                ) : (
-                  <Send className="h-4 w-4" />
-                )}
-                Publier le sujet
-              </Button>
-            </div>
-          </div>
-        )}
-      </Card>
-
-      {/* Filter */}
-      <div className="flex items-center gap-2">
-        <span className="text-sm text-muted-foreground">Catégorie :</span>
-        <Select value={filterCategory} onValueChange={setFilterCategory}>
-          <SelectTrigger className="w-[220px]">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">Toutes</SelectItem>
-            {CATEGORIES.map((c) => (
-              <SelectItem key={c.value} value={c.value}>
-                {c.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
-
-      {/* Topics list */}
-      <Card className="overflow-hidden">
-        <div className="border-b px-5 py-4">
-          <h2 className="font-semibold">
-            Sujets récents ({filteredTopics.length})
-          </h2>
-        </div>
-        <ScrollArea className="max-h-[600px]">
-          {loading ? (
-            <div className="space-y-2 p-4">
-              {Array.from({ length: 4 }).map((_, i) => (
-                <Skeleton key={i} className="h-20 rounded-lg" />
-              ))}
-            </div>
-          ) : filteredTopics.length === 0 ? (
-            <div className="p-8 text-center text-sm text-muted-foreground">
-              Aucun sujet. Soyez le premier à lancer la discussion !
-            </div>
-          ) : (
-            <div className="divide-y">
-              {filteredTopics.map((t) => (
-                <button
-                  key={t.id}
-                  onClick={() => openTopic(t.id)}
-                  className="flex w-full items-start gap-3 px-5 py-4 text-left transition-colors hover:bg-muted/40"
-                >
-                  <Avatar className="h-9 w-9 shrink-0">
-                    <AvatarFallback className="bg-emerald-100 text-xs text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
-                      {initials(t.author.name || "?")}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate font-semibold leading-tight">
-                      {t.title}
-                    </p>
-                    <p className="mt-0.5 line-clamp-1 text-xs text-muted-foreground">
-                      {t.content}
-                    </p>
-                    <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                      <Badge variant="outline" className="capitalize">
-                        {t.category}
-                      </Badge>
-                      <span>par {t.author.name}</span>
-                      <span>· {formatDate(t.createdAt)}</span>
-                      <span className="flex items-center gap-1">
-                        <MessageSquare className="h-3 w-3" />
-                        {t._count?.replies ?? 0}
-                      </span>
-                    </div>
-                  </div>
-                </button>
-              ))}
-            </div>
-          )}
-        </ScrollArea>
-      </Card>
-    </div>
-  );
-}
->>>>>>> Stashed changes

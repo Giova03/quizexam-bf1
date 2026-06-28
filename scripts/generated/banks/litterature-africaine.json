@@ -19,8 +19,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
       "question": "Qui a écrit 'L'Enfant noir' ?",
       "optionA": "Camara Laye",
       "optionB": "Cheikh Hamidou Kane",
@@ -31,7 +29,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "Qui a écrit 'L'Aventure ambiguë' ?",
       "optionA": "Cheikh Hamidou Kane",
       "optionB": "Camara Laye",
@@ -122,19 +119,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
-      "question": "Qui a écrit 'L'Étranger' ?",
-      "optionA": "Albert Camus",
-      "optionB": "Jean-Paul Sartre",
-      "optionC": "André Gide",
-      "optionD": "Marcel Proust",
-      "correctAnswer": "A",
-      "explanation": "Albert Camus a écrit 'L'Étranger' (1942).",
-      "difficulty": "medium"
-    },
-    {
->>>>>>> Stashed changes
       "question": "Qui a fondé le mouvement de la négritude ?",
       "optionA": "Aimé Césaire, Léopold Sédar Senghor et Léon-Gontran Damas",
       "optionB": "Mongo Beti",
@@ -145,8 +129,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
       "question": "Qui a écrit 'Cahier d'un retour au pays natal' ?",
       "optionA": "Aimé Césaire",
       "optionB": "Léopold Sédar Senghor",
@@ -157,7 +139,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "Léopold Sédar Senghor a été président de quel pays ?",
       "optionA": "Sénégal",
       "optionB": "Côte d'Ivoire",

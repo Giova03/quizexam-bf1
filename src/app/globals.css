@@ -201,7 +201,6 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
-<<<<<<< Updated upstream
 /* === Accessibility modes (P9) ===
  * Applied by PreferencesApplier as classes/attributes on <html>.
  * Keep specificity low so user content remains readable but adapts.
@@ -273,42 +272,6 @@ html.large-text .text-sm { font-size: 1rem !important; }
 html.large-text .text-base { font-size: 1.1rem !important; }
 
 /* Reduce motion: disable all CSS animations + transitions. */
-=======
-/* === Accessibility classes (I5 - Feature 8) === */
-
-/* High contrast mode: stronger borders, pure black/white text */
-html.hc-mode {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0 0 0);
-  --muted-foreground: oklch(0.2 0 0);
-  --border: oklch(0 0 0);
-  --input: oklch(0 0 0);
-  --ring: oklch(0 0 0);
-}
-html.hc-mode.dark {
-  --background: oklch(0 0 0);
-  --foreground: oklch(1 0 0);
-  --muted-foreground: oklch(0.85 0 0);
-  --border: oklch(1 0 0);
-  --input: oklch(0.9 0 0);
-  --ring: oklch(1 0 0);
-}
-html.hc-mode * {
-  border-color: var(--border) !important;
-}
-html.hc-mode a,
-html.hc-mode button {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-/* Large text mode: +25% font-size globally */
-html.large-text {
-  font-size: 125%;
-}
-
-/* Reduce motion: disable all transitions + animations */
->>>>>>> Stashed changes
 html.reduce-motion *,
 html.reduce-motion *::before,
 html.reduce-motion *::after {
@@ -317,116 +280,5 @@ html.reduce-motion *::after {
   transition-duration: 0.001ms !important;
   scroll-behavior: auto !important;
 }
-<<<<<<< Updated upstream
 
 /* Honour the user's OS-level prefers-reduced-motion setting too. */
-=======
->>>>>>> Stashed changes
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-<<<<<<< Updated upstream
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Dyslexia-friendly font: use a slab/serif fallback stack that many dyslexic
- * readers find easier to scan than the default sans-serif. Loads from system
- * fonts (no network fetch), so it works offline. */
-html[data-dyslexia] body,
-html[data-dyslexia] p,
-html[data-dyslexia] li,
-html[data-dyslexia] span,
-html[data-dyslexia] a,
-html[data-dyslexia] button,
-html[data-dyslexia] input,
-html[data-dyslexia] textarea,
-html[data-dyslexia] label,
-html[data-dyslexia] h1,
-html[data-dyslexia] h2,
-html[data-dyslexia] h3,
-html[data-dyslexia] h4,
-html[data-dyslexia] h5,
-html[data-dyslexia] h6 {
-  font-family: "Comic Sans MS", "Comic Neue", "Lexend", "Verdana", "Tahoma",
-    "Trebuchet MS", system-ui, sans-serif !important;
-  letter-spacing: 0.03em;
-  word-spacing: 0.08em;
-  line-height: 1.6;
-}
-
-/* Screen-reader hints mode: surfaces hidden labels + adds visible hints
- * for elements that are normally announced only by screen readers. */
-html[data-sr-hints] .sr-only {
-  position: static !important;
-  width: auto !important;
-  height: auto !important;
-  padding: 0 0.25rem !important;
-  margin: 0 !important;
-  overflow: visible !important;
-  clip: auto !important;
-  clip-path: none !important;
-  white-space: normal !important;
-  border: 1px dashed var(--border) !important;
-  background: var(--muted) !important;
-  color: var(--foreground) !important;
-  font-size: 0.7rem !important;
-}
-html[data-sr-hints] [aria-label]::after {
-  content: " [aria: " attr(aria-label) "]";
-  font-size: 0.7rem;
-  color: var(--muted-foreground);
-  font-style: italic;
-}
-
-/* Custom scrollbar styling for long lists (used by max-h-96 overflow-y-auto) */
-.scrollbar-thin::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-.scrollbar-thin::-webkit-scrollbar-track {
-  background: transparent;
-}
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 3px;
-}
-.scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: var(--muted-foreground);
-=======
-    transition-duration: 0.001ms !important;
-  }
-}
-
-/* Dyslexia-friendly font: use system fonts with extra letter-spacing */
-html.dyslexia-font {
-  --font-dyslexia: "Comic Sans MS", "Verdana", "Tahoma", "Trebuchet MS", sans-serif;
-  font-family: var(--font-dyslexia) !important;
-  letter-spacing: 0.04em;
-  word-spacing: 0.08em;
-  line-height: 1.6;
-}
-html.dyslexia-font p,
-html.dyslexia-font li,
-html.dyslexia-font h1,
-html.dyslexia-font h2,
-html.dyslexia-font h3,
-html.dyslexia-font h4,
-html.dyslexia-font h5,
-html.dyslexia-font h6,
-html.dyslexia-font label,
-html.dyslexia-font button,
-html.dyslexia-font input,
-html.dyslexia-font textarea {
-  font-family: var(--font-dyslexia) !important;
-}
-
-/* User-controlled font-size slider (100% to 150%) */
-html {
-  font-size: var(--user-font-size, 100%);
->>>>>>> Stashed changes
-}

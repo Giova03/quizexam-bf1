@@ -5,7 +5,6 @@ import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
-<<<<<<< Updated upstream
 const ALLOWED_TARGET_TYPES = new Set([
   "forum_topic",
   "forum_reply",
@@ -94,71 +93,4 @@ export async function GET(req: Request) {
   });
 
   return NextResponse.json(reports);
-=======
-/** GET /api/reports — admin only. Optional status filter. */
-export async function GET(request: Request) {
-  try {
-    const session = await getServerSession(authOptions);
-    if (!session?.user || (session.user as { role?: string }).role !== "ADMIN") {
-      return NextResponse.json({ error: "Réservé à l'administrateur" }, { status: 403 });
-    }
-    const { searchParams } = new URL(request.url);
-    const status = searchParams.get("status") ?? "pending";
-    const where = status === "all" ? {} : { status };
-    const reports = await db.report.findMany({
-      where,
-      orderBy: { createdAt: "desc" },
-      take: 200,
-      include: {
-        reporter: { select: { id: true, name: true } },
-      },
-    });
-    return NextResponse.json(reports);
-  } catch (error) {
-    console.error("Failed to list reports:", error);
-    return NextResponse.json({ error: "Failed to load reports" }, { status: 500 });
-  }
-}
-
-/** POST /api/reports — any authenticated user can create a report. */
-export async function POST(request: Request) {
-  try {
-    const session = await getServerSession(authOptions);
-    if (!session?.user?.email) {
-      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
-    }
-    const user = await db.user.findUnique({
-      where: { email: session.user.email },
-      select: { id: true },
-    });
-    if (!user) {
-      return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
-    }
-    const body = (await request.json()) as {
-      targetType?: string;
-      targetId?: string;
-      reason?: string;
-      category?: string;
-    };
-    const targetType = body.targetType?.trim();
-    const targetId = body.targetId?.trim();
-    if (!targetType || !targetId) {
-      return NextResponse.json({ error: "Cible du signalement manquante" }, { status: 400 });
-    }
-    const report = await db.report.create({
-      data: {
-        targetType,
-        targetId,
-        reason: (body.reason ?? "").trim().slice(0, 1000),
-        category: body.category?.trim() || "autre",
-        reporterId: user.id,
-      },
-      include: { reporter: { select: { id: true, name: true } } },
-    });
-    return NextResponse.json(report, { status: 201 });
-  } catch (error) {
-    console.error("Failed to create report:", error);
-    return NextResponse.json({ error: "Failed to create report" }, { status: 500 });
-  }
->>>>>>> Stashed changes
 }

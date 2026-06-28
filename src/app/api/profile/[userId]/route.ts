@@ -7,7 +7,6 @@ export const dynamic = "force-dynamic";
 
 /**
  * GET /api/profile/[userId]
-<<<<<<< Updated upstream
  * Public profile of any user. Returns limited data:
  *   - id, name, role, bio, establishment, createdAt
  *   - avatar (initial — derived from the name)
@@ -21,9 +20,6 @@ export const dynamic = "force-dynamic";
  *   - recentActivity: last 10 completed sessions (title + score + date).
  *
  * No email, no private fields, no referral info is exposed.
-=======
- * Public profile of any user: name, bio, establishment, public stats.
->>>>>>> Stashed changes
  */
 export async function GET(
   _request: Request,
@@ -31,45 +27,16 @@ export async function GET(
 ) {
   try {
     const { userId } = await params;
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     const user = await db.user.findUnique({
       where: { id: userId },
       select: {
         id: true,
         name: true,
-<<<<<<< Updated upstream
         role: true,
         bio: true,
         establishment: true,
         createdAt: true,
-=======
-        bio: true,
-        establishment: true,
-        createdAt: true,
-        sessions: {
-          where: { completedAt: { not: null } },
-          select: {
-            id: true,
-            title: true,
-            score: true,
-            totalQuestions: true,
-            completedAt: true,
-            sourceType: true,
-          },
-          orderBy: { completedAt: "desc" },
-          take: 20,
-        },
-        _count: {
-          select: {
-            sessions: { where: { completedAt: { not: null } } },
-            posts: true,
-            forumTopics: true,
-          },
-        },
->>>>>>> Stashed changes
       },
     });
 
@@ -80,7 +47,6 @@ export async function GET(
       );
     }
 
-<<<<<<< Updated upstream
     // Compute public stats from completed sessions.
     const sessions = await db.quizSession.findMany({
       where: { userId: user.id, completedAt: { not: null } },
@@ -139,44 +105,19 @@ export async function GET(
     }));
 
     const initial = (user.name ?? "?").charAt(0).toUpperCase();
-=======
-    const completedSessions = user.sessions;
-    const totalSessions = user._count.sessions;
-    const avgScore =
-      totalSessions > 0
-        ? Math.round(
-            completedSessions.reduce(
-              (sum, s) =>
-                sum + (s.score / Math.max(1, s.totalQuestions)) * 100,
-              0
-            ) / Math.max(1, completedSessions.length)
-          )
-        : 0;
-    const totalCorrect = completedSessions.reduce(
-      (sum, s) => sum + s.score,
-      0
-    );
->>>>>>> Stashed changes
 
     return NextResponse.json({
       id: user.id,
       name: user.name,
-<<<<<<< Updated upstream
       role: user.role,
       bio: user.bio ?? "",
       establishment: user.establishment ?? "",
       createdAt: user.createdAt,
       avatar: { initial },
-=======
-      bio: user.bio,
-      establishment: user.establishment,
-      joinedAt: user.createdAt,
->>>>>>> Stashed changes
       stats: {
         totalSessions,
         avgScore,
         totalCorrect,
-<<<<<<< Updated upstream
         totalQuestions,
         rank: rank > 0 ? rank : totalUsers,
         totalUsers,
@@ -188,27 +129,6 @@ export async function GET(
     console.error("Public profile GET error:", error);
     return NextResponse.json(
       { error: "Failed to load profile" },
-=======
-        postsCount: user._count.posts,
-        topicsCount: user._count.forumTopics,
-      },
-      recentSessions: completedSessions.map((s) => ({
-        id: s.id,
-        title: s.title,
-        score: s.score,
-        totalQuestions: s.totalQuestions,
-        percentage: Math.round(
-          (s.score / Math.max(1, s.totalQuestions)) * 100
-        ),
-        completedAt: s.completedAt,
-        sourceType: s.sourceType,
-      })),
-    });
-  } catch (error) {
-    console.error("[profile] GET error:", error);
-    return NextResponse.json(
-      { error: "Erreur lors de la récupération du profil" },
->>>>>>> Stashed changes
       { status: 500 }
     );
   }
@@ -216,7 +136,6 @@ export async function GET(
 
 /**
  * PATCH /api/profile/[userId]
-<<<<<<< Updated upstream
  * Update the public profile fields (bio, establishment) of the *current* user.
  *
  * The route is keyed by [userId] for consistency, but the body is only
@@ -228,17 +147,12 @@ export async function GET(
  *   - bio:           free-form text, max 500 chars
  *   - establishment: free-form text, max 200 chars
  *   - name:          display name, max 100 chars
-=======
- * Updates the current user's own profile (bio + establishment).
- * Only the owner can patch their own profile.
->>>>>>> Stashed changes
  */
 export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ userId: string }> }
 ) {
   try {
-<<<<<<< Updated upstream
     const session = await getServerSession(authOptions);
     if (!session?.user) {
       return NextResponse.json(
@@ -253,26 +167,12 @@ export async function PATCH(
     const isSelf = currentUserId === userId;
     const isAdmin = role === "ADMIN";
     if (!isSelf && !isAdmin) {
-=======
-    const { userId } = await params;
-    const session = await getServerSession(authOptions);
-    if (!session?.user?.email) {
-      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
-    }
-
-    const currentUser = await db.user.findUnique({
-      where: { email: session.user.email },
-      select: { id: true },
-    });
-    if (!currentUser || currentUser.id !== userId) {
->>>>>>> Stashed changes
       return NextResponse.json(
         { error: "Vous ne pouvez modifier que votre propre profil" },
         { status: 403 }
       );
     }
 
-<<<<<<< Updated upstream
     const body = await request.json();
     const data: Record<string, string> = {};
 
@@ -312,19 +212,6 @@ export async function PATCH(
       }
       data.name = name;
     }
-=======
-    const body = await request.json().catch(() => ({}));
-    const bio =
-      typeof body.bio === "string" ? body.bio.slice(0, 500) : undefined;
-    const establishment =
-      typeof body.establishment === "string"
-        ? body.establishment.slice(0, 200)
-        : undefined;
-
-    const data: { bio?: string; establishment?: string } = {};
-    if (bio !== undefined) data.bio = bio;
-    if (establishment !== undefined) data.establishment = establishment;
->>>>>>> Stashed changes
 
     if (Object.keys(data).length === 0) {
       return NextResponse.json(
@@ -336,7 +223,6 @@ export async function PATCH(
     const updated = await db.user.update({
       where: { id: userId },
       data,
-<<<<<<< Updated upstream
       select: {
         id: true,
         name: true,
@@ -346,22 +232,13 @@ export async function PATCH(
         establishment: true,
         createdAt: true,
       },
-=======
-      select: { id: true, name: true, bio: true, establishment: true },
->>>>>>> Stashed changes
     });
 
     return NextResponse.json(updated);
   } catch (error) {
-<<<<<<< Updated upstream
     console.error("Public profile PATCH error:", error);
     return NextResponse.json(
       { error: "Failed to update profile" },
-=======
-    console.error("[profile] PATCH error:", error);
-    return NextResponse.json(
-      { error: "Erreur lors de la mise à jour du profil" },
->>>>>>> Stashed changes
       { status: 500 }
     );
   }

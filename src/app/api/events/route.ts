@@ -5,7 +5,6 @@ import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
-<<<<<<< Updated upstream
 const EVENT_TYPES = ["exam", "contest", "deadline"] as const;
 type EventType = (typeof EVENT_TYPES)[number];
 
@@ -147,61 +146,10 @@ export async function POST(request: Request) {
         );
       }
     }
-=======
-/** GET /api/events — list upcoming + recent events (sorted by date asc). */
-export async function GET(request: Request) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const limit = Math.min(100, Number(searchParams.get("limit") ?? "100"));
-    const upcomingOnly = searchParams.get("upcoming") === "true";
-
-    const where = upcomingOnly ? { date: { gte: new Date() } } : {};
-    const events = await db.event.findMany({
-      where,
-      orderBy: { date: "asc" },
-      take: limit,
-    });
-    return NextResponse.json(events);
-  } catch (error) {
-    console.error("Failed to list events:", error);
-    return NextResponse.json({ error: "Failed to load events" }, { status: 500 });
-  }
-}
-
-/** POST /api/events — admin only. */
-export async function POST(request: Request) {
-  try {
-    const session = await getServerSession(authOptions);
-    if (!session?.user || (session.user as { role?: string }).role !== "ADMIN") {
-      return NextResponse.json({ error: "Réservé à l'administrateur" }, { status: 403 });
-    }
-    const body = (await request.json()) as {
-      title?: string;
-      description?: string;
-      date?: string;
-      endDate?: string;
-      location?: string;
-      category?: string;
-    };
-    const title = body.title?.trim();
-    const dateStr = body.date;
-    if (!title || !dateStr) {
-      return NextResponse.json({ error: "Titre et date requis" }, { status: 400 });
-    }
-    const date = new Date(dateStr);
-    if (isNaN(date.getTime())) {
-      return NextResponse.json({ error: "Date invalide" }, { status: 400 });
-    }
-    const user = await db.user.findUnique({
-      where: { email: session.user.email! },
-      select: { id: true },
-    });
->>>>>>> Stashed changes
 
     const event = await db.event.create({
       data: {
         title,
-<<<<<<< Updated upstream
         description,
         type,
         startDate,
@@ -220,19 +168,5 @@ export async function POST(request: Request) {
       { error: "Failed to create event" },
       { status: 500 }
     );
-=======
-        description: body.description?.trim() ?? "",
-        date,
-        endDate: body.endDate ? new Date(body.endDate) : null,
-        location: body.location?.trim() ?? "",
-        category: body.category?.trim() || "info",
-        createdBy: user?.id ?? null,
-      },
-    });
-    return NextResponse.json(event, { status: 201 });
-  } catch (error) {
-    console.error("Failed to create event:", error);
-    return NextResponse.json({ error: "Failed to create event" }, { status: 500 });
->>>>>>> Stashed changes
   }
 }

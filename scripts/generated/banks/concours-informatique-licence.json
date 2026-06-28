@@ -226,12 +226,7 @@
       "optionC": "UDP établit une connexion avant d'envoyer des données contrairement à TCP",
       "optionD": "TCP est utilisé pour les transmissions en mode texte tandis que UDP est pour le binaire",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "TCP (Transmission Control Protocol) est orienté connexion, fiable mais plus lent, avec contrôle d'erreurs et d'ordre. UDP (User Datagram Protocol) est sans connexion, plus rapide mais sans garantie de livraison ou d'ordre."
-=======
-      "explanation": "TCP (Transmission Control Protocol) est orienté connexion, fiable mais plus lent, avec contrôle d'erreurs et d'ordre. UDP (User Datagram Protocol) est sans connexion, plus rapide mais sans garantie de livraison ou d'ordre.",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Dans Git, quelle commande permet de voir l'historique des commits avec un formatage graphique des branches ?",

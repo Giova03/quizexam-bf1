@@ -409,8 +409,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
       "question": "Quel type de mutation est responsable de la drépanocytose ?",
       "optionA": "Substitution",
       "optionB": "Insertion",
@@ -421,7 +419,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "Quelle structure est responsable de la photosynth chez les plantes ?",
       "optionA": "Mitochondries",
       "optionB": "Chloroplastes",
@@ -552,19 +549,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
-      "question": "Quelle est la fonction principale des anticorps ?",
-      "optionA": "Production de cytokines",
-      "optionB": "Neutralisation des pathogènes",
-      "optionC": "Phagocytose",
-      "optionD": "Activation complémentaire",
-      "correctAnswer": "B",
-      "explanation": "Les anticorps sont principalement impliqués dans la neutralisation des pathogènes en se liant à leurs antigènes spécifiques.",
-      "difficulty": "medium"
-    },
-    {
->>>>>>> Stashed changes
       "question": "Quel type de régulation transcriptionnelle implique des activateurs ou des répresseurs se liant à l'ADN ?",
       "optionA": "Régulation post-traductionnelle",
       "optionB": "Régulation épigénétique",
@@ -845,8 +829,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
       "question": "Quelle cellule immunitaire est principalement responsable de la réponse humorale?",
       "optionA": "Les lymphocytes T",
       "optionB": "Les lymphocytes B",
@@ -857,7 +839,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "Chez les vertébrés, quel est le premier stade du développement embryonnaire après la fécondation?",
       "optionA": "La gastrulation",
       "optionB": "La neurulation",
@@ -954,12 +935,7 @@
       "optionC": "Mutation par substitution d'un nucléotide synonyme",
       "optionD": "Mutation par insertion d'un nucléotide dans l'intron",
       "correctAnswer": "B",
-<<<<<<< Updated upstream
       "explanation": "Une mutation non-sens (créant un codon d'arrêt prématuré) est susceptible de produire une protéine tronquée non fonctionnelle, ce qui peut provoquer une maladie dominante si un seul allèle muté suffit pour altérer la fonction."
-=======
-      "explanation": "Une mutation non-sens (créant un codon d'arrêt prématuré) est susceptible de produire une protéine tronquée non fonctionnelle, ce qui peut provoquer une maladie dominante si un seul allèle muté suffit pour altérer la fonction.",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Quel mécanisme permet aux plantes C4 d'effectuer la photosynthèse avec une efficacité accrue en conditions de sécheresse?",

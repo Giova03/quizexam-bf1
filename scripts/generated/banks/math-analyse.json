@@ -216,12 +216,7 @@
       "optionC": "y = e⁻ˣ",
       "optionD": "y = C",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « y = Ceˣ ». y' = y ⟹ y = Ceˣ. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « L'équation y' = y a pour solution : »."
-=======
-      "explanation": "La bonne réponse est « y = Ceˣ » car elle correspond à l'affirmation correcte concernant : L'équation y' = y a pour solution :",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "L'équation y'' + y = 0 a pour solution :",
@@ -230,12 +225,7 @@
       "optionC": "Ax + B",
       "optionD": "A",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « A·cos(x) + B·sin(x) ». r²+1=0, r=±i. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « L'équation y'' + y = 0 a pour solution : »."
-=======
-      "explanation": "La bonne réponse est « A·cos(x) + B·sin(x) » car elle correspond à l'affirmation correcte concernant : L'équation y'' + y = 0 a pour solution :",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Le théorème de Rolle dit que si f(a)=f(b), alors :",
@@ -264,12 +254,7 @@
       "optionC": "-cos(x) + C",
       "optionD": "tan(x) + C",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « sin(x) + C ». ∫ cos = sin + C. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « L'intégrale ∫ cos(x) dx est : »."
-=======
-      "explanation": "La bonne réponse est « sin(x) + C » car elle correspond à l'affirmation correcte concernant : L'intégrale ∫ cos(x) dx est :",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     }
   ]
 }

@@ -10,8 +10,6 @@
   "subject": "Réseau et télécom: OSI, TCP/IP, IPv4/IPv6, routage, protocoles (HTTP, DNS, DHCP), 4G/5G, fibre, Wi-Fi, VLAN, VPN",
   "questions": [
     {
-<<<<<<< Updated upstream
-=======
       "question": "Dans le modèle OSI, à quel niveau appartient le protocole TCP ?",
       "optionA": "Niveau 2 (Couche Liaison)",
       "optionB": "Niveau 3 (Couche Réseau)",
@@ -22,7 +20,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "Quelle est la taille minimale d'une trame Ethernet II ?",
       "optionA": "64 octets",
       "optionB": "128 octets",
@@ -379,12 +376,7 @@
       "optionC": "GCMP",
       "optionD": "TKIP",
       "correctAnswer": "C",
-<<<<<<< Updated upstream
       "explanation": "WPA3 utilise GCMP (Galois/Counter Mode Protocol) comme méthode de cryptage par défaut, qui offre une sécurité supérieure à AES-CCMP utilisé dans WPA2."
-=======
-      "explanation": "WPA3 utilise GCMP (Galois/Counter Mode Protocol) comme méthode de cryptage par défaut, qui offre une sécurité supérieure à AES-CCMP utilisé dans WPA2.",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Quel est le protocole utilisé pour sécuriser les communications HTTP ?",

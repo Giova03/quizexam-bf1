@@ -1,25 +1,17 @@
 "use client";
 
-<<<<<<< Updated upstream
 import { usePrefs } from "@/lib/prefs-store";
-=======
->>>>>>> Stashed changes
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-<<<<<<< Updated upstream
 import { Separator } from "@/components/ui/separator";
-=======
-import { Badge } from "@/components/ui/badge";
->>>>>>> Stashed changes
-import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 import {
   Contrast,
   Type,
   Wind,
   Accessibility,
-<<<<<<< Updated upstream
   BookOpen,
   Volume2,
   RotateCcw,
@@ -41,45 +33,27 @@ import {
  * Slider:
  *   - Base font size (12-24 px)
  */
-=======
-  ZoomIn,
-  RotateCcw,
-} from "lucide-react";
-import { usePrefs } from "@/lib/prefs-store";
-
->>>>>>> Stashed changes
 export function AccessibilityPanel() {
   const {
-    highContrast,
-    largeText,
-    reduceMotion,
-    dyslexiaFont,
-<<<<<<< Updated upstream
-    screenReaderHints,
-=======
->>>>>>> Stashed changes
+    highContrast = false,
+    largeText = false,
+    reduceMotion = false,
+    dyslexiaFont = false,
+    screenReaderHints = false,
     fontSize,
     toggleHighContrast,
     toggleLargeText,
     toggleReduceMotion,
     toggleDyslexiaFont,
-<<<<<<< Updated upstream
     toggleScreenReaderHints,
     setFontSize,
   } = usePrefs();
 
   const resetAll = () => {
-=======
-    setFontSize,
-  } = usePrefs();
-
-  function resetAll() {
->>>>>>> Stashed changes
     if (highContrast) toggleHighContrast();
     if (largeText) toggleLargeText();
     if (reduceMotion) toggleReduceMotion();
     if (dyslexiaFont) toggleDyslexiaFont();
-<<<<<<< Updated upstream
     if (screenReaderHints) toggleScreenReaderHints();
     setFontSize(16);
   };
@@ -184,99 +158,6 @@ export function AccessibilityPanel() {
         </>
       )}
     </div>
-=======
-    setFontSize(100);
-  }
-
-  const anyActive =
-    highContrast || largeText || reduceMotion || dyslexiaFont || fontSize !== 100;
-
-  return (
-    <Card className="divide-y p-0 shadow-sm">
-      {/* Header */}
-      <div className="flex items-center justify-between gap-3 p-3">
-        <div className="flex items-start gap-2.5">
-          <Accessibility className="mt-0.5 h-4 w-4 text-violet-600" />
-          <div>
-            <Label className="text-sm font-medium">Accessibilité</Label>
-            <p className="text-xs text-muted-foreground">
-              Adaptez l&apos;interface à vos besoins visuels et moteurs.
-            </p>
-          </div>
-        </div>
-        {anyActive && (
-          <Button size="sm" variant="ghost" className="gap-1 text-xs" onClick={resetAll}>
-            <RotateCcw className="h-3 w-3" />
-            Réinitialiser
-          </Button>
-        )}
-      </div>
-
-      <ToggleRow
-        icon={Contrast}
-        title="Contraste élevé"
-        description="Noir et blanc renforcés pour une meilleure lisibilité."
-        checked={highContrast}
-        onToggle={toggleHighContrast}
-      />
-
-      <ToggleRow
-        icon={Type}
-        title="Texte agrandi"
-        description="Augmente la taille de police de 25%."
-        checked={largeText}
-        onToggle={toggleLargeText}
-      />
-
-      <ToggleRow
-        icon={Wind}
-        title="Réduire les animations"
-        description="Désactive les transitions et animations."
-        checked={reduceMotion}
-        onToggle={toggleReduceMotion}
-      />
-
-      <ToggleRow
-        icon={Type}
-        title="Police dyslexie"
-        description="Police adaptée aux personnes dyslexiques (lettrage plus espacé)."
-        checked={dyslexiaFont}
-        onToggle={toggleDyslexiaFont}
-      />
-
-      {/* Font size slider */}
-      <div className="p-3">
-        <div className="flex items-center justify-between gap-3">
-          <div className="flex items-start gap-2.5">
-            <ZoomIn className="mt-0.5 h-4 w-4 text-emerald-600" />
-            <div>
-              <Label className="text-sm font-medium">Taille de police</Label>
-              <p className="text-xs text-muted-foreground">
-                Ajustez finement la taille du texte (100% à 150%).
-              </p>
-            </div>
-          </div>
-          <Badge variant="secondary" className="font-mono">
-            {fontSize}%
-          </Badge>
-        </div>
-        <div className="mt-3 px-1">
-          <Slider
-            value={[fontSize]}
-            min={100}
-            max={150}
-            step={5}
-            onValueChange={(v) => setFontSize(v[0] ?? 100)}
-            aria-label="Taille de police"
-          />
-          <div className="mt-1 flex justify-between text-[10px] text-muted-foreground">
-            <span>A</span>
-            <span className="text-base">A</span>
-          </div>
-        </div>
-      </div>
-    </Card>
->>>>>>> Stashed changes
   );
 }
 
@@ -302,11 +183,7 @@ function ToggleRow({
           <p className="text-xs text-muted-foreground">{description}</p>
         </div>
       </div>
-<<<<<<< Updated upstream
       <Switch checked={checked} onCheckedChange={onToggle} aria-label={title} />
-=======
-      <Switch checked={checked} onCheckedChange={onToggle} />
->>>>>>> Stashed changes
     </div>
   );
 }

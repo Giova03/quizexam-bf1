@@ -336,12 +336,7 @@
       "optionC": "Médiane = -1",
       "optionD": "Médiane = 0.5",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "Pour une loi normale N(μ,σ²), la médiane est égale à μ. Ici μ=0, donc la médiane est 0. La loi normale est symétrique autour de sa moyenne, qui coïncide avec la médiane."
-=======
-      "explanation": "Pour une loi normale N(μ,σ²), la médiane est égale à μ. Ici μ=0, donc la médiane est 0. La loi normale est symétrique autour de sa moyenne, qui coïncide avec la médiane.",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     }
   ]
 }

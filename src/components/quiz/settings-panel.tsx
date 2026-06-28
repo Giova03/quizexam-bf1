@@ -28,16 +28,10 @@ import {
   WifiOff,
 } from "lucide-react";
 import { useTranslation } from "@/lib/use-translation";
-<<<<<<< Updated upstream
 import { PushNotificationSettings } from "./push-notification-settings";
 import { AccessibilityPanel } from "./accessibility-panel";
 import { EmailPreferencesSection } from "./email-preferences";
 import { OfflineManagerPanel } from "./offline-manager-panel";
-=======
-import { OfflineManagerPanel } from "./offline-manager-panel";
-import { AccessibilityPanel } from "./accessibility-panel";
-import { PushNotificationSettings } from "./push-notification-settings";
->>>>>>> Stashed changes
 
 export function SettingsPanel({
   open,

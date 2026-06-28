@@ -2,51 +2,17 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
-<<<<<<< Updated upstream
 import { applySm2, type SpacedCard } from "@/lib/spaced-repetition-store";
-=======
->>>>>>> Stashed changes
-
-export const dynamic = "force-dynamic";
 
 /**
-<<<<<<< Updated upstream
- * GET /api/spaced-repetition?ids=q1,q2,q3
+ * GET /api/spaced-repetition?ids=id1,id2,...
  *
- * Returns the full question data for the given IDs. The client tracks which
- * cards are due (via the Zustand persisted store in localStorage) and sends
- * the list of due question IDs here. The server looks them up and returns
- * the question text, options, correct answer and explanation so the client
- * can render the flashcard review interface.
- *
- * If no IDs are provided, an empty array is returned.
+ * Returns the full question rows for the supplied IDs, preserving the order in
+ * which the IDs were provided. Used by the spaced-repetition client to load the
+ * cards that are due for review today.
  */
 export async function GET(request: Request) {
   try {
-    const session = await getServerSession(authOptions);
-    if (!session?.user?.email) {
-      return NextResponse.json(
-        { error: "Non authentifié" },
-        { status: 401 }
-      );
-    }
-
-=======
- * API pour la révision espacée.
- *
- * GET  ?ids=q1,q2,q3  → renvoie les données complètes des questions dont les
- *                       IDs sont fournis (le client filtre ensuite les cartes
- *                       dues via le store Zustand).
- *
- * POST { questionId, quality, bankId }
- *                       → enregistre une révision côté serveur (journal
- *                       d'audit) et renvoie l'ACK. Le scheduling réel est
- *                       calculé côté client par le store SM-2.
- */
-
-export async function GET(request: Request) {
-  try {
->>>>>>> Stashed changes
     const { searchParams } = new URL(request.url);
     const idsParam = searchParams.get("ids") ?? "";
     const ids = idsParam
@@ -55,22 +21,11 @@ export async function GET(request: Request) {
       .filter(Boolean);
 
     if (ids.length === 0) {
-<<<<<<< Updated upstream
       return NextResponse.json({ questions: [], dueCount: 0 });
     }
 
     const questions = await db.question.findMany({
       where: { id: { in: ids } },
-=======
-      return NextResponse.json({ questions: [] });
-    }
-
-    // Limite pour éviter les abus
-    const safeIds = ids.slice(0, 200);
-
-    const questions = await db.question.findMany({
-      where: { id: { in: safeIds } },
->>>>>>> Stashed changes
       select: {
         id: true,
         bankId: true,
@@ -80,7 +35,6 @@ export async function GET(request: Request) {
         optionC: true,
         optionD: true,
         correctAnswer: true,
-<<<<<<< Updated upstream
         correctAnswer2: true,
         explanation: true,
         difficulty: true,
@@ -102,27 +56,11 @@ export async function GET(request: Request) {
     console.error("Failed to load spaced-repetition cards:", error);
     return NextResponse.json(
       { error: "Failed to load spaced-repetition cards" },
-=======
-        explanation: true,
-        difficulty: true,
-        bank: {
-          select: { id: true, title: true, color: true, icon: true },
-        },
-      },
-    });
-
-    return NextResponse.json({ questions });
-  } catch (error) {
-    console.error("Failed to load spaced-repetition questions:", error);
-    return NextResponse.json(
-      { error: "Failed to load spaced-repetition questions" },
->>>>>>> Stashed changes
       { status: 500 }
     );
   }
 }
 
-<<<<<<< Updated upstream
 interface ReviewBody {
   questionId: string;
   quality: number;
@@ -159,29 +97,10 @@ export async function POST(request: Request) {
     if (!questionId) {
       return NextResponse.json(
         { error: "questionId requis" },
-=======
-export async function POST(request: Request) {
-  try {
-    const authSession = await getServerSession(authOptions);
-    if (!authSession?.user?.email) {
-      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
-    }
-
-    const body = (await request.json()) as {
-      questionId?: string;
-      quality?: number;
-      bankId?: string;
-    };
-
-    if (!body.questionId || typeof body.quality !== "number") {
-      return NextResponse.json(
-        { error: "questionId et quality sont requis" },
->>>>>>> Stashed changes
         { status: 400 }
       );
     }
 
-<<<<<<< Updated upstream
     if (
       typeof quality !== "number" ||
       quality < 0 ||
@@ -224,27 +143,6 @@ export async function POST(request: Request) {
       questionId,
       quality,
       card: updated,
-=======
-    // Validation : la question doit exister
-    const question = await db.question.findUnique({
-      where: { id: body.questionId },
-      select: { id: true, bankId: true },
-    });
-    if (!question) {
-      return NextResponse.json({ error: "Question introuvable" }, { status: 404 });
-    }
-
-    // Le scheduling est calculé côté client (store SM-2) car il est persisté
-    // dans localStorage. L'API se contente de valider l'existence de la
-    // question et de renvoyer un ACK. On pourrait à l'avenir loguer ces
-    // révisions dans une table dédiée pour analyse.
-
-    return NextResponse.json({
-      ok: true,
-      questionId: body.questionId,
-      quality: Math.max(0, Math.min(5, Math.floor(body.quality))),
-      recordedAt: new Date().toISOString(),
->>>>>>> Stashed changes
     });
   } catch (error) {
     console.error("Failed to record spaced-repetition review:", error);

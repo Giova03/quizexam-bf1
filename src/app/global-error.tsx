@@ -1,7 +1,6 @@
 "use client";
 
 /**
-<<<<<<< Updated upstream
  * global-error.tsx — Next.js App Router global error boundary.
  *
  * This component replaces the entire layout when an error propagates to the
@@ -13,20 +12,6 @@
 
 import { useEffect } from "react";
 import { AlertTriangle, RotateCcw } from "lucide-react";
-=======
- * global-error.tsx — page d'erreur globale Next.js.
- *
- * Ce fichier remplace le layout racine en cas d'erreur NON interceptée
- * par une ErrorBoundary. Il doit impérativement contenir ses propres
- * balises <html> et <body>.
- *
- * Référence : https://nextjs.org/docs/app/api-reference/file-conventions/error
- */
-
-import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { AlertTriangle, RefreshCw, Home } from "lucide-react";
->>>>>>> Stashed changes
 
 export default function GlobalError({
   error,
@@ -35,7 +20,6 @@ export default function GlobalError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-<<<<<<< Updated upstream
   // Log the error for development / future Sentry integration.
   useEffect(() => {
     console.error("[GlobalError] Uncaught error:", error);
@@ -80,65 +64,6 @@ export default function GlobalError({
             >
               ou recharger la page
             </button>
-=======
-  useEffect(() => {
-    // Logge systématiquement l'erreur pour faciliter le debug
-    console.error("[GlobalError] Erreur non interceptée :", error);
-    if (error.digest) {
-      console.error("[GlobalError] Digest :", error.digest);
-    }
-  }, [error]);
-
-  const message = error?.message ?? "Une erreur inattendue s'est produite.";
-
-  return (
-    <html lang="fr">
-      <body>
-        <div
-          role="alert"
-          className="flex min-h-screen w-full flex-col items-center justify-center gap-4 bg-muted/30 p-8 text-center"
-        >
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-rose-100 text-rose-600">
-            <AlertTriangle className="h-8 w-8" />
-          </div>
-          <div className="space-y-1">
-            <h1 className="text-2xl font-bold">
-              Erreur critique de l&apos;application
-            </h1>
-            <p className="max-w-md text-sm text-muted-foreground">
-              {message}
-            </p>
-            {error.digest && (
-              <p className="font-mono text-xs text-muted-foreground/70">
-                Code : {error.digest}
-              </p>
-            )}
-            <p className="mt-2 text-xs text-muted-foreground/70">
-              L&apos;équipe technique a été notifiée. Vous pouvez tenter de
-              recharger la page ou retourner à l&apos;accueil.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <Button
-              onClick={() => reset()}
-              className="gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
-            >
-              <RefreshCw className="h-4 w-4" />
-              Réessayer
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => {
-                if (typeof window !== "undefined") {
-                  window.location.href = "/";
-                }
-              }}
-              className="gap-2"
-            >
-              <Home className="h-4 w-4" />
-              Accueil
-            </Button>
->>>>>>> Stashed changes
           </div>
         </div>
       </body>

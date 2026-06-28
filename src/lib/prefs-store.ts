@@ -66,7 +66,6 @@ interface PrefsState {
   toggleHighContrast: () => void;
   toggleLargeText: () => void;
   toggleReduceMotion: () => void;
-<<<<<<< Updated upstream
   // --- Extended accessibility (P9) ---
   /** Base font size in pixels (12-24). Applied to <html> via inline style. */
   fontSize: number;
@@ -77,10 +76,6 @@ interface PrefsState {
   /** Screen-reader hints toggle (applies [data-sr-hints] on <html>). */
   screenReaderHints: boolean;
   toggleScreenReaderHints: () => void;
-=======
-  toggleDyslexiaFont: () => void;
-  setFontSize: (n: number) => void;
->>>>>>> Stashed changes
   xp: number;
   level: number;
   streak: number;
@@ -89,7 +84,6 @@ interface PrefsState {
   sessionsCompleted: number;
   totalCorrect: number;
   totalAnswered: number;
-<<<<<<< Updated upstream
   // --- Extended tracking (P5) ---
   /** Number of times the user scored 100% on a quiz (for perfectionniste). */
   perfectScores: number;
@@ -113,47 +107,6 @@ interface PrefsState {
   earlyBirdUnlocked: boolean;
   addXp: (amount: number) => void;
   recordSession: (correct: number, total: number, ctx?: SessionContext) => void;
-=======
-  // === I4 tracking state (for the 19 new badges) ===
-  /** Distinct bank IDs the user has played at least one session in (polyvalent). */
-  banksPlayed: string[];
-  /** Number of perfect-score sessions (perfectionniste). */
-  perfectScoreCount: number;
-  /** Number of community posts/comments (social-butterfly). */
-  socialPostsCount: number;
-  /** Number of users referred (parrain-5). Synced from /api/referral. */
-  referralCount: number;
-  /** Distinct daily-challenge dayKeys completed (daily-warrior). */
-  dailyChallengesDone: string[];
-  /** Current streak of consecutive hard questions answered correctly (master-hard). */
-  hardCorrectStreak: number;
-  /** Best hard-correct streak ever (master-hard fallback). */
-  bestHardCorrectStreak: number;
-  /** Total SM-2 reviews ever (revision-master). */
-  revisionCount: number;
-  /** Number of questions answered today (marathonien). Reset by recordSession when the day changes. */
-  questionsAnsweredToday: number;
-  /** Day key for questionsAnsweredToday (YYYY-MM-DD). */
-  questionsAnsweredDayKey: string;
-  /** Duration (sec) of the last completed quiz (speed-run). */
-  lastQuizDurationSec: number | null;
-  addXp: (amount: number) => void;
-  recordSession: (correct: number, total: number) => void;
-  /** Overload with extra metadata for advanced tracking (banks, difficulty, duration). */
-  recordSessionAdvanced: (opts: {
-    correct: number;
-    total: number;
-    bankId?: string;
-    durationSec?: number;
-    hardCorrect?: number;
-    hardTotal?: number;
-  }) => void;
-  recordSocialPost: () => void;
-  recordReferral: (count: number) => void;
-  recordDailyChallenge: (dayKey: string) => void;
-  recordHardAnswer: (correct: boolean) => void;
-  recordRevision: (count?: number) => void;
->>>>>>> Stashed changes
   unlockBadge: (id: string) => void;
   /** Sync the local referral count with the server; awards +50 XP per new referral. */
   syncReferrals: (serverCount: number) => void;
@@ -170,7 +123,6 @@ interface PrefsState {
 }
 
 const DEFAULT_BADGES: Badge[] = [
-<<<<<<< Updated upstream
   // --- Existing (8) ---
   { id: "first-quiz", label: "Premier pas", description: "Terminer votre premier quiz", icon: "Footprints", unlocked: false, color: "emerald" },
   { id: "streak-3", label: "Régulier", description: "3 jours consécutifs", icon: "Flame", unlocked: false, color: "amber" },
@@ -200,37 +152,6 @@ const DEFAULT_BADGES: Badge[] = [
   { id: "scholar-1000", label: "Érudit Suprême", description: "Répondre à 1000 questions", icon: "BookOpen", unlocked: false, color: "violet" },
   { id: "night-owl", label: "Hibou de nuit", description: "Quiz entre minuit et 4h", icon: "Moon", unlocked: false, color: "violet" },
   { id: "early-bird", label: "Lève-tôt", description: "Quiz entre 4h et 6h", icon: "Sunrise", unlocked: false, color: "amber" },
-=======
-  // === Original 8 ===
-  { id: "first-quiz", label: "Premier pas", description: "Terminer votre premier quiz", icon: "Footprints", unlocked: false },
-  { id: "streak-3", label: "Régulier", description: "3 jours consécutifs", icon: "Flame", unlocked: false },
-  { id: "streak-7", label: "Assidu", description: "7 jours consécutifs", icon: "Trophy", unlocked: false },
-  { id: "perfect-score", label: "Sans faute", description: "100% à un quiz", icon: "Star", unlocked: false },
-  { id: "quiz-master-10", label: "Quiz Master", description: "Terminer 10 quiz", icon: "Crown", unlocked: false },
-  { id: "xp-500", label: "Érudit", description: "Atteindre 500 XP", icon: "GraduationCap", unlocked: false },
-  { id: "exam-complete", label: "Candidat", description: "Terminer un examen blanc", icon: "FileCheck", unlocked: false },
-  { id: "scholar-100", label: "Studieux", description: "Répondre à 100 questions", icon: "BookOpen", unlocked: false },
-  // === I4 extensions (19 new badges → total 27) ===
-  { id: "speed-run", label: "Éclair", description: "Terminer un quiz en moins de 60s", icon: "Zap", unlocked: false },
-  { id: "polyvalent", label: "Polyvalent", description: "Jouer dans 5 banques différentes", icon: "Layers", unlocked: false },
-  { id: "perfectionniste", label: "Perfectionniste", description: "Obtenir 100% à 5 quiz", icon: "Sparkles", unlocked: false },
-  { id: "marathonien", label: "Marathonien", description: "Répondre à 200 questions en une journée", icon: "Hourglass", unlocked: false },
-  { id: "social-butterfly", label: "Sociable", description: "Publier 10 messages dans la communauté", icon: "MessageCircle", unlocked: false },
-  { id: "parrain-5", label: "Parrain", description: "Parrainer 5 utilisateurs", icon: "Users", unlocked: false },
-  { id: "daily-warrior", label: "Guerrier du jour", description: "Compléter 7 défis quotidiens", icon: "Swords", unlocked: false },
-  { id: "master-hard", label: "Maître Difficile", description: "Réussir 10 questions difficiles d'affilée", icon: "Dumbbell", unlocked: false },
-  { id: "revision-master", label: "Maître Révision", description: "Réviser 50 cartes en SM-2", icon: "Brain", unlocked: false },
-  { id: "streak-30", label: "Infatigable", description: "30 jours consécutifs", icon: "Flame", unlocked: false },
-  { id: "streak-100", label: "Légende", description: "100 jours consécutifs", icon: "Crown", unlocked: false },
-  { id: "xp-1000", label: "Sage", description: "Atteindre 1000 XP", icon: "GraduationCap", unlocked: false },
-  { id: "xp-5000", label: "Maître Jedi", description: "Atteindre 5000 XP", icon: "Award", unlocked: false },
-  { id: "quiz-master-50", label: "Champion", description: "Terminer 50 quiz", icon: "Crown", unlocked: false },
-  { id: "quiz-master-100", label: "Légende des Quiz", description: "Terminer 100 quiz", icon: "Trophy", unlocked: false },
-  { id: "scholar-500", label: "Érudit Confirmé", description: "Répondre à 500 questions", icon: "BookOpen", unlocked: false },
-  { id: "scholar-1000", label: "Bibliothèque", description: "Répondre à 1000 questions", icon: "Library", unlocked: false },
-  { id: "night-owl", label: "Hibou de nuit", description: "Réviser après minuit", icon: "Moon", unlocked: false },
-  { id: "early-bird", label: "Lève-tôt", description: "Réviser avant 6h du matin", icon: "Sunrise", unlocked: false },
->>>>>>> Stashed changes
 ];
 
 function levelFromXp(xp: number): number {
@@ -277,7 +198,6 @@ export const usePrefs = create<PrefsState>()(
       toggleHighContrast: () => set((s) => ({ highContrast: !s.highContrast })),
       toggleLargeText: () => set((s) => ({ largeText: !s.largeText })),
       toggleReduceMotion: () => set((s) => ({ reduceMotion: !s.reduceMotion })),
-<<<<<<< Updated upstream
       // Extended accessibility (P9)
       fontSize: 16,
       setFontSize: (size) =>
@@ -289,10 +209,6 @@ export const usePrefs = create<PrefsState>()(
       screenReaderHints: false,
       toggleScreenReaderHints: () =>
         set((s) => ({ screenReaderHints: !s.screenReaderHints })),
-=======
-      toggleDyslexiaFont: () => set((s) => ({ dyslexiaFont: !s.dyslexiaFont })),
-      setFontSize: (n) => set({ fontSize: Math.max(100, Math.min(150, Math.round(n))) }),
->>>>>>> Stashed changes
       xp: 0,
       level: 1,
       streak: 0,
@@ -301,7 +217,6 @@ export const usePrefs = create<PrefsState>()(
       sessionsCompleted: 0,
       totalCorrect: 0,
       totalAnswered: 0,
-<<<<<<< Updated upstream
       // Extended tracking (P5)
       perfectScores: 0,
       distinctBanks: [],
@@ -313,20 +228,6 @@ export const usePrefs = create<PrefsState>()(
       spacedReviewsCompleted: 0,
       nightOwlUnlocked: false,
       earlyBirdUnlocked: false,
-=======
-      // === I4 tracking state defaults ===
-      banksPlayed: [],
-      perfectScoreCount: 0,
-      socialPostsCount: 0,
-      referralCount: 0,
-      dailyChallengesDone: [],
-      hardCorrectStreak: 0,
-      bestHardCorrectStreak: 0,
-      revisionCount: 0,
-      questionsAnsweredToday: 0,
-      questionsAnsweredDayKey: "",
-      lastQuizDurationSec: null,
->>>>>>> Stashed changes
       addXp: (amount) => {
         const newXp = get().xp + amount;
         set({ xp: newXp, level: levelFromXp(newXp) });
@@ -334,21 +235,7 @@ export const usePrefs = create<PrefsState>()(
         if (newXp >= 1000) get().unlockBadge("xp-1000");
         if (newXp >= 5000) get().unlockBadge("xp-5000");
       },
-<<<<<<< Updated upstream
       recordSession: (correct, total, ctx) => {
-=======
-      recordSession: (correct, total) => {
-        get().recordSessionAdvanced({ correct, total });
-      },
-      recordSessionAdvanced: ({
-        correct,
-        total,
-        bankId,
-        durationSec,
-        hardCorrect = 0,
-        hardTotal = 0,
-      }) => {
->>>>>>> Stashed changes
         const today = todayStr();
         const lastDate = get().lastActiveDate;
         let newStreak = get().streak;
@@ -359,7 +246,6 @@ export const usePrefs = create<PrefsState>()(
         }
         const newSessions = get().sessionsCompleted + 1;
         const newXp = get().xp + correct * 10 + (correct === total ? 50 : 0);
-<<<<<<< Updated upstream
 
         // Update distinct banks (polyvalent badge)
         const bankId = ctx?.bankId;
@@ -403,44 +289,6 @@ export const usePrefs = create<PrefsState>()(
           ? Math.max(get().hardBestPct, pct)
           : get().hardBestPct;
 
-=======
-        const isPerfect = correct === total && total > 0;
-
-        // banksPlayed (polyvalent)
-        const banksPlayed = bankId && !get().banksPlayed.includes(bankId)
-          ? [...get().banksPlayed, bankId]
-          : get().banksPlayed;
-
-        // perfectScoreCount (perfectionniste)
-        const perfectScoreCount = isPerfect ? get().perfectScoreCount + 1 : get().perfectScoreCount;
-
-        // questionsAnsweredToday / dayKey (marathonien)
-        let questionsAnsweredToday = get().questionsAnsweredToday;
-        let questionsAnsweredDayKey = get().questionsAnsweredDayKey;
-        if (questionsAnsweredDayKey !== today) {
-          questionsAnsweredToday = 0;
-          questionsAnsweredDayKey = today;
-        }
-        questionsAnsweredToday += total;
-
-        // lastQuizDurationSec (speed-run)
-        const lastQuizDurationSec = durationSec ?? get().lastQuizDurationSec;
-
-        // hard streak (master-hard) — only when at least one hard question was answered
-        let hardCorrectStreak = get().hardCorrectStreak;
-        let bestHardCorrectStreak = get().bestHardCorrectStreak;
-        if (hardTotal > 0) {
-          if (hardCorrect === hardTotal) {
-            hardCorrectStreak += hardCorrect;
-          } else {
-            hardCorrectStreak = hardCorrect;
-          }
-          if (hardCorrectStreak > bestHardCorrectStreak) {
-            bestHardCorrectStreak = hardCorrectStreak;
-          }
-        }
-
->>>>>>> Stashed changes
         set({
           streak: newStreak,
           lastActiveDate: today,
@@ -449,7 +297,6 @@ export const usePrefs = create<PrefsState>()(
           totalAnswered: get().totalAnswered + total,
           xp: newXp,
           level: levelFromXp(newXp),
-<<<<<<< Updated upstream
           distinctBanks: newBanks,
           perfectScores: newPerfectScores,
           weekActivity: newWeekActivity,
@@ -460,23 +307,12 @@ export const usePrefs = create<PrefsState>()(
 
         // --- Badge checks ---
         const totalAnswered = get().totalAnswered;
-=======
-          banksPlayed,
-          perfectScoreCount,
-          questionsAnsweredToday,
-          questionsAnsweredDayKey,
-          lastQuizDurationSec,
-          hardCorrectStreak,
-          bestHardCorrectStreak,
-        });
->>>>>>> Stashed changes
         if (newSessions === 1) get().unlockBadge("first-quiz");
         if (newStreak >= 3) get().unlockBadge("streak-3");
         if (newStreak >= 7) get().unlockBadge("streak-7");
         if (newStreak >= 30) get().unlockBadge("streak-30");
         if (newStreak >= 100) get().unlockBadge("streak-100");
         if (isPerfect) get().unlockBadge("perfect-score");
-<<<<<<< Updated upstream
         if (newPerfectScores >= 5) get().unlockBadge("perfectionniste");
         if (newSessions >= 10) get().unlockBadge("quiz-master-10");
         if (newSessions >= 50) get().unlockBadge("quiz-master-50");
@@ -501,53 +337,6 @@ export const usePrefs = create<PrefsState>()(
           set({ dailyChallengesCompleted: newDcCount });
           if (newDcCount >= 30) get().unlockBadge("daily-warrior");
         }
-=======
-        if (newSessions >= 10) get().unlockBadge("quiz-master-10");
-        if (newSessions >= 50) get().unlockBadge("quiz-master-50");
-        if (newSessions >= 100) get().unlockBadge("quiz-master-100");
-        if (get().totalAnswered >= 100) get().unlockBadge("scholar-100");
-        if (get().totalAnswered >= 500) get().unlockBadge("scholar-500");
-        if (get().totalAnswered >= 1000) get().unlockBadge("scholar-1000");
-        if (get().xp >= 500) get().unlockBadge("xp-500");
-        if (get().xp >= 1000) get().unlockBadge("xp-1000");
-        if (get().xp >= 5000) get().unlockBadge("xp-5000");
-        if (banksPlayed.length >= 5) get().unlockBadge("polyvalent");
-        if (perfectScoreCount >= 5) get().unlockBadge("perfectionniste");
-        if (questionsAnsweredToday >= 200) get().unlockBadge("marathonien");
-        if (lastQuizDurationSec != null && lastQuizDurationSec < 60 && total >= 5) get().unlockBadge("speed-run");
-        if (bestHardCorrectStreak >= 10) get().unlockBadge("master-hard");
-        // Time-of-day badges (local time)
-        const hour = new Date().getHours();
-        if (hour >= 0 && hour < 6) get().unlockBadge("early-bird");
-        if (hour >= 0 && hour < 4) get().unlockBadge("night-owl");
-      },
-      recordSocialPost: () => {
-        const n = get().socialPostsCount + 1;
-        set({ socialPostsCount: n });
-        if (n >= 10) get().unlockBadge("social-butterfly");
-      },
-      recordReferral: (count) => {
-        set({ referralCount: count });
-        if (count >= 5) get().unlockBadge("parrain-5");
-      },
-      recordDailyChallenge: (dayKey) => {
-        const done = get().dailyChallengesDone.includes(dayKey)
-          ? get().dailyChallengesDone
-          : [...get().dailyChallengesDone, dayKey];
-        set({ dailyChallengesDone: done });
-        if (done.length >= 7) get().unlockBadge("daily-warrior");
-      },
-      recordHardAnswer: (correct) => {
-        let hardCorrectStreak = correct ? get().hardCorrectStreak + 1 : 0;
-        let bestHardCorrectStreak = Math.max(get().bestHardCorrectStreak, hardCorrectStreak);
-        set({ hardCorrectStreak, bestHardCorrectStreak });
-        if (bestHardCorrectStreak >= 10) get().unlockBadge("master-hard");
-      },
-      recordRevision: (count = 1) => {
-        const n = get().revisionCount + count;
-        set({ revisionCount: n });
-        if (n >= 50) get().unlockBadge("revision-master");
->>>>>>> Stashed changes
       },
       unlockBadge: (id) => {
         const badges = get().badges;

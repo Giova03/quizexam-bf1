@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-<<<<<<< Updated upstream
 import { getRoom, serializeRoom } from "@/lib/competition-store";
 
 export const dynamic = "force-dynamic";
@@ -100,68 +99,4 @@ export async function POST(request: Request) {
   }
 
   return NextResponse.json(serializeRoom(room, user.id));
-=======
-import { db } from "@/lib/db";
-import { competitionStore } from "@/lib/competition-store";
-
-export const dynamic = "force-dynamic";
-
-/**
- * POST /api/competition/next — fait avancer la room à la question suivante.
- * Seul l'hôte peut déclencher cette action.
- * Corps : { code }
- */
-
-export async function POST(request: Request) {
-  try {
-    const session = await getServerSession(authOptions);
-    if (!session?.user?.email) {
-      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
-    }
-
-    const user = await db.user.findUnique({
-      where: { email: session.user.email },
-      select: { id: true },
-    });
-    if (!user) {
-      return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
-    }
-
-    const body = (await request.json()) as { code?: string };
-    const code = (body.code ?? "").toUpperCase().trim();
-    if (!code) {
-      return NextResponse.json({ error: "code requis" }, { status: 400 });
-    }
-
-    const room = competitionStore.advanceQuestion(code, user.id);
-    if (!room) {
-      return NextResponse.json(
-        { error: "Action refusée (hôte uniquement ou room introuvable)" },
-        { status: 403 }
-      );
-    }
-
-    return NextResponse.json({
-      code: room.code,
-      phase: room.phase,
-      currentQuestionIdx: room.currentQuestionIdx,
-      totalQuestions: room.questions.length,
-      questionStartedAt: room.questionStartedAt,
-      isLastQuestion: room.phase === "finished",
-      participants: Object.values(room.participants)
-        .map((p) => ({
-          id: p.id,
-          name: p.name,
-          score: p.score,
-        }))
-        .sort((a, b) => b.score - a.score),
-    });
-  } catch (error) {
-    console.error("Failed to advance competition question:", error);
-    return NextResponse.json(
-      { error: "Failed to advance question" },
-      { status: 500 }
-    );
-  }
->>>>>>> Stashed changes
 }

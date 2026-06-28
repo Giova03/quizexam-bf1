@@ -3,28 +3,21 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-<<<<<<< Updated upstream
-=======
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
->>>>>>> Stashed changes
 import {
   Users,
   Activity,
   Database,
   Download,
-<<<<<<< Updated upstream
-=======
   Mail,
   AlertTriangle,
   Send,
->>>>>>> Stashed changes
 } from "lucide-react";
 import { toast } from "sonner";
 
 /**
-<<<<<<< Updated upstream
  * ExportsPanel — "Export" tab. Three CSV export cards (users, sessions,
  * banks) that trigger a download via the /api/admin/export endpoint.
  *
@@ -32,10 +25,6 @@ import { toast } from "sonner";
  * dynamic — Tailwind's JIT picks them up because the full set of color
  * names is referenced in other files (e.g. admin-banks.tsx color list).
  * If tree-shaking ever drops them, switch to a static colorMap.
-=======
- * ExportsPanel — onglet "Export" du panneau admin.
- * Permet de télécharger les données (utilisateurs, sessions, banques) au format CSV.
->>>>>>> Stashed changes
  */
 export function ExportsPanel() {
   const [exporting, setExporting] = useState<string | null>(null);
@@ -135,8 +124,6 @@ export function ExportsPanel() {
     </div>
   );
 }
-<<<<<<< Updated upstream
-=======
 
 /**
  * BroadcastPanel — onglet "Broadcast" du panneau admin.
@@ -234,4 +221,3 @@ export function BroadcastPanel() {
     </div>
   );
 }
->>>>>>> Stashed changes

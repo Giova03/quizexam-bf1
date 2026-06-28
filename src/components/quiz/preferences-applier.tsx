@@ -7,14 +7,9 @@ export function PreferencesApplier() {
   const highContrast = usePrefs((s) => s.highContrast);
   const largeText = usePrefs((s) => s.largeText);
   const reduceMotion = usePrefs((s) => s.reduceMotion);
-<<<<<<< Updated upstream
   const fontSize = usePrefs((s) => s.fontSize);
   const dyslexiaFont = usePrefs((s) => s.dyslexiaFont);
   const screenReaderHints = usePrefs((s) => s.screenReaderHints);
-=======
-  const dyslexiaFont = usePrefs((s) => s.dyslexiaFont);
-  const fontSize = usePrefs((s) => s.fontSize);
->>>>>>> Stashed changes
   const locale = usePrefs((s) => s.locale);
 
   useEffect(() => {

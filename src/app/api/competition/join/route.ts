@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-<<<<<<< Updated upstream
 import {
   getRoom,
   serializeRoom,
@@ -86,71 +85,4 @@ export async function POST(request: Request) {
   }
 
   return NextResponse.json(serializeRoom(room, user.id));
-=======
-import { db } from "@/lib/db";
-import { competitionStore } from "@/lib/competition-store";
-
-export const dynamic = "force-dynamic";
-
-/**
- * POST /api/competition/join — rejoindre une room par son code.
- * Corps : { code, participantId? }
- *
- * Si participantId est fourni (depuis le localStorage du client) et que le
- * participant existe déjà dans la room (ex: reload), on le reconnecte sans
- * reset son score. Sinon on l'ajoute.
- */
-
-export async function POST(request: Request) {
-  try {
-    const session = await getServerSession(authOptions);
-    if (!session?.user?.email) {
-      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
-    }
-
-    const user = await db.user.findUnique({
-      where: { email: session.user.email },
-      select: { id: true, name: true },
-    });
-    if (!user) {
-      return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
-    }
-
-    const body = (await request.json()) as { code?: string };
-    const code = (body.code ?? "").toUpperCase().trim();
-    if (!code) {
-      return NextResponse.json({ error: "Code requis" }, { status: 400 });
-    }
-
-    const existing = competitionStore.getRoom(code);
-    if (!existing) {
-      return NextResponse.json({ error: "Room introuvable" }, { status: 404 });
-    }
-
-    // Si le user n'est pas encore participant, on l'ajoute
-    if (!existing.participants[user.id]) {
-      competitionStore.joinRoom(code, { id: user.id, name: user.name });
-    }
-
-    const room = competitionStore.getRoom(code)!;
-    return NextResponse.json({
-      code: room.code,
-      phase: room.phase,
-      bankTitle: room.bankTitle,
-      hostName: room.hostName,
-      currentQuestionIdx: room.currentQuestionIdx,
-      totalQuestions: room.questions.length,
-      questionDurationSec: room.questionDurationSec,
-      questionStartedAt: room.questionStartedAt,
-      isHost: room.hostId === user.id,
-      hostId: user.id,
-    });
-  } catch (error) {
-    console.error("Failed to join competition room:", error);
-    return NextResponse.json(
-      { error: "Failed to join room" },
-      { status: 500 }
-    );
-  }
->>>>>>> Stashed changes
 }

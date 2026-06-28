@@ -620,8 +620,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
       "question": "En quelle année a commencé la Première Guerre mondiale ?",
       "optionA": "1914",
       "optionB": "1918",
@@ -632,7 +630,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "En quelle année a fini la Seconde Guerre mondiale ?",
       "optionA": "1945",
       "optionB": "1939",

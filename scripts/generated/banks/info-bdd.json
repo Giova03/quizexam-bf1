@@ -396,12 +396,7 @@
       "optionC": "Index de hachage",
       "optionD": "Index plein texte",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "Les index clusterisés sont efficaces pour les requêtes de plage car ils trient physiquement les données sur le disque selon la colonne indexée."
-=======
-      "explanation": "Les index clusterisés sont efficaces pour les requêtes de plage car ils trient physiquement les données sur le disque selon la colonne indexée.",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Quelle est la principale différence entre une vue et une table matérialisée?",

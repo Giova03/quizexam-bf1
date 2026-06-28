@@ -565,12 +565,7 @@
       "optionC": "Ils sont soumis au droit commun des actes administratifs",
       "optionD": "Ils sont soumis à un régime dérogatoire spécifique",
       "correctAnswer": "C",
-<<<<<<< Updated upstream
       "explanation": "Les actes administratifs unilatéraux non réglementaires (décisions individuelles) sont soumis au droit commun des actes administratifs, qui comprend les conditions de leur validité (compétence, forme, procédure) et leur contrôle par le juge administratif."
-=======
-      "explanation": "Les actes administratifs unilatéraux non réglementaires (décisions individuelles) sont soumis au droit commun des actes administratifs, qui comprend les conditions de leur validité (compétence, forme, procédure) et leur contrôle par le juge administratif.",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "En droit des procédures collectives OHADA, quel est l'effet de la déclaration de redressement judiciaire sur les créances antérieures à cette déclaration ?",

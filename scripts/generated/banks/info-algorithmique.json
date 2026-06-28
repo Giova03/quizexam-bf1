@@ -386,12 +386,7 @@
       "optionC": "Diviser pour régner",
       "optionD": "Parallélisation",
       "correctAnswer": "B",
-<<<<<<< Updated upstream
       "explanation": "La mémorisation (stocker les résultats des sous-problèmes) est fondamentale en programmation dynamique pour éviter les recalculs et optimiser la performance."
-=======
-      "explanation": "La mémorisation (stocker les résultats des sous-problèmes) est fondamentale en programmation dynamique pour éviter les recalculs et optimiser la performance.",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Quelle est la complexité spatiale de l'algorithme de tri rapide (QuickSort) dans le pire des cas?",
@@ -520,12 +515,7 @@
       "optionC": "O(n)",
       "optionD": "O(n log n)",
       "correctAnswer": "B",
-<<<<<<< Updated upstream
       "explanation": "L'extraction du minimum dans un tas binaire nécessite de réorganiser le tas pour maintenir la propriété du tas, ce qui prend un temps proportionnel à la hauteur du tas, soit O(log n)."
-=======
-      "explanation": "L'extraction du minimum dans un tas binaire nécessite de réorganiser le tas pour maintenir la propriété du tas, ce qui prend un temps proportionnel à la hauteur du tas, soit O(log n).",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Dans une récursivité terminale (tail recursion), quelle est la condition nécessaire pour que l'optimisation de la récursion terminale soit efficace ?",

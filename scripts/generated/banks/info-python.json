@@ -466,12 +466,7 @@
       "optionC": "Une erreur est levée",
       "optionD": "c",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La méthode get() retourne la valeur pour la clé si elle existe, sinon retourne la valeur par défaut fournie (ici 3)."
-=======
-      "explanation": "La méthode get() retourne la valeur pour la clé si elle existe, sinon retourne la valeur par défaut fournie (ici 3).",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\na = [1, 2, 3]\nb = [x * 2 for x in a if x % 2 == 0]\nprint(b)\n```",
@@ -690,12 +685,7 @@
       "optionC": "3",
       "optionD": "5",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "args contient 2, 3 (2 éléments) et kwargs contient a, b (2 éléments). Le total est 4."
-=======
-      "explanation": "args contient 2, 3 (2 éléments) et kwargs contient a, b (2 éléments). Le total est 4.",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     }
   ]
 }

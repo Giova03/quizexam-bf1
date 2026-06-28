@@ -70,8 +70,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
       "question": "Quelle est la signification de l'acronyme AES dans le contexte burkinabè ?",
       "optionA": "Agence d'État pour la Sécurité",
       "optionB": "Armée pour l'Émergence du Sahel",
@@ -82,7 +80,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "Quelle est la politique d'Ibrahim Traoré concernant les ressources minières du Burkina Faso ?",
       "optionA": "Il a nationalisé toutes les mines étrangères",
       "optionB": "Il a proposé une révision des contrats miniers pour un partage plus équitable",

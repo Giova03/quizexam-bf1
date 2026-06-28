@@ -159,8 +159,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
       "question": "Quelle est la monnaie du Royaume-Uni ?",
       "optionA": "Livre sterling (£)",
       "optionB": "Euro",
@@ -171,7 +169,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "Quelle est la capitale du Japon ?",
       "optionA": "Tokyo",
       "optionB": "Osaka",
@@ -182,19 +179,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
-      "question": "Quelle est la monnaie du Japon ?",
-      "optionA": "Yen (¥)",
-      "optionB": "Won",
-      "optionC": "Yuan",
-      "optionD": "Rupee",
-      "correctAnswer": "A",
-      "explanation": "Le Japon utilise le yen (JPY).",
-      "difficulty": "medium"
-    },
-    {
->>>>>>> Stashed changes
       "question": "Quelle est la capitale de la Chine ?",
       "optionA": "Pékin (Beijing)",
       "optionB": "Shanghai",
@@ -235,8 +219,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
       "question": "Quelle est la capitale du Brésil ?",
       "optionA": "Brasília",
       "optionB": "Rio de Janeiro",
@@ -247,7 +229,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "Quelle est la monnaie du Brésil ?",
       "optionA": "Real (BRL)",
       "optionB": "Peso",
@@ -258,19 +239,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
-      "question": "Quelle est la capitale de l'Afrique du Sud ?",
-      "optionA": "Pretoria (administrative)",
-      "optionB": "Le Cap",
-      "optionC": "Johannesburg",
-      "optionD": "Durban",
-      "correctAnswer": "A",
-      "explanation": "L'Afrique du Sud a 3 capitales: Pretoria (admin), Le Cap (législatif), Bloemfontein (judiciaire).",
-      "difficulty": "medium"
-    },
-    {
->>>>>>> Stashed changes
       "question": "Quelle est la capitale du Maroc ?",
       "optionA": "Rabat",
       "optionB": "Casablanca",
@@ -351,8 +319,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
       "question": "Quelle est la capitale du Canada ?",
       "optionA": "Ottawa",
       "optionB": "Toronto",
@@ -373,7 +339,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "Quelle est la capitale de l'Italie ?",
       "optionA": "Rome",
       "optionB": "Milan",
@@ -390,42 +355,7 @@
       "optionC": "Séville",
       "optionD": "Valence",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "Madrid est la capitale de l'Espagne."
-=======
-      "explanation": "Madrid est la capitale de l'Espagne.",
-      "difficulty": "medium"
-    },
-    {
-      "question": "Quelle est la capitale de la Turquie ?",
-      "optionA": "Ankara",
-      "optionB": "Istanbul",
-      "optionC": "Izmir",
-      "optionD": "Bursa",
-      "correctAnswer": "A",
-      "explanation": "Ankara est la capitale (pas Istanbul).",
-      "difficulty": "medium"
-    },
-    {
-      "question": "Quelle est la capitale de la Suisse ?",
-      "optionA": "Berne",
-      "optionB": "Genève",
-      "optionC": "Zurich",
-      "optionD": "Lausanne",
-      "correctAnswer": "A",
-      "explanation": "Berne est la capitale (ville fédérale) de la Suisse.",
-      "difficulty": "medium"
-    },
-    {
-      "question": "Quelle est la monnaie de la Suisse ?",
-      "optionA": "Franc suisse (CHF)",
-      "optionB": "Euro",
-      "optionC": "Dollar",
-      "optionD": "Livre",
-      "correctAnswer": "A",
-      "explanation": "La Suisse utilise le franc suisse (CHF).",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     }
   ]
 }

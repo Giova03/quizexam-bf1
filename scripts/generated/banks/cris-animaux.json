@@ -15,12 +15,7 @@
       "optionC": "Le grognement",
       "optionD": "Le meuglement",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le rugissement ». Le lion rugit. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du lion  »."
-=======
-      "explanation": "La réponse correcte est « Le rugissement ». Cette affirmation répond directement à la question posée : Quel est le cri du lion ?",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle du lion ?",
@@ -49,12 +44,7 @@
       "optionC": "Le jappement",
       "optionD": "Le aboiement",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le hurlement ». Le loup hurle. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du loup  »."
-=======
-      "explanation": "La réponse correcte est « Le hurlement ». Cette affirmation répond directement à la question posée : Quel est le cri du loup ?",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle du loup ?",
@@ -83,12 +73,7 @@
       "optionC": "Le grognement",
       "optionD": "Le jappement",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « L'aboiement ». Le chien aboie. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du chien  »."
-=======
-      "explanation": "La réponse correcte est « L'aboiement ». Cette affirmation répond directement à la question posée : Quel est le cri du chien ?",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle du chien ?",
@@ -117,12 +102,7 @@
       "optionC": "Le rugissement",
       "optionD": "Le sifflement",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le miaulement ». Le chat miaule. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du chat  »."
-=======
-      "explanation": "La réponse correcte est « Le miaulement ». Cette affirmation répond directement à la question posée : Quel est le cri du chat ?",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle du chat ?",
@@ -151,12 +131,7 @@
       "optionC": "Le braiment",
       "optionD": "Le cri",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le hennissement ». Le cheval hennit. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du cheval  »."
-=======
-      "explanation": "La réponse correcte est « Le hennissement ». Cette affirmation répond directement à la question posée : Quel est le cri du cheval ?",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle du cheval ?",
@@ -245,12 +220,7 @@
       "optionC": "Le criaillement",
       "optionD": "Le grognement",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le bêlement ». Le mouton bêle. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du mouton  »."
-=======
-      "explanation": "La réponse correcte est « Le bêlement ». Cette affirmation répond directement à la question posée : Quel est le cri du mouton ?",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle du mouton ?",
@@ -279,12 +249,7 @@
       "optionC": "Le chant",
       "optionD": "Le criaillement",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « La caquètement ». La poule caquète. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri de la poule  »."
-=======
-      "explanation": "La réponse correcte est « La caquètement ». Cette affirmation répond directement à la question posée : Quel est le cri de la poule ?",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Quel est le cri du coq ?",
@@ -313,12 +278,7 @@
       "optionC": "Le meuglement",
       "optionD": "Le hurlement",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le braiment ». L'âne brait. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri de l'âne  »."
-=======
-      "explanation": "La réponse correcte est « Le braiment ». Cette affirmation répond directement à la question posée : Quel est le cri de l'âne ?",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle de l'âne ?",
@@ -367,12 +327,7 @@
       "optionC": "Le murmure",
       "optionD": "Le souffle",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le sifflement ». Le serpent siffle. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du serpent  »."
-=======
-      "explanation": "La réponse correcte est « Le sifflement ». Cette affirmation répond directement à la question posée : Quel est le cri du serpent ?",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Quel est le cri de l'éléphant ?",
@@ -381,12 +336,7 @@
       "optionC": "Le trompement",
       "optionD": "Le cri",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le barrissement ». L'éléphant barrit. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri de l'éléphant  »."
-=======
-      "explanation": "La réponse correcte est « Le barrissement ». Cette affirmation répond directement à la question posée : Quel est le cri de l'éléphant ?",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Quel est le cri de la grenouille ?",
@@ -405,12 +355,7 @@
       "optionC": "Le chant",
       "optionD": "Le sifflement",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le croassement ». Le corbeau croasse. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du corbeau  »."
-=======
-      "explanation": "La réponse correcte est « Le croassement ». Cette affirmation répond directement à la question posée : Quel est le cri du corbeau ?",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Quel est le cri de la cigogne ?",

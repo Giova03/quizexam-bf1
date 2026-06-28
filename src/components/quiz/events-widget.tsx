@@ -1,6 +1,5 @@
 "use client";
 
-<<<<<<< Updated upstream
 import { useEffect, useState, useCallback } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -15,20 +14,12 @@ import {
   FileWarning,
   GraduationCap,
 } from "lucide-react";
-=======
-import { useEffect, useState } from "react";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Skeleton } from "@/components/ui/skeleton";
-import { CalendarDays, Clock, MapPin, ArrowRight } from "lucide-react";
->>>>>>> Stashed changes
 import { useQuizStore } from "@/lib/quiz-store";
 
 interface EventItem {
   id: string;
   title: string;
   description: string;
-<<<<<<< Updated upstream
   type: "exam" | "contest" | "deadline";
   startDate: string;
   endDate: string | null;
@@ -61,46 +52,12 @@ const TYPE_META: Record<
  * Compact dashboard widget showing the next 3 upcoming events.
  * Fetches from /api/events?limit=3 — public (no auth required) so it works
  * even for visitors browsing the dashboard.
-=======
-  date: string;
-  endDate: string | null;
-  location: string;
-  category: string;
-}
-
-function formatEventDate(iso: string): string {
-  try {
-    return new Date(iso).toLocaleDateString("fr-FR", {
-      day: "2-digit",
-      month: "short",
-    });
-  } catch {
-    return iso;
-  }
-}
-
-function formatTime(iso: string): string {
-  try {
-    return new Date(iso).toLocaleTimeString("fr-FR", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  } catch {
-    return "";
-  }
-}
-
-/**
- * EventsWidget — shows the next 3 upcoming events on the dashboard.
- * Clicking "Voir tout" navigates to the full events view.
->>>>>>> Stashed changes
  */
 export function EventsWidget() {
   const [events, setEvents] = useState<EventItem[]>([]);
   const [loading, setLoading] = useState(true);
   const openEvents = useQuizStore((s) => s.openEvents);
 
-<<<<<<< Updated upstream
   const load = useCallback(async () => {
     setLoading(true);
     try {
@@ -202,77 +159,6 @@ export function EventsWidget() {
               </button>
             );
           })}
-=======
-  useEffect(() => {
-    fetch("/api/events?upcoming=true&limit=3")
-      .then((r) => (r.ok ? r.json() : []))
-      .then((data: EventItem[]) => setEvents(Array.isArray(data) ? data : []))
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  }, []);
-
-  return (
-    <Card className="overflow-hidden border-0 bg-gradient-to-br from-emerald-500 to-teal-600 p-4 text-white shadow-md">
-      <div className="mb-3 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <CalendarDays className="h-5 w-5" />
-          <h3 className="text-sm font-semibold">Prochains événements</h3>
-        </div>
-        <button
-          onClick={openEvents}
-          className="flex items-center gap-1 rounded-md bg-white/15 px-2 py-1 text-xs font-medium backdrop-blur transition-colors hover:bg-white/25"
-        >
-          Voir tout
-          <ArrowRight className="h-3 w-3" />
-        </button>
-      </div>
-      {loading ? (
-        <div className="space-y-2">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <div key={i} className="h-12 rounded-lg bg-white/15" />
-          ))}
-        </div>
-      ) : events.length === 0 ? (
-        <p className="py-4 text-center text-xs text-white/80">
-          Aucun événement à venir.
-        </p>
-      ) : (
-        <div className="space-y-2">
-          {events.map((e) => (
-            <button
-              key={e.id}
-              onClick={openEvents}
-              className="flex w-full items-center gap-3 rounded-lg bg-white/10 p-2.5 text-left backdrop-blur transition-colors hover:bg-white/20"
-            >
-              <div className="flex h-10 w-10 shrink-0 flex-col items-center justify-center rounded-md bg-white/20 text-center">
-                <span className="text-[9px] font-medium uppercase leading-none">
-                  {new Date(e.date).toLocaleDateString("fr-FR", { month: "short" })}
-                </span>
-                <span className="text-base font-bold leading-none">
-                  {new Date(e.date).getDate()}
-                </span>
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-medium">{e.title}</p>
-                <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[10px] text-white/80">
-                  <span className="flex items-center gap-0.5">
-                    <Clock className="h-2.5 w-2.5" />
-                    {formatTime(e.date)}
-                  </span>
-                  {e.location && (
-                    <span className="flex items-center gap-0.5">
-                      <MapPin className="h-2.5 w-2.5" />
-                      {e.location}
-                    </span>
-                  )}
-                </div>
-              </div>
-              <Badge className="shrink-0 border-white/30 bg-white/20 text-[9px] text-white backdrop-blur">
-                {e.category}
-              </Badge>
-            </button>
-          ))}
->>>>>>> Stashed changes
         </div>
       )}
     </Card>

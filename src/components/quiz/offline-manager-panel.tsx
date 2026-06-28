@@ -4,7 +4,6 @@ import { useEffect, useState, useCallback } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-<<<<<<< Updated upstream
 import { Progress } from "@/components/ui/progress";
 import {
   Download,
@@ -88,84 +87,10 @@ export function OfflineManagerPanel() {
       }
     } catch {
       // ignore
-=======
-import { Input } from "@/components/ui/input";
-import { Skeleton } from "@/components/ui/skeleton";
-import { useToast } from "@/hooks/use-toast";
-import {
-  Download,
-  Trash2,
-  RefreshCw,
-  CloudOff,
-  HardDrive,
-  CheckCircle2,
-  CloudUpload,
-  Loader2,
-  WifiOff,
-} from "lucide-react";
-import {
-  downloadBankForOffline,
-  getOfflineBanks,
-  removeOfflineBank,
-  syncOfflineSessions,
-  getOfflineSessions,
-  getOfflineStorageSize,
-  type OfflineBankSummary,
-  type OfflineSession,
-  type SyncResult,
-} from "@/lib/offline-manager";
-
-function formatBytes(bytes: number): string {
-  if (bytes < 1024) return `${bytes} o`;
-  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} Ko`;
-  return `${(bytes / (1024 * 1024)).toFixed(2)} Mo`;
-}
-
-function formatDate(iso: string): string {
-  try {
-    return new Date(iso).toLocaleDateString("fr-FR", {
-      day: "2-digit",
-      month: "short",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  } catch {
-    return iso;
-  }
-}
-
-export function OfflineManagerPanel() {
-  const [banks, setBanks] = useState<OfflineBankSummary[]>([]);
-  const [sessions, setSessions] = useState<OfflineSession[]>([]);
-  const [storageBytes, setStorageBytes] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [bankIdInput, setBankIdInput] = useState("");
-  const [downloading, setDownloading] = useState(false);
-  const [syncing, setSyncing] = useState(false);
-  const [lastSync, setLastSync] = useState<SyncResult | null>(null);
-  const { toast } = useToast();
-
-  const refresh = useCallback(async () => {
-    setLoading(true);
-    try {
-      const [b, s, sz] = await Promise.all([
-        getOfflineBanks(),
-        getOfflineSessions(),
-        getOfflineStorageSize(),
-      ]);
-      setBanks(b);
-      setSessions(s);
-      setStorageBytes(sz);
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setLoading(false);
->>>>>>> Stashed changes
     }
   }, []);
 
   useEffect(() => {
-<<<<<<< Updated upstream
     loadBanks();
     loadSubscription();
     refresh();
@@ -204,58 +129,10 @@ export function OfflineManagerPanel() {
     if (removeOfflineBank(bankId)) {
       toast.success(`« ${title} » retiré du cache hors ligne.`);
       refresh();
-=======
-    refresh();
-  }, [refresh]);
-
-  async function handleDownload() {
-    const id = bankIdInput.trim();
-    if (!id) {
-      toast({
-        title: "ID de banque requis",
-        description: "Saisissez l'identifiant de la banque à télécharger.",
-        variant: "destructive",
-      });
-      return;
-    }
-    setDownloading(true);
-    try {
-      const bank = await downloadBankForOffline(id);
-      toast({
-        title: "Banque téléchargée ✓",
-        description: `« ${bank.title} » — ${bank.questions.length} questions disponibles hors ligne.`,
-      });
-      setBankIdInput("");
-      await refresh();
-    } catch (e) {
-      toast({
-        title: "Échec du téléchargement",
-        description: e instanceof Error ? e.message : "Erreur inconnue",
-        variant: "destructive",
-      });
-    } finally {
-      setDownloading(false);
-    }
-  }
-
-  async function handleRemove(bankId: string, title: string) {
-    if (!confirm(`Supprimer « ${title} » du stockage hors ligne ?`)) return;
-    try {
-      await removeOfflineBank(bankId);
-      toast({ title: "Banque supprimée du hors-ligne" });
-      await refresh();
-    } catch (e) {
-      toast({
-        title: "Échec de la suppression",
-        description: e instanceof Error ? e.message : "Erreur",
-        variant: "destructive",
-      });
->>>>>>> Stashed changes
     }
   }
 
   async function handleSync() {
-<<<<<<< Updated upstream
     if (syncing) return;
     setSyncing(true);
     try {
@@ -268,42 +145,11 @@ export function OfflineManagerPanel() {
         toast.error(`${result.failed} session(s) non synchronisée(s). Réessayez plus tard.`);
       }
       refresh();
-=======
-    setSyncing(true);
-    try {
-      const result = await syncOfflineSessions();
-      setLastSync(result);
-      if (result.total === 0) {
-        toast({
-          title: "Rien à synchroniser",
-          description: "Aucune session en attente.",
-        });
-      } else if (result.failed === 0) {
-        toast({
-          title: "Synchronisation terminée ✓",
-          description: `${result.success} session(s) envoyée(s) au serveur.`,
-        });
-      } else {
-        toast({
-          title: "Synchronisation partielle",
-          description: `${result.success} réussie(s), ${result.failed} échec(s).`,
-          variant: "destructive",
-        });
-      }
-      await refresh();
-    } catch (e) {
-      toast({
-        title: "Échec de la synchronisation",
-        description: e instanceof Error ? e.message : "Erreur",
-        variant: "destructive",
-      });
->>>>>>> Stashed changes
     } finally {
       setSyncing(false);
     }
   }
 
-<<<<<<< Updated upstream
   const usagePct = Math.min(100, Math.round((bytes / LS_QUOTA_BYTES) * 100));
   const usageKB = (bytes / 1024).toFixed(1);
   const budgetKB = (LS_QUOTA_BYTES / 1024).toFixed(0);
@@ -398,158 +244,12 @@ export function OfflineManagerPanel() {
                   className="h-7 w-7 text-rose-600 hover:bg-rose-50"
                   onClick={() => handleRemove(c.bank.id, c.bank.title)}
                   aria-label={`Retirer ${c.bank.title} du cache hors ligne`}
-=======
-  const pendingCount = sessions.filter((s) => !s.synced).length;
-
-  return (
-    <section className="space-y-3">
-      <div className="flex items-center gap-2 text-sm font-semibold">
-        <CloudOff className="h-4 w-4 text-sky-600" />
-        Mode hors ligne
-      </div>
-
-      {/* Storage summary */}
-      <Card className="overflow-hidden border-0 bg-gradient-to-br from-sky-500 to-cyan-600 p-4 text-white shadow-md">
-        <div className="flex items-center justify-between gap-3">
-          <div className="flex items-center gap-2.5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20 backdrop-blur">
-              <HardDrive className="h-5 w-5" />
-            </div>
-            <div>
-              <p className="text-sm font-semibold">
-                {banks.length} banque(s) · {sessions.length} session(s)
-              </p>
-              <p className="text-xs text-white/80">
-                {formatBytes(storageBytes)} utilisés · {pendingCount} en attente de synchro
-              </p>
-            </div>
-          </div>
-          <Button
-            size="sm"
-            variant="secondary"
-            className="gap-1.5"
-            onClick={handleSync}
-            disabled={syncing || pendingCount === 0}
-          >
-            {syncing ? (
-              <Loader2 className="h-3.5 w-3.5 animate-spin" />
-            ) : (
-              <CloudUpload className="h-3.5 w-3.5" />
-            )}
-            <span className="hidden sm:inline">Synchroniser</span>
-          </Button>
-        </div>
-      </Card>
-
-      {/* Download new bank */}
-      <Card className="p-3">
-        <p className="mb-2 text-xs font-medium text-muted-foreground">
-          Télécharger une banque pour usage hors ligne
-        </p>
-        <div className="flex gap-2">
-          <Input
-            value={bankIdInput}
-            onChange={(e) => setBankIdInput(e.target.value)}
-            placeholder="ID de la banque (ex: ckxxxx…)"
-            disabled={downloading}
-            className="text-xs"
-            aria-label="ID de la banque à télécharger"
-          />
-          <Button
-            size="sm"
-            onClick={handleDownload}
-            disabled={downloading || !bankIdInput.trim()}
-            className="gap-1.5 bg-gradient-to-r from-sky-500 to-cyan-600 text-white"
-          >
-            {downloading ? (
-              <Loader2 className="h-3.5 w-3.5 animate-spin" />
-            ) : (
-              <Download className="h-3.5 w-3.5" />
-            )}
-            <span className="hidden sm:inline">Télécharger</span>
-          </Button>
-        </div>
-        <p className="mt-1.5 text-[10px] text-muted-foreground">
-          Astuce : ouvrez une banque depuis l&apos;accueil, puis copiez son ID depuis l&apos;URL.
-        </p>
-      </Card>
-
-      {/* Last sync result */}
-      {lastSync && lastSync.total > 0 && (
-        <Card className="p-3">
-          <div className="mb-1.5 flex items-center gap-1.5 text-xs font-medium">
-            <CloudUpload className="h-3.5 w-3.5 text-emerald-600" />
-            Dernière synchronisation
-          </div>
-          <div className="grid grid-cols-3 gap-2 text-center">
-            <div className="rounded border bg-muted/30 p-1.5">
-              <p className="text-base font-bold text-sky-600">{lastSync.total}</p>
-              <p className="text-[10px] text-muted-foreground">total</p>
-            </div>
-            <div className="rounded border bg-muted/30 p-1.5">
-              <p className="text-base font-bold text-emerald-600">{lastSync.success}</p>
-              <p className="text-[10px] text-muted-foreground">réussies</p>
-            </div>
-            <div className="rounded border bg-muted/30 p-1.5">
-              <p className="text-base font-bold text-rose-600">{lastSync.failed}</p>
-              <p className="text-[10px] text-muted-foreground">échouées</p>
-            </div>
-          </div>
-        </Card>
-      )}
-
-      {/* Offline banks list */}
-      <Card className="overflow-hidden">
-        <div className="flex items-center justify-between border-b px-3 py-2">
-          <span className="text-xs font-medium">Banques téléchargées</span>
-          <Button
-            size="icon"
-            variant="ghost"
-            className="h-6 w-6"
-            onClick={refresh}
-            aria-label="Actualiser"
-          >
-            <RefreshCw className="h-3 w-3" />
-          </Button>
-        </div>
-        {loading ? (
-          <div className="space-y-2 p-3">
-            <Skeleton className="h-12 w-full" />
-            <Skeleton className="h-12 w-full" />
-          </div>
-        ) : banks.length === 0 ? (
-          <div className="flex flex-col items-center gap-1.5 p-6 text-center text-xs text-muted-foreground">
-            <WifiOff className="h-6 w-6 text-muted-foreground/60" />
-            Aucune banque téléchargée.
-            <span className="text-[10px]">
-              Téléchargez une banque ci-dessus pour étudier sans connexion.
-            </span>
-          </div>
-        ) : (
-          <div className="max-h-72 divide-y overflow-y-auto">
-            {banks.map((b) => (
-              <div key={b.id} className="flex items-center gap-2 px-3 py-2">
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-xs font-medium">{b.title}</p>
-                  <p className="text-[10px] text-muted-foreground">
-                    {b.category} · {b.questionCount} Q · {formatBytes(b.sizeBytes)} ·{" "}
-                    {formatDate(b.downloadedAt)}
-                  </p>
-                </div>
-                <Button
-                  size="icon"
-                  variant="ghost"
-                  className="h-7 w-7 text-rose-500 hover:bg-rose-50 hover:text-rose-700 dark:hover:bg-rose-950/40"
-                  onClick={() => handleRemove(b.id, b.title)}
-                  aria-label={`Supprimer ${b.title}`}
->>>>>>> Stashed changes
                 >
                   <Trash2 className="h-3.5 w-3.5" />
                 </Button>
               </div>
             ))}
           </div>
-<<<<<<< Updated upstream
         </div>
       )}
 
@@ -604,51 +304,5 @@ export function OfflineManagerPanel() {
         </div>
       </div>
     </div>
-=======
-        )}
-      </Card>
-
-      {/* Pending sessions */}
-      {sessions.length > 0 && (
-        <Card className="overflow-hidden">
-          <div className="flex items-center justify-between border-b px-3 py-2">
-            <span className="text-xs font-medium">Sessions locales</span>
-            <Badge variant="secondary" className="text-[10px]">
-              {pendingCount} en attente
-            </Badge>
-          </div>
-          <div className="max-h-48 divide-y overflow-y-auto">
-            {sessions.map((s) => (
-              <div key={s.id} className="flex items-center gap-2 px-3 py-2 text-xs">
-                <div className="min-w-0 flex-1">
-                  <p className="truncate font-medium">{s.title}</p>
-                  <p className="text-[10px] text-muted-foreground">
-                    {s.answers.length} réponses · {formatDate(s.completedAt)}
-                  </p>
-                </div>
-                {s.synced ? (
-                  <Badge
-                    variant="outline"
-                    className="border-emerald-300 bg-emerald-50 text-[10px] text-emerald-700 dark:border-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-300"
-                  >
-                    <CheckCircle2 className="mr-1 h-3 w-3" />
-                    Synchronisée
-                  </Badge>
-                ) : (
-                  <Badge
-                    variant="outline"
-                    className="border-amber-300 bg-amber-50 text-[10px] text-amber-700 dark:border-amber-700 dark:bg-amber-950/30 dark:text-amber-300"
-                  >
-                    <CloudUpload className="mr-1 h-3 w-3" />
-                    En attente
-                  </Badge>
-                )}
-              </div>
-            ))}
-          </div>
-        </Card>
-      )}
-    </section>
->>>>>>> Stashed changes
   );
 }

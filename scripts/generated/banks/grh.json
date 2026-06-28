@@ -226,12 +226,7 @@
       "optionC": "L'évaluation individuelle des compétences",
       "optionD": "La cartographie des métiers existants",
       "correctAnswer": "B",
-<<<<<<< Updated upstream
       "explanation": "La première étape de la GPEC est l'analyse stratégique de l'entreprise et de son environnement. Cette analyse permet de comprendre les évolutions prévisibles de l'organisation, du marché et des technologies pour anticiper les besoins en compétences et en emplois futurs."
-=======
-      "explanation": "La première étape de la GPEC est l'analyse stratégique de l'entreprise et de son environnement. Cette analyse permet de comprendre les évolutions prévisibles de l'organisation, du marché et des technologies pour anticiper les besoins en compétences et en emplois futurs.",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Selon la théorie de la motivation d'Herzberg, quel facteur est considéré comme 'hygiénique' ?",
@@ -540,12 +535,7 @@
       "optionC": "Leur faible validité prédictive",
       "optionD": "Leur difficulté d'administration",
       "correctAnswer": "B",
-<<<<<<< Updated upstream
       "explanation": "Les entretiens structurés, bien que fiables, manquent de flexibilité et peuvent ne pas permettre d'explorer des aspects non prévus du candidat."
-=======
-      "explanation": "Les entretiens structurés, bien que fiables, manquent de flexibilité et peuvent ne pas permettre d'explorer des aspects non prévus du candidat.",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Dans le cadre de la gestion des carrières, quelle est la principale utilité du bilan de compétences ?",

@@ -3,7 +3,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { useSession } from "next-auth/react";
 import { Card } from "@/components/ui/card";
-<<<<<<< Updated upstream
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -61,80 +60,10 @@ interface RecentActivity {
   pct: number;
   completedAt: string | null;
 }
-=======
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Progress } from "@/components/ui/progress";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { useToast } from "@/hooks/use-toast";
-import { usePrefs } from "@/lib/prefs-store";
-import {
-  Award,
-  Building2,
-  Calendar,
-  Check,
-  Edit3,
-  Lock,
-  MessageCircle,
-  MessagesSquare,
-  Trophy,
-  Target,
-  CheckCircle2,
-  XCircle,
-  Footprints,
-  Flame,
-  Star,
-  Crown,
-  GraduationCap,
-  FileCheck,
-  BookOpen,
-  Zap,
-  Layers,
-  Sparkles,
-  Users,
-  Swords,
-  Dumbbell,
-  Brain,
-  Library,
-  Moon,
-  Sunrise,
-  Hourglass,
-  type LucideIcon,
-} from "lucide-react";
-
-const ICON_MAP: Record<string, LucideIcon> = {
-  Award,
-  Trophy,
-  Footprints,
-  Flame,
-  Star,
-  Crown,
-  GraduationCap,
-  FileCheck,
-  BookOpen,
-  Zap,
-  Layers,
-  Sparkles,
-  MessageCircle,
-  Users,
-  Swords,
-  Dumbbell,
-  Brain,
-  Library,
-  Moon,
-  Sunrise,
-  Hourglass,
-};
->>>>>>> Stashed changes
 
 interface ProfileData {
   id: string;
   name: string;
-<<<<<<< Updated upstream
   email?: string;
   role?: string;
   bio?: string;
@@ -298,98 +227,6 @@ export function ProfileView() {
       }
     } catch {
       toast.error("Erreur réseau");
-=======
-  bio: string;
-  establishment: string;
-  joinedAt: string;
-  stats: {
-    totalSessions: number;
-    avgScore: number;
-    totalCorrect: number;
-    postsCount: number;
-    topicsCount: number;
-  };
-  recentSessions: Array<{
-    id: string;
-    title: string;
-    score: number;
-    totalQuestions: number;
-    percentage: number;
-    completedAt: string | null;
-    sourceType: string;
-  }>;
-}
-
-export function ProfileView({ userId }: { userId?: string }) {
-  const { data: session } = useSession();
-  const currentUserId = (session?.user as { id?: string } | undefined)?.id;
-  const targetUserId = userId ?? currentUserId ?? null;
-  const isOwn = !userId || userId === currentUserId;
-
-  // Badges are stored locally (zustand persist) for the *current* user only.
-  // For other users we just show the public stats (no badges).
-  const badges = usePrefs((s) => s.badges);
-  const xp = usePrefs((s) => s.xp);
-  const streak = usePrefs((s) => s.streak);
-  const sessionsCompleted = usePrefs((s) => s.sessionsCompleted);
-
-  const [profile, setProfile] = useState<ProfileData | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [editing, setEditing] = useState(false);
-  const [bio, setBio] = useState("");
-  const [establishment, setEstablishment] = useState("");
-  const [saving, setSaving] = useState(false);
-  const { toast } = useToast();
-
-  const load = useCallback(async () => {
-    if (!targetUserId) return;
-    setLoading(true);
-    try {
-      const res = await fetch(`/api/profile/${targetUserId}`);
-      if (res.ok) {
-        const json = await res.json();
-        setProfile(json);
-        setBio(json.bio ?? "");
-        setEstablishment(json.establishment ?? "");
-      }
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setLoading(false);
-    }
-  }, [targetUserId]);
-
-  useEffect(() => {
-    load();
-  }, [load]);
-
-  async function saveProfile() {
-    if (!targetUserId) return;
-    setSaving(true);
-    try {
-      const res = await fetch(`/api/profile/${targetUserId}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ bio, establishment }),
-      });
-      const json = await res.json();
-      if (!res.ok) {
-        toast({
-          title: "Erreur",
-          description: json?.error || "Échec de la mise à jour",
-          variant: "destructive",
-        });
-      } else {
-        toast({ title: "Profil mis à jour ✓" });
-        setEditing(false);
-        load();
-      }
-    } catch {
-      toast({
-        title: "Erreur réseau",
-        variant: "destructive",
-      });
->>>>>>> Stashed changes
     } finally {
       setSaving(false);
     }
@@ -398,7 +235,6 @@ export function ProfileView({ userId }: { userId?: string }) {
   if (loading) {
     return (
       <div className="space-y-4">
-<<<<<<< Updated upstream
         <Skeleton className="h-8 w-32" />
         <Skeleton className="h-48 rounded-xl" />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -406,9 +242,6 @@ export function ProfileView({ userId }: { userId?: string }) {
             <Skeleton key={i} className="h-24 rounded-xl" />
           ))}
         </div>
-=======
-        <Skeleton className="h-32 rounded-xl" />
->>>>>>> Stashed changes
         <Skeleton className="h-64 rounded-xl" />
       </div>
     );
@@ -416,7 +249,6 @@ export function ProfileView({ userId }: { userId?: string }) {
 
   if (!profile) {
     return (
-<<<<<<< Updated upstream
       <div className="space-y-4">
         <Button variant="ghost" size="sm" className="gap-2" onClick={goHome}>
           <ArrowLeft className="h-4 w-4" />
@@ -510,63 +342,10 @@ export function ProfileView({ userId }: { userId?: string }) {
               >
                 <Pencil className="h-3.5 w-3.5" />
                 Modifier le profil
-=======
-      <Card className="p-8 text-center text-muted-foreground">
-        Profil introuvable.
-      </Card>
-    );
-  }
-
-  const initials = profile.name
-    .split(" ")
-    .map((n) => n[0])
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
-
-  return (
-    <div className="space-y-6">
-      {/* Header card */}
-      <Card className="overflow-hidden">
-        <div className="h-20 bg-gradient-to-r from-emerald-500 to-teal-600" />
-        <div className="p-5">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div className="flex items-end gap-4">
-              <Avatar className="h-20 w-20 -mt-12 border-4 border-background">
-                <AvatarFallback className="bg-emerald-100 text-xl font-bold text-emerald-700">
-                  {initials}
-                </AvatarFallback>
-              </Avatar>
-              <div>
-                <h1 className="text-xl font-bold">{profile.name}</h1>
-                {profile.establishment && (
-                  <p className="flex items-center gap-1 text-sm text-muted-foreground">
-                    <Building2 className="h-3.5 w-3.5" />
-                    {profile.establishment}
-                  </p>
-                )}
-                <p className="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground">
-                  <Calendar className="h-3 w-3" />
-                  Membre depuis le{" "}
-                  {new Date(profile.joinedAt).toLocaleDateString("fr-FR")}
-                </p>
-              </div>
-            </div>
-            {isOwn && !editing && (
-              <Button
-                variant="outline"
-                size="sm"
-                className="gap-2"
-                onClick={() => setEditing(true)}
-              >
-                <Edit3 className="h-4 w-4" />
-                Modifier
->>>>>>> Stashed changes
               </Button>
             )}
           </div>
 
-<<<<<<< Updated upstream
           {profile.bio ? (
             <p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-foreground/90">
               {profile.bio}
@@ -578,77 +357,11 @@ export function ProfileView({ userId }: { userId?: string }) {
                 présenter à la communauté.
               </p>
             )
-=======
-          {/* Bio */}
-          {!editing ? (
-            profile.bio ? (
-              <p className="mt-4 whitespace-pre-line text-sm leading-relaxed">
-                {profile.bio}
-              </p>
-            ) : (
-              <p className="mt-4 text-sm italic text-muted-foreground">
-                {isOwn
-                  ? "Aucune bio. Cliquez sur « Modifier » pour en ajouter une."
-                  : "Aucune bio."}
-              </p>
-            )
-          ) : (
-            <div className="mt-4 space-y-3">
-              <div className="space-y-1.5">
-                <Label htmlFor="bio" className="text-xs">
-                  Bio (max 500 caractères)
-                </Label>
-                <Textarea
-                  id="bio"
-                  value={bio}
-                  onChange={(e) => setBio(e.target.value.slice(0, 500))}
-                  placeholder="Décrivez votre parcours, vos objectifs…"
-                  rows={3}
-                />
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="establishment" className="text-xs">
-                  Établissement / Organisation
-                </Label>
-                <Input
-                  id="establishment"
-                  value={establishment}
-                  onChange={(e) =>
-                    setEstablishment(e.target.value.slice(0, 200))
-                  }
-                  placeholder="ex: Université Joseph Ki-Zerbo"
-                />
-              </div>
-              <div className="flex gap-2">
-                <Button
-                  size="sm"
-                  className="gap-1.5"
-                  onClick={saveProfile}
-                  disabled={saving}
-                >
-                  <Check className="h-4 w-4" />
-                  Enregistrer
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={() => {
-                    setEditing(false);
-                    setBio(profile.bio ?? "");
-                    setEstablishment(profile.establishment ?? "");
-                  }}
-                >
-                  Annuler
-                </Button>
-              </div>
-            </div>
->>>>>>> Stashed changes
           )}
         </div>
       </Card>
 
       {/* Stats grid */}
-<<<<<<< Updated upstream
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard
           icon={<Trophy className="h-5 w-5 text-amber-500" />}
@@ -815,105 +528,12 @@ export function ProfileView({ userId }: { userId?: string }) {
                       })
                     : "—"}
                 </span>
-=======
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <Card className="p-4">
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <Trophy className="h-4 w-4 text-amber-500" />
-            Sessions terminées
-          </div>
-          <p className="mt-1 text-2xl font-bold">
-            {profile.stats.totalSessions}
-          </p>
-        </Card>
-        <Card className="p-4">
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <Target className="h-4 w-4 text-emerald-500" />
-            Score moyen
-          </div>
-          <p className="mt-1 text-2xl font-bold">{profile.stats.avgScore}%</p>
-          <Progress value={profile.stats.avgScore} className="mt-1.5 h-1.5" />
-        </Card>
-        <Card className="p-4">
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <CheckCircle2 className="h-4 w-4 text-sky-500" />
-            Bonnes réponses
-          </div>
-          <p className="mt-1 text-2xl font-bold">
-            {profile.stats.totalCorrect}
-          </p>
-        </Card>
-        <Card className="p-4">
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <MessageCircle className="h-4 w-4 text-violet-500" />
-            Communauté
-          </div>
-          <p className="mt-1 text-2xl font-bold">
-            {profile.stats.postsCount + profile.stats.topicsCount}
-          </p>
-          <p className="text-[10px] text-muted-foreground">
-            {profile.stats.topicsCount} sujets · {profile.stats.postsCount}{" "}
-            messages
-          </p>
-        </Card>
-      </div>
-
-      {/* Recent sessions */}
-      <Card className="overflow-hidden">
-        <div className="flex items-center gap-2 border-b px-5 py-4">
-          <MessagesSquare className="h-4 w-4 text-emerald-600" />
-          <h2 className="font-semibold">Sessions récentes</h2>
-          <Badge variant="secondary" className="ml-auto">
-            {profile.recentSessions.length}
-          </Badge>
-        </div>
-        {profile.recentSessions.length === 0 ? (
-          <p className="p-6 text-center text-sm text-muted-foreground">
-            Aucune session terminée pour le moment.
-          </p>
-        ) : (
-          <div className="max-h-96 divide-y overflow-y-auto">
-            {profile.recentSessions.map((s) => (
-              <div
-                key={s.id}
-                className="flex items-center justify-between gap-3 px-5 py-3 text-sm"
-              >
-                <div className="min-w-0 flex-1">
-                  <p className="truncate font-medium">{s.title}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {new Date(s.completedAt ?? "").toLocaleString("fr-FR", {
-                      day: "2-digit",
-                      month: "short",
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    })}{" "}
-                    · {s.sourceType === "exam" ? "Examen" : "Banque"}
-                  </p>
-                </div>
-                <div className="flex items-center gap-2">
-                  {s.percentage >= 50 ? (
-                    <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-                  ) : (
-                    <XCircle className="h-4 w-4 text-rose-500" />
-                  )}
-                  <span
-                    className={`font-bold ${
-                      s.percentage >= 50
-                        ? "text-emerald-600"
-                        : "text-rose-600"
-                    }`}
-                  >
-                    {s.percentage}%
-                  </span>
-                </div>
->>>>>>> Stashed changes
               </div>
             ))}
           </div>
         )}
       </Card>
 
-<<<<<<< Updated upstream
       {/* Edit dialog */}
       <Dialog open={editOpen} onOpenChange={setEditOpen}>
         <DialogContent className="sm:max-w-lg">
@@ -1018,75 +638,3 @@ function StatCard({
     </Card>
   );
 }
-=======
-      {/* Badges (own profile only — badges are stored locally) */}
-      {isOwn && (
-        <Card className="overflow-hidden">
-          <div className="flex items-center gap-2 border-b px-5 py-4">
-            <Trophy className="h-4 w-4 text-amber-500" />
-            <h2 className="font-semibold">Mes badges</h2>
-            <Badge variant="secondary" className="ml-auto gap-1">
-              <Award className="h-3 w-3" />
-              {badges.filter((b) => b.unlocked).length} / {badges.length}
-            </Badge>
-          </div>
-          <div className="px-5 py-4">
-            <div className="mb-3 flex items-center justify-between text-xs text-muted-foreground">
-              <span className="flex items-center gap-1.5">
-                <Zap className="h-3 w-3" /> {xp} XP
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Flame className="h-3 w-3" /> {streak}j série
-              </span>
-              <span className="flex items-center gap-1.5">
-                <FileCheck className="h-3 w-3" /> {sessionsCompleted} sessions
-              </span>
-            </div>
-            <Progress
-              value={Math.round(
-                (badges.filter((b) => b.unlocked).length /
-                  Math.max(1, badges.length)) *
-                  100
-              )}
-              className="mb-4 h-2"
-            />
-            <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6">
-              {badges.map((b) => {
-                const Icon = ICON_MAP[b.icon] ?? Award;
-                return (
-                  <div
-                    key={b.id}
-                    className={`flex flex-col items-center gap-1 rounded-lg border p-2 text-center transition-all ${
-                      b.unlocked
-                        ? "border-amber-200 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/30"
-                        : "border-dashed opacity-60"
-                    }`}
-                    title={b.description}
-                  >
-                    <div
-                      className={`flex h-8 w-8 items-center justify-center rounded-full ${
-                        b.unlocked
-                          ? "bg-gradient-to-br from-amber-400 to-orange-500 text-white"
-                          : "bg-muted text-muted-foreground"
-                      }`}
-                    >
-                      {b.unlocked ? (
-                        <Icon className="h-4 w-4" />
-                      ) : (
-                        <Lock className="h-3.5 w-3.5" />
-                      )}
-                    </div>
-                    <span className="text-[10px] font-medium leading-tight">
-                      {b.label}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </Card>
-      )}
-    </div>
-  );
-}
->>>>>>> Stashed changes

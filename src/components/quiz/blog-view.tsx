@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-<<<<<<< Updated upstream
 import { useSession } from "next-auth/react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -99,52 +98,10 @@ export function BlogView() {
   const [editorOpen, setEditorOpen] = useState(false);
   const [editingArticle, setEditingArticle] = useState<ArticleListItem | null>(null);
   const [deleteId, setDeleteId] = useState<string | null>(null);
-=======
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { Skeleton } from "@/components/ui/skeleton";
-import {
-  Newspaper,
-  ArrowLeft,
-  PenLine,
-  Eye,
-  CalendarDays,
-  Tag,
-  Filter,
-} from "lucide-react";
-import { toast } from "sonner";
-import { ArticleEditor } from "./article-editor";
-
-export interface ArticleItem {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-  tags: string;
-  coverUrl: string;
-  status: string;
-  views: number;
-  createdAt: string;
-  updatedAt: string;
-  author?: { id: string; name: string } | null;
-}
-
-export function BlogView() {
-  const [articles, setArticles] = useState<ArticleItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [selected, setSelected] = useState<ArticleItem | null>(null);
-  const [editing, setEditing] = useState(false);
-  const [tagFilter, setTagFilter] = useState<string>("");
-  const [availableTags, setAvailableTags] = useState<string[]>([]);
->>>>>>> Stashed changes
 
   const load = useCallback(async () => {
     setLoading(true);
     try {
-<<<<<<< Updated upstream
       const params = new URLSearchParams({ limit: "50" });
       if (category && category !== "all") params.set("category", category);
       // Always include the current user's own drafts so they can edit them.
@@ -155,38 +112,18 @@ export function BlogView() {
       if (res.ok) {
         const data = await res.json();
         setArticles(Array.isArray(data.items) ? data.items : []);
-=======
-      const res = await fetch("/api/articles");
-      if (res.ok) {
-        const data = await res.json();
-        const list = Array.isArray(data) ? (data as ArticleItem[]) : [];
-        setArticles(list);
-        // Collect tags
-        const tags = new Set<string>();
-        for (const a of list) {
-          for (const t of (a.tags || "").split(",").map((s) => s.trim()).filter(Boolean)) {
-            tags.add(t);
-          }
-        }
-        setAvailableTags(Array.from(tags).sort());
->>>>>>> Stashed changes
       }
     } catch (e) {
       console.error(e);
     } finally {
       setLoading(false);
     }
-<<<<<<< Updated upstream
   }, [category, currentUserId]);
-=======
-  }, []);
->>>>>>> Stashed changes
 
   useEffect(() => {
     load();
   }, [load]);
 
-<<<<<<< Updated upstream
   const openDetail = useCallback(async (id: string) => {
     setSelectedId(id);
     setLoadingDetail(true);
@@ -233,56 +170,20 @@ export function BlogView() {
 
   // ---------- Detail view ----------
   if (selectedId) {
-=======
-  const filtered = tagFilter
-    ? articles.filter((a) =>
-        (a.tags || "")
-          .split(",")
-          .map((s) => s.trim())
-          .includes(tagFilter)
-      )
-    : articles;
-
-  // === Editor mode ===
-  if (editing) {
-    return (
-      <ArticleEditor
-        article={selected}
-        onClose={() => {
-          setEditing(false);
-          setSelected(null);
-        }}
-        onSaved={async () => {
-          setEditing(false);
-          setSelected(null);
-          await load();
-        }}
-      />
-    );
-  }
-
-  // === Detail mode ===
-  if (selected) {
->>>>>>> Stashed changes
     return (
       <div className="space-y-6">
         <Button
           variant="ghost"
           size="sm"
           className="gap-1.5"
-<<<<<<< Updated upstream
           onClick={() => {
             setSelectedId(null);
             setDetail(null);
           }}
-=======
-          onClick={() => setSelected(null)}
->>>>>>> Stashed changes
         >
           <ArrowLeft className="h-4 w-4" />
           Retour au blog
         </Button>
-<<<<<<< Updated upstream
 
         {loadingDetail || !detail ? (
           <div className="space-y-4">
@@ -415,80 +316,16 @@ export function BlogView() {
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
-=======
-        <article className="space-y-4">
-          <header className="space-y-2">
-            <h1 className="text-3xl font-bold leading-tight">{selected.title}</h1>
-            <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-              {selected.author && (
-                <span className="font-medium text-foreground">
-                  Par {selected.author.name}
-                </span>
-              )}
-              <span className="flex items-center gap-1">
-                <CalendarDays className="h-3 w-3" />
-                {new Date(selected.createdAt).toLocaleDateString("fr-FR", {
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric",
-                })}
-              </span>
-              <span className="flex items-center gap-1">
-                <Eye className="h-3 w-3" />
-                {selected.views} vues
-              </span>
-            </div>
-            {selected.tags && (
-              <div className="flex flex-wrap gap-1.5">
-                {selected.tags
-                  .split(",")
-                  .map((s) => s.trim())
-                  .filter(Boolean)
-                  .map((t) => (
-                    <Badge key={t} variant="secondary" className="text-[10px]">
-                      <Tag className="mr-0.5 h-2.5 w-2.5" />
-                      {t}
-                    </Badge>
-                  ))}
-              </div>
-            )}
-          </header>
-          {selected.coverUrl && (
-            <img
-              src={selected.coverUrl}
-              alt=""
-              className="h-64 w-full rounded-xl object-cover"
-            />
-          )}
-          {selected.excerpt && (
-            <p className="border-l-4 border-emerald-500 bg-emerald-50 px-4 py-2 text-sm italic text-emerald-900 dark:bg-emerald-950/30 dark:text-emerald-100">
-              {selected.excerpt}
-            </p>
-          )}
-          <div className="prose prose-sm max-w-none whitespace-pre-wrap text-sm leading-relaxed">
-            {selected.content}
-          </div>
-        </article>
-        <Button onClick={() => setEditing(true)} variant="outline" className="gap-1.5">
-          <PenLine className="h-4 w-4" />
-          Modifier cet article
-        </Button>
->>>>>>> Stashed changes
       </div>
     );
   }
 
-<<<<<<< Updated upstream
   // ---------- List view ----------
-=======
-  // === List mode ===
->>>>>>> Stashed changes
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="flex items-center gap-2 text-2xl font-bold">
-<<<<<<< Updated upstream
             <Newspaper className="h-6 w-6 text-emerald-600" />
             Blog
           </h1>
@@ -592,104 +429,6 @@ export function BlogView() {
                   <span className="truncate">par {a.author.name}</span>
                   <span>
                     {new Date(a.createdAt).toLocaleDateString("fr-FR")}
-=======
-            <Newspaper className="h-6 w-6 text-amber-600" />
-            Blog & Articles
-          </h1>
-          <p className="text-muted-foreground">
-            Astuces, méthodes de révision, actualités des concours.
-          </p>
-        </div>
-        <Button
-          onClick={() => setEditing(true)}
-          className="gap-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white"
-        >
-          <PenLine className="h-4 w-4" />
-          Écrire un article
-        </Button>
-      </div>
-
-      {availableTags.length > 0 && (
-        <Card className="p-3">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="flex items-center gap-1 text-xs font-medium text-muted-foreground">
-              <Filter className="h-3.5 w-3.5" />
-              Filtrer par tag:
-            </span>
-            <button
-              onClick={() => setTagFilter("")}
-              className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-                !tagFilter
-                  ? "bg-emerald-500 text-white"
-                  : "bg-muted text-muted-foreground hover:bg-muted/70"
-              }`}
-            >
-              Tous
-            </button>
-            {availableTags.map((t) => (
-              <button
-                key={t}
-                onClick={() => setTagFilter(t)}
-                className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-                  tagFilter === t
-                    ? "bg-emerald-500 text-white"
-                    : "bg-muted text-muted-foreground hover:bg-muted/70"
-                }`}
-              >
-                {t}
-              </button>
-            ))}
-          </div>
-        </Card>
-      )}
-
-      {loading ? (
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <Skeleton key={i} className="h-48 rounded-xl" />
-          ))}
-        </div>
-      ) : filtered.length === 0 ? (
-        <Card className="flex flex-col items-center gap-3 p-12 text-center">
-          <Newspaper className="h-12 w-12 text-muted-foreground/50" />
-          <p className="text-sm text-muted-foreground">
-            Aucun article pour l&apos;instant. Soyez le premier à écrire !
-          </p>
-        </Card>
-      ) : (
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((a) => (
-            <Card
-              key={a.id}
-              className="group flex cursor-pointer flex-col overflow-hidden transition-all hover:border-amber-300 hover:shadow-md"
-              onClick={() => setSelected(a)}
-            >
-              {a.coverUrl ? (
-                <img
-                  src={a.coverUrl}
-                  alt=""
-                  className="h-32 w-full object-cover"
-                />
-              ) : (
-                <div className="flex h-32 items-center justify-center bg-gradient-to-br from-amber-100 to-orange-200 dark:from-amber-950/40 dark:to-orange-950/40">
-                  <Newspaper className="h-10 w-10 text-amber-500/50" />
-                </div>
-              )}
-              <div className="flex flex-1 flex-col p-4">
-                <h3 className="line-clamp-2 font-semibold leading-tight">
-                  {a.title}
-                </h3>
-                {a.excerpt && (
-                  <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">
-                    {a.excerpt}
-                  </p>
-                )}
-                <div className="mt-auto flex items-center justify-between pt-3 text-[10px] text-muted-foreground">
-                  <span>{new Date(a.createdAt).toLocaleDateString("fr-FR")}</span>
-                  <span className="flex items-center gap-1">
-                    <Eye className="h-3 w-3" />
-                    {a.views}
->>>>>>> Stashed changes
                   </span>
                 </div>
               </div>
@@ -697,7 +436,6 @@ export function BlogView() {
           ))}
         </div>
       )}
-<<<<<<< Updated upstream
 
       <ArticleEditor
         open={editorOpen}
@@ -710,8 +448,6 @@ export function BlogView() {
         }}
         existing={editingArticle}
       />
-=======
->>>>>>> Stashed changes
     </div>
   );
 }

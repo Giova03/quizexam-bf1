@@ -1,24 +1,16 @@
 /**
-<<<<<<< Updated upstream
  * cache.test.ts — unit tests for the in-memory TTL cache.
  *
  * Uses a tiny assert-based test framework (no Jest / Vitest dependency).
  * Runnable via `bun run scripts/run-tests.ts`.
  */
 
-=======
- * Tests unitaires pour src/lib/cache.ts
- *
- * Exécutés par `bun run scripts/run-tests.ts`.
- */
->>>>>>> Stashed changes
 import {
   cacheGet,
   cacheSet,
   cacheInvalidate,
   cacheClear,
   cacheStats,
-<<<<<<< Updated upstream
   CACHE_KEYS,
 } from "../cache";
 
@@ -172,140 +164,3 @@ console.log(`\n  cache.test.ts: ${passed} passed, ${failed} failed`);
 if (failed > 0) {
   process.exitCode = 1;
 }
-=======
-  cacheInvalidatePrefix,
-  CACHE_KEYS,
-} from "../cache";
-import { test, describe, expect } from "./test-framework";
-
-describe("Cache mémoire", () => {
-  // Nettoie avant chaque série
-  cacheClear();
-
-  test("cacheGet renvoie null pour une clé manquante", () => {
-    expect(cacheGet("missing-key")).toBeNull();
-  });
-
-  test("cacheSet puis cacheGet roundtrip renvoie la valeur", () => {
-    cacheSet("user:1", { name: "Alice", age: 30 });
-    const v = cacheGet<{ name: string; age: number }>("user:1");
-    expect(v).toBeTruthy();
-    expect(v?.name).toBe("Alice");
-    expect(v?.age).toBe(30);
-  });
-
-  test("cacheSet accepte une valeur primitive", () => {
-    cacheSet("count", 42);
-    expect(cacheGet<number>("count")).toBe(42);
-  });
-
-  test("cacheSet accepte une valeur null (non null après get)", () => {
-    // La convention : cacheGet renvoie null seulement pour "absent" ou "expiré"
-    // mais on peut stocker null et le distinguer avec un wrapper.
-    cacheSet("nullable", "ok");
-    expect(cacheGet("nullable")).toBe("ok");
-  });
-
-  test("cacheInvalidate supprime une clé", () => {
-    cacheSet("temp-key", "hello");
-    expect(cacheGet("temp-key")).toBe("hello");
-    cacheInvalidate("temp-key");
-    expect(cacheGet("temp-key")).toBeNull();
-  });
-
-  test("cacheClear vide tout le cache", () => {
-    cacheSet("a", 1);
-    cacheSet("b", 2);
-    cacheSet("c", 3);
-    const statsBefore = cacheStats();
-    expect(statsBefore.size).toBeGreaterThan(2);
-    cacheClear();
-    const statsAfter = cacheStats();
-    expect(statsAfter.size).toBe(0);
-    expect(cacheGet("a")).toBeNull();
-    expect(cacheGet("b")).toBeNull();
-    expect(cacheGet("c")).toBeNull();
-  });
-
-  test("cacheStats renvoie les clés présentes", () => {
-    cacheClear();
-    cacheSet("alpha", 1);
-    cacheSet("beta", 2);
-    const stats = cacheStats();
-    expect(stats.size).toBe(2);
-    expect(stats.keys).toContain("alpha");
-    expect(stats.keys).toContain("beta");
-  });
-
-  test("cacheInvalidatePrefix supprime les clés qui matchent", () => {
-    cacheClear();
-    cacheSet("banks:list", []);
-    cacheSet("banks:1", { id: 1 });
-    cacheSet("banks:2", { id: 2 });
-    cacheSet("exams:list", []);
-    const removed = cacheInvalidatePrefix("banks:");
-    expect(removed).toBe(3);
-    expect(cacheGet("banks:list")).toBeNull();
-    expect(cacheGet("banks:1")).toBeNull();
-    expect(cacheGet("banks:2")).toBeNull();
-    // Les clés non concernées restent
-    expect(cacheGet("exams:list")).toBeTruthy();
-  });
-
-  test("cacheSet avec TTL 0 invalide immédiatement la clé", () => {
-    cacheSet("ephemeral", "data", 0);
-    expect(cacheGet("ephemeral")).toBeNull();
-  });
-
-  test("cacheSet avec TTL négatif invalide immédiatement la clé", () => {
-    cacheSet("ephemeral2", "data", -100);
-    expect(cacheGet("ephemeral2")).toBeNull();
-  });
-
-  test("cacheGet renvoie null après expiration du TTL", async () => {
-    cacheSet("short-lived", "value", 50); // 50 ms
-    // Immédiatement, la valeur est disponible
-    expect(cacheGet("short-lived")).toBe("value");
-    // Attendre l'expiration
-    await new Promise((resolve) => setTimeout(resolve, 80));
-    expect(cacheGet("short-lived")).toBeNull();
-  });
-
-  test("le cache survit au HMR via globalThis", () => {
-    // Re-importer le module ne devrait pas perdre le cache
-    cacheClear();
-    cacheSet("persistent", "yes");
-    // Simule un re-import en réutilisant le même globalThis
-    // (puisque cache.ts lit globalThis.__APP_CACHE__, plusieurs imports
-    // partagent le même Map.)
-    const stats = cacheStats();
-    expect(stats.keys).toContain("persistent");
-  });
-});
-
-describe("Cache mémoire - CACHE_KEYS", () => {
-  test("CACHE_KEYS exporte les clés attendues", () => {
-    expect(CACHE_KEYS.BANKS).toBe("banks:list");
-    expect(CACHE_KEYS.EXAMS).toBe("exams:list");
-  });
-
-  test("CACHE_KEYS peut être utilisé pour stocker et récupérer une valeur", () => {
-    cacheClear();
-    cacheSet(CACHE_KEYS.BANKS, [{ id: 1, name: "Bank A" }]);
-    const v = cacheGet<{ id: number; name: string }[]>(CACHE_KEYS.BANKS);
-    expect(v).toBeTruthy();
-    expect(v?.length).toBe(1);
-    expect(v?.[0]?.name).toBe("Bank A");
-  });
-
-  test("cacheInvalidate(CACHE_KEYS.BANKS) supprime la bonne clé", () => {
-    cacheClear();
-    cacheSet(CACHE_KEYS.BANKS, "banks-data");
-    cacheSet(CACHE_KEYS.EXAMS, "exams-data");
-    cacheInvalidate(CACHE_KEYS.BANKS);
-    expect(cacheGet(CACHE_KEYS.BANKS)).toBeNull();
-    // L'autre clé reste intacte
-    expect(cacheGet(CACHE_KEYS.EXAMS)).toBe("exams-data");
-  });
-});
->>>>>>> Stashed changes

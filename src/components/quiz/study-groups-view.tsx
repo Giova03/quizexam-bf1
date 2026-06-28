@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-<<<<<<< Updated upstream
 import { useSession } from "next-auth/react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,16 +10,6 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-=======
-import { useSession } from "next-auth";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
-import { Skeleton } from "@/components/ui/skeleton";
->>>>>>> Stashed changes
 import {
   Dialog,
   DialogContent,
@@ -30,7 +19,6 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import {
-<<<<<<< Updated upstream
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -57,25 +45,10 @@ import {
 // ---------- Types ----------
 
 interface GroupCreator {
-=======
-  Users2,
-  Plus,
-  ArrowLeft,
-  LogIn,
-  Trash2,
-  Copy,
-  Hash,
-  UserCircle2,
-} from "lucide-react";
-import { toast } from "sonner";
-
-interface GroupOwner {
->>>>>>> Stashed changes
   id: string;
   name: string;
 }
 
-<<<<<<< Updated upstream
 interface StudyGroupListItem {
   id: string;
   name: string;
@@ -114,53 +87,14 @@ export function StudyGroupsView() {
   const [createOpen, setCreateOpen] = useState(false);
   const [joinOpen, setJoinOpen] = useState(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
-=======
-interface GroupMember {
-  id: string;
-  joinedAt: string;
-  user: { id: string; name: string };
-}
-
-interface StudyGroup {
-  id: string;
-  name: string;
-  description: string;
-  subject: string;
-  code: string;
-  ownerId: string;
-  createdAt: string;
-  owner: GroupOwner;
-  members?: GroupMember[];
-  _count?: { members: number };
-}
-
-export function StudyGroupsView() {
-  const { data: session } = useSession();
-  const currentUserId = (session?.user as { id?: string })?.id;
-  const [groups, setGroups] = useState<StudyGroup[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [selected, setSelected] = useState<StudyGroup | null>(null);
-  const [createOpen, setCreateOpen] = useState(false);
-  const [joinCode, setJoinCode] = useState("");
-  const [joining, setJoining] = useState(false);
-  const [creating, setCreating] = useState(false);
-  const [form, setForm] = useState({ name: "", description: "", subject: "" });
->>>>>>> Stashed changes
 
   const loadGroups = useCallback(async () => {
     setLoading(true);
     try {
-<<<<<<< Updated upstream
       const res = await fetch("/api/groups", { cache: "no-store" });
       if (res.ok) {
         const data = await res.json();
         setGroups(Array.isArray(data.items) ? data.items : []);
-=======
-      const res = await fetch("/api/groups");
-      if (res.ok) {
-        const data = await res.json();
-        setGroups(Array.isArray(data) ? data : []);
->>>>>>> Stashed changes
       }
     } catch (e) {
       console.error(e);
@@ -173,7 +107,6 @@ export function StudyGroupsView() {
     loadGroups();
   }, [loadGroups]);
 
-<<<<<<< Updated upstream
   const openDetail = useCallback(async (id: string) => {
     setSelectedId(id);
     setLoadingDetail(true);
@@ -196,61 +129,10 @@ export function StudyGroupsView() {
 
   const handleLeave = async () => {
     if (!detail) return;
-=======
-  const loadGroup = useCallback(async (id: string) => {
-    try {
-      const res = await fetch(`/api/groups/${id}`);
-      if (res.ok) {
-        const data = await res.json();
-        setSelected(data);
-      }
-    } catch (e) {
-      console.error(e);
-    }
-  }, []);
-
-  async function handleCreate() {
-    if (!form.name.trim()) {
-      toast.error("Le nom est obligatoire");
-      return;
-    }
-    setCreating(true);
-    try {
-      const res = await fetch("/api/groups", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        toast.error(data.error ?? "Erreur lors de la création");
-        return;
-      }
-      toast.success("Groupe créé !");
-      setCreateOpen(false);
-      setForm({ name: "", description: "", subject: "" });
-      await loadGroups();
-      await loadGroup(data.id);
-    } catch (e) {
-      console.error(e);
-      toast.error("Erreur réseau");
-    } finally {
-      setCreating(false);
-    }
-  }
-
-  async function handleJoin() {
-    if (!joinCode.trim()) {
-      toast.error("Entrez un code d'invitation");
-      return;
-    }
-    setJoining(true);
->>>>>>> Stashed changes
     try {
       const res = await fetch("/api/groups/join", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-<<<<<<< Updated upstream
         body: JSON.stringify({ inviteCode: detail.inviteCode, leave: true }),
       });
       const data = await res.json();
@@ -284,86 +166,29 @@ export function StudyGroupsView() {
       }
       setDeleteId(null);
       loadGroups();
-=======
-        body: JSON.stringify({ code: joinCode.trim() }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        toast.error(data.error ?? "Erreur lors de la rejoindre");
-        return;
-      }
-      if (data.alreadyMember) {
-        toast.info("Vous êtes déjà membre de ce groupe");
-      } else {
-        toast.success("Vous avez rejoint le groupe");
-      }
-      setJoinCode("");
-      await loadGroups();
-      await loadGroup(data.group.id);
-    } catch (e) {
-      console.error(e);
-      toast.error("Erreur réseau");
-    } finally {
-      setJoining(false);
-    }
-  }
-
-  async function handleDelete(id: string) {
-    if (!confirm("Supprimer ce groupe ? Les membres seront retirés.")) return;
-    try {
-      const res = await fetch(`/api/groups/${id}`, { method: "DELETE" });
-      if (!res.ok) {
-        const data = await res.json();
-        toast.error(data.error ?? "Erreur");
-        return;
-      }
-      toast.success("Groupe supprimé");
-      setSelected(null);
-      await loadGroups();
->>>>>>> Stashed changes
     } catch (e) {
       console.error(e);
       toast.error("Erreur réseau");
     }
-<<<<<<< Updated upstream
   };
 
   // ---------- Detail view ----------
   if (selectedId) {
-=======
-  }
-
-  function copyCode(code: string) {
-    navigator.clipboard.writeText(code).then(
-      () => toast.success("Code copié"),
-      () => toast.error("Copie impossible")
-    );
-  }
-
-  // === Detail view ===
-  if (selected) {
-    const members = selected.members ?? [];
->>>>>>> Stashed changes
     return (
       <div className="space-y-6">
         <Button
           variant="ghost"
           size="sm"
           className="gap-1.5"
-<<<<<<< Updated upstream
           onClick={() => {
             setSelectedId(null);
             setDetail(null);
           }}
-=======
-          onClick={() => setSelected(null)}
->>>>>>> Stashed changes
         >
           <ArrowLeft className="h-4 w-4" />
           Retour à la liste
         </Button>
 
-<<<<<<< Updated upstream
         {loadingDetail || !detail ? (
           <div className="space-y-4">
             <Skeleton className="h-12 w-2/3" />
@@ -527,131 +352,16 @@ export function StudyGroupsView() {
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
-=======
-        <Card className="overflow-hidden">
-          <div className="bg-gradient-to-br from-violet-500 to-purple-600 p-6 text-white">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-              <div className="flex-1">
-                <h1 className="text-2xl font-bold">{selected.name}</h1>
-                {selected.subject && (
-                  <Badge className="mt-2 border-white/30 bg-white/20 text-white">
-                    {selected.subject}
-                  </Badge>
-                )}
-                {selected.description && (
-                  <p className="mt-3 text-sm text-white/90">{selected.description}</p>
-                )}
-              </div>
-              <div className="flex items-center gap-2 rounded-xl bg-white/15 px-4 py-2 backdrop-blur">
-                <Hash className="h-4 w-4" />
-                <span className="font-mono text-lg font-bold tracking-wider">
-                  {selected.code}
-                </span>
-                <Button
-                  size="icon"
-                  variant="ghost"
-                  className="h-7 w-7 text-white hover:bg-white/20"
-                  onClick={() => copyCode(selected.code)}
-                >
-                  <Copy className="h-3.5 w-3.5" />
-                </Button>
-              </div>
-            </div>
-            <div className="mt-4 flex items-center gap-4 text-xs text-white/80">
-              <span className="flex items-center gap-1">
-                <UserCircle2 className="h-3.5 w-3.5" />
-                Créé par {selected.owner.name}
-              </span>
-              <span className="flex items-center gap-1">
-                <Users2 className="h-3.5 w-3.5" />
-                {selected._count?.members ?? members.length} membre(s)
-              </span>
-            </div>
-          </div>
-        </Card>
-
-        <div>
-          <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold">
-            <Users2 className="h-5 w-5 text-violet-600" />
-            Membres ({members.length})
-          </h2>
-          <div className="max-h-96 space-y-2 overflow-y-auto">
-            {members.length === 0 ? (
-              <Card className="p-6 text-center text-sm text-muted-foreground">
-                Aucun membre pour l&apos;instant.
-              </Card>
-            ) : (
-              members.map((m, i) => (
-                <Card key={m.id} className="flex items-center gap-3 p-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-violet-100 text-sm font-bold text-violet-700 dark:bg-violet-950/40 dark:text-violet-300">
-                    {m.user.name?.[0]?.toUpperCase() ?? "?"}
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-medium">{m.user.name}</p>
-                    <p className="text-xs text-muted-foreground">
-                      Rejoint le{" "}
-                      {new Date(m.joinedAt).toLocaleDateString("fr-FR", {
-                        day: "2-digit",
-                        month: "short",
-                        year: "numeric",
-                      })}
-                    </p>
-                  </div>
-                  {m.user.id === selected.ownerId && (
-                    <Badge variant="secondary" className="text-[10px]">
-                      Propriétaire
-                    </Badge>
-                  )}
-                  {i === 0 && m.user.id !== selected.ownerId && (
-                    <Badge variant="outline" className="text-[10px]">
-                      Premier membre
-                    </Badge>
-                  )}
-                </Card>
-              ))
-            )}
-          </div>
-        </div>
-
-        {selected.ownerId === currentUserId && (
-          <Card className="border-rose-200 bg-rose-50/50 p-4 dark:border-rose-800 dark:bg-rose-950/20">
-            <div className="flex items-center justify-between gap-3">
-              <div>
-                <p className="text-sm font-semibold text-rose-700 dark:text-rose-300">
-                  Zone dangereuse
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  Supprimer définitivement ce groupe et tous ses membres.
-                </p>
-              </div>
-              <Button
-                variant="destructive"
-                size="sm"
-                className="gap-1.5"
-                onClick={() => handleDelete(selected.id)}
-              >
-                <Trash2 className="h-4 w-4" />
-                Supprimer
-              </Button>
-            </div>
-          </Card>
-        )}
->>>>>>> Stashed changes
       </div>
     );
   }
 
-<<<<<<< Updated upstream
   // ---------- List view ----------
-=======
-  // === List view ===
->>>>>>> Stashed changes
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="flex items-center gap-2 text-2xl font-bold">
-<<<<<<< Updated upstream
             <Users className="h-6 w-6 text-emerald-600" />
             Groupes d&apos;étude
           </h1>
@@ -684,64 +394,10 @@ export function StudyGroupsView() {
         <div className="grid gap-3 sm:grid-cols-2">
           {Array.from({ length: 4 }).map((_, i) => (
             <Skeleton key={i} className="h-32 rounded-xl" />
-=======
-            <Users2 className="h-6 w-6 text-violet-600" />
-            Groupes d&apos;étude
-          </h1>
-          <p className="text-muted-foreground">
-            Révisez à plusieurs, partagez vos banques et progressez ensemble.
-          </p>
-        </div>
-        <Button
-          onClick={() => setCreateOpen(true)}
-          className="gap-2 bg-gradient-to-r from-violet-500 to-purple-600 text-white"
-        >
-          <Plus className="h-4 w-4" />
-          Créer un groupe
-        </Button>
-      </div>
-
-      {/* Join by code */}
-      <Card className="p-4">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
-          <div className="flex-1 space-y-1.5">
-            <Label htmlFor="join-code" className="text-sm font-medium">
-              Rejoindre par code d&apos;invitation
-            </Label>
-            <Input
-              id="join-code"
-              value={joinCode}
-              onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
-              placeholder="ex: AB3K9Z"
-              className="font-mono uppercase"
-              maxLength={10}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") handleJoin();
-              }}
-            />
-          </div>
-          <Button
-            onClick={handleJoin}
-            disabled={joining}
-            className="gap-1.5"
-          >
-            <LogIn className="h-4 w-4" />
-            {joining ? "..." : "Rejoindre"}
-          </Button>
-        </div>
-      </Card>
-
-      {/* Groups grid */}
-      {loading ? (
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <Skeleton key={i} className="h-40 rounded-xl" />
->>>>>>> Stashed changes
           ))}
         </div>
       ) : groups.length === 0 ? (
         <Card className="flex flex-col items-center gap-3 p-12 text-center">
-<<<<<<< Updated upstream
           <Users className="h-12 w-12 text-muted-foreground/50" />
           <p className="text-sm text-muted-foreground">
             Aucun groupe pour le moment. Soyez le premier à en créer un !
@@ -773,43 +429,6 @@ export function StudyGroupsView() {
                 </span>
                 <span className="text-xs text-muted-foreground">
                   {new Date(g.createdAt).toLocaleDateString("fr-FR")}
-=======
-          <Users2 className="h-12 w-12 text-muted-foreground/50" />
-          <p className="text-sm text-muted-foreground">
-            Aucun groupe pour l&apos;instant. Créez le premier !
-          </p>
-        </Card>
-      ) : (
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {groups.map((g) => (
-            <Card
-              key={g.id}
-              className="group cursor-pointer p-4 transition-all hover:border-violet-300 hover:shadow-md"
-              onClick={() => loadGroup(g.id)}
-            >
-              <div className="flex items-start justify-between gap-2">
-                <div className="min-w-0 flex-1">
-                  <h3 className="truncate font-semibold">{g.name}</h3>
-                  {g.subject && (
-                    <Badge variant="outline" className="mt-1 text-[10px]">
-                      {g.subject}
-                    </Badge>
-                  )}
-                </div>
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-600 dark:bg-violet-950/40">
-                  <Users2 className="h-4 w-4" />
-                </div>
-              </div>
-              {g.description && (
-                <p className="mt-2 line-clamp-2 text-xs text-muted-foreground">
-                  {g.description}
-                </p>
-              )}
-              <div className="mt-3 flex items-center justify-between border-t pt-2 text-xs text-muted-foreground">
-                <span>{g._count?.members ?? 0} membre(s)</span>
-                <span className="flex items-center gap-1">
-                  par {g.owner.name}
->>>>>>> Stashed changes
                 </span>
               </div>
             </Card>
@@ -817,7 +436,6 @@ export function StudyGroupsView() {
         </div>
       )}
 
-<<<<<<< Updated upstream
       <CreateGroupDialog
         open={createOpen}
         onOpenChange={setCreateOpen}
@@ -1073,61 +691,3 @@ function JoinByCodeButton({
     </Button>
   );
 }
-=======
-      {/* Create dialog */}
-      <Dialog open={createOpen} onOpenChange={setCreateOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Créer un groupe d&apos;étude</DialogTitle>
-            <DialogDescription>
-              Un code d&apos;invitation à 6 caractères sera généré pour
-              permettre à d&apos;autres étudiants de rejoindre.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="space-y-3">
-            <div className="space-y-1.5">
-              <Label htmlFor="g-name">Nom du groupe *</Label>
-              <Input
-                id="g-name"
-                value={form.name}
-                onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                placeholder="ex: Prépa Concours Fonction Publique 2025"
-                maxLength={100}
-              />
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="g-subject">Matière / Sujet</Label>
-              <Input
-                id="g-subject"
-                value={form.subject}
-                onChange={(e) => setForm((f) => ({ ...f, subject: e.target.value }))}
-                placeholder="ex: Culture Générale, Droit..."
-                maxLength={50}
-              />
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="g-desc">Description</Label>
-              <Textarea
-                id="g-desc"
-                value={form.description}
-                onChange={(e) => setForm((f) => ({ ...f, description: e.target.value }))}
-                placeholder="Objectifs, horaires de révision, etc."
-                rows={3}
-                maxLength={500}
-              />
-            </div>
-          </div>
-          <DialogFooter>
-            <Button variant="ghost" onClick={() => setCreateOpen(false)}>
-              Annuler
-            </Button>
-            <Button onClick={handleCreate} disabled={creating}>
-              {creating ? "Création..." : "Créer le groupe"}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-    </div>
-  );
-}
->>>>>>> Stashed changes

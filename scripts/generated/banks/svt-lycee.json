@@ -60,8 +60,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
       "question": "Quelle est la conséquence écologique principale de la fragmentation des habitats ?",
       "optionA": "Augmentation de la biodiversité locale",
       "optionB": "Diminution de la connectivité entre populations",
@@ -72,7 +70,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "Quel processus géologique explique la formation des chaînes de montagnes à marge active ?",
       "optionA": "Extension crustale",
       "optionB": "Subduction océanique-continental",
@@ -143,19 +140,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
-      "question": "Quelle est la conséquence écologique principale de l'eutrophisation des écosystèmes aquatiques ?",
-      "optionA": "Augmentation de la biodiversité",
-      "optionB": "Diminution de la transparence de l'eau et anoxie",
-      "optionC": "Amélioration de la qualité de l'eau",
-      "optionD": "Augmentation de la productivité primaire",
-      "correctAnswer": "B",
-      "explanation": "L'eutrophisation entraîne une prolifération d'algues, réduisant la transparence et, lors de leur décomposition, consommant l'oxygène et créant des zones anoxiques.",
-      "difficulty": "medium"
-    },
-    {
->>>>>>> Stashed changes
       "question": "Quel mécanisme explique la régulation de l'expression génique par les microARN ?",
       "optionA": "Dégradation de l'ARNm ou inhibition de sa traduction",
       "optionB": "Méthylation de l'ADN",

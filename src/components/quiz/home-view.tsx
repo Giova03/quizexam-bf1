@@ -2,7 +2,6 @@
 
 import { useEffect, useCallback, useState } from "react";
 import { useQuizStore } from "@/lib/quiz-store";
-import { useSpacedRepetition } from "@/lib/spaced-repetition-store";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -11,23 +10,17 @@ import { BankIcon } from "./bank-icon";
 import { getColor } from "@/lib/types";
 import { SearchDialog } from "./search-dialog";
 import { RevisionDialog } from "./revision-dialog";
-import { DailyChallengeCard } from "./daily-challenge-card";
-<<<<<<< Updated upstream
 import { StudyReminders } from "./study-reminders";
-=======
->>>>>>> Stashed changes
 import {
   GraduationCap,
   FileQuestion,
   Clock,
-  Layers,
   ArrowRight,
   BookOpen,
   Trophy,
   Sparkles,
   Search,
   Layers3,
-  Brain,
 } from "lucide-react";
 
 export function HomeView() {
@@ -42,10 +35,7 @@ export function HomeView() {
     setLoadingExams,
     openBank,
     openExam,
-    openSpacedRepetition,
   } = useQuizStore();
-  const dueCount = useSpacedRepetition((s) => s.getStats().dueToday);
-  const totalCards = useSpacedRepetition((s) => s.getStats().totalCards);
 
   const [searchOpen, setSearchOpen] = useState(false);
   const [revisionBank, setRevisionBank] = useState<{ id: string; title: string } | null>(null);
@@ -110,22 +100,16 @@ export function HomeView() {
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
             <div className="flex items-center gap-2 rounded-lg bg-white/15 px-4 py-2 backdrop-blur">
-              <Layers className="h-5 w-5" />
-              <span className="text-sm font-medium">
-                {banks.length} banques
-              </span>
+              <BookOpen className="h-5 w-5" />
+              <span className="text-sm font-medium">{banks.length} banques</span>
             </div>
             <div className="flex items-center gap-2 rounded-lg bg-white/15 px-4 py-2 backdrop-blur">
               <FileQuestion className="h-5 w-5" />
-              <span className="text-sm font-medium">
-                {totalQuestions} questions
-              </span>
+              <span className="text-sm font-medium">{totalQuestions} questions</span>
             </div>
             <div className="flex items-center gap-2 rounded-lg bg-white/15 px-4 py-2 backdrop-blur">
               <Trophy className="h-5 w-5" />
-              <span className="text-sm font-medium">
-                {exams.length} examens blancs
-              </span>
+              <span className="text-sm font-medium">{exams.length} examens blancs</span>
             </div>
           </div>
         </div>
@@ -133,51 +117,18 @@ export function HomeView() {
 
       {/* Quick actions bar */}
       <section className="flex flex-col gap-3 sm:flex-row">
-        <Button
-          variant="outline"
-          className="gap-2 justify-start"
-          onClick={() => setSearchOpen(true)}
-        >
+        <Button variant="outline" className="gap-2 justify-start" onClick={() => setSearchOpen(true)}>
           <Search className="h-4 w-4 text-emerald-600" />
           <span className="flex-1 text-left">Rechercher une question...</span>
           <Badge variant="secondary" className="text-[10px]">Ctrl+K</Badge>
         </Button>
-        <Button
-          variant="outline"
-          className="gap-2 justify-start border-amber-300 text-amber-700 hover:bg-amber-50 hover:text-amber-800 dark:border-amber-800 dark:text-amber-300 dark:hover:bg-amber-950/40"
-          onClick={openSpacedRepetition}
-        >
-          <Brain className="h-4 w-4" />
-          <span className="flex-1 text-left">Révision espacée</span>
-          {dueCount > 0 ? (
-            <Badge className="bg-amber-500 text-white text-[10px]">
-              {dueCount} due{dueCount > 1 ? "s" : ""}
-            </Badge>
-          ) : totalCards > 0 ? (
-            <Badge variant="secondary" className="text-[10px]">
-              {totalCards} carte{totalCards > 1 ? "s" : ""}
-            </Badge>
-          ) : null}
-        </Button>
       </section>
 
-<<<<<<< Updated upstream
-      {/* Study reminders (daily streak, suggestions, etc.) */}
+      {/* Study reminders */}
       <StudyReminders />
 
-      {/* Daily challenge — 2× XP, rotates by day of week */}
-      <div data-tour="daily-challenge">
-        <DailyChallengeCard />
-      </div>
-=======
-      {/* Daily challenge */}
-      <section>
-        <DailyChallengeCard />
-      </section>
->>>>>>> Stashed changes
-
       {/* Banks section */}
-      <section className="space-y-4" data-tour="banks-section">
+      <section className="space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-emerald-600" />
@@ -207,30 +158,19 @@ export function HomeView() {
                   className="group relative cursor-pointer overflow-hidden p-5 transition-all hover:-translate-y-1 hover:shadow-lg"
                   onClick={() => openBank(bank.id)}
                 >
-                  <div
-                    className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${color.gradient}`}
-                  />
+                  <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${color.gradient}`} />
                   <div className="flex items-start gap-3">
-                    <div
-                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${color.bgSoft} ${color.text}`}
-                    >
+                    <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${color.bgSoft} ${color.text}`}>
                       <BankIcon name={bank.icon} className="h-6 w-6" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <h3 className="font-semibold leading-tight">
-                        {bank.title}
-                      </h3>
-                      <Badge
-                        variant="outline"
-                        className={`mt-1 ${color.border} ${color.text}`}
-                      >
+                      <h3 className="font-semibold leading-tight">{bank.title}</h3>
+                      <Badge variant="outline" className={`mt-1 ${color.border} ${color.text}`}>
                         {bank.category}
                       </Badge>
                     </div>
                   </div>
-                  <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">
-                    {bank.description}
-                  </p>
+                  <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">{bank.description}</p>
                   <div className="mt-4 flex items-center justify-between gap-2">
                     <span className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
                       <FileQuestion className="h-4 w-4" />
@@ -249,9 +189,7 @@ export function HomeView() {
                         <Layers3 className="h-3 w-3" />
                         <span className="hidden sm:inline">Réviser</span>
                       </Button>
-                      <span
-                        className={`flex items-center gap-1 text-sm font-medium ${color.text} transition-transform group-hover:translate-x-0.5`}
-                      >
+                      <span className={`flex items-center gap-1 text-sm font-medium ${color.text} transition-transform group-hover:translate-x-0.5`}>
                         Explorer
                         <ArrowRight className="h-4 w-4" />
                       </span>
@@ -299,9 +237,7 @@ export function HomeView() {
                       <GraduationCap className="h-6 w-6" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <h3 className="font-semibold leading-tight">
-                        {exam.title}
-                      </h3>
+                      <h3 className="font-semibold leading-tight">{exam.title}</h3>
                       <div className="mt-1 flex flex-wrap items-center gap-2">
                         <Badge variant="outline" className="border-violet-200 text-violet-700 dark:border-violet-800 dark:text-violet-300">
                           <Clock className="mr-1 h-3 w-3" />
@@ -313,9 +249,7 @@ export function HomeView() {
                       </div>
                     </div>
                   </div>
-                  <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">
-                    {exam.description}
-                  </p>
+                  <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">{exam.description}</p>
                   <div className="mt-4 flex items-center justify-end">
                     <span className="flex items-center gap-1 text-sm font-medium text-violet-700 transition-transform group-hover:translate-x-0.5 dark:text-violet-300">
                       Démarrer l&apos;examen

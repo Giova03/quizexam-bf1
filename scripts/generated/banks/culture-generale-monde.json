@@ -60,8 +60,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
       "question": "Qui a peint la Joconde ?",
       "optionA": "Michel-Ange",
       "optionB": "Raphaël",
@@ -72,7 +70,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "Quel écrivain a reçu le prix Nobel de littérature en 1953 ?",
       "optionA": "Albert Camus",
       "optionB": "Ernest Hemingway",
@@ -143,19 +140,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
-      "question": "Quelle est la capitale du Brésil ?",
-      "optionA": "Rio de Janeiro",
-      "optionB": "São Paulo",
-      "optionC": "Brasília",
-      "optionD": "Salvador",
-      "correctAnswer": "C",
-      "explanation": "Brasília est la capitale du Brésil depuis 1960. Rio de Janeiro et Salvador ont été des capitales historiques, et São Paulo est la plus grande ville du pays mais n'est pas la capitale.",
-      "difficulty": "medium"
-    },
-    {
->>>>>>> Stashed changes
       "question": "Quel désert est le plus grand d'Antarctique ?",
       "optionA": "Le désert de McMurdo",
       "optionB": "Le désert de Victoria",
@@ -256,8 +240,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
       "question": "Quelle est la capitale du Canada ?",
       "optionA": "Toronto",
       "optionB": "Vancouver",
@@ -268,7 +250,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "Quel fleuve traverse la plus grande partie de l'Europe de l'Est ?",
       "optionA": "Volga",
       "optionB": "Danube",

@@ -78,7 +78,6 @@ export function BankDetailView() {
     loadBank();
   }, [loadBank]);
 
-<<<<<<< Updated upstream
   // Counts per difficulty — for both the preview filter and the StartDialog.
   const difficultyCounts = useMemo(() => {
     const all = bank?.questions ?? [];
@@ -98,9 +97,6 @@ export function BankDetailView() {
   }, [bank, difficulty]);
 
   async function handleStart(mode: CorrectionMode, diff: DifficultyFilter) {
-=======
-  async function handleStart(mode: CorrectionMode, difficulty: DifficultyFilter) {
->>>>>>> Stashed changes
     if (!bank) return;
     try {
       const res = await fetch("/api/sessions", {
@@ -111,17 +107,12 @@ export function BankDetailView() {
           mode,
           sourceType: "bank",
           sourceId: bank.id,
-<<<<<<< Updated upstream
           difficulty: diff,
-=======
-          ...(difficulty !== "all" ? { difficulty } : {}),
->>>>>>> Stashed changes
         }),
       });
       if (res.ok) {
         const session = await res.json();
         setDialogOpen(false);
-<<<<<<< Updated upstream
         startSession(session.id, diff);
       } else if (res.status === 402) {
         // Freemium daily limit reached — surface a toast prompting upgrade.
@@ -130,12 +121,6 @@ export function BankDetailView() {
           data?.error ??
             "Limite quotidienne atteinte. Passez à Premium pour continuer."
         );
-=======
-        startSession(session.id);
-      } else {
-        const data = await res.json().catch(() => ({}));
-        console.error("Failed to create session", data);
->>>>>>> Stashed changes
       }
     } catch (e) {
       console.error("Failed to create session", e);

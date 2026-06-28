@@ -96,21 +96,12 @@ export type ViewName =
   | "social"
   | "leaderboard"
   | "spaced-repetition"
-<<<<<<< Updated upstream
   | "achievements"
   | "forum"
   | "profile"
   | "competition"
   // Social/community views (added in F6):
   | "groups"
-=======
-  | "forum"
-  | "competition"
-  | "achievements"
-  | "profile"
-  | "api-docs"
-  | "study-groups"
->>>>>>> Stashed changes
   | "events"
   | "blog";
 

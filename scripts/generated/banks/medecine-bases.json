@@ -795,12 +795,7 @@
       "optionC": "Corps de Pick",
       "optionD": "Dépôts de tau dans les oligodendrocytes",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La maladie d'Alzheimer se caractérise histologiquement par la présence de plaques amyloïdes extracellulaires et de dégénérescence neurofibrillaire (intraneuronales)."
-=======
-      "explanation": "La maladie d'Alzheimer se caractérise histologiquement par la présence de plaques amyloïdes extracellulaires et de dégénérescence neurofibrillaire (intraneuronales).",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Quelle est la fonction principale du pancréas exocrine?",

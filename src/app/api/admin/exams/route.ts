@@ -2,11 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
-<<<<<<< Updated upstream
 import { cacheInvalidate, CACHE_KEYS } from "@/lib/cache";
-=======
-import { cacheInvalidate } from "@/lib/cache";
->>>>>>> Stashed changes
 
 export const dynamic = "force-dynamic";
 
@@ -83,11 +79,7 @@ export async function POST(request: Request) {
       include: { _count: { select: { examQuestions: true } } },
     });
 
-<<<<<<< Updated upstream
     cacheInvalidate(CACHE_KEYS.examsList);
-=======
-    cacheInvalidate("exams:list");
->>>>>>> Stashed changes
     return NextResponse.json(exam);
   } catch (error) {
     console.error("Failed to create exam:", error);
@@ -105,14 +97,8 @@ export async function DELETE(request: Request) {
     const { searchParams } = new URL(request.url);
     const examId = searchParams.get("id");
     if (!examId) return NextResponse.json({ error: "id required" }, { status: 400 });
-<<<<<<< Updated upstream
     await db.exam.delete({ where: { id: examId } });
     cacheInvalidate(CACHE_KEYS.examsList);
-=======
-    await db.exam.delete({ where: { id: examId } }).catch(() => {});
-    cacheInvalidate("exams:list");
-    cacheInvalidate(`exam:${examId}`);
->>>>>>> Stashed changes
     return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json({ error: "Failed to delete exam" }, { status: 500 });

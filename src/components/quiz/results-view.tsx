@@ -342,21 +342,14 @@ export function ResultsView() {
         </div>
       </Card>
 
-<<<<<<< Updated upstream
       {/* Certificate dialog (Premium-gated) */}
-=======
-      {/* Certificate dialog (only opened when user clicks the certificate button) */}
->>>>>>> Stashed changes
       <CertificateDialog
         open={certOpen}
         onOpenChange={setCertOpen}
         sessionId={session.id}
-<<<<<<< Updated upstream
-=======
         sessionTitle={session.title}
         score={score}
         totalQuestions={total}
->>>>>>> Stashed changes
       />
     </div>
   );

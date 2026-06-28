@@ -5,7 +5,6 @@ import ZAI from "z-ai-web-dev-sdk";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
-<<<<<<< Updated upstream
 export const runtime = "nodejs";
 
 const MIN_COUNT = 5;
@@ -15,14 +14,6 @@ const MAX_TEXT_CHARS = 5000;
 async function requireAdmin() {
   const session = await getServerSession(authOptions);
   if (!session?.user || (session.user as { role?: string }).role !== "ADMIN") return null;
-=======
-
-async function requireAdmin() {
-  const session = await getServerSession(authOptions);
-  if (!session?.user || (session.user as { role?: string }).role !== "ADMIN") {
-    return null;
-  }
->>>>>>> Stashed changes
   return session;
 }
 
@@ -36,7 +27,6 @@ interface GeneratedQuestion {
   explanation: string;
 }
 
-<<<<<<< Updated upstream
 /** Strip ```json fences if the model wrapped its output in markdown. */
 function stripFences(s: string): string {
   let t = s.trim();
@@ -104,71 +94,12 @@ function parseQuestions(content: string): GeneratedQuestion[] {
       if (Array.isArray(p)) return p.filter(isValidQuestion) as GeneratedQuestion[];
     } catch {
       /* fall through */
-=======
-function buildPrompt(text: string, count: number, subject: string): string {
-  return `Tu es un générateur expert de QCM pour une plateforme de préparation aux concours.
-À partir du texte source fourni ci-dessous, génère exactement ${count} questions à choix multiples (QCM) sur le sujet: "${subject}".
-
-CONTRAINTES STRICTES:
-1. Chaque question doit avoir EXACTEMENT 4 options (A, B, C, D) — pas plus, pas moins.
-2. Les 4 options doivent être différentes les unes des autres.
-3. Une seule réponse correcte (lettre A, B, C ou D).
-4. Fournis une explication concise (1-3 phrases) pour chaque question.
-5. Les questions doivent porter sur le contenu du texte source.
-6. Évite les questions trop évidentes ou triviales.
-7. Varie le type de questions (définition, application, analyse, fait).
-
-FORMAT DE SORTIE — RÉPONDS UNIQUEMENT AVEC DU JSON VALIDE, SANS TEXTE AUTOUR:
-[
-  {
-    "question": "Libellé de la question?",
-    "optionA": "Texte de l'option A",
-    "optionB": "Texte de l'option B",
-    "optionC": "Texte de l'option C",
-    "optionD": "Texte de l'option D",
-    "correctAnswer": "A",
-    "explanation": "Explication courte de la réponse."
-  }
-]
-
-TEXTE SOURCE:
-"""
-${text}
-"""
-
-Génère maintenant ${count} questions au format JSON exact:`;
-}
-
-function extractJson(content: string): any[] {
-  // Try to find a JSON array in the response
-  if (!content) return [];
-
-  // First try direct parse
-  try {
-    const parsed = JSON.parse(content);
-    if (Array.isArray(parsed)) return parsed;
-    if (parsed && Array.isArray(parsed.questions)) return parsed.questions;
-  } catch {
-    // fall through
-  }
-
-  // Try to find the first [ ... ] block
-  const start = content.indexOf("[");
-  const end = content.lastIndexOf("]");
-  if (start !== -1 && end !== -1 && end > start) {
-    const slice = content.slice(start, end + 1);
-    try {
-      return JSON.parse(slice);
-    } catch {
-      // fall through
->>>>>>> Stashed changes
     }
   }
 
   return [];
 }
 
-<<<<<<< Updated upstream
 /** Trim each validated question's string fields to avoid storing huge blobs. */
 function cleanQuestion(q: GeneratedQuestion): GeneratedQuestion {
   return {
@@ -246,35 +177,6 @@ EXIGENCES:
   }
 
   return collected.slice(0, count);
-=======
-function validateQuestion(q: any): q is GeneratedQuestion {
-  if (!q || typeof q !== "object") return false;
-  const required = ["question", "optionA", "optionB", "optionC", "optionD", "correctAnswer", "explanation"];
-  for (const k of required) {
-    if (typeof q[k] !== "string" || !q[k].trim()) return false;
-  }
-  if (!["A", "B", "C", "D"].includes(String(q.correctAnswer).toUpperCase())) {
-    return false;
-  }
-  // All 4 options must be distinct
-  const opts = [q.optionA, q.optionB, q.optionC, q.optionD].map((s) =>
-    String(s).trim().toLowerCase()
-  );
-  if (new Set(opts).size < 4) return false;
-  return true;
-}
-
-function normalizeQuestion(q: any): GeneratedQuestion {
-  return {
-    question: String(q.question).trim(),
-    optionA: String(q.optionA).trim(),
-    optionB: String(q.optionB).trim(),
-    optionC: String(q.optionC).trim(),
-    optionD: String(q.optionD).trim(),
-    correctAnswer: String(q.correctAnswer).trim().toUpperCase(),
-    explanation: String(q.explanation).trim(),
-  };
->>>>>>> Stashed changes
 }
 
 export async function POST(request: Request) {
@@ -283,7 +185,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
   }
 
-<<<<<<< Updated upstream
   let body: { text?: unknown; count?: unknown; subject?: unknown };
   try {
     body = await request.json();
@@ -314,61 +215,18 @@ export async function POST(request: Request) {
 
   try {
     const questions = await generateQuestions(truncatedText, count, subject);
-=======
-  try {
-    const body = await request.json();
-    const { text, count, subject } = body;
-    if (!text || typeof text !== "string" || text.trim().length < 50) {
-      return NextResponse.json(
-        { error: "Texte source trop court (min 50 caractères)" },
-        { status: 400 }
-      );
-    }
-    const n = Math.min(20, Math.max(5, parseInt(count, 10) || 10));
-    const subj = (subject ?? "général").toString().trim();
-
-    const prompt = buildPrompt(text.slice(0, 4500), n, subj);
-
-    let questions: GeneratedQuestion[] = [];
-
-    try {
-      const zai = await ZAI.create();
-      const completion = await zai.chat.completions.create({
-        messages: [
-          {
-            role: "assistant",
-            content:
-              "Tu es un générateur expert de QCM pour la préparation aux concours. Tu réponds UNIQUEMENT avec du JSON valide, sans texte avant ou après.",
-          },
-          { role: "user", content: prompt },
-        ],
-        thinking: { type: "disabled" },
-      });
-      const content = completion?.choices?.[0]?.message?.content ?? "";
-      const raw = extractJson(content);
-      questions = raw.filter(validateQuestion).map(normalizeQuestion);
-    } catch (aiError) {
-      console.error("AI generation failed:", aiError);
-    }
->>>>>>> Stashed changes
 
     if (questions.length === 0) {
       return NextResponse.json(
         {
           error:
-<<<<<<< Updated upstream
             "L'IA n'a pas pu générer de questions valides à partir de ce texte. Essayez avec un PDF plus textuel ou un autre extrait.",
-=======
-            "Échec de la génération: le modèle n'a pas produit de questions valides. Réessayez avec un texte plus clair.",
-          questions: [],
->>>>>>> Stashed changes
         },
         { status: 422 }
       );
     }
 
     return NextResponse.json({
-<<<<<<< Updated upstream
       count: questions.length,
       requested: count,
       subject,
@@ -378,16 +236,6 @@ export async function POST(request: Request) {
     console.error("generate-qcm error:", error);
     return NextResponse.json(
       { error: "Erreur lors de la génération des questions par l'IA." },
-=======
-      questions,
-      count: questions.length,
-      requested: n,
-    });
-  } catch (error) {
-    console.error("Generate QCM error:", error);
-    return NextResponse.json(
-      { error: "Échec de la génération de QCM" },
->>>>>>> Stashed changes
       { status: 500 }
     );
   }

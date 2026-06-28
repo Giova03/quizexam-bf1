@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -12,11 +12,10 @@ model User {
   email         String        @unique
   name          String
   passwordHash  String
-<<<<<<< Updated upstream
   role          String        @default("VISITOR") // "VISITOR" | "ADMIN"
   // Auto-generated 8-char alphanumeric referral code (unique per user).
   // Backfill default uses md5(random()) so existing rows get a value during migration.
-  referralCode  String        @unique @default(dbgenerated("(upper(substr(md5(random()::text || clock_timestamp()::text), 1, 8)))"))
+  referralCode  String        @unique @default(cuid())
   // The referral code of the user who invited this user (null if no referral).
   referredBy    String?
   // Public profile fields (added in P6).
@@ -32,14 +31,6 @@ model User {
   // upload PDFs, cannot use the AI tutor, and cannot download certificates.
   // Premium users get unlimited questions + all features. Admin bypasses.
   subscription String        @default("free")
-=======
-  role          String        @default("VISITOR")
-  bio           String?
-  establishment String?
-  referralCode  String        @unique @default(cuid())
-  referredBy    String?
-  subscription  String        @default("free")
->>>>>>> Stashed changes
   createdAt     DateTime      @default(now())
   sessions      QuizSession[]
   posts         Post[]
@@ -48,18 +39,11 @@ model User {
   forumTopics   ForumTopic[]
   forumReplies  ForumReply[]
   reports       Report[]
-<<<<<<< Updated upstream
   // Social/community features (added in F6):
   studyGroupsCreated  StudyGroup[]        @relation("StudyGroupCreator")
   studyGroupMembers   StudyGroupMember[]  @relation("StudyGroupMember")
   eventsCreated       Event[]             @relation("EventCreator")
   articles            Article[]           @relation("ArticleAuthor")
-=======
-  studyGroups   StudyGroupMember[]
-  createdGroups StudyGroup[]
-  articles      Article[]
-  events        Event[]
->>>>>>> Stashed changes
 }
 
 model Document {
@@ -103,15 +87,11 @@ model Question {
   difficulty     String        @default("medium")
   imageUrl       String?
   audioUrl       String?
-  level          String        @default("TOUS")
-  difficulty     String        @default("medium") // "easy" | "medium" | "hard"
   // Optional media attached to the question (added in F4):
   // - imageUrl points to /uploads/<file>.png|jpg|webp|gif
   // - audioUrl points to /uploads/<file>.mp3|wav|ogg
   // Both are surfaced in the session-view (image above, audio below) and in
   // the results-view detailed review.
-  imageUrl       String?
-  audioUrl       String?
   createdAt      DateTime      @default(now())
   examQuestions  ExamQuestion[]
 }
@@ -216,7 +196,6 @@ model EmailLog {
   status    String   @default("pending")
 }
 
-<<<<<<< Updated upstream
 // === Forum (par matière) ===
 // Discussion topics organized by category / question bank.
 model ForumTopic {
@@ -322,86 +301,4 @@ model Report {
   reason     String
   status     String   @default("pending") // "pending" | "resolved" | "dismissed"
   createdAt  DateTime @default(now())
-=======
-model ForumTopic {
-  id        String       @id @default(cuid())
-  title     String
-  content   String
-  authorId  String
-  author    User         @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  bankId    String?
-  category  String
-  createdAt DateTime     @default(now())
-  updatedAt DateTime     @default(now())
-  replies   ForumReply[]
-}
-
-model ForumReply {
-  id            String     @id @default(cuid())
-  topicId       String
-  topic         ForumTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
-  content       String
-  authorId      String
-  author        User       @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  isBestAnswer  Boolean    @default(false)
-  createdAt     DateTime   @default(now())
-}
-
-model Report {
-  id          String   @id @default(cuid())
-  reporterId  String
-  reporter    User     @relation(fields: [reporterId], references: [id], onDelete: Cascade)
-  targetType  String
-  targetId    String
-  reason      String
-  status      String   @default("pending")
-  createdAt   DateTime @default(now())
-}
-
-model StudyGroup {
-  id          String              @id @default(cuid())
-  name        String
-  description String
-  creatorId   String
-  creator     User                @relation(fields: [creatorId], references: [id])
-  inviteCode  String              @unique @default(cuid())
-  createdAt   DateTime            @default(now())
-  members     StudyGroupMember[]
-}
-
-model StudyGroupMember {
-  id        String      @id @default(cuid())
-  groupId   String
-  group     StudyGroup  @relation(fields: [groupId], references: [id], onDelete: Cascade)
-  userId    String
-  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
-  joinedAt  DateTime    @default(now())
-  @@unique([groupId, userId])
-}
-
-model Event {
-  id          String   @id @default(cuid())
-  title       String
-  description String
-  type        String
-  startDate   DateTime
-  endDate     DateTime?
-  createdBy   String
-  author      User     @relation(fields: [createdBy], references: [id])
-  createdAt   DateTime @default(now())
-}
-
-model Article {
-  id            String   @id @default(cuid())
-  title         String
-  content       String
-  excerpt       String
-  authorId      String
-  author        User     @relation(fields: [authorId], references: [id])
-  category      String
-  published     Boolean  @default(false)
-  featuredImage String?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @default(now())
->>>>>>> Stashed changes
 }

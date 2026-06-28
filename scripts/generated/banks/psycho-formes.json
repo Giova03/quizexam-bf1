@@ -245,12 +245,7 @@
       "optionC": "◇",
       "optionD": "◆",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « □ ». Après vide → plein. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Suite : □ ⟶ ◻ ⟶ □ ⟶ ◻ ? (alternance plein/vide) »."
-=======
-      "explanation": "La bonne réponse est « □ » car elle correspond à l'affirmation correcte concernant : Suite : □ ⟶ ◻ ⟶ □ ⟶ ◻ ? (alternance plein/vide)",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Suite de diagonales: ╱ ╲ ╱ ╲ ╱ ?",
@@ -349,12 +344,7 @@
       "optionC": "◉",
       "optionD": "◎",
       "correctAnswer": "A",
-<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « ○ ». Après plein → vide. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Suite de tailles: ○●○●○● ? (alternance) »."
-=======
-      "explanation": "La bonne réponse est « ○ » car elle correspond à l'affirmation correcte concernant : Suite de tailles: ○●○●○● ? (alternance)",
-      "difficulty": "medium"
->>>>>>> Stashed changes
     },
     {
       "question": "Suite de points alignés: . .. ... .... ?",

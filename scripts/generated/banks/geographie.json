@@ -107,8 +107,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
       "question": "Quel est le plus long fleuve du monde ?",
       "optionA": "Nil",
       "optionB": "Amazone",
@@ -119,7 +117,6 @@
       "difficulty": "medium"
     },
     {
->>>>>>> Stashed changes
       "question": "Quelle est la montagne la plus haute du monde ?",
       "optionA": "Mont Kilimandjaro",
       "optionB": "Mont Everest",
@@ -210,19 +207,6 @@
       "difficulty": "medium"
     },
     {
-<<<<<<< Updated upstream
-=======
-      "question": "Quelle est la capitale de l'Australie ?",
-      "optionA": "Sydney",
-      "optionB": "Melbourne",
-      "optionC": "Canberra",
-      "optionD": "Brisbane",
-      "correctAnswer": "C",
-      "explanation": "Canberra est la capitale de l'Australie.",
-      "difficulty": "medium"
-    },
-    {
->>>>>>> Stashed changes
       "question": "Quel pays a la plus grande superficie terrestre ?",
       "optionA": "Canada",
       "optionB": "Chine",
