@@ -149,8 +149,19 @@ export function SessionView() {
     );
   }
 
-  const answers = session.answers;
-  const current = answers[currentIdx];
+  const answers = session.answers ?? [];
+  if (answers.length === 0) {
+    return (
+      <Card className="p-8 text-center">
+        <AlertCircle className="mx-auto h-12 w-12 text-amber-500" />
+        <p className="mt-3 text-sm text-muted-foreground">
+          Cette session ne contient aucune question.
+        </p>
+        <Button onClick={goHome} className="mt-4">Retour à l&apos;accueil</Button>
+      </Card>
+    );
+  }
+  const current = answers[currentIdx] ?? answers[0];
   const isImmediate = session.mode === "immediate";
   const showFeedback = isImmediate && current?.userAnswer !== null;
   const answeredCount = answers.filter((a) => a.userAnswer !== null).length;

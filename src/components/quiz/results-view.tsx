@@ -75,7 +75,7 @@ export function ResultsView() {
     );
   }
 
-  const answers = session.answers;
+  const answers = session.answers ?? [];
   const correct = answers.filter((a) => a.isCorrect === true).length;
   const wrong = answers.filter((a) => a.isCorrect === false).length;
   const skipped = answers.filter((a) => a.userAnswer === null).length;

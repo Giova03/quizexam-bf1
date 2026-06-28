@@ -36,7 +36,7 @@ export async function PATCH(
 
     const isCorrect = existing.correctAnswer === userAnswer;
 
-    const updated = await db.sessionAnswer.update({
+    await db.sessionAnswer.update({
       where: { id: answerId },
       data: {
         userAnswer,
@@ -45,7 +45,34 @@ export async function PATCH(
       },
     });
 
-    return NextResponse.json(updated);
+    // Return the FULL session with all answers so the client can update state
+    const fullSession = await db.quizSession.findUnique({
+      where: { id },
+      include: {
+        answers: {
+          orderBy: { id: "asc" },
+        },
+      },
+    });
+
+    if (!fullSession) {
+      return NextResponse.json(
+        { error: "Session not found after update" },
+        { status: 404 }
+      );
+    }
+
+    // Include durationMin for exam sessions
+    let durationMin: number | null = null;
+    if (fullSession.sourceType === "exam") {
+      const exam = await db.exam.findUnique({
+        where: { id: fullSession.sourceId },
+        select: { durationMin: true },
+      });
+      durationMin = exam?.durationMin ?? null;
+    }
+
+    return NextResponse.json({ ...fullSession, durationMin });
   } catch (error) {
     console.error("Failed to submit answer:", error);
     return NextResponse.json(

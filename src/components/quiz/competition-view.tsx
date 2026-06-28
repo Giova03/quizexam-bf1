@@ -127,7 +127,7 @@ export function CompetitionView() {
           const sorted = [...b].sort(
             (a, b) => (b._count?.questions ?? 0) - (a._count?.questions ?? 0)
           );
-          setSelectedBankId(sorted[0].id);
+          setSelectedBankId(sorted[0]?.id ?? "");
         }
       })
       .catch(() => {});
@@ -820,7 +820,7 @@ export function CompetitionView() {
     const leaderboard =
       room.finalLeaderboard ?? room.participants;
     const sorted = [...leaderboard].sort((a, b) => b.score - a.score);
-    const winner = sorted[0];
+    const winner = sorted[0] ?? sorted[sorted.length - 1];
     return (
       <div className="mx-auto max-w-2xl space-y-5">
         <Card className="overflow-hidden">

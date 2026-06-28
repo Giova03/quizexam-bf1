@@ -260,7 +260,7 @@ export async function POST(request: Request) {
             optionC: q.optionC,
             optionD: q.optionD,
             correctAnswer: q.correctAnswer,
-            correctAnswer2: q.correctAnswer2,
+            correctAnswer2: q.correctAnswer2 ?? null,
             explanation: q.explanation,
             // Snapshot the question's media URLs so the session keeps
             // rendering images/audio even if the bank's question is later

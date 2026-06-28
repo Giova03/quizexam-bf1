@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 import { db } from "./db";
 
 export const authOptions: NextAuthOptions = {
+  secret: process.env.NEXTAUTH_SECRET || "quizexam-bf-fallback-secret-2025-aZ7xK9",
   providers: [
     CredentialsProvider({
       name: "credentials",
