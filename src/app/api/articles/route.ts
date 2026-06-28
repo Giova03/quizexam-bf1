@@ -5,6 +5,7 @@ import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
+<<<<<<< Updated upstream
 /**
  * GET /api/articles
  * List published articles. Authors and admins can also see their own drafts
@@ -49,10 +50,21 @@ export async function GET(request: Request) {
       }
       where = { OR: [ownFilter, pubFilter] };
     }
+=======
+/** GET /api/articles — list published articles, optional tag filter. */
+export async function GET(request: Request) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const tag = searchParams.get("tag");
+    const status = searchParams.get("status") ?? "published";
+    const where: { status?: string; tags?: { contains: string } } = { status };
+    if (tag) where.tags = { contains: tag };
+>>>>>>> Stashed changes
 
     const articles = await db.article.findMany({
       where,
       orderBy: { createdAt: "desc" },
+<<<<<<< Updated upstream
       take: limit,
       include: {
         author: { select: { id: true, name: true, role: true } },
@@ -150,10 +162,62 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+=======
+      take: 100,
+      include: {
+        author: { select: { id: true, name: true } },
+      },
+    });
+    return NextResponse.json(articles);
+  } catch (error) {
+    console.error("Failed to list articles:", error);
+    return NextResponse.json({ error: "Failed to load articles" }, { status: 500 });
+  }
+}
+
+/** POST /api/articles — create a new article (auth required; admin bypasses status). */
+export async function POST(request: Request) {
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.email) {
+      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
+    }
+    const user = await db.user.findUnique({
+      where: { email: session.user.email },
+      select: { id: true, role: true },
+    });
+    if (!user) {
+      return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
+    }
+    const body = (await request.json()) as {
+      title?: string;
+      excerpt?: string;
+      content?: string;
+      tags?: string;
+      coverUrl?: string;
+      status?: string;
+    };
+    const title = body.title?.trim();
+    if (!title || title.length < 3) {
+      return NextResponse.json({ error: "Le titre doit faire au moins 3 caractères" }, { status: 400 });
+    }
+    // slug from title
+    const slug = `${title
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 60)}-${Date.now().toString(36).slice(-4)}`;
+
+    const isAdmin = user.role === "ADMIN";
+    const status = body.status === "draft" ? "draft" : "published";
+>>>>>>> Stashed changes
 
     const article = await db.article.create({
       data: {
         title,
+<<<<<<< Updated upstream
         content,
         excerpt,
         category,
@@ -173,5 +237,21 @@ export async function POST(request: Request) {
       { error: "Failed to create article" },
       { status: 500 }
     );
+=======
+        slug,
+        excerpt: body.excerpt?.trim() ?? "",
+        content: body.content ?? "",
+        tags: body.tags?.trim() ?? "",
+        coverUrl: body.coverUrl?.trim() ?? "",
+        authorId: user.id,
+        status: isAdmin ? status : "published",
+      },
+      include: { author: { select: { id: true, name: true } } },
+    });
+    return NextResponse.json(article, { status: 201 });
+  } catch (error) {
+    console.error("Failed to create article:", error);
+    return NextResponse.json({ error: "Failed to create article" }, { status: 500 });
+>>>>>>> Stashed changes
   }
 }

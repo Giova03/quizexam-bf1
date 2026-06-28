@@ -13,7 +13,8 @@
       "optionC": "Les pays non-alignés sont tous capitalistes",
       "optionD": "L'organisation suit les injonctions des organismes internationaux",
       "correctAnswer": "B",
-      "explanation": "La diversité géographique et idéologique des pays membres du mouvement du non-alignement a compliqué son unité et son efficacité."
+      "explanation": "La diversité géographique et idéologique des pays membres du mouvement du non-alignement a compliqué son unité et son efficacité.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel a été l'apport du Burkina Faso pendant la Seconde Guerre mondiale ?",
@@ -22,7 +23,8 @@
       "optionC": "La fourniture d'armes aux alliés",
       "optionD": "L'offre de son territoire pour les combats",
       "correctAnswer": "B",
-      "explanation": "Le Burkina Faso, alors Haute-Volta, a envoyé des combattants participer à la Seconde Guerre mondiale aux côtés des forces alliées."
+      "explanation": "Le Burkina Faso, alors Haute-Volta, a envoyé des combattants participer à la Seconde Guerre mondiale aux côtés des forces alliées.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel a été l'impact de la participation de l'Afrique à la Seconde Guerre mondiale ?",
@@ -31,7 +33,8 @@
       "optionC": "La fin du mythe de l'invincibilité de l'homme blanc",
       "optionD": "La victoire des russes à la bataille de Stalingrad",
       "correctAnswer": "C",
-      "explanation": "La participation des troupes africaines à la guerre a contribué à détruire le mythe de la supériorité de l'homme blanc."
+      "explanation": "La participation des troupes africaines à la guerre a contribué à détruire le mythe de la supériorité de l'homme blanc.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le domaine d'action de la FAO ?",
@@ -40,7 +43,8 @@
       "optionC": "La culture et l'éducation",
       "optionD": "La protection des droits de l'enfant",
       "correctAnswer": "A",
-      "explanation": "La FAO (Organisation des Nations Unies pour l'alimentation et l'agriculture) se concentre sur la lutte contre la faim et l'amélioration de l'agriculture."
+      "explanation": "La FAO (Organisation des Nations Unies pour l'alimentation et l'agriculture) se concentre sur la lutte contre la faim et l'amélioration de l'agriculture.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le domaine d'action de l'UNESCO ?",
@@ -49,7 +53,8 @@
       "optionC": "La culture et l'éducation",
       "optionD": "La protection des droits de l'enfant",
       "correctAnswer": "C",
-      "explanation": "L'UNESCO (Organisation des Nations Unies pour l'éducation, la science et la culture) se consacre à la promotion de l'éducation, des sciences et de la culture."
+      "explanation": "L'UNESCO (Organisation des Nations Unies pour l'éducation, la science et la culture) se consacre à la promotion de l'éducation, des sciences et de la culture.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le domaine d'action de l'UNICEF ?",
@@ -58,7 +63,8 @@
       "optionC": "La culture et l'éducation",
       "optionD": "La protection des droits de l'enfant",
       "correctAnswer": "D",
-      "explanation": "L'UNICEF (Fonds des Nations Unies pour l'enfance) se concentre sur la protection des droits et du bien-être des enfants."
+      "explanation": "L'UNICEF (Fonds des Nations Unies pour l'enfance) se concentre sur la protection des droits et du bien-être des enfants.",
+      "difficulty": "medium"
     },
     {
       "question": "Parmi les actions suivantes, laquelle a été un succès pour l'ONU ?",
@@ -67,7 +73,8 @@
       "optionC": "L'accession à l'indépendance des pays colonisés",
       "optionD": "Le désarmement total des grandes puissances",
       "correctAnswer": "C",
-      "explanation": "L'ONU a joué un rôle important dans le processus de décolonisation et l'indépendance des pays coloniaux."
+      "explanation": "L'ONU a joué un rôle important dans le processus de décolonisation et l'indépendance des pays coloniaux.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment la Rhodésie du Sud a-t-elle pu accéder à l'indépendance ?",
@@ -76,7 +83,8 @@
       "optionC": "Uniquement par des négociations entre nationalistes et colonisateurs",
       "optionD": "À l'issue de la lutte armée organisée par les nationalistes zimbabwéens",
       "correctAnswer": "D",
-      "explanation": "La Rhodésie du Sud (actuel Zimbabwe) a accédé à l'indépendance après une lutte armée menée par les nationalistes zimbabwéens."
+      "explanation": "La Rhodésie du Sud (actuel Zimbabwe) a accédé à l'indépendance après une lutte armée menée par les nationalistes zimbabwéens.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment la communauté internationale a-t-elle contribué à l'accession à l'indépendance de la Rhodésie du Sud ?",
@@ -85,7 +93,8 @@
       "optionC": "La communauté internationale a voté des sanctions économiques contre le pouvoir blanc",
       "optionD": "Les négociations ouvertes dès 1978 et qui ont conduit à l'indépendance du pays ont été conduites par la communauté internationale",
       "correctAnswer": "D",
-      "explanation": "Les négociations menées sous l'égide de la communauté internationale, notamment à la Conférence de Lancaster House, ont conduit à l'indépendance du Zimbabwe."
+      "explanation": "Les négociations menées sous l'égide de la communauté internationale, notamment à la Conférence de Lancaster House, ont conduit à l'indépendance du Zimbabwe.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel fut le rôle des élites dans l'émancipation de la Haute-Volta ?",
@@ -94,7 +103,8 @@
       "optionC": "Le musèlement de l'administration coloniale",
       "optionD": "L'incitation au boycott des produits français",
       "correctAnswer": "A",
-      "explanation": "Les élites voltaïques ont joué un rôle majeur dans la sensibilisation à travers les partis politiques pour obtenir l'indépendance du pays."
+      "explanation": "Les élites voltaïques ont joué un rôle majeur dans la sensibilisation à travers les partis politiques pour obtenir l'indépendance du pays.",
+      "difficulty": "medium"
     },
     {
       "question": "Quels sont les caractéristiques du temps ?",
@@ -103,7 +113,8 @@
       "optionC": "La limite de l'éclairage, l'intensité de l'éclairage, la nature de l'éclairage",
       "optionD": "La durée de l'éclairage, la nature de l'éclairage, l'intensité de l'éclairage",
       "correctAnswer": "D",
-      "explanation": "Le temps se caractérise par sa durée, sa nature et son intensité, qui déterminent la perception de l'environnement."
+      "explanation": "Le temps se caractérise par sa durée, sa nature et son intensité, qui déterminent la perception de l'environnement.",
+      "difficulty": "medium"
     },
     {
       "question": "Parmi les propositions suivantes, quelle est une cause de la bipolarisation du monde ?",
@@ -112,7 +123,8 @@
       "optionC": "L'isolationnisme des américains",
       "optionD": "Les profondes rivalités sociales",
       "correctAnswer": "A",
-      "explanation": "La bipolarisation du monde après la Seconde Guerre mondiale a été principalement causée par les rivalités idéologiques entre les blocs capitaliste et communiste."
+      "explanation": "La bipolarisation du monde après la Seconde Guerre mondiale a été principalement causée par les rivalités idéologiques entre les blocs capitaliste et communiste.",
+      "difficulty": "medium"
     },
     {
       "question": "Parmi les moyens suivants, lequel est une sanction pacifique de règlement des différends internationaux ?",
@@ -121,7 +133,8 @@
       "optionC": "L'arbitrage",
       "optionD": "L'embargo",
       "correctAnswer": "D",
-      "explanation": "L'embargo est une mesure de sanction économique utilisée comme moyen pacifique de pression dans les relations internationales."
+      "explanation": "L'embargo est une mesure de sanction économique utilisée comme moyen pacifique de pression dans les relations internationales.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon les principes de l'ONU, dans quel cas les casques bleus ont-ils le droit de tirer ?",
@@ -130,7 +143,8 @@
       "optionC": "En situation de légitime défense",
       "optionD": "En cas de conflit inter-Etats",
       "correctAnswer": "C",
-      "explanation": "Les casques bleus ont le droit de tirer uniquement en situation de légitime défense pour protéger les civils et leur mission."
+      "explanation": "Les casques bleus ont le droit de tirer uniquement en situation de légitime défense pour protéger les civils et leur mission.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle action symbolise le succès de l'ONU ?",
@@ -139,7 +153,8 @@
       "optionC": "Contribution à l'indépendance des colonies",
       "optionD": "L'arrêt des conflits armés dans le monde",
       "correctAnswer": "C",
-      "explanation": "La contribution de l'ONU à l'indépendance des colonies est l'un de ses plus grands succès historiques."
+      "explanation": "La contribution de l'ONU à l'indépendance des colonies est l'un de ses plus grands succès historiques.",
+      "difficulty": "medium"
     },
     {
       "question": "Parmi ces facteurs, lequel est une cause économique de la Deuxième Guerre mondiale ?",
@@ -148,7 +163,8 @@
       "optionC": "La rivalité économique entre l'Allemagne et la France",
       "optionD": "La crise économique de 1929 née aux Etats Unis",
       "correctAnswer": "D",
-      "explanation": "La crise économique de 1929 a exacerbé les tensions internationales et favorisé l'accession au pouvoir de régimes totalitaires comme le nazisme."
+      "explanation": "La crise économique de 1929 a exacerbé les tensions internationales et favorisé l'accession au pouvoir de régimes totalitaires comme le nazisme.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle phrase convient à la situation de l'Afrique indépendante ?",
@@ -157,7 +173,8 @@
       "optionC": "Utilise ses langues nationales pour l'éducation formelle",
       "optionD": "A une culture qui s'impose au-delà de ses frontières",
       "correctAnswer": "A",
-      "explanation": "L'Afrique indépendante reste confrontée à des défis éducatifs majeurs, avec des taux d'analphabétisme élevés dans de nombreux pays."
+      "explanation": "L'Afrique indépendante reste confrontée à des défis éducatifs majeurs, avec des taux d'analphabétisme élevés dans de nombreux pays.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle phrase convient à la situation sociale de l'Afrique indépendante ?",
@@ -166,7 +183,8 @@
       "optionC": "A trouvé des solutions définitives aux problèmes de chômages des jeunes",
       "optionD": "Abrite des Etats qui vivent permanemment sous l'insécurité alimentaire",
       "correctAnswer": "D",
-      "explanation": "L'Afrique indépendante reste confrontée à des défis sécuritaires et alimentaires majeurs dans de nombreux États."
+      "explanation": "L'Afrique indépendante reste confrontée à des défis sécuritaires et alimentaires majeurs dans de nombreux États.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel événement symbolise le début de la période d'après-guerre froide ?",
@@ -175,7 +193,8 @@
       "optionC": "La fin du maccarthysme",
       "optionD": "La signature des accords de Helsinki",
       "correctAnswer": "A",
-      "explanation": "La chute du Mur de Berlin le 9 novembre 1989 a marqué le début de la fin de la guerre froide et le début de la période post-guerre froide."
+      "explanation": "La chute du Mur de Berlin le 9 novembre 1989 a marqué le début de la fin de la guerre froide et le début de la période post-guerre froide.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel a été le rôle des Nations Unies dans le processus de décolonisation ?",
@@ -184,7 +203,8 @@
       "optionC": "Soutenir les puissances coloniales",
       "optionD": "Faciliter l'accession à l'indépendance des pays colonisés",
       "correctAnswer": "D",
-      "explanation": "L'ONU a joué un rôle crucial dans le processus de décolonisation en soutenant les mouvements indépendantistes et en facilitant les transitions vers l'indépendance."
+      "explanation": "L'ONU a joué un rôle crucial dans le processus de décolonisation en soutenant les mouvements indépendantistes et en facilitant les transitions vers l'indépendance.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel a été le principal instrument utilisé par la communauté internationale pour lutter contre l'apartheid en Afrique du Sud ?",
@@ -193,7 +213,8 @@
       "optionC": "Un boycott culturel et sportif uniquement",
       "optionD": "Une résolution de l'Assemblée générale de l'ONU",
       "correctAnswer": "B",
-      "explanation": "La communauté internationale a principalement utilisé des sanctions économiques et diplomatiques pour lutter contre l'apartheid en Afrique du Sud."
+      "explanation": "La communauté internationale a principalement utilisé des sanctions économiques et diplomatiques pour lutter contre l'apartheid en Afrique du Sud.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale caractéristique de la guerre froide ?",
@@ -202,7 +223,8 @@
       "optionC": "Une collaboration économique entre les deux superpuissances",
       "optionD": "Une division du monde en trois blocs égaux",
       "correctAnswer": "B",
-      "explanation": "La guerre froide s'est caractérisée par une rivalité idéologique et politique entre les blocs capitaliste et communiste, sans conflit militaire direct entre les deux superpuissances."
+      "explanation": "La guerre froide s'est caractérisée par une rivalité idéologique et politique entre les blocs capitaliste et communiste, sans conflit militaire direct entre les deux superpuissances.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel a été le rôle de l'Organisation de l'Unité Africaine (OUA) dans la lutte contre le colonialisme ?",
@@ -211,7 +233,8 @@
       "optionC": "Négocier avec les puissances coloniales",
       "optionD": "Organiser des interventions militaires",
       "correctAnswer": "B",
-      "explanation": "L'OUA a joué un rôle crucial en soutenant les mouvements de libération et en condamnant fermement le colonialisme et l'apartheid."
+      "explanation": "L'OUA a joué un rôle crucial en soutenant les mouvements de libération et en condamnant fermement le colonialisme et l'apartheid.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle a été la principale conséquence de la décolonisation pour les États africains ?",
@@ -220,7 +243,8 @@
       "optionC": "L'instabilité politique totale",
       "optionD": "L'unité politique parfaite",
       "correctAnswer": "B",
-      "explanation": "Les États africains ont hérité de leurs frontières de la période coloniale, ce qui a souvent posé des problèmes de cohésion nationale."
+      "explanation": "Les États africains ont hérité de leurs frontières de la période coloniale, ce qui a souvent posé des problèmes de cohésion nationale.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle a été la politique étrangère du Burkina Faso sous Thomas Sankara ?",
@@ -229,7 +253,8 @@
       "optionC": "Proximité avec l'Afrique du Sud",
       "optionD": "Isolationnisme total",
       "correctAnswer": "B",
-      "explanation": "Thomas Sankara a mené une politique de non-alignement et a soutenu activement les luttes de liboration en Afrique et dans le monde."
+      "explanation": "Thomas Sankara a mené une politique de non-alignement et a soutenu activement les luttes de liboration en Afrique et dans le monde.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle a été la principale caractéristique de la politique étrangère du Ghana sous Kwame Nkrumah ?",
@@ -238,7 +263,8 @@
       "optionC": "Panafricanisme et anti-impérialisme",
       "optionD": "Neutralité totale",
       "correctAnswer": "C",
-      "explanation": "Kwame Nkrumah a été un ardent défenseur du panafricanisme et de l'anti-impérialisme dans sa politique étrangère."
+      "explanation": "Kwame Nkrumah a été un ardent défenseur du panafricanisme et de l'anti-impérialisme dans sa politique étrangère.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel a été le rôle de la France dans la décolonisation de l'Afrique ?",
@@ -247,7 +273,8 @@
       "optionC": "Elle a négocié progressivement l'indépendance de ses colonies",
       "optionD": "Elle a abandonné toutes ses colonies sans négociation",
       "correctAnswer": "C",
-      "explanation": "La France a négocié progressivement l'indépendance de ses colonies africaines, souvent dans un contexte de tension et de conflit."
+      "explanation": "La France a négocié progressivement l'indépendance de ses colonies africaines, souvent dans un contexte de tension et de conflit.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle a été la principale conséquence de la guerre froide pour l'Afrique ?",
@@ -256,7 +283,8 @@
       "optionC": "L'indépendance immédiate de toutes les colonies",
       "optionD": "La fin de tous les conflits armés",
       "correctAnswer": "B",
-      "explanation": "La guerre froide a entraîné la bipolarisation des alliances en Afrique et de nombreux conflits par procuration entre les deux blocs."
+      "explanation": "La guerre froide a entraîné la bipolarisation des alliances en Afrique et de nombreux conflits par procuration entre les deux blocs.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle a été la principale organisation créée pour promouvoir la coopération économique en Afrique après l'indépendance ?",
@@ -265,7 +293,8 @@
       "optionC": "L'Union Africaine",
       "optionD": "L'Organisation de l'Unité Africaine",
       "correctAnswer": "B",
-      "explanation": "La Cédéao (Communauté Économique des États de l'Afrique de l'Ouest) a été créée pour promouvoir la coopération économique en Afrique de l'Ouest."
+      "explanation": "La Cédéao (Communauté Économique des États de l'Afrique de l'Ouest) a été créée pour promouvoir la coopération économique en Afrique de l'Ouest.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle a été la principale caractéristique de la diplomatie burkinabè après l'indépendance ?",
@@ -274,7 +303,8 @@
       "optionC": "Proximité avec l'Afrique du Sud",
       "optionD": "Isolationnisme total",
       "correctAnswer": "B",
-      "explanation": "Le Burkina Faso, comme de nombreux autres États africains, a suivi une politique de non-alignement et de soutien aux luttes de libération."
+      "explanation": "Le Burkina Faso, comme de nombreux autres États africains, a suivi une politique de non-alignement et de soutien aux luttes de libération.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle a été la principale cause des conflits en Afrique après l'indépendance ?",
@@ -283,7 +313,8 @@
       "optionC": "Les ressources naturelles",
       "optionD": "Toutes ces réponses",
       "correctAnswer": "D",
-      "explanation": "Les conflits en Afrique après l'indépendance ont été causés par une combinaison de facteurs, dont la diversité ethnique, les frontières coloniales et la compétition pour les ressources naturelles."
+      "explanation": "Les conflits en Afrique après l'indépendance ont été causés par une combinaison de facteurs, dont la diversité ethnique, les frontières coloniales et la compétition pour les ressources naturelles.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel événement marque généralement le début officiel de la Seconde Guerre mondiale en Europe?",
@@ -292,7 +323,8 @@
       "optionC": "La signature du pacte de Munich en septembre 1938",
       "optionD": "L'invasion de la Tchécoslovaquie par l'Allemagne en mars 1939",
       "correctAnswer": "A",
-      "explanation": "L'invasion de la Pologne par l'Allemagne nazie le 1er septembre 1939 a provoqué la déclaration de guerre de la France et du Royaume-Uni à l'Allemagne, marquant ainsi le début de la Seconde Guerre mondiale en Europe."
+      "explanation": "L'invasion de la Pologne par l'Allemagne nazie le 1er septembre 1939 a provoqué la déclaration de guerre de la France et du Royaume-Uni à l'Allemagne, marquant ainsi le début de la Seconde Guerre mondiale en Europe.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a refusé de signer les accords de Munich de 1938?",
@@ -301,7 +333,8 @@
       "optionC": "Les États-Unis",
       "optionD": "Le Japon",
       "correctAnswer": "B",
-      "explanation": "L'Union soviétique, bien qu'initialement partie des négociations, a été exclue des accords de Munich qui ont permis à l'Allemagne d'annexer les régions sudètes de Tchécoslovaquie."
+      "explanation": "L'Union soviétique, bien qu'initialement partie des négociations, a été exclue des accords de Munich qui ont permis à l'Allemagne d'annexer les régions sudètes de Tchécoslovaquie.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel général français a proposé la ligne Maginot comme principale défense contre l'Allemagne?",
@@ -310,7 +343,8 @@
       "optionC": "André Maginot",
       "optionD": "Maxime Weygand",
       "correctAnswer": "C",
-      "explanation": "André Maginot, ministre de la Guerre puis des Affaires étrangères, a été le principal promoteur de la construction de la ligne de fortifications qui porte son nom, achevée en 1936."
+      "explanation": "André Maginot, ministre de la Guerre puis des Affaires étrangères, a été le principal promoteur de la construction de la ligne de fortifications qui porte son nom, achevée en 1936.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a été le premier à déclarer la guerre au Japon après l'attaque de Pearl Harbor?",
@@ -319,7 +353,8 @@
       "optionC": "La Chine",
       "optionD": "L'Australie",
       "correctAnswer": "B",
-      "explanation": "Le Royaume-Uni a été le premier pays à déclarer la guerre au Japon le 8 décembre 1941, seulement quelques heures après les États-Unis, en réponse à l'attaque de Pearl Harbor."
+      "explanation": "Le Royaume-Uni a été le premier pays à déclarer la guerre au Japon le 8 décembre 1941, seulement quelques heures après les États-Unis, en réponse à l'attaque de Pearl Harbor.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel événement a marqué la fin de la Seconde Guerre mondiale en Europe?",
@@ -328,7 +363,8 @@
       "optionC": "Le débarquement de Normandie en juin 1944",
       "optionD": "La bataille de Berlin en avril 1945",
       "correctAnswer": "A",
-      "explanation": "La capitulation sans condition de l'Allemagne, signée le 7 mai 1945 à Reims et ratifiée le 8 mai à Berlin, a marqué la fin officielle des hostilités en Europe."
+      "explanation": "La capitulation sans condition de l'Allemagne, signée le 7 mai 1945 à Reims et ratifiée le 8 mai à Berlin, a marqué la fin officielle des hostilités en Europe.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la date de création de l'Organisation des Nations Unies (ONU)?",
@@ -337,7 +373,8 @@
       "optionC": "1er janvier 1946",
       "optionD": "10 décembre 1948",
       "correctAnswer": "A",
-      "explanation": "L'ONU a été officiellement créée le 24 octobre 1945, date à laquelle la Charte a été ratifiée par les cinq membres permanents du Conseil de sécurité et la majorité des autres signataires."
+      "explanation": "L'ONU a été officiellement créée le 24 octobre 1945, date à laquelle la Charte a été ratifiée par les cinq membres permanents du Conseil de sécurité et la majorité des autres signataires.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a proposé la création de la Commission de Décolonisation de l'ONU?",
@@ -346,7 +383,8 @@
       "optionC": "L'Inde",
       "optionD": "L'Éthiopie",
       "correctAnswer": "C",
-      "explanation": "L'Inde, sous l'impulsion de Jawaharlal Nehru, a joué un rôle central dans la création de la Commission de Décolonisation en 1961 pour accélérer le processus de décolonisation."
+      "explanation": "L'Inde, sous l'impulsion de Jawaharlal Nehru, a joué un rôle central dans la création de la Commission de Décolonisation en 1961 pour accélérer le processus de décolonisation.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la date de création de l'Organisation de l'Unité Africaine (OUA)?",
@@ -355,7 +393,8 @@
       "optionC": "11 juillet 1999",
       "optionD": "30 mai 1963",
       "correctAnswer": "A",
-      "explanation": "L'Organisation de l'Unité Africaine (OUA) a été créée le 25 mai 1963 à Addis-Abeba, en Éthiopie, avec 32 États fondateurs."
+      "explanation": "L'Organisation de l'Unité Africaine (OUA) a été créée le 25 mai 1963 à Addis-Abeba, en Éthiopie, avec 32 États fondateurs.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a accueilli la première conférence des pays non-alignés?",
@@ -364,7 +403,8 @@
       "optionC": "Égypte",
       "optionD": "Indonésie",
       "correctAnswer": "C",
-      "explanation": "La première conférence des pays non-alignés s'est tenue en septembre 1961 à Belgrade, en Yougoslavie, mais c'est en Égypte que le mouvement a été officiellement fondé en 1956."
+      "explanation": "La première conférence des pays non-alignés s'est tenue en septembre 1961 à Belgrade, en Yougoslavie, mais c'est en Égypte que le mouvement a été officiellement fondé en 1956.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel leader a été le principal promoteur du mouvement des non-alignés?",
@@ -373,7 +413,8 @@
       "optionC": "Josip Broz Tito",
       "optionD": "Jawaharlal Nehru",
       "correctAnswer": "C",
-      "explanation": "Josip Broz Tito, président de la Yougoslavie, a été l'un des principaux fondateurs du mouvement des non-alignés aux côtés de Nasser, Nehru et Nkrumah."
+      "explanation": "Josip Broz Tito, président de la Yougoslavie, a été l'un des principaux fondateurs du mouvement des non-alignés aux côtés de Nasser, Nehru et Nkrumah.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a été le premier à quitter l'OUA?",
@@ -382,7 +423,8 @@
       "optionC": "Le Sénégal",
       "optionD": "Le Zaïre",
       "correctAnswer": "A",
-      "explanation": "L'Afrique du Sud, sous le régime de l'apartheid, a quitté l'OUA en 1963 et n'y a été réadmise qu'en 1994 après la fin de l'apartheid."
+      "explanation": "L'Afrique du Sud, sous le régime de l'apartheid, a quitté l'OUA en 1963 et n'y a été réadmise qu'en 1994 après la fin de l'apartheid.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel événement a marqué la fin officielle de l'apartheid en Afrique du Sud?",
@@ -391,7 +433,8 @@
       "optionC": "La fin de la ségrégation légale en 1986",
       "optionD": "La signature de la Constitution en 1996",
       "correctAnswer": "B",
-      "explanation": "Les premières élections multiraciales en Afrique du Sud en 1994, remportées par Nelson Mandela et le Congrès national africain (ANC), ont marqué la fin officielle de l'apartheid."
+      "explanation": "Les premières élections multiraciales en Afrique du Sud en 1994, remportées par Nelson Mandela et le Congrès national africain (ANC), ont marqué la fin officielle de l'apartheid.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a construit le mur de Berlin?",
@@ -400,7 +443,8 @@
       "optionC": "L'Allemagne de l'Ouest",
       "optionD": "L'Allemagne de l'Est",
       "correctAnswer": "D",
-      "explanation": "Le mur de Berlin a été construit par le gouvernement de la République démocratique allemande (Allemagne de l'Est) en 1961 pour empêcher l'exode de ses citoyens vers l'Allemagne de l'Ouest."
+      "explanation": "Le mur de Berlin a été construit par le gouvernement de la République démocratique allemande (Allemagne de l'Est) en 1961 pour empêcher l'exode de ses citoyens vers l'Allemagne de l'Ouest.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel événement a marqué la chute du mur de Berlin?",
@@ -409,7 +453,8 @@
       "optionC": "La manifestation du 9 novembre 1989",
       "optionD": "La réunification allemande en 1990",
       "correctAnswer": "C",
-      "explanation": "Le mur de Berlin est tombé le 9 novembre 1989 suite à une annonce mal interprétée par la foule lors d'une conférence de presse, déclenchant une manifestation spontanée."
+      "explanation": "Le mur de Berlin est tombé le 9 novembre 1989 suite à une annonce mal interprétée par la foule lors d'une conférence de presse, déclenchant une manifestation spontanée.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel leader africain a été surnommé 'le Che Guevara d'Afrique'?",
@@ -418,7 +463,8 @@
       "optionC": "Thomas Sankara",
       "optionD": "Haile Selassie",
       "correctAnswer": "C",
-      "explanation": "Thomas Sankara, président du Burkina Faso de 1983 à 1987, a été surnommé 'le Che Guevara d'Afrique' en raison de son engagement révolutionnaire, son ascétisme et ses politiques anti-impérialistes."
+      "explanation": "Thomas Sankara, président du Burkina Faso de 1983 à 1987, a été surnommé 'le Che Guevara d'Afrique' en raison de son engagement révolutionnaire, son ascétisme et ses politiques anti-impérialistes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a été le premier à accorder l'indépendance à ses colonies africaines?",
@@ -427,7 +473,8 @@
       "optionC": "La Belgique",
       "optionD": "Le Portugal",
       "correctAnswer": "C",
-      "explanation": "La Belgique a accordé l'indépendance au Congo en 1960, suivie du Rwanda et du Burundi en 1962, devenant ainsi le premier pays européen à accorder l'indépendance à ses colonies africaines."
+      "explanation": "La Belgique a accordé l'indépendance au Congo en 1960, suivie du Rwanda et du Burundi en 1962, devenant ainsi le premier pays européen à accorder l'indépendance à ses colonies africaines.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel événement a marqué le début de la guerre froide?",
@@ -436,7 +483,8 @@
       "optionC": "Le blocus de Berlin en 1948-1949",
       "optionD": "La création de l'OTAN en 1949",
       "correctAnswer": "A",
-      "explanation": "Le discours de Fulton prononcé par Winston Churchill en mars 1946, où il évoquait le 'rideau de fer' séparant l'Est et l'Ouest, est souvent considéré comme l'événement fondateur de la guerre froide."
+      "explanation": "Le discours de Fulton prononcé par Winston Churchill en mars 1946, où il évoquait le 'rideau de fer' séparant l'Est et l'Ouest, est souvent considéré comme l'événement fondateur de la guerre froide.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a été le dernier à accorder l'indépendance à ses colonies en Afrique?",
@@ -445,7 +493,8 @@
       "optionC": "L'Espagne",
       "optionD": "L'Italie",
       "correctAnswer": "B",
-      "explanation": "Le Portugal, sous le régime de Salazar puis de Caetano, a été le dernier pays européen à accorder l'indépendance à ses colonies africaines, entre 1974 et 1975, suite à la révolution des Œillets."
+      "explanation": "Le Portugal, sous le régime de Salazar puis de Caetano, a été le dernier pays européen à accorder l'indépendance à ses colonies africaines, entre 1974 et 1975, suite à la révolution des Œillets.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel événement a marqué la fin officielle de la guerre froide?",
@@ -454,7 +503,8 @@
       "optionC": "La signature du traité de Start II en 1993",
       "optionD": "La normalisation des relations entre les États-Unis et la Chine en 1979",
       "correctAnswer": "B",
-      "explanation": "La dissolution de l'Union soviétique le 25 décembre 1991 est généralement considérée comme la fin officielle de la guerre froide, marquant la victoire des États-Unis et de leurs alliés."
+      "explanation": "La dissolution de l'Union soviétique le 25 décembre 1991 est généralement considérée comme la fin officielle de la guerre froide, marquant la victoire des États-Unis et de leurs alliés.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a proposé la création de la Communauté des États Africains (CEDEAO)?",
@@ -463,7 +513,8 @@
       "optionC": "La Côte d'Ivoire",
       "optionD": "Le Sénégal",
       "correctAnswer": "C",
-      "explanation": "La CEDEAO a été créée le 28 mai 1975 à Lagos, au Nigeria, mais c'est Félix Houphouët-Boigny, président de la Côte d'Ivoire, qui en a été le principal promoteur."
+      "explanation": "La CEDEAO a été créée le 28 mai 1975 à Lagos, au Nigeria, mais c'est Félix Houphouët-Boigny, président de la Côte d'Ivoire, qui en a été le principal promoteur.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle fut la principale conséquence de la Conférence de Yalta (février 1945) pour l'Europe de l'Est ?",
@@ -472,7 +523,8 @@
       "optionC": "L'inclusion des pays d'Europe de l'Est dans la sphère d'influence soviétique",
       "optionD": "L'organisation d'élections libres supervisées par l'ONU",
       "correctAnswer": "C",
-      "explanation": "La Conférence de Yalta a scellé le sort de l'Europe de l'Est en la plaçant sous l'influence soviétique, menant à l'établissement de régimes communistes dans ces pays."
+      "explanation": "La Conférence de Yalta a scellé le sort de l'Europe de l'Est en la plaçant sous l'influence soviétique, menant à l'établissement de régimes communistes dans ces pays.",
+      "difficulty": "medium"
     },
     {
       "question": "Le concept de 'non-alignement', tel que promu par la Conférence de Bandung (1955), implique principalement :",
@@ -481,7 +533,8 @@
       "optionC": "L'indépendance dans la prise de décision politique et diplomatique",
       "optionD": "L'alliance avec les pays socialistes contre l'impérialisme",
       "correctAnswer": "C",
-      "explanation": "Le non-alignement se définit par l'indépendance dans la prise de décision politique, refusant de s'aligner sur les blocs Est-Ouest pendant la Guerre Froide."
+      "explanation": "Le non-alignement se définit par l'indépendance dans la prise de décision politique, refusant de s'aligner sur les blocs Est-Ouest pendant la Guerre Froide.",
+      "difficulty": "medium"
     },
     {
       "question": "La Déclaration universelle des droits de l'homme (1948) adoptée par l'ONU a été principalement influencée par :",
@@ -490,7 +543,8 @@
       "optionC": "Le système juridique chinois traditionnel",
       "optionD": "Les coutumes africaines précoloniales",
       "correctAnswer": "B",
-      "explanation": "Cette déclaration a été profondément marquée par la philosophie des Lumières et le désir de prévenir les violations des droits humaines constatées pendant la Seconde Guerre mondiale."
+      "explanation": "Cette déclaration a été profondément marquée par la philosophie des Lumières et le désir de prévenir les violations des droits humaines constatées pendant la Seconde Guerre mondiale.",
+      "difficulty": "medium"
     },
     {
       "question": "La politique d'apartheid en Afrique du Sud a été officiellement mise en place en :",
@@ -499,7 +553,8 @@
       "optionC": "1976",
       "optionD": "1990",
       "correctAnswer": "A",
-      "explanation": "Le Parti national a remporté les élections en 1948 et a immédiatement institué la politique d'apartheid, formalisant la ségregation raciale déjà existante."
+      "explanation": "Le Parti national a remporté les élections en 1948 et a immédiatement institué la politique d'apartheid, formalisant la ségregation raciale déjà existante.",
+      "difficulty": "medium"
     },
     {
       "question": "La décolonisation accélérée après la Seconde Guerre mondiale est principalement due à :",
@@ -508,7 +563,8 @@
       "optionC": "Le changement de mentalité internationale après la Shoah",
       "optionD": "Toutes ces raisons",
       "correctAnswer": "D",
-      "explanation": "La décolonisation résulte d'une combinaison de ces facteurs : les puissances européennes affaiblies, les luttes nationales locales, et une évolution de la conscience internationale."
+      "explanation": "La décolonisation résulte d'une combinaison de ces facteurs : les puissances européennes affaiblies, les luttes nationales locales, et une évolution de la conscience internationale.",
+      "difficulty": "medium"
     },
     {
       "question": "Thomas Sankara est principalement connu pour :",
@@ -517,7 +573,8 @@
       "optionC": "Sa révolution au Burkina Faso et ses positions anti-impérialistes",
       "optionD": "Sa médiation dans le conflit israélo-arabe",
       "correctAnswer": "C",
-      "explanation": "Thomas Sankara a dirigé la Révolution burkinabé de 1983, menant des réformes sociales, économiques et environnementales tout en adoptant une posture anti-impérialiste."
+      "explanation": "Thomas Sankara a dirigé la Révolution burkinabé de 1983, menant des réformes sociales, économiques et environnementales tout en adoptant une posture anti-impérialiste.",
+      "difficulty": "medium"
     },
     {
       "question": "La chute du Mur de Berlin en 1989 a principalement été facilitée par :",
@@ -526,7 +583,8 @@
       "optionC": "L'intervention directe des États-Unis",
       "optionD": "La réforme économique du Comecon",
       "correctAnswer": "A",
-      "explanation": "La politique de glasnost (transparence) et de perestroïka (réforme) de Gorbatchev a affaibli le contrôle soviétique sur l'Europe de l'Est, permettant la chute du Mur."
+      "explanation": "La politique de glasnost (transparence) et de perestroïka (réforme) de Gorbatchev a affaibli le contrôle soviétique sur l'Europe de l'Est, permettant la chute du Mur.",
+      "difficulty": "medium"
     },
     {
       "question": "La crise de Suez (1956) a marqué un tournant dans les relations internationales en :",
@@ -535,7 +593,8 @@
       "optionC": "Réaffirmant le principe de non-intervention dans les affaires internes",
       "optionD": "Consolidant l'alliance entre la France et l'Allemagne de l'Ouest",
       "correctAnswer": "B",
-      "explanation": "La crise de Suez a révélé la diminution du pouvoir des anciennes puissances coloniales face aux nouvelles réalités géopolitiques, notamment l'influence croissante des États-Unis et de l'URSS."
+      "explanation": "La crise de Suez a révélé la diminution du pouvoir des anciennes puissances coloniales face aux nouvelles réalités géopolitiques, notamment l'influence croissante des États-Unis et de l'URSS.",
+      "difficulty": "medium"
     },
     {
       "question": "L'Organisation de l'Unité Africaine (OUA) a été créée en 1963 principalement pour :",
@@ -544,7 +603,8 @@
       "optionC": "Établir une union monétaire africaine unique",
       "optionD": "Créer une force de défense commune continentale",
       "correctAnswer": "B",
-      "explanation": "L'OUA a été fondée pour unir les États africains dans leur lutte contre le colonialisme et le néo-colonialisme, et pour promouvoir la solidarité continentale."
+      "explanation": "L'OUA a été fondée pour unir les États africains dans leur lutte contre le colonialisme et le néo-colonialisme, et pour promouvoir la solidarité continentale.",
+      "difficulty": "medium"
     },
     {
       "question": "La Conférence de Bandung (1955) a été significative car elle a :",
@@ -553,7 +613,8 @@
       "optionC": "Approuvé la création d'Israël",
       "optionD": "Déclaré le soutien à la politique d'apartheid en Afrique du Sud",
       "correctAnswer": "B",
-      "explanation": "Cette conférence historique a rassemblé des représentants de 29 nations asiatiques et africaines nouvellement indépendantes, jetant les bases du mouvement non-aligné."
+      "explanation": "Cette conférence historique a rassemblé des représentants de 29 nations asiatiques et africaines nouvellement indépendantes, jetant les bases du mouvement non-aligné.",
+      "difficulty": "medium"
     },
     {
       "question": "La stratégie de 'guerre révolutionnaire' utilisée par la France pendant la guerre d'Algérie visait à :",
@@ -562,7 +623,8 @@
       "optionC": "Isoler le FLN de la population par des mesures de terreur",
       "optionD": "Obtenir le soutien des pays arabes voisins",
       "correctAnswer": "B",
-      "explanation": "Cette stratégie combinait actions militaires et mesures de 'pacification' visant à séduire la population civile et la couper du FLN."
+      "explanation": "Cette stratégie combinait actions militaires et mesures de 'pacification' visant à séduire la population civile et la couper du FLN.",
+      "difficulty": "medium"
     },
     {
       "question": "La Déclaration sur l'octroi de l'indépendance aux pays et peuples coloniaux (1960) de l'ONU a été adoptée par :",
@@ -571,7 +633,8 @@
       "optionC": "Un vote contre de l'Afrique du Sud",
       "optionD": "Un vote contre de la France et du Royaume-Uni",
       "correctAnswer": "C",
-      "explanation": "Cette résolution historique a été adoptée par 89 voix contre 1 (Afrique du Sud) et 9 abstentions, marquant un tournant dans la décolonisation."
+      "explanation": "Cette résolution historique a été adoptée par 89 voix contre 1 (Afrique du Sud) et 9 abstentions, marquant un tournant dans la décolonisation.",
+      "difficulty": "medium"
     },
     {
       "question": "La politique de 'constructive engagement' menée par le gouvernement sud-africain de P.W. Botha dans les années 1980 visait à :",
@@ -580,7 +643,8 @@
       "optionC": "Isoler davantage la population noire",
       "optionD": "Obtenir le retrait des sanctions internationales",
       "correctAnswer": "B",
-      "explanation": "Cette politique tentait de réformes limitées pour préserver la domination blanche tout en atténuant les aspects les plus odieux de l'apartheid."
+      "explanation": "Cette politique tentait de réformes limitées pour préserver la domination blanche tout en atténuant les aspects les plus odieux de l'apartheid.",
+      "difficulty": "medium"
     },
     {
       "question": "La Conférence de Téhéran (novembre-décembre 1943) a été significative car elle a :",
@@ -589,7 +653,8 @@
       "optionC": "Discuté de la future organisation de l'ONU",
       "optionD": "Établi les zones d'occupation en Allemagne",
       "correctAnswer": "A",
-      "explanation": "Cette conférence a notamment abouti à la décision d'ouvrir un deuxième front en Europe (Opération Overlord) pour soulager l'Armée rouge sur le front de l'Est."
+      "explanation": "Cette conférence a notamment abouti à la décision d'ouvrir un deuxième front en Europe (Opération Overlord) pour soulager l'Armée rouge sur le front de l'Est.",
+      "difficulty": "medium"
     },
     {
       "question": "La transformation de l'OUA en Union Africaine (UA) en 2002 a marqué :",
@@ -598,7 +663,8 @@
       "optionC": "Un renforcement de l'intégration politique et économique africaine",
       "optionD": "La fin du soutien aux mouvements de libération",
       "correctAnswer": "C",
-      "explanation": "La création de l'UA a représenté une évolution vers une plus grande intégration politique, économique et institutionnelle, avec des mécanismes de gouvernance plus forts."
+      "explanation": "La création de l'UA a représenté une évolution vers une plus grande intégration politique, économique et institutionnelle, avec des mécanismes de gouvernance plus forts.",
+      "difficulty": "medium"
     },
     {
       "question": "La Conférence de Versailles (1919) a eu un impact significatif sur la Seconde Guerre mondiale en :",
@@ -607,7 +673,8 @@
       "optionC": "Désarmant définitivement l'Allemagne",
       "optionD": "Créant la Société des Nations",
       "correctAnswer": "A",
-      "explanation": "Les clauses très dures du traité de Versailles ont créé un ressentiment en Allemagne, contribuant à la montée du nazisme et à la Seconde Guerre mondiale."
+      "explanation": "Les clauses très dures du traité de Versailles ont créé un ressentiment en Allemagne, contribuant à la montée du nazisme et à la Seconde Guerre mondiale.",
+      "difficulty": "medium"
     },
     {
       "question": "La crise des missiles de Cuba (1962) a été résolue lorsque :",
@@ -616,7 +683,8 @@
       "optionC": "Fidel Castro a renversé son alliance avec l'URSS",
       "optionD": "L'ONU a déployé des troupes pour superviser la zone",
       "correctAnswer": "B",
-      "explanation": "La crise s'est terminée par un accord secret : l'URSS retirait ses missiles de Cuba et les États-Unis s'engageaient à retirer leurs missiles de Turquie."
+      "explanation": "La crise s'est terminée par un accord secret : l'URSS retirait ses missiles de Cuba et les États-Unis s'engageaient à retirer leurs missiles de Turquie.",
+      "difficulty": "medium"
     },
     {
       "question": "La politique d'assistance technique et financière de la France en Afrique francophone après l'indépendance est souvent qualifiée de :",
@@ -625,7 +693,8 @@
       "optionC": "Coopération Sud-Sud",
       "optionD": "Aide humanitaire",
       "correctAnswer": "B",
-      "explanation": "Ce terme désigne le système de relations complexes entre la France et ses anciennes colonies africaines, mêlant coopération économique, politique et influence."
+      "explanation": "Ce terme désigne le système de relations complexes entre la France et ses anciennes colonies africaines, mêlant coopération économique, politique et influence.",
+      "difficulty": "medium"
     }
   ]
 }

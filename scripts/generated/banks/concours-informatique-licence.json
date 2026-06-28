@@ -16,7 +16,8 @@
       "optionC": "La vitesse d'accès",
       "optionD": "La consommation électrique",
       "correctAnswer": "B",
-      "explanation": "La RAM est volatile (les données sont perdues à l'arrêt de l'alimentation) tandis que la ROM est non volatile (les données sont conservées même sans alimentation)."
+      "explanation": "La RAM est volatile (les données sont perdues à l'arrêt de l'alimentation) tandis que la ROM est non volatile (les données sont conservées même sans alimentation).",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle OSI, à quel niveau appartient le protocole TCP ?",
@@ -25,7 +26,8 @@
       "optionC": "Niveau Session",
       "optionD": "Niveau Application",
       "correctAnswer": "B",
-      "explanation": "TCP (Transmission Control Protocol) fonctionne au niveau Transport du modèle OSI, assurant la transmission fiable des données entre applications."
+      "explanation": "TCP (Transmission Control Protocol) fonctionne au niveau Transport du modèle OSI, assurant la transmission fiable des données entre applications.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle commande Linux permet de trouver tous les fichiers contenant le mot 'erreur' dans le répertoire courant ?",
@@ -34,7 +36,8 @@
       "optionC": "search 'erreur'",
       "optionD": "locate 'erreur'",
       "correctAnswer": "B",
-      "explanation": "La commande grep -r 'erreur' . recherche récursivement le mot 'erreur' dans tous les fichiers du répertoire courant et ses sous-répertoires."
+      "explanation": "La commande grep -r 'erreur' . recherche récursivement le mot 'erreur' dans tous les fichiers du répertoire courant et ses sous-répertoires.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre les protocoles TCP et UDP ?",
@@ -43,7 +46,8 @@
       "optionC": "UDP établit une connexion avant d'envoyer des données",
       "optionD": "TCP est utilisé pour le streaming tandis qu'UDP est pour le transfert de fichiers",
       "correctAnswer": "A",
-      "explanation": "UDP est plus rapide et plus léger que TCP mais n'offre pas de mécanisme de confirmation de réception ni de contrôle d'erreurs, ce qui le rend moins fiable."
+      "explanation": "UDP est plus rapide et plus léger que TCP mais n'offre pas de mécanisme de confirmation de réception ni de contrôle d'erreurs, ce qui le rend moins fiable.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale du modèle MVC ?",
@@ -52,7 +56,8 @@
       "optionC": "Faciliter la maintenance du code",
       "optionD": "Toutes les réponses précédentes",
       "correctAnswer": "D",
-      "explanation": "Le modèle MVC (Modèle-Vue-Contrôleur) sépare la logique métier (Modèle), l'interface utilisateur (Vue) et la gestion des interactions (Contrôleur), facilitant ainsi la maintenance et le développement."
+      "explanation": "Le modèle MVC (Modèle-Vue-Contrôleur) sépare la logique métier (Modèle), l'interface utilisateur (Vue) et la gestion des interactions (Contrôleur), facilitant ainsi la maintenance et le développement.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la complexité temporelle de l'opération de recherche dans une table de hachage bien conçue ?",
@@ -61,7 +66,8 @@
       "optionC": "O(1)",
       "optionD": "O(n²)",
       "correctAnswer": "C",
-      "explanation": "Dans une table de hachage bien conçue avec une bonne fonction de hachage et gestion des collisions, l'opération de recherche est en moyenne O(1)."
+      "explanation": "Dans une table de hachage bien conçue avec une bonne fonction de hachage et gestion des collisions, l'opération de recherche est en moyenne O(1).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle commande Git permet de voir l'historique des commits avec leurs différences ?",
@@ -70,7 +76,8 @@
       "optionC": "git diff",
       "optionD": "git history",
       "correctAnswer": "B",
-      "explanation": "La commande git show affiche les informations d'un commit spécifique ainsi que les différences introduites par ce commit."
+      "explanation": "La commande git show affiche les informations d'un commit spécifique ainsi que les différences introduites par ce commit.",
+      "difficulty": "medium"
     },
     {
       "question": "En programmation orientée objet, quel concept permet de masquer les détails d'implémentation et de ne révéler que les fonctionnalités ?",
@@ -79,7 +86,8 @@
       "optionC": "L'encapsulation",
       "optionD": "L'abstraction",
       "correctAnswer": "D",
-      "explanation": "L'abstraction consiste à ne montrer que les caractéristiques essentielles d'un objet et à cacher les détails d'implémentation internes."
+      "explanation": "L'abstraction consiste à ne montrer que les caractéristiques essentielles d'un objet et à cacher les détails d'implémentation internes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel type d'adresse IP est utilisé pour la diffusion sur un réseau local ?",
@@ -88,7 +96,8 @@
       "optionC": "Adresse broadcast",
       "optionD": "Adresse anycast",
       "correctAnswer": "C",
-      "explanation": "Une adresse broadcast est utilisée pour envoyer des données à tous les hôtes d'un réseau local simultanément."
+      "explanation": "Une adresse broadcast est utilisée pour envoyer des données à tous les hôtes d'un réseau local simultanément.",
+      "difficulty": "medium"
     },
     {
       "question": "En C, que signifie l'opérateur '->' ?",
@@ -97,7 +106,8 @@
       "optionC": "Allocation dynamique de mémoire",
       "optionD": "Libération de mémoire",
       "correctAnswer": "A",
-      "explanation": "En C, l'opérateur '->' est utilisé pour accéder aux membres d'une structure ou d'un union via un pointeur vers celle-ci."
+      "explanation": "En C, l'opérateur '->' est utilisé pour accéder aux membres d'une structure ou d'un union via un pointeur vers celle-ci.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale caractéristique du langage Python qui le rend différent de C et Java ?",
@@ -106,7 +116,8 @@
       "optionC": "L'indentation comme syntaxe",
       "optionD": "La gestion manuelle de la mémoire",
       "correctAnswer": "C",
-      "explanation": "Python utilise l'indentation pour définir les blocs de code, contrairement à C et Java qui utilisent des accolades."
+      "explanation": "Python utilise l'indentation pour définir les blocs de code, contrairement à C et Java qui utilisent des accolades.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle OSI, quel niveau s'occupe de la conversion des données en signaux physiques ?",
@@ -115,7 +126,8 @@
       "optionC": "Niveau Réseau",
       "optionD": "Niveau Transport",
       "correctAnswer": "A",
-      "explanation": "Le niveau Physique (couche 1) du modèle OSI est responsable de la transmission brute des bits sous forme de signaux physiques sur le support de transmission."
+      "explanation": "Le niveau Physique (couche 1) du modèle OSI est responsable de la transmission brute des bits sous forme de signaux physiques sur le support de transmission.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence principale entre la méthode 'equals()' et l'opérateur '==' en Java ?",
@@ -124,7 +136,8 @@
       "optionC": "'equals()' compare les références, '==' compare le contenu",
       "optionD": "'==' ne peut être utilisé qu'avec les types primitifs",
       "correctAnswer": "B",
-      "explanation": "En Java, l'opérateur '==' compare les références d'objets, tandis que la méthode 'equals()' (quand elle est correctement implémentée) compare le contenu des objets."
+      "explanation": "En Java, l'opérateur '==' compare les références d'objets, tandis que la méthode 'equals()' (quand elle est correctement implémentée) compare le contenu des objets.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la complexité temporelle de l'opération de recherche dans une liste chaînée ?",
@@ -133,7 +146,8 @@
       "optionC": "O(n)",
       "optionD": "O(n²)",
       "correctAnswer": "C",
-      "explanation": "Dans une liste chaînée, l'opération de recherche nécessite en moyenne de parcourir la moitié des éléments, ce qui donne une complexité O(n)."
+      "explanation": "Dans une liste chaînée, l'opération de recherche nécessite en moyenne de parcourir la moitié des éléments, ce qui donne une complexité O(n).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle commande Git permet de créer une nouvelle branche à partir de la branche actuelle ?",
@@ -142,7 +156,8 @@
       "optionC": "git create-branch nouvelle-branche",
       "optionD": "git new-branch nouvelle-branche",
       "correctAnswer": "B",
-      "explanation": "La commande git checkout -b nouvelle-branche crée une nouvelle branche et bascule immédiatement dessus. C'est l'équivalent de deux commandes: git branch nouvelle-branche suivi de git checkout nouvelle-branche."
+      "explanation": "La commande git checkout -b nouvelle-branche crée une nouvelle branche et bascule immédiatement dessus. C'est l'équivalent de deux commandes: git branch nouvelle-branche suivi de git checkout nouvelle-branche.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qu'une adresse IP privée ?",
@@ -151,7 +166,8 @@
       "optionC": "Une adresse qui garantit l'anonymat de l'utilisateur",
       "optionD": "Une adresse attribuée dynamiquement par un serveur DHCP",
       "correctAnswer": "B",
-      "explanation": "Les adresses IP privées sont des plages d'adresses réservées pour une utilisation en interne dans les réseaux locaux et ne sont pas routables sur Internet."
+      "explanation": "Les adresses IP privées sont des plages d'adresses réservées pour une utilisation en interne dans les réseaux locaux et ne sont pas routables sur Internet.",
+      "difficulty": "medium"
     },
     {
       "question": "En Java, que signifie le mot-clé 'static' lorsqu'il est appliqué à une variable d'instance ?",
@@ -160,7 +176,8 @@
       "optionC": "La variable est accessible uniquement depuis la classe",
       "optionD": "La variable est stockée sur la pile plutôt que sur le tas",
       "correctAnswer": "B",
-      "explanation": "Une variable statique (static) en Java est partagée par toutes les instances d'une classe, contrairement aux variables d'instance qui sont spécifiques à chaque objet."
+      "explanation": "Une variable statique (static) en Java est partagée par toutes les instances d'une classe, contrairement aux variables d'instance qui sont spécifiques à chaque objet.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre les ports TCP et UDP ?",
@@ -169,7 +186,8 @@
       "optionC": "Les ports TCP sont utilisés pour le streaming, les ports UDP pour le transfert de fichiers",
       "optionD": "Les ports TCP sont réservés aux applications système, les ports UDP aux applications utilisateur",
       "correctAnswer": "B",
-      "explanation": "Les ports TCP sont généralement utilisés pour les applications nécessitant une transmission fiable (comme le web, le courriel), tandis que les ports UDP sont privilégiés pour les applications nécessitant une vitesse et une faible latence (comme la VoIP, le streaming)."
+      "explanation": "Les ports TCP sont généralement utilisés pour les applications nécessitant une transmission fiable (comme le web, le courriel), tandis que les ports UDP sont privilégiés pour les applications nécessitant une vitesse et une faible latence (comme la VoIP, le streaming).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la complexité spatiale de l'algorithme de tri fusion (merge sort) ?",
@@ -178,7 +196,8 @@
       "optionC": "O(n)",
       "optionD": "O(n²)",
       "correctAnswer": "C",
-      "explanation": "L'algorithme de tri fusion nécessite un espace supplémentaire proportionnel à la taille des données à trier, ce qui donne une complexité spatiale O(n)."
+      "explanation": "L'algorithme de tri fusion nécessite un espace supplémentaire proportionnel à la taille des données à trier, ce qui donne une complexité spatiale O(n).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre la RAM et la ROM en termes de caractéristiques et d'utilisation ?",
@@ -187,7 +206,8 @@
       "optionC": "La RAM est utilisée pour stocker des données permanentes tandis que la ROM est temporaire",
       "optionD": "La ROM nécessite une alimentation électrique pour conserver ses données contrairement à la RAM",
       "correctAnswer": "A",
-      "explanation": "La RAM (Random Access Memory) est volatile (perd ses données lorsque l'alimentation est coupée) et permet la lecture et l'écriture. La ROM (Read-Only Memory) est non volatile (conserve ses données sans alimentation) et est généralement en lecture seule, bien que certaines puissent être effacées."
+      "explanation": "La RAM (Random Access Memory) est volatile (perd ses données lorsque l'alimentation est coupée) et permet la lecture et l'écriture. La ROM (Read-Only Memory) est non volatile (conserve ses données sans alimentation) et est généralement en lecture seule, bien que certaines puissent être effacées.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle OSI, quelle couche est responsable de la détection et de la correction des erreurs de transmission ?",
@@ -196,7 +216,8 @@
       "optionC": "Couche de transport (couche 4)",
       "optionD": "Couche de session (couche 5)",
       "correctAnswer": "B",
-      "explanation": "La couche 2 (liaison de données) est responsable de la détection et correction des erreurs via des mécanismes comme les contrôles de redondance cyclique (CRC) et les protocoles de retransmission."
+      "explanation": "La couche 2 (liaison de données) est responsable de la détection et correction des erreurs via des mécanismes comme les contrôles de redondance cyclique (CRC) et les protocoles de retransmission.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence fondamentale entre TCP et UDP ?",
@@ -205,7 +226,12 @@
       "optionC": "UDP établit une connexion avant d'envoyer des données contrairement à TCP",
       "optionD": "TCP est utilisé pour les transmissions en mode texte tandis que UDP est pour le binaire",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "TCP (Transmission Control Protocol) est orienté connexion, fiable mais plus lent, avec contrôle d'erreurs et d'ordre. UDP (User Datagram Protocol) est sans connexion, plus rapide mais sans garantie de livraison ou d'ordre."
+=======
+      "explanation": "TCP (Transmission Control Protocol) est orienté connexion, fiable mais plus lent, avec contrôle d'erreurs et d'ordre. UDP (User Datagram Protocol) est sans connexion, plus rapide mais sans garantie de livraison ou d'ordre.",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Dans Git, quelle commande permet de voir l'historique des commits avec un formatage graphique des branches ?",
@@ -214,7 +240,8 @@
       "optionC": "git branch -v",
       "optionD": "git status --graph",
       "correctAnswer": "A",
-      "explanation": "La commande 'git log --graph --oneline --all' affiche l'historique des commits de manière concise (--oneline), avec une représentation graphique des branches (--graph) et de toutes les branches (--all)."
+      "explanation": "La commande 'git log --graph --oneline --all' affiche l'historique des commits de manière concise (--oneline), avec une représentation graphique des branches (--graph) et de toutes les branches (--all).",
+      "difficulty": "medium"
     },
     {
       "question": "En programmation orientée objet, qu'est-ce que le principe d'encapsulation ?",
@@ -223,7 +250,8 @@
       "optionC": "Le regroupement des données et des méthodes qui les manipulent au sein d'une même entité, avec un contrôle d'accès",
       "optionD": "La capacité d'une méthode à avoir plusieurs noms",
       "correctAnswer": "C",
-      "explanation": "L'encapsulation consiste à regrouper les données (attributs) et les méthodes qui les manipulent au sein d'une même classe, tout en contrôlant l'accès à ces éléments via des modificateurs de visibilité (public, privé, protégé)."
+      "explanation": "L'encapsulation consiste à regrouper les données (attributs) et les méthodes qui les manipulent au sein d'une même classe, tout en contrôlant l'accès à ces éléments via des modificateurs de visibilité (public, privé, protégé).",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle MVC, quel composant est responsable de la gestion de l'interaction utilisateur et de l'affichage des données ?",
@@ -232,7 +260,8 @@
       "optionC": "Contrôleur",
       "optionD": "Base de données",
       "correctAnswer": "B",
-      "explanation": "Dans le modèle MVC (Modèle-Vue-Contrôleur), la Vue est responsable de l'affichage des données et de l'interaction avec l'utilisateur. Le Contrôleur gère les actions de l'utilisateur et met à jour le Modèle et la Vue."
+      "explanation": "Dans le modèle MVC (Modèle-Vue-Contrôleur), la Vue est responsable de l'affichage des données et de l'interaction avec l'utilisateur. Le Contrôleur gère les actions de l'utilisateur et met à jour le Modèle et la Vue.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la complexité temporelle de l'algorithme de recherche séquentielle (recherche linéaire) dans le pire des cas ?",
@@ -241,7 +270,8 @@
       "optionC": "O(n)",
       "optionD": "O(n²)",
       "correctAnswer": "C",
-      "explanation": "La recherche séquentielle a une complexité temporelle de O(n) dans le pire des cas, car elle peut nécessiter de parcourir tous les n éléments de la liste pour trouver l'élément recherché."
+      "explanation": "La recherche séquentielle a une complexité temporelle de O(n) dans le pire des cas, car elle peut nécessiter de parcourir tous les n éléments de la liste pour trouver l'élément recherché.",
+      "difficulty": "medium"
     },
     {
       "question": "En C, quelle est la différence entre 'int arr[10];' et 'int *arr = malloc(10 * sizeof(int));' ?",
@@ -250,7 +280,8 @@
       "optionC": "La première est plus rapide d'accès que la seconde",
       "optionD": "La première ne peut être utilisée que pour des entiers, la seconde pour tout type de données",
       "correctAnswer": "A",
-      "explanation": "La déclaration 'int arr[10];' alloue un tableau de 10 entiers sur la pile, tandis que 'int *arr = malloc(10 * sizeof(int));' alloue de la mémoire dynamiquement sur le tas, qui doit être libérée manuellement avec free()."
+      "explanation": "La déclaration 'int arr[10];' alloue un tableau de 10 entiers sur la pile, tandis que 'int *arr = malloc(10 * sizeof(int));' alloue de la mémoire dynamiquement sur le tas, qui doit être libérée manuellement avec free().",
+      "difficulty": "medium"
     },
     {
       "question": "En Java, quelle est la différence entre une interface et une classe abstraite ?",
@@ -259,7 +290,8 @@
       "optionC": "Une classe peut implémenter plusieurs interfaces, mais hériter d'une seule classe abstraite",
       "optionD": "Une interface peut avoir des constructeurs, une classe abstraite non",
       "correctAnswer": "C",
-      "explanation": "En Java, une classe peut implémenter plusieurs interfaces (implémentation multiple) mais ne peut hériter que d'une seule classe (abstraite ou non) due à l'héritage simple du langage."
+      "explanation": "En Java, une classe peut implémenter plusieurs interfaces (implémentation multiple) mais ne peut hériter que d'une seule classe (abstraite ou non) due à l'héritage simple du langage.",
+      "difficulty": "medium"
     },
     {
       "question": "En Python, que fait la décorateur @property ?",
@@ -268,7 +300,8 @@
       "optionC": "Indique qu'une méthode est privée et ne doit pas être appelée en dehors de la classe",
       "optionD": "Permet de définir une méthode statique",
       "correctAnswer": "A",
-      "explanation": "Le décorateur @property en Python transforme une méthode en attribut accessible sans les parenthèses, permettant d'accéder à une méthode comme à un attribut tout en pouvant ajouter une logique d'accès."
+      "explanation": "Le décorateur @property en Python transforme une méthode en attribut accessible sans les parenthèses, permettant d'accéder à une méthode comme à un attribut tout en pouvant ajouter une logique d'accès.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est l'adresse IP privée par défaut pour un routeur domestique ?",
@@ -277,7 +310,8 @@
       "optionC": "172.16.0.1",
       "optionD": "127.0.0.1",
       "correctAnswer": "A",
-      "explanation": "Bien que plusieurs plages d'IP privées existent (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16), 192.168.1.1 est l'adresse IP privée la plus couramment utilisée par défaut pour les routeurs domestiques."
+      "explanation": "Bien que plusieurs plages d'IP privées existent (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16), 192.168.1.1 est l'adresse IP privée la plus couramment utilisée par défaut pour les routeurs domestiques.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel port est utilisé par le protocole HTTPS ?",
@@ -286,7 +320,8 @@
       "optionC": "80",
       "optionD": "443",
       "correctAnswer": "D",
-      "explanation": "Le protocole HTTPS (HTTP Secure) utilise le port 443 par défaut pour les communications chiffrées entre les clients et les serveurs web."
+      "explanation": "Le protocole HTTPS (HTTP Secure) utilise le port 443 par défaut pour les communications chiffrées entre les clients et les serveurs web.",
+      "difficulty": "medium"
     },
     {
       "question": "En POO, qu'est-ce que le polymorphisme ?",
@@ -295,7 +330,8 @@
       "optionC": "La création d'objets à partir de classes",
       "optionD": "Le regroupement des données et des méthodes au sein d'une même entité",
       "correctAnswer": "B",
-      "explanation": "Le polymorphisme permet à une même méthode d'avoir plusieurs comportements différents selon l'objet sur lequel elle est appelée, généralement implémenté via le surchargement ou le redéfinition de méthodes."
+      "explanation": "Le polymorphisme permet à une même méthode d'avoir plusieurs comportements différents selon l'objet sur lequel elle est appelée, généralement implémenté via le surchargement ou le redéfinition de méthodes.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle OSI, quelle couche est responsable de la traduction des données en signaux physiques ?",
@@ -304,7 +340,8 @@
       "optionC": "Couche de réseau (couche 3)",
       "optionD": "Couche de transport (couche 4)",
       "correctAnswer": "A",
-      "explanation": "La couche physique (couche 1) est responsable de la transmission brute des bits sur le support physique, convertissant les données en signaux électriques, optiques ou radiofréquences."
+      "explanation": "La couche physique (couche 1) est responsable de la transmission brute des bits sur le support physique, convertissant les données en signaux électriques, optiques ou radiofréquences.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle commande Linux permet de compter le nombre de lignes, de mots et de caractères dans un fichier ?",
@@ -313,7 +350,8 @@
       "optionC": "stat fichier.txt",
       "optionD": "lines fichier.txt",
       "correctAnswer": "B",
-      "explanation": "La commande 'wc' (word count) permet de compter le nombre de lignes, de mots et de caractères dans un fichier ou l'entrée standard, avec l'option -l pour les lignes uniquement, -w pour les mots, et -c pour les caractères."
+      "explanation": "La commande 'wc' (word count) permet de compter le nombre de lignes, de mots et de caractères dans un fichier ou l'entrée standard, avec l'option -l pour les lignes uniquement, -w pour les mots, et -c pour les caractères.",
+      "difficulty": "medium"
     }
   ]
 }

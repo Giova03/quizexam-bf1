@@ -1,9 +1,14 @@
 /**
+<<<<<<< Updated upstream
  * Shared types for the admin panel sub-components.
  *
  * Extracted from the original monolithic admin-view.tsx so each tab's
  * component file can import the same shapes without creating a circular
  * dependency on admin-view.tsx itself.
+=======
+ * Types partagés entre les modules d'administration.
+ * Centralise les interfaces pour éviter la duplication.
+>>>>>>> Stashed changes
  */
 
 export interface AdminStats {
@@ -51,8 +56,11 @@ export interface Question {
   explanation: string;
   order: number;
   difficulty?: string;
+<<<<<<< Updated upstream
   imageUrl?: string | null;
   audioUrl?: string | null;
+=======
+>>>>>>> Stashed changes
 }
 
 export interface BankWithCount {
@@ -62,3 +70,14 @@ export interface BankWithCount {
   subcategory: string;
   _count: { questions: number };
 }
+<<<<<<< Updated upstream
+=======
+
+export type StatColor =
+  | "emerald"
+  | "violet"
+  | "amber"
+  | "sky"
+  | "rose"
+  | "teal";
+>>>>>>> Stashed changes

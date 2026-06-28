@@ -13,7 +13,8 @@
       "optionC": "Croûte",
       "optionD": "Atmosphère",
       "correctAnswer": "C",
-      "explanation": "La croûte est la couche externe solide de la Terre."
+      "explanation": "La croûte est la couche externe solide de la Terre.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le pourcentage approximatif de la surface de la Terre recouverte par les océans ?",
@@ -22,7 +23,8 @@
       "optionC": "𝟕𝟎%",
       "optionD": "𝟖𝟎%",
       "correctAnswer": "C",
-      "explanation": "Environ 𝟕𝟎% de la surface de la Terre est recouverte par des océans."
+      "explanation": "Environ 𝟕𝟎% de la surface de la Terre est recouverte par des océans.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la partie la plus profonde de l'océan connue sur Terre ?",
@@ -31,7 +33,8 @@
       "optionC": "Fosse des Kermadec",
       "optionD": "Fosse des Philippines",
       "correctAnswer": "A",
-      "explanation": "La Fosse des Mariannes est la partie la plus profonde de l'océan, située dans l'océan Pacifique."
+      "explanation": "La Fosse des Mariannes est la partie la plus profonde de l'océan, située dans l'océan Pacifique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le plus grand continent sur Terre en termes de superficie ?",
@@ -40,7 +43,8 @@
       "optionC": "Amérique du Nord",
       "optionD": "Europe",
       "correctAnswer": "B",
-      "explanation": "L'Asie est le plus grand continent en termes de superficie."
+      "explanation": "L'Asie est le plus grand continent en termes de superficie.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel gaz est le plus abondant dans l'atmosphère terrestre ?",
@@ -49,7 +53,8 @@
       "optionC": "Azote",
       "optionD": "Argon",
       "correctAnswer": "C",
-      "explanation": "L'azote constitue environ 𝟕𝟖% de l'atmosphère terrestre, ce qui en fait le gaz le plus abondant."
+      "explanation": "L'azote constitue environ 𝟕𝟖% de l'atmosphère terrestre, ce qui en fait le gaz le plus abondant.",
+      "difficulty": "medium"
     },
     {
       "question": "Combien de temps la Terre met-elle pour faire une rotation complète sur son axe ?",
@@ -58,7 +63,8 @@
       "optionC": "𝟑𝟔 heures",
       "optionD": "𝟒𝟖 heures",
       "correctAnswer": "B",
-      "explanation": "La Terre met environ 𝟐𝟒 heures pour faire une rotation complète sur son axe, ce qui définit une journée."
+      "explanation": "La Terre met environ 𝟐𝟒 heures pour faire une rotation complète sur son axe, ce qui définit une journée.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la distance moyenne de la Terre au Soleil ?",
@@ -67,7 +73,8 @@
       "optionC": "𝟐𝟎𝟎 millions de kilomètres",
       "optionD": "𝟐𝟓𝟎 millions de kilomètres",
       "correctAnswer": "B",
-      "explanation": "La distance moyenne de la Terre au Soleil eRst d'environ 𝟏𝟓𝟎 millions de kilomètres."
+      "explanation": "La distance moyenne de la Terre au Soleil eRst d'environ 𝟏𝟓𝟎 millions de kilomètres.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale la plus haute du monde par rapport au niveau de la mer ?",
@@ -76,7 +83,8 @@
       "optionC": "Katmandou",
       "optionD": "Addis-Abeba",
       "correctAnswer": "A",
-      "explanation": "La Paz en Bolivie est la capitale la plus haute du monde par rapport au niveau de la mer."
+      "explanation": "La Paz en Bolivie est la capitale la plus haute du monde par rapport au niveau de la mer.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la plus grande île du monde ?",
@@ -85,7 +93,8 @@
       "optionC": "Bornéo",
       "optionD": "Nouvelle-Guinée",
       "correctAnswer": "B",
-      "explanation": "Le Groenland est la plus grande île du monde."
+      "explanation": "Le Groenland est la plus grande île du monde.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale cause du réchauffement climatique ?",
@@ -94,16 +103,31 @@
       "optionC": "Les éruptions volcaniques",
       "optionD": "L'érosion des sols",
       "correctAnswer": "B",
-      "explanation": "Les émissions de gaz à effet de serre sont la principale cause du réchauffement climatique."
+      "explanation": "Les émissions de gaz à effet de serre sont la principale cause du réchauffement climatique.",
+      "difficulty": "medium"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "question": "Quel est le plus long fleuve du monde ?",
+      "optionA": "Nil",
+      "optionB": "Amazone",
+      "optionC": "Yangtsé",
+      "optionD": "Mississippi",
+      "correctAnswer": "A",
+      "explanation": "Le Nil est souvent considéré comme le plus long fleuve du monde.",
+      "difficulty": "medium"
+    },
+    {
+>>>>>>> Stashed changes
       "question": "Quelle est la montagne la plus haute du monde ?",
       "optionA": "Mont Kilimandjaro",
       "optionB": "Mont Everest",
       "optionC": "Mont McKinley",
       "optionD": "Mont Elbrouz",
       "correctAnswer": "B",
-      "explanation": "Le mont Everest est la montagne la plus haute du monde."
+      "explanation": "Le mont Everest est la montagne la plus haute du monde.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la période géologique actuelle ?",
@@ -112,7 +136,8 @@
       "optionC": "Holocène",
       "optionD": "Miocène",
       "correctAnswer": "C",
-      "explanation": "L'Holocène est la période géologique actuelle."
+      "explanation": "L'Holocène est la période géologique actuelle.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale composante du noyau externe de la Terre ?",
@@ -121,7 +146,8 @@
       "optionC": "Silicium",
       "optionD": "Oxygène",
       "correctAnswer": "A",
-      "explanation": "Le noyau externe de la Terre est principalement composé de fer."
+      "explanation": "Le noyau externe de la Terre est principalement composé de fer.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le plus grand désert chaud du monde ?",
@@ -130,7 +156,8 @@
       "optionC": "Désert du Sahara",
       "optionD": "Désert d'Arabie",
       "correctAnswer": "C",
-      "explanation": "Le désert du Sahara est le plus grand désert chaud du monde."
+      "explanation": "Le désert du Sahara est le plus grand désert chaud du monde.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la ville la plus peuplée du monde ?",
@@ -139,7 +166,8 @@
       "optionC": "Mexico",
       "optionD": "Shanghai",
       "correctAnswer": "B",
-      "explanation": "Tokyo est la ville la plus peuplée du monde."
+      "explanation": "Tokyo est la ville la plus peuplée du monde.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le mouvement des plaques tectoniques responsable de la formation des montagnes ?",
@@ -148,7 +176,8 @@
       "optionC": "Transformant",
       "optionD": "Subductif",
       "correctAnswer": "B",
-      "explanation": "Le mouvement convergent des plaques tectoniques est responsable de la formation des montagnes."
+      "explanation": "Le mouvement convergent des plaques tectoniques est responsable de la formation des montagnes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel phénomène naturel est mesuré par l'échelle de Richter ?",
@@ -157,7 +186,8 @@
       "optionC": "Les séismes",
       "optionD": "Les éruptions volcaniques",
       "correctAnswer": "C",
-      "explanation": "L'échelle de Richter mesure la magnitude des séismes."
+      "explanation": "L'échelle de Richter mesure la magnitude des séismes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale cause de la formation des saisons sur Terre ?",
@@ -166,7 +196,8 @@
       "optionC": "La rotation de la Terre",
       "optionD": "Les éruptions solaires",
       "correctAnswer": "B",
-      "explanation": "L'inclinaison de l'axe de la Terre par rapport à son orbite autour du Soleil est la principale cause de la formation des saisons."
+      "explanation": "L'inclinaison de l'axe de la Terre par rapport à son orbite autour du Soleil est la principale cause de la formation des saisons.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le plus grand océan du monde ?",
@@ -175,16 +206,31 @@
       "optionC": "Océan Arctique",
       "optionD": "Océan Pacifique",
       "correctAnswer": "D",
-      "explanation": "L'océan Pacifique est le plus grand océan du monde."
+      "explanation": "L'océan Pacifique est le plus grand océan du monde.",
+      "difficulty": "medium"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "question": "Quelle est la capitale de l'Australie ?",
+      "optionA": "Sydney",
+      "optionB": "Melbourne",
+      "optionC": "Canberra",
+      "optionD": "Brisbane",
+      "correctAnswer": "C",
+      "explanation": "Canberra est la capitale de l'Australie.",
+      "difficulty": "medium"
+    },
+    {
+>>>>>>> Stashed changes
       "question": "Quel pays a la plus grande superficie terrestre ?",
       "optionA": "Canada",
       "optionB": "Chine",
       "optionC": "États-Unis",
       "optionD": "Russie",
       "correctAnswer": "D",
-      "explanation": "La Russie est le pays avec la plus grande superficie terrestre."
+      "explanation": "La Russie est le pays avec la plus grande superficie terrestre.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le phénomène de montée des eaux dû à la fonte des glaciers et des calottes polaires ?",
@@ -193,7 +239,8 @@
       "optionC": "Élévation du niveau de la mer",
       "optionD": "La Niña",
       "correctAnswer": "C",
-      "explanation": "La fonte des glaciers et des calottes polaires contribue à l'élévation du niveau de la mer."
+      "explanation": "La fonte des glaciers et des calottes polaires contribue à l'élévation du niveau de la mer.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la plus grande chaîne de montagnes au monde ?",
@@ -202,7 +249,8 @@
       "optionC": "L'Himalaya",
       "optionD": "Les Andes",
       "correctAnswer": "C",
-      "explanation": "L'Himalaya est la plus grande chaîne de montagnes du monde."
+      "explanation": "L'Himalaya est la plus grande chaîne de montagnes du monde.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la ville la plus au nord du monde ?",
@@ -211,7 +259,8 @@
       "optionC": "Anchorage",
       "optionD": "Tromsø",
       "correctAnswer": "A",
-      "explanation": "Longyearbyen, en Norvège, est la ville la plus au nord du monde."
+      "explanation": "Longyearbyen, en Norvège, est la ville la plus au nord du monde.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel type de roche est le granite ?",
@@ -220,7 +269,8 @@
       "optionC": "Roche ignée",
       "optionD": "Roche volcanique",
       "correctAnswer": "C",
-      "explanation": "Le granite est une roche ignée."
+      "explanation": "Le granite est une roche ignée.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle mer borde la côte nord de l'Afrique ?",
@@ -229,7 +279,8 @@
       "optionC": "Mer Noire",
       "optionD": "Mer Caspienne",
       "correctAnswer": "B",
-      "explanation": "La mer Méditerranée borde la côte nord de l'Afrique."
+      "explanation": "La mer Méditerranée borde la côte nord de l'Afrique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée de l'année civile sur Terre ?",
@@ -238,7 +289,8 @@
       "optionC": "𝟑𝟔𝟔 jours",
       "optionD": "𝟑𝟔𝟕 jours",
       "correctAnswer": "B",
-      "explanation": "L'année civile compte 𝟑𝟔𝟓 jours, sauf les années bissextiles qui en comptent 𝟑𝟔𝟔."
+      "explanation": "L'année civile compte 𝟑𝟔𝟓 jours, sauf les années bissextiles qui en comptent 𝟑𝟔𝟔.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la plus grande forêt tropicale du monde ?",
@@ -247,7 +299,8 @@
       "optionC": "Forêt de Bornéo",
       "optionD": "Forêt de Sumatra",
       "correctAnswer": "B",
-      "explanation": "La forêt amazonienne est la plus grande forêt tropicale du monde."
+      "explanation": "La forêt amazonienne est la plus grande forêt tropicale du monde.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel phénomène est causé par le mouvement rapide de l'air et caractérisé par des vents violents et tourbillonnants ?",
@@ -256,7 +309,8 @@
       "optionC": "Tempête tropicale",
       "optionD": "Cyclone",
       "correctAnswer": "B",
-      "explanation": "Une tornade est causée par le mouvement rapide de l'air et est caractérisée par des vents violents et tourbillonnants."
+      "explanation": "Une tornade est causée par le mouvement rapide de l'air et est caractérisée par des vents violents et tourbillonnants.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la région du Burkina Faso qui a la plus grande superficie ?",
@@ -265,7 +319,8 @@
       "optionC": "Ouest",
       "optionD": "Centre-Ouest",
       "correctAnswer": "B",
-      "explanation": "La région Est est la plus grande région du Burkina Faso avec une superficie de 46 540 km², couvrant environ 17% du territoire national."
+      "explanation": "La région Est est la plus grande région du Burkina Faso avec une superficie de 46 540 km², couvrant environ 17% du territoire national.",
+      "difficulty": "medium"
     },
     {
       "question": "Parmi les suivantes, quelle est la seule région qui n'a pas de frontière avec le Mali ?",
@@ -274,7 +329,8 @@
       "optionC": "Est",
       "optionD": "Centre-Ouest",
       "correctAnswer": "D",
-      "explanation": "La région Centre-Ouest est la seule région burkinabè qui ne partage pas de frontière avec le Mali. Elle borde les régions Centre, Sud-Ouest et Hauts-Bassins."
+      "explanation": "La région Centre-Ouest est la seule région burkinabè qui ne partage pas de frontière avec le Mali. Elle borde les régions Centre, Sud-Ouest et Hauts-Bassins.",
+      "difficulty": "medium"
     },
     {
       "question": "Combien de provinces compte la région du Sahel ?",
@@ -283,7 +339,8 @@
       "optionC": "5",
       "optionD": "6",
       "correctAnswer": "A",
-      "explanation": "La région du Sahel comprend 3 provinces : Séno, Soum et Yagha."
+      "explanation": "La région du Sahel comprend 3 provinces : Séno, Soum et Yagha.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel fleuve est le plus long du Burkina Faso ?",
@@ -292,7 +349,8 @@
       "optionC": "Mékrou",
       "optionD": "Volta Noire",
       "correctAnswer": "B",
-      "explanation": "Le Mouhoun (ou Volta Noire) est le plus long fleuve du Burkina Faso avec environ 1 200 km de long, suivie par le Nakanbé (ou Volta Blanche) avec environ 850 km."
+      "explanation": "Le Mouhoun (ou Volta Noire) est le plus long fleuve du Burkina Faso avec environ 1 200 km de long, suivie par le Nakanbé (ou Volta Blanche) avec environ 850 km.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans quelle province se trouve le barrage de Bagré ?",
@@ -301,7 +359,8 @@
       "optionC": "Boulgou",
       "optionD": "Nayala",
       "correctAnswer": "C",
-      "explanation": "Le barrage de Bagré est situé sur la rivière Nakambé (ou Volta Blanche) dans la province du Boulgou, dans la région du Centre-Est."
+      "explanation": "Le barrage de Bagré est situé sur la rivière Nakambé (ou Volta Blanche) dans la province du Boulgou, dans la région du Centre-Est.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle région burkinabè est surnommée 'la chaudière du pays' ?",
@@ -310,7 +369,8 @@
       "optionC": "Sud-Ouest",
       "optionD": "Boucle du Mouhoun",
       "correctAnswer": "A",
-      "explanation": "La région Centre est surnommée 'la chaudière du pays' en raison de sa position géographique centrale et de son rôle économique important."
+      "explanation": "La région Centre est surnommée 'la chaudière du pays' en raison de sa position géographique centrale et de son rôle économique important.",
+      "difficulty": "medium"
     },
     {
       "question": "Le barrage de Samandéni est situé sur quel fleuve ?",
@@ -319,7 +379,8 @@
       "optionC": "Kompienga",
       "optionD": "Black Volta",
       "correctAnswer": "B",
-      "explanation": "Le barrage de Samandéni est situé sur le fleuve Nakanbé (ou Volta Blanche) dans la province des Hauts-Bassins."
+      "explanation": "Le barrage de Samandéni est situé sur le fleuve Nakanbé (ou Volta Blanche) dans la province des Hauts-Bassins.",
+      "difficulty": "medium"
     },
     {
       "question": "Combien de pays frontaliers partage le Burkina Faso ?",
@@ -328,7 +389,8 @@
       "optionC": "7",
       "optionD": "8",
       "correctAnswer": "B",
-      "explanation": "Le Burkina Faso partage des frontières avec six pays : le Mali au nord-ouest, le Niger à l'est, le Bénin au sud-est, le Togo et le Ghana au sud, et la Côte d'Ivoire au sud-ouest."
+      "explanation": "Le Burkina Faso partage des frontières avec six pays : le Mali au nord-ouest, le Niger à l'est, le Bénin au sud-est, le Togo et le Ghana au sud, et la Côte d'Ivoire au sud-ouest.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle province a pour capitale Bobo-Dioulasso ?",
@@ -337,7 +399,8 @@
       "optionC": "Banwa",
       "optionD": "Tuy",
       "correctAnswer": "A",
-      "explanation": "Bobo-Dioulasso est la capitale de la province du Houet, située dans la région des Hauts-Bassins."
+      "explanation": "Bobo-Dioulasso est la capitale de la province du Houet, située dans la région des Hauts-Bassins.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle région comprend le plus grand nombre de provinces ?",
@@ -346,7 +409,8 @@
       "optionC": "Ouest",
       "optionD": "Sahel",
       "correctAnswer": "A",
-      "explanation": "La région Centre comprend le plus grand nombre de provinces avec 10 provinces : Bazèga, Nahouri, Oubritenga, Zoundwéogo, Sanguié, Plateau-Central, Kadiogo, Kouritenga, Namentenga et Yatenga."
+      "explanation": "La région Centre comprend le plus grand nombre de provinces avec 10 provinces : Bazèga, Nahouri, Oubritenga, Zoundwéogo, Sanguié, Plateau-Central, Kadiogo, Kouritenga, Namentenga et Yatenga.",
+      "difficulty": "medium"
     },
     {
       "question": "Le lac de barrage de Kompienga est situé dans quelle région ?",
@@ -355,7 +419,8 @@
       "optionC": "Est",
       "optionD": "Nord",
       "correctAnswer": "B",
-      "explanation": "Le lac de barrage de Kompienga est situé dans la région Centre-Est, sur la rivière Kompienga, affluent de la Volta Blanche."
+      "explanation": "Le lac de barrage de Kompienga est situé dans la région Centre-Est, sur la rivière Kompienga, affluent de la Volta Blanche.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle province est la plus septentrionale du Burkina Faso ?",
@@ -364,7 +429,8 @@
       "optionC": "Yagha",
       "optionD": "Oudalan",
       "correctAnswer": "B",
-      "explanation": "La province du Soum est la plus septentrionale du Burkina Faso, située dans la région du Sahel et bordant le Mali et le Niger."
+      "explanation": "La province du Soum est la plus septentrionale du Burkina Faso, située dans la région du Sahel et bordant le Mali et le Niger.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle région burkinabè est entièrement enclavée ?",
@@ -373,7 +439,8 @@
       "optionC": "Sahel",
       "optionD": "Est",
       "correctAnswer": "B",
-      "explanation": "La région Centre-Ouest est la seule région entièrement enclavée du Burkina Faso, ne partageant aucune frontière internationale."
+      "explanation": "La région Centre-Ouest est la seule région entièrement enclavée du Burkina Faso, ne partageant aucune frontière internationale.",
+      "difficulty": "medium"
     },
     {
       "question": "Le fleuve Mouhoun prend sa source dans quel pays ?",
@@ -382,7 +449,8 @@
       "optionC": "Côte d'Ivoire",
       "optionD": "Ghana",
       "correctAnswer": "A",
-      "explanation": "Le fleuve Mouhoun (ou Volta Noire) prend sa source dans le sud-ouest du Burkina Faso, près de la frontière avec la Côte d'Ivoire."
+      "explanation": "Le fleuve Mouhoun (ou Volta Noire) prend sa source dans le sud-ouest du Burkina Faso, près de la frontière avec la Côte d'Ivoire.",
+      "difficulty": "medium"
     },
     {
       "question": "Combien de régions compte le Burkina Faso depuis la réforme administrative de 2021 ?",
@@ -391,7 +459,8 @@
       "optionC": "17",
       "optionD": "19",
       "correctAnswer": "C",
-      "explanation": "Depuis la réforme administrative de 2021, le Burkina Faso est divisé en 17 régions administratives."
+      "explanation": "Depuis la réforme administrative de 2021, le Burkina Faso est divisé en 17 régions administratives.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle province a pour capitale Tenkodogo ?",
@@ -400,7 +469,8 @@
       "optionC": "Komandjari",
       "optionD": "Nahouri",
       "correctAnswer": "A",
-      "explanation": "Tenkodogo est la capitale de la province du Boulgou, située dans la région Centre-Est."
+      "explanation": "Tenkodogo est la capitale de la province du Boulgou, située dans la région Centre-Est.",
+      "difficulty": "medium"
     },
     {
       "question": "Le barrage de Ziga est situé sur quel fleuve ?",
@@ -409,7 +479,8 @@
       "optionC": "Nazinon",
       "optionD": "Mékrou",
       "correctAnswer": "C",
-      "explanation": "Le barrage de Ziga est situé sur le fleuve Nazinon (ou Volte Rouge) dans la province du Ziro, dans la région du Centre-Ouest."
+      "explanation": "Le barrage de Ziga est situé sur le fleuve Nazinon (ou Volte Rouge) dans la province du Ziro, dans la région du Centre-Ouest.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle région est la plus densément peuplée du Burkina Faso ?",
@@ -418,7 +489,8 @@
       "optionC": "Ouest",
       "optionD": "Sahel",
       "correctAnswer": "A",
-      "explanation": "La région Centre est la plus densément peuplée du Burkina Faso avec environ 78 habitants/km², bien au-dessus de la moyenne nationale de 68 habitants/km²."
+      "explanation": "La région Centre est la plus densément peuplée du Burkina Faso avec environ 78 habitants/km², bien au-dessus de la moyenne nationale de 68 habitants/km².",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle province est la plus orientale du Burkina Faso ?",
@@ -427,7 +499,8 @@
       "optionC": "Gnagna",
       "optionD": "Namentenga",
       "correctAnswer": "A",
-      "explanation": "La province de Kompienga est la plus orientale du Burkina Faso, située dans la région Est et bordant le Bénin et le Togo."
+      "explanation": "La province de Kompienga est la plus orientale du Burkina Faso, située dans la région Est et bordant le Bénin et le Togo.",
+      "difficulty": "medium"
     },
     {
       "question": "Le fleuve Nakanbé est aussi connu sous quel autre nom ?",
@@ -436,7 +509,8 @@
       "optionC": "Volte Rouge",
       "optionD": "Mouhoun",
       "correctAnswer": "B",
-      "explanation": "Le fleuve Nakanbé est aussi connu sous le nom de Volta Blanche, en référence à sa couleur moins sombre que celle du Mouhoun (Volta Noire)."
+      "explanation": "Le fleuve Nakanbé est aussi connu sous le nom de Volta Blanche, en référence à sa couleur moins sombre que celle du Mouhoun (Volta Noire).",
+      "difficulty": "medium"
     },
     {
       "question": "Le Burkina Faso est divisé en 17 régions administratives. Parmi les suivantes, quelle région n'est pas limitrophe de la capitale Ouagadougou ?",
@@ -445,7 +519,8 @@
       "optionC": "Centre-Sud",
       "optionD": "Est",
       "correctAnswer": "D",
-      "explanation": "La région Est n'est pas limitrophe d'Ouagadougou. Les régions limitrophes sont le Centre-Ouest, le Centre-Nord et le Centre-Sud."
+      "explanation": "La région Est n'est pas limitrophe d'Ouagadougou. Les régions limitrophes sont le Centre-Ouest, le Centre-Nord et le Centre-Sud.",
+      "difficulty": "medium"
     },
     {
       "question": "Le fleuve Mouhoun, également connu sous le nom de Volta Noire, est le plus long fleuve du Burkina Faso. Dans quel pays se trouve son embouchure ?",
@@ -454,7 +529,8 @@
       "optionC": "Mali",
       "optionD": "Bénin",
       "correctAnswer": "A",
-      "explanation": "Le fleuve Mouhoun (Volta Noire) prend sa source au Burkina Faso et se jette dans le lac Volta au Ghana avant de se déverser dans l'océan Atlantique."
+      "explanation": "Le fleuve Mouhoun (Volta Noire) prend sa source au Burkina Faso et se jette dans le lac Volta au Ghana avant de se déverser dans l'océan Atlantique.",
+      "difficulty": "medium"
     },
     {
       "question": "Le barrage de Bagré est un important ouvrage hydroélectrique et agricole au Burkina Faso. Sur quel fleuve est-il construit ?",
@@ -463,7 +539,8 @@
       "optionC": "Nazinon",
       "optionD": "Penké",
       "correctAnswer": "B",
-      "explanation": "Le barrage de Bagré est construit sur le fleuve Nakanbé (ou Volta Rouge), qui prend sa source dans la falaise de Banfora."
+      "explanation": "Le barrage de Bagré est construit sur le fleuve Nakanbé (ou Volta Rouge), qui prend sa source dans la falaise de Banfora.",
+      "difficulty": "medium"
     },
     {
       "question": "Le Burkina Favo partage une frontière terrestre avec six pays. Parmi les suivantes, quel pays n'est pas frontalier du Burkina Faso ?",
@@ -472,7 +549,8 @@
       "optionC": "Togo",
       "optionD": "Sénégal",
       "correctAnswer": "D",
-      "explanation": "Le Burkina Favo est frontalier avec le Mali, le Niger, le Bénin, le Togo, le Ghana et la Côte d'Ivoire. Il n'a pas de frontière avec le Sénégal."
+      "explanation": "Le Burkina Favo est frontalier avec le Mali, le Niger, le Bénin, le Togo, le Ghana et la Côte d'Ivoire. Il n'a pas de frontière avec le Sénégal.",
+      "difficulty": "medium"
     },
     {
       "question": "La région du Sahel au Burkina Favo est divisée en plusieurs provinces. Parmi les suivantes, quelle province n'appartient pas à la région du Sahel ?",
@@ -481,7 +559,8 @@
       "optionC": "Yagha",
       "optionD": "Oudalan",
       "correctAnswer": "B",
-      "explanation": "La province de Sourou fait partie de la région du Boucle du Mouhoun, pas de la région du Sahel. Les provinces du Sahel sont le Séno, Yagha, Oudalan, Soum et Loroum."
+      "explanation": "La province de Sourou fait partie de la région du Boucle du Mouhoun, pas de la région du Sahel. Les provinces du Sahel sont le Séno, Yagha, Oudalan, Soum et Loroum.",
+      "difficulty": "medium"
     },
     {
       "question": "Le barrage de Samandéni est situé dans la région des Cascades. Quel est son principal usage ?",
@@ -490,7 +569,8 @@
       "optionC": "Alimentation en eau potable",
       "optionD": "Contrôle des inondations",
       "correctAnswer": "B",
-      "explanation": "Le barrage de Samandéni est principalement utilisé pour l'irrigation des terres agricoles, soutenant ainsi la production de riz et d'autres cultures dans la région."
+      "explanation": "Le barrage de Samandéni est principalement utilisé pour l'irrigation des terres agricoles, soutenant ainsi la production de riz et d'autres cultures dans la région.",
+      "difficulty": "medium"
     },
     {
       "question": "Le fleuve Nakanbé, deuxième plus long fleuve du Burkina Favo, est également connu sous quel autre nom ?",
@@ -499,7 +579,8 @@
       "optionC": "Mouhoun",
       "optionD": "Nazinon",
       "correctAnswer": "A",
-      "explanation": "Le Nakanbé est également appelé Volta Rouge, tandis que le Nazinon est appelé Volta Blanc et le Mouhoun est le Volta Noire."
+      "explanation": "Le Nakanbé est également appelé Volta Rouge, tandis que le Nazinon est appelé Volta Blanc et le Mouhoun est le Volta Noire.",
+      "difficulty": "medium"
     },
     {
       "question": "La région du Centre-Ouest compte combien de provinces ?",
@@ -508,7 +589,8 @@
       "optionC": "6",
       "optionD": "7",
       "correctAnswer": "A",
-      "explanation": "La région du Centre-Ouest comprend trois provinces : Boulkiemdé, Sanguié et Ziro."
+      "explanation": "La région du Centre-Ouest comprend trois provinces : Boulkiemdé, Sanguié et Ziro.",
+      "difficulty": "medium"
     },
     {
       "question": "La capitale du Burkina Favo, Ouagadougou, est située dans quelle région administrative ?",
@@ -517,7 +599,8 @@
       "optionC": "Centre-Nord",
       "optionD": "Centre-Sud",
       "correctAnswer": "A",
-      "explanation": "Ouagadougou est la capitale administrative de la région Centre, qui comprend également les provinces du Kadiogo, du Oubritenga et du Ganzourgou."
+      "explanation": "Ouagadougou est la capitale administrative de la région Centre, qui comprend également les provinces du Kadiogo, du Oubritenga et du Ganzourgou.",
+      "difficulty": "medium"
     },
     {
       "question": "Le Burkina Favo partage une frontière avec le Ghana sur environ 600 km. Quelle est la principale caractéristique de cette frontière ?",
@@ -526,7 +609,8 @@
       "optionC": "Elle est entièrement terrestre",
       "optionD": "Elle traverse la forêt classée de Deux Balés",
       "correctAnswer": "B",
-      "explanation": "La frontière entre le Burkina Favo et le Ghana suit en grande partie le cours du fleuve Mouhoun (Volta Noire) sur environ 548 km."
+      "explanation": "La frontière entre le Burkina Favo et le Ghana suit en grande partie le cours du fleuve Mouhoun (Volta Noire) sur environ 548 km.",
+      "difficulty": "medium"
     },
     {
       "question": "La région des Hauts-Bassins est connue pour ses paysages de falaises et ses cascades. Parmi les suivantes, quelle province n'appartient pas à cette région ?",
@@ -535,7 +619,8 @@
       "optionC": "Kénédougou",
       "optionD": "Tuy",
       "correctAnswer": "A",
-      "explanation": "La province de Houndé fait partie de la région du Hauts-Bassins, tout comme Bobo-Dioulasso, Kénédougou et Tuy."
+      "explanation": "La province de Houndé fait partie de la région du Hauts-Bassins, tout comme Bobo-Dioulasso, Kénédougou et Tuy.",
+      "difficulty": "medium"
     },
     {
       "question": "Le lac de Bagré, formé par le barrage du même nom, est important pour l'économie locale. Quelle est sa principale ressource économique ?",
@@ -544,7 +629,8 @@
       "optionC": "Transport fluvial",
       "optionD": "Extraction minière",
       "correctAnswer": "A",
-      "explanation": "La pêche est la principale ressource économique du lac de Bagré, avec une production annuelle estimée à plusieurs milliers de tonnes de poissons."
+      "explanation": "La pêche est la principale ressource économique du lac de Bagré, avec une production annuelle estimée à plusieurs milliers de tonnes de poissons.",
+      "difficulty": "medium"
     },
     {
       "question": "Le Burkina Favo est divisé en 47 provinces. Parmi les suivantes, quelle province n'appartient pas à la région du Centre-Nord ?",
@@ -553,7 +639,8 @@
       "optionC": "Yatenga",
       "optionD": "Sanguié",
       "correctAnswer": "D",
-      "explanation": "La province de Sanguié fait partie de la région du Centre-Ouest, tandis que Bam, Namentenga et Yatenga sont dans la région du Centre-Nord."
+      "explanation": "La province de Sanguié fait partie de la région du Centre-Ouest, tandis que Bam, Namentenga et Yatenga sont dans la région du Centre-Nord.",
+      "difficulty": "medium"
     },
     {
       "question": "Le fleuve Nazinon, troisième plus long fleuve du Burkina Favo, est également connu sous quel autre nom ?",
@@ -562,7 +649,8 @@
       "optionC": "Mouhoun",
       "optionD": "Nakanbé",
       "correctAnswer": "B",
-      "explanation": "Le Nazinon est également appelé Volta Blanc, tandis que le Nakanbé est le Volta Rouge et le Mouhoun est le Volta Noire."
+      "explanation": "Le Nazinon est également appelé Volta Blanc, tandis que le Nakanbé est le Volta Rouge et le Mouhoun est le Volta Noire.",
+      "difficulty": "medium"
     },
     {
       "question": "La région de l'Est est la plus grande région du Burkina Favo en termes de superficie. Quelle est sa capitale administrative ?",
@@ -571,7 +659,8 @@
       "optionC": "Diapaga",
       "optionD": "Gaoua",
       "correctAnswer": "A",
-      "explanation": "Fada N'Gourma est la capitale administrative de la région de l'Est, qui comprend également les provinces de la Komandjoari, du Tapoa, du Gourma et du Kompienga."
+      "explanation": "Fada N'Gourma est la capitale administrative de la région de l'Est, qui comprend également les provinces de la Komandjoari, du Tapoa, du Gourma et du Kompienga.",
+      "difficulty": "medium"
     },
     {
       "question": "Le Burkina Favo partage une frontière avec le Bénin sur environ 386 km. Quelle est la principale caractéristique de cette frontière ?",
@@ -580,7 +669,8 @@
       "optionC": "Elle suit le cours de la rivière Mékrou",
       "optionD": "Elle est entièrement désertique",
       "correctAnswer": "C",
-      "explanation": "La frontière entre le Burkina Favo et le Bénin suit en grande partie le cours de la rivière Mékrou, affluent du fleuve Niger."
+      "explanation": "La frontière entre le Burkina Favo et le Bénin suit en grande partie le cours de la rivière Mékrou, affluent du fleuve Niger.",
+      "difficulty": "medium"
     },
     {
       "question": "La région du Sahel est la plus septentrionale du Burkina Favo. Quelle est sa capitale administrative ?",
@@ -589,7 +679,8 @@
       "optionC": "Ouahigouya",
       "optionD": "Gaoua",
       "correctAnswer": "A",
-      "explanation": "Dori est la capitale administrative de la région du Sahel, qui comprend également les provinces du Séno, Yagha, Oudalan, Soum et Loroum."
+      "explanation": "Dori est la capitale administrative de la région du Sahel, qui comprend également les provinces du Séno, Yagha, Oudalan, Soum et Loroum.",
+      "difficulty": "medium"
     },
     {
       "question": "Le barrage de Ziga est un autre important ouvrage hydroélectrique au Burkina Favo. Sur quel fleuve est-il construit ?",
@@ -598,7 +689,8 @@
       "optionC": "Nazinon",
       "optionD": "Penké",
       "correctAnswer": "B",
-      "explanation": "Le barrage de Ziga est construit sur le fleuve Nakanbé, en aval du barrage de Bagré, pour fournir de l'électricité et de l'eau à la région."
+      "explanation": "Le barrage de Ziga est construit sur le fleuve Nakanbé, en aval du barrage de Bagré, pour fournir de l'électricité et de l'eau à la région.",
+      "difficulty": "medium"
     },
     {
       "question": "La région des Cascades est connue pour ses paysages naturels et sa culture. Parmi les suivantes, quelle est sa capitale administrative ?",
@@ -607,7 +699,8 @@
       "optionC": "Gaoua",
       "optionD": "Dédougou",
       "correctAnswer": "A",
-      "explanation": "Banfora est la capitale administrative de la région des Cascades, qui comprend également les provinces de la Comoé et de la Léraba."
+      "explanation": "Banfora est la capitale administrative de la région des Cascades, qui comprend également les provinces de la Comoé et de la Léraba.",
+      "difficulty": "medium"
     },
     {
       "question": "Le Burkina Favo partage une frontière avec le Niger sur environ 628 km. Quelle est la principale caractéristique de cette frontière ?",
@@ -616,7 +709,8 @@
       "optionC": "Elle suit une ligne de latitude",
       "optionD": "Elle est entièrement désertique",
       "correctAnswer": "A",
-      "explanation": "La frontière entre le Burkina Favo et le Niger suit en grande partie le cours du fleuve Niger sur environ 628 km."
+      "explanation": "La frontière entre le Burkina Favo et le Niger suit en grande partie le cours du fleuve Niger sur environ 628 km.",
+      "difficulty": "medium"
     }
   ],
   "subcategory": "Géographie",

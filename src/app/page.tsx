@@ -24,6 +24,7 @@ import { PreferencesApplier } from "@/components/quiz/preferences-applier";
 import { UserMenuButton, AuthDialog } from "@/components/quiz/auth-dialog";
 import { Chatbot } from "@/components/quiz/chatbot";
 import { SplashScreen } from "@/components/quiz/splash-screen";
+<<<<<<< Updated upstream
 import { InstallPrompt } from "@/components/quiz/install-prompt";
 import { ErrorBoundary } from "@/components/quiz/error-boundary";
 import { OnboardingTourContainer } from "@/components/quiz/onboarding-tour";
@@ -31,6 +32,20 @@ import { HelpButton } from "@/components/quiz/help-button";
 import { PricingModal } from "@/components/quiz/pricing-modal";
 import { ApiDocsView } from "@/components/quiz/api-docs-view";
 import { Skeleton } from "@/components/ui/skeleton";
+=======
+import { ErrorBoundary } from "@/components/quiz/error-boundary";
+import { SpacedRepetitionView } from "@/components/quiz/spaced-repetition-view";
+import { ForumView } from "@/components/quiz/forum-view";
+import { CompetitionView } from "@/components/quiz/competition-view";
+import { AchievementsView } from "@/components/quiz/achievements-view";
+import { ProfileView } from "@/components/quiz/profile-view";
+import { ApiDocsView } from "@/components/quiz/api-docs-view";
+import { StudyGroupsView } from "@/components/quiz/study-groups-view";
+import { EventsView } from "@/components/quiz/events-view";
+import { BlogView } from "@/components/quiz/blog-view";
+import { OnboardingTour, restartTour } from "@/components/quiz/onboarding-tour";
+import { PricingModal } from "@/components/quiz/pricing-modal";
+>>>>>>> Stashed changes
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -59,6 +74,7 @@ import {
   Sparkles,
   Search,
   Trophy,
+<<<<<<< Updated upstream
   Award,
   MessagesSquare,
   Swords,
@@ -69,6 +85,19 @@ import {
   UsersRound,
   CalendarDays,
   Newspaper,
+=======
+  Brain,
+  MessagesSquare,
+  Swords,
+  Award,
+  User as UserIcon,
+  Code2,
+  Crown,
+  Users2,
+  CalendarDays,
+  Newspaper,
+  HelpCircle,
+>>>>>>> Stashed changes
 } from "lucide-react";
 
 // --- Lazy-loaded secondary views --------------------------------------------
@@ -139,6 +168,7 @@ export default function Home() {
     openAdmin,
     openSocial,
     openLeaderboard,
+<<<<<<< Updated upstream
     openAchievements,
     openForum,
     openCompetition,
@@ -146,6 +176,18 @@ export default function Home() {
     openGroups,
     openEvents,
     openBlog,
+=======
+    openSpacedRepetition,
+    openForum,
+    openCompetition,
+    openAchievements,
+    openProfile,
+    openApiDocs,
+    openStudyGroups,
+    openEvents,
+    openBlog,
+    selectedProfileId,
+>>>>>>> Stashed changes
     startSession,
   } = useQuizStore();
   const { t } = useTranslation();
@@ -183,7 +225,10 @@ export default function Home() {
   const [customExamOpen, setCustomExamOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [pricingOpen, setPricingOpen] = useState(false);
+<<<<<<< Updated upstream
   const [apiDocsOpen, setApiDocsOpen] = useState(false);
+=======
+>>>>>>> Stashed changes
   const { data: session, status } = useSession();
   const unreadCount = usePrefs((s) =>
     s.notifications.filter((n) => !n.read).length
@@ -367,6 +412,219 @@ export default function Home() {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button
+<<<<<<< Updated upstream
+=======
+                      variant={view === "social" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openSocial}
+                    >
+                      <Users className="h-4 w-4" />
+                      <span className="hidden lg:inline">Communauté</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Communauté</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "leaderboard" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openLeaderboard}
+                    >
+                      <Trophy className="h-4 w-4" data-testid="trophy-icon" />
+                      <span className="hidden lg:inline">Classement</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Classement général</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "spaced-repetition" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openSpacedRepetition}
+                    >
+                      <Brain className="h-4 w-4" />
+                      <span className="hidden lg:inline">Révision</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Révision espacée (SM-2)</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "forum" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openForum}
+                    >
+                      <MessagesSquare className="h-4 w-4" />
+                      <span className="hidden lg:inline">Forum</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Forum de discussion</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "competition" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openCompetition}
+                    >
+                      <Swords className="h-4 w-4" />
+                      <span className="hidden lg:inline">Compétition</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Mode compétition multijoueur</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "achievements" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openAchievements}
+                    >
+                      <Award className="h-4 w-4" />
+                      <span className="hidden lg:inline">Badges</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Achievements (27 badges)</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "profile" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={() => openProfile()}
+                    >
+                      <UserIcon className="h-4 w-4" />
+                      <span className="hidden lg:inline">Profil</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Mon profil public</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "api-docs" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openApiDocs}
+                    >
+                      <Code2 className="h-4 w-4" />
+                      <span className="hidden lg:inline">API</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Documentation API publique</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "study-groups" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openStudyGroups}
+                    >
+                      <Users2 className="h-4 w-4" />
+                      <span className="hidden lg:inline">Groupes</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Groupes d&apos;étude</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "events" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openEvents}
+                    >
+                      <CalendarDays className="h-4 w-4" />
+                      <span className="hidden lg:inline">Événements</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Événements à venir</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "blog" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openBlog}
+                    >
+                      <Newspaper className="h-4 w-4" />
+                      <span className="hidden lg:inline">Blog</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Blog & articles</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      className="gap-1.5 text-amber-600"
+                      onClick={() => setPricingOpen(true)}
+                    >
+                      <Crown className="h-4 w-4" />
+                      <span className="hidden lg:inline">Améliorer</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Abonnement & tarifs</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "about" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openAbout}
+                    >
+                      <Info className="h-4 w-4" />
+                      <span className="hidden lg:inline">
+                        {t("nav.about")}
+                      </span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>{t("nav.about")}</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+>>>>>>> Stashed changes
                       size="sm"
                       className="gap-1.5 bg-gradient-to-r from-violet-500 to-purple-600 text-white hover:opacity-90"
                       onClick={() => setCustomExamOpen(true)}
@@ -570,6 +828,24 @@ export default function Home() {
               </Tooltip>
             </TooltipProvider>
 
+            {/* Help - restart onboarding tour */}
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-9 w-9"
+                    onClick={() => restartTour()}
+                    aria-label="Aide / Visite guidée"
+                  >
+                    <HelpCircle className="h-4.5 w-4.5" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>Revoir la visite guidée</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
             {/* Settings */}
             <TooltipProvider>
               <Tooltip>
@@ -645,6 +921,7 @@ export default function Home() {
               <LayoutDashboard className="h-4 w-4" />
               <span className="text-xs">Stats</span>
             </Button>
+<<<<<<< Updated upstream
 
             {/* Plus dropdown — secondary nav */}
             <DropdownMenu>
@@ -751,6 +1028,125 @@ export default function Home() {
               </DropdownMenuContent>
             </DropdownMenu>
 
+=======
+            <Button
+              variant={view === "social" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openSocial}
+            >
+              <Users className="h-4 w-4" />
+              <span className="text-xs">Communauté</span>
+            </Button>
+            <Button
+              variant={view === "leaderboard" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openLeaderboard}
+            >
+              <Trophy className="h-4 w-4" data-testid="trophy-icon" />
+              <span className="text-xs">Classement</span>
+            </Button>
+            <Button
+              variant={view === "spaced-repetition" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openSpacedRepetition}
+            >
+              <Brain className="h-4 w-4" />
+              <span className="text-xs">Révision</span>
+            </Button>
+            <Button
+              variant={view === "forum" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openForum}
+            >
+              <MessagesSquare className="h-4 w-4" />
+              <span className="text-xs">Forum</span>
+            </Button>
+            <Button
+              variant={view === "competition" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openCompetition}
+            >
+              <Swords className="h-4 w-4" />
+              <span className="text-xs">Compétition</span>
+            </Button>
+            <Button
+              variant={view === "achievements" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openAchievements}
+            >
+              <Award className="h-4 w-4" />
+              <span className="text-xs">Badges</span>
+            </Button>
+            <Button
+              variant={view === "profile" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={() => openProfile()}
+            >
+              <UserIcon className="h-4 w-4" />
+              <span className="text-xs">Profil</span>
+            </Button>
+            <Button
+              variant={view === "api-docs" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openApiDocs}
+            >
+              <Code2 className="h-4 w-4" />
+              <span className="text-xs">API</span>
+            </Button>
+            <Button
+              variant={view === "study-groups" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openStudyGroups}
+            >
+              <Users2 className="h-4 w-4" />
+              <span className="text-xs">Groupes</span>
+            </Button>
+            <Button
+              variant={view === "events" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openEvents}
+            >
+              <CalendarDays className="h-4 w-4" />
+              <span className="text-xs">Évén.</span>
+            </Button>
+            <Button
+              variant={view === "blog" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openBlog}
+            >
+              <Newspaper className="h-4 w-4" />
+              <span className="text-xs">Blog</span>
+            </Button>
+            <Button
+              size="sm"
+              variant="ghost"
+              className="flex-1 gap-1.5 text-amber-600"
+              onClick={() => setPricingOpen(true)}
+            >
+              <Crown className="h-4 w-4" />
+              <span className="text-xs">Améliorer</span>
+            </Button>
+            <Button
+              variant={view === "about" ? "secondary" : "ghost"}
+              size="sm"
+              className="flex-1 gap-1.5"
+              onClick={openAbout}
+            >
+              <Info className="h-4 w-4" />
+              <span className="text-xs">À propos</span>
+            </Button>
+>>>>>>> Stashed changes
             {isAdmin && (
               <Button
                 variant={view === "admin" ? "secondary" : "ghost"}
@@ -767,18 +1163,28 @@ export default function Home() {
       </header>
 
       {/* Main content */}
+<<<<<<< Updated upstream
       <main
         className="mx-auto w-full max-w-6xl flex-1 px-4 py-8"
         data-tour="home"
       >
         <ErrorBoundary>
           {/* Eager views — main user flow (no Suspense needed) */}
+=======
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
+        <ErrorBoundary
+          onError={(err, info) => {
+            console.error("[Page] Erreur de rendu interceptée :", err, info);
+          }}
+        >
+>>>>>>> Stashed changes
           {view === "home" && <HomeView />}
           {view === "bank-detail" && <BankDetailView />}
           {view === "exam-detail" && <ExamDetailView />}
           {view === "session" && <SessionView />}
           {view === "results" && <ResultsView />}
           {view === "dashboard" && <DashboardView />}
+<<<<<<< Updated upstream
           {view === "social" && <SocialView />}
 
           {/* Lazy views — wrapped in Suspense with a skeleton fallback */}
@@ -795,6 +1201,23 @@ export default function Home() {
             {view === "events" && <EventsView />}
             {view === "blog" && <BlogView />}
           </Suspense>
+=======
+          {view === "about" && <AboutView />}
+          {view === "admin" && <AdminView />}
+          {view === "social" && <SocialView />}
+          {view === "leaderboard" && <LeaderboardView />}
+          {view === "spaced-repetition" && <SpacedRepetitionView />}
+          {view === "forum" && <ForumView />}
+          {view === "competition" && <CompetitionView />}
+          {view === "achievements" && <AchievementsView />}
+          {view === "profile" && (
+            <ProfileView userId={selectedProfileId ?? undefined} />
+          )}
+          {view === "api-docs" && <ApiDocsView />}
+          {view === "study-groups" && <StudyGroupsView />}
+          {view === "events" && <EventsView />}
+          {view === "blog" && <BlogView />}
+>>>>>>> Stashed changes
         </ErrorBoundary>
       </main>
 
@@ -842,6 +1265,31 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 border-t pt-3 text-xs text-muted-foreground">
+            <button
+              onClick={openApiDocs}
+              className="inline-flex items-center gap-1 hover:text-emerald-600"
+            >
+              <Code2 className="h-3 w-3" />
+              API Docs
+            </button>
+            <span aria-hidden="true">·</span>
+            <button
+              onClick={() => setPricingOpen(true)}
+              className="inline-flex items-center gap-1 hover:text-amber-600"
+            >
+              <Crown className="h-3 w-3" />
+              Tarifs
+            </button>
+            <span aria-hidden="true">·</span>
+            <button
+              onClick={openAbout}
+              className="inline-flex items-center gap-1 hover:text-emerald-600"
+            >
+              <Info className="h-3 w-3" />
+              {t("nav.about")}
+            </button>
+          </div>
         </div>
       </footer>
 
@@ -859,12 +1307,18 @@ export default function Home() {
       {/* Search dialog (Ctrl+K) */}
       <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
 
+<<<<<<< Updated upstream
       {/* Pricing modal (freemium upgrade) */}
       <PricingModal open={pricingOpen} onOpenChange={setPricingOpen} />
 
       {/* API documentation dialog */}
       <ApiDocsView open={apiDocsOpen} onOpenChange={setApiDocsOpen} />
 
+=======
+      {/* Pricing modal */}
+      <PricingModal open={pricingOpen} onOpenChange={setPricingOpen} />
+
+>>>>>>> Stashed changes
       {/* Real-time floating notifications */}
       <RealtimeNotification />
 
@@ -874,11 +1328,16 @@ export default function Home() {
       {/* Chatbot IA flottant */}
       <Chatbot />
 
+<<<<<<< Updated upstream
       {/* Aide contextuelle (bouton flottant en bas à gauche) */}
       <HelpButton />
 
       {/* Tour guidé au premier login */}
       <OnboardingTourContainer isAuthenticated={status === "authenticated"} />
+=======
+      {/* Onboarding guided tour (first login) */}
+      <OnboardingTour />
+>>>>>>> Stashed changes
     </div>
   );
 }

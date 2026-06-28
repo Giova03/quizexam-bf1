@@ -1,4 +1,5 @@
 /**
+<<<<<<< Updated upstream
  * run-tests.ts — minimal test runner.
  *
  * Usage:
@@ -91,8 +92,54 @@ async function main() {
     process.exit(1);
   } else {
     console.log("  Result: PASS \u2713");
+=======
+ * Lance tous les tests unitaires du projet.
+ *
+ * Usage : `bun run scripts/run-tests.ts`
+ *
+ * Aucune dépendance externe (pas de Jest) — utilise un mini-framework
+ * inline défini dans src/lib/__tests__/test-framework.ts.
+ *
+ * Les tests sont des modules TypeScript standard qui s'enregistrent
+ * via `test(name, fn)` puis sont exécutés via `runAll()`.
+ *
+ * Le code de sortie est 0 si tous passent, 1 sinon.
+ */
+import { runAll } from "../src/lib/__tests__/test-framework";
+
+// Importer les fichiers de test pour qu'ils s'enregistrent
+import "../src/lib/__tests__/cache.test";
+import "../src/lib/__tests__/sm2.test";
+import "../src/lib/__tests__/favorites.test";
+
+async function main() {
+  console.log("=============================================");
+  console.log("  Tests automatisés QuizExam BF");
+  console.log("=============================================");
+
+  const result = await runAll();
+
+  console.log("");
+  console.log("---------------------------------------------");
+  console.log(
+    `Total: ${result.total} | Réussis: ${result.passed} | Échoués: ${result.failed}`
+  );
+  console.log("---------------------------------------------");
+
+  if (result.failed > 0) {
+    process.exit(1);
+  } else {
+    console.log("\n✅ Tous les tests ont réussi.");
+>>>>>>> Stashed changes
     process.exit(0);
   }
 }
 
+<<<<<<< Updated upstream
 main();
+=======
+main().catch((err) => {
+  console.error("Erreur fatale dans le runner de tests :", err);
+  process.exit(1);
+});
+>>>>>>> Stashed changes

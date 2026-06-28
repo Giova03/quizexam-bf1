@@ -16,7 +16,8 @@
       "optionC": "Le prix doit être supérieur au coût variable moyen",
       "optionD": "Le prix doit être égal au revenu marginal",
       "correctAnswer": "A",
-      "explanation": "En concurrence parfaite, l'équilibre à court terme est atteint lorsque le prix (qui est aussi le revenu marginal) est égal au coût marginal, car l'entreprise maximise son profit en produisant jusqu'au point où P = CM."
+      "explanation": "En concurrence parfaite, l'équilibre à court terme est atteint lorsque le prix (qui est aussi le revenu marginal) est égal au coût marginal, car l'entreprise maximise son profit en produisant jusqu'au point où P = CM.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de l'agent principal, quel problème survient lorsque les intérêts de l'agent sont différents de ceux du principal ?",
@@ -25,7 +26,8 @@
       "optionC": "Asymétrie d'information",
       "optionD": "Externalité",
       "correctAnswer": "A",
-      "explanation": "Le risque moral survient lorsque l'agent, après avoir été engagé, agit dans son propre intérêt plutôt que dans celui du principal, en raison de l'asymétrie d'information qui persiste après la signature du contrat."
+      "explanation": "Le risque moral survient lorsque l'agent, après avoir été engagé, agit dans son propre intérêt plutôt que dans celui du principal, en raison de l'asymétrie d'information qui persiste après la signature du contrat.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre de la comptabilité nationale, quel composant du PIB est le plus volatile à court terme ?",
@@ -34,7 +36,8 @@
       "optionC": "Les dépenses publiques",
       "optionD": "Les exportations nettes",
       "correctAnswer": "B",
-      "explanation": "Les investissements des entreprises sont généralement le composant le plus volatile du PIB à court terme, car ils dépendent fortement des anticipations économiques et des conditions de financement."
+      "explanation": "Les investissements des entreprises sont généralement le composant le plus volatile du PIB à court terme, car ils dépendent fortement des anticipations économiques et des conditions de financement.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est l'impact d'une dépréciation du taux de change sur le commerce extérieur d'un pays ?",
@@ -43,7 +46,8 @@
       "optionC": "Elle améliore la balance commerciale si les élasticités-prix de la demande sont supérieures à 1",
       "optionD": "Elle n'affecte pas la balance commerciale",
       "correctAnswer": "C",
-      "explanation": "Selon la courbe en J, une dépréciation améliore la balance commerciale seulement si les élasticités-prix de la demande sont supérieures à 1 (condition de Marshall-Lerner)."
+      "explanation": "Selon la courbe en J, une dépréciation améliore la balance commerciale seulement si les élasticités-prix de la demande sont supérieures à 1 (condition de Marshall-Lerner).",
+      "difficulty": "medium"
     },
     {
       "question": "Dans une entreprise, quel est le principal inconvénient de l'utilisation du coût complet pour la prise de décision ?",
@@ -52,7 +56,8 @@
       "optionC": "Il ignore les coûts variables",
       "optionD": "Il ne permet pas de calculer le seuil de rentabilité",
       "correctAnswer": "B",
-      "explanation": "Le coût complet attribue tous les coûts fixes aux produits, ce qui peut conduire à des décisions erronées car les coûts fixes sont irréversibles à court terme et ne devraient pas influencer les décisions marginales."
+      "explanation": "Le coût complet attribue tous les coûts fixes aux produits, ce qui peut conduire à des décisions erronées car les coûts fixes sont irréversibles à court terme et ne devraient pas influencer les décisions marginales.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle stratégie de prix est la plus adaptée pour un produit à forte élasticité-prix de la demande ?",
@@ -61,7 +66,8 @@
       "optionC": "Parité concurrentielle",
       "optionD": "Tarification psychologique",
       "correctAnswer": "A",
-      "explanation": "Pour un produit à forte élasticité-prix, une stratégie de pénétration de marché (prix initialement bas) est efficace car elle permet de capter rapidement une part de marché importante grâce à la sensibilité des consommateurs au prix."
+      "explanation": "Pour un produit à forte élasticité-prix, une stratégie de pénétration de marché (prix initialement bas) est efficace car elle permet de capter rapidement une part de marché importante grâce à la sensibilité des consommateurs au prix.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le coût d'opportunité du capital dans une entreprise ?",
@@ -70,7 +76,8 @@
       "optionC": "Le coût de l'emprunt",
       "optionD": "Le taux d'inflation",
       "correctAnswer": "B",
-      "explanation": "Le coût d'opportunité du capital est le rendement minimal que les investisseurs exigent en compensation pour le risque pris en investissant dans l'entreprise plutôt que dans d'autres placements alternatifs."
+      "explanation": "Le coût d'opportunité du capital est le rendement minimal que les investisseurs exigent en compensation pour le risque pris en investissant dans l'entreprise plutôt que dans d'autres placements alternatifs.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle IS-LM, une augmentation des impôts a quel effet sur l'équilibre macroéconomique ?",
@@ -79,7 +86,8 @@
       "optionC": "Déplacement de la courbe LM vers la gauche et hausse des taux d'intérêt",
       "optionD": "Pas d'effet sur l'équilibre",
       "correctAnswer": "A",
-      "explanation": "Une augmentation des impôts réduit le revenu disponible, ce qui diminue la consommation et investissement, déplaçant la courbe IS vers la gauche et réduisant le revenu d'équilibre."
+      "explanation": "Une augmentation des impôts réduit le revenu disponible, ce qui diminue la consommation et investissement, déplaçant la courbe IS vers la gauche et réduisant le revenu d'équilibre.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle méthode d'évaluation d'entreprise est basée sur la capacité bénéficiaire future de l'entreprise ?",
@@ -88,7 +96,8 @@
       "optionC": "Valeur de rendement",
       "optionD": "Valeur intrinsèque",
       "correctAnswer": "D",
-      "explanation": "La valeur intrinsèque est estimée en actualisant les flux de trésorerie futurs attendus de l'entreprise, reflétant ainsi sa capacité bénéficiaire future."
+      "explanation": "La valeur intrinsèque est estimée en actualisant les flux de trésorerie futurs attendus de l'entreprise, reflétant ainsi sa capacité bénéficiaire future.",
+      "difficulty": "medium"
     },
     {
       "question": "En marketing, le concept de 'portefeuille-produit' désigne :",
@@ -97,7 +106,8 @@
       "optionC": "La gestion des stocks de produits finis",
       "optionD": "L'évaluation de la performance des produits",
       "correctAnswer": "B",
-      "explanation": "Le portefeuille-produit désigne l'ensemble des produits et services qu'une entreprise propose à ses différents segments de marché, avec des stratégies différenciées pour chaque produit."
+      "explanation": "Le portefeuille-produit désigne l'ensemble des produits et services qu'une entreprise propose à ses différents segments de marché, avec des stratégies différenciées pour chaque produit.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans une firme en oligopole, quelle stratégie de prix est la plus susceptible de déclencher une guerre des prix ?",
@@ -106,7 +116,8 @@
       "optionC": "Pricing psychologique",
       "optionD": "Pénétration de marché",
       "correctAnswer": "B",
-      "explanation": "Un prix prédateur, consistant à vendre en dessous du coût pour éliminer la concurrence, est la stratégie la plus susceptible de déclencher une guerre des prix dans un oligopole."
+      "explanation": "Un prix prédateur, consistant à vendre en dessous du coût pour éliminer la concurrence, est la stratégie la plus susceptible de déclencher une guerre des prix dans un oligopole.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale limitation de l'analyse financière basée uniquement sur les ratios comptables ?",
@@ -115,7 +126,8 @@
       "optionC": "Elle utilise des données historiques",
       "optionD": "Elle ne permet pas de comparer entre entreprises",
       "correctAnswer": "B",
-      "explanation": "L'analyse basée sur les ratios comptables ignore les facteurs qualitatifs cruciaux tels que la qualité de la direction, la culture d'entreprise, la propriété intellectuelle, qui influencent fortement la performance future."
+      "explanation": "L'analyse basée sur les ratios comptables ignore les facteurs qualitatifs cruciaux tels que la qualité de la direction, la culture d'entreprise, la propriété intellectuelle, qui influencent fortement la performance future.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie du portefeuille moderne de Markowitz, quel est le principal bénéfice de la diversification ?",
@@ -124,7 +136,8 @@
       "optionC": "Élimination de tout risque",
       "optionD": "Augmentation du risque pour un rendement donné",
       "correctAnswer": "B",
-      "explanation": "La diversification permet de réduire le risque global du portefeuille (mesuré par l'écart-type) sans sacrifier le rendement attendu, grâce à la corrélation non parfaite entre les actifs."
+      "explanation": "La diversification permet de réduire le risque global du portefeuille (mesuré par l'écart-type) sans sacrifier le rendement attendu, grâce à la corrélation non parfaite entre les actifs.",
+      "difficulty": "medium"
     },
     {
       "question": "En comptabilité, quelle est la nature du fonds de roulement net (FRN) ?",
@@ -133,7 +146,8 @@
       "optionC": "Un indicateur d'endettement",
       "optionD": "Un indicateur de productivité",
       "correctAnswer": "B",
-      "explanation": "Le fonds de roulement net (actif circulant - dettes à court terme) mesure la capacité de l'entreprise à financer son cycle d'exploitation à moyen terme, reflétant sa liquidité à court terme."
+      "explanation": "Le fonds de roulement net (actif circulant - dettes à court terme) mesure la capacité de l'entreprise à financer son cycle d'exploitation à moyen terme, reflétant sa liquidité à court terme.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale caractéristique d'un bien public pur selon la théorie économique ?",
@@ -142,7 +156,8 @@
       "optionC": "Non-rivalité et excludabilité",
       "optionD": "Rivalité et non-excludabilité",
       "correctAnswer": "A",
-      "explanation": "Un bien public pur est caractérisé par sa non-rivalité (la consommation par un individu n'en réduit pas la disponibilité pour les autres) et sa non-excludabilité (il est impossible d'empêcher quelqu'un de le consommer)."
+      "explanation": "Un bien public pur est caractérisé par sa non-rivalité (la consommation par un individu n'en réduit pas la disponibilité pour les autres) et sa non-excludabilité (il est impossible d'empêcher quelqu'un de le consommer).",
+      "difficulty": "medium"
     },
     {
       "question": "En finance, le bêta d'un titre mesure :",
@@ -151,7 +166,8 @@
       "optionC": "Le risque spécifique du titre",
       "optionD": "La volatilité historique du titre",
       "correctAnswer": "A",
-      "explanation": "Le bêta mesure la sensibilité du rendement d'un titre par rapport au rendement du marché, c'est-à-dire son risque systématique ou de marché, non diversifiable."
+      "explanation": "Le bêta mesure la sensibilité du rendement d'un titre par rapport au rendement du marché, c'est-à-dire son risque systématique ou de marché, non diversifiable.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans une analyse SWOT, les 'menaces' sont des éléments :",
@@ -160,7 +176,8 @@
       "optionC": "Externes positifs",
       "optionD": "Externes négatifs",
       "correctAnswer": "D",
-      "explanation": "Dans une analyse SWOT, les menaces (Threats) sont des éléments externes négatifs à l'environnement de l'entreprise qui pourraient nuire à sa performance."
+      "explanation": "Dans une analyse SWOT, les menaces (Threats) sont des éléments externes négatifs à l'environnement de l'entreprise qui pourraient nuire à sa performance.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est l'effet d'une politique monétaire expansionniste sur le taux d'intérêt réel à long terme selon la théorie quantitative de la monnaie ?",
@@ -169,7 +186,8 @@
       "optionC": "Pas d'effet",
       "optionD": "Effet incertain",
       "correctAnswer": "C",
-      "explanation": "Selon la théorie quantitative de la monnaie, à long terme, le taux d'intérêt réel est déterminé par les facteurs réels (productivité, préférence pour le présent) et non par la quantité de monnaie, donc une politique monétaire expansionniste n'affecte pas le taux d'intérêt réel à long terme."
+      "explanation": "Selon la théorie quantitative de la monnaie, à long terme, le taux d'intérêt réel est déterminé par les facteurs réels (productivité, préférence pour le présent) et non par la quantité de monnaie, donc une politique monétaire expansionniste n'affecte pas le taux d'intérêt réel à long terme.",
+      "difficulty": "medium"
     },
     {
       "question": "En gestion de projet, la méthode PERT est utilisée pour :",
@@ -178,7 +196,8 @@
       "optionC": "Évaluer la rentabilité du projet",
       "optionD": "Planifier les ressources humaines",
       "correctAnswer": "B",
-      "explanation": "La méthode PERT (Program Evaluation and Review Technique) est utilisée pour analyser les tâches nécessaires à l'accomplissement d'un projet et identifier le chemin critique, qui détermine la durée minimale du projet."
+      "explanation": "La méthode PERT (Program Evaluation and Review Technique) est utilisée pour analyser les tâches nécessaires à l'accomplissement d'un projet et identifier le chemin critique, qui détermine la durée minimale du projet.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre une fusion et une acquisition d'entreprises ?",
@@ -187,7 +206,8 @@
       "optionC": "Les fusions sont toujours amicales, les acquisitions sont hostiles",
       "optionD": "Les acquisitions sont toujours financées en numéraire",
       "correctAnswer": "B",
-      "explanation": "La principale différence est qu'une acquisition implique une entreprise qui rachète une autre (qui peut être absorbée ou devenir une filiale), tandis qu'une fusion implique la création d'une nouvelle entité à partir de deux ou plusieurs entreprises existantes."
+      "explanation": "La principale différence est qu'une acquisition implique une entreprise qui rachète une autre (qui peut être absorbée ou devenir une filiale), tandis qu'une fusion implique la création d'une nouvelle entité à partir de deux ou plusieurs entreprises existantes.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans un modèle de concurrence monopolistique, à l'équilibre à long terme:",
@@ -196,7 +216,8 @@
       "optionC": "Le prix est inférieur au coût marginal",
       "optionD": "Le profit économique est nul",
       "correctAnswer": "D",
-      "explanation": "En concurrence monopolistique, à l'équilibre à long terme, les entreprises réalisent un profit économique nul en raison de la libre entrée sur le marché, mais le prix reste supérieur au coût marginal."
+      "explanation": "En concurrence monopolistique, à l'équilibre à long terme, les entreprises réalisent un profit économique nul en raison de la libre entrée sur le marché, mais le prix reste supérieur au coût marginal.",
+      "difficulty": "medium"
     },
     {
       "question": "La courbe de Phillips décrit une relation:",
@@ -205,7 +226,8 @@
       "optionC": "Inverse entre le taux d'intérêt et le taux de chômage",
       "optionD": "Directe entre le taux d'intérêt et le taux d'inflation",
       "correctAnswer": "A",
-      "explanation": "La courbe de Phillips illustre une relation de court terme inverse entre le taux d'inflation et le taux de chômage, suggérant qu'une baisse du chômage peut être obtenue au prix d'une hausse de l'inflation."
+      "explanation": "La courbe de Phillips illustre une relation de court terme inverse entre le taux d'inflation et le taux de chômage, suggérant qu'une baisse du chômage peut être obtenue au prix d'une hausse de l'inflation.",
+      "difficulty": "medium"
     },
     {
       "question": "En comptabilité nationale, le PIB est égal à:",
@@ -214,7 +236,8 @@
       "optionC": "Consommation finale + Épargne + Exportations - Importations",
       "optionD": "Consommation finale + Épargne + Importations - Exportations",
       "correctAnswer": "A",
-      "explanation": "Le PIB (Produit Intérieur Brut) se calcule par la somme des consommations finales, des investissements, des exportations, moins les importations (PIB = C + I + X - M)."
+      "explanation": "Le PIB (Produit Intérieur Brut) se calcule par la somme des consommations finales, des investissements, des exportations, moins les importations (PIB = C + I + X - M).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale limitation du ratio de liquidité générale (current ratio)?",
@@ -223,7 +246,8 @@
       "optionC": "Il ignore la rentabilité de l'entreprise",
       "optionD": "Il ne tient pas compte de la structure du capital",
       "correctAnswer": "B",
-      "explanation": "Le ratio de liquidité générale (actifs courants/passifs courants) présente comme limitation principale de ne pas distinguer la liquidité des différentes composantes du passif courant, toutes étant traitées de manière identique."
+      "explanation": "Le ratio de liquidité générale (actifs courants/passifs courants) présente comme limitation principale de ne pas distinguer la liquidité des différentes composantes du passif courant, toutes étant traitées de manière identique.",
+      "difficulty": "medium"
     },
     {
       "question": "La méthode ABC (Activity-Based Costing) est principalement utilisée pour:",
@@ -232,7 +256,8 @@
       "optionC": "Allouer les coûts indirects de manière plus précise",
       "optionD": "Déterminer le seuil de rentabilité",
       "correctAnswer": "C",
-      "explanation": "La méthode ABC permet d'allouer les coûts indirects de manière plus précise en les rattachant aux activités qui les génèrent, plutôt qu'en se basant sur des critères arbitraires comme les heures de main-d'œuvre."
+      "explanation": "La méthode ABC permet d'allouer les coûts indirects de manière plus précise en les rattachant aux activités qui les génèrent, plutôt qu'en se basant sur des critères arbitraires comme les heures de main-d'œuvre.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle de diffusion d'innovations de Rogers, les 'innovateurs' représentent environ:",
@@ -241,7 +266,8 @@
       "optionC": "34% de la population",
       "optionD": "50% de la population",
       "correctAnswer": "A",
-      "explanation": "Selon Rogers, les adopteurs d'innovations se répartissent en 5 catégories: les innovateurs (2,5%), les early adopters (13,5%), la majorité précoce (34%), la majorité tardive (34%) et les retardataires (16%)."
+      "explanation": "Selon Rogers, les adopteurs d'innovations se répartissent en 5 catégories: les innovateurs (2,5%), les early adopters (13,5%), la majorité précoce (34%), la majorité tardive (34%) et les retardataires (16%).",
+      "difficulty": "medium"
     },
     {
       "question": "La valeur actuelle nette (VAN) d'un projet d'investissement est:",
@@ -250,7 +276,8 @@
       "optionC": "L'investissement initial divisé par le taux d'actualisation",
       "optionD": "Le flux de trésorerie annuel moyen multiplié par le coefficient d'actualisation",
       "correctAnswer": "A",
-      "explanation": "La VAN se calcule comme la somme des flux de trésorerie actualisés (actualisés au taux du coût du capital) moins l'investissement initial. Un projet est acceptable si sa VAN est positive."
+      "explanation": "La VAN se calcule comme la somme des flux de trésorerie actualisés (actualisés au taux du coût du capital) moins l'investissement initial. Un projet est acceptable si sa VAN est positive.",
+      "difficulty": "medium"
     },
     {
       "question": "Le théorème de Modigliani-Miller affirme que, en l'absence d'impôts et de coûts de faillite:",
@@ -259,7 +286,8 @@
       "optionC": "Une structure de capitaux propres augmente la valeur de l'entreprise",
       "optionD": "La valeur de l'entreprise est maximisée avec un endettement à 100%",
       "correctAnswer": "A",
-      "explanation": "Selon Modigliani-Miller, dans un marché parfait sans impôts ni coûts de faillite, la structure du capital n'affecte pas la valeur de l'entreprise, qui dépend uniquement de la rentabilité de ses actifs."
+      "explanation": "Selon Modigliani-Miller, dans un marché parfait sans impôts ni coûts de faillite, la structure du capital n'affecte pas la valeur de l'entreprise, qui dépend uniquement de la rentabilité de ses actifs.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans une analyse SWOT, les menaces sont:",
@@ -268,7 +296,8 @@
       "optionC": "Des éléments internes positifs",
       "optionD": "Des éléments externes positifs",
       "correctAnswer": "B",
-      "explanation": "L'analyse SWOT distingue: les Forces (internes positives), les Faiblesses (internes négatives), les Opportunités (externes positives) et les Menaces (externes négatives)."
+      "explanation": "L'analyse SWOT distingue: les Forces (internes positives), les Faiblesses (internes négatives), les Opportunités (externes positives) et les Menaces (externes négatives).",
+      "difficulty": "medium"
     },
     {
       "question": "Le coefficient bêta d'un titre mesure:",
@@ -277,7 +306,8 @@
       "optionC": "Le risque spécifique du titre",
       "optionD": "La valeur actuelle du titre",
       "correctAnswer": "A",
-      "explanation": "Le bêta mesure la sensibilité d'un titre par rapport au marché. Un bêta de 1 indique une volatilité similaire au marché, un bêta >1 une volatilité supérieure, et un bêta <1 une volatilité inférieure."
+      "explanation": "Le bêta mesure la sensibilité d'un titre par rapport au marché. Un bêta de 1 indique une volatilité similaire au marché, un bêta >1 une volatilité supérieure, et un bêta <1 une volatilité inférieure.",
+      "difficulty": "medium"
     },
     {
       "question": "En microéconomie, le surplus du consommateur est:",
@@ -286,7 +316,8 @@
       "optionC": "La somme des prix payés par tous les consommateurs",
       "optionD": "Le profit réalisé par le producteur",
       "correctAnswer": "A",
-      "explanation": "Le surplus du consommateur représente l'avantage qu'il tire de l'achat d'un bien, mesuré par la différence entre le prix maximum qu'il serait prêt à payer et le prix effectivement payé."
+      "explanation": "Le surplus du consommateur représente l'avantage qu'il tire de l'achat d'un bien, mesuré par la différence entre le prix maximum qu'il serait prêt à payer et le prix effectivement payé.",
+      "difficulty": "medium"
     },
     {
       "question": "La méthode du coût cible (target costing) commence par:",
@@ -295,7 +326,8 @@
       "optionC": "Le coût de distribution",
       "optionD": "Le coût de la main-d'œuvre",
       "correctAnswer": "B",
-      "explanation": "Le coût cible commence par déterminer le prix de vente attendu sur le marché, puis soustrait la marge bénéficiaire désirée pour obtenir le coût cible que le produit ne doit pas dépasser."
+      "explanation": "Le coût cible commence par déterminer le prix de vente attendu sur le marché, puis soustrait la marge bénéficiaire désirée pour obtenir le coût cible que le produit ne doit pas dépasser.",
+      "difficulty": "medium"
     },
     {
       "question": "La courbe d'indifférence représente:",
@@ -304,7 +336,8 @@
       "optionC": "La relation entre le revenu et la consommation",
       "optionD": "La relation entre le travail et le loisir",
       "correctAnswer": "B",
-      "explanation": "Une courbe d'indifférence représente l'ensemble des combinaisons de deux biens qui procurent au consommateur un même niveau de satisfaction ou d'utilité."
+      "explanation": "Une courbe d'indifférence représente l'ensemble des combinaisons de deux biens qui procurent au consommateur un même niveau de satisfaction ou d'utilité.",
+      "difficulty": "medium"
     },
     {
       "question": "En finance d'entreprise, le levier opérationnel (DOL) mesure:",
@@ -313,7 +346,8 @@
       "optionC": "L'effet de l'inflation sur la rentabilité",
       "optionD": "L'effet de variation des prix de vente sur la rentabilité",
       "correctAnswer": "B",
-      "explanation": "Le levier opérationnel (DOL) mesure l'effet des charges fixes d'exploitation sur la rentabilité. Un DOL élevé indique que les bénéfices varient fortement avec les variations du chiffre d'affaires."
+      "explanation": "Le levier opérationnel (DOL) mesure l'effet des charges fixes d'exploitation sur la rentabilité. Un DOL élevé indique que les bénéfices varient fortement avec les variations du chiffre d'affaires.",
+      "difficulty": "medium"
     },
     {
       "question": "La stratégie de différenciation consiste à:",
@@ -322,7 +356,8 @@
       "optionC": "Se concentrer sur un segment de marché étroit",
       "optionD": "Imiter les stratégies des concurrents leaders",
       "correctAnswer": "B",
-      "explanation": "La stratégie de différenciation vise à offrir un produit ou service perçu comme unique par les clients, justifiant un prix premium, plutôt que de se concentrer sur les coûts ou un segment spécifique."
+      "explanation": "La stratégie de différenciation vise à offrir un produit ou service perçu comme unique par les clients, justifiant un prix premium, plutôt que de se concentrer sur les coûts ou un segment spécifique.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans un modèle de concurrence monopolistique, quelle caractéristique distingue fondamentalement ce marché d'un marché de concurrence parfaite ?",
@@ -331,7 +366,8 @@
       "optionC": "La différenciation des produits",
       "optionD": "L'information parfaite des consommateurs",
       "correctAnswer": "C",
-      "explanation": "Dans la concurrence monopolistique, les produits sont différenciés, ce qui permet aux entreprises d'avoir un certain pouvoir de marché, contrairement à la concurrence parfaite où les produits sont homogènes."
+      "explanation": "Dans la concurrence monopolistique, les produits sont différenciés, ce qui permet aux entreprises d'avoir un certain pouvoir de marché, contrairement à la concurrence parfaite où les produits sont homogènes.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie du revenu permanent de Milton Friedman, comment un consommateur réagirait-il à une réduction temporaire de son revenu ?",
@@ -340,7 +376,8 @@
       "optionC": "Il augmenterait sa consommation en anticipant une future augmentation de revenu",
       "optionD": "Il reporterait ses dépenses futures pour maintenir son niveau de consommation actuel",
       "correctAnswer": "B",
-      "explanation": "Selon Friedman, les consommateurs basent leurs décisions sur leur revenu permanent (durable) plutôt que sur leur revenu transitoire (temporaire). Une réduction temporaire du revenu ne modifierait donc pas significativement la consommation."
+      "explanation": "Selon Friedman, les consommateurs basent leurs décisions sur leur revenu permanent (durable) plutôt que sur leur revenu transitoire (temporaire). Une réduction temporaire du revenu ne modifierait donc pas significativement la consommation.",
+      "difficulty": "medium"
     },
     {
       "question": "En comptabilité nationale, quel indicateur mesure la valeur totale des biens et services finaux produits sur un territoire donné, quelle que soit la nationalité des producteurs ?",
@@ -349,7 +386,8 @@
       "optionC": "Revenu National Brut (RNB)",
       "optionD": "Revenu Disponible Brut (RDB)",
       "correctAnswer": "A",
-      "explanation": "Le PIB mesure la valeur de tous les biens et services finaux produits sur un territoire donné, quelle que soit la nationalité des producteurs. Le PNB inclut les revenus des facteurs reçus de l'étranger."
+      "explanation": "Le PIB mesure la valeur de tous les biens et services finaux produits sur un territoire donné, quelle que soit la nationalité des producteurs. Le PNB inclut les revenus des facteurs reçus de l'étranger.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans une stratégie de marketing, le concept de 'valeur perçue' par le client est principalement influencé par :",
@@ -358,7 +396,8 @@
       "optionC": "La combinaison des bénéfices perçus et du coût perçu",
       "optionD": "Les coûts de production de l'entreprise",
       "correctAnswer": "C",
-      "explanation": "La valeur perçue par le client résulte de l'évaluation qu'il fait des bénéfices qu'il attend d'un produit (qualité, service, image) par rapport au coût qu'il doit supporter (prix, effort d'achat)."
+      "explanation": "La valeur perçue par le client résulte de l'évaluation qu'il fait des bénéfices qu'il attend d'un produit (qualité, service, image) par rapport au coût qu'il doit supporter (prix, effort d'achat).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence fondamentale entre une obligation à taux fixe et une obligation à taux variable ?",
@@ -367,7 +406,8 @@
       "optionC": "La manière dont le coupon est déterminé",
       "optionD": "La notation de crédit",
       "correctAnswer": "C",
-      "explanation": "Sur une obligation à taux fixe, le coupon (intérêt) est constant tout au long de la vie de l'emprunt. Sur une obligation à taux variable, le coupon est révisé périodiquement en fonction d'un taux de référence."
+      "explanation": "Sur une obligation à taux fixe, le coupon (intérêt) est constant tout au long de la vie de l'emprunt. Sur une obligation à taux variable, le coupon est révisé périodiquement en fonction d'un taux de référence.",
+      "difficulty": "medium"
     },
     {
       "question": "En microéconomie, quel concept explique pourquoi un monopole naturel tend à émerger dans certains secteurs ?",
@@ -376,7 +416,8 @@
       "optionC": "L'asymétrie d'information",
       "optionD": "Le problème du passager clandestin",
       "correctAnswer": "B",
-      "explanation": "Un monopole naturel apparaît lorsque les rendements d'échelle sont croissants sur toute la gamme de demande, rendant plus efficient pour une seule entreprise de produire plutôt que pour plusieurs concurrents."
+      "explanation": "Un monopole naturel apparaît lorsque les rendements d'échelle sont croissants sur toute la gamme de demande, rendant plus efficient pour une seule entreprise de produire plutôt que pour plusieurs concurrents.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans un contexte de stagflation (inflation élevée + faible croissance), quelle politique monétaire serait généralement inappropriée ?",
@@ -385,7 +426,8 @@
       "optionC": "Une politique de quantitative easing",
       "optionD": "Une politique de réserve obligatoire augmentée",
       "correctAnswer": "B",
-      "explanation": "Une politique de taux d'intérêt bas stimulerait la demande et aggraverait l'inflation, sans résoudre le problème de croissance faible. La stagflation pose un dilemme politique car les outils traditionnels sont inefficaces."
+      "explanation": "Une politique de taux d'intérêt bas stimulerait la demande et aggraverait l'inflation, sans résoudre le problème de croissance faible. La stagflation pose un dilemme politique car les outils traditionnels sont inefficaces.",
+      "difficulty": "medium"
     },
     {
       "question": "En comptabilité, quelle est la différence fondamentale entre la méthode de la comptabilité d'exercice et la comptabilité de caisse ?",
@@ -394,7 +436,8 @@
       "optionC": "La détermination du résultat fiscal",
       "optionD": "La valorisation des stocks",
       "correctAnswer": "B",
-      "explanation": "La comptabilité d'exercice enregistre les charges et les produits lorsqu'ils sont constatés, indépendamment des flux de trésorerie. La comptabilité de caisse ne comptabilise que les flux effectifs de trésorerie."
+      "explanation": "La comptabilité d'exercice enregistre les charges et les produits lorsqu'ils sont constatés, indépendamment des flux de trésorerie. La comptabilité de caisse ne comptabilise que les flux effectifs de trésorerie.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans un portefeuille d'actions, le concept de 'bêta' mesure :",
@@ -403,7 +446,8 @@
       "optionC": "La sensibilité du portefeuille aux mouvements du marché",
       "optionD": "La corrélation entre les différentes actions du portefeuille",
       "correctAnswer": "C",
-      "explanation": "Le bêta mesure la sensibilité d'un titre ou d'un portefeuille aux mouvements du marché global. Un bêta de 1 indique une sensibilité moyenne, supérieur à 1 une sensibilité plus forte que le marché, et inférieur à 1 une sensibilité moindre."
+      "explanation": "Le bêta mesure la sensibilité d'un titre ou d'un portefeuille aux mouvements du marché global. Un bêta de 1 indique une sensibilité moyenne, supérieur à 1 une sensibilité plus forte que le marché, et inférieur à 1 une sensibilité moindre.",
+      "difficulty": "medium"
     },
     {
       "question": "En marketing, le modèle AIDA (Attention, Intérêt, Désir, Action) représente :",
@@ -412,7 +456,8 @@
       "optionC": "Les composantes du mix marketing",
       "optionD": "Les niveaux de la hiérarchie des besoins de Maslow",
       "correctAnswer": "B",
-      "explanation": "Le modèle AIDA décrit le processus que suit un consommateur potentiel depuis sa première prise de conscience d'un produit jusqu'à l'achat final."
+      "explanation": "Le modèle AIDA décrit le processus que suit un consommateur potentiel depuis sa première prise de conscience d'un produit jusqu'à l'achat final.",
+      "difficulty": "medium"
     },
     {
       "question": "En macroéconomie, la courbe de Phillips décrit une relation entre :",
@@ -421,7 +466,8 @@
       "optionC": "La croissance du PIB et l'inflation",
       "optionD": "Les exportations et l'inflation",
       "correctAnswer": "A",
-      "explanation": "La courbe de Phillips originale décrit une relation inverse entre le taux d'inflation et le taux de chômage dans une économie, bien que cette relation soit devenue moins stable dans les économies modernes."
+      "explanation": "La courbe de Phillips originale décrit une relation inverse entre le taux d'inflation et le taux de chômage dans une économie, bien que cette relation soit devenue moins stable dans les économies modernes.",
+      "difficulty": "medium"
     },
     {
       "question": "En finance d'entreprise, la VAN (Valeur Actuelle Nette) d'un projet est calculée comme :",
@@ -430,7 +476,8 @@
       "optionC": "La somme des flux de trésorerie futurs non actualisés",
       "optionD": "L'investissement initial divisé par le flux de trésorerie annuel moyen",
       "correctAnswer": "A",
-      "explanation": "La VAN est la différence entre la valeur actuelle des flux de trésorerie futurs générés par un projet et le montant de l'investissement initial nécessaire pour le lancer."
+      "explanation": "La VAN est la différence entre la valeur actuelle des flux de trésorerie futurs générés par un projet et le montant de l'investissement initial nécessaire pour le lancer.",
+      "difficulty": "medium"
     },
     {
       "question": "En comptabilité, le principe de prudence implique que :",
@@ -439,7 +486,8 @@
       "optionC": "Les pertes soient constatées dès qu'elles sont probables, tandis que les gains ne sont constatés qu'une fois réalisés",
       "optionD": "Les produits soient comptabilisés dès leur encaissement",
       "correctAnswer": "C",
-      "explanation": "Le principe de prudence conduit à une moins-value probable immédiate et à une plus-value certaine seulement à la réalisation, évitant de surestimer les résultats de l'entreprise."
+      "explanation": "Le principe de prudence conduit à une moins-value probable immédiate et à une plus-value certaine seulement à la réalisation, évitant de surestimer les résultats de l'entreprise.",
+      "difficulty": "medium"
     },
     {
       "question": "En stratégie marketing, la 'cible' désigne :",
@@ -448,7 +496,8 @@
       "optionC": "Le positionnement du produit sur le marché",
       "optionD": "Les concurrents directs de l'entreprise",
       "correctAnswer": "B",
-      "explanation": "La cible marketing est le segment spécifique de population identifié comme le plus susceptible d'acheter le produit ou le service et sur lequel l'entreprise concentre ses efforts marketing."
+      "explanation": "La cible marketing est le segment spécifique de population identifié comme le plus susceptible d'acheter le produit ou le service et sur lequel l'entreprise concentre ses efforts marketing.",
+      "difficulty": "medium"
     },
     {
       "question": "En microéconomie, le surplus du consommateur est défini comme :",
@@ -457,7 +506,8 @@
       "optionC": "La somme de tous les gains des producteurs sur le marché",
       "optionD": "Le revenu disponible du consommateur après l'achat du bien",
       "correctAnswer": "A",
-      "explanation": "Le surplus du consommateur représente la différence entre la valeur subjective qu'il attribue au bien (ce qu'il serait prêt à payer) et le prix qu'il paie effectivement, mesurant son bénéfice de l'échange."
+      "explanation": "Le surplus du consommateur représente la différence entre la valeur subjective qu'il attribue au bien (ce qu'il serait prêt à payer) et le prix qu'il paie effectivement, mesurant son bénéfice de l'échange.",
+      "difficulty": "medium"
     }
   ]
 }

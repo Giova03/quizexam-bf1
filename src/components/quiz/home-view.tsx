@@ -12,7 +12,10 @@ import { getColor } from "@/lib/types";
 import { SearchDialog } from "./search-dialog";
 import { RevisionDialog } from "./revision-dialog";
 import { DailyChallengeCard } from "./daily-challenge-card";
+<<<<<<< Updated upstream
 import { StudyReminders } from "./study-reminders";
+=======
+>>>>>>> Stashed changes
 import {
   GraduationCap,
   FileQuestion,
@@ -158,6 +161,7 @@ export function HomeView() {
         </Button>
       </section>
 
+<<<<<<< Updated upstream
       {/* Study reminders (daily streak, suggestions, etc.) */}
       <StudyReminders />
 
@@ -165,6 +169,12 @@ export function HomeView() {
       <div data-tour="daily-challenge">
         <DailyChallengeCard />
       </div>
+=======
+      {/* Daily challenge */}
+      <section>
+        <DailyChallengeCard />
+      </section>
+>>>>>>> Stashed changes
 
       {/* Banks section */}
       <section className="space-y-4" data-tour="banks-section">

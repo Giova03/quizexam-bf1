@@ -27,12 +27,16 @@ import {
   Info,
   AlertCircle,
   Bookmark,
+<<<<<<< Updated upstream
   Clock,
+=======
+>>>>>>> Stashed changes
   Timer,
 } from "lucide-react";
 import { useFavorites } from "@/lib/favorites-store";
 import { usePrefs, type SessionContext } from "@/lib/prefs-store";
 import { toast } from "sonner";
+import { ExamTimer } from "./exam-timer";
 
 const OPTION_LETTERS = ["A", "B", "C", "D"] as const;
 
@@ -81,6 +85,8 @@ export function SessionView() {
   const [submitting, setSubmitting] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Exam timer state (only used when sourceType === "exam")
+  const [durationMin, setDurationMin] = useState<number | null>(null);
   const favorites = useFavorites((s) => s.favorites);
   const toggleFavorite = useFavorites((s) => s.toggleFavorite);
   const recordSession = usePrefs((s) => s.recordSession);
@@ -110,6 +116,18 @@ export function SessionView() {
           (a: SessionAnswer) => a.userAnswer === null
         );
         setCurrentIdx(firstUnanswered >= 0 ? firstUnanswered : 0);
+        // If exam session, fetch exam details to get durationMin
+        if (data.sourceType === "exam" && data.sourceId) {
+          try {
+            const examRes = await fetch(`/api/exams/${data.sourceId}`);
+            if (examRes.ok) {
+              const exam = await examRes.json();
+              setDurationMin(exam.durationMin ?? null);
+            }
+          } catch (e) {
+            console.warn("Failed to load exam duration", e);
+          }
+        }
       } else {
         setError("Impossible de charger la session.");
       }
@@ -120,6 +138,20 @@ export function SessionView() {
       setLoading(false);
     }
   }, [currentSessionId]);
+
+  // Auto-submit when exam timer expires.
+  // We store the latest session in a ref so the ExamTimer effect can stay stable
+  // (its onExpire prop has a stable identity) while still acting on up-to-date data.
+  const autoSubmitRef = useRef<() => void>(() => {});
+  autoSubmitRef.current = () => {
+    if (!session) return;
+    toast.error("Temps écoulé ! Soumission automatique de l'examen.");
+    setConfirmOpen(false);
+    completeSession();
+  };
+  const handleTimeExpired = useCallback(() => {
+    autoSubmitRef.current();
+  }, []);
 
   useEffect(() => {
     loadSession();
@@ -307,6 +339,37 @@ export function SessionView() {
     }
   }
 
+<<<<<<< Updated upstream
+=======
+  async function completeSession() {
+    if (!session) return;
+    setSubmitting(true);
+    setError(null);
+    try {
+      const res = await fetch(`/api/sessions/${session.id}/complete`, {
+        method: "POST",
+      });
+      if (res.ok) {
+        const updated = await res.json();
+        setSession(updated);
+        setConfirmOpen(false);
+        viewResults(session.id);
+      } else {
+        setError("Échec de la finalisation.");
+      }
+    } catch (e) {
+      console.error("Failed to complete session", e);
+      setError("Erreur lors de la finalisation.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  // Show exam timer only for exam sessions with known duration
+  const isExam = session?.sourceType === "exam";
+  const showTimer = isExam && durationMin !== null && !session?.completedAt;
+
+>>>>>>> Stashed changes
   if (loading) {
     return (
       <div className="space-y-4">
@@ -365,6 +428,7 @@ export function SessionView() {
           </div>
         </div>
         <div className="flex items-center gap-2">
+<<<<<<< Updated upstream
           {/* Countdown timer — Mode Examen Chronométré Strict */}
           {timeRemaining !== null && (
             <Badge
@@ -386,6 +450,14 @@ export function SessionView() {
               )}
               {formatTime(timeRemaining)}
             </Badge>
+=======
+          {showTimer && (
+            <ExamTimer
+              startedAt={session.startedAt}
+              durationMin={durationMin as number}
+              onExpire={handleTimeExpired}
+            />
+>>>>>>> Stashed changes
           )}
           <Badge
             variant="outline"
@@ -417,6 +489,17 @@ export function SessionView() {
       <div className="space-y-1.5">
         <Progress value={progress} className="h-2" />
       </div>
+
+      {/* Exam time warning banner (mobile-friendly) */}
+      {showTimer && (
+        <div className="flex items-center gap-2 rounded-lg border border-violet-200 bg-violet-50 p-2 text-xs text-violet-700 dark:border-violet-800 dark:bg-violet-950/30 dark:text-violet-300">
+          <Timer className="h-3.5 w-3.5 shrink-0" />
+          <span className="font-medium">Mode examen chronométré</span>
+          <span className="text-muted-foreground">
+            — soumission automatique à la fin du temps.
+          </span>
+        </div>
+      )}
 
       {error && (
         <div className="flex items-center gap-2 rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive">

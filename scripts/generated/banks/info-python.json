@@ -16,7 +16,8 @@
       "optionC": "[1, 2]\n[1, 2]",
       "optionD": "Erreur à l'exécution",
       "correctAnswer": "C",
-      "explanation": "Les listes en Python sont mutables et sont créées une seule fois lors de la définition de la fonction, pas à chaque appel."
+      "explanation": "Les listes en Python sont mutables et sont créées une seule fois lors de la définition de la fonction, pas à chaque appel.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le décorateur @property dans une classe Python?",
@@ -25,7 +26,8 @@
       "optionC": "Crée un attribut privé qui ne peut être modifié qu'à l'intérieur de la classe",
       "optionD": "Permet de définir une méthode statique qui ne dépend pas de l'instance",
       "correctAnswer": "A",
-      "explanation": "Le décorateur @property permet d'accéder à une méthode comme si c'était un attribut, sans utiliser les parenthèses d'appel."
+      "explanation": "Le décorateur @property permet d'accéder à une méthode comme si c'était un attribut, sans utiliser les parenthèses d'appel.",
+      "difficulty": "medium"
     },
     {
       "question": "Que retourne l'expression suivante?\n\n(lambda x, y: x**y)(2, 3)",
@@ -34,7 +36,8 @@
       "optionC": "9",
       "optionD": "None",
       "correctAnswer": "B",
-      "explanation": "Une fonction lambda est une fonction anonyme. Ici, elle élève x à la puissance y, donc 2^3 = 8."
+      "explanation": "Une fonction lambda est une fonction anonyme. Ici, elle élève x à la puissance y, donc 2^3 = 8.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le code suivant?\n\nwith open('file.txt', 'r+') as f:\n    content = f.read()\n    f.seek(0)\n    f.write('New content')\n    f.truncate()",
@@ -43,7 +46,8 @@
       "optionC": "Ouvre le fichier en lecture seule, ce qui provoquera une erreur",
       "optionD": "Crée une copie du fichier avec 'New content' ajouté au début",
       "correctAnswer": "A",
-      "explanation": "Le mode 'r+' permet lecture et écriture. seek(0) ramène le curseur au début, write écrit le nouveau contenu, et truncate supprime tout ce qui suit le curseur."
+      "explanation": "Le mode 'r+' permet lecture et écriture. seek(0) ramène le curseur au début, write écrit le nouveau contenu, et truncate supprime tout ce qui suit le curseur.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence entre `__str__` et `__repr__` dans une classe Python?",
@@ -52,7 +56,8 @@
       "optionC": "__str__ est appelé implicitement lors de l'impression, __repr__ doit être appelé manuellement",
       "optionD": "Il n'y a pas de différence, ce sont des alias",
       "correctAnswer": "B",
-      "explanation": "__str__ est destiné à une représentation conviviale pour l'utilisateur final, tandis que __repr__ vise une représentation plus technique, idéalement réutilisable pour recréer l'objet."
+      "explanation": "__str__ est destiné à une représentation conviviale pour l'utilisateur final, tandis que __repr__ vise une représentation plus technique, idéalement réutilisable pour recréer l'objet.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait l'opérateur `//` en Python?",
@@ -61,7 +66,8 @@
       "optionC": "Division avec arrondi à l'entier le plus proche",
       "optionD": "Division avec reste",
       "correctAnswer": "A",
-      "explanation": "L'opérateur `//` effectue une division entière (floor division), qui retourne le quotient arrondi à l'entier inférieur."
+      "explanation": "L'opérateur `//` effectue une division entière (floor division), qui retourne le quotient arrondi à l'entier inférieur.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le code suivant?\n\nd = {'a': 1, 'b': 2, 'c': 3}\n{k: v for k, v in d.items() if v % 2 == 0}",
@@ -70,7 +76,8 @@
       "optionC": "{'a': 1, 'b': 2, 'c': 3}",
       "optionD": "Erreur de syntaxe",
       "correctAnswer": "B",
-      "explanation": "C'est une compréhension de dictionnaire qui ne conserve que les paires clé-valeur où la valeur est paire (divisible par 2)."
+      "explanation": "C'est une compréhension de dictionnaire qui ne conserve que les paires clé-valeur où la valeur est paire (divisible par 2).",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le décorateur @classmethod?",
@@ -79,7 +86,8 @@
       "optionC": "Définit une méthode qui peut être héritée mais pas surchargée",
       "optionD": "Définit une méthode qui ne peut pas accéder aux attributs d'instance",
       "correctAnswer": "B",
-      "explanation": "Un @classmethod reçoit la classe (cls) comme premier argument au lieu de l'instance (self), permettant de travailler avec la classe plutôt qu'une instance."
+      "explanation": "Un @classmethod reçoit la classe (cls) comme premier argument au lieu de l'instance (self), permettant de travailler avec la classe plutôt qu'une instance.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait l'expression suivante?\n\n[x for x in range(5) if x % 2 == 0]",
@@ -88,7 +96,8 @@
       "optionC": "[1, 3]",
       "optionD": "[0, 1, 2, 3, 4, 0, 2, 4]",
       "correctAnswer": "B",
-      "explanation": "C'est une compréhension de liste qui génère les nombres de 0 à 4, mais seulement ceux qui sont pairs (divisibles par 2)."
+      "explanation": "C'est une compréhension de liste qui génère les nombres de 0 à 4, mais seulement ceux qui sont pairs (divisibles par 2).",
+      "difficulty": "medium"
     },
     {
       "question": "Que se passe-t-il si vous essayez de modifier un tuple en Python?",
@@ -97,7 +106,8 @@
       "optionC": "Le tuple est remplacé par une nouvelle version modifiée",
       "optionD": "Le tuple est converti automatiquement en liste",
       "correctAnswer": "A",
-      "explanation": "Les tuples sont immuables en Python, donc toute tentative de modification directe lèvera une TypeError."
+      "explanation": "Les tuples sont immuables en Python, donc toute tentative de modification directe lèvera une TypeError.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le mot-clé `yield` dans une fonction?",
@@ -106,7 +116,8 @@
       "optionC": "Définit un générateur qui produit une seule valeur",
       "optionD": "Échange des valeurs entre deux variables",
       "correctAnswer": "B",
-      "explanation": "Le mot-clé `yield` transforme une fonction en générateur, retournant une valeur et mettant la fonction en pause, jusqu'à ce que next() soit appelé à nouveau."
+      "explanation": "Le mot-clé `yield` transforme une fonction en générateur, retournant une valeur et mettant la fonction en pause, jusqu'à ce que next() soit appelé à nouveau.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le code suivant?\n\nimport math\nmath.sqrt(math.pow(2, 3))",
@@ -115,7 +126,8 @@
       "optionC": "Calcule la racine carrée de 2, puis élève le résultat à la puissance 3",
       "optionD": "Lève une erreur car pow() est une fonction intégrée, pas une méthode de math",
       "correctAnswer": "B",
-      "explanation": "math.sqrt() calcule la racine carrée, et math.pow() élève un nombre à une puissance. Ici, on élève d'abord 2 à la puissance 3, puis on calcule la racine carrée du résultat."
+      "explanation": "math.sqrt() calcule la racine carrée, et math.pow() élève un nombre à une puissance. Ici, on élève d'abord 2 à la puissance 3, puis on calcule la racine carrée du résultat.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le code suivant?\n\nclass A:\n    def __init__(self):\n        self.x = 10\n\nclass B(A):\n    def __init__(self):\n        super().__init__()\n        self.x = 20\n\nb = B()\nprint(b.x)",
@@ -124,7 +136,8 @@
       "optionC": "None",
       "optionD": "Erreur à l'exécution",
       "correctAnswer": "B",
-      "explanation": "La classe B hérite de A, mais surcharge __init__. Après avoir appelé le constructeur de la classe parente avec super(), elle redéfinit x à 20."
+      "explanation": "La classe B hérite de A, mais surcharge __init__. Après avoir appelé le constructeur de la classe parente avec super(), elle redéfinit x à 20.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le code suivant?\n\na = [1, 2, 3]\nb = a\nc = a.copy()\na.append(4)\nprint(b, c)",
@@ -133,7 +146,8 @@
       "optionC": "[1, 2, 3] [1, 2, 3]",
       "optionD": "[1, 2, 3] [1, 2, 3, 4]",
       "correctAnswer": "B",
-      "explanation": "b est une référence à la même liste que a, donc il est modifié quand a est modifié. c est une copie superficielle, donc il reste inchangé."
+      "explanation": "b est une référence à la même liste que a, donc il est modifié quand a est modifié. c est une copie superficielle, donc il reste inchangé.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le décorateur @staticmethod?",
@@ -142,7 +156,8 @@
       "optionC": "Définit une méthode qui ne peut pas accéder aux attributs d'instance ou de classe",
       "optionD": "Définit une méthode qui est partagée entre toutes les instances de la classe",
       "correctAnswer": "A",
-      "explanation": "Un @staticmethod est une méthode liée à la classe mais qui ne reçoit ni l'instance (self) ni la classe (cls) comme premier argument, et peut être appelée sans instancier la classe."
+      "explanation": "Un @staticmethod est une méthode liée à la classe mais qui ne reçoit ni l'instance (self) ni la classe (cls) comme premier argument, et peut être appelée sans instancier la classe.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le code suivant?\n\ntry:\n    x = 1 / 0\nexcept ZeroDivisionError:\n    print('Division par zéro')\nfinally:\n    print('Bloc finally')",
@@ -151,7 +166,8 @@
       "optionC": "Bloc finally",
       "optionD": "Aucune sortie",
       "correctAnswer": "A",
-      "explanation": "Le bloc except est exécuté en cas d'erreur, et le bloc finally est toujours exécuté, qu'une erreur se produise ou non."
+      "explanation": "Le bloc except est exécuté en cas d'erreur, et le bloc finally est toujours exécuté, qu'une erreur se produise ou non.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le code suivant?\n\na = [1, 2, 3]\nprint(a[::-1])",
@@ -160,7 +176,8 @@
       "optionC": "[1, 3, 2]",
       "optionD": "Erreur à l'exécution",
       "correctAnswer": "B",
-      "explanation": "La notation [::-1] est un slicing qui inverse la liste en créant une nouvelle liste avec les éléments dans l'ordre inverse."
+      "explanation": "La notation [::-1] est un slicing qui inverse la liste en créant une nouvelle liste avec les éléments dans l'ordre inverse.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le décorateur @abstractmethod?",
@@ -169,7 +186,8 @@
       "optionC": "Force une classe à être abstraite et ne peut pas être instanciée",
       "optionD": "Définit une méthode qui ne peut pas être surchargée par les classes enfants",
       "correctAnswer": "A",
-      "explanation": "@abstractmethod du module abc marque une méthode comme abstraite, ce qui signifie que toute classe héritant de la classe abstraite doit implémenter cette méthode."
+      "explanation": "@abstractmethod du module abc marque une méthode comme abstraite, ce qui signifie que toute classe héritant de la classe abstraite doit implémenter cette méthode.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le code suivant?\n\ndef func(*args, **kwargs):\n    print(args)\n    print(kwargs)\n\nfunc(1, 2, a=3, b=4)",
@@ -178,7 +196,8 @@
       "optionC": "[1, 2]\n{'a': 3, 'b': 4}",
       "optionD": "[1, 2, 'a': 3, 'b': 4]",
       "correctAnswer": "A",
-      "explanation": "*args capture les arguments positionnels dans un tuple, et **kwargs capture les arguments nommés dans un dictionnaire."
+      "explanation": "*args capture les arguments positionnels dans un tuple, et **kwargs capture les arguments nommés dans un dictionnaire.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le code suivant?\n\nwith open('file.txt', 'w') as f:\n    f.write('Hello')\n\nwith open('file.txt', 'a') as f:\n    f.write(' World')\n\nwith open('file.txt', 'r') as f:\n    print(f.read())",
@@ -187,7 +206,8 @@
       "optionC": "World",
       "optionD": "Erreur à l'exécution",
       "correctAnswer": "A",
-      "explanation": "Le premier bloc écrit 'Hello' dans le fichier (mode 'w' écrase le contenu existant). Le second bloc ajoute ' World' à la fin du fichier (mode 'a' pour append). Le dernier bloc lit et affiche le contenu complet."
+      "explanation": "Le premier bloc écrit 'Hello' dans le fichier (mode 'w' écrase le contenu existant). Le second bloc ajoute ' World' à la fin du fichier (mode 'a' pour append). Le dernier bloc lit et affiche le contenu complet.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant?\n\ndef f(x, y=[]):\n    y.append(x)\n    return y\n\nprint(f(1))\nprint(f(2))",
@@ -196,7 +216,8 @@
       "optionC": "[1] puis [1]",
       "optionD": "[1] puis [2, 1]",
       "correctAnswer": "B",
-      "explanation": "L'argument par défaut y=[] est créé une seule fois lors de la définition de la fonction, pas à chaque appel. Les appels successifs modifient donc la même liste."
+      "explanation": "L'argument par défaut y=[] est créé une seule fois lors de la définition de la fonction, pas à chaque appel. Les appels successifs modifient donc la même liste.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le code suivant?\n\na = [1, 2, 3]\nb = a\nc = a.copy()\na.append(4)\nprint(b is c)",
@@ -205,7 +226,8 @@
       "optionC": "Affiche True car b et c ont les mêmes éléments",
       "optionD": "Affiche None car b et c ne sont pas comparables avec is",
       "correctAnswer": "B",
-      "explanation": "b est une référence directe à a (même objet), tandis que c est une copie superficielle. L'opérateur 'is' vérifie l'identité des objets, pas l'égalité de leur contenu."
+      "explanation": "b est une référence directe à a (même objet), tandis que c est une copie superficielle. L'opérateur 'is' vérifie l'identité des objets, pas l'égalité de leur contenu.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le résultat de l'expression suivante?\n\n{x: x**2 for x in range(5) if x % 2 == 0}",
@@ -214,7 +236,8 @@
       "optionC": "{0, 2, 4}",
       "optionD": "Erreur de syntaxe",
       "correctAnswer": "B",
-      "explanation": "C'est une compréhension de dictionnaire qui crée des paires clé-valeur où les clés sont les nombres pairs de 0 à 4, et les valeurs sont leurs carrés."
+      "explanation": "C'est une compréhension de dictionnaire qui crée des paires clé-valeur où les clés sont les nombres pairs de 0 à 4, et les valeurs sont leurs carrés.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant?\n\nclass A:\n    def __init__(self):\n        self.x = 1\n    def f(self):\n        return self.x\n\nclass B(A):\n    def __init__(self):\n        super().__init__()\n        self.x = 2\n    def f(self):\n        return self.x + 1\n\nb = B()\nprint(b.f())",
@@ -223,7 +246,8 @@
       "optionC": "3",
       "optionD": "4",
       "correctAnswer": "C",
-      "explanation": "La classe B hérite de A et redéfinit la méthode f(). L'objet b a une valeur x=2, donc b.f() retourne 2 + 1 = 3."
+      "explanation": "La classe B hérite de A et redéfinit la méthode f(). L'objet b a une valeur x=2, donc b.f() retourne 2 + 1 = 3.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le code suivant?\n\ndef f(a, b, *args, **kwargs):\n    print(len(args), len(kwargs))\n\nf(1, 2, 3, 4, x=5, y=6)",
@@ -232,7 +256,8 @@
       "optionC": "Affiche 2 2 car args contient (1,2) et kwargs contient {'x':5, 'y':6}",
       "optionD": "Erreur car on ne peut pas mélanger args et kwargs",
       "correctAnswer": "A",
-      "explanation": "args capture les arguments positionnels supplémentaires (ici 3 et 4), et kwargs capture les arguments nommés supplémentaires (ici x et y)."
+      "explanation": "args capture les arguments positionnels supplémentaires (ici 3 et 4), et kwargs capture les arguments nommés supplémentaires (ici x et y).",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant?\n\na = [1, 2, 3]\nb = a\na += [4, 5]\nprint(a is b)",
@@ -241,7 +266,8 @@
       "optionC": "None",
       "optionD": "Erreur",
       "correctAnswer": "A",
-      "explanation": "L'opérateur += pour les listes modifie l'objet existant plutôt qu'en créer un nouveau. Donc a et b référencent toujours le même objet après l'opération."
+      "explanation": "L'opérateur += pour les listes modifie l'objet existant plutôt qu'en créer un nouveau. Donc a et b référencent toujours le même objet après l'opération.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le résultat de l'expression suivante?\n\nlambda x, y=2: x**y + y**x",
@@ -250,7 +276,8 @@
       "optionC": "Une erreur car lambda ne peut pas avoir des valeurs par défaut",
       "optionD": "Une fonction qui retourne x^y + x^y",
       "correctAnswer": "A",
-      "explanation": "C'est une fonction lambda qui prend deux paramètres x et y (avec y ayant une valeur par défaut de 2) et retourne x^y + y^x."
+      "explanation": "C'est une fonction lambda qui prend deux paramètres x et y (avec y ayant une valeur par défaut de 2) et retourne x^y + y^x.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant?\n\nwith open('test.txt', 'w') as f:\n    f.write('Hello')\n\nwith open('test.txt', 'r') as f:\n    print(f.read())",
@@ -259,7 +286,8 @@
       "optionC": "Erreur car le fichier est en mode lecture",
       "optionD": "Une chaîne vide",
       "correctAnswer": "A",
-      "explanation": "Le premier bloc écrit 'Hello' dans le fichier. Le second bloc lit le contenu du fichier qui est maintenant 'Hello'."
+      "explanation": "Le premier bloc écrit 'Hello' dans le fichier. Le second bloc lit le contenu du fichier qui est maintenant 'Hello'.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le résultat de l'expression suivante?\n\n{1, 2, 3} | {2, 3, 4}",
@@ -268,7 +296,8 @@
       "optionC": "{1, 4}",
       "optionD": "Erreur car on ne peut pas utiliser | sur des sets",
       "correctAnswer": "A",
-      "explanation": "L'opérateur | effectue l'union de deux ensembles, retournant un nouvel ensemble contenant tous les éléments uniques des deux ensembles."
+      "explanation": "L'opérateur | effectue l'union de deux ensembles, retournant un nouvel ensemble contenant tous les éléments uniques des deux ensembles.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant?\n\ndef f():\n    return lambda x: x * 2\n\ng = f()\nprint(g(3))",
@@ -277,7 +306,8 @@
       "optionC": "g(3)",
       "optionD": "Une erreur",
       "correctAnswer": "B",
-      "explanation": "La fonction f retourne une fonction lambda qui multiplie son argument par 2. g est cette fonction lambda, donc g(3) retourne 3 * 2 = 6."
+      "explanation": "La fonction f retourne une fonction lambda qui multiplie son argument par 2. g est cette fonction lambda, donc g(3) retourne 3 * 2 = 6.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant?\n\nclass A:\n    @staticmethod\n    def f():\n        return 'A'\n\nclass B(A):\n    @classmethod\n    def f(cls):\n        return 'B'\n\nprint(B.f())",
@@ -286,7 +316,8 @@
       "optionC": "Erreur",
       "optionD": "None",
       "correctAnswer": "B",
-      "explanation": "La méthode f() dans la classe B est un décorateur de classe méthode (classmethod) qui retourne la chaîne 'B'. Quand on appelle B.f(), on utilise cette méthode redéfinie dans B."
+      "explanation": "La méthode f() dans la classe B est un décorateur de classe méthode (classmethod) qui retourne la chaîne 'B'. Quand on appelle B.f(), on utilise cette méthode redéfinie dans B.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le code suivant?\n\nimport math as m\nprint(m.sqrt(m.pi))",
@@ -295,7 +326,8 @@
       "optionC": "Affiche une erreur car sqrt n'est pas dans math",
       "optionD": "Affiche une erreur car pi n'est pas dans math",
       "correctAnswer": "A",
-      "explanation": "Le code importe le module math sous l'alias m, puis calcule et affiche la racine carrée de pi (math.pi)."
+      "explanation": "Le code importe le module math sous l'alias m, puis calcule et affiche la racine carrée de pi (math.pi).",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant?\n\na = [1, 2, 3]\nb = [x for x in a if x % 2 == 0]\na.append(4)\nprint(b)",
@@ -304,7 +336,8 @@
       "optionC": "[2, 4]",
       "optionD": "Erreur",
       "correctAnswer": "B",
-      "explanation": "La liste comprehension crée une nouvelle liste b avec les éléments pairs de a. Quand on modifie a en ajoutant 4, b reste inchangé car c'est une nouvelle liste."
+      "explanation": "La liste comprehension crée une nouvelle liste b avec les éléments pairs de a. Quand on modifie a en ajoutant 4, b reste inchangé car c'est une nouvelle liste.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant?\n\ndef f(a, b, *, c, d=10):\n    return a + b + c + d\n\nprint(f(1, 2, c=3, d=4))",
@@ -313,7 +346,8 @@
       "optionC": "Erreur car on ne peut pas passer des arguments positionnels après des arguments nommés",
       "optionD": "Erreur car la fonction a trop d'arguments",
       "correctAnswer": "A",
-      "explanation": "L'astérisque dans la définition de la fonction indique que tous les arguments suivants doivent être passés par nom. Ici, on passe c et d par nom, et la fonction retourne 1+2+3+4=10."
+      "explanation": "L'astérisque dans la définition de la fonction indique que tous les arguments suivants doivent être passés par nom. Ici, on passe c et d par nom, et la fonction retourne 1+2+3+4=10.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\ndef f(x, y=[]):\n    y.append(x)\n    return y\n\nprint(f(1))\nprint(f(2))\n```",
@@ -322,7 +356,8 @@
       "optionC": "[1, 2] puis [1, 2]",
       "optionD": "[1] puis [1]",
       "correctAnswer": "A",
-      "explanation": "L'argument par défaut y=[] est évalué une seule fois à la définition de la fonction, pas à chaque appel. Les appels successifs modifient donc le même objet list."
+      "explanation": "L'argument par défaut y=[] est évalué une seule fois à la définition de la fonction, pas à chaque appel. Les appels successifs modifient donc le même objet list.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le décorateur @property dans Python ?",
@@ -331,7 +366,8 @@
       "optionC": "Permet de définir des attributs privés d'une classe",
       "optionD": "Crée une méthode statique qui ne peut pas modifier l'état de l'instance",
       "correctAnswer": "A",
-      "explanation": "@property transforme une méthode en un attribut accessible sans utiliser les parenthèses, permettant un accès contrôlé aux attributs d'une instance."
+      "explanation": "@property transforme une méthode en un attribut accessible sans utiliser les parenthèses, permettant un accès contrôlé aux attributs d'une instance.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\nd = {'a': 1, 'b': 2, 'c': 3}\nfor k in d:\n    print(k, end=' ')\n```",
@@ -340,7 +376,8 @@
       "optionC": "c b a",
       "optionD": "Une erreur est levée",
       "correctAnswer": "B",
-      "explanation": "Lorsqu'on parcourt un dictionnaire avec 'for k in d', on parcourt les clés du dictionnaire, pas les valeurs. L'ordre d'affichage dépend de l'implémentation de Python."
+      "explanation": "Lorsqu'on parcourt un dictionnaire avec 'for k in d', on parcourt les clés du dictionnaire, pas les valeurs. L'ordre d'affichage dépend de l'implémentation de Python.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\ndef f(x):\n    return x * 2\n\ng = lambda x: x * 3\n\nprint(f(2), g(2))\n```",
@@ -349,7 +386,8 @@
       "optionC": "4 4",
       "optionD": "6 6",
       "correctAnswer": "A",
-      "explanation": "La fonction f retourne x*2 donc f(2)=4. La lambda g retourne x*3 donc g(2)=6."
+      "explanation": "La fonction f retourne x*2 donc f(2)=4. La lambda g retourne x*3 donc g(2)=6.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence principale entre les listes et les tuples en Python ?",
@@ -358,7 +396,8 @@
       "optionC": "Les listes peuvent contenir des éléments de différents types, les tuples non",
       "optionD": "Les tuples sont plus rapides en termes de mémoire",
       "correctAnswer": "B",
-      "explanation": "La différence fondamentale est que les listes sont mutables (peuvent être modifiées après création) tandis que les tuples sont immutables (ne peuvent pas être modifiés après création)."
+      "explanation": "La différence fondamentale est que les listes sont mutables (peuvent être modifiées après création) tandis que les tuples sont immutables (ne peuvent pas être modifiés après création).",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\nclass A:\n    def __init__(self):\n        self.x = 1\n    def m(self):\n        return self.x\n\nclass B(A):\n    def __init__(self):\n        super().__init__()\n        self.y = 2\n    def m(self):\n        return self.y\n\nb = B()\nprint(b.m())\n```",
@@ -367,7 +406,8 @@
       "optionC": "Une erreur est levée",
       "optionD": "[1, 2]",
       "correctAnswer": "B",
-      "explanation": "La classe B surcharge la méthode m() de la classe A. Lorsqu'on appelle b.m(), c'est la méthode de B qui est exécutée, qui retourne self.y=2."
+      "explanation": "La classe B surcharge la méthode m() de la classe A. Lorsqu'on appelle b.m(), c'est la méthode de B qui est exécutée, qui retourne self.y=2.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\ndef f(a, b=2, c=3):\n    return a + b + c\n\nprint(f(1, c=4))\n```",
@@ -376,7 +416,8 @@
       "optionC": "5",
       "optionD": "Une erreur est levée",
       "correctAnswer": "A",
-      "explanation": "f(1, c=4) passe a=1, utilise la valeur par défaut b=2, et c=4. Le résultat est 1+2+4=7."
+      "explanation": "f(1, c=4) passe a=1, utilise la valeur par défaut b=2, et c=4. Le résultat est 1+2+4=7.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\ndef f(x):\n    if x > 0:\n        return x\n    else:\n        return -x\n\nprint(f(-5), f(5))\n```",
@@ -385,7 +426,8 @@
       "optionC": "5 5",
       "optionD": "-5 -5",
       "correctAnswer": "C",
-      "explanation": "La fonction f retourne la valeur absolue de x. f(-5) retourne 5 et f(5) retourne 5."
+      "explanation": "La fonction f retourne la valeur absolue de x. f(-5) retourne 5 et f(5) retourne 5.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\na = [1, 2, 3]\nb = a\nc = a.copy()\na.append(4)\nprint(b, c)\n```",
@@ -394,7 +436,8 @@
       "optionC": "[1, 2, 3, 4] [1, 2, 3]",
       "optionD": "[1, 2, 3] [1, 2, 3, 4]",
       "correctAnswer": "C",
-      "explanation": "b est une référence à la même liste que a, donc b change quand a change. c est une copie superficielle de a, donc c reste inchangé."
+      "explanation": "b est une référence à la même liste que a, donc b change quand a change. c est une copie superficielle de a, donc c reste inchangé.",
+      "difficulty": "medium"
     },
     {
       "question": "Que fait le mot-clé 'yield' dans une fonction Python ?",
@@ -403,7 +446,8 @@
       "optionC": "Attend une valeur d'entrée de l'utilisateur",
       "optionD": "Met la fonction en pause et reprend plus tard",
       "correctAnswer": "B",
-      "explanation": "'yield' transforme une fonction en générateur, qui peut être mis en pause et repris tout en conservant son état."
+      "explanation": "'yield' transforme une fonction en générateur, qui peut être mis en pause et repris tout en conservant son état.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\ndef deco(f):\n    def wrapper():\n        print('Avant')\n        f()\n        print('Après')\n    return wrapper\n\n@deco\ndef f():\n    print('Fonction')\n\nf()\n```",
@@ -412,7 +456,8 @@
       "optionC": "Après Avant Fonction",
       "optionD": "Une erreur est levée",
       "correctAnswer": "A",
-      "explanation": "Le décorateur @deco applique la fonction deco à f. Quand f() est appelé, c'est en réalité wrapper() qui est exécuté, affichant 'Avant', puis f(), puis 'Après'."
+      "explanation": "Le décorateur @deco applique la fonction deco à f. Quand f() est appelé, c'est en réalité wrapper() qui est exécuté, affichant 'Avant', puis f(), puis 'Après'.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\nd = {'a': 1, 'b': 2}\nprint(d.get('c', 3))\n```",
@@ -421,7 +466,12 @@
       "optionC": "Une erreur est levée",
       "optionD": "c",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La méthode get() retourne la valeur pour la clé si elle existe, sinon retourne la valeur par défaut fournie (ici 3)."
+=======
+      "explanation": "La méthode get() retourne la valeur pour la clé si elle existe, sinon retourne la valeur par défaut fournie (ici 3).",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\na = [1, 2, 3]\nb = [x * 2 for x in a if x % 2 == 0]\nprint(b)\n```",
@@ -430,7 +480,8 @@
       "optionC": "[1, 3]",
       "optionD": "[4]",
       "correctAnswer": "B",
-      "explanation": "La liste comprehension crée une nouvelle liste en multipliant par 2 chaque élément de a qui est pair (2 et 4)."
+      "explanation": "La liste comprehension crée une nouvelle liste en multipliant par 2 chaque élément de a qui est pair (2 et 4).",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\ndef f(*args, **kwargs):\n    print(len(args), len(kwargs))\n\nf(1, 2, a=3, b=4)\n```",
@@ -439,7 +490,8 @@
       "optionC": "0 4",
       "optionD": "2 4",
       "correctAnswer": "A",
-      "explanation": "*args collecte les arguments positionnels dans un tuple (ici 2 éléments: 1, 2). **kwargs collecte les arguments nommés dans un dictionnaire (ici 2 éléments: 'a':3, 'b':4)."
+      "explanation": "*args collecte les arguments positionnels dans un tuple (ici 2 éléments: 1, 2). **kwargs collecte les arguments nommés dans un dictionnaire (ici 2 éléments: 'a':3, 'b':4).",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\nimport math\nprint(math.sqrt(16))\n```",
@@ -448,7 +500,8 @@
       "optionC": "8",
       "optionD": "Une erreur est levée",
       "correctAnswer": "A",
-      "explanation": "math.sqrt(16) calcule la racine carrée de 16, qui est 4."
+      "explanation": "math.sqrt(16) calcule la racine carrée de 16, qui est 4.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\ndef f(x):\n    try:\n        return 1 / x\n    except ZeroDivisionError:\n        return 'Erreur'\n    except:\n        return 'Autre erreur'\n\nprint(f(0), f('a'))\n```",
@@ -457,7 +510,8 @@
       "optionC": "Autre erreur Erreur",
       "optionD": "Autre erreur Autre erreur",
       "correctAnswer": "A",
-      "explanation": "f(0) lève une ZeroDivisionError, donc le premier except est exécuté. f('a') lève une TypeError (pas une ZeroDivisionError), donc le deuxième except est exécuté."
+      "explanation": "f(0) lève une ZeroDivisionError, donc le premier except est exécuté. f('a') lève une TypeError (pas une ZeroDivisionError), donc le deuxième except est exécuté.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\n```python\nclass A:\n    @classmethod\n    def m(cls):\n        return 'A'\n    \n    @staticmethod\n    def s():\n        return 'S'\n\nprint(A.m(), A.s())\n```",
@@ -466,7 +520,8 @@
       "optionC": "Une erreur est levée",
       "optionD": "<bound method A.m of <class '__main__.A'>> <bound method A.s of <class '__main__.A'>>",
       "correctAnswer": "A",
-      "explanation": "Les méthodes de classe et statiques peuvent être appelées directement sur la classe. La méthode de classe reçoit la classe comme premier argument, la méthode statique ne reçoit aucun argument spécial."
+      "explanation": "Les méthodes de classe et statiques peuvent être appelées directement sur la classe. La méthode de classe reçoit la classe comme premier argument, la méthode statique ne reçoit aucun argument spécial.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\ndef f(x):\n    return x * 2\n\nprint(f(3) + f(4))",
@@ -475,7 +530,8 @@
       "optionC": "7",
       "optionD": "24",
       "correctAnswer": "A",
-      "explanation": "La fonction f retourne le double de son argument. f(3) = 6 et f(4) = 8. La somme est 14."
+      "explanation": "La fonction f retourne le double de son argument. f(3) = 6 et f(4) = 8. La somme est 14.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\na = [1, 2, 3]\nb = a\nc = a.copy()\na.append(4)\nprint(b[3])",
@@ -484,7 +540,8 @@
       "optionC": "None",
       "optionD": "3",
       "correctAnswer": "A",
-      "explanation": "b est une référence à la même liste que a, donc quand on ajoute 4 à a, b est aussi affecté. c est une copie indépendante."
+      "explanation": "b est une référence à la même liste que a, donc quand on ajoute 4 à a, b est aussi affecté. c est une copie indépendante.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\ndef deco(f):\n    def wrapper():\n        return \"<\" + f() + \">\"\n    return wrapper\n\n@deco\ndef hello():\n    return \"hello\"\n\nprint(hello())",
@@ -493,7 +550,8 @@
       "optionC": "<<hello>>",
       "optionD": "Erreur",
       "correctAnswer": "A",
-      "explanation": "Le décorateur deco ajoute des < > autour du retour de la fonction hello."
+      "explanation": "Le décorateur deco ajoute des < > autour du retour de la fonction hello.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\nx = 10\ndef f():\n    x = 5\n    print(x)\nf()\nprint(x)",
@@ -502,7 +560,8 @@
       "optionC": "10\n10",
       "optionD": "10\n5",
       "correctAnswer": "A",
-      "explanation": "Dans la fonction f, x est une variable locale qui masque la variable globale. Après l'appel de f, la valeur globale de x reste inchangée."
+      "explanation": "Dans la fonction f, x est une variable locale qui masque la variable globale. Après l'appel de f, la valeur globale de x reste inchangée.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\na = [1, 2, 3]\nb = a[:] + [4]\na[0] = 5\nprint(b[0])",
@@ -511,7 +570,8 @@
       "optionC": "4",
       "optionD": "Erreur",
       "correctAnswer": "A",
-      "explanation": "b est une copie de a avec [4] ajouté. La modification de a[0] n'affecte pas b."
+      "explanation": "b est une copie de a avec [4] ajouté. La modification de a[0] n'affecte pas b.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\nd = {'a': 1, 'b': 2, 'c': 3}\nprint(d.get('d', 4))",
@@ -520,7 +580,8 @@
       "optionC": "Erreur",
       "optionD": "'d'",
       "correctAnswer": "A",
-      "explanation": "La méthode get retourne la valeur pour la clé si elle existe, sinon retourne la valeur par défaut (ici 4)."
+      "explanation": "La méthode get retourne la valeur pour la clé si elle existe, sinon retourne la valeur par défaut (ici 4).",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\nclass A:\n    def __init__(self, x):\n        self.x = x\n    \n    def __add__(self, other):\n        return A(self.x + other.x)\n\na = A(1)\nb = A(2)\nc = a + b\nprint(c.x)",
@@ -529,7 +590,8 @@
       "optionC": "2",
       "optionD": "Erreur",
       "correctAnswer": "A",
-      "explanation": "La méthode __add__ surchargée retourne un nouvel objet A avec la somme des attributs x."
+      "explanation": "La méthode __add__ surchargée retourne un nouvel objet A avec la somme des attributs x.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\ns = \"Python\"\nprint(s[1:4])",
@@ -538,7 +600,8 @@
       "optionC": "Pyt",
       "optionD": "Python",
       "correctAnswer": "A",
-      "explanation": "La tranche s[1:4] sélectionne les caractères d'index 1 à 3 (4 exclus)."
+      "explanation": "La tranche s[1:4] sélectionne les caractères d'index 1 à 3 (4 exclus).",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\nl = [1, 2, 3, 4]\nprint(list(map(lambda x: x*2, l)))",
@@ -547,7 +610,8 @@
       "optionC": "[2, 4, 6]",
       "optionD": "[1, 4, 9, 16]",
       "correctAnswer": "A",
-      "explanation": "map applique la lambda fonction à chaque élément de la liste, multipliant chaque élément par 2."
+      "explanation": "map applique la lambda fonction à chaque élément de la liste, multipliant chaque élément par 2.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\ndef f(x, y=2, z=3):\n    return x + y + z\n\nprint(f(1, z=4))",
@@ -556,7 +620,8 @@
       "optionC": "5",
       "optionD": "Erreur",
       "correctAnswer": "A",
-      "explanation": "f(1, z=4) utilise x=1, y garde sa valeur par défaut 2, et z=4. La somme est 1+2+4=7."
+      "explanation": "f(1, z=4) utilise x=1, y garde sa valeur par défaut 2, et z=4. La somme est 1+2+4=7.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\na = [1, 2, 3]\nprint(a.pop(1))",
@@ -565,7 +630,8 @@
       "optionC": "3",
       "optionD": "[1, 3]",
       "correctAnswer": "A",
-      "explanation": "pop(1) retourne l'élément à l'index 1 (2) et le supprime de la liste."
+      "explanation": "pop(1) retourne l'élément à l'index 1 (2) et le supprime de la liste.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\nclass A:\n    @classmethod\n    def f(cls):\n        return 'A'\n\nclass B(A):\n    @classmethod\n    def f(cls):\n        return 'B'\n\nprint(B.f())",
@@ -574,7 +640,8 @@
       "optionC": "Erreur",
       "optionD": "None",
       "correctAnswer": "A",
-      "explanation": "La méthode de classe f est surchargée dans B, donc B.f() retourne 'B'."
+      "explanation": "La méthode de classe f est surchargée dans B, donc B.f() retourne 'B'.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\ns = {1, 2, 2, 3}\nprint(len(s))",
@@ -583,7 +650,8 @@
       "optionC": "2",
       "optionD": "Erreur",
       "correctAnswer": "A",
-      "explanation": "Les ensembles ne contiennent que des éléments uniques. Les doublons sont automatiquement supprimés."
+      "explanation": "Les ensembles ne contiennent que des éléments uniques. Les doublons sont automatiquement supprimés.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\ndef f(x):\n    if x > 0:\n        return x\n    else:\n        return -x\n\nprint(f(-5))",
@@ -592,7 +660,8 @@
       "optionC": "0",
       "optionD": "Erreur",
       "correctAnswer": "A",
-      "explanation": "La fonction retourne la valeur absolue de x. Pour x=-5, elle retourne 5."
+      "explanation": "La fonction retourne la valeur absolue de x. Pour x=-5, elle retourne 5.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\nimport math\nprint(math.factorial(5))",
@@ -601,7 +670,8 @@
       "optionC": "25",
       "optionD": "10",
       "correctAnswer": "A",
-      "explanation": "factorial(5) calcule 5! = 5×4×3×2×1 = 120."
+      "explanation": "factorial(5) calcule 5! = 5×4×3×2×1 = 120.",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\na = [1, 2, 3]\nfor i in range(len(a)):\n    a[i] = a[i] * 2\nprint(a)",
@@ -610,7 +680,8 @@
       "optionC": "[0, 2, 4]",
       "optionD": "[1, 4, 9]",
       "correctAnswer": "A",
-      "explanation": "La boucle multiplie chaque élément par 2, transformant [1, 2, 3] en [2, 4, 6]."
+      "explanation": "La boucle multiplie chaque élément par 2, transformant [1, 2, 3] en [2, 4, 6].",
+      "difficulty": "medium"
     },
     {
       "question": "Que va afficher le code suivant ?\n\ndef f(x, *args, **kwargs):\n    return len(args) + len(kwargs)\n\nprint(f(1, 2, 3, a=4, b=5))",
@@ -619,7 +690,12 @@
       "optionC": "3",
       "optionD": "5",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "args contient 2, 3 (2 éléments) et kwargs contient a, b (2 éléments). Le total est 4."
+=======
+      "explanation": "args contient 2, 3 (2 éléments) et kwargs contient a, b (2 éléments). Le total est 4.",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     }
   ]
 }

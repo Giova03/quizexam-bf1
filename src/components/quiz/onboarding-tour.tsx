@@ -1,5 +1,6 @@
 "use client";
 
+<<<<<<< Updated upstream
 import { useState, useEffect, useCallback, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,17 +19,44 @@ import {
 import { useQuizStore } from "@/lib/quiz-store";
 
 const STORAGE_KEY = "onboarding-completed";
+=======
+import { useEffect, useState, useCallback } from "react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import {
+  GraduationCap,
+  LayoutDashboard,
+  Users,
+  Trophy,
+  Brain,
+  Sparkles,
+  Award,
+  ShieldCheck,
+  X,
+  ChevronRight,
+  ChevronLeft,
+  Compass,
+} from "lucide-react";
+
+const STORAGE_KEY = "quizexam-onboarding-completed-v1";
+>>>>>>> Stashed changes
 
 interface TourStep {
   title: string;
   description: string;
+<<<<<<< Updated upstream
   icon: React.ComponentType<{ className?: string }>;
   /** CSS selector for the element to highlight. When null, the tooltip is centered. */
   selector: string | null;
+=======
+  icon: typeof GraduationCap;
+  color: string;
+>>>>>>> Stashed changes
 }
 
 const STEPS: TourStep[] = [
   {
+<<<<<<< Updated upstream
     title: "Bienvenue ! 🎓",
     description:
       "QuizExam BF est votre plateforme de préparation aux concours du Burkina Faso. Suivez ce petit tour pour découvrir les fonctionnalités essentielles.",
@@ -48,10 +76,18 @@ const STEPS: TourStep[] = [
       "Appuyez sur Ctrl+K (ou Cmd+K) à tout moment pour ouvrir la recherche globale : questions, banques, sujets du forum et utilisateurs.",
     icon: Search,
     selector: "[data-tour='search-btn']",
+=======
+    title: "Bienvenue sur QuizExam BF",
+    description:
+      "Votre plateforme de préparation aux concours et examens blancs du Burkina Faso. Suivez ce guide rapide pour découvrir les fonctionnalités essentielles.",
+    icon: GraduationCap,
+    color: "from-emerald-500 to-teal-600",
+>>>>>>> Stashed changes
   },
   {
     title: "Tableau de bord",
     description:
+<<<<<<< Updated upstream
       "Suivez votre progression : scores, temps de réponse, série de jours consécutifs et statistiques détaillées par matière.",
     icon: LayoutDashboard,
     selector: "[data-tour='dashboard-nav']",
@@ -407,11 +443,197 @@ export function OnboardingTour() {
           />
         )}
       </div>
+=======
+      "Suivez votre progression : scores, badges, XP, graphiques d'activité hebdomadaire et statistiques détaillées par quiz.",
+    icon: LayoutDashboard,
+    color: "from-sky-500 to-cyan-600",
+  },
+  {
+    title: "Communauté & Social",
+    description:
+      "Partagez vos réussites, échangez avec d'autres candidats et restez motivé grâce au fil d'actualité de la communauté.",
+    icon: Users,
+    color: "from-violet-500 to-purple-600",
+  },
+  {
+    title: "Classement & Compétition",
+    description:
+      "Mesurez-vous aux autres joueurs en temps réel et grimpez dans le classement général pour débloquer des récompenses.",
+    icon: Trophy,
+    color: "from-amber-500 to-orange-600",
+  },
+  {
+    title: "Révision espacée (SM-2)",
+    description:
+      "Marquez vos questions difficiles pendant les quiz, puis révisez-les avec l'algorithme SM-2 qui optimise la mémorisation à long terme.",
+    icon: Brain,
+    color: "from-rose-500 to-pink-600",
+  },
+  {
+    title: "Examen IA personnalisé",
+    description:
+      "Générez un examen blanc sur-mesure à partir d'un sujet, d'un nombre de questions et d'un niveau de difficulté, grâce à l'intelligence artificielle.",
+    icon: Sparkles,
+    color: "from-violet-500 to-purple-600",
+  },
+  {
+    title: "27 badges à débloquer",
+    description:
+      "Gagnez des badges en relevant des défis : série de jours, score parfait, polyvalence, marathon et bien plus encore !",
+    icon: Award,
+    color: "from-amber-500 to-orange-600",
+  },
+  {
+    title: "Panneau d'administration",
+    description:
+      "Les administrateurs peuvent gérer banques, questions, examens, utilisateurs et visualiser les analytics avancées de la plateforme.",
+    icon: ShieldCheck,
+    color: "from-emerald-500 to-teal-600",
+  },
+];
+
+/**
+ * OnboardingTour — 8-step guided tour with a spotlight overlay.
+ * Shows automatically on first login (when localStorage flag is absent).
+ * Can be restarted via the `restartTour()` export, wired to the Help button.
+ */
+export function OnboardingTour() {
+  const [open, setOpen] = useState(false);
+  const [step, setStep] = useState(0);
+
+  const tryStart = useCallback(() => {
+    try {
+      const done = localStorage.getItem(STORAGE_KEY);
+      if (!done) setOpen(true);
+    } catch {
+      // localStorage unavailable; do nothing
+    }
+  }, []);
+
+  useEffect(() => {
+    // Delay so splash screen finishes first
+    const t = setTimeout(tryStart, 2200);
+    return () => clearTimeout(t);
+  }, [tryStart]);
+
+  // Listen for external "restart tour" requests (from Help button)
+  useEffect(() => {
+    const handler = () => {
+      setStep(0);
+      setOpen(true);
+    };
+    window.addEventListener("quizexam-restart-tour", handler);
+    return () => window.removeEventListener("quizexam-restart-tour", handler);
+  }, []);
+
+  const close = useCallback(() => {
+    setOpen(false);
+    try {
+      localStorage.setItem(STORAGE_KEY, new Date().toISOString());
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  const next = () => {
+    if (step < STEPS.length - 1) setStep((s) => s + 1);
+    else close();
+  };
+
+  const prev = () => {
+    if (step > 0) setStep((s) => s - 1);
+  };
+
+  if (!open) return null;
+
+  const current = STEPS[step];
+  const Icon = current.icon;
+  const isLast = step === STEPS.length - 1;
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="onboarding-title"
+    >
+      <Card className="relative w-full max-w-md overflow-hidden border-0 shadow-2xl">
+        {/* Header */}
+        <div className={`bg-gradient-to-br ${current.color} p-6 text-white`}>
+          <button
+            onClick={close}
+            className="absolute right-3 top-3 rounded-md p-1 text-white/80 transition-colors hover:bg-white/20 hover:text-white"
+            aria-label="Fermer"
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 backdrop-blur">
+            <Icon className="h-7 w-7" />
+          </div>
+          <h2 id="onboarding-title" className="mt-4 text-xl font-bold">
+            {current.title}
+          </h2>
+        </div>
+
+        {/* Body */}
+        <div className="p-6">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            {current.description}
+          </p>
+
+          {/* Progress dots */}
+          <div className="mt-5 flex items-center justify-center gap-1.5">
+            {STEPS.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setStep(i)}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === step
+                    ? "w-6 bg-emerald-500"
+                    : i < step
+                    ? "w-1.5 bg-emerald-300"
+                    : "w-1.5 bg-muted"
+                }`}
+                aria-label={`Étape ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Step counter */}
+          <p className="mt-3 text-center text-[10px] text-muted-foreground">
+            Étape {step + 1} sur {STEPS.length}
+          </p>
+        </div>
+
+        {/* Footer */}
+        <div className="flex items-center justify-between gap-2 border-t bg-muted/30 p-4">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={prev}
+            disabled={step === 0}
+            className="gap-1"
+          >
+            <ChevronLeft className="h-4 w-4" />
+            Précédent
+          </Button>
+          <Button
+            onClick={next}
+            size="sm"
+            className={`gap-1 bg-gradient-to-r ${current.color} text-white`}
+          >
+            {isLast ? "Terminer" : "Suivant"}
+            {isLast ? <Compass className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
+          </Button>
+        </div>
+      </Card>
+>>>>>>> Stashed changes
     </div>
   );
 }
 
 /**
+<<<<<<< Updated upstream
  * Container component that decides whether to show the tour.
  * Shows on first login (when localStorage doesn't have STORAGE_KEY set).
  */
@@ -455,10 +677,32 @@ export function OnboardingTourContainer({
  * Allow external code (e.g. the help button) to re-trigger the tour.
  */
 export function restartOnboarding() {
+=======
+ * Restart the onboarding tour from the beginning.
+ * Wired to the Help button in the header.
+ */
+export function restartTour() {
+>>>>>>> Stashed changes
   try {
     localStorage.removeItem(STORAGE_KEY);
   } catch {
     // ignore
   }
+<<<<<<< Updated upstream
   window.location.reload();
+=======
+  // Trigger a custom event so the OnboardingTour component re-checks
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new Event("quizexam-restart-tour"));
+  }
+}
+
+/** Hook to allow external components to trigger the tour restart. */
+export function useTourRestartListener(onRestart: () => void) {
+  useEffect(() => {
+    const handler = () => onRestart();
+    window.addEventListener("quizexam-restart-tour", handler);
+    return () => window.removeEventListener("quizexam-restart-tour", handler);
+  }, [onRestart]);
+>>>>>>> Stashed changes
 }

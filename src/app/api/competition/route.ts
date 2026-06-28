@@ -3,6 +3,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import {
+<<<<<<< Updated upstream
   createRoom,
   generateUniqueRoomCode,
   getRoom,
@@ -237,4 +238,171 @@ export async function GET(request: Request) {
   }
 
   return NextResponse.json(serializeRoom(room, user.id));
+=======
+  competitionStore,
+  generateRoomCode,
+  pickRandomQuestions,
+  type CompetitionQuestion,
+} from "@/lib/competition-store";
+
+export const dynamic = "force-dynamic";
+
+/**
+ * POST /api/competition — crée une nouvelle room.
+ * Corps : { bankId, hostId, hostName, questionCount?, durationSec? }
+ *
+ * GET  /api/competition?code=XXXX — renvoie l'état public d'une room.
+ */
+
+export async function GET(request: Request) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const code = (searchParams.get("code") ?? "").toUpperCase().trim();
+    if (!code) {
+      return NextResponse.json(
+        { error: "Paramètre 'code' requis" },
+        { status: 400 }
+      );
+    }
+    const room = competitionStore.getRoom(code);
+    if (!room) {
+      return NextResponse.json(
+        { error: "Room introuvable" },
+        { status: 404 }
+      );
+    }
+    // Vue publique : on expose les participants et la question courante,
+    // mais PAS la bonne réponse tant que la phase n'est pas terminée.
+    const currentQ = room.questions[room.currentQuestionIdx];
+    return NextResponse.json({
+      code: room.code,
+      phase: room.phase,
+      bankTitle: room.bankTitle,
+      hostName: room.hostName,
+      currentQuestionIdx: room.currentQuestionIdx,
+      totalQuestions: room.questions.length,
+      questionDurationSec: room.questionDurationSec,
+      questionStartedAt: room.questionStartedAt,
+      currentQuestion: currentQ
+        ? {
+            id: currentQ.id,
+            question: currentQ.question,
+            optionA: currentQ.optionA,
+            optionB: currentQ.optionB,
+            optionC: currentQ.optionC,
+            optionD: currentQ.optionD,
+            // On ne renvoie jamais correctAnswer côté serveur pendant la phase "playing"
+          }
+        : null,
+      participants: Object.values(room.participants)
+        .map((p) => ({
+          id: p.id,
+          name: p.name,
+          score: p.score,
+          answeredCurrent: p.answeredCurrent,
+          lastAnswerCorrect: p.lastAnswerCorrect,
+        }))
+        .sort((a, b) => b.score - a.score),
+    });
+  } catch (error) {
+    console.error("Failed to fetch competition room:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch room" },
+      { status: 500 }
+    );
+  }
+}
+
+export async function POST(request: Request) {
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.email) {
+      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
+    }
+
+    const user = await db.user.findUnique({
+      where: { email: session.user.email },
+      select: { id: true, name: true },
+    });
+    if (!user) {
+      return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
+    }
+
+    const body = (await request.json()) as {
+      bankId?: string;
+      questionCount?: number;
+      durationSec?: number;
+    };
+
+    if (!body.bankId) {
+      return NextResponse.json({ error: "bankId requis" }, { status: 400 });
+    }
+
+    const bank = await db.questionBank.findUnique({
+      where: { id: body.bankId },
+      include: { questions: { orderBy: { order: "asc" } } },
+    });
+    if (!bank) {
+      return NextResponse.json({ error: "Banque introuvable" }, { status: 404 });
+    }
+    if (bank.questions.length === 0) {
+      return NextResponse.json(
+        { error: "Cette banque ne contient aucune question" },
+        { status: 400 }
+      );
+    }
+
+    const count = Math.min(
+      Math.max(5, body.questionCount ?? 10),
+      Math.min(30, bank.questions.length)
+    );
+    const picked = pickRandomQuestions(bank.questions, count);
+
+    const questions: CompetitionQuestion[] = picked.map((q) => ({
+      id: q.id,
+      question: q.question,
+      optionA: q.optionA,
+      optionB: q.optionB,
+      optionC: q.optionC,
+      optionD: q.optionD,
+      correctAnswer: q.correctAnswer,
+      explanation: q.explanation,
+    }));
+
+    const code = generateRoomCode();
+    const room = competitionStore.createRoom({
+      code,
+      hostId: user.id,
+      hostName: user.name,
+      bankId: bank.id,
+      bankTitle: bank.title,
+      questions,
+      questionDurationSec: body.durationSec ?? 30,
+    });
+
+    // Démarre immédiatement la première question
+    room.phase = "playing";
+    room.currentQuestionIdx = 0;
+    room.questionStartedAt = Date.now();
+
+    return NextResponse.json({
+      code: room.code,
+      phase: room.phase,
+      bankTitle: room.bankTitle,
+      hostName: room.hostName,
+      currentQuestionIdx: room.currentQuestionIdx,
+      totalQuestions: room.questions.length,
+      questionDurationSec: room.questionDurationSec,
+      questionStartedAt: room.questionStartedAt,
+      isHost: true,
+      hostId: user.id,
+    });
+  } catch (error) {
+    console.error("Failed to create competition room:", error);
+    return NextResponse.json(
+      { error: "Failed to create room" },
+      { status: 500 }
+    );
+  }
+>>>>>>> Stashed changes
 }

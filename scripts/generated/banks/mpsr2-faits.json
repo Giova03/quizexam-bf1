@@ -16,7 +16,8 @@
       "optionC": "Blaise Compaoré",
       "optionD": "Thomas Sankara",
       "correctAnswer": "B",
-      "explanation": "Ibrahim Traoré, un capitaine de l'armée burkinabè, a mené le coup d'État du 30 septembre 2022, renversant Paul-Henri Sandaogo Damiba qui avait lui-même pris le pouvoir lors d'un coup d'État en janvier 2022."
+      "explanation": "Ibrahim Traoré, un capitaine de l'armée burkinabè, a mené le coup d'État du 30 septembre 2022, renversant Paul-Henri Sandaogo Damiba qui avait lui-même pris le pouvoir lors d'un coup d'État en janvier 2022.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la signification de l'acronyme MPSR ?",
@@ -25,7 +26,8 @@
       "optionC": "Mouvement pour la Paix et la Sécurité au Sahel",
       "optionD": "Mouvement Populaire pour la Souveraineté et la Réforme",
       "correctAnswer": "B",
-      "explanation": "MPSR signifie Mouvement Patriotique pour la Sauvegarde et la Restauration, le nom du groupe militaire qui a pris le pouvoir au Burkina Faso après le coup d'État d'Ibrahim Traoré."
+      "explanation": "MPSR signifie Mouvement Patriotique pour la Sauvegarde et la Restauration, le nom du groupe militaire qui a pris le pouvoir au Burkina Faso après le coup d'État d'Ibrahim Traoré.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel événement majeur a précédé immédiatement le coup d'État d'Ibrahim Traoré ?",
@@ -34,7 +36,8 @@
       "optionC": "La destitution de Paul-Henri Sandaogo Damiba par l'Assemblée nationale",
       "optionD": "Une grève générale des enseignants",
       "correctAnswer": "B",
-      "explanation": "Le coup d'État d'Ibrahim Traoré a été déclenché en partie en réaction à une attaque terroriste particulièrement meurtrière à Fada N'Gourma qui a montré l'échec des politiques de sécurité de Damiba."
+      "explanation": "Le coup d'État d'Ibrahim Traoré a été déclenché en partie en réaction à une attaque terroriste particulièrement meurtrière à Fada N'Gourma qui a montré l'échec des politiques de sécurité de Damiba.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre le coup d'État de janvier 2022 et celui de septembre 2022 au Burkina Faso ?",
@@ -43,7 +46,8 @@
       "optionC": "Le premier était dirigé contre Kaboré, le second contre Damiba",
       "optionD": "Le premier avait un soutien international, le second non",
       "correctAnswer": "C",
-      "explanation": "Le coup d'État de janvier 2022 a renversé le président élu Roch Marc Christian Kaboré, tandis que celui de septembre 2022 a renversé le président de transition Paul-Henri Sandaogo Damiba."
+      "explanation": "Le coup d'État de janvier 2022 a renversé le président élu Roch Marc Christian Kaboré, tandis que celui de septembre 2022 a renversé le président de transition Paul-Henri Sandaogo Damiba.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel rôle a joué la CEDEAO dans la crise politique burkinabè post-coup d'État de septembre 2022 ?",
@@ -52,7 +56,8 @@
       "optionC": "Elle a exigé un retour rapide à un gouvernement constitutionnel",
       "optionD": "Elle a soutenu le nouveau régime d'Ibrahim Traoré",
       "correctAnswer": "C",
-      "explanation": "La CEDEAO a exigé un retour rapide à un gouvernement constitutionnel et a menacé de sanctions si le Burkina Faso ne respectait pas les délais fixés pour la transition."
+      "explanation": "La CEDEAO a exigé un retour rapide à un gouvernement constitutionnel et a menacé de sanctions si le Burkina Faso ne respectait pas les délais fixés pour la transition.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la position d'Ibrahim Traoré vis-à-vis de la France ?",
@@ -61,16 +66,31 @@
       "optionC": "Il a proposé un partenariat stratégique avec la Russie",
       "optionD": "Il a appelé à l'intervention de l'ONU",
       "correctAnswer": "B",
-      "explanation": "Ibrahim Traoré a exprimé son opposition à la présence militaire française au Sahel et a demandé le retrait des troupes françaises, reprochant à la France de ne pas avoir réussi à sécuriser la région."
+      "explanation": "Ibrahim Traoré a exprimé son opposition à la présence militaire française au Sahel et a demandé le retrait des troupes françaises, reprochant à la France de ne pas avoir réussi à sécuriser la région.",
+      "difficulty": "medium"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "question": "Quelle est la signification de l'acronyme AES dans le contexte burkinabè ?",
+      "optionA": "Agence d'État pour la Sécurité",
+      "optionB": "Armée pour l'Émergence du Sahel",
+      "optionC": "Alliance État-Sahel",
+      "optionD": "Agence d'Exécution des Services",
+      "correctAnswer": "A",
+      "explanation": "AES signifie Agence d'État pour la Sécurité, une structure créée par le régime d'Ibrahim Traoré pour coordonner la lutte contre le terrorisme.",
+      "difficulty": "medium"
+    },
+    {
+>>>>>>> Stashed changes
       "question": "Quelle est la politique d'Ibrahim Traoré concernant les ressources minières du Burkina Faso ?",
       "optionA": "Il a nationalisé toutes les mines étrangères",
       "optionB": "Il a proposé une révision des contrats miniers pour un partage plus équitable",
       "optionC": "Il a fermé toutes les mines d'or pour des raisons environnementales",
       "optionD": "Il a augmenté les taxes minières de 50%",
       "correctAnswer": "B",
-      "explanation": "Ibrahim Traoré a annoncé une révision des contrats miniers pour assurer un partage plus équitable des richesses entre l'État et les compagnies minières étrangères."
+      "explanation": "Ibrahim Traoré a annoncé une révision des contrats miniers pour assurer un partage plus équitable des richesses entre l'État et les compagnies minières étrangères.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom du mouvement politique créé par Ibrahim Traoré ?",
@@ -79,7 +99,8 @@
       "optionC": "Mouvement pour la Libération du Peuple",
       "optionD": "Union pour la Transition Démocratique",
       "correctAnswer": "A",
-      "explanation": "Ibrahim Traoré a créé le Mouvement Patriotique pour le Renouveau (MPR) comme structure politique pour soutenir sa transition et ses réformes."
+      "explanation": "Ibrahim Traoré a créé le Mouvement Patriotique pour le Renouveau (MPR) comme structure politique pour soutenir sa transition et ses réformes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la position d'Ibrahim Traoré concernant les élections au Burkina Faso ?",
@@ -88,7 +109,8 @@
       "optionC": "Il a proposé un référendum constitutionnel avant les élections",
       "optionD": "Il a déclaré qu'il ne se présenterait pas aux élections",
       "correctAnswer": "A",
-      "explanation": "Ibrahim Traoré a annoncé des élections pour février 2024, tout en maintenant le pouvoir militaire jusqu'à cette date."
+      "explanation": "Ibrahim Traoré a annoncé des élections pour février 2024, tout en maintenant le pouvoir militaire jusqu'à cette date.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le rôle d'ALT Ousmane Bougma dans le régime burkinabè ?",
@@ -97,7 +119,8 @@
       "optionC": "Ministre de la Défense",
       "optionD": "Président de l'Assemblée nationale",
       "correctAnswer": "B",
-      "explanation": "ALT Ousmane Bougma est le porte-parole du Mouvement Patriotique pour la Sauvegarde et la Restauration (MPSR), le groupe militaire au pouvoir."
+      "explanation": "ALT Ousmane Bougma est le porte-parole du Mouvement Patriotique pour la Sauvegarde et la Restauration (MPSR), le groupe militaire au pouvoir.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale stratégie d'Ibrahim Traoré pour lutter contre le terrorisme ?",
@@ -106,7 +129,8 @@
       "optionC": "Une approche purement militaire",
       "optionD": "Un dialogue avec les groupes terroristes",
       "correctAnswer": "B",
-      "explanation": "Ibrahim Traoré a mis l'accent sur l'implication des milices communautaires (défenseurs de la patrie) dans la lutte contre le terrorisme, en plus des forces armées régulières."
+      "explanation": "Ibrahim Traoré a mis l'accent sur l'implication des milices communautaires (défenseurs de la patrie) dans la lutte contre le terrorisme, en plus des forces armées régulières.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom de la nouvelle constitution proposée par Ibrahim Traoré ?",
@@ -115,7 +139,8 @@
       "optionC": "Pacte Républicain",
       "optionD": "Loi Fondamentale de la Transition",
       "correctAnswer": "C",
-      "explanation": "Ibrahim Traoré a proposé un projet de 'Pacte Républicain' qui servirait de nouvelle constitution pour le Burkina Faso."
+      "explanation": "Ibrahim Traoré a proposé un projet de 'Pacte Républicain' qui servirait de nouvelle constitution pour le Burkina Faso.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la position d'Ibrahim Traoré concernant l'Union Africaine ?",
@@ -124,7 +149,8 @@
       "optionC": "Il a proposé une réforme de l'UA",
       "optionD": "Il a appelé à un renforcement de l'UA",
       "correctAnswer": "B",
-      "explanation": "Ibrahim Traoré a critiqué l'Union Africaine pour son inaction face aux problèmes de sécurité au Sahel, notamment le terrorisme."
+      "explanation": "Ibrahim Traoré a critiqué l'Union Africaine pour son inaction face aux problèmes de sécurité au Sahel, notamment le terrorisme.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom de la force de défense communautaire créée par Ibrahim Traoré ?",
@@ -133,7 +159,8 @@
       "optionC": "Brigades de Sécurité Populaire",
       "optionD": "Militants pour l'Unité",
       "correctAnswer": "B",
-      "explanation": "Ibrahim Traoré a créé les 'Défenseurs de la Patrie', une force de défense communautaire pour compléter les efforts de l'armée régulière contre le terrorisme."
+      "explanation": "Ibrahim Traoré a créé les 'Défenseurs de la Patrie', une force de défense communautaire pour compléter les efforts de l'armée régulière contre le terrorisme.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la politique d'Ibrahim Traoré concernant les médias burkinabè ?",
@@ -142,7 +169,8 @@
       "optionC": "Il a créé un organe de censure gouvernementale",
       "optionD": "Il a nationalisé tous les médias privés",
       "correctAnswer": "B",
-      "explanation": "Ibrahim Traoré a promis une plus grande liberté de la presse et a condamné la censure, se distinguant ainsi de régimes autoritaires précédents."
+      "explanation": "Ibrahim Traoré a promis une plus grande liberté de la presse et a condamné la censure, se distinguant ainsi de régimes autoritaires précédents.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom du plan de développement proposé par Ibrahim Traoré ?",
@@ -151,7 +179,8 @@
       "optionC": "Programme de Reconstruction Nationale",
       "optionD": "Stratégie de Développement Durable",
       "correctAnswer": "A",
-      "explanation": "Ibrahim Traoré a présenté le 'Plan Renaissance 2030' comme son programme de développement pour reconstruire le Burkina Faso après des années de crise."
+      "explanation": "Ibrahim Traoré a présenté le 'Plan Renaissance 2030' comme son programme de développement pour reconstruire le Burkina Faso après des années de crise.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la position d'Ibrahim Traoré concernant les relations avec la Russie ?",
@@ -160,7 +189,8 @@
       "optionC": "Il a refusé toute coopération avec la Russie",
       "optionD": "Il a demandé des armes russies en échange de ressources minières",
       "correctAnswer": "B",
-      "explanation": "Ibrahim Traoré a exprimé son intérêt pour un partenariat stratégique avec la Russie dans plusieurs domaines, notamment la sécurité et l'économie, sans demander d'intervention militaire directe."
+      "explanation": "Ibrahim Traoré a exprimé son intérêt pour un partenariat stratégique avec la Russie dans plusieurs domaines, notamment la sécurité et l'économie, sans demander d'intervention militaire directe.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom de la coalition politique soutenue par Ibrahim Traoré ?",
@@ -169,7 +199,8 @@
       "optionC": "Mouvement pour la Paix et la Prospérité",
       "optionD": "Coalition des Patriotes Burkinabè",
       "correctAnswer": "B",
-      "explanation": "Ibrahim Traoré s'appuie sur l'Alliance pour la Souveraineté, une coalition politique qui soutient son programme de transition et de réformes."
+      "explanation": "Ibrahim Traoré s'appuie sur l'Alliance pour la Souveraineté, une coalition politique qui soutient son programme de transition et de réformes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale réforme économique proposée par Ibrahim Traoré ?",
@@ -178,7 +209,8 @@
       "optionC": "La révision des contrats miniers",
       "optionD": "L'augmentation des impôts sur les revenus",
       "correctAnswer": "C",
-      "explanation": "La réforme économique la plus significative proposée par Ibrahim Traoré est la révision des contrats miniers pour assurer un partage plus équitable des richesses."
+      "explanation": "La réforme économique la plus significative proposée par Ibrahim Traoré est la révision des contrats miniers pour assurer un partage plus équitable des richesses.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel événement majeur s'est produit le 30 septembre 2022 au Burkina Faso concernant Ibrahim Traoré ?",
@@ -187,7 +219,8 @@
       "optionC": "Il a démissionné de son poste de capitaine",
       "optionD": "Il a signé un accord de paix avec les rebelles",
       "correctAnswer": "B",
-      "explanation": "Le 30 septembre 2022, le capitaine Ibrahim Traoré a mené un deuxième coup d'État militaire au Burkina Faso, renversant le lieutenant-colonel Paul-Henri Sandaogo Damiba, qui avait lui-même pris le pouvoir lors d'un coup d'État en janvier 2022."
+      "explanation": "Le 30 septembre 2022, le capitaine Ibrahim Traoré a mené un deuxième coup d'État militaire au Burkina Faso, renversant le lieutenant-colonel Paul-Henri Sandaogo Damiba, qui avait lui-même pris le pouvoir lors d'un coup d'État en janvier 2022.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la signification de l'acronyme MPSR dans le contexte politique burkinabè ?",
@@ -196,7 +229,8 @@
       "optionC": "Mouvement Populaire pour la Souveraineté et la Réforme",
       "optionD": "Militaires pour la Paix et la Réconciliation",
       "correctAnswer": "B",
-      "explanation": "MPSR signifie Mouvement Patriotique pour la Sauvegarde et la Restauration. C'est le nom du groupe militaire qui a pris le pouvoir au Burkina Faso sous la direction d'Ibrahim Traoré."
+      "explanation": "MPSR signifie Mouvement Patriotique pour la Sauvegarde et la Restauration. C'est le nom du groupe militaire qui a pris le pouvoir au Burkina Faso sous la direction d'Ibrahim Traoré.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle organisation sous-régionale a imposé des sanctions au Burkina Faso après le coup d'État d'Ibrahim Traoré ?",
@@ -205,7 +239,8 @@
       "optionC": "Le Marché Commun de l'Afrique de l'Est et Australe (COMESA)",
       "optionD": "La Conférence des Chefs d'État et de Gouvernement de l'UMOA",
       "correctAnswer": "B",
-      "explanation": "La CEDEAO a imposé des sanctions économiques et diplomatiques au Burkina Faso après le coup d'État du 30 septembre 2022, notamment la suspension du pays de l'organisation et un embargo sur les armes."
+      "explanation": "La CEDEAO a imposé des sanctions économiques et diplomatiques au Burkina Faso après le coup d'État du 30 septembre 2022, notamment la suspension du pays de l'organisation et un embargo sur les armes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom de l'accord de paix signé en 2023 entre le Burkina Faso et ses voisins sous l'égide de la CEDEAO ?",
@@ -214,7 +249,8 @@
       "optionC": "Traité de Ouagadougou",
       "optionD": "Protocole de Accra",
       "correctAnswer": "A",
-      "explanation": "L'Accord de Niamey a été signé en juillet 2023 entre le Burkina Faso, le Mali, la Guinée et la CEDEAO, visant à normaliser les relations et lever les sanctions imposées après les coups d'État militaires."
+      "explanation": "L'Accord de Niamey a été signé en juillet 2023 entre le Burkina Faso, le Mali, la Guinée et la CEDEAO, visant à normaliser les relations et lever les sanctions imposées après les coups d'État militaires.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la politique d'approvisionnement en électricité promue par le régime d'Ibrahim Traoré ?",
@@ -223,7 +259,8 @@
       "optionC": "Transition vers les énergies renouvelables et l'autosuffisance",
       "optionD": "Importation exclusive d'électricité des pays voisins",
       "correctAnswer": "C",
-      "explanation": "Le régime d'Ibrahim Traoré a fait de l'autosuffisance énergétique et du développement des énergies renouvelables (solaire, hydroélectrique) une priorité pour réduire la dépendance externe et les coupures de courant."
+      "explanation": "Le régime d'Ibrahim Traoré a fait de l'autosuffisance énergétique et du développement des énergies renouvelables (solaire, hydroélectrique) une priorité pour réduire la dépendance externe et les coupures de courant.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la position officielle du MPSR concernant les élections au Burkina Faso ?",
@@ -232,7 +269,8 @@
       "optionC": "Abandon du processus démocratique au profit d'un régime militaire permanent",
       "optionD": "Transfert immédiat du pouvoir à un gouvernement civil",
       "correctAnswer": "B",
-      "explanation": "Le MPSR a annoncé reporter les élections prévues initialement pour juillet 2024, arguant de la nécessité de stabiliser le pays et de sécuriser le territoire avant tout retour à un régime civil."
+      "explanation": "Le MPSR a annoncé reporter les élections prévues initialement pour juillet 2024, arguant de la nécessité de stabiliser le pays et de sécuriser le territoire avant tout retour à un régime civil.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom du mouvement politique créé par Ibrahim Traoré pour préparer la transition vers un régime civil ?",
@@ -241,7 +279,8 @@
       "optionC": "Mouvement Patriotique pour la Transition (MPT)",
       "optionD": "Parti pour la Souveraineté et la Justice (PSJ)",
       "correctAnswer": "C",
-      "explanation": "Ibrahim Traoré a annoncé la création du Mouvement Patriotique pour la Transition (MPT) en 2023, présenté comme un instrument politique pour préparer la transition vers un régime civil."
+      "explanation": "Ibrahim Traoré a annoncé la création du Mouvement Patriotique pour la Transition (MPT) en 2023, présenté comme un instrument politique pour préparer la transition vers un régime civil.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale stratégie militaire adoptée par le Burkina Faso sous le régime d'Ibrahim Traoré pour combattre les groupes djihadistes ?",
@@ -250,7 +289,8 @@
       "optionC": "Développement d'une force de défense locale et partenariats régionaux",
       "optionD": "Retrait complet des opérations militaires dans le Sahel",
       "correctAnswer": "C",
-      "explanation": "Le régime Traoré a opté pour une stratégie de renforcement des forces de défense et de sécurité locales (Volontaires pour la Défense de la Patrie - VDP) et de partenariats avec les pays voisins, tout en réduisant la coopération avec la France."
+      "explanation": "Le régime Traoré a opté pour une stratégie de renforcement des forces de défense et de sécurité locales (Volontaires pour la Défense de la Patrie - VDP) et de partenariats avec les pays voisins, tout en réduisant la coopération avec la France.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom du plan de développement économique et social présenté par le régime d'Ibrahim Traoré ?",
@@ -259,7 +299,8 @@
       "optionC": "Programme de Développement Accéléré",
       "optionD": "Vision Burkina 2030",
       "correctAnswer": "B",
-      "explanation": "Le régime Traoré a présenté la 'Stratégie de Renaissance Burkinabè', un plan quinquennal visant à relancer l'économie, améliorer les services de base et renforcer la souveraineté nationale."
+      "explanation": "Le régime Traoré a présenté la 'Stratégie de Renaissance Burkinabè', un plan quinquennal visant à relancer l'économie, améliorer les services de base et renforcer la souveraineté nationale.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la position du Burkina Faso sous Ibrahim Traoré concernant la Cour Pénale Internationale (CPI) ?",
@@ -268,7 +309,8 @@
       "optionC": "Suspension temporaire de la coopération",
       "optionD": "Renforcement des liens avec la CPI",
       "correctAnswer": "B",
-      "explanation": "Le régime Traoré a entamé un processus de retrait de la CPI, accusant la cour de partialité et de cibler uniquement des Africains, notamment dans le contexte des accusations de crimes contre l'humanité contre l'ancien président Blaise Compaoré."
+      "explanation": "Le régime Traoré a entamé un processus de retrait de la CPI, accusant la cour de partialité et de cibler uniquement des Africains, notamment dans le contexte des accusations de crimes contre l'humanité contre l'ancien président Blaise Compaoré.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom de l'ancien ministre burkinabè assassiné en 2023 dont le cas a marqué le début du mandat d'Ibrahim Traoré ?",
@@ -277,7 +319,8 @@
       "optionC": "Chérif Sy",
       "optionD": "Paul-Henri Sandaogo Damiba",
       "correctAnswer": "B",
-      "explanation": "L'assassinat en 2023 du journaliste d'investigation Norbert Zongo, un cas non élucidé depuis 1998, a été réactivé par le régime Traoré qui en a fait une priorité symbolique de son mandat."
+      "explanation": "L'assassinat en 2023 du journaliste d'investigation Norbert Zongo, un cas non élucidé depuis 1998, a été réactivé par le régime Traoré qui en a fait une priorité symbolique de son mandat.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la politique d'éducation nationale mise en place par le régime d'Ibrahim Traoré ?",
@@ -286,7 +329,8 @@
       "optionC": "Développement de l'enseignement en langues nationales et renforcement de l'école publique",
       "optionD": "Suppression de l'enseignement religieux dans les écoles",
       "correctAnswer": "C",
-      "explanation": "Le régime Traoré a mis l'accent sur le développement de l'enseignement en langues nationales et le renforcement de l'école publique, dans le cadre d'une politique de souveraineté culturelle et éducative."
+      "explanation": "Le régime Traoré a mis l'accent sur le développement de l'enseignement en langues nationales et le renforcement de l'école publique, dans le cadre d'une politique de souveraineté culturelle et éducative.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la position du Burkina Faso sous Ibrahim Traoré concernant la présence militaire française dans la région ?",
@@ -295,7 +339,8 @@
       "optionC": "Fin de la coopération militaire avec la France",
       "optionD": "Intégration des forces françaises dans une force africaine commune",
       "correctAnswer": "C",
-      "explanation": "Le régime Traoré a mis fin à la coopération militaire avec la France, demandé le retrait des troupes françaises et la dissolution de la force anti-terroriste Barkhane, privilégiant d'autres partenaires comme la Russie."
+      "explanation": "Le régime Traoré a mis fin à la coopération militaire avec la France, demandé le retrait des troupes françaises et la dissolution de la force anti-terroriste Barkhane, privilégiant d'autres partenaires comme la Russie.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom du programme social lancé par le régime d'Ibrahim Traoré pour soutenir les populations vulnérables ?",
@@ -304,7 +349,8 @@
       "optionC": "Programme de Réinsertion et de Soutien aux Populations",
       "optionD": "Initiative pour la Cohésion Sociale",
       "correctAnswer": "A",
-      "explanation": "Le régime Traoré a créé le Fonds de Solidarité Nationale pour soutenir les populations déplacées par les conflits et les plus vulnérables, avec un accent particulier sur les zones rurales."
+      "explanation": "Le régime Traoré a créé le Fonds de Solidarité Nationale pour soutenir les populations déplacées par les conflits et les plus vulnérables, avec un accent particulier sur les zones rurales.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la politique agricole mise en œuvre par le régime d'Ibrahim Traoré ?",
@@ -313,7 +359,8 @@
       "optionC": "Autosuffisance alimentaire et valorisation des produits locaux",
       "optionD": "Abandon de l'agriculture de subsistance pour l'industrie",
       "correctAnswer": "C",
-      "explanation": "Le régime Traoré a fait de l'autosuffisance alimentaire et de la valorisation des produits locaux une priorité, avec des programmes de soutien aux petits agriculteurs et de promotion des cultures traditionnelles."
+      "explanation": "Le régime Traoré a fait de l'autosuffisance alimentaire et de la valorisation des produits locaux une priorité, avec des programmes de soutien aux petits agriculteurs et de promotion des cultures traditionnelles.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom de la nouvelle constitution adoptée sous le régime d'Ibrahim Traoré en 2023 ?",
@@ -322,7 +369,8 @@
       "optionC": "Pacte Constitutionnel Burkinabè",
       "optionD": "Loi Fondamentale de la Transition",
       "correctAnswer": "B",
-      "explanation": "Le régime Traoré a adopté la 'Charte pour la Souveraineté Populaire' en 2023, une nouvelle constitution qui renforce les pouvoirs du président et limite l'influence des anciennes élites."
+      "explanation": "Le régime Traoré a adopté la 'Charte pour la Souveraineté Populaire' en 2023, une nouvelle constitution qui renforce les pouvoirs du président et limite l'influence des anciennes élites.",
+      "difficulty": "medium"
     }
   ]
 }

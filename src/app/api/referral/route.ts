@@ -1,16 +1,27 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
+<<<<<<< Updated upstream
 import { authOptions, generateReferralCode } from "@/lib/auth";
+=======
+import { authOptions } from "@/lib/auth";
+>>>>>>> Stashed changes
 import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
+<<<<<<< Updated upstream
 const REFERRAL_XP_REWARD = 50;
 
 /**
  * GET /api/referral
  * Returns the current user's referral code, number of referrals, and the
  * XP they have earned from referrals (referralCount × 50).
+=======
+/**
+ * GET /api/referral
+ * Returns the current user's referral code, the code that referred them
+ * (if any), and the list of users they have referred (count + recent).
+>>>>>>> Stashed changes
  */
 export async function GET() {
   try {
@@ -24,13 +35,17 @@ export async function GET() {
       select: {
         id: true,
         name: true,
+<<<<<<< Updated upstream
         email: true,
+=======
+>>>>>>> Stashed changes
         referralCode: true,
         referredBy: true,
       },
     });
 
     if (!user) {
+<<<<<<< Updated upstream
       return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
     }
 
@@ -64,10 +79,24 @@ export async function GET() {
     const referredUsers = await db.user.findMany({
       where: { referredBy: referralCode },
       select: {
+=======
+      return NextResponse.json(
+        { error: "Utilisateur introuvable" },
+        { status: 404 }
+      );
+    }
+
+    // Find users referred by this user's code
+    const referrals = await db.user.findMany({
+      where: { referredBy: user.referralCode },
+      select: {
+        id: true,
+>>>>>>> Stashed changes
         name: true,
         createdAt: true,
       },
       orderBy: { createdAt: "desc" },
+<<<<<<< Updated upstream
       take: 20,
     });
 
@@ -99,15 +128,42 @@ export async function GET() {
   } catch (error) {
     console.error("Referral GET error:", error);
     return NextResponse.json({ error: "Échec du chargement des parrainages" }, { status: 500 });
+=======
+      take: 50,
+    });
+
+    return NextResponse.json({
+      referralCode: user.referralCode,
+      referredBy: user.referredBy,
+      referralCount: referrals.length,
+      referrals: referrals.map((r) => ({
+        id: r.id,
+        name: r.name,
+        joinedAt: r.createdAt,
+      })),
+    });
+  } catch (error) {
+    console.error("[referral] GET error:", error);
+    return NextResponse.json(
+      { error: "Erreur lors de la récupération du parrainage" },
+      { status: 500 }
+    );
+>>>>>>> Stashed changes
   }
 }
 
 /**
  * POST /api/referral
+<<<<<<< Updated upstream
  * Body: { referralCode: string }
  * Called during/after signup to link the current user to a referrer.
  * If the current user already has a `referredBy` value, this is a no-op
  * (a user can only be referred once).
+=======
+ * Body: { referralCode: string } — the code of the user who referred me.
+ * Sets `referredBy` on the current user. Cannot be changed once set, and
+ * cannot be set to one's own code.
+>>>>>>> Stashed changes
  */
 export async function POST(request: Request) {
   try {
@@ -117,6 +173,7 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json().catch(() => ({}));
+<<<<<<< Updated upstream
     const { referralCode } = body as { referralCode?: string };
     if (!referralCode || typeof referralCode !== "string") {
       return NextResponse.json({ error: "Code de parrainage requis" }, { status: 400 });
@@ -125,12 +182,24 @@ export async function POST(request: Request) {
     const trimmed = referralCode.trim().toUpperCase();
     if (trimmed.length === 0) {
       return NextResponse.json({ error: "Code de parrainage invalide" }, { status: 400 });
+=======
+    const code =
+      typeof body.referralCode === "string"
+        ? body.referralCode.trim().toUpperCase()
+        : "";
+    if (!code) {
+      return NextResponse.json(
+        { error: "Code de parrainage requis" },
+        { status: 400 }
+      );
+>>>>>>> Stashed changes
     }
 
     const user = await db.user.findUnique({
       where: { email: session.user.email },
       select: { id: true, referralCode: true, referredBy: true },
     });
+<<<<<<< Updated upstream
 
     if (!user) {
       return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
@@ -164,10 +233,49 @@ export async function POST(request: Request) {
     await db.user.update({
       where: { id: user.id },
       data: { referredBy: referrer.referralCode },
+=======
+    if (!user) {
+      return NextResponse.json(
+        { error: "Utilisateur introuvable" },
+        { status: 404 }
+      );
+    }
+
+    if (user.referredBy) {
+      return NextResponse.json(
+        { error: "Vous avez déjà été parrainé" },
+        { status: 400 }
+      );
+    }
+
+    if (code === user.referralCode) {
+      return NextResponse.json(
+        { error: "Vous ne pouvez pas vous parrainer vous-même" },
+        { status: 400 }
+      );
+    }
+
+    // Verify the referrer exists
+    const referrer = await db.user.findUnique({
+      where: { referralCode: code },
+      select: { id: true, name: true },
+    });
+    if (!referrer) {
+      return NextResponse.json(
+        { error: "Code de parrainage invalide" },
+        { status: 404 }
+      );
+    }
+
+    await db.user.update({
+      where: { id: user.id },
+      data: { referredBy: code },
+>>>>>>> Stashed changes
     });
 
     return NextResponse.json({
       success: true,
+<<<<<<< Updated upstream
       message: "Parrainage accepté !",
       referredBy: referrer.referralCode,
       referrerId: referrer.id,
@@ -175,5 +283,16 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Referral POST error:", error);
     return NextResponse.json({ error: "Échec du parrainage" }, { status: 500 });
+=======
+      referredBy: code,
+      referrerName: referrer.name,
+    });
+  } catch (error) {
+    console.error("[referral] POST error:", error);
+    return NextResponse.json(
+      { error: "Erreur lors de l'enregistrement du parrainage" },
+      { status: 500 }
+    );
+>>>>>>> Stashed changes
   }
 }

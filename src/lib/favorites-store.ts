@@ -1,7 +1,7 @@
 "use client";
 
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
 
 interface FavoriteQuestion {
   id: string;
@@ -22,6 +22,37 @@ interface FavoritesState {
   clearAll: () => void;
 }
 
+/**
+ * Storage compatible SSR :
+ * - Navigateur : renvoie un storage basé sur `localStorage`.
+ * - Node/SSR/tests : renvoie un storage no-op (silencieux) pour éviter
+ *   les warnings du middleware persist lorsque `storage` est falsy.
+ *
+ * NB : passer `storage: false` déclenche un warning à chaque setState
+ * dans zustand v5, d'où l'usage d'un no-op storage.
+ */
+function safeStorage(): ReturnType<typeof createJSONStorage> | {
+  getItem: () => null;
+  setItem: () => void;
+  removeItem: () => void;
+} {
+  // No-op storage pour environnements sans localStorage
+  const noopStorage = {
+    getItem: () => null,
+    setItem: () => {},
+    removeItem: () => {},
+  };
+  if (typeof window === "undefined") return noopStorage;
+  try {
+    const test = "__qe_test__";
+    window.localStorage.setItem(test, "1");
+    window.localStorage.removeItem(test);
+    return createJSONStorage(() => window.localStorage);
+  } catch {
+    return noopStorage;
+  }
+}
+
 export const useFavorites = create<FavoritesState>()(
   persist(
     (set, get) => ({
@@ -39,6 +70,9 @@ export const useFavorites = create<FavoritesState>()(
       isFavorite: (id) => get().favorites.some((f) => f.id === id),
       clearAll: () => set({ favorites: [] }),
     }),
-    { name: "quizexam-favorites" }
+    {
+      name: "quizexam-favorites",
+      storage: safeStorage(),
+    }
   )
 );

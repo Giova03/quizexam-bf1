@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
+<<<<<<< Updated upstream
 import { getUserTier } from "@/lib/subscription-limits";
 
 export const dynamic = "force-dynamic";
@@ -36,6 +37,96 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const sessionId = searchParams.get("sessionId");
+=======
+
+export const dynamic = "force-dynamic";
+
+const MIN_PERCENTAGE = 80;
+
+/**
+ * GET /api/certificate
+ * Returns all certificates issued to the current user.
+ *
+ * Optional query: ?sessionId=xxx — returns the certificate for a specific
+ * session if it exists, or null.
+ */
+export async function GET(request: Request) {
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.email) {
+      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
+    }
+
+    const user = await db.user.findUnique({
+      where: { email: session.user.email },
+      select: { id: true, name: true },
+    });
+    if (!user) {
+      return NextResponse.json(
+        { error: "Utilisateur introuvable" },
+        { status: 404 }
+      );
+    }
+
+    const { searchParams } = new URL(request.url);
+    const sessionId = searchParams.get("sessionId");
+
+    if (sessionId) {
+      const cert = await db.certificate.findUnique({
+        where: { sessionId },
+      });
+      return NextResponse.json(cert);
+    }
+
+    const certs = await db.certificate.findMany({
+      where: { userId: user.id },
+      orderBy: { issuedAt: "desc" },
+    });
+
+    return NextResponse.json({
+      user: { id: user.id, name: user.name },
+      certificates: certs,
+    });
+  } catch (error) {
+    console.error("[certificate] GET error:", error);
+    return NextResponse.json(
+      { error: "Erreur lors de la récupération des certificats" },
+      { status: 500 }
+    );
+  }
+}
+
+/**
+ * POST /api/certificate
+ * Body: { sessionId: string }
+ *
+ * Issues a certificate for a completed session if:
+ *  - the session belongs to the current user
+ *  - the session is completed
+ *  - the score percentage >= 80%
+ *  - no certificate already exists for this session
+ */
+export async function POST(request: Request) {
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.email) {
+      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
+    }
+
+    const user = await db.user.findUnique({
+      where: { email: session.user.email },
+      select: { id: true, name: true },
+    });
+    if (!user) {
+      return NextResponse.json(
+        { error: "Utilisateur introuvable" },
+        { status: 404 }
+      );
+    }
+
+    const body = await request.json().catch(() => ({}));
+    const sessionId = typeof body.sessionId === "string" ? body.sessionId : "";
+>>>>>>> Stashed changes
     if (!sessionId) {
       return NextResponse.json(
         { error: "sessionId requis" },
@@ -43,6 +134,7 @@ export async function GET(request: Request) {
       );
     }
 
+<<<<<<< Updated upstream
     const session = await getServerSession(authOptions);
     const userId = (session?.user as { id?: string } | undefined)?.id ?? null;
 
@@ -61,16 +153,26 @@ export async function GET(request: Request) {
       }
     }
 
+=======
+>>>>>>> Stashed changes
     const quizSession = await db.quizSession.findUnique({
       where: { id: sessionId },
       select: {
         id: true,
+<<<<<<< Updated upstream
         title: true,
         score: true,
         totalQuestions: true,
         startedAt: true,
         completedAt: true,
         userId: true,
+=======
+        userId: true,
+        title: true,
+        score: true,
+        totalQuestions: true,
+        completedAt: true,
+>>>>>>> Stashed changes
       },
     });
 
@@ -80,12 +182,22 @@ export async function GET(request: Request) {
         { status: 404 }
       );
     }
+<<<<<<< Updated upstream
+=======
+    if (quizSession.userId !== user.id) {
+      return NextResponse.json(
+        { error: "Cette session ne vous appartient pas" },
+        { status: 403 }
+      );
+    }
+>>>>>>> Stashed changes
     if (!quizSession.completedAt) {
       return NextResponse.json(
         { error: "Session non terminée" },
         { status: 400 }
       );
     }
+<<<<<<< Updated upstream
     // If the session belongs to a different user, deny.
     if (quizSession.userId && quizSession.userId !== userId) {
       return NextResponse.json(
@@ -200,11 +312,28 @@ export async function POST(request: Request) {
             "Score insuffisant pour un certificat (minimum 80%).",
           code: "SCORE_TOO_LOW",
           percentage,
+=======
+
+    const percentage =
+      quizSession.totalQuestions > 0
+        ? Math.round(
+            (quizSession.score / quizSession.totalQuestions) * 100
+          )
+        : 0;
+
+    if (percentage < MIN_PERCENTAGE) {
+      return NextResponse.json(
+        {
+          error: `Score insuffisant pour un certificat (${percentage}% < ${MIN_PERCENTAGE}%)`,
+          percentage,
+          required: MIN_PERCENTAGE,
+>>>>>>> Stashed changes
         },
         { status: 400 }
       );
     }
 
+<<<<<<< Updated upstream
     let userName = "Candidat anonyme";
     if (userId) {
       const u = await db.user.findUnique({
@@ -234,6 +363,32 @@ export async function POST(request: Request) {
     console.error("certificate POST error:", error);
     return NextResponse.json(
       { error: "Échec de la génération du certificat" },
+=======
+    // Check if a certificate already exists for this session
+    const existing = await db.certificate.findUnique({
+      where: { sessionId },
+    });
+    if (existing) {
+      return NextResponse.json(existing);
+    }
+
+    const cert = await db.certificate.create({
+      data: {
+        userId: user.id,
+        sessionId,
+        title: quizSession.title,
+        score: quizSession.score,
+        totalQuestions: quizSession.totalQuestions,
+        percentage,
+      },
+    });
+
+    return NextResponse.json(cert);
+  } catch (error) {
+    console.error("[certificate] POST error:", error);
+    return NextResponse.json(
+      { error: "Erreur lors de la délivrance du certificat" },
+>>>>>>> Stashed changes
       { status: 500 }
     );
   }

@@ -3,6 +3,7 @@ import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
+<<<<<<< Updated upstream
 // ============================================================================
 // Anki CSV export — produces a semicolon-separated CSV (Anki's default for
 // French / European locales) with a UTF-8 BOM so accented characters render
@@ -116,22 +117,62 @@ function buildCsv(
 // ----------------------------------------------------------------------------
 // GET — export all questions of a public question bank
 // ----------------------------------------------------------------------------
+=======
+/**
+ * GET /api/export/anki?bankId=<id>
+ * Exports all questions of a bank as a CSV file in Anki-compatible format:
+ *   Front;Back;Tags
+ *
+ * - UTF-8 BOM (so Excel/Anki detect encoding properly)
+ * - Semicolon-separated
+ * - Quotes are escaped by doubling them, fields are wrapped in double quotes
+ *   if they contain a separator, quote, or newline.
+ *
+ * Public endpoint (no auth) so learners can export any public bank.
+ */
+>>>>>>> Stashed changes
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const bankId = searchParams.get("bankId");
+<<<<<<< Updated upstream
 
     if (!bankId) {
       return NextResponse.json(
         { error: "Paramètre 'bankId' manquant" },
+=======
+    if (!bankId) {
+      return NextResponse.json(
+        { error: "Paramètre bankId requis" },
+>>>>>>> Stashed changes
         { status: 400 }
       );
     }
 
     const bank = await db.questionBank.findUnique({
       where: { id: bankId },
+<<<<<<< Updated upstream
       include: {
         questions: { orderBy: { order: "asc" } },
+=======
+      select: {
+        id: true,
+        title: true,
+        category: true,
+        questions: {
+          select: {
+            question: true,
+            optionA: true,
+            optionB: true,
+            optionC: true,
+            optionD: true,
+            correctAnswer: true,
+            explanation: true,
+            difficulty: true,
+          },
+          orderBy: { order: "asc" },
+        },
+>>>>>>> Stashed changes
       },
     });
 
@@ -142,6 +183,7 @@ export async function GET(request: Request) {
       );
     }
 
+<<<<<<< Updated upstream
     const rows = bank.questions.map((q) => ({
       question: q.question,
       answer: answerText(
@@ -272,18 +314,63 @@ export async function POST(request: Request) {
     const csv = buildCsv(rows);
 
     const filename = `anki-favoris-${new Date().toISOString().slice(0, 10)}.csv`;
+=======
+    const escape = (s: string): string => {
+      const str = String(s ?? "");
+      if (/[";\n\r]/.test(str)) {
+        return `"${str.replace(/"/g, '""')}"`;
+      }
+      return str;
+    };
+
+    const lines: string[] = ["Front;Back;Tags"];
+    const tagBase = bank.category.replace(/[^a-zA-Z0-9_-]/g, "_");
+
+    for (const q of bank.questions) {
+      const front = `${q.question}\nA) ${q.optionA}\nB) ${q.optionB}\nC) ${q.optionC}\nD) ${q.optionD}`;
+      const correctLetter = q.correctAnswer;
+      const correctText =
+        correctLetter === "A"
+          ? q.optionA
+          : correctLetter === "B"
+            ? q.optionB
+            : correctLetter === "C"
+              ? q.optionC
+              : q.optionD;
+      const back = `Bonne réponse : ${correctLetter}) ${correctText}\n\nExplication : ${q.explanation}`;
+      const tags = `${tagBase} ${q.difficulty || "medium"}`.trim();
+      lines.push(
+        [escape(front), escape(back), escape(tags)].join(";")
+      );
+    }
+
+    // Prepend UTF-8 BOM (\uFEFF) for proper encoding detection by Anki/Excel.
+    const csv = "\uFEFF" + lines.join("\r\n");
+    const safeTitle = bank.title.replace(/[^a-zA-Z0-9-_]/g, "_");
+
+>>>>>>> Stashed changes
     return new NextResponse(csv, {
       status: 200,
       headers: {
         "Content-Type": "text/csv; charset=utf-8",
+<<<<<<< Updated upstream
         "Content-Disposition": `attachment; filename="${filename}"`,
+=======
+        "Content-Disposition": `attachment; filename="${safeTitle}_anki.csv"`,
+>>>>>>> Stashed changes
         "Cache-Control": "no-store",
       },
     });
   } catch (error) {
+<<<<<<< Updated upstream
     console.error("Anki export (POST) failed:", error);
     return NextResponse.json(
       { error: "Échec de l'export Anki" },
+=======
+    console.error("[export/anki] error:", error);
+    return NextResponse.json(
+      { error: "Erreur lors de l'export Anki" },
+>>>>>>> Stashed changes
       { status: 500 }
     );
   }

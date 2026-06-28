@@ -16,7 +16,8 @@
       "optionC": "Une bonne condition physique et une nutrition équilibrée",
       "optionD": "La capacité à réaliser ses ambitions et à satisfaire ses besoins",
       "correctAnswer": "B",
-      "explanation": "La définition de l'OMS de 1948 considère la santé comme un état complet de bien-être physique, mental et social, et non seulement comme l'absence de maladie."
+      "explanation": "La définition de l'OMS de 1948 considère la santé comme un état complet de bien-être physique, mental et social, et non seulement comme l'absence de maladie.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale stratégie de l'OMS pour éliminer le paludisme à l'horizon 2030?",
@@ -25,7 +26,8 @@
       "optionC": "La combinaison de prévention, diagnostic et traitement rapides",
       "optionD": "La modification génétique des moustiques pour les rendre stériles",
       "correctAnswer": "C",
-      "explanation": "L'OMS recommande une approche combinée incluant la prévention (moustiquaires imprégnées), un diagnostic rapide et un traitement efficace pour atteindre les cibles d'élimination."
+      "explanation": "L'OMS recommande une approche combinée incluant la prévention (moustiquaires imprégnées), un diagnostic rapide et un traitement efficace pour atteindre les cibles d'élimination.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est l'Objectif de Développement Durable (ODD) spécifiquement lié à l'égalité des genres?",
@@ -34,7 +36,8 @@
       "optionC": "ODD 10 - Réduction des inégalités",
       "optionD": "ODD 16 - Paix, justice et institutions efficaces",
       "correctAnswer": "B",
-      "explanation": "L'ODD 5 vise à réaliser l'égalité des sexes et à autonomiser toutes les femmes et les filles, avec cibles spécifiques sur les violences basées sur le genre."
+      "explanation": "L'ODD 5 vise à réaliser l'égalité des sexes et à autonomiser toutes les femmes et les filles, avec cibles spécifiques sur les violences basées sur le genre.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la méthode contraceptive la plus efficace à long terme chez la femme?",
@@ -43,7 +46,8 @@
       "optionC": "Implant contraceptif sous-cutané",
       "optionD": "Stérilet hormonal (IUS)",
       "correctAnswer": "D",
-      "explanation": "Le stérilet hormonal (IUS) a un taux d'échec de moins de 1% et peut rester en place jusqu'à 5 ans, le rendant plus efficace à long terme que les autres options listées."
+      "explanation": "Le stérilet hormonal (IUS) a un taux d'échec de moins de 1% et peut rester en place jusqu'à 5 ans, le rendant plus efficace à long terme que les autres options listées.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon l'ONUSIDA, quel est le principal facteur de risque pour l'infection au VIH chez les femmes en Afrique subsaharienne?",
@@ -52,7 +56,8 @@
       "optionC": "Inégalité de genre et violence basée sur le genre",
       "optionD": "Manque d'accès aux soins de santé",
       "correctAnswer": "C",
-      "explanation": "L'inegalité de genre et la VBG augmentent le risque d'infection au VIH chez les femmes, qui représentent 60% des nouveaux cas dans la région."
+      "explanation": "L'inegalité de genre et la VBG augmentent le risque d'infection au VIH chez les femmes, qui représentent 60% des nouveaux cas dans la région.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la vaccination recommandée par l'OMS pour prévenir le cancer du col de l'utérus?",
@@ -61,7 +66,8 @@
       "optionC": "Vaccin contre le VIH",
       "optionD": "Vaccin contre l'herpès génital",
       "correctAnswer": "A",
-      "explanation": "Le vaccin HPV prévient les infections par les types de papillomavirus à haut risque responsables de 70% des cancers du col de l'utérus."
+      "explanation": "Le vaccin HPV prévient les infections par les types de papillomavirus à haut risque responsables de 70% des cancers du col de l'utérus.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la forme de violence basée sur le genre (VBG) la plus répandue dans le monde?",
@@ -70,7 +76,8 @@
       "optionC": "Violence psychologique",
       "optionD": "Violence physique par un partenaire intime",
       "correctAnswer": "D",
-      "explanation": "Selon l'OMS, environ 1 femme sur 3 subit de la violence physique ou sexuelle par un partenaire intime au cours de sa vie, en faisant la forme la plus répandue."
+      "explanation": "Selon l'OMS, environ 1 femme sur 3 subit de la violence physique ou sexuelle par un partenaire intime au cours de sa vie, en faisant la forme la plus répandue.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal obstacle à l'accès à la planification familiale dans les pays à faible revenu?",
@@ -79,7 +86,8 @@
       "optionC": "Restrictions culturelles et religieuses",
       "optionD": "Tous les éléments ci-dessus",
       "correctAnswer": "D",
-      "explanation": "L'accès à la planification familiale est entravé par des facteurs systémiques incluant le manque de ressources, les barrières culturelles et le manque de formation."
+      "explanation": "L'accès à la planification familiale est entravé par des facteurs systémiques incluant le manque de ressources, les barrières culturelles et le manque de formation.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la stratégie la plus efficace pour réduire la transmission du VIH de mère à l'enfant?",
@@ -88,7 +96,8 @@
       "optionC": "PrEP pour la mère pendant la grossesse",
       "optionD": "Thérapie antirétrovirale (TAR) pour la mère et l'enfant",
       "correctAnswer": "D",
-      "explanation": "La TAR pour la mère pendant la grossesse, l'accouchement et l'allaitement, et pour l'enfant après la naissance, réduit le risque de transmission à moins de 5%."
+      "explanation": "La TAR pour la mère pendant la grossesse, l'accouchement et l'allaitement, et pour l'enfant après la naissance, réduit le risque de transmission à moins de 5%.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon l'OMS, quelle est la prévalence mondiale estimée des troubles mentaux chez les femmes?",
@@ -97,7 +106,8 @@
       "optionC": "3 fois plus élevée que chez les hommes",
       "optionD": "Moins élevée que chez les hommes",
       "correctAnswer": "B",
-      "explanation": "Les femmes ont un risque 1,5 à 2 fois plus élevé de développer des troubles mentals, en partie liés aux facteurs socioculturels et aux violences subies."
+      "explanation": "Les femmes ont un risque 1,5 à 2 fois plus élevé de développer des troubles mentals, en partie liés aux facteurs socioculturels et aux violences subies.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal obstacle à l'équité dans l'accès aux vaccins dans les pays à faible revenu?",
@@ -106,7 +116,8 @@
       "optionC": "Problèmes de chaîne du froid",
       "optionD": "Tous les éléments ci-dessus",
       "correctAnswer": "D",
-      "explanation": "L'équité vaccinale est entravée par des défis systémiques incluant le coût, la conservation, la distribution et les barrières géographiques."
+      "explanation": "L'équité vaccinale est entravée par des défis systémiques incluant le coût, la conservation, la distribution et les barrières géographiques.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la conséquence principale de la stigmatisation des personnes vivant avec le VIH (PVVIH)?",
@@ -115,7 +126,8 @@
       "optionC": "Discrimination dans l'emploi et les soins",
       "optionD": "Tous les éléments ci-dessus",
       "correctAnswer": "D",
-      "explanation": "La stigmatisation entraîne isolement, discrimination, retard dans les soins et réduction de l'observance thérapeutique."
+      "explanation": "La stigmatisation entraîne isolement, discrimination, retard dans les soins et réduction de l'observance thérapeutique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est l'impact principal de l'investissement dans la santé reproductive sur les économies nationales?",
@@ -124,7 +136,8 @@
       "optionC": "Augmentation du PIB par habitant",
       "optionD": "Tous les éléments ci-dessus",
       "correctAnswer": "D",
-      "explanation": "Les investissements dans la santé reproductive génèrent des retombées économiques positives par l'amélioration de la santé maternelle, la réduction de la mortalité infantile et l'augmentation de la participation féminine."
+      "explanation": "Les investissements dans la santé reproductive génèrent des retombées économiques positives par l'amélioration de la santé maternelle, la réduction de la mortalité infantile et l'augmentation de la participation féminine.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale stratégie de prévention du paludisme recommandée par l'OMS pour les femmes enceintes en zones à transmission intense?",
@@ -133,7 +146,8 @@
       "optionC": "Prévention du paludisme intermittent (IPTp)",
       "optionD": "Vaccin RTS,S",
       "correctAnswer": "C",
-      "explanation": "L'IPTp avec SP est recommandée pour les femmes enceintes dans les zones à transmission intense pour prévenir les effets délétères du paludisme sur la mère et le fœtus."
+      "explanation": "L'IPTp avec SP est recommandée pour les femmes enceintes dans les zones à transmission intense pour prévenir les effets délétères du paludisme sur la mère et le fœtus.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre l'équité et l'égalité en santé?",
@@ -142,7 +156,8 @@
       "optionC": "Aucune différence, les termes sont interchangeables",
       "optionD": "L'égalité concerne les ressources, l'équité concerne les services",
       "correctAnswer": "A",
-      "explanation": "L'égalité signifie fournir les mêmes ressources à tous, tandis que l'équité signifie adapter les ressources aux besoins spécifiques pour obtenir des résultats équitables."
+      "explanation": "L'égalité signifie fournir les mêmes ressources à tous, tandis que l'équité signifie adapter les ressources aux besoins spécifiques pour obtenir des résultats équitables.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal facteur de risque de mortalité maternelle dans le monde?",
@@ -151,7 +166,8 @@
       "optionC": "Infections",
       "optionD": "Tous les éléments ci-dessus",
       "correctAnswer": "D",
-      "explanation": "Les hémorragies, l'hypertension et les infections sont les principales causes de mortalité maternelle, représentant ensemble environ 70% des décès."
+      "explanation": "Les hémorragies, l'hypertension et les infections sont les principales causes de mortalité maternelle, représentant ensemble environ 70% des décès.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la stratégie la plus efficace pour lutter contre les inégalités de santé entre les genres?",
@@ -160,7 +176,8 @@
       "optionC": "Campagnes de sensibilisation",
       "optionD": "Tous les éléments ci-dessus",
       "correctAnswer": "D",
-      "explanation": "L'intégration du genre dans toutes les politiques de santé, combinée à la formation et à la sensibilisation, est la stratégie la plus complète pour réduire les inégalités."
+      "explanation": "L'intégration du genre dans toutes les politiques de santé, combinée à la formation et à la sensibilisation, est la stratégie la plus complète pour réduire les inégalités.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon l'ONUSIDA, quel est le principal facteur de réussite de la prévention du VIH chez les jeunes filles?",
@@ -169,7 +186,8 @@
       "optionC": "Autonomisation économique et éducation des filles",
       "optionD": "Tous les éléments ci-dessus",
       "correctAnswer": "D",
-      "explanation": "L'autonomisation des filles combinée à l'éducation et aux services de santé est la stratégie la plus efficace pour prévenir le VIH chez les jeunes filles."
+      "explanation": "L'autonomisation des filles combinée à l'éducation et aux services de santé est la stratégie la plus efficace pour prévenir le VIH chez les jeunes filles.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale recommandation de l'OMS pour l'auto-soignement en santé reproductive?",
@@ -178,7 +196,8 @@
       "optionC": "Dépistage communautaire",
       "optionD": "Tous les éléments ci-dessus",
       "correctAnswer": "D",
-      "explanation": "L'auto-soignement inclut la distribution de contraceptifs, la formation communautaire et le dépistage pour améliorer l'accès aux services."
+      "explanation": "L'auto-soignement inclut la distribution de contraceptifs, la formation communautaire et le dépistage pour améliorer l'accès aux services.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est l'impact principal de la violence économique sur la santé des femmes?",
@@ -187,7 +206,8 @@
       "optionC": "Dépendance économique",
       "optionD": "Tous les éléments ci-dessus",
       "correctAnswer": "D",
-      "explanation": "La violence économique entraîne stress, isolement, dépendance et difficultés d'accès aux soins, affectant négativement la santé physique et mentale."
+      "explanation": "La violence économique entraîne stress, isolement, dépendance et difficultés d'accès aux soins, affectant négativement la santé physique et mentale.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon l'OMS, quelle est la définition la plus complète de la santé ?",
@@ -196,7 +216,8 @@
       "optionC": "La capacité à accomplir des activités quotidiennes sans fatigue",
       "optionD": "Un bon fonctionnement des systèmes organiques",
       "correctAnswer": "B",
-      "explanation": "La définition de l'OMS inclut non seulement l'absence de maladie mais aussi un état complet de bien-être physique, mental et social, ce qui représente une approche holistique de la santé."
+      "explanation": "La définition de l'OMS inclut non seulement l'absence de maladie mais aussi un état complet de bien-être physique, mental et social, ce qui représente une approche holistique de la santé.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la stratégie de prévention du VIH recommandée par l'OMS pour les populations à haut risque ?",
@@ -205,7 +226,8 @@
       "optionC": "Une approche combinée incluant la PrEP, la circoncision masculine volontaire et la réduction des risques",
       "optionD": "La vaccination universelle contre le VIH",
       "correctAnswer": "C",
-      "explanation": "L'OMS recommande une approche combinée de prévention du VIH incluant plusieurs interventions adaptées aux contextes locaux, notamment la PrEP, la circoncision masculine et la réduction des risques."
+      "explanation": "L'OMS recommande une approche combinée de prévention du VIH incluant plusieurs interventions adaptées aux contextes locaux, notamment la PrEP, la circoncision masculine et la réduction des risques.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la particularité du paludisme dans le cadre des Objectifs de Développement Durable (ODD) ?",
@@ -214,7 +236,8 @@
       "optionC": "Il n'est pas mentionné dans les ODD car il est considéré comme éradiqué",
       "optionD": "Il est traité exclusivement dans l'ODD 10 (Réduction des inégalités)",
       "correctAnswer": "B",
-      "explanation": "Le paludisme est principalement abordé dans l'ODD 3 (cible 3.3) mais aussi dans l'ODD 6 (assainissement) et l'ODD 1 (pauvreté) car ses déterminants sont multiples."
+      "explanation": "Le paludisme est principalement abordé dans l'ODD 3 (cible 3.3) mais aussi dans l'ODD 6 (assainissement) et l'ODD 1 (pauvreté) car ses déterminants sont multiples.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale barrière à l'accès aux services de planning familial dans les pays à faible revenu ?",
@@ -223,7 +246,8 @@
       "optionC": "L'opposition systématique des leaders religieux",
       "optionD": "L'inefficacité des méthodes contraceptives disponibles",
       "correctAnswer": "B",
-      "explanation": "Plusieurs barrières interconnectées limitent l'accès aux services de planning familial, notamment les coûts, les distances, les restrictions culturelles et les obstacles financiers."
+      "explanation": "Plusieurs barrières interconnectées limitent l'accès aux services de planning familial, notamment les coûts, les distances, les restrictions culturelles et les obstacles financiers.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon l'OMS, quelle est la prévalence minimale de la violence basée sur le genre (VBG) dans le monde ?",
@@ -232,7 +256,8 @@
       "optionC": "1 femme sur 5 a subi des violences physiques ou sexuelles par un partenaire",
       "optionD": "1 femme sur 3 a subi des violences physiques ou sexuelles par un partenaire",
       "correctAnswer": "C",
-      "explanation": "Selon les données de l'OMS, environ 1 femme sur 5 dans le monde a subi des violences physiques ou sexuelles par un partenaire intime au cours de sa vie."
+      "explanation": "Selon les données de l'OMS, environ 1 femme sur 5 dans le monde a subi des violences physiques ou sexuelles par un partenaire intime au cours de sa vie.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la stratégie vaccinale la plus efficace pour éradiquer une maladie ?",
@@ -241,7 +266,8 @@
       "optionC": "La vaccination universelle avec une couverture de 95% ou plus",
       "optionD": "La vaccination saisonnière uniquement",
       "correctAnswer": "C",
-      "explanation": "Pour éradiquer une maladie comme la rougeole ou la polio, une couverture vaccinale universelle de 95% ou plus est généralement nécessaire pour atteindre l'immunité de groupe."
+      "explanation": "Pour éradiquer une maladie comme la rougeole ou la polio, une couverture vaccinale universelle de 95% ou plus est généralement nécessaire pour atteindre l'immunité de groupe.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre l'équité et l'égalité en santé ?",
@@ -250,7 +276,8 @@
       "optionC": "L'égalité est un concept économique, l'équité est un concept social",
       "optionD": "Il n'y a pas de différence, les termes sont interchangeables",
       "correctAnswer": "A",
-      "explanation": "L'égalité signifie traiter tout le monde de la même manière, tandis que l'équité signifie adapter les interventions pour répondre aux besoins spécifiques des populations vulnérables."
+      "explanation": "L'égalité signifie traiter tout le monde de la même manière, tandis que l'équité signifie adapter les interventions pour répondre aux besoins spécifiques des populations vulnérables.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le lien entre le VIH/sida et les Objectifs de Développement Durable (ODD) ?",
@@ -259,7 +286,8 @@
       "optionC": "Il est exclusivement lié à l'ODD 4 (Éducation)",
       "optionD": "Il n'est pas considéré comme un obstacle au développement durable",
       "correctAnswer": "B",
-      "explanation": "Le VIH/sida est lié à plusieurs ODD, principalement l'ODD 3 (cible 3.3) mais aussi l'ODD 10 (inégalités) et d'autres en raison de son impact multidimensionnel."
+      "explanation": "Le VIH/sida est lié à plusieurs ODD, principalement l'ODD 3 (cible 3.3) mais aussi l'ODD 10 (inégalités) et d'autres en raison de son impact multidimensionnel.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la particularité de l'approche genre dans la lutte contre le paludisme ?",
@@ -268,7 +296,8 @@
       "optionC": "Seuls les hommes sont considérés comme des décideurs dans la prévention du paludisme",
       "optionD": "Le paludisme n'a pas d'impact différencié selon le genre",
       "correctAnswer": "B",
-      "explanation": "Les femmes enceintes sont particulièrement vulnérables au paludisme grave, ce qui nécessite des interventions spécifiques comme la prophylaxie intermittent."
+      "explanation": "Les femmes enceintes sont particulièrement vulnérables au paludisme grave, ce qui nécessite des interventions spécifiques comme la prophylaxie intermittent.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la recommandation de l'OMS concernant la vaccination des personnes vivant avec le VIH ?",
@@ -277,7 +306,8 @@
       "optionC": "Elles ont besoin d'un calendrier vaccinal adapté à leur état immunitaire",
       "optionD": "Seuls les vaccins vivants atténués leur sont recommandés",
       "correctAnswer": "C",
-      "explanation": "Les personnes vivant avec le VIH ont besoin d'un calendrier vaccinal adapté à leur niveau d'immunodépression, avec des précautions pour les vaccins vivants atténués dans les cas d'immunodépression sévère."
+      "explanation": "Les personnes vivant avec le VIH ont besoin d'un calendrier vaccinal adapté à leur niveau d'immunodépression, avec des précautions pour les vaccins vivants atténués dans les cas d'immunodépression sévère.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale stratégie de l'OMS pour éliminer la transmission mère-enfant du VIH ?",
@@ -286,7 +316,8 @@
       "optionC": "La promotion de l'allaitement artificiel exclusif",
       "optionD": "La vaccination systématique des nouveau-nés",
       "correctAnswer": "B",
-      "explanation": "La stratégie de l'OMS pour éliminer la transmission mère-enfant du VIH repose sur la prophylaxie antirétrovirale pour les mères vivant avec le VIH et leurs bébés."
+      "explanation": "La stratégie de l'OMS pour éliminer la transmission mère-enfant du VIH repose sur la prophylaxie antirétrovirale pour les mères vivant avec le VIH et leurs bébés.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence entre l'approche genre et l'approche féministe en santé publique ?",
@@ -295,7 +326,8 @@
       "optionC": "L'approche genre analyse les relations sociales entre hommes et femmes",
       "optionD": "Les deux approches sont identiques et interchangeables",
       "correctAnswer": "C",
-      "explanation": "L'approche genre analyse comment les rôles, les relations et les identités sociales entre hommes et femmes influencent la santé et les soins de santé, tandis que l'approche féministe met davantage l'accent sur les inégalités de pouvoir et la transformation sociale."
+      "explanation": "L'approche genre analyse comment les rôles, les relations et les identités sociales entre hommes et femmes influencent la santé et les soins de santé, tandis que l'approche féministe met davantage l'accent sur les inégalités de pouvoir et la transformation sociale.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la particularité de la vaccination dans les contextes humanitaires ?",
@@ -304,7 +336,8 @@
       "optionC": "Seuls les enfants doivent être vaccinés en situation d'urgence",
       "optionD": "La vaccination est considérée comme une mesure à long terme non prioritaire",
       "correctAnswer": "B",
-      "explanation": "Dans les contextes humanitaires, la vaccination est une intervention prioritaire pour prévenir les épidémies de maladies évitables par vaccin qui peuvent se propager rapidement dans des conditions de surpopulation et de déplacement."
+      "explanation": "Dans les contextes humanitaires, la vaccination est une intervention prioritaire pour prévenir les épidémies de maladies évitables par vaccin qui peuvent se propager rapidement dans des conditions de surpopulation et de déplacement.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale difficulté dans la mise en œuvre des services de planification familiale dans les pays à faible revenu ?",
@@ -313,7 +346,8 @@
       "optionC": "La combinaison de facteurs systémiques, culturels, financiers et de gouvernance",
       "optionD": "L'inefficacité des méthodes contraceptives disponibles",
       "correctAnswer": "C",
-      "explanation": "La mise en œuvre efficace des services de planification familiale fait face à une combinaison complexe de défis systémiques, culturels, financiers et de gouvernance."
+      "explanation": "La mise en œuvre efficace des services de planification familiale fait face à une combinaison complexe de défis systémiques, culturels, financiers et de gouvernance.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la stratégie de l'OMS pour lutter contre la stigmatisation associée au VIH ?",
@@ -322,7 +356,8 @@
       "optionC": "L'exclusion des personnes vivant avec le VIH de certains emplois",
       "optionD": "La dissimulation obligatoire du statut VIH",
       "correctAnswer": "B",
-      "explanation": "L'OMS recommande des campagnes d'éducation pour combattre les préjugés et des lois contre la discrimination pour protéger les droits des personnes vivant avec le VIH."
+      "explanation": "L'OMS recommande des campagnes d'éducation pour combattre les préjugés et des lois contre la discrimination pour protéger les droits des personnes vivant avec le VIH.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la relation entre les violences basées sur le genre (VBG) et les Objectifs de Développement Durable (ODD) ?",
@@ -331,7 +366,8 @@
       "optionC": "Elle est abordée dans l'ODD 5, 11 (Villes) et 16 (Paix)",
       "optionD": "Elle est considérée comme un problème exclusivement individuel",
       "correctAnswer": "C",
-      "explanation": "La VBG est abordée dans plusieurs ODD, principalement l'ODD 5 (égalité de genre), l'ODD 11 (villes et communautés sûres) et l'ODD 16 (paix, justice et institutions efficaces)."
+      "explanation": "La VBG est abordée dans plusieurs ODD, principalement l'ODD 5 (égalité de genre), l'ODD 11 (villes et communautés sûres) et l'ODD 16 (paix, justice et institutions efficaces).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la définition de la santé selon l'Organisation Mondiale de la Santé (OMS) de 1948 ?",
@@ -340,7 +376,8 @@
       "optionC": "Une bonne qualité de vie",
       "optionD": "La capacité à travailler efficacement",
       "correctAnswer": "B",
-      "explanation": "La définition de l'OMS de 1948 considère la santé comme un état complet de bien-être physique, mental et social, et non seulement comme l'absence de maladie."
+      "explanation": "La définition de l'OMS de 1948 considère la santé comme un état complet de bien-être physique, mental et social, et non seulement comme l'absence de maladie.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la stratégie de l'OMS pour éliminer le paludisme à l'horizon 2030 ?",
@@ -349,7 +386,12 @@
       "optionC": "Le triple approche: prévention, diagnostic et traitement",
       "optionD": "L'éradication des moustiques",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "L'OMS adopte une approche triple contre le paludisme: prévention (moustiquaires, insecticides), diagnostic rapide et traitement approprié pour éliminer la maladie."
+=======
+      "explanation": "L'OMS adopte une approche triple contre le paludisme: prévention (moustiquaires, insecticides), diagnostic rapide et traitement approprié pour éliminer la maladie.",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quelle est la particularité du vaccin contre le VIH développé par le français Jean-Claude Chermann ?",
@@ -358,7 +400,12 @@
       "optionC": "Il a provoisi des réactions immunitaires mais n'a pas empêché l'infection",
       "optionD": "Il est administré par voie orale",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "Le vaccin contre le VIH développé par Chermann a montré une réponse immunitaire mais n'a pas réussi à prévenir l'infection lors des essais cliniques."
+=======
+      "explanation": "Le vaccin contre le VIH développé par Chermann a montré une réponse immunitaire mais n'a pas réussi à prévenir l'infection lors des essais cliniques.",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quel est le principal obstacle à l'accès aux soins pour les personnes vivant avec le VIH dans les pays à faible revenu ?",
@@ -367,7 +414,8 @@
       "optionC": "La stigmatisation",
       "optionD": "Toutes ces réponses",
       "correctAnswer": "D",
-      "explanation": "L'accès aux soins pour les personnes vivant avec le VIH est entravé par une combinaison de facteurs: manque de personnel, coût des médicaments et stigmatisation."
+      "explanation": "L'accès aux soins pour les personnes vivant avec le VIH est entravé par une combinaison de facteurs: manque de personnel, coût des médicaments et stigmatisation.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la stratégie 'Test and Treat' promue par l'OMS pour le VIH ?",
@@ -376,7 +424,8 @@
       "optionC": "Ne traiter que les patients à stade avancé",
       "optionD": "Traiter préventivement les populations à haut risque",
       "correctAnswer": "B",
-      "explanation": "La stratégie 'Test and Treat' recommande de diagnostiquer le VIH et de débuter immédiatement le traitement antirétroviral pour toute personne séropositive, indépendamment de son taux de CD4."
+      "explanation": "La stratégie 'Test and Treat' recommande de diagnostiquer le VIH et de débuter immédiatement le traitement antirétroviral pour toute personne séropositive, indépendamment de son taux de CD4.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est l'impact du genre sur la charge de morbidité du paludisme ?",
@@ -385,7 +434,8 @@
       "optionC": "Les enfants de moins de 5 ans sont les plus touchés, sans différence de genre",
       "optionD": "Aucune différence de genre n'est observée",
       "correctAnswer": "B",
-      "explanation": "Les femmes enceintes sont particulièrement vulnérables au paludisme, qui peut entraîner des complications graves pour la mère et le fœtus."
+      "explanation": "Les femmes enceintes sont particulièrement vulnérables au paludisme, qui peut entraîner des complications graves pour la mère et le fœtus.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la cible de vaccination pour l'éradication de la polio selon l'OMS ?",
@@ -394,7 +444,8 @@
       "optionC": "Vacciner toute la population adulte",
       "optionD": "Vacciner uniquement les populations à risque",
       "correctAnswer": "B",
-      "explanation": "Pour éradiquer la polio, l'OMS cible une couverture vaccinale de 95% des enfants de moins de 5 ans pour interrompre la transmission du virus."
+      "explanation": "Pour éradiquer la polio, l'OMS cible une couverture vaccinale de 95% des enfants de moins de 5 ans pour interrompre la transmission du virus.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la relation entre les ODD et la santé des femmes ?",
@@ -403,7 +454,8 @@
       "optionC": "Plusieurs ODD sont interconnectés avec la santé des femmes",
       "optionD": "La santé des femmes est traitée uniquement dans l'ODD 3",
       "correctAnswer": "C",
-      "explanation": "Plusieurs ODD sont interconnectés avec la santé des femmes, notamment l'ODD 3 (santé), ODD 4 (éducation), ODD 5 (genre) et ODD 10 (inégalités)."
+      "explanation": "Plusieurs ODD sont interconnectés avec la santé des femmes, notamment l'ODD 3 (santé), ODD 4 (éducation), ODD 5 (genre) et ODD 10 (inégalités).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la particularité du vaccin contre Ebola développé pendant l'épidémie de 2014-2016 ?",
@@ -412,7 +464,8 @@
       "optionC": "Il est administré en une seule dose",
       "optionD": "Il utilise une technologie à ARN messager",
       "correctAnswer": "A",
-      "explanation": "Le vaccin rVSV-ZEBOV contre Ebola a été développé en record de temps (moins de 6 mois) et déployé lors de l'épidémie en Afrique de l'Ouest."
+      "explanation": "Le vaccin rVSV-ZEBOV contre Ebola a été développé en record de temps (moins de 6 mois) et déployé lors de l'épidémie en Afrique de l'Ouest.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale stratégie de prévention de la transmission mère-enfant du VIH ?",
@@ -421,7 +474,8 @@
       "optionC": "Traitement antirétroviral de la mère pendant la grossesse et l'allaitement",
       "optionD": "Quarantaine du nouveau-né",
       "correctAnswer": "C",
-      "explanation": "Le traitement antirétroviral de la mère pendant la grossesse, l'accouchement et l'allaitement réduit considérablement le risque de transmission du VIH au bébé."
+      "explanation": "Le traitement antirétroviral de la mère pendant la grossesse, l'accouchement et l'allaitement réduit considérablement le risque de transmission du VIH au bébé.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la définition du genre selon l'OMS ?",
@@ -430,7 +484,8 @@
       "optionC": "L'orientation sexuelle d'une personne",
       "optionD": "L'identité de genre d'une personne",
       "correctAnswer": "B",
-      "explanation": "Selon l'OMS, le genre fait référence aux rôles, comportements et attributs sociaux qu'une société considère comme appropriés pour les hommes et les femmes, construits socialement et appris."
+      "explanation": "Selon l'OMS, le genre fait référence aux rôles, comportements et attributs sociaux qu'une société considère comme appropriés pour les hommes et les femmes, construits socialement et appris.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la particularité du vaccin contre le COVID-19 développé par Pfizer-BioNTech ?",
@@ -439,7 +494,8 @@
       "optionC": "Il nécessite une seule injection",
       "optionD": "Il est efficace à 100%",
       "correctAnswer": "B",
-      "explanation": "Le vaccin Pfizer-BioNTech utilise une technologie innovante à ARN messager, qui n'avait jamais été utilisée à grande échelle pour un vaccin humain avant la pandémie de COVID-19."
+      "explanation": "Le vaccin Pfizer-BioNTech utilise une technologie innovante à ARN messager, qui n'avait jamais été utilisée à grande échelle pour un vaccin humain avant la pandémie de COVID-19.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la forme de violence basée sur le genre la plus sous-déclarée ?",
@@ -448,7 +504,8 @@
       "optionC": "La violence psychologique",
       "optionD": "La violence sexuelle",
       "correctAnswer": "D",
-      "explanation": "La violence sexuelle est la forme de VBG la plus sous-déclarée en raison de la stigmatisation, de la honte et des craintes de ne pas être cru."
+      "explanation": "La violence sexuelle est la forme de VBG la plus sous-déclarée en raison de la stigmatisation, de la honte et des craintes de ne pas être cru.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal défi de la vaccination dans les pays à faible revenu ?",
@@ -457,7 +514,8 @@
       "optionC": "Le coût des vaccins",
       "optionD": "Toutes ces réponses",
       "correctAnswer": "D",
-      "explanation": "Les pays à faible revenu font face à de multiples défis: coût des vaccins, logistique complexe (chaîne du froid), et parfois faible acceptation par la population."
+      "explanation": "Les pays à faible revenu font face à de multiples défis: coût des vaccins, logistique complexe (chaîne du froid), et parfois faible acceptation par la population.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la relation entre le genre et l'accès aux soins de santé ?",
@@ -466,7 +524,8 @@
       "optionC": "Les inégalités d'accès dépendent du contexte socioculturel",
       "optionD": "Il n'y a pas de différence d'accès aux soins entre les genres",
       "correctAnswer": "C",
-      "explanation": "Les inégalités d'accès aux soins entre les genres varient selon les contextes socioculturels, économiques et géographiques."
+      "explanation": "Les inégalités d'accès aux soins entre les genres varient selon les contextes socioculturels, économiques et géographiques.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la stratégie 'Treat All' promue par l'OMS pour le VIH ?",
@@ -475,7 +534,8 @@
       "optionC": "Proposer le traitement à toutes les personnes vivant avec le VIH",
       "optionD": "Traiter préventivement les populations à haut risque",
       "correctAnswer": "C",
-      "explanation": "La stratégie 'Treat All' (Traiter tous) recommande d'offrir un traitement antirétroviral à toutes les personnes vivant avec le VIH, indépendamment de leur stade clinique ou immunologique."
+      "explanation": "La stratégie 'Treat All' (Traiter tous) recommande d'offrir un traitement antirétroviral à toutes les personnes vivant avec le VIH, indépendamment de leur stade clinique ou immunologique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale mesure de prévention du paludisme dans les zones à haut risque ?",
@@ -484,7 +544,8 @@
       "optionC": "L'utilisation de moustiquaires imprégnées d'insecticide",
       "optionD": "La prise de médicaments préventifs",
       "correctAnswer": "C",
-      "explanation": "L'utilisation de moustiquaires imprégnées d'insecticide est considérée comme la mesure de prévention la plus efficace contre le paludisme dans les zones à haut risque."
+      "explanation": "L'utilisation de moustiquaires imprégnées d'insecticide est considérée comme la mesure de prévention la plus efficace contre le paludisme dans les zones à haut risque.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la relation entre les ODD et la santé publique ?",
@@ -493,7 +554,8 @@
       "optionC": "Les ODD sont interconnectés et la santé est un élément transversal",
       "optionD": "La santé publique n'est pas un objectif des ODD",
       "correctAnswer": "C",
-      "explanation": "Les ODD sont interconnectés et la santé (ODD 3) est un élément transversal qui influence et est influencé par de nombreux autres objectifs."
+      "explanation": "Les ODD sont interconnectés et la santé (ODD 3) est un élément transversal qui influence et est influencé par de nombreux autres objectifs.",
+      "difficulty": "medium"
     }
   ]
 }

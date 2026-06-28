@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 
 const OPTION_LETTERS = ["A", "B", "C", "D"] as const;
+const CERTIFICATE_THRESHOLD = 80;
 
 export function ResultsView() {
   const { currentSessionId, goHome, openBank, openExam, session: storeSession } =
@@ -87,6 +88,8 @@ export function ResultsView() {
   const gradeColor = passed
     ? "from-emerald-500 to-teal-600"
     : "from-rose-500 to-orange-600";
+
+  const eligibleForCertificate = percentage >= CERTIFICATE_THRESHOLD;
 
   return (
     <div className="space-y-6">
@@ -168,6 +171,16 @@ export function ResultsView() {
             <RefreshCw className="h-4 w-4" />
             Refaire
           </Button>
+          {eligibleForCertificate && (
+            <Button
+              variant="outline"
+              className="gap-2 border-amber-400 bg-amber-50 text-amber-700 hover:bg-amber-100 dark:border-amber-600 dark:bg-amber-950/30 dark:text-amber-300"
+              onClick={() => setCertOpen(true)}
+            >
+              <Award className="h-4 w-4" />
+              Obtenir un certificat
+            </Button>
+          )}
           <Button onClick={goHome} className="gap-2">
             <Home className="h-4 w-4" />
             Accueil
@@ -329,11 +342,21 @@ export function ResultsView() {
         </div>
       </Card>
 
+<<<<<<< Updated upstream
       {/* Certificate dialog (Premium-gated) */}
+=======
+      {/* Certificate dialog (only opened when user clicks the certificate button) */}
+>>>>>>> Stashed changes
       <CertificateDialog
         open={certOpen}
         onOpenChange={setCertOpen}
         sessionId={session.id}
+<<<<<<< Updated upstream
+=======
+        sessionTitle={session.title}
+        score={score}
+        totalQuestions={total}
+>>>>>>> Stashed changes
       />
     </div>
   );

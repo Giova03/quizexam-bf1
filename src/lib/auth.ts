@@ -96,7 +96,11 @@ export async function ensureAdminAccount() {
         name: "Administrateur",
         passwordHash: hash,
         role: "ADMIN",
+<<<<<<< Updated upstream
         referralCode,
+=======
+        referralCode: generateReferralCode(),
+>>>>>>> Stashed changes
       },
     });
     console.log(`✓ Admin account created: ${adminEmail} (referral: ${referralCode})`);
@@ -112,6 +116,7 @@ export async function ensureAdminAccount() {
 }
 
 /**
+<<<<<<< Updated upstream
  * Create a new visitor account.
  * If `referralCode` is provided and matches an existing user, sets `referredBy`
  * to that user's referral code (the referrer earns +50 XP the next time they
@@ -153,6 +158,60 @@ export async function createVisitorAccount(
       referralCode: newReferralCode,
       referredBy: resolvedReferredBy,
     },
+=======
+ * Generates an 8-character referral code (uppercase alphanumerical,
+ * excluding ambiguous characters like 0/O or 1/I). Collisions are
+ * extremely unlikely for 8 chars from a 31-char alphabet (~31^8 ≈ 8.5e11)
+ * but the caller is expected to retry on a unique-constraint violation.
+ */
+export function generateReferralCode(): string {
+  const alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let out = "";
+  const bytes = crypto.getRandomValues(new Uint8Array(8));
+  for (let i = 0; i < 8; i++) {
+    out += alphabet[bytes[i] % alphabet.length];
+  }
+  return out;
+}
+
+/**
+ * Inserts a user with a unique 8-char referral code. Retries up to 5 times
+ * in the (very unlikely) event of a collision on the @unique constraint.
+ */
+async function createUserWithUniqueReferralCode(data: {
+  email: string;
+  name: string;
+  passwordHash: string;
+  role: string;
+}) {
+  let lastError: unknown = null;
+  for (let attempt = 0; attempt < 5; attempt++) {
+    try {
+      return await db.user.create({
+        data: { ...data, referralCode: generateReferralCode() },
+      });
+    } catch (err) {
+      lastError = err;
+      // Prisma unique-constraint violation code (P2002) — try again
+      const code =
+        (err as { code?: string })?.code ??
+        (err as { error?: { code?: string } })?.error?.code;
+      if (code !== "P2002") throw err;
+    }
+  }
+  throw lastError;
+}
+
+export async function createVisitorAccount(email: string, name: string, password: string) {
+  const existing = await db.user.findUnique({ where: { email: email.toLowerCase() } });
+  if (existing) throw new Error("Un compte existe déjà avec cet email.");
+  const hash = await bcrypt.hash(password, 10);
+  const user = await createUserWithUniqueReferralCode({
+    email: email.toLowerCase(),
+    name,
+    passwordHash: hash,
+    role: "VISITOR",
+>>>>>>> Stashed changes
   });
 
   return {

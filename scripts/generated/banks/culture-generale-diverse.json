@@ -16,7 +16,8 @@
       "optionC": "L'UNESCO a été créée avant le PNUD",
       "optionD": "Seul le PNUD a un statut d'observateur à l'Assemblée générale des Nations Unies",
       "correctAnswer": "A",
-      "explanation": "L'UNESCO (Organisation des Nations Unies pour l'éducation, la science et la culture) se concentre spécifiquement sur ces domaines, tandis que le PNUD (Programme des Nations Unies pour le Développement) travaille plus largement sur le développement économique et social."
+      "explanation": "L'UNESCO (Organisation des Nations Unies pour l'éducation, la science et la culture) se concentre spécifiquement sur ces domaines, tandis que le PNUD (Programme des Nations Unies pour le Développement) travaille plus largement sur le développement économique et social.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le pays qui a le plus grand nombre de sites inscrits sur la liste du patrimoine mondial de l'UNESCO ?",
@@ -25,7 +26,8 @@
       "optionC": "Espagne",
       "optionD": "France",
       "correctAnswer": "B",
-      "explanation": "La Chine détient le plus grand nombre de sites inscrits sur la liste du patrimoine mondial de l'UNESCO avec 56 sites, suivie de l'Italie avec 58 sites et l'Allemagne avec 51 sites."
+      "explanation": "La Chine détient le plus grand nombre de sites inscrits sur la liste du patrimoine mondial de l'UNESCO avec 56 sites, suivie de l'Italie avec 58 sites et l'Allemagne avec 51 sites.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale fonction du Conseil de sécurité des Nations Unies ?",
@@ -34,7 +36,8 @@
       "optionC": "Recommander l'admission de nouveaux membres",
       "optionD": "Étudier les questions relatives aux droits de l'homme",
       "correctAnswer": "B",
-      "explanation": "Le Conseil de sécurité des Nations Unies est principalement responsable du maintien de la paix et de la sécurité internationales, contrairement à l'Assemblée générale qui a un rôle plus large."
+      "explanation": "Le Conseil de sécurité des Nations Unies est principalement responsable du maintien de la paix et de la sécurité internationales, contrairement à l'Assemblée générale qui a un rôle plus large.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a été le premier Secrétaire général des Nations Unies ?",
@@ -43,7 +46,8 @@
       "optionC": "U Thant",
       "optionD": "Kurt Waldheim",
       "correctAnswer": "B",
-      "explanation": "Trygve Lie, un diplomate norvégien, a été le premier Secrétaire général des Nations Unies, servant de 1946 à 1952."
+      "explanation": "Trygve Lie, un diplomate norvégien, a été le premier Secrétaire général des Nations Unies, servant de 1946 à 1952.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale de la CEDEAO (Communauté Économique des États de l'Afrique de l'Ouest) ?",
@@ -52,7 +56,8 @@
       "optionC": "Lomé",
       "optionD": "Niamey",
       "correctAnswer": "A",
-      "explanation": "La capitale de la CEDEAO est Abuja, au Nigeria, bien que plusieurs de ses institutions soient situées à d'autres endroits comme Accra au Ghana."
+      "explanation": "La capitale de la CEDEAO est Abuja, au Nigeria, bien que plusieurs de ses institutions soient situées à d'autres endroits comme Accra au Ghana.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal organe décisionnel de l'UNESCO ?",
@@ -61,7 +66,8 @@
       "optionC": "Le Secrétariat",
       "optionD": "Le Comité du patrimoine mondial",
       "correctAnswer": "B",
-      "explanation": "La Conférence générale est l'organe principal de l'UNESCO, composé des États membres, qui se réunit tous les deux ans pour définir les programmes et le budget de l'organisation."
+      "explanation": "La Conférence générale est l'organe principal de l'UNESCO, composé des États membres, qui se réunit tous les deux ans pour définir les programmes et le budget de l'organisation.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle personnalité historique est associée à la déclaration d'indépendance de l'Inde en 1947 ?",
@@ -70,7 +76,8 @@
       "optionC": "Subhas Chandra Bose",
       "optionD": "Sardar Vallabhbhai Patel",
       "correctAnswer": "A",
-      "explanation": "Jawaharlal Nehru, premier Premier ministre de l'Inde, a lu la déclaration d'indépendance le 15 août 1947, bien que Gandhi ait été la figure principale du mouvement d'indépendance."
+      "explanation": "Jawaharlal Nehru, premier Premier ministre de l'Inde, a lu la déclaration d'indépendance le 15 août 1947, bien que Gandhi ait été la figure principale du mouvement d'indépendance.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre la CEDEAO et l'UA (Union Africaine) ?",
@@ -79,7 +86,8 @@
       "optionC": "Seule la CEDEAO a une monnaie unique",
       "optionD": "Seule l'UA a un parlement",
       "correctAnswer": "A",
-      "explanation": "La CEDEAO est principalement une organisation économique axée sur l'intégration économique de l'Afrique de l'Ouest, tandis que l'UA est une organisation politique continentale plus large."
+      "explanation": "La CEDEAO est principalement une organisation économique axée sur l'intégration économique de l'Afrique de l'Ouest, tandis que l'UA est une organisation politique continentale plus large.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal objectif de la Convention du patrimoine mondial de l'UNESCO ?",
@@ -88,7 +96,8 @@
       "optionC": "Promouvoir la liberté de la presse",
       "optionD": "Lutter contre le changement climatique",
       "correctAnswer": "B",
-      "explanation": "La Convention du patrimoine mondial vise à identifier, protéger et conserver les sites culturels et naturels d'importance universelle pour l'héritage commun de l'humanité."
+      "explanation": "La Convention du patrimoine mondial vise à identifier, protéger et conserver les sites culturels et naturels d'importance universelle pour l'héritage commun de l'humanité.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a rejoint l'ONU le plus récemment ?",
@@ -97,7 +106,8 @@
       "optionC": "Serbie",
       "optionD": "Timor-Leste",
       "correctAnswer": "A",
-      "explanation": "Le Soudan du Sud est devenu le 193e État membre des Nations Unies le 14 juillet 2011, ce qui en fait le pays le plus récent à avoir rejoint l'organisation."
+      "explanation": "Le Soudan du Sud est devenu le 193e État membre des Nations Unies le 14 juillet 2011, ce qui en fait le pays le plus récent à avoir rejoint l'organisation.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal organe judiciaire de l'ONU ?",
@@ -106,7 +116,8 @@
       "optionC": "Le Conseil de sécurité",
       "optionD": "La Commission des droits de l'homme",
       "correctAnswer": "A",
-      "explanation": "La Cour internationale de Justice (CIJ) est le principal organe judiciaire des Nations Unies, situé au Palais de la Paix à La Haye, aux Pays-Bas."
+      "explanation": "La Cour internationale de Justice (CIJ) est le principal organe judiciaire des Nations Unies, situé au Palais de la Paix à La Haye, aux Pays-Bas.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale de l'UA (Union Africaine) ?",
@@ -115,7 +126,8 @@
       "optionC": "Nairobi",
       "optionD": "Pretoria",
       "correctAnswer": "A",
-      "explanation": "Addis-Abeba, en Éthiopie, est le siège de l'Union Africaine, abritant la plupart de ses institutions principales."
+      "explanation": "Addis-Abeba, en Éthiopie, est le siège de l'Union Africaine, abritant la plupart de ses institutions principales.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel a été le premier Secrétaire général de la CEDEAO ?",
@@ -124,7 +136,8 @@
       "optionC": "Ahmadou Ahidjo",
       "optionD": "Jerry Rawlings",
       "correctAnswer": "A",
-      "explanation": "Edem Kodjo, un diplomate togolais, a été le premier Secrétaire exécutif de la CEDEAO, servant de 1977 à 1983."
+      "explanation": "Edem Kodjo, un diplomate togolais, a été le premier Secrétaire exécutif de la CEDEAO, servant de 1977 à 1983.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal objectif de la Stratégie de développement durable à l'horizon 2030 de l'ONU ?",
@@ -133,7 +146,8 @@
       "optionC": "Garantir l'accès à l'eau potable",
       "optionD": "Réduire les inégalités",
       "correctAnswer": "A",
-      "explanation": "Bien que les 17 Objectifs de développement durable (ODD) couvrent de nombreux domaines, l'objectif principal est d'éradiquer la pauvreté sous toutes ses formes et partout dans le monde."
+      "explanation": "Bien que les 17 Objectifs de développement durable (ODD) couvrent de nombreux domaines, l'objectif principal est d'éradiquer la pauvreté sous toutes ses formes et partout dans le monde.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence entre l'UNESCO et l'UNICEF ?",
@@ -142,7 +156,8 @@
       "optionC": "L'UNESCO a été créée avant l'UNICEF",
       "optionD": "Seul l'UNESCO a un rôle dans la préservation du patrimoine culturel",
       "correctAnswer": "B",
-      "explanation": "L'UNESCO est une agence spécialisée des Nations Unies, tandis que l'UNICEF (Fonds des Nations Unies pour l'enfance) est un programme des Nations Unies, bien que les deux travaillent dans des domaines connexes."
+      "explanation": "L'UNESCO est une agence spécialisée des Nations Unies, tandis que l'UNICEF (Fonds des Nations Unies pour l'enfance) est un programme des Nations Unies, bien que les deux travaillent dans des domaines connexes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal organe décisionnel de la CEDEAO ?",
@@ -151,7 +166,8 @@
       "optionC": "Le Parlement",
       "optionD": "La Commission",
       "correctAnswer": "B",
-      "explanation": "La Conférence des chefs d'État et de gouvernement est l'organe suprême de la CEDEAO, responsable de l'orientation et des grandes décisions de l'organisation."
+      "explanation": "La Conférence des chefs d'État et de gouvernement est l'organe suprême de la CEDEAO, responsable de l'orientation et des grandes décisions de l'organisation.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal objectif de la Convention de l'UNESCO sur la protection du patrimoine mondial culturel et naturel ?",
@@ -160,7 +176,8 @@
       "optionC": "Promouvoir la liberté de la presse",
       "optionD": "Lutter contre le changement climatique",
       "correctAnswer": "B",
-      "explanation": "La Convention de l'UNESCO sur le patrimoine mondial vise à identifier, protéger et conserver les sites culturels et naturels d'importance universelle pour l'héritage commun de l'humanité."
+      "explanation": "La Convention de l'UNESCO sur le patrimoine mondial vise à identifier, protéger et conserver les sites culturels et naturels d'importance universelle pour l'héritage commun de l'humanité.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal organe décisionnel de l'UA ?",
@@ -169,7 +186,8 @@
       "optionC": "Le Parlement panafricain",
       "optionD": "La Commission de l'UA",
       "correctAnswer": "B",
-      "explanation": "La Conférence des chefs d'État et de gouvernement est l'organe suprême de l'Union Africaine, responsable de l'orientation et des grandes décisions de l'organisation."
+      "explanation": "La Conférence des chefs d'État et de gouvernement est l'organe suprême de l'Union Africaine, responsable de l'orientation et des grandes décisions de l'organisation.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle organisation internationale, fondée en 1945, a pour objectif principal de maintenir la paix et la sécurité internationales?",
@@ -178,7 +196,8 @@
       "optionC": "L'Organisation pour la Coopération et le Développement Économiques (OCDE)",
       "optionD": "L'Union Européenne (UE)",
       "correctAnswer": "B",
-      "explanation": "L'ONU, créée après la Seconde Guerre mondiale, est la principale organisation internationale dédiée au maintien de la paix et de la sécurité mondiales, avec un Conseil de Sécurité comme organe principal."
+      "explanation": "L'ONU, créée après la Seconde Guerre mondiale, est la principale organisation internationale dédiée au maintien de la paix et de la sécurité mondiales, avec un Conseil de Sécurité comme organe principal.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a été le premier à adhérer à la CEDEAO (Communauté Économique des États de l'Afrique de l'Ouest)?",
@@ -187,7 +206,8 @@
       "optionC": "Ghana",
       "optionD": "Côte d'Ivoire",
       "correctAnswer": "C",
-      "explanation": "Le Ghana a été le premier pays à signer le traité de création de la CEDEAO le 28 mai 1975, suivis par le Nigeria, la Guinée, le Sierra Leone et d'autres."
+      "explanation": "Le Ghana a été le premier pays à signer le traité de création de la CEDEAO le 28 mai 1975, suivis par le Nigeria, la Guinée, le Sierra Leone et d'autres.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel ancien Secrétaire général des Nations Unies a été le premier africain à occuper ce poste?",
@@ -196,7 +216,8 @@
       "optionC": "U Thant",
       "optionD": "Dag Hammarskjöld",
       "correctAnswer": "A",
-      "explanation": "Kofi Annan, de nationalité ghanéenne, a été le septième Secrétaire général de l'ONU (1997-2006) et le premier issu d'Afrique."
+      "explanation": "Kofi Annan, de nationalité ghanéenne, a été le septième Secrétaire général de l'ONU (1997-2006) et le premier issu d'Afrique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale de l'Australie?",
@@ -205,7 +226,8 @@
       "optionC": "Canberra",
       "optionD": "Brisbane",
       "correctAnswer": "C",
-      "explanation": "Canberra a été spécifiquement conçue et construite comme capitale de l'Australie en 1913 pour résoudre le conflit entre Sydney et Melbourne."
+      "explanation": "Canberra a été spécifiquement conçue et construite comme capitale de l'Australie en 1913 pour résoudre le conflit entre Sydney et Melbourne.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel personnage historique est crédité d'avoir formulé la théorie de la relativité restreinte?",
@@ -214,7 +236,8 @@
       "optionC": "Niels Bohr",
       "optionD": "Stephen Hawking",
       "correctAnswer": "B",
-      "explanation": "Albert Einstein a publié sa théorie de la relativité restreinte en 1905, révolutionnant notre compréhension de l'espace, du temps et de la gravité."
+      "explanation": "Albert Einstein a publié sa théorie de la relativité restreinte en 1905, révolutionnant notre compréhension de l'espace, du temps et de la gravité.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre l'UNESCO et le PNUD?",
@@ -223,7 +246,8 @@
       "optionC": "L'UNESCO a été fondée en 1946, tandis que le PNUD a été fondé en 1950",
       "optionD": "L'UNESCO opère uniquement dans les pays développés, tandis que le PNUD opère uniquement dans les pays en développement",
       "correctAnswer": "A",
-      "explanation": "L'UNESCO (Organisation des Nations Unies pour l'éducation, la science et la culture) et le PNUD (Programme des Nations Unies pour le développement) sont tous deux des agences spécialisées de l'ONU, mais avec des mandats différents."
+      "explanation": "L'UNESCO (Organisation des Nations Unies pour l'éducation, la science et la culture) et le PNUD (Programme des Nations Unies pour le développement) sont tous deux des agences spécialisées de l'ONU, mais avec des mandats différents.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a le plus grand nombre de sièges permanents au Conseil de Sécurité de l'ONU?",
@@ -232,7 +256,8 @@
       "optionC": "France",
       "optionD": "Aucun, tous les membres permanents ont un seul siège",
       "correctAnswer": "D",
-      "explanation": "Le Conseil de Sécurité de l'ONU compte cinq membres permanents (États-Unis, Russie, Chine, Royaume-Uni, France), chacun avec un seul siège et droit de veto."
+      "explanation": "Le Conseil de Sécurité de l'ONU compte cinq membres permanents (États-Unis, Russie, Chine, Royaume-Uni, France), chacun avec un seul siège et droit de veto.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la plus longue frontière terrestre entre deux pays?",
@@ -241,7 +266,8 @@
       "optionC": "Frontière entre l'Argentine et le Chili",
       "optionD": "Frontière entre le Brésil et la Bolivie",
       "correctAnswer": "A",
-      "explanation": "La frontière entre les États-Unis et le Canada s'étend sur environ 8 891 kilomètres, ce qui en fait la plus longue frontière non défendue au monde et la plus longue frontière terrestre entre deux pays."
+      "explanation": "La frontière entre les États-Unis et le Canada s'étend sur environ 8 891 kilomètres, ce qui en fait la plus longue frontière non défendue au monde et la plus longue frontière terrestre entre deux pays.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a rejoint l'Union Européenne le plus récemment?",
@@ -250,7 +276,8 @@
       "optionC": "Bulgarie",
       "optionD": "Croatie (2013)",
       "correctAnswer": "D",
-      "explanation": "La Croatie a rejoint l'Union Européenne le 1er juillet 2013, ce qui en fait le pays le plus récent à avoir adhéré parmi les options proposées."
+      "explanation": "La Croatie a rejoint l'Union Européenne le 1er juillet 2013, ce qui en fait le pays le plus récent à avoir adhéré parmi les options proposées.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel personnage historique est connu pour avoir écrit 'Le Prince'?",
@@ -259,7 +286,8 @@
       "optionC": "Jean-Jacques Rousseau",
       "optionD": "Montesquieu",
       "correctAnswer": "A",
-      "explanation": "Nicolas Machiavel, philosophe et homme d'État italien du XVIe siècle, est l'auteur de 'Le Prince', un ouvrage fondamental de la philosophie politique."
+      "explanation": "Nicolas Machiavel, philosophe et homme d'État italien du XVIe siècle, est l'auteur de 'Le Prince', un ouvrage fondamental de la philosophie politique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal organe décisionnel de la CEDEAO?",
@@ -268,7 +296,8 @@
       "optionC": "Le Parlement",
       "optionD": "La Cour de Justice",
       "correctAnswer": "A",
-      "explanation": "Le Conseil des Ministres est l'organe suprême de la CEDEAO, responsable de la prise de décisions et de la direction de l'organisation."
+      "explanation": "Le Conseil des Ministres est l'organe suprême de la CEDEAO, responsable de la prise de décisions et de la direction de l'organisation.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale du Canada?",
@@ -277,7 +306,8 @@
       "optionC": "Ottawa",
       "optionD": "Montréal",
       "correctAnswer": "C",
-      "explanation": "Ottawa a été choisie comme capitale du Canada en 1857 en raison de sa position géographique centrale entre Toronto et Montréal, et de sa distance relative des frontières américaines."
+      "explanation": "Ottawa a été choisie comme capitale du Canada en 1857 en raison de sa position géographique centrale entre Toronto et Montréal, et de sa distance relative des frontières américaines.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a été le premier à abolir l'esclavage?",
@@ -286,7 +316,8 @@
       "optionC": "Haïti",
       "optionD": "États-Unis",
       "correctAnswer": "C",
-      "explanation": "Haïti, alors Saint-Domingue, a été le premier pays au monde à abolir l'esclavage en 1793 sous l'impulsion de Toussaint Louverture, bien que cette abolition ait été confirmée en 1804 lors de l'indépendance."
+      "explanation": "Haïti, alors Saint-Domingue, a été le premier pays au monde à abolir l'esclavage en 1793 sous l'impulsion de Toussaint Louverture, bien que cette abolition ait été confirmée en 1804 lors de l'indépendance.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le siège principal de l'UNESCO?",
@@ -295,7 +326,8 @@
       "optionC": "Paris",
       "optionD": "La Haye",
       "correctAnswer": "C",
-      "explanation": "Le siège principal de l'UNESCO est situé à Paris, France, depuis sa création en 1945."
+      "explanation": "Le siège principal de l'UNESCO est situé à Paris, France, depuis sa création en 1945.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom du premier homme à avoir marché sur la Lune?",
@@ -304,7 +336,8 @@
       "optionC": "Neil Armstrong",
       "optionD": "John Glenn",
       "correctAnswer": "C",
-      "explanation": "Neil Armstrong, astronaute américain, a été le premier humain à poser le pied sur la Lune le 20 juillet 1969 lors de la mission Apollo 11."
+      "explanation": "Neil Armstrong, astronaute américain, a été le premier humain à poser le pied sur la Lune le 20 juillet 1969 lors de la mission Apollo 11.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le plus long fleuve du monde ?",
@@ -313,7 +346,8 @@
       "optionC": "Le Mississippi",
       "optionD": "Le Yangtsé",
       "correctAnswer": "A",
-      "explanation": "Le Nil (6 650 km) est généralement considéré comme le plus long fleuve du monde."
+      "explanation": "Le Nil (6 650 km) est généralement considéré comme le plus long fleuve du monde.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le plus haut sommet du monde ?",
@@ -322,7 +356,8 @@
       "optionC": "Le Kilimandjaro",
       "optionD": "Le Mont Blanc",
       "correctAnswer": "A",
-      "explanation": "L'Everest (8 849 m) est le plus haut sommet du monde."
+      "explanation": "L'Everest (8 849 m) est le plus haut sommet du monde.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale de l'Australie ?",
@@ -331,7 +366,8 @@
       "optionC": "Melbourne",
       "optionD": "Perth",
       "correctAnswer": "A",
-      "explanation": "Canberra est la capitale de l'Australie (pas Sydney)."
+      "explanation": "Canberra est la capitale de l'Australie (pas Sydney).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale du Canada ?",
@@ -340,7 +376,8 @@
       "optionC": "Montréal",
       "optionD": "Vancouver",
       "correctAnswer": "A",
-      "explanation": "Ottawa est la capitale du Canada."
+      "explanation": "Ottawa est la capitale du Canada.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale du Brésil ?",
@@ -349,7 +386,8 @@
       "optionC": "São Paulo",
       "optionD": "Salvador",
       "correctAnswer": "A",
-      "explanation": "Brasília est la capitale du Brésil depuis 1960."
+      "explanation": "Brasília est la capitale du Brésil depuis 1960.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale de la Suisse ?",
@@ -358,7 +396,8 @@
       "optionC": "Zurich",
       "optionD": "Lausanne",
       "correctAnswer": "A",
-      "explanation": "Berne est la capitale (ville fédérale) de la Suisse."
+      "explanation": "Berne est la capitale (ville fédérale) de la Suisse.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale de l'Afrique du Sud ?",
@@ -367,7 +406,8 @@
       "optionC": "Johannesburg",
       "optionD": "Durban",
       "correctAnswer": "A",
-      "explanation": "L'Afrique du Sud a 3 capitales: Pretoria (administrative), Le Cap (législative), Bloemfontein (judiciaire)."
+      "explanation": "L'Afrique du Sud a 3 capitales: Pretoria (administrative), Le Cap (législative), Bloemfontein (judiciaire).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale de la Turquie ?",
@@ -376,7 +416,8 @@
       "optionC": "Izmir",
       "optionD": "Bursa",
       "correctAnswer": "A",
-      "explanation": "Ankara est la capitale de la Turquie (pas Istanbul)."
+      "explanation": "Ankara est la capitale de la Turquie (pas Istanbul).",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le plus grand désert du monde ?",
@@ -385,7 +426,8 @@
       "optionC": "Le désert de Gobi",
       "optionD": "Le désert d'Arabie",
       "correctAnswer": "A",
-      "explanation": "Le désert Antarctique est le plus grand (14 millions km²), puis le Sahara."
+      "explanation": "Le désert Antarctique est le plus grand (14 millions km²), puis le Sahara.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le plus grand océan du monde ?",
@@ -394,7 +436,8 @@
       "optionC": "L'océan Indien",
       "optionD": "L'océan Arctique",
       "correctAnswer": "A",
-      "explanation": "Le Pacifique est le plus grand océan (165 millions km²)."
+      "explanation": "Le Pacifique est le plus grand océan (165 millions km²).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la plus grande île du monde ?",
@@ -403,7 +446,8 @@
       "optionC": "Bornéo",
       "optionD": "Sumatra",
       "correctAnswer": "A",
-      "explanation": "Le Groenland (2 166 086 km²) est la plus grande île."
+      "explanation": "Le Groenland (2 166 086 km²) est la plus grande île.",
+      "difficulty": "medium"
     },
     {
       "question": "Combien de continents y a-t-il sur Terre ?",
@@ -412,7 +456,8 @@
       "optionC": "6",
       "optionD": "8",
       "correctAnswer": "A",
-      "explanation": "7 continents: Afrique, Amérique du Nord, Amérique du Sud, Antarctique, Asie, Europe, Océanie."
+      "explanation": "7 continents: Afrique, Amérique du Nord, Amérique du Sud, Antarctique, Asie, Europe, Océanie.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a le plus de fuseaux horaires ?",
@@ -421,7 +466,8 @@
       "optionC": "Les États-Unis",
       "optionD": "La Chine",
       "correctAnswer": "A",
-      "explanation": "La France a 12 fuseaux horaires (DOM-TOM et territoires d'outre-mer)."
+      "explanation": "La France a 12 fuseaux horaires (DOM-TOM et territoires d'outre-mer).",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le pays le plus peuplé du monde ?",
@@ -430,7 +476,8 @@
       "optionC": "Les États-Unis",
       "optionD": "L'Indonésie",
       "correctAnswer": "A",
-      "explanation": "L'Inde a dépassé la Chine en 2023 comme pays le plus peuplé (~1,43 milliard)."
+      "explanation": "L'Inde a dépassé la Chine en 2023 comme pays le plus peuplé (~1,43 milliard).",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a peint la Joconde ?",
@@ -439,7 +486,8 @@
       "optionC": "Raphaël",
       "optionD": "Van Gogh",
       "correctAnswer": "A",
-      "explanation": "La Joconde a été peinte par Léonard de Vinci vers 1503-1519."
+      "explanation": "La Joconde a été peinte par Léonard de Vinci vers 1503-1519.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a composé la 9e symphonie ?",
@@ -448,7 +496,8 @@
       "optionC": "Bach",
       "optionD": "Chopin",
       "correctAnswer": "A",
-      "explanation": "Beethoven a composé la 9e symphonie (Hymne à la joie)."
+      "explanation": "Beethoven a composé la 9e symphonie (Hymne à la joie).",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Les Misérables' ?",
@@ -457,7 +506,8 @@
       "optionC": "Honoré de Balzac",
       "optionD": "Alexandre Dumas",
       "correctAnswer": "A",
-      "explanation": "Les Misérables (1862) a été écrit par Victor Hugo."
+      "explanation": "Les Misérables (1862) a été écrit par Victor Hugo.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'L'Étranger' ?",
@@ -466,7 +516,8 @@
       "optionC": "André Gide",
       "optionD": "Marcel Proust",
       "correctAnswer": "A",
-      "explanation": "L'Étranger (1942) a été écrit par Albert Camus."
+      "explanation": "L'Étranger (1942) a été écrit par Albert Camus.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a découvert la pénicilline ?",
@@ -475,7 +526,8 @@
       "optionC": "Marie Curie",
       "optionD": "Charles Darwin",
       "correctAnswer": "A",
-      "explanation": "Alexander Fleming a découvert la pénicilline en 1928."
+      "explanation": "Alexander Fleming a découvert la pénicilline en 1928.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a proposé la théorie de l'évolution ?",
@@ -484,7 +536,8 @@
       "optionC": "Jean-Baptiste Lamarck",
       "optionD": "Louis Pasteur",
       "correctAnswer": "A",
-      "explanation": "Charles Darwin a proposé la sélection naturelle (1859, 'L'Origine des espèces')."
+      "explanation": "Charles Darwin a proposé la sélection naturelle (1859, 'L'Origine des espèces').",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a découvert la radioactivité ?",
@@ -493,7 +546,8 @@
       "optionC": "Albert Einstein",
       "optionD": "Niels Bohr",
       "correctAnswer": "A",
-      "explanation": "Henri Becquerel a découvert la radioactivité en 1896 (Marie Curie a coined le terme)."
+      "explanation": "Henri Becquerel a découvert la radioactivité en 1896 (Marie Curie a coined le terme).",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a développé la théorie de la relativité ?",
@@ -502,7 +556,8 @@
       "optionC": "Stephen Hawking",
       "optionD": "Galilée",
       "correctAnswer": "A",
-      "explanation": "Einstein a développé la relativité restreinte (1905) et générale (1915)."
+      "explanation": "Einstein a développé la relativité restreinte (1905) et générale (1915).",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a inventé le téléphone ?",
@@ -511,7 +566,8 @@
       "optionC": "Guglielmo Marconi",
       "optionD": "Nikola Tesla",
       "correctAnswer": "A",
-      "explanation": "Alexander Graham Bell a breveté le téléphone en 1876."
+      "explanation": "Alexander Graham Bell a breveté le téléphone en 1876.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a inventé l'ampoule électrique ?",
@@ -520,7 +576,8 @@
       "optionC": "Benjamin Franklin",
       "optionD": "James Watt",
       "correctAnswer": "A",
-      "explanation": "Thomas Edison a développé l'ampoule commerciale en 1879."
+      "explanation": "Thomas Edison a développé l'ampoule commerciale en 1879.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a été le premier homme sur la Lune ?",
@@ -529,7 +586,8 @@
       "optionC": "Youri Gagarine",
       "optionD": "Michael Collins",
       "correctAnswer": "A",
-      "explanation": "Neil Armstrong a marché sur la Lune le 20 juillet 1969."
+      "explanation": "Neil Armstrong a marché sur la Lune le 20 juillet 1969.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a été le premier homme dans l'espace ?",
@@ -538,7 +596,8 @@
       "optionC": "John Glenn",
       "optionD": "Alan Shepard",
       "correctAnswer": "A",
-      "explanation": "Youri Gagarine (URSS) a été le premier dans l'espace le 12 avril 1961."
+      "explanation": "Youri Gagarine (URSS) a été le premier dans l'espace le 12 avril 1961.",
+      "difficulty": "medium"
     },
     {
       "question": "En quelle année a eu lieu la Révolution française ?",
@@ -547,7 +606,8 @@
       "optionC": "1804",
       "optionD": "1815",
       "correctAnswer": "A",
-      "explanation": "La Révolution française a commencé en 1789 (prise de la Bastille le 14 juillet)."
+      "explanation": "La Révolution française a commencé en 1789 (prise de la Bastille le 14 juillet).",
+      "difficulty": "medium"
     },
     {
       "question": "Quand a eu lieu la prise de la Bastille ?",
@@ -556,16 +616,31 @@
       "optionC": "4 août 1789",
       "optionD": "26 août 1789",
       "correctAnswer": "A",
-      "explanation": "La prise de la Bastille a eu lieu le 14 juillet 1789."
+      "explanation": "La prise de la Bastille a eu lieu le 14 juillet 1789.",
+      "difficulty": "medium"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "question": "En quelle année a commencé la Première Guerre mondiale ?",
+      "optionA": "1914",
+      "optionB": "1918",
+      "optionC": "1939",
+      "optionD": "1905",
+      "correctAnswer": "A",
+      "explanation": "La Première Guerre mondiale a commencé en 1914.",
+      "difficulty": "medium"
+    },
+    {
+>>>>>>> Stashed changes
       "question": "En quelle année a fini la Seconde Guerre mondiale ?",
       "optionA": "1945",
       "optionB": "1939",
       "optionC": "1918",
       "optionD": "1950",
       "correctAnswer": "A",
-      "explanation": "La Seconde Guerre mondiale s'est terminée en 1945."
+      "explanation": "La Seconde Guerre mondiale s'est terminée en 1945.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a fondé Microsoft ?",
@@ -574,7 +649,8 @@
       "optionC": "Mark Zuckerberg",
       "optionD": "Larry Page",
       "correctAnswer": "A",
-      "explanation": "Microsoft a été fondé par Bill Gates et Paul Allen en 1975."
+      "explanation": "Microsoft a été fondé par Bill Gates et Paul Allen en 1975.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a fondé Apple ?",
@@ -583,7 +659,8 @@
       "optionC": "Mark Zuckerberg",
       "optionD": "Elon Musk",
       "correctAnswer": "A",
-      "explanation": "Apple a été fondée en 1976 par Jobs, Wozniak et Wayne."
+      "explanation": "Apple a été fondée en 1976 par Jobs, Wozniak et Wayne.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a fondé Facebook ?",
@@ -592,7 +669,8 @@
       "optionC": "Bill Gates",
       "optionD": "Larry Page",
       "correctAnswer": "A",
-      "explanation": "Mark Zuckerberg a fondé Facebook en 2004."
+      "explanation": "Mark Zuckerberg a fondé Facebook en 2004.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a fondé Tesla (entreprise) ?",
@@ -601,7 +679,8 @@
       "optionC": "Steve Jobs",
       "optionD": "Jeff Bezos",
       "correctAnswer": "A",
-      "explanation": "Tesla a été fondée par Eberhard et Tarpenning en 2003; Musk a investi et est devenu CEO."
+      "explanation": "Tesla a été fondée par Eberhard et Tarpenning en 2003; Musk a investi et est devenu CEO.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a fondé Amazon ?",
@@ -610,7 +689,8 @@
       "optionC": "Bill Gates",
       "optionD": "Mark Zuckerberg",
       "correctAnswer": "A",
-      "explanation": "Jeff Bezos a fondé Amazon en 1994."
+      "explanation": "Jeff Bezos a fondé Amazon en 1994.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le symbole chimique de l'or ?",
@@ -619,7 +699,8 @@
       "optionC": "Or",
       "optionD": "Go",
       "correctAnswer": "A",
-      "explanation": "L'or a pour symbole Au (du latin aurum)."
+      "explanation": "L'or a pour symbole Au (du latin aurum).",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le symbole chimique de l'argent ?",
@@ -628,7 +709,8 @@
       "optionC": "Ar",
       "optionD": "Si",
       "correctAnswer": "A",
-      "explanation": "L'argent a pour symbole Ag (du latin argentum)."
+      "explanation": "L'argent a pour symbole Ag (du latin argentum).",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le symbole chimique du fer ?",
@@ -637,7 +719,8 @@
       "optionC": "Ir",
       "optionD": "F",
       "correctAnswer": "A",
-      "explanation": "Le fer a pour symbole Fe (du latin ferrum)."
+      "explanation": "Le fer a pour symbole Fe (du latin ferrum).",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est l'élément le plus abondant dans l'univers ?",
@@ -646,7 +729,8 @@
       "optionC": "L'hélium",
       "optionD": "Le carbone",
       "correctAnswer": "A",
-      "explanation": "L'hydrogène est l'élément le plus abondant (~75% de la matière)."
+      "explanation": "L'hydrogène est l'élément le plus abondant (~75% de la matière).",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est l'élément le plus abondant dans la croûte terrestre ?",
@@ -655,7 +739,8 @@
       "optionC": "Le fer",
       "optionD": "L'hydrogène",
       "correctAnswer": "A",
-      "explanation": "L'oxygène (~46%) est l'élément le plus abondant de la croûte terrestre."
+      "explanation": "L'oxygène (~46%) est l'élément le plus abondant de la croûte terrestre.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le plus grand pays d'Afrique par superficie ?",
@@ -664,7 +749,8 @@
       "optionC": "Le Soudan",
       "optionD": "La Libye",
       "correctAnswer": "A",
-      "explanation": "L'Algérie (2 382 000 km²) est le plus grand pays d'Afrique."
+      "explanation": "L'Algérie (2 382 000 km²) est le plus grand pays d'Afrique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le lac le plus profond du monde ?",
@@ -673,7 +759,8 @@
       "optionC": "La mer Caspienne",
       "optionD": "Le lac Victoria",
       "correctAnswer": "A",
-      "explanation": "Le lac Baïkal (Russie) est le plus profond (1 642 m)."
+      "explanation": "Le lac Baïkal (Russie) est le plus profond (1 642 m).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la monnaie du Japon ?",
@@ -682,7 +769,8 @@
       "optionC": "Le won",
       "optionD": "Le rupee",
       "correctAnswer": "A",
-      "explanation": "La monnaie du Japon est le yen (¥)."
+      "explanation": "La monnaie du Japon est le yen (¥).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la monnaie de la Suisse ?",
@@ -691,7 +779,8 @@
       "optionC": "Le dollar",
       "optionD": "La livre",
       "correctAnswer": "A",
-      "explanation": "La Suisse utilise le franc suisse (CHF)."
+      "explanation": "La Suisse utilise le franc suisse (CHF).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la monnaie du Royaume-Uni ?",
@@ -700,7 +789,8 @@
       "optionC": "Le dollar",
       "optionD": "Le franc",
       "correctAnswer": "A",
-      "explanation": "Le Royaume-Uni utilise la livre sterling (£)."
+      "explanation": "Le Royaume-Uni utilise la livre sterling (£).",
+      "difficulty": "medium"
     },
     {
       "question": "Combien de couleurs y a-t-il dans un arc-en-ciel ?",
@@ -709,7 +799,8 @@
       "optionC": "6",
       "optionD": "8",
       "correctAnswer": "A",
-      "explanation": "L'arc-en-ciel a 7 couleurs: rouge, orange, jaune, vert, bleu, indigo, violet."
+      "explanation": "L'arc-en-ciel a 7 couleurs: rouge, orange, jaune, vert, bleu, indigo, violet.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle planète est la plus proche du Soleil ?",
@@ -718,7 +809,8 @@
       "optionC": "La Terre",
       "optionD": "Mars",
       "correctAnswer": "A",
-      "explanation": "Mercure est la planète la plus proche du Soleil."
+      "explanation": "Mercure est la planète la plus proche du Soleil.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle planète est la plus grande du système solaire ?",
@@ -727,7 +819,8 @@
       "optionC": "Neptune",
       "optionD": "Uranus",
       "correctAnswer": "A",
-      "explanation": "Jupiter est la plus grande planète du système solaire."
+      "explanation": "Jupiter est la plus grande planète du système solaire.",
+      "difficulty": "medium"
     },
     {
       "question": "Combien de planètes compte le système solaire ?",
@@ -736,7 +829,8 @@
       "optionC": "7",
       "optionD": "10",
       "correctAnswer": "A",
-      "explanation": "8 planètes depuis 2006 (Pluton rétrogradé en planète naine)."
+      "explanation": "8 planètes depuis 2006 (Pluton rétrogradé en planète naine).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la vitesse du son dans l'air à 20°C ?",
@@ -745,7 +839,8 @@
       "optionC": "1 000 m/s",
       "optionD": "150 m/s",
       "correctAnswer": "A",
-      "explanation": "Le son voyage à environ 340 m/s dans l'air à 20°C."
+      "explanation": "Le son voyage à environ 340 m/s dans l'air à 20°C.",
+      "difficulty": "medium"
     }
   ]
 }

@@ -28,10 +28,16 @@ import {
   WifiOff,
 } from "lucide-react";
 import { useTranslation } from "@/lib/use-translation";
+<<<<<<< Updated upstream
 import { PushNotificationSettings } from "./push-notification-settings";
 import { AccessibilityPanel } from "./accessibility-panel";
 import { EmailPreferencesSection } from "./email-preferences";
 import { OfflineManagerPanel } from "./offline-manager-panel";
+=======
+import { OfflineManagerPanel } from "./offline-manager-panel";
+import { AccessibilityPanel } from "./accessibility-panel";
+import { PushNotificationSettings } from "./push-notification-settings";
+>>>>>>> Stashed changes
 
 export function SettingsPanel({
   open,
@@ -258,6 +264,33 @@ export function SettingsPanel({
               </button>
             </Card>
           </section>
+
+          <Separator />
+
+          {/* Accessibility section (advanced) */}
+          <section className="space-y-2.5">
+            <div className="flex items-center gap-2 text-sm font-semibold">
+              <Palette className="h-4 w-4 text-violet-600" />
+              Accessibilité avancée
+            </div>
+            <AccessibilityPanel />
+          </section>
+
+          <Separator />
+
+          {/* Push notifications section */}
+          <section className="space-y-2.5">
+            <div className="flex items-center gap-2 text-sm font-semibold">
+              <Smartphone className="h-4 w-4 text-amber-600" />
+              Notifications push
+            </div>
+            <PushNotificationSettings />
+          </section>
+
+          <Separator />
+
+          {/* Offline mode section */}
+          <OfflineManagerPanel />
         </div>
       </SheetContent>
     </Sheet>

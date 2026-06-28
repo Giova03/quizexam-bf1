@@ -16,7 +16,8 @@
       "optionC": "30 m/s",
       "optionD": "7.5 m/s",
       "correctAnswer": "A",
-      "explanation": "La vitesse d'un mouvement uniformément accéléré est donnée par v=v₀+at. En partant du repos (v₀=0), on obtient v=3×5=15 m/s."
+      "explanation": "La vitesse d'un mouvement uniformément accéléré est donnée par v=v₀+at. En partant du repos (v₀=0), on obtient v=3×5=15 m/s.",
+      "difficulty": "medium"
     },
     {
       "question": "Un circuit électrique comporte deux résistances R1=10Ω et R2=20Ω en parallèle. Quelle est la résistance équivalente de ce circuit ?",
@@ -25,7 +26,8 @@
       "optionC": "15 Ω",
       "optionD": "5 Ω",
       "correctAnswer": "B",
-      "explanation": "Pour des résistances en parallèle, 1/R_eq = 1/R1 + 1/R2 = 1/10 + 1/20 = 3/20, donc R_eq = 20/3 ≈ 6.67 Ω."
+      "explanation": "Pour des résistances en parallèle, 1/R_eq = 1/R1 + 1/R2 = 1/10 + 1/20 = 3/20, donc R_eq = 20/3 ≈ 6.67 Ω.",
+      "difficulty": "medium"
     },
     {
       "question": "Une onde lumineuse de longueur d'onde λ=600 nm se propage dans un milieu d'indice n=1.5. Quelle est sa longueur d'onde dans ce milieu ?",
@@ -34,7 +36,8 @@
       "optionC": "900 nm",
       "optionD": "1200 nm",
       "correctAnswer": "A",
-      "explanation": "La longueur d'onde dans un milieu est λ_milieu = λ_vide/n = 600/1.5 = 400 nm."
+      "explanation": "La longueur d'onde dans un milieu est λ_milieu = λ_vide/n = 600/1.5 = 400 nm.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la configuration électronique de l'atome de calcium (Z=20) dans son état fondamental ?",
@@ -43,7 +46,8 @@
       "optionC": "1s²2s²2p⁶3s²3p⁵4s¹",
       "optionD": "1s²2s²2p⁶3s²3p⁶4s¹",
       "correctAnswer": "A",
-      "explanation": "Le calcium a 20 électrons. Sa configuration suit l'ordre de remplissage des orbitales : 1s²2s²2p⁶3s²3p⁶4s²."
+      "explanation": "Le calcium a 20 électrons. Sa configuration suit l'ordre de remplissage des orbitales : 1s²2s²2p⁶3s²3p⁶4s².",
+      "difficulty": "medium"
     },
     {
       "question": "La constante d'acidité Ka de l'acide acétique (CH₃COOH) est de 1.8×10⁻⁵. Quelle est le pKa de cet acide ?",
@@ -52,7 +56,8 @@
       "optionC": "5.00",
       "optionD": "-4.74",
       "correctAnswer": "A",
-      "explanation": "Le pKa est défini comme pKa = -log(Ka). Donc pKa = -log(1.8×10⁻⁵) ≈ 4.74."
+      "explanation": "Le pKa est défini comme pKa = -log(Ka). Donc pKa = -log(1.8×10⁻⁵) ≈ 4.74.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans la réaction de combustion du méthane CH₄ + 2O₂ → CO₂ + 2H₂O, quel élément est oxydé ?",
@@ -61,7 +66,8 @@
       "optionC": "Hydrogène",
       "optionD": "Aucun",
       "correctAnswer": "A",
-      "explanation": "Le carbone passe de -2 dans CH₄ à +4 dans CO₂, il est donc oxydé. L'oxygène est réduit."
+      "explanation": "Le carbone passe de -2 dans CH₄ à +4 dans CO₂, il est donc oxydé. L'oxygène est réduit.",
+      "difficulty": "medium"
     },
     {
       "question": "Un objet de masse 5 kg est suspendu à un ressort de constante de raideur k=200 N/m. Quelle est la fréquence propre de ce système ?",
@@ -70,7 +76,8 @@
       "optionC": "2.0 Hz",
       "optionD": "4.0 Hz",
       "correctAnswer": "B",
-      "explanation": "La fréquence propre est f = (1/2π)√(k/m) = (1/2π)√(200/5) ≈ (1/2π)×6.32 ≈ 1.0 Hz."
+      "explanation": "La fréquence propre est f = (1/2π)√(k/m) = (1/2π)√(200/5) ≈ (1/2π)×6.32 ≈ 1.0 Hz.",
+      "difficulty": "medium"
     },
     {
       "question": "Un condensateur de capacité C=100 μF est chargé sous une tension U=12V. Quelle est l'énergie emmagasinée ?",
@@ -79,7 +86,8 @@
       "optionC": "1.44 J",
       "optionD": "720 J",
       "correctAnswer": "A",
-      "explanation": "L'énergie emmagasinée est E = ½CU² = 0.5×100×10⁻⁶×12² = 7.2×10⁻³ J = 7.2 mJ."
+      "explanation": "L'énergie emmagasinée est E = ½CU² = 0.5×100×10⁻⁶×12² = 7.2×10⁻³ J = 7.2 mJ.",
+      "difficulty": "medium"
     },
     {
       "question": "Une lentille convergente de distance focale f=10 cm donne d'un objet AB une image A'B'. Si l'objet est placé à 15 cm de la lentille, où se trouve l'image ?",
@@ -88,7 +96,8 @@
       "optionC": "15 cm de la lentille",
       "optionD": "5 cm de la lentille",
       "correctAnswer": "A",
-      "explanation": "En utilisant la relation de conjugaison 1/f = 1/u + 1/v, on trouve 1/v = 1/10 - 1/15 = 1/30, donc v=30 cm."
+      "explanation": "En utilisant la relation de conjugaison 1/f = 1/u + 1/v, on trouve 1/v = 1/10 - 1/15 = 1/30, donc v=30 cm.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la structure de Lewis correcte pour le molécule de méthane CH₄ ?",
@@ -97,7 +106,8 @@
       "optionC": "Les hydrogènes sont centraux avec des liaisons vers le carbone",
       "optionD": "Le carbone a une double liaison avec un hydrogène et deux liaisons simples avec les autres",
       "correctAnswer": "A",
-      "explanation": "Le carbone a 4 électrons de valence et forme 4 liaisons simples avec les 4 hydrogènes pour respecter la règle de l'octet."
+      "explanation": "Le carbone a 4 électrons de valence et forme 4 liaisons simples avec les 4 hydrogènes pour respecter la règle de l'octet.",
+      "difficulty": "medium"
     },
     {
       "question": "Une solution aqueuse d'hydroxyde de sodium (NaOH) a une concentration [OH⁻] = 0.01 M. Quel est le pH de cette solution ?",
@@ -106,7 +116,8 @@
       "optionC": "7",
       "optionD": "9",
       "correctAnswer": "A",
-      "explanation": "[OH⁻] = 0.01 M = 10⁻² M, donc pOH = 2. Comme pH + pOH = 14, pH = 12."
+      "explanation": "[OH⁻] = 0.01 M = 10⁻² M, donc pOH = 2. Comme pH + pOH = 14, pH = 12.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans la réaction Zn + Cu²⁺ → Zn²⁺ + Cu, quel est le couple oxydant-réducteur qui subit une réduction ?",
@@ -115,7 +126,8 @@
       "optionC": "H⁺/H₂",
       "optionD": "Fe²⁺/Fe",
       "correctAnswer": "B",
-      "explanation": "Le cuivre passe de Cu²⁺ à Cu, il est donc réduit. Le zinc est oxydé de Zn à Zn²⁺."
+      "explanation": "Le cuivre passe de Cu²⁺ à Cu, il est donc réduit. Le zinc est oxydé de Zn à Zn²⁺.",
+      "difficulty": "medium"
     },
     {
       "question": "Un solide de masse 2 kg est lancé verticalement vers le haut avec une vitesse initiale de 20 m/s. Quelle est son altitude maximale ? (g=10 m/s²)",
@@ -124,7 +136,8 @@
       "optionC": "10 m",
       "optionD": "30 m",
       "correctAnswer": "A",
-      "explanation": "En utilisant l'énergie mécanique conservée : ½mv² = mgh, on trouve h = v²/(2g) = 400/20 = 20 m."
+      "explanation": "En utilisant l'énergie mécanique conservée : ½mv² = mgh, on trouve h = v²/(2g) = 400/20 = 20 m.",
+      "difficulty": "medium"
     },
     {
       "question": "Un générateur de force électromotrice E=6V et de résistance interne r=1Ω alimente une résistance R=5Ω. Quelle est l'intensité du courant dans le circuit ?",
@@ -133,7 +146,8 @@
       "optionC": "0.5 A",
       "optionD": "6 A",
       "correctAnswer": "A",
-      "explanation": "L'intensité est I = E/(R+r) = 6/(5+1) = 1 A."
+      "explanation": "L'intensité est I = E/(R+r) = 6/(5+1) = 1 A.",
+      "difficulty": "medium"
     },
     {
       "question": "Deux ondes lumineuses de même fréquence et de même amplitude interfèrent en un point. Si la différence de marche est λ/2 (λ étant la longueur d'onde), quelle est l'interférence observée ?",
@@ -142,7 +156,8 @@
       "optionC": "Pas d'interférence",
       "optionD": "Interférence partielle",
       "correctAnswer": "B",
-      "explanation": "Une différence de marche de λ/2 correspond à un déphasage de π, donc interférence destructive."
+      "explanation": "Une différence de marche de λ/2 correspond à un déphasage de π, donc interférence destructive.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction chimique principale présente dans la molécule CH₃COOH ?",
@@ -151,7 +166,8 @@
       "optionC": "Cétone",
       "optionD": "Acide carboxylique",
       "correctAnswer": "D",
-      "explanation": "La fonction acide carboxylique est caractérisée par le groupe -COOH."
+      "explanation": "La fonction acide carboxylique est caractérisée par le groupe -COOH.",
+      "difficulty": "medium"
     },
     {
       "question": "Une solution a un pH de 3. Quelle est la concentration en ions H⁺ ?",
@@ -160,7 +176,8 @@
       "optionC": "3 M",
       "optionD": "10³ M",
       "correctAnswer": "A",
-      "explanation": "pH = -log[H⁺], donc [H⁺] = 10^(-pH) = 10⁻³ M."
+      "explanation": "pH = -log[H⁺], donc [H⁺] = 10^(-pH) = 10⁻³ M.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans la réaction 2Al + 3Cu²⁺ → 2Al³⁺ + 3Cu, quel est le coefficient d'oxydation de l'aluminium dans Al³⁺ ?",
@@ -169,7 +186,8 @@
       "optionC": "0",
       "optionD": "+2",
       "correctAnswer": "A",
-      "explanation": "Dans Al³⁺, l'aluminium a perdu 3 électrons, donc son coefficient d'oxydation est +3."
+      "explanation": "Dans Al³⁺, l'aluminium a perdu 3 électrons, donc son coefficient d'oxydation est +3.",
+      "difficulty": "medium"
     },
     {
       "question": "Un pendule simple de longueur L=1 m oscille avec une petite amplitude. Quelle est sa période d'oscillation ? (g=9.81 m/s²)",
@@ -178,7 +196,8 @@
       "optionC": "0.5 s",
       "optionD": "3.14 s",
       "correctAnswer": "A",
-      "explanation": "La période d'un pendule simple est T = 2π√(L/g) = 2π√(1/9.81) ≈ 2.01 s."
+      "explanation": "La période d'un pendule simple est T = 2π√(L/g) = 2π√(1/9.81) ≈ 2.01 s.",
+      "difficulty": "medium"
     },
     {
       "question": "Un solide de masse m=2kg est lancé avec une vitesse initiale v0=10m/s sur un plan incliné d'un angle α=30° par rapport à l'horizontale. Le coefficient de frottement cinétique entre le solide et le plan est μ=0.2. Quelle est la distance de parcours maximale du solide sur le plan incliné avant de s'arrêter ?",
@@ -187,7 +206,8 @@
       "optionC": "d = 9.2 m",
       "optionD": "d = 12.7 m",
       "correctAnswer": "B",
-      "explanation": "En utilisant le théorème de l'énergie cinétique, on calcule le travail des forces de frottement et du poids pour déterminer la distance de parcours."
+      "explanation": "En utilisant le théorème de l'énergie cinétique, on calcule le travail des forces de frottement et du poids pour déterminer la distance de parcours.",
+      "difficulty": "medium"
     },
     {
       "question": "Un condensateur de capacité C=10μF est chargé sous une tension U=100V. On le décharge ensuite dans une résistance de R=100Ω. Quelle est l'énergie dissipée dans la résistance ?",
@@ -196,7 +216,8 @@
       "optionC": "E = 0.5 J",
       "optionD": "E = 1 J",
       "correctAnswer": "A",
-      "explanation": "L'énergie stockée dans le condensateur est E=1/2CU², et cette énergie est entièrement dissipée dans la résistance lors de la décharge."
+      "explanation": "L'énergie stockée dans le condensateur est E=1/2CU², et cette énergie est entièrement dissipée dans la résistance lors de la décharge.",
+      "difficulty": "medium"
     },
     {
       "question": "Une onde lumineuse monochromatique de longueur d'onde λ=600nm traverse une fente de largeur a=0.1mm. Quel est le premier angle d'interférence minimum θ pour lequel l'intensité est minimale ?",
@@ -205,7 +226,8 @@
       "optionC": "θ = 0.0102 rad",
       "optionD": "θ = 0.0136 rad",
       "correctAnswer": "A",
-      "explanation": "Le premier minimum d'interférence pour une fente simple est donné par sinθ=λ/a, ce qui donne θ≈λ/a pour de petits angles."
+      "explanation": "Le premier minimum d'interférence pour une fente simple est donné par sinθ=λ/a, ce qui donne θ≈λ/a pour de petits angles.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la structure de Lewis correcte pour le dioxyde de carbone CO₂ ?",
@@ -214,7 +236,8 @@
       "optionC": "O-C-O avec deux double liaisons et deux paires d'électrons non liés sur chaque oxygène",
       "optionD": "O⁻-C-O⁺ avec deux charges formelles opposées",
       "correctAnswer": "A",
-      "explanation": "Le CO₂ a une structure linéaire avec deux double liares C=O, respectant la rètte de l'octet pour chaque atome."
+      "explanation": "Le CO₂ a une structure linéaire avec deux double liares C=O, respectant la rètte de l'octet pour chaque atome.",
+      "difficulty": "medium"
     },
     {
       "question": "Une solution d'acide acétique (CH₃COOH) à 0.1M a un pH de 2.87. Quelle est la constante d'acidité Ka de l'acide acétique ?",
@@ -223,7 +246,8 @@
       "optionC": "Ka = 1.75 × 10⁻³",
       "optionD": "Ka = 1.75 × 10⁻²",
       "correctAnswer": "A",
-      "explanation": "Pour un acide faible, Ka = [H⁺]²/[HA], où [H⁺] = 10^(-pH) et [HA] est la concentration initiale de l'acide."
+      "explanation": "Pour un acide faible, Ka = [H⁺]²/[HA], où [H⁺] = 10^(-pH) et [HA] est la concentration initiale de l'acide.",
+      "difficulty": "medium"
     },
     {
       "question": "La réaction suivante se produit en solution aqueuse : 2Fe³⁺(aq) + Sn²⁺(aq) → 2Fe²⁺(aq) + Sn⁴⁺(aq). Quelles sont les demi-équations d'oxydoréduction correspondantes ?",
@@ -232,7 +256,8 @@
       "optionC": "2Fe³⁺ + 2e⁻ → 2Fe²⁺ (réduction) et Sn²⁺ → Sn⁴⁺ + 2e⁻ (oxydation)",
       "optionD": "2Fe³⁺ → 2Fe²⁺ + 2e⁻ (oxydation) et Sn²⁺ + 2e⁻ → Sn⁴⁺ (réduction)",
       "correctAnswer": "C",
-      "explanation": "Le fer est réduit (gagne des électrons) et l'étain est oxydé (perd des électrons). Les nombres d'électrons doivent être équilibrés."
+      "explanation": "Le fer est réduit (gagne des électrons) et l'étain est oxydé (perd des électrons). Les nombres d'électrons doivent être équilibrés.",
+      "difficulty": "medium"
     },
     {
       "question": "Un pendule simple de longueur L=1m oscille avec une amplitude angulaire maximale θ₀=10°. Quelle est la période des petites oscillations ?",
@@ -241,7 +266,8 @@
       "optionC": "T = 3.14 s",
       "optionD": "T = 4.02 s",
       "correctAnswer": "B",
-      "explanation": "Pour un pendule simple, la période T=2π√(L/g), où g=9.81m/s². L'amplitude n'affecte pas la période pour de petites oscillations."
+      "explanation": "Pour un pendule simple, la période T=2π√(L/g), où g=9.81m/s². L'amplitude n'affecte pas la période pour de petites oscillations.",
+      "difficulty": "medium"
     },
     {
       "question": "Un circuit électrique comporte une résistance R=10Ω, une inductance L=0.1H et un condensateur C=100μF en série, alimenté par un générateur de tension alternative de fréquence f=50Hz. Quelle est l'impédance totale du circuit ?",
@@ -250,7 +276,8 @@
       "optionC": "Z = 20.5 Ω",
       "optionD": "Z = 25.8 Ω",
       "correctAnswer": "B",
-      "explanation": "L'impédance Z=√(R²+(XL-XC)²), où XL=2πfL et XC=1/(2πfC). On calcule d'abord les réactances inductive et capacitive."
+      "explanation": "L'impédance Z=√(R²+(XL-XC)²), où XL=2πfL et XC=1/(2πfC). On calcule d'abord les réactances inductive et capacitive.",
+      "difficulty": "medium"
     },
     {
       "question": "Un miroir plan forme une image d'un objet de hauteur h=5cm situé à une distance d=20cm devant le miroir. Quelle est la caractéristique de l'image formée ?",
@@ -259,7 +286,8 @@
       "optionC": "L'image est virtuelle, droite et de hauteur 5cm",
       "optionD": "L'image est virtuelle, renversée et de hauteur 5cm",
       "correctAnswer": "C",
-      "explanation": "Un miroir plan forme toujours une image virtuelle, droite et de même taille que l'objet, située à égale distance derrière le miroir."
+      "explanation": "Un miroir plan forme toujours une image virtuelle, droite et de même taille que l'objet, située à égale distance derrière le miroir.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la configuration électronique correcte de l'atome de carbone dans son état fondamental ?",
@@ -268,7 +296,8 @@
       "optionC": "1s² 2s² 2p¹ 3s¹",
       "optionD": "1s² 2p⁴",
       "correctAnswer": "A",
-      "explanation": "Le carbone (Z=6) a 6 électrons. La configuration stable suit le principe d'Aufbau, avec les électrons occupant d'abord les orbitales de plus basse énergie."
+      "explanation": "Le carbone (Z=6) a 6 électrons. La configuration stable suit le principe d'Aufbau, avec les électrons occupant d'abord les orbitales de plus basse énergie.",
+      "difficulty": "medium"
     },
     {
       "question": "Une solution tampon est préparée en mélangeant 0.1mol d'acide acétique (pKa=4.76) et 0.1mol d'acétate de sodium dans 1L d'eau. Quel est le pH de cette solution ?",
@@ -277,7 +306,8 @@
       "optionC": "pH = 5.76",
       "optionD": "pH = 6.76",
       "correctAnswer": "B",
-      "explanation": "Pour une solution tampon avec [acide]=[base], pH=pKa. C'est le point où la solution résiste le mieux aux changements de pH."
+      "explanation": "Pour une solution tampon avec [acide]=[base], pH=pKa. C'est le point où la solution résiste le mieux aux changements de pH.",
+      "difficulty": "medium"
     },
     {
       "question": "La réaction suivante se produit en solution aqueuse : Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O. Quel est le nombre d'oxydation du chrome dans le dichromate Cr₂O₇²⁻ ?",
@@ -286,7 +316,8 @@
       "optionC": "+6",
       "optionD": "+12",
       "correctAnswer": "C",
-      "explanation": "Dans Cr₂O₇²⁻, l'oxygène a un NO de -2. Soit x le NO du Cr: 2x + 7(-2) = -2 → 2x = 12 → x = +6."
+      "explanation": "Dans Cr₂O₇²⁻, l'oxygène a un NO de -2. Soit x le NO du Cr: 2x + 7(-2) = -2 → 2x = 12 → x = +6.",
+      "difficulty": "medium"
     },
     {
       "question": "Un ressort de constante de raideur k=100N/m est comprimé de 5cm puis libéré pour propulser horizontalement une masse de 0.5kg sur une surface sans frottement. Quelle est la vitesse maximale atteinte par la masse ?",
@@ -295,7 +326,8 @@
       "optionC": "v = 1.5 m/s",
       "optionD": "v = 2.0 m/s",
       "correctAnswer": "B",
-      "explanation": "L'énergie potentielle élastique du ressort (1/2kx²) est convertie en énergie cinétique (1/2mv²). On résout pour trouver v."
+      "explanation": "L'énergie potentielle élastique du ressort (1/2kx²) est convertie en énergie cinétique (1/2mv²). On résout pour trouver v.",
+      "difficulty": "medium"
     },
     {
       "question": "Une lentille convergente de distance focale f=10cm est utilisée pour former l'image d'un objet placé à 15cm devant la lentille. Quelle est la distance de l'image par rapport à la lentille ?",
@@ -304,7 +336,8 @@
       "optionC": "d' = 15.0 cm",
       "optionD": "d' = 30.0 cm",
       "correctAnswer": "D",
-      "explanation": "On utilise la formule des lentilles minces: 1/f = 1/d + 1/d', où f est la distance focale, d la distance objet et d' la distance image."
+      "explanation": "On utilise la formule des lentilles minces: 1/f = 1/d + 1/d', où f est la distance focale, d la distance objet et d' la distance image.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la structure correcte pour le composé organique CH₃-CH₂-OH ?",
@@ -313,7 +346,8 @@
       "optionC": "Éthanal",
       "optionD": "Éthanoate",
       "correctAnswer": "B",
-      "explanation": "CH₃-CH₂-OH est l'éthanol, un alcool avec deux atomes de carbone et un groupe fonctionnel -OH."
+      "explanation": "CH₃-CH₂-OH est l'éthanol, un alcool avec deux atomes de carbone et un groupe fonctionnel -OH.",
+      "difficulty": "medium"
     },
     {
       "question": "Un circuit électrique comprend une résistance R=10Ω, une inductance L=0.5H et un condensateur C=100μF en série. Ce circuit est alimenté par un générateur de tension alternative de fréquence f=50Hz. Quelle est l'impédance totale du circuit ?",
@@ -322,7 +356,8 @@
       "optionC": "Z ≈ 18.7 Ω",
       "optionD": "Z ≈ 22.4 Ω",
       "correctAnswer": "B",
-      "explanation": "L'impédance totale est Z = √(R² + (XL - XC)²) où XL = 2πfL ≈ 157.1 Ω et XC = 1/(2πfC) ≈ 31.8 Ω. D'où Z ≈ 15.3 Ω."
+      "explanation": "L'impédance totale est Z = √(R² + (XL - XC)²) où XL = 2πfL ≈ 157.1 Ω et XC = 1/(2πfC) ≈ 31.8 Ω. D'où Z ≈ 15.3 Ω.",
+      "difficulty": "medium"
     },
     {
       "question": "Une lentille convergente de distance focale f=15cm est utilisée pour former l'image d'un objet placé à 30cm de la lentille. Quelle est la nature et la position de l'image formée ?",
@@ -331,7 +366,8 @@
       "optionC": "Image réelle, à 45cm de la lentille",
       "optionD": "Image virtuelle, à 45cm de la lentille",
       "correctAnswer": "A",
-      "explanation": "En utilisant la formule de conjugaison 1/f = 1/p + 1/p', avec p=30cm et f=15cm, on trouve p'=30cm. Comme p'>0, l'image est réelle."
+      "explanation": "En utilisant la formule de conjugaison 1/f = 1/p + 1/p', avec p=30cm et f=15cm, on trouve p'=30cm. Comme p'>0, l'image est réelle.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la structure de l'isomère le plus stable du but-2-ène ?",
@@ -340,7 +376,8 @@
       "optionC": "Configuration Z avec double liaison entre C1-C2",
       "optionD": "Configuration E avec double liaison entre C1-C2",
       "correctAnswer": "B",
-      "explanation": "L'isomère le plus stable est le but-2-ène de configuration E (trans) car les groupes méthyl sont opposés, minimisant les interactions stériques."
+      "explanation": "L'isomère le plus stable est le but-2-ène de configuration E (trans) car les groupes méthyl sont opposés, minimisant les interactions stériques.",
+      "difficulty": "medium"
     },
     {
       "question": "On mélange 100mL d'une solution d'acide acétique à 0.1M avec 100mL d'une solution d'hydroxyde de sodium à 0.1M. Quel est le pH final de la solution ? (pKa de l'acide acétique = 4.75)",
@@ -349,7 +386,8 @@
       "optionC": "pH = 9.25",
       "optionD": "pH = 11.30",
       "correctAnswer": "C",
-      "explanation": "Les quantités d'acide et de base sont équimolaires, formant un tampon acétique/acetate. Le pH = pKa + log([A-]/[HA]) = 4.75 + log(1) = 4.75, mais après dilution, le pH est légèrement basique à 9.25."
+      "explanation": "Les quantités d'acide et de base sont équimolaires, formant un tampon acétique/acetate. Le pH = pKa + log([A-]/[HA]) = 4.75 + log(1) = 4.75, mais après dilution, le pH est légèrement basique à 9.25.",
+      "difficulty": "medium"
     },
     {
       "question": "La constante d'équilibre K pour la réaction N2 + 3H2 ⇌ 2NH3 à 400°C est de 0.5. Si on part d'un mélange équimolaire de N2 et H2, quelle est la valeur de l'avancement final ?",
@@ -358,7 +396,8 @@
       "optionC": "x = 0.50",
       "optionD": "x = 0.67",
       "correctAnswer": "A",
-      "explanation": "En posant x comme l'avancement, K = [NH3]²/([N2][H2]³) = (4x²)/(1-x)(1-3x)³ = 0.5. La résolution donne x ≈ 0.25."
+      "explanation": "En posant x comme l'avancement, K = [NH3]²/([N2][H2]³) = (4x²)/(1-x)(1-3x)³ = 0.5. La résolution donne x ≈ 0.25.",
+      "difficulty": "medium"
     },
     {
       "question": "Un pendule simple de longueur L=1m est dévié de son point d'équilibre d'un angle θ=10° et lâché sans vitesse initiale. Quelle est sa période de petites oscillations ?",
@@ -367,7 +406,8 @@
       "optionC": "T ≈ 2.0 s",
       "optionD": "T ≈ 2.5 s",
       "correctAnswer": "C",
-      "explanation": "Pour un pendule simple, T = 2π√(L/g) ≈ 2π√(1/9.81) ≈ 2.0 s. La période ne dépend pas de l'angle pour de petites oscillations."
+      "explanation": "Pour un pendule simple, T = 2π√(L/g) ≈ 2π√(1/9.81) ≈ 2.0 s. La période ne dépend pas de l'angle pour de petites oscillations.",
+      "difficulty": "medium"
     },
     {
       "question": "Une charge électrique q=2μC est placée en un point où le champ électrique a une intensité de 500V/m. Quelle est la force électrique subie par cette charge ?",
@@ -376,7 +416,8 @@
       "optionC": "F = 1.00 mN",
       "optionD": "F = 2.00 mN",
       "correctAnswer": "C",
-      "explanation": "La force électrique est F = qE = (2×10⁻⁶)×500 = 10⁻³ N = 1.00 mN."
+      "explanation": "La force électrique est F = qE = (2×10⁻⁶)×500 = 10⁻³ N = 1.00 mN.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la structure du produit principal de la réaction entre le propan-2-ol et l'acide bromhydrique ?",
@@ -385,7 +426,8 @@
       "optionC": "2-bromo-2-méthylpropane",
       "optionD": "1-bromo-2-méthylpropane",
       "correctAnswer": "A",
-      "explanation": "Le propan-2-ol est un alcool secondaire, qui subit une substitution SN2 avec l'acide bromhydrique pour former le 2-bromopropane."
+      "explanation": "Le propan-2-ol est un alcool secondaire, qui subit une substitution SN2 avec l'acide bromhydrique pour former le 2-bromopropane.",
+      "difficulty": "medium"
     },
     {
       "question": "On considère la pile Daniell: Zn/Zn²⁺//Cu²⁺/Cu. La concentration en ions Zn²⁺ est 0.1M et celle en ions Cu²⁺ est 0.01M. Quelle est la force électromotrice de la pile à 25°C ? (E°(Zn²⁺/Zn) = -0.76V, E°(Cu²⁺/Cu) = +0.34V)",
@@ -394,7 +436,8 @@
       "optionC": "E ≈ 1.13 V",
       "optionD": "E ≈ 1.16 V",
       "correctAnswer": "B",
-      "explanation": "E = E° - (RT/2F)ln([Zn²⁺]/[Cu²⁺]) = 1.10 - (0.059/2)log(0.1/0.01) ≈ 1.10 V."
+      "explanation": "E = E° - (RT/2F)ln([Zn²⁺]/[Cu²⁺]) = 1.10 - (0.059/2)log(0.1/0.01) ≈ 1.10 V.",
+      "difficulty": "medium"
     },
     {
       "question": "Un ressort de constante de raideur k=100N/m est comprimé de 5cm puis laissé libre sans masse attachée. Quelle est l'énergie potentielle élastique stockée ?",
@@ -403,7 +446,8 @@
       "optionC": "E = 0.125 J",
       "optionD": "E = 0.250 J",
       "correctAnswer": "C",
-      "explanation": "L'énergie potentielle élastique est E = ½kx² = 0.5×100×(0.05)² = 0.125 J."
+      "explanation": "L'énergie potentielle élastique est E = ½kx² = 0.5×100×(0.05)² = 0.125 J.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la constante de vitesse d'une réaction du premier ordre dont la demi-vie est de 30 secondes ?",
@@ -412,7 +456,8 @@
       "optionC": "k ≈ 0.046 s⁻¹",
       "optionD": "k ≈ 0.067 s⁻¹",
       "correctAnswer": "A",
-      "explanation": "Pour une réaction du premier ordre, t½ = ln(2)/k, donc k = ln(2)/t½ ≈ 0.693/30 ≈ 0.023 s⁻¹."
+      "explanation": "Pour une réaction du premier ordre, t½ = ln(2)/k, donc k = ln(2)/t½ ≈ 0.693/30 ≈ 0.023 s⁻¹.",
+      "difficulty": "medium"
     },
     {
       "question": "Un rayon lumineux passe d'un milieu d'indice n1=1.33 (eau) à un milieu d'indice n2=1.5 (verre) avec un angle d'incidence de 30°. Quel est l'angle de réfraction ?",
@@ -421,7 +466,8 @@
       "optionC": "θr ≈ 27.1°",
       "optionD": "θr ≈ 28.2°",
       "correctAnswer": "B",
-      "explanation": "Selon la loi de Snell, n1 sin(θi) = n2 sin(θr). Donc sin(θr) = (1.33/1.5)×sin(30°) ≈ 0.443, d'où θr ≈ 26.3°."
+      "explanation": "Selon la loi de Snell, n1 sin(θi) = n2 sin(θr). Donc sin(θr) = (1.33/1.5)×sin(30°) ≈ 0.443, d'où θr ≈ 26.3°.",
+      "difficulty": "medium"
     },
     {
       "question": "Une mole de gaz parfait initialement à 300K et 1 atm subit une compression isotherme jusqu'à une pression de 4 atm. Quel est le travail effectué sur le gaz ?",
@@ -430,7 +476,8 @@
       "optionC": "W ≈ 4.5 kJ",
       "optionD": "W ≈ 5.5 kJ",
       "correctAnswer": "B",
-      "explanation": "Pour une compression isotherme, W = nRT ln(V1/V2) = nRT ln(P2/P1) = 1×8.314×300×ln(4) ≈ 3.5 kJ."
+      "explanation": "Pour une compression isotherme, W = nRT ln(V1/V2) = nRT ln(P2/P1) = 1×8.314×300×ln(4) ≈ 3.5 kJ.",
+      "difficulty": "medium"
     }
   ]
 }

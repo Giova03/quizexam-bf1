@@ -13,7 +13,8 @@
       "optionC": "Stimulation de l'activité économique",
       "optionD": "Baisse des taux d'intérêt",
       "correctAnswer": "B",
-      "explanation": "Une politique de rigueur budgétaire implique une réduction des dépenses publiques ou une augmentation des impôts, ce qui réduit le déficit public."
+      "explanation": "Une politique de rigueur budgétaire implique une réduction des dépenses publiques ou une augmentation des impôts, ce qui réduit le déficit public.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale caractéristique d'une politique monétaire restrictive ?",
@@ -22,7 +23,8 @@
       "optionC": "Baisse des taux d'intérêt",
       "optionD": "Stimulation des investissements",
       "correctAnswer": "B",
-      "explanation": "Une politique monétaire restrictive vise à réduire l'inflation en limitant la création de monnaie et en augmentant les taux d'intérêt."
+      "explanation": "Une politique monétaire restrictive vise à réduire l'inflation en limitant la création de monnaie et en augmentant les taux d'intérêt.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qui caractérise un choc d'offre négatif ?",
@@ -31,7 +33,8 @@
       "optionC": "Une hausse des bénéfices des entreprises",
       "optionD": "Une hausse des coûts de production",
       "correctAnswer": "D",
-      "explanation": "Un choc d'offre négatif se produit lorsqu'un événement entraîne une augmentation des coûts de production, réduisant l'offre."
+      "explanation": "Un choc d'offre négatif se produit lorsqu'un événement entraîne une augmentation des coûts de production, réduisant l'offre.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon les théoriciens de la croissance endogène, le progrès technique est-il :",
@@ -40,7 +43,8 @@
       "optionC": "Indépendant du fonctionnement du système économique",
       "optionD": "Un obstacle à la croissance",
       "correctAnswer": "B",
-      "explanation": "Pour les théoriciens de la croissance endogène, le progrès technique est généré par les décisions des agents économiques au sein du système."
+      "explanation": "Pour les théoriciens de la croissance endogène, le progrès technique est généré par les décisions des agents économiques au sein du système.",
+      "difficulty": "medium"
     },
     {
       "question": "Le PIB inclut-il :",
@@ -49,7 +53,8 @@
       "optionC": "Les revenus versés à l'étranger",
       "optionD": "Les activités informelles",
       "correctAnswer": "B",
-      "explanation": "Le PIB inclut la production des administrations publiques, même si ces productions ne sont pas marchandes."
+      "explanation": "Le PIB inclut la production des administrations publiques, même si ces productions ne sont pas marchandes.",
+      "difficulty": "medium"
     },
     {
       "question": "Une taxe carbone est efficace lorsque :",
@@ -58,7 +63,8 @@
       "optionC": "Elle n'est pas annoncée à l'avance",
       "optionD": "Elle n'affecte pas les prix des énergies fossiles",
       "correctAnswer": "B",
-      "explanation": "Une taxe carbone est efficace lorsqu'il existe des produits de substitution permettant aux consommateurs de changer leur comportement."
+      "explanation": "Une taxe carbone est efficace lorsqu'il existe des produits de substitution permettant aux consommateurs de changer leur comportement.",
+      "difficulty": "medium"
     },
     {
       "question": "Le marché des quotas d'émission fonctionne comme :",
@@ -67,7 +73,8 @@
       "optionC": "Un moyen de financer les énergies renouvelables",
       "optionD": "Un système de sanctions automatiques",
       "correctAnswer": "B",
-      "explanation": "Le marché des quotas d'émission crée une incitation financière pour les entreprises à réduire leurs émissions de polluants."
+      "explanation": "Le marché des quotas d'émission crée une incitation financière pour les entreprises à réduire leurs émissions de polluants.",
+      "difficulty": "medium"
     },
     {
       "question": "Pour les partisans de la soutenabilité forte, le capital naturel :",
@@ -76,7 +83,8 @@
       "optionC": "Est moins important que le capital humain",
       "optionD": "Est illimité",
       "correctAnswer": "B",
-      "explanation": "Les partisans de la soutenabilité forte considèrent que le capital naturel ne peut pas être remplacé par le capital physique et humain."
+      "explanation": "Les partisans de la soutenabilité forte considèrent que le capital naturel ne peut pas être remplacé par le capital physique et humain.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon les partisans de la soutenabilité faible :",
@@ -85,7 +93,8 @@
       "optionC": "Le progrès technique permettra d'atteindre l'objectif de développement durable",
       "optionD": "Le capital naturel n'a aucune valeur",
       "correctAnswer": "C",
-      "explanation": "Les partisans de la souténabilité faible estiment que le progrès technique permettra d'atteindre les objectifs de développement durable."
+      "explanation": "Les partisans de la souténabilité faible estiment que le progrès technique permettra d'atteindre les objectifs de développement durable.",
+      "difficulty": "medium"
     },
     {
       "question": "La demande globale se compose de :",
@@ -94,7 +103,8 @@
       "optionC": "FBCF, consommation, importations et exportations",
       "optionD": "Consommation, épargne et investissement",
       "correctAnswer": "B",
-      "explanation": "La demande globale est la somme de la FBCF, de la consommation, de la variation de stocks et des exportations."
+      "explanation": "La demande globale est la somme de la FBCF, de la consommation, de la variation de stocks et des exportations.",
+      "difficulty": "medium"
     },
     {
       "question": "Une baisse du taux directeur est décidée par :",
@@ -103,7 +113,8 @@
       "optionC": "Le gouvernement seul",
       "optionD": "Le Parlement",
       "correctAnswer": "B",
-      "explanation": "Le taux directeur est décidé par la Banque centrale, qui est l'institution monétaire responsable de la politique monétaire."
+      "explanation": "Le taux directeur est décidé par la Banque centrale, qui est l'institution monétaire responsable de la politique monétaire.",
+      "difficulty": "medium"
     },
     {
       "question": "Un krach boursier conduit à :",
@@ -112,7 +123,8 @@
       "optionC": "Une épargne accrue des ménages",
       "optionD": "Une politique de relance automatique",
       "correctAnswer": "C",
-      "explanation": "Un krach boursier conduit les ménages à épargner davantage par prudence, ce qui réduit la consommation."
+      "explanation": "Un krach boursier conduit les ménages à épargner davantage par prudence, ce qui réduit la consommation.",
+      "difficulty": "medium"
     },
     {
       "question": "La récession s'accompagne généralement :",
@@ -121,7 +133,8 @@
       "optionC": "D'une hausse des recettes fiscales",
       "optionD": "D'une hausse des déficits publics",
       "correctAnswer": "D",
-      "explanation": "La récession s'accompagne généralement d'une baisse des recettes fiscales et d'une hausse des dépenses sociales, augmentant les déficits publics."
+      "explanation": "La récession s'accompagne généralement d'une baisse des recettes fiscales et d'une hausse des dépenses sociales, augmentant les déficits publics.",
+      "difficulty": "medium"
     },
     {
       "question": "Les biens communs sont surexploités en raison de :",
@@ -130,7 +143,8 @@
       "optionC": "L'absence de droits de propriété clairs",
       "optionD": "Leur faible valeur économique",
       "correctAnswer": "C",
-      "explanation": "Les biens communs sont surexploités en raison de l'absence de droits de propriété clairs, conduisant au problème du passager clandestin."
+      "explanation": "Les biens communs sont surexploités en raison de l'absence de droits de propriété clairs, conduisant au problème du passager clandestin.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre de la politique climatique, la réglementation est :",
@@ -139,7 +153,8 @@
       "optionC": "Un moyen de créer un marché pour les quotas",
       "optionD": "Une politique monétaire",
       "correctAnswer": "B",
-      "explanation": "La réglementation en matière climatique est principalement un outil de contrainte qui impose des normes plutôt qu'une incitation financière."
+      "explanation": "La réglementation en matière climatique est principalement un outil de contrainte qui impose des normes plutôt qu'une incitation financière.",
+      "difficulty": "medium"
     },
     {
       "question": "Une politique de relance économique est généralement :",
@@ -148,7 +163,8 @@
       "optionC": "Fiscale restrictive",
       "optionD": "Non interventionniste",
       "correctAnswer": "B",
-      "explanation": "Une politique de relance économique est généralement budgétaire expansive, impliquant une augmentation des dépenses publiques ou une baisse des impôts."
+      "explanation": "Une politique de relance économique est généralement budgétaire expansive, impliquant une augmentation des dépenses publiques ou une baisse des impôts.",
+      "difficulty": "medium"
     },
     {
       "question": "La croissance endogène repose sur l'idée que :",
@@ -157,7 +173,8 @@
       "optionC": "L'État doit réduire son intervention économique",
       "optionD": "La croissance est uniquement déterminée par les facteurs de production",
       "correctAnswer": "B",
-      "explanation": "La croissance endogène repose sur l'idée que l'accumulation de capital sous toutes ses formes génère des externalités positives."
+      "explanation": "La croissance endogène repose sur l'idée que l'accumulation de capital sous toutes ses formes génère des externalités positives.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale cause de la limitation des efforts en matière de développement durable ?",
@@ -166,7 +183,8 @@
       "optionC": "L'absence de régulation de l'exploitation des ressources",
       "optionD": "Les ressources renouvelables",
       "correctAnswer": "C",
-      "explanation": "Les efforts en matière de développement durable sont limités en raison de la non-régulation de l'exploitation des ressources."
+      "explanation": "Les efforts en matière de développement durable sont limités en raison de la non-régulation de l'exploitation des ressources.",
+      "difficulty": "medium"
     },
     {
       "question": "Le comportement de passager clandestin explique :",
@@ -175,7 +193,8 @@
       "optionC": "La réduction des émissions de CO2",
       "optionD": "L'augmentation de la fiscalité verte",
       "correctAnswer": "B",
-      "explanation": "Le comportement de passager clandestin explique la surexploitation des biens communs, chacun cherchant à profiter des ressources sans contribuer à leur préservation."
+      "explanation": "Le comportement de passager clandestin explique la surexploitation des biens communs, chacun cherchant à profiter des ressources sans contribuer à leur préservation.",
+      "difficulty": "medium"
     },
     {
       "question": "Une taxe carbone permet d'internaliser :",
@@ -184,7 +203,8 @@
       "optionC": "Les coûts fixes",
       "optionD": "Les coûts variables",
       "correctAnswer": "B",
-      "explanation": "Une taxe carbone permet d'internaliser les externalités négatives associées à la pollution en faisant payer les pollueurs."
+      "explanation": "Une taxe carbone permet d'internaliser les externalités négatives associées à la pollution en faisant payer les pollueurs.",
+      "difficulty": "medium"
     },
     {
       "question": "La soutenabilité faible considère que :",
@@ -193,7 +213,8 @@
       "optionC": "Le progrès technique est nuisible à l'environnement",
       "optionD": "La croissance économique est incompatible avec le développement durable",
       "correctAnswer": "A",
-      "explanation": "La soutenabilité faible considère que le capital naturel et le capital physique (et humain) sont substituables."
+      "explanation": "La soutenabilité faible considère que le capital naturel et le capital physique (et humain) sont substituables.",
+      "difficulty": "medium"
     },
     {
       "question": "Le PIB mesure :",
@@ -202,7 +223,8 @@
       "optionC": "Les inégalités de revenu",
       "optionD": "La qualité de l'environnement",
       "correctAnswer": "B",
-      "explanation": "Le PIB mesure la production de biens et services finals réalisée sur un territoire pendant une période donnée."
+      "explanation": "Le PIB mesure la production de biens et services finals réalisée sur un territoire pendant une période donnée.",
+      "difficulty": "medium"
     },
     {
       "question": "Un choc de demande positif peut être provoqué par :",
@@ -211,7 +233,8 @@
       "optionC": "Une politique de relance",
       "optionD": "Une hausse des coûts de production",
       "correctAnswer": "C",
-      "explanation": "Une politique de relance augmente la demande globale, constituant un choc de demande positif."
+      "explanation": "Une politique de relance augmente la demande globale, constituant un choc de demande positif.",
+      "difficulty": "medium"
     },
     {
       "question": "La politique budgétaire concerne :",
@@ -220,7 +243,8 @@
       "optionC": "Le contrôle des changes",
       "optionD": "La régulation des marchés financiers",
       "correctAnswer": "B",
-      "explanation": "La politique budgétaire concerne les décisions relatives aux dépenses publiques et aux impôts."
+      "explanation": "La politique budgétaire concerne les décisions relatives aux dépenses publiques et aux impôts.",
+      "difficulty": "medium"
     },
     {
       "question": "La croissance endogène met l'accent sur :",
@@ -229,7 +253,8 @@
       "optionC": "La limitation du rôle de l'État",
       "optionD": "L'inefficacité des marchés",
       "correctAnswer": "B",
-      "explanation": "La croissance endogène met l'accent sur le rôle de l'accumulation de capital et du progrès technique généré par le système économique."
+      "explanation": "La croissance endogène met l'accent sur le rôle de l'accumulation de capital et du progrès technique généré par le système économique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale caractéristique d'un bien commun ?",
@@ -238,7 +263,8 @@
       "optionC": "Non-exclusivité d'usage",
       "optionD": "Caractère marchand",
       "correctAnswer": "C",
-      "explanation": "Un bien commun se caractérise par sa non-exclusivité d'usage, ce qui rend difficile son exclusion des non-payers."
+      "explanation": "Un bien commun se caractérise par sa non-exclusivité d'usage, ce qui rend difficile son exclusion des non-payers.",
+      "difficulty": "medium"
     },
     {
       "question": "Le développement durable repose sur trois piliers, sauf :",
@@ -247,7 +273,8 @@
       "optionC": "Environnemental",
       "optionD": "Politique",
       "correctAnswer": "D",
-      "explanation": "Le développement durable repose sur trois piliers : économique, social et environnemental."
+      "explanation": "Le développement durable repose sur trois piliers : économique, social et environnemental.",
+      "difficulty": "medium"
     },
     {
       "question": "La politique monétaire expansionniste a pour objectif :",
@@ -256,7 +283,8 @@
       "optionC": "La stimulation de l'activité économique",
       "optionD": "L'augmentation du taux de change",
       "correctAnswer": "C",
-      "explanation": "La politique monétaire expansionniste vise à stimuler l'activité économique en augmentant la masse monétaire et en baissant les taux d'intérêt."
+      "explanation": "La politique monétaire expansionniste vise à stimuler l'activité économique en augmentant la masse monétaire et en baissant les taux d'intérêt.",
+      "difficulty": "medium"
     },
     {
       "question": "La soutenabilité forte considère que :",
@@ -265,7 +293,8 @@
       "optionC": "La croissance économique est incompatible avec la protection de l'environnement",
       "optionD": "Les ressources naturelles sont illimitées",
       "correctAnswer": "B",
-      "explanation": "La soutenabilité forte considère que le capital naturel ne peut pas être remplacé par le capital physique et humain."
+      "explanation": "La soutenabilité forte considère que le capital naturel ne peut pas être remplacé par le capital physique et humain.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la conséquence d'une politique de relance budgétaire ?",
@@ -274,7 +303,8 @@
       "optionC": "Baisse de l'inflation",
       "optionD": "Réduction de la dette publique",
       "correctAnswer": "B",
-      "explanation": "Une politique de relance budgétaire augmente la demande globale par une hausse des dépenses publiques ou une baisse des impôts."
+      "explanation": "Une politique de relance budgétaire augmente la demande globale par une hausse des dépenses publiques ou une baisse des impôts.",
+      "difficulty": "medium"
     },
     {
       "question": "Le PIB ne mesure pas :",
@@ -283,7 +313,8 @@
       "optionC": "Le travail non rémunéré",
       "optionD": "La production de biens et services",
       "correctAnswer": "C",
-      "explanation": "Le PIB ne mesure pas le travail non rémunéré, tel que le travail domestique ou bénévole."
+      "explanation": "Le PIB ne mesure pas le travail non rémunéré, tel que le travail domestique ou bénévole.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle mesure est typiquement une politique monétaire restrictive ?",
@@ -292,7 +323,8 @@
       "optionC": "Augmentation des dépenses publiques",
       "optionD": "Baisse de l'impôt sur le revenu",
       "correctAnswer": "B",
-      "explanation": "L'augmentation des réserves obligatoires est une politique monétaire restrictive qui limite la capacité des banques à accorder des crédits."
+      "explanation": "L'augmentation des réserves obligatoires est une politique monétaire restrictive qui limite la capacité des banques à accorder des crédits.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale limite du PIB comme indicateur de développement durable ?",
@@ -301,7 +333,8 @@
       "optionC": "Il ne reflète pas le niveau de vie de la population",
       "optionD": "Il est difficile à calculer pour les pays en développement",
       "correctAnswer": "B",
-      "explanation": "Le PIB ne prend pas en compte la dégradation des ressources naturelles ni l'épuisement du capital naturel, ce qui le rend inadapté pour mesurer le développement durable."
+      "explanation": "Le PIB ne prend pas en compte la dégradation des ressources naturelles ni l'épuisement du capital naturel, ce qui le rend inadapté pour mesurer le développement durable.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de la croissance endogène, quel facteur est crucial pour expliquer la croissance économique à long terme ?",
@@ -310,7 +343,8 @@
       "optionC": "Les externalités positives de la connaissance",
       "optionD": "La diminution de la population active",
       "correctAnswer": "C",
-      "explanation": "La croissance endogène met l'accent sur les externalités positives de la connaissance et de l'innovation comme moteurs de la croissance économique à long terme, au-delà des facteurs traditionnels."
+      "explanation": "La croissance endogène met l'accent sur les externalités positives de la connaissance et de l'innovation comme moteurs de la croissance économique à long terme, au-delà des facteurs traditionnels.",
+      "difficulty": "medium"
     },
     {
       "question": "Une taxe carbone bien conçue peut contribuer à la soutenabilité des finances publiques en :",
@@ -319,7 +353,8 @@
       "optionC": "Diminuant toujours le déficit commercial",
       "optionD": "Éliminant complètement les subventions aux énergies fossiles",
       "correctAnswer": "B",
-      "explanation": "Une taxe carbone génère des revenus publics qui peuvent être utilisés pour financer la transition écologique, compenser les impacts sociaux ou réduire d'autres impôts, contribuant ainsi à la soutenabilité financière."
+      "explanation": "Une taxe carbone génère des revenus publics qui peuvent être utilisés pour financer la transition écologique, compenser les impacts sociaux ou réduire d'autres impôts, contribuant ainsi à la soutenabilité financière.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans un modèle de croissance endogène, quel type de rendements caractérise typically le capital immatériel comme la connaissance ?",
@@ -328,7 +363,8 @@
       "optionC": "Rendements croissants",
       "optionD": "Rendements nuls",
       "correctAnswer": "C",
-      "explanation": "La connaissance et le capital immatériel présentent des rendements croissants, ce qui est un pilier central des théories de la croissance endogène, expliquant pourquoi les économies peuvent connaître des croissances durables."
+      "explanation": "La connaissance et le capital immatériel présentent des rendements croissants, ce qui est un pilier central des théories de la croissance endogène, expliquant pourquoi les économies peuvent connaître des croissances durables.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la relation théorique entre inflation et croissance économique dans le cadre de la courbe de Phillips ?",
@@ -337,7 +373,8 @@
       "optionC": "Aucune relation systématique",
       "optionD": "Une relation positive à long terme",
       "correctAnswer": "A",
-      "explanation": "La courbe de Phillips classique suggère une relation positive entre inflation et chômage, et donc potentiellement entre inflation et croissance à court terme, bien que cette relation soit devenue plus complexe avec le temps."
+      "explanation": "La courbe de Phillips classique suggère une relation positive entre inflation et chômage, et donc potentiellement entre inflation et croissance à court terme, bien que cette relation soit devenue plus complexe avec le temps.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale critique adressée à l'utilisation du PIB vert comme indicateur de développement durable ?",
@@ -346,7 +383,8 @@
       "optionC": "Il est trop complexe à calculer",
       "optionD": "Il ne mesure pas la qualité de l'air",
       "correctAnswer": "B",
-      "explanation": "Le PIB vert, bien que mieux adapté que le PIB traditionnel, tend à sous-estimer la valeur des écosystèmes et des services écosystémiques qui ne sont pas facilement monétisables."
+      "explanation": "Le PIB vert, bien que mieux adapté que le PIB traditionnel, tend à sous-estimer la valeur des écosystèmes et des services écosystémiques qui ne sont pas facilement monétisables.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment une politique monétaire expansionniste affecte-t-elle potentiellement l'inflation ?",
@@ -355,7 +393,8 @@
       "optionC": "N'affecte pas l'inflation",
       "optionD": "La réduit à long terme",
       "correctAnswer": "B",
-      "explanation": "Une politique monétaire expansionniste (augmentation de la masse monétaire, baisse des taux) stimule la demande et peut générer des pressions inflationnistes à court terme."
+      "explanation": "Une politique monétaire expansionniste (augmentation de la masse monétaire, baisse des taux) stimule la demande et peut générer des pressions inflationnistes à court terme.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon le concept de soutenabilité fiscale, quel indicateur est crucial pour évaluer la viabilité à long terme des finances publiques ?",
@@ -364,7 +403,8 @@
       "optionC": "Le taux de change",
       "optionD": "Le taux de chômage",
       "correctAnswer": "A",
-      "explanation": "Le ratio dette/PIB est un indicateur clé de la soutenabilité fiscale, car il mesure la capacité d'un pays à honorer ses dettes à long terme par rapport à sa capacité de production."
+      "explanation": "Le ratio dette/PIB est un indicateur clé de la soutenabilité fiscale, car il mesure la capacité d'un pays à honorer ses dettes à long terme par rapport à sa capacité de production.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans un modèle de croissance endogène, l'investissement en recherche et développement (R&D) est justifié par :",
@@ -373,7 +413,8 @@
       "optionC": "La nécessité de réduire le chômage structurel",
       "optionD": "La nécessité d'augmenter la consommation",
       "correctAnswer": "B",
-      "explanation": "Les externalités positives de la connaissance justifient l'investissement en R&D, car les bénéfices dépassent ceux captés par l'investisseur initial, expliquant le sous-investissement privé."
+      "explanation": "Les externalités positives de la connaissance justifient l'investissement en R&D, car les bénéfices dépassent ceux captés par l'investisseur initial, expliquant le sous-investissement privé.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale difficulté d'implémentation d'une taxe carbone efficace ?",
@@ -382,7 +423,8 @@
       "optionC": "La difficulté d'évaluer le coût carbone",
       "optionD": "Son incompatibilité avec le marché carbone",
       "correctAnswer": "C",
-      "explanation": "La difficulté principale d'implémentation d'une taxe carbone efficace est l'évaluation du coût carbone optimal, qui doit refléter le vrai coût social du carbone tout en étant politiquement acceptable."
+      "explanation": "La difficulté principale d'implémentation d'une taxe carbone efficace est l'évaluation du coût carbone optimal, qui doit refléter le vrai coût social du carbone tout en étant politiquement acceptable.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment la politique monétaire peut-elle contribuer à la transition écologique ?",
@@ -391,7 +433,8 @@
       "optionC": "En contrôlant directement les prix des carburants",
       "optionD": "En interdisant les investissements dans les énergies fossiles",
       "correctAnswer": "B",
-      "explanation": "La politique monétaire peut contribuer à la transition écologique en orientant le crédit vers des activités durables, notamment par le biais de tests de résilience climatique pour les banques."
+      "explanation": "La politique monétaire peut contribuer à la transition écologique en orientant le crédit vers des activités durables, notamment par le biais de tests de résilience climatique pour les banques.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon le concept de soutenabilité environnementale, une économie est-elle considérée comme soutenable si :",
@@ -400,7 +443,8 @@
       "optionC": "Elle maintient constant le flux de ressources naturelles",
       "optionD": "Elle augmente la consommation de ressources naturelles",
       "correctAnswer": "A",
-      "explanation": "Selon le concept de soutenabilité environnementale (faible), une économie est soutenable si elle maintient constant le stock de capital naturel, permettant de maintenir le même niveau de bien-être pour les générations futures."
+      "explanation": "Selon le concept de soutenabilité environnementale (faible), une économie est soutenable si elle maintient constant le stock de capital naturel, permettant de maintenir le même niveau de bien-être pour les générations futures.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans un modèle de croissance endogène, quel instrument politique est susceptible de promouvoir la croissance économique durable ?",
@@ -409,7 +453,8 @@
       "optionC": "Des restrictions à l'immigration qualifiée",
       "optionD": "Des politiques protectionnistes",
       "correctAnswer": "B",
-      "explanation": "Les investissements dans l'éducation et la R&D sont susceptibles de promouvoir la croissance économique durable dans les modèles de croissance endogène, car ils renforcent le stock de connaissance et d'innovation."
+      "explanation": "Les investissements dans l'éducation et la R&D sont susceptibles de promouvoir la croissance économique durable dans les modèles de croissance endogène, car ils renforcent le stock de connaissance et d'innovation.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la relation entre inflation et politique monétaire dans un régime de ciblage de l'inflation ?",
@@ -418,7 +463,8 @@
       "optionC": "La banque centrale ignore l'inflation",
       "optionD": "La banque centrale cherche à éliminer complètement l'inflation",
       "correctAnswer": "A",
-      "explanation": "Dans un régime de ciblage de l'inflation, la banque centrale utilise ses instruments de politique monétaire pour maintenir l'inflation à un niveau prédéterminé, généralement autour de 2%."
+      "explanation": "Dans un régime de ciblage de l'inflation, la banque centrale utilise ses instruments de politique monétaire pour maintenir l'inflation à un niveau prédéterminé, généralement autour de 2%.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre la soutenabilité faible et forte en matière de développement durable ?",
@@ -427,7 +473,8 @@
       "optionC": "La soutenabilité faible ne considère que le capital naturel",
       "optionD": "La soutenabilité forte ne considère que le capital humain",
       "correctAnswer": "A",
-      "explanation": "La soutenabilité faible autorise la substitution du capital naturel par d'autres formes de capital (capital manufacturé, humain), tandis que la soutenabilité forte exige le maintien du stock total de capital naturel."
+      "explanation": "La soutenabilité faible autorise la substitution du capital naturel par d'autres formes de capital (capital manufacturé, humain), tandis que la soutenabilité forte exige le maintien du stock total de capital naturel.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans un modèle de croissance endogène, quel phénomène explique la persistance des différences de richesse entre pays ?",
@@ -436,7 +483,8 @@
       "optionC": "Les différences culturelles",
       "optionD": "Les politiques protectionnistes",
       "correctAnswer": "B",
-      "explanation": "Les externalités de connaissance et les rendements croissants expliquent pourquoi les pays riches restent riches et les pays pauvres peinent à rattraper leur retard, contrairement aux modèles de croissance exogène où la convergence devrait avoir lieu."
+      "explanation": "Les externalités de connaissance et les rendements croissants expliquent pourquoi les pays riches restent riches et les pays pauvres peinent à rattraper leur retard, contrairement aux modèles de croissance exogène où la convergence devrait avoir lieu.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est l'incidence principale d'une taxe carbone sur les prix des produits émettant beaucoup de carbone ?",
@@ -445,7 +493,8 @@
       "optionC": "Elle les rend plus stables",
       "optionD": "Elle n'affecte pas leurs prix",
       "correctAnswer": "B",
-      "explanation": "Une taxe carbone augmente le coût de production des produits émettant beaucoup de carbone, ce qui se répercute sur leurs prix finals, incitant ainsi à réduire leur consommation et à développer des alternatives moins carbonées."
+      "explanation": "Une taxe carbone augmente le coût de production des produits émettant beaucoup de carbone, ce qui se répercute sur leurs prix finals, incitant ainsi à réduire leur consommation et à développer des alternatives moins carbonées.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment la politique monétaire peut-elle affecter l'inflation des actifs financiers ?",
@@ -454,7 +503,8 @@
       "optionC": "En n'ayant aucun effet",
       "optionD": "En la réduisant par la hausse des taux",
       "correctAnswer": "B",
-      "explanation": "Une politique monétaire expansionniste peut contribuer à l'inflation des actifs financiers en augmentant la liquidité disponible sur les marchés, ce qui peut entraîner une hausse des prix des actions, de l'immobilier, etc."
+      "explanation": "Une politique monétaire expansionniste peut contribuer à l'inflation des actifs financiers en augmentant la liquidité disponible sur les marchés, ce qui peut entraîner une hausse des prix des actions, de l'immobilier, etc.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon le concept de PIB vert, comment l'épuisement des ressources naturelles devrait-il être comptabilisé ?",
@@ -463,7 +513,8 @@
       "optionC": "Sans impact sur le PIB",
       "optionD": "Comme une augmentation du déficit public",
       "correctAnswer": "B",
-      "explanation": "Dans un cadre de PIB vert, l'épuisement des ressources naturelles est comptabilisé comme une diminution du PIB, reflétant la perte de capital naturel qui ne sera pas disponible pour les générations futures."
+      "explanation": "Dans un cadre de PIB vert, l'épuisement des ressources naturelles est comptabilisé comme une diminution du PIB, reflétant la perte de capital naturel qui ne sera pas disponible pour les générations futures.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans un modèle de croissance endogène, quelle est la conséquence d'une augmentation des dépenses publiques en éducation ?",
@@ -472,7 +523,8 @@
       "optionC": "Une augmentation du chômage structurel",
       "optionD": "Une diminution de l'innovation",
       "correctAnswer": "B",
-      "explanation": "Dans un modèle de croissance endogène, une augmentation des dépenses publiques en éducation augmente la productité à long terme grâce à l'accumulation de capital humain, stimulant ainsi la croissance économique durable."
+      "explanation": "Dans un modèle de croissance endogène, une augmentation des dépenses publiques en éducation augmente la productité à long terme grâce à l'accumulation de capital humain, stimulant ainsi la croissance économique durable.",
+      "difficulty": "medium"
     },
     {
       "question": "La croissance endogène se distingue de la croissance traditionnelle en considérant que:",
@@ -481,7 +533,8 @@
       "optionC": "Les décisions économiques individuelles et les choix politiques influencent directement le taux de croissance",
       "optionD": "La croissance économique est principalement déterminée par les ressources naturelles disponibles",
       "correctAnswer": "C",
-      "explanation": "La croissance endogène considère que les décisions économiques individuelles et les politiques publiques peuvent influencer directement le taux de croissance, contrairement aux modèles traditionnels où le progrès technique est considéré comme exogène."
+      "explanation": "La croissance endogène considère que les décisions économiques individuelles et les politiques publiques peuvent influencer directement le taux de croissance, contrairement aux modèles traditionnels où le progrès technique est considéré comme exogène.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale critique adressée à l'utilisation du PIB comme indicateur de développement durable?",
@@ -490,7 +543,8 @@
       "optionC": "Le PIB est trop complexe à calculer pour les pays en développement",
       "optionD": "Le PIB ne mesure pas le bien-être subjectif des individus",
       "correctAnswer": "B",
-      "explanation": "Le PIB inclut les dépenses de défense et les activités de dépollution comme contributions positives à l'économie, sans soustraire la dégradation environnementale, ce qui le rend peu adapté pour mesurer le développement durable."
+      "explanation": "Le PIB inclut les dépenses de défense et les activités de dépollution comme contributions positives à l'économie, sans soustraire la dégradation environnementale, ce qui le rend peu adapté pour mesurer le développement durable.",
+      "difficulty": "medium"
     },
     {
       "question": "La taxe carbone est considérée comme un instrument efficace pour la transition écologique car:",
@@ -499,7 +553,8 @@
       "optionC": "Elle est toujours préférable à un système de quotas d'échange de droits à polluer",
       "optionD": "Elle est facilement acceptée par l'ensemble des acteurs économiques",
       "correctAnswer": "B",
-      "explanation": "La taxe carbone internalise le coût externe des émissions de CO2, incitant les agents économiques à internaliser cet impact dans leurs décisions et à réorienter leurs investissements vers des technologies moins carbonées."
+      "explanation": "La taxe carbone internalise le coût externe des émissions de CO2, incitant les agents économiques à internaliser cet impact dans leurs décisions et à réorienter leurs investissements vers des technologies moins carbonées.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre de la soutenabilité des finances publiques, la règle d'or stipule que:",
@@ -508,7 +563,8 @@
       "optionC": "Les emprunts ne doivent financer que des investissements publics",
       "optionD": "Les recettes fiscales doivent couvrir au moins 50% des dépenses publiques",
       "correctAnswer": "C",
-      "explanation": "La règle d'or de la soutenabilité financière stipule que les emprunts publics ne doivent financer que des investissements (qui généreront des revenus futurs) et non les dépenses courantes (consommation)."
+      "explanation": "La règle d'or de la soutenabilité financière stipule que les emprunts publics ne doivent financer que des investissements (qui généreront des revenus futurs) et non les dépenses courantes (consommation).",
+      "difficulty": "medium"
     },
     {
       "question": "La théorie de la croissance endogène de Romer met particulièrement l'accent sur:",
@@ -517,7 +573,8 @@
       "optionC": "Le capital humain et les connaissances comme facteurs clés de la croissance",
       "optionD": "Le rôle prépondérant des ressources naturelles",
       "correctAnswer": "C",
-      "explanation": "La théorie de la croissance endogène de Romer insiste sur le rôle du capital humain, des connaissances et de l'innovation comme moteurs principaux de la croissance économique, avec des rendements croissants du savoir."
+      "explanation": "La théorie de la croissance endogène de Romer insiste sur le rôle du capital humain, des connaissances et de l'innovation comme moteurs principaux de la croissance économique, avec des rendements croissants du savoir.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la relation théorique entre l'inflation et le chômage selon la courbe de Phillips?",
@@ -526,7 +583,8 @@
       "optionC": "Aucune relation systématique entre ces deux variables",
       "optionD": "Une relation parabolique : le chômage est minimal pour un taux d'inflation optimal",
       "correctAnswer": "B",
-      "explanation": "La courbe de Phillips théorique établit une relation négative entre l'inflation et le chômage : une hausse de l'inflation s'accompagne d'une baisse temporaire du chômage et vice versa."
+      "explanation": "La courbe de Phillips théorique établit une relation négative entre l'inflation et le chômage : une hausse de l'inflation s'accompagne d'une baisse temporaire du chômage et vice versa.",
+      "difficulty": "medium"
     },
     {
       "question": "La politique monétaire expansionniste consiste à:",
@@ -535,7 +593,8 @@
       "optionC": "Maintenir constantes les variables monétaires",
       "optionD": "Augmenter les réserves obligatoires des banques",
       "correctAnswer": "B",
-      "explanation": "La politique monétaire expansionniste vise à stimuler l'activité économique en abaissant les taux d'intérêt et en augmentant la masse monétaire, rendant le crédit plus accessible et moins cher."
+      "explanation": "La politique monétaire expansionniste vise à stimuler l'activité économique en abaissant les taux d'intérêt et en augmentant la masse monétaire, rendant le crédit plus accessible et moins cher.",
+      "difficulty": "medium"
     },
     {
       "question": "Le PIB vert ou ajusté au développement durable:",
@@ -544,7 +603,8 @@
       "optionC": "Ne prend en compte que les énergies renouvelables",
       "optionD": "Est toujours inférieur au PIB traditionnel",
       "correctAnswer": "B",
-      "explanation": "Le PIB vert ou ajusté au développement durable tente de corriger les limites du PIB traditionnel en déduisant les coûts de la dégradation environnementale et de l'épuisement des ressources naturelles."
+      "explanation": "Le PIB vert ou ajusté au développement durable tente de corriger les limites du PIB traditionnel en déduisant les coûts de la dégradation environnementale et de l'épuisement des ressources naturelles.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de la croissance endogène, les investissements en recherche et développement (R&D) ont un impact particulier sur la croissance car ils génèrent:",
@@ -553,7 +613,8 @@
       "optionC": "Un effet d'éviction sur l'investissement productif",
       "optionD": "Uniquement des bénéfices à court terme",
       "correctAnswer": "B",
-      "explanation": "Les investissements en R&D génèrent des rendements croissants car les connaissances sont des biens publics partiels (non-rival et partiellement non-excluable), permettant leur diffusion et leur utilisation répétée sans coût marginal supplémentaire."
+      "explanation": "Les investissements en R&D génèrent des rendements croissants car les connaissances sont des biens publics partiels (non-rival et partiellement non-excluable), permettant leur diffusion et leur utilisation répétée sans coût marginal supplémentaire.",
+      "difficulty": "medium"
     },
     {
       "question": "La double-dividende fiscal associé à une taxe carbone efficace se réfère à:",
@@ -562,7 +623,8 @@
       "optionC": "La réduction des émissions de carbone et la possibilité de réduire les taxes distorsives",
       "optionD": "L'augmentation de la compétitivité des entreprises et la réduction de la pauvreté",
       "correctAnswer": "C",
-      "explanation": "Le double dividende fiscal désigne le fait qu'une taxe carbone peut à la fois réduire les émissions de carbone (premier dividende environnemental) et permettre de réduire d'autres taxes plus dommageables pour l'efficacité économique (deuxième dividende économique)."
+      "explanation": "Le double dividende fiscal désigne le fait qu'une taxe carbone peut à la fois réduire les émissions de carbone (premier dividende environnemental) et permettre de réduire d'autres taxes plus dommageables pour l'efficacité économique (deuxième dividende économique).",
+      "difficulty": "medium"
     },
     {
       "question": "La transition écologique risque de compromettre la soutenabilité des finances publiques si:",
@@ -571,7 +633,8 @@
       "optionC": "Les coûts de la transition sont reportés sur les générations futures",
       "optionD": "Les recettes fiscales provenant de la taxe carbone sont utilisées pour réduire les impôts sur le travail",
       "correctAnswer": "C",
-      "explanation": "Reporter les coûts de la transition écologique sur les générations futures compromet la soutenabilité financière car cela transfère le fardeau aux futurs contribuables sans que ceux-ci bénéficient directement des investissements réalisés aujourd'hui."
+      "explanation": "Reporter les coûts de la transition écologique sur les générations futures compromet la soutenabilité financière car cela transfère le fardeau aux futurs contribuables sans que ceux-ci bénéficient directement des investissements réalisés aujourd'hui.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de la croissance endogène, l'État peut favoriser la croissance en:",
@@ -580,7 +643,8 @@
       "optionC": "Protectionnisme économique pour protéger les industries nationales",
       "optionD": "Subventionnant uniquement les secteurs traditionnels",
       "correctAnswer": "B",
-      "explanation": "Selon la théorie de la croissance endogène, l'État peut favoriser la croissance en investissant dans l'éducation et la recherche fondamentale, car ces investissements génèrent des connaissances qui ont des rendements croissants et bénéficient à l'ensemble de l'économie."
+      "explanation": "Selon la théorie de la croissance endogène, l'État peut favoriser la croissance en investissant dans l'éducation et la recherche fondamentale, car ces investissements génèrent des connaissances qui ont des rendements croissants et bénéficient à l'ensemble de l'économie.",
+      "difficulty": "medium"
     },
     {
       "question": "La comptabilité satellite environnementale vise à:",
@@ -589,7 +653,8 @@
       "optionC": "Calculer l'impact des politiques environnementales sur le PIB",
       "optionD": "Évaluer uniquement les émissions de carbone d'un pays",
       "correctAnswer": "B",
-      "explanation": "La comptabilité satellite environnementale est un système de comptes distincts du système national de comptes qui permet de mesurer séparément les flux économiques liés à l'environnement, tout en maintenant le PIB comme indicateur principal."
+      "explanation": "La comptabilité satellite environnementale est un système de comptes distincts du système national de comptes qui permet de mesurer séparément les flux économiques liés à l'environnement, tout en maintenant le PIB comme indicateur principal.",
+      "difficulty": "medium"
     },
     {
       "question": "La règle de Taylor en politique monétaire recommande que:",
@@ -598,7 +663,8 @@
       "optionC": "La banque centrale maintienne les taux d'intérêt constants quelle que soit la conjoncture",
       "optionD": "La banque centrale cible uniquement le taux de chômage",
       "correctAnswer": "B",
-      "explanation": "La règle de Taylor recommande que les taux d'intérêt soient ajustés en fonction de l'écart entre l'inflation observée et l'inflation cible, et de l'écart entre le PIB observé et le PIB potentiel (écart de production)."
+      "explanation": "La règle de Taylor recommande que les taux d'intérêt soient ajustés en fonction de l'écart entre l'inflation observée et l'inflation cible, et de l'écart entre le PIB observé et le PIB potentiel (écart de production).",
+      "difficulty": "medium"
     }
   ],
   "subcategory": "Économie",

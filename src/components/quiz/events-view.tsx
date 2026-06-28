@@ -1,12 +1,21 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
+<<<<<<< Updated upstream
 import { useSession } from "next-auth/react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+=======
+import { useSession } from "next-auth";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+>>>>>>> Stashed changes
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
@@ -24,11 +33,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+<<<<<<< Updated upstream
 import { toast } from "sonner";
+=======
+>>>>>>> Stashed changes
 import {
   CalendarDays,
   Plus,
   Trash2,
+<<<<<<< Updated upstream
   Clock,
   MapPin,
   CheckCircle2,
@@ -45,11 +58,22 @@ interface EventCreator {
   id: string;
   name: string;
 }
+=======
+  MapPin,
+  Clock,
+  Info,
+  GraduationCap,
+  Wrench,
+  Users2,
+} from "lucide-react";
+import { toast } from "sonner";
+>>>>>>> Stashed changes
 
 interface EventItem {
   id: string;
   title: string;
   description: string;
+<<<<<<< Updated upstream
   type: "exam" | "contest" | "deadline";
   startDate: string;
   endDate: string | null;
@@ -141,15 +165,79 @@ export function EventsView() {
   const [loading, setLoading] = useState(true);
   const [createOpen, setCreateOpen] = useState(false);
   const [subscribed, setSubscribed] = useState<Set<string>>(new Set());
+=======
+  date: string;
+  endDate: string | null;
+  location: string;
+  category: string;
+  createdAt: string;
+}
+
+const CATEGORIES = [
+  { value: "info", label: "Information", icon: Info, color: "text-sky-600" },
+  { value: "exam", label: "Examen", icon: GraduationCap, color: "text-rose-600" },
+  { value: "workshop", label: "Atelier", icon: Wrench, color: "text-amber-600" },
+  { value: "meeting", label: "Réunion", icon: Users2, color: "text-violet-600" },
+];
+
+function catMeta(value: string) {
+  return CATEGORIES.find((c) => c.value === value) ?? CATEGORIES[0];
+}
+
+function formatEventDate(iso: string): string {
+  try {
+    return new Date(iso).toLocaleDateString("fr-FR", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+  } catch {
+    return iso;
+  }
+}
+
+function formatTime(iso: string): string {
+  try {
+    return new Date(iso).toLocaleTimeString("fr-FR", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  } catch {
+    return "";
+  }
+}
+
+export function EventsView() {
+  const { data: session } = useSession();
+  const isAdmin = (session?.user as { role?: string })?.role === "ADMIN";
+  const [events, setEvents] = useState<EventItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [createOpen, setCreateOpen] = useState(false);
+  const [creating, setCreating] = useState(false);
+  const [form, setForm] = useState({
+    title: "",
+    description: "",
+    date: "",
+    time: "09:00",
+    location: "",
+    category: "info",
+  });
+>>>>>>> Stashed changes
 
   const load = useCallback(async () => {
     setLoading(true);
     try {
+<<<<<<< Updated upstream
       const res = await fetch("/api/events?limit=50", { cache: "no-store" });
       if (res.ok) {
         const data = await res.json();
         setEvents(Array.isArray(data.items) ? data.items : []);
       }
+=======
+      const res = await fetch("/api/events?limit=100");
+      if (res.ok) setEvents(await res.json());
+>>>>>>> Stashed changes
     } catch (e) {
       console.error(e);
     } finally {
@@ -159,6 +247,7 @@ export function EventsView() {
 
   useEffect(() => {
     load();
+<<<<<<< Updated upstream
     setSubscribed(getSubscribedIds());
   }, [load]);
 
@@ -205,6 +294,65 @@ export function EventsView() {
     acc[key].push(e);
     return acc;
   }, {});
+=======
+  }, [load]);
+
+  async function handleCreate() {
+    if (!form.title.trim() || !form.date) {
+      toast.error("Titre et date requis");
+      return;
+    }
+    const iso = new Date(`${form.date}T${form.time || "09:00"}`).toISOString();
+    setCreating(true);
+    try {
+      const res = await fetch("/api/events", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title: form.title.trim(),
+          description: form.description.trim(),
+          date: iso,
+          location: form.location.trim(),
+          category: form.category,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.error ?? "Erreur");
+        return;
+      }
+      toast.success("Événement créé");
+      setCreateOpen(false);
+      setForm({ title: "", description: "", date: "", time: "09:00", location: "", category: "info" });
+      await load();
+    } catch (e) {
+      console.error(e);
+      toast.error("Erreur réseau");
+    } finally {
+      setCreating(false);
+    }
+  }
+
+  async function handleDelete(id: string) {
+    if (!confirm("Supprimer cet événement ?")) return;
+    try {
+      const res = await fetch(`/api/events/${id}`, { method: "DELETE" });
+      if (!res.ok) {
+        toast.error("Erreur");
+        return;
+      }
+      toast.success("Supprimé");
+      await load();
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  // Group by upcoming / past
+  const now = new Date();
+  const upcoming = events.filter((e) => new Date(e.date) >= now);
+  const past = events.filter((e) => new Date(e.date) < now);
+>>>>>>> Stashed changes
 
   return (
     <div className="space-y-6">
@@ -215,14 +363,23 @@ export function EventsView() {
             Événements
           </h1>
           <p className="text-muted-foreground">
+<<<<<<< Updated upstream
             Examens, concours et échéances à venir
+=======
+            Examens blancs, ateliers de révision et réunions d&apos;information.
+>>>>>>> Stashed changes
           </p>
         </div>
         {isAdmin && (
           <Button
+<<<<<<< Updated upstream
             size="sm"
             className="gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
             onClick={() => setCreateOpen(true)}
+=======
+            onClick={() => setCreateOpen(true)}
+            className="gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
+>>>>>>> Stashed changes
           >
             <Plus className="h-4 w-4" />
             Créer un événement
@@ -232,6 +389,7 @@ export function EventsView() {
 
       {loading ? (
         <div className="space-y-3">
+<<<<<<< Updated upstream
           {Array.from({ length: 3 }).map((_, i) => (
             <Skeleton key={i} className="h-28 rounded-xl" />
           ))}
@@ -354,10 +512,153 @@ export function EventsView() {
           load();
         }}
       />
+=======
+          {Array.from({ length: 4 }).map((_, i) => (
+            <Skeleton key={i} className="h-24 rounded-xl" />
+          ))}
+        </div>
+      ) : (
+        <>
+          <section className="space-y-3">
+            <h2 className="flex items-center gap-2 text-sm font-semibold uppercase text-muted-foreground">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              À venir ({upcoming.length})
+            </h2>
+            {upcoming.length === 0 ? (
+              <Card className="p-6 text-center text-sm text-muted-foreground">
+                Aucun événement à venir.
+              </Card>
+            ) : (
+              <div className="space-y-2">
+                {upcoming.map((e) => (
+                  <EventCard
+                    key={e.id}
+                    event={e}
+                    isAdmin={isAdmin}
+                    onDelete={() => handleDelete(e.id)}
+                  />
+                ))}
+              </div>
+            )}
+          </section>
+
+          {past.length > 0 && (
+            <section className="space-y-3">
+              <h2 className="flex items-center gap-2 text-sm font-semibold uppercase text-muted-foreground">
+                <span className="h-2 w-2 rounded-full bg-muted-foreground" />
+                Passés ({past.length})
+              </h2>
+              <div className="space-y-2 opacity-70">
+                {past.slice(0, 10).map((e) => (
+                  <EventCard
+                    key={e.id}
+                    event={e}
+                    isAdmin={isAdmin}
+                    onDelete={() => handleDelete(e.id)}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
+        </>
+      )}
+
+      {/* Create dialog */}
+      <Dialog open={createOpen} onOpenChange={setCreateOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Créer un événement</DialogTitle>
+            <DialogDescription>
+              L&apos;événement sera visible par tous les utilisateurs.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-3">
+            <div className="space-y-1.5">
+              <Label htmlFor="ev-title">Titre *</Label>
+              <Input
+                id="ev-title"
+                value={form.title}
+                onChange={(e) => setForm((f) => ({ ...f, title: e.target.value }))}
+                placeholder="ex: Examen blanc de Culture Générale"
+                maxLength={120}
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <Label htmlFor="ev-date">Date *</Label>
+                <Input
+                  id="ev-date"
+                  type="date"
+                  value={form.date}
+                  onChange={(e) => setForm((f) => ({ ...f, date: e.target.value }))}
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="ev-time">Heure</Label>
+                <Input
+                  id="ev-time"
+                  type="time"
+                  value={form.time}
+                  onChange={(e) => setForm((f) => ({ ...f, time: e.target.value }))}
+                />
+              </div>
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="ev-loc">Lieu</Label>
+              <Input
+                id="ev-loc"
+                value={form.location}
+                onChange={(e) => setForm((f) => ({ ...f, location: e.target.value }))}
+                placeholder="ex: Salle 12, Ouagadougou / En ligne"
+                maxLength={120}
+              />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="ev-cat">Catégorie</Label>
+              <Select
+                value={form.category}
+                onValueChange={(v) => setForm((f) => ({ ...f, category: v }))}
+              >
+                <SelectTrigger id="ev-cat">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {CATEGORIES.map((c) => (
+                    <SelectItem key={c.value} value={c.value}>
+                      {c.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="ev-desc">Description</Label>
+              <Textarea
+                id="ev-desc"
+                value={form.description}
+                onChange={(e) => setForm((f) => ({ ...f, description: e.target.value }))}
+                placeholder="Détails, programme, prérequis..."
+                rows={3}
+                maxLength={1000}
+              />
+            </div>
+          </div>
+          <DialogFooter>
+            <Button variant="ghost" onClick={() => setCreateOpen(false)}>
+              Annuler
+            </Button>
+            <Button onClick={handleCreate} disabled={creating}>
+              {creating ? "Création..." : "Créer"}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+>>>>>>> Stashed changes
     </div>
   );
 }
 
+<<<<<<< Updated upstream
 // ---------- Create event dialog ----------
 
 function CreateEventDialog({
@@ -518,5 +819,67 @@ function CreateEventDialog({
         </DialogFooter>
       </DialogContent>
     </Dialog>
+=======
+function EventCard({
+  event,
+  isAdmin,
+  onDelete,
+}: {
+  event: EventItem;
+  isAdmin: boolean;
+  onDelete: () => void;
+}) {
+  const cat = catMeta(event.category);
+  const Icon = cat.icon;
+  return (
+    <Card className="flex items-start gap-3 p-4">
+      <div className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-xl bg-muted text-center">
+        <span className="text-xs font-medium uppercase text-muted-foreground">
+          {new Date(event.date).toLocaleDateString("fr-FR", { month: "short" })}
+        </span>
+        <span className="text-lg font-bold leading-none">
+          {new Date(event.date).getDate()}
+        </span>
+      </div>
+      <div className="min-w-0 flex-1">
+        <div className="flex items-start justify-between gap-2">
+          <h3 className="font-semibold leading-tight">{event.title}</h3>
+          <Badge variant="outline" className="shrink-0 gap-1 text-[10px]">
+            <Icon className={`h-3 w-3 ${cat.color}`} />
+            {cat.label}
+          </Badge>
+        </div>
+        <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+          <span className="flex items-center gap-1">
+            <CalendarDays className="h-3 w-3" />
+            {formatEventDate(event.date)}
+          </span>
+          <span className="flex items-center gap-1">
+            <Clock className="h-3 w-3" />
+            {formatTime(event.date)}
+          </span>
+          {event.location && (
+            <span className="flex items-center gap-1">
+              <MapPin className="h-3 w-3" />
+              {event.location}
+            </span>
+          )}
+        </div>
+        {event.description && (
+          <p className="mt-2 text-sm text-muted-foreground">{event.description}</p>
+        )}
+      </div>
+      {isAdmin && (
+        <Button
+          size="icon"
+          variant="ghost"
+          className="h-8 w-8 shrink-0 text-rose-500 hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-950/30"
+          onClick={onDelete}
+        >
+          <Trash2 className="h-4 w-4" />
+        </Button>
+      )}
+    </Card>
+>>>>>>> Stashed changes
   );
 }

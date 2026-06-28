@@ -1,6 +1,10 @@
 "use client";
 
+<<<<<<< Updated upstream
 import { useState, useCallback, useEffect } from "react";
+=======
+import { useCallback, useEffect, useState } from "react";
+>>>>>>> Stashed changes
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -26,9 +30,14 @@ import {
 import { toast } from "sonner";
 
 /**
+<<<<<<< Updated upstream
  * ExamsManager — "Examens" tab. Lists existing exams with delete action.
  * The "Nouvel examen" button triggers `onNew()` which the parent uses to
  * open NewExamDialog.
+=======
+ * ExamsManager — onglet "Examens".
+ * Liste les examens blancs + bouton "Nouvel examen" qui ouvre NewExamDialog.
+>>>>>>> Stashed changes
  */
 export function ExamsManager({ onNew }: { onNew: () => void }) {
   const [exams, setExams] = useState<any[]>([]);
@@ -129,8 +138,14 @@ export function ExamsManager({ onNew }: { onNew: () => void }) {
 }
 
 /**
+<<<<<<< Updated upstream
  * NewExamDialog — modal form for creating a new exam.
  * Selects how many questions to pull from each bank (distributions array).
+=======
+ * NewExamDialog — dialogue de création d'un nouvel examen blanc.
+ * L'utilisateur définit titre/description/durée + la distribution de questions
+ * par banque (combien de questions tirer aléatoirement de chaque banque).
+>>>>>>> Stashed changes
  */
 export function NewExamDialog({
   open,
@@ -163,7 +178,11 @@ export function NewExamDialog({
       return;
     }
     const distributions = Object.entries(selectedBanks)
+<<<<<<< Updated upstream
       .filter(([_, count]) => count > 0)
+=======
+      .filter(([, count]) => count > 0)
+>>>>>>> Stashed changes
       .map(([bankId, count]) => ({ bankId, count }));
     if (distributions.length === 0) {
       toast.error("Sélectionnez au moins une banque");

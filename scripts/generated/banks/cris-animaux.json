@@ -15,7 +15,12 @@
       "optionC": "Le grognement",
       "optionD": "Le meuglement",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le rugissement ». Le lion rugit. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du lion  »."
+=======
+      "explanation": "La réponse correcte est « Le rugissement ». Cette affirmation répond directement à la question posée : Quel est le cri du lion ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle du lion ?",
@@ -24,7 +29,8 @@
       "optionC": "La léopardesse",
       "optionD": "La panthère",
       "correctAnswer": "A",
-      "explanation": "La femelle du lion est la lionne."
+      "explanation": "La femelle du lion est la lionne.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on le petit du lion ?",
@@ -33,7 +39,8 @@
       "optionC": "Le chaton",
       "optionD": "Le petit",
       "correctAnswer": "A",
-      "explanation": "Le petit du lion est le lionceau."
+      "explanation": "Le petit du lion est le lionceau.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le cri du loup ?",
@@ -42,7 +49,12 @@
       "optionC": "Le jappement",
       "optionD": "Le aboiement",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le hurlement ». Le loup hurle. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du loup  »."
+=======
+      "explanation": "La réponse correcte est « Le hurlement ». Cette affirmation répond directement à la question posée : Quel est le cri du loup ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle du loup ?",
@@ -51,7 +63,8 @@
       "optionC": "La louvette",
       "optionD": "La renarde",
       "correctAnswer": "A",
-      "explanation": "La femelle du loup est la louve."
+      "explanation": "La femelle du loup est la louve.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on le petit du loup ?",
@@ -60,7 +73,8 @@
       "optionC": "Le renardeau",
       "optionD": "Le blaireaut",
       "correctAnswer": "A",
-      "explanation": "Le petit du loup est le louveteau."
+      "explanation": "Le petit du loup est le louveteau.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le cri du chien ?",
@@ -69,7 +83,12 @@
       "optionC": "Le grognement",
       "optionD": "Le jappement",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « L'aboiement ». Le chien aboie. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du chien  »."
+=======
+      "explanation": "La réponse correcte est « L'aboiement ». Cette affirmation répond directement à la question posée : Quel est le cri du chien ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle du chien ?",
@@ -78,7 +97,8 @@
       "optionC": "La chienlette",
       "optionD": "La lice",
       "correctAnswer": "A",
-      "explanation": "La femelle du chien est la chienne (aussi 'lice' pour les chiens de chasse)."
+      "explanation": "La femelle du chien est la chienne (aussi 'lice' pour les chiens de chasse).",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on le petit du chien ?",
@@ -87,7 +107,8 @@
       "optionC": "Le chienlon",
       "optionD": "Le chiotte",
       "correctAnswer": "A",
-      "explanation": "Le petit du chien est le chiot."
+      "explanation": "Le petit du chien est le chiot.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le cri du chat ?",
@@ -96,7 +117,12 @@
       "optionC": "Le rugissement",
       "optionD": "Le sifflement",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le miaulement ». Le chat miaule. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du chat  »."
+=======
+      "explanation": "La réponse correcte est « Le miaulement ». Cette affirmation répond directement à la question posée : Quel est le cri du chat ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle du chat ?",
@@ -105,7 +131,8 @@
       "optionC": "La minette",
       "optionD": "La chatline",
       "correctAnswer": "A",
-      "explanation": "La femelle du chat est la chatte."
+      "explanation": "La femelle du chat est la chatte.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on le petit du chat ?",
@@ -114,7 +141,8 @@
       "optionC": "Le kitten",
       "optionD": "Le minet",
       "correctAnswer": "A",
-      "explanation": "Le petit du chat est le chaton."
+      "explanation": "Le petit du chat est le chaton.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le cri du cheval ?",
@@ -123,7 +151,12 @@
       "optionC": "Le braiment",
       "optionD": "Le cri",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le hennissement ». Le cheval hennit. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du cheval  »."
+=======
+      "explanation": "La réponse correcte est « Le hennissement ». Cette affirmation répond directement à la question posée : Quel est le cri du cheval ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle du cheval ?",
@@ -132,7 +165,8 @@
       "optionC": "La pouliche",
       "optionD": "La haras",
       "correctAnswer": "A",
-      "explanation": "La femelle du cheval est la jument."
+      "explanation": "La femelle du cheval est la jument.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on le petit du cheval ?",
@@ -141,7 +175,8 @@
       "optionC": "Le poulard",
       "optionD": "Le chevalon",
       "correctAnswer": "A",
-      "explanation": "Le petit du cheval est le poulain (mâle) ou la pouliche (femelle)."
+      "explanation": "Le petit du cheval est le poulain (mâle) ou la pouliche (femelle).",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le cri de la vache ?",
@@ -150,7 +185,8 @@
       "optionC": "Le mugissement",
       "optionD": "Toutes ces réponses",
       "correctAnswer": "D",
-      "explanation": "La vache meugle, beugle ou mugit (synonymes)."
+      "explanation": "La vache meugle, beugle ou mugit (synonymes).",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on la femelle du bœuf ?",
@@ -159,7 +195,8 @@
       "optionC": "La taure",
       "optionD": "La vachette",
       "correctAnswer": "A",
-      "explanation": "La femelle du bœuf (taureau) est la vache."
+      "explanation": "La femelle du bœuf (taureau) est la vache.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on le petit de la vache ?",
@@ -168,7 +205,8 @@
       "optionC": "Le bovin",
       "optionD": "Le bouvillon",
       "correctAnswer": "A",
-      "explanation": "Le petit de la vache est le veau."
+      "explanation": "Le petit de la vache est le veau.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le cri du cochon ?",
@@ -177,7 +215,8 @@
       "optionD": "Le meuglement",
       "optionC": "Le beuglement",
       "correctAnswer": "A",
-      "explanation": "Le cochon grogne (ou cochonne/groine)."
+      "explanation": "Le cochon grogne (ou cochonne/groine).",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on la femelle du cochon ?",
@@ -186,7 +225,8 @@
       "optionC": "La porcine",
       "optionD": "La groine",
       "correctAnswer": "A",
-      "explanation": "La femelle du cochon est la truie."
+      "explanation": "La femelle du cochon est la truie.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on le petit du cochon ?",
@@ -195,7 +235,8 @@
       "optionC": "Le porcin",
       "optionD": "Le cochonneau",
       "correctAnswer": "A",
-      "explanation": "Le petit du cochon est le porcelet."
+      "explanation": "Le petit du cochon est le porcelet.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le cri du mouton ?",
@@ -204,7 +245,12 @@
       "optionC": "Le criaillement",
       "optionD": "Le grognement",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le bêlement ». Le mouton bêle. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du mouton  »."
+=======
+      "explanation": "La réponse correcte est « Le bêlement ». Cette affirmation répond directement à la question posée : Quel est le cri du mouton ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle du mouton ?",
@@ -213,7 +259,8 @@
       "optionC": "La ovine",
       "optionD": "La toison",
       "correctAnswer": "A",
-      "explanation": "La femelle du mouton est la brebis."
+      "explanation": "La femelle du mouton est la brebis.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on le petit du mouton ?",
@@ -222,7 +269,8 @@
       "optionC": "Le brebichon",
       "optionD": "Le toisonneau",
       "correctAnswer": "A",
-      "explanation": "Le petit du mouton est l'agneau."
+      "explanation": "Le petit du mouton est l'agneau.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le cri de la poule ?",
@@ -231,7 +279,12 @@
       "optionC": "Le chant",
       "optionD": "Le criaillement",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « La caquètement ». La poule caquète. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri de la poule  »."
+=======
+      "explanation": "La réponse correcte est « La caquètement ». Cette affirmation répond directement à la question posée : Quel est le cri de la poule ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quel est le cri du coq ?",
@@ -240,7 +293,8 @@
       "optionC": "Le chant",
       "optionD": "Le sifflement",
       "correctAnswer": "A",
-      "explanation": "Le coq chante 'cocorico'."
+      "explanation": "Le coq chante 'cocorico'.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on le petit de la poule ?",
@@ -249,7 +303,8 @@
       "optionC": "Le coquelet",
       "optionD": "Le poussinet",
       "correctAnswer": "A",
-      "explanation": "Le petit de la poule est le poussin."
+      "explanation": "Le petit de la poule est le poussin.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le cri de l'âne ?",
@@ -258,7 +313,12 @@
       "optionC": "Le meuglement",
       "optionD": "Le hurlement",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le braiment ». L'âne brait. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri de l'âne  »."
+=======
+      "explanation": "La réponse correcte est « Le braiment ». Cette affirmation répond directement à la question posée : Quel est le cri de l'âne ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on la femelle de l'âne ?",
@@ -267,7 +327,8 @@
       "optionC": "La baudet",
       "optionD": "La bourrique",
       "correctAnswer": "A",
-      "explanation": "La femelle de l'âne est l'ânesse."
+      "explanation": "La femelle de l'âne est l'ânesse.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on le petit de l'âne ?",
@@ -276,7 +337,8 @@
       "optionC": "L'ânin",
       "optionD": "Le bourriquet",
       "correctAnswer": "A",
-      "explanation": "Le petit de l'âne est l'ânon (ou baudet pour le mâle)."
+      "explanation": "Le petit de l'âne est l'ânon (ou baudet pour le mâle).",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le cri du canard ?",
@@ -285,7 +347,8 @@
       "optionC": "Le caquètement",
       "optionD": "Le sifflement",
       "correctAnswer": "A",
-      "explanation": "Le canard cancane (fait 'coin coin')."
+      "explanation": "Le canard cancane (fait 'coin coin').",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on le petit du canard ?",
@@ -294,7 +357,8 @@
       "optionC": "Le canardin",
       "optionD": "Le cannet",
       "correctAnswer": "A",
-      "explanation": "Le petit du canard est le caneton."
+      "explanation": "Le petit du canard est le caneton.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le cri du serpent ?",
@@ -303,7 +367,12 @@
       "optionC": "Le murmure",
       "optionD": "Le souffle",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le sifflement ». Le serpent siffle. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du serpent  »."
+=======
+      "explanation": "La réponse correcte est « Le sifflement ». Cette affirmation répond directement à la question posée : Quel est le cri du serpent ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quel est le cri de l'éléphant ?",
@@ -312,7 +381,12 @@
       "optionC": "Le trompement",
       "optionD": "Le cri",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le barrissement ». L'éléphant barrit. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri de l'éléphant  »."
+=======
+      "explanation": "La réponse correcte est « Le barrissement ». Cette affirmation répond directement à la question posée : Quel est le cri de l'éléphant ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quel est le cri de la grenouille ?",
@@ -321,7 +395,8 @@
       "optionC": "Le chant",
       "optionD": "Le sifflement",
       "correctAnswer": "A",
-      "explanation": "La grenouille coasse."
+      "explanation": "La grenouille coasse.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le cri du corbeau ?",
@@ -330,7 +405,12 @@
       "optionC": "Le chant",
       "optionD": "Le sifflement",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le croassement ». Le corbeau croasse. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel est le cri du corbeau  »."
+=======
+      "explanation": "La réponse correcte est « Le croassement ». Cette affirmation répond directement à la question posée : Quel est le cri du corbeau ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quel est le cri de la cigogne ?",
@@ -339,7 +419,8 @@
       "optionC": "Le croassement",
       "optionD": "Le sifflement",
       "correctAnswer": "A",
-      "explanation": "La cigogne claquette du bec (elle ne chante pas)."
+      "explanation": "La cigogne claquette du bec (elle ne chante pas).",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le cri du paon ?",
@@ -348,7 +429,8 @@
       "optionC": "Le sifflement",
       "optionD": "Le meuglement",
       "correctAnswer": "A",
-      "explanation": "Le paon criaille (pousse des cris perçants)."
+      "explanation": "Le paon criaille (pousse des cris perçants).",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on le petit du lapin ?",
@@ -357,7 +439,8 @@
       "optionC": "Le lapineau",
       "optionD": "Le bichon",
       "correctAnswer": "A",
-      "explanation": "Le petit du lapin est le lapereau."
+      "explanation": "Le petit du lapin est le lapereau.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on la femelle du lapin ?",
@@ -366,7 +449,8 @@
       "optionC": "La lapone",
       "optionD": "La biche",
       "correctAnswer": "A",
-      "explanation": "La femelle du lapin est la hase (aussi 'lapine')."
+      "explanation": "La femelle du lapin est la hase (aussi 'lapine').",
+      "difficulty": "medium"
     }
   ]
 }

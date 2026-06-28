@@ -1,4 +1,5 @@
 /**
+<<<<<<< Updated upstream
  * Simple in-memory IP-based rate limiter (added in F5).
  *
  * Used by the public API endpoints (/api/public/banks,
@@ -89,10 +90,97 @@ export function rateLimitCheck(
     limit: max,
     remaining,
     reset: Math.ceil((oldest + windowMs - now) / 1000),
+=======
+ * Simple in-memory rate limiter (per-process).
+ * Tracks request counts per identifier (e.g. IP address) within a sliding window.
+ *
+ * Note: this is a single-instance in-memory limiter; for multi-instance deployments
+ * a distributed store (e.g. Redis) would be required. Sufficient for current usage.
+ */
+
+interface RateBucket {
+  count: number;
+  resetAt: number;
+}
+
+interface RateLimitConfig {
+  /** Maximum number of requests allowed within the window. */
+  limit: number;
+  /** Window duration in milliseconds. */
+  windowMs: number;
+}
+
+const DEFAULT_CONFIG: RateLimitConfig = {
+  limit: 60,
+  windowMs: 60_000,
+};
+
+const buckets = new Map<string, RateBucket>();
+
+// Periodic cleanup of expired buckets (every 5 minutes)
+if (typeof setInterval !== "undefined") {
+  setInterval(() => {
+    const now = Date.now();
+    for (const [key, bucket] of buckets) {
+      if (bucket.resetAt <= now) buckets.delete(key);
+    }
+  }, 5 * 60_000).unref?.();
+}
+
+export interface RateLimitResult {
+  success: boolean;
+  limit: number;
+  remaining: number;
+  resetAt: number;
+}
+
+/**
+ * Check whether a request from `identifier` should be allowed.
+ * Returns the updated bucket state along with a `success` boolean.
+ */
+export function checkRateLimit(
+  identifier: string,
+  config: Partial<RateLimitConfig> = {}
+): RateLimitResult {
+  const { limit, windowMs } = { ...DEFAULT_CONFIG, ...config };
+  const now = Date.now();
+  const bucket = buckets.get(identifier);
+
+  if (!bucket || bucket.resetAt <= now) {
+    const newBucket: RateBucket = {
+      count: 1,
+      resetAt: now + windowMs,
+    };
+    buckets.set(identifier, newBucket);
+    return {
+      success: true,
+      limit,
+      remaining: limit - 1,
+      resetAt: newBucket.resetAt,
+    };
+  }
+
+  if (bucket.count >= limit) {
+    return {
+      success: false,
+      limit,
+      remaining: 0,
+      resetAt: bucket.resetAt,
+    };
+  }
+
+  bucket.count += 1;
+  return {
+    success: true,
+    limit,
+    remaining: limit - bucket.count,
+    resetAt: bucket.resetAt,
+>>>>>>> Stashed changes
   };
 }
 
 /**
+<<<<<<< Updated upstream
  * Extract a stable client key from a Next.js Request. Falls back to
  * "anon" if no IP header is present (which would happen in some
  * localhost setups — in that case all anonymous requests share the
@@ -118,4 +206,15 @@ export function rateLimitHeaders(r: RateLimitResult): Record<string, string> {
     "X-RateLimit-Remaining": String(r.remaining),
     "X-RateLimit-Reset": String(r.reset),
   };
+=======
+ * Extract the best-effort client IP from a Next.js Request.
+ * Falls back to "anonymous" when no IP can be determined.
+ */
+export function getClientIp(request: Request): string {
+  const forwarded = request.headers.get("x-forwarded-for");
+  if (forwarded) return forwarded.split(",")[0].trim();
+  const realIp = request.headers.get("x-real-ip");
+  if (realIp) return realIp.trim();
+  return "anonymous";
+>>>>>>> Stashed changes
 }

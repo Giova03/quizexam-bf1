@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback, useRef } from "react";
+<<<<<<< Updated upstream
 import { useSession } from "next-auth/react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,17 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Separator } from "@/components/ui/separator";
+=======
+import { useSession } from "next-auth";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Progress } from "@/components/ui/progress";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+>>>>>>> Stashed changes
 import {
   Select,
   SelectContent,
@@ -16,6 +28,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+<<<<<<< Updated upstream
 import { toast } from "sonner";
 import {
   Trophy,
@@ -55,10 +68,38 @@ interface CurrentQuestionPublic {
   optionD: string;
   correctAnswer: null;
   explanation: null;
+=======
+import { useQuizStore } from "@/lib/quiz-store";
+import {
+  Trophy,
+  Users,
+  Crown,
+  Play,
+  ArrowRight,
+  ArrowLeft,
+  Timer,
+  CheckCircle2,
+  XCircle,
+  LogIn,
+  Plus,
+  RefreshCw,
+} from "lucide-react";
+import { toast } from "sonner";
+
+const OPTION_LETTERS = ["A", "B", "C", "D"] as const;
+
+interface Participant {
+  id: string;
+  name: string;
+  score: number;
+  answeredCurrent?: boolean;
+  lastAnswerCorrect?: boolean | null;
+>>>>>>> Stashed changes
 }
 
 interface RoomState {
   code: string;
+<<<<<<< Updated upstream
   status: "lobby" | "playing" | "finished";
   bankTitle: string;
   hostId: string;
@@ -216,6 +257,119 @@ export function CompetitionView() {
       return;
     }
     setLoading(true);
+=======
+  phase: "lobby" | "playing" | "finished";
+  bankTitle: string;
+  hostName: string;
+  currentQuestionIdx: number;
+  totalQuestions: number;
+  questionDurationSec: number;
+  questionStartedAt: number | null;
+  isHost?: boolean;
+  hostId?: string;
+  currentQuestion?: {
+    id: string;
+    question: string;
+    optionA: string;
+    optionB: string;
+    optionC: string;
+    optionD: string;
+  } | null;
+  participants?: Participant[];
+}
+
+export function CompetitionView() {
+  const { data: session } = useSession();
+  const { banks, goHome } = useQuizStore();
+  const [mode, setMode] = useState<"menu" | "create" | "join" | "playing">("menu");
+  const [joinCode, setJoinCode] = useState("");
+  const [selectedBankId, setSelectedBankId] = useState("");
+  const [questionCount, setQuestionCount] = useState(10);
+  const [durationSec, setDurationSec] = useState(30);
+  const [creating, setCreating] = useState(false);
+  const [joining, setJoining] = useState(false);
+
+  const [room, setRoom] = useState<RoomState | null>(null);
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+  const [feedback, setFeedback] = useState<{
+    correct: boolean;
+    correctAnswer: string;
+    explanation: string;
+  } | null>(null);
+  const [remainingSec, setRemainingSec] = useState<number>(0);
+
+  // Polling de l'état de la room
+  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const stopPoll = useCallback(() => {
+    if (pollRef.current) {
+      clearInterval(pollRef.current);
+      pollRef.current = null;
+    }
+  }, []);
+
+  const fetchRoom = useCallback(async (code: string) => {
+    try {
+      const res = await fetch(`/api/competition?code=${encodeURIComponent(code)}`);
+      if (!res.ok) {
+        return null;
+      }
+      const data: RoomState = await res.json();
+      setRoom((prev) => {
+        // Si l'index de question a changé, on reset l'état de réponse
+        if (prev && prev.currentQuestionIdx !== data.currentQuestionIdx) {
+          setSelectedAnswer(null);
+          setFeedback(null);
+        }
+        return data;
+      });
+      return data;
+    } catch {
+      return null;
+    }
+  }, []);
+
+  const startPolling = useCallback(
+    (code: string) => {
+      stopPoll();
+      pollRef.current = setInterval(() => {
+        fetchRoom(code);
+      }, 2000);
+    },
+    [fetchRoom, stopPoll]
+  );
+
+  useEffect(() => {
+    return () => stopPoll();
+  }, [stopPoll]);
+
+  // Countdown timer
+  useEffect(() => {
+    if (!room || room.phase !== "playing" || !room.questionStartedAt) {
+      return;
+    }
+    function tick() {
+      if (!room || !room.questionStartedAt) return;
+      const elapsed = (Date.now() - room.questionStartedAt) / 1000;
+      const remaining = Math.max(0, room.questionDurationSec - elapsed);
+      setRemainingSec(Math.ceil(remaining));
+      if (remaining <= 0 && !feedback) {
+        // Temps écoulé : on force la soumission d'une réponse vide pour
+        // marquer la question comme répondue (incorrecte)
+        // (le serveur ignore la réponse si déjà répondue)
+      }
+    }
+    tick();
+    const id = setInterval(tick, 250);
+    return () => clearInterval(id);
+  }, [room, feedback]);
+
+  async function createRoom() {
+    if (!selectedBankId) {
+      toast.error("Choisissez une banque");
+      return;
+    }
+    setCreating(true);
+>>>>>>> Stashed changes
     try {
       const res = await fetch("/api/competition", {
         method: "POST",
@@ -223,6 +377,7 @@ export function CompetitionView() {
         body: JSON.stringify({
           bankId: selectedBankId,
           questionCount,
+<<<<<<< Updated upstream
           timeLimitSec,
         }),
       });
@@ -247,10 +402,37 @@ export function CompetitionView() {
       return;
     }
     setLoading(true);
+=======
+          durationSec,
+        }),
+      });
+      if (res.ok) {
+        const data: RoomState = await res.json();
+        setRoom(data);
+        setMode("playing");
+        startPolling(data.code);
+        toast.success(`Room créée : ${data.code}`);
+      } else {
+        const err = await res.json().catch(() => ({}));
+        toast.error(err.error ?? "Échec de création");
+      }
+    } finally {
+      setCreating(false);
+    }
+  }
+
+  async function joinRoom() {
+    if (!joinCode.trim()) {
+      toast.error("Entrez un code");
+      return;
+    }
+    setJoining(true);
+>>>>>>> Stashed changes
     try {
       const res = await fetch("/api/competition/join", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+<<<<<<< Updated upstream
         body: JSON.stringify({ code: joinCode.trim(), name: joinName.trim() }),
       });
       const data = await res.json();
@@ -315,10 +497,33 @@ export function CompetitionView() {
   const handleAnswer = async (answer: string) => {
     if (!room || selectedAnswer || answerFeedback) return;
     setSelectedAnswer(answer);
+=======
+        body: JSON.stringify({ code: joinCode.trim() }),
+      });
+      if (res.ok) {
+        const data: RoomState = await res.json();
+        setRoom(data);
+        setMode("playing");
+        startPolling(data.code);
+        toast.success(`Rejoint : ${data.code}`);
+      } else {
+        const err = await res.json().catch(() => ({}));
+        toast.error(err.error ?? "Échec");
+      }
+    } finally {
+      setJoining(false);
+    }
+  }
+
+  async function submitAnswer(letter: string) {
+    if (!room || selectedAnswer) return;
+    setSelectedAnswer(letter);
+>>>>>>> Stashed changes
     try {
       const res = await fetch("/api/competition/answer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+<<<<<<< Updated upstream
         body: JSON.stringify({ code: room.code, answer }),
       });
       const data: AnswerResponse = await res.json();
@@ -610,10 +815,113 @@ export function CompetitionView() {
             </div>
           </div>
         </Card>
+=======
+        body: JSON.stringify({ code: room.code, answer: letter }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setFeedback({
+          correct: data.correct,
+          correctAnswer: data.correctAnswer,
+          explanation: data.explanation,
+        });
+        // Refresh room state to get updated scores
+        fetchRoom(room.code);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async function nextQuestion() {
+    if (!room) return;
+    try {
+      const res = await fetch("/api/competition/next", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code: room.code }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.phase === "finished") {
+          setRoom((prev) => (prev ? { ...prev, phase: "finished", participants: data.participants } : prev));
+        } else {
+          fetchRoom(room.code);
+        }
+        setSelectedAnswer(null);
+        setFeedback(null);
+      } else {
+        const err = await res.json().catch(() => ({}));
+        toast.error(err.error ?? "Action refusée");
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  function exitRoom() {
+    stopPoll();
+    setRoom(null);
+    setMode("menu");
+    setSelectedAnswer(null);
+    setFeedback(null);
+  }
+
+  // ---------- Menu ----------
+  if (mode === "menu") {
+    return (
+      <div className="space-y-6">
+        <Button variant="ghost" size="sm" className="gap-2" onClick={goHome}>
+          <ArrowLeft className="h-4 w-4" />
+          Retour à l&apos;accueil
+        </Button>
+
+        <div>
+          <h1 className="flex items-center gap-2 text-2xl font-bold">
+            <Trophy className="h-6 w-6 text-amber-500" />
+            Mode compétition
+          </h1>
+          <p className="mt-1 text-muted-foreground">
+            Affrontez d&apos;autres joueurs en temps réel sur des questions
+            aléatoires. Le plus rapide et le plus précis gagne !
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Card className="cursor-pointer p-6 transition-all hover:-translate-y-1 hover:shadow-lg" onClick={() => setMode("create")}>
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300">
+                <Plus className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-semibold">Créer une room</h3>
+                <p className="text-sm text-muted-foreground">
+                  Choisissez une banque et invitez vos amis avec le code.
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="cursor-pointer p-6 transition-all hover:-translate-y-1 hover:shadow-lg" onClick={() => setMode("join")}>
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
+                <LogIn className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="font-semibold">Rejoindre une room</h3>
+                <p className="text-sm text-muted-foreground">
+                  Entrez le code à 6 caractères partagé par l&apos;hôte.
+                </p>
+              </div>
+            </div>
+          </Card>
+        </div>
+>>>>>>> Stashed changes
       </div>
     );
   }
 
+<<<<<<< Updated upstream
   // === Playing screen ===
   if (screen === "playing" && room.currentQuestion) {
     const q = room.currentQuestion;
@@ -895,6 +1203,79 @@ export function CompetitionView() {
             >
               <RotateCcw className="h-4 w-4" />
               Nouvelle compétition
+=======
+  // ---------- Create ----------
+  if (mode === "create") {
+    return (
+      <div className="space-y-6">
+        <Button variant="ghost" size="sm" className="gap-2" onClick={() => setMode("menu")}>
+          <ArrowLeft className="h-4 w-4" />
+          Retour
+        </Button>
+
+        <div>
+          <h1 className="text-2xl font-bold">Créer une room</h1>
+          <p className="text-sm text-muted-foreground">
+            Configurez votre compétition puis partagez le code.
+          </p>
+        </div>
+
+        <Card className="space-y-4 p-5">
+          <div>
+            <Label>Banque de questions</Label>
+            <Select value={selectedBankId} onValueChange={setSelectedBankId}>
+              <SelectTrigger>
+                <SelectValue placeholder="Choisir une banque" />
+              </SelectTrigger>
+              <SelectContent>
+                {banks.map((b) => (
+                  <SelectItem key={b.id} value={b.id}>
+                    {b.title} ({b._count?.questions ?? 0} Q)
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            <div>
+              <Label>Nombre de questions : {questionCount}</Label>
+              <input
+                type="range"
+                min={5}
+                max={30}
+                value={questionCount}
+                onChange={(e) => setQuestionCount(Number(e.target.value))}
+                className="mt-2 w-full accent-amber-500"
+              />
+            </div>
+            <div>
+              <Label>Temps par question : {durationSec}s</Label>
+              <input
+                type="range"
+                min={10}
+                max={60}
+                step={5}
+                value={durationSec}
+                onChange={(e) => setDurationSec(Number(e.target.value))}
+                className="mt-2 w-full accent-amber-500"
+              />
+            </div>
+          </div>
+
+          <div className="flex justify-end">
+            <Button
+              onClick={createRoom}
+              disabled={creating || !selectedBankId}
+              className="gap-1.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white"
+            >
+              {creating ? (
+                <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+              ) : (
+                <Play className="h-4 w-4" />
+              )}
+              Lancer la compétition
+>>>>>>> Stashed changes
             </Button>
           </div>
         </Card>
@@ -902,5 +1283,368 @@ export function CompetitionView() {
     );
   }
 
+<<<<<<< Updated upstream
   return null;
+=======
+  // ---------- Join ----------
+  if (mode === "join") {
+    return (
+      <div className="space-y-6">
+        <Button variant="ghost" size="sm" className="gap-2" onClick={() => setMode("menu")}>
+          <ArrowLeft className="h-4 w-4" />
+          Retour
+        </Button>
+
+        <div>
+          <h1 className="text-2xl font-bold">Rejoindre une room</h1>
+          <p className="text-sm text-muted-foreground">
+            Saisissez le code à 6 caractères fourni par l&apos;hôte.
+          </p>
+        </div>
+
+        <Card className="space-y-4 p-5">
+          <div>
+            <Label>Code de la room</Label>
+            <Input
+              value={joinCode}
+              onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
+              placeholder="ABCDEF"
+              maxLength={6}
+              className="font-mono text-2xl tracking-widest uppercase"
+            />
+          </div>
+          <div className="flex justify-end">
+            <Button
+              onClick={joinRoom}
+              disabled={joining || joinCode.length < 6}
+              className="gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
+            >
+              {joining ? (
+                <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+              ) : (
+                <LogIn className="h-4 w-4" />
+              )}
+              Rejoindre
+            </Button>
+          </div>
+        </Card>
+      </div>
+    );
+  }
+
+  // ---------- Playing / Lobby / Finished ----------
+  if (!room) {
+    return <Skeleton className="h-64 rounded-xl" />;
+  }
+
+  // Finished
+  if (room.phase === "finished") {
+    const sorted = (room.participants ?? []).slice().sort((a, b) => b.score - a.score);
+    const winner = sorted[0];
+    return (
+      <div className="space-y-6">
+        <Button variant="ghost" size="sm" className="gap-2" onClick={exitRoom}>
+          <ArrowLeft className="h-4 w-4" />
+          Quitter
+        </Button>
+
+        <Card className="overflow-hidden p-6 text-center">
+          <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-yellow-500 text-white shadow-lg">
+            <Crown className="h-8 w-8" />
+          </div>
+          <h1 className="text-2xl font-bold">Compétition terminée !</h1>
+          <p className="mt-1 text-muted-foreground">
+            {winner ? `Vainqueur : ${winner.name} avec ${winner.score} points` : "Aucun participant"}
+          </p>
+        </Card>
+
+        <Card className="overflow-hidden">
+          <div className="border-b px-5 py-4">
+            <h2 className="flex items-center gap-2 font-semibold">
+              <Trophy className="h-4 w-4 text-amber-500" />
+              Classement final
+            </h2>
+          </div>
+          <div className="divide-y">
+            {sorted.map((p, i) => (
+              <div key={p.id} className="flex items-center gap-3 px-5 py-3">
+                <span
+                  className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+                    i === 0
+                      ? "bg-amber-100 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300"
+                      : i === 1
+                        ? "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300"
+                        : i === 2
+                          ? "bg-orange-100 text-orange-700 dark:bg-orange-950/40 dark:text-orange-300"
+                          : "bg-muted text-muted-foreground"
+                  }`}
+                >
+                  {i + 1}
+                </span>
+                <Avatar className="h-8 w-8">
+                  <AvatarFallback className="bg-muted text-xs">
+                    {p.name.slice(0, 2).toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+                <p className="flex-1 truncate font-medium">{p.name}</p>
+                <Badge variant="secondary" className="font-mono">
+                  {p.score} pts
+                </Badge>
+              </div>
+            ))}
+          </div>
+        </Card>
+
+        <div className="flex justify-center gap-2">
+          <Button variant="outline" onClick={exitRoom} className="gap-1.5">
+            <ArrowLeft className="h-4 w-4" />
+            Retour au menu
+          </Button>
+          <Button onClick={() => setMode("create")} className="gap-1.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white">
+            <RefreshCw className="h-4 w-4" />
+            Nouvelle room
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
+  // Lobby
+  if (room.phase === "lobby") {
+    return (
+      <div className="space-y-6">
+        <Button variant="ghost" size="sm" className="gap-2" onClick={exitRoom}>
+          <ArrowLeft className="h-4 w-4" />
+          Quitter
+        </Button>
+        <Card className="p-6 text-center">
+          <h1 className="text-2xl font-bold">Salle d&apos;attente</h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Code de la room :
+          </p>
+          <p className="mx-auto my-3 w-fit rounded-lg bg-muted px-6 py-3 font-mono text-3xl font-bold tracking-widest">
+            {room.code}
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Partagez ce code avec vos amis pour qu&apos;ils rejoignent.
+          </p>
+        </Card>
+        <Card className="overflow-hidden">
+          <div className="border-b px-5 py-4">
+            <h2 className="flex items-center gap-2 font-semibold">
+              <Users className="h-4 w-4" />
+              Participants ({room.participants?.length ?? 0})
+            </h2>
+          </div>
+          <div className="divide-y">
+            {(room.participants ?? []).map((p) => (
+              <div key={p.id} className="flex items-center gap-3 px-5 py-3">
+                <Avatar className="h-8 w-8">
+                  <AvatarFallback className="bg-muted text-xs">
+                    {p.name.slice(0, 2).toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+                <p className="flex-1 truncate font-medium">{p.name}</p>
+                {p.id === room.hostId && (
+                  <Badge className="gap-1">
+                    <Crown className="h-3 w-3" />
+                    Hôte
+                  </Badge>
+                )}
+              </div>
+            ))}
+          </div>
+        </Card>
+      </div>
+    );
+  }
+
+  // Playing
+  const q = room.currentQuestion;
+  const progress =
+    room.totalQuestions > 0
+      ? ((room.currentQuestionIdx + 1) / room.totalQuestions) * 100
+      : 0;
+  const isHost = room.isHost;
+  const answeredCount = (room.participants ?? []).filter((p) => p.answeredCurrent).length;
+  const totalCount = (room.participants ?? []).length;
+  const isCritical = remainingSec <= 5;
+
+  return (
+    <div className="space-y-5">
+      {/* Header */}
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <Button variant="ghost" size="sm" className="gap-2" onClick={exitRoom}>
+            <ArrowLeft className="h-4 w-4" />
+            Quitter
+          </Button>
+          <h1 className="mt-1 text-lg font-bold">
+            Room {room.code} · {room.bankTitle}
+          </h1>
+          <p className="text-xs text-muted-foreground">
+            Question {room.currentQuestionIdx + 1} sur {room.totalQuestions}
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          <Badge
+            variant="outline"
+            className={`font-mono ${
+              isCritical
+                ? "animate-pulse border-rose-300 bg-rose-50 text-rose-700 dark:border-rose-700 dark:bg-rose-950/40 dark:text-rose-300"
+                : "border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-300"
+            }`}
+          >
+            <Timer className="mr-1 h-3 w-3" />
+            {remainingSec}s
+          </Badge>
+          <Badge variant="secondary">
+            {answeredCount}/{totalCount} ont répondu
+          </Badge>
+        </div>
+      </div>
+
+      <Progress value={progress} className="h-2" />
+
+      {/* Question */}
+      {q ? (
+        <Card className="overflow-hidden p-4 sm:p-6">
+          <h2 className="mb-4 text-base font-semibold leading-snug sm:text-lg">
+            {q.question}
+          </h2>
+          <div className="space-y-3">
+            {OPTION_LETTERS.map((letter) => {
+              const text =
+                letter === "A"
+                  ? q.optionA
+                  : letter === "B"
+                    ? q.optionB
+                    : letter === "C"
+                      ? q.optionC
+                      : q.optionD;
+              const isSelected = selectedAnswer === letter;
+              const isCorrect = feedback?.correctAnswer === letter;
+
+              let cls =
+                "border-border hover:border-amber-400 hover:bg-amber-50/50 dark:hover:bg-amber-950/20";
+              if (feedback) {
+                if (isCorrect) {
+                  cls = "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/30";
+                } else if (isSelected && !isCorrect) {
+                  cls = "border-rose-500 bg-rose-50 dark:bg-rose-950/30";
+                } else {
+                  cls = "border-border opacity-60";
+                }
+              } else if (isSelected) {
+                cls = "border-amber-500 bg-amber-50 dark:bg-amber-950/30";
+              }
+
+              return (
+                <button
+                  key={letter}
+                  onClick={() => submitAnswer(letter)}
+                  disabled={!!selectedAnswer}
+                  className={`flex w-full items-center gap-3 rounded-xl border-2 p-4 text-left transition-all disabled:cursor-not-allowed ${cls}`}
+                >
+                  <span
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-bold ${
+                      feedback && isCorrect
+                        ? "bg-emerald-500 text-white"
+                        : feedback && isSelected && !isCorrect
+                          ? "bg-rose-500 text-white"
+                          : isSelected
+                            ? "bg-amber-500 text-white"
+                            : "bg-muted text-muted-foreground"
+                    }`}
+                  >
+                    {letter}
+                  </span>
+                  <span className="flex-1 font-medium">{text}</span>
+                  {feedback && isCorrect && <CheckCircle2 className="h-5 w-5 text-emerald-600" />}
+                  {feedback && isSelected && !isCorrect && <XCircle className="h-5 w-5 text-rose-600" />}
+                </button>
+              );
+            })}
+          </div>
+
+          {feedback && (
+            <div
+              className={`mt-4 rounded-xl border p-3 text-sm ${
+                feedback.correct
+                  ? "border-emerald-200 bg-emerald-50 text-emerald-800 dark:border-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-200"
+                  : "border-rose-200 bg-rose-50 text-rose-800 dark:border-rose-800 dark:bg-rose-950/30 dark:text-rose-200"
+              }`}
+            >
+              <div className="flex items-center gap-2 font-semibold">
+                {feedback.correct ? (
+                  <>
+                    <CheckCircle2 className="h-4 w-4" />
+                    Bonne réponse !
+                  </>
+                ) : (
+                  <>
+                    <XCircle className="h-4 w-4" />
+                    Mauvaise réponse
+                  </>
+                )}
+              </div>
+              <p className="mt-1 text-muted-foreground">{feedback.explanation}</p>
+            </div>
+          )}
+
+          {isHost && feedback && (
+            <div className="mt-4 flex justify-end">
+              <Button
+                onClick={nextQuestion}
+                className="gap-1.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white"
+              >
+                Question suivante
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </div>
+          )}
+          {!isHost && feedback && (
+            <p className="mt-4 text-center text-xs text-muted-foreground">
+              En attente de l&apos;hôte pour la question suivante…
+            </p>
+          )}
+        </Card>
+      ) : (
+        <Card className="p-8 text-center text-muted-foreground">
+          Chargement de la question…
+        </Card>
+      )}
+
+      {/* Live leaderboard */}
+      <Card className="overflow-hidden">
+        <div className="border-b px-5 py-3">
+          <h2 className="flex items-center gap-2 text-sm font-semibold">
+            <Trophy className="h-4 w-4 text-amber-500" />
+            Classement en direct
+          </h2>
+        </div>
+        <div className="divide-y">
+          {(room.participants ?? [])
+            .slice()
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 5)
+            .map((p, i) => (
+              <div key={p.id} className="flex items-center gap-3 px-5 py-2 text-sm">
+                <span className="w-5 text-center font-bold text-muted-foreground">
+                  {i + 1}
+                </span>
+                <Avatar className="h-7 w-7">
+                  <AvatarFallback className="bg-muted text-[10px]">
+                    {p.name.slice(0, 2).toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+                <p className="flex-1 truncate">{p.name}</p>
+                <span className="font-mono text-xs">{p.score} pts</span>
+              </div>
+            ))}
+        </div>
+      </Card>
+    </div>
+  );
+>>>>>>> Stashed changes
 }

@@ -7,9 +7,14 @@ export function PreferencesApplier() {
   const highContrast = usePrefs((s) => s.highContrast);
   const largeText = usePrefs((s) => s.largeText);
   const reduceMotion = usePrefs((s) => s.reduceMotion);
+<<<<<<< Updated upstream
   const fontSize = usePrefs((s) => s.fontSize);
   const dyslexiaFont = usePrefs((s) => s.dyslexiaFont);
   const screenReaderHints = usePrefs((s) => s.screenReaderHints);
+=======
+  const dyslexiaFont = usePrefs((s) => s.dyslexiaFont);
+  const fontSize = usePrefs((s) => s.fontSize);
+>>>>>>> Stashed changes
   const locale = usePrefs((s) => s.locale);
 
   useEffect(() => {
@@ -17,8 +22,10 @@ export function PreferencesApplier() {
     root.classList.toggle("high-contrast", highContrast);
     root.classList.toggle("large-text", largeText);
     root.classList.toggle("reduce-motion", reduceMotion);
+    root.classList.toggle("dyslexia-font", dyslexiaFont);
+    root.style.setProperty("--user-font-size", `${fontSize}%`);
     root.lang = locale;
-  }, [highContrast, largeText, reduceMotion, locale]);
+  }, [highContrast, largeText, reduceMotion, dyslexiaFont, fontSize, locale]);
 
   // Apply the custom base font-size (only when the user explicitly picked a
   // non-default value, so we don't fight Tailwind's default 16px).

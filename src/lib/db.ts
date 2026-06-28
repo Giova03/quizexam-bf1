@@ -1,6 +1,7 @@
 import { PrismaClient } from '@prisma/client'
 import { resolve } from 'path'
 
+<<<<<<< Updated upstream
 // Fix: Force PostgreSQL URL when env has been overridden to SQLite path
 // (some environments set DATABASE_URL to a SQLite file path which breaks the postgresql provider)
 function getDatabaseUrl(): string | undefined {
@@ -104,6 +105,15 @@ function createPrismaClient(): PrismaClient {
 
 // Look for a previously-cached client under the versioned key.
 const cachedClient = globalForPrisma[PRISMA_GLOBAL_KEY] as PrismaClient | undefined
+=======
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | undefined
+}
+
+export const db =
+  globalForPrisma.prisma ??
+  new PrismaClient()
+>>>>>>> Stashed changes
 
 export const db = cachedClient ?? createPrismaClient()
 

@@ -5,6 +5,7 @@ import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
+<<<<<<< Updated upstream
 /**
  * PATCH /api/reports/[id]
  * Admin-only: update the status of a report.
@@ -47,4 +48,40 @@ export async function PATCH(
   });
 
   return NextResponse.json(updated);
+=======
+/** PATCH /api/reports/[id] — admin resolves or dismisses a report. */
+export async function PATCH(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session?.user || (session.user as { role?: string }).role !== "ADMIN") {
+      return NextResponse.json({ error: "Réservé à l'administrateur" }, { status: 403 });
+    }
+    const user = await db.user.findUnique({
+      where: { email: session.user.email! },
+      select: { id: true },
+    });
+    const { id } = await params;
+    const body = (await request.json()) as {
+      status?: string;
+      resolution?: string;
+    };
+    const status = body.status === "resolved" || body.status === "dismissed" ? body.status : "resolved";
+    const updated = await db.report.update({
+      where: { id },
+      data: {
+        status,
+        resolution: (body.resolution ?? "").trim().slice(0, 1000),
+        resolvedById: user?.id ?? null,
+        resolvedAt: new Date(),
+      },
+    });
+    return NextResponse.json(updated);
+  } catch (error) {
+    console.error("Failed to update report:", error);
+    return NextResponse.json({ error: "Failed to update report" }, { status: 500 });
+  }
+>>>>>>> Stashed changes
 }

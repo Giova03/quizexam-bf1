@@ -1,5 +1,6 @@
 "use client";
 
+<<<<<<< Updated upstream
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
   Dialog,
@@ -8,10 +9,21 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
+=======
+import { useEffect, useState, useRef } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+>>>>>>> Stashed changes
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+<<<<<<< Updated upstream
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
@@ -475,10 +487,338 @@ export function PdfUploadDialog({
           {/* === Step 1: Upload === */}
           {step === "upload" && (
             <div className="space-y-4">
+=======
+import { Badge } from "@/components/ui/badge";
+import {
+  FileText,
+  FileType2,
+  Upload,
+  Loader2,
+  Sparkles,
+  X,
+  AlertTriangle,
+  CheckCircle2,
+} from "lucide-react";
+import { toast } from "sonner";
+import { BankSelector, BankOption } from "./bank-selector";
+import { QuestionCardEditor, EditableQuestion } from "./question-card-editor";
+
+interface Props {
+  open: boolean;
+  onOpenChange: (v: boolean) => void;
+  onImported?: () => void;
+}
+
+type Stage = "upload" | "preview-text" | "generating" | "preview-questions";
+
+export function PdfUploadDialog({ open, onOpenChange, onImported }: Props) {
+  const [stage, setStage] = useState<Stage>("upload");
+  const [file, setFile] = useState<File | null>(null);
+  const [extractedText, setExtractedText] = useState("");
+  const [fileName, setFileName] = useState("");
+  const [sourceKind, setSourceKind] = useState<"pdf" | "docx">("pdf");
+  const [uploading, setUploading] = useState(false);
+  const [count, setCount] = useState(10);
+  const [subject, setSubject] = useState("");
+  const [questions, setQuestions] = useState<EditableQuestion[]>([]);
+  const [banks, setBanks] = useState<BankOption[]>([]);
+  const [targetBank, setTargetBank] = useState<string>("");
+  const [newBankTitle, setNewBankTitle] = useState<string>("");
+  const [importing, setImporting] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    fetch("/api/banks")
+      .then((r) => r.json())
+      .then((d) => {
+        const list = Array.isArray(d) ? d : [];
+        setBanks(list);
+        if (list.length > 0) {
+          setTargetBank((prev) => prev || list[0].id);
+        } else {
+          setTargetBank("new");
+        }
+      })
+      .catch(() => setBanks([]));
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) {
+      setStage("upload");
+      setFile(null);
+      setExtractedText("");
+      setFileName("");
+      setQuestions([]);
+      setSubject("");
+      setCount(10);
+      setTargetBank("");
+      setNewBankTitle("");
+    }
+  }, [open]);
+
+  function handleFiles(files: FileList | null) {
+    if (!files || files.length === 0) return;
+    const f = files[0];
+    const lower = f.name.toLowerCase();
+    if (lower.endsWith(".pdf")) {
+      setSourceKind("pdf");
+    } else if (lower.endsWith(".docx")) {
+      setSourceKind("docx");
+    } else {
+      toast.error("Format non supporté. Utilisez .pdf ou .docx");
+      return;
+    }
+    if (f.size > 10 * 1024 * 1024) {
+      toast.error("Fichier trop volumineux (max 10 Mo)");
+      return;
+    }
+    setFile(f);
+    setFileName(f.name);
+    // Auto-fill subject from filename
+    if (!subject) {
+      const base = f.name.replace(/\.(pdf|docx)$/i, "").replace(/[_-]+/g, " ");
+      setSubject(base.slice(0, 60));
+    }
+  }
+
+  function onDrop(e: React.DragEvent) {
+    e.preventDefault();
+    setIsDragging(false);
+    handleFiles(e.dataTransfer.files);
+  }
+
+  function onDragOver(e: React.DragEvent) {
+    e.preventDefault();
+    setIsDragging(true);
+  }
+
+  function onDragLeave(e: React.DragEvent) {
+    e.preventDefault();
+    setIsDragging(false);
+  }
+
+  async function handleUploadAndExtract() {
+    if (!file) {
+      toast.error("Choisissez un fichier");
+      return;
+    }
+    setUploading(true);
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      const endpoint =
+        sourceKind === "pdf" ? "/api/upload-pdf" : "/api/upload-word";
+      const res = await fetch(endpoint, { method: "POST", body: formData });
+      const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.error ?? "Échec de l'extraction");
+        return;
+      }
+      setExtractedText(data.text ?? "");
+      setStage("preview-text");
+      if (data.truncated) {
+        toast.info(
+          `Texte tronqué à 5000 caractères (${data.totalLength} au total)`
+        );
+      } else {
+        toast.success("Texte extrait ✓");
+      }
+    } catch {
+      toast.error("Erreur réseau");
+    } finally {
+      setUploading(false);
+    }
+  }
+
+  async function handleGenerate() {
+    if (!extractedText || extractedText.trim().length < 50) {
+      toast.error("Texte source trop court");
+      return;
+    }
+    if (!subject.trim()) {
+      toast.error("Indiquez le sujet");
+      return;
+    }
+    setStage("generating");
+    try {
+      const res = await fetch("/api/generate-qcm", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          text: extractedText,
+          count,
+          subject: subject.trim(),
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.error ?? "Échec de la génération");
+        setStage("preview-text");
+        return;
+      }
+      const qs: EditableQuestion[] = (data.questions ?? []).map((q: any) => ({
+        question: q.question ?? "",
+        optionA: q.optionA ?? "",
+        optionB: q.optionB ?? "",
+        optionC: q.optionC ?? "",
+        optionD: q.optionD ?? "",
+        correctAnswer: q.correctAnswer ?? "A",
+        explanation: q.explanation ?? "",
+        warnings: [],
+      }));
+      if (qs.length === 0) {
+        toast.error("Aucune question générée. Réessayez.");
+        setStage("preview-text");
+        return;
+      }
+      setQuestions(qs);
+      setStage("preview-questions");
+      toast.success(`${qs.length} question(s) générée(s) ✓`);
+    } catch {
+      toast.error("Erreur réseau");
+      setStage("preview-text");
+    }
+  }
+
+  function updateQuestion(idx: number, q: EditableQuestion) {
+    setQuestions((prev) => prev.map((p, i) => (i === idx ? q : p)));
+  }
+
+  function removeQuestion(idx: number) {
+    setQuestions((prev) => prev.filter((_, i) => i !== idx));
+  }
+
+  function validCount() {
+    return questions.filter((q) => {
+      const opts = [q.optionA, q.optionB, q.optionC, q.optionD].map((s) =>
+        s.trim().toLowerCase()
+      );
+      return (
+        q.question.trim() &&
+        q.optionA.trim() &&
+        q.optionB.trim() &&
+        q.optionC.trim() &&
+        q.optionD.trim() &&
+        q.explanation.trim() &&
+        ["A", "B", "C", "D"].includes(q.correctAnswer) &&
+        new Set(opts).size === 4
+      );
+    }).length;
+  }
+
+  async function handleImport() {
+    if (questions.length === 0) {
+      toast.error("Aucune question à importer");
+      return;
+    }
+    if (!targetBank) {
+      toast.error("Sélectionnez ou créez une banque cible");
+      return;
+    }
+    if (targetBank === "new" && !newBankTitle.trim()) {
+      toast.error("Donnez un titre à la nouvelle banque");
+      return;
+    }
+    setImporting(true);
+    try {
+      let bankId = targetBank;
+      if (targetBank === "new") {
+        const createRes = await fetch("/api/admin/banks", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            title: newBankTitle.trim(),
+            description: `Banque générée depuis ${fileName}`,
+            category: "Divers",
+            subcategory: "",
+            icon: sourceKind === "pdf" ? "FileText" : "FileType2",
+            color: "violet",
+            level: "TOUS",
+          }),
+        });
+        if (!createRes.ok) {
+          const err = await createRes.json();
+          toast.error(err.error ?? "Échec création banque");
+          return;
+        }
+        const bank = await createRes.json();
+        bankId = bank.id;
+      }
+
+      const validQs = questions.filter((q) => {
+        const opts = [q.optionA, q.optionB, q.optionC, q.optionD].map((s) =>
+          s.trim().toLowerCase()
+        );
+        return (
+          q.question.trim() &&
+          q.optionA.trim() &&
+          q.optionB.trim() &&
+          q.optionC.trim() &&
+          q.optionD.trim() &&
+          q.explanation.trim() &&
+          new Set(opts).size === 4
+        );
+      });
+
+      if (validQs.length === 0) {
+        toast.error("Aucune question valide");
+        return;
+      }
+
+      const res = await fetch("/api/import-questions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ questions: validQs, bankId }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.error ?? "Échec import");
+        return;
+      }
+      toast.success(
+        `${data.success} question(s) importée(s) ✓`
+      );
+      onImported?.();
+      onOpenChange(false);
+    } catch {
+      toast.error("Erreur réseau");
+    } finally {
+      setImporting(false);
+    }
+  }
+
+  const valid = validCount();
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="flex max-h-[95vh] flex-col sm:max-w-4xl">
+        <DialogHeader>
+          <DialogTitle className="flex items-center gap-2">
+            {sourceKind === "pdf" ? (
+              <FileText className="h-5 w-5 text-rose-600" />
+            ) : (
+              <FileType2 className="h-5 w-5 text-sky-600" />
+            )}
+            Importer un document (PDF ou Word)
+          </DialogTitle>
+          <DialogDescription>
+            Téléversez un fichier PDF ou .docx, extrayez le texte, puis
+            générez des QCM automatiquement par IA.
+          </DialogDescription>
+        </DialogHeader>
+
+        <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto pr-1">
+          {/* Stage 1: Upload */}
+          {stage === "upload" && (
+            <div className="space-y-3">
+>>>>>>> Stashed changes
               <div
                 onDrop={onDrop}
                 onDragOver={onDragOver}
                 onDragLeave={onDragLeave}
+<<<<<<< Updated upstream
                 className={`relative flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed p-8 text-center transition-colors ${
                   dragOver
                     ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/30"
@@ -613,11 +953,120 @@ export function PdfUploadDialog({
                 <div className="mt-1 flex justify-between text-[10px] text-muted-foreground">
                   <span>{MIN_Q}</span>
                   <span>{MAX_Q}</span>
+=======
+                onClick={() => inputRef.current?.click()}
+                className={`flex cursor-pointer flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed p-8 text-center transition-colors ${
+                  isDragging
+                    ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/30"
+                    : "border-border hover:border-emerald-400 hover:bg-muted/30"
+                }`}
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white">
+                  <Upload className="h-7 w-7" />
+                </div>
+                <div>
+                  <p className="font-semibold">
+                    Glissez un fichier ici ou cliquez pour parcourir
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    Formats: PDF (.pdf) ou Word (.docx) — Max 10 Mo
+                  </p>
+                </div>
+                {file && (
+                  <div className="mt-2 flex items-center gap-2 rounded-lg border bg-card px-3 py-2">
+                    {sourceKind === "pdf" ? (
+                      <FileText className="h-4 w-4 text-rose-600" />
+                    ) : (
+                      <FileType2 className="h-4 w-4 text-sky-600" />
+                    )}
+                    <span className="text-sm font-medium">{file.name}</span>
+                    <span className="text-xs text-muted-foreground">
+                      ({(file.size / 1024 / 1024).toFixed(2)} Mo)
+                    </span>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setFile(null);
+                        setFileName("");
+                      }}
+                      className="ml-2 text-muted-foreground hover:text-rose-600"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  </div>
+                )}
+              </div>
+              <input
+                ref={inputRef}
+                type="file"
+                accept=".pdf,.docx"
+                className="hidden"
+                onChange={(e) => handleFiles(e.target.files)}
+              />
+            </div>
+          )}
+
+          {/* Stage 2: Preview extracted text + config */}
+          {stage === "preview-text" && (
+            <div className="space-y-3">
+              <div className="flex flex-wrap items-center gap-2 rounded-lg border bg-emerald-50 p-3 text-xs text-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-200">
+                <CheckCircle2 className="h-4 w-4" />
+                <span>
+                  <strong>{fileName}</strong> — texte extrait ({
+                    extractedText.length
+                  }{" "}
+                  caractères)
+                </span>
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  className="ml-auto h-7 gap-1 text-xs"
+                  onClick={() => setStage("upload")}
+                >
+                  Changer de fichier
+                </Button>
+              </div>
+
+              <div>
+                <Label>Aperçu du texte extrait</Label>
+                <div className="mt-1 max-h-[200px] overflow-y-auto rounded-lg border bg-muted/30 p-3 font-mono text-xs whitespace-pre-wrap">
+                  {extractedText || "(texte vide)"}
+                </div>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div>
+                  <Label htmlFor="subject">Sujet / Thématique *</Label>
+                  <Input
+                    id="subject"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    placeholder="Ex: Histoire du Burkina Faso"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="count">Nombre de questions: {count}</Label>
+                  <input
+                    id="count"
+                    type="range"
+                    min={5}
+                    max={20}
+                    value={count}
+                    onChange={(e) => setCount(parseInt(e.target.value))}
+                    className="mt-3 w-full accent-emerald-600"
+                  />
+                  <div className="flex justify-between text-[10px] text-muted-foreground">
+                    <span>5</span>
+                    <span>20</span>
+                  </div>
+>>>>>>> Stashed changes
                 </div>
               </div>
             </div>
           )}
 
+<<<<<<< Updated upstream
           {/* === Step 3: Generated questions === */}
           {step === "generated" && (
             <div className="flex min-h-0 flex-col gap-3">
@@ -817,11 +1266,63 @@ export function PdfUploadDialog({
                     </Select>
                   </div>
                 )}
+=======
+          {/* Stage 3: Generating */}
+          {stage === "generating" && (
+            <div className="flex flex-col items-center justify-center gap-3 py-12">
+              <Loader2 className="h-12 w-12 animate-spin text-emerald-600" />
+              <p className="font-medium">
+                Génération de {count} questions en cours...
+              </p>
+              <p className="text-xs text-muted-foreground">
+                L&apos;IA analyse le texte et crée des QCM. Cela peut prendre
+                30-60 secondes.
+              </p>
+            </div>
+          )}
+
+          {/* Stage 4: Preview & edit generated questions */}
+          {stage === "preview-questions" && (
+            <div className="space-y-3">
+              <div className="flex flex-wrap items-center gap-2 rounded-lg border p-2">
+                <Badge variant="secondary">
+                  {questions.length} question(s)
+                </Badge>
+                <Badge variant="outline" className="border-emerald-300 text-emerald-700">
+                  {valid} valide(s)
+                </Badge>
+                {questions.length - valid > 0 && (
+                  <Badge variant="outline" className="border-amber-300 text-amber-700">
+                    {questions.length - valid} à corriger
+                  </Badge>
+                )}
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  className="ml-auto gap-1.5 text-xs"
+                  onClick={() => setStage("preview-text")}
+                >
+                  Retour
+                </Button>
+              </div>
+
+              <div className="space-y-2">
+                {questions.map((q, idx) => (
+                  <QuestionCardEditor
+                    key={idx}
+                    index={idx}
+                    q={q}
+                    onChange={(nq) => updateQuestion(idx, nq)}
+                    onRemove={() => removeQuestion(idx)}
+                  />
+                ))}
+>>>>>>> Stashed changes
               </div>
             </div>
           )}
         </div>
 
+<<<<<<< Updated upstream
         <DialogFooter className="gap-2 border-t pt-3">
           {step === "upload" && (
             <Button variant="outline" onClick={() => onOpenChange(false)} className="gap-1.5">
@@ -881,10 +1382,79 @@ export function PdfUploadDialog({
             </>
           )}
         </DialogFooter>
+=======
+        {/* Bank selector — visible in stage 4 */}
+        {stage === "preview-questions" && (
+          <div className="border-t pt-3">
+            <BankSelector
+              value={targetBank}
+              newBankTitle={newBankTitle}
+              banks={banks}
+              onValueChange={setTargetBank}
+              onNewTitleChange={setNewBankTitle}
+            />
+          </div>
+        )}
+
+        <DialogFooter className="gap-2">
+          <Button variant="outline" onClick={() => onOpenChange(false)}>
+            Annuler
+          </Button>
+          {stage === "upload" && (
+            <Button
+              onClick={handleUploadAndExtract}
+              disabled={!file || uploading}
+              className="gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
+            >
+              {uploading ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : (
+                <Upload className="h-4 w-4" />
+              )}
+              Extraire le texte
+            </Button>
+          )}
+          {stage === "preview-text" && (
+            <Button
+              onClick={handleGenerate}
+              disabled={!subject.trim() || !extractedText}
+              className="gap-1.5 bg-gradient-to-r from-violet-500 to-purple-600 text-white"
+            >
+              <Sparkles className="h-4 w-4" />
+              Générer {count} questions par IA
+            </Button>
+          )}
+          {stage === "preview-questions" && (
+            <Button
+              onClick={handleImport}
+              disabled={importing || valid === 0 || !targetBank}
+              className="gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
+            >
+              {importing ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : (
+                <Upload className="h-4 w-4" />
+              )}
+              Importer {valid} question(s)
+            </Button>
+          )}
+        </DialogFooter>
+
+        {stage === "preview-questions" && valid < questions.length && (
+          <div className="flex items-center gap-2 rounded-lg bg-amber-50 p-2 text-xs text-amber-800 dark:bg-amber-950/30 dark:text-amber-200">
+            <AlertTriangle className="h-4 w-4 shrink-0" />
+            <p>
+              {questions.length - valid} question(s) seront ignorées car
+              invalides. Corrigez-les ou supprimez-les.
+            </p>
+          </div>
+        )}
+>>>>>>> Stashed changes
       </DialogContent>
     </Dialog>
   );
 }
+<<<<<<< Updated upstream
 
 /**
  * Inline editor for a single generated question — used when the admin wants to
@@ -991,3 +1561,5 @@ function QuestionInlineEditor({
 }
 
 export default PdfUploadDialog;
+=======
+>>>>>>> Stashed changes

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 "use client";
 
 // ============================================================================
@@ -47,10 +48,39 @@ export function isSupported(): boolean {
  */
 export function getPermission(): NotificationPermission | null {
   if (!isSupported()) return null;
+=======
+/**
+ * push-notifications.ts — client-side push notification helpers.
+ *
+ * Wraps the Notification API with safe guards for unsupported browsers,
+ * SSR environments, and permission states. Also exposes a daily-reminder
+ * scheduler that uses setTimeout (re-scheduled each day) — no service
+ * worker required for the basic use-case.
+ */
+
+const REMINDER_KEY = "quizexam-push-reminder";
+
+export interface PushSettings {
+  enabled: boolean;
+  time: string; // "HH:MM" 24h format
+}
+
+function isBrowser(): boolean {
+  return typeof window !== "undefined" && typeof Notification !== "undefined";
+}
+
+/**
+ * Returns the current permission state. Returns "unsupported" if the
+ * Notification API is not available (e.g. SSR or older browsers).
+ */
+export function getPermission(): NotificationPermission | "unsupported" {
+  if (!isBrowser()) return "unsupported";
+>>>>>>> Stashed changes
   return Notification.permission;
 }
 
 /**
+<<<<<<< Updated upstream
  * Requests permission from the user to display notifications.
  * Resolves to true if permission was granted, false otherwise
  * (denied, dismissed, or unsupported).
@@ -63,11 +93,54 @@ export async function requestNotificationPermission(): Promise<boolean> {
     const result = await Notification.requestPermission();
     return result === "granted";
   } catch {
+=======
+ * Request notification permission from the user. Returns the new state.
+ * Resolves to "unsupported" if the API is missing.
+ */
+export async function requestPermission(): Promise<NotificationPermission | "unsupported"> {
+  if (!isBrowser()) return "unsupported";
+  try {
+    const result = await Notification.requestPermission();
+    return result;
+  } catch {
+    return "denied";
+  }
+}
+
+/**
+ * Show a local notification immediately. Returns false if not possible
+ * (unsupported, permission not granted, or window not focused optional).
+ */
+export function showNotification(
+  title: string,
+  options?: NotificationOptions & { requireInteraction?: boolean }
+): boolean {
+  if (!isBrowser()) return false;
+  if (Notification.permission !== "granted") return false;
+  try {
+    const n = new Notification(title, {
+      icon: "/logo-quizexam.svg",
+      badge: "/logo-quizexam.svg",
+      ...options,
+    });
+    // Auto-close after 8 seconds unless requireInteraction is set
+    if (!options?.requireInteraction) {
+      setTimeout(() => n.close(), 8000);
+    }
+    n.onclick = () => {
+      window.focus();
+      n.close();
+    };
+    return true;
+  } catch (e) {
+    console.error("Failed to show notification:", e);
+>>>>>>> Stashed changes
     return false;
   }
 }
 
 /**
+<<<<<<< Updated upstream
  * Shows a browser notification immediately. No-op if unsupported or
  * permission hasn't been granted.
  */
@@ -191,4 +264,116 @@ export function scheduleDailyReminder(
   };
 
   scheduleNext();
+=======
+ * Schedule a daily reminder at the given time (HH:MM).
+ * Uses a re-scheduled setTimeout to remain accurate across days.
+ * Persists the schedule in localStorage so it survives reloads; the
+ * tour is re-armed on each page load by `restoreReminderIfEnabled()`.
+ */
+export function scheduleDailyReminder(time: string, message?: string): void {
+  if (!isBrowser()) return;
+  clearDailyReminder();
+
+  const [h, m] = time.split(":").map((s) => parseInt(s, 10));
+  if (isNaN(h) || isNaN(m)) return;
+
+  const now = new Date();
+  const next = new Date();
+  next.setHours(h, m, 0, 0);
+  if (next.getTime() <= now.getTime()) {
+    // Today's slot already passed → schedule for tomorrow
+    next.setDate(next.getDate() + 1);
+  }
+  const delay = next.getTime() - now.getTime();
+
+  try {
+    localStorage.setItem(
+      REMINDER_KEY,
+      JSON.stringify({
+        time,
+        message: message ?? "Il est temps de réviser vos quiz ! 📚",
+        scheduledFor: next.toISOString(),
+      })
+    );
+  } catch {
+    // ignore
+  }
+
+  const timer = setTimeout(() => {
+    if (Notification.permission === "granted") {
+      showNotification("QuizExam BF — Rappel quotidien", {
+        body: message ?? "Il est temps de réviser vos quiz ! 📚",
+        tag: "daily-reminder",
+      });
+    }
+    // Re-arm for the next day
+    scheduleDailyReminder(time, message);
+  }, delay);
+
+  // Persist the timer id on the window object so clearDailyReminder can find it
+  (window as unknown as { __pushReminderTimer?: ReturnType<typeof setTimeout> }).__pushReminderTimer = timer;
+}
+
+/**
+ * Cancel any pending daily reminder.
+ */
+export function clearDailyReminder(): void {
+  if (!isBrowser()) return;
+  const w = window as unknown as { __pushReminderTimer?: ReturnType<typeof setTimeout> };
+  if (w.__pushReminderTimer) {
+    clearTimeout(w.__pushReminderTimer);
+    delete w.__pushReminderTimer;
+  }
+  try {
+    localStorage.removeItem(REMINDER_KEY);
+  } catch {
+    // ignore
+  }
+}
+
+/**
+ * On app load, re-arm the reminder if the user previously enabled it.
+ * Safe to call multiple times.
+ */
+export function restoreReminderIfEnabled(): void {
+  if (!isBrowser()) return;
+  if (Notification.permission !== "granted") return;
+  try {
+    const raw = localStorage.getItem(REMINDER_KEY);
+    if (!raw) return;
+    const parsed = JSON.parse(raw) as { time: string; message?: string };
+    if (parsed.time) {
+      scheduleDailyReminder(parsed.time, parsed.message);
+    }
+  } catch {
+    // ignore
+  }
+}
+
+/**
+ * Persist the user's push settings in localStorage so the UI stays in sync.
+ */
+export function loadPushSettings(): PushSettings {
+  if (!isBrowser()) return { enabled: false, time: "19:00" };
+  try {
+    const raw = localStorage.getItem("quizexam-push-settings");
+    if (!raw) return { enabled: false, time: "19:00" };
+    const parsed = JSON.parse(raw) as Partial<PushSettings>;
+    return {
+      enabled: !!parsed.enabled,
+      time: parsed.time ?? "19:00",
+    };
+  } catch {
+    return { enabled: false, time: "19:00" };
+  }
+}
+
+export function savePushSettings(s: PushSettings): void {
+  if (!isBrowser()) return;
+  try {
+    localStorage.setItem("quizexam-push-settings", JSON.stringify(s));
+  } catch {
+    // ignore
+  }
+>>>>>>> Stashed changes
 }

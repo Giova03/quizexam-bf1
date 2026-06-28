@@ -1,5 +1,6 @@
 "use client";
 
+<<<<<<< Updated upstream
 import { useEffect, useState, useCallback } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -48,13 +49,30 @@ export const ROLE_LABELS_FR: Record<string, string> = {
 /**
  * VisitorsStats — top stats (total + role distribution) + the full user list
  * with per-user role-change dropdown.
+=======
+import { useEffect, useState } from "react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Users, ShieldCheck, Activity, Trophy, BarChart3 } from "lucide-react";
+
+/**
+ * VisitorsStats — onglet "Visiteurs".
+ * Affiche les compteurs (total/visiteurs/admins) + la liste paginée
+ * des utilisateurs inscrits avec leur nombre de sessions.
+>>>>>>> Stashed changes
  */
 export function VisitorsStats() {
   const [users, setUsers] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+<<<<<<< Updated upstream
   const [updatingId, setUpdatingId] = useState<string | null>(null);
 
   const load = useCallback(() => {
+=======
+
+  useEffect(() => {
+>>>>>>> Stashed changes
     fetch("/api/admin/users")
       .then((r) => (r.ok ? r.json() : []))
       .then((d) => setUsers(Array.isArray(d) ? d : []))
@@ -62,6 +80,7 @@ export function VisitorsStats() {
       .finally(() => setLoading(false));
   }, []);
 
+<<<<<<< Updated upstream
   useEffect(() => {
     load();
   }, [load]);
@@ -112,11 +131,23 @@ export function VisitorsStats() {
     <div className="space-y-4">
       {/* Top stats: total + role distribution */}
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+=======
+  if (loading) return <Skeleton className="h-64 rounded-xl" />;
+
+  const totalUsers = users.length;
+  const visitors = users.filter((u) => u.role === "VISITOR");
+  const admins = users.filter((u) => u.role === "ADMIN");
+
+  return (
+    <div className="space-y-4">
+      <div className="grid gap-3 sm:grid-cols-3">
+>>>>>>> Stashed changes
         <Card className="p-4">
           <Users className="h-5 w-5 text-sky-600" />
           <p className="mt-2 text-2xl font-bold">{totalUsers}</p>
           <p className="text-xs text-muted-foreground">Total inscrits</p>
         </Card>
+<<<<<<< Updated upstream
         <Card className="p-4 sm:col-span-1 lg:col-span-2">
           <p className="mb-3 text-xs font-medium text-muted-foreground">
             Distribution des rôles
@@ -139,6 +170,17 @@ export function VisitorsStats() {
               </div>
             ))}
           </div>
+=======
+        <Card className="p-4">
+          <Users className="h-5 w-5 text-emerald-600" />
+          <p className="mt-2 text-2xl font-bold">{visitors.length}</p>
+          <p className="text-xs text-muted-foreground">Visiteurs</p>
+        </Card>
+        <Card className="p-4">
+          <ShieldCheck className="h-5 w-5 text-amber-600" />
+          <p className="mt-2 text-2xl font-bold">{admins.length}</p>
+          <p className="text-xs text-muted-foreground">Administrateurs</p>
+>>>>>>> Stashed changes
         </Card>
       </div>
 
@@ -146,6 +188,7 @@ export function VisitorsStats() {
         <div className="border-b px-5 py-4">
           <h2 className="flex items-center gap-2 font-semibold">
             <Users className="h-4 w-4 text-sky-600" />
+<<<<<<< Updated upstream
             Liste des utilisateurs ({users.length})
           </h2>
           <p className="text-sm text-muted-foreground">
@@ -224,6 +267,53 @@ export function VisitorsStats() {
               </div>
             );
           })}
+=======
+            Liste des visiteurs ({users.length})
+          </h2>
+        </div>
+        <div className="max-h-[400px] divide-y overflow-y-auto">
+          {users.length === 0 && (
+            <p className="p-8 text-center text-sm text-muted-foreground">
+              Aucun visiteur inscrit pour le moment.
+            </p>
+          )}
+          {users.map((u) => (
+            <div key={u.id} className="flex items-center gap-3 px-5 py-3">
+              <span
+                className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white ${
+                  u.role === "ADMIN"
+                    ? "bg-gradient-to-br from-amber-500 to-orange-600"
+                    : "bg-gradient-to-br from-emerald-500 to-teal-600"
+                }`}
+              >
+                {(u.name ?? u.email).charAt(0).toUpperCase()}
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-sm font-medium">{u.name}</p>
+                <p className="truncate text-xs text-muted-foreground">
+                  {u.email}
+                </p>
+              </div>
+              <div className="text-right">
+                {u.role === "ADMIN" && (
+                  <Badge variant="outline" className="border-amber-300 text-amber-700">
+                    ADMIN
+                  </Badge>
+                )}
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {u._count?.sessions ?? 0} session(s)
+                </p>
+                <p className="text-[10px] text-muted-foreground/70">
+                  {new Date(u.createdAt).toLocaleDateString("fr-FR", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </p>
+              </div>
+            </div>
+          ))}
+>>>>>>> Stashed changes
         </div>
       </Card>
     </div>
@@ -231,12 +321,17 @@ export function VisitorsStats() {
 }
 
 /**
+<<<<<<< Updated upstream
  * ProgressTracker — "Progression" tab. Groups sessions by user and shows
  * per-user averages with expandable session detail.
  *
  * (Kept in this file because it's conceptually about visitor progress; the
  * task split only mentions VisitorsStats, but ProgressTracker was already in
  * admin-view.tsx and belongs with the other visitor analytics.)
+=======
+ * ProgressTracker — onglet "Progression".
+ * Liste les visiteurs actifs avec leur score moyen et le détail de leurs sessions.
+>>>>>>> Stashed changes
  */
 export function ProgressTracker() {
   const [sessions, setSessions] = useState<any[]>([]);
@@ -253,7 +348,11 @@ export function ProgressTracker() {
 
   if (loading) return <Skeleton className="h-64 rounded-xl" />;
 
+<<<<<<< Updated upstream
   // Group by user
+=======
+  // Grouper par utilisateur
+>>>>>>> Stashed changes
   const userMap: Record<string, { name: string; email: string; role: string; sessions: any[] }> = {};
   for (const s of sessions) {
     const uid = s.user?.id ?? "anonymous";

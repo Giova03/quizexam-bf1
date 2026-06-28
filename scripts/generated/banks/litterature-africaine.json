@@ -15,16 +15,31 @@
       "optionC": "Camara Laye",
       "optionD": "Mongo Beti",
       "correctAnswer": "A",
-      "explanation": "Ahmadou Kourouma (ivoirien) a écrit 'Les Soleils des indépendances' (1968)."
+      "explanation": "Ahmadou Kourouma (ivoirien) a écrit 'Les Soleils des indépendances' (1968).",
+      "difficulty": "medium"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "question": "Qui a écrit 'L'Enfant noir' ?",
+      "optionA": "Camara Laye",
+      "optionB": "Cheikh Hamidou Kane",
+      "optionC": "Ahmadou Kourouma",
+      "optionD": "Sembène Ousmane",
+      "correctAnswer": "A",
+      "explanation": "Camara Laye (guinéen) a écrit 'L'Enfant noir' (1953), autobiographie.",
+      "difficulty": "medium"
+    },
+    {
+>>>>>>> Stashed changes
       "question": "Qui a écrit 'L'Aventure ambiguë' ?",
       "optionA": "Cheikh Hamidou Kane",
       "optionB": "Camara Laye",
       "optionC": "Mariama Bâ",
       "optionD": "Sembène Ousmane",
       "correctAnswer": "A",
-      "explanation": "Cheikh Hamidou Kane (sénégalais) a écrit 'L'Aventure ambiguë' (1961), sur le conflit des cultures."
+      "explanation": "Cheikh Hamidou Kane (sénégalais) a écrit 'L'Aventure ambiguë' (1961), sur le conflit des cultures.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Une si longue lettre' ?",
@@ -33,7 +48,8 @@
       "optionC": "Cheikh Hamidou Kane",
       "optionD": "Léopold Sédar Senghor",
       "correctAnswer": "A",
-      "explanation": "Mariama Bâ (sénégalaise) a écrit 'Une si longue lettre' (1979), plaidoyer féministe."
+      "explanation": "Mariama Bâ (sénégalaise) a écrit 'Une si longue lettre' (1979), plaidoyer féministe.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Le Pleurer-rire' ?",
@@ -42,7 +58,8 @@
       "optionC": "Sony Labou Tansi",
       "optionD": "Emmanuel Dongala",
       "correctAnswer": "A",
-      "explanation": "Henri Lopes (congolais) a écrit 'Le Pleurer-rire' (1982), satire de la dictature africaine."
+      "explanation": "Henri Lopes (congolais) a écrit 'Le Pleurer-rire' (1982), satire de la dictature africaine.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Les Bouts de bois de Dieu' ?",
@@ -51,7 +68,8 @@
       "optionC": "Camara Laye",
       "optionD": "Mongo Beti",
       "correctAnswer": "A",
-      "explanation": "Sembène Ousmane (sénégalais) a écrit 'Les Bouts de bois de Dieu' (1960), sur la grève des cheminots."
+      "explanation": "Sembène Ousmane (sénégalais) a écrit 'Les Bouts de bois de Dieu' (1960), sur la grève des cheminots.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Ville cruelle' ?",
@@ -60,7 +78,8 @@
       "optionC": "Camara Laye",
       "optionD": "Ahmadou Kourouma",
       "correctAnswer": "A",
-      "explanation": "Mongo Beti (camerounais) a écrit 'Ville cruelle' (1954), sous le pseudonyme Eza Boto."
+      "explanation": "Mongo Beti (camerounais) a écrit 'Ville cruelle' (1954), sous le pseudonyme Eza Boto.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Le Pauvre Christ de Bomba' ?",
@@ -69,7 +88,8 @@
       "optionC": "Chinua Achebe",
       "optionD": "Wole Soyinka",
       "correctAnswer": "A",
-      "explanation": "Mongo Beti a écrit 'Le Pauvre Christ de Bomba' (1956), critique de la colonisation religieuse."
+      "explanation": "Mongo Beti a écrit 'Le Pauvre Christ de Bomba' (1956), critique de la colonisation religieuse.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Crépuscule des temps anciens' ?",
@@ -78,7 +98,8 @@
       "optionC": "Pierre-Claver Ilboudo",
       "optionD": "Roch Naba",
       "correctAnswer": "A",
-      "explanation": "Nazi Boni (burkinabè) a écrit 'Crépuscule des temps anciens' (1962), premier roman du Burkina."
+      "explanation": "Nazi Boni (burkinabè) a écrit 'Crépuscule des temps anciens' (1962), premier roman du Burkina.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Le Parachutage' ?",
@@ -87,7 +108,8 @@
       "optionC": "Pierre-Claver Ilboudo",
       "optionD": "Sembène Ousmane",
       "correctAnswer": "A",
-      "explanation": "Norbert Zongo (burkinabè) a écrit 'Le Parachutage' (1988), dénonciation du néocolonialisme."
+      "explanation": "Norbert Zongo (burkinabè) a écrit 'Le Parachutage' (1988), dénonciation du néocolonialisme.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Les Mains sales' ?",
@@ -96,25 +118,54 @@
       "optionC": "Simone de Beauvoir",
       "optionD": "André Malraux",
       "correctAnswer": "A",
-      "explanation": "Jean-Paul Sartre a écrit 'Les Mains sales' (1948), pièce sur l'engagement politique."
+      "explanation": "Jean-Paul Sartre a écrit 'Les Mains sales' (1948), pièce sur l'engagement politique.",
+      "difficulty": "medium"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "question": "Qui a écrit 'L'Étranger' ?",
+      "optionA": "Albert Camus",
+      "optionB": "Jean-Paul Sartre",
+      "optionC": "André Gide",
+      "optionD": "Marcel Proust",
+      "correctAnswer": "A",
+      "explanation": "Albert Camus a écrit 'L'Étranger' (1942).",
+      "difficulty": "medium"
+    },
+    {
+>>>>>>> Stashed changes
       "question": "Qui a fondé le mouvement de la négritude ?",
       "optionA": "Aimé Césaire, Léopold Sédar Senghor et Léon-Gontran Damas",
       "optionB": "Mongo Beti",
       "optionC": "Sembène Ousmane",
       "optionD": "Frantz Fanon",
       "correctAnswer": "A",
-      "explanation": "La négritude a été fondée par Césaire, Senghor et Damas dans les années 1930 à Paris."
+      "explanation": "La négritude a été fondée par Césaire, Senghor et Damas dans les années 1930 à Paris.",
+      "difficulty": "medium"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "question": "Qui a écrit 'Cahier d'un retour au pays natal' ?",
+      "optionA": "Aimé Césaire",
+      "optionB": "Léopold Sédar Senghor",
+      "optionC": "Léon-Gontran Damas",
+      "optionD": "Frantz Fanon",
+      "correctAnswer": "A",
+      "explanation": "Aimé Césaire a écrit ce poème fondateur de la négritude (1939).",
+      "difficulty": "medium"
+    },
+    {
+>>>>>>> Stashed changes
       "question": "Léopold Sédar Senghor a été président de quel pays ?",
       "optionA": "Sénégal",
       "optionB": "Côte d'Ivoire",
       "optionC": "Mali",
       "optionD": "Guinée",
       "correctAnswer": "A",
-      "explanation": "Senghor a été président du Sénégal (1960-1980)."
+      "explanation": "Senghor a été président du Sénégal (1960-1980).",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Peau noire, masques blancs' ?",
@@ -123,7 +174,8 @@
       "optionC": "Sembène Ousmane",
       "optionD": "Mongo Beti",
       "correctAnswer": "A",
-      "explanation": "Frantz Fanon (martiniquais) a écrit 'Peau noire, masques blancs' (1952)."
+      "explanation": "Frantz Fanon (martiniquais) a écrit 'Peau noire, masques blancs' (1952).",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'L'Antépeuple' ?",
@@ -132,7 +184,8 @@
       "optionC": "Henri Lopes",
       "optionD": "Emmanuel Dongala",
       "correctAnswer": "A",
-      "explanation": "Sony Labou Tansi (congolais) a écrit 'L'Antépeuple' (1983)."
+      "explanation": "Sony Labou Tansi (congolais) a écrit 'L'Antépeuple' (1983).",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Le Devoir de violence' ?",
@@ -141,7 +194,8 @@
       "optionC": "Ahmadou Kourouma",
       "optionD": "Mongo Beti",
       "correctAnswer": "A",
-      "explanation": "Yambo Ouologuem (malien) a écrit 'Le Devoir de violence' (1968), prix Renaudot."
+      "explanation": "Yambo Ouologuem (malien) a écrit 'Le Devoir de violence' (1968), prix Renaudot.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Une vie de boy' ?",
@@ -150,7 +204,8 @@
       "optionC": "Sembène Ousmane",
       "optionD": "Cheikh Hamidou Kane",
       "correctAnswer": "A",
-      "explanation": "Ferdinand Oyono (camerounais) a écrit 'Une vie de boy' (1956)."
+      "explanation": "Ferdinand Oyono (camerounais) a écrit 'Une vie de boy' (1956).",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Le Vieux Nègre et la médaille' ?",
@@ -159,7 +214,8 @@
       "optionC": "Sembène Ousmane",
       "optionD": "Camara Laye",
       "correctAnswer": "A",
-      "explanation": "Ferdinand Oyono a écrit 'Le Vieux Nègre et la médaille' (1956)."
+      "explanation": "Ferdinand Oyono a écrit 'Le Vieux Nègre et la médaille' (1956).",
+      "difficulty": "medium"
     },
     {
       "question": "Wole Soyinka a reçu le prix Nobel de littérature en quelle année ?",
@@ -168,7 +224,8 @@
       "optionC": "2000",
       "optionD": "1975",
       "correctAnswer": "A",
-      "explanation": "Wole Soyinka (nigérian) a reçu le prix Nobel en 1986, premier Africain."
+      "explanation": "Wole Soyinka (nigérian) a reçu le prix Nobel en 1986, premier Africain.",
+      "difficulty": "medium"
     },
     {
       "question": "Naguib Mahfouz a reçu le prix Nobel en :",
@@ -177,7 +234,8 @@
       "optionC": "1990",
       "optionD": "2000",
       "correctAnswer": "A",
-      "explanation": "Naguib Mahfouz (égyptien) a reçu le Nobel en 1988."
+      "explanation": "Naguib Mahfouz (égyptien) a reçu le Nobel en 1988.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Things Fall Apart' (Le Monde s'effondre) ?",
@@ -186,7 +244,8 @@
       "optionC": "Nadine Gordimer",
       "optionD": "J.M. Coetzee",
       "correctAnswer": "A",
-      "explanation": "Chinua Achebe (nigérian) a écrit ce roman en 1958, chef-d'œuvre de la littérature africaine."
+      "explanation": "Chinua Achebe (nigérian) a écrit ce roman en 1958, chef-d'œuvre de la littérature africaine.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Cercle des tropiques' ?",
@@ -195,7 +254,8 @@
       "optionC": "Sony Labou Tansi",
       "optionD": "Henri Lopes",
       "correctAnswer": "A",
-      "explanation": "Tierno Monénembo (guinéen) a écrit 'Cercle des tropiques' (1978)."
+      "explanation": "Tierno Monénembo (guinéen) a écrit 'Cercle des tropiques' (1978).",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a écrit 'Les Racines de la mort' ?",
@@ -204,7 +264,8 @@
       "optionC": "Nazi Boni",
       "optionD": "Roch Naba",
       "correctAnswer": "A",
-      "explanation": "Pierre-Claver Ilboudo (burkinabè) a écrit 'Les Racines de la mort' (1983)."
+      "explanation": "Pierre-Claver Ilboudo (burkinabè) a écrit 'Les Racines de la mort' (1983).",
+      "difficulty": "medium"
     }
   ]
 }

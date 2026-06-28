@@ -7,7 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ScrollArea } from "@/components/ui/scroll-area";
+<<<<<<< Updated upstream
 import { toast } from "sonner";
+=======
+>>>>>>> Stashed changes
 import { StartDialog, type DifficultyFilter } from "./start-dialog";
 import type { Exam, CorrectionMode } from "@/lib/types";
 import {
@@ -56,7 +59,11 @@ export function ExamDetailView() {
           mode,
           sourceType: "exam",
           sourceId: exam.id,
+<<<<<<< Updated upstream
           difficulty,
+=======
+          ...(difficulty !== "all" ? { difficulty } : {}),
+>>>>>>> Stashed changes
         }),
       });
       if (res.ok) {

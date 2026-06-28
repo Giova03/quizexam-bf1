@@ -15,7 +15,8 @@
       "optionC": "Stade des opérations formelles (11-15 ans)",
       "optionD": "Stade des opérations concrètes (7-11 ans)",
       "correctAnswer": "C",
-      "explanation": "Le stade des opérations formelles (11-15 ans) est caractérisé par l'émergence du raisonnement hypothético-déductif, permettant à l'adolescent de raisonner sur des possibilités abstraites et des hypothèses."
+      "explanation": "Le stade des opérations formelles (11-15 ans) est caractérisé par l'émergence du raisonnement hypothético-déductif, permettant à l'adolescent de raisonner sur des possibilités abstraites et des hypothèses.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans la théorie psychanalytique freudienne, quel mécanisme de défense consiste à attribuer à autrui des pensées ou désirs propres jugés inacceptables?",
@@ -24,7 +25,8 @@
       "optionC": "Rationalisation",
       "optionD": "Sublimation",
       "correctAnswer": "B",
-      "explanation": "La projection est un mécanisme de défense où une personne attribue à d'autres ses propres pensées, désirs ou émotions qu'elle refuse de reconnaître en elle."
+      "explanation": "La projection est un mécanisme de défense où une personne attribue à d'autres ses propres pensées, désirs ou émotions qu'elle refuse de reconnaître en elle.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle théorie sociale explique le phénomène d'obéissance à l'autorité par la diffusion de la responsabilité dans des situations hiérarchisées?",
@@ -33,7 +35,8 @@
       "optionC": "Théorie de l'obéissance à l'autorité (Milgram)",
       "optionD": "Théorie de l'identité sociale (Tajfel)",
       "correctAnswer": "C",
-      "explanation": "L'expérience de Milgram démontre comment la diffusion de responsabilité dans une structure hiérarchisée peut conduire des personnes à obéir à des ordres contraires à leur conscience."
+      "explanation": "L'expérience de Milgram démontre comment la diffusion de responsabilité dans une structure hiérarchisée peut conduire des personnes à obéir à des ordres contraires à leur conscience.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon les critères du DSM-5, quel symptôme doit être présent pendant au moins deux semaines pour poser le diagnostic de dépressive majeure?",
@@ -42,7 +45,8 @@
       "optionC": "Troubles anxieux généralisés",
       "optionD": "Idées paranoïaques",
       "correctAnswer": "B",
-      "explanation": "L'anhédonie ou perte d'intérêt ou de plaisir est un symptôme central de la dépression majeure qui doit être présent pendant au moins deux semaines pour le diagnostic."
+      "explanation": "L'anhédonie ou perte d'intérêt ou de plaisir est un symptôme central de la dépression majeure qui doit être présent pendant au moins deux semaines pour le diagnostic.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle théorie de la motivation au travail met l'accent sur la satisfaction des besoins hiérarchisés (physiologiques, sécurité, sociaux, estime, accomplissement)?",
@@ -51,7 +55,8 @@
       "optionC": "Théorie de la hiérarchie des besoins (Maslow)",
       "optionD": "Théorie de l'équité (Adams)",
       "correctAnswer": "C",
-      "explanation": "La théorie de la hiérarchie des besoins de Maslow postule que les individus sont motivés par des besoins organisés en cinq niveaux qu'ils cherchent à satisfaire dans un ordre préférentiel."
+      "explanation": "La théorie de la hiérarchie des besoins de Maslow postule que les individus sont motivés par des besoins organisés en cinq niveaux qu'ils cherchent à satisfaire dans un ordre préférentiel.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans la psychopathologie, quelle différence fondamentale distingue la névrose de la psychose selon la classification psychanalytique?",
@@ -60,7 +65,8 @@
       "optionC": "La névrose préserve le test de réalité tandis que la psychose l'altère",
       "optionD": "La névrose est toujours d'origine organique tandis que la psychose est psychogène",
       "correctAnswer": "C",
-      "explanation": "La distinction fondamentale entre névrose et psychose réside dans la préservation ou non du test de réalité : la personne névrosée garde conscience de la réalité extérieure tandis que la personne psychotique perd ce contact."
+      "explanation": "La distinction fondamentale entre névrose et psychose réside dans la préservation ou non du test de réalité : la personne névrosée garde conscience de la réalité extérieure tandis que la personne psychotique perd ce contact.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle technique d'entretien clinique privilégie l'exploration libre du patient sans interruption ni orientation théorique préalable?",
@@ -69,7 +75,8 @@
       "optionC": "Entretien non directif",
       "optionD": "Entretien projectif",
       "correctAnswer": "C",
-      "explanation": "L'entretien non directif, associé à Carl Rogers, favorise l'expression libre du patient sans interruption ni orientation théorique, créant un climat d'acceptation et d'empathie."
+      "explanation": "L'entretien non directif, associé à Carl Rogers, favorise l'expression libre du patient sans interruption ni orientation théorique, créant un climat d'acceptation et d'empathie.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la validité d'un test psychologique qui mesure effectivement ce qu'elle prétend mesurer?",
@@ -78,7 +85,8 @@
       "optionC": "Validité critérielle",
       "optionD": "Validité concurrente",
       "correctAnswer": "A",
-      "explanation": "La validité de construit évalue si un mesure effectivement le concept théorique (le construit) qu'il est censé évaluer."
+      "explanation": "La validité de construit évalue si un mesure effectivement le concept théorique (le construit) qu'il est censé évaluer.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon les neurosciences, quelle structure cérébrale est principalement impliquée dans la formation des souvenirs explicites (déclaratifs)?",
@@ -87,7 +95,8 @@
       "optionC": "Ganglion basal",
       "optionD": "Thalamus",
       "correctAnswer": "B",
-      "explanation": "L'hippocampe joue un rôle crucial dans la consolidation des souvenirs explicites ou déclaratifs, permettant le stockage à long terme d'informations factuelles et événementielles."
+      "explanation": "L'hippocampe joue un rôle crucial dans la consolidation des souvenirs explicites ou déclaratifs, permettant le stockage à long terme d'informations factuelles et événementielles.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans la psychologie cognitive, quel modèle explique l'attention sélective par un filtre qui sélectionne une information parmi plusieurs selon sa pertinence?",
@@ -96,7 +105,8 @@
       "optionC": "Modèle du filtre late selection (Deutsch et Deutsch)",
       "optionD": "Modèle de la charge cognitive (Sweller)",
       "correctAnswer": "B",
-      "explanation": "Le modèle du filtre early selection de Broadbent postule qu'un filtre attentionnel sélectionne précocement une information parmi les stimuli sensoriels en fonction de ses caractéristiques physiques."
+      "explanation": "Le modèle du filtre early selection de Broadbent postule qu'un filtre attentionnel sélectionne précocement une information parmi les stimuli sensoriels en fonction de ses caractéristiques physiques.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle stratégie de coping (adaptation) est considérée comme la plus efficace face à un stress chronique selon la recherche en psychologie de la santé?",
@@ -105,7 +115,8 @@
       "optionC": "Confrontation directe",
       "optionD": "Réévaluation cognitive",
       "correctAnswer": "D",
-      "explanation": "La réévaluation cognitive, qui consiste à modifier son interprétation de la situation stressante, est généralement considérée comme la stratégie de coping la plus efficace face au stress chronique."
+      "explanation": "La réévaluation cognitive, qui consiste à modifier son interprétation de la situation stressante, est généralement considérée comme la stratégie de coping la plus efficace face au stress chronique.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de l'attribution, quel type d'attribution interne et stable mène à l'optimisme dans l'explication des succès personnels?",
@@ -114,7 +125,8 @@
       "optionC": "Attribution à un facteur interne et stable",
       "optionD": "Attribution à un facteur externe et instable",
       "correctAnswer": "C",
-      "explanation": "L'attribution à un facteur interne et stable (comme l'habileté personnelle) explique les succès par des causes permanentes, favorisant l'optimisme et l'auto-efficacité."
+      "explanation": "L'attribution à un facteur interne et stable (comme l'habileté personnelle) explique les succès par des causes permanentes, favorisant l'optimisme et l'auto-efficacité.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le domaine des tests de personnalité, quelle approche théorique sous-tend le MMPI (Minnesota Multiphasic Personality Inventory)?",
@@ -123,7 +135,8 @@
       "optionC": "Théorie des traits",
       "optionD": "Théorie empirique",
       "correctAnswer": "D",
-      "explanation": "Le MMPI est basé sur une approche empirique, construit à partir des réponses différenciantes de personnes diagnostiquées avec différents troubles psychologiques."
+      "explanation": "Le MMPI est basé sur une approche empirique, construit à partir des réponses différenciantes de personnes diagnostiquées avec différents troubles psychologiques.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle structure cérébrale est principalement impliquée dans la régulation des émotions négatives et la peur?",
@@ -132,7 +145,8 @@
       "optionC": "Noyau caudé",
       "optionD": "Substance noire",
       "correctAnswer": "B",
-      "explanation": "L'amygdale est une structure clé du système limbique impliquée dans le traitement des émotions, particulièrement la peur et l'anxiété."
+      "explanation": "L'amygdale est une structure clé du système limbique impliquée dans le traitement des émotions, particulièrement la peur et l'anxiété.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de l'apprentissage social de Bandura, quel processus est essentiel pour l'acquisition de comportements observés?",
@@ -141,7 +155,8 @@
       "optionC": "Modélisation observationnelle",
       "optionD": "Habituation sensorielle",
       "correctAnswer": "C",
-      "explanation": "La modélisation observationnelle est le processus par lequel les individus apprennent en observant les comportements des autres et leurs conséquences, selon Bandura."
+      "explanation": "La modélisation observationnelle est le processus par lequel les individus apprennent en observant les comportements des autres et leurs conséquences, selon Bandura.",
+      "difficulty": "medium"
     },
     {
       "question": "En psychopathologie, quel trouble anxieux se caractérise par une peur intense et irrationnelle d'objets ou de situations spécifiques?",
@@ -150,7 +165,8 @@
       "optionC": "Trouble obsessionnel-compulsif (TOC)",
       "optionD": "Phobie spécifique",
       "correctAnswer": "D",
-      "explanation": "Les phobies spécifiques sont caractérisées par une peur marquée et persistante d'objets ou de situations spécifiques, jugés dangereux par la personne."
+      "explanation": "Les phobies spécifiques sont caractérisées par une peur marquée et persistante d'objets ou de situations spécifiques, jugés dangereux par la personne.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle méthode d'analyse des protocoles projectifs comme le Rorschach repose sur l'interprétation des réponses en fonction de leur contenu, de leur processus et de leur fréquence?",
@@ -159,7 +175,8 @@
       "optionC": "Méthode TAT",
       "optionD": "Méthenne",
       "correctAnswer": "A",
-      "explanation": "La méthode Exner (système intégré du Rorschach) propose un cadre d'analyse standardisé des réponses projectives basé sur plusieurs dimensions dont le contenu, le processus et la fréquence."
+      "explanation": "La méthode Exner (système intégré du Rorschach) propose un cadre d'analyse standardisé des réponses projectives basé sur plusieurs dimensions dont le contenu, le processus et la fréquence.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de la résilience, quel facteur de protection individuel est le plus prédictif d'une adaptation positive après un traumatisme?",
@@ -168,7 +185,8 @@
       "optionC": "Style d'attachement sécurisant",
       "optionD": "Soutien social",
       "correctAnswer": "C",
-      "explanation": "Le style d'attachement sécurisant, développé précocement, constitue un facteur de protection majeur pour la résilience face aux traumatismes tout au long de la vie."
+      "explanation": "Le style d'attachement sécurisant, développé précocement, constitue un facteur de protection majeur pour la résilience face aux traumatismes tout au long de la vie.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans la psychologie du travail, quel concept désigne l'état de déséquilibre perçu entre les exigences professionnelles et les ressources de l'individu?",
@@ -177,7 +195,8 @@
       "optionC": "Stress professionnel",
       "optionD": "Insatisfaction au travail",
       "correctAnswer": "C",
-      "explanation": "Le stress professionnel est défini comme un état de déséquilibre perçu lorsque les exigences professionnelles excèdent les ressources et capacités de l'individu."
+      "explanation": "Le stress professionnel est défini comme un état de déséquilibre perçu lorsque les exigences professionnelles excèdent les ressources et capacités de l'individu.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle théorie de la perception visuelle postule que nous percevons le monde par un processus inférentiel basé sur des hypothèses sur la nature des objets?",
@@ -186,7 +205,8 @@
       "optionC": "Théorie de l'inférence bayésienne",
       "optionD": "Théorie de la détection de caractéristiques",
       "correctAnswer": "C",
-      "explanation": "La théorie de l'inférence bayésienne en perception suggère que notre cerveau construit notre perception du monde en générant et testant continuellement des hypothèses sur la nature des objets perçus."
+      "explanation": "La théorie de l'inférence bayésienne en perception suggère que notre cerveau construit notre perception du monde en générant et testant continuellement des hypothèses sur la nature des objets perçus.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon Piaget, quel stade du développement caractérisé par la pensée logique mais limitée aux situations concrètes?",
@@ -195,7 +215,8 @@
       "optionC": "Stade des opérations formelles",
       "optionD": "Stade des opérations concrètes",
       "correctAnswer": "D",
-      "explanation": "Le stade des opérations concrètes (7-11 ans) permet le raisonnement logique mais uniquement dans le cadre de situations concrètes et observables."
+      "explanation": "Le stade des opérations concrètes (7-11 ans) permet le raisonnement logique mais uniquement dans le cadre de situations concrètes et observables.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans la théorie freudienne, quel mécanisme de défense consiste à attribuer à autrui des pensées ou désirs propres jugés inacceptables?",
@@ -204,7 +225,8 @@
       "optionC": "Refoulement",
       "optionD": "Sublimation",
       "correctAnswer": "B",
-      "explanation": "La projection est un mécanisme de défense où l'individu attribue à d'autres ses propres pensées, désirs ou émotions qu'il refuse d'admettre en lui-même."
+      "explanation": "La projection est un mécanisme de défense où l'individu attribue à d'autres ses propres pensées, désirs ou émotions qu'il refuse d'admettre en lui-même.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel type de psychose se caractérise par une perte du contact avec la réalité, des hallucinations et des délires?",
@@ -213,7 +235,8 @@
       "optionC": "Schizophrénie",
       "optionD": "Trouble bipolaire",
       "correctAnswer": "C",
-      "explanation": "La schizophrénie est un trouble psychotique caractérisé par des symptômes positifs (hallucinations, délires) et négatifs (apathie, retrait social)."
+      "explanation": "La schizophrénie est un trouble psychotique caractérisé par des symptômes positifs (hallucinations, délires) et négatifs (apathie, retrait social).",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de l'attribution de Heider, quel type d'attribution consiste à explander le comportement de quelqu'un par des facteurs internes?",
@@ -222,7 +245,8 @@
       "optionC": "Attribution circulaire",
       "optionD": "Attribution défensive",
       "correctAnswer": "A",
-      "explanation": "L'attribution dispositionnelle (ou interne) consiste à expliquer un comportement par des caractéristiques personnelles de l'individu plutôt que par la situation."
+      "explanation": "L'attribution dispositionnelle (ou interne) consiste à expliquer un comportement par des caractéristiques personnelles de l'individu plutôt que par la situation.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle de la motivation au travail de Vroom, quel terme désigne la croyance qu'un effort mènera à une performance?",
@@ -231,7 +255,8 @@
       "optionC": "Instrumentalité",
       "optionD": "Équité",
       "correctAnswer": "B",
-      "explanation": "L'attente est la croyance qu'un effort donné mènera à un niveau de performance élevé selon Vroom dans sa théorie de l'expectance."
+      "explanation": "L'attente est la croyance qu'un effort donné mènera à un niveau de performance élevé selon Vroom dans sa théorie de l'expectance.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel test projectif utilise des taches d'encre pour évaluer la personnalité?",
@@ -240,7 +265,8 @@
       "optionC": "MMPI",
       "optionD": "16PF",
       "correctAnswer": "B",
-      "explanation": "Le test de Rorschach utilise des planches avec des taches d'encre dont la personne doit interpréter ce qu'elle voit, permettant d'explorer la personnalité."
+      "explanation": "Le test de Rorschach utilise des planches avec des taches d'encre dont la personne doit interpréter ce qu'elle voit, permettant d'explorer la personnalité.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de l'attachement de Bowlby, quel type d'attachement se caractérise par une insécurité et une ambivalence?",
@@ -249,7 +275,8 @@
       "optionC": "Attachement ambivalent-insecure",
       "optionD": "Attachement désorganisé",
       "correctAnswer": "C",
-      "explanation": "L'attachement ambivalent-insecure (ou résistant) se manifeste par une alternance de proximité et de rejet face à la figure d'attachement."
+      "explanation": "L'attachement ambivalent-insecure (ou résistant) se manifeste par une alternance de proximité et de rejet face à la figure d'attachement.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle structure cérébrale est principalement impliquée dans la formation de nouveaux souvenirs à long terme?",
@@ -258,7 +285,8 @@
       "optionC": "Thalamus",
       "optionD": "Médyppocampe",
       "correctAnswer": "B",
-      "explanation": "L'hippocampe joue un rôle crucial dans la consolidation des souvenirs à long terme, bien que ces souvenirs soient ensuite stockés dans le cortex cérébral."
+      "explanation": "L'hippocampe joue un rôle crucial dans la consolidation des souvenirs à long terme, bien que ces souvenirs soient ensuite stockés dans le cortex cérébral.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle de la communication non-violente de Rosenberg, quel élément correspond aux faits observables sans jugement?",
@@ -267,7 +295,8 @@
       "optionC": "Besoin",
       "optionD": "Demande",
       "correctAnswer": "A",
-      "explanation": "L'observation correspond à la description des faits concrets et observables sans interprétation ni jugement selon Rosenberg."
+      "explanation": "L'observation correspond à la description des faits concrets et observables sans interprétation ni jugement selon Rosenberg.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel concept décrit la capacité à s'adapter face à des événements stressants ou traumatiques?",
@@ -276,7 +305,8 @@
       "optionC": "Adaptation",
       "optionD": "Compensation",
       "correctAnswer": "B",
-      "explanation": "La résilience désigne la capacité d'un individu à faire face à des traumatismes, crises ou stress et à s'en remettre positivement."
+      "explanation": "La résilience désigne la capacité d'un individu à faire face à des traumatismes, crises ou stress et à s'en remettre positivement.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie des stades psychosociaux d'Erikson, quel conflit central caractérisé l'adolescence?",
@@ -285,7 +315,8 @@
       "optionC": "Intimité vs isolation",
       "optionD": "Compétence vs infériorité",
       "correctAnswer": "B",
-      "explanation": "L'adolescence selon Erikson est marquée par le conflit entre la formation de l'identité et la confusion des rôles."
+      "explanation": "L'adolescence selon Erikson est marquée par le conflit entre la formation de l'identité et la confusion des rôles.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel type de mémoire permet de maintenir temporairement l'information pendant quelques secondes?",
@@ -294,7 +325,8 @@
       "optionC": "Mémoire de travail",
       "optionD": "Mémoire procédurale",
       "correctAnswer": "C",
-      "explanation": "La mémoire de travail (ou mémoire à court terme) permet de maintenir temporairement l'information pour des tâches cognitives immédiates."
+      "explanation": "La mémoire de travail (ou mémoire à court terme) permet de maintenir temporairement l'information pour des tâches cognitives immédiates.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans la psychopathologie, quelle névrose se caractérise par des pensées, images ou impulsions récurrentes et envahissantes?",
@@ -303,7 +335,8 @@
       "optionC": "Névrose hystérique",
       "optionD": "Névrose anxieuse",
       "correctAnswer": "A",
-      "explanation": "La névrose obsessionnelle (ou trouble obsessionnel-compulsif) se manifeste par des obsessions (pensions intrusives) et compulsions (comportements répétitifs)."
+      "explanation": "La névrose obsessionnelle (ou trouble obsessionnel-compulsif) se manifeste par des obsessions (pensions intrusives) et compulsions (comportements répétitifs).",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de la dissonance cognitive de Festinger, qu'est-ce qui se produit lorsqu'une personne détient deux cognitions incompatibles?",
@@ -312,7 +345,8 @@
       "optionC": "Consonance cognitive",
       "optionD": "Cognitive dissonance",
       "correctAnswer": "B",
-      "explanation": "La dissonance cognitive déscharge l'inconfort psychologique résultant de la possession de deux cognitions incompatibles."
+      "explanation": "La dissonance cognitive déscharge l'inconfort psychologique résultant de la possession de deux cognitions incompatibles.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel type de neurones sont spécialisés dans la communication inter-hémisphérique?",
@@ -321,7 +355,8 @@
       "optionC": "Neurones interconnecteurs",
       "optionD": "Neurones du corps cellulaire",
       "correctAnswer": "C",
-      "explanation": "Les neurones interconnecteurs, notamment dans le corps calleux, permettent la communication entre les deux hémisphères cérébraux."
+      "explanation": "Les neurones interconnecteurs, notamment dans le corps calleux, permettent la communication entre les deux hémisphères cérébraux.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle de l'entretien clinique, quelle technique consiste à reformuler les propos du patient pour vérifier la compréhension?",
@@ -330,7 +365,8 @@
       "optionC": "Clarification",
       "optionD": "Confrontation",
       "correctAnswer": "B",
-      "explanation": "La réflexion consiste à reformuler les propos du patient pour montrer l'écoute et vérifier sa compréhension."
+      "explanation": "La réflexion consiste à reformuler les propos du patient pour montrer l'écoute et vérifier sa compréhension.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel concept décrit les stratégies cognitives et comportementales utilisées pour faire face au stress?",
@@ -339,7 +375,8 @@
       "optionC": "Adaptation",
       "optionD": "Mécanisme de défense",
       "correctAnswer": "B",
-      "explanation": "Le coping désigne les efforts cognitifs et comportementaux développés pour maîtriser les exigences externes perçues comme stressantes."
+      "explanation": "Le coping désigne les efforts cognitifs et comportementaux développés pour maîtriser les exigences externes perçues comme stressantes.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de l'apprentissage social de Bandura, quel processus implique l'observation et l'imitation des comportements?",
@@ -348,7 +385,8 @@
       "optionC": "Punition",
       "optionD": "Conditionnement",
       "correctAnswer": "A",
-      "explanation": "La modélisation est le processus par lequel les individus apprennent en observant et imitant les comportements d'autres personnes."
+      "explanation": "La modélisation est le processus par lequel les individus apprennent en observant et imitant les comportements d'autres personnes.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans la théorie des intelligences multiples de Gardner, quelle intelligence concerne la capacité à comprendre et gérer ses propres émotions et celles des autres?",
@@ -357,7 +395,8 @@
       "optionC": "Intelligence émotionnelle",
       "optionD": "Intelligence interpersonnelle",
       "correctAnswer": "D",
-      "explanation": "L'intelligence interpersonnelle concerne la capacité à comprendre et interagir efficacement avec les autres."
+      "explanation": "L'intelligence interpersonnelle concerne la capacité à comprendre et interagir efficacement avec les autres.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel test d'intelligence est largement utilisé et mesure un QM global basé sur des sous-tests?",
@@ -366,7 +405,8 @@
       "optionC": "WAIS",
       "optionD": "MMPI",
       "correctAnswer": "C",
-      "explanation": "Le WAIS (Wechsler Adult Intelligence Scale) mesure l'intelligence des adultes à travers différents sous-tests évaluant diverses cognitions."
+      "explanation": "Le WAIS (Wechsler Adult Intelligence Scale) mesure l'intelligence des adultes à travers différents sous-tests évaluant diverses cognitions.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans la psychologie de la santé, quel concept désigne les mécanismes inconscients utilisés pour gérer l'anxiété liée à des menaces?",
@@ -375,7 +415,8 @@
       "optionC": "Mécanismes de défense",
       "optionD": "Adaptation",
       "correctAnswer": "C",
-      "explanation": "Les mécanismes de défense sont des stratégies inconscientes utilisées pour réduire l'anxiété et protéger le psychisme."
+      "explanation": "Les mécanismes de défense sont des stratégies inconscientes utilisées pour réduire l'anxiété et protéger le psychisme.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon Piaget, quel mécanisme cognitif permet à l'enfant de s'adapter à son environnement en modifiant ses schèmes existants?",
@@ -384,7 +425,12 @@
       "optionC": "L'équilibration",
       "optionD": "La centration",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "L'accommodation est le processus par lequel l'individu modifie ses schèmes existants pour intégrer de nouvelles informations qui ne correspondent pas à ses connaissances antérieures."
+=======
+      "explanation": "L'accommodation est le processus par lequel l'individu modifie ses schèmes existants pour intégrer de nouvelles informations qui ne correspondent pas à ses connaissances antérieures.",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quelle approche théorique en psychologie sociale explique le comportement de conformité comme une réponse à la pression normative du groupe?",
@@ -393,7 +439,8 @@
       "optionC": "La théorie de l'influence informationnelle",
       "optionD": "La théorie de l'impact normatif",
       "correctAnswer": "D",
-      "explanation": "La théorie de l'impact normatif (ou normative social influence) explique la conformité comme une réponse au désir d'être accepté et approuvé par le groupe, même si cela signifie aller à l'encontre de ses propres convictions."
+      "explanation": "La théorie de l'impact normatif (ou normative social influence) explique la conformité comme une réponse au désir d'être accepté et approuvé par le groupe, même si cela signifie aller à l'encontre de ses propres convictions.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la classification DSM-5, quel trouble caractérisé par des épisodes dépressifs majeurs récurrents sans symptômes maniaques ou hypomaniaques?",
@@ -402,7 +449,8 @@
       "optionC": "Trouble bipolaire II",
       "optionD": "Trouble cyclothymique",
       "correctAnswer": "A",
-      "explanation": "Le trouble dépressif persistant (anciennement dépression dysthymique) est caractérisé par des épisodes dépressifs majeurs récurrents sans symptômes maniaques ou hypomaniaques."
+      "explanation": "Le trouble dépressif persistant (anciennement dépression dysthymique) est caractérisé par des épisodes dépressifs majeurs récurrents sans symptômes maniaques ou hypomaniaques.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle de Herzberg, quel type de facteur est lié à la satisfaction au travail plutôt qu'à l'insatisfaction?",
@@ -411,7 +459,8 @@
       "optionC": "Facteurs extrinsèques",
       "optionD": "Facteurs de sécurité",
       "correctAnswer": "B",
-      "explanation": "Les facteurs de motivation dans le modèle de Herzberg sont liés à la satisfaction au travail tandis que les facteurs hygiéniques sont liés à la prévention de l'insatisfaction."
+      "explanation": "Les facteurs de motivation dans le modèle de Herzberg sont liés à la satisfaction au travail tandis que les facteurs hygiéniques sont liés à la prévention de l'insatisfaction.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle technique d'entretien clinique vise à explorer les conflits inconscients à travers l'interprétation des associations libres du patient?",
@@ -420,7 +469,8 @@
       "optionC": "Entretien psychanalytique",
       "optionD": "Entretien systémique",
       "correctAnswer": "C",
-      "explanation": "L'entretien psychanalytique utilise l'association libre et l'interprétation pour explorer les conflits inconscients du patient."
+      "explanation": "L'entretien psychanalytique utilise l'association libre et l'interprétation pour explorer les conflits inconscients du patient.",
+      "difficulty": "medium"
     },
     {
       "question": "Le test de Rorschach appartient à quelle catégorie de tests psychologiques?",
@@ -429,7 +479,8 @@
       "optionC": "Tests projectifs",
       "optionD": "Tests d'attitudes",
       "correctAnswer": "C",
-      "explanation": "Le test de Rorschach est un test projectif qui permet d'explorer la personnalité et les conflits internes à travers l'interprétation de taches d'encre."
+      "explanation": "Le test de Rorschach est un test projectif qui permet d'explorer la personnalité et les conflits internes à travers l'interprétation de taches d'encre.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon le modèle de Baddeley et Hitch, quel composant de la mémoire de travail est responsable de la manipulation des informations?",
@@ -438,7 +489,8 @@
       "optionC": "Exécutif central",
       "optionD": "Buffer épisodique",
       "correctAnswer": "C",
-      "explanation": "L'exécutif central est responsable de la manipulation des informations, de l'attention et du contrôle des processus cognitifs dans la mémoire de travail."
+      "explanation": "L'exécutif central est responsable de la manipulation des informations, de l'attention et du contrôle des processus cognitifs dans la mémoire de travail.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle stratégie d'ajustement au stress consiste à chercher activement des informations et des solutions pour faire face à une situation stressante?",
@@ -447,7 +499,8 @@
       "optionC": "Coping évitant",
       "optionD": "Coping dissociatif",
       "correctAnswer": "B",
-      "explanation": "Le coping centré sur le problème implique des efforts actifs pour modifier ou éliminer la source de stress."
+      "explanation": "Le coping centré sur le problème implique des efforts actifs pour modifier ou éliminer la source de stress.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans la théorie de l'apprentissage social de Bandura, quel processus permet d'acquérir de nouveaux comportements par l'observation d'autres personnes?",
@@ -456,7 +509,8 @@
       "optionC": "L'observation vicariante",
       "optionD": "Le conditionnement",
       "correctAnswer": "C",
-      "explanation": "L'observation vicariante (ou apprentissage par observation) est le processus par lequel les individus apprennent de nouveaux comportements en observant les actions et leurs conséquences chez les autres."
+      "explanation": "L'observation vicariante (ou apprentissage par observation) est le processus par lequel les individus apprennent de nouveaux comportements en observant les actions et leurs conséquences chez les autres.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle théorie des attitudes postule que les attitudes sont fonctionnelles car elles aident les individus à maximiser les récompenses et à minimiser les punitions?",
@@ -465,7 +519,8 @@
       "optionC": "Théorie de la fonction utilitaire des attitudes",
       "optionD": "Théorie de la dissonance cognitive",
       "correctAnswer": "C",
-      "explanation": "La théorie de la fonction utilitaire des attitudes (ou fonction adaptative) suggère que les attitudes servent des fonctions pratiques en aidant les individues à obtenir des récompenses et éviter des punitions."
+      "explanation": "La théorie de la fonction utilitaire des attitudes (ou fonction adaptative) suggère que les attitudes servent des fonctions pratiques en aidant les individues à obtenir des récompenses et éviter des punitions.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon Bowlby, quel type d'attachement est caractérisé par une préoccupation excessive de l'enfant face à la séparation et une difficulté à être réconforté?",
@@ -474,7 +529,8 @@
       "optionC": "Attachement évitant",
       "optionD": "Attachement désorganisé",
       "correctAnswer": "B",
-      "explanation": "L'attachement anxieux-ambivalent est caractérisé par une préoccupation excessive de l'enfant face à la séparation et une difficulté à être réconforté par le parent lors des retrouvailles."
+      "explanation": "L'attachement anxieux-ambivalent est caractérisé par une préoccupation excessive de l'enfant face à la séparation et une difficulté à être réconforté par le parent lors des retrouvailles.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle approche théorique en psychopathologie considère les troubles mentaux comme résultant d'un déséquilibre chimique dans le cerveau?",
@@ -483,7 +539,8 @@
       "optionC": "Approche biologique",
       "optionD": "Approche comportementale",
       "correctAnswer": "C",
-      "explanation": "L'approche biologique en psychopathologie attribue les troubles mentaux à des causes biologiques, notamment des déséquilibres neurochimiques."
+      "explanation": "L'approche biologique en psychopathologie attribue les troubles mentaux à des causes biologiques, notamment des déséquilibres neurochimiques.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle de la résilience de Wolin et Wolin, quel facteur protecteur est défini comme la capacité à transformer les expériences négatives en forces?",
@@ -492,7 +549,8 @@
       "optionC": "La réparation",
       "optionD": "La réorganisation",
       "correctAnswer": "B",
-      "explanation": "L'ascension est le processus par lequel les individus transforment les expériences négatives en forces personnelles, contribuant ainsi à la résilience."
+      "explanation": "L'ascension est le processus par lequel les individus transforment les expériences négatives en forces personnelles, contribuant ainsi à la résilience.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle théorie de la motivation postule que les comportements sont motivés par la recherche d'un état d'équilibre homéostasique?",
@@ -501,7 +559,8 @@
       "optionC": "Théorie de l'homéostasie",
       "optionD": "Théorie de l'attribution",
       "correctAnswer": "C",
-      "explanation": "La théorie de l'homéostasie suggère que les comportements sont motivés par la recherche d'un état d'équilibre biologique et psychologique."
+      "explanation": "La théorie de l'homéostasie suggère que les comportements sont motivés par la recherche d'un état d'équilibre biologique et psychologique.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon le modèle de la mémoire de Atkinson et Shiffrin, quelle mémoire a une capacité limitée et une durée d'environ 15-30 secondes?",
@@ -510,7 +569,8 @@
       "optionC": "Mémoire de travail",
       "optionD": "Mémoire à long terme",
       "correctAnswer": "B",
-      "explanation": "La mémoire à court terme a une capacité limitée (environ 7±2 éléments) et une durée d'environ 15-30 secondes sans répétition."
+      "explanation": "La mémoire à court terme a une capacité limitée (environ 7±2 éléments) et une durée d'environ 15-30 secondes sans répétition.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle théorie de la communication de groupe explique l'émergence de normes à travers l'interaction sociale?",
@@ -519,7 +579,8 @@
       "optionC": "Théorie de l'identité sociale",
       "optionD": "Théorie de la formation de normes",
       "correctAnswer": "D",
-      "explanation": "La théorie de la formation de normes explique comment les normes émergent et se développent à travers les interactions sociales au sein d'un groupe."
+      "explanation": "La théorie de la formation de normes explique comment les normes émergent et se développent à travers les interactions sociales au sein d'un groupe.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le contexte de la psychologie clinique, quel type d'entretien est structuré avec des questions standardisées et un système de cotation défini?",
@@ -528,7 +589,12 @@
       "optionC": "Entretien semi-structuré",
       "optionD": "Entretien diagnostique structuré",
       "correctAnswer": "D",
+<<<<<<< Updated upstream
       "explanation": "L'entretien diagnostique structuré utilise des questions standardisées et un système de cotation défini pour assurer la fiabilité et la validité du diagnostic."
+=======
+      "explanation": "L'entretien diagnostique structuré utilise des questions standardisées et un système de cotation défini pour assurer la fiabilité et la validité du diagnostic.",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Selon la théorie de l'auto-efficacité de Bandura, quel facteur influence le plus fortement la motivation et l'accomplissement?",
@@ -537,7 +603,8 @@
       "optionC": "Les buts personnels",
       "optionD": "Les récompenses externes",
       "correctAnswer": "B",
-      "explanation": "L'auto-efficacité, croyance en sa propre capacité à réussir, est considérée comme le facteur le plus influent sur la motivation et l'accomplissement selon Bandura."
+      "explanation": "L'auto-efficacité, croyance en sa propre capacité à réussir, est considérée comme le facteur le plus influent sur la motivation et l'accomplissement selon Bandura.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon Piaget, quel stade du développement caractérise la pensée préopératoire chez l'enfant?",
@@ -546,7 +613,12 @@
       "optionC": "Stade des opérations concrètes (7-11 ans)",
       "optionD": "Stade des opérations formelles (11 ans et +)",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "Le stade préopératoire (2-7 ans) est caractérisé par la pensée symbolique mais encore égocentrique et irréversible, avant l'apparition des opérations logiques."
+=======
+      "explanation": "Le stade préopératoire (2-7 ans) est caractérisé par la pensée symbolique mais encore égocentrique et irréversible, avant l'apparition des opérations logiques.",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Selon la théorie de l'attribution, quel biais cognitif amène les individus à attribuer les comportements négatifs d'autrui à des facteurs internes (caractère) plutôt qu'à des facteurs externes (situation)?",
@@ -555,7 +627,8 @@
       "optionC": "Biais de confirmation",
       "optionD": "Effet de halo",
       "correctAnswer": "B",
-      "explanation": "Le biais d'attribution fondamentale (ou biais d'acteur-observateur) consiste à attribuer les comportements d'autrui à des facteurs internes (caractère) plutôt qu'à des facteurs externes (situation)."
+      "explanation": "Le biais d'attribution fondamentale (ou biais d'acteur-observateur) consiste à attribuer les comportements d'autrui à des facteurs internes (caractère) plutôt qu'à des facteurs externes (situation).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique principale d'une névrose selon la classification psychopathologique?",
@@ -564,7 +637,8 @@
       "optionC": "Conscience de la souffrance et capacité à maintenir un fonctionnement social",
       "optionD": "Hallucinations et délires persistants",
       "correctAnswer": "C",
-      "explanation": "La névrose se caractérise par une conscience de la souffrance, une relative conservation du jugement et de la réalité, contrairement à la psychose."
+      "explanation": "La névrose se caractérise par une conscience de la souffrance, une relative conservation du jugement et de la réalité, contrairement à la psychose.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle de Herzberg, quel facteur est considéré comme 'hygiénique' et non motivant s'il est absent mais ne satisfait pas lorsqu'il est présent?",
@@ -573,7 +647,12 @@
       "optionC": "Salaire",
       "optionD": "Responsabilité",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "Selon Herzberg, les facteurs hygiéniques (comme le salaire, les conditions de travail) ne motivent pas s'ils sont présents, mais leur absence cause de la mécontentement."
+=======
+      "explanation": "Selon Herzberg, les facteurs hygiéniques (comme le salaire, les conditions de travail) ne motivent pas s'ils sont présents, mais leur absence cause de la mécontentement.",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Le test de Rorschach est classé dans quelle catégorie de tests psychologiques?",
@@ -582,7 +661,8 @@
       "optionC": "Tests de personnalité projectifs",
       "optionD": "Tests d'aptitudes",
       "correctAnswer": "C",
-      "explanation": "Le test de Rorschach est un test projectif qui explore la personnalité en demandant au sujet d'interpréter des taches d'encre ambigües, révélant ainsi ses processus inconscients."
+      "explanation": "Le test de Rorschach est un test projectif qui explore la personnalité en demandant au sujet d'interpréter des taches d'encre ambigües, révélant ainsi ses processus inconscients.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de l'apprentissage par observation de Bandura, quel processus est nécessaire pour qu'un comportement observé soit imité?",
@@ -591,7 +671,8 @@
       "optionC": "Motivation uniquement",
       "optionD": "Attention, rétention, reproduction et motivation",
       "correctAnswer": "D",
-      "explanation": "Pour qu'un comportement soit imité selon Bandura, quatre processus sont nécessaires: attention, rétention, reproduction motrice et motivation."
+      "explanation": "Pour qu'un comportement soit imité selon Bandura, quatre processus sont nécessaires: attention, rétention, reproduction motrice et motivation.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle transactionnel du stress de Lazarus et Folkman, l'évaluation d'un événement comme dépassant ses ressources adaptatives correspond à quelle étape?",
@@ -600,7 +681,8 @@
       "optionC": "Apprentissage",
       "optionD": "Coping",
       "correctAnswer": "A",
-      "explanation": "L'évaluation primaire consiste à juger un événement comme stressant (dangereux, dépassant ses ressources), tandis que l'évaluation secondaire porte sur ses ressources pour faire face."
+      "explanation": "L'évaluation primaire consiste à juger un événement comme stressant (dangereux, dépassant ses ressources), tandis que l'évaluation secondaire porte sur ses ressources pour faire face.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon Kohlberg, quel stade du développement moral est caractérisé par la recherche d'approbation sociale et de conformité?",
@@ -609,7 +691,8 @@
       "optionC": "Stade postconventionnel",
       "optionD": "Stade transcendant",
       "correctAnswer": "B",
-      "explanation": "Le stade conventionnel (stades 3 et 4) est caractérisé par la recherche de l'approbation sociale, de la conformité aux normes et de l'ordre social."
+      "explanation": "Le stade conventionnel (stades 3 et 4) est caractérisé par la recherche de l'approbation sociale, de la conformité aux normes et de l'ordre social.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle approche thérapeutique se concentre sur l'identification et la modification des pensées automatiques dysfonctionnelles?",
@@ -618,7 +701,8 @@
       "optionC": "Thérapie humaniste",
       "optionD": "Thérapie systémique",
       "correctAnswer": "B",
-      "explanation": "Les TCC se concentrent sur l'identification et la modification des pensées automatiques dysfonctionnelles et des comportements associés pour modifier les émotions."
+      "explanation": "Les TCC se concentrent sur l'identification et la modification des pensées automatiques dysfonctionnelles et des comportements associés pour modifier les émotions.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique principale d'une dépression majeure selon les critères DSM-5?",
@@ -627,7 +711,8 @@
       "optionC": "Exagération de l'estime de soi",
       "optionD": "Insomnie paradoxale",
       "correctAnswer": "A",
-      "explanation": "La perte d'intérêt ou de plaisir (anhédonie) pour la plupart des activités est un symptôme central de la dépression majeure, présent au moins 2 semaines."
+      "explanation": "La perte d'intérêt ou de plaisir (anhédonie) pour la plupart des activités est un symptôme central de la dépression majeure, présent au moins 2 semaines.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le contexte de la psychologie de la santé, le terme 'coping' désigne quoi?",
@@ -636,7 +721,8 @@
       "optionC": "Les stratégies conscientes pour faire face au stress",
       "optionD": "La résilience innée",
       "correctAnswer": "C",
-      "explanation": "Le coping désigne les efforts cognitifs et comportementaux conscients développés par un individu pour faire face aux exigences stressantes."
+      "explanation": "Le coping désigne les efforts cognitifs et comportementaux conscients développés par un individu pour faire face aux exigences stressantes.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie des intelligences multiples de Gardner, quelle intelligence implique la capacité à comprendre et manipuler des formes spatiales?",
@@ -645,7 +731,8 @@
       "optionC": "Intelligence spatiale",
       "optionD": "Intelligence kinesthésique",
       "correctAnswer": "C",
-      "explanation": "L'intelligence spatiale implique la capacité à visualiser, manipuler et raisonner sur des objets et des espaces dans l'esprit."
+      "explanation": "L'intelligence spatiale implique la capacité à visualiser, manipuler et raisonner sur des objets et des espaces dans l'esprit.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel concept psychanalytique décrit le transfert des sentiments parentaux sur la figure du thérapeute?",
@@ -654,7 +741,8 @@
       "optionC": "Contre-transfert",
       "optionD": "Sublimation",
       "correctAnswer": "B",
-      "explanation": "Le transfert est le processus par lequel le patient projette sur le thérapeute des sentiments, désirs et attentes liés à ses figures parentales ou passées."
+      "explanation": "Le transfert est le processus par lequel le patient projette sur le thérapeute des sentiments, désirs et attentes liés à ses figures parentales ou passées.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle biopsychosocial de la santé, quel aspect est principalement responsable du développement des troubles anxieux selon la perspective cognitive?",
@@ -663,7 +751,8 @@
       "optionC": "Facteurs sociaux uniquement",
       "optionD": "Manque de coping",
       "correctAnswer": "B",
-      "explanation": "La perspective cognitive des troubles anxieux met l'accent sur les distorsions cognitives (pensées irrationnelles) comme facteur central dans leur développement."
+      "explanation": "La perspective cognitive des troubles anxieux met l'accent sur les distorsions cognitives (pensées irrationnelles) comme facteur central dans leur développement.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle méthode de recherche en psychologie est la plus appropriée pour établir une relation de causalité?",
@@ -672,7 +761,8 @@
       "optionC": "Expérience contrôlée",
       "optionD": "Étude de cas",
       "correctAnswer": "C",
-      "explanation": "L'expérience contrôlée, avec randomisation et groupe contrôle, est la méthode la plus appropriée pour établir une relation de causalité en psychologie."
+      "explanation": "L'expérience contrôlée, avec randomisation et groupe contrôle, est la méthode la plus appropriée pour établir une relation de causalité en psychologie.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de l'attribution de Weiner, quel type d'attribution interne mais instable explique les succès temporaires?",
@@ -681,7 +771,12 @@
       "optionC": "Chance",
       "optionD": "Difficulté de la tâche",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "L'effort est une attribution interne mais instable (peut varier), tandis que la capacité est interne et stable, et la chance est externe et instable."
+=======
+      "explanation": "L'effort est une attribution interne mais instable (peut varier), tandis que la capacité est interne et stable, et la chance est externe et instable.",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Dans le contexte de la psychologie clinique, quel type d'entretien utilise un guide structuré avec des questions standardisées?",
@@ -690,7 +785,8 @@
       "optionC": "Entretien structuré",
       "optionD": "Entretien projectif",
       "correctAnswer": "C",
-      "explanation": "L'entretien structuré utilise un guide avec des questions standardisées, permettant une évaluation plus fiable et reproductible, souvent utilisé dans les diagnostics."
+      "explanation": "L'entretien structuré utilise un guide avec des questions standardisées, permettant une évaluation plus fiable et reproductible, souvent utilisé dans les diagnostics.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon Piaget, quel stade du développement cognitif caractérise l'enfant capable de comprendre la conservation mais qui reste centré sur ses propres perspectives?",
@@ -699,7 +795,8 @@
       "optionC": "Stade des opérations concrètes (7-11 ans)",
       "optionD": "Stade des opérations formelles (11 ans et +)",
       "correctAnswer": "C",
-      "explanation": "Le stade des opérations concrètes (7-11 ans) est caractérisé par la compréhension de la conservation et la capacité au raisonnement logique, mais l'enfant reste centré sur l'aspect concret de situations et a du mal à adopter des perspectives autres que la sienne."
+      "explanation": "Le stade des opérations concrètes (7-11 ans) est caractérisé par la compréhension de la conservation et la capacité au raisonnement logique, mais l'enfant reste centré sur l'aspect concret de situations et a du mal à adopter des perspectives autres que la sienne.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de Freud, quel mécanisme de défense consiste à attribuer à autrui des pensées ou désirs inconscients que l'on refuse de reconnaître en soi?",
@@ -708,7 +805,8 @@
       "optionC": "La rationalisation",
       "optionD": "La sublimation",
       "correctAnswer": "B",
-      "explanation": "La projection est un mécanisme de défense où l'individut attribue à d'autres ses propres pensées, sentiments ou désirs inacceptables, refoulés dans l'inconscient."
+      "explanation": "La projection est un mécanisme de défense où l'individut attribue à d'autres ses propres pensées, sentiments ou désirs inacceptables, refoulés dans l'inconscient.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le contexte de la psychologie sociale, qu'est-ce que le 'biais de confirmation'?",
@@ -717,7 +815,8 @@
       "optionC": "La tendance à surévaluer la fréquence d'un événement après avoir été témoin de celui-ci",
       "optionD": "L'effet de première impression qui influence fortement la perception d'une personne",
       "correctAnswer": "A",
-      "explanation": "Le biais de confirmation est la tendance à interpréter, rechercher et mémoriser de manière sélective des informations qui confirment ou soutiennent ses croyances ou hypothèses préexistantes."
+      "explanation": "Le biais de confirmation est la tendance à interpréter, rechercher et mémoriser de manière sélective des informations qui confirment ou soutiennent ses croyances ou hypothèses préexistantes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle caractéristique distingue principalement une névrose d'une psychose selon la psychopathologie classique?",
@@ -726,7 +825,8 @@
       "optionC": "L'âge de début des symptômes",
       "optionD": "La durée du trouble",
       "correctAnswer": "B",
-      "explanation": "La principale distinction entre névrose et psychose réside dans le rapport à la réalité. Dans la névrose, le patient garde un contact avec la réalité (mais avec des symptômes anxieux ou obsessionnels), tandis que dans la psychose, il y a une rupture avec la réalité (délires, hallucinations)."
+      "explanation": "La principale distinction entre névrose et psychose réside dans le rapport à la réalité. Dans la névrose, le patient garde un contact avec la réalité (mais avec des symptômes anxieux ou obsessionnels), tandis que dans la psychose, il y a une rupture avec la réalité (délires, hallucinations).",
+      "difficulty": "medium"
     },
     {
       "question": "Selon Herzberg, quel facteur est principalement associé à la satisfaction au travail?",
@@ -735,7 +835,8 @@
       "optionC": "Les facteurs d'hygiène",
       "optionD": "Les facteurs motivants",
       "correctAnswer": "D",
-      "explanation": "Selon la théorie à deux facteurs de Herzberg, les facteurs motivants (accomplissement, reconnaissance, travail lui-même) sont principalement associés à la satisfaction au travail, tandis que les facteurs d'hygiène (salaire, conditions de travail) préviennent la mécontentement mais ne motivent pas."
+      "explanation": "Selon la théorie à deux facteurs de Herzberg, les facteurs motivants (accomplissement, reconnaissance, travail lui-même) sont principalement associés à la satisfaction au travail, tandis que les facteurs d'hygiène (salaire, conditions de travail) préviennent la mécontentement mais ne motivent pas.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre d'un entretien clinique, quelle technique d'écoute active consiste à reformuler ce que vient de dire le patient pour vérifier sa compréhension?",
@@ -744,7 +845,12 @@
       "optionC": "La paraphrase",
       "optionD": "L'interprétation",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La paraphrase est une technique d'écoute active qui consiste à reformuler avec ses propres mots ce que le patient vient d'exprimer, permettant de vérifier sa compréhension et d'encourager la communication."
+=======
+      "explanation": "La paraphrase est une technique d'écoute active qui consiste à reformuler avec ses propres mots ce que le patient vient d'exprimer, permettant de vérifier sa compréhension et d'encourager la communication.",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quelle définition correspond le mieux au concept de 'résilience' en psychologie de la santé?",
@@ -753,7 +859,8 @@
       "optionC": "La suppression émotionnelle des expériences traumatisantes",
       "optionD": "La rapidité à oublier les événements négatifs",
       "correctAnswer": "B",
-      "explanation": "La résilience est définie comme la capacité d'un individu à faire face aux adversités, traumatismes, menaces ou sources de stress importantes et à s'y adapter de manière positive."
+      "explanation": "La résilience est définie comme la capacité d'un individu à faire face aux adversités, traumatismes, menaces ou sources de stress importantes et à s'y adapter de manière positive.",
+      "difficulty": "medium"
     },
     {
       "question": "En psychologie cognitive, quel type d'attention est caractérisé par la capacité à maintenir sa concentration sur une tâche spécifique malgré les distractions?",
@@ -762,7 +869,8 @@
       "optionC": "L'attention soutenue",
       "optionD": "L'attention alternée",
       "correctAnswer": "A",
-      "explanation": "L'attention sélective est la capacité à focaliser sa concentration sur un stimulus spécifique tout en ignorant d'autres stimuli potentiels, permettant de filtrer les informations non pertinentes."
+      "explanation": "L'attention sélective est la capacité à focaliser sa concentration sur un stimulus spécifique tout en ignorant d'autres stimuli potentiels, permettant de filtrer les informations non pertinentes.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie des stades du développement psychosocial d'Erik Erikson, quel conflit central caractérisl'adolescence (12-18 ans)?",
@@ -771,7 +879,8 @@
       "optionC": "Identité vs. confusion des rôles",
       "optionD": "Intimité vs. isolement",
       "correctAnswer": "C",
-      "explanation": "Selon Erikson, l'adolescence (12-18 ans) est marquée par le conflit entre la formation d'une identité stable et claire et la confusion des rôles, où le jeune explore différentes possibilités avant de s'engager dans un rôle adulte."
+      "explanation": "Selon Erikson, l'adolescence (12-18 ans) est marquée par le conflit entre la formation d'une identité stable et claire et la confusion des rôles, où le jeune explore différentes possibilités avant de s'engager dans un rôle adulte.",
+      "difficulty": "medium"
     },
     {
       "question": "En psychopathologie, quel trouble est caractérisé par une période prolongée de tristesse intense, perte d'intérêt ou de plaisir, accompagnée de troubles du sommeil et de l'appétit?",
@@ -780,7 +889,8 @@
       "optionC": "Dépression majeure",
       "optionD": "Trouble bipolaire",
       "correctAnswer": "C",
-      "explanation": "La dépression majeure est caractérisée par une période d'au moins deux semaines de tristesse persistante, perte d'intérêt ou de plaisir, accompagnée d'au moins trois symptômes supplémentaires (troubles du sommeil, de l'appétit, fatigue, sentiment d'inutilité, etc.)."
+      "explanation": "La dépression majeure est caractérisée par une période d'au moins deux semaines de tristesse persistante, perte d'intérêt ou de plaisir, accompagnée d'au moins trois symptômes supplémentaires (troubles du sommeil, de l'appétit, fatigue, sentiment d'inutilité, etc.).",
+      "difficulty": "medium"
     },
     {
       "question": "En psychologie sociale, qu'est-ce que l'effet de spectateur?",
@@ -789,7 +899,8 @@
       "optionC": "L'influence d'un groupe sur les décisions d'un individu",
       "optionD": "La tendance à adopter les attitudes d'un groupe pour être accepté",
       "correctAnswer": "B",
-      "explanation": "L'effet de spectateur (ou effet de témoin) désigne la tendance à être moins susceptible d'intervenir dans une situation d'urgence lorsqu'on est en présence d'autres personnes, en raison de la diffusion de la responsabilité."
+      "explanation": "L'effet de spectateur (ou effet de témoin) désigne la tendance à être moins susceptible d'intervenir dans une situation d'urgence lorsqu'on est en présence d'autres personnes, en raison de la diffusion de la responsabilité.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de la motivation de Maslow, quel besoin est situé au sommet de la pyramide?",
@@ -798,7 +909,8 @@
       "optionC": "Les besoins d'estime",
       "optionD": "Les besoins d'actualisation",
       "correctAnswer": "D",
-      "explanation": "Selon la hiérarchie des besoins de Maslow, les besoins d'actualisation (réalisation de son potentiel, épanouissement personnel) se situent au sommet de la pyramide, une fois que les besoins physiologiques, de sécurité, d'appartenance et d'estime sont satisfaits."
+      "explanation": "Selon la hiérarchie des besoins de Maslow, les besoins d'actualisation (réalisation de son potentiel, épanouissement personnel) se situent au sommet de la pyramide, une fois que les besoins physiologiques, de sécurité, d'appartenance et d'estime sont satisfaits.",
+      "difficulty": "medium"
     },
     {
       "question": "En psychologie clinique, quelle approche thérapeutique se concentre sur l'identification et la modification des schémas cognitifs dysfonctionnels?",
@@ -807,7 +919,8 @@
       "optionC": "La thérapie humaniste",
       "optionD": "La thérapie systémique",
       "correctAnswer": "B",
-      "explanation": "La thérapie comportementale et cognitive (TCC) se concentre sur l'identification et la modification des pensées, croyances et schémas cognitifs dysfonctionnels qui sous-tendent les problèmes émotionnels et comportementaux."
+      "explanation": "La thérapie comportementale et cognitive (TCC) se concentre sur l'identification et la modification des pensées, croyances et schémas cognitifs dysfonctionnels qui sous-tendent les problèmes émotionnels et comportementaux.",
+      "difficulty": "medium"
     },
     {
       "question": "En neurosciences, quel neurotransmetteur est principalement impliqué dans la régulation de l'humeur et est souvent déséquilibré dans la dépression?",
@@ -816,7 +929,8 @@
       "optionC": "L'acétylcholine",
       "optionD": "L'adrénaline",
       "correctAnswer": "B",
-      "explanation": "La sérotonine est un neurotransmetteur impliqué dans la régulation de l'humeur, du sommeil et de l'appétit. Un déséquilibre de la sérotonine est souvent associé à la dépression, ce qui explique l'efficacité des antidépresseurs ISRS (inhibiteurs de la recapture de la sérotonine)."
+      "explanation": "La sérotonine est un neurotransmetteur impliqué dans la régulation de l'humeur, du sommeil et de l'appétit. Un déséquilibre de la sérotonine est souvent associé à la dépression, ce qui explique l'efficacité des antidépresseurs ISRS (inhibiteurs de la recapture de la sérotonine).",
+      "difficulty": "medium"
     },
     {
       "question": "En psychologie cognitive, qu'est-ce que le phénomène de 'fausse reconnaissance'?",
@@ -825,7 +939,8 @@
       "optionC": "La tendance à confondre des souvenirs réels et des informations imaginées",
       "optionD": "L'incapacité à former de nouveaux souvenirs",
       "correctAnswer": "C",
-      "explanation": "La fausse reconnaissance est un phénomène de mémoire où un individu confond un souvenir réel avec une information qu'il a simplement entendue ou imaginée, le croyant authentique."
+      "explanation": "La fausse reconnaissance est un phénomène de mémoire où un individu confond un souvenir réel avec une information qu'il a simplement entendue ou imaginée, le croyant authentique.",
+      "difficulty": "medium"
     },
     {
       "question": "En psychologie de la santé, qu'est-ce que le 'coping'?",
@@ -834,7 +949,8 @@
       "optionC": "La suppression totale des émotions négatives",
       "optionD": "La recherche constante de soutien social",
       "correctAnswer": "B",
-      "explanation": "Le coping fait référence aux efforts cognitifs et comportementaux développés pour gérer les exigences externes ou internes perçues comme écrasantes ou dépassant les ressources de l'individu."
+      "explanation": "Le coping fait référence aux efforts cognitifs et comportementaux développés pour gérer les exigences externes ou internes perçues comme écrasantes ou dépassant les ressources de l'individu.",
+      "difficulty": "medium"
     },
     {
       "question": "En psychologie générale, quelle approche considère le comportement comme le résultat de l'interaction entre les facteurs biologiques, psychologiques et sociaux?",
@@ -843,7 +959,8 @@
       "optionC": "Le modèle behavioriste",
       "optionD": "Le modèle psychodynamique",
       "correctAnswer": "B",
-      "explanation": "Le modèle biopsychosocial, proposé par Engel, considère que le comportement et la santé résultent d'une interaction complexe entre facteurs biologiques (génétiques, physiologiques), psychologiques (émotions, pensées) et sociaux (environnement, relations)."
+      "explanation": "Le modèle biopsychosocial, proposé par Engel, considère que le comportement et la santé résultent d'une interaction complexe entre facteurs biologiques (génétiques, physiologiques), psychologiques (émotions, pensées) et sociaux (environnement, relations).",
+      "difficulty": "medium"
     },
     {
       "question": "En psychologie clinique, quelle technique d'entretien consiste à questionner le patient sur ses pensées automatiques pour les mettre en perspective?",
@@ -852,7 +969,8 @@
       "optionC": "La validation",
       "optionD": "La normalisation",
       "correctAnswer": "B",
-      "explanation": "La restructuration cognitive est une technique qui consiste à identifier, questionner et modifier les pensées automatiques irrationnelles ou dysfonctionnelles pour les remplacer par des pensées plus adaptatives et équilibrées."
+      "explanation": "La restructuration cognitive est une technique qui consiste à identifier, questionner et modifier les pensées automatiques irrationnelles ou dysfonctionnelles pour les remplacer par des pensées plus adaptatives et équilibrées.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon Piaget, quel stade du développement cognitif caractérise un enfant capable de réaliser des opérations concrètes mais pas encore des opérations formelles?",
@@ -861,7 +979,8 @@
       "optionC": "Stade des opérations concrètes (7-11 ans)",
       "optionD": "Stade des opérations formelles (11-15 ans)",
       "correctAnswer": "C",
-      "explanation": "Le stade des opérations concrètes (7-11 ans) correspond à la période où l'enfant peut raisonner sur des objets concrets mais pas encore sur des hypothèses abstraites."
+      "explanation": "Le stade des opérations concrètes (7-11 ans) correspond à la période où l'enfant peut raisonner sur des objets concrets mais pas encore sur des hypothèses abstraites.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle technique projective est basée sur l'interprétation de taches d'encre multicolores?",
@@ -870,7 +989,8 @@
       "optionC": "TAT (Thematic Apperception Test)",
       "optionD": "Test d'association de mots",
       "correctAnswer": "B",
-      "explanation": "Le test de Rorschach consiste en une série de 10 planches avec des taches d'encre symétriques que le sujet interprète librement."
+      "explanation": "Le test de Rorschach consiste en une série de 10 planches avec des taches d'encre symétriques que le sujet interprète librement.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de l'attribution, quel biais cognitif conduit à attribuer les comportements des autres à leur personnalité plutôt qu'à des situations contextuelles?",
@@ -879,7 +999,8 @@
       "optionC": "Biais d'observateur",
       "optionD": "Biais de confirmation",
       "correctAnswer": "C",
-      "explanation": "Le biais d'observateur consiste à attribuer les comportements d'autrui à des facteurs internes (dispositions personnelles) plutôt qu'à des facteurs externes (situation)."
+      "explanation": "Le biais d'observateur consiste à attribuer les comportements d'autrui à des facteurs internes (dispositions personnelles) plutôt qu'à des facteurs externes (situation).",
+      "difficulty": "medium"
     },
     {
       "question": "Dans la classification des troubles mentaux, quel critère distingue une névrose d'une psychose?",
@@ -888,7 +1009,8 @@
       "optionC": "Âge de début des symptômes",
       "optionD": "Facteurs étiologiques",
       "correctAnswer": "B",
-      "explanation": "La névrose implique une anxiété et des symptômes sans perte du contact avec la réalité, tandis que la psychose implique une perte partielle ou totale du contact avec la réalité."
+      "explanation": "La névrose implique une anxiété et des symptômes sans perte du contact avec la réalité, tandis que la psychose implique une perte partielle ou totale du contact avec la réalité.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle théorie de la motivation au travail postule que les comportements sont motivés par la recherche de récompenses et l'évitement de punitions?",
@@ -897,7 +1019,8 @@
       "optionC": "Théorie de l'attribution",
       "optionD": "Théorie de l'utilité attendue",
       "correctAnswer": "D",
-      "explanation": "La théorie de l'utilité attendue (ou théorie instrumentale) suggère que les individus choisissent leurs actions en fonction des conséquences attendues (récompenses/punitions)."
+      "explanation": "La théorie de l'utilité attendue (ou théorie instrumentale) suggère que les individus choisissent leurs actions en fonction des conséquences attendues (récompenses/punitions).",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de l'apprentissage social de Bandura, quel processus cognitif est essentiel pour l'apprentissage par observation?",
@@ -906,7 +1029,8 @@
       "optionC": "Attention et rétention",
       "optionD": "Conditionnement classique",
       "correctAnswer": "C",
-      "explanation": "L'attention et la rétention sont des processus cognitifs fondamentaux dans l'apprentissage par observation selon Bandura, permettant d'acquérir et de mémoriser de nouveaux comportements."
+      "explanation": "L'attention et la rétention sont des processus cognitifs fondamentaux dans l'apprentissage par observation selon Bandura, permettant d'acquérir et de mémoriser de nouveaux comportements.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle stratégie d'adaptation face au stress implique de chercher activement des informations et des solutions pour faire face à une situation stressante?",
@@ -915,7 +1039,8 @@
       "optionC": "Évitement",
       "optionD": "Denegation",
       "correctAnswer": "B",
-      "explanation": "Le coping centré sur le problème consiste à采取措施 pour modifier ou éliminer la source de stress, tandis que le coping centré sur l'émotion vise à réguler les émotions négatives."
+      "explanation": "Le coping centré sur le problème consiste à采取措施 pour modifier ou éliminer la source de stress, tandis que le coping centré sur l'émotion vise à réguler les émotions négatives.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le modèle transactionnel du stress de Lazarus et Folkman, quel processus évalue si une situation dépasse les ressources de l'individu?",
@@ -924,7 +1049,8 @@
       "optionC": "Réévaluation cognitive",
       "optionD": "Évaluation tertiaire",
       "correctAnswer": "A",
-      "explanation": "L'évaluation primaire concerne l'interprétation initiale d'une situation comme menaçante, dépassant les ressources de l'individu."
+      "explanation": "L'évaluation primaire concerne l'interprétation initiale d'une situation comme menaçante, dépassant les ressources de l'individu.",
+      "difficulty": "medium"
     }
   ]
 }

@@ -16,7 +16,8 @@
       "optionC": "Paillage, rotation des cultures, labour minimal",
       "optionD": "Défrichage à brûlis, jachère courte, semis en billons",
       "correctAnswer": "A",
-      "explanation": "Le zaï consiste à creuser des trous (10-15 cm de diamètre, 10-20 cm de profondeur) amendés avec du fumier ou compost, où la semence est déposée directement. Cette technique améliore la rétention d'eau et la fertilité des sols dégradés."
+      "explanation": "Le zaï consiste à creuser des trous (10-15 cm de diamètre, 10-20 cm de profondeur) amendés avec du fumier ou compost, où la semence est déposée directement. Cette technique améliore la rétention d'eau et la fertilité des sols dégradés.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le contexte du changement climatique en Afrique de l'Ouest, l'agroforesterie associant le sorgho et l'acacia est particulièrement efficace pour :",
@@ -25,7 +26,8 @@
       "optionC": "Éliminer complètement les ravageurs des céréales",
       "optionD": "Remplacer entièrement les engrais chimiques",
       "correctAnswer": "B",
-      "explanation": "L'association sorgho-acacia crée un microclimat qui réduit l'évaporation, l'acacia fixe l'azote atmosphérique et améliore la structure du sol, contribuant ainsi à la résilience face au changement climatique."
+      "explanation": "L'association sorgho-acacia crée un microclimat qui réduit l'évaporation, l'acacia fixe l'azote atmosphérique et améliore la structure du sol, contribuant ainsi à la résilience face au changement climatique.",
+      "difficulty": "medium"
     },
     {
       "question": "Le coton, culture de rente majeure en Afrique de l'Ouest, est confronté à plusieurs défis environnementaux. Lequel des suivants n'est PAS un impact environnemental direct de la culture du coton ?",
@@ -34,7 +36,8 @@
       "optionC": "Pollution des eaux superficielles par les pesticides",
       "optionD": "Augmentation de la biodiversité locale",
       "correctAnswer": "D",
-      "explanation": "La culture intensive du coton réduit plutôt qu'elle n'augmente la biodiversité locale, par l'utilisation de pesticides, la monoculture et la dégradation des habitats naturels."
+      "explanation": "La culture intensive du coton réduit plutôt qu'elle n'augmente la biodiversité locale, par l'utilisation de pesticides, la monoculture et la dégradation des habitats naturels.",
+      "difficulty": "medium"
     },
     {
       "question": "Les micro-barrages en zone sahélienne présentent des avantages mais aussi des limites. Parmi ces affirmations, laquelle décrit le mieux un défi majeur de ces infrastructures ?",
@@ -43,7 +46,8 @@
       "optionC": "Ils s'envasent rapidement en raison de l'érosion",
       "optionD": "Ils nécessitent une énergie fossile pour leur fonctionnement",
       "correctAnswer": "C",
-      "explanation": "L'envasement rapide des micro-barrages est un défi majeur, dû à l'érosion des sols dans les bassins versants réduisant leur durée de vie utile et leur efficacité."
+      "explanation": "L'envasement rapide des micro-barrages est un défi majeur, dû à l'érosion des sols dans les bassins versants réduisant leur durée de vie utile et leur efficacité.",
+      "difficulty": "medium"
     },
     {
       "question": "L'élevage de petit bétail (ovins, caprins) en systèmes agro-pastoraux intégrés présente quel avantage principal face au changement climatique ?",
@@ -52,7 +56,8 @@
       "optionC": "Il est moins sensible aux variations climatiques",
       "optionD": "Il ne contribue pas à la déforestation",
       "correctAnswer": "B",
-      "explanation": "L'élevage de petit bétail permet de valoriser les résidus de cultures (pailles, fanes) qui autrement seraient perdus, améliorant ainsi l'efficacité globale du système agricole."
+      "explanation": "L'élevage de petit bétail permet de valoriser les résidus de cultures (pailles, fanes) qui autrement seraient perdus, améliorant ainsi l'efficacité globale du système agricole.",
+      "difficulty": "medium"
     },
     {
       "question": "La sorgho-grainiculture en zone sahélienne est particulièrement adaptée au changement climatique principalement grâce à :",
@@ -61,7 +66,8 @@
       "optionC": "Son besoin en engrais chimique minimal",
       "optionD": "Sa capacité à résister à tous les ravageurs",
       "correctAnswer": "B",
-      "explanation": "Le sorgho est réputé pour sa tolérance exceptionnelle à la sécheresse et à la chaleur, ce qui le rend particulièrement adapté aux conditions climatiques changeantes du Sahel."
+      "explanation": "Le sorgho est réputé pour sa tolérance exceptionnelle à la sécheresse et à la chaleur, ce qui le rend particulièrement adapté aux conditions climatiques changeantes du Sahel.",
+      "difficulty": "medium"
     },
     {
       "question": "L'agroforesterie avec l'association mil-sorgho et arbres fruitiers (manguier, jujubier) dans le Sahel améliore la sécurité alimentaire comment ?",
@@ -70,7 +76,8 @@
       "optionC": "En éliminant complètement le besoin d'irrigation",
       "optionD": "En remplaçant entièrement les cultures vivrières",
       "correctAnswer": "B",
-      "explanation": "Cette association diversifie les productions (céréales et fruits), améliore la fertilité des sols, fournit de l'ombre et crée des sources alternatives de revenus et de nutriments."
+      "explanation": "Cette association diversifie les productions (céréales et fruits), améliore la fertilité des sols, fournit de l'ombre et crée des sources alternatives de revenus et de nutriments.",
+      "difficulty": "medium"
     },
     {
       "question": "Le système de culture du coton en Afrique de l'Ouest repose fortement sur l'utilisation d'engrais chimiques. Quelle est une conséquence environnementale majeure de cette dépendance ?",
@@ -79,7 +86,8 @@
       "optionC": "Diminution de la salinisation des sols",
       "optionD": "Réduction de la pollution des nappes phréatiques",
       "correctAnswer": "B",
-      "explanation": "La production d'engrais azotés est un processus énergivore qui émet d'importantes quantités de gaz à effet de serre, contribuant au changement climatique."
+      "explanation": "La production d'engrais azotés est un processus énergivore qui émet d'importantes quantités de gaz à effet de serre, contribuant au changement climatique.",
+      "difficulty": "medium"
     },
     {
       "question": "L'intégration de l'élevage bovin dans les systèmes de culture du sorgho présente quel avantage agroécologique principal ?",
@@ -88,7 +96,8 @@
       "optionC": "Réduction complète des besoins en main-d'œuvre",
       "optionD": "Substitution totale des pesticides chimiques",
       "correctAnswer": "B",
-      "explanation": "L'élevage bovin produit du fumier qui peut être utilisé comme amendement organique, améliorant la fertilité des sols pour la culture du sorgho."
+      "explanation": "L'élevage bovin produit du fumier qui peut être utilisé comme amendement organique, améliorant la fertilité des sols pour la culture du sorgho.",
+      "difficulty": "medium"
     },
     {
       "question": "Les aménements hydro-agricoles (barrages) en Afrique de l'Ouest sont confrontés à quel défi majeur lié au changement climatique ?",
@@ -97,7 +106,8 @@
       "optionC": "Augmentation de la fréquence et de l'intensité des événements extrêmes",
       "optionD": "Amélioration de la prévisibilité des pluies",
       "correctAnswer": "C",
-      "explanation": "Le changement climatique augmente la fréquence et l'intensité des événements extrêmes (sécheresses intenses, inondations dévastatrices), qui menacent la durabilité des aménagements hydro-agricoles."
+      "explanation": "Le changement climatique augmente la fréquence et l'intensité des événements extrêmes (sécheresses intenses, inondations dévastatrices), qui menacent la durabilité des aménagements hydro-agricoles.",
+      "difficulty": "medium"
     },
     {
       "question": "La rotation des cultures entre coton et sorgho, associée à une jachère améliorée, présente quel avantage principal pour la gestion des sols ?",
@@ -106,7 +116,8 @@
       "optionC": "Réduction de la biodiversité du sol",
       "optionD": "Accélération de l'érosion",
       "correctAnswer": "B",
-      "explanation": "Cette rotation permet de briser les cycles de maladies, d'améliorer la structure du sol et de restaurer sa fertilité pendant la jachère améliorée."
+      "explanation": "Cette rotation permet de briser les cycles de maladies, d'améliorer la structure du sol et de restaurer sa fertilité pendant la jachère améliorée.",
+      "difficulty": "medium"
     },
     {
       "question": "En agroforesterie, l'association du coton avec l'acacia senegal présente un avantage économique majeur lié à :",
@@ -115,7 +126,8 @@
       "optionC": "L'élimination totale des ravageurs du coton",
       "optionD": "La substitution complète des engrais phosphatés",
       "correctAnswer": "B",
-      "explanation": "L'acacia senegal produit de la gomme arabique, un produit à haute valeur ajoutée qui génère des revenus supplémentaires pour les agriculteurs."
+      "explanation": "L'acacia senegal produit de la gomme arabique, un produit à haute valeur ajoutée qui génère des revenus supplémentaires pour les agriculteurs.",
+      "difficulty": "medium"
     },
     {
       "question": "Le système de culture du sorgho en association avec le niébé (pois d'Angole) présente quel avantage agroécologique majeur ?",
@@ -124,7 +136,8 @@
       "optionC": "Augmentation des besoins en engrais azotés",
       "optionD": "Réduction de la biodiversité culturale",
       "correctAnswer": "B",
-      "explanation": "Le niébé, légumineuse, fixe l'azote atmosphérique et le rend disponible pour le sorgho, réduisant ainsi le besoin d'engrais azotés."
+      "explanation": "Le niébé, légumineuse, fixe l'azote atmosphérique et le rend disponible pour le sorgho, réduisant ainsi le besoin d'engrais azotés.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le contexte du changement climatique, l'intensification de l'élevage en système agroforestier présente quel avantage principal par rapport à l'élevage extensif ?",
@@ -133,7 +146,8 @@
       "optionC": "Augmentation de l'émission de méthane par animal",
       "optionD": "Réduction de la biodiversité",
       "correctAnswer": "A",
-      "explanation": "L'intensification en système agroforestier réduit la pression sur les terres pastorales, limitant ainsi la dégradation des sols et la déforestation associées à l'élevage extensif."
+      "explanation": "L'intensification en système agroforestier réduit la pression sur les terres pastorales, limitant ainsi la dégradation des sols et la déforestation associées à l'élevage extensif.",
+      "difficulty": "medium"
     },
     {
       "question": "La principale culture céréalière au Burkina Faso est :",
@@ -142,7 +156,8 @@
       "optionC": "Le maïs",
       "optionD": "Le mil",
       "correctAnswer": "A",
-      "explanation": "Le sorgho est la première céréale cultivée."
+      "explanation": "Le sorgho est la première céréale cultivée.",
+      "difficulty": "medium"
     },
     {
       "question": "Le barrage de Samandéni est dans la région :",
@@ -151,7 +166,8 @@
       "optionC": "Du Sahel",
       "optionD": "De l'Est",
       "correctAnswer": "A",
-      "explanation": "Samandéni est dans les Hauts-Bassins."
+      "explanation": "Samandéni est dans les Hauts-Bassins.",
+      "difficulty": "medium"
     },
     {
       "question": "Le zaï est une technique de :",
@@ -160,7 +176,8 @@
       "optionC": "Pêche",
       "optionD": "Chasse",
       "correctAnswer": "A",
-      "explanation": "Le zaï restaure les sols dégradés."
+      "explanation": "Le zaï restaure les sols dégradés.",
+      "difficulty": "medium"
     },
     {
       "question": "Le paludisme est transmis par :",
@@ -169,7 +186,8 @@
       "optionC": "La tique",
       "optionD": "La puce",
       "correctAnswer": "A",
-      "explanation": "L'anophèle transmet le paludisme."
+      "explanation": "L'anophèle transmet le paludisme.",
+      "difficulty": "medium"
     },
     {
       "question": "L'agroforesterie consiste à :",
@@ -178,7 +196,8 @@
       "optionC": "Brûler la forêt",
       "optionD": "Planter des eucalyptus",
       "correctAnswer": "A",
-      "explanation": "L'agroforesterie associe arbres et cultures."
+      "explanation": "L'agroforesterie associe arbres et cultures.",
+      "difficulty": "medium"
     },
     {
       "question": "Le coton est principalement cultivé dans :",
@@ -187,7 +206,8 @@
       "optionC": "L'Est",
       "optionD": "Le Centre",
       "correctAnswer": "A",
-      "explanation": "Le coton est cultivé dans l'Ouest."
+      "explanation": "Le coton est cultivé dans l'Ouest.",
+      "difficulty": "medium"
     },
     {
       "question": "La jachère est :",
@@ -196,7 +216,8 @@
       "optionC": "Un engrais",
       "optionD": "Un outil",
       "correctAnswer": "A",
-      "explanation": "La jachère laisse le sol au repos."
+      "explanation": "La jachère laisse le sol au repos.",
+      "difficulty": "medium"
     },
     {
       "question": "Le compost est :",
@@ -205,7 +226,8 @@
       "optionC": "Un herbicide",
       "optionD": "Un fongicide",
       "correctAnswer": "A",
-      "explanation": "Le compost est un amendement organique."
+      "explanation": "Le compost est un amendement organique.",
+      "difficulty": "medium"
     },
     {
       "question": "La culture attelée utilise :",
@@ -214,7 +236,8 @@
       "optionC": "Des machines",
       "optionD": "Rien",
       "correctAnswer": "A",
-      "explanation": "La culture attelée utilise la traction animale."
+      "explanation": "La culture attelée utilise la traction animale.",
+      "difficulty": "medium"
     },
     {
       "question": "Le tilapia est :",
@@ -223,7 +246,8 @@
       "optionC": "Un bovin",
       "optionD": "Un insecte",
       "correctAnswer": "A",
-      "explanation": "Le tilapia est un poisson d'élevage."
+      "explanation": "Le tilapia est un poisson d'élevage.",
+      "difficulty": "medium"
     }
   ]
 }

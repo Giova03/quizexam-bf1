@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { Card } from "@/components/ui/card";
+<<<<<<< Updated upstream
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -23,10 +24,28 @@ import {
 import { toast } from "sonner";
 
 interface Report {
+=======
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Textarea } from "@/components/ui/textarea";
+import { Skeleton } from "@/components/ui/skeleton";
+import {
+  ShieldAlert,
+  CheckCircle2,
+  XCircle,
+  Flag,
+  RefreshCw,
+  Filter,
+} from "lucide-react";
+import { toast } from "sonner";
+
+interface ReportItem {
+>>>>>>> Stashed changes
   id: string;
   targetType: string;
   targetId: string;
   reason: string;
+<<<<<<< Updated upstream
   status: "pending" | "resolved" | "dismissed";
   createdAt: string;
   reporter: {
@@ -152,10 +171,80 @@ export function ModerationPanel() {
 
   const updateStatus = async (id: string, status: Report["status"]) => {
     setUpdatingId(id);
+=======
+  category: string;
+  status: string;
+  resolution: string;
+  createdAt: string;
+  resolvedAt: string | null;
+  reporter?: { id: string; name: string } | null;
+}
+
+const CATEGORIES: Record<string, { label: string; color: string }> = {
+  spam: { label: "Spam", color: "text-amber-600" },
+  harcèlement: { label: "Harcèlement", color: "text-rose-600" },
+  contenu_inapproprié: { label: "Contenu inapproprié", color: "text-rose-600" },
+  hors_sujet: { label: "Hors sujet", color: "text-sky-600" },
+  autre: { label: "Autre", color: "text-muted-foreground" },
+};
+
+const TARGET_LABELS: Record<string, string> = {
+  post: "Publication",
+  comment: "Commentaire",
+  "forum-topic": "Sujet forum",
+  "forum-reply": "Réponse forum",
+  user: "Utilisateur",
+  article: "Article",
+};
+
+function formatDate(iso: string): string {
+  try {
+    return new Date(iso).toLocaleDateString("fr-FR", {
+      day: "2-digit",
+      month: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  } catch {
+    return iso;
+  }
+}
+
+/**
+ * ModerationPanel — admin view of pending reports.
+ * Resolve (action taken) or dismiss (no action needed).
+ */
+export function ModerationPanel() {
+  const [reports, setReports] = useState<ReportItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState<"pending" | "resolved" | "dismissed" | "all">("pending");
+  const [resolvingId, setResolvingId] = useState<string | null>(null);
+  const [resolution, setResolution] = useState("");
+
+  const load = useCallback(async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/reports?status=${filter}`);
+      if (res.ok) setReports(await res.json());
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(false);
+    }
+  }, [filter]);
+
+  useEffect(() => {
+    load();
+  }, [load]);
+
+  async function handleResolve(id: string, status: "resolved" | "dismissed") {
+    setResolvingId(id);
+>>>>>>> Stashed changes
     try {
       const res = await fetch(`/api/reports/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
+<<<<<<< Updated upstream
         body: JSON.stringify({ status }),
       });
       if (!res.ok) {
@@ -191,10 +280,32 @@ export function ModerationPanel() {
 
   return (
     <div className="space-y-6">
+=======
+        body: JSON.stringify({ status, resolution: resolution.trim() }),
+      });
+      if (!res.ok) {
+        toast.error("Erreur lors du traitement");
+        return;
+      }
+      toast.success(status === "resolved" ? "Signalement résolu" : "Signalement ignoré");
+      setResolution("");
+      await load();
+    } catch (e) {
+      console.error(e);
+      toast.error("Erreur réseau");
+    } finally {
+      setResolvingId(null);
+    }
+  }
+
+  return (
+    <div className="space-y-4">
+>>>>>>> Stashed changes
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h2 className="flex items-center gap-2 text-xl font-bold">
             <ShieldAlert className="h-5 w-5 text-rose-600" />
+<<<<<<< Updated upstream
             Modération des signalements
           </h2>
           <p className="text-sm text-muted-foreground">
@@ -283,12 +394,56 @@ export function ModerationPanel() {
       {/* Reports list */}
       {loading ? (
         <div className="space-y-3">
+=======
+            Modération
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            Traitez les signalements de la communauté.
+          </p>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <Filter className="h-4 w-4 text-muted-foreground" />
+          {(["pending", "resolved", "dismissed", "all"] as const).map((f) => (
+            <button
+              key={f}
+              onClick={() => setFilter(f)}
+              className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors ${
+                filter === f
+                  ? "bg-rose-500 text-white"
+                  : "bg-muted text-muted-foreground hover:bg-muted/70"
+              }`}
+            >
+              {f === "pending"
+                ? "En attente"
+                : f === "resolved"
+                ? "Résolus"
+                : f === "dismissed"
+                ? "Ignorés"
+                : "Tous"}
+            </button>
+          ))}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8"
+            onClick={load}
+            aria-label="Rafraîchir"
+          >
+            <RefreshCw className="h-4 w-4" />
+          </Button>
+        </div>
+      </div>
+
+      {loading ? (
+        <div className="space-y-2">
+>>>>>>> Stashed changes
           {Array.from({ length: 4 }).map((_, i) => (
             <Skeleton key={i} className="h-24 rounded-xl" />
           ))}
         </div>
       ) : reports.length === 0 ? (
         <Card className="flex flex-col items-center gap-3 p-12 text-center">
+<<<<<<< Updated upstream
           <Inbox className="h-12 w-12 text-muted-foreground/40" />
           <p className="text-sm font-medium">Aucun signalement à afficher</p>
           <p className="text-xs text-muted-foreground">
@@ -394,6 +549,103 @@ export function ModerationPanel() {
                     )}
                   </div>
                 </div>
+=======
+          <CheckCircle2 className="h-12 w-12 text-emerald-500/60" />
+          <p className="text-sm text-muted-foreground">
+            {filter === "pending"
+              ? "Aucun signalement en attente. Tout est sous contrôle !"
+              : "Aucun signalement dans cette catégorie."}
+          </p>
+        </Card>
+      ) : (
+        <div className="space-y-2">
+          {reports.map((r) => {
+            const cat = CATEGORIES[r.category] ?? CATEGORIES.autre;
+            const targetLabel = TARGET_LABELS[r.targetType] ?? r.targetType;
+            const isPending = r.status === "pending";
+            return (
+              <Card key={r.id} className="p-4">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="min-w-0 flex-1 space-y-1.5">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Badge variant="outline" className="gap-1 text-[10px]">
+                        <Flag className={`h-3 w-3 ${cat.color}`} />
+                        {cat.label}
+                      </Badge>
+                      <Badge variant="secondary" className="text-[10px]">
+                        {targetLabel}
+                      </Badge>
+                      <span className="text-[10px] text-muted-foreground">
+                        {formatDate(r.createdAt)}
+                      </span>
+                      {r.reporter && (
+                        <span className="text-[10px] text-muted-foreground">
+                          par {r.reporter.name}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-sm">
+                      <span className="font-medium text-muted-foreground">Cible:</span>{" "}
+                      <code className="rounded bg-muted px-1 py-0.5 text-xs">
+                        {r.targetId}
+                      </code>
+                    </p>
+                    {r.reason && (
+                      <p className="rounded-md bg-muted/50 p-2 text-xs">
+                        <span className="font-medium">Motif:</span> {r.reason}
+                      </p>
+                    )}
+                    {!isPending && r.resolution && (
+                      <p className="rounded-md bg-emerald-50 p-2 text-xs text-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-200">
+                        <span className="font-medium">
+                          {r.status === "resolved" ? "Résolution:" : "Note:"}
+                        </span>{" "}
+                        {r.resolution}
+                        {r.resolvedAt && ` · ${formatDate(r.resolvedAt)}`}
+                      </p>
+                    )}
+                  </div>
+                  {isPending && (
+                    <div className="flex shrink-0 gap-2">
+                      <Button
+                        size="sm"
+                        variant="default"
+                        className="gap-1 bg-emerald-600 hover:bg-emerald-700"
+                        disabled={resolvingId === r.id}
+                        onClick={() => handleResolve(r.id, "resolved")}
+                      >
+                        <CheckCircle2 className="h-3.5 w-3.5" />
+                        Résoudre
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="gap-1"
+                        disabled={resolvingId === r.id}
+                        onClick={() => handleResolve(r.id, "dismissed")}
+                      >
+                        <XCircle className="h-3.5 w-3.5" />
+                        Ignorer
+                      </Button>
+                    </div>
+                  )}
+                </div>
+                {isPending && (
+                  <div className="mt-3 border-t pt-3">
+                    <Textarea
+                      value={resolvingId === r.id ? resolution : ""}
+                      onChange={(e) => {
+                        setResolvingId(r.id);
+                        setResolution(e.target.value);
+                      }}
+                      placeholder="Note de résolution (optionnel)..."
+                      rows={2}
+                      maxLength={500}
+                      className="text-xs"
+                    />
+                  </div>
+                )}
+>>>>>>> Stashed changes
               </Card>
             );
           })}

@@ -1,0 +1,722 @@
+{
+  "title": "QCM Divers - Culture, Sciences, Littérature (PDF)",
+  "description": "Questions extraites du PDF qcm(1).pdf: culture générale, maths, SVT, littérature, proverbes, actualités.",
+  "category": "Culture Générale",
+  "subcategory": "Divers",
+  "icon": "FileText",
+  "color": "emerald",
+  "level": "TOUS",
+  "bankKey": "qcm-pdf-divers",
+  "questions": [
+    {
+      "question": "Quel est le nom du Plan national de développement du Burkina Faso pour la période 2026- 2030 ?",
+      "optionA": "VISION 2030",
+      "optionB": "RELANCE",
+      "optionC": "EMERGENCE",
+      "optionD": "RENAISSANCE",
+      "correctAnswer": "B",
+      "explanation": "Le PND \"RELANCE\" est le cadre de planification nationale adopté par le gouvernement de transition du Burkina Faso pour la période 2026-2030, articulé autour de la souveraineté, de la sécurité et du développement.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la forme féminine de \"bélier\" ?",
+      "optionA": "Belière",
+      "optionB": "Brebis",
+      "optionC": "Agnelle",
+      "optionD": "Chevrette",
+      "correctAnswer": "B",
+      "explanation": "La femelle du bélier est la brebis. L'agnelle désigne la jeune femelle ovine, et la chevrette est la femelle du chevreuil ou de la chèvre juvénile.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la dérivée de f(x) = 3x² + 5x - 2 ?",
+      "optionA": "6x + 5",
+      "optionB": "3x + 5",
+      "optionC": "6x - 2",
+      "optionD": "3x² + 5",
+      "correctAnswer": "A",
+      "explanation": "On dérive terme par terme : la dérivée de 3x² est 6x, celle de 5x est 5, et la constante -2  \fs'annule. D'où f'(x) = 6x + 5.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel os forme la partie antérieure et médiane du thorax ?",
+      "optionA": "Le fémur",
+      "optionB": "Le sternum",
+      "optionC": "Le radius",
+      "optionD": "L'omoplate",
+      "correctAnswer": "B",
+      "explanation": "Le sternum est l'os plat situé au centre du thorax, auquel s'articulent les côtes via les cartilages costaux. Le fémur est l'os de la cuisse, le radius celui de l'avant-bras.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "\"La parole est d'argent, le silence est d'or.\" Que signifie ce proverbe ?",
+      "optionA": "L'or vaut plus que l'argent",
+      "optionB": "Il vaut mieux parler que se taire",
+      "optionC": "Il est parfois plus sage de se taire que de parler",
+      "optionD": "Les métaux précieux ont une grande valeur",
+      "correctAnswer": "C",
+      "explanation": "Ce proverbe enseigne que savoir se taire est une sagesse supérieure à celle de bien parler. Le silence, comparé à l'or, a plus de valeur que la parole, comparée à l'argent.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Le Burkina Faso, le Mali et le Niger ont quitté officiellement la CEDEAO le :",
+      "optionA": "16 septembre 2023",
+      "optionB": "28 janvier 2025",
+      "optionC": "25 mai 2024",
+      "optionD": "2 juillet 2025  \f✔ Le retrait officiel des trois pays de la CEDEAO est effectif au 2 juillet 2024, après le délai réglementaire d'un an suivant la notification de retrait formulée en 28 janvier 2025.",
+      "correctAnswer": "B",
+      "explanation": "Le retrait officiel des trois pays de la CEDEAO est effectif au 2 juillet 2024, après le délai réglementaire d'un an suivant la notification de retrait formulée en 28 janvier 2025.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle du sanglier ?",
+      "optionA": "La laie",
+      "optionB": "La truie",
+      "optionC": "La louve",
+      "optionD": "La laisse",
+      "correctAnswer": "A",
+      "explanation": "La femelle du sanglier s'appelle la laie. La truie est la femelle du cochon domestique, et la louve est la femelle du loup.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "En quelle année a eu lieu l'accident nucléaire de Tchernobyl ?",
+      "optionA": "1984",
+      "optionB": "1986",
+      "optionC": "1989",
+      "optionD": "1991",
+      "correctAnswer": "B",
+      "explanation": "La catastrophe nucléaire de Tchernobyl s'est produite le 26 avril 1986 en Ukraine (alors URSS), lors d'un test de sécurité sur le réacteur n°4 de la centrale.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Combien de vertèbres compte la colonne vertébrale humaine ?",
+      "optionA": "28",
+      "optionB": "30",
+      "optionC": "33",
+      "optionD": "36  \f✔ La colonne vertébrale comprend 33 vertèbres réparties en 5 régions : 7 cervicales, 12 dorsales, 5 lombaires, 5 sacrées (soudées) et 4 coccygiennes (soudées).",
+      "correctAnswer": "C",
+      "explanation": "La colonne vertébrale comprend 33 vertèbres réparties en 5 régions : 7 cervicales, 12 dorsales, 5 lombaires, 5 sacrées (soudées) et 4 coccygiennes (soudées).",
+      "difficulty": "medium"
+    },
+    {
+      "question": "\"Il n'est point de vent favorable pour celui qui ne sait où il va.\" Cette citation est attribuée à :",
+      "optionA": "Voltaire",
+      "optionB": "Sénèque",
+      "optionC": "Napoléon Bonaparte",
+      "optionD": "Victor Hugo",
+      "correctAnswer": "B",
+      "explanation": "Cette réflexion sur l'importance d'avoir un but dans la vie est attribuée au philosophe stoïcien romain Sénèque, dans ses Lettres à Lucilius.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la production d'or du Burkina Faso en 2025 selon la Banque mondiale ?",
+      "optionA": "61 tonnes",
+      "optionB": "75 tonnes",
+      "optionC": "94 tonnes",
+      "optionD": "110 tonnes",
+      "correctAnswer": "B",
+      "explanation": "Selon les données de la Banque mondiale, la production aurifère du Burkina Faso est estimée à 75 tonnes en 2025, confirmant l'or comme premier produit d'exportation du pays malgré le contexte sécuritaire.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle du cerf ?",
+      "optionA": "La daine",
+      "optionB": "La biche",
+      "optionC": "La cerve",
+      "optionD": "La faonne  \f✔ La femelle du cerf est la biche. La daine est la femelle du daim, animal différent bien qu'appartenant également à la famille des cervidés.",
+      "correctAnswer": "B",
+      "explanation": "La femelle du cerf est la biche. La daine est la femelle du daim, animal différent bien qu'appartenant également à la famille des cervidés.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Résoudre : 2x + 3 = 11",
+      "optionA": "x = 3",
+      "optionB": "x = 4",
+      "optionC": "x = 5",
+      "optionD": "x = 6",
+      "correctAnswer": "B",
+      "explanation": "On isole x : 2x = 11 - 3 = 8, donc x = 8 ÷ 2 = 4. Vérification : 2(4) + 3 = 11. ✓",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel os constitue la cuisse ?",
+      "optionA": "Le tibia",
+      "optionB": "Le péroné",
+      "optionC": "Le fémur",
+      "optionD": "L'humérus",
+      "correctAnswer": "C",
+      "explanation": "Le fémur est l'os unique de la cuisse, reliant la hanche au genou. Le tibia et le péroné constituent la jambe, et l'humérus est l'os du bras.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel est le classement du Burkina Faso selon l'IDH 2025 du PNUD ?",
+      "optionA": "170e sur 193",
+      "optionB": "178e sur 193",
+      "optionC": "186e sur 193",
+      "optionD": "191e sur 193  \f✔ Selon le rapport sur le développement humain 2025 du PNUD, le Burkina Faso se classe 186e sur 193 pays, reflétant les difficultés persistantes en matière d'éducation, de santé et de niveau de vie.",
+      "correctAnswer": "C",
+      "explanation": "Selon le rapport sur le développement humain 2025 du PNUD, le Burkina Faso se classe 186e sur 193 pays, reflétant les difficultés persistantes en matière d'éducation, de santé et de niveau de vie.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "\"La connaissance s'acquiert par l'expérience, tout le reste n'est que de l'information.\" Qui a dit cela ?",
+      "optionA": "Albert Einstein",
+      "optionB": "René Descartes",
+      "optionC": "Blaise Pascal",
+      "optionD": "Isaac Newton",
+      "correctAnswer": "A",
+      "explanation": "Cette citation est généralement attribuée à Albert Einstein, soulignant sa conviction que l'expérience concrète prime sur la simple accumulation de données théoriques.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle du lièvre ?",
+      "optionA": "La lapine",
+      "optionB": "La hase",
+      "optionC": "La lièvre",
+      "optionD": "La vipère",
+      "correctAnswer": "B",
+      "explanation": "La femelle du lièvre s'appelle la hase. La lapine est la femelle du lapin domestique, animal différent du lièvre sauvage.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "En quelle année a eu lieu l'attentat du 11 septembre aux États-Unis ?",
+      "optionA": "1999",
+      "optionB": "2000  \fc) 2001",
+      "optionC": "2001",
+      "optionD": "2003",
+      "correctAnswer": "B",
+      "explanation": "Les attentats du 11 septembre 2001 ont été perpétrés par le réseau Al-Qaïda contre les tours du World Trade Center à New York et le Pentagone à Washington, faisant près de 3 000 morts.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel est l'os le plus long du corps humain ?",
+      "optionA": "L'humérus",
+      "optionB": "Le tibia",
+      "optionC": "Le fémur",
+      "optionD": "Le radius",
+      "correctAnswer": "C",
+      "explanation": "Le fémur, os de la cuisse, est l'os le plus long du squelette humain. Il représente environ un quart de la taille totale d'une personne.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel pourcentage du budget 2025 du Burkina Faso est alloué à la sécurisation territoriale ?",
+      "optionA": "15,5%",
+      "optionB": "20,3%",
+      "optionC": "27,76%",
+      "optionD": "32,4%",
+      "correctAnswer": "C",
+      "explanation": "Le budget 2025 du Burkina Faso consacre 27,76% de ses ressources à la sécurisation du territoire national, traduisant la priorité accordée à la lutte contre l'insécurité dans le contexte de transition.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "\"Mieux vaut un bon ami qu'une mauvaise famille.\" Ce proverbe est de culture :",
+      "optionA": "Française  \fb) Africaine",
+      "optionB": "Africaine",
+      "optionC": "Latine",
+      "optionD": "Arabe",
+      "correctAnswer": "A",
+      "explanation": "Ce proverbe reflète la sagesse populaire africaine qui valorise les liens d'amitié sincère parfois au-dessus des liens du sang, une philosophie présente dans de nombreuses cultures subsahariennes.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle du renard ?",
+      "optionA": "La renardelle",
+      "optionB": "La renarde",
+      "optionC": "La vixène",
+      "optionD": "La ruse",
+      "correctAnswer": "B",
+      "explanation": "La femelle du renard s'appelle la renarde. Le terme \"vixène\" est une adaptation de l'anglais \"vixen\" et n'est pas reconnu en français standard.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Calculer la somme des 10 premiers entiers naturels (0 inclus) :",
+      "optionA": "45",
+      "optionB": "50",
+      "optionC": "55",
+      "optionD": "60",
+      "correctAnswer": "A",
+      "explanation": "Les 10 premiers entiers naturels incluant 0 sont : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. Leur somme = (9 × 10) ÷ 2 = 45. Attention : si l'on comptait de 1 à 10, la somme serait 55.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel os relie l'épaule au coude ?  \fa) Le radius",
+      "optionA": "Le radius",
+      "optionB": "Le cubitus",
+      "optionC": "L'humérus",
+      "optionD": "La clavicule",
+      "correctAnswer": "C",
+      "explanation": "L'humérus est l'os du bras reliant l'articulation de l'épaule (scapulo-humérale) à celle du coude. Le radius et le cubitus constituent l'avant-bras.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "L'Alliance des États du Sahel (AES) a été créée le :",
+      "optionA": "28 janvier 2023",
+      "optionB": "16 septembre 2023",
+      "optionC": "14 octobre 2022",
+      "optionD": "25 mai 2024",
+      "correctAnswer": "B",
+      "explanation": "L'Alliance des États du Sahel a été officiellement créée le 16 septembre 2023 à Bamako, par le Burkina Faso, le Mali et le Niger, à travers la Charte du Liptako-Gourma.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "\"Un peuple qui oublie son passé se condamne à le revivre.\" Cette pensée est associée à :",
+      "optionA": "Winston Churchill",
+      "optionB": "George Santayana",
+      "optionC": "Nelson Mandela",
+      "optionD": "Cheikh Anta Diop",
+      "correctAnswer": "A",
+      "explanation": "Cette pensée est une adaptation de la formule du philosophe hispano-américain : \"Ceux qui ne peuvent se rappeler le passé sont condamnés à le répéter.\"",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle du chameau ?  \fa) La chamelle ✅",
+      "optionA": "La chamelle",
+      "optionB": "La chameline",
+      "optionC": "La camelonne",
+      "optionD": "La dromadaire",
+      "correctAnswer": "A",
+      "explanation": "La femelle du chameau s'appelle la chamelle. Le dromadaire est une espèce distincte à une seule bosse, et \"dromadaire\" est un nom masculin.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "En quelle année s'est produit le tsunami dans l'océan Indien qui fit environ 230 000 morts ?",
+      "optionA": "2002",
+      "optionB": "2004",
+      "optionC": "2006",
+      "optionD": "2008",
+      "correctAnswer": "B",
+      "explanation": "Le tsunami du 26 décembre 2004, déclenché par un séisme de magnitude 9,1 au large de Sumatra, a ravagé les côtes de l'Asie du Sud-Est et de l'Afrique de l'Est, causant environ 230 000 victimes.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Combien d'os compte le crâne humain ?",
+      "optionA": "6",
+      "optionB": "8",
+      "optionC": "10",
+      "optionD": "12",
+      "correctAnswer": "B",
+      "explanation": "Le crâne humain est composé de 8 os : le frontal, l'occipital, le sphénoïde, l'ethmoïde, et deux pariétaux et deux temporaux.  \f30. Dans quel accident aérien a-t-on enregistré les deux plus lourds bilans humains de l'histoire de l'aviation civile, lors de la catastrophe de Ténérife en 1977 ?  a) Deux Boeing 747 sont entrés en collision au sol ✅  b) Un avion s'est crashé dans l'océan Atlantique  c) Un avion a percuté une montagne  d) Deux avions se sont percutés en vol  ✔ Le 27 mars 1977 à Ténérife (Îles Canaries), deux Boeing 747 — l'un de KLM, l'autre de Pan Am — sont entrés en collision sur la piste de l'aéroport Los Rodeos, causant 583 morts, la plus grande catastrophe de l'aviation civile.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Le taux de croissance économique du Burkina Faso estimé pour 2025 selon la Banque mondiale est de :",
+      "optionA": "3,2%",
+      "optionB": "4,8%",
+      "optionC": "5,3%",
+      "optionD": "6,1%",
+      "correctAnswer": "B",
+      "explanation": "La Banque mondiale estime le taux de croissance du PIB du Burkina Faso à 4,8% pour 2025, porté principalement par la reprise du secteur minier et agricole malgré les défis sécuritaires.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "\"Le savoir est une arme plus puissante que le fusil.\" Cette citation évoque :",
+      "optionA": "La suprématie de l'armée",
+      "optionB": "La puissance de l'éducation",
+      "optionC": "L'importance du commerce des armes",
+      "optionD": "La faiblesse des intellectuels  \f✔ Cette citation souligne que la connaissance et l'éducation constituent le levier le plus puissant pour transformer une société, plus durablement que la force militaire.",
+      "correctAnswer": "B",
+      "explanation": "Cette citation souligne que la connaissance et l'éducation constituent le levier le plus puissant pour transformer une société, plus durablement que la force militaire.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle du loup ?",
+      "optionA": "La louvette",
+      "optionB": "La louve",
+      "optionC": "La louvière",
+      "optionD": "La louvesse",
+      "correctAnswer": "B",
+      "explanation": "La femelle du loup est la louve. Le petit du loup s'appelle le louveteau.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la valeur de sin(90°) ?",
+      "optionA": "0",
+      "optionB": "0,5",
+      "optionC": "1",
+      "optionD": "-1",
+      "correctAnswer": "C",
+      "explanation": "Sur le cercle trigonométrique, sin(90°) = 1. C'est la valeur maximale de la fonction sinus, atteinte à 90° (soit π/2 radians).",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel os forme le genou ?",
+      "optionA": "Le ménisque",
+      "optionB": "La rotule",
+      "optionC": "Le tibia",
+      "optionD": "Le péroné  \f✔ La rotule (ou patella) est l'os qui forme le genou à l'avant de l'articulation. Le ménisque est un cartilage, non un os. Le tibia et le péroné constituent la jambe.",
+      "correctAnswer": "B",
+      "explanation": "La rotule (ou patella) est l'os qui forme le genou à l'avant de l'articulation. Le ménisque est un cartilage, non un os. Le tibia et le péroné constituent la jambe.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle institution législative remplace l'Assemblée nationale au Burkina Faso depuis la période de transition ?",
+      "optionA": "Le Sénat du Faso",
+      "optionB": "Assemblée Legislative du Peuple",
+      "optionC": "L'Assemblée législative de transition",
+      "optionD": "Le Parlement populaire",
+      "correctAnswer": "B",
+      "explanation": "La réponse correcte est B.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "\"Aide-toi, le ciel t'aidera.\" Ce proverbe encourage :",
+      "optionA": "La prière quotidienne",
+      "optionB": "L'effort personnel avant de chercher du secours",
+      "optionC": "La solidarité communautaire",
+      "optionD": "La confiance aveugle en la providence",
+      "correctAnswer": "B",
+      "explanation": "Ce proverbe, popularisé par La Fontaine dans sa fable \"Le Chartier embourbé\", enseigne que l'aide divine ou extérieure vient récompenser l'effort de celui qui agit par lui-même.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle de l'éléphant ?",
+      "optionA": "L'éléphante",
+      "optionB": "L'éléphanteau",
+      "optionC": "La cow-éléphant",
+      "optionD": "La femelle se dit aussi éléphant✔ En français, la femelle de l'éléphant n'a pas de nom spécifique courant ; on dit \"l'éléphant femelle\". L'éléphanteau est le petit. Certains dictionnaires acceptent \"l'éléphante\" mais cela reste rare et non standardisé.",
+      "correctAnswer": "D",
+      "explanation": "En français, la femelle de l'éléphant n'a pas de nom spécifique courant ; on dit \"l'éléphant femelle\". L'éléphanteau est le petit. Certains dictionnaires acceptent \"l'éléphante\" mais cela reste rare et non standardisé.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Si un carré a un côté de 7 cm, quelle est son aire ?",
+      "optionA": "28 cm²",
+      "optionB": "42 cm²",
+      "optionC": "49 cm²",
+      "optionD": "56 cm²",
+      "correctAnswer": "C",
+      "explanation": "L'aire d'un carré est égale au côté au carré : A = 7² = 49 cm². Le périmètre, lui, serait 4 × 7 = 28 cm.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Combien de côtes possède le squelette humain adulte normal ?",
+      "optionA": "22",
+      "optionB": "24",
+      "optionC": "26",
+      "optionD": "28",
+      "correctAnswer": "B",
+      "explanation": "Le squelette humain adulte compte 24 côtes, soit 12 paires : 7 vraies côtes reliées directement au sternum, 3 fausses côtes et 2 côtes flottantes de chaque côté.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "En quelle année s'est produit le naufrage du Titanic ?",
+      "optionA": "1910",
+      "optionB": "1912",
+      "optionC": "1914",
+      "optionD": "1916  \f✔ Le Titanic a sombré dans la nuit du 14 au 15 avril 1912, lors de son voyage inaugural de Southampton à New York, après avoir heurté un iceberg. Plus de 1 500 personnes ont péri.",
+      "correctAnswer": "B",
+      "explanation": "Le Titanic a sombré dans la nuit du 14 au 15 avril 1912, lors de son voyage inaugural de Southampton à New York, après avoir heurté un iceberg. Plus de 1 500 personnes ont péri.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel est le nom de la radio de l'AES dont l'installation du conseil d'administration a eu lieu le 8 juin 2026 ?",
+      "optionA": "Radio Sahel Uni",
+      "optionB": "Radio AES-FM",
+      "optionC": "Daandè Liptak",
+      "optionD": "Radio Confédération",
+      "correctAnswer": "C",
+      "explanation": "Daandè Liptak, dont le nom signifie \"La voix du Liptako\" en peul, est la radio officielle de l'Alliance des États du Sahel. Son conseil d'administration a été officiellement installé le 8 juin 2026 au Burkina Faso.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "\"Celui qui n'a pas voyagé ne connaît que la première page du livre.\" Ce proverbe vient de :",
+      "optionA": "Culture africaine",
+      "optionB": "Culture arabe",
+      "optionC": "Culture chinoise",
+      "optionD": "Culture indienne",
+      "correctAnswer": "B",
+      "explanation": "Ce proverbe est d'origine arabe et traduit la conviction que le voyage est une source incomparable de connaissance et d'ouverture sur le monde, au-delà de toute instruction livresque.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle du taureau ?",
+      "optionA": "La génisse",
+      "optionB": "La vachec) La vachette",
+      "optionC": "La vachette",
+      "optionD": "La bovin",
+      "correctAnswer": "B",
+      "explanation": "La femelle du taureau (le bovin mâle adulte) est la vache. La génisse désigne la jeune femelle bovine n'ayant pas encore vêlé.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Calculer : (2³ × 3) ÷ 6",
+      "optionA": "2",
+      "optionB": "3",
+      "optionC": "4",
+      "optionD": "6",
+      "correctAnswer": "C",
+      "explanation": "2³ = 8. Donc (8 × 3) ÷ 6 = 24 ÷ 6 = 4.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel est l'os du talon ?",
+      "optionA": "L'astragale",
+      "optionB": "Le calcanéum",
+      "optionC": "Le cuboid",
+      "optionD": "Le scaphoïde",
+      "correctAnswer": "B",
+      "explanation": "Le calcanéum est l'os du talon, le plus grand os du pied. L'astragale (ou talus) est l'os sus- jacent reliant le pied à la jambe.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel événement majeur s'est produit en Afrique du Sud en 1994 ?",
+      "optionA": "La fin de l'apartheid et les premières élections multiraciales",
+      "optionB": "L'indépendance du pays  \fc) La création de l'Union africaine",
+      "optionC": "La création de l'Union africaine",
+      "optionD": "La découverte des mines de diamants",
+      "correctAnswer": "A",
+      "explanation": "En avril 1994, l'Afrique du Sud a organisé ses premières élections démocratiques multiraciales, portant Nelson Mandela à la présidence et marquant la fin officielle du régime d'apartheid.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "La Charte de la transition au Burkina Faso a été modifiée et adoptée le :",
+      "optionA": "21 octobre 2022",
+      "optionB": "30 septembre 2022",
+      "optionC": "25 mai 2024",
+      "optionD": "28 janvier 2024",
+      "correctAnswer": "D",
+      "explanation": "La Charte de la transition du Burkina Faso a été révisée et adoptée le 28 janvier 2024, notamment pour prolonger la période de transition et adapter le cadre institutionnel aux nouvelles orientations du MPSR2.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "\"La vérité est comme le soleil : elle illumine tout et n'appartient à personne.\" Cette citation rappelle :",
+      "optionA": "L'importance de la propriété intellectuelle",
+      "optionB": "Le caractère universel de la vérité",
+      "optionC": "La chaleur du soleil en Afrique",
+      "optionD": "L'impossibilité de connaître la vérité",
+      "correctAnswer": "B",
+      "explanation": "Cette métaphore solaire souligne que la vérité, à l'image du soleil, est un bien commun universel : elle n'est la propriété exclusive d'aucune personne, nation ou idéologie.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle du lion ?  \fa) La lionne ✅",
+      "optionA": "La lionne",
+      "optionB": "La lioncelle",
+      "optionC": "La lionne",
+      "optionD": "La lionceau femelle",
+      "correctAnswer": "A",
+      "explanation": "La femelle du lion est la lionne. Le petit du lion, mâle ou femelle, s'appelle le lionceau.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la valeur de π arrondie à deux décimales ?",
+      "optionA": "3,12",
+      "optionB": "3,14",
+      "optionC": "3,16",
+      "optionD": "3,18",
+      "correctAnswer": "B",
+      "explanation": "La valeur de π est approximativement 3,14159... Arrondie à deux décimales, elle vaut 3,14, valeur utilisée couramment dans les calculs de géométrie.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel os est communément fracturé lors d'une chute sur la main tendue chez l'adulte jeune ?",
+      "optionA": "Le radius",
+      "optionB": "L'humérus",
+      "optionC": "Le cubitus",
+      "optionD": "Le scaphoïde",
+      "correctAnswer": "D",
+      "explanation": "Chez l'adulte jeune, une chute sur la main tendue provoque fréquemment une fracture du scaphoïde carpien, difficile à détecter à la radiographie initiale. Chez le sujet âgé, c'est plutôt la fracture de Pouteau-Colles (extrémité inférieure du radius) qui survient.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel est l'objectif annoncé du ministre de la Guerre du Burkina Faso en matière de  \fréservistes d'ici fin 2026 ?",
+      "optionA": "50 000 réservistes",
+      "optionB": "75 000 réservistes",
+      "optionC": "100 000 réservistes",
+      "optionD": "150 000 réservistes",
+      "correctAnswer": "C",
+      "explanation": "Le ministre de la Défense du Burkina Faso a annoncé l'objectif de constituer un corps de 100 000 réservistes militaires d'ici la fin de l'année 2026, dans le cadre du renforcement de la capacité de défense nationale.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "\"L'échec est le fondement de la réussite.\" Cette pensée est attribuée à :",
+      "optionA": "Confucius",
+      "optionB": "Lao-Tseu",
+      "optionC": "Sun Tzu",
+      "optionD": "Mao Zedong",
+      "correctAnswer": "B",
+      "explanation": "Cette pensée est attribuée à Lao-Tseu, fondateur du taoïsme, qui considérait l'échec non comme une fin mais comme une étape nécessaire dans le processus d'apprentissage et d'accomplissement.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle du tigre ?",
+      "optionA": "La tigrelle",
+      "optionB": "La tigresse",
+      "optionC": "La tigronne",
+      "optionD": "La fauve",
+      "correctAnswer": "B",
+      "explanation": "La femelle du tigre est la tigresse. Le petit du tigre s'appelle le tigron ou tigreau selon les  \frégions.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "En quelle année a eu lieu la chute du mur de Berlin ?",
+      "optionA": "1987",
+      "optionB": "1989",
+      "optionC": "1991",
+      "optionD": "1993",
+      "correctAnswer": "B",
+      "explanation": "Le mur de Berlin est tombé le 9 novembre 1989, symbole de la fin de la Guerre froide et de la division de l'Europe. La réunification allemande officielle a suivi le 3 octobre 1990.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Combien d'os compte la main humaine (y compris le poignet) ?",
+      "optionA": "22",
+      "optionB": "27",
+      "optionC": "32",
+      "optionD": "35",
+      "correctAnswer": "B",
+      "explanation": "La main humaine comprend 27 os : 8 os du carpe (poignet), 5 métacarpiens et 14 phalanges (trois par doigt sauf le pouce qui en a deux).",
+      "difficulty": "medium"
+    },
+    {
+      "question": "En 2024, la production d'or du Burkina Faso était de :",
+      "optionA": "48 tonnes",
+      "optionB": "58 tonnes",
+      "optionC": "61 tonnes",
+      "optionD": "75 tonnes  \f✔ La production aurifère du Burkina Faso en 2024 est évaluée à 61 tonnes. Elle progresse à 75 tonnes en 2025, selon les projections de la Banque mondiale.",
+      "correctAnswer": "C",
+      "explanation": "La production aurifère du Burkina Faso en 2024 est évaluée à 61 tonnes. Elle progresse à 75 tonnes en 2025, selon les projections de la Banque mondiale.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "\"Un arbre ne fait pas la forêt.\" Ce proverbe exprime :",
+      "optionA": "L'importance de la reforestation",
+      "optionB": "La nécessité de l'union et de la solidarité",
+      "optionC": "La solitude de l'homme fort",
+      "optionD": "La supériorité des grands arbres",
+      "correctAnswer": "B",
+      "explanation": "Ce proverbe enseigne qu'un individu seul, aussi fort soit-il, ne peut constituer une force collective. La forêt symbolise la communauté unie, bien plus puissante qu'un individu isolé.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle du coq ?",
+      "optionA": "La poulette",
+      "optionB": "La coquine",
+      "optionC": "La poule",
+      "optionD": "La pintade",
+      "correctAnswer": "C",
+      "explanation": "La femelle du coq est la poule. La poulette est la jeune poule, et la pintade est une espèce de gallinacé distincte.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Résoudre l'équation x² - 9 = 0 :",
+      "optionA": "x = 3 seulement",
+      "optionB": "x = -3 seulement",
+      "optionC": "x = 3 ou x = -3",
+      "optionD": "Pas de solution  \f✔ x² - 9 = 0 ⟺ x² = 9 ⟺ x = √9 ou x = -√9 ⟺ x = 3 ou x = -3. On peut aussi factoriser : (x-3)(x+3) =",
+      "correctAnswer": "C",
+      "explanation": "x² - 9 = 0 ⟺ x² = 9 ⟺ x = √9 ou x = -√9 ⟺ x = 3 ou x = -3. On peut aussi factoriser : (x-3)(x+3) =",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel est le plus petit os du corps humain ?",
+      "optionA": "Le marteau",
+      "optionB": "L'enclume",
+      "optionC": "L'étrier",
+      "optionD": "Le sésamoïde",
+      "correctAnswer": "C",
+      "explanation": "L'étrier (stapes) est le plus petit os du corps humain. Il mesure environ 3 mm et se trouve dans l'oreille moyenne avec le marteau et l'enclume. Ces trois osselets transmettent les vibrations sonores.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel pays a organisé la Coupe du monde de football en 2026 ?",
+      "optionA": "Le Brésil",
+      "optionB": "La France",
+      "optionC": "L'Amérique du Nord (États-Unis, Canada, Mexique)",
+      "optionD": "L'Australie",
+      "correctAnswer": "C",
+      "explanation": "La Coupe du monde 2026 est coorganisée par les États-Unis, le Canada et le Mexique, avec 48 équipes participantes pour la première fois de l'histoire du tournoi.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Combien de personnes déplacées internes le gouvernement du Burkina Faso affirme avoir réinstallées en mars 2025 ?",
+      "optionA": "500 000",
+      "optionB": "750 000",
+      "optionC": "Plus d'un milliond) 1,5 million",
+      "optionD": "1,5 million",
+      "correctAnswer": "C",
+      "explanation": "Le gouvernement du Burkina Faso a annoncé en mars 2025 avoir procédé au retour et à la réinstallation de plus d'un million de personnes déplacées internes dans leurs localités d'origine ou de nouvelles zones sécurisées.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "\"L'homme est la mesure de toutes choses.\" Cette phrase célèbre est de :",
+      "optionA": "Socrate",
+      "optionB": "Protagoras",
+      "optionC": "Platon",
+      "optionD": "Aristote",
+      "correctAnswer": "B",
+      "explanation": "Cette formule célèbre est du sophiste grec Protagoras d'Abdère (Ve siècle av. J.-C.), signifiant que la perception humaine est le critère de toute vérité. Elle fonde le relativisme philosophique.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle du canard ?",
+      "optionA": "La cane",
+      "optionB": "La canette",
+      "optionC": "La canardelle",
+      "optionD": "La cygne",
+      "correctAnswer": "A",
+      "explanation": "La femelle du canard est la cane. La canette est la jeune cane ou le petit contenant de boisson. Le cygne est une espèce distincte d'oiseau aquatique.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Calculer la surface d'un cercle de rayon 5 cm (utiliser π ≈ 3,14) :",
+      "optionA": "15,7 cm²  \fb) 31,4 cm²",
+      "optionB": "31,4 cm²",
+      "optionC": "78,5 cm²",
+      "optionD": "157 cm²",
+      "correctAnswer": "C",
+      "explanation": "La formule est A = π × r². A = 3,14 × 5² = 3,14 × 25 = 78,5 cm². Ne pas confondre avec le périmètre : P = 2πr = 2 × 3,14 × 5 = 31,4 cm.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quel os relie l'épaule au coude ?",
+      "optionA": "Le radius",
+      "optionB": "Le cubitus",
+      "optionC": "L'humérus",
+      "optionD": "La clavicule",
+      "correctAnswer": "C",
+      "explanation": "L'humérus est l'os du bras reliant l'articulation de l'épaule (scapulo-humérale) à celle du coude. Le radius et le cubitus constituent l'avant-bras.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle du chameau ?",
+      "optionA": "La chamelle",
+      "optionB": "La chameline",
+      "optionC": "La camelonne",
+      "optionD": "La dromadaire",
+      "correctAnswer": "A",
+      "explanation": "La femelle du chameau s'appelle la chamelle. Le dromadaire est une espèce distincte à une seule bosse, et \"dromadaire\" est un nom masculin.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Combien d'os compte le crâne humain ?  \fa) 6",
+      "optionA": "6",
+      "optionB": "8",
+      "optionC": "10",
+      "optionD": "12",
+      "correctAnswer": "B",
+      "explanation": "Le crâne humain est composé de 8 os : le frontal, l'occipital, le sphénoïde, l'ethmoïde, et deux pariétaux et deux temporaux.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Dans quel accident aérien a-t-on enregistré les deux plus lourds bilans humains de l'histoire de l'aviation civile, lors de la catastrophe de Ténérife en 1977 ?",
+      "optionA": "Deux Boeing 747 sont entrés en collision au sol",
+      "optionB": "Un avion s'est crashé dans l'océan Atlantique",
+      "optionC": "Un avion a percuté une montagne",
+      "optionD": "Deux avions se sont percutés en vol",
+      "correctAnswer": "A",
+      "explanation": "Le 27 mars 1977 à Ténérife (Îles Canaries), deux Boeing 747 — l'un de KLM, l'autre de Pan Am — sont entrés en collision sur la piste de l'aéroport Los Rodeos, causant 583 morts, la plus grande catastrophe de l'aviation civile.",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Quelle est la femelle du lion ?",
+      "optionA": "La lionne",
+      "optionB": "La lioncelle",
+      "optionC": "La lionne",
+      "optionD": "La lionceau femelle",
+      "correctAnswer": "A",
+      "explanation": "La femelle du lion est la lionne. Le petit du lion, mâle ou femelle, s'appelle le lionceau.",
+      "difficulty": "medium"
+    }
+  ]
+}

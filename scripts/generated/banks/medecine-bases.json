@@ -15,7 +15,8 @@
       "optionC": "3",
       "optionD": "6",
       "correctAnswer": "A",
-      "explanation": "Le cœur a 4 cavités : oreillette droite, oreillette gauche, ventricule droit, ventricule gauche."
+      "explanation": "Le cœur a 4 cavités : oreillette droite, oreillette gauche, ventricule droit, ventricule gauche.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle valve sépare l'oreillette gauche du ventricule gauche ?",
@@ -24,7 +25,8 @@
       "optionC": "Valve aortique",
       "optionD": "Valve pulmonaire",
       "correctAnswer": "A",
-      "explanation": "La valve mitrale (bicuspidienne) est entre OG et VG."
+      "explanation": "La valve mitrale (bicuspidienne) est entre OG et VG.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle valve sépare l'oreillette droite du ventricule droit ?",
@@ -33,7 +35,8 @@
       "optionC": "Valve aortique",
       "optionD": "Valve pulmonaire",
       "correctAnswer": "A",
-      "explanation": "La valve tricuspide (3 valves) est entre OD et VD."
+      "explanation": "La valve tricuspide (3 valves) est entre OD et VD.",
+      "difficulty": "medium"
     },
     {
       "question": "Le sang oxygéné arrive au cœur par :",
@@ -42,7 +45,8 @@
       "optionC": "L'artère pulmonaire",
       "optionD": "L'aorte",
       "correctAnswer": "A",
-      "explanation": "Les veines pulmonaires ramènent le sang oxygéné des poumons vers l'OG."
+      "explanation": "Les veines pulmonaires ramènent le sang oxygéné des poumons vers l'OG.",
+      "difficulty": "medium"
     },
     {
       "question": "Le sang non oxygéné quitte le cœur vers les poumons par :",
@@ -51,7 +55,8 @@
       "optionC": "Les veines pulmonaires",
       "optionD": "Les veines caves",
       "correctAnswer": "A",
-      "explanation": "L'artère pulmonaire transporte le sang non oxygéné du VD vers les poumons."
+      "explanation": "L'artère pulmonaire transporte le sang non oxygéné du VD vers les poumons.",
+      "difficulty": "medium"
     },
     {
       "question": "Combien de chromosomes possède la cellule humaine somatique ?",
@@ -60,7 +65,8 @@
       "optionC": "48",
       "optionD": "44",
       "correctAnswer": "A",
-      "explanation": "Les cellules somatiques (diploïdes) ont 46 chromosomes (23 paires)."
+      "explanation": "Les cellules somatiques (diploïdes) ont 46 chromosomes (23 paires).",
+      "difficulty": "medium"
     },
     {
       "question": "Les gamètes (spermatozoïdes, ovules) ont combien de chromosomes ?",
@@ -69,7 +75,8 @@
       "optionC": "48",
       "optionD": "22",
       "correctAnswer": "A",
-      "explanation": "Les gamètes sont haploïdes (n=23)."
+      "explanation": "Les gamètes sont haploïdes (n=23).",
+      "difficulty": "medium"
     },
     {
       "question": "La mitose produit :",
@@ -78,7 +85,8 @@
       "optionC": "1 cellule",
       "optionD": "8 cellules",
       "correctAnswer": "A",
-      "explanation": "La mitose produit 2 cellules filles identiques à la cellule mère."
+      "explanation": "La mitose produit 2 cellules filles identiques à la cellule mère.",
+      "difficulty": "medium"
     },
     {
       "question": "La méiose produit :",
@@ -87,7 +95,8 @@
       "optionC": "1 cellule",
       "optionD": "8 cellules",
       "correctAnswer": "A",
-      "explanation": "La méiose produit 4 gamètes haploïdes à partir d'une cellule diploïde."
+      "explanation": "La méiose produit 4 gamètes haploïdes à partir d'une cellule diploïde.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction des globules rouges ?",
@@ -96,7 +105,8 @@
       "optionC": "Coaguler le sang",
       "optionD": "Transporter les nutriments",
       "correctAnswer": "A",
-      "explanation": "Les globules rouges (hématies) transportent l'O₂ grâce à l'hémoglobine."
+      "explanation": "Les globules rouges (hématies) transportent l'O₂ grâce à l'hémoglobine.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction des globules blancs ?",
@@ -105,7 +115,8 @@
       "optionC": "Coaguler",
       "optionD": "Transporter les nutriments",
       "correctAnswer": "A",
-      "explanation": "Les globules blancs (leucocytes) assurent la défense immunitaire."
+      "explanation": "Les globules blancs (leucocytes) assurent la défense immunitaire.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction des plaquettes ?",
@@ -114,7 +125,8 @@
       "optionC": "Immunité",
       "optionD": "Transporter les nutriments",
       "correctAnswer": "A",
-      "explanation": "Les plaquettes (thrombocytes) assurent la coagulation."
+      "explanation": "Les plaquettes (thrombocytes) assurent la coagulation.",
+      "difficulty": "medium"
     },
     {
       "question": "L'hormone antidiurétique (ADH) est sécrétée par :",
@@ -123,7 +135,8 @@
       "optionC": "Le pancréas",
       "optionD": "Les surrénales",
       "correctAnswer": "A",
-      "explanation": "L'ADH (vasopressine) est sécrétée par l'hypophyse postérieure."
+      "explanation": "L'ADH (vasopressine) est sécrétée par l'hypophyse postérieure.",
+      "difficulty": "medium"
     },
     {
       "question": "L'insuline est sécrétée par :",
@@ -132,7 +145,8 @@
       "optionC": "Le foie",
       "optionD": "Les surrénales",
       "correctAnswer": "A",
-      "explanation": "L'insuline est produite par les cellules β des îlots de Langerhans."
+      "explanation": "L'insuline est produite par les cellules β des îlots de Langerhans.",
+      "difficulty": "medium"
     },
     {
       "question": "Le diabète de type 1 est dû à :",
@@ -141,7 +155,8 @@
       "optionC": "L'excès de sucre",
       "optionD": "Le stress",
       "correctAnswer": "A",
-      "explanation": "Le diabète type 1 = destruction auto-immune des cellules β."
+      "explanation": "Le diabète type 1 = destruction auto-immune des cellules β.",
+      "difficulty": "medium"
     },
     {
       "question": "Le diabète de type 2 est caractérisé par :",
@@ -150,7 +165,8 @@
       "optionC": "L'excès d'insuline",
       "optionD": "L'absence de glucose",
       "correctAnswer": "A",
-      "explanation": "Le diabète type 2 = insulinorésistance."
+      "explanation": "Le diabète type 2 = insulinorésistance.",
+      "difficulty": "medium"
     },
     {
       "question": "L'enzyme qui convertit l'angiotensine I en angiotensine II est :",
@@ -159,7 +175,8 @@
       "optionC": "L'aldostérone",
       "optionD": "L'ADH",
       "correctAnswer": "A",
-      "explanation": "L'ECA convertit l'angiotensine I (inactive) en angiotensine II (active vasoconstrictrice)."
+      "explanation": "L'ECA convertit l'angiotensine I (inactive) en angiotensine II (active vasoconstrictrice).",
+      "difficulty": "medium"
     },
     {
       "question": "Le paludisme est causé par :",
@@ -168,7 +185,8 @@
       "optionC": "Une bactérie",
       "optionD": "Un champignon",
       "correctAnswer": "A",
-      "explanation": "Le paludisme est causé par le protozoaire Plasmodium (falciparum, vivax...)."
+      "explanation": "Le paludisme est causé par le protozoaire Plasmodium (falciparum, vivax...).",
+      "difficulty": "medium"
     },
     {
       "question": "Le VIH attaque principalement :",
@@ -177,7 +195,8 @@
       "optionC": "Les plaquettes",
       "optionD": "Les neurones",
       "correctAnswer": "A",
-      "explanation": "Le VIH détruit les lymphocytes T CD4+, affaiblissant l'immunité."
+      "explanation": "Le VIH détruit les lymphocytes T CD4+, affaiblissant l'immunité.",
+      "difficulty": "medium"
     },
     {
       "question": "La drépanocytose est une maladie :",
@@ -186,7 +205,8 @@
       "optionC": "Auto-immune",
       "optionD": "Tumorale",
       "correctAnswer": "A",
-      "explanation": "La drépanocytose (anémie falciforme) est une maladie génétique de l'hémoglobine."
+      "explanation": "La drépanocytose (anémie falciforme) est une maladie génétique de l'hémoglobine.",
+      "difficulty": "medium"
     },
     {
       "question": "Le cholestérol est transporté dans le sang par :",
@@ -195,7 +215,8 @@
       "optionC": "Les plaquettes",
       "optionD": "L'albumine",
       "correctAnswer": "A",
-      "explanation": "Le cholestérol est transporté par HDL (bon) et LDL (mauvais)."
+      "explanation": "Le cholestérol est transporté par HDL (bon) et LDL (mauvais).",
+      "difficulty": "medium"
     },
     {
       "question": "Le LDL est appelé 'mauvais cholestérol' car :",
@@ -204,7 +225,8 @@
       "optionC": "Il est inutile",
       "optionD": "Il provoque le diabète",
       "correctAnswer": "A",
-      "explanation": "Le LDL dépose le cholestérol dans les artères (athérosclérose)."
+      "explanation": "Le LDL dépose le cholestérol dans les artères (athérosclérose).",
+      "difficulty": "medium"
     },
     {
       "question": "L'hypertension artérielle est définie par une PA supérieure à :",
@@ -213,7 +235,8 @@
       "optionC": "160/100 mmHg",
       "optionD": "130/85 mmHg",
       "correctAnswer": "A",
-      "explanation": "L'HTA est définie par PA ≥ 140/90 mmHg."
+      "explanation": "L'HTA est définie par PA ≥ 140/90 mmHg.",
+      "difficulty": "medium"
     },
     {
       "question": "Le cœur adulte bat en moyenne combien de fois par minute au repos ?",
@@ -222,7 +245,8 @@
       "optionC": "100-150",
       "optionD": "150-200",
       "correctAnswer": "A",
-      "explanation": "La fréquence cardiaque normale au repos est 60-100 bpm."
+      "explanation": "La fréquence cardiaque normale au repos est 60-100 bpm.",
+      "difficulty": "medium"
     },
     {
       "question": "L'ECG (électrocardiogramme) enregistre :",
@@ -231,7 +255,8 @@
       "optionC": "Les bruits cardiaques",
       "optionD": "Le débit cardiaque",
       "correctAnswer": "A",
-      "explanation": "L'ECG enregistre l'activité électrique du cœur."
+      "explanation": "L'ECG enregistre l'activité électrique du cœur.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la plus grande artère du corps ?",
@@ -240,7 +265,8 @@
       "optionC": "L'artère carotide",
       "optionD": "L'artère fémorale",
       "correctAnswer": "A",
-      "explanation": "L'aorte est la plus grande artère, partant du ventricule gauche."
+      "explanation": "L'aorte est la plus grande artère, partant du ventricule gauche.",
+      "difficulty": "medium"
     },
     {
       "question": "L'enzyme digestive de l'estomac est :",
@@ -249,7 +275,8 @@
       "optionC": "La lipase",
       "optionD": "La trypsine",
       "correctAnswer": "A",
-      "explanation": "La pepsine digère les protéines dans l'estomac (en milieu acide)."
+      "explanation": "La pepsine digère les protéines dans l'estomac (en milieu acide).",
+      "difficulty": "medium"
     },
     {
       "question": "La bile est produite par :",
@@ -258,7 +285,8 @@
       "optionC": "Le pancréas",
       "optionD": "L'estomac",
       "correctAnswer": "A",
-      "explanation": "La bile est produite par le foie et stockée dans la vésicule biliaire."
+      "explanation": "La bile est produite par le foie et stockée dans la vésicule biliaire.",
+      "difficulty": "medium"
     },
     {
       "question": "L'urée est éliminée par :",
@@ -267,7 +295,8 @@
       "optionC": "Les poumons",
       "optionD": "La peau",
       "correctAnswer": "A",
-      "explanation": "L'urée est filtrée et excrétée par les reins dans l'urine."
+      "explanation": "L'urée est filtrée et excrétée par les reins dans l'urine.",
+      "difficulty": "medium"
     },
     {
       "question": "La nephron est l'unité fonctionnelle du :",
@@ -276,7 +305,8 @@
       "optionC": "Poumon",
       "optionD": "Cœur",
       "correctAnswer": "A",
-      "explanation": "Le néphron est l'unité fonctionnelle du rein (filtration, réabsorption)."
+      "explanation": "Le néphron est l'unité fonctionnelle du rein (filtration, réabsorption).",
+      "difficulty": "medium"
     },
     {
       "question": "Combien de reins possède l'être humain ?",
@@ -285,7 +315,8 @@
       "optionC": "3",
       "optionD": "4",
       "correctAnswer": "A",
-      "explanation": "L'humain possède 2 reins (gauche et droit)."
+      "explanation": "L'humain possède 2 reins (gauche et droit).",
+      "difficulty": "medium"
     },
     {
       "question": "L'homéostasie désigne :",
@@ -294,7 +325,8 @@
       "optionC": "La reproduction",
       "optionD": "La digestion",
       "correctAnswer": "A",
-      "explanation": "L'homéostasie = maintien des constantes physiologiques internes."
+      "explanation": "L'homéostasie = maintien des constantes physiologiques internes.",
+      "difficulty": "medium"
     },
     {
       "question": "Le système nerveux central comprend :",
@@ -303,7 +335,8 @@
       "optionC": "Les ganglions",
       "optionD": "Les récepteurs",
       "correctAnswer": "A",
-      "explanation": "Le SNC = encéphale (cerveau) + moelle épinière."
+      "explanation": "Le SNC = encéphale (cerveau) + moelle épinière.",
+      "difficulty": "medium"
     },
     {
       "question": "Le système nerveux périphérique comprend :",
@@ -312,7 +345,8 @@
       "optionC": "La moelle épinière",
       "optionD": "Le cervelet",
       "correctAnswer": "A",
-      "explanation": "Le SNP = nerfs crâniens, nerfs spinaux, ganglions."
+      "explanation": "Le SNP = nerfs crâniens, nerfs spinaux, ganglions.",
+      "difficulty": "medium"
     },
     {
       "question": "Le neurone transmet l'influx nerveux via :",
@@ -321,7 +355,8 @@
       "optionC": "Les muscles",
       "optionD": "Les os",
       "correctAnswer": "A",
-      "explanation": "Le neurone communique via les synapses (neurotransmetteurs)."
+      "explanation": "Le neurone communique via les synapses (neurotransmetteurs).",
+      "difficulty": "medium"
     },
     {
       "question": "Les neurotransmetteurs sont :",
@@ -330,7 +365,8 @@
       "optionC": "Des hormones",
       "optionD": "Des protéines",
       "correctAnswer": "A",
-      "explanation": "Les neurotransmetteurs (dopamine, sérotonine...) sont des messagers chimiques."
+      "explanation": "Les neurotransmetteurs (dopamine, sérotonine...) sont des messagers chimiques.",
+      "difficulty": "medium"
     },
     {
       "question": "La dopamine est impliquée dans :",
@@ -339,7 +375,8 @@
       "optionC": "La coagulation",
       "optionD": "La respiration",
       "correctAnswer": "A",
-      "explanation": "La dopamine régule la motivation, la récompense et le mouvement (Parkinson = déficit)."
+      "explanation": "La dopamine régule la motivation, la récompense et le mouvement (Parkinson = déficit).",
+      "difficulty": "medium"
     },
     {
       "question": "La maladie de Parkinson est due à la dégénérescence des neurones :",
@@ -348,7 +385,8 @@
       "optionC": "Cholinergiques",
       "optionD": "GABAergiques",
       "correctAnswer": "A",
-      "explanation": "Parkinson = perte des neurones dopaminergiques de la substance noire."
+      "explanation": "Parkinson = perte des neurones dopaminergiques de la substance noire.",
+      "difficulty": "medium"
     },
     {
       "question": "La maladie d'Alzheimer est caractérisée par :",
@@ -357,7 +395,8 @@
       "optionC": "Un déficit en insuline",
       "optionD": "Une tumeur",
       "correctAnswer": "A",
-      "explanation": "Alzheimer = plaques β-amyloïdes + enchevêtrements de tau."
+      "explanation": "Alzheimer = plaques β-amyloïdes + enchevêtrements de tau.",
+      "difficulty": "medium"
     },
     {
       "question": "L'hormone de croissance est sécrétée par :",
@@ -366,7 +405,8 @@
       "optionC": "Le pancréas",
       "optionD": "Les surrénales",
       "correctAnswer": "A",
-      "explanation": "L'hormone de croissance (GH) est sécrétée par l'antéhypophyse."
+      "explanation": "L'hormone de croissance (GH) est sécrétée par l'antéhypophyse.",
+      "difficulty": "medium"
     },
     {
       "question": "L'hyperthyroïdie (ex: Basedow) se caractérise par :",
@@ -375,7 +415,8 @@
       "optionC": "Une tumeur",
       "optionD": "Une infection",
       "correctAnswer": "A",
-      "explanation": "L'hyperthyroïdie = excès de T3/T4 (tachycardie, perte de poids)."
+      "explanation": "L'hyperthyroïdie = excès de T3/T4 (tachycardie, perte de poids).",
+      "difficulty": "medium"
     },
     {
       "question": "La thyroïde a besoin de quel oligo-élément ?",
@@ -384,7 +425,8 @@
       "optionC": "Le calcium",
       "optionD": "Le zinc",
       "correctAnswer": "A",
-      "explanation": "La thyroïde utilise l'iode pour synthétiser T3 et T4."
+      "explanation": "La thyroïde utilise l'iode pour synthétiser T3 et T4.",
+      "difficulty": "medium"
     },
     {
       "question": "Concernant l'artère coronaire droite, quelle affirmation est correcte ?",
@@ -393,7 +435,8 @@
       "optionC": "Elle donne naissance à l'artère interventriculaire antérieure",
       "optionD": "Elle vascularise principalement le ventricule droit et le diaphragme",
       "correctAnswer": "D",
-      "explanation": "L'artère coronaire droite naît de l'aorte ascendante, vascularise principalement le ventricule droit et le diaphragme, et donne naissance à l'artère marginale droite."
+      "explanation": "L'artère coronaire droite naît de l'aorte ascendante, vascularise principalement le ventricule droit et le diaphragme, et donne naissance à l'artère marginale droite.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel neurotransmetteur est principalement impliqué dans la transmission de la douleur au niveau de la moelle épinière ?",
@@ -402,7 +445,8 @@
       "optionC": "Substance P",
       "optionD": "Sérotonine",
       "correctAnswer": "C",
-      "explanation": "La substance P est un neurotransmetteur impliqué dans la transmission des signaux de douleur au niveau des voies de la douleur dans la moelle épinière."
+      "explanation": "La substance P est un neurotransmetteur impliqué dans la transmission des signaux de douleur au niveau des voies de la douleur dans la moelle épinière.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale des cellules pariétales de l'estomac ?",
@@ -411,7 +455,8 @@
       "optionC": "Sécréter la gastrine",
       "optionD": "Sécréter le facteur intrinsèque",
       "correctAnswer": "B",
-      "explanation": "Les cellules pariétales de l'estomac sécrètent principalement l'acide chlorhydrique, qui aide à la digestion des aliments et à la stérilisation du bolus alimentaire."
+      "explanation": "Les cellules pariétales de l'estomac sécrètent principalement l'acide chlorhydrique, qui aide à la digestion des aliments et à la stérilisation du bolus alimentaire.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la demi-vie d'élimination de l'aspirine à dose anti-inflammatoire ?",
@@ -420,7 +465,8 @@
       "optionC": "6-8 heures",
       "optionD": "24-48 heures",
       "correctAnswer": "B",
-      "explanation": "La demi-vie d'élimination de l'aspirine à dose anti-inflammatoire est de 2-3 heures, alors qu'à dose antalgique elle est de 15-30 minutes."
+      "explanation": "La demi-vie d'élimination de l'aspirine à dose anti-inflammatoire est de 2-3 heures, alors qu'à dose antalgique elle est de 15-30 minutes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle structure forme la barrière hémato-encéphalique ?",
@@ -429,7 +475,8 @@
       "optionC": "Les cellules endothéliales des capillaires cérébraux",
       "optionD": "L'arachnoïde",
       "correctAnswer": "C",
-      "explanation": "La barrière hémato-encéphalique est principalement formée par les cellules endothéliales des capillaires cérébraux, qui sont jointes par des jonctions serrées."
+      "explanation": "La barrière hémato-encéphalique est principalement formée par les cellules endothéliales des capillaires cérébraux, qui sont jointes par des jonctions serrées.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel médicament est un inhibiteur de l'enzyme de conversion de l'angiotensine (IEC) ?",
@@ -438,7 +485,8 @@
       "optionC": "Ramipril",
       "optionD": "Furosémide",
       "correctAnswer": "C",
-      "explanation": "Le ramipril est un inhibiteur de l'enzyme de conversion de l'angiotensine (IEC). Le losartan est un antagoniste des récepteurs de l'angiotensine II, l'amlodipine est un antagoniste du calcium, et le furosémide est un diurétique de l'anse."
+      "explanation": "Le ramipril est un inhibiteur de l'enzyme de conversion de l'angiotensine (IEC). Le losartan est un antagoniste des récepteurs de l'angiotensine II, l'amlodipine est un antagoniste du calcium, et le furosémide est un diurétique de l'anse.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal site d'absorption du fer dans le tube digestif ?",
@@ -447,7 +495,8 @@
       "optionC": "Iléon",
       "optionD": "Jéjunum",
       "correctAnswer": "B",
-      "explanation": "Le principal site d'absorption du fer dans le tube digestif est le duodénum, où il est transporté par la protéine DMT1."
+      "explanation": "Le principal site d'absorption du fer dans le tube digestif est le duodénum, où il est transporté par la protéine DMT1.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la pression artérielle systolique normale chez l'adulte ?",
@@ -456,7 +505,8 @@
       "optionC": "150 mmHg",
       "optionD": "180 mmHg",
       "correctAnswer": "B",
-      "explanation": "La pression artérielle systolique normale chez l'adulte est de 120 mmHg, avec une diastolique normale de 80 mmHg."
+      "explanation": "La pression artérielle systolique normale chez l'adulte est de 120 mmHg, avec une diastolique normale de 80 mmHg.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle structure du cerveau est principalement responsable de la régulation de la respiration ?",
@@ -465,7 +515,8 @@
       "optionC": "Médiobulbe",
       "optionD": "Thalamus",
       "correctAnswer": "C",
-      "explanation": "Le médiobulbe, contenant le centre respiratoire, est principalement responsable de la régulation automatique de la respiration."
+      "explanation": "Le médiobulbe, contenant le centre respiratoire, est principalement responsable de la régulation automatique de la respiration.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le mécanisme d'action des statines ?",
@@ -474,7 +525,8 @@
       "optionC": "Activation de la lipoprotéine lipase",
       "optionD": "Augmentation de l'excrétion biliaire des acides biliaires",
       "correctAnswer": "B",
-      "explanation": "Les statines inhibent l'enzyme HMG-CoA réductase, clé dans la synthèse du cholestérol au niveau hépatique."
+      "explanation": "Les statines inhibent l'enzyme HMG-CoA réductase, clé dans la synthèse du cholestérol au niveau hépatique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale des cellules de Paneth dans l'intestin grêle ?",
@@ -483,7 +535,8 @@
       "optionC": "Absorber les lipides",
       "optionD": "Sécréter la gastrine",
       "correctAnswer": "B",
-      "explanation": "Les cellules de Paneth, situées au fond des cryptes de Lieberkühn, sécrètent des peptides antimicrobiens comme la défensine."
+      "explanation": "Les cellules de Paneth, situées au fond des cryptes de Lieberkühn, sécrètent des peptides antimicrobiens comme la défensine.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel médicament est utilisé en cas de surdosage par morphine ?",
@@ -492,7 +545,8 @@
       "optionC": "Flumazénil",
       "optionD": "Atropine",
       "correctAnswer": "A",
-      "explanation": "La naloxone est un antagoniste des récepteurs opioïdes utilisé en cas de surdosage par morphine ou autres opioïdes."
+      "explanation": "La naloxone est un antagoniste des récepteurs opioïdes utilisé en cas de surdosage par morphine ou autres opioïdes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle structure forme le sinus coronaire ?",
@@ -501,7 +555,8 @@
       "optionC": "Veine cave supérieure",
       "optionD": "Veine cave inférieure",
       "correctAnswer": "A",
-      "explanation": "Le sinus coronaire est formé par la confluence des veines cardiaques, principalement la veine cardiaque majeure."
+      "explanation": "Le sinus coronaire est formé par la confluence des veines cardiaques, principalement la veine cardiaque majeure.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale des astrocytes dans le système nerveux central ?",
@@ -510,7 +565,8 @@
       "optionC": "Maintien de l'homéostasie neuronale",
       "optionD": "Sécrétion de dopamine",
       "correctAnswer": "C",
-      "explanation": "Les astrocytes jouent un rôle crucial dans le maintien de l'homéostasie neuronale, notamment dans la régulation de la concentration en ions et neurotransmetteurs."
+      "explanation": "Les astrocytes jouent un rôle crucial dans le maintien de l'homéostasie neuronale, notamment dans la régulation de la concentration en ions et neurotransmetteurs.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal site de résorption de l'eau dans l'intestin grêle ?",
@@ -519,7 +575,8 @@
       "optionC": "Iléon",
       "optionD": "Colon",
       "correctAnswer": "C",
-      "explanation": "L'iléon est le principal site de résorption de l'eau et des électrolytes dans l'intestin grêle, tandis que le colon résorbe le reste de l'eau."
+      "explanation": "L'iléon est le principal site de résorption de l'eau et des électrolytes dans l'intestin grêle, tandis que le colon résorbe le reste de l'eau.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale des inhibiteurs de la pompe à protons (IPP) ?",
@@ -528,7 +585,8 @@
       "optionC": "Protéger la muqueuse gastrique",
       "optionD": "Stimuler la motilité gastrique",
       "correctAnswer": "A",
-      "explanation": "Les IPP inhibent spécifiquement la pompe à protons (H+/K+ ATPase) des cellules pariétales, réduisant ainsi la sécrétion d'acide chlorhydrique."
+      "explanation": "Les IPP inhibent spécifiquement la pompe à protons (H+/K+ ATPase) des cellules pariétales, réduisant ainsi la sécrétion d'acide chlorhydrique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle structure forme la barrière hématotesticulaire ?",
@@ -537,7 +595,8 @@
       "optionC": "Les cellules de Leydig",
       "optionD": "L'épididyme",
       "correctAnswer": "B",
-      "explanation": "Les cellules de Sertoli forment la barrière hématotesticulaire, qui sépare les compartiments basal et adluminal des tubules séminifères."
+      "explanation": "Les cellules de Sertoli forment la barrière hématotesticulaire, qui sépare les compartiments basal et adluminal des tubules séminifères.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale du système rétinien-locus coeruleus ?",
@@ -546,7 +605,8 @@
       "optionC": "Régulation de l'attention et de l'éveil",
       "optionD": "Régulation de l'appétit",
       "correctAnswer": "C",
-      "explanation": "Le système rétinien-locus coeruleus, utilisant la noradrénaline, est impliqué dans la régulation de l'attention, de l'éveil et des réponses au stress."
+      "explanation": "Le système rétinien-locus coeruleus, utilisant la noradrénaline, est impliqué dans la régulation de l'attention, de l'éveil et des réponses au stress.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le mécanisme d'action des anticoagulants oraux directs (AOD) ?",
@@ -555,7 +615,8 @@
       "optionC": "Inhibition directe du facteur Xa",
       "optionD": "Inhibition directe du facteur IIa (thrombine)",
       "correctAnswer": "C",
-      "explanation": "Les AOD comme le rivaroxaban et l'apixaban inhibent directement le facteur Xa, tandis que le dabigatran inhibe directement la thrombine (facteur IIa)."
+      "explanation": "Les AOD comme le rivaroxaban et l'apixaban inhibent directement le facteur Xa, tandis que le dabigatran inhibe directement la thrombine (facteur IIa).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale des cellules de Kupffer dans le foie ?",
@@ -564,7 +625,8 @@
       "optionC": "Phagocytose et détoxification",
       "optionD": "Synthèse des protéines plasmatiques",
       "correctAnswer": "C",
-      "explanation": "Les cellules de Kupffer sont des macrophages situés dans le foie, responsables de la phagocytose des particules et des bactéries, ainsi que de la détoxification."
+      "explanation": "Les cellules de Kupffer sont des macrophages situés dans le foie, responsables de la phagocytose des particules et des bactéries, ainsi que de la détoxification.",
+      "difficulty": "medium"
     },
     {
       "question": "Concernant l'artère coronaire droite, quelle affirmation est incorrecte?",
@@ -573,7 +635,8 @@
       "optionC": "Elle donne naissance à l'artère marginale droite",
       "optionD": "Elle vascularise le nœud sinusal dans 60% des cas",
       "correctAnswer": "A",
-      "explanation": "L'artère coronaire droite naît du sinus aortique droit, pas du sinus coronaire droit. Le sinus coronaire droit est une veine qui se jette dans l'oreillette droite."
+      "explanation": "L'artère coronaire droite naît du sinus aortique droit, pas du sinus coronaire droit. Le sinus coronaire droit est une veine qui se jette dans l'oreillette droite.",
+      "difficulty": "medium"
     },
     {
       "question": "Chez un patient présentant une pancréatite aiguë, quelle modification enzymatique est la plus spécifique?",
@@ -582,7 +645,8 @@
       "optionC": "Élévation de la phospholipase A2",
       "optionD": "Élévation de la trypsine",
       "correctAnswer": "B",
-      "explanation": "La lipasémie est plus spécifique que l'amylasémie pour le diagnostic de pancréatite aiguë. Elle présente une meilleure sensibilité et spécificité, avec une demi-vie plus longue."
+      "explanation": "La lipasémie est plus spécifique que l'amylasémie pour le diagnostic de pancréatite aiguë. Elle présente une meilleure sensibilité et spécificité, avec une demi-vie plus longue.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est l'action principale de l'enzyme de conversion de l'angiotensine (ECA)?",
@@ -591,7 +655,8 @@
       "optionC": "Inhibition de l'aldostérone",
       "optionD": "Vasodilatation des artérioles",
       "correctAnswer": "A",
-      "explanation": "L'ECA convertit l'angiotensine I en angiotensine II, un puissant vasoconstricteur. Elle dégrade également la bradykinine, mais ce n'est pas son action principale."
+      "explanation": "L'ECA convertit l'angiotensine I en angiotensine II, un puissant vasoconstricteur. Elle dégrade également la bradykinine, mais ce n'est pas son action principale.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle structure nerveuse est responsable de la coordination du mouvement et de l'équilibre?",
@@ -600,7 +665,8 @@
       "optionC": "Hypothalamus",
       "optionD": "Mésencéphale",
       "correctAnswer": "B",
-      "explanation": "Le cervelet est principalement responsable de la coordination du mouvement, de l'équilibre et de la posture. Il reçoit des informations sensorielles et compare les mouvements voulus avec les mouvements réels."
+      "explanation": "Le cervelet est principalement responsable de la coordination du mouvement, de l'équilibre et de la posture. Il reçoit des informations sensorielles et compare les mouvements voulus avec les mouvements réels.",
+      "difficulty": "medium"
     },
     {
       "question": "Chez un patient atteint de fibrillation atriale, quel médicament est le plus approprié pour contrôler la fréventriculaire?",
@@ -609,7 +675,8 @@
       "optionC": "Digoxine",
       "optionD": "Warfarine",
       "correctAnswer": "B",
-      "explanation": "Le diltiazem (bloqueur calcique non dihydropyridinique) est un choix approprié pour contrôler la fréventriculaire chez un patient en fibrillation atriale sans dysfonction ventriculaire gauche."
+      "explanation": "Le diltiazem (bloqueur calcique non dihydropyridinique) est un choix approprié pour contrôler la fréventriculaire chez un patient en fibrillation atriale sans dysfonction ventriculaire gauche.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel mécanisme explique la douleur de type sciatique?",
@@ -618,7 +685,8 @@
       "optionC": "Compression du nerf sciatique par une sténose du canal lombaire",
       "optionD": "Compression du nerf sciatique par un syndrome du piriforme",
       "correctAnswer": "D",
-      "explanation": "La sciatique est souvent causée par une compression du nerf sciatique par le muscle piriforme (syndrome du piriforme), bien que d'autres causes comme les hernies discales soient possibles."
+      "explanation": "La sciatique est souvent causée par une compression du nerf sciatique par le muscle piriforme (syndrome du piriforme), bien que d'autres causes comme les hernies discales soient possibles.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale des cellules pariétales de l'estomac?",
@@ -627,7 +695,8 @@
       "optionC": "Sécrétion de mucus",
       "optionD": "Sécrétion de gastrine",
       "correctAnswer": "B",
-      "explanation": "Les cellules pariétales de l'estomac sont responsables de la sécrétion d'acide chlorhydrique, essentielle à la digestion des protéines et à l'activation de la pepsine."
+      "explanation": "Les cellules pariétales de l'estomac sont responsables de la sécrétion d'acide chlorhydrique, essentielle à la digestion des protéines et à l'activation de la pepsine.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle modification hémodynamique est typique du choc septique?",
@@ -636,7 +705,8 @@
       "optionC": "Augmentation de la précharge ventriculaire",
       "optionD": "Diminution du débit cardiaque",
       "correctAnswer": "B",
-      "explanation": "Le choc septique se caractérise par une vasodilatation systémique avec diminution de la résistance vasculaire systémique, une augmentation du débit cardiaque et une redistribution du débit sanguin."
+      "explanation": "Le choc septique se caractérise par une vasodilatation systémique avec diminution de la résistance vasculaire systémique, une augmentation du débit cardiaque et une redistribution du débit sanguin.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle structure du cerveau est impliquée dans la régulation du sommeil et de l'éveil?",
@@ -645,7 +715,8 @@
       "optionC": "Ganglion basal",
       "optionD": "Cortex cérébral",
       "correctAnswer": "A",
-      "explanation": "L'hypothalamus, notamment les noyaux préoptiques médians et le noyau suprachiasmatique, joue un rôle crucial dans la régulation du cycle veille-sommeil."
+      "explanation": "L'hypothalamus, notamment les noyaux préoptiques médians et le noyau suprachiasmatique, joue un rôle crucial dans la régulation du cycle veille-sommeil.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale action des inhibiteurs de la pompe à protons (IPP)?",
@@ -654,7 +725,8 @@
       "optionC": "Neutralisation directe de l'acide gastrique",
       "optionD": "Augmentation de la sécrétion de mucus",
       "correctAnswer": "B",
-      "explanation": "Les IPP inhibent spécifiquement la pompe à protons (H+/K+ ATPase) des cellules pariétales de l'estomac, réduisant ainsi la sécrétion d'acide chlorhydrique."
+      "explanation": "Les IPP inhibent spécifiquement la pompe à protons (H+/K+ ATPase) des cellules pariétales de l'estomac, réduisant ainsi la sécrétion d'acide chlorhydrique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la conséquence physiologique principale de l'activation du système nerveux sympathique?",
@@ -663,7 +735,8 @@
       "optionC": "Augmentation de la motilité gastro-intestinale",
       "optionD": "Constriction pupillaire",
       "correctAnswer": "B",
-      "explanation": "L'activation du système sympathique entraîne une bronchodilatation, une augmentation de la fréquence cardiaque, une constriction pupillaire (mydriase) et une diminution de la motilité gastro-intestinale."
+      "explanation": "L'activation du système sympathique entraîne une bronchodilatation, une augmentation de la fréquence cardiaque, une constriction pupillaire (mydriase) et une diminution de la motilité gastro-intestinale.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique histologique typique de la maladie de Crohn?",
@@ -672,7 +745,8 @@
       "optionC": "Inflammation localisée au rectum",
       "optionD": "Inflammation avec infiltrat eosinophile",
       "correctAnswer": "B",
-      "explanation": "La maladie de Crohn se caractérise histologiquement par une inflammation transmurale qui peut toucher toute la paroi intestinale, souvent associée à la formation de granulomes non caséeux."
+      "explanation": "La maladie de Crohn se caractérise histologiquement par une inflammation transmurale qui peut toucher toute la paroi intestinale, souvent associée à la formation de granulomes non caséeux.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel médicament est un antagoniste des récepteurs de l'angiotensine II (ARA II)?",
@@ -681,7 +755,8 @@
       "optionC": "Furosémide",
       "optionD": "Amlodipine",
       "correctAnswer": "B",
-      "explanation": "Le valsartan est un antagoniste des récepteurs de l'angiotensine II (ARA II), qui bloque l'action de l'angiotensine II sur ses récepteurs AT1, réduisant ainsi la vasoconstriction."
+      "explanation": "Le valsartan est un antagoniste des récepteurs de l'angiotensine II (ARA II), qui bloque l'action de l'angiotensine II sur ses récepteurs AT1, réduisant ainsi la vasoconstriction.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle structure encéphalique est responsable de la régulation de la respiration?",
@@ -690,7 +765,8 @@
       "optionC": "Diencéphale",
       "optionD": "Cervelet",
       "correctAnswer": "A",
-      "explanation": "Le bulbe rachidien (ou médulla oblongata) contient les centres respiratoires principaux qui contrôlent automatiquement la fréquence et la profondeur de la respiration."
+      "explanation": "Le bulbe rachidien (ou médulla oblongata) contient les centres respiratoires principaux qui contrôlent automatiquement la fréquence et la profondeur de la respiration.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la complication la plus fréquente de la drépanocytose?",
@@ -699,7 +775,8 @@
       "optionC": "Cirrhose biliaire",
       "optionD": "Pancréatite chronique",
       "correctAnswer": "B",
-      "explanation": "Les accidents vasculaires cérébraux (AVC) sont une complication fréquente de la drépanocytose, particulièrement chez les enfants, en raison de la vaso-occlusion par les hématies falciformes."
+      "explanation": "Les accidents vasculaires cérébraux (AVC) sont une complication fréquente de la drépanocytose, particulièrement chez les enfants, en raison de la vaso-occlusion par les hématies falciformes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale de la valve aortique?",
@@ -708,7 +785,8 @@
       "optionC": "Assurer le remplissage ventriculaire",
       "optionD": "Contrôler la contraction ventriculaire",
       "correctAnswer": "A",
-      "explanation": "La valve aortique empêche le reflux du sang de l'aorte vers le ventricule gauche pendant la diastole, garantissant ainsi un flux unidirectionnel du sang dans le cœur."
+      "explanation": "La valve aortique empêche le reflux du sang de l'aorte vers le ventricule gauche pendant la diastole, garantissant ainsi un flux unidirectionnel du sang dans le cœur.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique histologique de la maladie d'Alzheimer?",
@@ -717,7 +795,12 @@
       "optionC": "Corps de Pick",
       "optionD": "Dépôts de tau dans les oligodendrocytes",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La maladie d'Alzheimer se caractérise histologiquement par la présence de plaques amyloïdes extracellulaires et de dégénérescence neurofibrillaire (intraneuronales)."
+=======
+      "explanation": "La maladie d'Alzheimer se caractérise histologiquement par la présence de plaques amyloïdes extracellulaires et de dégénérescence neurofibrillaire (intraneuronales).",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quelle est la fonction principale du pancréas exocrine?",
@@ -726,7 +809,8 @@
       "optionC": "Production d'enzymes digestives",
       "optionD": "Production de bicarbonates",
       "correctAnswer": "C",
-      "explanation": "Le pancréas exocrine produit et sécrète des enzymes digestives (amylase, lipase, trypsine, etc.) qui sont nécessaires à la digestion des aliments dans l'intestin grêle."
+      "explanation": "Le pancréas exocrine produit et sécrète des enzymes digestives (amylase, lipase, trypsine, etc.) qui sont nécessaires à la digestion des aliments dans l'intestin grêle.",
+      "difficulty": "medium"
     }
   ]
 }

@@ -17,6 +17,7 @@ interface QuizState {
   selectedBankId: string | null;
   selectedExamId: string | null;
   currentSessionId: string | null;
+<<<<<<< Updated upstream
   /**
    * The difficulty filter the user picked when starting the current session.
    * Used by SessionView to award the master-hard badge (only when difficulty
@@ -28,6 +29,9 @@ interface QuizState {
    * When null (default), the ProfileView shows the current user's own profile.
    */
   profileUserId: string | null;
+=======
+  selectedProfileId: string | null;
+>>>>>>> Stashed changes
   banks: QuestionBank[];
   exams: Exam[];
   session: QuizSession | null;
@@ -57,6 +61,7 @@ interface QuizState {
   openSocial: () => void;
   openLeaderboard: () => void;
   openSpacedRepetition: () => void;
+<<<<<<< Updated upstream
   openAchievements: () => void;
   /** Open the forum view (list of topics). */
   openForum: () => void;
@@ -74,6 +79,15 @@ interface QuizState {
   /** Open the calendar events view. */
   openEvents: () => void;
   /** Open the blog / articles view. */
+=======
+  openForum: () => void;
+  openCompetition: () => void;
+  openAchievements: () => void;
+  openProfile: (userId?: string) => void;
+  openApiDocs: () => void;
+  openStudyGroups: () => void;
+  openEvents: () => void;
+>>>>>>> Stashed changes
   openBlog: () => void;
 }
 
@@ -82,8 +96,12 @@ export const useQuizStore = create<QuizState>((set) => ({
   selectedBankId: null,
   selectedExamId: null,
   currentSessionId: null,
+<<<<<<< Updated upstream
   currentSessionDifficulty: null,
   profileUserId: null,
+=======
+  selectedProfileId: null,
+>>>>>>> Stashed changes
   banks: [],
   exams: [],
   session: null,
@@ -128,11 +146,21 @@ export const useQuizStore = create<QuizState>((set) => ({
   openSocial: () => set({ view: "social" }),
   openLeaderboard: () => set({ view: "leaderboard" }),
   openSpacedRepetition: () => set({ view: "spaced-repetition" }),
+<<<<<<< Updated upstream
   openAchievements: () => set({ view: "achievements" }),
   openForum: () => set({ view: "forum" }),
   openCompetition: () => set({ view: "competition" }),
   openProfile: (userId = null) => set({ view: "profile", profileUserId: userId }),
   openGroups: () => set({ view: "groups" }),
+=======
+  openForum: () => set({ view: "forum" }),
+  openCompetition: () => set({ view: "competition" }),
+  openAchievements: () => set({ view: "achievements" }),
+  openProfile: (userId) =>
+    set({ selectedProfileId: userId ?? null, view: "profile" }),
+  openApiDocs: () => set({ view: "api-docs" }),
+  openStudyGroups: () => set({ view: "study-groups" }),
+>>>>>>> Stashed changes
   openEvents: () => set({ view: "events" }),
   openBlog: () => set({ view: "blog" }),
 }));

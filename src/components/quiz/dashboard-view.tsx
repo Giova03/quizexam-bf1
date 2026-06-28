@@ -26,16 +26,27 @@ import {
   Star,
   Trash2,
   Bookmark,
+<<<<<<< Updated upstream
   Bot,
+=======
+  Sparkles,
+>>>>>>> Stashed changes
 } from "lucide-react";
 import { usePrefs } from "@/lib/prefs-store";
 import { useFavorites } from "@/lib/favorites-store";
 import { useQuizStore } from "@/lib/quiz-store";
 import { StatsComparison } from "./stats-comparison";
 import { ReferralCard } from "./referral-card";
+<<<<<<< Updated upstream
 import { AdvancedCharts } from "./advanced-charts";
 import { AnkiExportButton } from "./anki-export-button";
 import { AITutorPanel } from "./ai-tutor-panel";
+=======
+import { AiTutorPanel } from "./ai-tutor-panel";
+import { AdvancedCharts } from "./advanced-charts";
+import { SubscriptionLimits } from "./subscription-limits";
+import { AnkiExportButton } from "./anki-export-button";
+>>>>>>> Stashed changes
 import { EventsWidget } from "./events-widget";
 
 interface SessionAnswer {
@@ -255,9 +266,15 @@ export function DashboardView() {
             <Bookmark className="h-4 w-4" />
             <span className="hidden sm:inline">Favoris</span>
           </TabsTrigger>
+<<<<<<< Updated upstream
           <TabsTrigger value="ai-tutor" className="gap-1.5">
             <Bot className="h-4 w-4" />
             <span className="hidden sm:inline">Tuteur IA</span>
+=======
+          <TabsTrigger value="tools" className="gap-1.5">
+            <Sparkles className="h-4 w-4" />
+            <span className="hidden sm:inline">IA &amp; Outils</span>
+>>>>>>> Stashed changes
           </TabsTrigger>
         </TabsList>
 
@@ -398,8 +415,38 @@ export function DashboardView() {
           {/* Weekly activity chart */}
           <WeeklyChart sessions={completed} />
 
+<<<<<<< Updated upstream
           {/* Advanced charts (Recharts) — 30-day progression, radar, bar, pie */}
           <AdvancedCharts sessions={completed} />
+=======
+          {/* Upcoming events widget */}
+          <EventsWidget />
+
+          {/* Subscription status (free/premium) */}
+          <SubscriptionLimits />
+
+          {/* Advanced Recharts visualisations */}
+          <AdvancedCharts sessions={completed} />
+        </TabsContent>
+
+        {/* === IA & Tools Tab === */}
+        <TabsContent value="tools" className="space-y-4">
+          <AiTutorPanel />
+          <ReferralCard />
+          <Card className="p-5">
+            <div className="mb-3 flex items-center gap-2">
+              <FileDown className="h-4 w-4 text-emerald-600" />
+              <h3 className="text-sm font-semibold">
+                Export Anki
+              </h3>
+            </div>
+            <p className="mb-3 text-xs text-muted-foreground">
+              Sélectionnez une banque puis téléchargez un fichier CSV
+              importable dans Anki (format Front;Back;Tags avec BOM UTF-8).
+            </p>
+            <AnkiBankExporter />
+          </Card>
+>>>>>>> Stashed changes
         </TabsContent>
 
         {/* === Per-Quiz Tab === */}
@@ -703,6 +750,52 @@ function FavoritesList() {
           </Card>
         ))}
       </div>
+    </div>
+  );
+}
+
+// === Anki bank exporter (bank selector + export button) ===
+function AnkiBankExporter() {
+  const banks = useQuizStore((s) => s.banks);
+  // Only store the user's *explicit* choice. The displayed value falls back
+  // to the first available bank — this avoids setState-in-effect.
+  const [explicitChoice, setExplicitChoice] = useState<string>("");
+  const effectiveBankId = explicitChoice || banks[0]?.id || "";
+
+  // Load banks list lazily if not already cached. setState is only called
+  // inside the async .then() callback (not synchronously in the effect body).
+  useEffect(() => {
+    if (banks.length === 0) {
+      fetch("/api/banks")
+        .then((r) => (r.ok ? r.json() : []))
+        .then((list: Array<{ id: string; title: string }>) => {
+          if (Array.isArray(list)) {
+            useQuizStore.getState().setBanks(list as any);
+          }
+        })
+        .catch(() => {});
+    }
+  }, [banks.length]);
+
+  return (
+    <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+      <select
+        value={effectiveBankId}
+        onChange={(e) => setExplicitChoice(e.target.value)}
+        className="h-9 flex-1 rounded-md border bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+      >
+        {banks.length === 0 && <option value="">Chargement…</option>}
+        {banks.map((b) => (
+          <option key={b.id} value={b.id}>
+            {b.title}
+          </option>
+        ))}
+      </select>
+      <AnkiExportButton
+        bankId={effectiveBankId}
+        bankTitle={banks.find((b) => b.id === effectiveBankId)?.title}
+        size="default"
+      />
     </div>
   );
 }

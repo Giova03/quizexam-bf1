@@ -6,6 +6,7 @@ import { db } from "@/lib/db";
 export const dynamic = "force-dynamic";
 
 /**
+<<<<<<< Updated upstream
  * GET /api/forum/topics
  * List forum topics with optional filters and pagination.
  * Query params:
@@ -99,6 +100,31 @@ export async function GET(request: Request) {
     });
   } catch (error) {
     console.error("Forum topics GET error:", error);
+=======
+ * GET /api/forum/topics — liste les sujets de discussion (avec l'auteur et
+ * le nombre de réponses). Tri du plus récent au plus ancien.
+ *
+ * POST /api/forum/topics — crée un nouveau sujet. Requiert une session
+ * authentifiée. Corps attendu : { title, content, category? }.
+ */
+
+export async function GET() {
+  try {
+    const topics = await db.forumTopic.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 200,
+      include: {
+        author: {
+          select: { id: true, name: true },
+        },
+        _count: { select: { replies: true } },
+      },
+    });
+
+    return NextResponse.json(topics);
+  } catch (error) {
+    console.error("Failed to list forum topics:", error);
+>>>>>>> Stashed changes
     return NextResponse.json(
       { error: "Failed to load forum topics" },
       { status: 500 }
@@ -106,6 +132,7 @@ export async function GET(request: Request) {
   }
 }
 
+<<<<<<< Updated upstream
 /**
  * POST /api/forum/topics
  * Create a new forum topic. Requires authentication.
@@ -143,11 +170,42 @@ export async function POST(request: Request) {
     if (!title) {
       return NextResponse.json(
         { error: "Le titre est requis" },
+=======
+export async function POST(request: Request) {
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.email) {
+      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
+    }
+
+    const user = await db.user.findUnique({
+      where: { email: session.user.email },
+      select: { id: true },
+    });
+    if (!user) {
+      return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
+    }
+
+    const body = (await request.json()) as {
+      title?: string;
+      content?: string;
+      category?: string;
+    };
+
+    const title = body.title?.trim();
+    const content = body.content?.trim();
+    const category = body.category?.trim() || "general";
+
+    if (!title || !content) {
+      return NextResponse.json(
+        { error: "Le titre et le contenu sont obligatoires" },
+>>>>>>> Stashed changes
         { status: 400 }
       );
     }
     if (title.length > 200) {
       return NextResponse.json(
+<<<<<<< Updated upstream
         { error: "Le titre est trop long (200 caractères max)" },
         { status: 400 }
       );
@@ -178,12 +236,25 @@ export async function POST(request: Request) {
         );
       }
     }
+=======
+        { error: "Le titre ne doit pas dépasser 200 caractères" },
+        { status: 400 }
+      );
+    }
+    if (content.length > 5000) {
+      return NextResponse.json(
+        { error: "Le contenu ne doit pas dépasser 5000 caractères" },
+        { status: 400 }
+      );
+    }
+>>>>>>> Stashed changes
 
     const topic = await db.forumTopic.create({
       data: {
         title,
         content,
         category,
+<<<<<<< Updated upstream
         bankId,
         authorId: userId,
       },
@@ -192,15 +263,29 @@ export async function POST(request: Request) {
         bank: {
           select: { id: true, title: true, color: true, icon: true },
         },
+=======
+        authorId: user.id,
+      },
+      include: {
+        author: { select: { id: true, name: true } },
+>>>>>>> Stashed changes
         _count: { select: { replies: true } },
       },
     });
 
+<<<<<<< Updated upstream
     return NextResponse.json(topic, { status: 201 });
   } catch (error) {
     console.error("Forum topics POST error:", error);
     return NextResponse.json(
       { error: "Failed to create forum topic" },
+=======
+    return NextResponse.json(topic);
+  } catch (error) {
+    console.error("Failed to create forum topic:", error);
+    return NextResponse.json(
+      { error: "Failed to create topic" },
+>>>>>>> Stashed changes
       { status: 500 }
     );
   }

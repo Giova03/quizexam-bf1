@@ -13,7 +13,18 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+<<<<<<< Updated upstream
 import { Zap, Flag, CheckCircle2, ListChecks, BarChart3 } from "lucide-react";
+=======
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Zap, Flag, CheckCircle2, ListChecks, Gauge } from "lucide-react";
+>>>>>>> Stashed changes
 import type { CorrectionMode } from "@/lib/types";
 
 export type DifficultyFilter = "all" | "easy" | "medium" | "hard";
@@ -24,6 +35,7 @@ interface StartDialogProps {
   title: string;
   subtitle: string;
   questionCount: number;
+<<<<<<< Updated upstream
   /**
    * Optional difficulty counts — when provided, the dialog shows a difficulty
    * selector and the `onStart` callback receives the chosen difficulty.
@@ -71,6 +83,19 @@ const DIFFICULTY_OPTIONS: Array<{
       "border-rose-500 bg-rose-50 text-rose-700 dark:bg-rose-950/30 dark:text-rose-300",
   },
 ];
+=======
+  /** Whether to show the difficulty selector (hidden for exam-less banks). */
+  showDifficultyFilter?: boolean;
+  onStart: (mode: CorrectionMode, difficulty: DifficultyFilter) => Promise<void>;
+}
+
+const DIFFICULTY_LABELS: Record<DifficultyFilter, string> = {
+  all: "Toutes les difficultés",
+  easy: "Facile uniquement",
+  medium: "Moyen uniquement",
+  hard: "Difficile uniquement",
+};
+>>>>>>> Stashed changes
 
 export function StartDialog({
   open,
@@ -78,6 +103,7 @@ export function StartDialog({
   title,
   subtitle,
   questionCount,
+<<<<<<< Updated upstream
   difficultyCounts,
   initialDifficulty = "all",
   onStart,
@@ -86,6 +112,13 @@ export function StartDialog({
   const [difficulty, setDifficulty] = useState<DifficultyFilter>(
     initialDifficulty
   );
+=======
+  showDifficultyFilter = true,
+  onStart,
+}: StartDialogProps) {
+  const [mode, setMode] = useState<CorrectionMode>("immediate");
+  const [difficulty, setDifficulty] = useState<DifficultyFilter>("all");
+>>>>>>> Stashed changes
   const [starting, setStarting] = useState(false);
 
   // Compute the live question count based on the selected difficulty.
@@ -116,6 +149,7 @@ export function StartDialog({
 
         <p className="text-sm text-muted-foreground">{subtitle}</p>
 
+<<<<<<< Updated upstream
         {/* Difficulty selector (only when counts are provided) */}
         {difficultyCounts && (
           <div className="space-y-2">
@@ -159,6 +193,34 @@ export function StartDialog({
                 ⚠️ Aucune question pour ce niveau de difficulté. Choisissez une
                 autre difficulté.
               </div>
+=======
+        {showDifficultyFilter && (
+          <div className="space-y-1.5">
+            <Label className="flex items-center gap-1.5 text-sm font-semibold">
+              <Gauge className="h-4 w-4 text-emerald-600" />
+              Niveau de difficulté
+            </Label>
+            <Select
+              value={difficulty}
+              onValueChange={(v) => setDifficulty(v as DifficultyFilter)}
+            >
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {(Object.keys(DIFFICULTY_LABELS) as DifficultyFilter[]).map((d) => (
+                  <SelectItem key={d} value={d}>
+                    {DIFFICULTY_LABELS[d]}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            {difficulty !== "all" && (
+              <p className="text-xs text-amber-600 dark:text-amber-400">
+                ⚠️ Seules les questions « {DIFFICULTY_LABELS[difficulty]} » seront
+                incluses. Le nombre réel de questions peut être inférieur.
+              </p>
+>>>>>>> Stashed changes
             )}
           </div>
         )}

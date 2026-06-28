@@ -16,7 +16,8 @@
       "optionC": "Deux points d'inflexion en x=0 et x=2",
       "optionD": "Un point d'inflexion en x=1 et un extremum en x=2",
       "correctAnswer": "B",
-      "explanation": "La dérivée f'(x) = 3x² - 6x s'annule en x=0 et x=2. La dérivée seconde f''(x) = 6x - 6 est négative en x=0 (maximum) et positive en x=2 (minimum)."
+      "explanation": "La dérivée f'(x) = 3x² - 6x s'annule en x=0 et x=2. La dérivée seconde f''(x) = 6x - 6 est négative en x=0 (maximum) et positive en x=2 (minimum).",
+      "difficulty": "medium"
     },
     {
       "question": "Calculez l'intégrale ∫(de 0 à π) sin²(x) dx",
@@ -25,7 +26,8 @@
       "optionC": "2π",
       "optionD": "π/4",
       "correctAnswer": "A",
-      "explanation": "En utilisant l'identité sin²(x) = (1 - cos(2x))/2, on obtient ∫(de 0 à π) (1 - cos(2x))/2 dx = [x/2 - sin(2x)/4] de 0 à π = π/2."
+      "explanation": "En utilisant l'identité sin²(x) = (1 - cos(2x))/2, on obtient ∫(de 0 à π) (1 - cos(2x))/2 dx = [x/2 - sin(2x)/4] de 0 à π = π/2.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit la suite (u_n) définie par u_0 = 1 et u_{n+1} = 2u_n + 1. Quelle est la limite de la suite (u_n/3^n) ?",
@@ -34,7 +36,8 @@
       "optionC": "2/3",
       "optionD": "1",
       "correctAnswer": "A",
-      "explanation": "La suite u_n est géométrique de raison 2, donc u_n = 2^n - 1. Alors u_n/3^n = (2/3)^n - (1/3)^n tend vers 0 car |2/3| < 1."
+      "explanation": "La suite u_n est géométrique de raison 2, donc u_n = 2^n - 1. Alors u_n/3^n = (2/3)^n - (1/3)^n tend vers 0 car |2/3| < 1.",
+      "difficulty": "medium"
     },
     {
       "question": "Résolvez l'équation complexe z² + 2z + 5 = 0 dans ℂ",
@@ -43,7 +46,8 @@
       "optionC": "z = -1 ± i√5",
       "optionD": "z = 1 ± i√5",
       "correctAnswer": "A",
-      "explanation": "En utilisant le discriminant Δ = 4 - 20 = -16, on obtient z = (-2 ± √(-16))/2 = (-2 ± 4i)/2 = -1 ± 2i."
+      "explanation": "En utilisant le discriminant Δ = 4 - 20 = -16, on obtient z = (-2 ± √(-16))/2 = (-2 ± 4i)/2 = -1 ± 2i.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit la fonction f(x) = ln(x² + 1). Quelle est la dérivée de f en x=1 ?",
@@ -52,7 +56,8 @@
       "optionC": "1",
       "optionD": "2",
       "correctAnswer": "B",
-      "explanation": "La dérivée f'(x) = 2x/(x² + 1). En x=1, f'(1) = 2/(1 + 1) = 1/2."
+      "explanation": "La dérivée f'(x) = 2x/(x² + 1). En x=1, f'(1) = 2/(1 + 1) = 1/2.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire X suit une loi normale N(10, 4). Quelle est P(X > 14) ?",
@@ -61,7 +66,8 @@
       "optionC": "0.8413",
       "optionD": "0.9772",
       "correctAnswer": "A",
-      "explanation": "On standardise : Z = (X - 10)/2. P(X > 14) = P(Z > 2) = 1 - Φ(2) ≈ 1 - 0.9772 = 0.0228."
+      "explanation": "On standardise : Z = (X - 10)/2. P(X > 14) = P(Z > 2) = 1 - Φ(2) ≈ 1 - 0.9772 = 0.0228.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit la fonction f(x) = e^x sin(x). Calculez f'(π/4)",
@@ -70,7 +76,8 @@
       "optionC": "√2 e^(π/4)",
       "optionD": "2e^(π/4)",
       "correctAnswer": "C",
-      "explanation": "La dérivée f'(x) = e^x sin(x) + e^x cos(x) = e^x (sin(x) + cos(x)). En x=π/4, sin(π/4) = cos(π/4) = √2/2, donc f'(π/4) = e^(π/4) (√2/2 + √2/2) = √2 e^(π/4)."
+      "explanation": "La dérivée f'(x) = e^x sin(x) + e^x cos(x) = e^x (sin(x) + cos(x)). En x=π/4, sin(π/4) = cos(π/4) = √2/2, donc f'(π/4) = e^(π/4) (√2/2 + √2/2) = √2 e^(π/4).",
+      "difficulty": "medium"
     },
     {
       "question": "Calculez ∫(de 1 à e) ln(x)/x dx",
@@ -79,7 +86,8 @@
       "optionC": "e",
       "optionD": "e²/2",
       "correctAnswer": "A",
-      "explanation": "En posant u = ln(x), du = dx/x, l'intégrale devient ∫(de 0 à 1) u du = [u²/2] de 0 à 1 = 1/2."
+      "explanation": "En posant u = ln(x), du = dx/x, l'intégrale devient ∫(de 0 à 1) u du = [u²/2] de 0 à 1 = 1/2.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit la suite (u_n) définie par u_n = n²/2^n. Quelle est la limite de la suite (u_n) ?",
@@ -88,7 +96,8 @@
       "optionC": "+∞",
       "optionD": "La suite diverge",
       "correctAnswer": "A",
-      "explanation": "On peut utiliser la règle de l'Hôpital ou le fait que toute suite géométrique de raison |q| < 1 l'emporte sur toute suite polynômiale, donc n²/2^n → 0."
+      "explanation": "On peut utiliser la règle de l'Hôpital ou le fait que toute suite géométrique de raison |q| < 1 l'emporte sur toute suite polynômiale, donc n²/2^n → 0.",
+      "difficulty": "medium"
     },
     {
       "question": "Calculez sin(π/12) en utilisant les angles remarquables",
@@ -97,7 +106,8 @@
       "optionC": "(√2 - √6)/4",
       "optionD": "(√2 + √6)/4",
       "correctAnswer": "A",
-      "explanation": "sin(π/12) = sin(π/3 - π/4) = sin(π/3)cos(π/4) - cos(π/3)sin(π/4) = (√3/2)(√2/2) - (1/2)(√2/2) = (√6 - √2)/4."
+      "explanation": "sin(π/12) = sin(π/3 - π/4) = sin(π/3)cos(π/4) - cos(π/3)sin(π/4) = (√3/2)(√2/2) - (1/2)(√2/2) = (√6 - √2)/4.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit z = 1 + i√3. Calculez z^4 sous forme algébrique",
@@ -106,7 +116,8 @@
       "optionC": "-8 - 8i√3",
       "optionD": "8 - 8i√3",
       "correctAnswer": "C",
-      "explanation": "On a z = 2(cos(π/3) + i sin(π/3)), donc z^4 = 2^4(cos(4π/3) + i sin(4π/3)) = 16(-1/2 - i√3/2) = -8 - 8i√3."
+      "explanation": "On a z = 2(cos(π/3) + i sin(π/3)), donc z^4 = 2^4(cos(4π/3) + i sin(4π/3)) = 16(-1/2 - i√3/2) = -8 - 8i√3.",
+      "difficulty": "medium"
     },
     {
       "question": "Une urne contient 5 boules rouges et 3 boules noires. On tire successivement 3 boules sans remise. Quelle est la probabilité d'obtenir exactement 2 boules rouges ?",
@@ -115,7 +126,8 @@
       "optionC": "45/56",
       "optionD": "15/28",
       "correctAnswer": "B",
-      "explanation": "Le nombre de cas favorables est C(5,2)×C(3,1) = 10×3 = 30. Le nombre total de cas est C(8,3) = 56. Donc la probabilité est 30/56."
+      "explanation": "Le nombre de cas favorables est C(5,2)×C(3,1) = 10×3 = 30. Le nombre total de cas est C(8,3) = 56. Donc la probabilité est 30/56.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f(x) = x/(x² + 1). Calculez la limite de f(x) quand x tend vers +∞",
@@ -124,7 +136,8 @@
       "optionC": "+∞",
       "optionD": "1/2",
       "correctAnswer": "A",
-      "explanation": "On divise numérateur et dénominateur par x² : f(x) = (1/x)/(1 + 1/x²). Quand x → +∞, 1/x → 0 et 1/x² → 0, donc f(x) → 0/1 = 0."
+      "explanation": "On divise numérateur et dénominateur par x² : f(x) = (1/x)/(1 + 1/x²). Quand x → +∞, 1/x → 0 et 1/x² → 0, donc f(x) → 0/1 = 0.",
+      "difficulty": "medium"
     },
     {
       "question": "Calculez ∫(de 0 à π/2) sin³(x) dx",
@@ -133,7 +146,8 @@
       "optionC": "π/3",
       "optionD": "π/6",
       "correctAnswer": "B",
-      "explanation": "On utilise sin³(x) = sin(x)(1 - cos²(x)). En posant u = cos(x), du = -sin(x)dx, l'intégrale devient ∫(de 1 à 0) -(1 - u²) du = ∫(de 0 à 1) (1 - u²) du = [u - u³/3] de 0 à 1 = 1 - 1/3 = 2/3."
+      "explanation": "On utilise sin³(x) = sin(x)(1 - cos²(x)). En posant u = cos(x), du = -sin(x)dx, l'intégrale devient ∫(de 1 à 0) -(1 - u²) du = ∫(de 0 à 1) (1 - u²) du = [u - u³/3] de 0 à 1 = 1 - 1/3 = 2/3.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit la suite (u_n) définie par u_0 = 1 et u_{n+1} = (u_n + 2)/2. Quelle est la limite de la suite (u_n) ?",
@@ -142,7 +156,8 @@
       "optionC": "2",
       "optionD": "+∞",
       "correctAnswer": "C",
-      "explanation": "Si la suite converge vers L, alors L = (L + 2)/2, donc L = 2. On peut vérifier que la suite est croissante et majorée par 2, donc elle converge vers 2."
+      "explanation": "Si la suite converge vers L, alors L = (L + 2)/2, donc L = 2. On peut vérifier que la suite est croissante et majorée par 2, donc elle converge vers 2.",
+      "difficulty": "medium"
     },
     {
       "question": "Calculez cos(5π/12) en utilisant les angles remarquables",
@@ -151,7 +166,8 @@
       "optionC": "(√2 - √6)/4",
       "optionD": "(√2 + √6)/4",
       "correctAnswer": "B",
-      "explanation": "cos(5π/12) = cos(π/2 - π/12) = sin(π/12) = sin(π/3 - π/4) = sin(π/3)cos(π/4) - cos(π/3)sin(π/4) = (√3/2)(√2/2) - (1/2)(√2/2) = (√6 - √2)/4."
+      "explanation": "cos(5π/12) = cos(π/2 - π/12) = sin(π/12) = sin(π/3 - π/4) = sin(π/3)cos(π/4) - cos(π/3)sin(π/4) = (√3/2)(√2/2) - (1/2)(√2/2) = (√6 - √2)/4.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit z = (1 + i)/(1 - i). Calculez |z|",
@@ -160,7 +176,8 @@
       "optionC": "√2",
       "optionD": "2",
       "correctAnswer": "B",
-      "explanation": "En multipliant numérateur et dénominateur par le conjugué du dénominateur, on obtient z = (1 + i)²/((1 - i)(1 + i)) = (1 + 2i - 1)/(1 + 1) = 2i/2 = i. Donc |z| = |i| = 1."
+      "explanation": "En multipliant numérateur et dénominateur par le conjugué du dénominateur, on obtient z = (1 + i)²/((1 - i)(1 + i)) = (1 + 2i - 1)/(1 + 1) = 2i/2 = i. Donc |z| = |i| = 1.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire X suit une loi exponentielle de paramètre λ = 1/2. Calculez P(X > 3)",
@@ -169,7 +186,8 @@
       "optionC": "1 - e^(-3/2)",
       "optionD": "1 - e^(-3)",
       "correctAnswer": "A",
-      "explanation": "Pour une loi exponentielle de paramètre λ, P(X > x) = e^(-λx). Ici λ = 1/2, donc P(X > 3) = e^(-3/2)."
+      "explanation": "Pour une loi exponentielle de paramètre λ, P(X > x) = e^(-λx). Ici λ = 1/2, donc P(X > 3) = e^(-3/2).",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f(x) = x^x pour x > 0. Calculez f'(1)",
@@ -178,7 +196,8 @@
       "optionC": "e",
       "optionD": "1/e",
       "correctAnswer": "B",
-      "explanation": "On écrit f(x) = e^(x ln(x)), donc f'(x) = e^(x ln(x))(ln(x) + 1). En x=1, f'(1) = e^0(ln(1) + 1) = 1(0 + 1) = 1."
+      "explanation": "On écrit f(x) = e^(x ln(x)), donc f'(x) = e^(x ln(x))(ln(x) + 1). En x=1, f'(1) = e^0(ln(1) + 1) = 1(0 + 1) = 1.",
+      "difficulty": "medium"
     },
     {
       "question": "Calculez ∫(de 0 à 1) x e^x dx",
@@ -187,7 +206,8 @@
       "optionC": "e",
       "optionD": "2e - 1",
       "correctAnswer": "B",
-      "explanation": "En intégrant par parties avec u = x, dv = e^x dx, on obtient ∫u dv = uv - ∫v dx = [x e^x] de 0 à 1 - ∫(de 0 à 1) e^x dx = (e - 0) - [e^x] de 0 à 1 = e - (e - 1) = 1."
+      "explanation": "En intégrant par parties avec u = x, dv = e^x dx, on obtient ∫u dv = uv - ∫v dx = [x e^x] de 0 à 1 - ∫(de 0 à 1) e^x dx = (e - 0) - [e^x] de 0 à 1 = e - (e - 1) = 1.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = (x² - 3x + 2)e^x. Quelle est la dérivée troisième de f en 0?",
@@ -196,7 +216,8 @@
       "optionC": "6",
       "optionD": "12",
       "correctAnswer": "C",
-      "explanation": "f'(x) = (x² - x - 1)e^x, f''(x) = (x² + x - 2)e^x, f'''(x) = (x² + 3x - 2)e^x. f'''(0) = -2e^0 = -2? Correction: f'''(x) = (x² + 3x)e^x, donc f'''(0) = 0."
+      "explanation": "f'(x) = (x² - x - 1)e^x, f''(x) = (x² + x - 2)e^x, f'''(x) = (x² + 3x - 2)e^x. f'''(0) = -2e^0 = -2? Correction: f'''(x) = (x² + 3x)e^x, donc f'''(0) = 0.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit (u_n) une suite arithmétique de raison r>0 telle que u_1 = 1 et u_10 = 100. La somme S = u_1 + u_2 + ... + u_100 est égale à:",
@@ -205,7 +226,8 @@
       "optionC": "25250",
       "optionD": "50500",
       "correctAnswer": "C",
-      "explanation": "r = (u_10 - u_1)/9 = 11. S = 100*(1 + 100)/2 = 5050? Non, S = n*(u_1 + u_n)/2 = 100*(1 + 109)/2 = 50*110 = 5500."
+      "explanation": "r = (u_10 - u_1)/9 = 11. S = 100*(1 + 100)/2 = 5050? Non, S = n*(u_1 + u_n)/2 = 100*(1 + 109)/2 = 50*110 = 5500.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit z un nombre complexe tel que |z - 3 + 2i| = 5. Quel est le module de z?",
@@ -214,7 +236,8 @@
       "optionC": "entre 2 et 8",
       "optionD": "impossible à déterminer",
       "correctAnswer": "C",
-      "explanation": "L'ensemble des points z vérifiant |z - (3 - 2i)| = 5 est un cercle de centre 3 - 2i et rayon 5. Le module de z varie donc entre |3 - 2i| - 5 = √13 - 5 ≈ -1.6 et |3 - 2i| + 5 = √13 + 5 ≈ 8.6. Comme |z| ≥ 0, on a 0 ≤ |z| ≤ √13 + 5 ≈ 8.6."
+      "explanation": "L'ensemble des points z vérifiant |z - (3 - 2i)| = 5 est un cercle de centre 3 - 2i et rayon 5. Le module de z varie donc entre |3 - 2i| - 5 = √13 - 5 ≈ -1.6 et |3 - 2i| + 5 = √13 + 5 ≈ 8.6. Comme |z| ≥ 0, on a 0 ≤ |z| ≤ √13 + 5 ≈ 8.6.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ]0, +∞[ par f(x) = x^x. Quelle est la dérivée de f?",
@@ -223,7 +246,8 @@
       "optionC": "x^x (1 + ln(x))",
       "optionD": "x^(x-1)",
       "correctAnswer": "C",
-      "explanation": "f(x) = e^(x ln x). f'(x) = e^(x ln x) * (ln x + x * 1/x) = x^x (1 + ln x)."
+      "explanation": "f(x) = e^(x ln x). f'(x) = e^(x ln x) * (ln x + x * 1/x) = x^x (1 + ln x).",
+      "difficulty": "medium"
     },
     {
       "question": "Soit I = ∫(de 0 à π/2) sin^4(x) dx. La valeur de I est:",
@@ -232,7 +256,8 @@
       "optionC": "π/4",
       "optionD": "π/2",
       "correctAnswer": "B",
-      "explanation": "En utilisant la réduction des puissances de sinus: sin^4(x) = (1 - cos(2x))/2)^2 = (1 - 2cos(2x) + cos²(2x))/4 = (1 - 2cos(2x) + (1 + cos(4x))/2)/4 = (3 - 4cos(2x) + cos(4x))/8. L'intégrale de 0 à π/2 donne [3x/8 - sin(2x)/2 + sin(4x)/32] de 0 à π/2 = 3π/16 - 0 + 0 - (0 - 0 + 0) = 3π/16."
+      "explanation": "En utilisant la réduction des puissances de sinus: sin^4(x) = (1 - cos(2x))/2)^2 = (1 - 2cos(2x) + cos²(2x))/4 = (1 - 2cos(2x) + (1 + cos(4x))/2)/4 = (3 - 4cos(2x) + cos(4x))/8. L'intégrale de 0 à π/2 donne [3x/8 - sin(2x)/2 + sin(4x)/32] de 0 à π/2 = 3π/16 - 0 + 0 - (0 - 0 + 0) = 3π/16.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit (u_n) une suite définie par u_0 = 1 et u_{n+1} = (2u_n + 3)/(u_n + 4). La limite de cette suite est:",
@@ -241,7 +266,8 @@
       "optionC": "2",
       "optionD": "3",
       "correctAnswer": "B",
-      "explanation": "Si la suite converge vers L, alors L = (2L + 3)/(L + 4). L(L + 4) = 2L + 3 → L² + 4L - 2L - 3 = 0 → L² + 2L - 3 = 0. Les solutions sont L = 1 et L = -3. Comme u_n > 0 pour tout n, la limite est 1? Non, vérifions: u_0 = 1, u_1 = 5/5 = 1, donc la suite est constante égale à 1. La réponse est A."
+      "explanation": "Si la suite converge vers L, alors L = (2L + 3)/(L + 4). L(L + 4) = 2L + 3 → L² + 4L - 2L - 3 = 0 → L² + 2L - 3 = 0. Les solutions sont L = 1 et L = -3. Comme u_n > 0 pour tout n, la limite est 1? Non, vérifions: u_0 = 1, u_1 = 5/5 = 1, donc la suite est constante égale à 1. La réponse est A.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = ln(x² + 1). Quel est le développement limité de f à l'ordre 3 en 0?",
@@ -250,7 +276,8 @@
       "optionC": "x²/2 - x⁴/12 + o(x⁴)",
       "optionD": "x - x²/2 + x³/3 + o(x³)",
       "correctAnswer": "C",
-      "explanation": "On utilise le DL de ln(1 + u) = u - u²/2 + u³/3 - ... avec u = x². Donc f(x) = ln(1 + x²) = x² - (x²)²/2 + (x²)³/3 + o(x⁶) = x² - x⁴/2 + x⁶/3 + o(x⁶). À l'ordre 4, on a f(x) = x² - x⁴/2 + o(x⁴). La réponse C est incorrecte. Correction: f(x) = x² - x⁴/2 + o(x⁴). La réponse correcte devrait être x² - x⁴/2 + o(x⁴), mais ce n'est pas parmi les options. La réponse la plus proche est C."
+      "explanation": "On utilise le DL de ln(1 + u) = u - u²/2 + u³/3 - ... avec u = x². Donc f(x) = ln(1 + x²) = x² - (x²)²/2 + (x²)³/3 + o(x⁶) = x² - x⁴/2 + x⁶/3 + o(x⁶). À l'ordre 4, on a f(x) = x² - x⁴/2 + o(x⁴). La réponse C est incorrecte. Correction: f(x) = x² - x⁴/2 + o(x⁴). La réponse correcte devrait être x² - x⁴/2 + o(x⁴), mais ce n'est pas parmi les options. La réponse la plus proche est C.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit A et B deux événements indépendants tels que P(A) = 0.3 et P(B) = 0.4. La probabilité de l'événement A ∪ B est:",
@@ -259,7 +286,8 @@
       "optionC": "0.7",
       "optionD": "0.82",
       "correctAnswer": "B",
-      "explanation": "P(A ∪ B) = P(A) + P(B) - P(A ∩ B) = 0.3 + 0.4 - P(A)P(B) = 0.7 - 0.12 = 0.58."
+      "explanation": "P(A ∪ B) = P(A) + P(B) - P(A ∩ B) = 0.3 + 0.4 - P(A)P(B) = 0.7 - 0.12 = 0.58.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit z un nombre complexe tel que z + 1/z = 2cos(θ). Quel est le module de z?",
@@ -268,7 +296,8 @@
       "optionC": "2|cos(θ)|",
       "optionD": "|cos(θ)|/2",
       "correctAnswer": "A",
-      "explanation": "z + 1/z = 2cos(θ) → z² - 2cos(θ)z + 1 = 0. Le discriminant est Δ = 4cos²(θ) - 4 = -4sin²(θ). Les solutions sont z = [2cos(θ) ± 2isin(θ)]/2 = cos(θ) ± isin(θ). Donc |z| = √(cos²(θ) + sin²(θ)) = 1."
+      "explanation": "z + 1/z = 2cos(θ) → z² - 2cos(θ)z + 1 = 0. Le discriminant est Δ = 4cos²(θ) - 4 = -4sin²(θ). Les solutions sont z = [2cos(θ) ± 2isin(θ)]/2 = cos(θ) ± isin(θ). Donc |z| = √(cos²(θ) + sin²(θ)) = 1.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = x³ - 3x. Le nombre de points d'inflexion de la courbe représentative de f est:",
@@ -277,7 +306,8 @@
       "optionC": "2",
       "optionD": "3",
       "correctAnswer": "C",
-      "explanation": "f'(x) = 3x² - 3, f''(x) = 6x. Un point d'inflexion est un point où f''(x) = 0 et f''(x) change de signe. f''(x) = 0 → x = 0. f''(x) < 0 pour x < 0 et f''(x) > 0 pour x > 0, donc x = 0 est un point d'inflexion. Il n'y a qu'un point d'inflexion? Non, vérifions: f''(x) = 6x, qui s'annule en 0 et change de signe, donc un seul point d'inflexion. La réponse est B."
+      "explanation": "f'(x) = 3x² - 3, f''(x) = 6x. Un point d'inflexion est un point où f''(x) = 0 et f''(x) change de signe. f''(x) = 0 → x = 0. f''(x) < 0 pour x < 0 et f''(x) > 0 pour x > 0, donc x = 0 est un point d'inflexion. Il n'y a qu'un point d'inflexion? Non, vérifions: f''(x) = 6x, qui s'annule en 0 et change de signe, donc un seul point d'inflexion. La réponse est B.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit S = ∑(de n=1 à ∞) 1/(n(n+1)). La valeur de S est:",
@@ -286,7 +316,8 @@
       "optionC": "e - 1",
       "optionD": "π²/6 - 1",
       "correctAnswer": "B",
-      "explanation": "1/(n(n+1)) = 1/n - 1/(n+1). Donc S = (1 - 1/2) + (1/2 - 1/3) + (1/3 - 1/4) + ... = 1 (la série télescopique)."
+      "explanation": "1/(n(n+1)) = 1/n - 1/(n+1). Donc S = (1 - 1/2) + (1/2 - 1/3) + (1/3 - 1/4) + ... = 1 (la série télescopique).",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = e^{-x²}. Quelle est la valeur de ∫(de -∞ à +∞) f(x) dx?",
@@ -295,7 +326,8 @@
       "optionC": "π/2",
       "optionD": "π",
       "correctAnswer": "A",
-      "explanation": "C'est une intégrale gaussienne. ∫(de -∞ à +∞) e^{-x²} dx = √π."
+      "explanation": "C'est une intégrale gaussienne. ∫(de -∞ à +∞) e^{-x²} dx = √π.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit z un nombre complexe tel que |z| = 1 et arg(z) = π/3. Quel est le module de (1 + z²)/(1 - z²)?",
@@ -304,7 +336,8 @@
       "optionC": "2",
       "optionD": "3",
       "correctAnswer": "A",
-      "explanation": "z = e^{iπ/3} = cos(π/3) + isin(π/3) = 1/2 + i√3/2. z² = e^{i2π/3} = cos(2π/3) + isin(2π/3) = -1/2 + i√3/2. 1 + z² = 1/2 + i√3/2 = z. 1 - z² = 3/2 - i√3/2. |1 + z²| = |z| = 1. |1 - z²| = √((3/2)² + (√3/2)²) = √(9/4 + 3/4) = √3. Donc |(1 + z²)/(1 - z²)| = |z|/|1 - z²| = 1/√3? Non, je me suis trompé. 1 + z² = 1 + (-1/2 + i√3/2) = 1/2 + i√3/2. |1 + z²| = √((1/2)² + (√3/2)²) = √(1/4 + 3/4) = √1 = 1. 1 - z² = 1 - (-1/2 + i√3/2) = 3/2 - i√3/2. |1 - z²| = √((3/2)² + (√3/2)²) = √(9/4 + 3/4) = √3. Donc |(1 + z²)/(1 - z²)| = |1 + z²|/|1 - z²| = 1/√3. Mais ce n'est pas parmi les options. Réexaminons: z = e^{iπ/3}, z² = e^{i2π/3}. 1 + z² = 1 + e^{i2π/3}, 1 - z² = 1 - e^{i2π/3}. |1 + z²| = |1 + e^{i2π/3}| = |e^{iπ/3}(e^{-iπ/3} + e^{iπ/3})| = |e^{iπ/3}| * |2cos(π/3)| = 1 * 2 * 1/2 = 1. |1 - z²| = |1 - e^{i2π/3}| = |e^{iπ/3}(e^{-iπ/3} - e^{iπ/3})| = |e^{iπ/3}| * |-2isin(π/3)| = 1 * 2 * √3/2 = √3. Donc |(1 + z²)/(1 - z²)| = 1/√3. Il semble y avoir une erreur dans les options ou dans mon raisonnement."
+      "explanation": "z = e^{iπ/3} = cos(π/3) + isin(π/3) = 1/2 + i√3/2. z² = e^{i2π/3} = cos(2π/3) + isin(2π/3) = -1/2 + i√3/2. 1 + z² = 1/2 + i√3/2 = z. 1 - z² = 3/2 - i√3/2. |1 + z²| = |z| = 1. |1 - z²| = √((3/2)² + (√3/2)²) = √(9/4 + 3/4) = √3. Donc |(1 + z²)/(1 - z²)| = |z|/|1 - z²| = 1/√3? Non, je me suis trompé. 1 + z² = 1 + (-1/2 + i√3/2) = 1/2 + i√3/2. |1 + z²| = √((1/2)² + (√3/2)²) = √(1/4 + 3/4) = √1 = 1. 1 - z² = 1 - (-1/2 + i√3/2) = 3/2 - i√3/2. |1 - z²| = √((3/2)² + (√3/2)²) = √(9/4 + 3/4) = √3. Donc |(1 + z²)/(1 - z²)| = |1 + z²|/|1 - z²| = 1/√3. Mais ce n'est pas parmi les options. Réexaminons: z = e^{iπ/3}, z² = e^{i2π/3}. 1 + z² = 1 + e^{i2π/3}, 1 - z² = 1 - e^{i2π/3}. |1 + z²| = |1 + e^{i2π/3}| = |e^{iπ/3}(e^{-iπ/3} + e^{iπ/3})| = |e^{iπ/3}| * |2cos(π/3)| = 1 * 2 * 1/2 = 1. |1 - z²| = |1 - e^{i2π/3}| = |e^{iπ/3}(e^{-iπ/3} - e^{iπ/3})| = |e^{iπ/3}| * |-2isin(π/3)| = 1 * 2 * √3/2 = √3. Donc |(1 + z²)/(1 - z²)| = 1/√3. Il semble y avoir une erreur dans les options ou dans mon raisonnement.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ]0, +∞[ par f(x) = x^x. La limite de f(x) quand x tend vers 0+ est:",
@@ -313,7 +346,8 @@
       "optionC": "+∞",
       "optionD": "n'existe pas",
       "correctAnswer": "A",
-      "explanation": "f(x) = e^{x ln x}. Quand x → 0+, x ln x → 0 (car ln x → -∞ mais x → 0 plus rapidement). Donc f(x) → e^0 = 1? Non, en fait lim(x→0+) x ln x = 0, donc f(x) → e^0 = 1. La réponse est B."
+      "explanation": "f(x) = e^{x ln x}. Quand x → 0+, x ln x → 0 (car ln x → -∞ mais x → 0 plus rapidement). Donc f(x) → e^0 = 1? Non, en fait lim(x→0+) x ln x = 0, donc f(x) → e^0 = 1. La réponse est B.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit (u_n) une suite définie par u_0 = 1 et u_{n+1} = u_n + 1/u_n. La limite de u_n/n quand n tend vers +∞ est:",
@@ -322,7 +356,8 @@
       "optionC": "1",
       "optionD": "+∞",
       "correctAnswer": "B",
-      "explanation": "On montre que u_n ~ √(2n) quand n → +∞. Donc u_n/n ~ √(2n)/n = √(2/n) → 0? Non, en fait u_n² = u_0² + 2n + ∑(k=0 à n-1) 1/u_k² ~ 2n, donc u_n ~ √(2n). Donc u_n/n ~ √(2n)/n = √(2/n) → 0. La réponse est A."
+      "explanation": "On montre que u_n ~ √(2n) quand n → +∞. Donc u_n/n ~ √(2n)/n = √(2/n) → 0? Non, en fait u_n² = u_0² + 2n + ∑(k=0 à n-1) 1/u_k² ~ 2n, donc u_n ~ √(2n). Donc u_n/n ~ √(2n)/n = √(2/n) → 0. La réponse est A.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = sin(x) + sin(2x) + sin(3x). La période de f est:",
@@ -331,7 +366,8 @@
       "optionC": "3π",
       "optionD": "6π",
       "correctAnswer": "B",
-      "explanation": "Les périodes de sin(x), sin(2x) et sin(3x) sont 2π, π et 2π/3 respectivement. La période de f est le PPCM de ces périodes, qui est 2π."
+      "explanation": "Les périodes de sin(x), sin(2x) et sin(3x) sont 2π, π et 2π/3 respectivement. La période de f est le PPCM de ces périodes, qui est 2π.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit A et B deux événements tels que P(A) = 0.5, P(B) = 0.3 et P(A ∩ B) = 0.1. La probabilité de l'événement A ∪ B est:",
@@ -340,7 +376,8 @@
       "optionC": "0.8",
       "optionD": "0.9",
       "correctAnswer": "B",
-      "explanation": "P(A ∪ B) = P(A) + P(B) - P(A ∩ B) = 0.5 + 0.3 - 0.1 = 0.7."
+      "explanation": "P(A ∪ B) = P(A) + P(B) - P(A ∩ B) = 0.5 + 0.3 - 0.1 = 0.7.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = ∫(de 0 à x) sin(t²) dt. La dérivée de f est:",
@@ -349,7 +386,8 @@
       "optionC": "sin²(x)",
       "optionD": "2x sin(x²)",
       "correctAnswer": "A",
-      "explanation": "Par le théorème fondamental du calcul intégral, si f(x) = ∫(de a à x) g(t) dt, alors f'(x) = g(x). Donc f'(x) = sin(x²)."
+      "explanation": "Par le théorème fondamental du calcul intégral, si f(x) = ∫(de a à x) g(t) dt, alors f'(x) = g(x). Donc f'(x) = sin(x²).",
+      "difficulty": "medium"
     },
     {
       "question": "Soit z un nombre complexe tel que z² + z + 1 = 0. Quel est le module de z?",
@@ -358,7 +396,8 @@
       "optionC": "2",
       "optionD": "3",
       "correctAnswer": "A",
-      "explanation": "L'équation z² + z + 1 = 0 a pour solutions les racines cubiques de l'unité différentes de 1, qui sont e^{i2π/3} et e^{i4π/3}. Le module de ces nombres est 1."
+      "explanation": "L'équation z² + z + 1 = 0 a pour solutions les racines cubiques de l'unité différentes de 1, qui sont e^{i2π/3} et e^{i4π/3}. Le module de ces nombres est 1.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = x²e^{-x}. La limite de f(x) quand x tend vers +∞ est:",
@@ -367,7 +406,8 @@
       "optionC": "+∞",
       "optionD": "n'existe pas",
       "correctAnswer": "A",
-      "explanation": "On peut écrire f(x) = x²/e^x. Quand x → +∞, e^x croît plus vite que toute puissance de x, donc f(x) → 0."
+      "explanation": "On peut écrire f(x) = x²/e^x. Quand x → +∞, e^x croît plus vite que toute puissance de x, donc f(x) → 0.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit la fonction f définie sur ℝ par f(x) = (x³ - 3x + 2)/(x² - 1). Quelle est la limite de f en +∞ ?",
@@ -376,7 +416,8 @@
       "optionC": "1",
       "optionD": "2",
       "correctAnswer": "C",
-      "explanation": "En divisant numérateur et dénominateur par x², on obtient f(x) = (x - 3/x + 2/x²)/(1 - 1/x²). Quand x tend vers +∞, f(x) tend vers x/1, soit +∞. En réalité, il faut diviser par x³ : f(x) = (1 - 3/x² + 2/x³)/(1/x - 1/x³) tend vers 1/1 = 1."
+      "explanation": "En divisant numérateur et dénominateur par x², on obtient f(x) = (x - 3/x + 2/x²)/(1 - 1/x²). Quand x tend vers +∞, f(x) tend vers x/1, soit +∞. En réalité, il faut diviser par x³ : f(x) = (1 - 3/x² + 2/x³)/(1/x - 1/x³) tend vers 1/1 = 1.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit la suite (u_n) définie par u_0 = 1 et u_{n+1} = (2u_n + 3)/(u_n + 2). Quelle est la limite de cette suite ?",
@@ -385,7 +426,8 @@
       "optionC": "√2",
       "optionD": "3/2",
       "correctAnswer": "B",
-      "explanation": "Si la suite converge vers L, alors L = (2L + 3)/(L + 2). En résolvant cette équation, on obtient L² = 3, donc L = √3 (la suite étant positive)."
+      "explanation": "Si la suite converge vers L, alors L = (2L + 3)/(L + 2). En résolvant cette équation, on obtient L² = 3, donc L = √3 (la suite étant positive).",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ]0, +∞[ par f(x) = x² ln(x). Quel est le minimum de f sur ]0, +∞[ ?",
@@ -394,7 +436,8 @@
       "optionC": "-1/e",
       "optionD": "-1/(4e)",
       "correctAnswer": "B",
-      "explanation": "f'(x) = 2x ln(x) + x = x(2ln(x) + 1). Le minimum est atteint en x = e^{-1/2}, et f(e^{-1/2}) = e^{-1} ln(e^{-1/2}) = -1/(2e)."
+      "explanation": "f'(x) = 2x ln(x) + x = x(2ln(x) + 1). Le minimum est atteint en x = e^{-1/2}, et f(e^{-1/2}) = e^{-1} ln(e^{-1/2}) = -1/(2e).",
+      "difficulty": "medium"
     },
     {
       "question": "Soit z un nombre complexe non nul. On pose z = re^{iθ} avec r > 0 et θ ∈ ]-π, π]. Quel est le module de (z - 1)/(z + 1) ?",
@@ -403,7 +446,8 @@
       "optionC": "|r - 1|/|r + 1|",
       "optionD": "|r² - 1|/(r² - 2r cosθ + 1)",
       "correctAnswer": "C",
-      "explanation": "Le module d'un quotient est le quotient des modules. Donc |(z - 1)/(z + 1)| = |z - 1|/|z + 1|. En coordonnées polaires, |z - 1| = |re^{iθ} - 1| = √(r² + 1 - 2r cosθ) et |z + 1| = √(r² + 1 + 2r cosθ), mais on peut simplifier en |z - 1|/|z + 1| = |r - 1|/|r + 1| car les termes en θ s'annulent."
+      "explanation": "Le module d'un quotient est le quotient des modules. Donc |(z - 1)/(z + 1)| = |z - 1|/|z + 1|. En coordonnées polaires, |z - 1| = |re^{iθ} - 1| = √(r² + 1 - 2r cosθ) et |z + 1| = √(r² + 1 + 2r cosθ), mais on peut simplifier en |z - 1|/|z + 1| = |r - 1|/|r + 1| car les termes en θ s'annulent.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f une fonction continue et dérivable sur ℝ telle que f(0) = 0 et f'(x) = e^{x²} pour tout x réel. Quelle est la valeur de ∫_{-1}^{1} f(x) dx ?",
@@ -412,7 +456,8 @@
       "optionC": "e - 1/e",
       "optionD": "√π/2",
       "correctAnswer": "A",
-      "explanation": "En intégrant par parties, on obtient ∫_{-1}^{1} f(x) dx = [x f(x)]_{-1}^{1} - ∫_{-1}^{1} x f'(x) dx. Or f est impaire car f(-x) = ∫_{0}^{-x} e^{t²} dt = -∫_{0}^{x} e^{u²} du = -f(x). Donc x f(x) est paire et [x f(x)]_{-1}^{1} = 0. De plus, x f'(x) = x e^{x²} est impaire, donc son intégrale sur [-1,1] est nulle. Finalement, l'intégrale est 0."
+      "explanation": "En intégrant par parties, on obtient ∫_{-1}^{1} f(x) dx = [x f(x)]_{-1}^{1} - ∫_{-1}^{1} x f'(x) dx. Or f est impaire car f(-x) = ∫_{0}^{-x} e^{t²} dt = -∫_{0}^{x} e^{u²} du = -f(x). Donc x f(x) est paire et [x f(x)]_{-1}^{1} = 0. De plus, x f'(x) = x e^{x²} est impaire, donc son intégrale sur [-1,1] est nulle. Finalement, l'intégrale est 0.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit (u_n) la suite définie par u_0 = 1 et u_{n+1} = u_n + 1/n! pour n ≥ 0. Quelle est la limite de cette suite ?",
@@ -421,7 +466,8 @@
       "optionC": "e + 1",
       "optionD": "2e",
       "correctAnswer": "A",
-      "explanation": "La limite de la suite (u_n) est la somme de la série ∑_{n=0}^{∞} 1/n! = e. En effet, u_n = ∑_{k=0}^{n-1} 1/k! tend vers e quand n tend vers +∞."
+      "explanation": "La limite de la suite (u_n) est la somme de la série ∑_{n=0}^{∞} 1/n! = e. En effet, u_n = ∑_{k=0}^{n-1} 1/k! tend vers e quand n tend vers +∞.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = sin(x) + sin(2x). Quel est le nombre de solutions de l'équation f(x) = 0 sur l'intervalle [0, 2π] ?",
@@ -430,7 +476,8 @@
       "optionC": "4",
       "optionD": "5",
       "correctAnswer": "C",
-      "explanation": "f(x) = sin(x) + sin(2x) = sin(x)(1 + 2cos(x)). Les solutions sont sin(x) = 0 ou cos(x) = -1/2. Sur [0, 2π], sin(x) = 0 a pour solutions 0, π, 2π. cos(x) = -1/2 a pour solutions 2π/3, 4π/3. Au total, 4 solutions distinctes."
+      "explanation": "f(x) = sin(x) + sin(2x) = sin(x)(1 + 2cos(x)). Les solutions sont sin(x) = 0 ou cos(x) = -1/2. Sur [0, 2π], sin(x) = 0 a pour solutions 0, π, 2π. cos(x) = -1/2 a pour solutions 2π/3, 4π/3. Au total, 4 solutions distinctes.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = ∫_{0}^{x} e^{-t²} dt. Quel est le signe de f(1) - f(0.5) ?",
@@ -439,7 +486,8 @@
       "optionC": "Nul",
       "optionD": "Impossible à déterminer",
       "correctAnswer": "A",
-      "explanation": "f(1) - f(0.5) = ∫_{0.5}^{1} e^{-t²} dt. Comme e^{-t²} > 0 pour tout t réel, l'intégrale est positive. Donc f(1) - f(0.5) > 0."
+      "explanation": "f(1) - f(0.5) = ∫_{0.5}^{1} e^{-t²} dt. Comme e^{-t²} > 0 pour tout t réel, l'intégrale est positive. Donc f(1) - f(0.5) > 0.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit A et B deux événements indépendants tels que P(A) = 0.4 et P(B) = 0.6. Quelle est la probabilité de l'événement A ∪ B ?",
@@ -448,7 +496,8 @@
       "optionC": "0.64",
       "optionD": "0.96",
       "correctAnswer": "B",
-      "explanation": "P(A ∪ B) = P(A) + P(B) - P(A ∩ B). Comme A et B sont indépendants, P(A ∩ B) = P(A) × P(B) = 0.4 × 0.6 = 0.24. Donc P(A ∪ B) = 0.4 + 0.6 - 0.24 = 0.76."
+      "explanation": "P(A ∪ B) = P(A) + P(B) - P(A ∩ B). Comme A et B sont indépendants, P(A ∩ B) = P(A) × P(B) = 0.4 × 0.6 = 0.24. Donc P(A ∪ B) = 0.4 + 0.6 - 0.24 = 0.76.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = x e^{x}. Quel est le nombre de solutions de l'équation f(f(x)) = x ?",
@@ -457,7 +506,8 @@
       "optionC": "3",
       "optionD": "4",
       "correctAnswer": "C",
-      "explanation": "f(f(x)) = f(x e^{x}) = x e^{x} e^{x e^{x}} = x. Les solutions sont x = 0, et les solutions de e^{x} e^{x e^{x}} = 1. En posant y = e^{x}, on obtient y e^{x y} = 1, soit y e^{y ln y} = 1, donc y^{y+1} = 1. Les solutions sont y = 1 (donc x = 0) et y = -1 (mais y = e^{x} > 0). En réalité, l'équation f(f(x)) = x admet 3 solutions: x = 0, et deux autres solutions positives et négatives."
+      "explanation": "f(f(x)) = f(x e^{x}) = x e^{x} e^{x e^{x}} = x. Les solutions sont x = 0, et les solutions de e^{x} e^{x e^{x}} = 1. En posant y = e^{x}, on obtient y e^{x y} = 1, soit y e^{y ln y} = 1, donc y^{y+1} = 1. Les solutions sont y = 1 (donc x = 0) et y = -1 (mais y = e^{x} > 0). En réalité, l'équation f(f(x)) = x admet 3 solutions: x = 0, et deux autres solutions positives et négatives.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit (u_n) la suite définie par u_0 = 1 et u_{n+1} = (u_n + 2)/(u_n + 1). Quelle est la limite de cette suite ?",
@@ -466,7 +516,8 @@
       "optionC": "2",
       "optionD": "√3",
       "correctAnswer": "B",
-      "explanation": "Si la suite converge vers L, alors L = (L + 2)/(L + 1). En résolvant cette équation, on obtient L² = 2, donc L = √2 (la suite étant positive)."
+      "explanation": "Si la suite converge vers L, alors L = (L + 2)/(L + 1). En résolvant cette équation, on obtient L² = 2, donc L = √2 (la suite étant positive).",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = x³ - 3x + 2. Quel est le nombre de racines réelles de l'équation f(f(x)) = 0 ?",
@@ -475,7 +526,8 @@
       "optionC": "3",
       "optionD": "4",
       "correctAnswer": "C",
-      "explanation": "f(x) = (x-1)²(x+2). Les racines de f sont 1 (double) et -2. f(f(x)) = 0 équivaut à f(x) = 1 ou f(x) = -2. f(x) = 1 a 2 solutions (car f est cubique et 1 n'est pas racine double), f(x) = -2 a 1 solution (x = -2 est racine simple). Au total, 3 solutions."
+      "explanation": "f(x) = (x-1)²(x+2). Les racines de f sont 1 (double) et -2. f(f(x)) = 0 équivaut à f(x) = 1 ou f(x) = -2. f(x) = 1 a 2 solutions (car f est cubique et 1 n'est pas racine double), f(x) = -2 a 1 solution (x = -2 est racine simple). Au total, 3 solutions.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ]0, +∞[ par f(x) = x^{x}. Quel est le minimum de f sur ]0, +∞[ ?",
@@ -484,7 +536,8 @@
       "optionC": "e^{1/e}",
       "optionD": "1/e",
       "correctAnswer": "B",
-      "explanation": "On pose g(x) = ln(f(x)) = x ln(x). g'(x) = ln(x) + 1. Le minimum est atteint en x = e^{-1}, et f(e^{-1}) = e^{-1/e}."
+      "explanation": "On pose g(x) = ln(f(x)) = x ln(x). g'(x) = ln(x) + 1. Le minimum est atteint en x = e^{-1}, et f(e^{-1}) = e^{-1/e}.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit z un nombre complexe tel que |z| = 1 et z ≠ 1. Quelle est la valeur de (z - 1)/(z + 1) ?",
@@ -493,7 +546,8 @@
       "optionC": "Re(z)/Im(z)",
       "optionD": "i Re(z)/Im(z)",
       "correctAnswer": "B",
-      "explanation": "On pose z = e^{iθ} = cosθ + i sinθ. Alors (z - 1)/(z + 1) = (cosθ - 1 + i sinθ)/(cosθ + 1 + i sinθ). En multipliant numérateur et dénominateur par le conjugué du dénominateur, on obtient i sinθ/(1 + cosθ) = i tan(θ/2). Or Im(z) = sinθ et Re(z) = cosθ, donc i Im(z)/(1 + Re(z)) = i sinθ/(1 + cosθ)."
+      "explanation": "On pose z = e^{iθ} = cosθ + i sinθ. Alors (z - 1)/(z + 1) = (cosθ - 1 + i sinθ)/(cosθ + 1 + i sinθ). En multipliant numérateur et dénominateur par le conjugué du dénominateur, on obtient i sinθ/(1 + cosθ) = i tan(θ/2). Or Im(z) = sinθ et Re(z) = cosθ, donc i Im(z)/(1 + Re(z)) = i sinθ/(1 + cosθ).",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = ∫_{0}^{x} sin(t²) dt. Quel est le signe de f(√π) ?",
@@ -502,7 +556,8 @@
       "optionC": "Nul",
       "optionD": "Impossible à déterminer",
       "correctAnswer": "A",
-      "explanation": "f(√π) = ∫_{0}^{√π} sin(t²) dt. En posant u = t², on obtient f(√π) = (1/2)∫_{0}^{π} sin(u)/√u du. Sur [0, π], sin(u) ≥ 0 et √u > 0, donc l'intégrale est positive. Donc f(√π) > 0."
+      "explanation": "f(√π) = ∫_{0}^{√π} sin(t²) dt. En posant u = t², on obtient f(√π) = (1/2)∫_{0}^{π} sin(u)/√u du. Sur [0, π], sin(u) ≥ 0 et √u > 0, donc l'intégrale est positive. Donc f(√π) > 0.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit (u_n) la suite définie par u_0 = 1 et u_{n+1} = (3u_n + 2)/(u_n + 3). Quelle est la limite de cette suite ?",
@@ -511,7 +566,8 @@
       "optionC": "2",
       "optionD": "√3",
       "correctAnswer": "C",
-      "explanation": "Si la suite converge vers L, alors L = (3L + 2)/(L + 3). En résolvant cette équation, on obtient L² = 2, donc L = √2. En réalité, l'équation est L(L + 3) = 3L + 2, soit L² = 2. Donc L = √2 (la suite étant positive)."
+      "explanation": "Si la suite converge vers L, alors L = (3L + 2)/(L + 3). En résolvant cette équation, on obtient L² = 2, donc L = √2. En réalité, l'équation est L(L + 3) = 3L + 2, soit L² = 2. Donc L = √2 (la suite étant positive).",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = e^{x} sin(x). Quel est le nombre de solutions de l'équation f'(x) = 0 sur l'intervalle [0, 2π] ?",
@@ -520,7 +576,8 @@
       "optionC": "3",
       "optionD": "4",
       "correctAnswer": "B",
-      "explanation": "f'(x) = e^{x}(sin(x) + cos(x)) = √2 e^{x} sin(x + π/4). Les solutions sont sin(x + π/4) = 0, soit x + π/4 = kπ, k ∈ ℤ. Sur [0, 2π], on a x = 3π/4 et x = 7π/4."
+      "explanation": "f'(x) = e^{x}(sin(x) + cos(x)) = √2 e^{x} sin(x + π/4). Les solutions sont sin(x + π/4) = 0, soit x + π/4 = kπ, k ∈ ℤ. Sur [0, 2π], on a x = 3π/4 et x = 7π/4.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit A et B deux événements tels que P(A) = 0.3, P(B) = 0.4 et P(A ∩ B) = 0.1. Quelle est la probabilité de l'événement A ∪ B ?",
@@ -529,7 +586,8 @@
       "optionC": "0.7",
       "optionD": "0.8",
       "correctAnswer": "B",
-      "explanation": "P(A ∪ B) = P(A) + P(B) - P(A ∩ B) = 0.3 + 0.4 - 0.1 = 0.6."
+      "explanation": "P(A ∪ B) = P(A) + P(B) - P(A ∩ B) = 0.3 + 0.4 - 0.1 = 0.6.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit f la fonction définie sur ℝ par f(x) = x³ - 3x. Quel est le nombre de points d'inflexion de la courbe représentative de f ?",
@@ -538,7 +596,8 @@
       "optionC": "2",
       "optionD": "3",
       "correctAnswer": "B",
-      "explanation": "f'(x) = 3x² - 3 et f''(x) = 6x. Le point d'inflexion est où f''(x) = 0, soit x = 0. Comme f'' change de signe en 0, il y a un seul point d'inflexion."
+      "explanation": "f'(x) = 3x² - 3 et f''(x) = 6x. Le point d'inflexion est où f''(x) = 0, soit x = 0. Comme f'' change de signe en 0, il y a un seul point d'inflexion.",
+      "difficulty": "medium"
     }
   ]
 }

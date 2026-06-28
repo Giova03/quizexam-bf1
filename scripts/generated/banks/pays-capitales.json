@@ -15,7 +15,8 @@
       "optionC": "Côte d'Ivoire",
       "optionD": "Angola",
       "correctAnswer": "A",
-      "explanation": "Nigeria est la réponse correcte. Quel pays africain a connu la guerre civile appelée \"Guerre de Biafra\" ?..."
+      "explanation": "Nigeria est la réponse correcte. Quel pays africain a connu la guerre civile appelée \"Guerre de Biafra\" ?...",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays africain a été dirigé par l'empereur Haïlé Sélassié ?",
@@ -24,7 +25,8 @@
       "optionC": "Soudan",
       "optionD": "Libye",
       "correctAnswer": "B",
-      "explanation": "Éthiopie est la réponse correcte. Quel pays africain a été dirigé par l'empereur Haïlé Sélassié ?..."
+      "explanation": "Éthiopie est la réponse correcte. Quel pays africain a été dirigé par l'empereur Haïlé Sélassié ?...",
+      "difficulty": "medium"
     }
   ]
 }

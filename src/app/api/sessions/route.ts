@@ -11,6 +11,7 @@ interface CreateSessionBody {
   mode: "immediate" | "final";
   sourceType: "bank" | "exam";
   sourceId: string;
+<<<<<<< Updated upstream
   /**
    * Optional explicit list of question IDs. When provided, the session is
    * created with exactly these questions (in the given order) instead of
@@ -26,7 +27,19 @@ interface CreateSessionBody {
    * Ignored when `questionIds` is provided (the caller has already chosen).
    */
   difficulty?: "easy" | "medium" | "hard" | "all";
+=======
+  /** Optional difficulty filter ("easy" | "medium" | "hard") */
+  difficulty?: "easy" | "medium" | "hard";
+  /**
+   * Optional explicit list of question IDs to restrict the session to.
+   * Used by the daily challenge to build a session from a curated subset
+   * of questions across one or more banks.
+   */
+  questionIds?: string[];
+>>>>>>> Stashed changes
 }
+
+const VALID_DIFFICULTIES = ["easy", "medium", "hard"] as const;
 
 // GET — list sessions for the current user (with answers for dashboard)
 export async function GET() {
@@ -77,7 +90,11 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as CreateSessionBody;
+<<<<<<< Updated upstream
     const { title, mode, sourceType, sourceId, questionIds, difficulty } = body;
+=======
+    const { title, mode, sourceType, sourceId, difficulty, questionIds } = body;
+>>>>>>> Stashed changes
 
     if (!title || !mode || !sourceType || !sourceId) {
       return NextResponse.json(
@@ -93,22 +110,68 @@ export async function POST(request: Request) {
       );
     }
 
+<<<<<<< Updated upstream
     // Normalize the difficulty filter — anything other than easy/medium/hard
     // means "no filter".
     const diffFilter: "easy" | "medium" | "hard" | null =
       difficulty === "easy" || difficulty === "medium" || difficulty === "hard"
         ? difficulty
         : null;
+=======
+    if (difficulty && !VALID_DIFFICULTIES.includes(difficulty)) {
+      return NextResponse.json(
+        { error: "Invalid difficulty (must be 'easy', 'medium' or 'hard')" },
+        { status: 400 }
+      );
+    }
+>>>>>>> Stashed changes
 
     // Get the current user from the session
     const authSession = await getServerSession(authOptions);
     let userId: string | null = null;
+    let userSubscription: { subscription: string; subscriptionUntil: Date | null } | null = null;
     if (authSession?.user?.email) {
       const user = await db.user.findUnique({
         where: { email: authSession.user.email },
-        select: { id: true },
+        select: { id: true, subscription: true, subscriptionUntil: true },
       });
       userId = user?.id ?? null;
+      if (user) {
+        userSubscription = {
+          subscription: user.subscription,
+          subscriptionUntil: user.subscriptionUntil,
+        };
+      }
+    }
+
+    // Freemium daily limit check: free users are capped at 50 questions/day.
+    if (userId && userSubscription) {
+      const isPremium =
+        userSubscription.subscription === "premium" &&
+        (!userSubscription.subscriptionUntil ||
+          userSubscription.subscriptionUntil.getTime() > Date.now());
+      if (!isPremium) {
+        const startOfDay = new Date();
+        startOfDay.setHours(0, 0, 0, 0);
+        const todayQuestions = await db.sessionAnswer.count({
+          where: {
+            session: { userId },
+            answeredAt: { gte: startOfDay },
+          },
+        });
+        const FREE_DAILY_LIMIT = 50;
+        if (todayQuestions >= FREE_DAILY_LIMIT) {
+          return NextResponse.json(
+            {
+              error:
+                "Limite quotidienne atteinte (50 questions/jour). Passez à Premium pour des questions illimitées.",
+              limit: FREE_DAILY_LIMIT,
+              used: todayQuestions,
+            },
+            { status: 402 }
+          );
+        }
+      }
     }
 
     // Gather questions based on source type
@@ -143,9 +206,21 @@ export async function POST(request: Request) {
       const bank = await db.questionBank.findUnique({
         where: { id: sourceId },
         include: {
+<<<<<<< Updated upstream
           questions: diffFilter
             ? { where: { difficulty: diffFilter }, orderBy: { order: "asc" } }
             : { orderBy: { order: "asc" } },
+=======
+          questions: {
+            where: {
+              ...(difficulty ? { difficulty } : {}),
+              ...(questionIds && questionIds.length > 0
+                ? { id: { in: questionIds } }
+                : {}),
+            },
+            orderBy: { order: "asc" },
+          },
+>>>>>>> Stashed changes
         },
       });
       if (!bank) {
@@ -165,11 +240,19 @@ export async function POST(request: Request) {
       if (!exam) {
         return NextResponse.json({ error: "Exam not found" }, { status: 404 });
       }
+<<<<<<< Updated upstream
       // Apply the difficulty filter to exam questions as well, so the user
       // can take a subset of an exam at a given difficulty level.
       questions = exam.examQuestions
         .map((eq) => eq.question)
         .filter((q) => (diffFilter ? q.difficulty === diffFilter : true));
+=======
+      let examQuestions = exam.examQuestions.map((eq) => eq.question);
+      if (difficulty) {
+        examQuestions = examQuestions.filter((q) => q.difficulty === difficulty);
+      }
+      questions = examQuestions;
+>>>>>>> Stashed changes
     }
 
     if (questions.length === 0) {

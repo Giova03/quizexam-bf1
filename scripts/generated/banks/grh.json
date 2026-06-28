@@ -16,7 +16,8 @@
       "optionC": "Ses savoir-faire, ses savoirs, ses aptitudes et ses références",
       "optionD": "Son style, ses techniques, ses attitudes et ses réponses",
       "correctAnswer": "B",
-      "explanation": "La méthode STAR (Situation, Tâche, Action, Résultat) est une technique d'entretien structurée qui permet d'évaluer les compétences comportementales des candidats en se basant sur des situations concrètes vécues."
+      "explanation": "La méthode STAR (Situation, Tâche, Action, Résultat) est une technique d'entretien structurée qui permet d'évaluer les compétences comportementales des candidats en se basant sur des situations concrètes vécues.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre une évaluation formative et une évaluation sommative en formation?",
@@ -25,7 +26,8 @@
       "optionC": "La première est obligatoire, la seconde facultative",
       "optionD": "La première concerne les stagiaires, la seconde les formateurs",
       "correctAnswer": "B",
-      "explanation": "L'évaluation formative sert à ajuster le processus d'apprentissage en cours de formation, tandis que l'évaluation sommative sert à mesurer les acquis et à certifier les compétences à la fin de la formation."
+      "explanation": "L'évaluation formative sert à ajuster le processus d'apprentissage en cours de formation, tandis que l'évaluation sommative sert à mesurer les acquis et à certifier les compétences à la fin de la formation.",
+      "difficulty": "medium"
     },
     {
       "question": "En matière de paie, le taux de cotisation d'assurance chômage pour les entreprises de 1 à 19 salariés est de:",
@@ -34,7 +36,8 @@
       "optionC": "7% sur la tranche A",
       "optionD": "5,4% sur la tranche A",
       "correctAnswer": "B",
-      "explanation": "Le taux de cotisation d'assurance chômage pour les entreprises de 1 à 19 salariés est de 4,5% sur la tranche A (0 à 2,5 fois le plafond de la Sécurité sociale)."
+      "explanation": "Le taux de cotisation d'assurance chômage pour les entreprises de 1 à 19 salariés est de 4,5% sur la tranche A (0 à 2,5 fois le plafond de la Sécurité sociale).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée légale de préavis en cas de démission pour un salarié ayant 5 ans d'ancienneté?",
@@ -43,7 +46,8 @@
       "optionC": "2 mois",
       "optionD": "3 mois",
       "correctAnswer": "B",
-      "explanation": "Selon le Code du travail, la durée de préavis en cas de démission dépend de l'ancienneté du salarié: 1 mois pour une ancienneté d'au moins 1 an et moins de 6 ans."
+      "explanation": "Selon le Code du travail, la durée de préavis en cas de démission dépend de l'ancienneté du salarié: 1 mois pour une ancienneté d'au moins 1 an et moins de 6 ans.",
+      "difficulty": "medium"
     },
     {
       "question": "Le CSE (Comité Social et Économique) remplace quel(s) ancien(s) organe(s) représentatif(s)?",
@@ -52,7 +56,8 @@
       "optionC": "Le CCE et le CHSCT",
       "optionD": "Le CE, le CHSCT et le CCE",
       "correctAnswer": "D",
-      "explanation": "Le CSE a remplacé le Comité d'Entreprise (CE), le Comité d'Hygiène, de Sécurité et des Conditions de Travail (CHSCT) et le Comité d'Établissement (CE) dans les grandes entreprises."
+      "explanation": "Le CSE a remplacé le Comité d'Entreprise (CE), le Comité d'Hygiène, de Sécurité et des Conditions de Travail (CHSCT) et le Comité d'Établissement (CE) dans les grandes entreprises.",
+      "difficulty": "medium"
     },
     {
       "question": "La GPEC (Gestion Prévisionnelle des Emplois et des Compétences) repose principalement sur:",
@@ -61,7 +66,8 @@
       "optionC": "L'automatisation des tâches",
       "optionD": "La sous-traitance",
       "correctAnswer": "A",
-      "explanation": "La GPEC est une démarche stratégique qui vise à anticiper les évolutions des métiers et des compétences nécessaires à l'entreprise pour assurer sa pérennité."
+      "explanation": "La GPEC est une démarche stratégique qui vise à anticiper les évolutions des métiers et des compétences nécessaires à l'entreprise pour assurer sa pérennité.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle théorie de la motivation met l'accent sur les besoins hiérarchisés?",
@@ -70,7 +76,8 @@
       "optionC": "Pyramide des besoins de Maslow",
       "optionD": "Théorie de l'équité d'Adams",
       "correctAnswer": "C",
-      "explanation": "La pyramide des besoins de Maslow hiérarchise les besoins humains en cinq niveaux: physiologiques, sécurité, sociaux, estime et épanouissement personnel."
+      "explanation": "La pyramide des besoins de Maslow hiérarchise les besoins humains en cinq niveaux: physiologiques, sécurité, sociaux, estime et épanouissement personnel.",
+      "difficulty": "medium"
     },
     {
       "question": "En cas de licenciement économique, la priorité de réembauche s'applique:",
@@ -79,7 +86,8 @@
       "optionC": "Pendant 36 mois maximum",
       "optionD": "Pendant 48 mois maximum",
       "correctAnswer": "B",
-      "explanation": "L'employeur doit informer le salarié de son droit de priorité de réembauche pendant 24 mois à compter de la notification de son licenciement."
+      "explanation": "L'employeur doit informer le salarié de son droit de priorité de réembauche pendant 24 mois à compter de la notification de son licenciement.",
+      "difficulty": "medium"
     },
     {
       "question": "La méthode 360° dans l'évaluation des performances implique:",
@@ -88,7 +96,8 @@
       "optionC": "L'évaluation par plusieurs sources (supérieurs, pairs, subordonnés, clients)",
       "optionD": "L'évaluation par les RH uniquement",
       "correctAnswer": "C",
-      "explanation": "L'évaluation 360° consiste à recueillir des feedbacks sur les performances d'un salarié auprès de différentes personnes de son environnement professionnel."
+      "explanation": "L'évaluation 360° consiste à recueillir des feedbacks sur les performances d'un salarié auprès de différentes personnes de son environnement professionnel.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée maximale d'un CDD renouvelé?",
@@ -97,7 +106,8 @@
       "optionC": "27 mois maximum",
       "optionD": "36 mois maximum",
       "correctAnswer": "C",
-      "explanation": "La durée totale d'un CDD renouvelé ne peut excéder 27 mois, sauf dispositions conventionnelles plus favorables."
+      "explanation": "La durée totale d'un CDD renouvelé ne peut excéder 27 mois, sauf dispositions conventionnelles plus favorables.",
+      "difficulty": "medium"
     },
     {
       "question": "La méthode des 5 Pourquoi est utilisée dans:",
@@ -106,7 +116,8 @@
       "optionC": "L'analyse des causes racines d'un problème",
       "optionD": "L'évaluation des performances",
       "correctAnswer": "C",
-      "explanation": "La méthode des 5 Pourquoi est une technique d'analyse qui consiste à poser successivement des questions 'pourquoi' pour identifier les causes profondes d'un problème."
+      "explanation": "La méthode des 5 Pourquoi est une technique d'analyse qui consiste à poser successivement des questions 'pourquoi' pour identifier les causes profondes d'un problème.",
+      "difficulty": "medium"
     },
     {
       "question": "En droit du travail, la période d'essence peut être renouvelée:",
@@ -115,7 +126,8 @@
       "optionC": "Trois fois uniquement, avec l'accord écrit du salarié",
       "optionD": "Autant de fois que souhaité par l'employeur",
       "correctAnswer": "B",
-      "explanation": "La période d'essai peut être renouvelée une fois pour les employés et techniciens, et deux fois pour les agents de maîtrise et cadres, avec l'accord écrit du salarié."
+      "explanation": "La période d'essai peut être renouvelée une fois pour les employés et techniciens, et deux fois pour les agents de maîtrise et cadres, avec l'accord écrit du salarié.",
+      "difficulty": "medium"
     },
     {
       "question": "La théorie de l'autodétermination de Deci et Ryan identifie trois besoins psychologiques fondamentaux:",
@@ -124,7 +136,8 @@
       "optionC": "Physiologique, sécurité, social",
       "optionD": "Conformité, innovation, stabilité",
       "correctAnswer": "A",
-      "explanation": "La théorie de l'autodétermination identifie trois besoins psychologiques fondamentaux: la compétence, l'autonomie et l'affiliation sociale."
+      "explanation": "La théorie de l'autodétermination identifie trois besoins psychologiques fondamentaux: la compétence, l'autonomie et l'affiliation sociale.",
+      "difficulty": "medium"
     },
     {
       "question": "Le SMIC horaire brut en France est de:",
@@ -133,7 +146,8 @@
       "optionC": "12,39 €",
       "optionD": "13,52 €",
       "correctAnswer": "B",
-      "explanation": "Le SMIC horaire brut en France est de 11,27 € au 1er janvier 2023."
+      "explanation": "Le SMIC horaire brut en France est de 11,27 € au 1er janvier 2023.",
+      "difficulty": "medium"
     },
     {
       "question": "La convention collective applicable dans une entreprise est déterminée:",
@@ -142,7 +156,8 @@
       "optionC": "Par le secteur d'activité et le territoire géographique",
       "optionD": "Par le choix du dirigeant",
       "correctAnswer": "C",
-      "explanation": "La convention collective applicable à une entreprise est déterminée par son secteur d'activité et son territoire géographique d'implantation."
+      "explanation": "La convention collective applicable à une entreprise est déterminée par son secteur d'activité et son territoire géographique d'implantation.",
+      "difficulty": "medium"
     },
     {
       "question": "La méthode des entretiens de pair à pair dans l'évaluation des performances est utilisée pour:",
@@ -151,7 +166,8 @@
       "optionC": "Évaluer les compétences techniques",
       "optionD": "Mesurer la satisfaction client",
       "correctAnswer": "B",
-      "explanation": "Les entretiens de pair à pair permettent aux collègues de même niveau hiérarchique d'échanger des feedbacks sur leurs performances et comportements professionnels."
+      "explanation": "Les entretiens de pair à pair permettent aux collègues de même niveau hiérarchique d'échanger des feedbacks sur leurs performances et comportements professionnels.",
+      "difficulty": "medium"
     },
     {
       "question": "En cas de rupture conventionnelle, l'indemnité spécifique de rupture est:",
@@ -160,7 +176,8 @@
       "optionC": "Égale à l'indemnité de départ à la retraite",
       "optionD": "Nulle",
       "correctAnswer": "A",
-      "explanation": "L'indemnité spécifique de rupture en cas de rupture conventionnelle est calculée selon les mêmes règles que l'indemnité de licenciement."
+      "explanation": "L'indemnité spécifique de rupture en cas de rupture conventionnelle est calculée selon les mêmes règles que l'indemnité de licenciement.",
+      "difficulty": "medium"
     },
     {
       "question": "La méthode des compétences transversales dans la gestion des RH vise à:",
@@ -169,7 +186,8 @@
       "optionC": "Évaluer les performances individuelles",
       "optionD": "Mesurer la satisfaction des clients",
       "correctAnswer": "B",
-      "explanation": "Les compétences transversales sont des compétences communes à plusieurs postes ou métiers, qui permettent de développer la polyvalence et l'adaptabilité des salariés."
+      "explanation": "Les compétences transversales sont des compétences communes à plusieurs postes ou métiers, qui permettent de développer la polyvalence et l'adaptabilité des salariés.",
+      "difficulty": "medium"
     },
     {
       "question": "La durée de conservation des bulletins de paie est:",
@@ -178,7 +196,8 @@
       "optionC": "5 ans",
       "optionD": "10 ans",
       "correctAnswer": "C",
-      "explanation": "Les bulletins de paie doivent être conservés pendant 5 ans par l'employeur, conformément aux dispositions du Code du travail."
+      "explanation": "Les bulletins de paie doivent être conservés pendant 5 ans par l'employeur, conformément aux dispositions du Code du travail.",
+      "difficulty": "medium"
     },
     {
       "question": "La théorie des carrières proactives de Hall met l'accent sur:",
@@ -187,7 +206,8 @@
       "optionC": "La spécialisation technique",
       "optionD": "La stabilité de l'emploi",
       "correctAnswer": "B",
-      "explanation": "La théorie des carrières proactives de Hall insiste sur l'importance de la mobilité horizontale, du développement continu des compétences et de la réinvention de soi tout au long de la carrière."
+      "explanation": "La théorie des carrières proactives de Hall insiste sur l'importance de la mobilité horizontale, du développement continu des compétences et de la réinvention de soi tout au long de la carrière.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique principale d'un processus de recrutement basé sur les compétences comportementales ?",
@@ -196,7 +216,8 @@
       "optionC": "L'analyse des comportements passés pour prédire les performances futures",
       "optionD": "La sélection sur la base des seules diplômes obtenus",
       "correctAnswer": "C",
-      "explanation": "Le recrutement basé sur les compétences comportementales repose sur le principe que les comportements passés sont les meilleurs prédicteurs des performances futures. Il utilise des méthodes comme les entretiens comportementaux pour évaluer comment le candidat a agi dans des situations professionnelles similaires à celles qu'il pourrait rencontrer."
+      "explanation": "Le recrutement basé sur les compétences comportementales repose sur le principe que les comportements passés sont les meilleurs prédicteurs des performances futures. Il utilise des méthodes comme les entretiens comportementaux pour évaluer comment le candidat a agi dans des situations professionnelles similaires à celles qu'il pourrait rencontrer.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre de la GPEC (Gestion Prévisionnelle des Emplois et des Compétences), quelle est la première étape du processus ?",
@@ -205,7 +226,12 @@
       "optionC": "L'évaluation individuelle des compétences",
       "optionD": "La cartographie des métiers existants",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La première étape de la GPEC est l'analyse stratégique de l'entreprise et de son environnement. Cette analyse permet de comprendre les évolutions prévisibles de l'organisation, du marché et des technologies pour anticiper les besoins en compétences et en emplois futurs."
+=======
+      "explanation": "La première étape de la GPEC est l'analyse stratégique de l'entreprise et de son environnement. Cette analyse permet de comprendre les évolutions prévisibles de l'organisation, du marché et des technologies pour anticiper les besoins en compétences et en emplois futurs.",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Selon la théorie de la motivation d'Herzberg, quel facteur est considéré comme 'hygiénique' ?",
@@ -214,7 +240,8 @@
       "optionC": "Les conditions de travail",
       "optionD": "La nature même du travail",
       "correctAnswer": "C",
-      "explanation": "Selon Herzberg, les facteurs hygiéniques (comme les conditions de travail, la politique de l'entreprise, la supervision) ne motivent pas mais empêchent la démotivation. Les facteurs motivants (reconnaissance, nature du travail, opportunités d'avancement) créent la satisfaction et la motivation."
+      "explanation": "Selon Herzberg, les facteurs hygiéniques (comme les conditions de travail, la politique de l'entreprise, la supervision) ne motivent pas mais empêchent la démotivation. Les facteurs motivants (reconnaissance, nature du travail, opportunités d'avancement) créent la satisfaction et la motivation.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée de conservation minimale des fiches de paie selon le Code du travail français ?",
@@ -223,7 +250,8 @@
       "optionC": "5 ans",
       "optionD": "10 ans",
       "correctAnswer": "C",
-      "explanation": "Le Code du travail français impose une durée de conservation minimale de 5 ans pour les documents de paie, après la fin du contrat de travail. Cette obligation permet de justifier les éléments de rémunération en cas de contentieux."
+      "explanation": "Le Code du travail français impose une durée de conservation minimale de 5 ans pour les documents de paie, après la fin du contrat de travail. Cette obligation permet de justifier les éléments de rémunération en cas de contentieux.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale finalité d'un accord d'entreprise sur la gestion prévisionnelle des emplois et des compétences (GPEC) ?",
@@ -232,7 +260,8 @@
       "optionC": "Déterminer les plafonds salariaux pour chaque catégorie d'emplois",
       "optionD": "Organiser les élections des représentants du personnel",
       "correctAnswer": "B",
-      "explanation": "La principale finalité d'un accord GPEC est d'anticiper les évolutions prévisibles des emplois et des compétences nécessaires à l'entreprise pour assurer son adaptation aux changements économiques, technologiques et organisationnels."
+      "explanation": "La principale finalité d'un accord GPEC est d'anticiper les évolutions prévisibles des emplois et des compétences nécessaires à l'entreprise pour assurer son adaptation aux changements économiques, technologiques et organisationnels.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre d'un plan de reclassement interne, quelle est la mesure la plus pertinente pour un salariat en situation de handicap ?",
@@ -241,7 +270,8 @@
       "optionC": "Une mise à la retraite anticipée",
       "optionD": "Une rupture conventionnelle du contrat de travail",
       "correctAnswer": "B",
-      "explanation": "La loi impose à l'employeur d'assurer l'adaptation du poste de travail ou, à défaut, de proposer une mutation vers un autre emploi adapté. Cette mesure prioritaire vise à maintenir le salarié en emploi et à respecter l'obligation d'emploi des travailleurs handicapés."
+      "explanation": "La loi impose à l'employeur d'assurer l'adaptation du poste de travail ou, à défaut, de proposer une mutation vers un autre emploi adapté. Cette mesure prioritaire vise à maintenir le salarié en emploi et à respecter l'obligation d'emploi des travailleurs handicapés.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique principale d'un entretien annuel d'évaluation selon la méthode du management par objectifs (MBO) ?",
@@ -250,7 +280,8 @@
       "optionC": "Il sert principalement à discuter des augmentations salariales",
       "optionD": "Il est mené exclusivement par le DRH sans la présence du manager direct",
       "correctAnswer": "B",
-      "explanation": "Dans le cadre du management par objectifs (MBO), l'entretien annuel d'évaluation se concentre sur l'analyse de la performance du salarié en fonction de la réalisation des objectifs qui lui ont été fixés en début de période, en lien avec les objectifs stratégiques de l'entreprise."
+      "explanation": "Dans le cadre du management par objectifs (MBO), l'entretien annuel d'évaluation se concentre sur l'analyse de la performance du salarié en fonction de la réalisation des objectifs qui lui ont été fixés en début de période, en lien avec les objectifs stratégiques de l'entreprise.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée légale du préavis de licenciement pour un salarié ayant 10 ans d'ancienneté dans l'entreprise ?",
@@ -259,7 +290,8 @@
       "optionC": "3 mois",
       "optionD": "Aucun préavis n'est requis pour un licenciement",
       "correctAnswer": "B",
-      "explanation": "Selon le Code du travail, la durée du préavis de licenciement dépend de l'ancienneté du salarié. Pour 10 ans d'ancienneté, le préavis est de 2 mois. Cette durée peut être réduite par accord ou usage, ou augmentée par clause de contrat de travail."
+      "explanation": "Selon le Code du travail, la durée du préavis de licenciement dépend de l'ancienneté du salarié. Pour 10 ans d'ancienneté, le préavis est de 2 mois. Cette durée peut être réduite par accord ou usage, ou augmentée par clause de contrat de travail.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la particularité de la méthode 360° dans l'évaluation des compétences ?",
@@ -268,7 +300,8 @@
       "optionC": "Elle collectte des feedbacks de multiples sources (supérieurs, pairs, subordonnés, clients)",
       "optionD": "Elle est exclusivement utilisée pour l'évaluation des cadres supérieurs",
       "correctAnswer": "C",
-      "explanation": "La méthode 360° consiste à recueillir des évaluations de la performance et des compétences d'un salarié auprès de plusieurs sources : son supérieur hiérarchique, ses pairs, ses subordonnés (s'il en a) et parfois même des clients ou fournisseurs. Cette approche offre une vision plus complète et objective."
+      "explanation": "La méthode 360° consiste à recueillir des évaluations de la performance et des compétences d'un salarié auprès de plusieurs sources : son supérieur hiérarchique, ses pairs, ses subordonnés (s'il en a) et parfois même des clients ou fournisseurs. Cette approche offre une vision plus complète et objective.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de la self-détermination (Deci & Ryan), quel besoin psychologique fondamental n'est pas inclus dans les trois besoins universels de motivation ?",
@@ -277,7 +310,8 @@
       "optionC": "La reconnaissance sociale",
       "optionD": "L'appartenance",
       "correctAnswer": "C",
-      "explanation": "La théorie de la self-détermination identifie trois besoins psychologiques universels pour la motivation : l'autonomie (sentir qu'on est à l'origine de ses actions), la compétence (sentir qu'on est efficace) et l'appartenance (sentir des liens sociaux significatifs). La reconnaissance sociale n'est pas l'un des trois besoins fondamentaux identifiés."
+      "explanation": "La théorie de la self-détermination identifie trois besoins psychologiques universels pour la motivation : l'autonomie (sentir qu'on est à l'origine de ses actions), la compétence (sentir qu'on est efficace) et l'appartenance (sentir des liens sociaux significatifs). La reconnaissance sociale n'est pas l'un des trois besoins fondamentaux identifiés.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre un CSE (Comité Social et Économique) et un ancien comité d'entreprise ?",
@@ -286,7 +320,8 @@
       "optionC": "Le CSE n'intervient que sur les questions sociales",
       "optionD": "Le CSE n'existe que dans les grandes entreprises",
       "correctAnswer": "B",
-      "explanation": "Le CSE a remplacé les anciennes instances représentatives (comité d'entreprise, comité d'hygiène, sécurité et conditions de travail, délégué du personnel) en les fusionnant en une seule instance. Cette simplification vise à renforcer l'efficacité et la représentativité du dialogue social dans l'entreprise."
+      "explanation": "Le CSE a remplacé les anciennes instances représentatives (comité d'entreprise, comité d'hygiène, sécurité et conditions de travail, délégué du personnel) en les fusionnant en une seule instance. Cette simplification vise à renforcer l'efficacité et la représentativité du dialogue social dans l'entreprise.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre d'un plan de formation, quelle est la différence entre une action de 'formation' et une action de 'formation professionnelle' ?",
@@ -295,7 +330,8 @@
       "optionC": "La formation professionnelle vise à obtenir un diplôme ou une certification professionnelle",
       "optionD": "Il n'y a pas de différence, les termes sont interchangeables",
       "correctAnswer": "C",
-      "explanation": "Dans le vocabulaire de la formation professionnelle, une 'formation' désigne toute action pédagogique organisée par l'entreprise. Une 'formation professionnelle' spécifiquement vise à l'acquisition d'une certification professionnelle inscrite au Répertoire National des Certifications Professionnelles (RNCP)."
+      "explanation": "Dans le vocabulaire de la formation professionnelle, une 'formation' désigne toute action pédagogique organisée par l'entreprise. Une 'formation professionnelle' spécifiquement vise à l'acquisition d'une certification professionnelle inscrite au Répertoire National des Certifications Professionnelles (RNCP).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la particularité de la méthode STAR dans un entretien de recrutement ?",
@@ -304,7 +340,8 @@
       "optionC": "Elle est réservée exclusivement aux entretiens de recrutement des cadres supérieurs",
       "optionD": "Elle ne s'applique qu'aux entretiens de recrutement pour des postes techniques",
       "correctAnswer": "B",
-      "explanation": "La méthode STAR (Situation, Tâche, Action, Résultat) est une technique d'entretien structurée où le candidat est invité à décrire une situation professionnelle passée en détaisant la tâche, les actions entreprises et les résultats obtenus. Cette méthode permet d'évaluer concrètement les compétences comportementales."
+      "explanation": "La méthode STAR (Situation, Tâche, Action, Résultat) est une technique d'entretien structurée où le candidat est invité à décrire une situation professionnelle passée en détaisant la tâche, les actions entreprises et les résultats obtenus. Cette méthode permet d'évaluer concrètement les compétences comportementales.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée maximale d'un contrat de professionnalisation ?",
@@ -313,7 +350,8 @@
       "optionC": "24 mois",
       "optionD": "36 mois",
       "correctAnswer": "C",
-      "explanation": "Le contrat de professionnalisation a une durée maximale de 24 mois, qui peut être portée à 36 mois dans certains cas spécifiques (personnes handicapées, créateurs d'entreprise, etc.). Ce contrat combine une alternance entre periods de formation en centre et periodes en entreprise."
+      "explanation": "Le contrat de professionnalisation a une durée maximale de 24 mois, qui peut être portée à 36 mois dans certains cas spécifiques (personnes handicapées, créateurs d'entreprise, etc.). Ce contrat combine une alternance entre periods de formation en centre et periodes en entreprise.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie du renforcement de Skinner, quelle stratégie de renforcement est la plus efficace pour modifier durablement un comportement ?",
@@ -322,7 +360,8 @@
       "optionC": "Le renforcement positif immédiat",
       "optionD": "Le renforcement aléatoire",
       "correctAnswer": "A",
-      "explanation": "Selon Skinner, le renforcement intermittent (récompense après un certain nombre de comportements ou selon un intervalle de temps) est plus efficace que le renforcement continu pour maintenir un comportement sur le long terme. Il crée une résistance à l'extinction du comportement, contrairement au renforcement continu qui devient inefficace si la récompense cesse."
+      "explanation": "Selon Skinner, le renforcement intermittent (récompense après un certain nombre de comportements ou selon un intervalle de temps) est plus efficace que le renforcement continu pour maintenir un comportement sur le long terme. Il crée une résistance à l'extinction du comportement, contrairement au renforcement continu qui devient inefficace si la récompense cesse.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre d'un recrutement, quelle méthode d'évaluation permet de mesurer les compétences comportementales d'un candidat dans un contexte simulé ?",
@@ -331,7 +370,8 @@
       "optionC": "L'étude de cas",
       "optionD": "Le centre d'évaluation",
       "correctAnswer": "D",
-      "explanation": "Le centre d'évaluation met en situation le candidat à travers des exercices simulés pour observer ses comportements et compétences dans un contexte proche de la réalité professionnelle."
+      "explanation": "Le centre d'évaluation met en situation le candidat à travers des exercices simulés pour observer ses comportements et compétences dans un contexte proche de la réalité professionnelle.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale limite de la méthode 360° pour l'évaluation des performances ?",
@@ -340,7 +380,8 @@
       "optionC": "Le temps nécessaire pour sa mise en œuvre",
       "optionD": "La difficulté d'interprétation des résultats",
       "correctAnswer": "B",
-      "explanation": "La méthode 360° collecte des feedbacks de multiples sources, ce qui peut introduire des biais subjectifs et des interprétations différentes des comportements observés."
+      "explanation": "La méthode 360° collecte des feedbacks de multiples sources, ce qui peut introduire des biais subjectifs et des interprétations différentes des comportements observés.",
+      "difficulty": "medium"
     },
     {
       "question": "Selon la théorie de l'apprentissage expérientiel de Kolb, quelle étape précède la 'conceptualisation' dans le cycle d'apprentissage ?",
@@ -349,7 +390,8 @@
       "optionC": "L'expérience concrète",
       "optionD": "L'application",
       "correctAnswer": "C",
-      "explanation": "Le cycle d'apprentissage de Kolb suit l'ordre : expérience concrète → réflexion → conceptualisation → expérimentation."
+      "explanation": "Le cycle d'apprentissage de Kolb suit l'ordre : expérience concrète → réflexion → conceptualisation → expérimentation.",
+      "difficulty": "medium"
     },
     {
       "question": "En droit du travail français, quelle est la durée minimale prévue pour la période d'essai d'un CDI pour un employé de niveau cadre ?",
@@ -358,7 +400,8 @@
       "optionC": "3 mois",
       "optionD": "4 mois",
       "correctAnswer": "C",
-      "explanation": "Pour les salariés cadres, la période d'essai peut aller jusqu'à 3 mois (renouvelable une fois par accord collectif ou usage)."
+      "explanation": "Pour les salariés cadres, la période d'essai peut aller jusqu'à 3 mois (renouvelable une fois par accord collectif ou usage).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre un plan de formation et un GPEC (Gestion Prévisionnelle des Emplois et des Compétences) ?",
@@ -367,7 +410,8 @@
       "optionC": "Le plan de formation concerne uniquement les cadres",
       "optionD": "Le GPEC est axé sur la formation, le plan de formation sur les compétences",
       "correctAnswer": "B",
-      "explanation": "Le GPEC est un outil stratégique de gestion des effectifs à moyen et long terme, tandis que le plan de formation est plus opérationnel et annuel."
+      "explanation": "Le GPEC est un outil stratégique de gestion des effectifs à moyen et long terme, tandis que le plan de formation est plus opérationnel et annuel.",
+      "difficulty": "medium"
     },
     {
       "question": "En matière de rémunération, quelle méthode de fixation des salaires repose sur l'évaluation des postes et non sur les performances individuelles ?",
@@ -376,7 +420,8 @@
       "optionC": "La grille salariale",
       "optionD": "La participation aux résultats",
       "correctAnswer": "C",
-      "explanation": "La grille salariale est basée sur une classification des postes selon des critères objectifs comme la responsabilité, la complexité ou les qualifications requises."
+      "explanation": "La grille salariale est basée sur une classification des postes selon des critères objectifs comme la responsabilité, la complexité ou les qualifications requises.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le rôle principal du CSE (Comité Social et Économique) dans une entreprise ?",
@@ -385,7 +430,8 @@
       "optionC": "Représenter le personnel auprès de la direction",
       "optionD": "Recruter les nouveaux employés",
       "correctAnswer": "C",
-      "explanation": "Le CSE est l'instance représentative du personnel qui assure la défense des intérêts des salariés auprès de la direction."
+      "explanation": "Le CSE est l'instance représentative du personnel qui assure la défense des intérêts des salariés auprès de la direction.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre d'une réorganisation, quelle approche de la GPEC permet d'anticiper les départs en retraite massifs ?",
@@ -394,7 +440,8 @@
       "optionC": "Le plan de reclassement",
       "optionD": "La gestion des âges",
       "correctAnswer": "D",
-      "explanation": "La gestion des âges permet d'anticiper les effets du vieillissement des effectifs et de planifier les départs à la retraite."
+      "explanation": "La gestion des âges permet d'anticiper les effets du vieillissement des effectifs et de planifier les départs à la retraite.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique principale d'un entretien annuel d'évaluation ?",
@@ -403,7 +450,8 @@
       "optionC": "Il est exclusivement orienté vers le passé",
       "optionD": "Il est obligatoire pour tous les salariés",
       "correctAnswer": "A",
-      "explanation": "L'entretien annuel d'évaluation a principalement un rôle formatif pour aider le salariat à progresser et développer ses compétences."
+      "explanation": "L'entretien annuel d'évaluation a principalement un rôle formatif pour aider le salariat à progresser et développer ses compétences.",
+      "difficulty": "medium"
     },
     {
       "question": "En droit social, quelle est la nature du contrat de travail à durée déterminée (CDD) ?",
@@ -412,7 +460,8 @@
       "optionC": "Un contrat administratif",
       "optionD": "Un contrat de droit civil",
       "correctAnswer": "B",
-      "explanation": "Le CDD est un contrat d'exception au CDI, ne pouvant être utilisé que dans des cas strictement définis par la loi."
+      "explanation": "Le CDD est un contrat d'exception au CDI, ne pouvant être utilisé que dans des cas strictement définis par la loi.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle méthode de recrutement est la plus efficace pour identifier des profils rares sur le marché de l'emploi ?",
@@ -421,7 +470,8 @@
       "optionC": "Les cabinets de recrutement",
       "optionD": "Les job dating",
       "correctAnswer": "B",
-      "explanation": "Le sourcing consiste à rechercher activement des candidats potentiels, souvent sur des réseaux sociaux ou bases de données spécialisées, pour trouver des profils spécifiques ou rares."
+      "explanation": "Le sourcing consiste à rechercher activement des candidats potentiels, souvent sur des réseaux sociaux ou bases de données spécialisées, pour trouver des profils spécifiques ou rares.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale finalité d'un plan de mobilité interne dans une entreprise ?",
@@ -430,7 +480,8 @@
       "optionC": "Faire face aux mutations des métiers",
       "optionD": "Augmenter la polyvalence des équipes",
       "correctAnswer": "C",
-      "explanation": "Un plan de mobilité interne permet d'anticiper et accompagner les évolutions des métiers et des compétences nécessaires à l'entreprise."
+      "explanation": "Un plan de mobilité interne permet d'anticiper et accompagner les évolutions des métiers et des compétences nécessaires à l'entreprise.",
+      "difficulty": "medium"
     },
     {
       "question": "En matière de rémunération variable, quelle est la principale difficulté de mise en œuvre d'un plan d'intéressement ?",
@@ -439,7 +490,8 @@
       "optionC": "L'obligation d'accord collectif",
       "optionD": "La motivation des salariés",
       "correctAnswer": "B",
-      "explanation": "La mise en place d'un plan d'intéressement nécessite de définir des indicateurs de performance clairs et de calculer les répartitions, ce qui peut être complexe."
+      "explanation": "La mise en place d'un plan d'intéressement nécessite de définir des indicateurs de performance clairs et de calculer les répartitions, ce qui peut être complexe.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée maximale de la période d'essai pour un contrat à durée déterminée de 18 mois ?",
@@ -448,7 +500,8 @@
       "optionC": "3 mois",
       "optionD": "4 mois",
       "correctAnswer": "B",
-      "explanation": "Pour un CDD de plus de 6 mois, la période d'essai ne peut dépasser 1 mois (renouvelable une fois, soit 2 mois maximum)."
+      "explanation": "Pour un CDD de plus de 6 mois, la période d'essai ne peut dépasser 1 mois (renouvelable une fois, soit 2 mois maximum).",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre des relations sociales, quelle est la principale fonction des représentants du personnel ?",
@@ -457,7 +510,8 @@
       "optionC": "Contrôler l'application du droit du travail",
       "optionD": "Représenter les salariés",
       "correctAnswer": "D",
-      "explanation": "La fonction principale des représentants du personnel est de représenter les salariés auprès de la direction et de défendre leurs intérêts."
+      "explanation": "La fonction principale des représentants du personnel est de représenter les salariés auprès de la direction et de défendre leurs intérêts.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique principale d'une formation certifiante ?",
@@ -466,7 +520,8 @@
       "optionC": "Elle aboutit à une reconnaissance officielle",
       "optionD": "Elle est axée sur les compétences pratiques",
       "correctAnswer": "C",
-      "explanation": "Une formation certifiante aboutit à une reconnaissance officielle par un diplôme, un titre ou une certification enregistrée dans un répertoire."
+      "explanation": "Une formation certifiante aboutit à une reconnaissance officielle par un diplôme, un titre ou une certification enregistrée dans un répertoire.",
+      "difficulty": "medium"
     },
     {
       "question": "En droit du travail, quelle est la nature juridique du règlement intérieur de l'entreprise ?",
@@ -475,7 +530,8 @@
       "optionC": "Une convention collective",
       "optionD": "Un contrat de travail",
       "correctAnswer": "A",
-      "explanation": "Le règlement intérieur est un acte unilatéral de l'employeur qui définit les règles de discipline et de comportement applicables dans l'entreprise."
+      "explanation": "Le règlement intérieur est un acte unilatéral de l'employeur qui définit les règles de discipline et de comportement applicables dans l'entreprise.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale limite de l'utilisation des entretiens de recrutement structurés ?",
@@ -484,7 +540,12 @@
       "optionC": "Leur faible validité prédictive",
       "optionD": "Leur difficulté d'administration",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "Les entretiens structurés, bien que fiables, manquent de flexibilité et peuvent ne pas permettre d'explorer des aspects non prévus du candidat."
+=======
+      "explanation": "Les entretiens structurés, bien que fiables, manquent de flexibilité et peuvent ne pas permettre d'explorer des aspects non prévus du candidat.",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Dans le cadre de la gestion des carrières, quelle est la principale utilité du bilan de compétences ?",
@@ -493,7 +554,8 @@
       "optionC": "Mesurer les compétences actuelles",
       "optionD": "Planifier la formation continue",
       "correctAnswer": "B",
-      "explanation": "Le bilan de compétences permet à un salarié d'analyser ses compétences, aptitudes et motivations pour définir un projet professionnel."
+      "explanation": "Le bilan de compétences permet à un salarié d'analyser ses compétences, aptitudes et motivations pour définir un projet professionnel.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre d'une GPEC (Gestion Prévisionnelle des Emplois et des Compétences), quelle est la première étape essentielle du processus ?",
@@ -502,7 +564,8 @@
       "optionC": "La définition des objectifs stratégiques de l'entreprise",
       "optionD": "L'évaluation des performances actuelles",
       "correctAnswer": "C",
-      "explanation": "La GPEC commence par l'alignement des objectifs de gestion des RH avec la stratégie globale de l'entreprise, qui définit ensuite les besoins en emplois et compétences."
+      "explanation": "La GPEC commence par l'alignement des objectifs de gestion des RH avec la stratégie globale de l'entreprise, qui définit ensuite les besoins en emplois et compétences.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle méthode d'évaluation des compétences est la plus adaptée pour identifier les potentiels d'évolution dans une PME ?",
@@ -511,7 +574,8 @@
       "optionC": "L'analyse de la valeur ajoutée",
       "optionD": "L'entretien professionnel",
       "correctAnswer": "D",
-      "explanation": "L'entretien professionnel, obligatoire tous les deux ans, permet d'évaluer les compétences et d'identifier les potentiels d'évolution, adapté aux structures de taille réduite."
+      "explanation": "L'entretien professionnel, obligatoire tous les deux ans, permet d'évaluer les compétences et d'identifier les potentiels d'évolution, adapté aux structures de taille réduite.",
+      "difficulty": "medium"
     },
     {
       "question": "En matière de recrutement, quelle est la principale limite de la méthode d'entretien structuré ?",
@@ -520,7 +584,8 @@
       "optionC": "Son manque d'objectivité",
       "optionD": "Sa difficulté de mise en œuvre",
       "correctAnswer": "B",
-      "explanation": "L'entretien structuré, bien que plus fiable que l'entretien non structuré, présente une validité prédictive modérée (environ 0.38 selon les méta-analyses)."
+      "explanation": "L'entretien structuré, bien que plus fiable que l'entretien non structuré, présente une validité prédictive modérée (environ 0.38 selon les méta-analyses).",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre de la réforme de la formation professionnelle 2018, quel est le pourcentage minimal du salaire brut reversé au CPF pour les entreprises de 20 à 299 salariés ?",
@@ -529,7 +594,8 @@
       "optionC": "0.69%",
       "optionD": "1.24%",
       "correctAnswer": "C",
-      "explanation": "Les entreprises de 20 à 299 salariers doivent reverser 0.69% de leur masse salariale brute au CPF, contre 0.55% pour les moins de 20 salariés et 1.24% pour 300 et plus."
+      "explanation": "Les entreprises de 20 à 299 salariers doivent reverser 0.69% de leur masse salariale brute au CPF, contre 0.55% pour les moins de 20 salariés et 1.24% pour 300 et plus.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée maximale du congé de reclassement pour un licenciement économique dans une entreprise de 300 salariés ?",
@@ -538,7 +604,8 @@
       "optionC": "24 mois",
       "optionD": "36 mois",
       "correctAnswer": "A",
-      "explanation": "La durée maximale du congé de reclassement est de 12 mois pour les entreprises de 300 salariés et plus, et de 9 mois pour les moins de 300 salariés."
+      "explanation": "La durée maximale du congé de reclassement est de 12 mois pour les entreprises de 300 salariés et plus, et de 9 mois pour les moins de 300 salariés.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la limite légale du travail temporaire en France ?",
@@ -547,7 +614,8 @@
       "optionC": "36 mois maximum par mission",
       "optionD": "6 mois maximum par mission",
       "correctAnswer": "A",
-      "explanation": "La durée maximale d'une mission de travail temporaire est de 18 mois, avec possibilité de renouvellement dans des conditions strictes."
+      "explanation": "La durée maximale d'une mission de travail temporaire est de 18 mois, avec possibilité de renouvellement dans des conditions strictes.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre d'un plan de sauvegarde de l'emploi (PSE), quelle est la durée maximale du CSP (Contrat de Sécurure Professionnelle) ?",
@@ -556,7 +624,8 @@
       "optionC": "24 mois",
       "optionD": "36 mois",
       "correctAnswer": "C",
-      "explanation": "Le CSP peut durer jusqu'à 24 mois pour les salariés de 50 ans et plus, et jusqu'à 12 mois pour les moins de 50 ans."
+      "explanation": "Le CSP peut durer jusqu'à 24 mois pour les salariés de 50 ans et plus, et jusqu'à 12 mois pour les moins de 50 ans.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la composition du CSE (Comité Social et Économique) dans une entreprise de 50 salariés ?",
@@ -565,7 +634,8 @@
       "optionC": "Un comité d'entreprise et un délégué du personnel",
       "optionD": "Un comité social et économique central",
       "correctAnswer": "B",
-      "explanation": "Le CSE est un organe unique qui remplace le comité d'entreprise, le CHSCT et les délégués du personnel dans les entreprises de 11 à 50 salariés."
+      "explanation": "Le CSE est un organe unique qui remplace le comité d'entreprise, le CHSCT et les délégués du personnel dans les entreprises de 11 à 50 salariés.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée légale du préavis de démission ?",
@@ -574,7 +644,8 @@
       "optionC": "2 mois",
       "optionD": "Dépend de l'ancienneté",
       "correctAnswer": "A",
-      "explanation": "Le préavis de démission est de 15 jours calendaires pour les employés, ouvriers et techniciens, sauf clause plus favorable dans le contrat."
+      "explanation": "Le préavis de démission est de 15 jours calendaires pour les employés, ouvriers et techniciens, sauf clause plus favorable dans le contrat.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre de la rémunération variable, quel élément est essentiel pour sa conformité juridique ?",
@@ -583,7 +654,8 @@
       "optionC": "Son caractère discrétionnaire",
       "optionD": "Son absence d'impact sur le calcul des congés payés",
       "correctAnswer": "B",
-      "explanation": "Les critères d'attribution de la rémunération variable doivent être clairs, objectifs et connus des salariés pour éviter les contestations."
+      "explanation": "Les critères d'attribution de la rémunération variable doivent être clairs, objectifs et connus des salariés pour éviter les contestations.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée maximale du travail temporaire dans le cadre d'un contrat d'intérim de remplacement d'un salarié en grève ?",
@@ -592,7 +664,8 @@
       "optionC": "18 mois",
       "optionD": "24 mois",
       "correctAnswer": "C",
-      "explanation": "La durée maximale d'un contrat d'intérim est de 18 mois dans le cas de remplacement d'un salarié en grève ou en conflit collectif."
+      "explanation": "La durée maximale d'un contrat d'intérim est de 18 mois dans le cas de remplacement d'un salarié en grève ou en conflit collectif.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fréquence minimale des réunions du CSE dans une entreprise de 300 salariés ?",
@@ -601,7 +674,8 @@
       "optionC": "Une fois par semestre",
       "optionD": "Une fois par an",
       "correctAnswer": "A",
-      "explanation": "Le CSE doit se réunir au moins une fois par mois dans les entreprises de 300 salariés et plus."
+      "explanation": "Le CSE doit se réunir au moins une fois par mois dans les entreprises de 300 salariés et plus.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée légale du préavis de licenciement pour un salarié de 10 ans d'ancienneté ?",
@@ -610,7 +684,8 @@
       "optionC": "3 mois",
       "optionD": "4 mois",
       "correctAnswer": "B",
-      "explanation": "Le préavis de licenciement est de 2 mois pour les salariés ayant entre 2 et 10 ans d'ancienneté, et de 1 mois pour les moins de 2 ans."
+      "explanation": "Le préavis de licenciement est de 2 mois pour les salariés ayant entre 2 et 10 ans d'ancienneté, et de 1 mois pour les moins de 2 ans.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cadre de la gestion des compétences, quelle est la principale limite de la méthode des entretiens annuels ?",
@@ -619,7 +694,8 @@
       "optionC": "Leur manque de régularité",
       "optionD": "Leur faible couverture",
       "correctAnswer": "B",
-      "explanation": "Les entretiens annuels sont souvent critiqués pour leur subjectivité et leur dépendance à la perception du manager, pouvant biaiser l'évaluation des compétences."
+      "explanation": "Les entretiens annuels sont souvent critiqués pour leur subjectivité et leur dépendance à la perception du manager, pouvant biaiser l'évaluation des compétences.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée maximale d'un CDD d'usage dans le secteur du spectacle ?",
@@ -628,7 +704,8 @@
       "optionC": "12 mois",
       "optionD": "18 mois",
       "correctAnswer": "D",
-      "explanation": "Le CDD d'usage dans le secteur du spectacle peut aller jusqu'à 18 mois, avec possibilité de renouvellement dans des conditions strictes."
+      "explanation": "Le CDD d'usage dans le secteur du spectacle peut aller jusqu'à 18 mois, avec possibilité de renouvellement dans des conditions strictes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la composition du collège électoral pour les élections professionnelles dans une entreprise de 150 salariés ?",
@@ -637,7 +714,8 @@
       "optionC": "Deux collèges (employés et techniciens, cadres)",
       "optionD": "Deux collèges (ouvriers et employés, techniciens et cadres)",
       "correctAnswer": "D",
-      "explanation": "Dans les entreprises de 50 à 150 salariés, le collège électoral est composé de deux collèges : ouvriers et employés d'une part, techniciens et cadres d'autre part."
+      "explanation": "Dans les entreprises de 50 à 150 salariés, le collège électoral est composé de deux collèges : ouvriers et employés d'une part, techniciens et cadres d'autre part.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée maximale du télétravail hebdomadaire légalisée par la loi Travail de 2016 ?",
@@ -646,7 +724,8 @@
       "optionC": "4 jours par semaine",
       "optionD": "Aucune limite légale",
       "correctAnswer": "B",
-      "explanation": "La loi Travail de 2016 a fixé à 3 jours par semaine la durée maximale de télétravail, sauf accord d'entreprise ou accord collectif plus favorable."
+      "explanation": "La loi Travail de 2016 a fixé à 3 jours par semaine la durée maximale de télétravail, sauf accord d'entreprise ou accord collectif plus favorable.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la durée maximale du congé parental à temps partiel ?",
@@ -655,7 +734,8 @@
       "optionC": "3 ans",
       "optionD": "4 ans",
       "correctAnswer": "C",
-      "explanation": "Le congé parental à temps partiel peut durer jusqu'à 3 ans par enfant, avec possibilité de renouvellement."
+      "explanation": "Le congé parental à temps partiel peut durer jusqu'à 3 ans par enfant, avec possibilité de renouvellement.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale limite des méthodes de recrutement par approche directe (headhunting) ?",
@@ -664,7 +744,8 @@
       "optionC": "Leur manque d'objectivité",
       "optionD": "Leur faible couverture du marché",
       "correctAnswer": "C",
-      "explanation": "Le headhunting repose sur des relations personnelles et des jugements de valeur, ce qui peut introduire des biais subjectifs dans le processus de sélection."
+      "explanation": "Le headhunting repose sur des relations personnelles et des jugements de valeur, ce qui peut introduire des biais subjectifs dans le processus de sélection.",
+      "difficulty": "medium"
     }
   ]
 }

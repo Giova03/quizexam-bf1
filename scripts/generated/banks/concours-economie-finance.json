@@ -16,7 +16,8 @@
       "optionC": "Le PIB nominal est mesuré en prix constants, le PIB réel en prix courants",
       "optionD": "Le PIB réel tient compte de l'inflation, le PIB nominal ne le fait pas",
       "correctAnswer": "D",
-      "explanation": "Le PIB réel est corrigé de l'inflation et reflète la véritable croissance économique, tandis que le PIB nominal est mesuré en prix courants et inclut l'effet des prix."
+      "explanation": "Le PIB réel est corrigé de l'inflation et reflète la véritable croissance économique, tandis que le PIB nominal est mesuré en prix courants et inclut l'effet des prix.",
+      "difficulty": "medium"
     },
     {
       "question": "La BCEAO (Banque Centrale des États de l'Afrique de l'Ouest) a pour principale mission:",
@@ -25,7 +26,8 @@
       "optionC": "Contrôler les changes entre les pays membres",
       "optionD": "Financer les projets de développement dans la zone",
       "correctAnswer": "A",
-      "explanation": "La BCEAO est chargée d'émettre le franc CFA et de garantir sa stabilité, ainsi que de conduire la politique monétaire des pays membres de l'UEMOA."
+      "explanation": "La BCEAO est chargée d'émettre le franc CFA et de garantir sa stabilité, ainsi que de conduire la politique monétaire des pays membres de l'UEMOA.",
+      "difficulty": "medium"
     },
     {
       "question": "L'inflation faible mais persistante est généralement:",
@@ -34,7 +36,8 @@
       "optionC": "Souvent liée à une demande excédentaire",
       "optionD": "Toujours préférable à la déflation",
       "correctAnswer": "C",
-      "explanation": "L'inflation faible persistante est généralement causée par une demande globale excédentaire par rapport à l'offre, ce qui pousse les prix à la hausse."
+      "explanation": "L'inflation faible persistante est généralement causée par une demande globale excédentaire par rapport à l'offre, ce qui pousse les prix à la hausse.",
+      "difficulty": "medium"
     },
     {
       "question": "Le taux de TVA appliqué dans la plupart des pays de l'UEMOA est de:",
@@ -43,7 +46,8 @@
       "optionC": "18%",
       "optionD": "20%",
       "correctAnswer": "C",
-      "explanation": "Le taux normal de TVA dans la zone UEMOA est de 18%, bien qu'il existe des taux réduits pour certains produits de base."
+      "explanation": "Le taux normal de TVA dans la zone UEMOA est de 18%, bien qu'il existe des taux réduits pour certains produits de base.",
+      "difficulty": "medium"
     },
     {
       "question": "Une balance commerciale déficitaire signifie que:",
@@ -52,7 +56,8 @@
       "optionC": "Le solde courant est positif",
       "optionD": "Le pays a un excédent de compte en capital",
       "correctAnswer": "B",
-      "explanation": "Une balance commerciale déficitaire indique que les importations d'un pays excèdent ses exportations, ce qui peut être un signe de dépendance extérieure."
+      "explanation": "Une balance commerciale déficitaire indique que les importations d'un pays excèdent ses exportations, ce qui peut être un signe de dépendance extérieure.",
+      "difficulty": "medium"
     },
     {
       "question": "Sur le marché monétaire, les instruments à court terme négociés sont principalement:",
@@ -61,7 +66,8 @@
       "optionC": "Titres à revenu variable",
       "optionD": "Produits dérivés",
       "correctAnswer": "B",
-      "explanation": "Le marché monétaire est caractérisé par des instruments à court terme (moins d'un an) comme les bons du Trésor et les certificats de dépôt."
+      "explanation": "Le marché monétaire est caractérisé par des instruments à court terme (moins d'un an) comme les bons du Trésor et les certificats de dépôt.",
+      "difficulty": "medium"
     },
     {
       "question": "Lorsque vous achetez une action, vous devenez:",
@@ -70,7 +76,8 @@
       "optionC": "Prêteur à l'entreprise",
       "optionD": "Fournisseur de l'entreprise",
       "correctAnswer": "B",
-      "explanation": "Acheter une action signifie acquérir une part de propriété dans une entreprise, vous donnant des droits sur ses bénéfices et ses décisions."
+      "explanation": "Acheter une action signifie acquérir une part de propriété dans une entreprise, vous donnant des droits sur ses bénéfices et ses décisions.",
+      "difficulty": "medium"
     },
     {
       "question": "Une obligation d'État est généralement considérée comme:",
@@ -79,7 +86,8 @@
       "optionC": "Un investissement spéculatif",
       "optionD": "Un investissement en actions",
       "correctAnswer": "B",
-      "explanation": "Les obligations d'État sont des titres de dette émis par les gouvernements, offrant un revenu fixe par le biais des intérêts et remboursés à l'échéance."
+      "explanation": "Les obligations d'État sont des titres de dette émis par les gouvernements, offrant un revenu fixe par le biais des intérêts et remboursés à l'échéance.",
+      "difficulty": "medium"
     },
     {
       "question": "Le FMI (Fonds Monétaire International) accorde généralement des prêts aux pays:",
@@ -88,7 +96,8 @@
       "optionC": "Sans conditions particulières",
       "optionD": "Exclusivement pour des projets humanitaires",
       "correctAnswer": "B",
-      "explanation": "Le FMI accorde généralement des prêts aux pays en difficulté économique, mais en échange de la mise en place de réformes économiques structurelles."
+      "explanation": "Le FMI accorde généralement des prêts aux pays en difficulté économique, mais en échange de la mise en place de réformes économiques structurelles.",
+      "difficulty": "medium"
     },
     {
       "question": "La politique monétaire expansionniste de la BCEAO entraîne généralement:",
@@ -97,7 +106,8 @@
       "optionC": "Une stimulation de l'activité économique",
       "optionD": "Une appréciation de la monnaie",
       "correctAnswer": "C",
-      "explanation": "Une politique monétaire expansionniste vise à augmenter l'offre de monnaie et à baisser les taux d'intérêt pour stimuler l'emprunt et l'investissement."
+      "explanation": "Une politique monétaire expansionniste vise à augmenter l'offre de monnaie et à baisser les taux d'intérêt pour stimuler l'emprunt et l'investissement.",
+      "difficulty": "medium"
     },
     {
       "question": "Le PIB par habitant est calculé en:",
@@ -106,7 +116,8 @@
       "optionC": "Soustrayant la population du PIB nominal",
       "optionD": "Additionnant le PIB et la population",
       "correctAnswer": "A",
-      "explanation": "Le PIB par habitant est obtenu en divisant le PIB nominal (ou réel) par la population totale du pays, donnant une mesure du revenu moyen par personne."
+      "explanation": "Le PIB par habitant est obtenu en divisant le PIB nominal (ou réel) par la population totale du pays, donnant une mesure du revenu moyen par personne.",
+      "difficulty": "medium"
     },
     {
       "question": "La déflation est définie comme:",
@@ -115,7 +126,8 @@
       "optionC": "Une baisse généralisée et durable des prix",
       "optionD": "Une baisse du taux d'intérêt directeur",
       "correctAnswer": "C",
-      "explanation": "La déflation est une baisse généralisée et durable du niveau général des prix, ce qui augmente le pouvoir d'achat de la monnaie."
+      "explanation": "La déflation est une baisse généralisée et durable du niveau général des prix, ce qui augmente le pouvoir d'achat de la monnaie.",
+      "difficulty": "medium"
     },
     {
       "question": "Le franc CFA est une monnaie:",
@@ -124,7 +136,8 @@
       "optionC": "Flottante sur les marchés internationaux",
       "optionD": "Utilisée uniquement pour les transactions commerciales",
       "correctAnswer": "B",
-      "explanation": "Le franc CFA est lié à l'euro avec un taux de change fixe (1 euro = 655,957 F CFA), assurant sa stabilité."
+      "explanation": "Le franc CFA est lié à l'euro avec un taux de change fixe (1 euro = 655,957 F CFA), assurant sa stabilité.",
+      "difficulty": "medium"
     },
     {
       "question": "La TVA est un impôt:",
@@ -133,7 +146,8 @@
       "optionC": "Progressif basé sur le revenu",
       "optionD": "Prélevé à la source sur les salaires",
       "correctAnswer": "A",
-      "explanation": "La TVA est un impôt indirect payé par les consommateurs finals, même si elle est collectée par les entreprises intermédiaires."
+      "explanation": "La TVA est un impôt indirect payé par les consommateurs finals, même si elle est collectée par les entreprises intermédiaires.",
+      "difficulty": "medium"
     },
     {
       "question": "Un pays avec une balance commerciale excédentaire:",
@@ -142,7 +156,8 @@
       "optionC": "A toujours un taux de change fort",
       "optionD": "Ne peut pas avoir de déficit de compte en capital",
       "correctAnswer": "B",
-      "explanation": "Un excédent commercial signifie simplement que les exportations d'un pays dépassent ses importations, sans lien nécessaire avec le compte courant ou le taux de change."
+      "explanation": "Un excédent commercial signifie simplement que les exportations d'un pays dépassent ses importations, sans lien nécessaire avec le compte courant ou le taux de change.",
+      "difficulty": "medium"
     },
     {
       "question": "Le taux du marché monétaire est généralement:",
@@ -151,7 +166,8 @@
       "optionC": "Égal au taux de base bancaire",
       "optionD": "Fixé par les banques commerciales uniquement",
       "correctAnswer": "B",
-      "explanation": "Le taux du marché monétaire est généralement inférieur au taux de refinancement, car il représente le coût des prêts entre banques à très court terme."
+      "explanation": "Le taux du marché monétaire est généralement inférieur au taux de refinancement, car il représente le coût des prêts entre banques à très court terme.",
+      "difficulty": "medium"
     },
     {
       "question": "Le dividende d'une action est:",
@@ -160,7 +176,8 @@
       "optionC": "L'intérêt versé sur l'action",
       "optionD": "La valeur nominale de l'action",
       "correctAnswer": "B",
-      "explanation": "Le dividende est une portion des bénéfices d'une entreprise distribuée à ses actionnaires, généralement en fonction du nombre d'actions détenues."
+      "explanation": "Le dividende est une portion des bénéfices d'une entreprise distribuée à ses actionnaires, généralement en fonction du nombre d'actions détenues.",
+      "difficulty": "medium"
     },
     {
       "question": "Une obligation zéro-coupon est caractérisée par:",
@@ -169,7 +186,8 @@
       "optionC": "Aucun paiement d'intérêt pendant sa durée de vie",
       "optionD": "Un rendement garanti inférieur à l'inflation",
       "correctAnswer": "C",
-      "explanation": "Une obligation zéro-coupon ne verse aucun intérêt pendant sa durée de vie; elle est vendue à un prix inférieur à sa valeur nominale et remboursée à sa valeur nominale à l'échéance."
+      "explanation": "Une obligation zéro-coupon ne verse aucun intérêt pendant sa durée de vie; elle est vendue à un prix inférieur à sa valeur nominale et remboursée à sa valeur nominale à l'échéance.",
+      "difficulty": "medium"
     },
     {
       "question": "Le FMI utilise généralement quel instrument pour aider les pays en difficulté?",
@@ -178,7 +196,8 @@
       "optionC": "Subventions directes",
       "optionD": "Investissements directs étrangers",
       "correctAnswer": "B",
-      "explanation": "Le FMI utilise principalement des programmes d'ajustement structurel, qui incluent des prêts assortis de conditions économiques spécifiques."
+      "explanation": "Le FMI utilise principalement des programmes d'ajustement structurel, qui incluent des prêts assortis de conditions économiques spécifiques.",
+      "difficulty": "medium"
     },
     {
       "question": "La politique monétaire restrictive de la BCEAO vise à:",
@@ -187,7 +206,8 @@
       "optionC": "Augmenter le déficit budgétaire",
       "optionD": "Déprécier le franc CFA",
       "correctAnswer": "B",
-      "explanation": "Une politique monétaire restrictive vise à réduire l'offre de monnaie pour freiner l'inflation et stabiliser la valeur de la monnaie."
+      "explanation": "Une politique monétaire restrictive vise à réduire l'offre de monnaie pour freiner l'inflation et stabiliser la valeur de la monnaie.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale mission de la Banque Centrale des États de l'Afrique de l'Ouest (BCEAO)?",
@@ -196,7 +216,8 @@
       "optionC": "Contrôler les changes entre les États membres et le reste du monde",
       "optionD": "Financer directement les déficits budgétaires des États membres",
       "correctAnswer": "B",
-      "explanation": "La BCEAO a pour principale mission d'émettre la monnaie unique du bloc, le franc CFA, pour les huit pays membres de l'UEMOA, en assurant la stabilité monétaire et le contrôle de l'inflation."
+      "explanation": "La BCEAO a pour principale mission d'émettre la monnaie unique du bloc, le franc CFA, pour les huit pays membres de l'UEMOA, en assurant la stabilité monétaire et le contrôle de l'inflation.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment la TVA affecte-t-elle le prix final d'un produit par rapport à une taxe sur le chiffre d'affaires?",
@@ -205,7 +226,8 @@
       "optionC": "La TVA est une taxe sur la valeur ajoutée à chaque étape de la production",
       "optionD": "La TVA est calculée sur le chiffre d'affaires global de l'entreprise",
       "correctAnswer": "C",
-      "explanation": "Contrairement à une taxe sur le chiffre d'affaires, la TVA est une taxe sur la valeur ajoutée à chaque étape de la production, ce qui évite la taxation cumulative et réduit le coût final pour le consommateur."
+      "explanation": "Contrairement à une taxe sur le chiffre d'affaires, la TVA est une taxe sur la valeur ajoutée à chaque étape de la production, ce qui évite la taxation cumulative et réduit le coût final pour le consommateur.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qui caractérise principalement un déficit de la balance commerciale?",
@@ -214,7 +236,8 @@
       "optionC": "Les exportations et importations sont égales",
       "optionD": "La balance des services est excédentaire",
       "correctAnswer": "B",
-      "explanation": "Un déficit de la balance commerciale survient lorsque la valeur des importations d'un pays dépasse celle de ses exportations, indiquant que le pays consomme plus qu'il ne produit."
+      "explanation": "Un déficit de la balance commerciale survient lorsque la valeur des importations d'un pays dépasse celle de ses exportations, indiquant que le pays consomme plus qu'il ne produit.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale fonction du marché monétaire?",
@@ -223,7 +246,8 @@
       "optionC": "Permettre la cotation des actions en bourse",
       "optionD": "Gérer les changes internationaux",
       "correctAnswer": "B",
-      "explanation": "Le marché monétaire est un segment du marché financier où s'échangent des instruments financiers à court terme (moins d'un an), permettant aux banques et aux entreprises de se refinancer rapidement."
+      "explanation": "Le marché monétaire est un segment du marché financier où s'échangent des instruments financiers à court terme (moins d'un an), permettant aux banques et aux entreprises de se refinancer rapidement.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence fondamentale entre une action et une obligation?",
@@ -232,7 +256,8 @@
       "optionC": "Les actions représentent une part de propriété, les obligations sont un titre de créance",
       "optionD": "Les actions et les obligations sont identiques en termes de risque et de rendement",
       "correctAnswer": "C",
-      "explanation": "Une action représente une part de propriété dans une entreprise, donnant droit aux dividendes et au vote, tandis qu'une obligation est un titre de créance qui rapporte des intérêts fixes et doit être remboursée à l'échéance."
+      "explanation": "Une action représente une part de propriété dans une entreprise, donnant droit aux dividendes et au vote, tandis qu'une obligation est un titre de créance qui rapporte des intérêts fixes et doit être remboursée à l'échéance.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le principal objectif du Fonds Monétaire International (FMI)?",
@@ -241,7 +266,8 @@
       "optionC": "Garantir la stabilité des changes entre les grandes monnaies",
       "optionD": "Financer les projets d'infrastructure dans les pays en développement",
       "correctAnswer": "B",
-      "explanation": "Le FMI a pour principal objectif de maintenir la stabilité financière internationale et de fournir des prêts temporaires aux pays membres confrontés à des difficultés de balance des paiements."
+      "explanation": "Le FMI a pour principal objectif de maintenir la stabilité financière internationale et de fournir des prêts temporaires aux pays membres confrontés à des difficultés de balance des paiements.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment l'inflation affecte-t-elle la valeur réelle de l'argent?",
@@ -250,7 +276,8 @@
       "optionC": "Elle n'affecte pas la valeur réelle de l'argent",
       "optionD": "Elle augmente la valeur nominale mais pas la réelle de l'argent",
       "correctAnswer": "B",
-      "explanation": "L'inflation réduit la valeur réelle de l'argent car chaque unité monétaire peut acheter moins de biens et services qu'auparavant, érodant ainsi le pouvoir d'achat."
+      "explanation": "L'inflation réduit la valeur réelle de l'argent car chaque unité monétaire peut acheter moins de biens et services qu'auparavant, érodant ainsi le pouvoir d'achat.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la relation entre le taux directeur de la BCEAO et les taux du marché monétaire?",
@@ -259,7 +286,8 @@
       "optionC": "Le taux directeur sert de référence pour les taux du marché monétaire",
       "optionD": "Il n'y a aucune relation entre ces taux",
       "correctAnswer": "C",
-      "explanation": "Le taux directeur de la BCEAO sert de taux de référence qui influence l'ensemble des taux du marché monétaire, y compris les taux interbancaires et les taux appliqués aux entreprises et particuliers."
+      "explanation": "Le taux directeur de la BCEAO sert de taux de référence qui influence l'ensemble des taux du marché monétaire, y compris les taux interbancaires et les taux appliqués aux entreprises et particuliers.",
+      "difficulty": "medium"
     },
     {
       "question": "Pourquoi le franc CFA est-il considéré comme une monnaie 'forte' en Afrique de l'Ouest?",
@@ -268,7 +296,8 @@
       "optionC": "Parce qu'il n'est pas affecté par l'inflation",
       "optionD": "Parce qu'il est utilisé dans tous les pays d'Afrique",
       "correctAnswer": "A",
-      "explanation": "Le franc CFA est considéré comme 'fort' car il est indexé sur l'euro avec un taux de change fixe et soutenu par un dépôt de devises étrangères auprès de la Trésorerie française, ce qui lui confère une grande stabilité."
+      "explanation": "Le franc CFA est considéré comme 'fort' car il est indexé sur l'euro avec un taux de change fixe et soutenu par un dépôt de devises étrangères auprès de la Trésorerie française, ce qui lui confère une grande stabilité.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence entre une obligation à taux fixe et une obligation à taux variable?",
@@ -277,7 +306,8 @@
       "optionC": "Le taux d'intérêt des obligations à taux variable est révisé périodiquement selon un indice de référence",
       "optionD": "Les obligations à taux fixe sont risquées que les obligations à taux variable",
       "correctAnswer": "C",
-      "explanation": "Les obligations à taux variable voient leur taux d'intérêt ajusté périodiquement selon un indice de référence (comme l'Euribor), tandis que les obligations à taux fixe maintiennent un taux constant tout au long de leur durée de vie."
+      "explanation": "Les obligations à taux variable voient leur taux d'intérêt ajusté périodiquement selon un indice de référence (comme l'Euribor), tandis que les obligations à taux fixe maintiennent un taux constant tout au long de leur durée de vie.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment la politique monétaire expansionniste de la BCEAO affecte-t-elle l'économie?",
@@ -286,7 +316,8 @@
       "optionC": "Elle n'affecte ni l'offre de monnaie ni les taux d'intérêt",
       "optionD": "Elle augmente simultanément l'offre de monnaie et les taux d'intérêt",
       "correctAnswer": "B",
-      "explanation": "La politique monétaire expansionniste consiste à augmenter l'offre de monnaie dans l'économie, ce qui permet de réduire les taux d'intérêt et stimuler l'emprunt, la consommation et l'investissement."
+      "explanation": "La politique monétaire expansionniste consiste à augmenter l'offre de monnaie dans l'économie, ce qui permet de réduire les taux d'intérêt et stimuler l'emprunt, la consommation et l'investissement.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence entre le PIB et le PNB (Produit National Brut)?",
@@ -295,7 +326,8 @@
       "optionC": "Le PIB mesure la production sur le territoire national, le PNB mesure la production par les résidents nationaux",
       "optionD": "Le PIB et le PNB sont identiques",
       "correctAnswer": "C",
-      "explanation": "Le PIB mesure la valeur totale des biens et services produits sur le territoire d'un pays, quel que soit le pays de résidence des producteurs. Le PNB mesure la valeur totale produite par les résidents d'un pays, quel que soit le lieu de production."
+      "explanation": "Le PIB mesure la valeur totale des biens et services produits sur le territoire d'un pays, quel que soit le pays de résidence des producteurs. Le PNB mesure la valeur totale produite par les résidents d'un pays, quel que soit le lieu de production.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est l'impact d'une dépréciation de la monnaie sur la balance commerciale?",
@@ -304,7 +336,8 @@
       "optionC": "Elle améliore la balance commerciale si les élasticités-prix des exportations et importations sont supérieures à 1",
       "optionD": "Elle n'affecte pas la balance commerciale",
       "correctAnswer": "C",
-      "explanation": "Selon la théorie de la courbe en J, une dépréciation améliore la balance commerciale seulement si les élasticités-prix des exportations et importations sont suffisamment élevées (supérieures à 1), ce qui peut prendre du temps à se matérialiser."
+      "explanation": "Selon la théorie de la courbe en J, une dépréciation améliore la balance commerciale seulement si les élasticités-prix des exportations et importations sont suffisamment élevées (supérieures à 1), ce qui peut prendre du temps à se matérialiser.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence fondamentale entre le marché primaire et le marché secondaire des actions?",
@@ -313,7 +346,8 @@
       "optionC": "Le marché primaire est plus risqué que le marché secondaire",
       "optionD": "Le marché secondaire est régulé par la BCEAO, le marché primaire par la BRVM",
       "correctAnswer": "B",
-      "explanation": "Le marché primaire est où les entreprises émettent de nouvelles actions pour la première fois, levant directement des capitaux. Le marché secondaire est où les investisseurs achètent et vendent des actions déjà émises, sans intervention directe de l'émetteur."
+      "explanation": "Le marché primaire est où les entreprises émettent de nouvelles actions pour la première fois, levant directement des capitaux. Le marché secondaire est où les investisseurs achètent et vendent des actions déjà émises, sans intervention directe de l'émetteur.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la formule correcte pour calculer le PIB par la méthode des dépenses ?",
@@ -322,7 +356,8 @@
       "optionC": "PIB = Consommation + Investissement + Importations - Exportations",
       "optionD": "PIB = Revenus des facteurs + Transferts courants + Impôts directs",
       "correctAnswer": "A",
-      "explanation": "La méthode des dépenses calcule le PIB comme la somme de la consommation finale, de l'investissement, des exportations nettes (exportations - importations) et des dépenses gouvernementales."
+      "explanation": "La méthode des dépenses calcule le PIB comme la somme de la consommation finale, de l'investissement, des exportations nettes (exportations - importations) et des dépenses gouvernementales.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre l'inflation sous-jacente et l'inflation harmonisée dans la zone UEMOA ?",
@@ -331,7 +366,8 @@
       "optionC": "L'inflation sous-jacente est mesurée par la BCEAO, tandis que l'inflation harmonisée est mesurée par le FMI",
       "optionD": "Il n'y a pas de différence entre les deux, ce sont simplement deux termes pour la même mesure",
       "correctAnswer": "A",
-      "explanation": "L'inflation sous-jacente exclut les prix volatils des produits alimentaires et énergétiques pour mieux refléter les tendances de fond. L'inflation harmonisée est calculée selon une méthodologie commune aux pays de l'UEMOA pour permettre les comparaisons internationales."
+      "explanation": "L'inflation sous-jacente exclut les prix volatils des produits alimentaires et énergétiques pour mieux refléter les tendances de fond. L'inflation harmonisée est calculée selon une méthodologie commune aux pays de l'UEMOA pour permettre les comparaisons internationales.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le rôle principal de la BCEAO dans la zone franc ?",
@@ -340,7 +376,8 @@
       "optionC": "Gérer les réserves de change des pays membres de l'UEMOA",
       "optionD": "Contrôler les mouvements de capitaux entre les pays membres de l'UEMOA",
       "correctAnswer": "B",
-      "explanation": "La Banque Centrale des États de l'Afrique de l'Ouest (BCEAO) est responsable de l'émission du franc CFA et de la mise en œuvre de la politique monétaire pour les 8 pays membres de l'UEMOA."
+      "explanation": "La Banque Centrale des États de l'Afrique de l'Ouest (BCEAO) est responsable de l'émission du franc CFA et de la mise en œuvre de la politique monétaire pour les 8 pays membres de l'UEMOA.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique distinctive du franc CFA dans la zone UEMOA ?",
@@ -349,7 +386,8 @@
       "optionC": "Il est indexé sur le dollar américain avec un taux de change fixe",
       "optionD": "Il est une monnaie commune avec l'Afrique du Sud",
       "correctAnswer": "A",
-      "explanation": "Le franc CFA de l'UEMOA est indexé sur l'euro avec un taux de change fixe (1 euro = 655,957 XOF), avec une garantie du Trésor français."
+      "explanation": "Le franc CFA de l'UEMOA est indexé sur l'euro avec un taux de change fixe (1 euro = 655,957 XOF), avec une garantie du Trésor français.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment la TVA affecte-t-elle le prix final d'un produit dans une économie ?",
@@ -358,7 +396,8 @@
       "optionC": "Elle n'affecte pas le prix final car elle est entièrement supportée par le producteur",
       "optionD": "Elle est uniquement prélevée sur les exportations pour encourager le commerce international",
       "correctAnswer": "B",
-      "explanation": "La TVA est une taxe sur la consommation qui augmente le prix final des biens et services. Elle est calculée comme un pourcentage de la valeur ajoutée à chaque étape de la chaîne de production."
+      "explanation": "La TVA est une taxe sur la consommation qui augmente le prix final des biens et services. Elle est calculée comme un pourcentage de la valeur ajoutée à chaque étape de la chaîne de production.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qu'un excédent commercial ?",
@@ -367,7 +406,8 @@
       "optionC": "Lorsque les exportations et importations sont égales",
       "optionD": "Le solde des transferts de fonds à l'étranger",
       "correctAnswer": "B",
-      "explanation": "Un excédent commercial se produit lorsqu'un pays exporte plus de biens et services qu'il n'en importe, ce qui améliore sa balance commerciale."
+      "explanation": "Un excédent commercial se produit lorsqu'un pays exporte plus de biens et services qu'il n'en importe, ce qui améliore sa balance commerciale.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le rôle du FMI dans la zone UEMOA ?",
@@ -376,7 +416,8 @@
       "optionC": "Il émet le franc CFA",
       "optionD": "Il fixe les taux de change entre les pays membres de l'UEMOA",
       "correctAnswer": "B",
-      "explanation": "Le Fonds Monétaire International (FMI) fournit des conseils financiers et accorde des prêts aux pays membres qui font face à des difficultés économiques, y compris dans la zone UEMOA."
+      "explanation": "Le Fonds Monétaire International (FMI) fournit des conseils financiers et accorde des prêts aux pays membres qui font face à des difficultés économiques, y compris dans la zone UEMOA.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment la politique monétaire de la BCEAO affecte-t-elle l'inflation dans la zone UEMOA ?",
@@ -385,7 +426,8 @@
       "optionC": "En contrôlant directement les prix des produits de base",
       "optionD": "En fixant les salaires dans le secteur public",
       "correctAnswer": "B",
-      "explanation": "La BCEAO utilise son taux d'intérêt directeur comme principal outil pour contrôler l'inflation. En augmentant les taux, elle rend le crédit plus cher, ce qui réduit la demande et l'inflation."
+      "explanation": "La BCEAO utilise son taux d'intérêt directeur comme principal outil pour contrôler l'inflation. En augmentant les taux, elle rend le crédit plus cher, ce qui réduit la demande et l'inflation.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale conséquence d'une dépréciation du franc CFA ?",
@@ -394,7 +436,8 @@
       "optionC": "Le pouvoir d'achat des consommateurs augmente",
       "optionD": "L'inflation diminue nécessairement",
       "correctAnswer": "B",
-      "explanation": "Une dépréciation du franc CFA rend les importations plus coûteuses en monnaie locale, tandis que les exportations deviennent moins chères pour les acheteurs étrangers, ce qui peut stimuler les exportations."
+      "explanation": "Une dépréciation du franc CFA rend les importations plus coûteuses en monnaie locale, tandis que les exportations deviennent moins chères pour les acheteurs étrangers, ce qui peut stimuler les exportations.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment le PIB nominal diffère-t-il du PIB réel ?",
@@ -403,7 +446,8 @@
       "optionC": "Le PIB nominal inclut les transferts gouvernementaux, tandis que le PIB réel ne les inclut pas",
       "optionD": "Le PIB réel est toujours supérieur au PIB nominal",
       "correctAnswer": "B",
-      "explanation": "Le PIB réel est ajusté de l'inflation et mesure la production en termes de volume, reflétant mieux la croissance économique. Le PIB nominal est mesuré en prix courants et inclut l'effet des changements de prix."
+      "explanation": "Le PIB réel est ajusté de l'inflation et mesure la production en termes de volume, reflétant mieux la croissance économique. Le PIB nominal est mesuré en prix courants et inclut l'effet des changements de prix.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale fonction de la parité fixe du franc CFA avec l'euro ?",
@@ -412,7 +456,8 @@
       "optionC": "Permettre une dévaluation compétitive pour stimuler les exportations",
       "optionD": "Financer le déficit budgétaire des pays membres",
       "correctAnswer": "B",
-      "explanation": "La parité fixe avec l'euro garantit la stabilité des prix dans la zone UEMOA et facilite les échanges commerciaux avec l'Union européenne en éliminant le risque de change entre ces zones."
+      "explanation": "La parité fixe avec l'euro garantit la stabilité des prix dans la zone UEMOA et facilite les échanges commerciaux avec l'Union européenne en éliminant le risque de change entre ces zones.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment une hausse des taux d'intérêt par la BCEAO affecte-t-elle l'économie de l'UEMOA ?",
@@ -421,7 +466,8 @@
       "optionC": "Elle n'affecte pas les décisions d'investissement des entreprises",
       "optionD": "Elle entraîne nécessairement une dépréciation du franc CFA",
       "correctAnswer": "B",
-      "explanation": "Une hausse des taux d'intérêt rend l'emprunt plus cher pour les entreprises et les consommateurs, ce qui peut réduire l'investissement, la consommation et ainsi ralentir l'activité économique."
+      "explanation": "Une hausse des taux d'intérêt rend l'emprunt plus cher pour les entreprises et les consommateurs, ce qui peut réduire l'investissement, la consommation et ainsi ralentir l'activité économique.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce que la balance des paiements ?",
@@ -430,7 +476,8 @@
       "optionC": "La différence entre les exportations et les importations de biens et services",
       "optionD": "Le solde entre les impôts et les dépenses publiques",
       "correctAnswer": "B",
-      "explanation": "La balance des paiements est un enregistrement complet de toutes les transactions économiques entre les résidents d'un pays et le reste du monde, incluant la balance commerciale, les services, les transferts et les flux de capitaux."
+      "explanation": "La balance des paiements est un enregistrement complet de toutes les transactions économiques entre les résidents d'un pays et le reste du monde, incluant la balance commerciale, les services, les transferts et les flux de capitaux.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est l'impact d'une forte inflation sur la valeur du franc CFA ?",
@@ -439,7 +486,8 @@
       "optionC": "Elle peut exercer une pression à la dépréciation du franc CFA",
       "optionD": "Elle améliore la compétitivité-prix des exportations",
       "correctAnswer": "C",
-      "explanation": "Une forte inflation dans un pays de l'UEMOA peut exercer une pression à la dépréciation du franc CFA, car la perte de valeur de la monnaie nationale rend les importations plus chères et peut déstabiliser la zone."
+      "explanation": "Une forte inflation dans un pays de l'UEMOA peut exercer une pression à la dépréciation du franc CFA, car la perte de valeur de la monnaie nationale rend les importations plus chères et peut déstabiliser la zone.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment la TVA diffère-t-elle de la taxe sur les produits pétroliers (TIPP) ?",
@@ -448,7 +496,8 @@
       "optionC": "La TVA est uniquement prélevée sur les produits importés, tandis que la TIPP est prélevée sur tous les produits",
       "optionD": "Il n'y a pas de différence, ce sont simplement deux noms pour la même taxe",
       "correctAnswer": "A",
-      "explanation": "La TVA est un impôt général sur la consommation calculé comme un pourcentage de la valeur ajoutée, tandis que la TIPP est une taxe spécifique (par unité) sur les carburants, conçue principalement pour la fiscalité écologique et les recettes."
+      "explanation": "La TVA est un impôt général sur la consommation calculé comme un pourcentage de la valeur ajoutée, tandis que la TIPP est une taxe spécifique (par unité) sur les carburants, conçue principalement pour la fiscalité écologique et les recettes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le rôle du Mécanisme de Convergence de l'UEMOA ?",
@@ -457,7 +506,8 @@
       "optionC": "Gérer les réserves de change de la zone",
       "optionD": "Fixer les salaires dans le secteur public",
       "correctAnswer": "B",
-      "explanation": "Le Mécanisme de Convergence de l'UEMOA évalue la performance économique des États membres en fonction de critères de convergence (taux d'inflation, déficit public, dette publique, etc.) pour assurer la stabilité macroéconomique dans la zone."
+      "explanation": "Le Mécanisme de Convergence de l'UEMOA évalue la performance économique des États membres en fonction de critères de convergence (taux d'inflation, déficit public, dette publique, etc.) pour assurer la stabilité macroéconomique dans la zone.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment une dévaluation du franc CFA affecterait-elle la balance commerciale d'un pays de l'UEMOA ?",
@@ -466,7 +516,8 @@
       "optionC": "Elle n'aurait aucun effet sur la balance commerciale",
       "optionD": "Son effet dépend de la réactivité des exportations et importations aux prix (élasticité-prix)",
       "correctAnswer": "D",
-      "explanation": "L'effet d'une dévaluation sur la balance commerciale dépend de la réactivité des exportations et importations aux changements de prix (élasticité-prix). Si les exportations sont très sensibles aux prix et les importations peu sensibles, la balance commerciale s'améliore."
+      "explanation": "L'effet d'une dévaluation sur la balance commerciale dépend de la réactivité des exportations et importations aux changements de prix (élasticité-prix). Si les exportations sont très sensibles aux prix et les importations peu sensibles, la balance commerciale s'améliore.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est l'objectif principal du Programme d'Appui à la Compétitivité et à la Croissance (PACC) dans la zone UEMOA ?",
@@ -475,7 +526,8 @@
       "optionC": "Réduire la dette publique des pays membres",
       "optionD": "Augmenter les réserves de change de la BCEAO",
       "correctAnswer": "B",
-      "explanation": "Le PACC vise à améliorer la compétitivité des entreprises de la zone UEMOA en modernisant le tissu productif, en facilitant l'accès au financement et en soutenant les secteurs porteurs pour stimuler la croissance économique."
+      "explanation": "Le PACC vise à améliorer la compétitivité des entreprises de la zone UEMOA en modernisant le tissu productif, en facilitant l'accès au financement et en soutenant les secteurs porteurs pour stimuler la croissance économique.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment une politique de déflation affecte-t-elle l'économie d'un pays de l'UEMOA ?",
@@ -484,7 +536,8 @@
       "optionC": "Elle n'affecte pas les décisions d'investissement des entreprises",
       "optionD": "Elle entraîne toujours une appréciation de la monnaie nationale",
       "correctAnswer": "B",
-      "explanation": "La déflation (baisse durable des prix) peut stimuler la consommation à court terme en rendant les biens moins chers, mais elle peut aussi décourager l'investissement (en raison des perspectives de moindres profits) et augmenter le poids réel de la dette."
+      "explanation": "La déflation (baisse durable des prix) peut stimuler la consommation à court terme en rendant les biens moins chers, mais elle peut aussi décourager l'investissement (en raison des perspectives de moindres profits) et augmenter le poids réel de la dette.",
+      "difficulty": "medium"
     }
   ]
 }

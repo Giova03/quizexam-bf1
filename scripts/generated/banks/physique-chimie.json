@@ -15,7 +15,8 @@
       "optionC": "Accra",
       "optionD": "Lagos",
       "correctAnswer": "A",
-      "explanation": "Addis-Abeba est la réponse correcte. Où se trouve le siège de l'Union Africaine ?..."
+      "explanation": "Addis-Abeba est la réponse correcte. Où se trouve le siège de l'Union Africaine ?...",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle organisation africaine est spécialisée dans la lutte contre la désertification ?",
@@ -24,7 +25,8 @@
       "optionC": "SADC",
       "optionD": "CEDEAO",
       "correctAnswer": "B",
-      "explanation": "CILSS est la réponse correcte. Quelle organisation africaine est spécialisée dans la lutte contre la désertific..."
+      "explanation": "CILSS est la réponse correcte. Quelle organisation africaine est spécialisée dans la lutte contre la désertific...",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le plus grand festival de cinéma d'Afrique francophone ?",
@@ -33,7 +35,8 @@
       "optionC": "Luxor African Film Festival",
       "optionD": "Durban International Film Festival",
       "correctAnswer": "A",
-      "explanation": "FESPACO est la réponse correcte. Quel est le plus grand festival de cinéma d'Afrique francophone ?..."
+      "explanation": "FESPACO est la réponse correcte. Quel est le plus grand festival de cinéma d'Afrique francophone ?...",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le premier écrivain africain francophone à avoir reçu le prix Goncourt ?",
@@ -42,7 +45,8 @@
       "optionC": "Mohamed Mbougar Sar",
       "optionD": "Sony Labou Tansi",
       "correctAnswer": "C",
-      "explanation": "Mohamed Mbougar Sar est la réponse correcte. Quel est le premier écrivain africain francophone à avoir reçu le prix Goncourt ..."
+      "explanation": "Mohamed Mbougar Sar est la réponse correcte. Quel est le premier écrivain africain francophone à avoir reçu le prix Goncourt ...",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la date de création de l'Alliance des Etats du Sahel AES?",
@@ -51,7 +55,8 @@
       "optionC": "9 juillet 2024",
       "optionD": "26 septembre 2024",
       "correctAnswer": "B",
-      "explanation": "6 juillet 2024 est la réponse correcte. Quelle est la date de création de l'Alliance des Etats du Sahel AES?..."
+      "explanation": "6 juillet 2024 est la réponse correcte. Quelle est la date de création de l'Alliance des Etats du Sahel AES?...",
+      "difficulty": "medium"
     }
   ]
 }

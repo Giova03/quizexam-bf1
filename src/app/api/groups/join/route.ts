@@ -5,6 +5,7 @@ import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
+<<<<<<< Updated upstream
 /**
  * POST /api/groups/join
  * Join a study group by its invite code. Idempotent — joining a group you're
@@ -108,5 +109,51 @@ export async function POST(request: Request) {
       { error: "Impossible de rejoindre le groupe" },
       { status: 500 }
     );
+=======
+/** POST /api/groups/join — join a group by its invite code. */
+export async function POST(request: Request) {
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.email) {
+      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
+    }
+    const user = await db.user.findUnique({
+      where: { email: session.user.email },
+      select: { id: true },
+    });
+    if (!user) {
+      return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
+    }
+
+    const body = (await request.json()) as { code?: string };
+    const code = body.code?.trim().toUpperCase();
+    if (!code || code.length < 4) {
+      return NextResponse.json({ error: "Code d'invitation invalide" }, { status: 400 });
+    }
+
+    const group = await db.studyGroup.findUnique({
+      where: { code },
+      select: { id: true, name: true },
+    });
+    if (!group) {
+      return NextResponse.json({ error: "Aucun groupe trouvé avec ce code" }, { status: 404 });
+    }
+
+    const existing = await db.studyGroupMember.findUnique({
+      where: { groupId_userId: { groupId: group.id, userId: user.id } },
+      select: { id: true },
+    });
+    if (existing) {
+      return NextResponse.json({ alreadyMember: true, group });
+    }
+
+    await db.studyGroupMember.create({
+      data: { groupId: group.id, userId: user.id },
+    });
+    return NextResponse.json({ joined: true, group }, { status: 201 });
+  } catch (error) {
+    console.error("Failed to join group:", error);
+    return NextResponse.json({ error: "Failed to join group" }, { status: 500 });
+>>>>>>> Stashed changes
   }
 }

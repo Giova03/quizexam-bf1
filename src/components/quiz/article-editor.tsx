@@ -1,5 +1,6 @@
 "use client";
 
+<<<<<<< Updated upstream
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -143,15 +144,83 @@ export function ArticleEditor({
             : "Brouillon enregistré"
       );
       onOpenChange(false);
+=======
+import { useState } from "react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { ArrowLeft, Save, Eye, PenLine } from "lucide-react";
+import { toast } from "sonner";
+import type { ArticleItem } from "./blog-view";
+
+interface ArticleEditorProps {
+  article: ArticleItem | null;
+  onClose: () => void;
+  onSaved: () => void;
+}
+
+/**
+ * ArticleEditor — simple textarea-based editor for creating/editing articles.
+ * Supports a live preview toggle.
+ */
+export function ArticleEditor({ article, onClose, onSaved }: ArticleEditorProps) {
+  const [title, setTitle] = useState(article?.title ?? "");
+  const [excerpt, setExcerpt] = useState(article?.excerpt ?? "");
+  const [content, setContent] = useState(article?.content ?? "");
+  const [tags, setTags] = useState(article?.tags ?? "");
+  const [coverUrl, setCoverUrl] = useState(article?.coverUrl ?? "");
+  const [saving, setSaving] = useState(false);
+  const [preview, setPreview] = useState(false);
+
+  async function handleSave() {
+    if (!title.trim()) {
+      toast.error("Le titre est obligatoire");
+      return;
+    }
+    if (!content.trim()) {
+      toast.error("Le contenu est obligatoire");
+      return;
+    }
+    setSaving(true);
+    try {
+      const payload = {
+        title: title.trim(),
+        excerpt: excerpt.trim(),
+        content,
+        tags: tags.trim(),
+        coverUrl: coverUrl.trim(),
+      };
+      const url = article ? `/api/articles/${article.id}` : "/api/articles";
+      const method = article ? "PATCH" : "POST";
+      const res = await fetch(url, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.error ?? "Erreur lors de la sauvegarde");
+        return;
+      }
+      toast.success(article ? "Article mis à jour" : "Article publié");
+      onSaved();
+>>>>>>> Stashed changes
     } catch (e) {
       console.error(e);
       toast.error("Erreur réseau");
     } finally {
+<<<<<<< Updated upstream
       setSubmitting(false);
+=======
+      setSaving(false);
+>>>>>>> Stashed changes
     }
   }
 
   return (
+<<<<<<< Updated upstream
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-h-[90vh] max-w-3xl overflow-y-auto">
         <DialogHeader>
@@ -327,5 +396,132 @@ export function ArticleEditor({
         </DialogFooter>
       </DialogContent>
     </Dialog>
+=======
+    <div className="space-y-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-2">
+          <Button variant="ghost" size="sm" className="gap-1.5" onClick={onClose}>
+            <ArrowLeft className="h-4 w-4" />
+            Annuler
+          </Button>
+          <h1 className="flex items-center gap-2 text-xl font-bold">
+            <PenLine className="h-5 w-5 text-amber-600" />
+            {article ? "Modifier l'article" : "Nouvel article"}
+          </h1>
+        </div>
+        <div className="flex items-center gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setPreview((p) => !p)}
+            className="gap-1.5"
+          >
+            <Eye className="h-4 w-4" />
+            {preview ? "Éditer" : "Aperçu"}
+          </Button>
+          <Button
+            size="sm"
+            onClick={handleSave}
+            disabled={saving}
+            className="gap-1.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white"
+          >
+            <Save className="h-4 w-4" />
+            {saving ? "Sauvegarde..." : "Sauvegarder"}
+          </Button>
+        </div>
+      </div>
+
+      {preview ? (
+        <Card className="p-6">
+          <h1 className="text-2xl font-bold">{title || "Titre sans titre"}</h1>
+          {excerpt && (
+            <p className="mt-2 border-l-4 border-amber-500 bg-amber-50 px-3 py-1.5 text-sm italic dark:bg-amber-950/30">
+              {excerpt}
+            </p>
+          )}
+          {coverUrl && (
+            <img src={coverUrl} alt="" className="mt-3 h-64 w-full rounded-lg object-cover" />
+          )}
+          <div className="mt-4 whitespace-pre-wrap text-sm leading-relaxed">
+            {content || "(contenu vide)"}
+          </div>
+        </Card>
+      ) : (
+        <div className="grid gap-3 lg:grid-cols-3">
+          <div className="space-y-3 lg:col-span-2">
+            <Card className="space-y-3 p-4">
+              <div className="space-y-1.5">
+                <Label htmlFor="art-title">Titre *</Label>
+                <Input
+                  id="art-title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="Titre accrocheur..."
+                  maxLength={150}
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="art-content">Contenu *</Label>
+                <Textarea
+                  id="art-content"
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                  placeholder="Rédigez votre article ici. Sauts de ligne conservés."
+                  rows={18}
+                  className="font-mono text-sm"
+                  maxLength={50000}
+                />
+                <p className="text-right text-[10px] text-muted-foreground">
+                  {content.length} / 50000 caractères
+                </p>
+              </div>
+            </Card>
+          </div>
+          <div className="space-y-3">
+            <Card className="space-y-3 p-4">
+              <div className="space-y-1.5">
+                <Label htmlFor="art-excerpt">Extrait</Label>
+                <Textarea
+                  id="art-excerpt"
+                  value={excerpt}
+                  onChange={(e) => setExcerpt(e.target.value)}
+                  placeholder="Résumé court affiché dans la liste."
+                  rows={3}
+                  maxLength={300}
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="art-tags">Tags (séparés par virgules)</Label>
+                <Input
+                  id="art-tags"
+                  value={tags}
+                  onChange={(e) => setTags(e.target.value)}
+                  placeholder="concours, méthode, culture"
+                  maxLength={200}
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="art-cover">URL image de couverture</Label>
+                <Input
+                  id="art-cover"
+                  value={coverUrl}
+                  onChange={(e) => setCoverUrl(e.target.value)}
+                  placeholder="https://..."
+                  maxLength={500}
+                />
+              </div>
+            </Card>
+            <Card className="p-4 text-xs text-muted-foreground">
+              <p className="font-medium text-foreground">Astuce</p>
+              <p className="mt-1">
+                Utilisez des sauts de ligne pour séparer les paragraphes.
+                Le contenu est conservé tel quel (Markdown non interprété).
+              </p>
+            </Card>
+          </div>
+        </div>
+      )}
+    </div>
+>>>>>>> Stashed changes
   );
 }

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
+<<<<<<< Updated upstream
 import { getRoom, serializeRoom } from "@/lib/competition-store";
 
 export const dynamic = "force-dynamic";
@@ -101,4 +102,89 @@ export async function POST(request: Request) {
     correctAnswer: currentQuestion.correctAnswer,
     explanation: currentQuestion.explanation,
   });
+=======
+import { db } from "@/lib/db";
+import { competitionStore } from "@/lib/competition-store";
+
+export const dynamic = "force-dynamic";
+
+/**
+ * POST /api/competition/answer — enregistre la réponse du joueur courant.
+ * Corps : { code, answer: "A"|"B"|"C"|"D" }
+ *
+ * Renvoie { correct, scoreDelta, correctAnswer, explanation } — la solution
+ * n'est dévoilée qu'après que le joueur a répondu (un seul essai par question).
+ */
+
+export async function POST(request: Request) {
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.email) {
+      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
+    }
+
+    const user = await db.user.findUnique({
+      where: { email: session.user.email },
+      select: { id: true },
+    });
+    if (!user) {
+      return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
+    }
+
+    const body = (await request.json()) as {
+      code?: string;
+      answer?: "A" | "B" | "C" | "D";
+    };
+
+    const code = (body.code ?? "").toUpperCase().trim();
+    if (!code || !body.answer) {
+      return NextResponse.json(
+        { error: "code et answer sont requis" },
+        { status: 400 }
+      );
+    }
+
+    if (!["A", "B", "C", "D"].includes(body.answer)) {
+      return NextResponse.json(
+        { error: "answer doit être A, B, C ou D" },
+        { status: 400 }
+      );
+    }
+
+    const result = competitionStore.submitAnswer(
+      code,
+      user.id,
+      body.answer,
+      Date.now()
+    );
+
+    if (!result) {
+      // Déjà répondu ou room fermée → on renvoie quand même la solution
+      // pour que le client puisse l'afficher.
+      const room = competitionStore.getRoom(code);
+      const q = room?.questions[room.currentQuestionIdx];
+      return NextResponse.json({
+        alreadyAnswered: true,
+        correctAnswer: q?.correctAnswer ?? null,
+        explanation: q?.explanation ?? "",
+      });
+    }
+
+    const room = competitionStore.getRoom(code);
+    const q = room?.questions[room.currentQuestionIdx];
+
+    return NextResponse.json({
+      correct: result.correct,
+      scoreDelta: result.scoreDelta,
+      correctAnswer: q?.correctAnswer ?? null,
+      explanation: q?.explanation ?? "",
+    });
+  } catch (error) {
+    console.error("Failed to submit competition answer:", error);
+    return NextResponse.json(
+      { error: "Failed to submit answer" },
+      { status: 500 }
+    );
+  }
+>>>>>>> Stashed changes
 }

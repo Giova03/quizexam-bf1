@@ -15,7 +15,8 @@
       "optionC": "Atome",
       "optionD": "Anion",
       "correctAnswer": "C",
-      "explanation": "Atome est la réponse correcte. Quel est le point culminant d'Afrique ?..."
+      "explanation": "Atome est la réponse correcte. Quel est le point culminant d'Afrique ?...",
+      "difficulty": "medium"
     },
     {
       "question": "Dans quelle ville s'est tenue le premier sommet de l'AES ?",
@@ -24,7 +25,8 @@
       "optionC": "Ouagadougou",
       "optionD": "Aucune",
       "correctAnswer": "B",
-      "explanation": "Niamey est la réponse correcte. Dans quelle ville s'est tenue le premier sommet de l'AES ?..."
+      "explanation": "Niamey est la réponse correcte. Dans quelle ville s'est tenue le premier sommet de l'AES ?...",
+      "difficulty": "medium"
     },
     {
       "question": "Quel explorateur allemand a séjourné à Dori en 1853 ?",
@@ -33,7 +35,8 @@
       "optionC": "Heinrich Barth",
       "optionD": "Parfait-Louis Monteil",
       "correctAnswer": "C",
-      "explanation": "Heinrich Barth est la réponse correcte. Quel explorateur allemand a séjourné à Dori en 1853 ?..."
+      "explanation": "Heinrich Barth est la réponse correcte. Quel explorateur allemand a séjourné à Dori en 1853 ?...",
+      "difficulty": "medium"
     },
     {
       "question": "Quel explorateur n’a pas visité la Haute-Volta ?",
@@ -42,7 +45,8 @@
       "optionC": "René Caillé",
       "optionD": "Heinrich Barth",
       "correctAnswer": "C",
-      "explanation": "René Caillé est la réponse correcte. Quel explorateur n’a pas visité la Haute-Volta ?..."
+      "explanation": "René Caillé est la réponse correcte. Quel explorateur n’a pas visité la Haute-Volta ?...",
+      "difficulty": "medium"
     },
     {
       "question": "Lequel des barrages suivants est hydroélectrique au Burkina Faso ?",
@@ -51,7 +55,8 @@
       "optionC": "Samandéni",
       "optionD": "Bam",
       "correctAnswer": "A",
-      "explanation": "Kompienga est la réponse correcte. Lequel des barrages suivants est hydroélectrique au Burkina Faso ?..."
+      "explanation": "Kompienga est la réponse correcte. Lequel des barrages suivants est hydroélectrique au Burkina Faso ?...",
+      "difficulty": "medium"
     },
     {
       "question": "Qui est considéré comme le père de l’archéologie au Burkina Faso ?",
@@ -60,7 +65,8 @@
       "optionC": "Gérard Kango",
       "optionD": "Daniel Ouézzin Coulibaly",
       "correctAnswer": "B",
-      "explanation": "Jean-Baptiste Kiéthéga est la réponse correcte. Qui est considéré comme le père de l’archéologie au Burkina Faso ?..."
+      "explanation": "Jean-Baptiste Kiéthéga est la réponse correcte. Qui est considéré comme le père de l’archéologie au Burkina Faso ?...",
+      "difficulty": "medium"
     },
     {
       "question": "En quelle année la Haute-Volta est-elle devenue le Burkina Faso ?",
@@ -69,7 +75,8 @@
       "optionC": "1983",
       "optionD": "1984",
       "correctAnswer": "D",
-      "explanation": "Le 4 août 1984 sous Thomas Sankara."
+      "explanation": "Le 4 août 1984 sous Thomas Sankara.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a colonisé la Haute-Volta ?",
@@ -78,7 +85,8 @@
       "optionC": "France",
       "optionD": "Portugal",
       "correctAnswer": "C",
-      "explanation": "La France a colonisé la Haute-Volta."
+      "explanation": "La France a colonisé la Haute-Volta.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la date de la division du Burkina Faso en 17 régions ?",
@@ -87,7 +95,8 @@
       "optionC": "2 juillet 2025",
       "optionD": "2 juillet 2002",
       "correctAnswer": "C",
-      "explanation": "Nouveau découpage en 17 régions le 2 juillet 2025."
+      "explanation": "Nouveau découpage en 17 régions le 2 juillet 2025.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la date de la division du Burkina Faso en 47 provinces ?",
@@ -96,7 +105,8 @@
       "optionC": "2 juillet 2025",
       "optionD": "2 juillet 2002",
       "correctAnswer": "C",
-      "explanation": "47 provinces depuis le 2 juillet 2025."
+      "explanation": "47 provinces depuis le 2 juillet 2025.",
+      "difficulty": "medium"
     },
     {
       "question": "Le chef-lieu de la province du Dyamongou est :",
@@ -105,7 +115,8 @@
       "optionC": "Gaoua",
       "optionD": "Dori",
       "correctAnswer": "A",
-      "explanation": "Kantchari est le chef-lieu du Dyamongou."
+      "explanation": "Kantchari est le chef-lieu du Dyamongou.",
+      "difficulty": "medium"
     },
     {
       "question": "Sandbondtenga est la nouvelle appellation de la province de :",
@@ -114,7 +125,8 @@
       "optionC": "Bassitinga",
       "optionD": "Oubritenga",
       "correctAnswer": "A",
-      "explanation": "Sandbondtenga = nouveau nom du Sanmatenga."
+      "explanation": "Sandbondtenga = nouveau nom du Sanmatenga.",
+      "difficulty": "medium"
     },
     {
       "question": "Djelgodji est l actuel nom de la province de :",
@@ -123,7 +135,8 @@
       "optionC": "Bassitinga",
       "optionD": "Oubritenga",
       "correctAnswer": "B",
-      "explanation": "Djelgodji = nouveau nom du Soum."
+      "explanation": "Djelgodji = nouveau nom du Soum.",
+      "difficulty": "medium"
     },
     {
       "question": "À quelle date le Capitaine Ibrahim Traoré a-t-il été désigné Président du Burkina Faso ?",
@@ -132,7 +145,8 @@
       "optionC": "10 novembre 2022",
       "optionD": "2 juillet 2025",
       "correctAnswer": "B",
-      "explanation": "Désigné Président le 15 octobre 2022."
+      "explanation": "Désigné Président le 15 octobre 2022.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la date de la prestation de serment du Capitaine Ibrahim Traoré ?",
@@ -141,7 +155,8 @@
       "optionC": "10 novembre 2022",
       "optionD": "2 juillet 2025",
       "correctAnswer": "C",
-      "explanation": "Prestation de serment le 10 novembre 2022."
+      "explanation": "Prestation de serment le 10 novembre 2022.",
+      "difficulty": "medium"
     },
     {
       "question": "En 2024, la part de l or dans les exportations du BF était de :",
@@ -150,7 +165,8 @@
       "optionC": "84%",
       "optionD": "90%",
       "correctAnswer": "C",
-      "explanation": "L or représentait 84% des exportations en 2024."
+      "explanation": "L or représentait 84% des exportations en 2024.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel secteur emploie le plus de Burkinabè ?",
@@ -159,7 +175,8 @@
       "optionC": "Services",
       "optionD": "Mines",
       "correctAnswer": "B",
-      "explanation": "L agriculture emploie le plus de Burkinabè."
+      "explanation": "L agriculture emploie le plus de Burkinabè.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le secteur le plus dynamique au Burkina Faso ?",
@@ -168,7 +185,8 @@
       "optionC": "Secteur tertiaire",
       "optionD": "Secteur quaternaire",
       "correctAnswer": "C",
-      "explanation": "Le secteur tertiaire est le plus dynamique."
+      "explanation": "Le secteur tertiaire est le plus dynamique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel fleuve ivoirien prend sa source au Burkina Faso ?",
@@ -177,7 +195,8 @@
       "optionC": "Le Sassandra",
       "optionD": "Le Cavally",
       "correctAnswer": "B",
-      "explanation": "La Comoé prend sa source au BF."
+      "explanation": "La Comoé prend sa source au BF.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la nouvelle appellation de l ENAREF ?",
@@ -186,7 +205,8 @@
       "optionC": "ENA",
       "optionD": "IRSP",
       "correctAnswer": "B",
-      "explanation": "L ENAREF est devenue l IFPB."
+      "explanation": "L ENAREF est devenue l IFPB.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la devise de l IFPB ?",
@@ -195,7 +215,8 @@
       "optionC": "La Patrie, La Loi et L Honneur",
       "optionD": "Unité - Progrès - Justice",
       "correctAnswer": "B",
-      "explanation": "Devise IFPB: ENGAGEMENT - TRAVAIL - EXCELLENCE."
+      "explanation": "Devise IFPB: ENGAGEMENT - TRAVAIL - EXCELLENCE.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui est le directeur général de l IFPB ?",
@@ -204,7 +225,8 @@
       "optionC": "Matthias Traoré",
       "optionD": "Bassolma Bazié",
       "correctAnswer": "B",
-      "explanation": "Barthélémy Kebre est le DG de l IFPB."
+      "explanation": "Barthélémy Kebre est le DG de l IFPB.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la date de création de l IFPB ?",
@@ -213,7 +235,8 @@
       "optionC": "4 août 1983",
       "optionD": "16 août 1948",
       "correctAnswer": "B",
-      "explanation": "L IFPB a été créé le 15 janvier 2025."
+      "explanation": "L IFPB a été créé le 15 janvier 2025.",
+      "difficulty": "medium"
     },
     {
       "question": "Le taux de l impôt sur les sociétés au Burkina est de :",
@@ -222,7 +245,8 @@
       "optionC": "18%",
       "optionD": "30%",
       "correctAnswer": "D",
-      "explanation": "L IS au BF est de 30%."
+      "explanation": "L IS au BF est de 30%.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel explorateur n a pas visité la Haute-Volta ?",
@@ -231,7 +255,8 @@
       "optionC": "René Caillé",
       "optionD": "Heinrich Barth",
       "correctAnswer": "C",
-      "explanation": "René Caillé n a pas visité la Haute-Volta."
+      "explanation": "René Caillé n a pas visité la Haute-Volta.",
+      "difficulty": "medium"
     },
     {
       "question": "Lequel des barrages suivants est hydroélectrique au BF ?",
@@ -240,7 +265,8 @@
       "optionC": "Samandéni",
       "optionD": "Bam",
       "correctAnswer": "A",
-      "explanation": "Kompienga est hydroélectrique."
+      "explanation": "Kompienga est hydroélectrique.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui est le père de l archéologie au Burkina Faso ?",
@@ -249,7 +275,8 @@
       "optionC": "Gérard Kango",
       "optionD": "Daniel Ouézzin Coulibaly",
       "correctAnswer": "B",
-      "explanation": "Jean-Baptiste Kiéthéga, père de l archéologie au BF."
+      "explanation": "Jean-Baptiste Kiéthéga, père de l archéologie au BF.",
+      "difficulty": "medium"
     },
     {
       "question": "Que désigne la culture de la vigne ?",
@@ -258,7 +285,8 @@
       "optionC": "Aviculture",
       "optionD": "Pisciculture",
       "correctAnswer": "A",
-      "explanation": "La viticulture est la culture de la vigne."
+      "explanation": "La viticulture est la culture de la vigne.",
+      "difficulty": "medium"
     },
     {
       "question": "Date de la création de l ONAB ?",
@@ -267,7 +295,8 @@
       "optionC": "1967",
       "optionD": "1966",
       "correctAnswer": "C",
-      "explanation": "L ONAB a été créée en 1967."
+      "explanation": "L ONAB a été créée en 1967.",
+      "difficulty": "medium"
     },
     {
       "question": "À qui appartient le film Les trois lascars ?",
@@ -276,7 +305,8 @@
       "optionC": "Patrick Ilboudo",
       "optionD": "Norbert Zongo",
       "correctAnswer": "A",
-      "explanation": "Film de Boubacar Diallo."
+      "explanation": "Film de Boubacar Diallo.",
+      "difficulty": "medium"
     },
     {
       "question": "Route Nationale n°2, on a :",
@@ -285,7 +315,8 @@
       "optionC": "Ouagadougou-Ouahigouya",
       "optionD": "Ouagadougou-Fada",
       "correctAnswer": "C",
-      "explanation": "La RN2 relie Ouagadougou à Ouahigouya."
+      "explanation": "La RN2 relie Ouagadougou à Ouahigouya.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le plus vaste pays d Afrique en superficie ?",
@@ -294,7 +325,8 @@
       "optionC": "Algérie",
       "optionD": "Nigeria",
       "correctAnswer": "C",
-      "explanation": "L Algérie est le plus vaste pays d Afrique."
+      "explanation": "L Algérie est le plus vaste pays d Afrique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le plus grand pays du monde en superficie ?",
@@ -303,7 +335,8 @@
       "optionC": "Algérie",
       "optionD": "Inde",
       "correctAnswer": "A",
-      "explanation": "La Russie est le plus grand pays du monde."
+      "explanation": "La Russie est le plus grand pays du monde.",
+      "difficulty": "medium"
     },
     {
       "question": "Jean Paul Sartre est ?",
@@ -312,7 +345,8 @@
       "optionC": "Sophiste",
       "optionD": "Marxiste",
       "correctAnswer": "A",
-      "explanation": "Sartre = existentialisme."
+      "explanation": "Sartre = existentialisme.",
+      "difficulty": "medium"
     },
     {
       "question": "Que signifie l acronyme AVC en médecine ?",
@@ -321,7 +355,8 @@
       "optionC": "Apport Vitaminique Complet",
       "optionD": "Arythmie Ventriculaire Chronique",
       "correctAnswer": "A",
-      "explanation": "AVC = Accident Vasculaire Cérébral."
+      "explanation": "AVC = Accident Vasculaire Cérébral.",
+      "difficulty": "medium"
     },
     {
       "question": "En quelle année le FESPACO a-t-il été créé ?",
@@ -330,7 +365,8 @@
       "optionC": "1969",
       "optionD": "1970",
       "correctAnswer": "C",
-      "explanation": "FESPACO créé en 1969."
+      "explanation": "FESPACO créé en 1969.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle année ont eu lieu les accords d Évian ?",
@@ -339,7 +375,8 @@
       "optionC": "1960",
       "optionD": "1962",
       "correctAnswer": "D",
-      "explanation": "Accords d Évian en 1962."
+      "explanation": "Accords d Évian en 1962.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la vitesse maximale autorisée en agglomération au BF ?",
@@ -348,7 +385,8 @@
       "optionC": "60 km/h",
       "optionD": "80 km/h",
       "correctAnswer": "B",
-      "explanation": "50 km/h en agglomération au BF."
+      "explanation": "50 km/h en agglomération au BF.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a dit l éducation est l arme la plus puissante pour changer le monde ?",
@@ -357,7 +395,8 @@
       "optionC": "Kwame Nkrumah",
       "optionD": "Ahmadou Kourouma",
       "correctAnswer": "B",
-      "explanation": "Citation de Nelson Mandela."
+      "explanation": "Citation de Nelson Mandela.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel président du BF a le moins duré au pouvoir ?",
@@ -366,7 +405,8 @@
       "optionC": "Paul-Henri Sandaogo Damiba",
       "optionD": "Isaac Zida",
       "correctAnswer": "C",
-      "explanation": "Damiba a duré environ 8 mois."
+      "explanation": "Damiba a duré environ 8 mois.",
+      "difficulty": "medium"
     },
     {
       "question": "La CAN 2025 se joue dans quel pays ?",
@@ -375,7 +415,12 @@
       "optionC": "Maroc",
       "optionD": "Burkina Faso",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Maroc ». CAN 2025 au Maroc. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « La CAN 2025 se joue dans quel pays  »."
+=======
+      "explanation": "La bonne réponse est « Maroc » car elle correspond à l'affirmation correcte concernant : La CAN 2025 se joue dans quel pays ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Que signifie le sigle GSP ?",
@@ -384,7 +429,8 @@
       "optionC": "Groupe Spécial de Protection",
       "optionD": "Garde Spéciale Pénitentiaire",
       "correctAnswer": "A",
-      "explanation": "GSP = Garde Spéciale de Protection."
+      "explanation": "GSP = Garde Spéciale de Protection.",
+      "difficulty": "medium"
     },
     {
       "question": "À quelle date la GSP a-t-elle été créée ?",
@@ -393,7 +439,8 @@
       "optionC": "11 décembre 2024",
       "optionD": "25 octobre 2023",
       "correctAnswer": "B",
-      "explanation": "GSP créée le 4 août 1983."
+      "explanation": "GSP créée le 4 août 1983.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la devise de la GSP ?",
@@ -402,7 +449,8 @@
       "optionC": "La Patrie, La Loi et L Honneur",
       "optionD": "ENGAGEMENT - TRAVAIL - EXCELLENCE",
       "correctAnswer": "B",
-      "explanation": "Devise GSP: Honneur - Dévouement - Loyauté."
+      "explanation": "Devise GSP: Honneur - Dévouement - Loyauté.",
+      "difficulty": "medium"
     },
     {
       "question": "La GSP est chargée de la sécurité dans :",
@@ -411,7 +459,8 @@
       "optionC": "Les établissements pénitentiaires",
       "optionD": "Les aéroports",
       "correctAnswer": "C",
-      "explanation": "GSP = sécurité des établissements pénitentiaires."
+      "explanation": "GSP = sécurité des établissements pénitentiaires.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la date de création du corps des Eaux et Forêts ?",
@@ -420,7 +469,8 @@
       "optionC": "11 décembre 2024",
       "optionD": "25 octobre 2023",
       "correctAnswer": "B",
-      "explanation": "Eaux et Forêts créés le 16 août 1948."
+      "explanation": "Eaux et Forêts créés le 16 août 1948.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la devise des Eaux et Forêts ?",
@@ -429,7 +479,8 @@
       "optionC": "La Patrie, La Loi et L Honneur",
       "optionD": "ENGAGEMENT - TRAVAIL - EXCELLENCE",
       "correctAnswer": "B",
-      "explanation": "Devise Eaux et Forêts: Honneur - Discipline - Solidarité."
+      "explanation": "Devise Eaux et Forêts: Honneur - Discipline - Solidarité.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la devise de la Gendarmerie Nationale ?",
@@ -438,7 +489,8 @@
       "optionC": "La Patrie, La Loi et L Honneur",
       "optionD": "ENGAGEMENT - TRAVAIL - EXCELLENCE",
       "correctAnswer": "C",
-      "explanation": "Devise Gendarmerie: La Patrie, La Loi et L Honneur."
+      "explanation": "Devise Gendarmerie: La Patrie, La Loi et L Honneur.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le rôle principal de la Gendarmerie Mobile ?",
@@ -447,7 +499,8 @@
       "optionC": "Le maintien de l ordre et les opérations complexes",
       "optionD": "La protection des ambassades",
       "correctAnswer": "C",
-      "explanation": "Gendarmerie Mobile = maintien de l ordre."
+      "explanation": "Gendarmerie Mobile = maintien de l ordre.",
+      "difficulty": "medium"
     },
     {
       "question": "Le territoire militaire du BF est structuré en combien de régions militaires ?",
@@ -456,7 +509,8 @@
       "optionC": "6",
       "optionD": "8",
       "correctAnswer": "C",
-      "explanation": "6 régions militaires au BF."
+      "explanation": "6 régions militaires au BF.",
+      "difficulty": "medium"
     },
     {
       "question": "La 1ère région militaire du BF a pour chef-lieu :",
@@ -465,7 +519,8 @@
       "optionC": "Koudougou",
       "optionD": "Ouahigouya",
       "correctAnswer": "A",
-      "explanation": "1ère région militaire = Ouagadougou."
+      "explanation": "1ère région militaire = Ouagadougou.",
+      "difficulty": "medium"
     },
     {
       "question": "L accord militaire France-Burkina a été signé en :",
@@ -474,7 +529,12 @@
       "optionC": "1965",
       "optionD": "1970",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « 1961 ». Signé en 1961. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « L accord militaire France-Burkina a été signé en : »."
+=======
+      "explanation": "La bonne réponse est « 1961 » car elle correspond à l'affirmation correcte concernant : L accord militaire France-Burkina a été signé en :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "L état d urgence décrété en mars 2023 concernait combien de régions ?",
@@ -483,7 +543,8 @@
       "optionC": "10",
       "optionD": "13",
       "correctAnswer": "B",
-      "explanation": "8 régions concernées."
+      "explanation": "8 régions concernées.",
+      "difficulty": "medium"
     },
     {
       "question": "La fin de la présence militaire française au BF est intervenue le :",
@@ -492,7 +553,12 @@
       "optionC": "1er mars 2023",
       "optionD": "15 octobre 2022",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « 18 février 2023 ». Le 18 février 2023. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « La fin de la présence militaire française au BF est intervenue le : »."
+=======
+      "explanation": "La bonne réponse est « 18 février 2023 » car elle correspond à l'affirmation correcte concernant : La fin de la présence militaire française au BF est intervenue le :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quelle opération militaire française était déployée au BF ?",
@@ -501,7 +567,12 @@
       "optionC": "Sangaris",
       "optionD": "Chammal",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Barkhane ». Opération Barkhane. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quelle opération militaire française était déployée au BF  »."
+=======
+      "explanation": "La réponse correcte est « Barkhane ». Cette affirmation répond directement à la question posée : Quelle opération militaire française était déployée au BF ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Les GUMI ont été créés le :",
@@ -510,7 +581,8 @@
       "optionC": "18 février 2023",
       "optionD": "11 décembre 2024",
       "correctAnswer": "B",
-      "explanation": "GUMI créés le 25 octobre 2023."
+      "explanation": "GUMI créés le 25 octobre 2023.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la date de création de l Alliance des États du Sahel (AES) ?",
@@ -519,7 +591,8 @@
       "optionC": "16 septembre 2022",
       "optionD": "26 juillet 2023",
       "correctAnswer": "B",
-      "explanation": "AES créée le 16 septembre 2023."
+      "explanation": "AES créée le 16 septembre 2023.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la date de création de la Confédération AES ?",
@@ -528,7 +601,8 @@
       "optionC": "9 juillet 2024",
       "optionD": "26 septembre 2024",
       "correctAnswer": "B",
-      "explanation": "Confédération AES le 6 juillet 2024."
+      "explanation": "Confédération AES le 6 juillet 2024.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans quelle ville s est tenu le premier sommet de l AES ?",
@@ -537,7 +611,8 @@
       "optionC": "Ouagadougou",
       "optionD": "Aucune",
       "correctAnswer": "B",
-      "explanation": "Premier sommet AES à Niamey."
+      "explanation": "Premier sommet AES à Niamey.",
+      "difficulty": "medium"
     },
     {
       "question": "Le mot inflation désigne surtout :",
@@ -546,7 +621,8 @@
       "optionC": "Une stagnation",
       "optionD": "Une récession",
       "correctAnswer": "B",
-      "explanation": "Inflation = hausse générale des prix."
+      "explanation": "Inflation = hausse générale des prix.",
+      "difficulty": "medium"
     },
     {
       "question": "L espace Schengen :",
@@ -555,7 +631,8 @@
       "optionC": "Est une monnaie unique",
       "optionD": "Est une organisation militaire",
       "correctAnswer": "A",
-      "explanation": "Schengen = libre circulation dans 29 États."
+      "explanation": "Schengen = libre circulation dans 29 États.",
+      "difficulty": "medium"
     },
     {
       "question": "Le dollar américain est souvent considéré comme :",
@@ -564,7 +641,8 @@
       "optionC": "Une monnaie faible",
       "optionD": "Une monnaie européenne",
       "correctAnswer": "B",
-      "explanation": "Le dollar = monnaie de référence mondiale."
+      "explanation": "Le dollar = monnaie de référence mondiale.",
+      "difficulty": "medium"
     },
     {
       "question": "Quand les taux d intérêt montent, cela rend :",
@@ -573,7 +651,8 @@
       "optionC": "L épargne inutile",
       "optionD": "La croissance plus forte",
       "correctAnswer": "A",
-      "explanation": "Taux élevés = emprunt plus coûteux."
+      "explanation": "Taux élevés = emprunt plus coûteux.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a connu la guerre du Biafra ?",
@@ -582,7 +661,8 @@
       "optionC": "Côte d Ivoire",
       "optionD": "Angola",
       "correctAnswer": "A",
-      "explanation": "Biafra = Nigeria (1967-1970)."
+      "explanation": "Biafra = Nigeria (1967-1970).",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays a été dirigé par Haïlé Sélassié ?",
@@ -591,7 +671,8 @@
       "optionC": "Soudan",
       "optionD": "Libye",
       "correctAnswer": "B",
-      "explanation": "Haïlé Sélassié a dirigé l Éthiopie."
+      "explanation": "Haïlé Sélassié a dirigé l Éthiopie.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle organisation lutte contre la désertification ?",
@@ -600,7 +681,8 @@
       "optionC": "SADC",
       "optionD": "CEDEAO",
       "correctAnswer": "B",
-      "explanation": "CILSS = lutte contre la sécheresse au Sahel."
+      "explanation": "CILSS = lutte contre la sécheresse au Sahel.",
+      "difficulty": "medium"
     },
     {
       "question": "La Grande Muraille Verte vise à :",
@@ -609,7 +691,8 @@
       "optionC": "Protéger les espèces",
       "optionD": "Irriguer les terres",
       "correctAnswer": "B",
-      "explanation": "GMV = stopper l avancée du désert."
+      "explanation": "GMV = stopper l avancée du désert.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le plus grand festival de cinéma d Afrique francophone ?",
@@ -618,7 +701,8 @@
       "optionC": "Luxor",
       "optionD": "Durban",
       "correctAnswer": "A",
-      "explanation": "Le FESPACO à Ouagadougou."
+      "explanation": "Le FESPACO à Ouagadougou.",
+      "difficulty": "medium"
     },
     {
       "question": "Premier écrivain africain francophone à recevoir le Goncourt ?",
@@ -627,7 +711,8 @@
       "optionC": "Mohamed Mbougar Sar",
       "optionD": "Sony Labou Tansi",
       "correctAnswer": "C",
-      "explanation": "Mohamed Mbougar Sar, Goncourt 2021."
+      "explanation": "Mohamed Mbougar Sar, Goncourt 2021.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le point culminant d Afrique ?",
@@ -636,7 +721,8 @@
       "optionC": "Ras Dashan",
       "optionD": "Mont Atlas",
       "correctAnswer": "A",
-      "explanation": "Kilimandjaro (5 895 m)."
+      "explanation": "Kilimandjaro (5 895 m).",
+      "difficulty": "medium"
     },
     {
       "question": "En quelle année Mandela est-il devenu président ?",
@@ -645,7 +731,8 @@
       "optionC": "1996",
       "optionD": "2000",
       "correctAnswer": "B",
-      "explanation": "Mandela président en 1994."
+      "explanation": "Mandela président en 1994.",
+      "difficulty": "medium"
     },
     {
       "question": "La première République indépendante d Afrique est :",
@@ -654,7 +741,12 @@
       "optionC": "Le Liberia",
       "optionD": "L Éthiopie",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Le Liberia ». Le Liberia (1847). Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « La première République indépendante d Afrique est : »."
+=======
+      "explanation": "La bonne réponse est « Le Liberia » car elle correspond à l'affirmation correcte concernant : La première République indépendante d Afrique est :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quel pays a été réintégré à la CEDEAO le 28 janvier 2026 ?",
@@ -663,7 +755,8 @@
       "optionC": "Le Togo",
       "optionD": "Le Burkina Faso",
       "correctAnswer": "C",
-      "explanation": "Le Togo réintégré le 28 janvier 2026."
+      "explanation": "Le Togo réintégré le 28 janvier 2026.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui est le pape depuis mai 2025 ?",
@@ -672,7 +765,8 @@
       "optionC": "Pape Léon XIV",
       "optionD": "Pape Jean-Paul III",
       "correctAnswer": "C",
-      "explanation": "Pape Léon XIV depuis mai 2025."
+      "explanation": "Pape Léon XIV depuis mai 2025.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la nationalité du pape Léon XIV ?",
@@ -681,7 +775,8 @@
       "optionC": "Américaine",
       "optionD": "Française",
       "correctAnswer": "C",
-      "explanation": "Léon XIV est américain."
+      "explanation": "Léon XIV est américain.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la date de décès du pape François ?",
@@ -690,7 +785,8 @@
       "optionC": "1er mai 2025",
       "optionD": "8 mai 2025",
       "correctAnswer": "B",
-      "explanation": "Pape François décédé le 21 avril 2025."
+      "explanation": "Pape François décédé le 21 avril 2025.",
+      "difficulty": "medium"
     },
     {
       "question": "Léon XIV est le combienᵉ pape ?",
@@ -699,7 +795,8 @@
       "optionC": "267ᵉ",
       "optionD": "268ᵉ",
       "correctAnswer": "C",
-      "explanation": "Léon XIV = 267ᵉ pape."
+      "explanation": "Léon XIV = 267ᵉ pape.",
+      "difficulty": "medium"
     },
     {
       "question": "Lequel de ces papes a démissionné ?",
@@ -708,7 +805,8 @@
       "optionC": "Benoît XVI",
       "optionD": "Paul VI",
       "correctAnswer": "C",
-      "explanation": "Benoît XVI a démissionné en 2013."
+      "explanation": "Benoît XVI a démissionné en 2013.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle devise a choisi Léon XIV ?",
@@ -717,7 +815,12 @@
       "optionC": "Miserando atque eligendo",
       "optionD": "Totus tuus",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « In illo uno unum ». In illo uno unum. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quelle devise a choisi Léon XIV  »."
+=======
+      "explanation": "La réponse correcte est « In illo uno unum ». Cette affirmation répond directement à la question posée : Quelle devise a choisi Léon XIV ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Date du pacte de non-agression URSS-Allemagne ?",
@@ -726,7 +829,8 @@
       "optionC": "23 août 1939",
       "optionD": "1er septembre 1939",
       "correctAnswer": "C",
-      "explanation": "Pacte germano-soviétique le 23 août 1939."
+      "explanation": "Pacte germano-soviétique le 23 août 1939.",
+      "difficulty": "medium"
     },
     {
       "question": "Premier Africain à diriger l OIT ?",
@@ -735,7 +839,8 @@
       "optionC": "Ngozi Okonjo-Iweala",
       "optionD": "Wangari Maathai",
       "correctAnswer": "B",
-      "explanation": "Gilbert Houngbo (Togo) dirige l OIT."
+      "explanation": "Gilbert Houngbo (Togo) dirige l OIT.",
+      "difficulty": "medium"
     },
     {
       "question": "Lauréat du Prix Nobel de littérature 2025 ?",
@@ -744,7 +849,8 @@
       "optionC": "Olga Tokarczuk",
       "optionD": "Abdulrazak Gurnah",
       "correctAnswer": "B",
-      "explanation": "László Krasznahorkai, Nobel 2025."
+      "explanation": "László Krasznahorkai, Nobel 2025.",
+      "difficulty": "medium"
     },
     {
       "question": "Président en exercice de l UA ?",
@@ -753,7 +859,8 @@
       "optionC": "Assimi Goïta",
       "optionD": "Cyril Ramaphosa",
       "correctAnswer": "B",
-      "explanation": "Évariste Ndayishimiye (Burundi)."
+      "explanation": "Évariste Ndayishimiye (Burundi).",
+      "difficulty": "medium"
     },
     {
       "question": "La Coupe du monde 2026 se déroulera du :",
@@ -762,7 +869,8 @@
       "optionC": "15 juin au 20 juillet 2026",
       "optionD": "1er juillet au 15 août 2026",
       "correctAnswer": "B",
-      "explanation": "11 juin au 19 juillet 2026."
+      "explanation": "11 juin au 19 juillet 2026.",
+      "difficulty": "medium"
     },
     {
       "question": "Combien d équipes à la CM 2026 ?",
@@ -771,7 +879,8 @@
       "optionC": "48",
       "optionD": "64",
       "correctAnswer": "C",
-      "explanation": "48 équipes à la CM 2026."
+      "explanation": "48 équipes à la CM 2026.",
+      "difficulty": "medium"
     },
     {
       "question": "Quels pays co-organisent la CM 2026 ?",
@@ -780,7 +889,8 @@
       "optionC": "Canada, USA, Argentine",
       "optionD": "Mexique, USA, Colombie",
       "correctAnswer": "A",
-      "explanation": "USA, Canada, Mexique."
+      "explanation": "USA, Canada, Mexique.",
+      "difficulty": "medium"
     },
     {
       "question": "En quelle année a commencé la Première Guerre mondiale ?",
@@ -789,7 +899,12 @@
       "optionC": "1918",
       "optionD": "1939",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « 1914 ». 1914. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « En quelle année a commencé la Première Guerre mondiale  »."
+=======
+      "explanation": "La bonne réponse est « 1914 » car elle correspond à l'affirmation correcte concernant : En quelle année a commencé la Première Guerre mondiale ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quel événement marque la fin de la WWII en Europe ?",
@@ -798,7 +913,8 @@
       "optionC": "Débarquement de Normandie",
       "optionD": "Création de l ONU",
       "correctAnswer": "B",
-      "explanation": "Capitulation allemande mai 1945."
+      "explanation": "Capitulation allemande mai 1945.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel régime dirigeait l Allemagne nazie ?",
@@ -807,7 +923,12 @@
       "optionC": "République",
       "optionD": "Démocratie",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Dictature ». Dictature nazie. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel régime dirigeait l Allemagne nazie  »."
+=======
+      "explanation": "La réponse correcte est « Dictature ». Cette affirmation répond directement à la question posée : Quel régime dirigeait l Allemagne nazie ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Chef de la France libre pendant la WWII ?",
@@ -816,7 +937,12 @@
       "optionC": "Jean Moulin",
       "optionD": "Léon Blum",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Charles de Gaulle ». Charles de Gaulle. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Chef de la France libre pendant la WWII  »."
+=======
+      "explanation": "La bonne réponse est « Charles de Gaulle » car elle correspond à l'affirmation correcte concernant : Chef de la France libre pendant la WWII ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quel pays n était pas de l Axe ?",
@@ -825,7 +951,8 @@
       "optionC": "Italie",
       "optionD": "Japon",
       "correctAnswer": "A",
-      "explanation": "Royaume-Uni = Alliés."
+      "explanation": "Royaume-Uni = Alliés.",
+      "difficulty": "medium"
     },
     {
       "question": "La Shoah désigne :",
@@ -834,7 +961,8 @@
       "optionC": "L extermination des Juifs par les nazis",
       "optionD": "Le plan Marshall",
       "correctAnswer": "C",
-      "explanation": "Shoah = extermination des Juifs."
+      "explanation": "Shoah = extermination des Juifs.",
+      "difficulty": "medium"
     },
     {
       "question": "En quelle année la Déclaration des droits de l homme ?",
@@ -843,7 +971,12 @@
       "optionC": "1804",
       "optionD": "1871",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « 1789 ». 1789. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « En quelle année la Déclaration des droits de l homme  »."
+=======
+      "explanation": "La bonne réponse est « 1789 » car elle correspond à l'affirmation correcte concernant : En quelle année la Déclaration des droits de l homme ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "En quelle année l ONU a-t-elle été créée ?",
@@ -852,7 +985,12 @@
       "optionC": "1958",
       "optionD": "1918",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « 1945 ». 1945. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « En quelle année l ONU a-t-elle été créée  »."
+=======
+      "explanation": "La bonne réponse est « 1945 » car elle correspond à l'affirmation correcte concernant : En quelle année l ONU a-t-elle été créée ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quelle colonie française a obtenu son indépendance en 1962 ?",
@@ -861,7 +999,12 @@
       "optionC": "L Algérie",
       "optionD": "La Côte d Ivoire",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « L Algérie ». Algérie 1962. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quelle colonie française a obtenu son indépendance en 1962  »."
+=======
+      "explanation": "La réponse correcte est « L Algérie ». Cette affirmation répond directement à la question posée : Quelle colonie française a obtenu son indépendance en 1962 ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Qui a mis en place le régime de Vichy ?",
@@ -870,7 +1013,8 @@
       "optionC": "Napoléon",
       "optionD": "Hitler",
       "correctAnswer": "B",
-      "explanation": "Pétain = régime de Vichy."
+      "explanation": "Pétain = régime de Vichy.",
+      "difficulty": "medium"
     },
     {
       "question": "Comment appelle-t-on le Dieu du ciel grec ?",
@@ -879,7 +1023,8 @@
       "optionC": "Poséidon",
       "optionD": "Hermès",
       "correctAnswer": "B",
-      "explanation": "Zeus = Dieu du ciel."
+      "explanation": "Zeus = Dieu du ciel.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle pyramide est la plus célèbre d Égypte ?",
@@ -888,7 +1033,12 @@
       "optionC": "Saqqarah",
       "optionD": "Dahchour",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Khéops ». Pyramide de Khéops. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quelle pyramide est la plus célèbre d Égypte  »."
+=======
+      "explanation": "La réponse correcte est « Khéops ». Cette affirmation répond directement à la question posée : Quelle pyramide est la plus célèbre d Égypte ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quel philosophe est opposé à la religion ?",
@@ -897,7 +1047,8 @@
       "optionC": "Marx",
       "optionD": "Rousseau",
       "correctAnswer": "C",
-      "explanation": "Marx: religion = opium du peuple."
+      "explanation": "Marx: religion = opium du peuple.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans quelle œuvre Platon expose-t-il la justice ?",
@@ -906,7 +1057,8 @@
       "optionC": "Le Phédon",
       "optionD": "Le Gorgias",
       "correctAnswer": "A",
-      "explanation": "La République de Platon."
+      "explanation": "La République de Platon.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le rôle principal des reins ?",
@@ -915,7 +1067,8 @@
       "optionC": "Filtrer le sang",
       "optionD": "Transporter l O₂",
       "correctAnswer": "C",
-      "explanation": "Les reins filtrent le sang."
+      "explanation": "Les reins filtrent le sang.",
+      "difficulty": "medium"
     },
     {
       "question": "La reproduction asexuée est :",
@@ -924,7 +1077,8 @@
       "optionC": "Sans fécondation",
       "optionD": "Par accouplement",
       "correctAnswer": "C",
-      "explanation": "Reproduction sans fécondation."
+      "explanation": "Reproduction sans fécondation.",
+      "difficulty": "medium"
     },
     {
       "question": "Le système nerveux est composé du cerveau et de :",
@@ -933,7 +1087,8 @@
       "optionC": "Le cœur",
       "optionD": "Le foie",
       "correctAnswer": "B",
-      "explanation": "Cerveau + moelle épinière."
+      "explanation": "Cerveau + moelle épinière.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel organe produit les spermatozoïdes ?",
@@ -942,7 +1097,12 @@
       "optionC": "Les reins",
       "optionD": "Les ovaires",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Les testicules ». Les testicules. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel organe produit les spermatozoïdes  »."
+=======
+      "explanation": "La réponse correcte est « Les testicules ». Cette affirmation répond directement à la question posée : Quel organe produit les spermatozoïdes ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Un animal ovipare :",
@@ -951,7 +1111,8 @@
       "optionC": "Donne naissance à des vivants",
       "optionD": "Vit dans l eau",
       "correctAnswer": "B",
-      "explanation": "Ovipare = pond des œufs."
+      "explanation": "Ovipare = pond des œufs.",
+      "difficulty": "medium"
     },
     {
       "question": "Organe de la respiration chez l homme ?",
@@ -960,7 +1121,12 @@
       "optionC": "Les poumons",
       "optionD": "L estomac",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Les poumons ». Les poumons. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Organe de la respiration chez l homme  »."
+=======
+      "explanation": "La bonne réponse est « Les poumons » car elle correspond à l'affirmation correcte concernant : Organe de la respiration chez l homme ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Les plantes transpirent par :",
@@ -969,7 +1135,12 @@
       "optionC": "Les stomates",
       "optionD": "Les fruits",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Les stomates ». Les stomates. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Les plantes transpirent par : »."
+=======
+      "explanation": "La bonne réponse est « Les stomates » car elle correspond à l'affirmation correcte concernant : Les plantes transpirent par :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Comment appelle-t-on les contractions du cœur ?",
@@ -978,7 +1149,12 @@
       "optionC": "Spasmes",
       "optionD": "Convulsions",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Systoles ». Les systoles. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Comment appelle-t-on les contractions du cœur  »."
+=======
+      "explanation": "La réponse correcte est « Systoles ». Cette affirmation répond directement à la question posée : Comment appelle-t-on les contractions du cœur ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "À quelle catégorie chimique appartient l'ion cuivre Cu²⁺ présent en solution aqueuse ?",
@@ -987,7 +1163,8 @@
       "optionC": "Atome",
       "optionD": "Anion",
       "correctAnswer": "B",
-      "explanation": "Cu²⁺ = cation (ion positif)."
+      "explanation": "Cu²⁺ = cation (ion positif).",
+      "difficulty": "medium"
     },
     {
       "question": "Lors d une réaction, les nouveaux corps sont :",
@@ -996,7 +1173,12 @@
       "optionC": "Produits",
       "optionD": "Vapeur d eau",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Produits ». Les produits. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Lors d une réaction, les nouveaux corps sont : »."
+=======
+      "explanation": "La bonne réponse est « Produits » car elle correspond à l'affirmation correcte concernant : Lors d une réaction, les nouveaux corps sont :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "La radioactivité alpha émet :",
@@ -1005,7 +1187,8 @@
       "optionC": "Un noyau d hélium",
       "optionD": "Un neutron",
       "correctAnswer": "C",
-      "explanation": "Alpha = noyau d hélium."
+      "explanation": "Alpha = noyau d hélium.",
+      "difficulty": "medium"
     },
     {
       "question": "La radioactivité β⁻ émet :",
@@ -1014,7 +1197,12 @@
       "optionC": "Un noyau d hélium",
       "optionD": "Un neutron",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Un électron ». β⁻ = électron. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « La radioactivité β⁻ émet : »."
+=======
+      "explanation": "La bonne réponse est « Un électron » car elle correspond à l'affirmation correcte concernant : La radioactivité β⁻ émet :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "La radioactivité β⁺ émet :",
@@ -1023,7 +1211,12 @@
       "optionC": "Un noyau d hélium",
       "optionD": "Un neutron",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Un positon ». β⁺ = positon. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « La radioactivité β⁺ émet : »."
+=======
+      "explanation": "La bonne réponse est « Un positon » car elle correspond à l'affirmation correcte concernant : La radioactivité β⁺ émet :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Distance moyenne liaison C-C ?",
@@ -1032,7 +1225,12 @@
       "optionC": "1,20 Å",
       "optionD": "1,10 Å",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « 1,54 Å ». C-C = 1,54 Å. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Distance moyenne liaison C-C  »."
+=======
+      "explanation": "La bonne réponse est « 1,54 Å » car elle correspond à l'affirmation correcte concernant : Distance moyenne liaison C-C ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Distance moyenne double liaison C=C ?",
@@ -1041,7 +1239,12 @@
       "optionC": "1,20 Å",
       "optionD": "1,10 Å",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « 1,34 Å ». C=C = 1,34 Å. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Distance moyenne double liaison C=C  »."
+=======
+      "explanation": "La bonne réponse est « 1,34 Å » car elle correspond à l'affirmation correcte concernant : Distance moyenne double liaison C=C ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quelle technique produit du CO₂ ?",
@@ -1050,7 +1253,8 @@
       "optionC": "Fermentation ou combustion",
       "optionD": "Filtration",
       "correctAnswer": "C",
-      "explanation": "Fermentation/combustion produisent CO₂."
+      "explanation": "Fermentation/combustion produisent CO₂.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans un moteur 4 temps, lors de la compression, la soupape est :",
@@ -1059,7 +1263,8 @@
       "optionC": "À moitié ouverte",
       "optionD": "En mouvement",
       "correctAnswer": "B",
-      "explanation": "Fermée lors de la compression."
+      "explanation": "Fermée lors de la compression.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu est-ce qu un choc mou ?",
@@ -1068,7 +1273,8 @@
       "optionC": "Crée de l énergie nucléaire",
       "optionD": "Sans contact",
       "correctAnswer": "B",
-      "explanation": "Choc amorti, faible restitution."
+      "explanation": "Choc amorti, faible restitution.",
+      "difficulty": "medium"
     },
     {
       "question": "Combien d ions par dissociation de Na₂SO₄ ?",
@@ -1077,7 +1283,8 @@
       "optionC": "4",
       "optionD": "1",
       "correctAnswer": "B",
-      "explanation": "2Na⁺ + SO₄²⁻ = 3 ions."
+      "explanation": "2Na⁺ + SO₄²⁻ = 3 ions.",
+      "difficulty": "medium"
     },
     {
       "question": "Formule générale des alcènes ?",
@@ -1086,7 +1293,12 @@
       "optionC": "CₙH₂ₙ₋₂",
       "optionD": "CₙHₙ",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « CₙH₂ₙ ». Alcènes = CₙH₂ₙ. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Formule générale des alcènes  »."
+=======
+      "explanation": "La bonne réponse est « CₙH₂ₙ » car elle correspond à l'affirmation correcte concernant : Formule générale des alcènes ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Combien de Joules vaut 1 calorie ?",
@@ -1095,7 +1307,12 @@
       "optionC": "10 J",
       "optionD": "100 J",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « 4,2 J ». 1 cal ≈ 4,2 J. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Combien de Joules vaut 1 calorie  »."
+=======
+      "explanation": "La réponse correcte est « 4,2 J ». Cette affirmation répond directement à la question posée : Combien de Joules vaut 1 calorie ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "De quoi est composé le bronze ?",
@@ -1104,7 +1321,8 @@
       "optionC": "Fer + Carbone",
       "optionD": "Or + Argent",
       "correctAnswer": "B",
-      "explanation": "Bronze = cuivre + étain."
+      "explanation": "Bronze = cuivre + étain.",
+      "difficulty": "medium"
     },
     {
       "question": "Le laser émet une lumière :",
@@ -1113,7 +1331,8 @@
       "optionC": "Blanche et diffuse",
       "optionD": "Invisible",
       "correctAnswer": "B",
-      "explanation": "Laser = monochromatique, cohérente."
+      "explanation": "Laser = monochromatique, cohérente.",
+      "difficulty": "medium"
     },
     {
       "question": "Énergie d un corps en mouvement ?",
@@ -1122,7 +1341,12 @@
       "optionC": "Thermique",
       "optionD": "Chimique",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Cinétique ». Énergie cinétique. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Énergie d un corps en mouvement  »."
+=======
+      "explanation": "La bonne réponse est « Cinétique » car elle correspond à l'affirmation correcte concernant : Énergie d un corps en mouvement ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Oxydation d un alcool primaire produit :",
@@ -1131,7 +1355,12 @@
       "optionC": "Un alcène",
       "optionD": "De l eau",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Un aldéhyde ». Aldéhyde. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Oxydation d un alcool primaire produit : »."
+=======
+      "explanation": "La bonne réponse est « Un aldéhyde » car elle correspond à l'affirmation correcte concernant : Oxydation d un alcool primaire produit :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Unité de la vergence ?",
@@ -1140,7 +1369,12 @@
       "optionC": "Joule",
       "optionD": "Newton",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Dioptrie ». Dioptrie. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Unité de la vergence  »."
+=======
+      "explanation": "La bonne réponse est « Dioptrie » car elle correspond à l'affirmation correcte concernant : Unité de la vergence ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Rôle du générateur dans un circuit ?",
@@ -1149,7 +1383,8 @@
       "optionC": "Protéger les appareils",
       "optionD": "Fournir de la lumière",
       "correctAnswer": "B",
-      "explanation": "Le générateur fournit l énergie."
+      "explanation": "Le générateur fournit l énergie.",
+      "difficulty": "medium"
     },
     {
       "question": "Solution qui conduit l électricité ?",
@@ -1158,7 +1393,12 @@
       "optionC": "Électrolyte",
       "optionD": "Électrocution",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Électrolyte ». Électrolyte. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Solution qui conduit l électricité  »."
+=======
+      "explanation": "La bonne réponse est « Électrolyte » car elle correspond à l'affirmation correcte concernant : Solution qui conduit l électricité ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Combustion complète du carbone produit ?",
@@ -1167,7 +1407,12 @@
       "optionC": "CO₂",
       "optionD": "Rien",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « CO₂ ». C + O₂ → CO₂. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Combustion complète du carbone produit  »."
+=======
+      "explanation": "La bonne réponse est « CO₂ » car elle correspond à l'affirmation correcte concernant : Combustion complète du carbone produit ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Gaz à effet de serre le plus puissant ?",
@@ -1176,7 +1421,12 @@
       "optionC": "Méthane",
       "optionD": "Soufre",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Vapeur d eau ». La vapeur d eau. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Gaz à effet de serre le plus puissant  »."
+=======
+      "explanation": "La bonne réponse est « Vapeur d eau » car elle correspond à l'affirmation correcte concernant : Gaz à effet de serre le plus puissant ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Loi de gravitation universelle ?",
@@ -1185,7 +1435,12 @@
       "optionC": "Faraday",
       "optionD": "Einstein",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Newton ». Newton. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Loi de gravitation universelle  »."
+=======
+      "explanation": "La bonne réponse est « Newton » car elle correspond à l'affirmation correcte concernant : Loi de gravitation universelle ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Noyaux riches en neutrons émettent :",
@@ -1194,7 +1449,8 @@
       "optionC": "β⁻",
       "optionD": "γ",
       "correctAnswer": "C",
-      "explanation": "β⁻ (émission d électron)."
+      "explanation": "β⁻ (émission d électron).",
+      "difficulty": "medium"
     },
     {
       "question": "Dans un circuit RLC, φ(Q) représente :",
@@ -1203,7 +1459,12 @@
       "optionC": "La pulsation",
       "optionD": "La pulsion",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « La phase ». La phase. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Dans un circuit RLC, φ(Q) représente : »."
+=======
+      "explanation": "La bonne réponse est « La phase » car elle correspond à l'affirmation correcte concernant : Dans un circuit RLC, φ(Q) représente :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "pH = 8,5 donne ?",
@@ -1212,7 +1473,12 @@
       "optionC": "Un alcalin",
       "optionD": "Neutre",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Une base ». pH > 7 = basique. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « pH = 8,5 donne  »."
+=======
+      "explanation": "La bonne réponse est « Une base » car elle correspond à l'affirmation correcte concernant : pH = 8,5 donne ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Constante de Planck ?",
@@ -1221,7 +1487,8 @@
       "optionC": "6,623 × 10³⁴ J·s",
       "optionD": "6,623 × 10³⁴ J/s",
       "correctAnswer": "A",
-      "explanation": "h = 6,626 × 10⁻³⁴ J·s."
+      "explanation": "h = 6,626 × 10⁻³⁴ J·s.",
+      "difficulty": "medium"
     },
     {
       "question": "Charge d un électron ?",
@@ -1230,7 +1497,12 @@
       "optionC": "−1,6 × 10⁻¹⁰ C",
       "optionD": "−1,6 × 10⁻²⁶ C",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « −1,6 × 10⁻¹⁹ C ». −1,6 × 10⁻¹⁹ C. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Charge d un électron  »."
+=======
+      "explanation": "La bonne réponse est « −1,6 × 10⁻¹⁹ C » car elle correspond à l'affirmation correcte concernant : Charge d un électron ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "L osmose est un phénomène :",
@@ -1239,7 +1511,12 @@
       "optionC": "Biologique",
       "optionD": "Biochimique",
       "correctAnswer": "D",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Biochimique ». Biochimique. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « L osmose est un phénomène : »."
+=======
+      "explanation": "La bonne réponse est « Biochimique » car elle correspond à l'affirmation correcte concernant : L osmose est un phénomène :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Dosage base faible + acide fort, à l équivalence le pH est :",
@@ -1248,7 +1525,8 @@
       "optionC": "< 7",
       "optionD": "= pKa",
       "correctAnswer": "C",
-      "explanation": "pH < 7 à l équivalence."
+      "explanation": "pH < 7 à l équivalence.",
+      "difficulty": "medium"
     },
     {
       "question": "Oxydation de CH₃-CH(OH)-CH₃ donne :",
@@ -1257,7 +1535,8 @@
       "optionC": "Acide carboxylique",
       "optionD": "Cétone",
       "correctAnswer": "D",
-      "explanation": "Alcool secondaire → cétone."
+      "explanation": "Alcool secondaire → cétone.",
+      "difficulty": "medium"
     },
     {
       "question": "Lors d une substitution, on :",
@@ -1266,7 +1545,8 @@
       "optionC": "Fixe un atome sur un carbone",
       "optionD": "Élimine des atomes",
       "correctAnswer": "A",
-      "explanation": "Remplace un atome H."
+      "explanation": "Remplace un atome H.",
+      "difficulty": "medium"
     },
     {
       "question": "Un acide fort se dissocie :",
@@ -1275,7 +1555,8 @@
       "optionC": "Pas du tout",
       "optionD": "Totalement",
       "correctAnswer": "D",
-      "explanation": "Totalement dans l eau."
+      "explanation": "Totalement dans l eau.",
+      "difficulty": "medium"
     },
     {
       "question": "Électrolyse de l eau produit :",
@@ -1284,7 +1565,8 @@
       "optionC": "O₂ à la cathode",
       "optionD": "De l eau",
       "correctAnswer": "A",
-      "explanation": "H₂ à la cathode, O₂ à l anode."
+      "explanation": "H₂ à la cathode, O₂ à l anode.",
+      "difficulty": "medium"
     },
     {
       "question": "Le 2,4-DNPH réagit avec :",
@@ -1293,7 +1575,8 @@
       "optionC": "Ester",
       "optionD": "Acide carboxylique",
       "correctAnswer": "A",
-      "explanation": "DNPH + aldéhyde/cétone = précipité jaune."
+      "explanation": "DNPH + aldéhyde/cétone = précipité jaune.",
+      "difficulty": "medium"
     },
     {
       "question": "Formule brute du butane ?",
@@ -1302,7 +1585,12 @@
       "optionC": "C₅H₁₂",
       "optionD": "C₄H₉",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « C₄H₁₀ ». C₄H₁₀. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Formule brute du butane  »."
+=======
+      "explanation": "La bonne réponse est « C₄H₁₀ » car elle correspond à l'affirmation correcte concernant : Formule brute du butane ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "NaOH + CH₃COOH donne :",
@@ -1311,7 +1599,12 @@
       "optionC": "CH₃COONa",
       "optionD": "H₂O",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « CH₃COONa ». CH₃COONa + H₂O. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « NaOH + CH₃COOH donne : »."
+=======
+      "explanation": "La bonne réponse est « CH₃COONa » car elle correspond à l'affirmation correcte concernant : NaOH + CH₃COOH donne :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Quel gaz décolore le permanganate de K ?",
@@ -1320,7 +1613,12 @@
       "optionC": "SO₂",
       "optionD": "CO₂",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « SO₂ ». SO₂ décolore KMnO₄. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Quel gaz décolore le permanganate de K  »."
+=======
+      "explanation": "La réponse correcte est « SO₂ ». Cette affirmation répond directement à la question posée : Quel gaz décolore le permanganate de K ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Vitesse de la lumière dans le vide ?",
@@ -1329,7 +1627,12 @@
       "optionC": "300 000 km/h",
       "optionD": "300 000 m/h",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « 300 000 km/s ». c = 300 000 km/s. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Vitesse de la lumière dans le vide  »."
+=======
+      "explanation": "La bonne réponse est « 300 000 km/s » car elle correspond à l'affirmation correcte concernant : Vitesse de la lumière dans le vide ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Sulfate de cuivre en solution contient :",
@@ -1338,7 +1641,12 @@
       "optionC": "Des molécules",
       "optionD": "Des atomes",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Cu²⁺ et SO₄²⁻ ». Cu²⁺ + SO₄²⁻. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Sulfate de cuivre en solution contient : »."
+=======
+      "explanation": "La bonne réponse est « Cu²⁺ et SO₄²⁻ » car elle correspond à l'affirmation correcte concernant : Sulfate de cuivre en solution contient :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Moteur 4 temps, soupapes au 4e temps ?",
@@ -1347,7 +1655,8 @@
       "optionC": "Une ouverte",
       "optionD": "Une fermée",
       "correctAnswer": "A",
-      "explanation": "Soupape d échappement ouverte."
+      "explanation": "Soupape d échappement ouverte.",
+      "difficulty": "medium"
     },
     {
       "question": "Fer + dioxygène donne ?",
@@ -1356,7 +1665,12 @@
       "optionC": "Fe₃O₄",
       "optionD": "CO₂",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Fe₂O₃ ». Fe₂O₃ (rouille). Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Fer + dioxygène donne  »."
+=======
+      "explanation": "La bonne réponse est « Fe₂O₃ » car elle correspond à l'affirmation correcte concernant : Fer + dioxygène donne ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "L UA regroupe :",
@@ -1365,7 +1679,12 @@
       "optionC": "L Union africaine",
       "optionD": "Le G5 Sahel",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « L Union africaine ». L Union africaine. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « L UA regroupe : »."
+=======
+      "explanation": "La bonne réponse est « L Union africaine » car elle correspond à l'affirmation correcte concernant : L UA regroupe :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "La CEDEAO concerne :",
@@ -1374,7 +1693,12 @@
       "optionC": "L Afrique de l Ouest",
       "optionD": "L Afrique australe",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « L Afrique de l Ouest ». Afrique de l Ouest. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « La CEDEAO concerne : »."
+=======
+      "explanation": "La bonne réponse est « L Afrique de l Ouest » car elle correspond à l'affirmation correcte concernant : La CEDEAO concerne :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Siège de l UA ?",
@@ -1383,7 +1707,12 @@
       "optionC": "Abuja",
       "optionD": "Le Caire",
       "correctAnswer": "B",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Addis-Abeba ». Addis-Abeba. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Siège de l UA  »."
+=======
+      "explanation": "La bonne réponse est « Addis-Abeba » car elle correspond à l'affirmation correcte concernant : Siège de l UA ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Le G5 Sahel a été créé pour :",
@@ -1392,7 +1721,12 @@
       "optionC": "La sécurité",
       "optionD": "Le sport",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « La sécurité ». La sécurité. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Le G5 Sahel a été créé pour : »."
+=======
+      "explanation": "La bonne réponse est « La sécurité » car elle correspond à l'affirmation correcte concernant : Le G5 Sahel a été créé pour :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Le Sahel est une zone :",
@@ -1401,7 +1735,8 @@
       "optionC": "Désertique et semi-aride",
       "optionD": "Montagneuse",
       "correctAnswer": "C",
-      "explanation": "Désertique et semi-aride."
+      "explanation": "Désertique et semi-aride.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel pays n est pas en Afrique de l Ouest ?",
@@ -1410,7 +1745,8 @@
       "optionC": "Cameroun",
       "optionD": "Mali",
       "correctAnswer": "C",
-      "explanation": "Cameroun = Afrique centrale."
+      "explanation": "Cameroun = Afrique centrale.",
+      "difficulty": "medium"
     },
     {
       "question": "Pays le plus peuplé d Afrique ?",
@@ -1419,7 +1755,12 @@
       "optionC": "Éthiopie",
       "optionD": "Nigeria",
       "correctAnswer": "D",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Nigeria ». Nigeria. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Pays le plus peuplé d Afrique  »."
+=======
+      "explanation": "La bonne réponse est « Nigeria » car elle correspond à l'affirmation correcte concernant : Pays le plus peuplé d Afrique ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Objectif de la ZLECAf ?",
@@ -1428,7 +1769,8 @@
       "optionC": "Créer une monnaie unique",
       "optionD": "Unifier les armées",
       "correctAnswer": "B",
-      "explanation": "Faciliter le commerce."
+      "explanation": "Faciliter le commerce.",
+      "difficulty": "medium"
     },
     {
       "question": "Figure de style: La Mort lui a dit Ton heure est venue ?",
@@ -1437,7 +1779,8 @@
       "optionC": "Synecdoque",
       "optionD": "Métonymie",
       "correctAnswer": "B",
-      "explanation": "Prosopée = faire parler une abstraction."
+      "explanation": "Prosopée = faire parler une abstraction.",
+      "difficulty": "medium"
     },
     {
       "question": "Phrase correcte avec si et s y ?",
@@ -1446,7 +1789,8 @@
       "optionC": "Le monde est si grand qu on peut s y perdre",
       "optionD": "Le monde est s y grand qu on peut s y perdre",
       "correctAnswer": "C",
-      "explanation": "si (adverbe) + s y (pronom+y)."
+      "explanation": "si (adverbe) + s y (pronom+y).",
+      "difficulty": "medium"
     },
     {
       "question": "Ma direction a ... (accepter) ?",
@@ -1455,7 +1799,8 @@
       "optionC": "acceptés",
       "optionD": "acceptées",
       "correctAnswer": "A",
-      "explanation": "a accepté (invariable)."
+      "explanation": "a accepté (invariable).",
+      "difficulty": "medium"
     },
     {
       "question": "Tous les enfants sont en classe. Tous est :",
@@ -1464,7 +1809,12 @@
       "optionC": "Adverbe",
       "optionD": "Nom",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Adjectif indéfini ». Adjectif indéfini. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Tous les enfants sont en classe. Tous est : »."
+=======
+      "explanation": "La bonne réponse est « Adjectif indéfini » car elle correspond à l'affirmation correcte concernant : Tous les enfants sont en classe. Tous est :",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Que veut dire Coup de cœur ?",
@@ -1473,7 +1823,12 @@
       "optionC": "Évanouir",
       "optionD": "Aimer soudainement",
       "correctAnswer": "D",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Aimer soudainement ». Penchant soudain. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Que veut dire Coup de cœur  »."
+=======
+      "explanation": "La réponse correcte est « Aimer soudainement ». Cette affirmation répond directement à la question posée : Que veut dire Coup de cœur ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Sommet de y = x² + 4x + 4 ?",
@@ -1482,7 +1837,12 @@
       "optionC": "(0, 4)",
       "optionD": "(4, 0)",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « (-2, 0) ». x=-b/2a=-2, y=0. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Sommet de y = x² + 4x + 4  »."
+=======
+      "explanation": "La bonne réponse est « (-2, 0) » car elle correspond à l'affirmation correcte concernant : Sommet de y = x² + 4x + 4 ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Que signifie AVC ?",
@@ -1491,7 +1851,8 @@
       "optionC": "Apport Vitaminique Complet",
       "optionD": "Arythmie Ventriculaire Chronique",
       "correctAnswer": "A",
-      "explanation": "AVC = Accident Vasculaire Cérébral."
+      "explanation": "AVC = Accident Vasculaire Cérébral.",
+      "difficulty": "medium"
     },
     {
       "question": "Monnaie de la Chine ?",
@@ -1500,7 +1861,12 @@
       "optionC": "Yuan",
       "optionD": "Won",
       "correctAnswer": "C",
+<<<<<<< Updated upstream
       "explanation": "La réponse correcte est « Yuan ». Yuan (RMB). Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « Monnaie de la Chine  »."
+=======
+      "explanation": "La bonne réponse est « Yuan » car elle correspond à l'affirmation correcte concernant : Monnaie de la Chine ?",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     },
     {
       "question": "Que signifie cymbale ?",
@@ -1509,7 +1875,8 @@
       "optionC": "Chant lyrique",
       "optionD": "Reptile",
       "correctAnswer": "A",
-      "explanation": "Instrument de musique."
+      "explanation": "Instrument de musique.",
+      "difficulty": "medium"
     }
   ]
 }

@@ -16,7 +16,8 @@
       "optionC": "Réplication non fidèle des lymphocytes B",
       "optionD": "Transcription alternative des gènes codant pour les immunoglobulines",
       "correctAnswer": "A",
-      "explanation": "La diversité des anticorps est principalement générée par la recombinaison V(D)J des segments variables des gènes des immunoglobulines, permettant la création de millions de combinaisons différentes."
+      "explanation": "La diversité des anticorps est principalement générée par la recombinaison V(D)J des segments variables des gènes des immunoglobulines, permettant la création de millions de combinaisons différentes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la conséquence moléculaire principale de la mutation délétère dans le gène de la bêta-globine observée dans la drépanocytose ?",
@@ -25,7 +26,8 @@
       "optionC": "Instabilité de l'ARNm de la bêta-globine",
       "optionD": "Dégradation prématurée de la chaîne de bêta-globine",
       "correctAnswer": "A",
-      "explanation": "La drépanocytose est causée par une mutation ponctuelle (substitution A→T) dans le gène de la bêta-globine, remplaçant l'acide aminé glutamate par de la valine à la position 6, modifiant la structure de l'hémoglobine."
+      "explanation": "La drépanocytose est causée par une mutation ponctuelle (substitution A→T) dans le gène de la bêta-globine, remplaçant l'acide aminé glutamate par de la valine à la position 6, modifiant la structure de l'hémoglobine.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel processus évolutif explique la résistance accrue aux antipaludiques observée chez Plasmodium falciparum ?",
@@ -34,7 +36,8 @@
       "optionC": "Acquisition de plasmides contenant les gènes de résistance",
       "optionD": "Transformation génétique spontanée",
       "correctAnswer": "A",
-      "explanation": "La résistance aux antipaludiques résulte principalement de la sélection naturelle: les parasites portant des mutations conférant une résistance surviennent spontanément et sont sélectionnés sous pression de traitement."
+      "explanation": "La résistance aux antipaludiques résulte principalement de la sélection naturelle: les parasites portant des mutations conférant une résistance surviennent spontanément et sont sélectionnés sous pression de traitement.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique structurale distinctive du VIH qui le distingue d'autres rétrovirus ?",
@@ -43,7 +46,8 @@
       "optionC": "Absence d'enveloppe lipidique",
       "optionD": "Génome à simple brin",
       "correctAnswer": "A",
-      "explanation": "Le VIH possède des gènes régulateurs supplémentaires (tat, rev, nef) absents des rétrovirus simples, lui permettant de réguler sa réplication et d'échapper au système immunitaire."
+      "explanation": "Le VIH possède des gènes régulateurs supplémentaires (tat, rev, nef) absents des rétrovirus simples, lui permettant de réguler sa réplication et d'échapper au système immunitaire.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel mécanisme explique l'effet de seuil dans l'expression des maladies génétiques récessives liées à l'X ?",
@@ -52,16 +56,31 @@
       "optionC": "Mosaïcisme cellulaire",
       "optionD": "Compensation par le chromosome Y",
       "correctAnswer": "A",
-      "explanation": "L'inactivation aléatoire d'un chromosome X (lyonisation) chez les femmes crée un mosaïsme cellulaire, expliquant la variabilité d'expression des maladies liées à l'X."
+      "explanation": "L'inactivation aléatoire d'un chromosome X (lyonisation) chez les femmes crée un mosaïsme cellulaire, expliquant la variabilité d'expression des maladies liées à l'X.",
+      "difficulty": "medium"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "question": "Quelle est la conséquence écologique principale de la fragmentation des habitats ?",
+      "optionA": "Augmentation de la biodiversité locale",
+      "optionB": "Diminution de la connectivité entre populations",
+      "optionC": "Amélioration du flux de gènes",
+      "optionD": "Augmentation de la taille effective des populations",
+      "correctAnswer": "B",
+      "explanation": "La fragmentation des habitats isole les populations, réduisant la connectivité et le flux de gènes, ce qui augmente le risque d'extinction locale.",
+      "difficulty": "medium"
+    },
+    {
+>>>>>>> Stashed changes
       "question": "Quel processus géologique explique la formation des chaînes de montagnes à marge active ?",
       "optionA": "Extension crustale",
       "optionB": "Subduction océanique-continental",
       "optionC": "Rifting continental",
       "optionD": "Collision continentale",
       "correctAnswer": "B",
-      "explanation": "Les chaînes de montagnes à marge active (comme les Andes) se forment par subduction d'une plaque océanique sous une plaque continentale, générant un volcanisme intense et un plissement crustal."
+      "explanation": "Les chaînes de montagnes à marge active (comme les Andes) se forment par subduction d'une plaque océanique sous une plaque continentale, générant un volcanisme intense et un plissement crustal.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique biochimique principale de la fixation du carbone par la voie C4 par rapport à la voie C3 ?",
@@ -70,7 +89,8 @@
       "optionC": "Absence de photorespiration",
       "optionD": "Production directe de glucose",
       "correctAnswer": "A",
-      "explanation": "La voie C4 utilise l'enzyme PEP carboxylase pour fixer le CO2 en premier, ayant une affinité plus élevée que la Rubisco, réduisant la photorespiration."
+      "explanation": "La voie C4 utilise l'enzyme PEP carboxylase pour fixer le CO2 en premier, ayant une affinité plus élevée que la Rubisco, réduisant la photorespiration.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel mécanisme moléculaire explique la résistance aux antibiotiques à bêta-lactames chez les bactéries ?",
@@ -79,7 +99,8 @@
       "optionC": "Diminution de la perméabilité membranaire",
       "optionD": "Efflux actif de l'antibiotique",
       "correctAnswer": "A",
-      "explanation": "La production de bêta-lactamases est le mécanisme principal de résistance aux bêta-lactames, ces enzymes hydrolysant le cycle bêta-lactame de l'antibiotique."
+      "explanation": "La production de bêta-lactamases est le mécanisme principal de résistance aux bêta-lactames, ces enzymes hydrolysant le cycle bêta-lactame de l'antibiotique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la conséquence évolutive principale de la sélection sexuelle ?",
@@ -88,7 +109,8 @@
       "optionC": "Développement de caractères sexuels secondaires",
       "optionD": "Réduction de la compétition interspécifique",
       "correctAnswer": "C",
-      "explanation": "La sélection sexuelle favorise l'évolution de caractères sexuels secondaires qui augmentent les chances de reproduction, même s'ils peuvent réduire la survie."
+      "explanation": "La sélection sexuelle favorise l'évolution de caractères sexuels secondaires qui augmentent les chances de reproduction, même s'ils peuvent réduire la survie.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel processus géologique explique la formation des basaltes des plateaux océaniques ?",
@@ -97,7 +119,8 @@
       "optionC": "Points chauds",
       "optionD": "Expansion océanique",
       "correctAnswer": "D",
-      "explanation": "Les basaltes des plateaux océaniques proviennent du manteau par fusion partielle aux dorsales océaniques, lors de l'expansion des fonds océaniques."
+      "explanation": "Les basaltes des plateaux océaniques proviennent du manteau par fusion partielle aux dorsales océaniques, lors de l'expansion des fonds océaniques.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique immunologique principale du paludisme causé par Plasmodium falciparum ?",
@@ -106,7 +129,8 @@
       "optionC": "Activation spécifique des lymphocytes T CD8+",
       "optionD": "Formation de granulomes dans le foie",
       "correctAnswer": "A",
-      "explanation": "P. falciparum exprime des antigènes variantes (PfEMP1) sur la surface des globules rouges infectés, permettant d'échapper à la réponse immunitaire par variation antigénique."
+      "explanation": "P. falciparum exprime des antigènes variantes (PfEMP1) sur la surface des globules rouges infectés, permettant d'échapper à la réponse immunitaire par variation antigénique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel mécanisme explique la transmission verticale du VIH de la mère à l'enfant ?",
@@ -115,16 +139,31 @@
       "optionC": "Transmission pendant l'accouchement",
       "optionD": "Toutes ces réponses sont correctes",
       "correctAnswer": "D",
-      "explanation": "La transmission verticale du VIH peut se produire transplacentairement, pendant l'accouchement ou par le lait maternel."
+      "explanation": "La transmission verticale du VIH peut se produire transplacentairement, pendant l'accouchement ou par le lait maternel.",
+      "difficulty": "medium"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "question": "Quelle est la conséquence écologique principale de l'eutrophisation des écosystèmes aquatiques ?",
+      "optionA": "Augmentation de la biodiversité",
+      "optionB": "Diminution de la transparence de l'eau et anoxie",
+      "optionC": "Amélioration de la qualité de l'eau",
+      "optionD": "Augmentation de la productivité primaire",
+      "correctAnswer": "B",
+      "explanation": "L'eutrophisation entraîne une prolifération d'algues, réduisant la transparence et, lors de leur décomposition, consommant l'oxygène et créant des zones anoxiques.",
+      "difficulty": "medium"
+    },
+    {
+>>>>>>> Stashed changes
       "question": "Quel mécanisme explique la régulation de l'expression génique par les microARN ?",
       "optionA": "Dégradation de l'ARNm ou inhibition de sa traduction",
       "optionB": "Méthylation de l'ADN",
       "optionC": "Modification des histones",
       "optionD": "Épissage alternatif",
       "correctAnswer": "A",
-      "explanation": "Les microARN se lient aux ARNm cibles, conduisant soit à leur dégradation par le complexe RISC, soit à l'inhibition de leur traduction."
+      "explanation": "Les microARN se lient aux ARNm cibles, conduisant soit à leur dégradation par le complexe RISC, soit à l'inhibition de leur traduction.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique structurale principale des virus à ARN à simple brin comme le VIH ?",
@@ -133,7 +172,8 @@
       "optionC": "Présence d'une transcriptase inverse",
       "optionD": "Génome segmenté",
       "correctAnswer": "C",
-      "explanation": "Le VIH, comme tous les rétrovirus, possède une transcriptase inverse qui permet la synthèse d'ADN à partir de son ARN génomique."
+      "explanation": "Le VIH, comme tous les rétrovirus, possède une transcriptase inverse qui permet la synthèse d'ADN à partir de son ARN génomique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel processus évolutif explique la coévolution entre les plantes et leurs pollinisateurs ?",
@@ -142,7 +182,8 @@
       "optionC": "Sélection sexuelle",
       "optionD": "Sélection de parentèle",
       "correctAnswer": "B",
-      "explanation": "La coévolution entre plantes et pollinisateurs résulte d'une sélection mutualiste, où chaque espèce favorise les traits bénéfiques chez l'autre."
+      "explanation": "La coévolution entre plantes et pollinisateurs résulte d'une sélection mutualiste, où chaque espèce favorise les traits bénéfiques chez l'autre.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la conséquence géologique principale de la dérive des continents ?",
@@ -151,7 +192,8 @@
       "optionC": "Modification des climats régionaux",
       "optionD": "Formation de rifts continentaux",
       "correctAnswer": "C",
-      "explanation": "La dérive des continents modifie les répartitions des continents et des océans, influençant les courants marins et les climats régionaux."
+      "explanation": "La dérive des continents modifie les répartitions des continents et des océans, influençant les courants marins et les climats régionaux.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel mécanisme explique la résistance aux antivirals chez le VIH ?",
@@ -160,7 +202,8 @@
       "optionC": "Latence virale",
       "optionD": "Formation de réservoirs infectieux",
       "correctAnswer": "A",
-      "explanation": "La mutation rapide du génome viral du VIH, due à l'erreur de sa transcriptase inverse, permet l'émergence de variants résistants aux antivirals."
+      "explanation": "La mutation rapide du génome viral du VIH, due à l'erreur de sa transcriptase inverse, permet l'émergence de variants résistants aux antivirals.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique principale de la reproduction clonale chez les organismes ?",
@@ -169,7 +212,8 @@
       "optionC": "Nécessité d'un partenaire sexuel",
       "optionD": "Formation de gamètes haploïdes",
       "correctAnswer": "B",
-      "explanation": "La reproduction clonale produit des descendants génétiquement identiques aux parents, transmettant 100% du génome parental (sans recombinaison méiotique)."
+      "explanation": "La reproduction clonale produit des descendants génétiquement identiques aux parents, transmettant 100% du génome parental (sans recombinaison méiotique).",
+      "difficulty": "medium"
     },
     {
       "question": "Quel processus explique la formation des pétroles dans les roches sédimentaires ?",
@@ -178,7 +222,8 @@
       "optionC": "Cristallisation de magmas",
       "optionD": "Érosion des roches ignées",
       "correctAnswer": "A",
-      "explanation": "Le pétrole se forme par la diagenèse et catagenèse de matières organiques (plankton, algues) enfouies dans les sédiments marins sous conditions anaérobies."
+      "explanation": "Le pétrole se forme par la diagenèse et catagenèse de matières organiques (plankton, algues) enfouies dans les sédiments marins sous conditions anaérobies.",
+      "difficulty": "medium"
     },
     {
       "question": "Concernant la structure de l'ADN double brin, laquelle des affirmations suivantes est incorrecte?",
@@ -187,7 +232,8 @@
       "optionC": "La distance entre deux bases adjacentes est d'environ 0,34 nm",
       "optionD": "La réplication semi-conservatrice a été démontrée par l'expérience de Meselson et Stahl",
       "correctAnswer": "B",
-      "explanation": "Les bases purines s'appariennent avec les pyrimidines, mais spécifiquement A avec T et G avec C, pas n'importe quelle purine avec n'importe quelle pyrimidine."
+      "explanation": "Les bases purines s'appariennent avec les pyrimidines, mais spécifiquement A avec T et G avec C, pas n'importe quelle purine avec n'importe quelle pyrimidine.",
+      "difficulty": "medium"
     },
     {
       "question": "Chez les mammifères, quel mécanisme explique l'inactivation d'un chromosome X chez les femelles?",
@@ -196,7 +242,8 @@
       "optionC": "Empoisonnement topoisomérase",
       "optionD": "Barrage méiotique",
       "correctAnswer": "A",
-      "explanation": "L'inactivation d'un chromosome X chez les femelles mammifères est due à un processus de méthylation de l'ADN qui éteint l'expression des gènes de ce chromosome."
+      "explanation": "L'inactivation d'un chromosome X chez les femelles mammifères est due à un processus de méthylation de l'ADN qui éteint l'expression des gènes de ce chromosome.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la conséquence principale de la mutation ponctuelle dans le gène codant pour la bêta-globine qui cause la drépanocytose?",
@@ -205,7 +252,8 @@
       "optionC": "Substitution d'un acide aminé acide par un acide aminé basique",
       "optionD": "Substitution d'un acide aminé polaire par un acide aminé acide",
       "correctAnswer": "B",
-      "explanation": "La drépanocytose est causée par une mutation ponctuelle qui substitue un acide aminé non polaire (valine) à un acide aminé polaire (acide glutamique) à la position 6 de la chaîne de bêta-globine."
+      "explanation": "La drépanocytose est causée par une mutation ponctuelle qui substitue un acide aminé non polaire (valine) à un acide aminé polaire (acide glutamique) à la position 6 de la chaîne de bêta-globine.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale des anticorps de type IgE?",
@@ -214,7 +262,8 @@
       "optionC": "Défense contre les parasites multicellulaires",
       "optionD": "Agglutination des bactéries",
       "correctAnswer": "C",
-      "explanation": "Les IgE sont principalement impliquées dans la défense contre les parasites multicellulaires en activant les mastocytes et les basophiles, ce qui provoque une inflammation locale."
+      "explanation": "Les IgE sont principalement impliquées dans la défense contre les parasites multicellulaires en activant les mastocytes et les basophiles, ce qui provoque une inflammation locale.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans le cycle de Krebs, quel composé est à la fois un intermédiaire et un régulateur allostérique?",
@@ -223,7 +272,8 @@
       "optionC": "Succinate",
       "optionD": "Malate",
       "correctAnswer": "A",
-      "explanation": "Le citrate, produit initial du cycle de Krebs, agit comme un régulateur allostérique de l'enzyme phosphofructokinase dans la glycolyse, ralentissant ainsi le métabolisme des glucides lorsque les niveaux d'énergie sont élevés."
+      "explanation": "Le citrate, produit initial du cycle de Krebs, agit comme un régulateur allostérique de l'enzyme phosphofructokinase dans la glycolyse, ralentissant ainsi le métabolisme des glucides lorsque les niveaux d'énergie sont élevés.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la roche caractéristique formée par la métamorphose des calcaires sous haute pression et température?",
@@ -232,7 +282,8 @@
       "optionC": "Schiste",
       "optionD": "Quartzite",
       "correctAnswer": "B",
-      "explanation": "Le marbre est la roche métamorphique formée à partir du calcaire lorsque celui-ci subit des conditions de haute pression et température, recristallisant le carbonate de calcium."
+      "explanation": "Le marbre est la roche métamorphique formée à partir du calcaire lorsque celui-ci subit des conditions de haute pression et température, recristallisant le carbonate de calcium.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre les stratégies de reproduction r-stratégiste et K-stratégiste?",
@@ -241,7 +292,8 @@
       "optionC": "Les r-stratégistes ont une reproduction précoce et de nombreux descendants",
       "optionD": "Les K-stratégistes investissent plus dans chaque descendant",
       "correctAnswer": "D",
-      "explanation": "Les K-stratégistes, typiques d'environments stables, investissent plus de ressources dans chaque descendant au détriment du nombre total, tandis que les r-stratégistes produisent beaucoup de descendants avec peu d'investissement par individu."
+      "explanation": "Les K-stratégistes, typiques d'environments stables, investissent plus de ressources dans chaque descendant au détriment du nombre total, tandis que les r-stratégistes produisent beaucoup de descendants avec peu d'investissement par individu.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel processus permet aux plantes C4 de minimiser la photorespiration?",
@@ -250,7 +302,8 @@
       "optionC": "Utilisation de l'enzyme PEP carboxylase uniquement dans les cellules mésophylles",
       "optionD": "Augmentation de la température des feuilles",
       "correctAnswer": "A",
-      "explanation": "Les plantes C4 séparent spatialement la fixation initiale du CO2 (dans les cellules mésophylles) et le cycle de Calvin (dans les cellules de la gaine), minimisant ainsi la photorespiration."
+      "explanation": "Les plantes C4 séparent spatialement la fixation initiale du CO2 (dans les cellules mésophylles) et le cycle de Calvin (dans les cellules de la gaine), minimisant ainsi la photorespiration.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le vecteur principal du paludisme dans le monde?",
@@ -259,7 +312,8 @@
       "optionC": "Ixodes ricinus",
       "optionD": "Culex pipiens",
       "correctAnswer": "B",
-      "explanation": "Anopheles gambiae est le principal vecteur du paludisme dans le monde, transmettant le parasite Plasmodium falciparum qui cause la forme la plus dangereuse de la maladie."
+      "explanation": "Anopheles gambiae est le principal vecteur du paludisme dans le monde, transmettant le parasite Plasmodium falciparum qui cause la forme la plus dangereuse de la maladie.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le mécanisme d'action du virus VIH qui provoque le SIDA?",
@@ -268,7 +322,8 @@
       "optionC": "Activation excessive des lymphocytes B",
       "optionD": "Formation d'anticorps auto-réactifs",
       "correctAnswer": "A",
-      "explanation": "Le VIH infecte et détruit directement les cellules T CD4+, affaiblissant ainsi le système immunitaire et rendant le sujet vulnérable aux infections opportunistes."
+      "explanation": "Le VIH infecte et détruit directement les cellules T CD4+, affaiblissant ainsi le système immunitaire et rendant le sujet vulnérable aux infections opportunistes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence fondamentale entre la reproduction sexuée et asexuée en termes de diversité génétique?",
@@ -277,7 +332,8 @@
       "optionC": "La reproduction asexuée nécessite deux individus",
       "optionD": "La reproduction sexuée produit des clones",
       "correctAnswer": "B",
-      "explanation": "La reproduction sexuée combine les gènes de deux parents, créant une descendance génétiquement unique, tandis que la reproduction asexuée produit des génétiquement identiques au parent."
+      "explanation": "La reproduction sexuée combine les gènes de deux parents, créant une descendance génétiquement unique, tandis que la reproduction asexuée produit des génétiquement identiques au parent.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le rôle principal de la rubisco dans la photosynthèse?",
@@ -286,7 +342,8 @@
       "optionC": "Production d'ATP",
       "optionD": "Synthèse de NADPH",
       "correctAnswer": "B",
-      "explanation": "La rubisco (ribulose-1,5-bisphosphate carboxylase/oxygénase) est l'enzyme clé qui fixe le CO2 sur le ribulose-1,5-bisphosphate lors de la phase claire de la photosynthèse."
+      "explanation": "La rubisco (ribulose-1,5-bisphosphate carboxylase/oxygénase) est l'enzyme clé qui fixe le CO2 sur le ribulose-1,5-bisphosphate lors de la phase claire de la photosynthèse.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale conséquence de la déforestation sur le cycle du carbone?",
@@ -295,7 +352,8 @@
       "optionC": "Stabilisation du climat local",
       "optionD": "Augmentation de la biodiversité",
       "correctAnswer": "B",
-      "explanation": "La déforestation diminue les réserves de carbone dans les biomasses végétales, libérant ainsi plus de CO2 dans l'atmosphère et perturbant le cycle global du carbone."
+      "explanation": "La déforestation diminue les réserves de carbone dans les biomasses végétales, libérant ainsi plus de CO2 dans l'atmosphère et perturbant le cycle global du carbone.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le mécanisme de résistance aux antipaludéens chloroquine?",
@@ -304,7 +362,8 @@
       "optionC": "Mutation du gène codant pour la PfCRT",
       "optionD": "Augmentation de la production d'hémoglobine",
       "correctAnswer": "C",
-      "explanation": "La résistance à la chloroquine chez Plasmodium falciparum est principalement due à des mutations dans le gène PfCRT, qui code pour une protéine du transporteur des vacuoles digestives du parasite."
+      "explanation": "La résistance à la chloroquine chez Plasmodium falciparum est principalement due à des mutations dans le gène PfCRT, qui code pour une protéine du transporteur des vacuoles digestives du parasite.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence entre l'immunité innée et adaptative concernant la spécificité?",
@@ -313,7 +372,8 @@
       "optionC": "L'immunité adaptative réagit plus rapidement que l'innée",
       "optionD": "L'immunité innée nécessite un contact préalable avec l'agent pathogène",
       "correctAnswer": "B",
-      "explanation": "L'immunité innée reconnaît des motifs moléculaires communs aux pathogènes (PAMPs) tandis que l'immunité adaptative développe une réponse spécifique contre des antigènes particuliers après exposition."
+      "explanation": "L'immunité innée reconnaît des motifs moléculaires communs aux pathogènes (PAMPs) tandis que l'immunité adaptative développe une réponse spécifique contre des antigènes particuliers après exposition.",
+      "difficulty": "medium"
     },
     {
       "question": "Concernant la structure de l'ADN, quelle affirmation est incorrecte ?",
@@ -322,7 +382,8 @@
       "optionC": "Le brin 5'→3' est complémentaire du brin 3'→5'",
       "optionD": "La thymine est toujours liée à l'adénine dans la structure double hélice",
       "correctAnswer": "D",
-      "explanation": "La thymine est liée à l'adénine et la cytosine à la guanine, mais cette liaison n'est pas toujours présente dans tous les contextes biologiques."
+      "explanation": "La thymine est liée à l'adénine et la cytosine à la guanine, mais cette liaison n'est pas toujours présente dans tous les contextes biologiques.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la conséquence principale de la déamination de la cytosine ?",
@@ -331,7 +392,8 @@
       "optionC": "Formation d'une guanine",
       "optionD": "Formation d'une adénine",
       "correctAnswer": "A",
-      "explanation": "La déamination de la cytosine conduit à la formation d'uracile, ce qui peut provoquer des mutations si non corrigée."
+      "explanation": "La déamination de la cytosine conduit à la formation d'uracile, ce qui peut provoquer des mutations si non corrigée.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la principale différence entre l'immunité innée et l'immunité adaptative ?",
@@ -340,7 +402,8 @@
       "optionC": "L'immunité innée implique des anticorps",
       "optionD": "L'immunité adaptative est plus rapide",
       "correctAnswer": "B",
-      "explanation": "L'immunité adaptative possède une mémoire immunologique qui permet une réponse plus rapide et plus efficace lors d'une exposition ultérieure au même pathogène."
+      "explanation": "L'immunité adaptative possède une mémoire immunologique qui permet une réponse plus rapide et plus efficace lors d'une exposition ultérieure au même pathogène.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qui caractérise la réplication semi-conservative de l'ADN ?",
@@ -349,7 +412,8 @@
       "optionC": "Les molécules filles sont identiques à la molécule parentale",
       "optionD": "La réplication se fait sans intervention d'enzymes",
       "correctAnswer": "B",
-      "explanation": "La réplication semi-conservative signifie que chaque molécule d'ADN fille conserve une chaîne parentale et possède une chaîne nouvellement synthétisée."
+      "explanation": "La réplication semi-conservative signifie que chaque molécule d'ADN fille conserve une chaîne parentale et possède une chaîne nouvellement synthétisée.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale des lymphocytes T helpers (CD4+) ?",
@@ -358,7 +422,8 @@
       "optionC": "Activer d'autres cellules immunitaires",
       "optionD": "Produire des anticorps",
       "correctAnswer": "C",
-      "explanation": "Les lymphocytes T helpers activent d'autres cellules immunitaires comme les lymphocytes B et les lymphocytes T cytotoxiques."
+      "explanation": "Les lymphocytes T helpers activent d'autres cellules immunitaires comme les lymphocytes B et les lymphocytes T cytotoxiques.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la roche la plus abondante dans la croûte continentale ?",
@@ -367,7 +432,8 @@
       "optionC": "Gabbro",
       "optionD": "Andésite",
       "correctAnswer": "A",
-      "explanation": "Le granite est la roche la plus abondante dans la croûte continentale en raison de sa composition felsique et de sa formation par la différenciation magmatique."
+      "explanation": "Le granite est la roche la plus abondante dans la croûte continentale en raison de sa composition felsique et de sa formation par la différenciation magmatique.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qui caractérise un écosystème stable ?",
@@ -376,7 +442,8 @@
       "optionC": "Résilience élevée",
       "optionD": "Tous ces éléments",
       "correctAnswer": "D",
-      "explanation": "Un écosystème stable présente généralement une biodiversité élevée, une bonne productivité primaire et une résilience élevée pour faire face aux perturbations."
+      "explanation": "Un écosystème stable présente généralement une biodiversité élevée, une bonne productivité primaire et une résilience élevée pour faire face aux perturbations.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale de la photosynthèse ?",
@@ -385,7 +452,8 @@
       "optionC": "Libérer de l'oxygène dans l'atmosphère",
       "optionD": "Produire du glucose uniquement",
       "correctAnswer": "B",
-      "explanation": "La photosynthèse convertit l'énergie lumineuse en énergie chimique stockée dans les molécules organiques comme le glucose."
+      "explanation": "La photosynthèse convertit l'énergie lumineuse en énergie chimique stockée dans les molécules organiques comme le glucose.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence principale entre la méiose I et la méiose II ?",
@@ -394,7 +462,8 @@
       "optionC": "La méiose I a lieu après la méiose II",
       "optionD": "La méiose II implique un enjambement génétique",
       "correctAnswer": "A",
-      "explanation": "La méiose I sépare les chromosomes homologues tandis que la méiose II sépare les chromatides sœurs, similaire à une mitose."
+      "explanation": "La méiose I sépare les chromosomes homologues tandis que la méiose II sépare les chromatides sœurs, similaire à une mitose.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qui caractérise une mutation ponctuelle ?",
@@ -403,7 +472,8 @@
       "optionC": "Déletion d'un chromosome entier",
       "optionD": "Translocation d'un chromosome entier",
       "correctAnswer": "A",
-      "explanation": "Une mutation ponctuelle implique la modification d'un seul nucléotide dans la séquence d'ADN."
+      "explanation": "Une mutation ponctuelle implique la modification d'un seul nucléotide dans la séquence d'ADN.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale des anticorps ?",
@@ -412,7 +482,8 @@
       "optionC": "Neutralisation des antigènes",
       "optionD": "Présentation des antigènes",
       "correctAnswer": "C",
-      "explanation": "Les anticorps neutralisent les antigènes en se liant à eux, empêchant ainsi leur interaction avec les cellules hôtes."
+      "explanation": "Les anticorps neutralisent les antigènes en se liant à eux, empêchant ainsi leur interaction avec les cellules hôtes.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qui caractérise la loi de Hardy-Weinberg ?",
@@ -421,7 +492,8 @@
       "optionC": "Elle explique la dominance génétique",
       "optionD": "Elle décrit la structure de l'ADN",
       "correctAnswer": "B",
-      "explanation": "La loi de Hardy-Weinberg décrit les conditions dans lesquelles les fréquences alléliques et génotypiques restent constantes dans une population."
+      "explanation": "La loi de Hardy-Weinberg décrit les conditions dans lesquelles les fréquences alléliques et génotypiques restent constantes dans une population.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qui caractérise la photosynthèse C4 ?",
@@ -430,7 +502,8 @@
       "optionC": "Elle est moins efficace que la photosynthèse C3",
       "optionD": "Elle n'utilise pas le cycle de Calvin",
       "correctAnswer": "B",
-      "explanation": "La photosynthèse C4 sépare la fixation initiale du CO2 et la fixation du carbone dans le cycle de Calvin, permettant une meilleure efficacité en conditions arides."
+      "explanation": "La photosynthèse C4 sépare la fixation initiale du CO2 et la fixation du carbone dans le cycle de Calvin, permettant une meilleure efficacité en conditions arides.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qui caractérise la reproduction sexuée ?",
@@ -439,7 +512,8 @@
       "optionC": "Absence de méiose",
       "optionD": "Absence de fécondation",
       "correctAnswer": "B",
-      "explanation": "La reproduction sexuée implique la combinaison du matériel génétique de deux parents, créant une descendance génétiquement unique."
+      "explanation": "La reproduction sexuée implique la combinaison du matériel génétique de deux parents, créant une descendance génétiquement unique.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qui caractérise la tectonique des plaques ?",
@@ -448,7 +522,8 @@
       "optionC": "Le magma ne circule pas dans le manteau",
       "optionD": "Les séismes sont rares aux frontières des plaques",
       "correctAnswer": "B",
-      "explanation": "La tectonique des plaques décrit le mouvement des plaques lithosphériques à la surface de la Terre, provoquant des phénomènes comme les séismes et les volcans."
+      "explanation": "La tectonique des plaques décrit le mouvement des plaques lithosphériques à la surface de la Terre, provoquant des phénomènes comme les séismes et les volcans.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qui caractérise le cycle de Krebs ?",
@@ -457,7 +532,8 @@
       "optionC": "Il génère des molécules transporteurs d'électrons",
       "optionD": "Il n'implique pas de dioxyde de carbone",
       "correctAnswer": "C",
-      "explanation": "Le cycle de Krebs génère des molécules transporteurs d'électrons comme NADH et FADH2, qui sont utilisés dans la chaîne respiratoire."
+      "explanation": "Le cycle de Krebs génère des molécules transporteurs d'électrons comme NADH et FADH2, qui sont utilisés dans la chaîne respiratoire.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale des lymphocytes B ?",
@@ -466,7 +542,8 @@
       "optionC": "Produire des anticorps",
       "optionD": "Activer des macrophages",
       "correctAnswer": "C",
-      "explanation": "Les lymphocytes B se différencient en plasmocytes qui produisent des anticorps spécifiques contre un antigène donné."
+      "explanation": "Les lymphocytes B se différencient en plasmocytes qui produisent des anticorps spécifiques contre un antigène donné.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qui caractérise l'effet de serre ?",
@@ -475,7 +552,8 @@
       "optionC": "Il est un phénomène naturel uniquement",
       "optionD": "Il n'a aucun impact sur la vie sur Terre",
       "correctAnswer": "B",
-      "explanation": "L'effet de serre, principalement dû aux gaz à effet de serre comme le CO2, est responsable du réchauffement climatique de la planète."
+      "explanation": "L'effet de serre, principalement dû aux gaz à effet de serre comme le CO2, est responsable du réchauffement climatique de la planète.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qui caractérise la transcription de l'ARNm ?",
@@ -484,7 +562,8 @@
       "optionC": "Elle produit des molécules d'ADN",
       "optionD": "Elle n'inclut pas l'épissage",
       "correctAnswer": "B",
-      "explanation": "La transcription utilise l'ARN polymérase pour copier un segment d'ADN en une molécule d'ARNm complémentaire."
+      "explanation": "La transcription utilise l'ARN polymérase pour copier un segment d'ADN en une molécule d'ARNm complémentaire.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce qui caractérise la sélection naturelle ?",
@@ -493,7 +572,8 @@
       "optionC": "Elle est indépendante de la variation génétique",
       "optionD": "Elle produit une descendance identique aux parents",
       "correctAnswer": "B",
-      "explanation": "La sélection naturelle favorise les individus aux caractères les mieux adaptés à leur environnement, conduisant à l'évolution des espèces."
+      "explanation": "La sélection naturelle favorise les individus aux caractères les mieux adaptés à leur environnement, conduisant à l'évolution des espèces.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la conséquence principale de la méthylation de l'ADN sur l'expression génique ?",
@@ -502,7 +582,8 @@
       "optionC": "Augmentation de la réplication de l'ADN",
       "optionD": "Modification des séquences codantes",
       "correctAnswer": "B",
-      "explanation": "La méthylation de l'ADN, ajout de groupes méthyles sur les cytosines, généralement en position CpG, entraîne généralement une inactivation de la transcription des gènes concernés en modifiant la structure de la chromatine."
+      "explanation": "La méthylation de l'ADN, ajout de groupes méthyles sur les cytosines, généralement en position CpG, entraîne généralement une inactivation de la transcription des gènes concernés en modifiant la structure de la chromatine.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel mécanisme explique le phénomène d'expression génique différentielle lors du développement embryonnaire ?",
@@ -511,7 +592,8 @@
       "optionC": "Différenciation cellulaire",
       "optionD": "Transcription sélective",
       "correctAnswer": "D",
-      "explanation": "La transcription sélective est le mécanisme principal qui explique l'expression génique différentielle, où certains gènes sont transcrits dans certains types cellulaires mais pas dans d'autres, conduisant à la différenciation cellulaire."
+      "explanation": "La transcription sélective est le mécanisme principal qui explique l'expression génique différentielle, où certains gènes sont transcrits dans certains types cellulaires mais pas dans d'autres, conduisant à la différenciation cellulaire.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale des lymphocytes T helpers (CD4+) dans la réponse immunitaire adaptative ?",
@@ -520,7 +602,8 @@
       "optionC": "Activation des lymphocytes B et cytotoxiques",
       "optionD": "Phagocytose des pathogènes",
       "correctAnswer": "C",
-      "explanation": "Les lymphocytes T helpers (CD4+) jouent un rôle central dans la régulation de la réponse immunitaire adaptative en activant les lymphocytes B (pour la production d'anticorps) et les lymphocytes T cytotoxiques (pour la destruction des cellules infectées)."
+      "explanation": "Les lymphocytes T helpers (CD4+) jouent un rôle central dans la régulation de la réponse immunitaire adaptative en activant les lymphocytes B (pour la production d'anticorps) et les lymphocytes T cytotoxiques (pour la destruction des cellules infectées).",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la caractéristique principale des roches sédimentaires ?",
@@ -529,7 +612,8 @@
       "optionC": "Formation à partir de sédiments consolidés",
       "optionD": "Formation par métamorphisme de roches préexistantes",
       "correctAnswer": "C",
-      "explanation": "Les roches sédimentaires se forment par la consolidation de sédiments (détritus organiques ou minéraux) déposés par l'eau, le vent ou la glace, puis compactés et cimentés."
+      "explanation": "Les roches sédimentaires se forment par la consolidation de sédiments (détritus organiques ou minéraux) déposés par l'eau, le vent ou la glace, puis compactés et cimentés.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel processus géologique explique la formation des chaînes de montagnes ?",
@@ -538,7 +622,8 @@
       "optionC": "Tectonique des plaques",
       "optionD": "Volcanisme effusif",
       "correctAnswer": "C",
-      "explanation": "La tectonique des plaques est le processus géologique principal responsable de la formation des chaînes de montagnes, résultant de la convergence ou de la collision entre lithosphères."
+      "explanation": "La tectonique des plaques est le processus géologique principal responsable de la formation des chaînes de montagnes, résultant de la convergence ou de la collision entre lithosphères.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le rôle principal de la photosynthèse dans les écosystèmes terrestres ?",
@@ -547,7 +632,8 @@
       "optionC": "Génération d'énergie métabolique",
       "optionD": "Dégradation de la matière organique",
       "correctAnswer": "B",
-      "explanation": "La photosynthèse fixe le carbone atmosphérique (sous forme de CO2) en matière organique, constituant la base de la chaîne alimentaire et régulant le cycle du carbone global."
+      "explanation": "La photosynthèse fixe le carbone atmosphérique (sous forme de CO2) en matière organique, constituant la base de la chaîne alimentaire et régulant le cycle du carbone global.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence fondamentale entre la mitose et la méiose ?",
@@ -556,7 +642,8 @@
       "optionC": "La méiose introduit de la diversité génétique, la mitose conserve le génome identique",
       "optionD": "La mitose a lieu uniquement dans les cellules germinales",
       "correctAnswer": "C",
-      "explanation": "La méiose introduit de la diversité génétique par crossing-over et séparation aléatoire des chromosomes, alors que la mitose conserve le génome identique dans les cellules filles."
+      "explanation": "La méiose introduit de la diversité génétique par crossing-over et séparation aléatoire des chromosomes, alors que la mitose conserve le génome identique dans les cellules filles.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel mécanisme immunologique explique la réaction greffon contre hôte ?",
@@ -565,7 +652,8 @@
       "optionC": "Réaction des lymphocytes T du donneur contre les tissus du receveur",
       "optionD": "Production d'autoanticorps",
       "correctAnswer": "C",
-      "explanation": "La réaction greffon contre hôte est une réaction immunologique où les lymphocytes T du donneur reconnaissent les antigènes du receveur comme étrangers et attaquent ses tissus."
+      "explanation": "La réaction greffon contre hôte est une réaction immunologique où les lymphocytes T du donneur reconnaissent les antigènes du receveur comme étrangers et attaquent ses tissus.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la particularité de la réplication semi-conservative de l'ADN ?",
@@ -574,7 +662,8 @@
       "optionC": "Les molécules d'ADN filles sont identiques entre elles mais différentes de la molécule parentale",
       "optionD": "La réplication n'implique qu'un seul brin d'ADN parental",
       "correctAnswer": "B",
-      "explanation": "La réplication semi-conservative de l'ADN produit deux molécules d'ADN filles, chacune composée d'un brin parental et d'un brin nouvellement synthétisé, conservant ainsi l'information génétique."
+      "explanation": "La réplication semi-conservative de l'ADN produit deux molécules d'ADN filles, chacune composée d'un brin parental et d'un brin nouvellement synthétisé, conservant ainsi l'information génétique.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la différence entre le climat et le météo ?",
@@ -583,7 +672,8 @@
       "optionC": "La météo concerne les variations saisonnières, le climat les variations journalières",
       "optionD": "Le climat est local, la météo est globale",
       "correctAnswer": "B",
-      "explanation": "Le climat correspond à la moyenne des conditions météorologiques (température, précipitations, etc.) sur une période longue (généralement 30 ans ou plus), tandis que la météo décrit les conditions atmosphères à court terme (jours à semaines)."
+      "explanation": "Le climat correspond à la moyenne des conditions météorologiques (température, précipitations, etc.) sur une période longue (généralement 30 ans ou plus), tandis que la météo décrit les conditions atmosphères à court terme (jours à semaines).",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le rôle principal des hormones folliculo-stimulante (FSH) et lutéinisante (LH) dans le cycle féminin ?",
@@ -592,7 +682,8 @@
       "optionC": "FSH inhibe l'ovulation, LH la stimule",
       "optionD": "FSH et LH agissent ensemble sur l'endomètre pour préparer l'implantation",
       "correctAnswer": "B",
-      "explanation": "La FSH stimule la maturation du follicule ovarien et la production d'œstrogènes, tandis que le pic de LH déclenche l'ovulation et la formation du corps jaune."
+      "explanation": "La FSH stimule la maturation du follicule ovarien et la production d'œstrogènes, tandis que le pic de LH déclenche l'ovulation et la formation du corps jaune.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la conséquence principale de l'effet de serre sur le climat terrestre ?",
@@ -601,7 +692,8 @@
       "optionC": "Diminution des précipitations",
       "optionD": "Augmentation de la couche d'ozone",
       "correctAnswer": "B",
-      "explanation": "L'effet de serre, causé par l'accumulation de gaz à effet de serre dans l'atmosphère, piège la chaleur solaire et entraîne une augmentation des températures moyennes à la surface de la Terre."
+      "explanation": "L'effet de serre, causé par l'accumulation de gaz à effet de serre dans l'atmosphère, piège la chaleur solaire et entraîne une augmentation des températures moyennes à la surface de la Terre.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la fonction principale des anticorps dans la réponse immunitaire humorale ?",
@@ -610,7 +702,8 @@
       "optionC": "Neutralisation des pathogènes et marquage pour la phagocytose",
       "optionD": "Activation des lymphocytes T helpers",
       "correctAnswer": "C",
-      "explanation": "Les anticorps, produits par les lymphocytes B, neutralisent les pathogènes en se liant à leurs antigènes et les marquent pour la phagocytose par d'autres cellules immunitaires."
+      "explanation": "Les anticorps, produits par les lymphocytes B, neutralisent les pathogènes en se liant à leurs antigènes et les marquent pour la phagocytose par d'autres cellules immunitaires.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le rôle principal des chloroplastes dans les plantes ?",
@@ -619,7 +712,8 @@
       "optionC": "Respiration cellulaire et production d'ATP",
       "optionD": "Fixation de l'azote atmosphérique",
       "correctAnswer": "B",
-      "explanation": "Les chloroplastes sont les organites spécialisés dans la photosynthèse, capturant l'énergie lumineuse pour convertir le CO2 et l'eau en glucides, oxygénant l'atmosphère comme sous-produit."
+      "explanation": "Les chloroplastes sont les organites spécialisés dans la photosynthèse, capturant l'énergie lumineuse pour convertir le CO2 et l'eau en glucides, oxygénant l'atmosphère comme sous-produit.",
+      "difficulty": "medium"
     }
   ]
 }

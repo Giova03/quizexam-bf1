@@ -16,7 +16,8 @@
       "optionC": "Président de l'Assemblée nationale",
       "optionD": "Ambadeur du Burkina Faso en France",
       "correctAnswer": "A",
-      "explanation": "Ibrahim Traoré est le chef de la transition militaire burkinabè depuis le coup d'État d'octobre 2022, succédant à Paul-Henri Sandaogo Damiba."
+      "explanation": "Ibrahim Traoré est le chef de la transition militaire burkinabè depuis le coup d'État d'octobre 2022, succédant à Paul-Henri Sandaogo Damiba.",
+      "difficulty": "medium"
     },
     {
       "question": "Que représente Ousmane Bougma ALT dans la culture burkinabè ?",
@@ -25,7 +26,8 @@
       "optionC": "Président de l'Association des Écrivains du Burkina (AES)",
       "optionD": "Fondateur du Festival Panafricain du Cinéma et de la Télévision (FESPACO)",
       "correctAnswer": "B",
-      "explanation": "Ousmane Bougma ALT est le directeur du Sotigui Awards, festival panafricain du cinéma qui rend hommage au comédien burkinabè Sotigui Kouyaté."
+      "explanation": "Ousmane Bougma ALT est le directeur du Sotigui Awards, festival panafricain du cinéma qui rend hommage au comédien burkinabè Sotigui Kouyaté.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la signification de l'acronyme AES dans le paysage culturel burkinabè ?",
@@ -34,7 +36,8 @@
       "optionC": "Académie des Arts Spectacles",
       "optionD": "Agence d'Édition Scolaire",
       "correctAnswer": "B",
-      "explanation": "AES désigne l'Association des Écrivains du Burkina, une organisation qui regroupe les écrivains du pays et promeut la littérature burkinabè."
+      "explanation": "AES désigne l'Association des Écrivains du Burkina, une organisation qui regroupe les écrivains du pays et promeut la littérature burkinabè.",
+      "difficulty": "medium"
     },
     {
       "question": "Que signifie FSP dans l'administration burkinabè ?",
@@ -43,7 +46,8 @@
       "optionC": "Fonds de Support à la Presse",
       "optionD": "Faculté des Sciences Politiques",
       "correctAnswer": "A",
-      "explanation": "Le FSP (Fonds de Solidarité pour la Population) est une institution financière publique burkinabè qui soutient les initiatives de développement communautaire."
+      "explanation": "Le FSP (Fonds de Solidarité pour la Population) est une institution financière publique burkinabè qui soutient les initiatives de développement communautaire.",
+      "difficulty": "medium"
     },
     {
       "question": "Qu'est-ce que le Sotigui Awards ?",
@@ -52,7 +56,8 @@
       "optionC": "Un concours de danse traditionnelle",
       "optionD": "Une exposition d'art contemporain africain",
       "correctAnswer": "B",
-      "explanation": "Le Sotigui Awards est un festival de cinéma panafricain qui rend hommage à l'acteur burkinabè Sotigui Kouyaté, père de l'acteur Ibrahim Koma."
+      "explanation": "Le Sotigui Awards est un festival de cinéma panafricain qui rend hommage à l'acteur burkinabè Sotigui Kouyaté, père de l'acteur Ibrahim Koma.",
+      "difficulty": "medium"
     },
     {
       "question": "Que représente SOBTO ?",
@@ -61,7 +66,8 @@
       "optionC": "Sotigui Bougma Traoré Organisation",
       "optionD": "Société d'Organisation des Bourses et de Télécommunications",
       "correctAnswer": "C",
-      "explanation": "SOBTO est l'organisation qui gère le festival Sotigui Awards, nommée en hommage à Sotigui Kouyaté et dirigée par Ousmane Bougma."
+      "explanation": "SOBTO est l'organisation qui gère le festival Sotigui Awards, nommée en hommage à Sotigui Kouyaté et dirigée par Ousmane Bougma.",
+      "difficulty": "medium"
     },
     {
       "question": "Combien de régions le Burkina Faso comptait-il avant la réforme administrative de 2021 ?",
@@ -70,7 +76,8 @@
       "optionC": "25 régions",
       "optionD": "45 régions",
       "correctAnswer": "A",
-      "explanation": "Avant la réforme administrative de 2021, le Burkina Faso était divisé en 13 régions, avant d'être porté à 45 puis ramené à 13."
+      "explanation": "Avant la réforme administrative de 2021, le Burkina Faso était divisé en 13 régions, avant d'être porté à 45 puis ramené à 13.",
+      "difficulty": "medium"
     },
     {
       "question": "Depuis la réforme administrative de 2021, combien de régions compte le Burkina Faso ?",
@@ -79,7 +86,8 @@
       "optionC": "25 régions",
       "optionD": "45 régions",
       "correctAnswer": "B",
-      "explanation": "Depuis la réforme administrative de 2021, le Burkina Faso compte désormais 17 régions, contre 13 auparavant."
+      "explanation": "Depuis la réforme administrative de 2021, le Burkina Faso compte désormais 17 régions, contre 13 auparavant.",
+      "difficulty": "medium"
     },
     {
       "question": "Combien de provinces le Burkina Faso compte-t-il actuellement ?",
@@ -88,7 +96,8 @@
       "optionC": "45 provinces",
       "optionD": "47 provinces",
       "correctAnswer": "D",
-      "explanation": "Le Burkina Faso est actuellement divisé en 47 provinces, qui sont subdivisées en 351 communes."
+      "explanation": "Le Burkina Faso est actuellement divisé en 47 provinces, qui sont subdivisées en 351 communes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale administrative de la région du Sahel au Burkina Faso ?",
@@ -97,7 +106,8 @@
       "optionC": "Ouagadougou",
       "optionD": "Ouahigouya",
       "correctAnswer": "A",
-      "explanation": "Dori est la capitale administrative de la région du Sahel, située dans le nord du Burkina Faso."
+      "explanation": "Dori est la capitale administrative de la région du Sahel, située dans le nord du Burkina Faso.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a fondé le Festival Panafricain du Cinéma et de la Télévision (FESPACO) ?",
@@ -106,7 +116,8 @@
       "optionC": "Sotigui Kouyaté",
       "optionD": "None of the above",
       "correctAnswer": "D",
-      "explanation": "Le FESPACO a été fondé par l'État burkinabè et des cinéastes africains, mais ni Ibrahim Traoré, ni Ousmane Bougma ALT, ni Sotigui Kouyaté n'en sont les fondateurs."
+      "explanation": "Le FESPACO a été fondé par l'État burkinabè et des cinéastes africains, mais ni Ibrahim Traoré, ni Ousmane Bougma ALT, ni Sotigui Kouyaté n'en sont les fondateurs.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale administrative de la région du Centre-Ouest ?",
@@ -115,7 +126,8 @@
       "optionC": "Ouagadougou",
       "optionD": "Gaoua",
       "correctAnswer": "D",
-      "explanation": "Gaoua est la capitale administrative de la région du Centre-Ouest, créée lors de la réforme administrative de 2021."
+      "explanation": "Gaoua est la capitale administrative de la région du Centre-Ouest, créée lors de la réforme administrative de 2021.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la date de création du Sotigui Awards ?",
@@ -124,7 +136,8 @@
       "optionC": "2010",
       "optionD": "2012",
       "correctAnswer": "B",
-      "explanation": "Le Sotigui Awards a été créé en 2008 en hommage à l'acteur burkinabè Sotigui Kouyaté, décédé cette année-là."
+      "explanation": "Le Sotigui Awards a été créé en 2008 en hommage à l'acteur burkinabè Sotigui Kouyaté, décédé cette année-là.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la région la plus peuplée du Burkina Faso ?",
@@ -133,7 +146,8 @@
       "optionC": "Le Sahel",
       "optionD": "L'Est",
       "correctAnswer": "A",
-      "explanation": "La région du Centre est la plus peuplée du Burkina Faso, avec la capitale Ouagadougou qui concentre une grande partie de la population."
+      "explanation": "La région du Centre est la plus peuplée du Burkina Faso, avec la capitale Ouagadougou qui concentre une grande partie de la population.",
+      "difficulty": "medium"
     },
     {
       "question": "Que signifie FESPACO ?",
@@ -142,7 +156,8 @@
       "optionC": "Festival Panafricain du Cinéma et de la Télévision",
       "optionD": "Festival des Écrivains et des Spectacles d'Afrique Centrale",
       "correctAnswer": "C",
-      "explanation": "FESPACO signifie Festival Panafricain du Cinéma et de la Télévision, le plus grand festival de cinéma d'Afrique qui se tient tous les deux ans à Ouagadougou."
+      "explanation": "FESPACO signifie Festival Panafricain du Cinéma et de la Télévision, le plus grand festival de cinéma d'Afrique qui se tient tous les deux ans à Ouagadougou.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale administrative de la région du Centre-Nord ?",
@@ -151,7 +166,8 @@
       "optionC": "Tenkodogo",
       "optionD": "Fada N'Gourma",
       "correctAnswer": "A",
-      "explanation": "Kaya est la capitale administrative de la région du Centre-Nord, créée lors de la réforme administrative de 2021."
+      "explanation": "Kaya est la capitale administrative de la région du Centre-Nord, créée lors de la réforme administrative de 2021.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui a été le premier président du Burkina Faso après l'indépendance ?",
@@ -160,7 +176,8 @@
       "optionC": "Blaise Compaoré",
       "optionD": "Paul-Henri Sandaogo Damiba",
       "correctAnswer": "B",
-      "explanation": "Maurice Yaméogo a été le premier président du Haute-Volta (ancien nom du Burkina Faso) après l'indépendance en 1960."
+      "explanation": "Maurice Yaméogo a été le premier président du Haute-Volta (ancien nom du Burkina Faso) après l'indépendance en 1960.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale administrative de la région de l'Est ?",
@@ -169,7 +186,8 @@
       "optionC": "Ouagadougou",
       "optionD": "Tenkodogo",
       "correctAnswer": "A",
-      "explanation": "Fada N'Gourma est la capitale administrative de la région de l'Est, située dans l'est du Burkina Faso."
+      "explanation": "Fada N'Gourma est la capitale administrative de la région de l'Est, située dans l'est du Burkina Faso.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale administrative de la région du Boucle du Mouhoun ?",
@@ -178,7 +196,8 @@
       "optionC": "Dédougou",
       "optionD": "Gaoua",
       "correctAnswer": "C",
-      "explanation": "Dédougou est la capitale administrative de la région du Boucle du Mouhoun, située dans l'ouest du Burkina Faso."
+      "explanation": "Dédougou est la capitale administrative de la région du Boucle du Mouhoun, située dans l'ouest du Burkina Faso.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom de la nouvelle capitale administrative de la région du Centre-Est ?",
@@ -187,7 +206,8 @@
       "optionC": "Fada N'Gourma",
       "optionD": "Koupéla",
       "correctAnswer": "A",
-      "explanation": "Tenkodogo est la capitale administrative de la région du Centre-Est, créée lors de la réforme administrative de 2021."
+      "explanation": "Tenkodogo est la capitale administrative de la région du Centre-Est, créée lors de la réforme administrative de 2021.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale administrative de la région des Hauts-Bassins ?",
@@ -196,7 +216,8 @@
       "optionC": "Gaoua",
       "optionD": "Koudougou",
       "correctAnswer": "A",
-      "explanation": "Bobo-Dioulasso est la capitale administrative de la région des Hauts-Bassins, située dans l'ouest du Burkina Faso."
+      "explanation": "Bobo-Dioulasso est la capitale administrative de la région des Hauts-Bassins, située dans l'ouest du Burkina Faso.",
+      "difficulty": "medium"
     },
     {
       "question": "Qui est Ibrahim Traoré et quel est son rôle politique actuel au Burkina Faso ?",
@@ -205,7 +226,8 @@
       "optionC": "Président de l'Assemblée Nationale",
       "optionD": "Ancien ministre des Affaires Étrangères",
       "correctAnswer": "A",
-      "explanation": "Ibrahim Traoré est le Président de la Transition burkinabè depuis le 30 septembre 2022, après avoir pris le pouvoir lors d'un coup d'État militaire."
+      "explanation": "Ibrahim Traoré est le Président de la Transition burkinabè depuis le 30 septembre 2022, après avoir pris le pouvoir lors d'un coup d'État militaire.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la signification de l'acronyme AES dans le contexte burkinabè ?",
@@ -214,7 +236,8 @@
       "optionC": "Association des Étudiants du Sénégal",
       "optionD": "Agence d'Évaluation Sectorielle",
       "correctAnswer": "D",
-      "explanation": "L'AES au Burkina Faso désigne l'Agence d'Évaluation Sectorielle, un organisme chargé d'évaluer les performances des secteurs publics."
+      "explanation": "L'AES au Burkina Faso désigne l'Agence d'Évaluation Sectorielle, un organisme chargé d'évaluer les performances des secteurs publics.",
+      "difficulty": "medium"
     },
     {
       "question": "Ousmane Bougma ALT est une personnalité politique burkinabè connue pour son rôle dans quel parti politique ?",
@@ -223,7 +246,8 @@
       "optionC": "Parti pour la Démocratie et le Progrès Social (PDPS)",
       "optionD": "Union pour le Progrès et la Réforme (UPR)",
       "correctAnswer": "A",
-      "explanation": "Ousmane Bougma ALT est une figure politique du Congrès pour la Démocratie et le Progrès (CDP), parti du défunt président Blaise Compaoré."
+      "explanation": "Ousmane Bougma ALT est une figure politique du Congrès pour la Démocratie et le Progrès (CDP), parti du défunt président Blaise Compaoré.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la signification de l'acronyme FSP dans le système éducatif burkinabè ?",
@@ -232,7 +256,8 @@
       "optionC": "Fonds de Soutien à la Pauvreté",
       "optionD": "Formation des Services Publics",
       "correctAnswer": "A",
-      "explanation": "FSP signifie Formation Spécialisée Professionnelle, qui désigne un type de formation technique et professionnelle au Burkina Faso."
+      "explanation": "FSP signifie Formation Spécialisée Professionnelle, qui désigne un type de formation technique et professionnelle au Burkina Faso.",
+      "difficulty": "medium"
     },
     {
       "question": "Les Sotigui Awards sont des récompenses décernées dans quel domaine au Burkina Faso ?",
@@ -241,7 +266,8 @@
       "optionC": "Littérature orale",
       "optionD": "Arts visuels",
       "correctAnswer": "B",
-      "explanation": "Les Sotigui Awards sont des récompenses prestigieuses décernées dans le domaine du cinéma et des arts de la scène au Burkina Faso, en hommage au comédien Sotigui Kouyaté."
+      "explanation": "Les Sotigui Awards sont des récompenses prestigieuses décernées dans le domaine du cinéma et des arts de la scène au Burkina Faso, en hommage au comédien Sotigui Kouyaté.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la signification de l'acronyme SOBTO ?",
@@ -250,7 +276,8 @@
       "optionC": "Société d'Opération Bancaire et de Télécommunications",
       "optionD": "Service d'Observation Burkinabè du Tourisme",
       "correctAnswer": "C",
-      "explanation": "SOBTO désigne la Société d'Opération Bancaire et de Télécommunications, un établissement financier au Burkina Faso."
+      "explanation": "SOBTO désigne la Société d'Opération Bancaire et de Télécommunications, un établissement financier au Burkina Faso.",
+      "difficulty": "medium"
     },
     {
       "question": "Combien de régions administratives le Burkina Faso compte-t-il depuis la réforme de 2021 ?",
@@ -259,7 +286,8 @@
       "optionC": "25 régions",
       "optionD": "30 régions",
       "correctAnswer": "B",
-      "explanation": "Depuis la réforme administrative de 2021, le Burkina Faso est divisé en 17 régions administratives, contre 13 auparavant."
+      "explanation": "Depuis la réforme administrative de 2021, le Burkina Faso est divisé en 17 régions administratives, contre 13 auparavant.",
+      "difficulty": "medium"
     },
     {
       "question": "Le Burkina Faso est divisé en combien de provinces ?",
@@ -268,7 +296,8 @@
       "optionC": "45 provinces",
       "optionD": "47 provinces",
       "correctAnswer": "D",
-      "explanation": "Le Burkina Faso est divisé en 47 provinces, qui sont subdivisées en 351 communes."
+      "explanation": "Le Burkina Faso est divisé en 47 provinces, qui sont subdivisées en 351 communes.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la capitale de la région du Sahel au Burkina Faso ?",
@@ -277,7 +306,8 @@
       "optionC": "Ouahigouya",
       "optionD": "Tenkodogo",
       "correctAnswer": "A",
-      "explanation": "Dori est la capitale de la région du Sahel, située dans le nord du pays."
+      "explanation": "Dori est la capitale de la région du Sahel, située dans le nord du pays.",
+      "difficulty": "medium"
     },
     {
       "question": "Quel est le nom de la nouvelle région créée lors de la réforme de 2021 ?",
@@ -286,7 +316,8 @@
       "optionC": "Région du Plateau-Central",
       "optionD": "Région du Sud-Ouest",
       "correctAnswer": "D",
-      "explanation": "La région du Sud-Ouest est l'une des nouvelles régions créées lors de la réforme administrative de 2021."
+      "explanation": "La région du Sud-Ouest est l'une des nouvelles régions créées lors de la réforme administrative de 2021.",
+      "difficulty": "medium"
     },
     {
       "question": "Combien de provinces la région du Centre-Ouest compte-t-elle ?",
@@ -295,7 +326,8 @@
       "optionC": "7 provinces",
       "optionD": "10 provinces",
       "correctAnswer": "A",
-      "explanation": "La région du Centre-Ouest compte 3 provinces: Boulkiemdé, Sanguié et Ziro."
+      "explanation": "La région du Centre-Ouest compte 3 provinces: Boulkiemdé, Sanguié et Ziro.",
+      "difficulty": "medium"
     },
     {
       "question": "La province du Nahouri fait partie de quelle région ?",
@@ -304,7 +336,8 @@
       "optionC": "Région du Plateau-Central",
       "optionD": "Région du Centre-Est",
       "correctAnswer": "A",
-      "explanation": "La province du Nahouri est située dans la région du Centre-Sud, dont la capitale est Tenkodogo."
+      "explanation": "La province du Nahouri est située dans la région du Centre-Sud, dont la capitale est Tenkodogo.",
+      "difficulty": "medium"
     },
     {
       "question": "Quelle est la plus grande région du Burkina Faso par superficie ?",
@@ -313,7 +346,8 @@
       "optionC": "Région du Nord",
       "optionD": "Région du Centre-Ouest",
       "correctAnswer": "C",
-      "explanation": "La région du Nord est la plus grande région du Burkina Faso par superficie, couvrant environ 70 000 km²."
+      "explanation": "La région du Nord est la plus grande région du Burkina Faso par superficie, couvrant environ 70 000 km².",
+      "difficulty": "medium"
     },
     {
       "question": "La province du Loroum fait partie de quelle région ?",
@@ -322,7 +356,8 @@
       "optionC": "Région du Centre-Nord",
       "optionD": "Région de l'Est",
       "correctAnswer": "A",
-      "explanation": "La province du Loroum est située dans la région du Sahel, dont la capitale est Dori."
+      "explanation": "La province du Loroum est située dans la région du Sahel, dont la capitale est Dori.",
+      "difficulty": "medium"
     }
   ]
 }

@@ -5,12 +5,18 @@ import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
+<<<<<<< Updated upstream
 /**
  * GET /api/groups/[id]
  * Fetch a single group with its members list (id, name, joinedAt).
  */
 export async function GET(
   _request: Request,
+=======
+/** GET /api/groups/[id] — group details with members list. */
+export async function GET(
+  _req: Request,
+>>>>>>> Stashed changes
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
@@ -18,16 +24,24 @@ export async function GET(
     const group = await db.studyGroup.findUnique({
       where: { id },
       include: {
+<<<<<<< Updated upstream
         creator: { select: { id: true, name: true } },
         members: {
           orderBy: { joinedAt: "asc" },
           include: {
             user: { select: { id: true, name: true } },
           },
+=======
+        owner: { select: { id: true, name: true } },
+        members: {
+          orderBy: { joinedAt: "asc" },
+          include: { user: { select: { id: true, name: true } } },
+>>>>>>> Stashed changes
         },
         _count: { select: { members: true } },
       },
     });
+<<<<<<< Updated upstream
 
     if (!group) {
       return NextResponse.json(
@@ -80,10 +94,26 @@ export async function GET(
  */
 export async function DELETE(
   _request: Request,
+=======
+    if (!group) {
+      return NextResponse.json({ error: "Groupe introuvable" }, { status: 404 });
+    }
+    return NextResponse.json(group);
+  } catch (error) {
+    console.error("Failed to load group:", error);
+    return NextResponse.json({ error: "Failed to load group" }, { status: 500 });
+  }
+}
+
+/** DELETE /api/groups/[id] — only the owner can delete. */
+export async function DELETE(
+  _req: Request,
+>>>>>>> Stashed changes
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
+<<<<<<< Updated upstream
     if (!session?.user) {
       return NextResponse.json(
         { error: "Connexion requise" },
@@ -121,5 +151,33 @@ export async function DELETE(
       { error: "Failed to delete study group" },
       { status: 500 }
     );
+=======
+    if (!session?.user?.email) {
+      return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
+    }
+    const { id } = await params;
+    const user = await db.user.findUnique({
+      where: { email: session.user.email },
+      select: { id: true },
+    });
+    if (!user) {
+      return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
+    }
+    const group = await db.studyGroup.findUnique({
+      where: { id },
+      select: { ownerId: true },
+    });
+    if (!group) {
+      return NextResponse.json({ error: "Groupe introuvable" }, { status: 404 });
+    }
+    if (group.ownerId !== user.id) {
+      return NextResponse.json({ error: "Seul le propriétaire peut supprimer ce groupe" }, { status: 403 });
+    }
+    await db.studyGroup.delete({ where: { id } });
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error("Failed to delete group:", error);
+    return NextResponse.json({ error: "Failed to delete group" }, { status: 500 });
+>>>>>>> Stashed changes
   }
 }

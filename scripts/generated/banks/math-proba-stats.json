@@ -16,7 +16,8 @@
       "optionC": "0.382",
       "optionD": "0.618",
       "correctAnswer": "A",
-      "explanation": "On utilise une approximation normale par la loi N(np, np(1-p)) = N(30, 21). P(X ≥ 35) ≈ P(Z ≥ (34.5-30)/√21) ≈ P(Z ≥ 0.98) ≈ 0.1635. L'option la plus proche est A."
+      "explanation": "On utilise une approximation normale par la loi N(np, np(1-p)) = N(30, 21). P(X ≥ 35) ≈ P(Z ≥ (34.5-30)/√21) ≈ P(Z ≥ 0.98) ≈ 0.1635. L'option la plus proche est A.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire X suit une loi normale N(10, 4). Quelle est la probabilité P(8 < X < 12)?",
@@ -25,7 +26,8 @@
       "optionC": "0.8413",
       "optionD": "0.1587",
       "correctAnswer": "B",
-      "explanation": "Pour une loi normale N(μ, σ²), P(μ-σ < X < μ+σ) ≈ 0.6827. Ici μ=10, σ=2, donc P(8 < X < 12) ≈ 0.6827."
+      "explanation": "Pour une loi normale N(μ, σ²), P(μ-σ < X < μ+σ) ≈ 0.6827. Ici μ=10, σ=2, donc P(8 < X < 12) ≈ 0.6827.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit X une variable aléatoire suivant une loi de Poisson de paramètre λ=5. Quelle est la probabilité P(X=3)?",
@@ -34,7 +36,8 @@
       "optionC": "0.0067",
       "optionD": "0.1804",
       "correctAnswer": "A",
-      "explanation": "Pour une loi de Poisson, P(X=k) = (e^(-λ) * λ^k)/k!. P(X=3) = (e^(-5) * 5^3)/3! ≈ 0.1404."
+      "explanation": "Pour une loi de Poisson, P(X=k) = (e^(-λ) * λ^k)/k!. P(X=3) = (e^(-5) * 5^3)/3! ≈ 0.1404.",
+      "difficulty": "medium"
     },
     {
       "question": "On effectue un test d'hypothèse sur une moyenne μ avec H0: μ=10 contre H1: μ≠10. La taille de l'échantillon est n=36, l'écart-type connu σ=3, et la moyenne observée x̄=10.5. Le risque de première espèce est α=0.05. Quelle est la conclusion?",
@@ -43,7 +46,8 @@
       "optionC": "On accepte H0",
       "optionD": "Le test est indéterminé",
       "correctAnswer": "B",
-      "explanation": "La statistique de test est Z = (x̄-μ)/(σ/√n) = (10.5-10)/(3/6) = 1. La valeur critique pour α=0.05 est ±1.96. Comme |Z| < 1.96, on ne rejette pas H0."
+      "explanation": "La statistique de test est Z = (x̄-μ)/(σ/√n) = (10.5-10)/(3/6) = 1. La valeur critique pour α=0.05 est ±1.96. Comme |Z| < 1.96, on ne rejette pas H0.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit X et Y deux variables alétries indépendantes suivant des lois normales N(5,1) et N(3,4) respectivement. Quelle est la loi de X+Y?",
@@ -52,7 +56,8 @@
       "optionC": "N(2,5)",
       "optionD": "N(2,3)",
       "correctAnswer": "A",
-      "explanation": "La somme de deux variables normales indépendantes est une normale dont la moyenne est la somme des moyennes et la variance est la somme des variances. E[X+Y]=5+3=8, Var(X+Y)=1+4=5."
+      "explanation": "La somme de deux variables normales indépendantes est une normale dont la moyenne est la somme des moyennes et la variance est la somme des variances. E[X+Y]=5+3=8, Var(X+Y)=1+4=5.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans un test du χ² avec 5 degrés de liberté, quelle est la valeur critique pour un risque α=0.05?",
@@ -61,7 +66,8 @@
       "optionC": "15.086",
       "optionD": "3.841",
       "correctAnswer": "B",
-      "explanation": "Pour un test du χ² à 5 degrés de liberté et α=0.05, la valeur critique est 11.070. C'est la valeur pour laquelle P(χ² > 11.070) = 0.05."
+      "explanation": "Pour un test du χ² à 5 degrés de liberté et α=0.05, la valeur critique est 11.070. C'est la valeur pour laquelle P(χ² > 11.070) = 0.05.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire X suit une loi exponentielle de paramètre λ=0.5. Quelle est son espérance mathématique?",
@@ -70,7 +76,8 @@
       "optionC": "2",
       "optionD": "0.25",
       "correctAnswer": "C",
-      "explanation": "Pour une loi exponentielle de paramètre λ, l'espérance est 1/λ. Ici λ=0.5, donc E[X] = 1/0.5 = 2."
+      "explanation": "Pour une loi exponentielle de paramètre λ, l'espérance est 1/λ. Ici λ=0.5, donc E[X] = 1/0.5 = 2.",
+      "difficulty": "medium"
     },
     {
       "question": "On observe un échantillon de taille n=25 avec une moyenne x̄=50 et un écart-type s=10. On veut tester H0: μ=48 contre H1: μ>48 avec α=0.05. Quelle est la statistique de test?",
@@ -79,7 +86,8 @@
       "optionC": "10",
       "optionD": "2",
       "correctAnswer": "A",
-      "explanation": "La statistique de test est t = (x̄-μ)/(s/√n) = (50-48)/(10/5) = 2/2 = 1."
+      "explanation": "La statistique de test est t = (x̄-μ)/(s/√n) = (50-48)/(10/5) = 2/2 = 1.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit X une variable aléatoire suivant une loi binomiale de paramètres n=50 et p=0.4. Quelle est sa variance?",
@@ -88,7 +96,8 @@
       "optionC": "8",
       "optionD": "20",
       "correctAnswer": "A",
-      "explanation": "Pour une loi binomiale, Var(X) = np(1-p) = 50×0.4×0.6 = 12."
+      "explanation": "Pour une loi binomiale, Var(X) = np(1-p) = 50×0.4×0.6 = 12.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans une régression linéaire simple, le coefficient de détermination R² est égal à 0.81. Que signifie cela?",
@@ -97,7 +106,8 @@
       "optionC": "Le coefficient de corrélation est 0.9",
       "optionD": "La relation entre X et Y est très forte",
       "correctAnswer": "A",
-      "explanation": "R² mesure la proportion de la variance de la variable expliquée qui est expliquée par le modèle de régression. Ici, 81% de la variance de Y est expliquée par X."
+      "explanation": "R² mesure la proportion de la variance de la variable expliquée qui est expliquée par le modèle de régression. Ici, 81% de la variance de Y est expliquée par X.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire X suit une loi normale N(μ, σ²). Quelle est la probabilité P(μ-2σ < X < μ+2σ)?",
@@ -106,7 +116,8 @@
       "optionC": "0.9973",
       "optionD": "0.8413",
       "correctAnswer": "B",
-      "explanation": "Pour une loi normale, P(μ-σ < X < μ+σ) ≈ 0.6827, P(μ-2σ < X < μ+2σ) ≈ 0.9545, et P(μ-3σ < X < μ+3σ) ≈ 0.9973."
+      "explanation": "Pour une loi normale, P(μ-σ < X < μ+σ) ≈ 0.6827, P(μ-2σ < X < μ+2σ) ≈ 0.9545, et P(μ-3σ < X < μ+3σ) ≈ 0.9973.",
+      "difficulty": "medium"
     },
     {
       "question": "On effectue un test du χ² d'adéquance avec k=5 classes. Le tableau de contingence a des effectifs théoriques tous égaux à 10. La statistique de test observée est χ²=12.5. Que conclut-on pour α=0.05?",
@@ -115,7 +126,8 @@
       "optionC": "L'effectif est trop faible",
       "optionD": "Le test n'est pas applicable",
       "correctAnswer": "A",
-      "explanation": "Pour un test du χ² avec k=5 classes, le nombre de degrés de liberté est k-1=4. La valeur critique pour α=0.05 est 9.488. Comme χ²=12.5 > 9.488, on rejette H0."
+      "explanation": "Pour un test du χ² avec k=5 classes, le nombre de degrés de liberté est k-1=4. La valeur critique pour α=0.05 est 9.488. Comme χ²=12.5 > 9.488, on rejette H0.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire X suit une loi géométrique de paramètre p=0.3. Quelle est la probabilité P(X=4)?",
@@ -124,7 +136,8 @@
       "optionC": "0.3",
       "optionD": "0.2187",
       "correctAnswer": "B",
-      "explanation": "Pour une loi géométrique, P(X=k) = (1-p)^(k-1)×p. P(X=4) = (0.7)^3×0.3 ≈ 0.1029."
+      "explanation": "Pour une loi géométrique, P(X=k) = (1-p)^(k-1)×p. P(X=4) = (0.7)^3×0.3 ≈ 0.1029.",
+      "difficulty": "medium"
     },
     {
       "question": "Dans un test de Student pour comparer deux moyennes indépendantes, on obtient t=2.5 avec 28 degrés de liberté. Pour α=0.01, quelle est la conclusion?",
@@ -133,7 +146,8 @@
       "optionC": "On accepte H0",
       "optionD": "Le test est indéterminé",
       "correctAnswer": "B",
-      "explanation": "Pour un test bilatéral à 28 degrés de liberté et α=0.01, la valeur critique est environ ±2.763. Comme |t|=2.5 < 2.763, on ne rejette pas H0."
+      "explanation": "Pour un test bilatéral à 28 degrés de liberté et α=0.01, la valeur critique est environ ±2.763. Comme |t|=2.5 < 2.763, on ne rejette pas H0.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit X et Y deux variables aléatoires indépendantes avec Var(X)=4 et Var(Y)=9. Quelle est Var(2X-3Y)?",
@@ -142,7 +156,8 @@
       "optionC": "97",
       "optionD": "130",
       "correctAnswer": "C",
-      "explanation": "Pour des variables indépendantes, Var(aX+bY) = a²Var(X) + b²Var(Y). Var(2X-3Y) = 4×4 + 9×9 = 16 + 81 = 97."
+      "explanation": "Pour des variables indépendantes, Var(aX+bY) = a²Var(X) + b²Var(Y). Var(2X-3Y) = 4×4 + 9×9 = 16 + 81 = 97.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire X suit une loi normale N(0,1). Quelle est la valeur de P(X > 1.96)?",
@@ -151,7 +166,8 @@
       "optionC": "0.05",
       "optionD": "0.95",
       "correctAnswer": "A",
-      "explanation": "Pour une loi normale standard N(0,1), P(X > 1.96) = 0.025. C'est la valeur critique pour un test bilatéral avec α=0.05."
+      "explanation": "Pour une loi normale standard N(0,1), P(X > 1.96) = 0.025. C'est la valeur critique pour un test bilatéral avec α=0.05.",
+      "difficulty": "medium"
     },
     {
       "question": "On effectue une régression linéaire simple et on obtient une droite de régression y = 2x + 3. Pour un point x=4, quelle est la valeur prédite de y?",
@@ -160,7 +176,8 @@
       "optionC": "3",
       "optionD": "7",
       "correctAnswer": "B",
-      "explanation": "La valeur prédite est obtenue en remplaçant x par 4 dans l'équation de la droite de régression: y = 2×4 + 3 = 11."
+      "explanation": "La valeur prédite est obtenue en remplaçant x par 4 dans l'équation de la droite de régression: y = 2×4 + 3 = 11.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire X suit une loi uniforme sur l'intervalle [1,5]. Quelle est sa variance?",
@@ -169,7 +186,8 @@
       "optionC": "4/3",
       "optionD": "2",
       "correctAnswer": "C",
-      "explanation": "Pour une loi uniforme sur [a,b], Var(X) = (b-a)²/12. Ici Var(X) = (5-1)²/12 = 16/12 = 4/3."
+      "explanation": "Pour une loi uniforme sur [a,b], Var(X) = (b-a)²/12. Ici Var(X) = (5-1)²/12 = 16/12 = 4/3.",
+      "difficulty": "medium"
     },
     {
       "question": "On effectue un test d'hypothèse sur une proportion p avec H0: p=0.5 contre H1: p>0.5. La taille de l'échantillon est n=100, et on observe 55 succès. Le risque de première espèce est α=0.05. Quelle est la conclusion?",
@@ -178,7 +196,8 @@
       "optionC": "On accepte H0",
       "optionD": "Le test est indéterminé",
       "correctAnswer": "B",
-      "explanation": "La statistique de test est Z = (p̂-p)/√(p(1-p)/n) = (0.55-0.5)/√(0.5×0.5/100) = 1. La valeur critique pour α=0.05 est 1.645. Comme Z < 1.645, on ne rejette pas H0."
+      "explanation": "La statistique de test est Z = (p̂-p)/√(p(1-p)/n) = (0.55-0.5)/√(0.5×0.5/100) = 1. La valeur critique pour α=0.05 est 1.645. Comme Z < 1.645, on ne rejette pas H0.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit X une variable aléatoire suivant une loi binomiale de paramètres n=20 et p=0.6. Quelle est la probabilité P(X ≤ 12)?",
@@ -187,7 +206,8 @@
       "optionC": "0.868",
       "optionD": "0.132",
       "correctAnswer": "A",
-      "explanation": "On peut calculer directement P(X ≤ 12) = Σ(k=0 à 12) C(20,k)×0.6^k×0.4^(20-k) ≈ 0.584. On peut aussi utiliser une approximation normale par la loi N(12, 4.8) et obtenir P(X ≤ 12.5) ≈ 0.584."
+      "explanation": "On peut calculer directement P(X ≤ 12) = Σ(k=0 à 12) C(20,k)×0.6^k×0.4^(20-k) ≈ 0.584. On peut aussi utiliser une approximation normale par la loi N(12, 4.8) et obtenir P(X ≤ 12.5) ≈ 0.584.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire X suit une loi binomiale de paramètres n=50 et p=0.3. Quelle est la probabilité que X soit supérieure ou égale à 20?",
@@ -196,7 +216,8 @@
       "optionC": "P(X≥20) = 0.500",
       "optionD": "P(X≥20) = 0.032",
       "correctAnswer": "B",
-      "explanation": "Pour une loi binomiale B(n,p), on utilise une approximation normale lorsque np(1-p) > 5. Ici np(1-p) = 10.5 > 5. On approxime par N(np,np(1-p)) = N(15,10.5). P(X≥20) = P(X>19.5) = P(Z>(19.5-15)/√10.5) = P(Z>1.38) = 1-0.9162 = 0.0838 ≈ 0.088."
+      "explanation": "Pour une loi binomiale B(n,p), on utilise une approximation normale lorsque np(1-p) > 5. Ici np(1-p) = 10.5 > 5. On approxime par N(np,np(1-p)) = N(15,10.5). P(X≥20) = P(X>19.5) = P(Z>(19.5-15)/√10.5) = P(Z>1.38) = 1-0.9162 = 0.0838 ≈ 0.088.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire Y suit une loi de Poisson de paramètre λ=4. Quelle est la probabilité que Y soit strictement inférieure à 2?",
@@ -205,7 +226,8 @@
       "optionC": "P(Y<2) = 0.238",
       "optionD": "P(Y<2) = 0.762",
       "correctAnswer": "B",
-      "explanation": "Pour une loi de Poisson de paramètre λ, P(Y=k) = e^(-λ)×λ^k/k!. Donc P(Y<2) = P(Y=0) + P(Y=1) = e^(-4)×4^0/0! + e^(-4)×4^1/1! = e^(-4)(1 + 4) = 5×e^(-4) ≈ 5×0.0183 = 0.0915 ≈ 0.092."
+      "explanation": "Pour une loi de Poisson de paramètre λ, P(Y=k) = e^(-λ)×λ^k/k!. Donc P(Y<2) = P(Y=0) + P(Y=1) = e^(-4)×4^0/0! + e^(-4)×4^1/1! = e^(-4)(1 + 4) = 5×e^(-4) ≈ 5×0.0183 = 0.0915 ≈ 0.092.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire Z suit une loi normale N(10,4). Quelle est la probabilité que Z soit comprise entre 8 et 12?",
@@ -214,7 +236,8 @@
       "optionC": "P(8<Z<12) = 0.9772",
       "optionD": "P(8<Z<12) = 0.9545",
       "correctAnswer": "D",
-      "explanation": "Pour Z~N(μ,σ²), P(μ-σ<Z<μ+σ) ≈ 0.6827, P(μ-2σ<Z<μ+2σ) ≈ 0.9545, P(μ-3σ<Z<μ+3σ) ≈ 0.9973. Ici μ=10, σ=2, donc 8=μ-σ et 12=μ+σ. P(8<Z<12) = P(μ-σ<Z<μ+σ) ≈ 0.9545."
+      "explanation": "Pour Z~N(μ,σ²), P(μ-σ<Z<μ+σ) ≈ 0.6827, P(μ-2σ<Z<μ+2σ) ≈ 0.9545, P(μ-3σ<Z<μ+3σ) ≈ 0.9973. Ici μ=10, σ=2, donc 8=μ-σ et 12=μ+σ. P(8<Z<12) = P(μ-σ<Z<μ+σ) ≈ 0.9545.",
+      "difficulty": "medium"
     },
     {
       "question": "On lance un dé équilibré 100 fois. Soit X la variable aléatoire représentant le nombre de fois où on obtient un 6. Quelle est l'espérance de X?",
@@ -223,7 +246,8 @@
       "optionC": "E(X) = 6",
       "optionD": "E(X) = 100",
       "correctAnswer": "B",
-      "explanation": "X suit une loi binomiale de paramètres n=100 et p=1/6. L'espérance d'une loi binomiale B(n,p) est E(X) = np. Donc E(X) = 100×(1/6) = 100/6 ≈ 16.67."
+      "explanation": "X suit une loi binomiale de paramètres n=100 et p=1/6. L'espérance d'une loi binomiale B(n,p) est E(X) = np. Donc E(X) = 100×(1/6) = 100/6 ≈ 16.67.",
+      "difficulty": "medium"
     },
     {
       "question": "Soit X une variable aléatoire de loi exponentielle de paramètre λ=0.5. Quelle est la probabilité que X soit supérieure à 3?",
@@ -232,7 +256,8 @@
       "optionC": "P(X>3) = 1-e^(-1.5)",
       "optionD": "P(X>3) = 1-e^(-0.5)",
       "correctAnswer": "A",
-      "explanation": "Pour une loi exponentielle de paramètre λ, la fonction de survie est P(X>x) = e^(-λx). Ici λ=0.5, donc P(X>3) = e^(-0.5×3) = e^(-1.5)."
+      "explanation": "Pour une loi exponentielle de paramètre λ, la fonction de survie est P(X>x) = e^(-λx). Ici λ=0.5, donc P(X>3) = e^(-0.5×3) = e^(-1.5).",
+      "difficulty": "medium"
     },
     {
       "question": "On effectue un test d'hypothèses pour vérifier si la moyenne d'une population est égale à 10. L'hypothèse nulle est H0: μ=10 et l'hypothèse alternative est H1: μ≠10. On observe une valeur de la statistique de test de 2.34. Que conclut-on au seuil de 5%?",
@@ -241,7 +266,8 @@
       "optionC": "On accepte H0",
       "optionD": "Le test est invalide",
       "correctAnswer": "A",
-      "explanation": "Pour un test bilatéral au seuil de 5%, les valeurs critiques sont ±1.96. La statistique de test (2.34) est supérieure à 1.96, donc on rejette H0 au seuil de 5%."
+      "explanation": "Pour un test bilatéral au seuil de 5%, les valeurs critiques sont ±1.96. La statistique de test (2.34) est supérieure à 1.96, donc on rejette H0 au seuil de 5%.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire X suit une loi binomiale de paramètres n=20 et p=0.4. Quelle est la variance de X?",
@@ -250,7 +276,8 @@
       "optionC": "Var(X) = 20",
       "optionD": "Var(X) = 0.4",
       "correctAnswer": "B",
-      "explanation": "Pour une loi binomiale B(n,p), la variance est Var(X) = np(1-p). Ici n=20, p=0.4, donc Var(X) = 20×0.4×0.6 = 4.8."
+      "explanation": "Pour une loi binomiale B(n,p), la variance est Var(X) = np(1-p). Ici n=20, p=0.4, donc Var(X) = 20×0.4×0.6 = 4.8.",
+      "difficulty": "medium"
     },
     {
       "question": "On réalise une régression linéaire simple entre deux variables X et Y. On obtient une droite de régression Y = 2X + 3. Si on change l'origine des X en soustrayant 5 à chaque valeur, quelle sera la nouvelle équation de la droite de régression?",
@@ -259,7 +286,8 @@
       "optionC": "Y = 2X - 7",
       "optionD": "Y = 2X + 8",
       "correctAnswer": "A",
-      "explanation": "Si on définit X' = X - 5, alors X = X' + 5. En substituant dans l'équation originale: Y = 2(X' + 5) + 3 = 2X' + 10 + 3 = 2X' + 13. La nouvelle équation est donc Y = 2X + 13 (où X représente maintenant la variable décalée)."
+      "explanation": "Si on définit X' = X - 5, alors X = X' + 5. En substituant dans l'équation originale: Y = 2(X' + 5) + 3 = 2X' + 10 + 3 = 2X' + 13. La nouvelle équation est donc Y = 2X + 13 (où X représente maintenant la variable décalée).",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire X suit une loi normale N(5,9). Quelle est la probabilité que X soit supérieure à 8?",
@@ -268,7 +296,8 @@
       "optionC": "P(X>8) = 0.9772",
       "optionD": "P(X>8) = 0.0228",
       "correctAnswer": "B",
-      "explanation": "Pour X~N(5,9), on a μ=5, σ=3. P(X>8) = P((X-5)/3 > (8-5)/3) = P(Z>1) où Z suit N(0,1). P(Z>1) = 1-P(Z<1) = 1-0.8413 = 0.1587."
+      "explanation": "Pour X~N(5,9), on a μ=5, σ=3. P(X>8) = P((X-5)/3 > (8-5)/3) = P(Z>1) où Z suit N(0,1). P(Z>1) = 1-P(Z<1) = 1-0.8413 = 0.1587.",
+      "difficulty": "medium"
     },
     {
       "question": "On effectue un test du khi-deux pour vérifier l'indépendance entre deux variables catégorielles avec 3 modalités pour la première variable et 2 modalités pour la seconde. Quel est le nombre de degrés de liberté du test?",
@@ -277,7 +306,8 @@
       "optionC": "ddl = 3",
       "optionD": "ddl = 5",
       "correctAnswer": "D",
-      "explanation": "Pour un test du khi-deux d'indépendance, le nombre de degrés de liberté est (l-1)(c-1) où l est le nombre de modalités de la première variable et c le nombre de modalités de la seconde. Ici l=3, c=2, donc ddl = (3-1)(2-1) = 2×1 = 2. La réponse correcte est B, pas D. Je corrige: ddl = (3-1)(2-1) = 2×1 = 2."
+      "explanation": "Pour un test du khi-deux d'indépendance, le nombre de degrés de liberté est (l-1)(c-1) où l est le nombre de modalités de la première variable et c le nombre de modalités de la seconde. Ici l=3, c=2, donc ddl = (3-1)(2-1) = 2×1 = 2. La réponse correcte est B, pas D. Je corrige: ddl = (3-1)(2-1) = 2×1 = 2.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire X suit une loi de Poisson de paramètre λ=2. Quelle est la probabilité que X soit égale à 3?",
@@ -286,7 +316,8 @@
       "optionC": "P(X=3) = e^(-2)×2^3/3",
       "optionD": "P(X=3) = e^(-2)×2^3",
       "correctAnswer": "B",
-      "explanation": "Pour une loi de Poisson de paramètre λ, P(X=k) = e^(-λ)×λ^k/k!. Ici λ=2, k=3, donc P(X=3) = e^(-2)×2^3/3! = e^(-2)×8/6."
+      "explanation": "Pour une loi de Poisson de paramètre λ, P(X=k) = e^(-λ)×λ^k/k!. Ici λ=2, k=3, donc P(X=3) = e^(-2)×2^3/3! = e^(-2)×8/6.",
+      "difficulty": "medium"
     },
     {
       "question": "On effectue un test d'hypothèses sur la moyenne d'une population de variance connue σ²=4. L'hypothèse nulle est H0: μ=10 et l'hypothèse alternative est H1: μ>10. On observe une moyenne échantillonnale de 11.5 pour un échantillon de taille 25. Que conclut-on au seuil de 1%?",
@@ -295,7 +326,8 @@
       "optionC": "On accepte H0",
       "optionD": "Le test est invalide",
       "correctAnswer": "A",
-      "explanation": "La statistique de test est Z = (x̄ - μ)/(σ/√n) = (11.5 - 10)/(2/5) = 1.5/0.4 = 3.75. Pour un test unilatéral supérieur au seuil de 1%, la valeur critique est 2.326. Comme 3.75 > 2.326, on rejette H0."
+      "explanation": "La statistique de test est Z = (x̄ - μ)/(σ/√n) = (11.5 - 10)/(2/5) = 1.5/0.4 = 3.75. Pour un test unilatéral supérieur au seuil de 1%, la valeur critique est 2.326. Comme 3.75 > 2.326, on rejette H0.",
+      "difficulty": "medium"
     },
     {
       "question": "Une variable aléatoire X suit une loi normale N(0,1). Quelle est la médiane de X?",
@@ -304,7 +336,12 @@
       "optionC": "Médiane = -1",
       "optionD": "Médiane = 0.5",
       "correctAnswer": "A",
+<<<<<<< Updated upstream
       "explanation": "Pour une loi normale N(μ,σ²), la médiane est égale à μ. Ici μ=0, donc la médiane est 0. La loi normale est symétrique autour de sa moyenne, qui coïncide avec la médiane."
+=======
+      "explanation": "Pour une loi normale N(μ,σ²), la médiane est égale à μ. Ici μ=0, donc la médiane est 0. La loi normale est symétrique autour de sa moyenne, qui coïncide avec la médiane.",
+      "difficulty": "medium"
+>>>>>>> Stashed changes
     }
   ]
 }

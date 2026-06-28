@@ -2,7 +2,11 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
+<<<<<<< Updated upstream
 import { cacheInvalidate, CACHE_KEYS } from "@/lib/cache";
+=======
+import { cacheInvalidate } from "@/lib/cache";
+>>>>>>> Stashed changes
 export const dynamic = "force-dynamic";
 
 async function requireAdmin() {
@@ -15,11 +19,16 @@ export async function POST(request: Request) {
   const session = await requireAdmin();
   if (!session) return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
   const body = await request.json();
+<<<<<<< Updated upstream
   const { bankId, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, level, difficulty, imageUrl, audioUrl } = body;
+=======
+  const { bankId, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, level, difficulty } = body;
+>>>>>>> Stashed changes
   if (!bankId || !question || !optionA || !optionB || !optionC || !optionD || !correctAnswer || !explanation)
     return NextResponse.json({ error: "Tous les champs sont requis" }, { status: 400 });
   if (!["A", "B", "C", "D"].includes(correctAnswer))
     return NextResponse.json({ error: "Réponse correcte invalide" }, { status: 400 });
+<<<<<<< Updated upstream
   // Validate difficulty (default to "medium" if absent or invalid).
   const validDifficulty =
     difficulty && ["easy", "medium", "hard"].includes(difficulty)
@@ -31,6 +40,11 @@ export async function POST(request: Request) {
     typeof imageUrl === "string" && imageUrl.trim() ? imageUrl.trim() : null;
   const validAudioUrl =
     typeof audioUrl === "string" && audioUrl.trim() ? audioUrl.trim() : null;
+=======
+  // Validate difficulty if provided
+  const validDifficulties = ["easy", "medium", "hard"];
+  const finalDifficulty = difficulty && validDifficulties.includes(difficulty) ? difficulty : "medium";
+>>>>>>> Stashed changes
   const count = await db.question.count({ where: { bankId } });
   // Create the question WITHOUT imageUrl/audioUrl via the Prisma client.
   // The dev server's Turbopack-cached Prisma client may not know about the
@@ -38,6 +52,7 @@ export async function POST(request: Request) {
   // them in the `data` object would trigger a PrismaClientValidationError.
   // We set them via a raw SQL UPDATE immediately after the create.
   const q = await db.question.create({
+<<<<<<< Updated upstream
     data: {
       bankId,
       order: count,
@@ -64,12 +79,21 @@ export async function POST(request: Request) {
   // Question count for this bank changed — invalidate the cached banks list.
   cacheInvalidate(CACHE_KEYS.banksList);
   return NextResponse.json({ ...q, imageUrl: validImageUrl, audioUrl: validAudioUrl });
+=======
+    data: { bankId, order: count, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2: correctAnswer2 || null, explanation, level: level || "TOUS", difficulty: finalDifficulty },
+  });
+  // Invalide le cache des banques (la liste + cette banque spécifique)
+  cacheInvalidate("banks:list");
+  cacheInvalidate(`bank:${bankId}`);
+  return NextResponse.json(q);
+>>>>>>> Stashed changes
 }
 
 export async function PATCH(request: Request) {
   const session = await requireAdmin();
   if (!session) return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
   const body = await request.json();
+<<<<<<< Updated upstream
   const { id, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, difficulty, imageUrl, audioUrl } = body;
   if (!id) return NextResponse.json({ error: "ID requis" }, { status: 400 });
   // Validate difficulty if provided.
@@ -82,6 +106,13 @@ export async function PATCH(request: Request) {
   }
   // Update the question WITHOUT imageUrl/audioUrl via the Prisma client.
   // Media URLs are handled separately via raw SQL below.
+=======
+  const { id, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, difficulty } = body;
+  if (!id) return NextResponse.json({ error: "ID requis" }, { status: 400 });
+  // Validate difficulty if provided
+  const validDifficulties = ["easy", "medium", "hard"];
+  const finalDifficulty = difficulty && validDifficulties.includes(difficulty) ? difficulty : undefined;
+>>>>>>> Stashed changes
   const updated = await db.question.update({
     where: { id },
     data: {
@@ -93,6 +124,7 @@ export async function PATCH(request: Request) {
       ...(correctAnswer !== undefined && { correctAnswer }),
       ...(correctAnswer2 !== undefined && { correctAnswer2 }),
       ...(explanation !== undefined && { explanation }),
+<<<<<<< Updated upstream
       ...difficultyUpdate,
     },
   });
@@ -118,6 +150,14 @@ export async function PATCH(request: Request) {
   // Invalidate so /api/banks (which only returns counts) stays accurate for
   // the count field — and future endpoints that inline questions stay fresh.
   cacheInvalidate(CACHE_KEYS.banksList);
+=======
+      ...(finalDifficulty !== undefined && { difficulty: finalDifficulty }),
+    },
+  });
+  // Invalide le cache de la banque parente (la liste des banques aussi)
+  cacheInvalidate("banks:list");
+  if (updated?.bankId) cacheInvalidate(`bank:${updated.bankId}`);
+>>>>>>> Stashed changes
   return NextResponse.json(updated);
 }
 
@@ -127,7 +167,15 @@ export async function DELETE(request: Request) {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get("id");
   if (!id) return NextResponse.json({ error: "ID requis" }, { status: 400 });
+<<<<<<< Updated upstream
   await db.question.delete({ where: { id } });
   cacheInvalidate(CACHE_KEYS.banksList);
+=======
+  // Récupère d'abord la banque parente pour invalider le cache correspondant
+  const existing = await db.question.findUnique({ where: { id }, select: { bankId: true } }).catch(() => null);
+  await db.question.delete({ where: { id } }).catch(() => {});
+  cacheInvalidate("banks:list");
+  if (existing?.bankId) cacheInvalidate(`bank:${existing.bankId}`);
+>>>>>>> Stashed changes
   return NextResponse.json({ success: true });
 }

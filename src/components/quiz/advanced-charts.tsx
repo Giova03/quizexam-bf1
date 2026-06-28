@@ -1,14 +1,27 @@
 "use client";
 
+<<<<<<< Updated upstream
 import { useEffect, useMemo, useState } from "react";
 import {
+=======
+import { useMemo } from "react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  ResponsiveContainer,
+>>>>>>> Stashed changes
   LineChart,
   Line,
   XAxis,
   YAxis,
+<<<<<<< Updated upstream
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+=======
+  Tooltip,
+  CartesianGrid,
+>>>>>>> Stashed changes
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
@@ -21,6 +34,7 @@ import {
   Cell,
   Legend,
 } from "recharts";
+<<<<<<< Updated upstream
 import { format, subDays, isSameDay, parseISO } from "date-fns";
 import { fr } from "date-fns/locale";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -204,10 +218,115 @@ export function AdvancedCharts({ sessions }: { sessions: SessionLite[] }) {
       return {
         date: d,
         label: format(d, "EEE", { locale: fr }),
+=======
+import {
+  TrendingUp,
+  Radar as RadarIcon,
+  BarChart3,
+  PieChart as PieIcon,
+} from "lucide-react";
+
+export interface AdvancedChartsProps {
+  sessions: Array<{
+    id: string;
+    title: string;
+    score: number;
+    totalQuestions: number;
+    completedAt: string | null;
+    startedAt: string;
+    sourceType: string;
+  }>;
+}
+
+const PIE_COLORS = ["#10b981", "#f43f5e", "#94a3b8"];
+
+/**
+ * Four advanced Recharts visualisations for the dashboard.
+ * Each chart degrades gracefully when there is not enough data.
+ */
+export function AdvancedCharts({ sessions }: AdvancedChartsProps) {
+  // 30-day progression (avg score per day)
+  const lineData = useMemo(() => {
+    const days: Array<{
+      date: string;
+      label: string;
+      scores: number[];
+    }> = [];
+    for (let i = 29; i >= 0; i--) {
+      const d = new Date();
+      d.setHours(0, 0, 0, 0);
+      d.setDate(d.getDate() - i);
+      const iso = d.toISOString().slice(0, 10);
+      days.push({
+        date: iso,
+        label: d.toLocaleDateString("fr-FR", {
+          day: "2-digit",
+          month: "2-digit",
+        }),
+        scores: [],
+      });
+    }
+    const dayMap = new Map(days.map((d) => [d.date, d]));
+    for (const s of sessions) {
+      if (!s.completedAt) continue;
+      const iso = new Date(s.completedAt).toISOString().slice(0, 10);
+      const day = dayMap.get(iso);
+      if (day) {
+        const pct = (s.score / Math.max(1, s.totalQuestions)) * 100;
+        day.scores.push(pct);
+      }
+    }
+    return days.map((d) => ({
+      label: d.label,
+      score:
+        d.scores.length > 0
+          ? Math.round(
+              d.scores.reduce((a, b) => a + b, 0) / d.scores.length
+            )
+          : null,
+      count: d.scores.length,
+    }));
+  }, [sessions]);
+
+  // Skills by category (radar) — avg score per source title (top 6)
+  const radarData = useMemo(() => {
+    const groups = new Map<
+      string,
+      { scores: number[]; count: number }
+    >();
+    for (const s of sessions) {
+      if (!s.completedAt) continue;
+      const key = s.title.length > 24
+        ? s.title.slice(0, 22) + "…"
+        : s.title;
+      if (!groups.has(key)) groups.set(key, { scores: [], count: 0 });
+      const g = groups.get(key)!;
+      g.scores.push((s.score / Math.max(1, s.totalQuestions)) * 100);
+      g.count++;
+    }
+    return Array.from(groups.entries())
+      .sort((a, b) => b[1].count - a[1].count)
+      .slice(0, 6)
+      .map(([key, g]) => ({
+        category: key,
+        score: Math.round(g.scores.reduce((a, b) => a + b, 0) / g.scores.length),
+      }));
+  }, [sessions]);
+
+  // 7-day activity bar chart
+  const barData = useMemo(() => {
+    const out = Array.from({ length: 7 }, (_, i) => {
+      const d = new Date();
+      d.setDate(d.getDate() - (6 - i));
+      return {
+        label: d.toLocaleDateString("fr-FR", { weekday: "short" }),
+        sessions: 0,
+>>>>>>> Stashed changes
         questions: 0,
       };
     });
     for (const s of sessions) {
+<<<<<<< Updated upstream
       const d = parseISO(s.completedAt ?? s.startedAt);
       const day = days.find((x) => isSameDay(x.date, d));
       if (day) {
@@ -461,6 +580,219 @@ export function AdvancedCharts({ sessions }: { sessions: SessionLite[] }) {
           </CardContent>
         </Card>
       </div>
+=======
+      if (!s.completedAt) continue;
+      const d = new Date(s.completedAt);
+      const dayDiff = Math.floor(
+        (Date.now() - d.getTime()) / (1000 * 60 * 60 * 24)
+      );
+      if (dayDiff >= 0 && dayDiff < 7) {
+        const idx = 6 - dayDiff;
+        out[idx].sessions += 1;
+        out[idx].questions += s.totalQuestions;
+      }
+    }
+    return out;
+  }, [sessions]);
+
+  // Score distribution pie chart
+  const pieData = useMemo(() => {
+    let excellent = 0;
+    let pass = 0;
+    let fail = 0;
+    for (const s of sessions) {
+      if (!s.completedAt) continue;
+      const pct = (s.score / Math.max(1, s.totalQuestions)) * 100;
+      if (pct >= 80) excellent++;
+      else if (pct >= 50) pass++;
+      else fail++;
+    }
+    return [
+      { name: "Excellent (≥80%)", value: excellent },
+      { name: "Réussi (50-79%)", value: pass },
+      { name: "Échec (<50%)", value: fail },
+    ];
+  }, [sessions]);
+
+  return (
+    <div className="grid gap-4 lg:grid-cols-2">
+      {/* 30-day progression line chart */}
+      <Card className="p-5">
+        <div className="mb-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <TrendingUp className="h-4 w-4 text-emerald-600" />
+            <h3 className="text-sm font-semibold">
+              Progression sur 30 jours
+            </h3>
+          </div>
+          <Badge variant="secondary" className="text-[10px]">
+            score moyen / jour
+          </Badge>
+        </div>
+        <div className="h-56">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              data={lineData}
+              margin={{ top: 5, right: 5, bottom: 5, left: -20 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+              <XAxis
+                dataKey="label"
+                tick={{ fontSize: 10 }}
+                interval={4}
+                stroke="#9ca3af"
+              />
+              <YAxis
+                domain={[0, 100]}
+                tick={{ fontSize: 10 }}
+                stroke="#9ca3af"
+              />
+              <Tooltip
+                formatter={(v: number) => (v == null ? "—" : `${v}%`)}
+                labelStyle={{ fontSize: 12 }}
+              />
+              <Line
+                type="monotone"
+                dataKey="score"
+                stroke="#10b981"
+                strokeWidth={2}
+                dot={{ r: 3, fill: "#10b981" }}
+                connectNulls
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </Card>
+
+      {/* Skills radar */}
+      <Card className="p-5">
+        <div className="mb-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <RadarIcon className="h-4 w-4 text-violet-600" />
+            <h3 className="text-sm font-semibold">Compétences par catégorie</h3>
+          </div>
+          <Badge variant="secondary" className="text-[10px]">
+            top 6
+          </Badge>
+        </div>
+        {radarData.length === 0 ? (
+          <div className="flex h-56 items-center justify-center text-sm text-muted-foreground">
+            Pas assez de données
+          </div>
+        ) : (
+          <div className="h-56">
+            <ResponsiveContainer width="100%" height="100%">
+              <RadarChart data={radarData} outerRadius={75}>
+                <PolarGrid stroke="#e5e7eb" />
+                <PolarAngleAxis
+                  dataKey="category"
+                  tick={{ fontSize: 9 }}
+                  stroke="#9ca3af"
+                />
+                <PolarRadiusAxis
+                  domain={[0, 100]}
+                  tick={{ fontSize: 9 }}
+                  stroke="#9ca3af"
+                />
+                <Radar
+                  name="Score moyen"
+                  dataKey="score"
+                  stroke="#8b5cf6"
+                  fill="#8b5cf6"
+                  fillOpacity={0.4}
+                />
+                <Tooltip formatter={(v: number) => `${v}%`} />
+              </RadarChart>
+            </ResponsiveContainer>
+          </div>
+        )}
+      </Card>
+
+      {/* 7-day activity bar chart */}
+      <Card className="p-5">
+        <div className="mb-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <BarChart3 className="h-4 w-4 text-sky-600" />
+            <h3 className="text-sm font-semibold">Activité des 7 derniers jours</h3>
+          </div>
+          <Badge variant="secondary" className="text-[10px]">
+            sessions / questions
+          </Badge>
+        </div>
+        <div className="h-56">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={barData}
+              margin={{ top: 5, right: 5, bottom: 5, left: -20 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+              <XAxis dataKey="label" tick={{ fontSize: 10 }} stroke="#9ca3af" />
+              <YAxis tick={{ fontSize: 10 }} stroke="#9ca3af" />
+              <Tooltip />
+              <Legend wrapperStyle={{ fontSize: 11 }} />
+              <Bar
+                dataKey="sessions"
+                name="Sessions"
+                fill="#0ea5e9"
+                radius={[4, 4, 0, 0]}
+              />
+              <Bar
+                dataKey="questions"
+                name="Questions"
+                fill="#10b981"
+                radius={[4, 4, 0, 0]}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Card>
+
+      {/* Score distribution pie chart */}
+      <Card className="p-5">
+        <div className="mb-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <PieIcon className="h-4 w-4 text-amber-600" />
+            <h3 className="text-sm font-semibold">Distribution des scores</h3>
+          </div>
+          <Badge variant="secondary" className="text-[10px]">
+            par tranche
+          </Badge>
+        </div>
+        {pieData.every((p) => p.value === 0) ? (
+          <div className="flex h-56 items-center justify-center text-sm text-muted-foreground">
+            Pas encore de sessions terminées
+          </div>
+        ) : (
+          <div className="h-56">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={pieData}
+                  dataKey="value"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={75}
+                  label={({ name, value }) =>
+                    value > 0 ? `${name}: ${value}` : ""
+                  }
+                  labelLine={false}
+                >
+                  {pieData.map((entry, idx) => (
+                    <Cell
+                      key={idx}
+                      fill={PIE_COLORS[idx % PIE_COLORS.length]}
+                    />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend wrapperStyle={{ fontSize: 11 }} />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+        )}
+      </Card>
+>>>>>>> Stashed changes
     </div>
   );
 }

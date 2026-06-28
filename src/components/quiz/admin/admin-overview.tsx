@@ -14,10 +14,21 @@ import {
   Star,
   AlertTriangle,
 } from "lucide-react";
+<<<<<<< Updated upstream
 import type { AdminStats } from "./types";
 
 /**
  * StatCard — small KPI tile used at the top of the overview tab.
+=======
+import type { AdminStats, StatColor } from "./types";
+
+interface AdminOverviewProps {
+  stats: AdminStats | null;
+}
+
+/**
+ * StatCard — petit carte de statistique avec icône colorée.
+>>>>>>> Stashed changes
  */
 export function StatCard({
   icon: Icon,
@@ -28,7 +39,11 @@ export function StatCard({
   icon: typeof Users;
   label: string;
   value: number;
+<<<<<<< Updated upstream
   color: string;
+=======
+  color: StatColor | string;
+>>>>>>> Stashed changes
 }) {
   const colorMap: Record<string, string> = {
     emerald: "text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40",
@@ -54,9 +69,123 @@ export function StatCard({
 }
 
 /**
+<<<<<<< Updated upstream
  * TopPerformersAndAlerts — fetches sessions and renders the top-5 leaderboard
  * plus the low-performance alerts card. Lives at the bottom of the overview
  * tab.
+=======
+ * AdminOverview — onglet "Vue d'ensemble" du panneau admin.
+ * Affiche les cartes de statistiques + visiteurs/sessions récents
+ * + top 5 + alertes performance.
+ */
+export function AdminOverview({ stats }: AdminOverviewProps) {
+  const c = stats?.counts;
+  return (
+    <div className="space-y-4">
+      <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        <StatCard icon={BookOpen} label="Banques" value={c?.banks ?? 0} color="emerald" />
+        <StatCard icon={FileQuestion} label="Questions" value={c?.questions ?? 0} color="violet" />
+        <StatCard icon={Trophy} label="Examens" value={c?.exams ?? 0} color="amber" />
+        <StatCard icon={Users} label="Utilisateurs" value={c?.users ?? 0} color="sky" />
+        <StatCard icon={Activity} label="Sessions" value={c?.sessions ?? 0} color="rose" />
+        <StatCard icon={TrendingUp} label="Terminées" value={c?.completedSessions ?? 0} color="teal" />
+      </div>
+
+      <div className="grid gap-4 lg:grid-cols-2">
+        <Card className="overflow-hidden">
+          <div className="border-b px-5 py-4">
+            <h2 className="flex items-center gap-2 font-semibold">
+              <Users className="h-4 w-4 text-sky-600" />
+              Visiteurs récents
+            </h2>
+          </div>
+          <div className="max-h-[300px] divide-y overflow-y-auto">
+            {stats?.recentUsers.length === 0 && (
+              <p className="p-4 text-center text-sm text-muted-foreground">
+                Aucun visiteur inscrit
+              </p>
+            )}
+            {stats?.recentUsers.map((u) => (
+              <div key={u.id} className="flex items-center gap-3 px-5 py-3">
+                <span
+                  className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold text-white ${
+                    u.role === "ADMIN"
+                      ? "bg-gradient-to-br from-amber-500 to-orange-600"
+                      : "bg-gradient-to-br from-emerald-500 to-teal-600"
+                  }`}
+                >
+                  {(u.name ?? u.email).charAt(0).toUpperCase()}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-medium">{u.name}</p>
+                  <p className="truncate text-xs text-muted-foreground">
+                    {u.email}
+                  </p>
+                </div>
+                {u.role === "ADMIN" && (
+                  <Badge variant="outline" className="border-amber-300 text-amber-700">
+                    ADMIN
+                  </Badge>
+                )}
+                <span className="text-xs text-muted-foreground">
+                  {new Date(u.createdAt).toLocaleDateString("fr-FR")}
+                </span>
+              </div>
+            ))}
+          </div>
+        </Card>
+
+        <Card className="overflow-hidden">
+          <div className="border-b px-5 py-4">
+            <h2 className="flex items-center gap-2 font-semibold">
+              <Activity className="h-4 w-4 text-rose-600" />
+              Sessions récentes
+            </h2>
+          </div>
+          <div className="max-h-[300px] divide-y overflow-y-auto">
+            {stats?.recentSessions.length === 0 && (
+              <p className="p-4 text-center text-sm text-muted-foreground">
+                Aucune session terminée
+              </p>
+            )}
+            {stats?.recentSessions.map((s) => {
+              const pct = Math.round(
+                (s.score / Math.max(1, s.totalQuestions)) * 100
+              );
+              return (
+                <div
+                  key={s.id}
+                  className="flex items-center justify-between gap-3 px-5 py-3"
+                >
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-medium">{s.title}</p>
+                    <p className="truncate text-xs text-muted-foreground">
+                      {s.user?.name ?? s.user?.email ?? "Visiteur"}
+                    </p>
+                  </div>
+                  <span
+                    className={`text-sm font-bold ${
+                      pct >= 50 ? "text-emerald-600" : "text-rose-600"
+                    }`}
+                  >
+                    {pct}%
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </Card>
+      </div>
+
+      <TopPerformersAndAlerts />
+    </div>
+  );
+}
+
+/**
+ * TopPerformersAndAlerts — composant affichant le top 5 des visiteurs
+ * et les alertes de performance (< 50%).
+>>>>>>> Stashed changes
  */
 export function TopPerformersAndAlerts() {
   const [sessions, setSessions] = useState<any[]>([]);
@@ -72,7 +201,10 @@ export function TopPerformersAndAlerts() {
 
   if (loading) return <Skeleton className="h-48 rounded-xl" />;
 
+<<<<<<< Updated upstream
   // Compute top performers
+=======
+>>>>>>> Stashed changes
   const userMap: Record<string, { name: string; email: string; sessions: any[] }> = {};
   for (const s of sessions) {
     const uid = s.user?.id ?? "anon";
@@ -173,6 +305,7 @@ export function TopPerformersAndAlerts() {
     </div>
   );
 }
+<<<<<<< Updated upstream
 
 /**
  * OverviewTab — renders the 6 KPI cards + recent users + recent sessions +
@@ -282,3 +415,5 @@ export function OverviewTab({ stats }: { stats: AdminStats | null }) {
     </div>
   );
 }
+=======
+>>>>>>> Stashed changes

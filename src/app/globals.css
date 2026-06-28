@@ -201,6 +201,7 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+<<<<<<< Updated upstream
 /* === Accessibility modes (P9) ===
  * Applied by PreferencesApplier as classes/attributes on <html>.
  * Keep specificity low so user content remains readable but adapts.
@@ -272,6 +273,42 @@ html.large-text .text-sm { font-size: 1rem !important; }
 html.large-text .text-base { font-size: 1.1rem !important; }
 
 /* Reduce motion: disable all CSS animations + transitions. */
+=======
+/* === Accessibility classes (I5 - Feature 8) === */
+
+/* High contrast mode: stronger borders, pure black/white text */
+html.hc-mode {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0 0 0);
+  --muted-foreground: oklch(0.2 0 0);
+  --border: oklch(0 0 0);
+  --input: oklch(0 0 0);
+  --ring: oklch(0 0 0);
+}
+html.hc-mode.dark {
+  --background: oklch(0 0 0);
+  --foreground: oklch(1 0 0);
+  --muted-foreground: oklch(0.85 0 0);
+  --border: oklch(1 0 0);
+  --input: oklch(0.9 0 0);
+  --ring: oklch(1 0 0);
+}
+html.hc-mode * {
+  border-color: var(--border) !important;
+}
+html.hc-mode a,
+html.hc-mode button {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Large text mode: +25% font-size globally */
+html.large-text {
+  font-size: 125%;
+}
+
+/* Reduce motion: disable all transitions + animations */
+>>>>>>> Stashed changes
 html.reduce-motion *,
 html.reduce-motion *::before,
 html.reduce-motion *::after {
@@ -280,13 +317,17 @@ html.reduce-motion *::after {
   transition-duration: 0.001ms !important;
   scroll-behavior: auto !important;
 }
+<<<<<<< Updated upstream
 
 /* Honour the user's OS-level prefers-reduced-motion setting too. */
+=======
+>>>>>>> Stashed changes
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.001ms !important;
+<<<<<<< Updated upstream
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
@@ -356,4 +397,36 @@ html[data-sr-hints] [aria-label]::after {
 }
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
   background: var(--muted-foreground);
+=======
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Dyslexia-friendly font: use system fonts with extra letter-spacing */
+html.dyslexia-font {
+  --font-dyslexia: "Comic Sans MS", "Verdana", "Tahoma", "Trebuchet MS", sans-serif;
+  font-family: var(--font-dyslexia) !important;
+  letter-spacing: 0.04em;
+  word-spacing: 0.08em;
+  line-height: 1.6;
+}
+html.dyslexia-font p,
+html.dyslexia-font li,
+html.dyslexia-font h1,
+html.dyslexia-font h2,
+html.dyslexia-font h3,
+html.dyslexia-font h4,
+html.dyslexia-font h5,
+html.dyslexia-font h6,
+html.dyslexia-font label,
+html.dyslexia-font button,
+html.dyslexia-font input,
+html.dyslexia-font textarea {
+  font-family: var(--font-dyslexia) !important;
+}
+
+/* User-controlled font-size slider (100% to 150%) */
+html {
+  font-size: var(--user-font-size, 100%);
+>>>>>>> Stashed changes
 }

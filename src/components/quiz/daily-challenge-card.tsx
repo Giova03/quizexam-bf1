@@ -1,10 +1,15 @@
 "use client";
 
+<<<<<<< Updated upstream
 import { useEffect, useState, useCallback } from "react";
+=======
+import { useEffect, useState } from "react";
+>>>>>>> Stashed changes
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+<<<<<<< Updated upstream
 import { useQuizStore } from "@/lib/quiz-store";
 import { toast } from "sonner";
 import {
@@ -85,10 +90,93 @@ export function DailyChallengeCard() {
     }
     setStarting(true);
     try {
+=======
+import { CalendarDays, Flame, Trophy, CheckCircle2, Play } from "lucide-react";
+import { toast } from "sonner";
+import { useQuizStore } from "@/lib/quiz-store";
+
+interface DailyChallengeData {
+  dayKey: string;
+  theme: {
+    code: string;
+    label: string;
+    color: string;
+    icon: string;
+  };
+  questions: Array<{
+    id: string;
+    bankId: string;
+    question: string;
+    optionA: string;
+    optionB: string;
+    optionC: string;
+    optionD: string;
+    correctAnswer: string;
+    explanation: string;
+    difficulty: string;
+  }>;
+  message?: string;
+}
+
+const COMPLETED_KEY = "quizexam-daily-completed";
+
+function readCompletedMap(): Record<string, { score: number; total: number }> {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(window.localStorage.getItem(COMPLETED_KEY) ?? "{}");
+  } catch {
+    return {};
+  }
+}
+
+function writeCompletedMap(map: Record<string, { score: number; total: number }>) {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(COMPLETED_KEY, JSON.stringify(map));
+  } catch {
+    /* ignore quota errors */
+  }
+}
+
+export function DailyChallengeCard() {
+  const [data, setData] = useState<DailyChallengeData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [completed, setCompleted] = useState<{ score: number; total: number } | null>(null);
+  const [starting, setStarting] = useState(false);
+  const startSession = useQuizStore((s) => s.startSession);
+
+  useEffect(() => {
+    fetch("/api/daily-challenge")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (d) {
+          setData(d);
+          const map = readCompletedMap();
+          if (d.dayKey && map[d.dayKey]) {
+            setCompleted(map[d.dayKey]);
+          }
+        }
+      })
+      .catch(() => setData(null))
+      .finally(() => setLoading(false));
+  }, []);
+
+  async function startChallenge() {
+    if (!data || data.questions.length === 0) return;
+    setStarting(true);
+    try {
+      // Create an exam-mode session from the daily questions by using a
+      // custom-exam-style payload: we POST to /api/sessions with sourceType
+      // "exam" pointing at no exam — but the API needs a real source. Instead,
+      // we use the first bank as the sourceType="bank" to avoid creating a
+      // dedicated exam entity.
+      const firstQuestion = data.questions[0];
+>>>>>>> Stashed changes
       const res = await fetch("/api/sessions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+<<<<<<< Updated upstream
           title: data.title,
           mode: "immediate",
           sourceType: "bank",
@@ -97,10 +185,18 @@ export function DailyChallengeCard() {
           // NOT NULL constraint on sourceId.
           sourceId: "daily-challenge",
           questionIds: data.questionIds,
+=======
+          title: `Défi quotidien — ${data.theme.label}`,
+          mode: "final",
+          sourceType: "bank",
+          sourceId: firstQuestion.bankId,
+          questionIds: data.questions.map((q) => q.id),
+>>>>>>> Stashed changes
         }),
       });
       if (res.ok) {
         const session = await res.json();
+<<<<<<< Updated upstream
         toast.success("Défi du jour démarré ! Bonne chance 🎯");
         startSession(session.id);
       } else {
@@ -110,11 +206,22 @@ export function DailyChallengeCard() {
     } catch (e) {
       console.error("Failed to start daily challenge", e);
       toast.error("Erreur lors du démarrage du défi.");
+=======
+        toast.success("Défi quotidien démarré !");
+        startSession(session.id);
+      } else {
+        toast.error("Impossible de démarrer le défi.");
+      }
+    } catch (e) {
+      console.error("Failed to start daily challenge", e);
+      toast.error("Erreur réseau.");
+>>>>>>> Stashed changes
     } finally {
       setStarting(false);
     }
   }
 
+<<<<<<< Updated upstream
   if (loading) {
     return (
       <section className="space-y-3">
@@ -196,10 +303,117 @@ export function DailyChallengeCard() {
             </Button>
             <p className="text-xs text-amber-700/80 dark:text-amber-300/70">
               Récompense : ×{data.xpMultiplier} XP
+=======
+  // Expose a global hook so results-view can mark today's challenge as done.
+  // This avoids wiring a full store for a localStorage-only feature.
+  useEffect(() => {
+    (window as unknown as { __markDailyComplete?: (score: number, total: number) => void }).__markDailyComplete = (score: number, total: number) => {
+      if (!data?.dayKey) return;
+      const map = readCompletedMap();
+      map[data.dayKey] = { score, total };
+      writeCompletedMap(map);
+      setCompleted({ score, total });
+      toast.success(`Défi terminé : ${score}/${total} ✓`);
+    };
+  }, [data?.dayKey]);
+
+  if (loading) {
+    return <Skeleton className="h-40 rounded-xl" />;
+  }
+
+  if (!data) {
+    // Silently skip — daily challenge is a bonus, not critical
+    return null;
+  }
+
+  if (data.questions.length === 0) {
+    return (
+      <Card className="overflow-hidden p-5">
+        <div className="flex items-center gap-3">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-muted text-muted-foreground">
+            <CalendarDays className="h-6 w-6" />
+          </div>
+          <div>
+            <h3 className="font-semibold">Défi quotidien</h3>
+            <p className="text-sm text-muted-foreground">
+              {data.message ?? "Aucune question disponible aujourd'hui."}
+>>>>>>> Stashed changes
             </p>
           </div>
         </div>
       </Card>
+<<<<<<< Updated upstream
     </section>
+=======
+    );
+  }
+
+  const colorClass =
+    data.theme.color === "amber"
+      ? "from-amber-500 to-orange-600"
+      : data.theme.color === "violet"
+        ? "from-violet-500 to-purple-600"
+        : data.theme.color === "emerald"
+          ? "from-emerald-500 to-teal-600"
+          : data.theme.color === "rose"
+            ? "from-rose-500 to-pink-600"
+            : data.theme.color === "sky"
+              ? "from-sky-500 to-cyan-600"
+              : data.theme.color === "cyan"
+                ? "from-cyan-500 to-teal-600"
+                : "from-teal-500 to-emerald-600";
+
+  return (
+    <Card className="group relative overflow-hidden p-5">
+      <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${colorClass}`} />
+      <div className="flex items-start gap-3">
+        <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${colorClass} text-white shadow-sm`}>
+          <Flame className="h-6 w-6" />
+        </div>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-2">
+            <h3 className="font-semibold leading-tight">Défi quotidien</h3>
+            <Badge variant="secondary" className="text-[10px]">
+              <CalendarDays className="mr-1 h-3 w-3" />
+              {data.dayKey}
+            </Badge>
+          </div>
+          <p className="mt-0.5 text-sm font-medium text-muted-foreground">
+            Thème du jour : <span className="text-foreground">{data.theme.label}</span>
+          </p>
+          <p className="mt-1 text-xs text-muted-foreground">
+            10 questions — même défi pour tous les joueurs aujourd&apos;hui.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-4 flex items-center justify-between gap-2">
+        {completed ? (
+          <Badge className="gap-1 border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300">
+            <CheckCircle2 className="h-3 w-3" />
+            Terminé : {completed.score}/{completed.total}
+          </Badge>
+        ) : (
+          <Badge variant="outline" className="gap-1">
+            <Trophy className="h-3 w-3" />
+            À relever
+          </Badge>
+        )}
+        <Button
+          size="sm"
+          className={`gap-1.5 bg-gradient-to-r ${colorClass} text-white hover:opacity-90`}
+          onClick={startChallenge}
+          disabled={starting || completed !== null}
+        >
+          {starting ? (
+            <span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-current border-t-transparent" />
+          ) : (
+            <Play className="h-3.5 w-3.5" />
+          )}
+          {completed ? "Déjà terminé" : "Commencer le défi"}
+        </Button>
+      </div>
+    </Card>
+>>>>>>> Stashed changes
   );
 }

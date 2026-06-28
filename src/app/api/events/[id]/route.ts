@@ -5,16 +5,22 @@ import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
+<<<<<<< Updated upstream
 /**
  * GET /api/events/[id]
  * Fetch a single event by id.
  */
 export async function GET(
   _request: Request,
+=======
+export async function GET(
+  _req: Request,
+>>>>>>> Stashed changes
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { id } = await params;
+<<<<<<< Updated upstream
     const event = await db.event.findUnique({
       where: { id },
       include: {
@@ -45,10 +51,26 @@ export async function GET(
  */
 export async function DELETE(
   _request: Request,
+=======
+    const event = await db.event.findUnique({ where: { id } });
+    if (!event) {
+      return NextResponse.json({ error: "Événement introuvable" }, { status: 404 });
+    }
+    return NextResponse.json(event);
+  } catch (error) {
+    console.error("Failed to load event:", error);
+    return NextResponse.json({ error: "Failed to load event" }, { status: 500 });
+  }
+}
+
+export async function DELETE(
+  _req: Request,
+>>>>>>> Stashed changes
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
+<<<<<<< Updated upstream
     if (!session?.user) {
       return NextResponse.json(
         { error: "Connexion requise" },
@@ -83,5 +105,16 @@ export async function DELETE(
       { error: "Failed to delete event" },
       { status: 500 }
     );
+=======
+    if (!session?.user || (session.user as { role?: string }).role !== "ADMIN") {
+      return NextResponse.json({ error: "Réservé à l'administrateur" }, { status: 403 });
+    }
+    const { id } = await params;
+    await db.event.delete({ where: { id } });
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error("Failed to delete event:", error);
+    return NextResponse.json({ error: "Failed to delete event" }, { status: 500 });
+>>>>>>> Stashed changes
   }
 }

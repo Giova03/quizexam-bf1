@@ -8,6 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import {
   Users,
   TrendingUp,
+<<<<<<< Updated upstream
   Database,
   Activity,
   GraduationCap,
@@ -19,12 +20,23 @@ import {
   Plus,
   FileText,
   Sparkles,
+=======
+  Plus,
+  BarChart3,
+  Download,
+  Mail,
+  GraduationCap,
+  FileInput,
+  ShieldAlert,
+  LineChart,
+>>>>>>> Stashed changes
 } from "lucide-react";
 import { toast } from "sonner";
 import { PdfUploadDialog } from "@/components/quiz/pdf-upload-dialog";
 import { AdminAnalytics } from "@/components/quiz/admin-analytics";
 import { AiQuestionGenerator } from "@/components/quiz/ai-question-generator";
 
+<<<<<<< Updated upstream
 import { OverviewTab } from "@/components/quiz/admin/admin-overview";
 import { VisitorsStats, ProgressTracker } from "@/components/quiz/admin/admin-visitors";
 import { BanksTab, NewBankDialog } from "@/components/quiz/admin/admin-banks";
@@ -53,6 +65,37 @@ import type { AdminStats, BankWithCount } from "@/components/quiz/admin/types";
  *
  * All tab content components live in ./admin/*.tsx; this file is just the
  * shell.
+=======
+import type { AdminStats, BankWithCount } from "./admin/types";
+import { AdminOverview } from "./admin/admin-overview";
+import { VisitorsStats, ProgressTracker } from "./admin/admin-visitors";
+import { AdminBanks, BankQuestionsDialog, NewBankDialog } from "./admin/admin-banks";
+import { SessionsList } from "./admin/admin-sessions";
+import { ExamsManager, NewExamDialog } from "./admin/admin-exams";
+import { ExportsPanel, BroadcastPanel } from "./admin/admin-exports";
+import { ImportsPanel } from "./admin/admin-import";
+import { AdminAnalytics } from "./admin/admin-analytics";
+import { ModerationPanel } from "./moderation-panel";
+
+/**
+ * AdminView — point d'entrée du panneau d'administration.
+ *
+ * Composant orchestrateur :
+ *  - Charge les statistiques (GET /api/admin/stats)
+ *  - Vérifie le rôle ADMIN
+ *  - Affiche la barre de navigation par onglets
+ *  - Délègue chaque onglet à un module dédié dans ./admin/
+ *
+ * Toute la logique métier a été extraite dans ces modules :
+ *  - admin-overview.tsx      → Vue d'ensemble + TopPerformers/Alertes
+ *  - admin-visitors.tsx      → Visiteurs + Progression
+ *  - admin-banks.tsx         → Banques, BankQuestionsDialog, QuestionEditor, NewBankDialog
+ *  - admin-sessions.tsx      → Liste des sessions
+ *  - admin-exams.tsx         → ExamsManager + NewExamDialog
+ *  - admin-exports.tsx       → Export CSV + Broadcast
+ *  - admin-import.tsx        → ImportsPanel (5 méthodes d'import)
+ *  - types.ts                → Interfaces partagées
+>>>>>>> Stashed changes
  */
 export function AdminView() {
   const { data: session } = useSession();
@@ -62,8 +105,11 @@ export function AdminView() {
   const [newBankOpen, setNewBankOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("overview");
   const [newExamOpen, setNewExamOpen] = useState(false);
+<<<<<<< Updated upstream
   const [broadcastOpen, setBroadcastOpen] = useState(false);
   const [pdfUploadOpen, setPdfUploadOpen] = useState(false);
+=======
+>>>>>>> Stashed changes
 
   const loadStats = useCallback(async () => {
     setLoading(true);
@@ -82,7 +128,7 @@ export function AdminView() {
     fetch("/api/admin/init", { method: "POST" }).catch(() => {});
   }, [loadStats]);
 
-  if (loading)
+  if (loading) {
     return (
       <div className="space-y-4">
         <Skeleton className="h-8 w-64" />
@@ -93,9 +139,10 @@ export function AdminView() {
         </div>
       </div>
     );
+  }
 
   const isAdmin = (session?.user as { role?: string })?.role === "ADMIN";
-  if (!isAdmin)
+  if (!isAdmin) {
     return (
       <Card className="flex flex-col items-center gap-3 p-12 text-center">
         <ShieldCheck className="h-12 w-12 text-muted-foreground/50" />
@@ -105,24 +152,40 @@ export function AdminView() {
         </p>
       </Card>
     );
+  }
 
+<<<<<<< Updated upstream
   // Tab definitions — order matters (matches the visible button order).
   const TABS = [
     { id: "overview", label: "Vue d'ensemble", icon: TrendingUp },
+=======
+  // Configuration des onglets (label + icône)
+  const tabs = [
+    { id: "overview", label: "Vue d'ensemble", icon: TrendingUp },
+    { id: "analytics", label: "Analytics", icon: LineChart },
+>>>>>>> Stashed changes
     { id: "visitors", label: "Visiteurs", icon: Users },
     { id: "progress", label: "Progression", icon: BarChart3 },
     { id: "banks", label: "Banques & QCM", icon: Database },
     { id: "sessions", label: "Sessions", icon: Activity },
     { id: "exams", label: "Examens", icon: GraduationCap },
+<<<<<<< Updated upstream
     { id: "exports", label: "Export", icon: Download },
     { id: "broadcast", label: "Broadcast", icon: Mail },
     { id: "analytics", label: "Analytics", icon: BarChart3 },
     { id: "moderation", label: "Modération", icon: ShieldAlert },
     { id: "ai-generator", label: "Générateur IA", icon: Sparkles },
+=======
+    { id: "imports", label: "Import", icon: FileInput },
+    { id: "exports", label: "Export", icon: Download },
+    { id: "moderation", label: "Modération", icon: ShieldAlert },
+    { id: "broadcast", label: "Broadcast", icon: Mail },
+>>>>>>> Stashed changes
   ] as const;
 
   return (
     <div className="space-y-6">
+      {/* En-tête */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="flex items-center gap-2 text-2xl font-bold">
@@ -152,9 +215,15 @@ export function AdminView() {
         </div>
       </div>
 
+<<<<<<< Updated upstream
       {/* Tab navigation — simple buttons for maximum reliability (NOT Radix Tabs). */}
       <div className="flex flex-wrap gap-2">
         {TABS.map((tab) => {
+=======
+      {/* Navigation par onglets */}
+      <div className="flex flex-wrap gap-2">
+        {tabs.map((tab) => {
+>>>>>>> Stashed changes
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
           return (
@@ -174,6 +243,7 @@ export function AdminView() {
         })}
       </div>
 
+<<<<<<< Updated upstream
       {/* === Tab content === */}
       {activeTab === "overview" && <OverviewTab stats={stats} />}
 
@@ -206,6 +276,34 @@ export function AdminView() {
       {activeTab === "ai-generator" && <AiQuestionGenerator />}
 
       {/* === Cross-tab dialogs === */}
+=======
+      {/* Contenu de l'onglet actif */}
+      {activeTab === "overview" && <AdminOverview stats={stats} />}
+
+      {activeTab === "analytics" && <AdminAnalytics />}
+
+      {activeTab === "visitors" && <VisitorsStats />}
+
+      {activeTab === "progress" && <ProgressTracker />}
+
+      {activeTab === "banks" && (
+        <AdminBanks stats={stats} onSelectBank={setSelectedBank} />
+      )}
+
+      {activeTab === "sessions" && <SessionsList />}
+
+      {activeTab === "exams" && <ExamsManager onNew={() => setNewExamOpen(true)} />}
+
+      {activeTab === "imports" && <ImportsPanel onChanged={() => loadStats()} />}
+
+      {activeTab === "exports" && <ExportsPanel />}
+
+      {activeTab === "moderation" && <ModerationPanel />}
+
+      {activeTab === "broadcast" && <BroadcastPanel />}
+
+      {/* Dialogues globaux */}
+>>>>>>> Stashed changes
       {selectedBank && (
         <BankQuestionsDialog
           bank={selectedBank}
@@ -231,6 +329,7 @@ export function AdminView() {
           toast.success("Examen créé avec succès");
         }}
       />
+<<<<<<< Updated upstream
 
       <PdfUploadDialog
         open={pdfUploadOpen}
@@ -240,3 +339,11 @@ export function AdminView() {
     </div>
   );
 }
+=======
+    </div>
+  );
+}
+
+// Ré-export des icônes utilisées ailleurs (compatibilité)
+export { Users, FileQuestion, BookOpen, Trophy, Activity, Database, TrendingUp };
+>>>>>>> Stashed changes

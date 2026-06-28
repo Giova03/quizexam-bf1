@@ -1,14 +1,23 @@
 "use client";
 
+<<<<<<< Updated upstream
 import { useState, useEffect } from "react";
+=======
+import { useEffect, useState } from "react";
+>>>>>>> Stashed changes
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Clock } from "lucide-react";
 
 /**
+<<<<<<< Updated upstream
  * SessionsList — "Sessions" tab. Fetches all sessions and renders them in a
  * scrollable list with score, mode, started/completed timestamps.
+=======
+ * SessionsList — onglet "Sessions" du panneau admin.
+ * Liste toutes les sessions (terminées et en cours) avec leur score.
+>>>>>>> Stashed changes
  */
 export function SessionsList() {
   const [sessions, setSessions] = useState<any[]>([]);
