@@ -55,3 +55,4 @@ server.log
 start-dev.sh
 tool-results/
 tool-results/
+db/*.db
