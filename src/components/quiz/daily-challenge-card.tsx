@@ -137,69 +137,81 @@ export function DailyChallengeCard() {
       <div className="flex items-center gap-2">
         <CalendarClock className="h-5 w-5 text-amber-600" />
         <h2 className="text-xl font-semibold">Défi du jour</h2>
-        <Badge variant="secondary" className="gap-1">
+        <Badge className="gap-1 bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:from-amber-500 hover:to-orange-600">
           <Flame className="h-3 w-3" />
           2× XP
         </Badge>
       </div>
 
-      <Card className="relative overflow-hidden border-2 border-amber-200 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 p-5 dark:border-amber-800/60 dark:from-amber-950/40 dark:via-orange-950/30 dark:to-amber-950/40">
-        <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-amber-400/20 blur-2xl" />
-        <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="min-w-0 flex-1 space-y-2">
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge className="gap-1 bg-amber-500 text-white hover:bg-amber-500">
-                <Sparkles className="h-3 w-3" />
-                {data.theme}
-              </Badge>
-              <Badge variant="outline" className="border-amber-300 text-amber-700 dark:border-amber-700 dark:text-amber-300">
-                {data.questionIds.length} questions
-              </Badge>
-              {completedToday && (
-                <Badge className="gap-1 bg-emerald-500 text-white hover:bg-emerald-500">
-                  <CheckCircle2 className="h-3 w-3" />
-                  Terminé aujourd&apos;hui
+      <div className="group relative overflow-hidden rounded-2xl p-[2px]">
+        {/* Animated gradient border */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 animate-[gradientShift_8s_ease_infinite] bg-[linear-gradient(110deg,#f59e0b,#f97316,#fbbf24,#f97316,#f59e0b)] bg-[length:200%_100%] opacity-90 group-hover:opacity-100"
+        />
+        <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 p-5 shadow-xl dark:from-amber-950/60 dark:via-orange-950/50 dark:to-amber-950/60 sm:p-7">
+          <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-amber-400/30 blur-3xl" />
+          <div className="absolute -bottom-10 left-1/4 h-24 w-24 rounded-full bg-orange-400/20 blur-3xl" />
+          <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="min-w-0 flex-1 space-y-2">
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge className="gap-1 bg-amber-500 text-white hover:bg-amber-500">
+                  <Sparkles className="h-3 w-3" />
+                  {data.theme}
                 </Badge>
-              )}
+                <Badge
+                  variant="outline"
+                  className="border-amber-300 bg-white/60 text-amber-700 dark:border-amber-700 dark:bg-black/20 dark:text-amber-300"
+                >
+                  {data.questionIds.length} questions
+                </Badge>
+                {completedToday && (
+                  <Badge className="gap-1 bg-emerald-500 text-white hover:bg-emerald-500">
+                    <CheckCircle2 className="h-3 w-3" />
+                    Terminé aujourd&apos;hui
+                  </Badge>
+                )}
+              </div>
+              <h3 className="text-lg font-bold leading-tight text-amber-900 dark:text-amber-100 sm:text-2xl">
+                {data.title}
+              </h3>
+              <p className="text-sm text-amber-800/90 dark:text-amber-200/80 sm:text-base">
+                {data.message ??
+                  "10 questions sélectionnées pour vous aujourd'hui. Tous les joueurs auront les mêmes !"}
+              </p>
             </div>
-            <h3 className="text-lg font-bold leading-tight text-amber-900 dark:text-amber-100">
-              {data.title}
-            </h3>
-            <p className="text-sm text-amber-800/90 dark:text-amber-200/80">
-              {data.message ??
-                "10 questions sélectionnées pour vous aujourd'hui. Tous les joueurs auront les mêmes !"}
-            </p>
-          </div>
 
-          <div className="flex shrink-0 flex-col gap-2 sm:items-end">
-            <Button
-              onClick={handleStart}
-              disabled={starting}
-              className="gap-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:opacity-90"
-            >
-              {starting ? (
-                <>
-                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                  Démarrage…
-                </>
-              ) : completedToday ? (
-                <>
-                  <RefreshCw className="h-4 w-4" />
-                  Refaire le défi
-                </>
-              ) : (
-                <>
-                  <Play className="h-4 w-4" />
-                  Commencer le défi
-                </>
-              )}
-            </Button>
-            <p className="text-xs text-amber-700/80 dark:text-amber-300/70">
-              Récompense : ×{data.xpMultiplier} XP
-            </p>
+            <div className="flex shrink-0 flex-col gap-2 sm:items-end">
+              <Button
+                onClick={handleStart}
+                disabled={starting}
+                size="lg"
+                className="gap-2 bg-gradient-to-r from-amber-500 to-orange-600 px-6 text-base text-white shadow-lg shadow-amber-500/30 hover:opacity-90"
+              >
+                {starting ? (
+                  <>
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                    Démarrage…
+                  </>
+                ) : completedToday ? (
+                  <>
+                    <RefreshCw className="h-5 w-5" />
+                    Refaire le défi
+                  </>
+                ) : (
+                  <>
+                    <Play className="h-5 w-5" />
+                    Commencer le défi
+                  </>
+                )}
+              </Button>
+              <p className="text-xs text-amber-700/80 dark:text-amber-300/70">
+                Récompense : ×{data.xpMultiplier} XP
+              </p>
+            </div>
           </div>
-        </div>
-      </Card>
+        </Card>
+      </div>
     </section>
   );
 }

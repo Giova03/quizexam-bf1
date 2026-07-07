@@ -1234,7 +1234,7 @@ export default function Home() {
               navigation. The shimmer-skeleton fallback (ViewSkeleton)
               shows while the chunk downloads. */}
           <Suspense fallback={<ViewSkeleton />}>
-            {view === "home" && <HomeView />}
+            {view === "home" && <HomeView onOpenCustomExam={() => setCustomExamOpen(true)} />}
             {view === "bank-detail" && <BankDetailView />}
             {view === "exam-detail" && <ExamDetailView />}
             {view === "session" && <SessionView />}
