@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { cacheInvalidate, CACHE_KEYS } from "@/lib/cache";
+import { invalidateBanksListCache } from "@/lib/cache";
 export const dynamic = "force-dynamic";
 
 async function requireAdmin() {
@@ -11,11 +11,49 @@ async function requireAdmin() {
   return session;
 }
 
+/** Valid education levels (added in E1). */
+const VALID_EDUCATION_LEVELS = new Set([
+  "BEPC",
+  "BAC",
+  "LICENCE",
+  "CONCOURS",
+  "TOUS",
+]);
+
+/**
+ * Coerce an incoming educationLevel value to a valid level. Defaults to
+ * "TOUS" so callers who omit the field inherit the bank's level.
+ */
+function normalizeEducationLevel(v: unknown): string {
+  if (typeof v === "string" && VALID_EDUCATION_LEVELS.has(v.toUpperCase())) {
+    return v.toUpperCase();
+  }
+  return "TOUS";
+}
+
+/** Coerce an incoming tags value to a comma-separated string. */
+function normalizeTags(v: unknown): string {
+  if (Array.isArray(v)) {
+    return v
+      .map((t) => String(t).trim())
+      .filter(Boolean)
+      .join(",");
+  }
+  if (typeof v === "string") return v.trim();
+  return "";
+}
+
+/** Coerce an incoming chapter / subject value to a clean string | null. */
+function normalizeOptionalString(v: unknown): string | null {
+  if (typeof v === "string" && v.trim()) return v.trim();
+  return null;
+}
+
 export async function POST(request: Request) {
   const session = await requireAdmin();
   if (!session) return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
   const body = await request.json();
-  const { bankId, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, difficulty, imageUrl, audioUrl } = body;
+  const { bankId, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, difficulty, imageUrl, audioUrl, educationLevel, tags, chapter, subject } = body;
   if (!bankId || !question || !optionA || !optionB || !optionC || !optionD || !correctAnswer || !explanation)
     return NextResponse.json({ error: "Tous les champs sont requis" }, { status: 400 });
   if (!["A", "B", "C", "D"].includes(correctAnswer))
@@ -31,6 +69,10 @@ export async function POST(request: Request) {
     typeof imageUrl === "string" && imageUrl.trim() ? imageUrl.trim() : null;
   const validAudioUrl =
     typeof audioUrl === "string" && audioUrl.trim() ? audioUrl.trim() : null;
+  const validEducationLevel = normalizeEducationLevel(educationLevel);
+  const validTags = normalizeTags(tags);
+  const validChapter = normalizeOptionalString(chapter);
+  const validSubject = normalizeOptionalString(subject);
   const count = await db.question.count({ where: { bankId } });
   // Create the question WITHOUT imageUrl/audioUrl via the Prisma client.
   // The dev server's Turbopack-cached Prisma client may not know about the
@@ -52,6 +94,12 @@ export async function POST(request: Request) {
       difficulty: validDifficulty,
       imageUrl: validImageUrl,
       audioUrl: validAudioUrl,
+      // E1 fields — included directly in the create call because they were
+      // added to the schema before any other "raw SQL backfill" was needed.
+      educationLevel: validEducationLevel,
+      tags: validTags,
+      chapter: validChapter,
+      subject: validSubject,
     },
   });
   // Backfill the media columns via raw SQL (bypasses Prisma's field validation).
@@ -63,7 +111,7 @@ export async function POST(request: Request) {
     `;
   }
   // Question count for this bank changed — invalidate the cached banks list.
-  cacheInvalidate(CACHE_KEYS.banksList);
+  invalidateBanksListCache();
   return NextResponse.json({ ...q, imageUrl: validImageUrl, audioUrl: validAudioUrl });
 }
 
@@ -71,7 +119,7 @@ export async function PATCH(request: Request) {
   const session = await requireAdmin();
   if (!session) return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
   const body = await request.json();
-  const { id, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, difficulty, imageUrl, audioUrl } = body;
+  const { id, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, difficulty, imageUrl, audioUrl, educationLevel, tags, chapter, subject } = body;
   if (!id) return NextResponse.json({ error: "ID requis" }, { status: 400 });
   // Validate difficulty if provided.
   let difficultyUpdate: { difficulty?: string } = {};
@@ -95,6 +143,13 @@ export async function PATCH(request: Request) {
       ...(correctAnswer2 !== undefined && { correctAnswer2 }),
       ...(explanation !== undefined && { explanation }),
       ...difficultyUpdate,
+      // E1 fields — only update when the caller explicitly provided them.
+      ...(educationLevel !== undefined && {
+        educationLevel: normalizeEducationLevel(educationLevel),
+      }),
+      ...(tags !== undefined && { tags: normalizeTags(tags) }),
+      ...(chapter !== undefined && { chapter: normalizeOptionalString(chapter) }),
+      ...(subject !== undefined && { subject: normalizeOptionalString(subject) }),
     },
   });
   // Backfill media columns via raw SQL when the caller explicitly provided
@@ -118,7 +173,7 @@ export async function PATCH(request: Request) {
   // Edits don't change the count, but they DO change the bank's contents.
   // Invalidate so /api/banks (which only returns counts) stays accurate for
   // the count field — and future endpoints that inline questions stay fresh.
-  cacheInvalidate(CACHE_KEYS.banksList);
+  invalidateBanksListCache();
   return NextResponse.json(updated);
 }
 
@@ -129,6 +184,6 @@ export async function DELETE(request: Request) {
   const id = searchParams.get("id");
   if (!id) return NextResponse.json({ error: "ID requis" }, { status: 400 });
   await db.question.delete({ where: { id } });
-  cacheInvalidate(CACHE_KEYS.banksList);
+  invalidateBanksListCache();
   return NextResponse.json({ success: true });
 }

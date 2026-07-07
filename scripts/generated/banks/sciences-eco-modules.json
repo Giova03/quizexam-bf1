@@ -7,5 +7,6 @@
   "color": "cyan",
   "level": "LICENCE",
   "bankKey": "sciences-eco-modules",
-  "questions": []
+  "questions": [],
+  "educationLevel": "LICENCE"
 }

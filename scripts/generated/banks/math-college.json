@@ -349,5 +349,6 @@
       "explanation": "En utilisant la formule du cosinus : cos(BAC) = (AB² + AC² - BC²)/(2×AB×AC) = (49 + 25 - 64)/(2×7×5) = 10/70 = 1/7. Donc BAC = arccos(1/7) ≈ 60°",
       "difficulty": "medium"
     }
-  ]
+  ],
+  "educationLevel": "BEPC"
 }

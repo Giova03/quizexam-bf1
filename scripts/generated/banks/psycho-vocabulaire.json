@@ -7,5 +7,6 @@
   "color": "amber",
   "level": "TOUS",
   "bankKey": "psycho-vocabulaire",
-  "questions": []
+  "questions": [],
+  "educationLevel": "TOUS"
 }

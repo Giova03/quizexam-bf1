@@ -7,5 +7,6 @@
   "color": "rose",
   "level": "LICENCE",
   "bankKey": "action-sociale",
-  "questions": []
+  "questions": [],
+  "educationLevel": "CONCOURS"
 }

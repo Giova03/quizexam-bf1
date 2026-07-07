@@ -37,6 +37,12 @@ import { AdvancedCharts } from "./advanced-charts";
 import { AnkiExportButton } from "./anki-export-button";
 import { AITutorPanel } from "./ai-tutor-panel";
 import { EventsWidget } from "./events-widget";
+import { AIRecommendations } from "./ai-recommendations";
+import { PredictSuccess } from "./predict-success-card";
+import { QuestsPanel } from "./quests-panel";
+import { LeagueBadge } from "./league-badge";
+import { SeasonsCard } from "./seasons-card";
+import { ConceptStats } from "./concept-stats";
 
 interface SessionAnswer {
   id: string;
@@ -215,6 +221,9 @@ export function DashboardView() {
         <EventsWidget />
         {/* Referral program — visible even before any quiz session */}
         <ReferralCard />
+        {/* AI adaptive recommendations — at least the daily challenge is
+            always available even without history. */}
+        <AIRecommendations />
       </div>
     );
 
@@ -362,6 +371,15 @@ export function DashboardView() {
             </div>
           </Card>
 
+          {/* Gamification widgets (E4) — quests panel, league leaderboard,
+              and seasonal trophies. Shown prominently after the strip so
+              the user always sees what to do next + their competitive rank. */}
+          <div className="grid gap-4 lg:grid-cols-2">
+            <QuestsPanel compact onSeeAll={() => useQuizStore.getState().setView("quests")} />
+            <LeagueBadge full />
+          </div>
+          <SeasonsCard />
+
           {/* Badges */}
           <Card className="p-4">
             <p className="mb-3 text-sm font-semibold">
@@ -395,11 +413,20 @@ export function DashboardView() {
           {/* Upcoming events widget */}
           <EventsWidget />
 
+          {/* AI adaptive features (added in E2) */}
+          <AIRecommendations />
+
+          {/* Predicted success rate */}
+          <PredictSuccess />
+
           {/* Weekly activity chart */}
           <WeeklyChart sessions={completed} />
 
           {/* Advanced charts (Recharts) — 30-day progression, radar, bar, pie */}
           <AdvancedCharts sessions={completed} />
+
+          {/* Concept statistics — heatmap + radar by category (E6.4) */}
+          <ConceptStats />
         </TabsContent>
 
         {/* === Per-Quiz Tab === */}

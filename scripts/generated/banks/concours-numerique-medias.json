@@ -359,5 +359,6 @@
       "explanation": "La principale différence entre le stockage sur le cloud et le stockage local est que le cloud permet d'accéder aux données de n'importe où et à tout moment avec une connexion internet, tandis que le stockage local nécessite d'être physiquement proche du périphérique de stockage pour accéder aux données.",
       "difficulty": "medium"
     }
-  ]
+  ],
+  "educationLevel": "CONCOURS"
 }

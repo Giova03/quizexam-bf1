@@ -1,30 +1,62 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import { cacheGet, cacheSet, cacheInvalidate, CACHE_KEYS } from "@/lib/cache";
+import {
+  cacheGet,
+  cacheSet,
+  invalidateBanksListCache,
+  CACHE_KEYS,
+  EDUCATION_LEVELS,
+} from "@/lib/cache";
 
 export const dynamic = "force-dynamic";
 
-const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+/**
+ * Valid education levels. Used to validate the `?level=` query param so
+ * callers cannot inject arbitrary SQL/Prisma filter values.
+ *
+ * "TOUS" means "applies to every level" — banks with this level are always
+ * returned regardless of the filter (so a bank tagged TOUS shows up under
+ * BEPC, BAC, LICENCE and CONCOURS filters alike).
+ */
+const VALID_LEVELS = new Set<string>(EDUCATION_LEVELS);
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    // Cache the banks list for 5 minutes (default TTL) to avoid hitting the
-    // DB on every page load. The cache is invalidated by the admin mutation
-    // endpoints (create/update/delete bank, create/update/delete question —
-    // since the per-bank question count is part of the response).
-    const cached = cacheGet<unknown>(CACHE_KEYS.banksList);
+    // Parse the optional `?level=` query param.
+    // - If `level` is missing or invalid → return all banks (no filter).
+    // - If `level=TOUS` → also return all banks (no filter).
+    // - Otherwise → return banks whose `educationLevel` is either the
+    //   requested level OR "TOUS" (the "applies to every level" wildcard).
+    const { searchParams } = new URL(request.url);
+    const rawLevel = searchParams.get("level")?.toUpperCase().trim() ?? "";
+
+    // Cache key includes the level so different filters don't shadow each other.
+    const cacheKey = `${CACHE_KEYS.banksList}:level=${rawLevel || "ALL"}`;
+
+    const cached = cacheGet<unknown>(cacheKey);
     if (cached) {
       return NextResponse.json(cached);
     }
 
+    const where =
+      rawLevel && VALID_LEVELS.has(rawLevel) && rawLevel !== "TOUS"
+        ? {
+            OR: [
+              { educationLevel: rawLevel },
+              { educationLevel: "TOUS" },
+            ],
+          }
+        : undefined;
+
     const banks = await db.questionBank.findMany({
+      where,
       orderBy: { createdAt: "asc" },
       include: {
         _count: { select: { questions: true } },
       },
     });
 
-    cacheSet(CACHE_KEYS.banksList, banks);
+    cacheSet(cacheKey, banks);
     return NextResponse.json(banks);
   } catch (error) {
     console.error("Failed to list banks:", error);
@@ -37,6 +69,8 @@ export async function GET() {
 
 // Invalide le cache si la route est étendue pour des écritures (POST futur)
 export async function POST() {
-  cacheInvalidate(CACHE_KEYS.banksList);
+  // Invalidate every cached variant (no level + every known level) since a
+  // new bank affects potentially all of them.
+  invalidateBanksListCache();
   return NextResponse.json({ ok: true });
 }

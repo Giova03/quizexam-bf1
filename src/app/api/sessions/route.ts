@@ -3,6 +3,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { checkLimit, FREE_DAILY_LIMIT } from "@/lib/subscription-limits";
+import { applyUserRateLimit } from "@/lib/api-rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -31,8 +32,12 @@ interface CreateSessionBody {
 const VALID_DIFFICULTIES = ["easy", "medium", "hard"] as const;
 
 // GET — list sessions for the current user (with answers for dashboard)
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    // E6.7 — per-user rate limiting (100 req/min).
+    const limit = await applyUserRateLimit(request);
+    if (!limit.allowed && limit.response) return limit.response;
+
     const session = await getServerSession(authOptions);
     if (!session?.user?.email) {
       return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
@@ -78,6 +83,10 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
+    // E6.7 — per-user rate limiting (100 req/min).
+    const limit = await applyUserRateLimit(request);
+    if (!limit.allowed && limit.response) return limit.response;
+
     const body = (await request.json()) as CreateSessionBody;
     const { title, mode, sourceType, sourceId, questionIds, difficulty } = body;
 

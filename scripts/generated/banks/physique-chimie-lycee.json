@@ -479,5 +479,6 @@
       "explanation": "Pour une compression isotherme, W = nRT ln(V1/V2) = nRT ln(P2/P1) = 1×8.314×300×ln(4) ≈ 3.5 kJ.",
       "difficulty": "medium"
     }
-  ]
+  ],
+  "educationLevel": "BAC"
 }

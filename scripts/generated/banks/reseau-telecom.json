@@ -638,5 +638,6 @@
       "explanation": "DHCP (Dynamic Host Configuration Protocol) permet aux serveurs d'attribuer automatiquement des adresses IP et d'autres paramètres réseau aux clients, simplifiant la gestion des réseaux.",
       "difficulty": "medium"
     }
-  ]
+  ],
+  "educationLevel": "LICENCE"
 }

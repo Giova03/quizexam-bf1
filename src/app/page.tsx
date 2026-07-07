@@ -5,13 +5,42 @@ import { useSession } from "next-auth/react";
 import { useQuizStore } from "@/lib/quiz-store";
 import { usePrefs } from "@/lib/prefs-store";
 import { useTranslation } from "@/lib/use-translation";
-import { HomeView } from "@/components/quiz/home-view";
-import { BankDetailView } from "@/components/quiz/bank-detail-view";
-import { ExamDetailView } from "@/components/quiz/exam-detail-view";
-import { SessionView } from "@/components/quiz/session-view";
-import { ResultsView } from "@/components/quiz/results-view";
-import { DashboardView } from "@/components/quiz/dashboard-view";
-import { SocialView } from "@/components/quiz/social-view";
+// E6: All views are now lazy-loaded (code splitting complet).
+// Each view is its own JS chunk fetched on first navigation. Suspense
+// fallbacks show shimmer skeletons while the chunk downloads.
+const HomeView = lazy(() =>
+  import("@/components/quiz/home-view").then((m) => ({ default: m.HomeView })),
+);
+const BankDetailView = lazy(() =>
+  import("@/components/quiz/bank-detail-view").then((m) => ({
+    default: m.BankDetailView,
+  })),
+);
+const ExamDetailView = lazy(() =>
+  import("@/components/quiz/exam-detail-view").then((m) => ({
+    default: m.ExamDetailView,
+  })),
+);
+const SessionView = lazy(() =>
+  import("@/components/quiz/session-view").then((m) => ({
+    default: m.SessionView,
+  })),
+);
+const ResultsView = lazy(() =>
+  import("@/components/quiz/results-view").then((m) => ({
+    default: m.ResultsView,
+  })),
+);
+const DashboardView = lazy(() =>
+  import("@/components/quiz/dashboard-view").then((m) => ({
+    default: m.DashboardView,
+  })),
+);
+const SocialView = lazy(() =>
+  import("@/components/quiz/social-view").then((m) => ({
+    default: m.SocialView,
+  })),
+);
 import { CustomExamDialog } from "@/components/quiz/custom-exam-dialog";
 import { SearchDialog } from "@/components/quiz/search-dialog";
 import { RealtimeNotification } from "@/components/quiz/realtime-notification";
@@ -30,6 +59,17 @@ import { OnboardingTourContainer, restartOnboarding } from "@/components/quiz/on
 import { HelpButton } from "@/components/quiz/help-button";
 import { PricingModal } from "@/components/quiz/pricing-modal";
 import { ApiDocsView } from "@/components/quiz/api-docs-view";
+// E4 — gamification bridge (registers quest-reward callback + refreshes
+// quests/league/seasons stores on mount).
+import { GamificationBridge } from "@/components/quiz/gamification-bridge";
+// E6 — screen reader announcer + global error tracker.
+import { SrAnnouncer } from "@/components/quiz/sr-announcer";
+import { announcePageChange } from "@/lib/screen-reader";
+import {
+  installGlobalErrorTracker,
+  captureError,
+} from "@/lib/error-tracking";
+import { LeagueBadge } from "@/components/quiz/league-badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import {
@@ -70,6 +110,18 @@ import {
   CalendarDays,
   Newspaper,
   HelpCircle,
+  Target,
+  TreePalm,
+  ShoppingBag,
+  Coins,
+  // E5 — social feature icons:
+  Mail,
+  UserCheck,
+  BookOpen,
+  Radio,
+  // E6 — pedagogy feature icons:
+  FileText,
+  CalendarCheck,
 } from "lucide-react";
 
 // --- Lazy-loaded secondary views --------------------------------------------
@@ -125,10 +177,87 @@ const BlogView = lazy(() =>
     default: m.BlogView,
   }))
 );
+const StudyPlanView = lazy(() =>
+  import("@/components/quiz/study-plan-view").then((m) => ({
+    default: m.StudyPlanView,
+  }))
+);
+// E4 — gamification views (lazy-loaded to keep the main bundle small).
+const QuestsPanelFull = lazy(() =>
+  import("@/components/quiz/quests-panel").then((m) => ({
+    default: m.QuestsPanel,
+  }))
+);
+const SkillTree = lazy(() =>
+  import("@/components/quiz/skill-tree").then((m) => ({
+    default: m.SkillTree,
+  }))
+);
+const ShopView = lazy(() =>
+  import("@/components/quiz/shop-view").then((m) => ({
+    default: m.ShopView,
+  }))
+);
+// E5 — social views (lazy-loaded to keep the main bundle small).
+const MessagesView = lazy(() =>
+  import("@/components/quiz/messages-view").then((m) => ({
+    default: m.MessagesView,
+  }))
+);
+const MentorshipView = lazy(() =>
+  import("@/components/quiz/mentorship-view").then((m) => ({
+    default: m.MentorshipView,
+  }))
+);
+const WikiView = lazy(() =>
+  import("@/components/quiz/wiki-view").then((m) => ({
+    default: m.WikiView,
+  }))
+);
+const LiveSessionsView = lazy(() =>
+  import("@/components/quiz/live-sessions-view").then((m) => ({
+    default: m.LiveSessionsView,
+  }))
+);
+// E6 — pedagogy views (lazy-loaded to keep the main bundle small).
+const OfficialExamView = lazy(() =>
+  import("@/components/quiz/official-exam-view").then((m) => ({
+    default: m.OfficialExamView,
+  }))
+);
+const StudySheetView = lazy(() =>
+  import("@/components/quiz/study-sheet-view").then((m) => ({
+    default: m.StudySheetView,
+  }))
+);
+const GuidedPath = lazy(() =>
+  import("@/components/quiz/guided-path").then((m) => ({
+    default: m.GuidedPath,
+  }))
+);
 
 // Shared Suspense fallback for any lazy view.
+// E6: upgraded to a shimmer skeleton (multiple lines + a card) so the
+// loading state is more polished than a single grey box.
 function ViewSkeleton() {
-  return <Skeleton className="h-64 w-full rounded-xl" />;
+  return (
+    <div className="space-y-4">
+      <div className="shimmer h-8 w-1/3 rounded-md bg-muted" />
+      <Skeleton className="h-32 w-full rounded-xl" />
+      <Skeleton className="h-64 w-full rounded-xl" />
+    </div>
+  );
+}
+
+/**
+ * Small inline component that renders the user's QuizCoins balance.
+ * Lives in the header next to the league badge. Subscribes to the prefs
+ * store so it re-renders whenever the balance changes (after a quiz, after
+ * claiming a quest, after buying a shop item).
+ */
+function CoinsBalance() {
+  const coins = usePrefs((s) => s.quizCoins);
+  return <>{coins}</>;
 }
 
 export default function Home() {
@@ -147,6 +276,17 @@ export default function Home() {
     openGroups,
     openEvents,
     openBlog,
+    openStudyPlan,
+    openQuests,
+    openSkillTree,
+    openShop,
+    openMessages,
+    openMentorship,
+    openWiki,
+    openLiveSessions,
+    openOfficialExam,
+    openStudySheet,
+    openGuidedPath,
     startSession,
   } = useQuizStore();
   const { t } = useTranslation();
@@ -217,6 +357,40 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => setSplashDone(true), 1800);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Sticky-header shadow on scroll (E3). Toggles a CSS class that adds a
+  // subtle box-shadow once the user scrolls past 4px, giving the header a
+  // "lifted" premium feel without breaking the transparent glass at rest.
+  const [headerScrolled, setHeaderScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setHeaderScrolled(window.scrollY > 4);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // E6.6 — install the global error tracker on mount (window.onerror +
+  // unhandledrejection). Idempotent — safe to call once.
+  useEffect(() => {
+    const cleanup = installGlobalErrorTracker();
+    return cleanup;
+  }, []);
+
+  // E6.9 — announce the view change to screen reader users.
+  useEffect(() => {
+    announcePageChange(view);
+  }, [view]);
+
+  // E6.6 — wrap the unauthenticated-state effect below so any future
+  // top-level error is reported. (Currently a no-op but kept here as
+  // a hook point for future global try/catch wrappers.)
+  useEffect(() => {
+    // Surface any prior client-side errors (already in localStorage) to
+    // the admin badge on first load — handled by the admin view itself.
+    // This effect is intentionally a no-op captureError call so the
+    // tracker module initialises (loads the buffer from localStorage).
+    void captureError;
   }, []);
 
   // Show loading while session is being checked
@@ -291,6 +465,11 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-muted/30">
       <SplashScreen />
       <PreferencesApplier />
+      {/* E4 — wires quest rewards into the prefs store + refreshes the
+          quests / league / seasons stores on mount + on prefs changes. */}
+      <GamificationBridge />
+      {/* E6.9 — invisible aria-live regions for screen reader announcements. */}
+      <SrAnnouncer />
 
       {/* Offline banner */}
       {!isOnline && (
@@ -300,8 +479,12 @@ export default function Home() {
         </div>
       )}
 
-      {/* Header */}
-      <header className="sticky top-0 z-40 border-b bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/65">
+      {/* Header — glassmorphism + shadow on scroll (E3) */}
+      <header
+        className={`glass-strong sticky top-0 z-40 border-b border-white/20 transition-shadow dark:border-white/5 ${
+          headerScrolled ? "header-scrolled" : ""
+        }`}
+      >
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-4">
           {/* Logo + brand */}
           <button
@@ -369,7 +552,7 @@ export default function Home() {
                   <TooltipTrigger asChild>
                     <Button
                       size="sm"
-                      className="gap-1.5 bg-gradient-to-r from-violet-500 to-purple-600 text-white hover:opacity-90"
+                      className="gap-1.5 bg-gradient-to-r from-violet-500 to-purple-600 text-white hover:opacity-90 pulse-glow"
                       onClick={() => setCustomExamOpen(true)}
                     >
                       <Sparkles className="h-4 w-4" />
@@ -399,6 +582,17 @@ export default function Home() {
                             view === "groups" ||
                             view === "events" ||
                             view === "blog" ||
+                            view === "study-plan" ||
+                            view === "quests" ||
+                            view === "skill-tree" ||
+                            view === "shop" ||
+                            view === "messages" ||
+                            view === "mentorship" ||
+                            view === "wiki" ||
+                            view === "live-sessions" ||
+                            view === "official-exam" ||
+                            view === "study-sheet" ||
+                            view === "guided-path" ||
                             view === "about"
                               ? "secondary"
                               : "ghost"
@@ -458,11 +652,89 @@ export default function Home() {
                     Blog
                   </DropdownMenuItem>
                   <DropdownMenuItem
+                    onClick={openMessages}
+                    className="gap-2 text-violet-600 focus:text-violet-600"
+                  >
+                    <Mail className="h-4 w-4" />
+                    Messagerie
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openMentorship}
+                    className="gap-2 text-emerald-600 focus:text-emerald-600"
+                  >
+                    <UserCheck className="h-4 w-4" />
+                    Mentorat
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openWiki}
+                    className="gap-2 text-emerald-600 focus:text-emerald-600"
+                  >
+                    <BookOpen className="h-4 w-4" />
+                    Wiki
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openLiveSessions}
+                    className="gap-2 text-rose-600 focus:text-rose-600"
+                  >
+                    <Radio className="h-4 w-4" />
+                    Sessions live
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openStudyPlan}
+                    className="gap-2 text-violet-600 focus:text-violet-600"
+                  >
+                    <Sparkles className="h-4 w-4" />
+                    Parcours IA
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openOfficialExam}
+                    className="gap-2 text-violet-600 focus:text-violet-600"
+                  >
+                    <GraduationCap className="h-4 w-4" />
+                    Examen blanc officiel
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openStudySheet}
+                    className="gap-2 text-emerald-600 focus:text-emerald-600"
+                  >
+                    <FileText className="h-4 w-4" />
+                    Fiches de révision
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openGuidedPath}
+                    className="gap-2 text-amber-600 focus:text-amber-600"
+                  >
+                    <CalendarCheck className="h-4 w-4" />
+                    Parcours 30 jours
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
                     onClick={openCompetition}
                     className="gap-2 text-rose-600 focus:text-rose-600"
                   >
                     <Swords className="h-4 w-4" />
                     Compétition
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem
+                    onClick={openQuests}
+                    className="gap-2 text-amber-600 focus:text-amber-600"
+                  >
+                    <Target className="h-4 w-4" />
+                    Quêtes
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openSkillTree}
+                    className="gap-2 text-emerald-600 focus:text-emerald-600"
+                  >
+                    <TreePalm className="h-4 w-4" />
+                    Arbre de compétences
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openShop}
+                    className="gap-2 text-violet-600 focus:text-violet-600"
+                  >
+                    <ShoppingBag className="h-4 w-4" />
+                    Boutique
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem
@@ -520,6 +792,23 @@ export default function Home() {
             </nav>
 
             <div className="mx-1 hidden h-6 w-px bg-border sm:block" />
+
+            {/* E4 — League badge (compact) + QuizCoins balance.
+                Click the league badge → opens the leaderboard view.
+                Click the coins balance → opens the shop. */}
+            <div className="hidden items-center gap-1.5 sm:flex">
+              <LeagueBadge onClick={openLeaderboard} />
+              <button
+                onClick={openShop}
+                className="inline-flex items-center gap-1 rounded-full border border-amber-300 bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-700 transition-all hover:scale-105 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-300"
+                aria-label="QuizCoins — ouvrir la boutique"
+              >
+                <Coins className="h-3.5 w-3.5" />
+                <span className="tabular-nums">
+                  <CoinsBalance />
+                </span>
+              </button>
+            </div>
 
             {/* Search button */}
             <TooltipProvider>
@@ -640,7 +929,7 @@ export default function Home() {
           <div className="flex items-center gap-1 overflow-x-auto">
             <Button
               size="sm"
-              className="gap-1.5 bg-gradient-to-r from-violet-500 to-purple-600 text-white"
+              className="gap-1.5 bg-gradient-to-r from-violet-500 to-purple-600 text-white pulse-glow"
               onClick={() => setCustomExamOpen(true)}
             >
               <Sparkles className="h-3.5 w-3.5" />
@@ -679,6 +968,17 @@ export default function Home() {
                     view === "groups" ||
                     view === "events" ||
                     view === "blog" ||
+                    view === "study-plan" ||
+                    view === "quests" ||
+                    view === "skill-tree" ||
+                    view === "shop" ||
+                    view === "messages" ||
+                    view === "mentorship" ||
+                    view === "wiki" ||
+                    view === "live-sessions" ||
+                    view === "official-exam" ||
+                    view === "study-sheet" ||
+                    view === "guided-path" ||
                     view === "about"
                       ? "secondary"
                       : "ghost"
@@ -731,11 +1031,89 @@ export default function Home() {
                   Blog
                 </DropdownMenuItem>
                 <DropdownMenuItem
+                  onClick={openMessages}
+                  className="gap-2 text-violet-600 focus:text-violet-600"
+                >
+                  <Mail className="h-4 w-4" />
+                  Messagerie
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openMentorship}
+                  className="gap-2 text-emerald-600 focus:text-emerald-600"
+                >
+                  <UserCheck className="h-4 w-4" />
+                  Mentorat
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openWiki}
+                  className="gap-2 text-emerald-600 focus:text-emerald-600"
+                >
+                  <BookOpen className="h-4 w-4" />
+                  Wiki
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openLiveSessions}
+                  className="gap-2 text-rose-600 focus:text-rose-600"
+                >
+                  <Radio className="h-4 w-4" />
+                  Sessions live
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openStudyPlan}
+                  className="gap-2 text-violet-600 focus:text-violet-600"
+                >
+                  <Sparkles className="h-4 w-4" />
+                  Parcours IA
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openOfficialExam}
+                  className="gap-2 text-violet-600 focus:text-violet-600"
+                >
+                  <GraduationCap className="h-4 w-4" />
+                  Examen blanc
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openStudySheet}
+                  className="gap-2 text-emerald-600 focus:text-emerald-600"
+                >
+                  <FileText className="h-4 w-4" />
+                  Fiches
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openGuidedPath}
+                  className="gap-2 text-amber-600 focus:text-amber-600"
+                >
+                  <CalendarCheck className="h-4 w-4" />
+                  30 jours
+                </DropdownMenuItem>
+                <DropdownMenuItem
                   onClick={openCompetition}
                   className="gap-2 text-rose-600 focus:text-rose-600"
                 >
                   <Swords className="h-4 w-4" />
                   Compétition
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem
+                  onClick={openQuests}
+                  className="gap-2 text-amber-600 focus:text-amber-600"
+                >
+                  <Target className="h-4 w-4" />
+                  Quêtes
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openSkillTree}
+                  className="gap-2 text-emerald-600 focus:text-emerald-600"
+                >
+                  <TreePalm className="h-4 w-4" />
+                  Arbre de compétences
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={openShop}
+                  className="gap-2 text-violet-600 focus:text-violet-600"
+                >
+                  <ShoppingBag className="h-4 w-4" />
+                  Boutique
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
@@ -791,17 +1169,20 @@ export default function Home() {
         data-tour="home"
       >
         <ErrorBoundary>
-          {/* Eager views — main user flow (no Suspense needed) */}
-          {view === "home" && <HomeView />}
-          {view === "bank-detail" && <BankDetailView />}
-          {view === "exam-detail" && <ExamDetailView />}
-          {view === "session" && <SessionView />}
-          {view === "results" && <ResultsView />}
-          {view === "dashboard" && <DashboardView />}
-          {view === "social" && <SocialView />}
-
-          {/* Lazy views — wrapped in Suspense with a skeleton fallback */}
+          {/* E6: ALL views are now lazy-loaded and wrapped in Suspense.
+              Each view ships in its own JS chunk, fetched on first
+              navigation. The shimmer-skeleton fallback (ViewSkeleton)
+              shows while the chunk downloads. */}
           <Suspense fallback={<ViewSkeleton />}>
+            {view === "home" && <HomeView />}
+            {view === "bank-detail" && <BankDetailView />}
+            {view === "exam-detail" && <ExamDetailView />}
+            {view === "session" && <SessionView />}
+            {view === "results" && <ResultsView />}
+            {view === "dashboard" && <DashboardView />}
+            {view === "social" && <SocialView />}
+
+            {/* Secondary views */}
             {view === "about" && <AboutView />}
             {view === "admin" && <AdminView />}
             {view === "leaderboard" && <LeaderboardView />}
@@ -813,6 +1194,20 @@ export default function Home() {
             {view === "groups" && <StudyGroupsView />}
             {view === "events" && <EventsView />}
             {view === "blog" && <BlogView />}
+            {view === "study-plan" && <StudyPlanView />}
+            {/* E4 — gamification views */}
+            {view === "quests" && <QuestsPanelFull />}
+            {view === "skill-tree" && <SkillTree />}
+            {view === "shop" && <ShopView />}
+            {/* E5 — social views */}
+            {view === "messages" && <MessagesView />}
+            {view === "mentorship" && <MentorshipView />}
+            {view === "wiki" && <WikiView />}
+            {view === "live-sessions" && <LiveSessionsView />}
+            {/* E6 — pedagogy views */}
+            {view === "official-exam" && <OfficialExamView />}
+            {view === "study-sheet" && <StudySheetView />}
+            {view === "guided-path" && <GuidedPath />}
           </Suspense>
         </ErrorBoundary>
       </main>

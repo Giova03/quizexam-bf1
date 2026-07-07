@@ -2,6 +2,8 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import { useQuizStore } from "@/lib/quiz-store";
+import { usePrefs } from "@/lib/prefs-store";
+import { useQuests } from "@/lib/quests-store";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -16,6 +18,8 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import type { QuizSession, SessionAnswer } from "@/lib/types";
+import { Confetti, ProgressRing } from "./animated-components";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   ArrowLeft,
   ArrowRight,
@@ -24,22 +28,61 @@ import {
   Flag,
   Zap,
   Trophy,
-  Info,
   AlertCircle,
-  Bookmark,
-  Clock,
 } from "lucide-react";
 
 const OPTION_LETTERS = ["A", "B", "C", "D"] as const;
 
+/**
+ * Module-level set of session IDs already recorded by prefs/quests stores.
+ * Prevents double-counting XP/coins/streak when the user re-opens the
+ * results view (which can happen via navigation, page reload, etc.). The set
+ * is backed by localStorage so it survives reloads.
+ */
+const RECORDED_KEY = "quizexam:recorded-sessions";
+function readRecordedSet(): Set<string> {
+  try {
+    const raw = window.localStorage.getItem(RECORDED_KEY);
+    if (!raw) return new Set();
+    const arr = JSON.parse(raw);
+    return Array.isArray(arr) ? new Set(arr) : new Set();
+  } catch {
+    return new Set();
+  }
+}
+function markSessionRecorded(id: string) {
+  try {
+    const set = readRecordedSet();
+    set.add(id);
+    // Keep the last 200 entries to avoid unbounded growth.
+    const arr = Array.from(set).slice(-200);
+    window.localStorage.setItem(RECORDED_KEY, JSON.stringify(arr));
+  } catch {
+    // ignore
+  }
+}
+function isSessionRecorded(id: string): boolean {
+  return readRecordedSet().has(id);
+}
+
+type FeedbackAnim = "correct" | "wrong" | null;
+
 export function SessionView() {
   const { currentSessionId, viewResults, goHome } = useQuizStore();
+  const recordSessionPref = usePrefs((s) => s.recordSession);
+  const recordSessionQuest = useQuests((s) => s.recordSession);
   const [session, setSession] = useState<QuizSession | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [submitting, setSubmitting] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // E3: feedback animations + confetti
+  const [feedbackAnim, setFeedbackAnim] = useState<FeedbackAnim>(null);
+  const [confettiFire, setConfettiFire] = useState(0);
+  const reduceMotion = useReducedMotion();
+  const shakeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const loadSession = useCallback(async () => {
     if (!currentSessionId) return;
@@ -69,6 +112,19 @@ export function SessionView() {
     loadSession();
   }, [loadSession]);
 
+  // Clean up the shake timer on unmount.
+  useEffect(() => {
+    return () => {
+      if (shakeTimerRef.current) clearTimeout(shakeTimerRef.current);
+    };
+  }, []);
+
+  // Reset the feedback animation whenever the current question changes so
+  // the shake / pop-in only plays once per answer.
+  useEffect(() => {
+    setFeedbackAnim(null);
+  }, [currentIdx]);
+
   async function submitAnswer(answerId: string, choice: "A" | "B" | "C" | "D") {
     if (!session) return;
     setSubmitting(true);
@@ -85,6 +141,27 @@ export function SessionView() {
       if (res.ok) {
         const updated = await res.json();
         setSession(updated);
+
+        // E3: trigger confetti on correct, shake on wrong — only in
+        // immediate mode (final mode gives no feedback until the end).
+        if (session.mode === "immediate") {
+          const justAnswered = updated.answers?.find(
+            (a: SessionAnswer) => a.id === answerId,
+          );
+          if (justAnswered?.isCorrect === true) {
+            setFeedbackAnim("correct");
+            setConfettiFire((n) => n + 1);
+          } else if (justAnswered?.isCorrect === false) {
+            setFeedbackAnim("wrong");
+            if (!reduceMotion) {
+              if (shakeTimerRef.current) clearTimeout(shakeTimerRef.current);
+              shakeTimerRef.current = setTimeout(
+                () => setFeedbackAnim(null),
+                600,
+              );
+            }
+          }
+        }
       } else {
         setError("Erreur lors de l'enregistrement.");
       }
@@ -105,8 +182,44 @@ export function SessionView() {
         method: "POST",
       });
       if (res.ok) {
+        const completed = (await res.json()) as QuizSession;
+        setSession(completed);
+
+        // --- Record the session into the local gamification stores (E4) ---
+        // Guarded by a localStorage-backed set so the same session is only
+        // ever recorded once across reloads.
+        if (!isSessionRecorded(completed.id)) {
+          markSessionRecorded(completed.id);
+          const correct = (completed.answers ?? []).filter(
+            (a) => a.isCorrect === true,
+          ).length;
+          const total = completed.totalQuestions;
+          const isDailyChallenge =
+            completed.sourceType === "bank" &&
+            completed.sourceId === "daily-challenge";
+          const isExam = completed.sourceType === "exam";
+          const ctx = {
+            bankId: isDailyChallenge
+              ? undefined
+              : completed.sourceType === "bank"
+                ? completed.sourceId
+                : undefined,
+            isExam,
+            isDailyChallenge,
+            completedAt: completed.completedAt ?? new Date().toISOString(),
+            startedAt: completed.startedAt,
+          };
+          recordSessionPref(correct, total, ctx);
+          recordSessionQuest({
+            correct,
+            total,
+            bankId: ctx.bankId,
+            isDailyChallenge,
+          });
+        }
+
         setConfirmOpen(false);
-        viewResults(session.id);
+        viewResults(completed.id);
       } else {
         setError("Échec de la finalisation.");
       }
@@ -169,6 +282,9 @@ export function SessionView() {
 
   return (
     <div className="space-y-6">
+      {/* Confetti burst on correct answer */}
+      <Confetti fire={confettiFire} count={70} duration={2600} />
+
       {/* Top bar */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
@@ -183,7 +299,7 @@ export function SessionView() {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <Badge
             variant="outline"
             className={
@@ -207,113 +323,146 @@ export function SessionView() {
           <Badge variant="secondary">
             {answeredCount}/{answers.length} répondues
           </Badge>
-        </div>
-      </div>
-
-      {/* Progress */}
-      <div className="space-y-1.5">
-        <Progress value={progress} className="h-2" />
-        <div className="flex flex-wrap gap-1">
-          {answers.map((a, idx) => {
-            const isAnswered = a.userAnswer !== null;
-            const isCurrent = idx === currentIdx;
-            return (
-              <button
-                key={a.id}
-                onClick={() => setCurrentIdx(idx)}
-                className={`flex h-7 w-7 items-center justify-center rounded-md text-xs font-medium transition-colors ${
-                  isCurrent
-                    ? "bg-emerald-500 text-white"
-                    : isAnswered
-                      ? "bg-emerald-100 text-emerald-700"
-                      : "bg-muted text-muted-foreground"
-                }`}
-                aria-label={`Question ${idx + 1}`}
-              >
-                {idx + 1}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Question card */}
-      {current && (
-        <Card className="overflow-hidden p-4 sm:p-6">
-          <div className="mb-4 flex items-start gap-3">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-sm font-bold text-emerald-700">
-              {currentIdx + 1}
+          {/* E3: progress ring (replaces the linear bar visual) */}
+          <ProgressRing
+            value={progress / 100}
+            size={48}
+            strokeWidth={5}
+            progressColor={isImmediate ? "#10b981" : "#8b5cf6"}
+            className="shrink-0 text-muted-foreground"
+          >
+            <span className="text-[10px] font-bold text-foreground">
+              {progress}%
             </span>
-            <h2 className="min-w-0 flex-1 pt-1 text-base font-semibold leading-snug sm:text-lg">
-              {current.questionText}
-            </h2>
-          </div>
+          </ProgressRing>
+        </div>
+      </div>
 
-          <div className="space-y-3">
-            {OPTION_LETTERS.map((letter) => {
-              const text =
-                letter === "A"
-                  ? current.optionA
-                  : letter === "B"
-                    ? current.optionB
-                    : letter === "C"
-                      ? current.optionC
-                      : current.optionD;
-              const isSelected = current.userAnswer === letter;
-              const isCorrectAnswer = current.correctAnswer === letter;
+      {/* Question grid (compact navigation) */}
+      <div className="flex flex-wrap gap-1">
+        {answers.map((a, idx) => {
+          const isAnswered = a.userAnswer !== null;
+          const isCurrent = idx === currentIdx;
+          // In immediate mode we can also colour-code correctness.
+          const isCorrect = isImmediate && a.isCorrect === true;
+          const isWrong = isImmediate && a.isCorrect === false;
+          return (
+            <button
+              key={a.id}
+              onClick={() => setCurrentIdx(idx)}
+              className={`flex h-7 w-7 items-center justify-center rounded-md text-xs font-medium transition-all ${
+                isCurrent
+                  ? "bg-emerald-500 text-white shadow-md ring-2 ring-emerald-300"
+                  : isCorrect
+                    ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300"
+                    : isWrong
+                      ? "bg-rose-100 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300"
+                      : isAnswered
+                        ? "bg-violet-100 text-violet-700 dark:bg-violet-950/50 dark:text-violet-300"
+                        : "bg-muted text-muted-foreground"
+              }`}
+              aria-label={`Question ${idx + 1}`}
+            >
+              {idx + 1}
+            </button>
+          );
+        })}
+      </div>
 
-              let stateClass =
-                "border-border hover:border-emerald-400 hover:bg-emerald-50/50";
-              if (showFeedback) {
-                if (isCorrectAnswer) {
-                  stateClass = "border-emerald-500 bg-emerald-50";
-                } else if (isSelected && !isCorrectAnswer) {
-                  stateClass = "border-rose-500 bg-rose-50";
-                } else {
-                  stateClass = "border-border opacity-60";
-                }
-              } else if (isSelected) {
-                stateClass = "border-emerald-500 bg-emerald-50";
-              }
+      {/* Slim linear progress bar (kept for at-a-glance scan) */}
+      <Progress value={progress} className="h-1.5" />
 
-              return (
-                <button
-                  key={letter}
-                  onClick={() => !current.userAnswer && submitAnswer(current.id, letter)}
-                  disabled={!!current.userAnswer || submitting}
-                  className={`flex w-full items-center gap-3 rounded-xl border-2 p-4 text-left transition-all ${stateClass} ${
-                    !current.userAnswer ? "cursor-pointer" : "cursor-default"
-                  }`}
-                >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-muted text-sm font-bold">
-                    {letter}
-                  </span>
-                  <span className="flex-1 text-sm sm:text-base">{text}</span>
-                  {showFeedback && isCorrectAnswer && (
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-600" />
-                  )}
-                  {showFeedback && isSelected && !isCorrectAnswer && (
-                    <XCircle className="h-5 w-5 shrink-0 text-rose-600" />
-                  )}
-                </button>
-              );
-            })}
-          </div>
+      {/* Question card — glass + smooth transitions */}
+      {current && (
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current.id}
+            initial={reduceMotion ? false : { opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={reduceMotion ? undefined : { opacity: 0, x: -24 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Card
+              className={`glass overflow-hidden p-4 shadow-sm sm:p-6 ${
+                feedbackAnim === "wrong" ? "animate-shake" : ""
+              } ${feedbackAnim === "correct" ? "animate-pop-in" : ""}`}
+            >
+              <div className="mb-4 flex items-start gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-sm font-bold text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">
+                  {currentIdx + 1}
+                </span>
+                <h2 className="min-w-0 flex-1 pt-1 text-base font-semibold leading-snug sm:text-lg">
+                  {current.questionText}
+                </h2>
+              </div>
 
-          {/* Feedback */}
-          {showFeedback && (
-            <div className={`mt-4 rounded-lg p-4 text-sm ${
-              current.isCorrect
-                ? "bg-emerald-50 text-emerald-800"
-                : "bg-amber-50 text-amber-800"
-            }`}>
-              <p className="font-semibold">
-                {current.isCorrect ? "✓ Correct !" : "✗ Incorrect"}
-              </p>
-              <p className="mt-1">{current.explanation}</p>
-            </div>
-          )}
-        </Card>
+              <div className="space-y-3">
+                {OPTION_LETTERS.map((letter) => {
+                  const text =
+                    letter === "A"
+                      ? current.optionA
+                      : letter === "B"
+                        ? current.optionB
+                        : letter === "C"
+                          ? current.optionC
+                          : current.optionD;
+                  const isSelected = current.userAnswer === letter;
+                  const isCorrectAnswer = current.correctAnswer === letter;
+
+                  let stateClass =
+                    "border-border hover:border-emerald-400 hover:bg-emerald-50/50";
+                  if (showFeedback) {
+                    if (isCorrectAnswer) {
+                      stateClass = "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/30";
+                    } else if (isSelected && !isCorrectAnswer) {
+                      stateClass = "border-rose-500 bg-rose-50 dark:bg-rose-950/30";
+                    } else {
+                      stateClass = "border-border opacity-60";
+                    }
+                  } else if (isSelected) {
+                    stateClass = "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/30";
+                  }
+
+                  return (
+                    <button
+                      key={letter}
+                      onClick={() => !current.userAnswer && submitAnswer(current.id, letter)}
+                      disabled={!!current.userAnswer || submitting}
+                      className={`flex w-full items-center gap-3 rounded-xl border-2 p-4 text-left transition-all ${stateClass} ${
+                        !current.userAnswer ? "cursor-pointer" : "cursor-default"
+                      }`}
+                    >
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-muted text-sm font-bold">
+                        {letter}
+                      </span>
+                      <span className="flex-1 text-sm sm:text-base">{text}</span>
+                      {showFeedback && isCorrectAnswer && (
+                        <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-600" />
+                      )}
+                      {showFeedback && isSelected && !isCorrectAnswer && (
+                        <XCircle className="h-5 w-5 shrink-0 text-rose-600" />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Feedback */}
+              {showFeedback && (
+                <div className={`mt-4 rounded-lg p-4 text-sm ${
+                  current.isCorrect
+                    ? "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-200"
+                    : "bg-amber-50 text-amber-800 dark:bg-amber-950/30 dark:text-amber-200"
+                }`}>
+                  <p className="font-semibold">
+                    {current.isCorrect ? "✓ Correct !" : "✗ Incorrect"}
+                  </p>
+                  <p className="mt-1">{current.explanation}</p>
+                </div>
+              )}
+            </Card>
+          </motion.div>
+        </AnimatePresence>
       )}
 
       {/* Navigation */}

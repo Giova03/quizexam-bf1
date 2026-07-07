@@ -687,5 +687,6 @@
       "correctAnswer": "A",
       "explanation": "args contient 2, 3 (2 éléments) et kwargs contient a, b (2 éléments). Le total est 4."
     }
-  ]
+  ],
+  "educationLevel": "LICENCE"
 }

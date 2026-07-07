@@ -35,6 +35,7 @@ export interface AdminStats {
     title: string;
     category: string;
     subcategory: string;
+    educationLevel?: string;
     _count: { questions: number };
   }>;
 }
@@ -53,6 +54,14 @@ export interface Question {
   difficulty?: string;
   imageUrl?: string | null;
   audioUrl?: string | null;
+  /** Education level (added in E1). */
+  educationLevel?: string;
+  /** Comma-separated tags (added in E1). */
+  tags?: string;
+  /** Optional chapter name (added in E1). */
+  chapter?: string | null;
+  /** Optional subject within the bank (added in E1). */
+  subject?: string | null;
 }
 
 export interface BankWithCount {
@@ -60,5 +69,7 @@ export interface BankWithCount {
   title: string;
   category: string;
   subcategory: string;
+  /** Education level (added in E1). */
+  educationLevel?: string;
   _count: { questions: number };
 }

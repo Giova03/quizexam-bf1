@@ -1197,5 +1197,6 @@
       "explanation": "La bêta-oxydation des acides gras se déroule principalement dans la mitochondrie pour la plupart des acides gras. Ce processus décompose les acides gras en molécules d'acétyl-CoA qui entrent ensuite dans le cycle de Krebs. Les peroxysomes sont également impliqués dans la bêta-oxydation, principalement pour les acides gras à chaîne très longue, tandis que le cytoplasme et le noyau ne sont pas impliqués dans ce métabolisme.",
       "difficulty": "medium"
     }
-  ]
+  ],
+  "educationLevel": "LICENCE"
 }

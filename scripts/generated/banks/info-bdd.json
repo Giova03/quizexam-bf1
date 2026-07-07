@@ -718,5 +718,6 @@
       "explanation": "Un SGBD relationnel représente les données et les relations entre elles sous forme de tables à deux dimensions (relations). Chaque table contient des lignes (enregistrements) et des colonnes (champs), et les relations entre les tables sont établies via des clés primaires et étrangères.",
       "difficulty": "medium"
     }
-  ]
+  ],
+  "educationLevel": "LICENCE"
 }

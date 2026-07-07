@@ -18,6 +18,40 @@ interface TutorBody {
     isCorrect: boolean | null;
     bankTitle?: string;
   }>;
+  /**
+   * Mode selector (added in E2):
+   *   - "chat"     (default): ask the tutor a question — uses AI.
+   *   - "analyze"            : return a structured weak/strong-areas
+   *                            analysis with recommendations (no AI call).
+   *
+   * Backward-compat: when `question` is present, the route behaves as
+   * before (chat mode), regardless of `mode`. The `analyze` mode is only
+   * triggered when the client explicitly asks for it AND no `question`
+   * is supplied (or `question` is the literal "analyze").
+   */
+  mode?: "chat" | "analyze";
+}
+
+// --- Shared types for the analysis payload -----------------------------
+interface WeakArea {
+  bank: string;
+  category: string;
+  wrongRate: number; // 0-100
+  total: number;
+}
+
+interface StrongArea {
+  bank: string;
+  category: string;
+  successRate: number; // 0-100
+  total: number;
+}
+
+interface AnalysisResponse {
+  weakAreas: WeakArea[];
+  strongAreas: StrongArea[];
+  recommendations: string[];
+  summary: string;
 }
 
 /**
@@ -26,11 +60,11 @@ interface TutorBody {
  * the most errors, and lists up to 3 sample wrong questions per bank.
  */
 function buildWeakAreasSummary(
-  history: NonNullable<TutorBody["userHistory"]>
+  history: NonNullable<TutorBody["userHistory"]>,
 ): string {
   if (history.length === 0) return "Aucun historique disponible.";
   const wrong = history.filter(
-    (a) => a.isCorrect === false || a.userAnswer === null
+    (a) => a.isCorrect === false || a.userAnswer === null,
   );
   if (wrong.length === 0) {
     return "Aucune erreur récente — l'utilisateur maîtrise bien les sujets abordés.";
@@ -50,7 +84,7 @@ function buildWeakAreasSummary(
       .slice(0, 3)
       .map(
         (w) =>
-          `  • "${w.questionText.slice(0, 90)}${w.questionText.length > 90 ? "…" : ""}" → bonne réponse: ${w.correctAnswer}`
+          `  • "${w.questionText.slice(0, 90)}${w.questionText.length > 90 ? "…" : ""}" → bonne réponse: ${w.correctAnswer}`,
       )
       .join("\n");
     return `- ${r.bank} (${r.items.length} erreur(s)):\n${samples}`;
@@ -72,13 +106,227 @@ STYLE :
 - Cite des notions vérifiables (président du Faso, AES, FESPACO, etc.) quand pertinent.
 - Si la question sort de ton domaine, dis-le simplement et propose une alternative.`;
 
+// ---------------------------------------------------------------------------
+// Analysis helpers
+// ---------------------------------------------------------------------------
+
+interface AnalysisSessionRow {
+  id: string;
+  title: string;
+  score: number;
+  totalQuestions: number;
+  startedAt: Date;
+  sourceType: string;
+  sourceId: string;
+  answers: Array<{
+    isCorrect: boolean | null;
+    userAnswer: string | null;
+  }>;
+}
+
+interface BankInfo {
+  id: string;
+  title: string;
+  category: string;
+}
+
+/**
+ * Fetch the user's recent completed sessions with their answers, plus a
+ * lookup of bank info (title + category) keyed by bank id. Sessions store
+ * `sourceId` (bank or exam id) + `sourceType` ("bank" | "exam").
+ */
+async function fetchAnalysisData(userId: string): Promise<{
+  sessions: AnalysisSessionRow[];
+  banks: Map<string, BankInfo>;
+}> {
+  const sessions = (await db.quizSession.findMany({
+    where: { userId, completedAt: { not: null } },
+    orderBy: { startedAt: "desc" },
+    take: 50,
+    select: {
+      id: true,
+      title: true,
+      score: true,
+      totalQuestions: true,
+      startedAt: true,
+      sourceType: true,
+      sourceId: true,
+      answers: {
+        select: { isCorrect: true, userAnswer: true },
+      },
+    },
+  })) as AnalysisSessionRow[];
+
+  const bankIds = new Set<string>();
+  for (const s of sessions) {
+    if (s.sourceType === "bank") bankIds.add(s.sourceId);
+  }
+  const bankRows = await db.questionBank.findMany({
+    where: { id: { in: Array.from(bankIds) } },
+    select: { id: true, title: true, category: true },
+  });
+  const banks = new Map<string, BankInfo>();
+  for (const b of bankRows) {
+    banks.set(b.id, { id: b.id, title: b.title, category: b.category });
+  }
+  return { sessions, banks };
+}
+
+/**
+ * Compute weak/strong areas + recommendations from the user's sessions.
+ *
+ * A "weak area" is a bank where the user's wrong rate is ≥ 30% on at least
+ * 5 answered questions. A "strong area" is a bank where the success rate
+ * is ≥ 70% on at least 5 answered questions.
+ */
+function analyzePerformance(
+  sessions: AnalysisSessionRow[],
+  banks: Map<string, BankInfo>,
+): AnalysisResponse {
+  // Aggregate per-bank stats.
+  const perBank = new Map<
+    string,
+    { bank: BankInfo; correct: number; wrong: number; skipped: number }
+  >();
+
+  for (const s of sessions) {
+    if (s.sourceType !== "bank") continue;
+    const info = banks.get(s.sourceId);
+    if (!info) continue;
+    const cur =
+      perBank.get(s.sourceId) ?? {
+        bank: info,
+        correct: 0,
+        wrong: 0,
+        skipped: 0,
+      };
+    for (const a of s.answers) {
+      if (a.isCorrect === true) cur.correct++;
+      else if (a.isCorrect === false) cur.wrong++;
+      else cur.skipped++;
+    }
+    perBank.set(s.sourceId, cur);
+  }
+
+  const weakAreas: WeakArea[] = [];
+  const strongAreas: StrongArea[] = [];
+
+  for (const { bank, correct, wrong, skipped } of perBank.values()) {
+    const total = correct + wrong + skipped;
+    if (total < 5) continue; // not enough data
+    const wrongRate = Math.round(((wrong + skipped) / total) * 100);
+    const successRate = Math.round((correct / total) * 100);
+
+    if (wrongRate >= 30) {
+      weakAreas.push({
+        bank: bank.title,
+        category: bank.category,
+        wrongRate,
+        total,
+      });
+    }
+    if (successRate >= 70) {
+      strongAreas.push({
+        bank: bank.title,
+        category: bank.category,
+        successRate,
+        total,
+      });
+    }
+  }
+
+  // Sort: worst wrong rate first for weak; best success rate first for strong.
+  weakAreas.sort((a, b) => b.wrongRate - a.wrongRate);
+  strongAreas.sort((a, b) => b.successRate - a.successRate);
+
+  // Build recommendations.
+  const recommendations: string[] = [];
+
+  if (weakAreas.length === 0 && strongAreas.length === 0) {
+    recommendations.push(
+      "Continuez à faire des sessions — vous n'avez pas encore assez d'historique pour des recommandations ciblées.",
+    );
+  } else {
+    // 1) Top weak area → recommend refaire une session.
+    if (weakAreas[0]) {
+      recommendations.push(
+        `Vous ratez ${weakAreas[0].wrongRate}% des questions en « ${weakAreas[0].bank} » — révisez ce module en priorité (mode correction immédiate).`,
+      );
+    }
+    if (weakAreas[1]) {
+      recommendations.push(
+        `Travaillez aussi « ${weakAreas[1].bank} » (${weakAreas[1].wrongRate}% d'erreur) pour élargir vos bases.`,
+      );
+    }
+
+    // 2) Top strong area → encourage to maintain / go harder.
+    if (strongAreas[0]) {
+      recommendations.push(
+        `Vos meilleures performances sont en « ${strongAreas[0].bank} » (${strongAreas[0].successRate}% de réussite) — essayez des questions plus difficiles pour vous challenger.`,
+      );
+    }
+
+    // 3) Daily challenge reminder.
+    recommendations.push(
+      "Participez au défi du jour pour gagner 2× XP et tester votre polyvalence.",
+    );
+
+    // 4) Spaced repetition reminder for the worst weak area.
+    if (weakAreas[0]) {
+      recommendations.push(
+        `Ajoutez vos erreurs de « ${weakAreas[0].bank} » à la révision espacée pour les mémoriser à long terme.`,
+      );
+    }
+  }
+
+  // Build a short human-readable summary.
+  let summary: string;
+  if (perBank.size === 0) {
+    summary =
+      "Vous n'avez pas encore de session terminée sur une banque de questions.";
+  } else {
+    const totalCorrect = Array.from(perBank.values()).reduce(
+      (s, v) => s + v.correct,
+      0,
+    );
+    const totalAnswered = Array.from(perBank.values()).reduce(
+      (s, v) => s + v.correct + v.wrong,
+      0,
+    );
+    const overallPct =
+      totalAnswered > 0
+        ? Math.round((totalCorrect / totalAnswered) * 100)
+        : 0;
+    summary = `Sur ${perBank.size} banque(s) abordée(s), votre taux de réussite global est de ${overallPct}%. ${
+      weakAreas.length > 0
+        ? `${weakAreas.length} zone(s) de faiblesse identifiée(s).`
+        : "Aucune zone de faiblesse majeure."
+    } ${
+      strongAreas.length > 0
+        ? `${strongAreas.length} point(s) fort(s) à exploiter.`
+        : ""
+    }`.trim();
+  }
+
+  return {
+    weakAreas: weakAreas.slice(0, 5),
+    strongAreas: strongAreas.slice(0, 5),
+    recommendations,
+    summary,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Main route handler
+// ---------------------------------------------------------------------------
+
 export async function POST(request: Request) {
   try {
     const session = await getServerSession(authOptions);
     if (!session?.user?.email) {
       return NextResponse.json(
         { error: "Authentification requise" },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -89,12 +337,28 @@ export async function POST(request: Request) {
     if (!user) {
       return NextResponse.json(
         { error: "Utilisateur introuvable" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
-    // Freemium gate: AI Tutor is Premium-only.
+    // Freemium gate: AI Tutor chat is Premium-only. The analyze mode is
+    // available to everyone because it doesn't call the LLM (it's pure
+    // arithmetic on the user's session history).
     const tier = await getUserTier(user.id);
+
+    const body = (await request.json().catch(() => ({}))) as TutorBody;
+    const question = (body.question ?? "").trim();
+    const wantAnalyze =
+      body.mode === "analyze" && (question === "" || question === "analyze");
+
+    // --- Mode: analyze ----------------------------------------------------
+    if (wantAnalyze) {
+      const { sessions, banks } = await fetchAnalysisData(user.id);
+      const analysis = analyzePerformance(sessions, banks);
+      return NextResponse.json({ ...analysis, tier });
+    }
+
+    // --- Mode: chat (default, Premium-gated) ------------------------------
     if (tier !== "premium" && tier !== "admin") {
       return NextResponse.json(
         {
@@ -102,22 +366,20 @@ export async function POST(request: Request) {
             "Le Tuteur IA est réservé aux membres Premium. Passez à Premium pour l'utiliser.",
           code: "PREMIUM_REQUIRED",
         },
-        { status: 403 }
+        { status: 403 },
       );
     }
 
-    const body = (await request.json()) as TutorBody;
-    const question = (body.question ?? "").trim();
     if (!question) {
       return NextResponse.json(
         { error: "Question manquante" },
-        { status: 400 }
+        { status: 400 },
       );
     }
     if (question.length > 1000) {
       return NextResponse.json(
         { error: "Question trop longue (max 1000 caractères)" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -146,7 +408,7 @@ export async function POST(request: Request) {
         s.answers.map((a) => ({
           ...a,
           bankTitle: s.title,
-        }))
+        })),
       );
     }
 
@@ -203,13 +465,53 @@ Réponds à la question en tenant compte de ce contexte. Si la question porte su
     console.error("AI Tutor route error:", error);
     return NextResponse.json(
       { error: "Échec du Tuteur IA" },
-      { status: 500 }
+      { status: 500 },
+    );
+  }
+}
+
+/**
+ * GET handler — convenience wrapper for the analyze mode.
+ *
+ * `GET /api/ai-tutor` returns the structured weak/strong-areas analysis
+ * (same payload as `POST /api/ai-tutor` with `{ mode: "analyze" }`).
+ * Useful for the dashboard which can fetch the analysis without crafting
+ * a POST body.
+ */
+export async function GET() {
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.email) {
+      return NextResponse.json(
+        { error: "Authentification requise" },
+        { status: 401 },
+      );
+    }
+    const user = await db.user.findUnique({
+      where: { email: session.user.email },
+      select: { id: true },
+    });
+    if (!user) {
+      return NextResponse.json(
+        { error: "Utilisateur introuvable" },
+        { status: 404 },
+      );
+    }
+    const { sessions, banks } = await fetchAnalysisData(user.id);
+    const analysis = analyzePerformance(sessions, banks);
+    const tier = await getUserTier(user.id);
+    return NextResponse.json({ ...analysis, tier });
+  } catch (error) {
+    console.error("AI Tutor GET error:", error);
+    return NextResponse.json(
+      { error: "Échec de l'analyse" },
+      { status: 500 },
     );
   }
 }
 
 function deriveRecommendations(
-  history: NonNullable<TutorBody["userHistory"]>
+  history: NonNullable<TutorBody["userHistory"]>,
 ): string[] {
   if (history.length === 0) {
     return [
@@ -217,7 +519,7 @@ function deriveRecommendations(
     ];
   }
   const wrong = history.filter(
-    (a) => a.isCorrect === false || a.userAnswer === null
+    (a) => a.isCorrect === false || a.userAnswer === null,
   );
   if (wrong.length === 0) {
     return [
@@ -235,6 +537,6 @@ function deriveRecommendations(
     .slice(0, 3);
   return ranked.map(
     ([bank, count]) =>
-      `Refaire une session dans « ${bank} » (${count} erreur(s) récente(s)).`
+      `Refaire une session dans « ${bank} » (${count} erreur(s) récente(s)).`,
   );
 }

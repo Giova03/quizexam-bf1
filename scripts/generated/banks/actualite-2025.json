@@ -7,5 +7,6 @@
   "color": "rose",
   "level": "TOUS",
   "bankKey": "actualite-2025",
-  "questions": []
+  "questions": [],
+  "educationLevel": "TOUS"
 }

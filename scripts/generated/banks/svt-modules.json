@@ -7,5 +7,6 @@
   "color": "rose",
   "level": "LYCEE",
   "bankKey": "svt-modules",
-  "questions": []
+  "questions": [],
+  "educationLevel": "BEPC"
 }

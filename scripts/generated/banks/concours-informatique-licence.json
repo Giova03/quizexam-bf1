@@ -348,5 +348,6 @@
       "explanation": "La commande 'wc' (word count) permet de compter le nombre de lignes, de mots et de caractères dans un fichier ou l'entrée standard, avec l'option -l pour les lignes uniquement, -w pour les mots, et -c pour les caractères.",
       "difficulty": "medium"
     }
-  ]
+  ],
+  "educationLevel": "LICENCE"
 }

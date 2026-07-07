@@ -349,5 +349,6 @@
       "explanation": "La contrainte de calcul à l'ELS pour un acier d'armature de nuance FeE500 en situation durable est 500/1,15 = 435 MPa selon l'Eurocode 2.",
       "difficulty": "medium"
     }
-  ]
+  ],
+  "educationLevel": "CONCOURS"
 }

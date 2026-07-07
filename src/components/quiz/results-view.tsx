@@ -6,9 +6,14 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Progress } from "@/components/ui/progress";
 import type { QuizSession } from "@/lib/types";
 import { CertificateDialog } from "./certificate-dialog";
+import {
+  Confetti,
+  CountUp,
+  ProgressRing,
+} from "./animated-components";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   Trophy,
   CheckCircle2,
@@ -23,6 +28,7 @@ import {
 
 const OPTION_LETTERS = ["A", "B", "C", "D"] as const;
 const CERTIFICATE_THRESHOLD = 80;
+const CONFETTI_THRESHOLD = 50;
 
 export function ResultsView() {
   const { currentSessionId, goHome, openBank, openExam, session: storeSession } =
@@ -30,6 +36,12 @@ export function ResultsView() {
   const [session, setSession] = useState<QuizSession | null>(storeSession);
   const [loading, setLoading] = useState(!storeSession);
   const [certOpen, setCertOpen] = useState(false);
+
+  // E3: confetti burst — fires once on mount when the score is high enough.
+  // We use a numeric token (1) instead of a boolean so the Confetti
+  // component re-evaluates its effect when this fires.
+  const [confettiFire, setConfettiFire] = useState(0);
+  const reduceMotion = useReducedMotion();
 
   const loadSession = useCallback(async () => {
     if (!currentSessionId) return;
@@ -54,6 +66,20 @@ export function ResultsView() {
   useEffect(() => {
     loadSession();
   }, [loadSession]);
+
+  // E3: fire confetti once the session is loaded and the score qualifies.
+  // Runs only when we actually have a final percentage (avoids firing 0%
+  // confetti while loading). Reduced-motion users skip the confetti.
+  useEffect(() => {
+    if (!session || reduceMotion) return;
+    const total = session.totalQuestions;
+    if (total <= 0) return;
+    const pct = Math.round((session.score / total) * 100);
+    if (pct >= CONFETTI_THRESHOLD) {
+      const t = setTimeout(() => setConfettiFire(1), 350);
+      return () => clearTimeout(t);
+    }
+  }, [session, reduceMotion]);
 
   if (loading) {
     return (
@@ -93,36 +119,77 @@ export function ResultsView() {
 
   return (
     <div className="space-y-6">
-      {/* Score hero */}
-      <Card className={`overflow-hidden bg-gradient-to-br ${gradeColor} text-white`}>
-        <div className="p-8 text-center">
-          <Trophy className="mx-auto h-12 w-12" />
-          <h1 className="mt-3 text-3xl font-bold">
-            {percentage}% — {score}/{total}
-          </h1>
-          <p className="mt-1 text-lg text-white/90">
-            {passed
-              ? "Félicitations, vous avez réussi !"
-              : "Continuez à vous entraîner !"}
-          </p>
-          <div className="mx-auto mt-4 flex max-w-md justify-center gap-2">
-            <div className="flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 backdrop-blur">
-              <CheckCircle2 className="h-4 w-4" />
-              <span className="text-sm font-medium">{correct} correctes</span>
-            </div>
-            <div className="flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 backdrop-blur">
-              <XCircle className="h-4 w-4" />
-              <span className="text-sm font-medium">{wrong} fausses</span>
-            </div>
-            {skipped > 0 && (
-              <div className="flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 backdrop-blur">
-                <CircleDashed className="h-4 w-4" />
-                <span className="text-sm font-medium">{skipped} omises</span>
+      {/* Confetti on success */}
+      <Confetti fire={confettiFire} count={120} duration={4500} />
+
+      {/* Score hero — glass + progress ring + animated counter */}
+      <motion.div
+        initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      >
+      <Card className="glass relative overflow-hidden">
+        <div className={`absolute inset-0 bg-gradient-to-br ${gradeColor} opacity-95`} />
+        {/* Decorative blurred orbs */}
+        <div aria-hidden="true" className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-white/20 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -left-12 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
+        <div className="relative flex flex-col items-center gap-6 p-8 text-white md:flex-row md:items-center md:gap-10">
+          {/* Progress ring with % in centre */}
+          <ProgressRing
+            value={percentage / 100}
+            size={160}
+            strokeWidth={14}
+            progressColor="#ffffff"
+            trackColor="rgba(255,255,255,0.25)"
+            className="shrink-0"
+          >
+            <div className="text-center">
+              <div className="text-3xl font-bold leading-none">
+                <CountUp value={percentage} duration={1200} suffix="%" />
               </div>
-            )}
+              <div className="mt-1 text-[11px] font-medium uppercase tracking-wider opacity-80">
+                Score
+              </div>
+            </div>
+          </ProgressRing>
+
+          {/* Trophy + score + message + stats */}
+          <div className="flex-1 text-center md:text-left">
+            <Trophy className="mx-auto h-10 w-10 md:mx-0" />
+            <h1 className="mt-2 text-2xl font-bold md:text-3xl">
+              <CountUp value={score} duration={1200} /> / {total}
+            </h1>
+            <p className="mt-1 text-base text-white/90 md:text-lg">
+              {passed
+                ? "Félicitations, vous avez réussi !"
+                : "Continuez à vous entraîner !"}
+            </p>
+            <div className="mt-4 flex flex-wrap justify-center gap-2 md:justify-start">
+              <div className="flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 backdrop-blur">
+                <CheckCircle2 className="h-4 w-4" />
+                <span className="text-sm font-medium">
+                  <CountUp value={correct} /> correctes
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 backdrop-blur">
+                <XCircle className="h-4 w-4" />
+                <span className="text-sm font-medium">
+                  <CountUp value={wrong} /> fausses
+                </span>
+              </div>
+              {skipped > 0 && (
+                <div className="flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 backdrop-blur">
+                  <CircleDashed className="h-4 w-4" />
+                  <span className="text-sm font-medium">
+                    <CountUp value={skipped} /> omises
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </Card>
+      </motion.div>
 
       {/* Mode badge + actions */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -188,8 +255,8 @@ export function ResultsView() {
         </div>
       </div>
 
-      {/* Progress summary */}
-      <Card className="p-5">
+      {/* Progress summary — glass card */}
+      <Card className="glass p-5 shadow-sm">
         <div className="mb-2 flex items-center justify-between text-sm">
           <span className="font-medium">Répartition des réponses</span>
           <span className="text-muted-foreground">
@@ -198,22 +265,22 @@ export function ResultsView() {
         </div>
         <div className="flex h-3 overflow-hidden rounded-full">
           <div
-            className="bg-emerald-500"
+            className="bg-emerald-500 transition-all duration-700"
             style={{ width: `${(correct / total) * 100}%` }}
           />
           <div
-            className="bg-rose-500"
+            className="bg-rose-500 transition-all duration-700"
             style={{ width: `${(wrong / total) * 100}%` }}
           />
           <div
-            className="bg-muted-foreground/40"
+            className="bg-muted-foreground/40 transition-all duration-700"
             style={{ width: `${(skipped / total) * 100}%` }}
           />
         </div>
       </Card>
 
       {/* Detailed review - full responsive, no inner scroll */}
-      <Card className="overflow-hidden">
+      <Card className="glass overflow-hidden shadow-sm">
         <div className="border-b px-4 py-4 sm:px-6">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>

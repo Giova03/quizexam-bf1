@@ -10,7 +10,10 @@ export function PreferencesApplier() {
   const fontSize = usePrefs((s) => s.fontSize);
   const dyslexiaFont = usePrefs((s) => s.dyslexiaFont);
   const screenReaderHints = usePrefs((s) => s.screenReaderHints);
+  const colorBlindMode = usePrefs((s) => s.colorBlindMode);
   const locale = usePrefs((s) => s.locale);
+  // E4: purchased accent theme (emerald / violet / sunset / ocean / dark).
+  const activeTheme = usePrefs((s) => s.activeTheme);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -21,6 +24,28 @@ export function PreferencesApplier() {
     root.style.setProperty("--user-font-size", `${fontSize}%`);
     root.lang = locale;
   }, [highContrast, largeText, reduceMotion, dyslexiaFont, fontSize, locale]);
+
+  // E6.10 — apply color-blind mode class on <html>.
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.remove("cb-deuteranopia", "cb-protanopia", "cb-tritanopia");
+    if (colorBlindMode && colorBlindMode !== "none") {
+      root.classList.add(`cb-${colorBlindMode}`);
+    }
+  }, [colorBlindMode]);
+
+  // Apply the purchased theme by setting a `data-theme` attribute on <html>.
+  // The CSS in globals.css uses this attribute to override the accent color
+  // palette. The "default" / "emerald" theme clears the attribute (no
+  // override needed — emerald is the platform's default).
+  useEffect(() => {
+    const root = document.documentElement;
+    if (activeTheme && activeTheme !== "default" && activeTheme !== "emerald") {
+      root.setAttribute("data-theme", activeTheme);
+    } else {
+      root.removeAttribute("data-theme");
+    }
+  }, [activeTheme]);
 
   // Apply the custom base font-size (only when the user explicitly picked a
   // non-default value, so we don't fight Tailwind's default 16px).

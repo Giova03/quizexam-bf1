@@ -7,5 +7,6 @@
   "color": "rose",
   "level": "LICENCE",
   "bankKey": "medecine-sante",
-  "questions": []
+  "questions": [],
+  "educationLevel": "LICENCE"
 }

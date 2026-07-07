@@ -599,5 +599,6 @@
       "explanation": "f'(x) = 3x² - 3 et f''(x) = 6x. Le point d'inflexion est où f''(x) = 0, soit x = 0. Comme f'' change de signe en 0, il y a un seul point d'inflexion.",
       "difficulty": "medium"
     }
-  ]
+  ],
+  "educationLevel": "BAC"
 }

@@ -15,7 +15,15 @@ import {
   BookOpen,
   Volume2,
   RotateCcw,
+  Eye,
 } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 /**
  * Accessibility panel — embedded inside the Settings sheet.
@@ -29,6 +37,7 @@ import {
  *   - Reduce motion (reduce-motion class)
  *   - Dyslexia-friendly font ([data-dyslexia] attribute)
  *   - Screen-reader hints ([data-sr-hints] attribute)
+ *   - Color-blind mode (cb-deuteranopia / cb-protanopia / cb-tritanopia class)
  *
  * Slider:
  *   - Base font size (12-24 px)
@@ -40,12 +49,14 @@ export function AccessibilityPanel() {
     reduceMotion = false,
     dyslexiaFont = false,
     screenReaderHints = false,
+    colorBlindMode = "none",
     fontSize,
     toggleHighContrast,
     toggleLargeText,
     toggleReduceMotion,
     toggleDyslexiaFont,
     toggleScreenReaderHints,
+    setColorBlindMode,
     setFontSize,
   } = usePrefs();
 
@@ -55,6 +66,7 @@ export function AccessibilityPanel() {
     if (reduceMotion) toggleReduceMotion();
     if (dyslexiaFont) toggleDyslexiaFont();
     if (screenReaderHints) toggleScreenReaderHints();
+    setColorBlindMode("none");
     setFontSize(16);
   };
 
@@ -64,6 +76,7 @@ export function AccessibilityPanel() {
     reduceMotion ||
     dyslexiaFont ||
     screenReaderHints ||
+    colorBlindMode !== "none" ||
     fontSize !== 16;
 
   return (
@@ -104,6 +117,49 @@ export function AccessibilityPanel() {
           checked={screenReaderHints}
           onToggle={toggleScreenReaderHints}
         />
+      </Card>
+
+      {/* Color-blind mode selector (E6.10) */}
+      <Card className="space-y-3 p-4 shadow-sm">
+        <div className="flex items-start gap-2.5">
+          <Eye className="mt-0.5 h-4 w-4 text-muted-foreground" />
+          <div className="flex-1">
+            <Label className="text-sm font-medium">Mode daltonisme</Label>
+            <p className="text-xs text-muted-foreground">
+              Palette adaptée pour distinguer les réponses correctes des
+              réponses fausses.
+            </p>
+          </div>
+        </div>
+        <Select
+          value={colorBlindMode}
+          onValueChange={(v) =>
+            setColorBlindMode(
+              v as "none" | "deuteranopia" | "protanopia" | "tritanopia",
+            )
+          }
+        >
+          <SelectTrigger className="w-full">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="none">Aucun (palette par défaut)</SelectItem>
+            <SelectItem value="deuteranopia">
+              Deutéranopie (vert-rouge)
+            </SelectItem>
+            <SelectItem value="protanopia">Protanopie (rouge-vert)</SelectItem>
+            <SelectItem value="tritanopia">Tritanopie (bleu-jaune)</SelectItem>
+          </SelectContent>
+        </Select>
+        {/* Live preview */}
+        <div className="flex gap-2">
+          <div className="correct flex-1 rounded-md border-2 border-current px-3 py-2 text-center text-xs font-semibold">
+            Exemple correct
+          </div>
+          <div className="wrong flex-1 rounded-md border-2 border-current px-3 py-2 text-center text-xs font-semibold">
+            Exemple faux
+          </div>
+        </div>
       </Card>
 
       {/* Font size slider */}

@@ -349,5 +349,6 @@
       "explanation": "Le fait que le R² ajusté soit seulement légèrement inférieur au R² standard indique que les variables explicatives apportent une contribution significative au modèle. La différence modérée suggère qu'il n'y a pas de surajustement marqué.",
       "difficulty": "medium"
     }
-  ]
+  ],
+  "educationLevel": "LICENCE"
 }

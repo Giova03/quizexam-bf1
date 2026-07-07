@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { cacheInvalidate } from "@/lib/cache";
+import { cacheInvalidate, invalidateBanksListCache } from "@/lib/cache";
 
 export const dynamic = "force-dynamic";
 
@@ -166,7 +166,7 @@ export async function POST(request: Request) {
         data: toCreate.map((q) => ({ bankId, ...q })),
       });
       // Invalide le cache des banques (liste + cette banque spécifique)
-      cacheInvalidate("banks:list");
+      invalidateBanksListCache();
       cacheInvalidate(`bank:${bankId}`);
     }
 

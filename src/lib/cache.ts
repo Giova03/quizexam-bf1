@@ -110,3 +110,34 @@ export const CACHE_KEYS = {
   banksList: "banks:list",
   examsList: "exams:list",
 } as const;
+
+/**
+ * Education levels used by the home-view filter (added in E1). Exported here
+ * so mutation endpoints can iterate the full list when invalidating the
+ * per-level cache variants produced by /api/banks?level=….
+ */
+export const EDUCATION_LEVELS = [
+  "TOUS",
+  "BEPC",
+  "BAC",
+  "LICENCE",
+  "CONCOURS",
+] as const;
+
+/**
+ * Invalidate every cached banks list variant — the unfiltered list
+ * (`banks:list`) as well as the per-level variants produced by
+ * `/api/banks?level=BEPC|BAC|LICENCE|CONCOURS`.
+ *
+ * Call this from any mutation endpoint that changes which banks exist or
+ * which questions belong to a bank (since the per-bank `_count.questions`
+ * is part of the cached response).
+ */
+export function invalidateBanksListCache(): void {
+  cacheInvalidate(CACHE_KEYS.banksList);
+  cacheInvalidate(`${CACHE_KEYS.banksList}:level=ALL`);
+  for (const lvl of EDUCATION_LEVELS) {
+    if (lvl === "TOUS") continue;
+    cacheInvalidate(`${CACHE_KEYS.banksList}:level=${lvl}`);
+  }
+}

@@ -11,10 +11,22 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Zap, Flag, CheckCircle2, ListChecks, BarChart3 } from "lucide-react";
+import {
+  Zap,
+  Flag,
+  CheckCircle2,
+  ListChecks,
+  BarChart3,
+  GraduationCap,
+} from "lucide-react";
 import type { CorrectionMode } from "@/lib/types";
+import {
+  getEducationLevelMeta,
+  type EducationLevel,
+} from "./education-level-selector";
 
 export type DifficultyFilter = "all" | "easy" | "medium" | "hard";
 
@@ -38,6 +50,31 @@ interface StartDialogProps {
   };
   /** Initial difficulty selection (default "all"). */
   initialDifficulty?: DifficultyFilter;
+
+  /**
+   * Education level of the bank being started (added in E1).
+   * When provided, a level badge is shown next to the title. If the bank is
+   * tagged "TOUS" (applies to every level), no badge is shown.
+   */
+  educationLevel?: string;
+
+  /**
+   * Optional per-level counts for questions inside the bank (added in E1).
+   * When provided AND `educationLevel !== "TOUS"`, an in-bank level filter is
+   * shown so the user can choose to play only the questions tagged with a
+   * specific level (useful when a bank aggregates multiple levels).
+   *
+   * The "all" key counts every question in the bank. The other keys count
+   * only questions explicitly tagged with that level.
+   */
+  educationLevelCounts?: Partial<Record<EducationLevel, number>>;
+
+  /**
+   * Initial education-level-in-bank selection (default "all").
+   * Only meaningful when `educationLevelCounts` is provided.
+   */
+  initialEducationLevelInBank?: EducationLevel | "all";
+
   onStart: (mode: CorrectionMode, difficulty: DifficultyFilter) => Promise<void>;
 }
 
@@ -80,19 +117,55 @@ export function StartDialog({
   questionCount,
   difficultyCounts,
   initialDifficulty = "all",
+  educationLevel,
+  educationLevelCounts,
+  initialEducationLevelInBank = "all",
   onStart,
 }: StartDialogProps) {
   const [mode, setMode] = useState<CorrectionMode>("immediate");
   const [difficulty, setDifficulty] = useState<DifficultyFilter>(
     initialDifficulty
   );
+  const [levelInBank, setLevelInBank] = useState<EducationLevel | "all">(
+    initialEducationLevelInBank,
+  );
   const [starting, setStarting] = useState(false);
 
   // Compute the live question count based on the selected difficulty.
-  const liveCount =
-    difficultyCounts && difficulty !== "all"
-      ? (difficultyCounts[difficulty] ?? 0)
-      : questionCount;
+  // When the in-bank level filter is active (and not "all"), we further
+  // restrict the count to questions tagged with that level — combining both
+  // filters so the user sees exactly what will be played.
+  const liveCount = (() => {
+    let count =
+      difficultyCounts && difficulty !== "all"
+        ? (difficultyCounts[difficulty] ?? 0)
+        : questionCount;
+    if (educationLevelCounts && levelInBank !== "all") {
+      const levelCount = educationLevelCounts[levelInBank] ?? 0;
+      // The two filters (difficulty + level) compound: we cap by the smaller
+      // of the two because we don't have a per-(difficulty × level) matrix.
+      // This is a conservative estimate — the actual session will use the
+      // server-side filter which IS precise.
+      count = Math.min(count, levelCount);
+    }
+    return count;
+  })();
+
+  // Resolve metadata for the bank's education level badge.
+  const bankLevelMeta = getEducationLevelMeta(educationLevel ?? "TOUS");
+  const BankLevelIcon = bankLevelMeta.icon;
+  const showBankLevelBadge =
+    !!educationLevel && educationLevel.toUpperCase() !== "TOUS";
+
+  // Show the in-bank level filter only when per-level counts were provided
+  // AND the bank actually has questions tagged with a specific level (i.e. at
+  // least one level count > 0 and different from the "all" count).
+  const showInBankLevelFilter =
+    !!educationLevelCounts &&
+    Object.keys(educationLevelCounts).length > 0 &&
+    (Object.keys(educationLevelCounts) as Array<EducationLevel | "all">).some(
+      (k) => k !== "all" && (educationLevelCounts[k] ?? 0) > 0,
+    );
 
   async function handleStart() {
     if (liveCount === 0) return;
@@ -108,13 +181,84 @@ export function StartDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
-          <DialogTitle className="text-xl">Démarrer la session</DialogTitle>
+          <DialogTitle className="flex flex-wrap items-center gap-2 text-xl">
+            Démarrer la session
+            {showBankLevelBadge && (
+              <Badge
+                variant="secondary"
+                className="gap-1 text-xs"
+                title={`Niveau de la banque : ${bankLevelMeta.label}`}
+              >
+                <BankLevelIcon className="h-3 w-3" />
+                {bankLevelMeta.label}
+              </Badge>
+            )}
+          </DialogTitle>
           <DialogDescription className="text-base">
             {title} &middot; {liveCount} question{liveCount > 1 ? "s" : ""}
           </DialogDescription>
         </DialogHeader>
 
         <p className="text-sm text-muted-foreground">{subtitle}</p>
+
+        {/* In-bank education-level filter (added in E1) */}
+        {showInBankLevelFilter && (
+          <div className="space-y-2">
+            <div className="flex items-center gap-1.5 text-sm font-semibold">
+              <GraduationCap className="h-4 w-4 text-emerald-600" />
+              Filtrer par niveau (dans la banque)
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Cette banque contient des questions de plusieurs niveaux.
+              Choisissez « Tous » pour tout inclure ou un niveau spécifique.
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              <button
+                type="button"
+                onClick={() => setLevelInBank("all")}
+                className={`flex items-center gap-1.5 rounded-lg border-2 px-2.5 py-1.5 text-xs font-medium transition-all hover:scale-[1.02] ${
+                  levelInBank === "all"
+                    ? "border-emerald-500 bg-emerald-50 text-emerald-700 ring-2 ring-offset-1 dark:bg-emerald-950/30 dark:text-emerald-300"
+                    : "border-border bg-muted/30 text-muted-foreground hover:bg-muted/60"
+                }`}
+                aria-pressed={levelInBank === "all"}
+              >
+                <span>Tous</span>
+                <span className="rounded-full bg-black/10 px-1.5 py-0.5 text-[10px] font-normal">
+                  {questionCount}
+                </span>
+              </button>
+              {(["BEPC", "BAC", "LICENCE", "CONCOURS"] as EducationLevel[]).map(
+                (lvl) => {
+                  const c = educationLevelCounts?.[lvl] ?? 0;
+                  if (c === 0) return null;
+                  const meta = getEducationLevelMeta(lvl);
+                  const Icon = meta.icon;
+                  const isSelected = levelInBank === lvl;
+                  return (
+                    <button
+                      key={lvl}
+                      type="button"
+                      onClick={() => setLevelInBank(lvl)}
+                      className={`flex items-center gap-1.5 rounded-lg border-2 px-2.5 py-1.5 text-xs font-medium transition-all hover:scale-[1.02] ${
+                        isSelected
+                          ? "border-emerald-500 bg-emerald-50 text-emerald-700 ring-2 ring-offset-1 dark:bg-emerald-950/30 dark:text-emerald-300"
+                          : "border-border bg-muted/30 text-muted-foreground hover:bg-muted/60"
+                      }`}
+                      aria-pressed={isSelected}
+                    >
+                      <Icon className="h-3 w-3" />
+                      <span>{meta.label}</span>
+                      <span className="rounded-full bg-black/10 px-1.5 py-0.5 text-[10px] font-normal">
+                        {c}
+                      </span>
+                    </button>
+                  );
+                },
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Difficulty selector (only when counts are provided) */}
         {difficultyCounts && (

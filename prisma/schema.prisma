@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -64,6 +64,10 @@ model QuestionBank {
   icon        String     @default("BookOpen")
   color       String     @default("emerald")
   level       String     @default("TOUS")
+  // Education level (added in E1): "BEPC" | "BAC" | "LICENCE" | "CONCOURS" | "TOUS".
+  // Lets users filter banks by their academic level (collège, lycée,
+  // université, concours). "TOUS" = applies to every level.
+  educationLevel String   @default("TOUS")
   documentId  String?
   document    Document?  @relation(fields: [documentId], references: [id])
   questions   Question[]
@@ -87,6 +91,20 @@ model Question {
   difficulty     String        @default("medium")
   imageUrl       String?
   audioUrl       String?
+  // Education level (added in E1): same vocabulary as QuestionBank.educationLevel.
+  // Lets a single bank host questions for multiple levels (e.g. a "Maths"
+  // bank with both collège and lycée items), and lets the start dialog filter
+  // by level within a bank. Defaults to "TOUS" to inherit the bank's level.
+  educationLevel String        @default("TOUS")
+  // Comma-separated free-form tags (added in E1), e.g. "algèbre,géométrie".
+  // Used by the upcoming tag-based filter + search.
+  tags           String        @default("")
+  // Optional chapter name (added in E1), e.g. "Chapitre 3 — Équations".
+  // Lets the start dialog and revision cards group questions by chapter.
+  chapter        String?
+  // Optional specific subject within the bank (added in E1). Useful when a
+  // bank aggregates several subjects (e.g. "Sciences" → "Physique" | "SVT").
+  subject        String?
   // Optional media attached to the question (added in F4):
   // - imageUrl points to /uploads/<file>.png|jpg|webp|gif
   // - audioUrl points to /uploads/<file>.mp3|wav|ogg

@@ -256,5 +256,6 @@
       "correctAnswer": "A",
       "explanation": "La réponse correcte est « sin(x) + C ». ∫ cos = sin + C. Cette réponse est justifiée par les connaissances de référence et les règles applicables au sujet abordé dans la question « L'intégrale ∫ cos(x) dx est : »."
     }
-  ]
+  ],
+  "educationLevel": "LICENCE"
 }

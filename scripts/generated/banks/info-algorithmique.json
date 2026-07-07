@@ -647,5 +647,6 @@
       "explanation": "Dans le meilleur des cas (le tableau est déjà trié), l'algorithme de tri par insertion ne fait qu'une seule passe sur le tableau, avec chaque élément déjà à sa place, d'où une complexité linéaire O(n).",
       "difficulty": "medium"
     }
-  ]
+  ],
+  "educationLevel": "LICENCE"
 }

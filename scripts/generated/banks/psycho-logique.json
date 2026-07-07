@@ -7,5 +7,6 @@
   "color": "violet",
   "level": "TOUS",
   "bankKey": "psycho-logique",
-  "questions": []
+  "questions": [],
+  "educationLevel": "TOUS"
 }

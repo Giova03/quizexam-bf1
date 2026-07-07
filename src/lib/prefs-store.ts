@@ -74,6 +74,9 @@ interface PrefsState {
   /** Screen-reader hints toggle (applies [data-sr-hints] on <html>). */
   screenReaderHints: boolean;
   toggleScreenReaderHints: () => void;
+  /** Color-blind mode: "none" | "deuteranopia" | "protanopia" | "tritanopia". */
+  colorBlindMode: "none" | "deuteranopia" | "protanopia" | "tritanopia";
+  setColorBlindMode: (mode: "none" | "deuteranopia" | "protanopia" | "tritanopia") => void;
   xp: number;
   level: number;
   streak: number;
@@ -103,6 +106,45 @@ interface PrefsState {
   nightOwlUnlocked: boolean;
   /** Whether the user has completed a quiz between 4:00 and 6:00 (early-bird). */
   earlyBirdUnlocked: boolean;
+  // --- Gamification: virtual currency + shop items (E4) ---
+  /** Virtual currency balance (QuizCoins). Earned by completing quizzes / quests / posts. */
+  quizCoins: number;
+  addCoins: (amount: number) => void;
+  /**
+   * Spend QuizCoins on a shop item. Returns true on success, false if the
+   * balance is insufficient.
+   */
+  spendCoins: (amount: number) => boolean;
+  /** Theme IDs the user owns. "default" is always owned. */
+  ownedThemes: string[];
+  /** Avatar IDs the user owns. "default" is always owned. */
+  ownedAvatars: string[];
+  /** Custom badge IDs the user owns. */
+  ownedBadges: string[];
+  /** The currently active theme id. Applied to <html data-theme="…">. */
+  activeTheme: string;
+  /** Set the active theme (must be owned). */
+  setActiveTheme: (themeId: string) => void;
+  /** Add an owned theme id. */
+  addOwnedTheme: (themeId: string) => void;
+  /** Add an owned avatar id. */
+  addOwnedAvatar: (avatarId: string) => void;
+  /** Add an owned badge id. */
+  addOwnedBadge: (badgeId: string) => void;
+  /** Timestamp (ms) until which the XP boost (2×) is active. Null when inactive. */
+  xpBoostUntil: number | null;
+  /** Activate the XP boost for the given number of ms (from now). */
+  activateXpBoost: (durationMs: number) => void;
+  /** Number of "streak freeze" credits owned (skip a missed day). */
+  streakFreezes: number;
+  /** Add a streak freeze credit. */
+  addStreakFreeze: (n?: number) => void;
+  /** Consume a streak freeze credit. Returns true on success. */
+  useStreakFreeze: () => boolean;
+  /** Timestamp (ms) until which the premium preview is active. */
+  premiumPreviewUntil: number | null;
+  /** Activate premium preview for the given number of ms. */
+  activatePremiumPreview: (durationMs: number) => void;
   addXp: (amount: number) => void;
   recordSession: (correct: number, total: number, ctx?: SessionContext) => void;
   unlockBadge: (id: string) => void;
@@ -205,6 +247,9 @@ export const usePrefs = create<PrefsState>()(
       screenReaderHints: false,
       toggleScreenReaderHints: () =>
         set((s) => ({ screenReaderHints: !s.screenReaderHints })),
+      // E6.10 — color-blind mode (none by default).
+      colorBlindMode: "none",
+      setColorBlindMode: (mode) => set({ colorBlindMode: mode }),
       xp: 0,
       level: 1,
       streak: 0,
@@ -224,8 +269,71 @@ export const usePrefs = create<PrefsState>()(
       spacedReviewsCompleted: 0,
       nightOwlUnlocked: false,
       earlyBirdUnlocked: false,
+      // --- Gamification: virtual currency + shop items (E4) ---
+      quizCoins: 0,
+      addCoins: (amount) => {
+        if (!amount) return;
+        set((s) => ({ quizCoins: Math.max(0, s.quizCoins + amount) }));
+      },
+      spendCoins: (amount) => {
+        const bal = get().quizCoins;
+        if (bal < amount) return false;
+        set({ quizCoins: bal - amount });
+        return true;
+      },
+      ownedThemes: ["default"],
+      ownedAvatars: ["default"],
+      ownedBadges: [],
+      activeTheme: "default",
+      setActiveTheme: (themeId) => {
+        if (!get().ownedThemes.includes(themeId)) return;
+        set({ activeTheme: themeId });
+      },
+      addOwnedTheme: (themeId) =>
+        set((s) =>
+          s.ownedThemes.includes(themeId)
+            ? s
+            : { ownedThemes: [...s.ownedThemes, themeId] },
+        ),
+      addOwnedAvatar: (avatarId) =>
+        set((s) =>
+          s.ownedAvatars.includes(avatarId)
+            ? s
+            : { ownedAvatars: [...s.ownedAvatars, avatarId] },
+        ),
+      addOwnedBadge: (badgeId) =>
+        set((s) =>
+          s.ownedBadges.includes(badgeId)
+            ? s
+            : { ownedBadges: [...s.ownedBadges, badgeId] },
+        ),
+      xpBoostUntil: null,
+      activateXpBoost: (durationMs) => {
+        set({ xpBoostUntil: Date.now() + Math.max(0, durationMs) });
+        get().addNotification({
+          type: "badge",
+          title: "Boost XP activé !",
+          message: `Vous gagnez 2× XP pendant ${Math.round(durationMs / 60000)} min.`,
+        });
+      },
+      streakFreezes: 0,
+      addStreakFreeze: (n = 1) =>
+        set((s) => ({ streakFreezes: s.streakFreezes + n })),
+      useStreakFreeze: () => {
+        if (get().streakFreezes <= 0) return false;
+        set((s) => ({ streakFreezes: s.streakFreezes - 1 }));
+        return true;
+      },
+      premiumPreviewUntil: null,
+      activatePremiumPreview: (durationMs) => {
+        set({ premiumPreviewUntil: Date.now() + Math.max(0, durationMs) });
+      },
       addXp: (amount) => {
-        const newXp = get().xp + amount;
+        // Apply 2× XP boost if currently active.
+        const boostEnd = get().xpBoostUntil;
+        const isBoosted = boostEnd !== null && boostEnd > Date.now();
+        const finalAmount = isBoosted ? amount * 2 : amount;
+        const newXp = get().xp + finalAmount;
         set({ xp: newXp, level: levelFromXp(newXp) });
         if (newXp >= 500) get().unlockBadge("xp-500");
         if (newXp >= 1000) get().unlockBadge("xp-1000");
@@ -333,6 +441,16 @@ export const usePrefs = create<PrefsState>()(
           set({ dailyChallengesCompleted: newDcCount });
           if (newDcCount >= 30) get().unlockBadge("daily-warrior");
         }
+
+        // --- Virtual currency rewards (E4) ---
+        // Base: +10 coins per quiz completed.
+        // Perfect score: +50 coins (replaces the base, like a jackpot).
+        // Daily challenge: +25 coins (replaces the base).
+        // Daily-challenge + perfect: +75 coins (sum of both bonuses).
+        let coinReward = 10;
+        if (isPerfect) coinReward = 50;
+        if (ctx?.isDailyChallenge) coinReward = isPerfect ? 75 : 25;
+        if (coinReward > 0) get().addCoins(coinReward);
       },
       unlockBadge: (id) => {
         const badges = get().badges;
@@ -379,6 +497,8 @@ export const usePrefs = create<PrefsState>()(
         const newCount = get().postsCount + 1;
         set({ postsCount: newCount });
         if (newCount >= 10) get().unlockBadge("social-butterfly");
+        // Forum post reward (E4): +5 QuizCoins per post.
+        get().addCoins(5);
       },
       recordDailyChallenge: () => {
         const newCount = get().dailyChallengesCompleted + 1;

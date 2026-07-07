@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { usePrefs } from "@/lib/prefs-store";
+import { useQuests } from "@/lib/quests-store";
 
 interface Post {
   id: string;
@@ -41,6 +42,7 @@ interface Post {
 export function SocialView() {
   const { data: session } = useSession();
   const recordPost = usePrefs((s) => s.recordPost);
+  const recordQuestForumPost = useQuests((s) => s.recordForumPost);
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [newPost, setNewPost] = useState("");
@@ -78,8 +80,10 @@ export function SocialView() {
         setPosts((prev) => [post, ...prev]);
         setNewPost("");
         toast.success("Publication partagée !");
-        // Track for social-butterfly badge (10 posts).
+        // Track for social-butterfly badge (10 posts) + QuizCoins reward.
         recordPost();
+        // Also update the quests store (daily "Aider sur le forum" quest).
+        recordQuestForumPost();
       } else {
         toast.error("Échec de la publication");
       }

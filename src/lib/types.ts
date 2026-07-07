@@ -21,6 +21,14 @@ export interface Question {
   imageUrl?: string | null;
   /** Optional audio URL pointing to a file under /public/uploads/. */
   audioUrl?: string | null;
+  /** Education level (added in E1): "BEPC" | "BAC" | "LICENCE" | "CONCOURS" | "TOUS". */
+  educationLevel?: string;
+  /** Comma-separated tags (added in E1). */
+  tags?: string;
+  /** Optional chapter name (added in E1). */
+  chapter?: string | null;
+  /** Optional specific subject within the bank (added in E1). */
+  subject?: string | null;
 }
 
 export interface QuestionBank {
@@ -30,6 +38,8 @@ export interface QuestionBank {
   category: string;
   icon: string;
   color: string;
+  /** Education level: "BEPC" | "BAC" | "LICENCE" | "CONCOURS" | "TOUS". */
+  educationLevel?: string;
   _count?: { questions: number };
   questions?: Question[];
 }
@@ -103,7 +113,22 @@ export type ViewName =
   // Social/community views (added in F6):
   | "groups"
   | "events"
-  | "blog";
+  | "blog"
+  // AI adaptive features (added in E2):
+  | "study-plan"
+  // Gamification views (added in E4):
+  | "quests"
+  | "skill-tree"
+  | "shop"
+  // Social features (added in E5):
+  | "messages"
+  | "mentorship"
+  | "wiki"
+  | "live-sessions"
+  // Pedagogy features (added in E6):
+  | "official-exam"
+  | "study-sheet"
+  | "guided-path";
 
 // Color mapping helper for bank/exam accent colors
 export const COLOR_CLASSES: Record<

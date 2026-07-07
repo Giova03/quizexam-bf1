@@ -89,6 +89,19 @@ export function BankDetailView() {
     };
   }, [bank]);
 
+  // Counts per education level inside the bank (added in E1). Used by the
+  // StartDialog to offer an in-bank level filter when the bank aggregates
+  // multiple levels.
+  const educationLevelCounts = useMemo(() => {
+    const all = bank?.questions ?? [];
+    const counts: Record<string, number> = {};
+    for (const q of all) {
+      const lvl = (q.educationLevel ?? "TOUS").toUpperCase();
+      counts[lvl] = (counts[lvl] ?? 0) + 1;
+    }
+    return counts as Record<string, number>;
+  }, [bank]);
+
   // Questions currently visible in the preview (filtered by selected difficulty).
   const visibleQuestions = useMemo(() => {
     const all = bank?.questions ?? [];
@@ -320,6 +333,8 @@ export function BankDetailView() {
         questionCount={bank?.questions?.length ?? 0}
         difficultyCounts={difficultyCounts}
         initialDifficulty={difficulty}
+        educationLevel={bank?.educationLevel ?? "TOUS"}
+        educationLevelCounts={educationLevelCounts}
         onStart={handleStart}
       />
     </div>

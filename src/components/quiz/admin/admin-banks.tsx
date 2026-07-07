@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Skeleton } from "@/components/ui/skeleton";
 import {
   Select,
   SelectContent,
@@ -25,6 +24,11 @@ import {
 import { Database, FileText, Plus } from "lucide-react";
 import { toast } from "sonner";
 import type { AdminStats, BankWithCount } from "./types";
+import {
+  EDUCATION_LEVEL_OPTIONS,
+  getEducationLevelMeta,
+  type EducationLevel,
+} from "@/components/quiz/education-level-selector";
 
 /**
  * BanksTab — Banks & QCM tab content.
@@ -80,24 +84,38 @@ export function BanksTab({
           </p>
         </div>
         <div className="grid gap-2 p-4 sm:grid-cols-2">
-          {stats?.bankStats.map((bank) => (
-            <button
-              key={bank.id}
-              onClick={() => onSelectBank(bank)}
-              className="flex items-center justify-between rounded-xl border p-4 text-left transition-all hover:border-emerald-400 hover:shadow-sm"
-            >
-              <div className="min-w-0 flex-1">
-                <p className="truncate font-semibold">{bank.title}</p>
-                <p className="text-xs text-muted-foreground">
-                  {bank.category}
-                  {bank.subcategory ? ` · ${bank.subcategory}` : ""}
-                </p>
-              </div>
-              <Badge variant="secondary">
-                {bank._count.questions} Q
-              </Badge>
-            </button>
-          ))}
+          {stats?.bankStats.map((bank) => {
+            const lvlMeta = getEducationLevelMeta(bank.educationLevel ?? "TOUS");
+            const LvlIcon = lvlMeta.icon;
+            return (
+              <button
+                key={bank.id}
+                onClick={() => onSelectBank(bank)}
+                className="flex items-center justify-between rounded-xl border p-4 text-left transition-all hover:border-emerald-400 hover:shadow-sm"
+              >
+                <div className="min-w-0 flex-1">
+                  <p className="truncate font-semibold">{bank.title}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {bank.category}
+                    {bank.subcategory ? ` · ${bank.subcategory}` : ""}
+                  </p>
+                  {(bank.educationLevel ?? "TOUS") !== "TOUS" && (
+                    <Badge
+                      variant="secondary"
+                      className="mt-1 gap-1 text-[10px]"
+                      title={`Niveau : ${lvlMeta.label}`}
+                    >
+                      <LvlIcon className="h-3 w-3" />
+                      {lvlMeta.label}
+                    </Badge>
+                  )}
+                </div>
+                <Badge variant="secondary">
+                  {bank._count.questions} Q
+                </Badge>
+              </button>
+            );
+          })}
         </div>
       </Card>
     </div>
@@ -121,6 +139,8 @@ export function NewBankDialog({
   const [category, setCategory] = useState("Culture Générale");
   const [subcategory, setSubcategory] = useState("");
   const [color, setColor] = useState("emerald");
+  const [educationLevel, setEducationLevel] =
+    useState<EducationLevel>("TOUS");
   const [saving, setSaving] = useState(false);
 
   async function create() {
@@ -137,14 +157,21 @@ export function NewBankDialog({
           color,
           icon: "BookOpen",
           level: "TOUS",
+          educationLevel,
         }),
       });
       if (res.ok) {
-        toast.success("Banque créée");
+        toast.success("Banque créée ✓");
         setTitle("");
         setDescription("");
+        setEducationLevel("TOUS");
         onCreated();
+      } else {
+        const data = await res.json().catch(() => ({}));
+        toast.error(data?.error ?? "Échec de la création");
       }
+    } catch {
+      toast.error("Erreur réseau");
     } finally {
       setSaving(false);
     }
@@ -226,6 +253,37 @@ export function NewBankDialog({
               onChange={(e) => setSubcategory(e.target.value)}
               placeholder="Ex: Histoire"
             />
+          </div>
+
+          {/* Education level selector (added in E1) */}
+          <div>
+            <Label>Niveau d&apos;éducation</Label>
+            <p className="mb-2 mt-0.5 text-xs text-muted-foreground">
+              Utilisé par le filtre de niveau sur l&apos;accueil. « Tous »
+              signifie que la banque s&apos;affiche pour tous les niveaux.
+            </p>
+            <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
+              {EDUCATION_LEVEL_OPTIONS.map((opt) => {
+                const Icon = opt.icon;
+                const isActive = educationLevel === opt.value;
+                return (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => setEducationLevel(opt.value)}
+                    className={`flex flex-col items-center gap-1 rounded-lg border-2 px-2 py-2 text-xs font-medium transition-all hover:scale-[1.02] ${
+                      isActive
+                        ? `${opt.activeCls} border-transparent ring-2 ring-offset-1`
+                        : "border-border bg-muted/30 text-muted-foreground hover:bg-muted/60"
+                    }`}
+                    aria-pressed={isActive}
+                  >
+                    <Icon className="h-4 w-4" />
+                    <span>{opt.label}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
         <DialogFooter className="gap-2">

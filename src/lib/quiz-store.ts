@@ -75,6 +75,42 @@ interface QuizState {
   openEvents: () => void;
   /** Open the blog / articles view. */
   openBlog: () => void;
+  /**
+   * Open the AI-generated personalised study plan view (added in E2).
+   * Lets the user generate, view and track a day-by-day plan.
+   */
+  openStudyPlan: () => void;
+  /**
+   * Open the gamification quests view (added in E4) — daily / weekly /
+   * special quests with progress + claim reward.
+   */
+  openQuests: () => void;
+  /**
+   * Open the Duolingo-style skill tree (added in E4) — vertical tree of
+   * banks with mastery lighting (50% lit, 80% gold).
+   */
+  openSkillTree: () => void;
+  /**
+   * Open the QuizCoins shop (added in E4) — themes, avatars, boosters,
+   * premium preview, custom badges.
+   */
+  openShop: () => void;
+  // Social features (added in E5):
+  /** Open the private messaging view (conversations + chat thread). */
+  openMessages: () => void;
+  /** Open the mentorship view (browse mentors, see your mentor/mentees). */
+  openMentorship: () => void;
+  /** Open the collaborative wiki view (browse, read, create/edit). */
+  openWiki: () => void;
+  /** Open the live revision sessions view (upcoming sessions + join). */
+  openLiveSessions: () => void;
+  // Pedagogy features (added in E6):
+  /** Open the official exam simulator (BEPC/BAC/Concours Admin/Santé). */
+  openOfficialExam: () => void;
+  /** Open the auto-generated study sheet view. */
+  openStudySheet: () => void;
+  /** Open the 30-day guided study path. */
+  openGuidedPath: () => void;
 }
 
 export const useQuizStore = create<QuizState>((set) => ({
@@ -135,6 +171,17 @@ export const useQuizStore = create<QuizState>((set) => ({
   openGroups: () => set({ view: "groups" }),
   openEvents: () => set({ view: "events" }),
   openBlog: () => set({ view: "blog" }),
+  openStudyPlan: () => set({ view: "study-plan" }),
+  openQuests: () => set({ view: "quests" }),
+  openSkillTree: () => set({ view: "skill-tree" }),
+  openShop: () => set({ view: "shop" }),
+  openMessages: () => set({ view: "messages" }),
+  openMentorship: () => set({ view: "mentorship" }),
+  openWiki: () => set({ view: "wiki" }),
+  openLiveSessions: () => set({ view: "live-sessions" }),
+  openOfficialExam: () => set({ view: "official-exam" }),
+  openStudySheet: () => set({ view: "study-sheet" }),
+  openGuidedPath: () => set({ view: "guided-path" }),
 }));
 
 export const pendingStart = {
