@@ -328,7 +328,7 @@ export function ExamBuilder({ open, onOpenChange, onCreated }: Props) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="flex max-h-[95vh] flex-col sm:max-w-5xl">
+      <DialogContent className="flex max-h-[95vh] max-w-[95vw] flex-col overflow-y-auto sm:max-w-5xl">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <GraduationCap className="h-5 w-5 text-violet-600" />

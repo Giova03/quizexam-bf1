@@ -38,24 +38,25 @@ export function ExamDetailView() {
 
   return (
     <div className="space-y-6">
-      <Button variant="ghost" size="sm" className="gap-2" onClick={goHome}>
+      <Button variant="ghost" size="sm" className="h-11 gap-2 sm:h-8" onClick={goHome}>
         <ArrowLeft className="h-4 w-4" /> Retour
       </Button>
-      <Card className="overflow-hidden p-6">
-        <div className="flex items-start gap-4">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-50 text-violet-700">
+      {/* FIX3: stack header on mobile, wrap buttons, break-words on text. */}
+      <Card className="overflow-hidden p-4 sm:p-6">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-violet-50 text-violet-700">
             <GraduationCap className="h-7 w-7" />
           </div>
-          <div>
-            <h1 className="text-2xl font-bold">{exam.title}</h1>
-            <p className="mt-1 text-muted-foreground">{exam.description}</p>
-            <div className="mt-2 flex gap-2">
+          <div className="min-w-0 flex-1">
+            <h1 className="break-words text-xl font-bold sm:text-2xl">{exam.title}</h1>
+            <p className="mt-1 break-words text-sm text-muted-foreground sm:text-base">{exam.description}</p>
+            <div className="mt-2 flex flex-wrap gap-2">
               <Badge variant="outline"><Clock className="mr-1 h-3 w-3" />{exam.durationMin} min</Badge>
               <Badge variant="outline"><FileQuestion className="mr-1 h-3 w-3" />{count} questions</Badge>
             </div>
           </div>
         </div>
-        <Button className="mt-6 gap-2" onClick={() => setDialogOpen(true)}>Démarrer l&apos;examen</Button>
+        <Button className="mt-6 h-11 w-full gap-2 sm:h-9 sm:w-auto" onClick={() => setDialogOpen(true)}>Démarrer l&apos;examen</Button>
       </Card>
       <StartDialog
         open={dialogOpen}

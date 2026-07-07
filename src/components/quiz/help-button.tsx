@@ -162,7 +162,7 @@ export function HelpButton() {
       </button>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-h-[90vh] overflow-hidden p-0 sm:max-w-2xl">
+        <DialogContent className="max-h-[90vh] max-w-[95vw] overflow-hidden p-0 sm:max-w-2xl">
           <DialogHeader className="border-b px-4 py-3 sm:px-6">
             <DialogTitle className="flex items-center gap-2 text-base">
               <HelpCircle className="h-4 w-4 text-emerald-600" />

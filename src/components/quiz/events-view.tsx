@@ -432,7 +432,7 @@ function CreateEventDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-lg">
+      <DialogContent className="max-h-[90vh] max-w-[95vw] overflow-y-auto sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>Créer un événement</DialogTitle>
           <DialogDescription>

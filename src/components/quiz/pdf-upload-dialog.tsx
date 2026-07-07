@@ -417,7 +417,7 @@ export function PdfUploadDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="flex max-h-[92vh] flex-col gap-4 sm:max-w-3xl">
+      <DialogContent className="flex max-h-[92vh] max-w-[95vw] flex-col gap-4 overflow-y-auto sm:max-w-3xl">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <FileText className="h-5 w-5 text-emerald-600" />

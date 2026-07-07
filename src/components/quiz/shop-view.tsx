@@ -715,7 +715,7 @@ export function ShopView() {
 
       {/* Confirmation dialog */}
       <Dialog open={!!pending} onOpenChange={(o) => !o && setPending(null)}>
-        <DialogContent>
+        <DialogContent className="max-h-[90vh] max-w-[95vw] overflow-y-auto sm:max-w-md">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <span className="text-2xl">{pending?.emoji}</span>

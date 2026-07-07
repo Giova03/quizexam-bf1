@@ -167,22 +167,22 @@ export function BankDetailView() {
         </Card>
       ) : (
         <>
-          {/* Header */}
+          {/* Header — FIX3: stack on mobile, row on sm+. */}
           <Card className="overflow-hidden">
             <div className={`h-2 bg-gradient-to-r ${color.gradient}`} />
-            <div className="p-6">
-              <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+            <div className="p-4 sm:p-6">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex items-start gap-4">
                   <div
                     className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${color.bgSoft} ${color.text}`}
                   >
                     <BankIcon name={bank.icon} className="h-7 w-7" />
                   </div>
-                  <div>
-                    <h1 className="text-2xl font-bold tracking-tight">
+                  <div className="min-w-0 flex-1">
+                    <h1 className="break-words text-xl font-bold tracking-tight sm:text-2xl">
                       {bank.title}
                     </h1>
-                    <p className="mt-1 text-muted-foreground">
+                    <p className="mt-1 break-words text-sm text-muted-foreground sm:text-base">
                       {bank.description}
                     </p>
                     <div className="mt-2 flex flex-wrap items-center gap-2">
@@ -196,7 +196,7 @@ export function BankDetailView() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col gap-2 sm:flex-row md:flex-col lg:flex-row">
+                <div className="flex flex-wrap gap-2">
                   <Button
                     size="lg"
                     className={`gap-2 bg-gradient-to-r ${color.gradient} text-white hover:opacity-90`}
@@ -216,8 +216,8 @@ export function BankDetailView() {
             </div>
           </Card>
 
-          {/* Difficulty filter bar */}
-          <Card className="p-4">
+          {/* Difficulty filter bar — FIX3: smaller filter buttons on mobile. */}
+          <Card className="p-3 sm:p-4">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-2">
                 <BarChart3 className="h-4 w-4 text-amber-600" />
@@ -237,7 +237,7 @@ export function BankDetailView() {
                       key={opt.value}
                       type="button"
                       onClick={() => setDifficulty(opt.value)}
-                      className={`flex items-center gap-1.5 rounded-lg border-2 px-2.5 py-1.5 text-xs font-medium transition-all hover:scale-[1.02] ${
+                      className={`flex items-center gap-1.5 rounded-lg border-2 px-2 py-1 text-[11px] font-medium transition-all hover:scale-[1.02] sm:px-2.5 sm:py-1.5 sm:text-xs ${
                         isSelected
                           ? `${opt.cls} ring-2 ring-offset-1`
                           : "border-border bg-muted/30 text-muted-foreground hover:bg-muted/60"
@@ -263,11 +263,11 @@ export function BankDetailView() {
             </div>
           </Card>
 
-          {/* Questions preview */}
+          {/* Questions preview — FIX3: break-words + responsive padding. */}
           <Card className="overflow-hidden">
-            <div className="border-b px-6 py-4">
+            <div className="border-b px-4 py-3 sm:px-6 sm:py-4">
               <h2 className="font-semibold">Aperçu des questions</h2>
-              <p className="text-sm text-muted-foreground">
+              <p className="break-words text-sm text-muted-foreground">
                 {visibleQuestions.length} question
                 {visibleQuestions.length > 1 ? "s" : ""} affichée
                 {visibleQuestions.length > 1 ? "s" : ""}
@@ -279,14 +279,14 @@ export function BankDetailView() {
             <ScrollArea className="max-h-[600px]">
               <div className="divide-y">
                 {visibleQuestions.length === 0 ? (
-                  <div className="px-6 py-10 text-center text-sm text-muted-foreground">
+                  <div className="px-4 py-10 text-center text-sm text-muted-foreground sm:px-6">
                     Aucune question pour ce niveau de difficulté.
                   </div>
                 ) : (
                   visibleQuestions.map((q, idx) => (
                     <div
                       key={q.id}
-                      className="flex items-start gap-3 px-6 py-4 transition-colors hover:bg-muted/40"
+                      className="flex items-start gap-3 px-4 py-3 transition-colors hover:bg-muted/40 sm:px-6 sm:py-4"
                     >
                       <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-semibold">
                         {idx + 1}
@@ -308,12 +308,12 @@ export function BankDetailView() {
                             </span>
                           )}
                         </div>
-                        <div className="mt-1 flex items-center gap-2 text-xs text-muted-foreground">
+                        <div className="mt-1 flex flex-col gap-1 text-xs text-muted-foreground sm:flex-row sm:items-center sm:gap-2">
                           <span className="font-medium">
                             Réponse : {q.correctAnswer}
                           </span>
-                          <ChevronRight className="h-3 w-3" />
-                          <span className="line-clamp-1">{q.explanation}</span>
+                          <ChevronRight className="hidden h-3 w-3 sm:block" />
+                          <span className="break-words line-clamp-2 sm:line-clamp-1">{q.explanation}</span>
                         </div>
                       </div>
                     </div>

@@ -179,7 +179,7 @@ export function StartDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg">
+      <DialogContent className="max-h-[90vh] max-w-[95vw] overflow-y-auto sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="flex flex-wrap items-center gap-2 text-xl">
             Démarrer la session

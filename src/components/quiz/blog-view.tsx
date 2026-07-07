@@ -298,7 +298,7 @@ export function BlogView() {
           open={!!deleteId}
           onOpenChange={(o) => !o && setDeleteId(null)}
         >
-          <AlertDialogContent>
+          <AlertDialogContent className="max-w-[95vw] sm:max-w-md">
             <AlertDialogHeader>
               <AlertDialogTitle>Supprimer cet article ?</AlertDialogTitle>
               <AlertDialogDescription>

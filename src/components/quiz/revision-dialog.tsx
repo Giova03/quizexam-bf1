@@ -81,7 +81,7 @@ export function RevisionDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[95vh] overflow-hidden p-0 sm:max-w-2xl">
+      <DialogContent className="max-h-[95vh] max-w-[95vw] overflow-hidden p-0 sm:max-w-2xl">
         {/* Header */}
         <div className="flex items-center justify-between gap-2 border-b px-4 py-3 sm:px-6">
           <div className="flex min-w-0 flex-1 items-center gap-2">

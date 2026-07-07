@@ -122,9 +122,10 @@ import {
   TreePalm,
   ShoppingBag,
   Coins,
-  // FIX2 — added Grid + Menu icons for the prominent "Plus" trigger + mobile nav.
-  Grid,
+  // FIX2 — added Menu icon for the mobile nav (Grid removed in FIX3 in favour of Compass).
   Menu,
+  // FIX3 — Compass icon for the new "Explorer" dropdown trigger.
+  Compass,
   // E5 — social feature icons:
   Mail,
   UserCheck,
@@ -652,14 +653,18 @@ export default function Home() {
                 </Tooltip>
               </TooltipProvider>
 
-              {/* Secondary nav — grouped under a "Plus" dropdown.
-                  FIX2: removed the Tooltip wrapper that was double-wrapping
-                  the DropdownMenuTrigger (Tooltip > TooltipTrigger > DropdownMenuTrigger > Button)
-                  and prevented the dropdown from opening. The trigger is now
-                  a direct child of <DropdownMenu>. Also made the button more
-                  prominent (Grid icon + visible label at every breakpoint above
-                  sm) and grouped the items by category with labels +
-                  scrollable max-height. */}
+              {/* FIX3 — Secondary nav grouped under an "Explorer" dropdown.
+                  Replaces the old "Plus" dropdown with a more creative
+                  "Explorer" button (Compass icon, emerald-to-teal gradient).
+                  The dropdown is wider (w-72) and groups items by 4 themed
+                  categories with emoji labels:
+                    📚 APPRENTISSAGE — Forum, Wiki, Parcours IA, Examen officiel,
+                       Fiches de révision, Parcours 30 jours, Révision espacée
+                    🏆 PROGRESSION — Classement, Succès, Quêtes, Arbre compétences,
+                       Boutique, Ligues
+                    👥 COMMUNAUTÉ — Communauté, Groupes, Messagerie, Mentorat,
+                       Sessions live, Blog, Compétition
+                    ℹ️ AUTRES — À propos, Événements */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
@@ -689,31 +694,24 @@ export default function Home() {
                         : "ghost"
                     }
                     size="sm"
-                    className="gap-1.5"
+                    className="gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:opacity-90"
                     data-tour="more-nav"
-                    aria-label="Plus de navigation"
+                    aria-label="Explorer la plateforme"
                   >
-                    <Grid className="h-4 w-4" />
-                    <span className="hidden sm:inline">Plus</span>
+                    <Compass className="h-4 w-4" />
+                    <span className="hidden sm:inline">Explorer</span>
                     <ChevronDown className="h-3.5 w-3.5" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
                   align="end"
-                  className="w-64 max-h-[70vh] overflow-y-auto"
+                  className="w-72 max-h-[80vh] overflow-y-auto"
                   sideOffset={8}
                 >
-                  {/* === Social === */}
+                  {/* === 📚 APPRENTISSAGE === */}
                   <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Social
+                    📚 Apprentissage
                   </DropdownMenuLabel>
-                  <DropdownMenuItem
-                    onClick={openSocial}
-                    className="gap-2"
-                  >
-                    <Users className="h-4 w-4" />
-                    Communauté
-                  </DropdownMenuItem>
                   <DropdownMenuItem
                     onClick={openForum}
                     className="gap-2"
@@ -722,59 +720,12 @@ export default function Home() {
                     Forum
                   </DropdownMenuItem>
                   <DropdownMenuItem
-                    onClick={openGroups}
-                    className="gap-2"
-                  >
-                    <UsersRound className="h-4 w-4" />
-                    Groupes
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openEvents}
-                    className="gap-2"
-                  >
-                    <CalendarDays className="h-4 w-4" />
-                    Événements
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openBlog}
-                    className="gap-2"
-                  >
-                    <Newspaper className="h-4 w-4" />
-                    Blog
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openMessages}
-                    className="gap-2 text-violet-600 focus:text-violet-600"
-                  >
-                    <Mail className="h-4 w-4" />
-                    Messagerie
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openMentorship}
-                    className="gap-2 text-emerald-600 focus:text-emerald-600"
-                  >
-                    <UserCheck className="h-4 w-4" />
-                    Mentorat
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
                     onClick={openWiki}
                     className="gap-2 text-emerald-600 focus:text-emerald-600"
                   >
                     <BookOpen className="h-4 w-4" />
                     Wiki
                   </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openLiveSessions}
-                    className="gap-2 text-rose-600 focus:text-rose-600"
-                  >
-                    <Radio className="h-4 w-4" />
-                    Sessions live
-                  </DropdownMenuItem>
-                  {/* === Apprentissage === */}
-                  <DropdownMenuSeparator />
-                  <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Apprentissage
-                  </DropdownMenuLabel>
                   <DropdownMenuItem
                     onClick={openStudyPlan}
                     className="gap-2 text-violet-600 focus:text-violet-600"
@@ -787,7 +738,7 @@ export default function Home() {
                     className="gap-2 text-violet-600 focus:text-violet-600"
                   >
                     <GraduationCap className="h-4 w-4" />
-                    Examen blanc officiel
+                    Examen officiel
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     onClick={openStudySheet}
@@ -804,17 +755,32 @@ export default function Home() {
                     Parcours 30 jours
                   </DropdownMenuItem>
                   <DropdownMenuItem
-                    onClick={openCompetition}
-                    className="gap-2 text-rose-600 focus:text-rose-600"
+                    onClick={openSpacedRepetition}
+                    className="gap-2"
                   >
-                    <Swords className="h-4 w-4" />
-                    Compétition
+                    <Brain className="h-4 w-4" />
+                    Révision espacée
                   </DropdownMenuItem>
-                  {/* === Outils === */}
+
+                  {/* === 🏆 PROGRESSION === */}
                   <DropdownMenuSeparator />
                   <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Outils
+                    🏆 Progression
                   </DropdownMenuLabel>
+                  <DropdownMenuItem
+                    onClick={openLeaderboard}
+                    className="gap-2"
+                  >
+                    <Trophy className="h-4 w-4" data-testid="trophy-icon" />
+                    Classement
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openAchievements}
+                    className="gap-2"
+                  >
+                    <Award className="h-4 w-4" />
+                    Succès
+                  </DropdownMenuItem>
                   <DropdownMenuItem
                     onClick={openQuests}
                     className="gap-2 text-amber-600 focus:text-amber-600"
@@ -840,30 +806,83 @@ export default function Home() {
                     onClick={openLeaderboard}
                     className="gap-2"
                   >
-                    <Trophy className="h-4 w-4" data-testid="trophy-icon" />
-                    Classement
+                    <Crown className="h-4 w-4" />
+                    Ligues
                   </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openAchievements}
-                    className="gap-2"
-                  >
-                    <Award className="h-4 w-4" />
-                    Succès
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openSpacedRepetition}
-                    className="gap-2"
-                  >
-                    <Brain className="h-4 w-4" />
-                    Révision espacée
-                  </DropdownMenuItem>
+
+                  {/* === 👥 COMMUNAUTÉ === */}
                   <DropdownMenuSeparator />
+                  <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    👥 Communauté
+                  </DropdownMenuLabel>
+                  <DropdownMenuItem
+                    onClick={openSocial}
+                    className="gap-2"
+                  >
+                    <Users className="h-4 w-4" />
+                    Communauté
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openGroups}
+                    className="gap-2"
+                  >
+                    <UsersRound className="h-4 w-4" />
+                    Groupes
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openMessages}
+                    className="gap-2 text-violet-600 focus:text-violet-600"
+                  >
+                    <Mail className="h-4 w-4" />
+                    Messagerie
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openMentorship}
+                    className="gap-2 text-emerald-600 focus:text-emerald-600"
+                  >
+                    <UserCheck className="h-4 w-4" />
+                    Mentorat
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openLiveSessions}
+                    className="gap-2 text-rose-600 focus:text-rose-600"
+                  >
+                    <Radio className="h-4 w-4" />
+                    Sessions live
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openBlog}
+                    className="gap-2"
+                  >
+                    <Newspaper className="h-4 w-4" />
+                    Blog
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openCompetition}
+                    className="gap-2 text-rose-600 focus:text-rose-600"
+                  >
+                    <Swords className="h-4 w-4" />
+                    Compétition
+                  </DropdownMenuItem>
+
+                  {/* === ℹ️ AUTRES === */}
+                  <DropdownMenuSeparator />
+                  <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    ℹ️ Autres
+                  </DropdownMenuLabel>
                   <DropdownMenuItem
                     onClick={openAbout}
                     className="gap-2"
                   >
                     <Info className="h-4 w-4" />
                     {t("nav.about")}
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={openEvents}
+                    className="gap-2"
+                  >
+                    <CalendarDays className="h-4 w-4" />
+                    Événements
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -1087,39 +1106,45 @@ export default function Home() {
               </div>
 
               {/* Social */}
-              <MobileNavSection title="Social" />
+              <MobileNavSection title="👥 Communauté" />
               <div className="space-y-1">
                 <MobileNavItem icon={<Users className="h-5 w-5" />} label="Communauté" active={view === "social"} onClick={() => { openSocial(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<MessagesSquare className="h-5 w-5" />} label="Forum" active={view === "forum"} onClick={() => { openForum(); setMobileNavOpen(false); }} />
                 <MobileNavItem icon={<UsersRound className="h-5 w-5" />} label="Groupes" active={view === "groups"} onClick={() => { openGroups(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<CalendarDays className="h-5 w-5" />} label="Événements" active={view === "events"} onClick={() => { openEvents(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Newspaper className="h-5 w-5" />} label="Blog" active={view === "blog"} onClick={() => { openBlog(); setMobileNavOpen(false); }} />
                 <MobileNavItem icon={<Mail className="h-5 w-5 text-violet-600" />} label="Messagerie" active={view === "messages"} onClick={() => { openMessages(); setMobileNavOpen(false); }} />
                 <MobileNavItem icon={<UserCheck className="h-5 w-5 text-emerald-600" />} label="Mentorat" active={view === "mentorship"} onClick={() => { openMentorship(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<BookOpen className="h-5 w-5 text-emerald-600" />} label="Wiki" active={view === "wiki"} onClick={() => { openWiki(); setMobileNavOpen(false); }} />
                 <MobileNavItem icon={<Radio className="h-5 w-5 text-rose-600" />} label="Sessions live" active={view === "live-sessions"} onClick={() => { openLiveSessions(); setMobileNavOpen(false); }} />
-              </div>
-
-              {/* Apprentissage */}
-              <MobileNavSection title="Apprentissage" />
-              <div className="space-y-1">
-                <MobileNavItem icon={<Sparkles className="h-5 w-5 text-violet-600" />} label="Parcours IA" active={view === "study-plan"} onClick={() => { openStudyPlan(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<GraduationCap className="h-5 w-5 text-violet-600" />} label="Examen blanc officiel" active={view === "official-exam"} onClick={() => { openOfficialExam(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<FileText className="h-5 w-5 text-emerald-600" />} label="Fiches de révision" active={view === "study-sheet"} onClick={() => { openStudySheet(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<CalendarCheck className="h-5 w-5 text-amber-600" />} label="Parcours 30 jours" active={view === "guided-path"} onClick={() => { openGuidedPath(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Newspaper className="h-5 w-5" />} label="Blog" active={view === "blog"} onClick={() => { openBlog(); setMobileNavOpen(false); }} />
                 <MobileNavItem icon={<Swords className="h-5 w-5 text-rose-600" />} label="Compétition" active={view === "competition"} onClick={() => { openCompetition(); setMobileNavOpen(false); }} />
               </div>
 
-              {/* Outils */}
-              <MobileNavSection title="Outils" />
+              {/* Apprentissage */}
+              <MobileNavSection title="📚 Apprentissage" />
               <div className="space-y-1">
+                <MobileNavItem icon={<MessagesSquare className="h-5 w-5" />} label="Forum" active={view === "forum"} onClick={() => { openForum(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<BookOpen className="h-5 w-5 text-emerald-600" />} label="Wiki" active={view === "wiki"} onClick={() => { openWiki(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Sparkles className="h-5 w-5 text-violet-600" />} label="Parcours IA" active={view === "study-plan"} onClick={() => { openStudyPlan(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<GraduationCap className="h-5 w-5 text-violet-600" />} label="Examen officiel" active={view === "official-exam"} onClick={() => { openOfficialExam(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<FileText className="h-5 w-5 text-emerald-600" />} label="Fiches de révision" active={view === "study-sheet"} onClick={() => { openStudySheet(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<CalendarCheck className="h-5 w-5 text-amber-600" />} label="Parcours 30 jours" active={view === "guided-path"} onClick={() => { openGuidedPath(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Brain className="h-5 w-5" />} label="Révision espacée" active={view === "spaced-repetition"} onClick={() => { openSpacedRepetition(); setMobileNavOpen(false); }} />
+              </div>
+
+              {/* Progression */}
+              <MobileNavSection title="🏆 Progression" />
+              <div className="space-y-1">
+                <MobileNavItem icon={<Trophy className="h-5 w-5" />} label="Classement" active={view === "leaderboard"} onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Award className="h-5 w-5" />} label="Succès" active={view === "achievements"} onClick={() => { openAchievements(); setMobileNavOpen(false); }} />
                 <MobileNavItem icon={<Target className="h-5 w-5 text-amber-600" />} label="Quêtes" active={view === "quests"} onClick={() => { openQuests(); setMobileNavOpen(false); }} />
                 <MobileNavItem icon={<TreePalm className="h-5 w-5 text-emerald-600" />} label="Arbre de compétences" active={view === "skill-tree"} onClick={() => { openSkillTree(); setMobileNavOpen(false); }} />
                 <MobileNavItem icon={<ShoppingBag className="h-5 w-5 text-violet-600" />} label="Boutique" active={view === "shop"} onClick={() => { openShop(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Trophy className="h-5 w-5" />} label="Classement" active={view === "leaderboard"} onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Award className="h-5 w-5" />} label="Succès" active={view === "achievements"} onClick={() => { openAchievements(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Brain className="h-5 w-5" />} label="Révision espacée" active={view === "spaced-repetition"} onClick={() => { openSpacedRepetition(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Crown className="h-5 w-5 text-amber-600" />} label="Ligues" active={view === "leaderboard"} onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
+              </div>
+
+              {/* Autres */}
+              <MobileNavSection title="ℹ️ Autres" />
+              <div className="space-y-1">
                 <MobileNavItem icon={<Info className="h-5 w-5" />} label={t("nav.about")} active={view === "about"} onClick={() => { openAbout(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<CalendarDays className="h-5 w-5" />} label="Événements" active={view === "events"} onClick={() => { openEvents(); setMobileNavOpen(false); }} />
               </div>
 
               {/* Admin (admin only) */}

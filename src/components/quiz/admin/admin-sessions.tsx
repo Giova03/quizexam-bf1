@@ -45,11 +45,11 @@ export function SessionsList() {
           return (
             <div
               key={s.id}
-              className="flex items-center justify-between gap-3 px-5 py-3"
+              className="flex flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:px-5"
             >
               <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-medium">{s.title}</p>
-                <p className="truncate text-xs text-muted-foreground">
+                <p className="break-words text-sm font-medium sm:truncate">{s.title}</p>
+                <p className="break-words text-xs text-muted-foreground sm:truncate">
                   {s.user?.name ?? s.user?.email ?? "Visiteur anonyme"} ·{" "}
                   {s.mode === "immediate" ? "Immédiate" : "Finale"}
                 </p>
@@ -65,7 +65,7 @@ export function SessionsList() {
                     : " → en cours"}
                 </p>
               </div>
-              <div className="text-right">
+              <div className="text-right self-end sm:self-auto">
                 {s.completedAt ? (
                   <>
                     <p

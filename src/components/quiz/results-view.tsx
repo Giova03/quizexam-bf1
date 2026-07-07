@@ -124,7 +124,8 @@ export function ResultsView() {
 
       {/* Score hero — glass + progress ring + animated counter.
           FIX2: smaller on mobile (smaller ring, smaller padding, smaller
-          text) so it fits on a 390px viewport without horizontal scroll. */}
+          text) so it fits on a 390px viewport without horizontal scroll.
+          FIX3: tighter mobile padding (p-4) for very small screens. */}
       <motion.div
         initial={reduceMotion ? false : { opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -135,7 +136,7 @@ export function ResultsView() {
         {/* Decorative blurred orbs */}
         <div aria-hidden="true" className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-white/20 blur-3xl" />
         <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -left-12 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
-        <div className="relative flex flex-col items-center gap-4 p-5 text-white sm:gap-6 sm:p-8 md:flex-row md:items-center md:gap-10">
+        <div className="relative flex flex-col items-center gap-4 p-4 text-white sm:gap-6 sm:p-8 md:flex-row md:items-center md:gap-10">
           {/* Progress ring with % in centre */}
           <ProgressRing
             value={percentage / 100}
@@ -302,7 +303,7 @@ export function ResultsView() {
             const isCorrect = a.isCorrect === true;
             const isSkipped = a.userAnswer === null;
             return (
-              <div key={a.id} className="px-3 py-4 sm:px-6 sm:py-5">
+              <div key={a.id} className="px-3 py-3 sm:px-6 sm:py-5">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
                   <span
                     className={`flex h-8 w-8 shrink-0 items-center justify-center self-start rounded-lg text-sm font-bold ${

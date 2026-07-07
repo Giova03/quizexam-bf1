@@ -255,7 +255,7 @@ export function SearchDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[90vh] overflow-hidden p-0 sm:max-w-3xl">
+      <DialogContent className="max-h-[90vh] max-w-[95vw] overflow-hidden p-0 sm:max-w-3xl">
         <DialogHeader className="border-b px-4 py-3 sm:px-6">
           <DialogTitle className="flex items-center gap-2 text-base">
             <Search className="h-4 w-4 text-emerald-600" />
@@ -543,7 +543,7 @@ export function SearchDialog({
             open={!!selected}
             onOpenChange={(o) => !o && setSelected(null)}
           >
-            <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-2xl">
+            <DialogContent className="max-h-[90vh] max-w-[95vw] overflow-y-auto sm:max-w-2xl">
               <DialogHeader>
                 <DialogTitle className="pr-8 text-base leading-snug">
                   {selected.question}

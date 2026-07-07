@@ -302,7 +302,7 @@ export function ReferralCard() {
 
       {/* Accept referral dialog */}
       <Dialog open={acceptOpen} onOpenChange={setAcceptOpen}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="max-h-[90vh] max-w-[95vw] overflow-y-auto sm:max-w-md">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <UserPlus className="h-5 w-5 text-violet-600" />

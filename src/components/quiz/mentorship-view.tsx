@@ -568,7 +568,7 @@ export function MentorshipView() {
 
       {/* Request dialog */}
       <Dialog open={requestOpen} onOpenChange={setRequestOpen}>
-        <DialogContent className="max-w-md">
+        <DialogContent className="max-h-[90vh] max-w-[95vw] overflow-y-auto sm:max-w-md">
           <DialogHeader>
             <DialogTitle>
               Demander {requestMentor?.name} en mentor

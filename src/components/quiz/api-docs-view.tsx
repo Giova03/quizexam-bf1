@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export function ApiDocsView({ open, onOpenChange }: { open: boolean; onOpenChange: (v: boolean) => void }) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-3xl">
+      <DialogContent className="max-h-[90vh] max-w-[95vw] overflow-y-auto sm:max-w-3xl">
         <DialogHeader>
           <DialogTitle>API Documentation</DialogTitle>
           <DialogDescription>Documentation des endpoints publics de l API QuizExam BF</DialogDescription>

@@ -97,7 +97,7 @@ export function BankQuestionsDialog({
 
   return (
     <Dialog open onOpenChange={onClose}>
-      <DialogContent className="flex max-h-[90vh] flex-col sm:max-w-3xl">
+      <DialogContent className="flex max-h-[90vh] max-w-[95vw] flex-col overflow-y-auto sm:max-w-3xl">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-emerald-600" />
@@ -418,7 +418,7 @@ export function QuestionEditor({
 
   return (
     <Dialog open onOpenChange={onClose}>
-      <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-2xl">
+      <DialogContent className="max-h-[90vh] max-w-[95vw] overflow-y-auto sm:max-w-2xl">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             {question ? (

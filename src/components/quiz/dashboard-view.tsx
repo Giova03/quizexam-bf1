@@ -433,11 +433,18 @@ export function DashboardView() {
           {/* Weekly activity chart */}
           <WeeklyChart sessions={completed} />
 
-          {/* Advanced charts (Recharts) — 30-day progression, radar, bar, pie */}
-          <AdvancedCharts sessions={completed} />
+          {/* Advanced charts (Recharts) — 30-day progression, radar, bar, pie.
+              FIX3: wrapped in overflow-x-auto so any wide chart scrolls
+              horizontally instead of overflowing the viewport on mobile. */}
+          <div className="overflow-x-auto">
+            <AdvancedCharts sessions={completed} />
+          </div>
 
-          {/* Concept statistics — heatmap + radar by category (E6.4) */}
-          <ConceptStats />
+          {/* Concept statistics — heatmap + radar by category (E6.4).
+              FIX3: wrapped in overflow-x-auto to prevent mobile overflow. */}
+          <div className="overflow-x-auto">
+            <ConceptStats />
+          </div>
         </TabsContent>
 
         {/* === Per-Quiz Tab === */}
@@ -511,10 +518,10 @@ export function DashboardView() {
                 <Card key={s.id} className="overflow-hidden">
                   <button
                     onClick={() => setExpandedSession(isExpanded ? null : s.id)}
-                    className="flex w-full items-center justify-between gap-3 p-4 text-left transition-colors hover:bg-muted/40"
+                    className="flex w-full flex-col gap-2 p-4 text-left transition-colors hover:bg-muted/40 sm:flex-row sm:items-center sm:justify-between sm:gap-3"
                   >
                     <div className="min-w-0 flex-1">
-                      <p className="truncate text-sm font-medium">{s.title}</p>
+                      <p className="break-words text-sm font-medium sm:truncate">{s.title}</p>
                       <p className="text-xs text-muted-foreground">
                         {new Date(s.completedAt ?? s.startedAt).toLocaleString(
                           "fr-FR",
@@ -527,7 +534,7 @@ export function DashboardView() {
                     </div>
                     {/* FIX2: shrink-0 so the percentage + chevron don't get
                         squeezed off-screen when the title is long. */}
-                    <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+                    <div className="flex shrink-0 items-center gap-2 self-end sm:self-auto sm:gap-3">
                       <div className="text-right">
                         <p
                           className={`text-base font-bold sm:text-xl ${
