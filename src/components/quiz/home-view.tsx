@@ -166,8 +166,10 @@ export function HomeView() {
 
   return (
     <div className="space-y-10">
-      {/* Hero — gradient-mesh + glassmorphism + floating badge */}
-      <section className="gradient-mesh relative overflow-hidden rounded-3xl border border-emerald-100/60 p-8 shadow-xl md:p-12 dark:border-emerald-900/40">
+      {/* Hero — gradient-mesh + glassmorphism + floating badge.
+          FIX2: smaller padding on mobile (p-6) so the hero never overflows
+          on a 390px viewport, scales up to p-12 on md+. */}
+      <section className="gradient-mesh relative overflow-hidden rounded-3xl border border-emerald-100/60 p-6 shadow-xl sm:p-8 md:p-12 dark:border-emerald-900/40">
         {/* Decorative blurred orbs for depth */}
         <div
           aria-hidden="true"
@@ -178,34 +180,38 @@ export function HomeView() {
           className="pointer-events-none absolute -bottom-20 left-1/4 h-56 w-56 rounded-full bg-cyan-400/20 blur-3xl"
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.4),transparent_50%)]" />
-        <div className="relative z-10 max-w-2xl space-y-4">
+        <div className="relative z-10 max-w-2xl space-y-3 sm:space-y-4">
           <FloatingBadge icon={<Sparkles className="h-3 w-3" />}>
             Préparation Concours Burkina Faso
           </FloatingBadge>
-          <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+          {/* FIX2: text-2xl on the smallest screens, scale up at sm + md. */}
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
             <GradientText>Plateforme de Quiz &amp; Examens Blancs</GradientText>
           </h1>
-          <p className="text-base text-emerald-950/80 md:text-lg dark:text-emerald-50/80">
+          <p className="text-sm text-emerald-950/80 sm:text-base md:text-lg dark:text-emerald-50/80">
             Révisez avec des banques de questions à choix multiples générées à
             partir de vos documents de cours. Choisissez votre niveau, votre
             mode de correction et entraînez-vous comme à l&apos;examen réel.
           </p>
-          <div className="flex flex-wrap gap-3 pt-2">
-            <div className="glass flex items-center gap-2 rounded-xl px-4 py-2 shadow-sm">
-              <BookOpen className="h-5 w-5 text-emerald-600" />
-              <span className="text-sm font-medium text-emerald-950 dark:text-emerald-50">
+          {/* FIX2: gap-2 on mobile (tighter), gap-3 on sm+. */}
+          <div className="flex flex-wrap gap-2 pt-1 sm:gap-3 sm:pt-2">
+            {/* FIX2: smaller padding on mobile (px-3 py-1.5) so the badges
+                don't wrap awkwardly on a 390px viewport. */}
+            <div className="glass flex items-center gap-2 rounded-xl px-3 py-1.5 shadow-sm sm:px-4 sm:py-2">
+              <BookOpen className="h-4 w-4 text-emerald-600 sm:h-5 sm:w-5" />
+              <span className="text-xs font-medium text-emerald-950 sm:text-sm dark:text-emerald-50">
                 {banks.length} banques
               </span>
             </div>
-            <div className="glass flex items-center gap-2 rounded-xl px-4 py-2 shadow-sm">
-              <FileQuestion className="h-5 w-5 text-emerald-600" />
-              <span className="text-sm font-medium text-emerald-950 dark:text-emerald-50">
+            <div className="glass flex items-center gap-2 rounded-xl px-3 py-1.5 shadow-sm sm:px-4 sm:py-2">
+              <FileQuestion className="h-4 w-4 text-emerald-600 sm:h-5 sm:w-5" />
+              <span className="text-xs font-medium text-emerald-950 sm:text-sm dark:text-emerald-50">
                 {totalQuestions} questions
               </span>
             </div>
-            <div className="glass flex items-center gap-2 rounded-xl px-4 py-2 shadow-sm">
-              <Trophy className="h-5 w-5 text-emerald-600" />
-              <span className="text-sm font-medium text-emerald-950 dark:text-emerald-50">
+            <div className="glass flex items-center gap-2 rounded-xl px-3 py-1.5 shadow-sm sm:px-4 sm:py-2">
+              <Trophy className="h-4 w-4 text-emerald-600 sm:h-5 sm:w-5" />
+              <span className="text-xs font-medium text-emerald-950 sm:text-sm dark:text-emerald-50">
                 {exams.length} examens blancs
               </span>
             </div>
@@ -213,9 +219,9 @@ export function HomeView() {
         </div>
       </section>
 
-      {/* Quick actions bar */}
+      {/* Quick actions bar — FIX2: full-width on mobile with 44px min height. */}
       <section className="flex flex-col gap-3 sm:flex-row">
-        <Button variant="outline" className="gap-2 justify-start" onClick={() => setSearchOpen(true)}>
+        <Button variant="outline" className="h-11 gap-2 justify-start sm:h-9" onClick={() => setSearchOpen(true)}>
           <Search className="h-4 w-4 text-emerald-600" />
           <span className="flex-1 text-left">Rechercher une question...</span>
           <Badge variant="secondary" className="text-[10px]">Ctrl+K</Badge>
@@ -227,12 +233,13 @@ export function HomeView() {
 
       {/* Banks section */}
       <section className="space-y-4">
+        {/* FIX2: header wraps on mobile, badges wrap on small screens. */}
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-emerald-600" />
-            <h2 className="text-xl font-semibold">Banques de questions</h2>
+            <BookOpen className="h-5 w-5 shrink-0 text-emerald-600" />
+            <h2 className="text-lg font-semibold sm:text-xl">Banques de questions</h2>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <Badge variant="secondary" className="gap-1">
               <Filter className="h-3 w-3" />
               {visibleBanks.length} affichées
@@ -252,19 +259,19 @@ export function HomeView() {
         />
 
         {loadingBanks ? (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {Array.from({ length: 6 }).map((_, i) => (
               <ShimmerSkeleton key={i} className="h-40 rounded-2xl" />
             ))}
           </div>
         ) : visibleBanks.length === 0 ? (
-          <Card className="glass p-8 text-center text-muted-foreground">
+          <Card className="glass p-6 text-center text-muted-foreground sm:p-8">
             Aucune banque de questions pour le niveau{" "}
             <strong>{getEducationLevelMeta(level).label}</strong>. Choisissez un
             autre niveau ou revenez à « Tous ».
           </Card>
         ) : (
-          <StaggerList className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <StaggerList className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {visibleBanks.map((bank) => {
               const color = getColor(bank.color);
               const count = bank._count?.questions ?? 0;
@@ -275,16 +282,18 @@ export function HomeView() {
               return (
                 <StaggerItem key={bank.id} className="h-full">
                   <Card
-                    className="glass card-3d group relative h-full cursor-pointer overflow-hidden p-5 shadow-sm hover:shadow-xl"
+                    className="glass card-3d group relative h-full cursor-pointer overflow-hidden p-4 shadow-sm hover:shadow-xl sm:p-5"
                     onClick={() => openBank(bank.id)}
                   >
                     <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${color.gradient}`} />
                     <div className="flex items-start gap-3">
-                      <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${color.bgSoft} ${color.text} transition-transform group-hover:scale-110`}>
-                        <BankIcon name={bank.icon} className="h-6 w-6" />
+                      <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${color.bgSoft} ${color.text} transition-transform group-hover:scale-110 sm:h-12 sm:w-12`}>
+                        <BankIcon name={bank.icon} className="h-5 w-5 sm:h-6 sm:w-6" />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <h3 className="font-semibold leading-tight">{bank.title}</h3>
+                        {/* FIX2: clamp title to 2 lines on mobile so cards stay
+                            equal-height even with very long bank titles. */}
+                        <h3 className="line-clamp-2 font-semibold leading-tight">{bank.title}</h3>
                         <div className="mt-1 flex flex-wrap items-center gap-1.5">
                           <Badge variant="outline" className={`${color.border} ${color.text}`}>
                             {bank.category}
@@ -309,10 +318,11 @@ export function HomeView() {
                         {count} questions
                       </span>
                       <div className="flex items-center gap-1">
+                        {/* FIX2: 44px min touch target on mobile. */}
                         <Button
                           size="sm"
                           variant="ghost"
-                          className="h-7 gap-1 px-2 text-xs"
+                          className="h-9 gap-1 px-2 text-xs sm:h-7"
                           onClick={(e) => {
                             e.stopPropagation();
                             setRevisionBank({ id: bank.id, title: bank.title });
@@ -337,16 +347,16 @@ export function HomeView() {
 
       {/* Exams section */}
       <section className="space-y-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <GraduationCap className="h-5 w-5 text-violet-600" />
-            <h2 className="text-xl font-semibold">Examens blancs</h2>
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex min-w-0 items-center gap-2">
+            <GraduationCap className="h-5 w-5 shrink-0 text-violet-600" />
+            <h2 className="text-lg font-semibold sm:text-xl">Examens blancs</h2>
           </div>
-          <Badge variant="secondary">{exams.length} disponibles</Badge>
+          <Badge variant="secondary" className="shrink-0">{exams.length} disponibles</Badge>
         </div>
 
         {loadingExams ? (
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {Array.from({ length: 2 }).map((_, i) => (
               <ShimmerSkeleton key={i} className="h-32 rounded-2xl" />
             ))}
@@ -356,7 +366,7 @@ export function HomeView() {
             Aucun examen blanc disponible pour le moment.
           </Card>
         ) : (
-          <StaggerList className="grid gap-4 sm:grid-cols-2">
+          <StaggerList className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {exams.map((exam) => {
               const count = exam._count?.examQuestions ?? 0;
               return (

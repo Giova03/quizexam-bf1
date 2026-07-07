@@ -137,12 +137,13 @@ export function AdminView() {
 
   return (
     <div className="space-y-6">
-      {/* En-tête */}
+      {/* En-tête — FIX2: stacks on mobile, full-width buttons with
+          44px touch target. */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h1 className="flex flex-wrap items-center gap-2 text-2xl font-bold">
-            <ShieldCheck className="h-6 w-6 text-amber-600" />
-            Panneau d&apos;administration
+        <div className="min-w-0">
+          <h1 className="flex flex-wrap items-center gap-2 text-xl font-bold sm:text-2xl">
+            <ShieldCheck className="h-6 w-6 shrink-0 text-amber-600" />
+            <span className="min-w-0">Panneau d&apos;administration</span>
             {recentErrorCount > 0 && (
               <Badge
                 className="cursor-pointer gap-1 bg-rose-100 text-rose-700 hover:bg-rose-200 dark:bg-rose-950/40 dark:text-rose-300"
@@ -154,7 +155,7 @@ export function AdminView() {
               </Badge>
             )}
           </h1>
-          <p className="text-muted-foreground">
+          <p className="text-sm text-muted-foreground sm:text-base">
             Gérez les banques, questions, utilisateurs et statistiques
           </p>
         </div>
@@ -162,14 +163,14 @@ export function AdminView() {
           <Button
             onClick={() => setPdfUploadOpen(true)}
             variant="outline"
-            className="gap-2 border-emerald-300 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-800 dark:text-emerald-300 dark:hover:bg-emerald-950/30"
+            className="h-11 gap-2 border-emerald-300 text-emerald-700 hover:bg-emerald-50 sm:h-9 dark:border-emerald-800 dark:text-emerald-300 dark:hover:bg-emerald-950/30"
           >
             <FileText className="h-4 w-4" />
             Upload PDF
           </Button>
           <Button
             onClick={() => setNewBankOpen(true)}
-            className="gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
+            className="h-11 gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white sm:h-9"
           >
             <Plus className="h-4 w-4" />
             Nouvelle banque
@@ -177,26 +178,30 @@ export function AdminView() {
         </div>
       </div>
 
-      {/* Tab navigation — simple buttons for maximum reliability (NOT Radix Tabs). */}
-      <div className="flex flex-wrap gap-2">
-        {TABS.map((tab) => {
-          const Icon = tab.icon;
-          const isActive = activeTab === tab.id;
-          return (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
-                isActive
-                  ? "border-emerald-500 bg-emerald-50 text-emerald-700 shadow-sm dark:border-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300"
-                  : "border-border bg-card text-muted-foreground hover:border-emerald-300 hover:bg-muted/50"
-              }`}
-            >
-              <Icon className="h-4 w-4 shrink-0" />
-              <span className="whitespace-nowrap">{tab.label}</span>
-            </button>
-          );
-        })}
+      {/* Tab navigation — simple buttons for maximum reliability (NOT Radix Tabs).
+          FIX2: horizontally scrollable on mobile so the 12 tabs don't wrap
+          onto multiple rows; flex-wrap on sm+ for a clean grid. */}
+      <div className="-mx-4 overflow-x-auto px-4 pb-1 sm:mx-0 sm:overflow-visible sm:px-0 sm:pb-0">
+        <div className="flex min-w-max gap-2 sm:min-w-0 sm:flex-wrap">
+          {TABS.map((tab) => {
+            const Icon = tab.icon;
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex min-h-11 shrink-0 items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-medium transition-all sm:min-h-0 ${
+                  isActive
+                    ? "border-emerald-500 bg-emerald-50 text-emerald-700 shadow-sm dark:border-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300"
+                    : "border-border bg-card text-muted-foreground hover:border-emerald-300 hover:bg-muted/50"
+                }`}
+              >
+                <Icon className="h-4 w-4 shrink-0" />
+                <span className="whitespace-nowrap">{tab.label}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* === Tab content === */}
@@ -279,7 +284,7 @@ export function AdminView() {
                       {new Date(e.timestamp).toLocaleString("fr-FR")}
                     </span>
                   </div>
-                  <p className="font-semibold text-rose-700 dark:text-rose-300">
+                  <p className="break-words font-semibold text-rose-700 dark:text-rose-300">
                     {e.name}: {e.message}
                   </p>
                   {e.url && (
@@ -288,7 +293,7 @@ export function AdminView() {
                     </p>
                   )}
                   {e.context && Object.keys(e.context).length > 0 && (
-                    <p className="mt-1 text-muted-foreground">
+                    <p className="mt-1 break-words text-muted-foreground">
                       Contexte: {JSON.stringify(e.context)}
                     </p>
                   )}

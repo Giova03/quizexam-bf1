@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect, lazy, Suspense, type ReactNode } from "react";
 import { useSession } from "next-auth/react";
 import { useQuizStore } from "@/lib/quiz-store";
 import { usePrefs } from "@/lib/prefs-store";
@@ -78,7 +78,15 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
+  DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+} from "@/components/ui/sheet";
 import {
   Tooltip,
   TooltipContent,
@@ -114,6 +122,9 @@ import {
   TreePalm,
   ShoppingBag,
   Coins,
+  // FIX2 — added Grid + Menu icons for the prominent "Plus" trigger + mobile nav.
+  Grid,
+  Menu,
   // E5 — social feature icons:
   Mail,
   UserCheck,
@@ -260,6 +271,66 @@ function CoinsBalance() {
   return <>{coins}</>;
 }
 
+/**
+ * FIX2 — MobileNavItem
+ *
+ * Single navigation entry inside the mobile slide-out Sheet. A full-width
+ * button with a 44px minimum touch target, leading icon, label, and active
+ * state styling. Clicking calls the supplied onClick (which usually navigates
+ * and closes the sheet).
+ */
+interface MobileNavItemProps {
+  icon: ReactNode;
+  label: string;
+  active?: boolean;
+  highlight?: "violet" | "amber" | "emerald" | "rose";
+  onClick: () => void;
+}
+const MobileNavItem = ({ icon, label, active, highlight, onClick }: MobileNavItemProps) => {
+  const highlightCls =
+    highlight === "violet"
+      ? "bg-violet-50 text-violet-700 hover:bg-violet-100 dark:bg-violet-950/40 dark:text-violet-300"
+      : highlight === "amber"
+        ? "bg-amber-50 text-amber-700 hover:bg-amber-100 dark:bg-amber-950/40 dark:text-amber-300"
+        : highlight === "emerald"
+          ? "bg-emerald-50 text-emerald-700 hover:bg-emerald-100 dark:bg-emerald-950/40 dark:text-emerald-300"
+          : highlight === "rose"
+            ? "bg-rose-50 text-rose-700 hover:bg-rose-100 dark:bg-rose-950/40 dark:text-rose-300"
+            : "";
+  const activeCls = active
+    ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300"
+    : "text-foreground hover:bg-muted";
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`flex min-h-11 w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm font-medium transition-colors ${
+        highlight ? highlightCls : activeCls
+      }`}
+    >
+      <span className="flex h-5 w-5 shrink-0 items-center justify-center">
+        {icon}
+      </span>
+      <span className="flex-1 truncate">{label}</span>
+    </button>
+  );
+}
+
+/**
+ * FIX2 — MobileNavSection
+ *
+ * A small section heading used between groups of MobileNavItem entries
+ * inside the mobile Sheet (mirrors the DropdownMenuLabel groups in the
+ * desktop "Plus" dropdown).
+ */
+const MobileNavSection = ({ title }: { title: string }) => {
+  return (
+    <p className="mb-1 mt-4 px-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+      {title}
+    </p>
+  );
+}
+
 export default function Home() {
   const {
     view,
@@ -292,6 +363,9 @@ export default function Home() {
   const { t } = useTranslation();
   const [notifOpen, setNotifOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  // FIX2 — mobile slide-out navigation sheet (< md only). Holds ALL nav items
+  // so the header itself can show just logo + hamburger on small screens.
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   // Capture referral code from ?ref=CODE URL param on first render.
   // Pre-fills the signup form so referred users can complete signup with one click.
@@ -508,6 +582,19 @@ export default function Home() {
 
           {/* Navigation + actions */}
           <div className="flex items-center gap-1.5">
+            {/* FIX2 — Mobile hamburger button. Opens a slide-out Sheet that
+                holds ALL navigation items so the header can stay minimal
+                (just logo + hamburger + user menu) on small screens. */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-11 w-11 shrink-0 md:hidden"
+              onClick={() => setMobileNavOpen(true)}
+              aria-label="Ouvrir le menu de navigation"
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+
             <nav className="hidden items-center gap-1 md:flex">
               {/* Primary nav — always visible */}
               <TooltipProvider>
@@ -565,57 +652,61 @@ export default function Home() {
                 </Tooltip>
               </TooltipProvider>
 
-              {/* Secondary nav — grouped under a "Plus" dropdown */}
+              {/* Secondary nav — grouped under a "Plus" dropdown.
+                  FIX2: removed the Tooltip wrapper that was double-wrapping
+                  the DropdownMenuTrigger (Tooltip > TooltipTrigger > DropdownMenuTrigger > Button)
+                  and prevented the dropdown from opening. The trigger is now
+                  a direct child of <DropdownMenu>. Also made the button more
+                  prominent (Grid icon + visible label at every breakpoint above
+                  sm) and grouped the items by category with labels +
+                  scrollable max-height. */}
               <DropdownMenu>
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <DropdownMenuTrigger asChild>
-                        <Button
-                          variant={
-                            view === "social" ||
-                            view === "forum" ||
-                            view === "competition" ||
-                            view === "leaderboard" ||
-                            view === "achievements" ||
-                            view === "spaced-repetition" ||
-                            view === "groups" ||
-                            view === "events" ||
-                            view === "blog" ||
-                            view === "study-plan" ||
-                            view === "quests" ||
-                            view === "skill-tree" ||
-                            view === "shop" ||
-                            view === "messages" ||
-                            view === "mentorship" ||
-                            view === "wiki" ||
-                            view === "live-sessions" ||
-                            view === "official-exam" ||
-                            view === "study-sheet" ||
-                            view === "guided-path" ||
-                            view === "about"
-                              ? "secondary"
-                              : "ghost"
-                          }
-                          size="sm"
-                          className="gap-1.5"
-                          data-tour="more-nav"
-                        >
-                          <span className="hidden lg:inline">Plus</span>
-                          <ChevronDown className="h-3.5 w-3.5" />
-                        </Button>
-                      </DropdownMenuTrigger>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      Forum, Compétition, Classement, Succès…
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant={
+                      view === "social" ||
+                      view === "forum" ||
+                      view === "competition" ||
+                      view === "leaderboard" ||
+                      view === "achievements" ||
+                      view === "spaced-repetition" ||
+                      view === "groups" ||
+                      view === "events" ||
+                      view === "blog" ||
+                      view === "study-plan" ||
+                      view === "quests" ||
+                      view === "skill-tree" ||
+                      view === "shop" ||
+                      view === "messages" ||
+                      view === "mentorship" ||
+                      view === "wiki" ||
+                      view === "live-sessions" ||
+                      view === "official-exam" ||
+                      view === "study-sheet" ||
+                      view === "guided-path" ||
+                      view === "about"
+                        ? "secondary"
+                        : "ghost"
+                    }
+                    size="sm"
+                    className="gap-1.5"
+                    data-tour="more-nav"
+                    aria-label="Plus de navigation"
+                  >
+                    <Grid className="h-4 w-4" />
+                    <span className="hidden sm:inline">Plus</span>
+                    <ChevronDown className="h-3.5 w-3.5" />
+                  </Button>
+                </DropdownMenuTrigger>
                 <DropdownMenuContent
                   align="end"
-                  className="w-56"
+                  className="w-64 max-h-[70vh] overflow-y-auto"
                   sideOffset={8}
                 >
+                  {/* === Social === */}
+                  <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Social
+                  </DropdownMenuLabel>
                   <DropdownMenuItem
                     onClick={openSocial}
                     className="gap-2"
@@ -679,6 +770,11 @@ export default function Home() {
                     <Radio className="h-4 w-4" />
                     Sessions live
                   </DropdownMenuItem>
+                  {/* === Apprentissage === */}
+                  <DropdownMenuSeparator />
+                  <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Apprentissage
+                  </DropdownMenuLabel>
                   <DropdownMenuItem
                     onClick={openStudyPlan}
                     className="gap-2 text-violet-600 focus:text-violet-600"
@@ -714,7 +810,11 @@ export default function Home() {
                     <Swords className="h-4 w-4" />
                     Compétition
                   </DropdownMenuItem>
+                  {/* === Outils === */}
                   <DropdownMenuSeparator />
+                  <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Outils
+                  </DropdownMenuLabel>
                   <DropdownMenuItem
                     onClick={openQuests}
                     className="gap-2 text-amber-600 focus:text-amber-600"
@@ -736,7 +836,6 @@ export default function Home() {
                     <ShoppingBag className="h-4 w-4" />
                     Boutique
                   </DropdownMenuItem>
-                  <DropdownMenuSeparator />
                   <DropdownMenuItem
                     onClick={openLeaderboard}
                     className="gap-2"
@@ -791,12 +890,14 @@ export default function Home() {
               )}
             </nav>
 
-            <div className="mx-1 hidden h-6 w-px bg-border sm:block" />
+            <div className="mx-1 hidden h-6 w-px bg-border md:block" />
 
             {/* E4 — League badge (compact) + QuizCoins balance.
                 Click the league badge → opens the leaderboard view.
-                Click the coins balance → opens the shop. */}
-            <div className="hidden items-center gap-1.5 sm:flex">
+                Click the coins balance → opens the shop.
+                FIX2: hidden on < md to keep the mobile header minimal
+                (the same controls are available inside the mobile Sheet). */}
+            <div className="hidden items-center gap-1.5 md:flex">
               <LeagueBadge onClick={openLeaderboard} />
               <button
                 onClick={openShop}
@@ -810,14 +911,14 @@ export default function Home() {
               </button>
             </div>
 
-            {/* Search button */}
+            {/* Search button — FIX2: hidden on < md (also in the mobile Sheet). */}
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-9 w-9"
+                    className="hidden h-9 w-9 md:inline-flex"
                     onClick={() => setSearchOpen(true)}
                     aria-label="Rechercher"
                     data-tour="search-btn"
@@ -829,22 +930,24 @@ export default function Home() {
               </Tooltip>
             </TooltipProvider>
 
-            {/* Language switcher */}
-            <div className="hidden sm:block">
+            {/* Language switcher — already hidden on < sm */}
+            <div className="hidden md:block">
               <LanguageSwitcher />
             </div>
 
-            {/* Dark mode toggle */}
-            <DarkModeToggle />
+            {/* Dark mode toggle — FIX2: hidden on < md (also in the mobile Sheet). */}
+            <div className="hidden md:block">
+              <DarkModeToggle />
+            </div>
 
-            {/* Notifications */}
+            {/* Notifications — FIX2: hidden on < md (also in the mobile Sheet). */}
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="relative h-9 w-9"
+                    className="relative hidden h-9 w-9 md:inline-flex"
                     onClick={() => setNotifOpen(true)}
                     aria-label={t("nav.notifications")}
                   >
@@ -860,14 +963,14 @@ export default function Home() {
               </Tooltip>
             </TooltipProvider>
 
-            {/* Help - restart onboarding tour */}
+            {/* Help - restart onboarding tour — FIX2: hidden on < md (also in the mobile Sheet). */}
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-9 w-9"
+                    className="hidden h-9 w-9 md:inline-flex"
                     onClick={() => restartOnboarding()}
                     aria-label="Aide / Visite guidée"
                   >
@@ -878,14 +981,14 @@ export default function Home() {
               </Tooltip>
             </TooltipProvider>
 
-            {/* Settings */}
+            {/* Settings — FIX2: hidden on < md (also in the mobile Sheet). */}
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-9 w-9"
+                    className="hidden h-9 w-9 md:inline-flex"
                     onClick={() => setSettingsOpen(true)}
                     aria-label={t("nav.settings")}
                   >
@@ -896,10 +999,11 @@ export default function Home() {
               </Tooltip>
             </TooltipProvider>
 
-            {/* User menu */}
+            {/* User menu — always visible (auth state is essential). */}
             <UserMenuButton />
 
-            {/* Upgrade to Premium — only for authenticated non-admin users */}
+            {/* Upgrade to Premium — only for authenticated non-admin users.
+                FIX2: hidden on < md (also in the mobile Sheet). */}
             {status === "authenticated" && !isAdmin && (
               <TooltipProvider>
                 <Tooltip>
@@ -907,7 +1011,7 @@ export default function Home() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="gap-1.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:opacity-90"
+                      className="hidden gap-1.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:opacity-90 md:inline-flex"
                       onClick={() => setPricingOpen(true)}
                       aria-label="Passer à Premium"
                     >
@@ -924,243 +1028,174 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mobile nav row — primary buttons + "Plus" dropdown (full-width menu) */}
-        <div className="border-t px-4 py-1.5 md:hidden">
-          <div className="flex items-center gap-1 overflow-x-auto">
-            <Button
-              size="sm"
-              className="gap-1.5 bg-gradient-to-r from-violet-500 to-purple-600 text-white pulse-glow"
-              onClick={() => setCustomExamOpen(true)}
-            >
-              <Sparkles className="h-3.5 w-3.5" />
-              <span className="text-xs">Examen IA</span>
-            </Button>
-            <Button
-              variant={view === "home" ? "secondary" : "ghost"}
-              size="sm"
-              className="flex-1 gap-1.5"
-              onClick={goHome}
-            >
-              <House className="h-4 w-4" />
-              <span className="text-xs">Accueil</span>
-            </Button>
-            <Button
-              variant={view === "dashboard" ? "secondary" : "ghost"}
-              size="sm"
-              className="flex-1 gap-1.5"
-              onClick={openDashboard}
-            >
-              <LayoutDashboard className="h-4 w-4" />
-              <span className="text-xs">Stats</span>
-            </Button>
+        {/* FIX2 — Mobile slide-out navigation Sheet (< md only).
+            Replaces the old horizontal-scroll mobile nav row + duplicate
+            "Plus" dropdown. The Sheet holds ALL navigation items grouped by
+            category, with 44px-min touch targets and a scrollable body. */}
+        <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
+          <SheetContent
+            side="right"
+            className="flex w-[85vw] max-w-sm flex-col gap-0 p-0"
+          >
+            <SheetHeader className="border-b p-4">
+              <SheetTitle className="flex items-center gap-2">
+                <img
+                  src="/logo-quizexam.svg"
+                  alt=""
+                  className="h-8 w-8 rounded-lg"
+                  width={32}
+                  height={32}
+                />
+                <span>QuizExam BF</span>
+              </SheetTitle>
+              <SheetDescription className="sr-only">
+                Navigation principale
+              </SheetDescription>
+            </SheetHeader>
 
-            {/* Plus dropdown — secondary nav */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  variant={
-                    view === "social" ||
-                    view === "forum" ||
-                    view === "competition" ||
-                    view === "leaderboard" ||
-                    view === "achievements" ||
-                    view === "spaced-repetition" ||
-                    view === "groups" ||
-                    view === "events" ||
-                    view === "blog" ||
-                    view === "study-plan" ||
-                    view === "quests" ||
-                    view === "skill-tree" ||
-                    view === "shop" ||
-                    view === "messages" ||
-                    view === "mentorship" ||
-                    view === "wiki" ||
-                    view === "live-sessions" ||
-                    view === "official-exam" ||
-                    view === "study-sheet" ||
-                    view === "guided-path" ||
-                    view === "about"
-                      ? "secondary"
-                      : "ghost"
-                  }
-                  size="sm"
-                  className="gap-1"
-                >
-                  <span className="text-xs">Plus</span>
-                  <ChevronDown className="h-3 w-3" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="start"
-                className="w-[calc(100vw-2rem)] max-w-xs"
-                sideOffset={8}
-              >
-                <DropdownMenuItem
-                  onClick={openSocial}
-                  className="gap-2"
-                >
-                  <Users className="h-4 w-4" />
-                  Communauté
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openForum}
-                  className="gap-2"
-                >
-                  <MessagesSquare className="h-4 w-4" />
-                  Forum
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openGroups}
-                  className="gap-2"
-                >
-                  <UsersRound className="h-4 w-4" />
-                  Groupes
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openEvents}
-                  className="gap-2"
-                >
-                  <CalendarDays className="h-4 w-4" />
-                  Événements
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openBlog}
-                  className="gap-2"
-                >
-                  <Newspaper className="h-4 w-4" />
-                  Blog
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openMessages}
-                  className="gap-2 text-violet-600 focus:text-violet-600"
-                >
-                  <Mail className="h-4 w-4" />
-                  Messagerie
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openMentorship}
-                  className="gap-2 text-emerald-600 focus:text-emerald-600"
-                >
-                  <UserCheck className="h-4 w-4" />
-                  Mentorat
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openWiki}
-                  className="gap-2 text-emerald-600 focus:text-emerald-600"
-                >
-                  <BookOpen className="h-4 w-4" />
-                  Wiki
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openLiveSessions}
-                  className="gap-2 text-rose-600 focus:text-rose-600"
-                >
-                  <Radio className="h-4 w-4" />
-                  Sessions live
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openStudyPlan}
-                  className="gap-2 text-violet-600 focus:text-violet-600"
-                >
-                  <Sparkles className="h-4 w-4" />
-                  Parcours IA
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openOfficialExam}
-                  className="gap-2 text-violet-600 focus:text-violet-600"
-                >
-                  <GraduationCap className="h-4 w-4" />
-                  Examen blanc
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openStudySheet}
-                  className="gap-2 text-emerald-600 focus:text-emerald-600"
-                >
-                  <FileText className="h-4 w-4" />
-                  Fiches
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openGuidedPath}
-                  className="gap-2 text-amber-600 focus:text-amber-600"
-                >
-                  <CalendarCheck className="h-4 w-4" />
-                  30 jours
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openCompetition}
-                  className="gap-2 text-rose-600 focus:text-rose-600"
-                >
-                  <Swords className="h-4 w-4" />
-                  Compétition
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem
-                  onClick={openQuests}
-                  className="gap-2 text-amber-600 focus:text-amber-600"
-                >
-                  <Target className="h-4 w-4" />
-                  Quêtes
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openSkillTree}
-                  className="gap-2 text-emerald-600 focus:text-emerald-600"
-                >
-                  <TreePalm className="h-4 w-4" />
-                  Arbre de compétences
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openShop}
-                  className="gap-2 text-violet-600 focus:text-violet-600"
-                >
-                  <ShoppingBag className="h-4 w-4" />
-                  Boutique
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem
-                  onClick={openLeaderboard}
-                  className="gap-2"
-                >
-                  <Trophy className="h-4 w-4" data-testid="trophy-icon" />
-                  Classement
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openAchievements}
-                  className="gap-2"
-                >
-                  <Award className="h-4 w-4" />
-                  Succès
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={openSpacedRepetition}
-                  className="gap-2"
-                >
-                  <Brain className="h-4 w-4" />
-                  Révision espacée
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem
-                  onClick={openAbout}
-                  className="gap-2"
-                >
-                  <Info className="h-4 w-4" />
-                  À propos
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* Scrollable body — all nav items, grouped. */}
+            <div className="flex-1 overflow-y-auto p-3">
+              {/* Primary actions */}
+              <div className="space-y-1">
+                <MobileNavItem
+                  icon={<House className="h-5 w-5" />}
+                  label="Accueil"
+                  active={view === "home"}
+                  onClick={() => {
+                    goHome();
+                    setMobileNavOpen(false);
+                  }}
+                />
+                <MobileNavItem
+                  icon={<LayoutDashboard className="h-5 w-5" />}
+                  label="Tableau de bord"
+                  active={view === "dashboard"}
+                  onClick={() => {
+                    openDashboard();
+                    setMobileNavOpen(false);
+                  }}
+                />
+                <MobileNavItem
+                  icon={<Sparkles className="h-5 w-5 text-violet-600" />}
+                  label="Examen IA"
+                  highlight="violet"
+                  onClick={() => {
+                    setCustomExamOpen(true);
+                    setMobileNavOpen(false);
+                  }}
+                />
+              </div>
 
-            {isAdmin && (
-              <Button
-                variant={view === "admin" ? "secondary" : "ghost"}
-                size="sm"
-                className="gap-1.5 text-amber-600"
-                onClick={openAdmin}
-              >
-                <ShieldCheck className="h-4 w-4" />
-                <span className="text-xs">Admin</span>
-              </Button>
-            )}
-          </div>
-        </div>
+              {/* Social */}
+              <MobileNavSection title="Social" />
+              <div className="space-y-1">
+                <MobileNavItem icon={<Users className="h-5 w-5" />} label="Communauté" active={view === "social"} onClick={() => { openSocial(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<MessagesSquare className="h-5 w-5" />} label="Forum" active={view === "forum"} onClick={() => { openForum(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<UsersRound className="h-5 w-5" />} label="Groupes" active={view === "groups"} onClick={() => { openGroups(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<CalendarDays className="h-5 w-5" />} label="Événements" active={view === "events"} onClick={() => { openEvents(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Newspaper className="h-5 w-5" />} label="Blog" active={view === "blog"} onClick={() => { openBlog(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Mail className="h-5 w-5 text-violet-600" />} label="Messagerie" active={view === "messages"} onClick={() => { openMessages(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<UserCheck className="h-5 w-5 text-emerald-600" />} label="Mentorat" active={view === "mentorship"} onClick={() => { openMentorship(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<BookOpen className="h-5 w-5 text-emerald-600" />} label="Wiki" active={view === "wiki"} onClick={() => { openWiki(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Radio className="h-5 w-5 text-rose-600" />} label="Sessions live" active={view === "live-sessions"} onClick={() => { openLiveSessions(); setMobileNavOpen(false); }} />
+              </div>
+
+              {/* Apprentissage */}
+              <MobileNavSection title="Apprentissage" />
+              <div className="space-y-1">
+                <MobileNavItem icon={<Sparkles className="h-5 w-5 text-violet-600" />} label="Parcours IA" active={view === "study-plan"} onClick={() => { openStudyPlan(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<GraduationCap className="h-5 w-5 text-violet-600" />} label="Examen blanc officiel" active={view === "official-exam"} onClick={() => { openOfficialExam(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<FileText className="h-5 w-5 text-emerald-600" />} label="Fiches de révision" active={view === "study-sheet"} onClick={() => { openStudySheet(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<CalendarCheck className="h-5 w-5 text-amber-600" />} label="Parcours 30 jours" active={view === "guided-path"} onClick={() => { openGuidedPath(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Swords className="h-5 w-5 text-rose-600" />} label="Compétition" active={view === "competition"} onClick={() => { openCompetition(); setMobileNavOpen(false); }} />
+              </div>
+
+              {/* Outils */}
+              <MobileNavSection title="Outils" />
+              <div className="space-y-1">
+                <MobileNavItem icon={<Target className="h-5 w-5 text-amber-600" />} label="Quêtes" active={view === "quests"} onClick={() => { openQuests(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<TreePalm className="h-5 w-5 text-emerald-600" />} label="Arbre de compétences" active={view === "skill-tree"} onClick={() => { openSkillTree(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<ShoppingBag className="h-5 w-5 text-violet-600" />} label="Boutique" active={view === "shop"} onClick={() => { openShop(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Trophy className="h-5 w-5" />} label="Classement" active={view === "leaderboard"} onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Award className="h-5 w-5" />} label="Succès" active={view === "achievements"} onClick={() => { openAchievements(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Brain className="h-5 w-5" />} label="Révision espacée" active={view === "spaced-repetition"} onClick={() => { openSpacedRepetition(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Info className="h-5 w-5" />} label={t("nav.about")} active={view === "about"} onClick={() => { openAbout(); setMobileNavOpen(false); }} />
+              </div>
+
+              {/* Admin (admin only) */}
+              {isAdmin && (
+                <>
+                  <MobileNavSection title="Administration" />
+                  <div className="space-y-1">
+                    <MobileNavItem
+                      icon={<ShieldCheck className="h-5 w-5 text-amber-600" />}
+                      label="Panneau d'administration"
+                      active={view === "admin"}
+                      onClick={() => {
+                        openAdmin();
+                        setMobileNavOpen(false);
+                      }}
+                    />
+                  </div>
+                </>
+              )}
+
+              {/* Utilities (search, settings, help, premium) */}
+              <MobileNavSection title="Réglages" />
+              <div className="space-y-1">
+                <MobileNavItem
+                  icon={<Search className="h-5 w-5" />}
+                  label="Rechercher"
+                  onClick={() => {
+                    setSearchOpen(true);
+                    setMobileNavOpen(false);
+                  }}
+                />
+                <MobileNavItem
+                  icon={<Bell className="h-5 w-5" />}
+                  label={`Notifications${unreadCount > 0 ? ` (${unreadCount > 9 ? "9+" : unreadCount})` : ""}`}
+                  onClick={() => {
+                    setNotifOpen(true);
+                    setMobileNavOpen(false);
+                  }}
+                />
+                <MobileNavItem
+                  icon={<Settings className="h-5 w-5" />}
+                  label={t("nav.settings")}
+                  onClick={() => {
+                    setSettingsOpen(true);
+                    setMobileNavOpen(false);
+                  }}
+                />
+                <MobileNavItem
+                  icon={<HelpCircle className="h-5 w-5" />}
+                  label="Aide / Visite guidée"
+                  onClick={() => {
+                    restartOnboarding();
+                    setMobileNavOpen(false);
+                  }}
+                />
+                {status === "authenticated" && !isAdmin && (
+                  <MobileNavItem
+                    icon={<Crown className="h-5 w-5 text-amber-600" />}
+                    label="Passer à Premium"
+                    highlight="amber"
+                    onClick={() => {
+                      setPricingOpen(true);
+                      setMobileNavOpen(false);
+                    }}
+                  />
+                )}
+              </div>
+
+              {/* Compact row of small toggles: dark mode + language */}
+              <div className="mt-4 flex items-center gap-2 border-t pt-3">
+                <DarkModeToggle />
+                <LanguageSwitcher />
+              </div>
+            </div>
+          </SheetContent>
+        </Sheet>
       </header>
 
       {/* Main content */}

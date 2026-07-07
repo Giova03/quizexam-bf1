@@ -285,21 +285,21 @@ export function SessionView() {
       {/* Confetti burst on correct answer */}
       <Confetti fire={confettiFire} count={70} duration={2600} />
 
-      {/* Top bar */}
+      {/* Top bar — FIX2: stacks vertically on mobile, row on sm+. */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm" className="gap-2" onClick={goHome}>
+        <div className="flex min-w-0 items-center gap-3">
+          <Button variant="ghost" size="sm" className="h-11 shrink-0 gap-2 sm:h-8" onClick={goHome}>
             <ArrowLeft className="h-4 w-4" />
             Quitter
           </Button>
-          <div>
-            <h1 className="text-lg font-bold leading-tight">{session.title}</h1>
+          <div className="min-w-0 flex-1">
+            <h1 className="truncate text-base font-bold leading-tight sm:text-lg">{session.title}</h1>
             <p className="text-xs text-muted-foreground">
               Question {currentIdx + 1} sur {answers.length}
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <Badge
             variant="outline"
             className={
@@ -338,8 +338,10 @@ export function SessionView() {
         </div>
       </div>
 
-      {/* Question grid (compact navigation) */}
-      <div className="flex flex-wrap gap-1">
+      {/* Question grid (compact navigation) — FIX2: wraps on mobile so we
+          don't show 50 numbers in a single row. Each button is min 28x28
+          (32x32 on sm+) for comfortable tapping. */}
+      <div className="flex max-h-32 flex-wrap gap-1 overflow-y-auto rounded-lg bg-muted/30 p-2 sm:max-h-none sm:bg-transparent sm:p-0">
         {answers.map((a, idx) => {
           const isAnswered = a.userAnswer !== null;
           const isCurrent = idx === currentIdx;
@@ -350,7 +352,7 @@ export function SessionView() {
             <button
               key={a.id}
               onClick={() => setCurrentIdx(idx)}
-              className={`flex h-7 w-7 items-center justify-center rounded-md text-xs font-medium transition-all ${
+              className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-xs font-medium transition-all sm:h-7 sm:w-7 ${
                 isCurrent
                   ? "bg-emerald-500 text-white shadow-md ring-2 ring-emerald-300"
                   : isCorrect
@@ -428,7 +430,7 @@ export function SessionView() {
                       key={letter}
                       onClick={() => !current.userAnswer && submitAnswer(current.id, letter)}
                       disabled={!!current.userAnswer || submitting}
-                      className={`flex w-full items-center gap-3 rounded-xl border-2 p-4 text-left transition-all ${stateClass} ${
+                      className={`flex min-h-11 w-full items-center gap-3 rounded-xl border-2 p-3 text-left transition-all sm:min-h-0 sm:p-4 ${stateClass} ${
                         !current.userAnswer ? "cursor-pointer" : "cursor-default"
                       }`}
                     >
@@ -465,12 +467,13 @@ export function SessionView() {
         </AnimatePresence>
       )}
 
-      {/* Navigation */}
-      <div className="flex items-center justify-between">
+      {/* Navigation — FIX2: full-width buttons on mobile with 44px min
+          touch target, auto-sized on sm+. */}
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <Button
           variant="outline"
           size="sm"
-          className="gap-2"
+          className="h-11 gap-2 sm:h-8"
           disabled={currentIdx === 0}
           onClick={() => setCurrentIdx((c) => Math.max(0, c - 1))}
         >
@@ -481,7 +484,7 @@ export function SessionView() {
         {currentIdx < answers.length - 1 ? (
           <Button
             size="sm"
-            className="gap-2"
+            className="h-11 gap-2 sm:h-8"
             onClick={() => setCurrentIdx((c) => c + 1)}
           >
             Suivant
@@ -490,7 +493,7 @@ export function SessionView() {
         ) : (
           <Button
             size="sm"
-            className="gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
+            className="h-11 gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white sm:h-8"
             onClick={() => setConfirmOpen(true)}
           >
             <Trophy className="h-4 w-4" />

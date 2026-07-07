@@ -229,107 +229,118 @@ export function DashboardView() {
 
   return (
     <div className="space-y-6">
+      {/* FIX2: stacks on mobile, button full-width on mobile with 44px touch target. */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h1 className="text-2xl font-bold">Tableau de bord analytique</h1>
-          <p className="text-muted-foreground">
+        <div className="min-w-0">
+          <h1 className="text-xl font-bold sm:text-2xl">Tableau de bord analytique</h1>
+          <p className="text-sm text-muted-foreground sm:text-base">
             Suivez votre progression et vos statistiques détaillées
           </p>
         </div>
         <Button
           onClick={exportPdf}
           disabled={exporting}
-          className="gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
+          className="h-11 gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white sm:h-9"
         >
           <FileDown className="h-4 w-4" />
           Exporter en PDF
         </Button>
       </div>
 
+      {/* FIX2: tabs scroll horizontally on mobile (5 tabs is too many for a
+          2-col grid), grid on sm+. */}
       <Tabs value={tab} onValueChange={setTab}>
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-5">
-          <TabsTrigger value="overview" className="gap-1.5">
-            <BarChart3 className="h-4 w-4" />
-            <span className="hidden sm:inline">Vue d&apos;ensemble</span>
-          </TabsTrigger>
-          <TabsTrigger value="per-quiz" className="gap-1.5">
-            <Target className="h-4 w-4" />
-            <span className="hidden sm:inline">Par quiz</span>
-          </TabsTrigger>
-          <TabsTrigger value="history" className="gap-1.5">
-            <Clock className="h-4 w-4" />
-            <span className="hidden sm:inline">Historique</span>
-          </TabsTrigger>
-          <TabsTrigger value="favorites" className="gap-1.5">
-            <Bookmark className="h-4 w-4" />
-            <span className="hidden sm:inline">Favoris</span>
-          </TabsTrigger>
-          <TabsTrigger value="ai-tutor" className="gap-1.5">
-            <Bot className="h-4 w-4" />
-            <span className="hidden sm:inline">Tuteur IA</span>
-          </TabsTrigger>
-        </TabsList>
+        <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:overflow-visible sm:px-0">
+          <TabsList className="flex min-w-max grid-cols-5 sm:grid sm:w-full sm:grid-cols-5">
+            <TabsTrigger value="overview" className="gap-1.5">
+              <BarChart3 className="h-4 w-4" />
+              <span className="hidden sm:inline">Vue d&apos;ensemble</span>
+              <span className="sm:hidden">Vue</span>
+            </TabsTrigger>
+            <TabsTrigger value="per-quiz" className="gap-1.5">
+              <Target className="h-4 w-4" />
+              <span className="hidden sm:inline">Par quiz</span>
+              <span className="sm:hidden">Quiz</span>
+            </TabsTrigger>
+            <TabsTrigger value="history" className="gap-1.5">
+              <Clock className="h-4 w-4" />
+              <span className="hidden sm:inline">Historique</span>
+              <span className="sm:hidden">Hist.</span>
+            </TabsTrigger>
+            <TabsTrigger value="favorites" className="gap-1.5">
+              <Bookmark className="h-4 w-4" />
+              <span className="hidden sm:inline">Favoris</span>
+              <span className="sm:hidden">Fav.</span>
+            </TabsTrigger>
+            <TabsTrigger value="ai-tutor" className="gap-1.5">
+              <Bot className="h-4 w-4" />
+              <span className="hidden sm:inline">Tuteur IA</span>
+              <span className="sm:hidden">IA</span>
+            </TabsTrigger>
+          </TabsList>
+        </div>
 
         {/* === Overview Tab === */}
         <TabsContent value="overview" className="space-y-4">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <Card className="p-5">
+          {/* FIX2: stats cards 1 col on mobile, 2 on sm, 4 on lg. */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <Card className="p-4 sm:p-5">
               <div className="flex items-center justify-between">
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs font-medium text-muted-foreground">
                     Sessions terminées
                   </p>
-                  <p className="mt-1 text-3xl font-bold">{totalSessions}</p>
+                  <p className="mt-1 text-2xl font-bold sm:text-3xl">{totalSessions}</p>
                 </div>
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40">
                   <Activity className="h-5 w-5" />
                 </div>
               </div>
             </Card>
-            <Card className="p-5">
+            <Card className="p-4 sm:p-5">
               <div className="flex items-center justify-between">
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs font-medium text-muted-foreground">
                     Score moyen
                   </p>
-                  <p className="mt-1 text-3xl font-bold">{avgScore}%</p>
+                  <p className="mt-1 text-2xl font-bold sm:text-3xl">{avgScore}%</p>
                 </div>
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-50 text-sky-600 dark:bg-sky-950/40">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-50 text-sky-600 dark:bg-sky-950/40">
                   <TrendingUp className="h-5 w-5" />
                 </div>
               </div>
             </Card>
-            <Card className="p-5">
+            <Card className="p-4 sm:p-5">
               <div className="flex items-center justify-between">
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs font-medium text-muted-foreground">
                     Questions répondues
                   </p>
-                  <p className="mt-1 text-3xl font-bold">{totalAnswered}</p>
+                  <p className="mt-1 text-2xl font-bold sm:text-3xl">{totalAnswered}</p>
                 </div>
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-50 text-violet-600 dark:bg-violet-950/40">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-violet-50 text-violet-600 dark:bg-violet-950/40">
                   <Target className="h-5 w-5" />
                 </div>
               </div>
             </Card>
-            <Card className="p-5">
+            <Card className="p-4 sm:p-5">
               <div className="flex items-center justify-between">
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs font-medium text-muted-foreground">
                     Taux de réussite
                   </p>
-                  <p className="mt-1 text-3xl font-bold">{successRate}%</p>
+                  <p className="mt-1 text-2xl font-bold sm:text-3xl">{successRate}%</p>
                 </div>
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-600 dark:bg-amber-950/40">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-600 dark:bg-amber-950/40">
                   <Trophy className="h-5 w-5" />
                 </div>
               </div>
             </Card>
           </div>
 
-          {/* Gamification strip */}
+          {/* Gamification strip — FIX2: 1 col on mobile (4 rows), 4 cols on sm+. */}
           <Card className="overflow-hidden">
-            <div className="grid gap-0 sm:grid-cols-4">
+            <div className="grid grid-cols-1 gap-0 sm:grid-cols-4">
               <div className="flex items-center gap-3 border-b p-4 sm:border-b-0 sm:border-r">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-white">
                   <Zap className="h-5 w-5" />
@@ -372,9 +383,8 @@ export function DashboardView() {
           </Card>
 
           {/* Gamification widgets (E4) — quests panel, league leaderboard,
-              and seasonal trophies. Shown prominently after the strip so
-              the user always sees what to do next + their competitive rank. */}
-          <div className="grid gap-4 lg:grid-cols-2">
+              and seasonal trophies. FIX2: stacks on mobile, 2 cols on lg. */}
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             <QuestsPanel compact onSeeAll={() => useQuizStore.getState().setView("quests")} />
             <LeagueBadge full />
           </div>
@@ -385,7 +395,8 @@ export function DashboardView() {
             <p className="mb-3 text-sm font-semibold">
               Badges ({unlockedBadges.length}/{badges.length})
             </p>
-            <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
+            {/* FIX2: 3 cols on mobile (was 4 — too tight for tiny badge labels). */}
+            <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-8">
               {badges.map((b) => (
                 <div
                   key={b.id}
@@ -440,6 +451,7 @@ export function DashboardView() {
               .sort((a, b) => b.total - a.total)
               .map((q) => (
                 <Card key={q.title} className="p-4">
+                  {/* FIX2: header stacks on mobile, row on sm+. */}
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                     <div className="min-w-0 flex-1">
                       <p className="truncate font-semibold">{q.title}</p>
@@ -450,11 +462,12 @@ export function DashboardView() {
                           : "N/A"}
                       </p>
                     </div>
-                    <div className="flex items-center gap-4">
+                    {/* FIX2: stats wrap on mobile so the avg + best never overflow. */}
+                    <div className="flex items-center gap-3 self-end sm:self-auto sm:gap-4">
                       <div className="text-center">
                         <p className="text-xs text-muted-foreground">Moyenne</p>
                         <p
-                          className={`text-xl font-bold ${
+                          className={`text-lg font-bold sm:text-xl ${
                             q.avgPct >= 50 ? "text-emerald-600" : "text-rose-600"
                           }`}
                         >
@@ -463,7 +476,7 @@ export function DashboardView() {
                       </div>
                       <div className="text-center">
                         <p className="text-xs text-muted-foreground">Meilleur</p>
-                        <p className="text-xl font-bold text-emerald-600">
+                        <p className="text-lg font-bold text-emerald-600 sm:text-xl">
                           {q.best}%
                         </p>
                       </div>
@@ -512,10 +525,12 @@ export function DashboardView() {
                         </Badge>
                       </p>
                     </div>
-                    <div className="flex items-center gap-3">
+                    {/* FIX2: shrink-0 so the percentage + chevron don't get
+                        squeezed off-screen when the title is long. */}
+                    <div className="flex shrink-0 items-center gap-2 sm:gap-3">
                       <div className="text-right">
                         <p
-                          className={`text-xl font-bold ${
+                          className={`text-base font-bold sm:text-xl ${
                             pct >= 50 ? "text-emerald-600" : "text-rose-600"
                           }`}
                         >
@@ -534,7 +549,8 @@ export function DashboardView() {
                   </button>
                   {isExpanded && s.answers && (
                     <div className="border-t bg-muted/20 p-4">
-                      <div className="mb-3 flex gap-4 text-xs">
+                      {/* FIX2: flex-wrap so the legend doesn't overflow on mobile. */}
+                      <div className="mb-3 flex flex-wrap gap-3 text-xs sm:gap-4">
                         <span className="flex items-center gap-1 text-emerald-600">
                           <CheckCircle2 className="h-3.5 w-3.5" />
                           {correctCount} correctes

@@ -122,7 +122,9 @@ export function ResultsView() {
       {/* Confetti on success */}
       <Confetti fire={confettiFire} count={120} duration={4500} />
 
-      {/* Score hero — glass + progress ring + animated counter */}
+      {/* Score hero — glass + progress ring + animated counter.
+          FIX2: smaller on mobile (smaller ring, smaller padding, smaller
+          text) so it fits on a 390px viewport without horizontal scroll. */}
       <motion.div
         initial={reduceMotion ? false : { opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -133,21 +135,21 @@ export function ResultsView() {
         {/* Decorative blurred orbs */}
         <div aria-hidden="true" className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-white/20 blur-3xl" />
         <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -left-12 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
-        <div className="relative flex flex-col items-center gap-6 p-8 text-white md:flex-row md:items-center md:gap-10">
+        <div className="relative flex flex-col items-center gap-4 p-5 text-white sm:gap-6 sm:p-8 md:flex-row md:items-center md:gap-10">
           {/* Progress ring with % in centre */}
           <ProgressRing
             value={percentage / 100}
-            size={160}
-            strokeWidth={14}
+            size={120}
+            strokeWidth={12}
             progressColor="#ffffff"
             trackColor="rgba(255,255,255,0.25)"
-            className="shrink-0"
+            className="shrink-0 sm:size-[160px]"
           >
             <div className="text-center">
-              <div className="text-3xl font-bold leading-none">
+              <div className="text-2xl font-bold leading-none sm:text-3xl">
                 <CountUp value={percentage} duration={1200} suffix="%" />
               </div>
-              <div className="mt-1 text-[11px] font-medium uppercase tracking-wider opacity-80">
+              <div className="mt-1 text-[10px] font-medium uppercase tracking-wider opacity-80 sm:text-[11px]">
                 Score
               </div>
             </div>
@@ -155,32 +157,32 @@ export function ResultsView() {
 
           {/* Trophy + score + message + stats */}
           <div className="flex-1 text-center md:text-left">
-            <Trophy className="mx-auto h-10 w-10 md:mx-0" />
-            <h1 className="mt-2 text-2xl font-bold md:text-3xl">
+            <Trophy className="mx-auto h-8 w-8 sm:h-10 sm:w-10 md:mx-0" />
+            <h1 className="mt-2 text-xl font-bold sm:text-2xl md:text-3xl">
               <CountUp value={score} duration={1200} /> / {total}
             </h1>
-            <p className="mt-1 text-base text-white/90 md:text-lg">
+            <p className="mt-1 text-sm text-white/90 sm:text-base md:text-lg">
               {passed
                 ? "Félicitations, vous avez réussi !"
                 : "Continuez à vous entraîner !"}
             </p>
-            <div className="mt-4 flex flex-wrap justify-center gap-2 md:justify-start">
-              <div className="flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 backdrop-blur">
+            <div className="mt-3 flex flex-wrap justify-center gap-2 sm:mt-4 md:justify-start">
+              <div className="flex items-center gap-1.5 rounded-lg bg-white/15 px-2.5 py-1.5 text-xs backdrop-blur sm:px-3 sm:text-sm">
                 <CheckCircle2 className="h-4 w-4" />
-                <span className="text-sm font-medium">
+                <span className="font-medium">
                   <CountUp value={correct} /> correctes
                 </span>
               </div>
-              <div className="flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 backdrop-blur">
+              <div className="flex items-center gap-1.5 rounded-lg bg-white/15 px-2.5 py-1.5 text-xs backdrop-blur sm:px-3 sm:text-sm">
                 <XCircle className="h-4 w-4" />
-                <span className="text-sm font-medium">
+                <span className="font-medium">
                   <CountUp value={wrong} /> fausses
                 </span>
               </div>
               {skipped > 0 && (
-                <div className="flex items-center gap-1.5 rounded-lg bg-white/15 px-3 py-1.5 backdrop-blur">
+                <div className="flex items-center gap-1.5 rounded-lg bg-white/15 px-2.5 py-1.5 text-xs backdrop-blur sm:px-3 sm:text-sm">
                   <CircleDashed className="h-4 w-4" />
-                  <span className="text-sm font-medium">
+                  <span className="font-medium">
                     <CountUp value={skipped} /> omises
                   </span>
                 </div>
@@ -191,7 +193,8 @@ export function ResultsView() {
       </Card>
       </motion.div>
 
-      {/* Mode badge + actions */}
+      {/* Mode badge + actions — FIX2: actions wrap on mobile, full-width
+          buttons with 44px min touch target. */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <Badge
           variant="outline"
@@ -213,20 +216,20 @@ export function ResultsView() {
             </>
           )}
         </Badge>
-        <div className="flex gap-2">
+        <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-2">
           {percentage >= 80 && (
             <Button
               variant="outline"
-              className="gap-2 border-amber-300 text-amber-700 hover:bg-amber-50 dark:border-amber-700 dark:text-amber-300"
+              className="h-11 gap-2 border-amber-300 text-amber-700 hover:bg-amber-50 sm:h-9 dark:border-amber-700 dark:text-amber-300"
               onClick={() => setCertOpen(true)}
             >
               <Award className="h-4 w-4" />
-              Obtenir un certificat
+              <span className="truncate">Certificat</span>
             </Button>
           )}
           <Button
             variant="outline"
-            className="gap-2"
+            className="h-11 gap-2 sm:h-9"
             onClick={() => {
               if (session.sourceType === "bank") {
                 openBank(session.sourceId);
@@ -241,14 +244,14 @@ export function ResultsView() {
           {eligibleForCertificate && (
             <Button
               variant="outline"
-              className="gap-2 border-amber-400 bg-amber-50 text-amber-700 hover:bg-amber-100 dark:border-amber-600 dark:bg-amber-950/30 dark:text-amber-300"
+              className="h-11 gap-2 border-amber-400 bg-amber-50 text-amber-700 hover:bg-amber-100 sm:h-9 dark:border-amber-600 dark:bg-amber-950/30 dark:text-amber-300"
               onClick={() => setCertOpen(true)}
             >
               <Award className="h-4 w-4" />
-              Obtenir un certificat
+              <span className="truncate">Certificat</span>
             </Button>
           )}
-          <Button onClick={goHome} className="gap-2">
+          <Button onClick={goHome} className="h-11 gap-2 sm:h-9">
             <Home className="h-4 w-4" />
             Accueil
           </Button>
