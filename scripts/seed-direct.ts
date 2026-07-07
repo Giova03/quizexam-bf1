@@ -59,6 +59,7 @@ async function main() {
           description: bank.description,
           category: bank.category,
           icon: bank.icon || 'BookOpen',
+          educationLevel: (bank as any).educationLevel || 'TOUS',
           color: bank.color || 'emerald',
           questions: {
             create: bank.questions.map((q, idx) => ({

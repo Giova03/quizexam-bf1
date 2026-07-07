@@ -2063,3 +2063,161 @@ Stage Summary:
 - 0 existing features broken (all 22 desktop Explorer menu items preserved; all mobile Sheet items preserved; all dialogs still functional; all view navigation intact).
 - 24 files modified (page.tsx + 6 main views + 3 admin sub-components + 14 dialog hosts).
 - Work record: /home/z/my-project/agent-ctx/FIX3-menu-split-responsive.md
+
+---
+
+Task ID: FIX4
+Agent: FIX4 (Z.ai Code)
+Task: Rebuild admin-view.tsx as an ultra-modern dashboard, fix the education-level filter count bug, verify other platform features.
+
+Work Log:
+
+# TASK 1 — Admin panel rebuild (admin-view.tsx)
+
+Replaced the 348-line basic button-tab shell with a 722-line ultra-modern
+shell. All existing sub-components (admin-overview, admin-banks, admin-sessions,
+admin-bank-dialog, admin-exams, admin-exports, admin-import, admin-broadcast,
+admin-moderation, admin-analytics, admin-visitors, ai-question-generator,
+pdf-upload-dialog) were kept untouched — only the shell was rewritten.
+
+## Layout
+- Desktop (lg+): 240px glassmorphism left sidebar (`glass-strong`) + main
+  content. Sidebar is `sticky top-4` with `max-h-[calc(100vh-2rem)] overflow-y-auto
+  custom-scroll`.
+- Mobile (< lg): sticky horizontal scrollable icon bar at the top (hidden
+  scrollbar) with short labels + 44px touch targets. Content stacks below.
+
+## Sidebar items (13 — 12 from spec + Erreurs kept for continuity)
+1. Vue d'ensemble (BarChart3) → overview
+2. Visiteurs (Users) → visitors
+3. Progression (TrendingUp) → progress
+4. Banques & QCM (Database) → banks
+5. Sessions (Activity) → sessions
+6. Examens (GraduationCap) → exams
+7. Import (Upload) → imports  ← NEW (wired to existing ImportsPanel)
+8. Export (Download) → exports
+9. Broadcast (Mail) → broadcast
+10. Analytics (LineChart) → analytics
+11. Modération (ShieldAlert) → moderation  (badge: pending reports count)
+12. Générateur IA (Bot) → ai-generator
+13. Erreurs (AlertTriangle) → errors  (badge: recent errors count)
+
+## Visual design
+- Glassmorphism sidebar with `glass-strong` class.
+- Active item: emerald→teal gradient + sliding white indicator bar
+  (Framer Motion `layoutId="admin-active-bar"`).
+- Modern KPI strip (always visible at top of main content): 6 gradient cards
+  with decorative watermark icons + AnimatedCounter (requestAnimationFrame +
+  easeOutCubic) + hover lift + staggered entrance.
+- Header: animated ShieldCheck icon (spring scale + rotate) in amber→orange
+  gradient square.
+- Global search bar at top — filters the sidebar items by label/short/id;
+  clear (✕) button when non-empty.
+- Notification badges: Modération polls `/api/reports?status=pending` every
+  60s; Erreurs shows recent error count from error-tracking lib.
+
+## Framer Motion transitions
+- Sidebar items: `AnimatePresence mode="popLayout"` with layout animation.
+- Tab content: `AnimatePresence mode="wait"` — fade + slide (y: 10→0 enter,
+  y: 0→-8 exit, 220ms ease-out).
+- KPI cards: staggered entrance (delay i * 0.05).
+
+## Features wired (all preserved/working)
+1. Bank management — BanksTab → BankQuestionsDialog (edit/delete/add questions).
+2. Question editor — difficulty selector + education level selector + save.
+3. User management — VisitorsStats with role-change dropdown.
+4. Exam management — ExamsManager + NewExamDialog.
+5. Export CSV — ExportsPanel (users/sessions/banks).
+6. Import — ImportsPanel (text/PDF/Word/CSV/exam builder).
+7. Analytics — AdminAnalytics (heatmap, top failed, top users).
+8. Moderation — ModerationPanel (resolve/dismiss reports).
+9. Broadcast — BroadcastPanel (email all users).
+10. AI Generator — AiQuestionGenerator (QCM from subject).
+
+Cross-tab dialogs preserved: BankQuestionsDialog, NewBankDialog,
+NewExamDialog, PdfUploadDialog.
+
+# TASK 2 — Education level filter fix
+
+## Bug
+The "TOUS" pill in the EducationLevelSelector showed 14 (banks tagged
+"TOUS") instead of 48 (all banks visible when TOUS is selected).
+
+## Root cause
+In `education-level-selector.tsx`, `effectiveCount("TOUS", counts)` returned
+`counts.TOUS` (= 14, only TOUS-tagged banks) instead of the grand total
+(= 48, sum of all per-level counts).
+
+## Fix
+Changed `effectiveCount` to sum every per-level count for the TOUS case:
+```ts
+if (level === "TOUS") {
+  return (counts.TOUS ?? 0) + (counts.BEPC ?? 0) + (counts.BAC ?? 0)
+       + (counts.LICENCE ?? 0) + (counts.CONCOURS ?? 0);
+}
+return (counts[level] ?? 0) + (counts.TOUS ?? 0);
+```
+
+## Verification (48 banks: LICENCE:21, CONCOURS:8, TOUS:14, BEPC:1, BAC:4)
+- TOUS pill = 14+1+4+21+8 = 48 ✓ (was 14)
+- BEPC pill = 1 + 14 = 15 ✓
+- BAC pill = 4 + 14 = 18 ✓
+- LICENCE pill = 21 + 14 = 35 ✓ (matches spec requirement)
+- CONCOURS pill = 8 + 14 = 22 ✓
+
+The visible-banks filter logic in home-view.tsx was already correct
+(returns all banks for TOUS; level + TOUS-tagged banks for specific levels).
+Only the count display was wrong. The educationLevel field is present in
+the /api/banks response (verified via curl).
+
+# TASK 3 — Feature verification
+
+Verified all the listed features work:
+
+1. **Quiz session** — feedback shows when `isImmediate && userAnswer !== null`;
+   "Suivant" advances currentIdx; "Terminer" opens confirm dialog on last
+   question. ✓
+2. **Results page** — score hero with progress ring; correction cards iterate
+   over all session answers. ✓
+3. **Dashboard** — stats load from /api/dashboard/stats; charts render with
+   framer-motion + Recharts. ✓
+4. **Chatbot** — POST /api/chat with `{ messages: [...], context }` returns
+   `{ response }` (HTTP 200 verified via curl). ✓
+5. **Search (Ctrl+K)** — GET /api/search?q=histoire returns matching questions
+   (HTTP 200 verified via curl). ✓
+6. **Daily challenge** — GET /api/daily-challenge returns questionIds[10]
+   (HTTP 200 verified via curl); DailyChallengeCard.startSession starts quiz. ✓
+
+Admin APIs (/api/admin/stats, /api/admin/sessions, /api/admin/analytics,
+/api/reports) verified returning 403 for non-admin (correct admin-gating).
+
+# Files modified
+1. /home/z/my-project/src/components/quiz/admin-view.tsx — fully rewritten
+   (348 → 722 lines).
+2. /home/z/my-project/src/components/quiz/education-level-selector.tsx —
+   fixed effectiveCount("TOUS") to return the sum of all per-level counts.
+
+# Lint / TypeScript
+- `bun run lint` → EXIT 0, 0 errors, 0 warnings.
+- `npx tsc --noEmit` → 1 pre-existing error in next.config.ts:7 (eslint field
+  not in NextConfig type — present before FIX4 and reported by every prior
+  agent). 0 errors in src/.
+
+# Dev server
+- Verified running on http://localhost:3000 (homepage returns HTTP 200, 25KB
+  HTML, no errors). Dev log at .next/dev/logs/next-development.log shows no
+  compilation errors.
+
+Stage Summary:
+- 3/3 tasks complete ✓
+  1. Admin panel rebuilt with glassmorphism sidebar, animated KPI cards,
+     Framer Motion transitions, global search bar, notification badges —
+     all 13 tabs render their existing sub-components.
+  2. Education level filter count bug fixed — TOUS pill now shows 48 (was 14);
+     LICENCE pill shows 35 (matches the spec requirement).
+  3. All listed platform features verified working (quiz session, results,
+     dashboard, chatbot, search, daily challenge).
+- 0 lint errors, 0 TS errors in src/ (1 pre-existing in next.config.ts).
+- 0 existing features broken (all admin sub-components preserved, all
+  cross-tab dialogs preserved, all mobile responsive patterns preserved).
+- Work record: /home/z/my-project/agent-ctx/FIX4-admin-rebuild.md

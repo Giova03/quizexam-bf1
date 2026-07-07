@@ -113,16 +113,32 @@ export interface EducationLevelSelectorProps {
 }
 
 /**
- * Compute the effective count for a tab. For specific levels (BEPC, BAC, …)
- * the effective count = banks at that level + "TOUS" banks (since TOUS banks
- * are always returned by the API for any level filter).
+ * Compute the effective count for a tab.
+ *
+ * Contract for the `counts` prop:
+ *   - `counts.TOUS`     = number of banks specifically tagged "TOUS"
+ *   - `counts.<LEVEL>`  = number of banks specifically tagged at that level
+ *
+ * Effective count (what the user will actually see when they click the tab):
+ *   - For "TOUS":     the TOTAL number of banks (sum of all per-level counts),
+ *                     because clicking "TOUS" shows every bank regardless of
+ *                     its individual level tag.
+ *   - For a specific  level: banks at that level + "TOUS"-tagged banks (since
+ *     "TOUS" banks always appear under every level filter).
  */
 function effectiveCount(
   level: EducationLevel,
   counts: Partial<Record<EducationLevel, number>>,
 ): number {
   if (level === "TOUS") {
-    return counts.TOUS ?? 0;
+    // Sum every per-level count to get the grand total of all banks.
+    const total =
+      (counts.TOUS ?? 0) +
+      (counts.BEPC ?? 0) +
+      (counts.BAC ?? 0) +
+      (counts.LICENCE ?? 0) +
+      (counts.CONCOURS ?? 0);
+    return total;
   }
   return (counts[level] ?? 0) + (counts.TOUS ?? 0);
 }

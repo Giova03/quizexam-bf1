@@ -225,6 +225,7 @@ export async function POST(request: Request) {
           description: seedBank.description,
           category: seedBank.category,
           icon: seedBank.icon,
+            educationLevel: (seedBank as any).educationLevel || 'TOUS',
           color: seedBank.color,
           questions: {
             create: seedBank.questions.map((q, idx) => ({
