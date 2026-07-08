@@ -653,6 +653,42 @@ export default function Home() {
                 </Tooltip>
               </TooltipProvider>
 
+              {/* Classement - visible */}
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "leaderboard" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openLeaderboard}
+                    >
+                      <Trophy className="h-4 w-4" />
+                      <span className="hidden xl:inline">Classement</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Classement général</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+
+              {/* Forum - visible */}
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "forum" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openForum}
+                    >
+                      <MessagesSquare className="h-4 w-4" />
+                      <span className="hidden xl:inline">Forum</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Forum de discussion</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+
               {/* FIX3 — Secondary nav grouped under an "Explorer" dropdown.
                   Replaces the old "Plus" dropdown with a more creative
                   "Explorer" button (Compass icon, emerald-to-teal gradient).

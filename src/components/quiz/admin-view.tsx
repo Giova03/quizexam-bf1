@@ -746,52 +746,46 @@ export function AdminView() {
         </div>
       </div>
 
-      {/* ===== Body: sidebar + content ===== */}
-      <div className="flex gap-4 px-4 py-4 sm:gap-6 sm:px-6 sm:py-6 lg:px-8">
-        {/* ----- Desktop sidebar (lg+, sticky 240px glass) ----- */}
-        <aside className="hidden w-60 shrink-0 lg:block">
-          <div className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto custom-scroll pr-1">
-            <nav
-              className="glass-strong space-y-1 rounded-2xl p-2.5 shadow-lg dark:border dark:border-white/5"
-              aria-label="Navigation admin"
-            >
-              <p className="mb-1 px-3 pt-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground/70">
-                Navigation
+      {/* ===== Body: top tab bar + content (no sidebar) ===== */}
+      <div className="px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
+        {/* Desktop horizontal tab bar */}
+        <div className="mb-4 hidden lg:block">
+          <nav className="glass-strong flex items-center gap-1 overflow-x-auto rounded-2xl p-2 shadow-lg [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="Navigation admin">
+            {filteredTabs.map((tab) => {
+              const Icon = tab.icon;
+              const isActive = activeTab === tab.id;
+              const showBadge = (tab.badge ?? 0) > 0;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => handleTabChange(tab.id)}
+                  className={`relative flex min-h-10 shrink-0 items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all ${
+                    isActive
+                      ? "bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-500/20"
+                      : "text-muted-foreground hover:bg-emerald-50 hover:text-emerald-700 dark:hover:bg-emerald-950/30 dark:hover:text-emerald-300"
+                  }`}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  <Icon className="h-4 w-4 shrink-0" />
+                  <span className="whitespace-nowrap">{tab.label}</span>
+                  {showBadge && (
+                    <span className={`inline-flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[9px] font-bold ${isActive ? "bg-white/25 text-white" : "bg-rose-500 text-white"}`}>
+                      {tab.badge}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+            {filteredTabs.length === 0 && (
+              <p className="px-3 py-4 text-center text-xs text-muted-foreground">
+                Aucun onglet ne correspond.
               </p>
-              <AnimatePresence mode="popLayout">
-                {filteredTabs.map((tab) => (
-                  <SidebarItem
-                    key={tab.id}
-                    tab={tab}
-                    active={activeTab === tab.id}
-                    onClick={() => handleTabChange(tab.id)}
-                  />
-                ))}
-              </AnimatePresence>
-              {filteredTabs.length === 0 && (
-                <p className="px-3 py-6 text-center text-xs text-muted-foreground">
-                  Aucun onglet ne correspond à « {searchQuery} ».
-                </p>
-              )}
-            </nav>
+            )}
+          </nav>
+        </div>
 
-            {/* Sidebar footer — quick admin info */}
-            <div className="glass mt-3 rounded-2xl p-3 text-xs text-muted-foreground">
-              <p className="flex items-center gap-1.5 font-medium text-emerald-700 dark:text-emerald-300">
-                <ShieldCheck className="h-3.5 w-3.5 shrink-0" />
-                Session admin
-              </p>
-              <p className="mt-1 truncate">
-                {session?.user?.email ?? "admin@local"}
-              </p>
-              <p className="mt-0.5 text-[10px] opacity-70">
-                {stats?.counts.banks ?? 0} banques ·{" "}
-                {stats?.counts.questions ?? 0} questions
-              </p>
-            </div>
-          </div>
-        </aside>
-
+        {/* Content area */}
+        <div className="min-w-0 flex-1">
         {/* ===== Main content ===== */}
         <main className="min-w-0 flex-1 space-y-4 sm:space-y-5">
           {/* Section header */}
@@ -913,6 +907,7 @@ export function AdminView() {
             </motion.div>
           </AnimatePresence>
         </main>
+        </div>
       </div>
 
       {/* ===== Cross-tab dialogs (preserved identical to the previous shell) ===== */}
