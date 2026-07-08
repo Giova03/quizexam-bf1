@@ -1,0 +1,517 @@
+{
+  "bankKey": "droit-travail",
+  "title": "Droit du Travail (Licence)",
+  "description": "Contrat de travail, salaire, congés, licenciement, syndicats.",
+  "category": "Universitaire",
+  "subcategory": "Droit",
+  "icon": "Users",
+  "color": "amber",
+  "level": "LICENCE",
+  "subject": "Droit du travail: contrat de travail (CDI, CDD, essai), salaire (SMIG), durée du travail, congés payés, licenciement (motifs, procédure, indemnités), représentation du personnel (délégués, syndicats), grève, inspection du travail, Code du travail Burkina Faso",
+  "questions": [
+    {
+      "question": "Dans un contrat de travail à durée déterminée (CDD), la période d'essai peut-elle être renouvelée ?",
+      "optionA": "Oui, mais uniquement pour les cadres",
+      "optionB": "Non, la période d'essai ne peut être renouvelée dans un CDD",
+      "optionC": "Oui, mais avec l'accord écrit du salarié",
+      "optionD": "Oui, automatiquement pour la moitié de sa durée initiale",
+      "correctAnswer": "C",
+      "explanation": "La période d'essai dans un CDD peut être renouvelée, mais uniquement avec l'accord écrit du salarié. La durée totale d'essai ne peut dépasser certains plafonds légaux selon la nature du contrat."
+    },
+    {
+      "question": "Quelle est la durée maximale d'un contrat de travail à durée déterminée (CDD) ?",
+      "optionA": "18 mois",
+      "optionB": "24 mois",
+      "optionC": "36 mois",
+      "optionD": "Il n'y a pas de durée maximale légale",
+      "correctAnswer": "B",
+      "explanation": "La durée maximale d'un CDD est généralement de 24 mois. Cependant, des durées plus longues peuvent être prévues pour certains cas spécifiquement prévus par la loi."
+    },
+    {
+      "question": "Quelle est la durée légale minimale du congé payé annuel ?",
+      "optionA": "10 jours ouvrables",
+      "optionB": "20 jours ouvrés",
+      "optionC": "25 jours ouvrables",
+      "optionD": "30 jours ouvrés",
+      "correctAnswer": "C",
+      "explanation": "Le congé payé annuel est de 25 jours ouvrables par an, soit 5 semaines. Cette durée est légale et ne peut être réduite par accord collectif."
+    },
+    {
+      "question": "Quel est le délai de prévenance minimal en cas de licenciement pour motif personnel ?",
+      "optionA": "15 jours",
+      "optionB": "30 jours",
+      "optionC": "1 mois par année d'ancienneté",
+      "optionD": "2 mois",
+      "correctAnswer": "B",
+      "explanation": "En cas de licenciement pour motif personnel, le délai de prévenance est d'au moins 1 mois. Ce délai est réduit à 15 jours pour les salariés ayant moins de 6 mois d'ancienneté."
+    },
+    {
+      "question": "Quelle est la nature juridique du SMIG (Salaire Minimum Interprofessionnel de Croissance) ?",
+      "optionA": "Un salaire minimum fixé par accord collectif",
+      "optionB": "Un salaire minimum garanti par la loi",
+      "optionC": "Un salaire minimum fixé par l'employeur",
+      "optionD": "Un salaire minimum négocié entre syndicats et employeurs",
+      "correctAnswer": "B",
+      "explanation": "Le SMIG est un salaire minimum garanti par la loi, qui s'applique à tous les salariés, sauf dispositions plus favorables issues d'accords collectifs ou de contrats individuels."
+    },
+    {
+      "question": "Quelle est la durée légale hebdomadaire du travail ?",
+      "optionA": "35 heures",
+      "optionB": "37 heures 30 minutes",
+      "optionC": "40 heures",
+      "optionD": "45 heures",
+      "correctAnswer": "A",
+      "explanation": "La durée légale hebdomadaire du travail est de 35 heures, sauf dispositions plus favorables issues d'accords collectifs ou d'entreprises."
+    },
+    {
+      "question": "Quelle est la durée maximale quotidienne du travail ?",
+      "optionA": "8 heures",
+      "optionB": "9 heures",
+      "optionC": "10 heures",
+      "optionD": "12 heures",
+      "correctAnswer": "C",
+      "explanation": "La durée maximale quotidienne du travail est de 10 heures, sauf dérogations prévues par la loi pour certains secteurs ou activités."
+    },
+    {
+      "question": "Quelle est la nature du congé maternité ?",
+      "optionA": "Un congé payé pris sur le solde des congés annuels",
+      "optionB": "Un congé sans solde",
+      "optionC": "Un congé légal indemnisé par la Sécurité sociale",
+      "optionD": "Un congé obligatoire non indemnisé",
+      "correctAnswer": "C",
+      "explanation": "Le congé maternité est un congé légal indemnisé par la Sécurité sociale. Sa durée et le taux d'indemnisation sont fixés par la loi."
+    },
+    {
+      "question": "Quelle est la durée minimale de la période d'essai dans un CDI ?",
+      "optionA": "Aucune durée minimale n'est imposée par la loi",
+      "optionB": "1 mois",
+      "optionC": "2 mois",
+      "optionD": "3 mois",
+      "correctAnswer": "A",
+      "explanation": "La loi n'impose pas de durée minimale à la période d'essai dans un CDI. Sa durée est fixée par accord collectif ou contrat de travail."
+    },
+    {
+      "question": "Quelle est la nature de la rupture du contrat de travail pendant la période d'essai ?",
+      "optionA": "Une rupture pour faute grave",
+      "optionB": "Une rupture disciplinaire",
+      "optionC": "Une rupture à l'initiative de l'employeur sans motif",
+      "optionD": "Une rupture pour motif économique",
+      "correctAnswer": "C",
+      "explanation": "Pendant la période d'essai, le contrat peut être rompu à l'initiative de l'employeur ou du salarié sans motif, sous réspect de délais de prévenance."
+    },
+    {
+      "question": "Quelle est la nature du licenciement pour motif économique ?",
+      "optionA": "Une sanction disciplinaire",
+      "optionB": "Une rupture du contrat pour motif personnel",
+      "optionC": "Une rupture du contrat liée à des difficultés économiques",
+      "optionD": "Une rupture conventionnelle",
+      "correctAnswer": "C",
+      "explanation": "Le licenciement pour motif économique est une rupture du contrat de travail liée à des difficultés économiques, techniques ou structurelles de l'entreprise."
+    },
+    {
+      "question": "Quelle est la durée maximale de la période d'essai pour un cadre ?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "6 mois",
+      "correctAnswer": "C",
+      "explanation": "La période d'essai pour un cadre peut aller jusqu'à 3 mois, sauf accord collectif plus favorable."
+    },
+    {
+      "question": "Quelle est la nature du congé parental d'éducation ?",
+      "optionA": "Un congé payé",
+      "optionB": "Un congé sans solde",
+      "optionC": "Un congé indemnisé à 100%",
+      "optionD": "Un congé obligatoire",
+      "correctAnswer": "B",
+      "explanation": "Le congé parental d'éducation est un congé sans solde qui permet aux parents de réduire leur temps de travail ou de suspendre leur activité professionnelle pour élever leur enfant."
+    },
+    {
+      "question": "Quelle est la nature de la grève ?",
+      "optionA": "Un droit individuel",
+      "optionB": "Un droit collectif",
+      "optionC": "Une obligation légale",
+      "optionD": "Un délit",
+      "correctAnswer": "B",
+      "explanation": "La grève est un droit collectif reconnu par la Constitution, qui permet aux travailleurs de cesser collectivement leur travail pour défendre leurs intérêts professionnels."
+    },
+    {
+      "question": "Quelle est la durée minimale de préavis en cas de démission ?",
+      "optionA": "8 jours",
+      "optionB": "15 jours",
+      "optionC": "1 mois",
+      "optionD": "2 mois",
+      "correctAnswer": "B",
+      "explanation": "En cas de démission, le préavis est d'au moins 15 jours pour les salariés ayant moins de 6 mois d'ancienneté, et d'au moins 1 mois pour les autres."
+    },
+    {
+      "question": "Quelle est la nature de l'inspection du travail ?",
+      "optionA": "Un organe consultatif",
+      "optionB": "Un organe de contrôle",
+      "optionC": "Un organe disciplinaire",
+      "optionD": "Un organe judiciaire",
+      "correctAnswer": "B",
+      "explanation": "L'inspection du travail est un organe de contrôle qui veille au respect du droit du travail et assiste les employeurs et les salariés."
+    },
+    {
+      "question": "Quelle est la durée maximale de la durée du travail effectif par jour ?",
+      "optionA": "8 heures",
+      "optionB": "10 heures",
+      "optionC": "12 heures",
+      "optionD": "16 heures",
+      "correctAnswer": "B",
+      "explanation": "La durée maximale de travail effectif par jour est de 10 heures, sauf dérogations prévues par la loi pour certains secteurs ou activités."
+    },
+    {
+      "question": "Quelle est la nature du licenciement pour motif personnel ?",
+      "optionA": "Une rupture du contrat liée à des difficultés économiques",
+      "optionB": "Une rupture du contrat liée à la personne du salarié",
+      "optionC": "Une rupture du contrat pour motif de santé",
+      "optionD": "Une rupture du contrat pour motif de retraite",
+      "correctAnswer": "B",
+      "explanation": "Le licenciement pour motif personnel est une rupture du contrat liée à la personne du salarié (incompétence, insuffisance professionnelle, faute, etc.)."
+    },
+    {
+      "question": "Quelle est la nature du droit de retrait ?",
+      "optionA": "Un droit individuel",
+      "optionB": "Un droit collectif",
+      "optionC": "Un droit syndical",
+      "optionD": "Un droit obligatoire",
+      "correctAnswer": "A",
+      "explanation": "Le droit de retrait est un droit individuel qui permet à un salarié de se retirer d'une situation de travail présentant un danger grave et imminent pour sa vie ou sa santé."
+    },
+    {
+      "question": "Quelle est la nature du comité social et économique (CSE) ?",
+      "optionA": "Un organe consultatif",
+      "optionB": "Un organe de décision",
+      "optionC": "Un organe de représentation du personnel",
+      "optionD": "Un organe disciplinaire",
+      "correctAnswer": "C",
+      "explanation": "Le comité social et économique (CSE) est un organe de représentation du personnel qui assure l'expression collective des salariés et participe à la vie de l'entreprise."
+    },
+    {
+      "question": "Quelle est la nature du préavis en cas de licenciement pour faute grave ?",
+      "optionA": "Aucun préavis n'est dû",
+      "optionB": "15 jours",
+      "optionC": "1 mois",
+      "optionD": "2 mois",
+      "correctAnswer": "A",
+      "explanation": "En cas de licenciement pour faute grave, aucun préavis n'est dû, et l'employeur peut rompre immédiatement le contrat de travail."
+    },
+    {
+      "question": "Quelle est la durée minimale du préavis de licenciement pour un salarié ayant une ancienneté de 10 ans dans l'entreprise?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "Aucun préavis requis",
+      "correctAnswer": "B",
+      "explanation": "Selon l'article L1234-1 du Code du travail, pour une ancienneté de 10 ans, le préavis est de 2 mois."
+    },
+    {
+      "question": "Quelle est la durée maximale de la période d'essai pour un cadre embauché à temps plein?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "6 mois",
+      "correctAnswer": "C",
+      "explanation": "Pour un cadre, la période d'essai peut aller jusqu'à 3 mois renouvelable une fois par accord collectif ou usage."
+    },
+    {
+      "question": "Quelle est la durée minimale de congés payés annuels pour un salarié à temps plein?",
+      "optionA": "20 jours ouvrés",
+      "optionB": "25 jours ouvrés",
+      "optionC": "30 jours ouvrés",
+      "optionD": "5 semaines",
+      "correctAnswer": "B",
+      "explanation": "L'article L3141-3 du Code du travail prévoit 2.5 jours ouvrés par mois de travail effectif, soit 25 jours ouvrés pour une année complète."
+    },
+    {
+      "question": "Dans quel cas un employeur peut-il licencier un salarié sans motif réel et sérieux?",
+      "optionA": "En cas d'absence prolongée pour maladie",
+      "optionB": "En cas d'inaptitude constatée par le médecin du travail",
+      "optionC": "En cas de faute grave du salarié",
+      "optionD": "En cas de changement de direction",
+      "correctAnswer": "C",
+      "explanation": "Un licenciement peut intervenir sans motif réel et sérieux en cas de faute grave du salarié, selon l'article L1232-1 du Code du travail."
+    },
+    {
+      "question": "Quelle est la nature juridique du comité social et économique (CSE)?",
+      "optionA": "Un organe consultatif",
+      "optionB": "Un organe représentatif du personnel",
+      "optionC": "Un établissement public à caractère administratif",
+      "optionD": "Une association loi 1901",
+      "correctAnswer": "B",
+      "explanation": "Le CSE est un organe représentatif du personnel, issu de la fusion du comité d'entreprise et du comité d'hygiène, de sécurité et des conditions de travail."
+    },
+    {
+      "question": "Quelle est la durée maximale d'un contrat à durée déterminée (CDD) en l'absence de motif de recours spécifique?",
+      "optionA": "6 mois",
+      "optionB": "12 mois",
+      "optionC": "18 mois",
+      "optionD": "24 mois",
+      "correctAnswer": "C",
+      "explanation": "En l'absence de motif de recours spécifique, la durée maximale d'un CDD est de 18 mois (article L1242-2 du Code du travail)."
+    },
+    {
+      "question": "Quel est le délai de carence entre deux contrats à durée déterminée successifs avec le même salarié?",
+      "optionA": "Aucun délai de carence",
+      "optionB": "1/3 de la durée du contrat précédent",
+      "optionC": "1/4 de la durée du contrat précédent",
+      "optionD": "1/5 de la durée du contrat précédent",
+      "correctAnswer": "B",
+      "explanation": "Le délai de carence est d'au moins 1/3 de la durée du contrat précédent (article L1244-1 du Code du travail)."
+    },
+    {
+      "question": "Quelle est la durée minimale de la période d'essai pour un salarié non-cadre embauché à temps plein?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "6 mois",
+      "correctAnswer": "A",
+      "explanation": "Pour un salarié non-cadre, la période d'essai est d'un mois maximum, pouvant être portée à 2 mois par accord collectif (article L1221-19 du Code du travail)."
+    },
+    {
+      "question": "Quelle est la durée maximale du congé parental à temps partiel?",
+      "optionA": "6 mois",
+      "optionB": "1 an",
+      "optionC": "3 ans",
+      "optionD": "5 ans",
+      "correctAnswer": "C",
+      "explanation": "Le congé parental peut être pris à temps partiel pour une durée maximale de 3 ans (article L1225-63 du Code du travail)."
+    },
+    {
+      "question": "Quelle est la nature juridique d'un syndicat?",
+      "optionA": "Un établissement public",
+      "optionB": "Un groupement de droit privé",
+      "optionC": "Une association loi 1901",
+      "optionD": "Une fondation",
+      "correctAnswer": "B",
+      "explanation": "Un syndicat est un groupement de droit privé, autonome et indépendant, selon l'article L2131-1 du Code du travail."
+    },
+    {
+      "question": "Quel est le délai de prévenance minimal pour un licenciement économique?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "Aucun délai spécifique",
+      "correctAnswer": "B",
+      "explanation": "L'employeur doit informer le salarié de son intention de le licencier pour motif économique au moins 2 mois à l'avance (article L1233-11 du Code du travail)."
+    },
+    {
+      "question": "Quelle est la durée minimale de la période d'essai pour un contrat de professionnalisation?",
+      "optionA": "Aucune période d'essai",
+      "optionB": "1 mois",
+      "optionC": "2 mois",
+      "optionD": "3 mois",
+      "correctAnswer": "A",
+      "explanation": "Le contrat de professionnalisation ne comporte pas de période d'essai (article L6321-47 du Code du travail)."
+    },
+    {
+      "question": "Quelle est la durée maximale d'un contrat de travail temporaire (intérim)?",
+      "optionA": "6 mois",
+      "optionB": "12 mois",
+      "optionC": "18 mois",
+      "optionD": "24 mois",
+      "correctAnswer": "C",
+      "explanation": "La durée maximale d'un contrat de travail temporaire est de 18 mois, sauf renouvellement dans certains cas (article L1251-31 du Code du travail)."
+    },
+    {
+      "question": "Quelle est la durée minimale de la période d'essai pour un contrat de travail à durée indéterminée (CDI) à temps partiel?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "Aucune période d'essai spécifique",
+      "correctAnswer": "A",
+      "explanation": "La période d'essai pour un CDI à temps partiel est d'un mois maximum, sauf accord collectif plus favorable (article L1221-19 du Code du travail)."
+    },
+    {
+      "question": "Quelle est la durée maximale d'un contrat de mission (intérim) pour remplacer un salarié en grève?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "6 mois",
+      "correctAnswer": "B",
+      "explanation": "La durée maximale d'un contrat de mission pour remplacer un salarié en grève est de 2 mois (article L1251-32 du Code du travail)."
+    },
+    {
+      "question": "Quelle est la durée minimale de la période d'essai pour un contrat de travail à durée déterminée (CDD) de plus de 6 mois?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "Aucune période d'essai spécifique",
+      "correctAnswer": "A",
+      "explanation": "La période d'essai pour un CDD de plus de 6 mois est d'un mois maximum (article L1242-6 du Code du travail)."
+    },
+    {
+      "question": "Quelle est la nature juridique du contrat de travail selon la doctrine française dominante ?",
+      "optionA": "Contrat de droit privé",
+      "optionB": "Contrat administratif",
+      "optionC": "Contrat mixte",
+      "optionD": "Contrat de droit public",
+      "correctAnswer": "A",
+      "explanation": "Le contrat de travail est considéré comme un contrat de droit privé, bien qu'il fasse l'objet d'une réglementation spécifique et protectrice du salarié."
+    },
+    {
+      "question": "Dans le cadre d'un CDD, quelle est la durée maximale pour un contrat conclu en cas de commande exceptionnelle à l'exportation ?",
+      "optionA": "6 mois",
+      "optionB": "12 mois",
+      "optionC": "18 mois",
+      "optionD": "24 mois",
+      "correctAnswer": "C",
+      "explanation": "Pour un CDD conclu en cas de commande exceptionnelle à l'exportation, la durée maximale est de 18 mois selon l'article L1242-3 du Code du travail."
+    },
+    {
+      "question": "Quelle est la durée minimale de préavis de licenciement pour un salarié de 10 ans d'ancienneté ?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "4 mois",
+      "correctAnswer": "B",
+      "explanation": "Selon l'article L1234-1 du Code du travail, le préavis est de 2 mois pour un salarié ayant entre 2 et 10 ans d'ancienneté."
+    },
+    {
+      "question": "Quelle est la durée maximale d'un congé sabbatique ?",
+      "optionA": "6 mois",
+      "optionB": "9 mois",
+      "optionC": "12 mois",
+      "optionD": "24 mois",
+      "correctAnswer": "C",
+      "explanation": "Le congé sabbatique peut durer jusqu'à 12 mois, renouvelable une fois dans la limite de 24 mois au total."
+    },
+    {
+      "question": "Quelle est la règle concernant le calcul du salaire minimum interprofessionnel de croissance (SMIC) ?",
+      "optionA": "Il est revalorisé automatiquement chaque année",
+      "optionB": "Il est indexé sur l'inflation",
+      "optionC": "Il est revalorisé par décret après consultation des partenaires sociaux",
+      "optionD": "Il est fixé par accord majoritaire en entreprise",
+      "correctAnswer": "C",
+      "explanation": "Le SMIC est revalorisé par décret après consultation des partenaires sociaux, conformément à l'article L3231-2 du Code du travail."
+    },
+    {
+      "question": "Quelle est la durée minimale du congé payé annuel pour un salarié à temps plein ?",
+      "optionA": "20 jours ouvrables",
+      "optionB": "22 jours ouvrables",
+      "optionC": "24 jours ouvrables",
+      "optionD": "30 jours ouvrables",
+      "correctAnswer": "C",
+      "explanation": "Le Code du travail prévoit un congé payé de 2.5 jours par mois de travail effectif, soit 30 jours ouvrables par an, avec un minimum de 24 jours ouvrables."
+    },
+    {
+      "question": "Quelle est la condition essentielle pour qu'un licenciement soit considéré comme motif économique ?",
+      "optionA": "L'employeur doit justifier d'une baisse de 15% du chiffre d'affaires",
+      "optionB": "L'employeur doit prouver la nécessité de supprimer un poste pour des raisons économiques",
+      "optionC": "L'employeur doit obtenir l'accord du comité social et économique",
+      "optionD": "L'employeur doit notifier la Direction régionale des entreprises, de la concurrence, de la consommation, du travail et de l'emploi (DIECCTE)",
+      "correctAnswer": "B",
+      "explanation": "Un licenciement économique doit être motivé par des raisons économiques réelles et sérieuses, nécessitant la suppression d'emplois pour sauvegarder la compétitivité de l'entreprise."
+    },
+    {
+      "question": "Quelle est la durée de conservation des documents de paie ?",
+      "optionA": "3 ans",
+      "optionB": "5 ans",
+      "optionC": "10 ans",
+      "optionD": "15 ans",
+      "correctAnswer": "B",
+      "explanation": "L'employeur doit conserver les documents de paie pendant 5 ans après la fin du contrat de travail, conformément à l'article L3243-2 du Code du travail."
+    },
+    {
+      "question": "Quelle est la procédure à suivre en cas de licenciement pour motif personnel ?",
+      "optionA": "Convocation à un entretien préalable obligatoire",
+      "optionB": "Notification d'un premier avertissement écrit",
+      "optionC": "Consultation du comité social et économique",
+      "optionD": "Médiation obligatoire avec un représentant du personnel",
+      "correctAnswer": "A",
+      "explanation": "En cas de licenciement pour motif personnel, l'employeur doit convoquer le salarié à un entretien préalable, conformément à l'article L1232-2 du Code du travail."
+    },
+    {
+      "question": "Quelle est la durée maximale d'un contrat d'apprentissage pour un salarié de plus de 26 ans ?",
+      "optionA": "1 an",
+      "optionB": "2 ans",
+      "optionC": "3 ans",
+      "optionD": "4 ans",
+      "correctAnswer": "C",
+      "explanation": "Pour un salarié de plus de 26 ans, la durée maximale du contrat d'apprentissage est de 3 ans, selon l'article L6222-1 du Code du travail."
+    },
+    {
+      "question": "Quelle est la durée du préavis de démission pour un salarié ayant 15 ans d'ancienneté ?",
+      "optionA": "1 mois",
+      "optionB": "2 mois",
+      "optionC": "3 mois",
+      "optionD": "Aucun préavis légal",
+      "correctAnswer": "A",
+      "explanation": "Le Code du travail ne fixe pas de durée minimale pour le préavis de démission, qui doit être fixé par usage ou accord entre les parties."
+    },
+    {
+      "question": "Quelle est la durée maximale d'un congé parental à temps partiel ?",
+      "optionA": "1 an",
+      "optionB": "2 ans",
+      "optionC": "3 ans",
+      "optionD": "5 ans",
+      "correctAnswer": "C",
+      "explanation": "Le congé parental à temps partiel peut durer jusqu'à 3 ans, renouvelable une fois dans la limite de 6 ans au total."
+    },
+    {
+      "question": "Quelle est la règle concernant la représentativité syndicale ?",
+      "optionA": "Elle est déterminée par le nombre de voix obtenues aux élections professionnelles",
+      "optionB": "Elle est fixée par décret en Conseil d'État",
+      "optionC": "Elle dépend de l'ancienneté de l'organisation syndicale",
+      "optionD": "Elle est liée au nombre d'adhérents",
+      "correctAnswer": "A",
+      "explanation": "La représentativité syndicale est déterminée par le nombre de voix obtenues aux élections professionnelles, selon l'article L2121-1 du Code du travail."
+    },
+    {
+      "question": "Quelle est la durée minimale de congé pour événements familiaux ?",
+      "optionA": "1 jour par événement",
+      "optionB": "3 jours par événement",
+      "optionC": "5 jours par événement",
+      "optionD": "7 jours par événement",
+      "correctAnswer": "B",
+      "explanation": "Le congé pour événements familiaux est de 3 jours par événement, selon l'article L3142-3 du Code du travail."
+    },
+    {
+      "question": "Quelle est la condition pour qu'un licenciement soit considéré comme motif disciplinaire ?",
+      "optionA": "L'employeur doit prouver une faute grave du salarié",
+      "optionB": "L'employeur doit notifier la faute par lettre recommandée avec accusé de réception",
+      "optionC": "L'employeur doit respecter la procédure disciplinaire prévue par l'entreprise",
+      "optionD": "L'employeur doit obtenir l'accord du comité social et économique",
+      "correctAnswer": "A",
+      "explanation": "Un licenciement disciplinaire doit être motivé par une faute du salarié, qui peut être légère, grave ou lourde, selon l'article L1232-1 du Code du travail."
+    },
+    {
+      "question": "Quelle est la durée maximale d'un contrat de travail temporaire (intérim) ?",
+      "optionA": "6 mois",
+      "optionB": "9 mois",
+      "optionC": "12 mois",
+      "optionD": "24 mois",
+      "correctAnswer": "D",
+      "explanation": "La durée maximale d'un contrat d'intérim est de 24 mois, renouvelable une fois dans la limite de 36 mois pour certains cas exceptionnels."
+    },
+    {
+      "question": "Quelle est la règle concernant la durée hebdomadaire du travail ?",
+      "optionA": "35 heures maximum",
+      "optionB": "35 heures minimum",
+      "optionC": "39 heures maximum",
+      "optionD": "39 heures minimum",
+      "correctAnswer": "A",
+      "explanation": "La durée légale du travail est de 35 heures par semaine, selon l'article L3121-27 du Code du travail."
+    },
+    {
+      "question": "Quelle est la durée maximale d'un congé de solidarité familiale ?",
+      "optionA": "3 mois",
+      "optionB": "6 mois",
+      "optionC": "9 mois",
+      "optionD": "12 mois",
+      "correctAnswer": "C",
+      "explanation": "Le congé de solidarité familiale peut durer jusqu'à 9 mois, renouvelable une fois dans la limite de 18 mois."
+    },
+    {
+      "question": "Quelle est la condition pour qu'un accord d'entreprise soit étendu ?",
+      "optionA": "Il doit être soumis à l'approbation du comité social et économique",
+      "optionB": "Il doit être agréé par le ministre du Travail",
+      "optionC": "Il doit être conforme à l'ordre public social",
+      "optionD": "Il doit être signé par une majorité des organisations syndicales représentatives",
+      "correctAnswer": "C",
+      "explanation": "Un accord d'entreprise peut être étendu par arrêté ministériel s'il est conforme à l'ordre public social, selon l'article L2232-12 du Code du travail."
+    }
+  ]
+}

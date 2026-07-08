@@ -1,0 +1,311 @@
+"""
+Génère les banques universitaires et concours par filière.
+"""
+import json, os
+
+OUTPUT_DIR = "/home/z/my-project/scripts/generated/banks"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+BANKS = []
+
+# ============================================================
+# 5. INFORMATIQUE - ALGORITHMIQUE
+# ============================================================
+BANKS.append({
+    "bankKey": "info-algorithmique",
+    "title": "Informatique - Algorithmique",
+    "description": "Structures de données, tris, complexité, récursivité, algorithmes classiques.",
+    "category": "Universitaire",
+    "subcategory": "Informatique",
+    "icon": "Binary",
+    "color": "violet",
+    "level": "LICENCE",
+    "questions": [
+        {"question":"Quelle est la complexité temporelle de la recherche dichotomique dans un tableau trié ?","optionA":"O(1)","optionB":"O(log n)","optionC":"O(n)","optionD":"O(n²)","correctAnswer":"B","explanation":"La recherche dichotomique divise l'espace par 2 à chaque étape : O(log n)."},
+        {"question":"La complexité du tri à bulles est :","optionA":"O(n)","optionB":"O(n log n)","optionC":"O(n²)","optionD":"O(log n)","correctAnswer":"C","explanation":"Le tri à bulles a une complexité quadratique O(n²) dans le pire cas."},
+        {"question":"Quelle structure de données fonctionne en LIFO (Last In, First Out) ?","optionA":"La file (queue)","optionB":"La pile (stack)","optionC":"La liste chaînée","optionD":"Le tableau","correctAnswer":"B","explanation":"La pile est LIFO : le dernier élément empilé est le premier dépilé."},
+        {"question":"Quelle structure fonctionne en FIFO (First In, First Out) ?","optionA":"La pile","optionB":"La file (queue)","optionC":"L'arbre","optionD":"Le dictionnaire","correctAnswer":"B","explanation":"La file est FIFO : premier entré, premier sorti."},
+        {"question":"La complexité du tri rapide (quicksort) en moyenne est :","optionA":"O(n)","optionB":"O(n log n)","optionC":"O(n²)","optionD":"O(log n)","correctAnswer":"B","explanation":"Quicksort a une complexité moyenne O(n log n), mais O(n²) dans le pire cas."},
+        {"question":"Une fonction récursive doit toujours avoir :","optionA":"Une boucle for","optionB":"Un cas de base (condition d'arrêt)","optionC":"Un paramètre tableau","optionD":"Une variable globale","correctAnswer":"B","explanation":"Sans cas de base, la récursion serait infinie (stack overflow)."},
+        {"question":"Quelle est la complexité de l'accès à un élément dans un tableau par son index ?","optionA":"O(1)","optionB":"O(log n)","optionC":"O(n)","optionD":"O(n²)","correctAnswer":"A","explanation":"L'accès par index dans un tableau est en temps constant O(1)."},
+        {"question":"Dans un arbre binaire de recherche, le parcours infixe donne les éléments :","optionA":"Dans un ordre aléatoire","optionB":"En ordre décroissant","optionC":"En ordre croissant","optionD":"Par niveau","correctAnswer":"C","explanation":"Le parcours infixe (gauche-racine-droite) d'un ABR donne les éléments triés en ordre croissant."},
+        {"question":"La structure de données la plus efficace pour rechercher un élément par clé est :","optionA":"Un tableau non trié","optionB":"Une liste chaînée","optionC":"Une table de hachage","optionD":"Une pile","correctAnswer":"C","explanation":"La table de hachage offre une recherche en O(1) en moyenne."},
+        {"question":"Le nombre maximal de nœuds dans un arbre binaire parfait de hauteur h est :","optionA":"2^h","optionB":"2^(h+1) - 1","optionC":"2h","optionD":"h²","correctAnswer":"B","explanation":"Un arbre binaire parfait de hauteur h a 2^(h+1) - 1 nœuds."},
+        {"question":"Quel algorithme trouve le plus court chemin dans un graphe avec poids positifs ?","optionA":"Tri fusion","optionB":"Dijkstra","optionC":"Parcours en largeur simple","optionD":"Tri à bulles","correctAnswer":"B","explanation":"L'algorithme de Dijkstra trouve le plus court chemin pour des poids positifs."},
+        {"question":"La complexité du tri par fusion (merge sort) est :","optionA":"O(n)","optionB":"O(n log n)","optionC":"O(n²)","optionD":"O(log n)","correctAnswer":"B","explanation":"Le tri par fusion a une complexité O(n log n) dans tous les cas."},
+        {"question":"Le parcours en largeur (BFS) utilise quelle structure ?","optionA":"Une pile","optionB":"Une file","optionC":"Un tableau trié","optionD":"Un dictionnaire","correctAnswer":"B","explanation":"BFS utilise une file (FIFO) pour explorer les nœuds niveau par niveau."},
+        {"question":"Le parcours en profondeur (DFS) utilise quelle structure ?","optionA":"Une file","optionB":"Une pile (ou récursion)","optionC":"Un tableau","optionD":"Une file prioritaire","correctAnswer":"B","explanation":"DFS utilise une pile (LIFO) ou la récursion."},
+        {"question":"Le résultat de 5 mod 3 est :","optionA":"1","optionB":"2","optionC":"3","optionD":"5","correctAnswer":"B","explanation":"5 = 3×1 + 2, donc 5 mod 3 = 2."},
+        {"question":"La notation grand O décrit :","optionA":"Le temps exact d'exécution","optionB":"La limite supérieure asymptotique de la complexité","optionC":"Le nombre de lignes de code","optionD":"La taille mémoire exacte","correctAnswer":"B","explanation":"Le grand O donne une borne supérieure asymptotique de la complexité."},
+        {"question":"Quel est le type de tri le plus efficace en moyenne parmi ces choix ?","optionA":"Tri à bulles","optionB":"Tri par sélection","optionC":"Tri rapide (quicksort)","optionD":"Tri par insertion","correctAnswer":"C","explanation":"Quicksort est en O(n log n) en moyenne, contre O(n²) pour les autres cités."},
+        {"question":"Une liste chaînée permet :","optionA":"Un accès direct O(1) à un élément","optionB":"L'insertion/suppression en O(1) en tête","optionC":"La recherche en O(1)","optionD":"Le tri en O(n)","correctAnswer":"B","explanation":"Dans une liste chaînée, insérer/supprimer en tête est en O(1)."},
+        {"question":"La hauteur d'un arbre binaire équilibré avec n nœuds est :","optionA":"O(1)","optionB":"O(log n)","optionC":"O(n)","optionD":"O(n²)","correctAnswer":"B","explanation":"Un arbre équilibré a une hauteur O(log n)."},
+        {"question":"La complexité de la factorielle récursive fact(n) est :","optionA":"O(1)","optionB":"O(log n)","optionC":"O(n)","optionD":"O(n!)","correctAnswer":"C","explanation":"n appels récursifs, donc O(n)."},
+        {"question":"Dans un graphe non orienté à n sommets, le nombre maximal d'arêtes est :","optionA":"n","optionB":"n²","optionC":"n(n-1)/2","optionD":"2n","correctAnswer":"C","explanation":"Graphe complet : C(n,2) = n(n-1)/2 arêtes."},
+        {"question":"Le cas le plus défavorable du tri rapide est :","optionA":"O(n)","optionB":"O(n log n)","optionC":"O(n²)","optionD":"O(log n)","correctAnswer":"C","explanation":"Le pire cas (pivot systématiquement extrémal) donne O(n²)."},
+        {"question":"Le code Gray est utilisé pour :","optionA":"Compresser des données","optionB":"Coder des entiers en binaire avec un seul bit qui change","optionC":"Crypter","optionD":"Trier","correctAnswer":"B","explanation":"Le code Gray fait varier un seul bit entre valeurs consécutives."},
+        {"question":"Quel algorithme résout le problème du sac à dos (knapsack) par programmation dynamique ?","optionA":"Dijkstra","optionB":"BFS","optionC":"Knapsack DP","optionD":"Quicksort","correctAnswer":"C","explanation":"Le sac à dos se résout en O(n×W) par programmation dynamique."},
+        {"question":"Une pile vide a son sommet à :","optionA":"1","optionB":"-1","optionC":"0","optionD":"n","correctAnswer":"B","explanation":"Convention classique : sommet = -1 quand la pile est vide."},
+        {"question":"La structure de données heap (tas) permet d'extraire le min en :","optionA":"O(1)","optionB":"O(log n)","optionC":"O(n)","optionD":"O(n log n)","correctAnswer":"B","explanation":"L'extraction du min dans un tas min est O(log n) (re-heapify)."},
+        {"question":"Quel est le suffixe d'une boucle while infinie ?","optionA":"while(true)","optionB":"while(0)","optionC":"while(false)","optionD":"for(;;)","correctAnswer":"A","explanation":"while(true) crée une boucle infinie tant qu'aucun break n'est rencontré."},
+        {"question":"La complexité de la multiplication de deux matrices n×n par l'algorithme naïf est :","optionA":"O(n²)","optionB":"O(n² log n)","optionC":"O(n³)","optionD":"O(n!)","correctAnswer":"C","explanation":"L'algorithme naïf fait n³ multiplications."},
+        {"question":"Le 'Big Omega' Ω décrit :","optionA":"La complexité moyenne","optionB":"La borne inférieure asymptotique","optionC":"La complexité exacte","optionD":"Le pire cas","correctAnswer":"B","explanation":"Ω donne la borne inférieure asymptotique."},
+        {"question":"Un arbre AVL maintient :","optionA":"Une hauteur fixe","optionB":"Un facteur d'équilibre ≤ 1 en valeur absolue","optionC":"Un nombre de nœuds pair","optionD":"Une racine constante","correctAnswer":"B","explanation":"Un AVL est équilibré : |hauteur(gauche) - hauteur(droite)| ≤ 1."},
+        {"question":"Le hachage peut entraîner des :","optionA":"Erreurs de syntaxe","optionB":"Collisions","optionC":"Fuites mémoire","optionD":"Boucles infinies","correctAnswer":"B","explanation":"Deux clés différentes peuvent donner le même hash (collision)."},
+        {"question":"Quel est l'avantage principal d'un arbre B par rapport à un arbre binaire ?","optionA":"Plus petit","optionB":"Optimisé pour le stockage sur disque","optionC":"Toujours parfait","optionD":"Aucune collision","correctAnswer":"B","explanation":"L'arbre B minimise les accès disque (utilisée dans les BDD)."},
+        {"question":"Le paradigme 'diviser pour régner' (divide and conquer) :","optionA":"Évite la récursion","optionB":"Divise le problème en sous-problèmes, les résout, combine","optionC":"N'utilise que des boucles","optionD":"Tri uniquement","correctAnswer":"B","explanation":"Diviser pour régner : découper, résoudre récursivement, fusionner."},
+        {"question":"Le problème du voyageur de commerce est :","optionA":"Polynomial","optionB":"NP-difficile","optionC":"P","optionD":"O(n)","correctAnswer":"B","explanation":"Le TSP est un problème NP-difficile."},
+        {"question":"La programmation dynamique est utilisée pour :","optionA":"Le tri","optionB":"Optimiser des problèmes à sous-structures optimales et chevauchements","optionC":"La recherche Web","optionD":"La compression","correctAnswer":"B","explanation":"La PD évite de recalculer des sous-problèmes déjà résolus (mémoïsation)."},
+    ],
+})
+
+# ============================================================
+# 6. INFORMATIQUE - PROGRAMMATION PYTHON
+# ============================================================
+BANKS.append({
+    "bankKey": "info-python",
+    "title": "Informatique - Programmation Python",
+    "description": "Syntaxe Python, types, fonctions, POO, structures de données, bibliothèques.",
+    "category": "Universitaire",
+    "subcategory": "Informatique",
+    "icon": "Code",
+    "color": "amber",
+    "level": "LICENCE",
+    "questions": [
+        {"question":"Quel mot-clé définit une fonction en Python ?","optionA":"function","optionB":"def","optionC":"func","optionD":"define","correctAnswer":"B","explanation":"En Python on utilise 'def' pour définir une fonction."},
+        {"question":"Quel est le résultat de 7 // 2 en Python ?","optionA":"3.5","optionB":"3","optionC":"4","optionD":"2","correctAnswer":"B","explanation":"// est la division entière : 7 // 2 = 3."},
+        {"question":"Quel est le résultat de 7 % 2 en Python ?","optionA":"1","optionB":"2","optionC":"3","optionD":"3.5","correctAnswer":"A","explanation":"% est le modulo : 7 % 2 = 1."},
+        {"question":"Comment crée-t-on une liste vide en Python ?","optionA":"list = {}","optionB":"list = []","optionC":"list = ()","optionD":"list = new List()","correctAnswer":"B","explanation":"Une liste vide se crée avec [] en Python."},
+        {"question":"Quel type est immuable en Python ?","optionA":"list","optionB":"dict","optionC":"tuple","optionD":"set","correctAnswer":"C","explanation":"Les tuples sont immuables (non modifiables)."},
+        {"question":"Comment insère-t-on un élément à la fin d'une liste L ?","optionA":"L.add(x)","optionB":"L.push(x)","optionC":"L.append(x)","optionD":"L.insert(x)","correctAnswer":"C","explanation":"L.append(x) ajoute x à la fin de la liste."},
+        {"question":"Que renvoie len('Bonjour') ?","optionA":"6","optionB":"7","optionC":"8","optionD":"Erreur","correctAnswer":"B","explanation":"'Bonjour' a 7 caractères."},
+        {"question":"Que renvoie 'Python'[0] ?","optionA":"'P'","optionB":"'ython'","optionC":"0","optionD":"Erreur","correctAnswer":"A","explanation":"L'index 0 renvoie le premier caractère 'P'."},
+        {"question":"Quel est le résultat de True and False ?","optionA":"True","optionB":"False","optionC":"None","optionD":"Erreur","correctAnswer":"B","explanation":"and renvoie False si l'un des deux opérandes est False."},
+        {"question":"Quel opérateur teste l'égalité en Python ?","optionA":"=","optionB":"==","optionC":"===","optionD":"eq","correctAnswer":"B","explanation":"== teste l'égalité (= est l'affectation)."},
+        {"question":"Que fait range(3) ?","optionA":"Renvoie [1, 2, 3]","optionB":"Renvoie [0, 1, 2]","optionC":"Renvoie [0, 1, 2, 3]","optionD":"Renvoie 3","correctAnswer":"B","explanation":"range(3) produit 0, 1, 2 (exclut la borne supérieure)."},
+        {"question":"Comment définit-on une classe en Python ?","optionA":"class MaClasse:","optionB":"class MaClasse()","optionC":"class MaClasse {}","optionD":"def class MaClasse:","correctAnswer":"A","explanation":"Une classe se définit avec 'class MaClasse:'."},
+        {"question":"Quel est le constructeur d'une classe en Python ?","optionA":"__init__","optionB":"constructor","optionC":"__construct","optionD":"init","correctAnswer":"A","explanation":"Le constructeur est la méthode __init__(self, ...)."},
+        {"question":"Comment importe-t-on le module math ?","optionA":"import math","optionB":"include math","optionC":"using math","optionD":"require math","correctAnswer":"A","explanation":"En Python : import math."},
+        {"question":"Que renvoie math.sqrt(16) ?","optionA":"4","optionB":"4.0","optionC":"16","optionD":"Erreur","correctAnswer":"B","explanation":"math.sqrt renvoie un float : 4.0."},
+        {"question":"Quel mot-clé gère les exceptions ?","optionA":"catch","optionB":"try / except","optionC":"rescue","optionD":"handle","correctAnswer":"B","explanation":"Python utilise try/except (pas catch comme Java)."},
+        {"question":"Que fait 'abc'.upper() ?","optionA":"'abc'","optionB":"'ABC'","optionC":"'Abc'","optionD":"Erreur","correctAnswer":"B","explanation":"upper() convertit en majuscules : 'ABC'."},
+        {"question":"Comment écrit-on un commentaire sur une ligne ?","optionA":"// commentaire","optionB":"/* commentaire */","optionC":"# commentaire","optionD":"<!-- commentaire -->","correctAnswer":"C","explanation":"En Python : # pour un commentaire d'une ligne."},
+        {"question":"Quel type est {'a': 1, 'b': 2} en Python ?","optionA":"Une liste","optionB":"Un tuple","optionC":"Un dictionnaire","optionD":"Un ensemble","correctAnswer":"C","explanation":"Les accolades avec clés:valeurs définissent un dict."},
+        {"question":"Que renvoie [1, 2, 3][1] ?","optionA":"1","optionB":"2","optionC":"3","optionD":"Erreur","correctAnswer":"B","explanation":"Index 1 renvoie le deuxième élément : 2."},
+        {"question":"Que fait la méthode split() sur une chaîne ?","optionA":"Concatène","optionB":"Découpe selon un séparateur","optionC":"Inverse","optionD":"Tri","correctAnswer":"B","explanation":"split() découpe une chaîne en liste selon un séparateur."},
+        {"question":"Que fait 'x'.join(['a', 'b', 'c']) ?","optionA":"'abc'","optionB":"'axbxc'","optionC":"'abcx'","optionD":"Erreur","correctAnswer":"B","explanation":"'x'.join(...) insère 'x' entre chaque élément : 'axbxc'."},
+        {"question":"Quel mot-clé permet de sortir d'une boucle ?","optionA":"exit","optionB":"break","optionC":"stop","optionD":"return","correctAnswer":"B","explanation":"break sort immédiatement de la boucle."},
+        {"question":"Que fait 'continue' dans une boucle ?","optionA":"Sort de la boucle","optionB":"Passe à l'itération suivante","optionC":"Redémarre la boucle","optionD":"Ignore les erreurs","correctAnswer":"B","explanation":"continue passe à l'itération suivante sans exécuter le reste."},
+        {"question":"Comment ouvre-t-on un fichier en lecture ?","optionA":"open('f.txt', 'r')","optionB":"open('f.txt', 'w')","optionC":"open('f.txt', 'read')","optionD":"read('f.txt')","correctAnswer":"A","explanation":"open(fichier, 'r') ouvre en mode lecture."},
+        {"question":"Quel mot-clé définit une fonction anonyme ?","optionA":"def","optionB":"lambda","optionC":"anon","optionD":"function","correctAnswer":"B","explanation":"lambda crée une fonction anonyme : lambda x: x*2."},
+        {"question":"Que renvoie sum([1, 2, 3, 4]) ?","optionA":"4","optionB":"6","optionC":"10","optionD":"24","correctAnswer":"C","explanation":"sum = 1+2+3+4 = 10."},
+        {"question":"Quel est le résultat de 2 ** 10 ?","optionA":"20","optionB":"100","optionC":"1024","optionD":"210","correctAnswer":"C","explanation":"** est la puissance : 2¹⁰ = 1024."},
+        {"question":"Que fait la fonction type() ?","optionA":"Affiche","optionB":"Renvoie le type d'un objet","optionC":"Convertit","optionD":"Crée un type","correctAnswer":"B","explanation":"type(x) renvoie le type de l'objet x."},
+        {"question":"Comment convertit-on la chaîne '42' en entier ?","optionA":"int('42')","optionB":"str('42')","optionC":"float('42')","optionD":"to_int('42')","correctAnswer":"A","explanation":"int('42') convertit la chaîne en entier 42."},
+        {"question":"Que fait list(range(5)) ?","optionA":"[1, 2, 3, 4, 5]","optionB":"[0, 1, 2, 3, 4]","optionC":"[0, 1, 2, 3, 4, 5]","optionD":"[5]","correctAnswer":"B","explanation":"range(5) = 0,1,2,3,4. list() → [0,1,2,3,4]."},
+        {"question":"Qu'affiche print(3 == 3.0) ?","optionA":"True","optionB":"False","optionC":"Erreur","optionD":"None","correctAnswer":"A","explanation":"3 et 3.0 sont égaux en valeur en Python."},
+        {"question":"Comment définit-on un ensemble (set) ?","optionA":"{1, 2, 3}","optionB":"[1, 2, 3]","optionC":"(1, 2, 3)","optionD":"'1, 2, 3'","correctAnswer":"A","explanation":"Les accolades avec des valeurs (sans clés) définissent un set."},
+        {"question":"Que renvoie 'a' in ['a', 'b'] ?","optionA":"True","optionB":"False","optionC":"'a'","optionD":"0","correctAnswer":"A","explanation":"in teste l'appartenance : True."},
+        {"question":"Le mot-clé 'self' dans une méthode représente :","optionA":"La classe","optionB":"L'instance courante","optionC":"Le module","optionD":"La méthode","correctAnswer":"B","explanation":"self est la référence à l'instance courante."},
+        {"question":"Que fait sorted([3, 1, 2]) ?","optionA":"[3, 1, 2]","optionB":"[1, 2, 3]","optionC":"[3, 2, 1]","optionD":"None","correctAnswer":"B","explanation":"sorted() renvoie une nouvelle liste triée en ordre croissant."},
+        {"question":"Quel mot-clé permet l'héritage en Python ?","optionA":"extends","optionB":"class Enfant(Parent):","optionC":"inherit","optionD":"implements","correctAnswer":"B","explanation":"class Enfant(Parent): définit l'héritage."},
+        {"question":"Que fait enumerate(['a', 'b']) ?","optionA":"Renvoie ['a', 'b']","optionB":"Renvoie [(0, 'a'), (1, 'b')]","optionC":"Renvoie ['0a', '1b']","optionD":"Renvoie 2","correctAnswer":"B","explanation":"enumerate renvoie des couples (index, valeur)."},
+    ],
+})
+
+# ============================================================
+# 7. INFORMATIQUE - BASES DE DONNÉES
+# ============================================================
+BANKS.append({
+    "bankKey": "info-bdd",
+    "title": "Informatique - Bases de Données & SQL",
+    "description": "Modèle relationnel, SQL, normalisation, jointures, transactions.",
+    "category": "Universitaire",
+    "subcategory": "Informatique",
+    "icon": "Database",
+    "color": "cyan",
+    "level": "LICENCE",
+    "questions": [
+        {"question":"Que signifie l'acronyme SQL ?","optionA":"Structured Query Language","optionB":"Simple Query Language","optionC":"Standard Question Language","optionD":"System Query Logic","correctAnswer":"A","explanation":"SQL = Structured Query Language."},
+        {"question":"Quelle commande SQL récupère des données ?","optionA":"GET","optionB":"SELECT","optionC":"FETCH","optionD":"PULL","correctAnswer":"B","explanation":"SELECT récupère des données d'une table."},
+        {"question":"Quelle commande insère des données ?","optionA":"ADD","optionB":"INSERT INTO","optionC":"CREATE","optionD":"APPEND","correctAnswer":"B","explanation":"INSERT INTO ajoute des lignes dans une table."},
+        {"question":"Quelle commande supprime une table entière ?","optionA":"DELETE","optionB":"DROP TABLE","optionC":"REMOVE","optionD":"CLEAR","correctAnswer":"B","explanation":"DROP TABLE supprime la table et sa structure. DELETE ne supprime que les lignes."},
+        {"question":"Quelle clause filtre les résultats ?","optionA":"FILTER","optionB":"WHERE","optionC":"GROUP BY","optionD":"ORDER BY","correctAnswer":"B","explanation":"WHERE filtre les lignes selon une condition."},
+        {"question":"Quelle clause trie les résultats ?","optionA":"SORT BY","optionB":"ORDER BY","optionC":"GROUP BY","optionD":"ARRANGE","correctAnswer":"B","explanation":"ORDER BY trie les résultats."},
+        {"question":"Quelle clause regroupe les lignes ?","optionA":"GROUP BY","optionB":"ORDER BY","optionC":"SORT BY","optionD":"JOIN","correctAnswer":"A","explanation":"GROUP BY regroupe les lignes par valeur (pour agrégats)."},
+        {"question":"Quelle jointure ne renvoie que les lignes correspondantes des deux tables ?","optionA":"LEFT JOIN","optionB":"RIGHT JOIN","optionC":"INNER JOIN","optionD":"FULL JOIN","correctAnswer":"C","explanation":"INNER JOIN ne renvoie que les lignes qui matchent dans les deux tables."},
+        {"question":"Que fait COUNT(*) ?","optionA":"Compte les colonnes","optionB":"Compte toutes les lignes","optionC":"Compte les valeurs NULL","optionD":"Additionne","correctAnswer":"B","explanation":"COUNT(*) compte toutes les lignes, y compris NULL."},
+        {"question":"Que signifie SGBD ?","optionA":"Système de Gestion de Base de Données","optionB":"Système Global de Business Data","optionC":"Standard Général de BD","optionD":"Système de Gestion Bancaire Distribué","correctAnswer":"A","explanation":"SGBD = Système de Gestion de Base de Données (DBMS en anglais)."},
+        {"question":"La 1ère forme normale (1NF) impose :","optionA":"Aucune valeur NULL","optionB":"Des attributs atomiques (non divisibles)","optionC":"Une seule table","optionD":"Une clé primaire numérique","correctAnswer":"B","explanation":"La 1NF exige des attributs atomiques (une seule valeur par cellule)."},
+        {"question":"La 2NF impose en plus :","optionA":"Une clé primaire unique","optionB":"Aucune dépendance partielle vers une partie de la clé","optionC":"Aucune donnée NULL","optionD":"Trois tables minimum","correctAnswer":"B","explanation":"La 2NF élimine les dépendances partielles (clés composites)."},
+        {"question":"La 3NF impose :","optionA":"Aucune dépendance transitive","optionB":"Une seule colonne","optionC":"Toujours 2 tables","optionD":"Une clé étrangère obligatoire","correctAnswer":"A","explanation":"La 3NF élimine les dépendances transitives entre attributs non-clés."},
+        {"question":"Qu'est-ce qu'une clé primaire ?","optionA":"Un index","optionB":"Un identifiant unique pour chaque ligne","optionC":"Une colonne obligatoirement numérique","optionD":"Une clé étrangère","correctAnswer":"B","explanation":"La clé primaire identifie de manière unique chaque enregistrement."},
+        {"question":"Qu'est-ce qu'une clé étrangère ?","optionA":"Une clé chiffrée","optionB":"Une référence à la clé primaire d'une autre table","optionC":"Une clé unique","optionD":"Un index secondaire","correctAnswer":"B","explanation":"La clé étrangère référence la clé primaire d'une autre table."},
+        {"question":"Quelle commande crée une table ?","optionA":"MAKE TABLE","optionB":"CREATE TABLE","optionC":"NEW TABLE","optionD":"ADD TABLE","correctAnswer":"B","explanation":"CREATE TABLE définit une nouvelle table."},
+        {"question":"Quelle commande modifie la structure d'une table ?","optionA":"ALTER TABLE","optionB":"UPDATE TABLE","optionC":"MODIFY TABLE","optionD":"CHANGE TABLE","correctAnswer":"A","explanation":"ALTER TABLE modifie la structure (ajout/suppression colonne)."},
+        {"question":"Quelle commande met à jour des lignes ?","optionA":"MODIFY","optionB":"UPDATE","optionC":"CHANGE","optionD":"REPLACE","correctAnswer":"B","explanation":"UPDATE modifie les valeurs des lignes existantes."},
+        {"question":"Que fait DISTINCT dans un SELECT ?","optionA":"Compte","optionB":"Élimine les doublons","optionC":"Trie","optionD":"Groupe","correctAnswer":"B","explanation":"SELECT DISTINCT supprime les doublons dans les résultats."},
+        {"question":"Que fait la fonction AVG() ?","optionA":"Compte","optionB":"Calcule la moyenne","optionC":"Additionne","optionD":"Trouve le max","correctAnswer":"B","explanation":"AVG() calcule la moyenne d'une colonne numérique."},
+        {"question":"Que fait SUM() ?","optionA":"Compte","optionB":"Calcule la somme","optionC":"Moyenne","optionD":"Maximum","correctAnswer":"B","explanation":"SUM() calcule la somme des valeurs."},
+        {"question":"Que fait MAX() ?","optionA":"Compte","optionB":"Renvoie la valeur maximale","optionC":"Moyenne","optionD":"Tri","correctAnswer":"B","explanation":"MAX() renvoie la valeur maximale d'une colonne."},
+        {"question":"Quelle propriété ACID garantit qu'une transaction est entièrement effectuée ou annulée ?","optionA":"Atomicity","optionB":"Consistency","optionC":"Isolation","optionD":"Durability","correctAnswer":"A","explanation":"L'atomicité (A) : tout ou rien."},
+        {"question":"Que signifie le 'I' dans ACID ?","optionA":"Integrity","optionB":"Isolation","optionC":"Indexation","optionD":"Integration","correctAnswer":"B","explanation":"Isolation : transactions indépendantes."},
+        {"question":"Que fait HAVING par rapport à WHERE ?","optionA":"HAVING filtre après GROUP BY","optionB":"HAVING trie","optionC":"HAVING supprime","optionD":"Identique à WHERE","correctAnswer":"A","explanation":"HAVING filtre les groupes (après GROUP BY), WHERE filtre avant."},
+        {"question":"Qu'est-ce qu'une vue (view) ?","optionA":"Une table réelle","optionB":"Une table virtuelle issue d'une requête","optionC":"Un index","optionD":"Un trigger","correctAnswer":"B","explanation":"Une vue est une table virtuelle définie par une requête."},
+        {"question":"Que fait le mot-clé BETWEEN ?","optionA":"Joint deux tables","optionB":"Filtre sur un intervalle","optionC":"Trie","optionD":"Groupe","correctAnswer":"B","explanation":"BETWEEN x AND y filtre les valeurs dans [x, y]."},
+        {"question":"Que fait LIKE '%abc%' ?","optionA":"Égalité stricte","optionB":"Recherche de motif contenant 'abc'","optionC":"Tri","optionD":"Compte","correctAnswer":"B","explanation":"LIKE avec % recherche un motif : %abc% = toute chaîne contenant 'abc'."},
+        {"question":"Que fait NULL en SQL ?","optionA":"Zéro","optionB":"Représente l'absence de valeur","optionC":"Vide","optionD":"Erreur","correctAnswer":"B","explanation":"NULL représente l'absence de valeur (inconnue)."},
+        {"question":"Quelle commande supprime des lignes sans supprimer la table ?","optionA":"DROP","optionB":"DELETE","optionC":"TRUNCATE","optionD":"CLEAR","correctAnswer":"B","explanation":"DELETE supprime les lignes (avec WHERE) mais garde la table."},
+        {"question":"Que fait TRUNCATE par rapport à DELETE ?","optionA":"Plus lent","optionB":"Plus rapide, supprime tout et réinitialise","optionC":"Identique","optionD":"Supprime la table","correctAnswer":"B","explanation":"TRUNCATE supprime toutes les lignes rapidement sans journaliser chaque ligne."},
+        {"question":"Qu'est-ce qu'un index ?","optionA":"Une table","optionB":"Une structure accélérant la recherche","optionC":"Un trigger","optionD":"Une vue","correctAnswer":"B","explanation":"Un index accélère les recherches sur une colonne."},
+        {"question":"Quel type de jointure renvoie toutes les lignes de gauche même sans correspondance ?","optionA":"INNER JOIN","optionB":"LEFT JOIN","optionC":"RIGHT JOIN","optionD":"CROSS JOIN","correctAnswer":"B","explanation":"LEFT JOIN renvoie toutes les lignes de la table gauche."},
+        {"question":"Que fait le mot-clé AS en SQL ?","optionA":"Trie","optionB":"Renomme un alias","optionC":"Filtre","optionD":"Joint","correctAnswer":"B","explanation":"AS définit un alias (colonne ou table)."},
+        {"question":"Que fait UNION ?","optionA":"Joint","optionB":"Concatène les résultats de deux SELECT","optionC":"Compte","optionD":"Trie","correctAnswer":"B","explanation":"UNION combine les résultats de deux requêtes (supprime les doublons)."},
+    ],
+})
+
+# ============================================================
+# 8. MATHÉMATIQUES - ANALYSE (Universitaire)
+# ============================================================
+BANKS.append({
+    "bankKey": "math-analyse",
+    "title": "Mathématiques - Analyse (Licence)",
+    "description": "Limites, continuité, dérivées, intégrales, suites et séries, équations différentielles.",
+    "category": "Universitaire",
+    "subcategory": "Mathématiques",
+    "icon": "Function",
+    "color": "teal",
+    "level": "LICENCE",
+    "questions": [
+        {"question":"Une fonction continue sur un segment [a, b] est :","optionA":"Dérivable","optionB":"Bornée et atteint ses bornes (théorème de Weierstrass)","optionC":"Monotone","optionD":"Périodique","correctAnswer":"B","explanation":"Théorème des bornes : continue sur segment ⟹ bornée et atteint ses bornes."},
+        {"question":"Le théorème des accroissements finis dit que si f est continue sur [a,b] et dérivable sur ]a,b[, alors :","optionA":"f(a)=f(b)","optionB":"∃ c ∈ ]a,b[ : f'(c) = (f(b)-f(a))/(b-a)","optionC":"f est constante","optionD":"f'(a) = f'(b)","correctAnswer":"B","explanation":"C'est l'énoncé exact du théorème des accroissements finis."},
+        {"question":"Une suite convergente est :","optionA":"Toujours croissante","optionB":"Bornée","optionC":"Périodique","optionD":"Divergente","correctAnswer":"B","explanation":"Toute suite convergente est bornée (la réciproque est fausse)."},
+        {"question":"La série géométrique ∑ qⁿ converge si et seulement si :","optionA":"q = 1","optionB":"|q| < 1","optionC":"q > 0","optionD":"|q| > 1","correctAnswer":"B","explanation":"La série converge vers 1/(1-q) pour |q| < 1."},
+        {"question":"La somme de la série ∑ (1/2)ⁿ de n=0 à ∞ est :","optionA":"1","optionB":"2","optionC":"1/2","optionD":"∞","correctAnswer":"B","explanation":"1/(1-1/2) = 2."},
+        {"question":"Le critère de d'Alembert dit que si lim |u(n+1)/u(n)| = L, alors la série ∑u(n) converge si :","optionA":"L > 1","optionB":"L < 1","optionC":"L = 1","optionD":"L = 0","correctAnswer":"B","explanation":"Si L < 1, la série converge ; si L > 1, elle diverge."},
+        {"question":"L'intégrale de Riemann ∫₀¹ (1/x) dx est :","optionA":"0","optionB":"1","optionC":"Divergente (∞)","optionD":"ln(2)","correctAnswer":"C","explanation":"∫₁^ε (1/x) dx = ln(ε) → ∞ quand ε → 0. Intégrale impropre divergente."},
+        {"question":"La fonction f(x) = |x| est :","optionA":"Non continue en 0","optionB":"Continue mais non dérivable en 0","optionC":"Dérivable en 0","optionD":"Discontinue partout","correctAnswer":"B","explanation":"|x| est continue en 0 mais non dérivable (angularité)."},
+        {"question":"L'équation différentielle y' = y a pour solution générale :","optionA":"y = x + C","optionB":"y = Ceˣ","optionC":"y = e^(-x)","optionD":"y = C","correctAnswer":"B","explanation":"y' = y ⟹ y = C·eˣ."},
+        {"question":"L'équation y'' + y = 0 a pour solution générale :","optionA":"y = A·eˣ + B·e⁻ˣ","optionB":"y = A·cos(x) + B·sin(x)","optionC":"y = Ax + B","optionD":"y = A","correctAnswer":"B","explanation":"Équation caractéristique r²+1=0, r=±i. Solution : A·cos(x) + B·sin(x)."},
+        {"question":"Le théorème de Rolle dit que si f est continue sur [a,b], dérivable sur ]a,b[, et f(a)=f(b), alors :","optionA":"f est constante","optionB":"∃ c ∈ ]a,b[ : f'(c) = 0","optionC":"f(a) = 0","optionD":"f est monotone","correctAnswer":"B","explanation":"Rolle : existence d'un point où la dérivée s'annule."},
+        {"question":"La dérivée de f(x) = tan(x) est :","optionA":"1 + tan²(x)","optionB":"1/cos²(x)","optionC":"-1/sin²(x)","optionD":"sec²(x)","correctAnswer":"B","explanation":"(tan x)' = 1/cos²(x) = 1 + tan²(x). La réponse B (et A) sont équivalentes."},
+        {"question":"L'intégrale ∫ cos(x) dx est :","optionA":"sin(x) + C","optionB":"-sin(x) + C","optionC":"-cos(x) + C","optionD":"tan(x) + C","correctAnswer":"A","explanation":"∫ cos(x) dx = sin(x) + C."},
+        {"question":"L'intégrale ∫ sin(x) dx est :","optionA":"cos(x) + C","optionB":"-cos(x) + C","optionC":"sin(x) + C","optionD":"-sin(x) + C","correctAnswer":"B","explanation":"∫ sin(x) dx = -cos(x) + C."},
+        {"question":"Le développement limité de eˣ à l'ordre 1 au voisinage de 0 est :","optionA":"1 + x","optionB":"1 + x + x²/2","optionC":"x","optionD":"1","correctAnswer":"A","explanation":"eˣ ≈ 1 + x + o(x) à l'ordre 1."},
+        {"question":"La règle de l'Hôpital sert à calculer :","optionA":"Une intégrale","optionB":"Une limite de forme indéterminée 0/0 ou ∞/∞","optionC":"Une dérivée","optionD":"Une série","correctAnswer":"B","explanation":"L'Hôpital : lim f/g = lim f'/g' pour les formes indéterminées."},
+        {"question":"Une fonction strictement croissante sur un intervalle est :","optionA":"Toujours continue","optionB":"Injective (un à un)","optionC":"Surjective","optionD":"Périodique","correctAnswer":"B","explanation":"Strictement croissante ⟹ injective (x₁ ≠ x₂ ⟹ f(x₁) ≠ f(x₂))."},
+        {"question":"La primitive de 1/x est :","optionA":"ln|x| + C","optionB":"1/x²","optionC":"x","optionD":"ln(x) + C","correctAnswer":"A","explanation":"∫ (1/x) dx = ln|x| + C (valeur absolue pour x < 0)."},
+        {"question":"La série harmonique ∑ 1/n (n ≥ 1) est :","optionA":"Convergente","optionB":"Divergente","optionC":"Périodique","optionD":"Bornée","correctAnswer":"B","explanation":"La série harmonique diverge (vers +∞)."},
+        {"question":"Si f est dérivable en a et admet un extremum local en a, alors :","optionA":"f'(a) = 0","optionB":"f(a) = 0","optionC":"f''(a) = 0","optionD":"f'(a) = 1","correctAnswer":"A","explanation":"Condition nécessaire d'extremum : f'(a) = 0 (théorème de Fermat)."},
+        {"question":"L'intégration par parties a pour formule :","optionA":"∫ u·v = u·∫v","optionB":"∫ u·v' dx = u·v - ∫ u'·v dx","optionC":"∫ u·v = u·v","optionD":"∫ u·v = 0","correctAnswer":"B","explanation":"Formule d'intégration par parties : ∫u·v' = [u·v] - ∫u'·v."},
+        {"question":"Le théorème de Taylor donne :","optionA":"Une intégrale","optionB":"Une approximation polynomiale d'une fonction","optionC":"Une dérivée","optionD":"Une série","correctAnswer":"B","explanation":"Taylor : f(x) ≈ ∑ f⁽ᵏ⁾(a)/k! · (x-a)ᵏ (approximation polynomiale)."},
+        {"question":"Une suite de Cauchy dans ℝ est :","optionA":"Divergente","optionB":"Convergente (dans ℝ)","optionC":"Périodique","optionD":"Constante","correctAnswer":"B","explanation":"Dans ℝ (complet), toute suite de Cauchy converge."},
+        {"question":"La dérivée de f(x) = arctan(x) est :","optionA":"1/(1+x²)","optionB":"1/(1-x²)","optionC":"1/x","optionD":"1/(1+x)","correctAnswer":"A","explanation":"(arctan x)' = 1/(1+x²)."},
+        {"question":"La fonction f(x) = x³ est :","optionA":"Pair","optionB":"Impair","optionC":"Ni l'un ni l'autre","optionD":"Périodique","correctAnswer":"B","explanation":"f(-x) = -x³ = -f(x), donc impair."},
+        {"question":"La limite de (1 + 1/n)ⁿ quand n → ∞ est :","optionA":"1","optionB":"e","optionC":"∞","optionD":"0","correctAnswer":"B","explanation":"C'est une définition de e ≈ 2,71828."},
+        {"question":"La convergence normale d'une série de fonctions implique :","optionA":"La divergence","optionB":"La convergence uniforme","optionC":"La périodicité","optionD":"La monotonie","correctAnswer":"B","explanation":"Convergence normale ⟹ convergence uniforme ⟹ convergence simple."},
+        {"question":"Le critère de Leibniz dit qu'une série alternée ∑(-1)ⁿu(n) converge si :","optionA":"u(n) est constant","optionB":"u(n) décroît vers 0","optionC":"u(n) croît","optionD":"u(n) = 1","correctAnswer":"B","explanation":"Critère de Leibniz : u(n) décroissante et lim u(n) = 0."},
+    ],
+})
+
+# ============================================================
+# 9. MATHÉMATIQUES - PROBABILITÉS & STATISTIQUES
+# ============================================================
+BANKS.append({
+    "bankKey": "math-proba-stats",
+    "title": "Mathématiques - Probabilités & Statistiques",
+    "description": "Probabilités discrètes et continues, variables aléatoires, lois, estimation, tests.",
+    "category": "Universitaire",
+    "subcategory": "Mathématiques",
+    "icon": "Dice5",
+    "color": "rose",
+    "level": "LICENCE",
+    "questions": [
+        {"question":"La probabilité d'un événement est toujours comprise entre :","optionA":"-1 et 1","optionB":"0 et 1","optionC":"0 et 100","optionD":"1 et ∞","correctAnswer":"B","explanation":"Une probabilité est dans [0, 1]."},
+        {"question":"Si P(A) = 0,3 et P(B) = 0,4 avec A et B indépendants, P(A ∩ B) = :","optionA":"0,7","optionB":"0,12","optionC":"0,1","optionD":"0,5","correctAnswer":"B","explanation":"Indépendance : P(A∩B) = 0,3 × 0,4 = 0,12."},
+        {"question":"Si P(A) = 0,3 et P(B) = 0,4 avec A et B incompatibles, P(A ∪ B) = :","optionA":"0,7","optionB":"0,12","optionC":"0,1","optionD":"0,5","correctAnswer":"A","explanation":"Incompatibles : P(A∪B) = P(A) + P(B) = 0,7."},
+        {"question":"L'espérance de la loi binomiale B(n, p) est :","optionA":"np","optionB":"np(1-p)","optionC":"n/p","optionD":"p","correctAnswer":"A","explanation":"E(X) = np pour la loi binomiale."},
+        {"question":"La variance de la loi binomiale B(n, p) est :","optionA":"np","optionB":"np(1-p)","optionC":"n","optionD":"p(1-p)","correctAnswer":"B","explanation":"V(X) = np(1-p) pour la loi binomiale."},
+        {"question":"La loi normale centrée réduite a pour paramètres :","optionA":"μ=0, σ=1","optionB":"μ=1, σ=0","optionC":"μ=0, σ=0","optionD":"μ=1, σ=1","correctAnswer":"A","explanation":"N(0, 1) : espérance 0, écart-type 1."},
+        {"question":"La densité de la loi normale N(μ, σ²) est :","optionA":"f(x) = eˣ","optionB":"f(x) = (1/(σ√(2π))) · e^(-(x-μ)²/(2σ²))","optionC":"f(x) = 1","optionD":"f(x) = x","correctAnswer":"B","explanation":"Densité gaussienne standard."},
+        {"question":"La loi des grands nombres dit que la moyenne empirique :","optionA":"Diverge","optionB":"Converge vers l'espérance","optionC":"Est nulle","optionD":"Est infinie","correctAnswer":"B","explanation":"La moyenne empirique converge vers E(X) quand n → ∞."},
+        {"question":"Le théorème central limite dit que la moyenne empirique (normalisée) suit approximativement :","optionA":"Une loi uniforme","optionB":"Une loi normale","optionC":"Une loi de Poisson","optionD":"Une loi binomiale","correctAnswer":"B","explanation":"TCL : la moyenne empirique standardisée converge en loi vers N(0,1)."},
+        {"question":"La probabilité d'obtenir au moins une fois « Face » en 3 lancers d'une pièce équilibrée est :","optionA":"1/8","optionB":"3/8","optionC":"7/8","optionD":"1","correctAnswer":"C","explanation":"P(aucune Face) = (1/2)³ = 1/8. P(≥1 Face) = 1 - 1/8 = 7/8."},
+        {"question":"La loi de Poisson de paramètre λ a pour espérance :","optionA":"λ","optionB":"λ²","optionC":"1/λ","optionD":"0","correctAnswer":"A","explanation":"E(X) = λ et V(X) = λ pour la loi de Poisson."},
+        {"question":"L'écart-type est :","optionA":"La moyenne","optionB":"La racine carrée de la variance","optionC":"Le carré de la variance","optionD":"La médiane","correctAnswer":"B","explanation":"σ = √(Variance)."},
+        {"question":"Dans un test d'hypothèse, l'erreur de première espèce (α) est :","optionA":"Accepter H₀ alors que H₀ est fausse","optionB":"Rejeter H₀ alors que H₀ est vraie","optionC":"Ne pas décider","optionD":"Calculer α","correctAnswer":"B","explanation":"Erreur de type I : rejeter H₀ à tort (faux positif)."},
+        {"question":"L'erreur de deuxième espèce (β) est :","optionA":"Rejeter H₀ à tort","optionB":"Accepter H₀ alors que H₀ est fausse","optionC":"Aucune décision","optionD":"β = 1","correctAnswer":"B","explanation":"Erreur de type II : accepter H₀ à tort (faux négatif)."},
+        {"question":"La puissance d'un test est :","optionA":"α","optionB":"1 - β","optionC":"β","optionD":"1 - α","correctAnswer":"B","explanation":"Puissance = 1 - β (probabilité de rejeter H₀ à juste titre)."},
+        {"question":"Deux événements A et B sont indépendants si :","optionA":"P(A ∩ B) = P(A) + P(B)","optionB":"P(A ∩ B) = P(A) × P(B)","optionC":"P(A ∩ B) = 0","optionD":"A = B","correctAnswer":"B","explanation":"Indépendance : P(A∩B) = P(A)·P(B)."},
+        {"question":"La probabilité conditionnelle P(A|B) = :","optionA":"P(A) × P(B)","optionB":"P(A ∩ B) / P(B)","optionC":"P(B) / P(A)","optionD":"P(A) + P(B)","correctAnswer":"B","explanation":"P(A|B) = P(A∩B)/P(B), pour P(B) > 0."},
+        {"question":"L'espérance d'une variable aléatoire constante c est :","optionA":"0","optionB":"c","optionC":"c²","optionD":"1","correctAnswer":"B","explanation":"E(c) = c."},
+        {"question":"La variance est toujours :","optionA":"Négative","optionB":"Positive ou nulle","optionC":"Égale à 1","optionD":"Égale à la moyenne","correctAnswer":"B","explanation":"V(X) = E[(X-E(X))²] ≥ 0."},
+        {"question":"Si X suit N(0,1), P(X > 0) = :","optionA":"0","optionB":"0,25","optionC":"0,5","optionD":"1","correctAnswer":"C","explanation":"Loi centrée : P(X > 0) = 0,5."},
+        {"question":"La covariance Cov(X, Y) = 0 signifie :","optionA":"X et Y sont indépendants","optionB":"X et Y sont non corrélés (linéairement)","optionC":"X = Y","optionD":"X et Y sont continus","correctAnswer":"B","explanation":"Cov = 0 ⟹ non corrélation linéaire (mais pas forcément indépendance)."},
+        {"question":"Le coefficient de corrélation de Pearson est compris entre :","optionA":"0 et 1","optionB":"-1 et 1","optionC":"-∞ et +∞","optionD":"0 et 100","correctAnswer":"B","explanation":"r ∈ [-1, 1]."},
+        {"question":"L'estimateur de la moyenne empirique est :","optionA":"La médiane","optionB":"(1/n)·∑Xᵢ","optionC":"max(Xᵢ)","optionD":"min(Xᵢ)","correctAnswer":"B","explanation":"X̄ = (1/n)·∑Xᵢ."},
+        {"question":"L'estimateur de la variance (sans biais) utilise :","optionA":"n","optionB":"n - 1","optionC":"n + 1","optionD":"n²","correctAnswer":"B","explanation":"Variance sans biais : S² = (1/(n-1))·∑(Xᵢ - X̄)²."},
+        {"question":"La médiane d'une série statistique est :","optionA":"Toujours la moyenne","optionB":"La valeur qui sépare la série en deux moitiés","optionC":"Le max","optionD":"Le min","correctAnswer":"B","explanation":"La médiane sépare la série ordonnée en deux parties égales."},
+        {"question":"Le mode d'une série est :","optionA":"La moyenne","optionB":"La valeur la plus fréquente","optionC":"La médiane","optionD":"L'écart-type","correctAnswer":"B","explanation":"Le mode = valeur la plus fréquente."},
+        {"question":"L'intervalle de confiance à 95% pour une moyenne (grand échantillon) est approximativement :","optionA":"X̄ ± 1,96·σ/√n","optionB":"X̄ ± σ","optionC":"X̄ ± n","optionD":"X̄ ± 1","correctAnswer":"A","explanation":"IC 95% : X̄ ± 1,96·(σ/√n) (loi normale)."},
+        {"question":"Dans une urne avec 3 boules rouges et 2 vertes, P(tirer une rouge) = :","optionA":"2/5","optionB":"3/5","optionC":"1/2","optionD":"3/2","correctAnswer":"B","explanation":"3 rouges / 5 total = 3/5."},
+        {"question":"Si X ~ B(10, 0,5), E(X) = :","optionA":"2,5","optionB":"5","optionC":"10","optionD":"0,5","correctAnswer":"B","explanation":"E(X) = np = 10 × 0,5 = 5."},
+        {"question":"La probabilité de l'événement certain est :","optionA":"0","optionB":"0,5","optionC":"1","optionD":"Indéfinie","correctAnswer":"C","explanation":"Un événement certain a P = 1."},
+    ],
+})
+
+# ============================================================
+# 10. PHILOSOPHIE - TERMINALE
+# ============================================================
+BANKS.append({
+    "bankKey": "philo-terminale",
+    "title": "Philosophie - Terminale",
+    "description": "Grands courants, auteurs, concepts clés, dissertations et explications de textes.",
+    "category": "Secondaire",
+    "subcategory": "Philosophie",
+    "icon": "Brain",
+    "color": "violet",
+    "level": "TERM",
+    "questions": [
+        {"question":"Qui a écrit 'La République' ?","optionA":"Aristote","optionB":"Platon","optionC":"Socrate","optionD":"Épicure","correctAnswer":"B","explanation":"La République est une œuvre majeure de Platon."},
+        {"question":"Le 'Cogito, ergo sum' (Je pense, donc je suis) est de :","optionA":"Kant","optionB":"Descartes","optionC":"Spinoza","optionD":"Leibniz","correctAnswer":"B","explanation":"Cette formule est de René Descartes (Discours de la méthode)."},
+        {"question":"Qui a écrit 'Ainsi parlait Zarathoustra' ?","optionA":"Kant","optionB":"Hegel","optionC":"Nietzsche","optionD":"Heidegger","correctAnswer":"C","explanation":"Ainsi parlait Zarathoustra est de Friedrich Nietzsche."},
+        {"question":"Le concept de 'volonté générale' est associé à :","optionA":"Rousseau","optionB":"Voltaire","optionC":"Montesquieu","optionD":"Locke","correctAnswer":"A","explanation":"La volonté générale est un concept central de Jean-Jacques Rousseau (Du contrat social)."},
+        {"question":"Qui a formulé l'impératif catégorique ?","optionA":"Kant","optionB":"Hume","optionC":"Mill","optionD":"Bentham","correctAnswer":"A","explanation":"L'impératif catégorique est un concept éthique d'Emmanuel Kant."},
+        {"question":"L'utilitarisme est principalement associé à :","optionA":"Bentham et Mill","optionB":"Kant","optionC":"Rousseau","optionD":"Descartes","correctAnswer":"A","explanation":"Jeremy Bentham et John Stuart Mill sont les fondateurs de l'utilitarisme."},
+        {"question":"Qui a écrit 'L'Être et le Néant' ?","optionA":"Camus","optionB":"Sartre","optionC":"Merleau-Ponty","optionD":"Beauvoir","correctAnswer":"B","explanation":"L'Être et le Néant (1943) est de Jean-Paul Sartre."},
+        {"question":"Le mythe de la caverne est dans :","optionA":"La Métaphysique d'Aristote","optionB":"La République de Platon","optionC":"Le Banquet","optionD":"Le Discours de la méthode","correctAnswer":"B","explanation":"L'allégorie de la caverne est dans La République (livre VII) de Platon."},
+        {"question":"Qui a écrit 'Du contrat social' ?","optionA":"Montesquieu","optionB":"Rousseau","optionC":"Locke","optionD":"Hobbes","correctAnswer":"B","explanation":"Du contrat social (1762) est de Jean-Jacques Rousseau."},
+        {"question":"L'existentialisme affirme que :","optionA":"L'essence précède l'existence","optionB":"L'existence précède l'essence","optionC":"Dieu crée l'homme","optionD":"Le destin est fixe","correctAnswer":"B","explanation":"Pour Sartre, « l'existence précède l'essence » : l'homme se définit par ses actes."},
+        {"question":"Qui a écrit 'Critique de la raison pure' ?","optionA":"Hegel","optionB":"Kant","optionC":"Fichte","optionD":"Schopenhauer","correctAnswer":"B","explanation":"La Critique de la raison pure (1781) est d'Emmanuel Kant."},
+        {"question":"Le concept de 'dialectique' (thèse-antithèse-synthèse) est associé à :","optionA":"Hegel","optionB":"Marx","optionC":"Kant","optionD":"Nietzsche","correctAnswer":"A","explanation":"La dialectique hégélienne : thèse, antithèse, synthèse (aufheben)."},
+        {"question":"Qui a écrit 'Le Prince' ?","optionA":"Machiavel","optionB":"Montesquieu","optionC":"Rousseau","optionD":"Hobbes","correctAnswer":"A","explanation":"Le Prince (1532) est de Nicolas Machiavel."},
+        {"question":"La phrase 'L'homme est un loup pour l'homme' (homo homini lupus) est de :","optionA":"Rousseau","optionB":"Hobbes","optionC":"Locke","optionD":"Spinoza","correctAnswer":"B","explanation":"Hobbes utilise cette formule dans le Léviathan."},
+        {"question":"Qui a écrit 'Éthique' démontrée selon la méthode géométrique ?","optionA":"Descartes","optionB":"Spinoza","optionC":"Leibniz","optionD":"Malebranche","correctAnswer":"B","explanation":"L'Éthique (1677) est de Baruch Spinoza."},
+        {"question":"Qui a formulé la théorie des trois pouvoirs (exécutif, législatif, judiciaire) ?","optionA":"Rousseau","optionB":"Montesquieu","optionC":"Voltaire","optionD":"Locke","correctAnswer":"B","explanation":"Montesquieu dans De l'esprit des lois (1748)."},
+        {"question":"La 'phénoménologie' est associée à :","optionA":"Husserl","optionB":"Sartre","optionC":"Heidegger","optionD":"Tous ces auteurs","correctAnswer":"D","explanation":"Husserl (fondateur), Heidegger, Sartre, Merleau-Ponty ont contribué à la phénoménologie."},
+        {"question":"Qui a écrit 'Le Mythe de Sisyphe' ?","optionA":"Sartre","optionB":"Camus","optionC":"Beauvoir","optionD":"Merleau-Ponty","correctAnswer":"B","explanation":"Le Mythe de Sisyphe (1942) est d'Albert Camus."},
+        {"question":"La 'déconstruction' est un concept de :","optionA":"Foucault","optionB":"Derrida","optionC":"Bourdieu","optionD":"Sartre","correctAnswer":"B","explanation":"La déconstruction est la méthode de Jacques Derrida."},
+        {"question":"Qui a écrit 'Surveiller et punir' ?","optionA":"Foucault","optionB":"Bourdieu","optionC":"Derrida","optionD":"Lyotard","correctAnswer":"A","explanation":"Surveiller et punir (1975) est de Michel Foucault."},
+        {"question":"Le 'dualisme' (âme et corps) est associé à :","optionA":"Descartes","optionB":"Spinoza","optionC":"Hume","optionD":"Kant","correctAnswer":"A","explanation":"Descartes défend un dualisme âme/corps (substances distinctes)."},
+        {"question":"L'empirisme affirme que la connaissance vient :","optionA":"De la raison seule","optionB":"De l'expérience sensible","optionC":"De Dieu","optionD":"De l'inné","correctAnswer":"B","explanation":"Empirisme (Locke, Hume) : tout vient de l'expérience."},
+        {"question":"Le rationalisme affirme que la connaissance vient :","optionA":"De l'expérience seule","optionB":"De la raison","optionC":"Des sens","optionD":"Du hasard","correctAnswer":"B","explanation":"Rationalisme (Descartes, Spinoza, Leibniz) : la raison est source de connaissance."},
+        {"question":"Qui a écrit 'La Phénoménologie de l'esprit' ?","optionA":"Kant","optionB":"Hegel","optionC":"Fichte","optionD":"Schelling","correctAnswer":"B","explanation":"La Phénoménologie de l'esprit (1807) est de Hegel."},
+        {"question":"La 'tabula rasa' (l'esprit comme page blanche) est de :","optionA":"Descartes","optionB":"Locke","optionC":"Kant","optionD":"Leibniz","correctAnswer":"B","explanation":"John Locke défend l'idée d'un esprit initialement vide (tabula rasa)."},
+        {"question":"Qui a écrit 'Ainsi parlait Zarathoustra' et défendu le 'surhomme' (Übermensch) ?","optionA":"Schopenhauer","optionB":"Nietzsche","optionC":"Kierkegaard","optionD":"Heidegger","correctAnswer":"B","explanation":"Nietzsche introduit le surhomme dans Ainsi parlait Zarathoustra."},
+        {"question":"La 'bioéthique' traite des questions :","optionA":"Politiques","optionB":"Morales liées au vivant (clonage, euthanasie, etc.)","optionC":"Économiques","optionD":"Linguistiques","correctAnswer":"B","explanation":"La bioéthique concerne les enjeux éthiques du vivant."},
+        {"question":"La 'Responsabilité' en philosophie morale désigne :","optionA":"Le destin","optionB":"L'obligation de répondre de ses actes","optionC":"La chance","optionD":"Le libre arbitre seul","correctAnswer":"B","explanation":"La responsabilité = devoir de répondre de ses actions."},
+        {"question":"Le 'libre arbitre' est :","optionA":"Le destin","optionB":"La capacité de choisir librement","optionC":"La fatalité","optionD":"La chance","correctAnswer":"B","explanation":"Le libre arbitre = capacité de se déterminer soi-même."},
+        {"question":"L'aphorisme 'Dieu est mort' est de :","optionA":"Kierkegaard","optionB":"Nietzsche","optionC":"Hegel","optionD":"Marx","correctAnswer":"B","explanation":"Nietzsche proclame « Dieu est mort » dans Le Gai savoir."},
+    ],
+})
+
+print(f"Préparation de {len(BANKS)} banques...")
+for bank in BANKS:
+    path = os.path.join(OUTPUT_DIR, f"{bank['bankKey']}.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(bank, f, ensure_ascii=False, indent=2)
+    print(f"  ✓ {bank['bankKey']}: {len(bank['questions'])} questions")
+
+total = sum(len(b['questions']) for b in BANKS)
+print(f"\nTotal nouvelles questions: {total}")

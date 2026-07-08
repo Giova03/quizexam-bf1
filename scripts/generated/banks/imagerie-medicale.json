@@ -1,0 +1,495 @@
+{
+  "bankKey": "imagerie-medicale",
+  "title": "imagerie-medicale",
+  "questions": [
+    {
+      "question": "Les rayons X sont découverts par :",
+      "optionA": "Wilhelm Röntgen (1895)",
+      "optionB": "Marie Curie",
+      "optionC": "Henri Becquerel",
+      "optionD": "Thomas Edison",
+      "correctAnswer": "A",
+      "explanation": "Wilhelm Röntgen a découvert les rayons X en 1895 (Prix Nobel 1901)."
+    },
+    {
+      "question": "L'unité de dose de rayonnement est :",
+      "optionA": "Le Sievert (Sv)",
+      "optionB": "Le Becquerel",
+      "optionC": "Le Gray",
+      "optionD": "Le Joule",
+      "correctAnswer": "A",
+      "explanation": "Sievert (Sv) mesure la dose équivalente/biologique. Gray = dose absorbée. Becquerel = activité."
+    },
+    {
+      "question": "Le principe ALARA signifie :",
+      "optionA": "As Low As Reasonably Achievable (dose la plus basse possible)",
+      "optionB": "Always Look And Radiograph Always",
+      "optionC": "As Long As Radiography Allows",
+      "optionD": "As Low As Randomly Achievable",
+      "correctAnswer": "A",
+      "explanation": "ALARA = minimiser l'exposition aux rayonnements le plus raisonnablement possible."
+    },
+    {
+      "question": "L'IRM utilise quel phénomène physique ?",
+      "optionA": "La résonance magnétique nucléaire des protons",
+      "optionB": "Les rayons X",
+      "optionC": "Les ultrasons",
+      "optionD": "La radioactivité",
+      "correctAnswer": "A",
+      "explanation": "L'IRM utilise la résonance magnétique des noyaux d'hydrogène (protons) du corps."
+    },
+    {
+      "question": "L'échographie utilise :",
+      "optionA": "Des ondes ultrasonores (1-20 MHz)",
+      "optionB": "Des rayons X",
+      "optionC": "Des champs magnétiques",
+      "optionD": "Des rayons gamma",
+      "correctAnswer": "A",
+      "explanation": "L'échographie utilise des ultrasons (fréquences 1-20 MHz) réfléchis par les tissus."
+    },
+    {
+      "question": "Le doppler en échographie mesure :",
+      "optionA": "La vitesse du sang (flux)",
+      "optionB": "La taille des organes",
+      "optionC": "La densité des tissus",
+      "optionD": "La température",
+      "correctAnswer": "A",
+      "explanation": "Le doppler mesure la vitesse et la direction des flux sanguins."
+    },
+    {
+      "question": "Le scanner (TDM) utilise :",
+      "optionA": "Des rayons X avec reconstruction tomographique",
+      "optionB": "Des ultrasons",
+      "optionC": "Des champs magnétiques",
+      "optionD": "Des isotopes radioactifs",
+      "correctAnswer": "A",
+      "explanation": "Le scanner (tomodensitométrie) utilise des rayons X avec reconstruction en coupes."
+    },
+    {
+      "question": "La scintigraphie utilise :",
+      "optionA": "Des isotopes radioactifs (radiopharmaceutiques)",
+      "optionB": "Des rayons X",
+      "optionC": "Des ultrasons",
+      "optionD": "Des champs magnétiques",
+      "correctAnswer": "A",
+      "explanation": "La scintigraphie injecte un radiopharmaceutique (ex: Tc-99m) capté par un organe."
+    },
+    {
+      "question": "En IRM, T1 est meilleur pour voir :",
+      "optionA": "L'anatomie",
+      "optionB": "L'œdème",
+      "optionC": "Les inflammations",
+      "optionD": "Les tumeurs",
+      "correctAnswer": "A",
+      "explanation": "T1 = bonne résolution anatomique. T2 = meilleure pour pathologie (œdème, inflammation)."
+    },
+    {
+      "question": "En IRM, T2 est meilleur pour voir :",
+      "optionA": "La pathologie (œdème, inflammation)",
+      "optionB": "L'anatomie",
+      "optionC": "Les os",
+      "optionD": "L'air",
+      "correctAnswer": "A",
+      "explanation": "T2 met en évidence l'eau/œdème (pathologie), contrairement à T1 (anatomie)."
+    },
+    {
+      "question": "La radiographie thoracique permet de voir :",
+      "optionA": "Les poumons, le cœur, les côtes",
+      "optionB": "Le cerveau",
+      "optionD": "L'abdomen",
+      "optionC": "Les os longs",
+      "correctAnswer": "A",
+      "explanation": "Le cliché thoracique montre poumons, cœur, côtes, clavicules, diaphragme."
+    },
+    {
+      "question": "La mammographie utilise des rayons X pour dépister :",
+      "optionA": "Le cancer du sein",
+      "optionB": "Le cancer du poumon",
+      "optionC": "L'ostéoporose",
+      "optionD": "La fracture",
+      "correctAnswer": "A",
+      "explanation": "La mammographie est une radiographie des seins pour dépister le cancer du sein."
+    },
+    {
+      "question": "Le produit de contraste iodé est utilisé en :",
+      "optionA": "Scanner et radiographie",
+      "optionB": "IRM",
+      "optionC": "Échographie",
+      "optionD": "EEG",
+      "correctAnswer": "A",
+      "explanation": "L'iode est un produit de contraste pour rayons X et scanner. Le gadolinium pour l'IRM."
+    },
+    {
+      "question": "La contre-indication absolue de l'IRM est :",
+      "optionA": "Le pacemaker non compatible IRM",
+      "optionB": "Le diabète",
+      "optionC": "L'hypertension",
+      "optionD": "La grossesse au 1er trimestre",
+      "correctAnswer": "A",
+      "explanation": "Un pacemaker non compatible IRM est une contre-indication absolue (champ magnétique)."
+    },
+    {
+      "question": "La radioprotection du patient repose sur :",
+      "optionA": "Les 3 principes: temps, distance, écran",
+      "optionB": "Le jeûne",
+      "optionC": "L'hydratation",
+      "optionD": "Le repos",
+      "correctAnswer": "A",
+      "explanation": "Radioprotection: minimiser le temps d'exposition, maximiser la distance, utiliser des écrans (plomb)."
+    },
+    {
+      "question": "Quelle est l'énergie typique des photons utilisés en radiographie conventionnelle ?",
+      "optionA": "20-150 keV",
+      "optionB": "150 keV - 1 MeV",
+      "optionC": "1-10 MeV",
+      "optionD": "10-20 MeV",
+      "correctAnswer": "A",
+      "explanation": "La radiographie conventionnelle utilise des photons X d'énergie typiquement comprise entre 20 et 150 keV, permettant une bonne pénétration des tissus tout maintenant un contraste adéquat."
+    },
+    {
+      "question": "Dans une IRM, quel phénomène physique est à la base de l'acquisition d'image ?",
+      "optionA": "Absorption des photons gamma",
+      "optionB": "Résonance magnétique des protons",
+      "optionC": "Atténuation des rayons X",
+      "optionD": "Réflexion d'ondes ultrasonores",
+      "correctAnswer": "B",
+      "explanation": "L'IRM exploite la résonance magnétique des noyaux d'hydrogène (protons) placés dans un champ magnétique fort, en utilisant des ondes radio pour exciter ces protons et détecter leur signal de retour."
+    },
+    {
+      "question": "Quel est le principe de fonctionnement de l'échographie Doppler ?",
+      "optionA": "Mesure de l'atténuation des ondes ultrasonores",
+      "optionB": "Détection des décalages de fréquence dus au mouvement des hématies",
+      "optionC": "Utilisation de la radioactivité pour marquer les cellules sanguines",
+      "optionD": "Mesure de la densité électronique des tissus",
+      "correctAnswer": "B",
+      "explanation": "L'échographie Doppler détecte le décalage de fréquence des ultrasons réfléchis par les éléments mobiles (comme les hématies), permettant d'évaliter la vitesse et le sens du flux sanguin."
+    },
+    {
+      "question": "Quel est le principe de base du scanner (TDM) ?",
+      "optionA": "Utilisation de champs magnétiques variables",
+      "optionB": "Acquisition de projections angulaires d'un objet",
+      "optionC": "Injection de radio-isotopes émetteurs de positons",
+      "optionD": "Utilisation d'ondes ultrasonores pulsées",
+      "correctAnswer": "B",
+      "explanation": "Le scanner acquiert de multiples projections radiographiques d'un objet sous différents angles, puis utilise un algorithme de reconstruction (comme la transformée de Radon) pour obtenir des coupes transversales."
+    },
+    {
+      "question": "Quelle est la particule émise lors de la désintégration bêta moins ?",
+      "optionA": "Un électron",
+      "optionB": "Un positon",
+      "optionC": "Un alpha",
+      "optionD": "Un proton",
+      "correctAnswer": "A",
+      "explanation": "La désintégration bêta moins (β-) consiste en l'émission d'un électron et d'un antineutrino par un neutron transformé en proton au sein d'un noyau atomique."
+    },
+    {
+      "question": "Quelle est la signification de l'acronyme ALARA en radioprotection ?",
+      "optionA": "As Low As Reasonably Achievable",
+      "optionB": "Average Lifetime Activity Risk Assessment",
+      "optionC": "Annual Limit for Radiation Absorption",
+      "optionD": "Automated Low-dose Area Risk Assessment",
+      "correctAnswer": "A",
+      "explanation": "ALARA signifie 'As Low As Reasonably Achievable' (Aussi Bas Que Raisonnement Possible), un principe fondamental en radioprotection visant à maintenir l'exposition aux rayonnements ionisants aussi bas que raisonnablement possible."
+    },
+    {
+      "question": "Quel est le mécanisme principal de contraste en IRM pondérée T2 ?",
+      "optionA": "Différences de densité protonique",
+      "optionB": "Différences de temps de relaxation spin-réseau (T1)",
+      "optionC": "Différences de temps de relaxation spin-spin (T2)",
+      "optionD": "Effet de susceptibilité magnétique",
+      "correctAnswer": "C",
+      "explanation": "L'IRM pondérée T2 met en évidence les différences de temps de relaxation spin-spin (T2) entre les tissus, où les tissus à long T2 apparaissent plus brillants."
+    },
+    {
+      "question": "Quel radio-isotope est couramment utilisé en médecine nucléaire pour les scintigraphies osseuses ?",
+      "optionA": "Technétium-99m",
+      "optionB": "Iode-123",
+      "optionC": "Fluor-18",
+      "optionD": "Thallium-201",
+      "correctAnswer": "A",
+      "explanation": "Le Technétium-99m (Tc-99m) est le radio-isotope le plus utilisé en médecine nucléaire, notamment pour les scintigraphies osseuses en raison de son demi-vie courte (6 heures), de son énergie gamma idéale pour la détection, et de sa capacité à s'accumuler dans le squelette."
+    },
+    {
+      "question": "Quel est le facteur principal qui limite la résolution spatiale en échographie ?",
+      "optionA": "La longueur d'onde des ultrasons",
+      "optionB": "L'intensité du champ magnétique",
+      "optionC": "L'énergie des photons X",
+      "optionD": "La radioactivité de la source",
+      "correctAnswer": "A",
+      "explanation": "La résolution spatiale en échographie est principalement limitée par la longueur d'onde des ultrasons, car les détails inférieurs à cette longueur d'onde ne peuvent être résolus."
+    },
+    {
+      "question": "Quel est le principe de la tomosynthèse mammaire ?",
+      "optionA": "Acquisition de coupes transversales par reconstruction",
+      "optionB": "Utilisation de champs magnétiques",
+      "optionC": "Injection de radio-isotopes",
+      "optionD": "Utilisation d'ondes ultrasonores",
+      "correctAnswer": "A",
+      "explanation": "La tomosynthèse mammaire consiste à acquérir de multiples projections à angles différents du sein, puis à reconstruire des coupes transversales pour réduire le superposition des structures."
+    },
+    {
+      "question": "Quelle est l'unité de dose absorbée en radioprotection ?",
+      "optionA": "Gray (Gy)",
+      "optionB": "Becquerel (Bq)",
+      "optionC": "Sievert (Sv)",
+      "optionD": "Curie (Ci)",
+      "correctAnswer": "A",
+      "explanation": "Le Gray (Gy) est l'unité de dose absorbée en radioprotection, représentant l'énergie déposée par unité de masse (1 J/kg). Le Sievert (Sv) mesure la dose équivalente ou efficace, prenant en compte le type de rayonnement."
+    },
+    {
+      "question": "Quel est le mécanisme de contraste en scanner avec injection de produit de contraste iodé ?",
+      "optionA": "Augmentation de l'atténuation des rayons X dans les vaisseaux",
+      "optionB": "Modification du signal de résonance magnétique",
+      "optionC": "Augmentation de l'écho ultrasonore",
+      "optionD": "Émission de positons",
+      "correctAnswer": "A",
+      "explanation": "Le produit de contraste iodé augmente l'atténuation des rayons X dans les vaisseaux sanguins en raison de sa haute densité électronique, permettant une meilleure visualisation des vaisseaux et des tissus vascularisés."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre l'IRM et la spectroscopie par résonance magnétique (SRM) ?",
+      "optionA": "L'utilisation de champs magnétiques différents",
+      "optionB": "La mesure de la concentration de métabolites spécifiques",
+      "optionC": "La technique d'acquisition des signaux",
+      "optionD": "Le type de radio-isotope utilisé",
+      "correctAnswer": "B",
+      "explanation": "La spectroscopie par résonance magnétique (SRM) est une technique dérivée de l'IRM qui mesure la concentration de métabolites spécifiques dans les tissus, contrairement à l'IRM standard qui fournit des images anatomiques."
+    },
+    {
+      "question": "Quel est le principe de la tomographie par émission de positons (TEP) ?",
+      "optionA": "Détection des photons gamma produits par l'annihilation électron-positon",
+      "optionB": "Mesure de l'atténuation des rayons X",
+      "optionC": "Utilisation de champs magnétiques variables",
+      "optionD": "Injection de produits de contraste iodés",
+      "correctAnswer": "A",
+      "explanation": "La TEP détecte les photons gamma produits par l'annihilation d'un positon avec un électron, permettant de localiser avec précision la source de radioactivité et de reconstruire des images tridimensionnelles."
+    },
+    {
+      "question": "Quelle est la relation entre la dose efficace et la dose absorbée en radioprotection ?",
+      "optionA": "La dose efficace est la dose absorbée multipliée par des facteurs de pondération",
+      "optionB": "La dose efficace est toujours égale à la dose absorbée",
+      "optionC": "La dose efficace est indépendante de la dose absorbée",
+      "optionD": "La dose efficace est la moitié de la dose absorbée",
+      "correctAnswer": "A",
+      "explanation": "La dose efficace est calculée en multipliant la dose absorbée par des facteurs de pondération qui tiennent compte du type de rayonnement et de la radiosensibilité des tissus irradiés."
+    },
+    {
+      "question": "Quel est l'effet principal des champs magnétiques forts en IRM ?",
+      "optionA": "Réchauffement des tissus",
+      "optionB": "Déplacement des protons",
+      "optionC": "Ionisation des atomes",
+      "optionD": "Production de rayons X",
+      "correctAnswer": "B",
+      "explanation": "Les champs magnétiques forts en IRM alignent les moments magnétiques des protons des molécules d'eau, et l'application de champs radiofréquences permet d'exciter ces protons pour générer le signal d'IRM."
+    },
+    {
+      "question": "Quelle est la principale limitation de la radiographie numérique par rapport à la radiographie conventionnelle ?",
+      "optionA": "Moins de sensibilité",
+      "optionB": "Moindre dynamique",
+      "optionC": "Temps d'exposition plus long",
+      "optionD": "Moindre résolution spatiale",
+      "correctAnswer": "B",
+      "explanation": "La radiographie numérique a une dynamique limitée comparée à la radiographie conventionnelle, bien qu'elle offre d'autres avantages comme la manipulation post-acquisition et une plus grande sensibilité."
+    },
+    {
+      "question": "Quel est le mécanisme de contraste en échographie de contraste ?",
+      "optionA": "Utilisation de microbulles de gaz",
+      "optionB": "Injection de produits de contraste iodés",
+      "optionC": "Utilisation de champs magnétiques",
+      "optionD": "Injection de radio-isotopes",
+      "correctAnswer": "A",
+      "explanation": "L'échographie de contraste utilise des microbulles de gaz injectées dans le sang, qui augmentent considérablement l'écho ultrasonore grâce à leur impédance acoustique très différente de celle du sang."
+    },
+    {
+      "question": "Quel est le principe de la radiographie interventionnelle ?",
+      "optionA": "Utilisation de techniques d'imagerie pour guider des procédures thérapeutiques",
+      "optionB": "Utilisation de radio-isotopes pour le diagnostic",
+      "optionC": "Utilisation d'ondes ultrasonores pour le traitement",
+      "optionD": "Utilisation de champs magnétiques pour la thérapie",
+      "correctAnswer": "A",
+      "explanation": "La radiologie interventionnelle utilise des techniques d'imager (fluoroscopie, échographie, etc.) pour guider des procédures thérapeutiques mini-invasives comme l'angioplastie ou les embolisations."
+    },
+    {
+      "question": "Quel est le rôle du filtre en radiographie ?",
+      "optionA": "Augmenter le contraste",
+      "optionB": "Réduire la dose de rayonnement",
+      "optionC": "Améliorer la résolution spatiale",
+      "optionD": "Augmenter l'énergie des photons",
+      "correctAnswer": "B",
+      "explanation": "Le filtre en radiographie permet d'absorber les photons de basse énergie qui contribuent peu à l'image mais exposent le patient, réduisant ainsi la dose de rayonnement reçue."
+    },
+    {
+      "question": "Quelle est la particule principale responsable de l'ionisation dans un détecteur à semi-conducteur comme le germanium haute pureté (HPGe) utilisé en médecine nucléaire ?",
+      "optionA": "Les photons gamma",
+      "optionB": "Les électrons de conversion interne",
+      "optionC": "Les paires électron-trou",
+      "optionD": "Les photons de fluorescence X",
+      "correctAnswer": "C",
+      "explanation": "Dans un semi-conducteur, l'interaction des photons gamma crée des paires électron-trou qui se déplacent sous l'effet d'un champ électrique, générant un signal électrique mesurable."
+    },
+    {
+      "question": "En radiologie, quel phénomène physique explique l'atténuation différente des rayons X par les tissus mous et les os ?",
+      "optionA": "L'effet Compton",
+      "optionB": "L'effet photoélectrique",
+      "optionC": "La diffusion cohérente",
+      "optionD": "L'effet pair production",
+      "correctAnswer": "B",
+      "explanation": "L'effet photoélectrique est prédominant aux basses énergies et dépend fortement du numéro atomique Z, expliquant la différence d'atténuation entre les tissus mous (Z faible) et les os (Z élevé)."
+    },
+    {
+      "question": "En IRM, quel paramètre est principalement responsable du contraste T2 des images ?",
+      "optionA": "La densité protonique",
+      "optionB": "Le temps de relaxation T1",
+      "optionC": "Le temps de relaxation T2",
+      "optionD": "La vitesse de déspin des protons",
+      "correctAnswer": "C",
+      "explanation": "Le contraste T2 en IRM dépend directement du temps de relaxation transversale T2, qui mesure la décroissance du signal dans le plan transversal après l'excitation."
+    },
+    {
+      "question": "En échographie Doppler, quelle relation existe entre la fréquence de l'onde émise et la fréquence de l'onde reçue pour un mouvement de source et d'observateur ?",
+      "optionA": "La formule de Doppler classique f' = f(c+v)/(c-v)",
+      "optionB": "La formule de Doppler pour une source en mouvement f' = f c/(c-v)",
+      "optionC": "La formule de Doppler pour un observateur en mouvement f' = f (c+v)/c",
+      "optionD": "La formule de Doppler bidirectionnelle f' = f (c+v_r)/(c+v_s)",
+      "correctAnswer": "D",
+      "explanation": "En échographie Doppler, on doit considérer à la fois le mouvement de la source (le transducteur) et le mouvement de l'observateur (les globules rouges), d'où la formule bidirectionnelle."
+    },
+    {
+      "question": "En scanner, quel phénomène physique explique la nécessité d'effectuer une reconstruction d'image à partir des projections ?",
+      "optionA": "L'atténuation beam-hardening",
+      "optionB": "L'artefact de partie volumée",
+      "optionC": "Le principe de projection en coupe",
+      "optionD": "La transformée de Radon",
+      "correctAnswer": "D",
+      "explanation": "La reconstruction d'image en scanner repose sur la transformée de Radon, qui mathématiquement modélise la transformation des projections en image 2D ou 3D."
+    },
+    {
+      "question": "En médecine nucléaire, quel isotope est le plus couramment utilisé pour les scintigraphosies osseuses ?",
+      "optionA": "Iode-131",
+      "optionB": "Technétium-99m",
+      "optionC": "Thallium-201",
+      "optionD": "Gallium-67",
+      "correctAnswer": "B",
+      "explanation": "Le Technétium-99m est l'isotope le plus utilisé en médecine nucléaire pour les scintigraphies osseuses en raison de son demi-vie favorable (6h), de son émission gamma idéale pour la détection et de son affinité pour le remodelage osseux."
+    },
+    {
+      "question": "Quelle est la principale différence entre une radiographie conventionnelle et une tomosynthèse ?",
+      "optionA": "L'énergie des rayons X utilisés",
+      "optionB": "La dose de rayonnement reçue",
+      "optionC": "L'acquisition d'images à différents angles",
+      "optionD": "Le type de détecteur utilisé",
+      "correctAnswer": "C",
+      "explanation": "La tomosynthèse consiste à acquérir des images à différents angles autour du patient, permettant une reconstruction en coupes avec moins d'artefacts de superposition qu'une radiographie standard."
+    },
+    {
+      "question": "En radioprotection, le principe ALARA signifie :",
+      "optionA": "As Low As Reasonably Achievable",
+      "optionB": "As Low As Radiation Allows",
+      "optionC": "As Low As Regulatory Accepted",
+      "optionD": "As Low As Risk Assessment",
+      "correctAnswer": "A",
+      "explanation": "ALARA signifie 'As Low As Reasonably Achievable' (Aussi bas que raisonnablement possible), un principe fondamental en radioprotection visant à minimiser l'exposition aux rayonnements ionisants."
+    },
+    {
+      "question": "En IRM, quel phénomène physique explique l'effet de susceptibilité magnétique ?",
+      "optionA": "La précession des protons",
+      "optionB": "La relaxation spin-réseau",
+      "optionC": "La déphasage des spins",
+      "optionD": "La résonance magnétique nucléaire",
+      "correctAnswer": "C",
+      "explanation": "L'effet de susceptibilité magnétique en IRM est dû aux variations locales du champ magnétique qui causent un déphasage des spins de protons, affectant le signal local."
+    },
+    {
+      "question": "En scanner, quel phénomène explique l'artefact d'anneaux (ring artifact) ?",
+      "optionA": "L'atténuation beam-hardening",
+      "optionB": "L'artefat de mouvement",
+      "optionC": "L'inhomogénéité des détecteurs",
+      "optionD": "Le bruit électronique",
+      "correctAnswer": "C",
+      "explanation": "L'artefact d'anneaux en scanner est principalement causé par des inhomogénéités de réponse entre les différents détecteurs de l'anneau de détecteurs."
+    },
+    {
+      "question": "En échographie, quelle est la fréquence typique utilisée pour l'imagerie abdominale chez l'adulte ?",
+      "optionA": "1-2 MHz",
+      "optionB": "2-5 MHz",
+      "optionC": "5-10 MHz",
+      "optionD": "10-15 MHz",
+      "correctAnswer": "B",
+      "explanation": "L'échographie abdominale chez l'adulte utilise typiquement des fréquences de 2-5 MHz, offrant un bon compromis entre pénétration et résolution spatiale."
+    },
+    {
+      "question": "En médecine nucléaire, quel principe physique sous-tend la détection des gamma-caméras ?",
+      "optionA": "La scintillation",
+      "optionB": "La semi-conduction",
+      "optionC": "La ionisation",
+      "optionD": "La luminescence",
+      "correctAnswer": "A",
+      "explanation": "Les gamma-caméras détectent les rayonnements gamma par le principe de scintillation, où les photons interagissent avec un cristal (comme le NaI(Tl)) pour produire de la lumière."
+    },
+    {
+      "question": "En IRM, quelle séquence est la plus sensible aux hémorragies aiguës ?",
+      "optionA": "T1 pondérée",
+      "optionB": "T2 pondérée",
+      "optionC": "FLAIR",
+      "optionD": "Gradient-écho T2*",
+      "correctAnswer": "D",
+      "explanation": "Les séquences gradient-écho T2* sont très sensibles aux déphasages magnétiques locaux causés par les produits de dégradation de l'hémoglobine, rendant les hémorragies aiguës hyperintenses."
+    },
+    {
+      "question": "En scanner, quelle est la relation entre le nombre de projections et la résolution spatiale ?",
+      "optionA": "Inversement proportionnelle",
+      "optionB": "Directement proportionnelle",
+      "optionC": "Indépendante",
+      "optionD": "Exponentielle",
+      "correctAnswer": "B",
+      "explanation": "La résolution spatiale en scanner est directement proportionnelle au nombre de projections acquises, plus de projections permettant une reconstruction plus précise."
+    },
+    {
+      "question": "En médecine nucléaire, quel est le principe de la tomographie par émission de positons (TEP) ?",
+      "optionA": "La détection de photons gamma en coïncidence",
+      "optionB": "La détection de particules bêta",
+      "optionC": "La détection de rayons X",
+      "optionD": "La détection de neutrons",
+      "correctAnswer": "A",
+      "explanation": "La TEP repose sur la détection en coïncidence de deux photons gamma de 511 keV émis en directions opposées lors de l'annihilation du positon avec un électron."
+    },
+    {
+      "question": "En échographie, quel phénomène explique l'amélioration du contraste avec les agents de contraste microbulles ?",
+      "optionA": "L'absorption acoustique",
+      "optionB": "La diffusion non linéaire",
+      "optionC": "La réflexion spéculaire",
+      "optionD": "L'impédance acoustique",
+      "correctAnswer": "B",
+      "explanation": "Les agents de contraste microbulles améliorent le contraste en échographie par leur comportement non linéaire sous l'effet des ondes ultrasonores, produisant des harmoniques."
+    },
+    {
+      "question": "En radiologie, quel est le principe de la numérisation des images radiologiques ?",
+      "optionA": "La conversion directe des rayons X en signal électrique",
+      "optionB": "La scintillation",
+      "optionC": "La stimulation luminescente",
+      "optionD": "La lecture de film par un scanner optique",
+      "correctAnswer": "A",
+      "explanation": "La numérisation directe utilise des détecteurs à conversion directe qui transforment directement les rayons X en signal électrique, sans étape intermédiaire de film ou de scintillation."
+    },
+    {
+      "question": "En IRM, quelle est la différence fondamentale entre une séquence spin-écho et une séquence gradient-écho ?",
+      "optionA": "L'utilisation d'un gradient de phase",
+      "optionB": "La présence ou non d'une impulsion de réphasage",
+      "optionC": "Le type de coil utilisé",
+      "optionD": "L'orientation du champ magnétique",
+      "correctAnswer": "B",
+      "explanation": "La différence fondamentale est que les séquences spin-écho utilisent une impulsion de 180° pour réphaser les spins, tandis que les séquences gradient-écho utilisent un gradient de réphasage."
+    },
+    {
+      "question": "En radioprotection, quel est le facteur de risque relatif (RR) pour le développement d'un cancer suite à une exposition aux rayonnements ionisants ?",
+      "optionA": "Linéaire sans seuil (LNT)",
+      "optionB": "Seuil d'action",
+      "optionC": "Modèle de probabilité",
+      "optionD": "Module exponentiel",
+      "correctAnswer": "A",
+      "explanation": "Le modèle LNT (Linéaire No Threshold) est le modèle le plus couramment utilisé en radioprotection, postulant que le risque est linéairement proportionnel à la dose, même pour de très faibles doses."
+    }
+  ],
+  "category": "Universitaire",
+  "subcategory": "imagerie-medicale",
+  "description": "Radiologie, échographie, scanner, IRM, principes physiques."
+}

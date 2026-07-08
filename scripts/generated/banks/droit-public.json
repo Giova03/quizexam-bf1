@@ -1,0 +1,688 @@
+{
+  "bankKey": "droit-public",
+  "title": "Droit Public & Constitutionnel (Licence)",
+  "description": "Constitution, institutions, décentralisation, fonction publique.",
+  "category": "Universitaire",
+  "subcategory": "Droit",
+  "icon": "Landmark",
+  "color": "sky",
+  "level": "LICENCE",
+  "subject": "Droit public et constitutionnel: Constitution du Burkina Faso (1991), séparation des pouvoirs, Président du Faso, gouvernement, Assemblée Nationale/ALT, Conseil Constitutionnel, décentralisation (17 régions, 47 provinces), fonction publique, droits fondamentaux",
+  "questions": [
+    {
+      "question": "Selon la Constitution burkinabè de 1991, quel organe est chargé de veiller au respect de la séparation des pouvoirs ?",
+      "optionA": "L'Assemblée Nationale",
+      "optionB": "Le Conseil Constitutionnel",
+      "optionC": "Le Président de la République",
+      "optionD": "La Haute Cour de Justice",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil Constitutionnel est chargé de veiller au respect de la séparation des pouvoirs, conformément à l'article 99 de la Constitution."
+    },
+    {
+      "question": "Quelle est la durée du mandat du Président de la République selon la Constitution de 1991 ?",
+      "optionA": "Cinq ans renouvelable une seule fois",
+      "optionB": "Six ans renouvelable une seule fois",
+      "optionC": "Septans non renouvelable",
+      "optionD": "Quatre ans renouvelable deux fois",
+      "correctAnswer": "A",
+      "explanation": "L'article 37 de la Constitution établit un mandat présidentiel de cinq ans, renouvelable une seule fois."
+    },
+    {
+      "question": "Quelle est la composition du Conseil Constitutionnel burkinabè ?",
+      "optionA": "11 membres dont le Président",
+      "optionB": "9 membres dont le Président",
+      "optionC": "7 membres dont le Président",
+      "optionD": "13 membres dont le Président",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil Constitutionnel est composé de neuf membres, dont le Président, selon l'article 100 de la Constitution."
+    },
+    {
+      "question": "Qui nomme les membres du Conseil Constitutionnel ?",
+      "optionA": "Le Président de la République seul",
+      "optionB": "Le Président de l'Assemblée Nationale seul",
+      "optionC": "Le Président de la République, le Président de l'Assemblée Nationale et le Président de la Haute Cour de Justice",
+      "optionD": "Le Premier Ministre",
+      "correctAnswer": "C",
+      "explanation": "Les membres du Conseil Constitutionnel sont nommés par le Président de la République, le Président de l'Assemblée Nationale et le Président de la Haute Cour de Justice, chacun nommant trois membres (article 102)."
+    },
+    {
+      "question": "Quelle est la procédure de destitution du Président de la République ?",
+      "optionA": "Vote de défiance par l'Assemblée Nationale",
+      "optionB": "Référendum",
+      "optionC": "Haute Cour de Justice",
+      "optionD": "Conseil Constitutionnel",
+      "correctAnswer": "C",
+      "explanation": "La Haute Cour de Justice est compétente pour juger le Président de la République en cas de haute trahison ou d'atteinte grave à la Constitution (article 121)."
+    },
+    {
+      "question": "Combien de régions administratives le Burkina Faso compte-t-il selon la décentralisation ?",
+      "optionA": "13 régions",
+      "optionB": "17 régions",
+      "optionC": "35 régions",
+      "optionD": "45 régions",
+      "correctAnswer": "B",
+      "explanation": "Le Burkina Faso est divisé en 17 régions administratives dans le cadre de sa politique de décentralisation."
+    },
+    {
+      "question": "Quelle est la nature du régime politique burkinabè selon la Constitution de 1991 ?",
+      "optionA": "Monarchie parlementaire",
+      "optionB": "République semi-présidentielle",
+      "optionC": "République parlementaire",
+      "optionD": "République présidentielle",
+      "correctAnswer": "B",
+      "explanation": "Le Burkina Faso est une République semi-présidentielle, combinant des éléments de régime présidentiel et parlementaire."
+    },
+    {
+      "question": "Quel organe contrôle l'activité du gouvernement ?",
+      "optionA": "Le Conseil Constitutionnel",
+      "optionB": "La Cour des Comptes",
+      "optionC": "L'Assemblée Nationale",
+      "optionD": "Le Président de la République",
+      "correctAnswer": "C",
+      "explanation": "L'Assemblée Nationale contrôle l'activité du gouvernement, notamment par le biais de questions, d'interpellations et du vote de la loi de finances (article 79)."
+    },
+    {
+      "question": "Quelle est la durée maximale d'une session ordinaire de l'Assemblée Nationale ?",
+      "optionA": "Trois mois",
+      "optionB": "Quatre mois",
+      "optionC": "Cinq mois",
+      "optionD": "Six mois",
+      "correctAnswer": "A",
+      "explanation": "Une session ordinaire de l'Assemblée Nationale dure au maximum trois mois (article 84)."
+    },
+    {
+      "question": "Qui préside le Conseil des Ministres ?",
+      "optionA": "Le Président de la République",
+      "optionB": "Le Premier Ministre",
+      "optionC": "Le Président de l'Assemblée Nationale",
+      "optionD": "Le Garde des Sceaux",
+      "correctAnswer": "A",
+      "explanation": "Le Président de la République préside le Conseil des Ministres, conformément à l'article 47 de la Constitution."
+    },
+    {
+      "question": "Quelle est la procédure pour adopter une loi ordinaire ?",
+      "optionA": "Seule l'initiative présidentielle suffit",
+      "optionB": "Seule l'initiative parlementaire suffit",
+      "optionC": "Initiative présidentielle ou parlementaire, puis adoption par l'Assemblée Nationale",
+      "optionD": "Référendum obligatoire",
+      "correctAnswer": "C",
+      "explanation": "Une loi ordinaire peut être initiée par le Président de la République ou par les membres de l'Assemblée Nationale, puis est adoptée par cette dernière (article 86)."
+    },
+    {
+      "question": "Quelle est la composition de l'Assemblée Nationale ?",
+      "optionA": "111 députés",
+      "optionB": "127 députés",
+      "optionC": "143 députés",
+      "optionD": "161 députés",
+      "correctAnswer": "B",
+      "explanation": "L'Assemblée Nationale est composée de 127 députés élus pour cinq ans (article 80)."
+    },
+    {
+      "question": "Quel est le rôle du Premier Ministre ?",
+      "optionA": "Il dirige la politique de la nation",
+      "optionB": "Il est le chef du gouvernement",
+      "optionC": "Il est le chef de l'État",
+      "optionD": "Il préside l'Assemblée Nationale",
+      "correctAnswer": "B",
+      "explanation": "Le Premier Ministre est le chef du gouvernement et dirige l'action du gouvernement (article 46)."
+    },
+    {
+      "question": "Combien de provinces le Burkina Faso compte-t-il ?",
+      "optionA": "35 provinces",
+      "optionB": "45 provinces",
+      "optionC": "47 provinces",
+      "optionD": "55 provinces",
+      "correctAnswer": "B",
+      "explanation": "Le Burkina Faso est divisé en 45 provinces, qui sont subdivisées en régions (17) puis en communes."
+    },
+    {
+      "question": "Quelle est la procédure de révision constitutionnelle ?",
+      "optionA": "Vote à la majorité simple à l'Assemblée Nationale",
+      "optionB": "Vote à la majorité qualifiée aux deux tiers de l'Assemblée Nationale",
+      "optionC": "Référendum obligatoire",
+      "optionD": "Initiative présidentielle seule",
+      "correctAnswer": "B",
+      "explanation": "La révision constitutionnelle nécessite une majorité des deux tiers des membres de l'Assemblée Nationale (article 115)."
+    },
+    {
+      "question": "Quelle est la durée du mandat d'un conseiller municipal ?",
+      "optionA": "Cinq ans",
+      "optionB": "Six ans",
+      "optionC": "Quatre ans",
+      "optionD": "Sept ans",
+      "correctAnswer": "B",
+      "explanation": "Les conseillers municipaux sont élus pour six ans, conformément à la loi sur la décentralisation."
+    },
+    {
+      "question": "Quel organe est chargé de l'élection du Président de la République ?",
+      "optionA": "Le Conseil Constitutionnel",
+      "optionB": "L'Assemblée Nationale",
+      "optionC": "Les grands électeurs",
+      "optionD": "Le corps électoral universel direct",
+      "correctAnswer": "D",
+      "explanation": "Le Président de la République est élu au suffrage universel direct pour un mandat de cinq ans (article 37)."
+    },
+    {
+      "question": "Quelle est la fonction du Conseil Constitutionnel en matière électorale ?",
+      "optionA": "Il organise les élections",
+      "optionB": "Il proclame les résultats des élections présidentielles et législatives",
+      "optionC": "Il veille à la régularité des élections",
+      "optionD": "Il annule les élections en cas d'irrégularités",
+      "correctAnswer": "C",
+      "explanation": "Le Conseil Constitutionnel veille à la régularité du déroulement des élections présidentielles et législatives (article 99)."
+    },
+    {
+      "question": "Quelle est la nature du Conseil Constitutionnel ?",
+      "optionA": "Un organe administratif",
+      "optionB": "Un organe juridictionnel",
+      "optionC": "Un organe législatif",
+      "optionD": "Un organe exécutif",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil Constitutionnel est un organe juridictionnel spécialisé, chargé de contrôler la conformité des lois à la Constitution."
+    },
+    {
+      "question": "Quelle est la durée du mandat du Président de la République du Burkina Faso selon la Constitution de 1991 ?",
+      "optionA": "5 ans renouvelable une seule fois",
+      "optionB": "6 ans renouvelable une seule fois",
+      "optionC": "7 ans non renouvelable",
+      "optionD": "5 ans renouvelable deux fois",
+      "correctAnswer": "A",
+      "explanation": "Selon l'article 37 de la Constitution de 1991, le Président de la République est élu pour un mandat de cinq ans renouvelable une seule fois."
+    },
+    {
+      "question": "Quel organe est chargé de veiller au respect de la séparation des pouvoirs dans la Constitution burkinabè de 1991 ?",
+      "optionA": "Le Conseil Constitutionnel",
+      "optionB": "La Cour de Cassation",
+      "optionC": "Le Conseil d'État",
+      "optionD": "Le Haut Conseil de la Communication",
+      "correctAnswer": "A",
+      "explanation": "Le Conseil Constitutionnel, selon l'article 124 de la Constitution, est chargé de veiller au respect de la séparation des pouvoirs et de l'équilibre des institutions."
+    },
+    {
+      "question": "Quelle est la composition du gouvernement burkinabè selon la Constitution de 1991 ?",
+      "optionA": "Président du Conseil, ministres et secrétaires d'État",
+      "optionB": "Président de la République, ministres et secrétaires d'État",
+      "optionC": "Premier ministre, ministres et délégués ministériels",
+      "optionD": "Premier ministre, ministres et secrétaires d'État",
+      "correctAnswer": "D",
+      "explanation": "L'article 121 de la Constitution précise que le gouvernement comprend le Premier ministre, les ministres et les secrétaires d'État."
+    },
+    {
+      "question": "Combien de régions administratives le Burkina Faso comptait-il après la réforme de la décentralisation ?",
+      "optionA": "13 régions",
+      "optionB": "17 régions",
+      "optionC": "30 régions",
+      "optionD": "45 régions",
+      "correctAnswer": "B",
+      "explanation": "Le Burkina Faso est divisé en 17 régions administratives depuis la réforme de la décentralisation mise en œuvre progressivement."
+    },
+    {
+      "question": "Quel est le rôle du Conseil Constitutionnel en matière d'élections présidentielles ?",
+      "optionA": "Organiser les élections",
+      "optionB": "Proclamer les résultats définitifs",
+      "optionC": "Vérifier l'éligibilité des candidats",
+      "optionD": "Tous les précédents",
+      "correctAnswer": "D",
+      "explanation": "Le Conseil Constitutionnel a plusieurs rôles dans les élections présidentielles : organisation, vérification de l'éligibilité et proclamation des résultats définitifs."
+    },
+    {
+      "question": "Quelle est la procédure de révocation du Président de la République selon la Constitution de 1991 ?",
+      "optionA": "Vote de défiance par l'Assemblée Nationale",
+      "optionB": "Référendum d'initiative citoyenne",
+      "optionC": "Haute Cour de Justice",
+      "optionD": "Décision du Conseil Constitutionnel",
+      "correctAnswer": "C",
+      "explanation": "L'article 44 de la Constitution prévoit que le Président de la République peut être mis en accusation par l'Assemblée Nationale pour trahison et jugé par la Haute Cour de Justice."
+    },
+    {
+      "question": "Quelle est la nature du régime politique du Burkina Faso selon la Constitution de 1991 ?",
+      "optionA": "Monarchie parlementaire",
+      "optionB": "République semi-présidentielle",
+      "optionC": "République parlementaire",
+      "optionD": "République présidentielle",
+      "correctAnswer": "B",
+      "explanation": "La Constitution de 1991 établit un régime républicain semi-présidentiel, combinant un exécutif fort (Président) et un gouvernement responsable devant le Parlement."
+    },
+    {
+      "question": "Combien de provinces le Burkina Faso comprend-il ?",
+      "optionA": "30 provinces",
+      "optionB": "35 provinces",
+      "optionC": "45 provinces",
+      "optionD": "47 provinces",
+      "correctAnswer": "D",
+      "explanation": "Le Burkina Faso est divisé en 45 provinces, qui sont des subdivisions administratives des régions."
+    },
+    {
+      "question": "Quel est le rôle de l'Assemblée Nationale dans le processus législatif ?",
+      "optionA": "Propose les lois",
+      "optionB": "Vote les lois",
+      "optionC": "Applique les lois",
+      "optionD": "Contrôle l'application des lois",
+      "correctAnswer": "B",
+      "explanation": "Selon l'article 78 de la Constitution, l'Assemblée Nationale vote les lois. Le Gouvernement propose les lois, mais l'Assemblée les adopte."
+    },
+    {
+      "question": "Quelle est la durée du mandat des conseillers municipaux au Burkina Faso ?",
+      "optionA": "4 ans",
+      "optionB": "5 ans",
+      "optionC": "6 ans",
+      "optionD": "7 ans",
+      "correctAnswer": "C",
+      "explanation": "Les conseillers municipaux sont élus pour un mandat de six ans, conformément aux dispositions sur la décentralisation."
+    },
+    {
+      "question": "Quelle est la procédure de révision constitutionnelle au Burkina Faso ?",
+      "optionA": "Simple majorité des députés",
+      "optionB": "Droits d'amendement restreint du Président",
+      "optionC": "Référendum obligatoire",
+      "optionD": "Majorité qualifiée des deux tiers des députés",
+      "correctAnswer": "D",
+      "explanation": "L'article 175 de la Constitution prévoit que la révision constitutionnelle est adoptée par la majorité des deux tiers des membres de l'Assemblée Nationale."
+    },
+    {
+      "question": "Quel est le statut du Premier ministre dans le régime semi-présidentiel burkinabè ?",
+      "optionA": "Il est élu au suffrage universel direct",
+      "optionB": "Il est nommé par le Président de la République",
+      "optionC": "Il est élu par l'Assemblée Nationale",
+      "optionD": "Il est désigné par le parti majoritaire au Parlement",
+      "correctAnswer": "B",
+      "explanation": "L'article 41 de la Constitution dispose que le Premier ministre est nommé par le Président de la République."
+    },
+    {
+      "question": "Quel est le rôle du Conseil Constitutionnel en matière de référendum ?",
+      "optionA": "Organiser le scrutin",
+      "optionB": "Vérifier la recevabilité des questions",
+      "optionC": "Proclamer les résultats",
+      "optionD": "Tous les précédents",
+      "correctAnswer": "D",
+      "explanation": "Le Conseil Constitutionnel a plusieurs rôles dans l'organisation d'un référendum : vérification de la recevabilité, organisation du scrutin et proclamation des résultats."
+    },
+    {
+      "question": "Quelle est la composition de l'Assemblée Nationale burkinabè ?",
+      "optionA": "111 députés",
+      "optionB": "127 députés",
+      "optionC": "150 députés",
+      "optionD": "200 députés",
+      "correctAnswer": "A",
+      "explanation": "L'article 77 de la Constitution précise que l'Assemblée Nationale comprend 111 députés élus pour cinq ans."
+    },
+    {
+      "question": "Quelle est la condition requise pour être candidat à l'élection présidentielle au Burkina Faso ?",
+      "optionA": "Être âgé d'au moins 35 ans",
+      "optionB": "Être âgé d'au moins 40 ans",
+      "optionC": "Être âgé d'au moins 45 ans",
+      "optionD": "Être âgé d'au moins 50 ans",
+      "correctAnswer": "B",
+      "explanation": "L'article 37 de la Constitution stipule que pour être candidat à l'élection présidentielle, il faut être burkinabè de naissance, jouir de ses droits civiques et politiques, être âgé d'au moins 40 ans et être en possession de toutes ses capacités physiques et mentales."
+    },
+    {
+      "question": "Quel est le principe directeur de la fonction publique burkinabè ?",
+      "optionA": "Principe d'hérédité",
+      "optionB": "Principe de mérite",
+      "optionC": "Principe de cooptation",
+      "optionD": "Principe d'ancienneté",
+      "correctAnswer": "B",
+      "explanation": "Le principe directeur de la fonction publique burkinabè est le principe de mérite, garanti par la Constitution et les lois sur la fonction publique."
+    },
+    {
+      "question": "Quel organe est compétent pour juger le Premier ministre en cas de responsabilité pénale ?",
+      "optionA": "La Cour de Cassation",
+      "optionB": "La Haute Cour de Justice",
+      "optionC": "Le Conseil Constitutionnel",
+      "optionD": "La Cour Suprême",
+      "correctAnswer": "B",
+      "explanation": "L'article 145 de la Constitution prévoit que le Premier ministre peut être mis en accusation par l'Assemblée Nationale pour trahison et jugé par la Haute Cour de Justice."
+    },
+    {
+      "question": "Quelle est la durée du mandat des conseillers régionaux au Burkina Faso ?",
+      "optionA": "4 ans",
+      "optionB": "5 ans",
+      "optionC": "6 ans",
+      "optionD": "7 ans",
+      "correctAnswer": "C",
+      "explanation": "Les conseillers régionaux sont élus pour un mandat de six ans, conformément aux dispositions sur la décentralisation."
+    },
+    {
+      "question": "Quel est le rôle du Président de la République dans le processus législatif ?",
+      "optionA": "Il seul peut proposer les lois",
+      "optionB": "Il promulgue les lois",
+      "optionC": "Il peut soumettre des lois à référendum",
+      "optionD": "Tous les précédents",
+      "correctAnswer": "D",
+      "explanation": "Le Président de la République a plusieurs pouvoirs dans le processus législatif : il peut proposer des lois, il promulgue les lois et il peut soumettre des lois à référendum."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de la Constitution de 1991 en matière de système politique ?",
+      "optionA": "Elle établit un régime présidentiel fort",
+      "optionB": "Elle institue un régime parlementaire",
+      "optionC": "Elle met en place un régime semi-présidentiel",
+      "optionD": "Elle crée un régime d'assemblée",
+      "correctAnswer": "C",
+      "explanation": "La Constitution de 1991 a établi un régime semi-présidentiel combinant un président élu directement et un Premier ministre responsable devant le Parlement."
+    },
+    {
+      "question": "Quelle est la durée du mandat présidentiel selon la Constitution de 1991 ?",
+      "optionA": "Cinq ans renouvelable une fois",
+      "optionB": "Septans non renouvelable",
+      "optionC": "Cinq ans renouvelable indéfiniment",
+      "optionD": "Septans renouvelable une fois",
+      "correctAnswer": "A",
+      "explanation": "La Constitution de 1991 a initialement prévu un mandat présidentiel de septans non renouvelable, mais a été modifiée pour établir un mandat de cinqans renouvelable une fois."
+    },
+    {
+      "question": "Quelle est la procédure de révision constitutionnelle prévue par l'article 89 de la Constitution de 1991 ?",
+      "optionA": "Référendum obligatoire",
+      "optionB": "Vote à la majorité des trois cinquièmes du Parlement réuni en Congrès",
+      "optionC": "Simple majorité des députés",
+      "optionD": "Initiative populaire avec signature de 10% des électeurs",
+      "correctAnswer": "B",
+      "explanation": "L'article 89 prévoit que la révision constitutionnelle doit être votée à la majorité des trois cinquièmes du Parlement réuni en Congrès, sauf pour certaines matières."
+    },
+    {
+      "question": "Quelle est la compétence exclusive du Premier ministre selon la Constitution de 1991 ?",
+      "optionA": "Nomination des ministres",
+      "optionB": "Décrets en conseil des ministres",
+      "optionC": "Direction et coordination de l'action du gouvernement",
+      "optionD": "Ratification des traités internationaux",
+      "correctAnswer": "C",
+      "explanation": "Le Premier ministre a pour fonction principale de 'diriger et coordonner l'action du gouvernement' (article 21), ce qui constitue sa compétence exclusive."
+    },
+    {
+      "question": "Quelle est la nature juridique du Conseil constitutionnel selon la Constitution de 1991 ?",
+      "optionA": "Une simple juridiction administrative",
+      "optionB": "Un organe consultatif",
+      "optionC": "Une autorité constitutionnelle indépendante",
+      "optionD": "Une chambre parlementaire",
+      "correctAnswer": "C",
+      "explanation": "Le Conseil constitutionnel est une autorité constitutionnelle indépendante chargée de contrôler la conformité des lois à la Constitution."
+    },
+    {
+      "question": "Quelle est la procédure de dissolution de l'Assemblée nationale prévue par la Constitution de 1991 ?",
+      "optionA": "Décision du Président après accord du Premier ministre",
+      "optionB": "Décision du Président après consultation du Premier ministre",
+      "optionC": "Décision du Premier ministre après accord du Président",
+      "optionD": "Vote de défiance par l'Assemblée",
+      "correctAnswer": "B",
+      "explanation": "Le Président de la République peut dissoudre l'Assemblée nationale 'après consultation du Premier ministre et des présidents des deux assemblées' (article 12)."
+    },
+    {
+      "question": "Quelle est la compétence partagée entre l'État et les collectivités territoriales de la République ?",
+      "optionA": "La défense nationale",
+      "optionB": "La diplomatie",
+      "optionC": "L'éducation nationale",
+      "optionD": "La politique étrangère",
+      "correctAnswer": "C",
+      "explanation": "L'éducation nationale est une compétence partagée entre l'État et les collectivités territoriales, contrairement à la défense, la diplomatie et la politique étrangère qui sont des compétences exclusives de l'État."
+    },
+    {
+      "question": "Quelle est la durée du mandat des conseillers municipaux selon la Constitution de 1991 ?",
+      "optionA": "Cinqans",
+      "optionB": "Sixans",
+      "optionC": "Septans",
+      "optionD": "Quatreans",
+      "correctAnswer": "B",
+      "explanation": "Les conseillers municipaux sont élus pour sixans, conformément aux dispositions de la loi organique relative aux collectivités territoriales."
+    },
+    {
+      "question": "Quelle est la procédure de révocation d'un élu local selon la Constitution de 1991 ?",
+      "optionA": "Décision du préfet",
+      "optionB": "Vote des électeurs de la circonscription",
+      "optionC": "Décision du tribunal administratif",
+      "optionD": "Vote du conseil municipal",
+      "correctAnswer": "B",
+      "explanation": "La Constitution prévoit la possibilité de révocation des élus locaux par référendum à l'initiative des électeurs de la circonscription concernée."
+    },
+    {
+      "question": "Quelle est la nature juridique des statuts particuliers des collectivités territoriales spécifiques ?",
+      "optionA": "Des lois ordinaires",
+      "optionB": "Des décrets en conseil des ministres",
+      "optionC": "Des lois organiques",
+      "optionD": "Des arrêtés préfectoraux",
+      "correctAnswer": "C",
+      "explanation": "Les statuts particuliers des collectivités territoriales spécifiques (comme la Corse ou les départements d'outre-mer) sont établis par des lois organiques."
+    },
+    {
+      "question": "Quelle est la compétence exclusive de la région en matière de développement économique ?",
+      "optionA": "Le commerce international",
+      "optionB": "La politique monétaire",
+      "optionC": "L'aménagement du territoire",
+      "optionD": "La défense nationale",
+      "correctAnswer": "C",
+      "explanation": "L'aménagement du territoire est une compétence exclusive de la région, contrairement au commerce international, la politique monétaire et la défense nationale qui sont des compétences de l'État."
+    },
+    {
+      "question": "Quelle est la procédure de création d'un établissement public territorial de coopération intercommunale ?",
+      "optionA": "Décision du préfet",
+      "optionB": "Décision du conseil municipal",
+      "optionC": "Délibérations concordantes des communes intéressées",
+      "optionD": "Vote des citoyens concernés",
+      "correctAnswer": "C",
+      "explanation": "La création d'un établissement public territorial de coopération intercommunale nécessite des délibérations concordantes des communes intéressées."
+    },
+    {
+      "question": "Quelle est la nature juridique du statut de la fonction publique selon la Constitution de 1991 ?",
+      "optionA": "Un simple règlement administratif",
+      "optionB": "Une loi ordinaire",
+      "optionC": "Une loi organique",
+      "optionD": "Un décret en conseil des ministres",
+      "correctAnswer": "C",
+      "explanation": "Le statut général de la fonction publique est fixé par une loi organique, conformément à l'article 34 de la Constitution."
+    },
+    {
+      "question": "Quelle est la durée du stage en administration pour les recrutements externes de la fonction publique ?",
+      "optionA": "Six mois",
+      "optionB": "Douze mois",
+      "optionC": "Dix-huit mois",
+      "optionD": "Vingt-quatre mois",
+      "correctAnswer": "B",
+      "explanation": "Les recrutements externes de la fonction publique doivent accomplir un stage de douze mois avant d'être titularisés."
+    },
+    {
+      "question": "Quelle est la procédure de nomination aux emplois supérieurs de la fonction publique ?",
+      "optionA": "Concours interne",
+      "optionB": "Concours externe",
+      "optionC": "Recrutement direct par le pouvoir exécutif",
+      "optionD": "Élection par les agents",
+      "correctAnswer": "C",
+      "explanation": "Les emplois supérieurs de la fonction publique sont nommés par le pouvoir exécutif, contrairement aux emplois de catégorie A et B qui font l'objet de concours."
+    },
+    {
+      "question": "Quelle est la nature juridique du statut particulier des magistrats de l'ordre administratif ?",
+      "optionA": "Un décret simple",
+      "optionB": "Un décret en conseil des ministres",
+      "optionC": "Une loi ordinaire",
+      "optionD": "Une loi organique",
+      "correctAnswer": "D",
+      "explanation": "Le statut particulier des magistrats de l'ordre administratif est fixé par une loi organique, conformément à l'article 64 de la Constitution."
+    },
+    {
+      "question": "Quelle est la procédure de révocation d'un fonctionnaire ?",
+      "optionA": "Décision du ministre compétent",
+      "optionB": "Décision du directeur de l'administration",
+      "optionC": "Décision du tribunal administratif",
+      "optionD": "Décision du Conseil d'État",
+      "correctAnswer": "C",
+      "explanation": "La révocation d'un fonctionnaire doit être décidée par une autorité administrative, mais son annulation relève du juge administratif."
+    },
+    {
+      "question": "Quelle est la compétence exclusive de l'État en matière de fonction publique ?",
+      "optionA": "La gestion des carrières",
+      "optionB": "La fixation des statuts particuliers",
+      "optionC": "La détermination des principes fondamentaux",
+      "optionD": "La gestion des rémunérations",
+      "correctAnswer": "C",
+      "explanation": "L'État a pour compétence exclusive de déterminer les principes fondamentaux de la fonction publique, tandis que les autres compétences peuvent être partagées."
+    },
+    {
+      "question": "Quelle est la nature juridique du Conseil supérieur de la fonction publique ?",
+      "optionA": "Un organe consultatif",
+      "optionB": "Une juridiction administrative",
+      "optionC": "Une autorité indépendante",
+      "optionD": "Une chambre parlementaire",
+      "correctAnswer": "A",
+      "explanation": "Le Conseil supérieur de la fonction publique est un organe consultatif auprès du gouvernement en matière de politique de la fonction publique."
+    },
+    {
+      "question": "Quelle est la procédure de recrutement dans la fonction publique hospitalière ?",
+      "optionA": "Concours externe uniquement",
+      "optionB": "Concours interne uniquement",
+      "optionC": "Concours externe, interne ou contrat",
+      "optionD": "Nominations directes",
+      "correctAnswer": "C",
+      "explanation": "La fonction publique hospitalière recrute par concours externe, interne ou par contrat, selon les catégories d'emplois."
+    },
+    {
+      "question": "Quelle est la nature juridique du statut des agents non-titulaires de la fonction publique ?",
+      "optionA": "Un simple contrat de droit privé",
+      "optionB": "Un contrat de droit public",
+      "optionC": "Un statut de droit commun",
+      "optionD": "Un régime dérogatoire",
+      "correctAnswer": "B",
+      "explanation": "Les agents non-titulaires de la fonction publique sont régis par un contrat de droit public, distinct du droit privé."
+    },
+    {
+      "question": "Selon la Constitution de 1991, quel est le rôle du Président de la République dans le processus législatif ?",
+      "optionA": "Il a le droit d'initiative législative exclusive",
+      "optionB": "Il peut soumettre des référendums",
+      "optionC": "Il promulgue les lois et peut demander une nouvelle délibération",
+      "optionD": "Il nomme les députés",
+      "correctAnswer": "C",
+      "explanation": "Le Président de la République promulgue les lois dans un délai de 21 jours et peut demander au Parlement une nouvelle délibération sur le même texte."
+    },
+    {
+      "question": "Quelle institution a le pouvoir de juger le Président de la République pour haute trahison selon la Constitution de 1991 ?",
+      "optionA": "La Cour de cassation",
+      "optionB": "Le Conseil constitutionnel",
+      "optionC": "Le Sénat",
+      "optionD": "La Haute Cour de Justice",
+      "correctAnswer": "D",
+      "explanation": "La Haute Cour de Justice est compétente pour juger le Président de la République en cas de haute trahison."
+    },
+    {
+      "question": "Quelle est la composition du Parlement selon la Constitution de 1991 ?",
+      "optionA": "Une seule chambre : l'Assemblée nationale",
+      "optionB": "Deux chambres : l'Assemblée nationale et le Sénat",
+      "optionC": "Trois chambres : l'Assemblée nationale, le Sénat et la Chambre des pairs",
+      "optionD": "Une seule chambre : le Congrès national",
+      "correctAnswer": "B",
+      "explanation": "La Constitution de 1991 établit un Parlement bicaméral composé de l'Assemblée nationale et du Sénat."
+    },
+    {
+      "question": "Quelle est la procédure de révision constitutionnelle prévue par la Constitution de 1991 ?",
+      "optionA": "Une simple majorité des députés suffit",
+      "optionB": "Un référendum est obligatoire",
+      "optionC": "Une majorité des trois cinquièmes des membres du Parlement réuni en Congrès",
+      "optionD": "Le Président seul peut réviser la Constitution",
+      "correctAnswer": "C",
+      "explanation": "La révision constitutionnelle nécessite une majorité des trois cinquièmes des membres du Parlement réuni en Congrès."
+    },
+    {
+      "question": "Quelle est la nature des compétences partagées entre l'État et les collectivités territoriales dans le cadre de la décentralisation ?",
+      "optionA": "Les compétences sont exclusivement étatiques",
+      "optionB": "Les compétences sont exclusivement locales",
+      "optionC": "Les compétences sont concurrentes",
+      "optionD": "Les compétences sont exclusivement dévolues aux régions",
+      "correctAnswer": "C",
+      "explanation": "Dans le cadre de la décentralisation, certaines compétences sont partagées entre l'État et les collectivités territoriales selon le principe de compétence concurrente."
+    },
+    {
+      "question": "Quelle est la limite du nombre de mandats présidentiels selon la Constitution de 1991 ?",
+      "optionA": "Aucune limite",
+      "optionB": "Un seul mandat",
+      "optionC": "Deux mandats maximum",
+      "optionD": "Trois mandats maximum",
+      "correctAnswer": "C",
+      "explanation": "La Constitution de 1991 limite le nombre de mandats présidentiels à deux, consécutifs ou non."
+    },
+    {
+      "question": "Quelle est la fonction du Conseil constitutionnel selon la Constitution de 1991 ?",
+      "optionA": "Il juge les litiges entre les collectivités territoriales",
+      "optionB": "Il veille au respect de la Constitution et contrôle l'élection des parlementaires",
+      "optionC": "Il est la plus haute juridiction administrative",
+      "optionD": "Il gère les relations internationales",
+      "correctAnswer": "B",
+      "explanation": "Le Conseil constitutionnel veille au respect de la Constitution et contrôle la régularité des élections parlementaires et présidentielles."
+    },
+    {
+      "question": "Quelle est la règle concernant l'immunité parlementaire selon la Constitution de 1991 ?",
+      "optionA": "Les parlementaires bénéficient d'une immunité absolue",
+      "optionB": "Les parlementaires ne bénéficient d'aucune immunité",
+      "optionC": "Les parlementaires bénéficient d'une immunité relative pour les opinions émises",
+      "optionD": "L'immunité ne s'applique qu'aux sénateurs",
+      "correctAnswer": "C",
+      "explanation": "Les parlementaires bénéficient d'une immunité relative pour les opinions émises dans l'exercice de leur mandat, mais peuvent être poursuivis pour les délits commis."
+    },
+    {
+      "question": "Quelle est la nature du statut de la fonction publique selon la Constitution de 1991 ?",
+      "optionA": "Elle est entièrement décentralisée",
+      "optionB": "Elle est entièrement centralisée",
+      "optionC": "Elle est mixte avec des statuts spécifiques pour chaque catégorie",
+      "optionD": "Elle est gérée par les collectivités territoriales",
+      "correctAnswer": "C",
+      "explanation": "La fonction publique a un statut mixte avec des statuts spécifiques pour les trois catégories : fonction publique de l'État, fonction publique territoriale et fonction publique hospitalière."
+    },
+    {
+      "question": "Quelle est la compétence exclusive de l'État selon la Constitution de 1991 en matière de décentralisation ?",
+      "optionA": "La gestion des écoles maternelles",
+      "optionB": "La défense nationale",
+      "optionC": "La gestion des déchets ménagers",
+      "optionD": "L'urbanisme",
+      "correctAnswer": "B",
+      "explanation": "La défense nationale est une compétence exclusive de l'État, contrairement aux autres exemples qui relèvent des collectivités territoriales."
+    },
+    {
+      "question": "Quelle est la procédure de nomination des membres du Conseil constitutionnel selon la Constitution de 1991 ?",
+      "optionA": "Ils sont tous élus par le Parlement",
+      "optionB": "Ils sont tous nommés par le Président de la République",
+      "optionC": "Ils sont nommés pour moitié par le Président, pour un tiers par le Président de l'Assemblée nationale et pour un tiers par le Président du Sénat",
+      "optionD": "Ils sont élus par les citoyens",
+      "correctAnswer": "C",
+      "explanation": "Les membres du Conseil constitutionnel sont nommés pour moitié par le Président de la République, pour un tiers par le Président de l'Assemblée nationale et pour un tiers par le Président du Sénat."
+    },
+    {
+      "question": "Quelle est la durée du mandat des membres du Conseil constitutionnel selon la Constitution de 1991 ?",
+      "optionA": "Cinq ans",
+      "optionB": "Six ans",
+      "optionC": "Sept ans",
+      "optionD": "Neuf ans",
+      "correctAnswer": "D",
+      "explanation": "Les membres du Conseil constitutionnel sont nommés pour neuf ans et ne sont pas renouvelables."
+    },
+    {
+      "question": "Quelle est la règle concernant l'initiative des lois selon la Constitution de 1991 ?",
+      "optionA": "Elle appartient exclusivement au Président de la République",
+      "optionB": "Elle appartient exclusivement au Parlement",
+      "optionC": "Elle appartient au Président, au Premier ministre et aux parlementaires",
+      "optionD": "Elle appartient uniquement au gouvernement",
+      "correctAnswer": "C",
+      "explanation": "L'initiative des lois appartient au Président de la République, au Premier ministre et aux membres du Parlement."
+    },
+    {
+      "question": "Quelle est la nature du référendum selon la Constitution de 1991 ?",
+      "optionA": "Il est obligatoire pour toutes les révisions constitutionnelles",
+      "optionB": "Il est facultatif et peut être proposé par le Président ou par les citoyens",
+      "optionC": "Il n'existe pas dans le système constitutionnel de 1991",
+      "optionD": "Il est uniquement consultatif",
+      "correctAnswer": "B",
+      "explanation": "Le référendum est facultatif et peut être proposé par le Président de la République ou par les citoyens à travers une pétition signée par un dixième des électeurs."
+    },
+    {
+      "question": "Quelle est la procédure de destitution du Président de la République selon la Constitution de 1991 ?",
+      "optionA": "Elle est décidée par le Parlement à la majorité simple",
+      "optionB": "Elle est décidée par le Conseil constitutionnel",
+      "optionC": "Elle est décidée par le Sénat à la majorité des deux tiers",
+      "optionD": "Elle est décidée par la Haute Cour de Justice à la majorité des trois quarts",
+      "correctAnswer": "D",
+      "explanation": "La destitution du Président de la République est décidée par la Haute Cour de Justice à la majorité des trois quarts de ses membres."
+    },
+    {
+      "question": "Quelle est la règle concernant l'organisation des collectivités territoriales selon la Constitution de 1991 ?",
+      "optionA": "Elles sont uniquement composées de communes",
+      "optionB": "Elles sont composées de communes, de départements et de régions",
+      "optionC": "Elles sont uniquement composées de régions",
+      "optionD": "Elles sont composées de communes, de départements, de régions et de territoires d'outre-mer",
+      "correctAnswer": "D",
+      "explanation": "Les collectivités territoriales sont composées de communes, de départements, de régions et de territoires d'outre-mer, chacun avec des compétences spécifiques."
+    }
+  ]
+}

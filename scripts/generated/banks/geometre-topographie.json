@@ -1,0 +1,504 @@
+{
+  "bankKey": "geometre-topographie",
+  "title": "geometre-topographie",
+  "questions": [
+    {
+      "question": "Le théodolite sert à mesurer :",
+      "optionA": "Les angles horizontaux et verticaux",
+      "optionB": "Les distances",
+      "optionC": "Les pressions",
+      "optionD": "Les températures",
+      "correctAnswer": "A",
+      "explanation": "Le théodolite mesure les angles (horizontal et vertical). Le tachéomètre mesure angles + distances."
+    },
+    {
+      "question": "La station totale combine :",
+      "optionA": "Théodolite + distancemètre électronique",
+      "optionB": "Théodolite + GPS",
+      "optionC": "GPS + niveau",
+      "optionD": "Niveau + boussole",
+      "correctAnswer": "A",
+      "explanation": "La station totale = théodolite (angles) + distancemètre (distances) électronique."
+    },
+    {
+      "question": "Le nivellement direct (géométrique) mesure :",
+      "optionA": "Les différences d'altitude avec un niveau et une mire",
+      "optionB": "Les angles",
+      "optionC": "Les distances horizontales",
+      "optionD": "Les coordonnées GPS",
+      "correctAnswer": "A",
+      "explanation": "Le nivellement direct utilise un niveau optique/laser et une mire pour calculer des dénivelés."
+    },
+    {
+      "question": "Le système WGS84 est :",
+      "optionA": "Un système géodésique mondial (utilisé par le GPS)",
+      "optionB": "Un théodolite",
+      "optionC": "Une carte",
+      "optionD": "Un logiciel",
+      "correctAnswer": "A",
+      "explanation": "WGS84 = World Geodetic System 1984, système de référence du GPS."
+    },
+    {
+      "question": "La projection UTM est :",
+      "optionA": "Une projection cylindrique transverse universelle",
+      "optionB": "Une carte ancienne",
+      "optionC": "Un instrument",
+      "optionD": "Une méthode de nivellement",
+      "correctAnswer": "A",
+      "explanation": "UTM = Universal Transverse Mercator, projection courante (60 fuseaux de 6°)."
+    },
+    {
+      "question": "Le GPS RTK permet :",
+      "optionA": "Un positionnement centimétrique en temps réel",
+      "optionB": "Un positionnement au mètre",
+      "optionC": "Une mesure d'angle",
+      "optionD": "Un nivellement",
+      "correctAnswer": "A",
+      "explanation": "Le RTK (Real Time Kinematic) utilise une base fixe pour corriger le signal GPS → précision cm."
+    },
+    {
+      "question": "Le cadastre sert à :",
+      "optionA": "Identifier et délimiter les propriétés foncières",
+      "optionB": "Mesurer la pluie",
+      "optionC": "Compter la population",
+      "optionD": "Cartographier le relief",
+      "correctAnswer": "A",
+      "explanation": "Le cadastre = document fiscal et juridique des propriétés (parcelles, propriétaires)."
+    },
+    {
+      "question": "L'échelle 1/1000 signifie que :",
+      "optionA": "1 cm sur le plan = 1000 cm (10 m) sur le terrain",
+      "optionB": "1 cm = 1 m",
+      "optionC": "1 cm = 100 m",
+      "optionD": "1 cm = 1 km",
+      "correctAnswer": "A",
+      "explanation": "À l'échelle 1/1000, 1 cm sur le plan = 10 m sur le terrain."
+    },
+    {
+      "question": "Le bornage est :",
+      "optionA": "La délimitation matérielle d'une propriété (bornes)",
+      "optionB": "Une carte",
+      "optionC": "Une mesure d'altitude",
+      "optionD": "Un type de GPS",
+      "correctAnswer": "A",
+      "explanation": "Le bornage consiste à poser des bornes aux limites d'une propriété."
+    },
+    {
+      "question": "La photogrammétrie permet :",
+      "optionA": "De reconstituer le relief à partir de photos aériennes",
+      "optionB": "De mesurer la pression",
+      "optionC": "De cartographier le sous-sol",
+      "optionD": "De prévoir la météo",
+      "correctAnswer": "A",
+      "explanation": "La photogrammétrie utilise des photos aériennes (stéréoscopie) pour générer un modèle 3D / MNT."
+    },
+    {
+      "question": "Le LiDAR (laser scanning) sert à :",
+      "optionA": "Mesurer des distances par laser (nuage de points 3D)",
+      "optionB": "Mesurer la température",
+      "optionC": "Compter les arbres",
+      "optionD": "Prendre des photos",
+      "correctAnswer": "A",
+      "explanation": "Le LiDAR émet des impulsions laser et mesure le temps de retour → nuage de points 3D."
+    },
+    {
+      "question": "Une polygonale en topographie est :",
+      "optionA": "Une succession de stations reliées par des mesures d'angles et distances",
+      "optionB": "Une carte",
+      "optionC": "Un type de niveau",
+      "optionD": "Une projection",
+      "correctAnswer": "A",
+      "explanation": "Une polygonale = cheminement de stations mesurant angles et distances pour déterminer des coordonnées."
+    },
+    {
+      "question": "Le gisement est :",
+      "optionA": "L'angle horizontal entre une direction et le nord",
+      "optionB": "L'altitude",
+      "optionC": "La distance",
+      "optionD": "La pente",
+      "correctAnswer": "A",
+      "explanation": "Le gisement = angle horizontal (azimut) d'une direction par rapport au nord."
+    },
+    {
+      "question": "La précision d'un nivellement de précision est de l'ordre de :",
+      "optionA": "± 1 à 2 mm par km",
+      "optionB": "± 10 cm",
+      "optionC": "± 1 m",
+      "optionD": "± 50 cm",
+      "correctAnswer": "A",
+      "explanation": "Le nivellement de haute précision atteint 1-2 mm par km double nivellement."
+    },
+    {
+      "question": "Le code de la propriété foncière au Burkina Faso régit :",
+      "optionA": "La propriété, l'enregistrement et les transactions foncières",
+      "optionB": "Le droit pénal",
+      "optionC": "Le droit commercial",
+      "optionD": "Le droit du travail",
+      "correctAnswer": "A",
+      "explanation": "Le code foncier rural (Burkina Faso, loi 034-2009/AN) régit le foncier rural."
+    },
+    {
+      "question": "Quelle est la précision typique d'un théodolite de haute qualité pour la mesure d'angles horizontaux ?",
+      "optionA": "±1 seconde d'arc",
+      "optionB": "±5 secondes d'arc",
+      "optionC": "±10 secondes d'arc",
+      "optionD": "±30 secondes d'arc",
+      "correctAnswer": "A",
+      "explanation": "Les théodolites de haute qualité ont une précision typique de ±1 seconde d'arc pour la mesure des angles horizontaux, ce qui les rend adaptés aux travaux topographiques de précision."
+    },
+    {
+      "question": "Dans un nivellement de précision, quelle est la distance maximale recommandée entre deux repères successifs ?",
+      "optionA": "20 mètres",
+      "optionB": "50 mètres",
+      "optionC": "75 mètres",
+      "optionD": "100 mètres",
+      "correctAnswer": "C",
+      "explanation": "Dans un nivellement de précision, la distance maximale entre deux repères successifs est généralement limitée à 75 mètres pour minimiser les erreurs de collimation et de courbure terrestre."
+    },
+    {
+      "question": "Quelle est la principale différence entre un station totale et un GPS/GNSS en mode statique ?",
+      "optionA": "Le GPS/GNSS mesure les distances par temps de propagation",
+      "optionB": "Le station totale nécessite une visibilité directe des points",
+      "optionC": "Le GPS/GNSS est toujours plus précis",
+      "optionD": "Le station total utilise le principe de trilatération",
+      "correctAnswer": "B",
+      "explanation": "La principale différence est que le station totale nécessite une visibilité directe des points mesurés, tandis que le GPS/GNSS peut fonctionner sans visibilité directe en utilisant des satellites."
+    },
+    {
+      "question": "Quel système de coordonnées est utilisé comme système de référence mondial pour le GPS/GNSS ?",
+      "optionA": "RGF93",
+      "optionB": "Lambert-93",
+      "optionC": "WGS84",
+      "optionD": "NTF",
+      "correctAnswer": "C",
+      "explanation": "WGS84 (World Geodetic System 1984) est le système de référence géodésique mondial utilisé par le GPS/GNSS pour définir les positions sur la Terre."
+    },
+    {
+      "question": "Dans la projection UTM, quelle est la largeur d'un fuseau ?",
+      "optionA": "6 degrés de longitude",
+      "optionB": "9 degrés de longitude",
+      "optionC": "12 degrés de longitude",
+      "optionD": "15 degrés de longitude",
+      "correctAnswer": "A",
+      "explanation": "Dans la projection UTM (Universal Transverse Mercator), chaque fuseau a une largeur de 6 degrés de longitude, ce qui permet de minimiser les distorsions de projection."
+    },
+    {
+      "question": "Quelle est la précision typique d'un GPS/GNSS en mode cinématique différentiel (RTK) ?",
+      "optionA": "1 à 2 cm",
+      "optionB": "10 à 20 cm",
+      "optionC": "1 à 2 m",
+      "optionD": "5 à 10 m",
+      "correctAnswer": "A",
+      "explanation": "Le GPS/GNSS en mode cinématique différentiel (RTK) atteint une précision typique de 1 à 2 cm, ce qui le rend idéal pour des travaux topographiques de haute précision."
+    },
+    {
+      "question": "Quelle est la nature juridique du cadastre en France ?",
+      "optionA": "Un document fiscal",
+      "optionB": "Un document administratif",
+      "optionC": "Un document technique",
+      "optionD": "Un document graphique",
+      "correctAnswer": "A",
+      "explanation": "En France, le cadastre est avant tout un document fiscal dont la principale finalité est d'établir la contribution des propriétés d'un contribuable à l'impôt foncier."
+    },
+    {
+      "question": "Dans la photogrammétrie aérienne, quel est le format standard des images pour la stéréoscopie ?",
+      "optionA": "Format 60% de recouvrement longitudinal et 30% de recouvrement latéral",
+      "optionB": "Format 80% de recouvrement longitudinal et 60% de recouvrement latéral",
+      "optionC": "Format 70% de recouvrement longitudinal et 40% de recouvrement latéral",
+      "optionD": "Format 90% de recouvrement longitudinal et 70% de recouvrement latéral",
+      "correctAnswer": "C",
+      "explanation": "Le format standard pour la stéréoscopie en photogrammétrie aérienne est de 70% de recouvrement longitudinal et 40% de recouvrement latéral, permettant une bonne couverture et une vision stéréoscopique."
+    },
+    {
+      "question": "Quelle est la longueur d'onde typique utilisée dans un système LiDAR ?",
+      "optionA": "Visible (550-700 nm)",
+      "optionB": "Infrarouge proche (800-1100 nm)",
+      "optionC": "Infrarouge moyen (3000-5000 nm)",
+      "optionD": "Infrarouge lointain (10000-12000 nm)",
+      "correctAnswer": "B",
+      "explanation": "Les systèmes LiDAR utilisent généralement des longueurs d'onde dans l'infrarouge proche (800-1100 nm), qui peuvent pénétrer l'atmosphère et être réfléchis par la plupart des surfaces."
+    },
+    {
+      "question": "Dans un nivellement de précision, comment corrige-t-on l'erreur de courbure terrestre ?",
+      "optionA": "En utilisant une nivelle à fiole très sensible",
+      "optionB": "En appliquant une correction de 0.0785 D²/D où D est la distance en km",
+      "optionC": "En mesurant la température de l'air",
+      "optionD": "En utilisant un niveau numérique",
+      "correctAnswer": "B",
+      "explanation": "Pour corriger l'erreur de courbure terrestre dans un nivellement de précision, on applique la formule 0.0785 D²/D où D est la distance en kilomètres entre le niveau et le mire."
+    },
+    {
+      "question": "Quelle est la précision angulaire minimale requise pour un théodolite destiné à l'arpentage cadastral ?",
+      "optionA": "±1 seconde d'arc",
+      "optionB": "±5 secondes d'arc",
+      "optionC": "±20 secondes d'arc",
+      "optionD": "±60 secondes d'arc",
+      "correctAnswer": "C",
+      "explanation": "Pour l'arpentage cadastral, un théodolite avec une précision angulaire de ±20 secondes d'arc est généralement suffisant, car les exigences de précision sont moins strictes que pour la topographie de haute précision."
+    },
+    {
+      "question": "Dans le système WGS84, quel est le rayon équatorial de la Terre ?",
+      "optionA": "6 378 137 mètres",
+      "optionB": "6 356 752 mètres",
+      "optionC": "6 371 000 mètres",
+      "optionD": "6 378 000 mètres",
+      "correctAnswer": "A",
+      "explanation": "Dans le système WGS84, le rayon équatorial de la Terre est de 6 378 137 mètres, tandis que le rayon polaire est de 6 356 752 mètres."
+    },
+    {
+      "question": "Quelle est la précision typique d'un système LiDAR aérien pour la mesure de l'altitude du sol ?",
+      "optionA": "±1 cm",
+      "optionB": "±5 cm",
+      "optionC": "±10 cm",
+      "optionD": "±30 cm",
+      "correctAnswer": "B",
+      "explanation": "Un système LiDAR aérien atteint généralement une précision de ±5 cm pour la mesure de l'altitude du sol, ce qui le rend très efficace pour la cartographie topographique détaillée."
+    },
+    {
+      "question": "Dans la projection UTM, quel est le système de coordonnées utilisé pour le fuseau 30 en France ?",
+      "optionA": "WGS84",
+      "optionB": "RGF93",
+      "optionC": "NTF",
+      "optionD": "Lambert-93",
+      "correctAnswer": "B",
+      "explanation": "En France, la projection UTM utilise le système de coordonnées RGF93 (Référentiel Géodésque Français 1993) qui est le système officiel de référence."
+    },
+    {
+      "question": "Quelle est la relation entre la précision d'une station totale et la distance mesurée ?",
+      "optionA": "La précision augmente avec la distance",
+      "optionB": "La précision diminue proportionnellement à la distance",
+      "optionC": "La précision reste constante quelle que soit la distance",
+      "optionD": "La précision diminue exponentiellement avec la distance",
+      "correctAnswer": "B",
+      "explanation": "La précision d'une station totale diminue généralement proportionnellement à la distance mesurée, selon la précision intrinsèque de l'appareil et les conditions d'observation."
+    },
+    {
+      "question": "Dans la photogrammétrie, que signifie le terme 'stéréoscopie' ?",
+      "optionA": "La technique de prise de vue avec un seul appareil",
+      "optionB": "La technique de mesure des distances par différence de temps",
+      "optionC": "La technique de vision en 3D à partir de deux images décalées",
+      "optionD": "La technique de correction des déformations de l'atmosphère",
+      "correctAnswer": "C",
+      "explanation": "La stéréoscopie en photogrammétrie consiste à utiliser deux images d'une même scène prises de positions légèrement différentes pour créer un effet de vision en 3D et mesurer les altitudes."
+    },
+    {
+      "question": "Quelle est la précision typique d'un GPS/GNSS en mode autonome (sans correction différentielle) ?",
+      "optionA": "1 à 5 mètres",
+      "optionB": "5 à 10 mètres",
+      "optionC": "10 à 20 mètres",
+      "optionD": "20 à 100 mètres",
+      "correctAnswer": "A",
+      "explanation": "Un GPS/GNSS en mode autonome (sans correction différentielle) atteint généralement une précision de 1 à 5 mètres, selon les conditions de réception du signal satellite."
+    },
+    {
+      "question": "Dans un nivellement de précision, comment corrige-t-on l'erreur de réfraction atmosphérique ?",
+      "optionA": "En mesurant la température et la pression",
+      "optionB": "En utilisant une nivelle à fiole très sensible",
+      "optionC": "En limitant la distance entre le niveau et la mire",
+      "optionD": "En utilisant une formule de correction basée sur la distance et la température",
+      "correctAnswer": "D",
+      "explanation": "Pour corriger l'erreur de réfraction atmosphérique, on utilise généralement une formule de correction basée sur la distance entre le niveau et la mire, ainsi que sur la température de l'air."
+    },
+    {
+      "question": "Quelle est la principale limitation du LiDAR par rapport à la photogrammétrie traditionnelle ?",
+      "optionA": "Le LiDAR ne peut pas mesurer les couleurs",
+      "optionB": "Le LiDAR est moins précis",
+      "optionC": "Le LiDAR ne peut pas pénétrer l'eau",
+      "optionD": "Le LiDAR nécessite une visibilité directe des surfaces",
+      "correctAnswer": "A",
+      "explanation": "La principale limitation du LiDAR par rapport à la photogrammétrie traditionnelle est qu'il ne capture pas les informations colorimétriques, se concentrant uniquement sur les distances et les altitudes."
+    },
+    {
+      "question": "Dans le système de projection UTM, quelle est la nature de la coordonnée 'Easting' ?",
+      "optionA": "La latitude du point",
+      "optionB": "La longitude du point",
+      "optionC": "La coordonnée horizontale mesurée à partir du méridien central du fuseau",
+      "optionD": "La coordonnée verticale du point",
+      "correctAnswer": "C",
+      "explanation": "Dans la projection UTM, la coordonnée 'Easting' (ou X) représente la coordonnée horizontale mesurée à partir du méridien central du fuseau, en mètres."
+    },
+    {
+      "question": "Quelle est la précision angulaire typique d'un théodolite de précision utilisé en topographie de haute précision ?",
+      "optionA": "1 minute d'arc",
+      "optionB": "10 secondes d'arc",
+      "optionC": "1 seconde d'arc",
+      "optionD": "0,1 seconde d'arc",
+      "correctAnswer": "C",
+      "explanation": "Les théodolites de précision ont une précision angulaire typique de 1 seconde d'arc (1/3600 de degré), ce qui les rend appropriés pour les travaux topographiques de haute précision."
+    },
+    {
+      "question": "Dans un système de coordonnées UTM, quelle est la largeur d'un fuseau ?",
+      "optionA": "6 degrés de longitude",
+      "optionB": "3 degrés de longitude",
+      "optionC": "1 degré de longitude",
+      "optionD": "9 degrés de longitude",
+      "correctAnswer": "A",
+      "explanation": "Le système UTM divise la Terre en 60 fuseaux, chacun ayant une largeur de 6 degrés de longitude. La numérotation commence à 180° de longitude, en allant vers l'est."
+    },
+    {
+      "question": "Quelle est la principale différence entre un nivellement direct et un nivellement indirect ?",
+      "optionA": "Le nivellement direct mesure des différences d'altitude entre points visibles, tandis que le nivellement indirect utilise des formules trigonométriques",
+      "optionB": "Le nivellement direct est plus précis que le nivellement indirect",
+      "optionC": "Le nivellement direct ne peut être utilisé qu'en plaine, tandis que le nivellement indirect est adapté aux terrains accidentés",
+      "optionD": "Le nivellement direct nécessite une station unique, tandis que le nivellement enjambe nécessite plusieurs stations",
+      "correctAnswer": "A",
+      "explanation": "Le nivellement direct (ou géométrique) mesure directement les différences d'altitude entre points visibles. Le nivellement indirect (ou trigonométrique) utilise des mesures d'angles et de distances pour calculer les différences d'altitude."
+    },
+    {
+      "question": "Dans le système WGS84, quel est le paramètre qui définit l'aplatissement de la Terre ?",
+      "optionA": "Le grand axe semi-majeur",
+      "optionB": "Le petit axe semi-mineur",
+      "optionC": "L'excentricité",
+      "optionD": "L'aplatissement (f)",
+      "correctAnswer": "D",
+      "explanation": "L'aplatissement (f) est défini comme la différence entre le grand axe semi-majeur (a) et le petit axe semi-mineur (b) divisée par le grand axe semi-majeur (f = (a-b)/a). C'est un paramètre clé qui définit la forme ellipsoïdale de la Terre dans le système WGS84."
+    },
+    {
+      "question": "Quelle est la technologie utilisée dans un LiDAR pour mesurer les distances ?",
+      "optionA": "Mesure du temps de parcours d'un signal sonore",
+      "optionB": "Mesure du temps de parcours d'un signal laser",
+      "optionC": "Mesure de la phase d'une onde radar",
+      "optionD": "Mesure de l'intensité d'un signal lumineux",
+      "correctAnswer": "B",
+      "explanation": "Le LiDAR (Light Detection and Ranging) utilise un laser pour mesurer les distances. Il envoie des impulsions laser et mesure le temps de retour de ces impulsions après réflexion sur les objets, permettant de calculer précisément les distances."
+    },
+    {
+      "question": "Dans un système de positionnement GNSS, quelle est la précision obtenue avec le mode de positionnement différentiel (DGPS/DGNSS) ?",
+      "optionA": "Quelques mètres",
+      "optionB": "Quelques décimètres",
+      "optionC": "Quelques centimètres",
+      "optionD": "Quelques millimètres",
+      "correctAnswer": "C",
+      "explanation": "Le positionnement différentiel (DGPS/DGNSS) utilise des corrections de signal transmises par une station de référence, améliorant la précision à quelques centimètres, contrairement au positionnement autonome qui est précis à quelques mètres."
+    },
+    {
+      "question": "Quelle est la caractéristique principale d'une station totale par rapport à un simple théodolite ?",
+      "optionA": "Elle mesure uniquement les angles horizontaux",
+      "optionB": "Elle intègre un système de mesure des distances électronique",
+      "optionC": "Elle ne peut mesurer que les angles verticaux",
+      "optionD": "Elle nécessite un calcul externe pour déterminer les coordonnées",
+      "correctAnswer": "B",
+      "explanation": "Une station totale est un instrument qui combine les fonctionnalités d'un théodolite (mesure d'angles) et d'un télémètre électronique (mesure de distances), permettant de déterminer directement les coordonnées des points."
+    },
+    {
+      "question": "Dans le système de projection UTM, quel est le méridien central d'un fuseau ?",
+      "optionA": "Le méridien de Greenwich",
+      "optionB": "Le méridien situé au centre du fuseau",
+      "optionC": "Le méridien situé à l'ouest du fuseau",
+      "optionD": "Le méridien situé à l'est du fuseau",
+      "correctAnswer": "B",
+      "explanation": "Dans le système UTM, chaque fuseau a son propre méridien central, situé au milieu du fuseau (à 3° à l'est et à l'ouest des limites du fuseau). Ce méridien central sert d'origine pour les coordonnées X (méridien) dans le système."
+    },
+    {
+      "question": "Quelle est la technique photogrammétrique qui permet d'obtenir un modèle numérique de terrain à partir de photographies aériennes ?",
+      "optionA": "La stéréoscopie",
+      "optionB": "La triangulation",
+      "optionC": "L'orthophotographie",
+      "optionD": "La restitution",
+      "correctAnswer": "A",
+      "explanation": "La stéréoscopie utilise la parallaxe entre deux photographies aériennes prises de positions légèrement différentes pour calculer les altitudes et créer un modèle numérique de terrain."
+    },
+    {
+      "question": "Dans un nivellement de précision, quelle est la tolérance admissible pour une fermeture de nivellement sur une ligne de 1 km ?",
+      "optionA": "5√(L) mm",
+      "optionB": "10√(L) mm",
+      "optionC": "20√(L) mm",
+      "optionD": "30√(L) mm",
+      "correctAnswer": "A",
+      "explanation": "En nivellement de précision, la tolérance admissible pour une fermeture est généralement de 5√(L) mm, où L est la longueur de la ligne en kilomètres. Cette formule tient compte de l'accumulation des erreurs sur la distance."
+    },
+    {
+      "question": "Quelle est la particularité du système de coordonnées WGS84 par rapport à d'autres systèmes géodésiques ?",
+      "optionA": "Il est basé sur une sphère parfaite",
+      "optionB": "Il est géocentrique et mondial",
+      "optionC": "Il n'utilise pas de système de projection",
+      "optionD": "Il est spécifique à chaque pays",
+      "correctAnswer": "B",
+      "explanation": "WGS84 (World Geodetic System 1984) est un système géodésique géocentrique, ce qui signifie qu'il a son origine au centre de masse de la Terre. C'est un système mondial utilisé par le GPS et de nombreux autres systèmes de navigation."
+    },
+    {
+      "question": "Quelle est la principale application du cadastre en topographie ?",
+      "optionA": "La délimitation des propriétés foncières",
+      "optionB": "La cartographie des reliefs",
+      "optionC": "La mesure des précipitations",
+      "optionD": "La détermination des limites administratives",
+      "correctAnswer": "A",
+      "explanation": "Le cadastre est un système d'enregistrement qui décrit la situation juridique, fiscale et géométrique des parcelles de terrain. Sa principale application est la délimitation et la documentation des propriétés foncières."
+    },
+    {
+      "question": "Dans un système GNSS, que mesure le code C/A ?",
+      "optionA": "La phase porteuse du signal",
+      "optionB": "L'erreur d'horloge du satellite",
+      "optionC": "Un code binaire pseudo-aléatoire à débit rapide",
+      "optionD": "Un code binaire pseudo-aléatoire à débit lent",
+      "correctAnswer": "D",
+      "explanation": "Le code C/A (Coarse/Acquisition) est un code binaire pseudo-aléatoire à débit lent (1,023 MHz) utilisé par les satellites GPS pour permettre aux récepteurs de se verrouiller rapidement sur le signal. Il est moins précis que le code P qui est réservé à un usage militaire."
+    },
+    {
+      "question": "Quelle est la différence entre une orthophotographie et une photographie aérienne classique ?",
+      "optionA": "L'orthophotographie est toujours en noir et blanc",
+      "optionB": "L'orthophotographie est corrigée des déformations géométriques",
+      "optionC": "L'orthophotographie est prise au sol",
+      "optionD": "L'orthophotographie a une résolution plus faible",
+      "correctAnswer": "B",
+      "explanation": "Une orthophotographie est une photographie aérienne corrigée des déformations géométriques causées par l'inclinaison de la caméra et le relief du terrain. Elle permet des mesures précises comme une carte topographique."
+    },
+    {
+      "question": "Dans un système de coordonnées UTM, que représente la coordonnée 'Easting' ?",
+      "optionA": "L'altitude du point",
+      "optionB": "La latitude du point",
+      "optionC": "La longitude du point par rapport au méridien central",
+      "optionD": "La distance au méridien central",
+      "correctAnswer": "D",
+      "explanation": "Dans le système UTM, la coordonnée 'Easting' (ou X) représente la distance en mètres du point par rapport au méridien central de son fuseau, mesurée sur l'axe des X. Cette valeur est toujours positive."
+    },
+    {
+      "question": "Quelle est la technologie utilisée dans un GNSS pour corriger les erreurs d'ionosphère ?",
+      "optionA": "L'utilisation de deux fréquences porteuses (L1 et L2)",
+      "optionB": "Le positionnement différentiel",
+      "optionC": "Le recalage par des stations terrestres",
+      "optionD": "L'utilisation de satellites géostationnaires",
+      "correctAnswer": "A",
+      "explanation": "L'utilisation de deux fréquences porteuses (L1 et L2) permet de mesurer l'effet de l'ionosphère sur le signal et de le corriger, car ce effet dépend de la fréquence du signal. C'est une technique utilisée dans les récepteurs GNSS dual-fréquence."
+    },
+    {
+      "question": "Quelle est la précision typique d'un LiDAR aéroporté pour la mesure des altitudes ?",
+      "optionA": "Quelques mètres",
+      "optionB": "Quelques décimètres",
+      "optionC": "Quelques centimètres",
+      "optionD": "Quelques millimètres",
+      "correctAnswer": "C",
+      "explanation": "Les systèmes LiDAR aéroportés atteignent typiquement une précision de quelques centimètres en altitude, selon la plateforme, l'altitude de vol et la densité de points mesurés."
+    },
+    {
+      "question": "Dans un système de nivellement, comment calcule-t-on la cote d'un point ?",
+      "optionA": "Cote = altitude de la station + lecture arrière - lecture avant",
+      "optionB": "Cote = altitude de la station + lecture avant - lecture arrière",
+      "optionC": "Cote = altitude de la station × lecture arrière / lecture avant",
+      "optionD": "Cote = altitude de la station + lecture arrière + lecture avant",
+      "correctAnswer": "A",
+      "explanation": "En nivellement, la cote d'un point est calculée en ajoutant l'altitude de la station à la lecture arrière (sur une mire de référence) et en soustrayant la lecture avant (sur la mire du point dont on veut déterminer l'altitude)."
+    },
+    {
+      "question": "Quelle est la particularité du système de coordonnées Lambert 93 par rapport au système UTM ?",
+      "optionA": "Il est utilisé uniquement pour le cadastre",
+      "optionB": "Il est une projection conique conforme",
+      "optionC": "Il ne gère que les coordonnées 2D",
+      "optionD": "Il est spécifique à la France",
+      "correctAnswer": "D",
+      "explanation": "Le système Lambert 93 est une projection conique conforme utilisée en France comme système de référence officiel. Il est spécifique à la France, contrairement au système UTM qui est utilisé à l'échelle mondiale."
+    },
+    {
+      "question": "Dans une station totale, que mesure le collimateur électronique ?",
+      "optionA": "La distance horizontale",
+      "optionB": "L'altitude du point",
+      "optionC": "Les coordonnées du point",
+      "optionD": "Les angles horizontaux et verticaux",
+      "correctAnswer": "D",
+      "explanation": "Le collimateur électronique d'une station totale est le système optique et électronique qui permet de mesurer les angles horizontaux et verticaux. Il remplace le collimateur optique des théodolites traditionnels."
+    }
+  ],
+  "category": "Universitaire",
+  "subcategory": "geometre-topographie",
+  "description": "Topographie, nivellement, GPS, cadastre, dessin technique."
+}

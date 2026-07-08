@@ -1,0 +1,1264 @@
+{
+  "bankKey": "droit-civil",
+  "title": "Droit Civil & des Affaires",
+  "description": "Personnes, famille, biens, obligations, contrats, droit commercial, sociétés, effets de commerce.",
+  "category": "Universitaire",
+  "subcategory": "Droit",
+  "icon": "Scale",
+  "color": "emerald",
+  "level": "LICENCE",
+  "subject": "Droit civil: personnes physiques et morales, capacité juridique, famille (mariage, divorce, filiation), biens (propriété, usufruit, servitudes), obligations (contrats, quasi-contrats, responsabilité civile délictuelle et contractuelle, dommages et intérêts)",
+  "questions": [
+    {
+      "question": "Quelle est la nature juridique de la personne morale selon le Code civil français ?",
+      "optionA": "Elle est considérée comme une simple fiction juridique",
+      "optionB": "Elle a une existence réelle et autonome par rapport à ses membres",
+      "optionC": "Elle est assimilée à une personne physique",
+      "optionD": "Elle ne peut pas exercer des droits civils",
+      "correctAnswer": "B",
+      "explanation": "Selon l'article 481 du Code civil, la personne morale est une entité distincte de ses membres avec une existence juridique propre, pouvant exercer des droits et obligations."
+    },
+    {
+      "question": "Quelle est la capacité civile d'une personne mineure non émancipée ?",
+      "optionA": "Elle peut accomplir tous les actes juridiques sans restriction",
+      "optionB": "Elle a une capacité réduite et ne peut accomplir que certains actes",
+      "optionC": "Elle est considérée comme incapable de tout acte juridique",
+      "optionD": "Sa capacité est identique à celle d'un majeur",
+      "correctAnswer": "B",
+      "explanation": "Le mineur non émancipé a une capacité civile réduite (article 389 du Code civil) : il peut accomplir seul les actes d'administration et de disposition courants, mais les actes d'administration et de disposition importants nécessitent l'assistance de ses représentants légaux."
+    },
+    {
+      "question": "Quelle est la condition de fond essentielle pour la validité du mariage ?",
+      "optionA": "La communauté de patrimoine entre les époux",
+      "optionB": "Le consentement libre et éclairé des futurs époux",
+      "optionC": "L'existence d'un contrat de mariage",
+      "optionD": "L'approbation des parents des futurs époux",
+      "correctAnswer": "B",
+      "explanation": "Le consentement libre et éclairé est la condition essentielle de la validité du mariage (article 144 du Code civil). Sans consentement valable, le mariage est nul."
+    },
+    {
+      "question": "Quelle est la différence entre l'usufruit et la nue-propriété ?",
+      "optionA": "L'usufruit donne droit à la jouissance du bien, tandis que la nue-propriété donne droit à la propriété pleine et entière",
+      "optionB": "L'usufruit est toujours temporaire, tandis que la nue-propriété est perpétuelle",
+      "optionC": "Seul l'usufruitier peut vendre le bien",
+      "optionD": "Le nu-propriétaire peut jouir duimmédiatement du bien",
+      "correctAnswer": "A",
+      "explanation": "L'usufruitier a le droit d'user et de jouir du bien, tandis que le nu-propriétaire a seulement la propriété du bien sans droit d'en jouir (article 578 du Code civil). L'usufruit est toujours temporaire, tandis que la nue-propriété dure jusqu'à l'extinction de l'usufruit."
+    },
+    {
+      "question": "Quelle est la nature de l'obligation découlant d'un contrat ?",
+      "optionA": "Elle est toujours à titre gratuit",
+      "optionB": "Elle est toujours synallagmatique",
+      "optionC": "Elle est toujours à titre onéreux",
+      "optionD": "Elle peut être à titre gratuit ou onéreux",
+      "correctAnswer": "D",
+      "explanation": "Les obligations contractuelles peuvent être à titre gratuit (comme le don) ou à titre onéreux (comme la vente). La nature de l'obligation dépend des termes du contrat."
+    },
+    {
+      "question": "Quelle est la condition de la responsabilité délictuelle ?",
+      "optionA": "La seule existence d'un dommage suffit",
+      "optionB": "La seule existence d'une faute suffit",
+      "optionC": "La nécessité d'un lien de causalité entre la faute et le dommage",
+      "optionD": "L'existence d'un contrat entre les parties",
+      "correctAnswer": "C",
+      "explanation": "La responsabilité délictuelle nécessite trois éléments : une faute, un dommage et un lien de causalité entre la faute et le dommage (article 1240 du Code civil)."
+    },
+    {
+      "question": "Quelle est la règle concernant la capacité de tester d'une personne ?",
+      "optionA": "Elle peut être réduite par une mesure de protection",
+      "optionB": "Elle est identique à la capacité civile",
+      "optionC": "Elle est toujours pleine pour les majeurs",
+      "optionD": "Elle n'existe que pour les personnes majeures",
+      "correctAnswer": "A",
+      "explanation": "La capacité de tester peut être réduite par une mesure de protection (curatelle ou tutelle) selon l'article 901 du Code civil, même si la personne conserve sa capacité civile."
+    },
+    {
+      "question": "Quelle est la nature du lien de filiation établi par la possession d'état ?",
+      "optionA": "Elle établit une filiation simple",
+      "optionB": "Elle établit une filiction légale",
+      "optionC": "Elle établit une filiction naturelle",
+      "optionD": "Elle n'a aucune valeur juridique",
+      "correctAnswer": "C",
+      "explanation": "La possession d'état établit une filiction naturelle (article 345 du Code civil), qui peut être confirmée par une action en reconnaissance si elle répond aux conditions de l'article 346."
+    },
+    {
+      "question": "Quelle est la durée maximale de l'usufruit ?",
+      "optionA": "30 ans",
+      "optionB": "La vie de l'usufruitier",
+      "optionC": "99 ans",
+      "optionD": "Illimitée",
+      "correctAnswer": "B",
+      "explanation": "L'usufruit peut durer toute la vie de l'usufruitier (article 609 du Code civil). Il ne peut pas être établi pour une durée supérieure à la vie de la personne."
+    },
+    {
+      "question": "Quelle est la règle concernant la révocation d'un don manuel ?",
+      "optionA": "Elle peut être révocation à tout moment par le donateur",
+      "optionB": "Elle est irrévocable",
+      "optionC": "Elle ne peut être révocation qu'en cas de gratitude ingrate",
+      "optionD": "Elle ne peut être révocation qu'après décès du donateur",
+      "correctAnswer": "A",
+      "explanation": "Le don manuel est une libéralité qui s'accomplit par la remise de la chose (article 932 du Code civil) et peut être révoqué à tout moment par le donateur, car il n'y a pas de formalisme."
+    },
+    {
+      "question": "Quelle est la nature de la responsabilité du fait des produits défectueux ?",
+      "optionA": "Elle est contractuelle",
+      "optionB": "Elle est délictuelle",
+      "optionC": "Elle est quasi-délictuelle",
+      "optionD": "Elle peut être contractuelle ou extracontractuelle",
+      "correctAnswer": "D",
+      "explanation": "La responsabilité du fait des produits défectueux peut être engagée sur le fondement contractuel (vices cachés) ou extracontractuel (article 1245 du Code civil)."
+    },
+    {
+      "question": "Quelle est la condition essentielle pour la validité d'un contrat de mariage ?",
+      "optionA": "Il doit être établi par un notaire",
+      "optionB": "Il doit être signé avant le mariage",
+      "optionC": "Il doit être homologué par un juge",
+      "optionD": "Il doit être publié au Registre de l'état civil",
+      "correctAnswer": "B",
+      "explanation": "Le contrat de mariage doit être signifié avant la célébration du mariage (article 1394 du Code civil) pour être valide. Les autres formalités sont nécessaires mais pas conditionnelles de validité."
+    },
+    {
+      "question": "Quelle est la nature de la servitude de passage ?",
+      "optionA": "Elle est toujours à titre gratuit",
+      "optionB": "Elle est toujours à titre onéreux",
+      "optionC": "Elle peut être à titre gratuit ou onéreux",
+      "optionD": "Elle est toujours temporaire",
+      "correctAnswer": "C",
+      "explanation": "La servitude de passage peut être établie à titre gratuit ou onéreux (article 682 du Code civil). Sa durée dépend de sa nature (perpétuelle ou temporaire)."
+    },
+    {
+      "question": "Quelle est la règle concernant la capacité d'une personne en tutelle ?",
+      "optionA": "Elle est considérée comme incapable de tout acte juridique",
+      "optionB": "Elle peut accomplir seule les actes d'administration courante",
+      "optionC": "Elle doit accomplir tous ses actes avec l'assistance de son tuteur",
+      "optionD": "Elle conserve une capacité civile entière",
+      "correctAnswer": "C",
+      "explanation": "La personne en tutelle doit accomplir tous ses actes avec l'assistance de son tuteur (article 458 du Code civil). Elle ne peut pas accomplir seule les actes d'administration ou de disposition."
+    },
+    {
+      "question": "Quelle est la nature de l'obligation née d'un quasi-contrat ?",
+      "optionA": "Elle est toujours à titre gratuit",
+      "optionB": "Elle est toujours à titre onéreux",
+      "optionC": "Elle résulte de la loi sans consentement des parties",
+      "optionD": "Elle nécessite un écrit pour être valable",
+      "correctAnswer": "C",
+      "explanation": "Les quasi-contrats sont des obligations qui naissent sans consentement des parties, mais en vertu de la loi (article 1302 du Code civil), comme l'enrichissement sans cause."
+    },
+    {
+      "question": "Quelle est la règle concernant la prescription extinctive des actions en responsabilité délictuelle ?",
+      "optionA": "Elle est de 5 ans",
+      "optionB": "Elle est de 10 ans",
+      "optionC": "Elle est de 30 ans",
+      "optionD": "Elle est de 20 ans",
+      "correctAnswer": "C",
+      "explanation": "La prescription extinctive des actions en responsabilité délictuelle est de 30 ans (article 2224 du Code civil)."
+    },
+    {
+      "question": "Quelle est la nature du régime de séparation de biens ?",
+      "optionA": "Les biens sont communs aux époux",
+      "optionB": "Chacun conserve la propriété de ses biens",
+      "optionC": "Les biens sont partagés à parts égales",
+      "optionD": "Les biens appartiennent au mari",
+      "correctAnswer": "B",
+      "explanation": "Le régime de séparation de biens prévoit que chaque époux conserve la propriété de ses biens personnels (article 1537 du Code civil)."
+    },
+    {
+      "question": "Quelle est la condition de la responsabilité du fait des choses ?",
+      "optionA": "La simple existence d'une chose suffit",
+      "optionB": "La chose doit appartenir à la personne responsable",
+      "optionC": "La chose doit être sous la garde de la personne responsable",
+      "optionD": "La chose doit être dangereuse",
+      "correctAnswer": "C",
+      "explanation": "La responsabilité du fait des choses (article 1242 du Code civil) nécessite que la chose soit sous la garde de la personne qui en est responsable."
+    },
+    {
+      "question": "Quelle est la nature de la filiction légitime ?",
+      "optionA": "Elle résulte du mariage des parents",
+      "optionB": "Elle résulte de la reconnaissance",
+      "optionC": "Elle résulte de l'adoption",
+      "optionD": "Elle résulte de la possession d'état",
+      "correctAnswer": "A",
+      "explanation": "La filiction légitime résulte du mariage des parents (article 311-21 du Code civil). La filiction naturelle résulte de la reconnaissance ou de la possession d'état."
+    },
+    {
+      "question": "Quelle est la règle concernant la prescription acquisitive ?",
+      "optionA": "Elle est de 10 ans pour les meubles",
+      "optionB": "Elle est de 30 ans pour les immeubles",
+      "optionC": "Elle est de 5 ans pour les meubles",
+      "optionD": "Elle est de 20 ans pour les immeubles",
+      "correctAnswer": "D",
+      "explanation": "La prescription acquisitive est de 30 ans pour les immeubles (article 2252 du Code civil) et de 3 ans pour les meubles (article 2277 du Code civil), sauf exceptions."
+    },
+    {
+      "question": "En droit civil français, quelle est la nature juridique de l'embryon selon la jurisprudence de la Cour de cassation?",
+      "optionA": "Il est considéré comme une personne physique dès la conception",
+      "optionB": "Il bénéficie d'une protection mais n'a pas la personnalité juridique",
+      "optionC": "Il est considéré comme un bien",
+      "optionD": "Sa personnalité juridique est suspendue jusqu'à la naissance",
+      "correctAnswer": "B",
+      "explanation": "La jurisprudence française reconnaît à l'embryon une protection spécifique mais lui refuse la personnalité juridique, qui n'est acquise qu'à la naissance avec vie."
+    },
+    {
+      "question": "Quelle est la conséquence de l'incapacité d'exercice d'une personne majeure placée sous curatelle?",
+      "optionA": "Elle ne peut accomplir aucun acte juridique",
+      "optionB": "Elle peut accomplir seule les actes de la vie courante mais nécessite l'assistance du curateur pour les actes d'administration et de disposition",
+      "optionC": "Elle est privée de sa capacité juridique",
+      "optionD": "Elle ne peut être partie à un contrat que représentée par son curateur",
+      "correctAnswer": "B",
+      "explanation": "La curatelle permet à la personne d'accomplir seule les actes de la vie courante, mais elle nécessite l'assistance du curateur pour les actes d'administration et de disposition."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre le divorce pour faute et le divorce par consentement mutuel?",
+      "optionA": "Seul le divorce pour faute nécessite une procédure contentieuse",
+      "optionB": "Le divorce pour faute permet d'obtenir des dommages-intérêts alors que le divorce par consentement mutuel ne le permet pas",
+      "optionC": "Le divorce par consentement mutuel nécessite l'intervention d'un juge alors que le divorce pour faute peut être amiable",
+      "optionD": "Seul le divorce par consentement mutuel met fin aux effets du mariage",
+      "correctAnswer": "A",
+      "explanation": "Le divorce pour faute est une procédure contentieuse qui nécessite l'intervention d'un juge, tandis que le divorce par consentement mutuel peut être obtenu par convention homologuée par le juge."
+    },
+    {
+      "question": "En matière de filiation, quel est l'effet de la possession d'état?",
+      "optionA": "Elle établit une filiation irréfragable",
+      "optionB": "Elle constitue une présomption simple de filiation",
+      "optionC": "Elle ne produit d'effet que si elle est confirmée par un jugement",
+      "optionD": "Elle éteint toute action en recherche de paternité",
+      "correctAnswer": "B",
+      "explanation": "La possession d'état constitue une présomption simple de filiation qui peut être établie par tous moyens et qui peut être renversée par une preuve contraire."
+    },
+    {
+      "question": "Quelle est la nature juridique du droit de propriété selon l'article 544 du Code civil?",
+      "optionA": "Un droit absolu et imprescriptible",
+      "optionB": "Un droit absolu, mais limité par les servitudes et l'usage social",
+      "optionC": "Un droit relatif qui s'exerce dans le respect des droits des autres",
+      "optionD": "Un droit temporaire qui cesse avec la mort du propriétaire",
+      "correctAnswer": "B",
+      "explanation": "Le droit de propriété est un droit absolu mais limité par les servitudes et l'usage social, comme l'exige l'article 544 du Code civil."
+    },
+    {
+      "question": "Quelle est la différence entre l'usufruit et l'usage?",
+      "optionA": "L'usufruit porte sur la jouissance des biens, l'usage sur l'habitation seule",
+      "optionB": "L'usufruit est un droit réel, l'usage est un droit personnel",
+      "optionC": "L'usufruit peut être à titre gratuit, l'usage est toujours onéreux",
+      "optionD": "L'usufruit est transmissible, l'usage ne l'est pas",
+      "correctAnswer": "A",
+      "explanation": "L'usufruit porte sur la jouissance des biens (droit réel), tandis que l'usage se limite au droit d'habiter un logement."
+    },
+    {
+      "question": "Quelle est la nature juridique d'une servitude de passage?",
+      "optionA": "Elle constitue une servitude personnelle",
+      "optionB": "Elle est un droit réel immobilier qui s'impose à tout propriétaire",
+      "optionC": "Elle nécessite l'accord écrit des propriétaires concernés",
+      "optionD": "Elle est révocable à tout moment par le propriétaire du fonds dominant",
+      "correctAnswer": "B",
+      "explanation": "La servitude de passage est un droit réel immobilier qui s'impose à tout propriétaire du fonds servant, même s'il change de propriétaire."
+    },
+    {
+      "question": "En matière de contrat, quelle est la différence entre la cause et l'objet?",
+      "optionA": "La cause est le motif économique du contrat, l'objet est ce qui est échangé",
+      "optionB": "La cause est toujours licite, l'objet peut être illicite",
+      "optionC": "La cause est l'élément essentiel, l'objet est accessoire",
+      "optionD": "La cause concerne les parties, l'objet concerne le contenu du contrat",
+      "correctAnswer": "A",
+      "explanation": "La cause est le motif économique ou social qui explique le contrat, tandis que l'objet est la prestation échangée entre les parties."
+    },
+    {
+      "question": "Quelle est la règle applicable à la nullité d'un contrat pour vice du consentement?",
+      "optionA": "Elle peut être invoquée même si le contrat a été exécuté",
+      "optionB": "Elle ne peut être invoquée que dans les 5 ans suivant la conclusion du contrat",
+      "optionC": "Elle entraîne de plein droit la nullité absolue",
+      "optionD": "Elle ne peut être invoquée que par la partie lésée",
+      "correctAnswer": "D",
+      "explanation": "La nullité pour vice du consentement ne peut être invoquée que par la partie lésée et dans les délais prévus par la loi."
+    },
+    {
+      "question": "En matière de responsabilité civile délictuelle, quelle est la condition de la faute?",
+      "optionA": "La faute doit être intentionnelle",
+      "optionB": "La faute doit être caractérisée par une violation d'une obligation légale",
+      "optionC": "La faute doit être commise avec intention de nuire",
+      "optionD": "La faute doit être caractérisée par une violation d'une obligation contractuelle",
+      "correctAnswer": "B",
+      "explanation": "La faute en responsabilité délictuelle est caractérisée par une violation d'une obligation légale ou délictuelle, non contractuelle."
+    },
+    {
+      "question": "Quelle est la différence entre la responsabilité du fait des choses et la responsabilité du fait des personnes?",
+      "optionA": "La première ne nécessite pas de faute, la deuxième nécessite une faute",
+      "optionB": "La première est contractuelle, la deuxième est délictuelle",
+      "optionC": "La première est engagée par le gardien, la deuxième par l'auteur du dommage",
+      "optionD": "La première est une responsabilité objective, la deuxième est une responsabilité subjective",
+      "correctAnswer": "C",
+      "explanation": "La responsabilité du fait des choses est engagée par le gardien de la chose, sans nécessité de prouver une faute, tandis que la responsabilité du fait des personnes nécessite la prouver une faute."
+    },
+    {
+      "question": "Quelle est la conséquence de la force majeure en matière de contrat?",
+      "optionA": "Elle entraîne la résolution de plein droit du contrat",
+      "optionB": "Elle exonère de l'exécution de l'obligation mais ne résout pas le contrat",
+      "optionC": "Elle ne peut être invoquée que si elle est prévue dans le contrat",
+      "optionD": "Elle engage la responsabilité du débiteur",
+      "correctAnswer": "B",
+      "explanation": "La force majeure exonère le débiteur de son obligation mais ne résout pas automatiquement le contrat, sauf stipulation contraire."
+    },
+    {
+      "question": "Quelle est la différence entre la clause de non-responsabilité et la clause de limite de responsabilité?",
+      "optionA": "La première exclut toute responsabilité, la seconde la limite à un certain montant",
+      "optionB": "La première est toujours valable, la seconde peut être réputée non écrite",
+      "optionC": "La première ne s'applique qu'en matière contractuelle, la seconde en matière délictuelle",
+      "optionD": "La première est une clause d'exonération, la seconde est une clause d'aménagement",
+      "correctAnswer": "A",
+      "explanation": "La clause de non-responsabilité exclut toute responsabilité du professionnel, tandis que la clause de limite de responsabilité la réduit à un certain montant."
+    },
+    {
+      "question": "En matière de responsabilité du fait des produits défectueux, quelle est la règle applicable?",
+      "optionA": "Le fabricant est responsable même s'il n'a commis aucune faute",
+      "optionB": "Le fabricant n'est responsable que s'il a commis une faute",
+      "optionC": "Le fabricant est responsable uniquement si le produit est défectueux à la sortie d'usine",
+      "optionD": "Le fabricant est responsable uniquement si le défaut est antérieur à la mise sur le marché",
+      "correctAnswer": "A",
+      "explanation": "La responsabilité du fait des produits défectueux est une responsabilité objective qui n'exige pas la preuve d'une faute du fabricant."
+    },
+    {
+      "question": "Quelle est la nature juridique de la société civile?",
+      "optionA": "Elle est toujours une personne morale de droit privé",
+      "optionB": "Elle peut être une personne morale de droit privé ou une simple association de fait",
+      "optionC": "Elle est toujours une personne morale de droit public",
+      "optionD": "Elle est toujours une simple association de fait",
+      "correctAnswer": "B",
+      "explanation": "La société civile peut être une personne morale de droit privé si elle a été régulièrement constituée, ou rester une simple association de fait."
+    },
+    {
+      "question": "Quelle est la différence entre une société en nom collectif et une société en commandite simple?",
+      "optionA": "La première a des associés solidaires, la seconde a des associés à responsabilité limitée",
+      "optionB": "La première a des associés à responsabilité limitée, la seconde a des associés solidaires",
+      "optionC": "La première peut avoir des associés commanditaires, la seconde non",
+      "optionD": "La première est toujours constituée de manière informelle, la seconde nécessite un acte notarié",
+      "correctAnswer": "A",
+      "explanation": "Dans une société en nom collectif, tous les associés sont solidairement responsables des dettes sociales, tandis que dans une société en commandite simple, les associés commanditaires ont une responsabilité limitée."
+    },
+    {
+      "question": "Quelle est la conséquence de la dissolution d'une société?",
+      "optionA": "Elle met fin immédiatement à la personnalité morale de la société",
+      "optionB": "Elle met fin aux pouvoons des organes de direction mais la société conserve sa personnalité morale pour la liquidation",
+      "optionC": "Elle entraîne la reprise des activités par les associés",
+      "optionD": "Elle annule tous les contrats conclus par la société",
+      "correctAnswer": "B",
+      "explanation": "La dissolution met fin aux pouvoons des organes de direction mais la société conserve sa personnalité morale pour la liquidation des affaires."
+    },
+    {
+      "question": "Quelle est la différence entre la prescription extinctive et la prescription acquisitive?",
+      "optionA": "La première concerne les droits personnels, la seconde les droits réels",
+      "optionB": "La première est toujours de 30 ans, la seconde varie selon les biens",
+      "optionC": "La première nécessite une possession de bonne foi, la seconde non",
+      "optionD": "La première est une défense, la seconde est une action",
+      "correctAnswer": "A",
+      "explanation": "La prescription extinctive concerne les droits personnels et met fin à l'action, tandis que la prescription acquisitive concerne les droits réels et transfère la propriété."
+    },
+    {
+      "question": "En matière de contrat de bail, quelle est la différence entre la clause de révision et la clause d'indexation?",
+      "optionA": "La première permet d'augmenter le loyer, la seconde le maintien constant",
+      "optionB": "La première est toujours valable, la seconde peut être réputée non écrite",
+      "optionC": "La première permet une révision périodique, la seconde une révision en fonction d'un indice",
+      "optionD": "La première ne peut être appliquée qu'en fin de bail, la seconde à tout moment",
+      "correctAnswer": "C",
+      "explanation": "La clause de révision permet une révision périodique du loyer, tandis que la clause d'indexation le lie à un indice économique."
+    },
+    {
+      "question": "Quelle est la différence entre l'obligation naturelle et l'obligation civile?",
+      "optionA": "La première n'est pas exigible en justice, la seconde l'est",
+      "optionB": "La première est morale, la seconde est juridique",
+      "optionC": "La première ne peut être cédée, la seconde peut l'être",
+      "optionD": "La première ne produit d'effet qu'entre les parties, la seconde s'impose à tous",
+      "correctAnswer": "A",
+      "explanation": "L'obligation naturelle n'est pas exigible en justice mais peut être exécutée volontairement, tandis que l'obligation civile est exigible en justice."
+    },
+    {
+      "question": "En droit civil français, quelle est la nature juridique de l'embryon selon la loi bioéthique de 2011?",
+      "optionA": "L'embryon est considéré comme une personne à part entière dès sa conception",
+      "optionB": "L'embryon n'a aucune personnalité juridique mais bénéficie d'une protection spécifique",
+      "optionC": "L'embryon est assimilé à un bien meuble",
+      "optionD": "La loi ne se prononce pas sur la nature juridique de l'embryon",
+      "correctAnswer": "B",
+      "explanation": "La loi bioéthique de 2011 reconnaît que l'embryon n'a pas de personnalité juridique mais lui accorde une protection spécifique en tant que quête de vie humaine."
+    },
+    {
+      "question": "Quelle est la conséquence juridique de la majorité civile en France?",
+      "optionA": "L'acquisition automatique de la capacité d'exercice",
+      "optionB": "La fin de l'autorité parentale",
+      "optionC": "L'obligation de passer un test de capacité juridique",
+      "optionD": "La suppression de la tutelle",
+      "correctAnswer": "A",
+      "explanation": "La majorité civile (18 ans) entraîne l'acquisition automatique de la capacité d'exercice, permettant à la personne d'accomplir tous les actes juridiques sans assistance."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre la séparation de corps et le divorce?",
+      "optionA": "La séparation de corps met fin au mariage tandis que le divorce ne le fait pas",
+      "optionB": "La séparation de corps ne dissout pas le lien conjugal contrairement au divorce",
+      "optionC": "Le divorce est toujours consensuel tandis que la séparation de corps peut être contentieuse",
+      "optionD": "La séparation de corps est une procédure religieuse tandis que le divorce est civil",
+      "correctAnswer": "B",
+      "explanation": "La séparation de corps maintient le lien conjugal (interdiction de se remarier) alors que le divorce dissout définitivement le mariage."
+    },
+    {
+      "question": "En matière de filiation, quel est le principe selon le Code civil français?",
+      "optionA": "La filiation maternelle est établie par la seule possession d'état",
+      "optionB": "La filiation paternelle repose sur la présomption de paternité",
+      "optionC": "La filiation ne peut être établie qu'après un test ADN",
+      "optionD": "La filiation est établie uniquement par le mariage des parents",
+      "correctAnswer": "B",
+      "explanation": "Le Code civil français repose sur la présomption de paternité : le mari est présumé être le père de l'enfant conçu pendant le mariage."
+    },
+    {
+      "question": "Quelle est la nature juridique de la clause de non-responsabilité dans un contrat de prestation de services?",
+      "optionA": "Elle est toujours nulle car contraire à l'ordre public",
+      "optionB": "Elle est valable sauf si elle exclut la responsabilité du fait des fautes dolosées",
+      "optionC": "Elle est inopposable au client si elle a été rédigée en petit caractères",
+      "optionD": "Elle n'a aucune valeur juridique car elle est contraire à la liberté contractuelle",
+      "correctAnswer": "B",
+      "explanation": "Une clause de non-responsibilité peut être valable mais ne peut exclure la responsabilité du fait des fautes dolosées ou des obligations essentielles du contrat."
+    },
+    {
+      "question": "Quelle est la caractéristique essentielle du contrat de mandat?",
+      "optionA": "Il est toujours rémunéré",
+      "optionB": "Il nécessite un écrit sous peine de nullité",
+      "optionC": "Il est caractérisé par l'obligation de rendre compte",
+      "optionD": "Il ne peut être consenti qu'à un mandataire professionnel",
+      "correctAnswer": "C",
+      "explanation": "Le contrat de mandat est caractérisé par l'obligation pour le mandataire de rendre compte de sa gestion au mandant."
+    },
+    {
+      "question": "En matière de responsabilité civile, quelle est la différence entre la faute et le risque?",
+      "optionA": "La faute engage la responsabilité sans faute tandis que le risque engage la responsabilité pour faute",
+      "optionB": "La faute est une condition de la responsabilité contractuelle tandis que le risque est une condition de la responsabilité délictuelle",
+      "optionC": "La faute suppose une violation d'une obligation légale ou contractuelle tandis que le risque est lié à une activité dangereuse",
+      "optionD": "La faute et le risque sont deux synonymes en droit civil",
+      "correctAnswer": "C",
+      "explanation": "La faute implique une violation d'une obligation (légale ou contractuelle) tandis que le risque est lié à une activité dangereuse sans nécessairement faute."
+    },
+    {
+      "question": "Quelle est la condition de validité essentielle du contrat de mariage communauté légale?",
+      "optionA": "L'absence de contrat de mariage",
+      "optionB": "Le consentement des deux futurs conjoints",
+      "optionC": "L'absence d'enfants du premier mariage",
+      "optionD": "L'âge minimum de 21 ans pour les deux époux",
+      "correctAnswer": "B",
+      "explanation": "Le contrat de mariage communauté légale, comme tout contrat, nécessite le consentement libre et éclairé des deux futurs conjoints."
+    },
+    {
+      "question": "Quelle est la nature juridique de la clause de révision contractuelle?",
+      "optionA": "Elle est toujours nulle car contraire à l'immuabilité du contrat",
+      "optionB": "Elle est valable si elle prévoit des critères objectifs de révision",
+      "optionC": "Elle ne peut être insérée qu'après la formation du contrat",
+      "optionD": "Elle n'a d'effet qu'en cas de modification unilatérale",
+      "correctAnswer": "B",
+      "explanation": "Une clause de révision contractuelle est valable si elle prévoit des critères objectifs permettant d'ajuster les obligations contractuelles."
+    },
+    {
+      "question": "En droit des obligations, quelle est la différence entre l'obligation de moyens et l'obligation de résultat?",
+      "optionA": "L'obligation de moyens engage la responsabilité sans faute, l'obligation de résultat nécessite une faute",
+      "optionB": "L'obligation de moyens suppose un engagement de moyens raisonnables, l'obligation de résultat suppose un engagement d'obtenir un résultat déterminé",
+      "optionC": "L'obligation de moyens est toujours contractuelle, l'obligation de résultat est toujours délictuelle",
+      "optionD": "L'obligation de moyens ne peut être engagée que par les professionnels, l'obligation de résultat peut être engagée par tout individu",
+      "correctAnswer": "B",
+      "explanation": "L'obligation de moyens engage le débiteur à fournir tous les soins nécessaires pour atteindre un résultat, tandis que l'obligation de résultat engage à atteindre un résultat déterminé."
+    },
+    {
+      "question": "Quelle est la conséquence juridique de la nullité du mariage?",
+      "optionA": "Elle produit des effets entre les époux mais pas avec les tiers",
+      "optionB": "Elle annule le mariage rétroactivement comme s'il n'avait jamais existé",
+      "optionC": "Elle ne concerne que les aspects patrimoniaux du mariage",
+      "optionD": "Elle nécessite une procédure de divorce pour être prononcée",
+      "correctAnswer": "B",
+      "explanation": "La nullité du mariage annule le mariage rétroactivement, le traitant comme s'il n'avait jamais existé, sauf exceptions concernant les enfants nés de l'union."
+    },
+    {
+      "question": "En matière de responsabilité du fait des produits défectueux, quelle est la règle applicable en droit français?",
+      "optionA": "La responsabilité du fabricant est engagée uniquement en cas de faute",
+      "optionB": "La responsabilité du fabricant est engagée sans faute dès lors que le produit est défectueux",
+      "optionC": "La responsabilité du fabricant est engagée uniquement si le consommateur a agi avec imprudence",
+      "optionD": "La responsabilité du fabricant n'est jamais engagée si le produit a été modifié après sa sortie d'usine",
+      "correctAnswer": "B",
+      "explanation": "Selon la directive européenne transposée en droit français, la responsabilité du fabricant est engagée sans faute dès lors que le produit est défectueux."
+    },
+    {
+      "question": "Quelle est la caractéristique du contrat de bail commercial?",
+      "optionA": "Sa durée est toujours de 3 ans renouvelables",
+      "optionB": "Il nécessite une autorisation préfectorale",
+      "optionC": "Il ne peut être résilié que par le bailleur",
+      "optionD": "Il est soumis au droit commun des baux",
+      "correctAnswer": "A",
+      "explanation": "Le contrat de bail commercial a une durée minimale de 9 ans (3+3+3) avec une option de résiliation triennale pour le preneur."
+    },
+    {
+      "question": "En matière de filiation adoptive, quelle est la règle selon le Code civil?",
+      "optionA": "L'adoption simple ne crée qu'un lien d'adoption mais maintient le lien biologique",
+      "optionB": "L'adoption plénière conserve le lien avec la famille d'origine",
+      "optionC": "L'adoption simple interdit l'adoption par le conjoint de l'adoptant",
+      "optionD": "L'adoption plénière est toujours orale",
+      "correctAnswer": "A",
+      "explanation": "L'adoption simple crée un lien d'adoption mais ne rompt pas le lien avec la famille d'origine, contrairement à l'adoption plénière."
+    },
+    {
+      "question": "Quelle est la nature juridique de la clause de non-concurrence dans un contrat de travail?",
+      "optionA": "Elle est toujours nulle car contraire à la liberté du travail",
+      "optionB": "Elle est valable si elle est limitée dans le temps, dans l'espace et dans l'objet",
+      "optionC": "Elle ne peut être insérée qu'après la signature du contrat",
+      "optionD": "Elle n'a d'effet qu'en cas de faute grave du salarié",
+      "correctAnswer": "B",
+      "explanation": "Une clause de non-concurrence est valable si elle est limitée dans le temps, dans l'espace et dans l'objet, et si elle comporte une contrepartie financière."
+    },
+    {
+      "question": "En matière de responsabilité du fait des produits défectueux, qui est responsable en cas de produit défectueux?",
+      "optionA": "Seul le fabricant est responsable",
+      "optionB": "Seul le distributeur est responsable",
+      "optionC": "Toute personne intervenant dans la chaîne de production peut être responsable",
+      "optionD": "Le consommateur est responsable s'il n'a pas respecté les instructions d'utilisation",
+      "correctAnswer": "C",
+      "explanation": "Selon le Code civil, toute personne ayant mis en circulation un produit défectueux peut être responsable, y compris le fabricant, l'importateur ou le distributeur."
+    },
+    {
+      "question": "Quelle est la différence entre la donation et le legs?",
+      "optionA": "La donation est toujours entre vifs, le legs est toujours testamentaire",
+      "optionB": "La donation nécessite l'intervention d'un notaire, le legs peut être fait par écrit privé",
+      "optionC": "La donation transfère la propriété immédiatement, le legs transfère la propriété après le décès du donateur",
+      "optionD": "La donation est toujours révocable, le legs est irrévocable",
+      "correctAnswer": "C",
+      "explanation": "La donation transfère la propriété immédiatement entre vifs, tandis que le legs transfère la propriété après le décès du testateur."
+    },
+    {
+      "question": "En matière de responsabilité du fait des animaux, quelle est la règle applicable en droit français?",
+      "optionA": "Le propriétaire d'un animal est responsable uniquement s'il a commis une faute",
+      "optionB": "Le propriétaire d'un animal est responsable sans faute du fait des dommages causés par son animal",
+      "optionC": "Seul le gardien de l'animal est responsable, pas le propriétaire",
+      "optionD": "Le propriétaire n'est responsable que si l'animal a été dressé pour l'attaque",
+      "correctAnswer": "B",
+      "explanation": "Selon l'article 1243 du Code civil, le propriétaire d'un animal est responsable sans faute du fait des dommages causés par son animal."
+    },
+    {
+      "question": "Quelle est la caractéristique du contrat de cautionnement?",
+      "optionA": "Il nécessite l'intervention d'un notaire",
+      "optionB": "Il est toujours gratuit",
+      "optionC": "Il engage la responsabilité du caution au même titre que le débiteur principal",
+      "optionD": "Il ne peut être consenti que par une personne physique",
+      "correctAnswer": "C",
+      "explanation": "Le cautionnement engage la caution personnellement pour l'exécution de l'obligation du débiteur principal, dans les mêmes conditions."
+    },
+    {
+      "question": "En matière de divorce, quelle est la particularité du divorce pour faute?",
+      "optionA": "Il nécessite la preuve d'une faute grave et intolérable",
+      "optionB": "Il ne peut être prononcé qu'après une séparation de corps d'un an",
+      "optionC": "Il ne concerne que les adultères",
+      "optionD": "Il est toujours demandé par le conjoint innocent",
+      "correctAnswer": "A",
+      "explanation": "Le divorce pour faute nécessite la preuve d'une faute grave et intolérable rendant la vie commune impossible."
+    },
+    {
+      "question": "En droit civil français, quelle est la nature juridique de la personne morale ?",
+      "optionA": "Un être humain doté de la personnalité juridique",
+      "optionB": "Un groupement de personnes ayant une existence légale distincte de ses membres",
+      "optionC": " une simple fiction juridique sans réalité tangible",
+      "optionD": " un concept réservé aux seules personnes publiques",
+      "correctAnswer": "B",
+      "explanation": "La personne morale est un groupement de personnes ou de biens ayant une existence légale propre, distincte de celle de ses membres, et doté de la personnalité juridique."
+    },
+    {
+      "question": "Quelle est la durée maximale d'un pacte civil de solidarité (PACS) en droit français ?",
+      "optionA": "3 ans",
+      "optionB": "5 ans",
+      "optionC": "10 ans",
+      "optionD": "Illimitée",
+      "correctAnswer": "C",
+      "explanation": "Le PACS est initialement conclu pour une durée de 3 ans, renouvelable par tacite reconduction pour des périodes de 3 ans, mais peut être conclu pour une durée maximale de 10 ans."
+    },
+    {
+      "question": "En matière de responsabilité civile, que signifie le principe de 'responsabilité objective sans faute' ?",
+      "optionA": "La responsabilité est engagée même en l'absence de faute de l'auteur du dommage",
+      "optionB": "La responsabilité ne peut être engagée qu'en présence d'une faute intentionnelle",
+      "optionC": "La responsabilité est toujours subordonnée à la preuve d'une faute",
+      "optionD": "La responsabilité est limitée aux seuls dommages matériels",
+      "correctAnswer": "A",
+      "explanation": "La responsabilité objective sans faute permet d'engager la responsabilité d'une personne même en l'absence de sa propre faute, notamment dans les cas de risque ou de responsabilité des produits défectueux."
+    },
+    {
+      "question": "En droit des obligations, quelle est la différence entre une obligation de moyens et une obligation de résultat ?",
+      "optionA": "Il n'y a aucune différence, les deux termes sont synonymes",
+      "optionB": "L'obligation de moyens exige une simple diligence, tandis que l'obligation de résultat exige l'obtention d'un résultat précis",
+      "optionC": "L'obligation de résultat est toujours plus coûteuse que l'obligation de moyens",
+      "optionD": "Seules les obligations de moyens peuvent être contractuelles",
+      "correctAnswer": "B",
+      "explanation": "L'obligation de moyens exige du débiteur une simple diligence et un comportement raisonnable, tandis que l'obligation de résultat exige l'obtention d'un résultat précis, sans tenir compte des efforts fournis."
+    },
+    {
+      "question": "Quelle est la règle applicable à la prescription extinctive des actions en responsabilité civile délictuelle ?",
+      "optionA": "5 ans à compter de la survenance du dommage",
+      "optionB": "10 ans à compter de la survenance du dommage",
+      "optionC": "20 ans à compter des faits",
+      "optionD": "30 ans à compter des faits",
+      "correctAnswer": "D",
+      "explanation": "La prescription extinctive des actions en responsabilité civile délictuelle est de 30 ans à compter des faits qui la fondent, selon l'article 2226 du Code civil."
+    },
+    {
+      "question": "Quelle est la caractéristique essentielle du contrat de mandat ?",
+      "optionA": "Il est toujours à titre gratuit",
+      "optionB": "Il nécessite une autorisation spéciale du mandant",
+      "optionC": "Il est synallagmatique",
+      "optionD": "Il est un contrat de représentation",
+      "correctAnswer": "D",
+      "explanation": "Le contrat de mandat est un contrat par lequel une personne (le mandant) donne à une autre personne (le mandant) le pouvoir de faire quelque chose en son nom et pour son compte."
+    },
+    {
+      "question": "En matière de filiation, qu'est-ce que la présomption de paternité ?",
+      "optionA": "Elle établit la filiation maternelle",
+      "optionB": "Elle s'applique uniquement dans les cas de mariage",
+      "optionC": "Elle établit la filiation paternelle lorsque l'enfant est né pendant le mariage",
+      "optionD": "Elle peut être écartée par une expertise génétique",
+      "correctAnswer": "C",
+      "explanation": "La présomption de paternité établit que l'enfant né pendant le mariage a pour père le mari, sauf preuve contraire par une action en contestation de paternité."
+    },
+    {
+      "question": "Quelle est la condition de validité essentielle d'un contrat de vente ?",
+      "optionA": "L'existence d'un notaire",
+      "optionB": "La détermination de la chose et du prix",
+      "optionC": "La déclaration d'intention des parties",
+      "optionD": "La présence de témoins",
+      "correctAnswer": "B",
+      "explanation": "Pour être valide, un contrat de vente nécessite la détermination de la chose vendue et du prix, selon l'article 1582 du Code civil."
+    },
+    {
+      "question": "Quelle est la nature du droit de propriété ?",
+      "optionA": "Un droit personnel",
+      "optionB": "Un droit réel",
+      "optionC": "Un droit de créance",
+      "optionD": "Un droit mixte",
+      "correctAnswer": "B",
+      "explanation": "Le droit de propriété est un droit réel, car il confère à son titulaire un pouvoir direct sur une chose, s'opposant ainsi aux droits personnels (créances)."
+    },
+    {
+      "question": "Quelle est la durée de l'indisponibilité du nom d'une personne décédée ?",
+      "optionA": "5 ans",
+      "optionB": "10 ans",
+      "optionC": "20 ans",
+      "optionD": "30 ans",
+      "correctAnswer": "D",
+      "explanation": "Le nom d'une personne décédée est indisponible pendant 30 ans à compter du décès, selon l'article 16-1 du Code civil."
+    },
+    {
+      "question": "Quelle est la différence entre la nullité absolue et la nullité relative d'un contrat ?",
+      "optionA": "La nullité absolue peut être invoquée par tout intéressé, la nullité relative seulement par les parties",
+      "optionB": "La nullité absolue touche à l'ordre public, la nullité relative à l'ordre public simplement interne",
+      "optionC": "La nullité absolue est toujours rétroactive, la nullité relative seulement prospectivement",
+      "optionD": "La nullité absolue ne peut être jamais couverte, la nullité relative peut l'être",
+      "correctAnswer": "B",
+      "explanation": "La nullité absolue, qui touche à l'ordre public, peut être invoquée par tout intéressé, tandis que la nullité relative, qui touche à l'ordre public simplement interne, ne peut être invoquée que par les parties intéressées."
+    },
+    {
+      "question": "Quelle est la règle de la responsabilité du fait des produits défectueux ?",
+      "optionA": "Elle repose sur la preuve de la faute du fabricant",
+      "optionB": "Elle est objective et sans faute",
+      "optionC": "Elle est limitée aux dommages corporels",
+      "optionD": "Elle ne s'applique qu'aux produits de consommation",
+      "correctAnswer": "B",
+      "explanation": "La responsabilité du fait des produits défectueux est une responsabilité objective qui ne nécessite pas la preuve d'une faute du fabricant, conformément à l'article 1245 du Code civil."
+    },
+    {
+      "question": "Quelle est la caractéristique principale du contrat de bail commercial ?",
+      "optionA": "Sa durée est toujours de 3 ans",
+      "optionB": "Il ne peut pas être résilié avant l'échéance",
+      "optionC": "Le locataire bénéficie d'un droit au renouvellement",
+      "optionD": "Le loyer est toujours indexé sur l'IPC",
+      "correctAnswer": "C",
+      "explanation": "Le contrat de bail commercial accorde au locataire un droit au renouvellement pour une durée de 6 ans, sauf motif légitime de refus du bailleur."
+    },
+    {
+      "question": "Quelle est la différence entre la capacité d'agir et la capacité de jouissance ?",
+      "optionA": "La capacité d'agir concerne les mineurs, la capacité de jouissance les majeurs",
+      "optionB": "La capacité d'agir permet d'ester en justice, la capacité de jouissance d'acquérir des droits",
+      "optionC": "La capacité d'agir est toujours temporaire, la capacité de jouissance permanente",
+      "optionD": "La capacité d'agir s'applique uniquement en droit civil, la capacité de jouissance en droit commercial",
+      "correctAnswer": "B",
+      "explanation": "La capacité d'agir permet à une personne d'ester en justice et d'exercer elle-même ses droits, tandis que la capacité de jouissance permet d'acquérir et de jouir de droits."
+    },
+    {
+      "question": "Quelle est la règle applicable à la prescription acquisitive (usucapion) en droit civil français ?",
+      "optionA": "10 ans pour les biens immobiliers, 3 ans pour les biens mobiliers",
+      "optionB": "30 ans pour tous les biens",
+      "optionC": "5 ans pour les biens immobiliers, 3 ans pour les biens mobiliers",
+      "optionD": "20 ans pour les biens immobiliers, 10 ans pour les biens mobiliers",
+      "correctAnswer": "B",
+      "explanation": "La prescription acquisitive est de 30 ans pour les biens immobiliers et de 3 ans pour les biens mobiliers, mais la réforme de 2018 a porté la prescription à 30 ans pour tous les biens."
+    },
+    {
+      "question": "Quelle est la nature du contrat de cautionnement ?",
+      "optionA": "Un contrat principal",
+      "optionB": "Un contrat accessoire",
+      "optionC": "Un contrat consensuel",
+      "optionD": "Un contrat réel",
+      "correctAnswer": "B",
+      "explanation": "Le contrat de cautionnement est un contrat accessoire, car il garantit l'exécution d'une obligation principale existante entre le créancier et le débiteur principal."
+    },
+    {
+      "question": "Quelle est la règle de la responsabilité du fait des animaux ?",
+      "optionA": "Elle repose sur la preuve de la faute du propriétaire",
+      "optionB": "Elle est objective et sans faute",
+      "optionC": "Elle est limitée aux animaux domestiques",
+      "optionD": "Elle n'existe plus en droit français",
+      "correctAnswer": "B",
+      "explanation": "La responsabilité du fait des animaux est une responsabilité objective, sans nécessité de prouver une faute du propriétaire, selon l'article 1243 du Code civil."
+    },
+    {
+      "question": "Quelle est la condition de fond essentielle pour la validité d'un contrat de donation ?",
+      "optionA": "La présence d'un notaire",
+      "optionB": "L'acceptation du donataire",
+      "optionC": "L'intention libérale du donateur",
+      "optionD": "La détermination de la chose donnée",
+      "correctAnswer": "C",
+      "explanation": "La condition essentielle pour la validité d'un contrat de donation est l'intention libérale, c'est-à-dire la volonté de gratifier sans contrepartie."
+    },
+    {
+      "question": "Quelle est la règle de la prescription de l'action en responsabilité contractuelle ?",
+      "optionA": "5 ans à compter de la survenance du dommage",
+      "optionB": "10 ans à compter de la survenance du dommage",
+      "optionC": "20 ans à compter des faits",
+      "optionD": "30 ans à compter des faits",
+      "correctAnswer": "A",
+      "explanation": "La prescription de l'action en responsabilité contractuelle est de 5 ans à compter de la survenue du dommage, selon l'article 1104 du Code civil."
+    },
+    {
+      "question": "Quelle est la caractéristique essentielle d'un acte de commerce au sens du Code de commerce ?",
+      "optionA": "Il doit être accompli par un commerçant",
+      "optionB": "Il doit avoir un objet pécuniaire",
+      "optionC": "Il doit être accompli avec l'intention de spéculer",
+      "optionD": "Il doit être accompli dans le cadre d'une activité professionnelle habituelle",
+      "correctAnswer": "C",
+      "explanation": "Un acte de commerce se distingue par l'intention de spéculer, c'est-à-dire de tirer un profit économique immédiat, même s'il est accompli par un non-commerçant."
+    },
+    {
+      "question": "Quelle est la conséquence de l'immatriculation d'un commerçant au Registre du Commerce et des Sociétés (RCS) ?",
+      "optionA": "Elle confère la qualité de commerçant",
+      "optionB": "Elle est une condition de validité des actes de commerce",
+      "optionC": "Elle crée une présomption de capacité commerciale",
+      "optionD": "Elle dispense de l'affichage de la raison sociale",
+      "correctAnswer": "A",
+      "explanation": "L'immatriculation au RCS est une condition essentielle pour obtenir la qualité de commerçant, selon l'article L123-1 du Code de commerce."
+    },
+    {
+      "question": "Quelle est la nature juridique du fonds de commerce ?",
+      "optionA": "Un bien meuble corporel",
+      "optionB": "Un bien meuble incorporel",
+      "optionC": "Un bien immeuble",
+      "optionD": "Un droit personnel",
+      "correctAnswer": "B",
+      "explanation": "Le fonds de commerce est un bien meuble incorporel composé d'éléments corporels (stocks, matériel) et incorporels (clientèle, droit au bail, marque)."
+    },
+    {
+      "question": "Dans une SARL, quel organe exerce la fonction de gérance ?",
+      "optionA": "Le conseil d'administration",
+      "optionB": "Le directoire",
+      "optionC": "Un ou plusieurs gérants",
+      "optionD": "L'assemblée générale des associés",
+      "correctAnswer": "C",
+      "explanation": "Dans une SARL, la gérance est exercée par un ou plusieurs gérants personnes physiques, désignés dans les statuts ou par décision des associés."
+    },
+    {
+      "question": "Quelle est la caractéristique principale d'une société anonyme (SA) ?",
+      "optionA": "La responsabilité des associés est illimitée",
+      "optionB": "Le capital est divisé en actions négociables",
+      "optionC": "Le nombre d'associés est limité à 50",
+      "optionD": "La gestion est assurée par tous les associés",
+      "correctAnswer": "B",
+      "explanation": "La SA se caractérise par un capital divisé en actions, négociables librement, et une responsabilité des actionnaires limitée à leur apport."
+    },
+    {
+      "question": "Quelle est la particularité d'une société en nom collectif (SNC) ?",
+      "optionA": "Les associés ont une responsabilité limitée à leurs apports",
+      "optionB": "Les associés ont une responsabilité solidaire et indéfinie",
+      "optionC": "Elle ne peut être constituée que par des personnes morales",
+      "optionD": "Elle ne peut pas transformer son statut",
+      "correctAnswer": "B",
+      "explanation": "Dans une SNC, les associés ont une responsabilité solidaire et indéfinie, engageant leur patrimoine personnel pour les dettes sociales."
+    },
+    {
+      "question": "Quelle est la durée de validité maximale d'une lettre de trait ?",
+      "optionA": "8 jours",
+      "optionB": "10 jours",
+      "optionC": "15 jours",
+      "optionD": "30 jours",
+      "correctAnswer": "A",
+      "explanation": "La lettre de trait, qui est une lettre de change émise à l'échéance, a une durée de validité maximale de 8 jours à compter de sa date d'émission."
+    },
+    {
+      "question": "Quelle est la particularité du chèque par rapport à la lettre de change ?",
+      "optionA": "Il peut être présenté à l'échéance",
+      "optionB": "Il est payable à vue",
+      "optionC": "Il nécessite l'acceptation du tiré",
+      "optionD": "Il peut être endossé plusieurs fois",
+      "correctAnswer": "B",
+      "explanation": "Le chèque est un effet de commerce payable à vue, contrairement à la lettre de change qui est généralement payable à une éché déterminée."
+    },
+    {
+      "question": "Quelle est la conséquence principale de l'ouverture d'une procédure de redressement judiciaire ?",
+      "optionA": "La dissolution immédiate de la société",
+      "optionB": "La suspension des poursuites individuelles",
+      "optionC": "La nomination d'un liquidateur",
+      "optionD": "La radiation du RCS",
+      "correctAnswer": "B",
+      "explanation": "L'ouverture d'une procédure de redressement judiciaire entraîne la suspension des poursuites individuelles et des saisies conservatoires."
+    },
+    {
+      "question": "Quelle est la différence essentielle entre la procédure de liquidation judiciaire et le redressement judiciaire ?",
+      "optionA": "La liquidation judiciaire concerne uniquement les personnes physiques",
+      "optionB": "Le redressement judiciaire vise à sauvegarder l'entreprise, la liquidation à la dissoudre",
+      "optionC": "La liquidation judiciaire est toujours initiée par le débiteur",
+      "optionD": "Le redressement judiciaire ne concerne que les grandes entreprises",
+      "correctAnswer": "B",
+      "explanation": "Le redressement judiciaire a pour objectif la sauvegarde et la continuation de l'activité, tandis que la liquidation judiciaire prévoit la cessation d'activité et la vente des actifs."
+    },
+    {
+      "question": "Quelle est la condition de fond essentielle pour qu'un acte constitue un acte de commerce ?",
+      "optionA": "Il doit être écrit",
+      "optionB": "Il doit être accompli dans un cadre professionnel",
+      "optionC": "Il doit avoir pour objet une opération spéculative",
+      "optionD": "Il doit être enregistré",
+      "correctAnswer": "C",
+      "explanation": "La condition de fond essentielle d'un acte de commerce est qu'il ait pour objet une opération spéculative, c'est-à-dire visant un profit économique immédiat."
+    },
+    {
+      "question": "Dans une SA, quel organe est chargé de la direction de la société ?",
+      "optionA": "Le conseil d'administration",
+      "optionB": "L'assemblée générale des actionnaires",
+      "optionC": "Le directoire",
+      "optionD": "Le conseil de surveillance",
+      "correctAnswer": "C",
+      "explanation": "Dans une SA à conseil d'administration, le directoire est chargé de la direction de la société. Dans une SA à directoire et conseil de surveillance, c'est le directoire qui assure la direction."
+    },
+    {
+      "question": "Quelle est la conséquence du défaut de publicité d'un fonds de commerce ?",
+      "optionA": "La nullité de la vente",
+      "optionB": "L'inefficacité à l'égard des tiers",
+      "optionC": "La résolution du contrat de vente",
+      "optionD": "La responsabilité pénale du vendeur",
+      "correctAnswer": "B",
+      "explanation": "Le défaut de publicité d'un fonds de commerce (non-inscription au RCS) rend la vente inopposable aux tiers, mais n'entraîne pas la nullité du contrat entre les parties."
+    },
+    {
+      "question": "Quelle est la règle concernant la responsabilité des associés dans une SARL ?",
+      "optionA": "Ils sont responsables solidairement des dettes sociales",
+      "optionB": "Ils répondent des dettes sociales dans la limite de leurs apports",
+      "optionC": "Ils ont une responsabilité indéfinie",
+      "optionD": "Seuls les gérants sont responsables des dettes sociales",
+      "correctAnswer": "B",
+      "explanation": "Dans une SARL, les associés ne sont responsables des dettes sociales qu'à concurrence de leurs apports, sauf en cas de faute de gestion."
+    },
+    {
+      "question": "Quelle est la particularité de la procédure de sauvegarde ?",
+      "optionA": "Elle ne peut être ouverte que pour les entreprises en redressement judiciaire",
+      "optionB": "Elle permet d'obtenir un moratoire sur les dettes",
+      "optionC": "Elle ne concerne que les artisans",
+      "optionD": "Elle entraîne automatiquement la cessation d'activité",
+      "correctAnswer": "B",
+      "explanation": "La procédure de sauvegarde permet à l'entreprise d'obtenir un moratoire sur ses dettes et de négocier un plan de continuation avec ses créanciers."
+    },
+    {
+      "question": "Quelle est la condition de forme pour qu'un acte soit considéré comme un acte de commerce ?",
+      "optionA": "Il doit être écrit",
+      "optionB": "Il doit être enregistré",
+      "optionC": "Il doit être accompli par un commerçant",
+      "optionD": "Il doit être accompli dans un cadre professionnel",
+      "correctAnswer": "C",
+      "explanation": "La condition de forme pour qu'un acte soit considéré comme un acte de commerce est qu'il soit accompli par un commerçant dans l'exercice de son commerce."
+    },
+    {
+      "question": "Quelle est la règle concernant l'endossement d'un chèque ?",
+      "optionA": "Il peut être translatif de propriété",
+      "optionB": "Il doit être nominatif",
+      "optionC": "Il ne peut pas être porté en blanc",
+      "optionD": "Il doit être obligatoirement garanti",
+      "correctAnswer": "A",
+      "explanation": "L'endossement d'un chèque peut être translatif de propriété, permettant au porteur du chèque d'exercer les droits attachés au titre."
+    },
+    {
+      "question": "Quelle est la sanction en cas de pratique de concurrence déloyale ?",
+      "optionA": "Une amende administrative",
+      "optionB": "Une peine d'emprisonnement",
+      "optionC": "Des dommages-intérêts",
+      "optionD": "La radiation du RCS",
+      "correctAnswer": "C",
+      "explanation": "La pratique de concurrence déloyale expose le responsable à des dommages-intérêts en réparation du préjudice subi par la victime."
+    },
+    {
+      "question": "Quelle est la caractéristique d'une entente illicite en droit de la concurrence ?",
+      "optionA": "Elle doit être écrite",
+      "optionB": "Elle doit porter sur les prix",
+      "optionC": "Elle doit avoir pour objet ou effet d'empêcher, de restreindre ou de fausser le jeu de la concurrence",
+      "optionD": "Elle doit être notifiée à l'autorité de la concurrence",
+      "correctAnswer": "C",
+      "explanation": "Une entente est illicite si elle a pour objet ou effet d'empêcher, de restreindre ou de fausser le jeu de la concurrence, peu importe sa forme ou son contenu."
+    },
+    {
+      "question": "Quelle est la règle concernant la nullité d'une clause de non-concurrence dans un contrat de travail ?",
+      "optionA": "Elle est toujours nulle",
+      "optionB": "Elle est nulle si elle n'est pas indispensable à la protection de l'entreprise",
+      "optionC": "Elle est nulle si elle excède 2 ans",
+      "optionD": "Elle est nulle si elle est limitée géographiquement",
+      "correctAnswer": "B",
+      "explanation": "Une clause de non-concurrence est nulle si elle n'est pas justifiée par l'intérêt légitime de l'entreprise et si elle excède ce qui est nécessaire pour protéger cet intérêt."
+    },
+    {
+      "question": "Quelle est la nature de la procédure de conciliation préalable à l'ouverture d'une procédure collective ?",
+      "optionA": "Une procédure obligatoire",
+      "optionB": "Une procédure confidentielle",
+      "optionC": "Une procédure judiciaire",
+      "optionD": "Une procédure facultative",
+      "correctAnswer": "D",
+      "explanation": "La conciliation préalable est une procédure facultative qui permet à l'entreprise et à ses créanciers de négocier un accord amiable avant d'engager une procédure collective."
+    },
+    {
+      "question": "Quelle est la caractéristique essentielle d'un acte de commerce au sens de l'article L110-1 du Code de commerce ?",
+      "optionA": "Il doit être réalisé par un commerçant",
+      "optionB": "Il doit avoir pour objet l'achat ou la vente de marchandises",
+      "optionC": "Il doit constituer l'objet habituel d'une personne ayant pour profession l'exercice d'actes de commerce",
+      "optionD": "Il doit être réalisé dans un cadre professionnel",
+      "correctAnswer": "C",
+      "explanation": "L'article L110-1 définit l'acte de commerce comme tout acte qui constitue l'objet habituel d'une personne ayant pour profession l'exercice d'actes de commerce, sans que la qualité de commerçant soit requise."
+    },
+    {
+      "question": "Quelle est la conséquence principale du caractère commercial d'un acte ?",
+      "optionA": "Il est soumis au droit civil",
+      "optionB": "Il est soumis au droit commercial",
+      "optionC": "Il est soumis au droit pénal",
+      "optionD": "Il est soumis au droit administratif",
+      "correctAnswer": "B",
+      "explanation": "Le caractère commercial d'un acte entraîne son rattachement au droit commercial, qui s'applique en dérogation au droit civil."
+    },
+    {
+      "question": "Dans une SARL, quelles sont les règles concernant la responsabilité des associés ?",
+      "optionA": "Les associés sont responsables indéfiniment et solidairement",
+      "optionB": "Les associés sont responsables dans la limite de leur apport",
+      "optionC": "Les associés sont responsables sur leurs biens personnels",
+      "optionD": "Les associés ne sont responsables qu'en cas de faute de gestion",
+      "correctAnswer": "B",
+      "explanation": "Dans une SARL, les associés ne sont responsables qu'à concurrence de leurs apports, conformément à l'article L223-14 du Code de commerce."
+    },
+    {
+      "question": "Quelle est la formalité obligatoire pour la constitution d'une SA ?",
+      "optionA": "Un acte sous seing privé",
+      "optionB": "Un acte notarié",
+      "optionC": "Un statut-type émis par l'administration",
+      "optionD": "Une déclaration à la préfecture",
+      "correctAnswer": "B",
+      "explanation": "La constitution d'une SA doit obligatoirement faire l'objet d'un acte notarié, conformément à l'article L225-10 du Code de commerce."
+    },
+    {
+      "question": "Quel est le délai de prescription d'une action en responsabilité contre un gérant de SARL pour faute de gestion ?",
+      "optionA": "3 ans",
+      "optionB": "5 ans",
+      "optionC": "10 ans",
+      "optionD": "30 ans",
+      "correctAnswer": "A",
+      "explanation": "L'action en responsabilité contre un gérant de SARL pour faute de gestion est prescrite par 3 ans, conformément à l'article L223-22 du Code de commerce."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre une SA et une SAS ?",
+      "optionA": "La SA a un capital minimum obligatoire, la SAS non",
+      "optionB": "La SA est soumise au droit des sociétés commerciales, la SAS au droit civil",
+      "optionC": "La SA ne peut être détenue qu'à 100% par des personnes physiques",
+      "optionD": "La SA ne peut pas avoir un objet social mixte",
+      "correctAnswer": "A",
+      "explanation": "La principale différence réside dans le capital minimum (37 000€ pour une SA contre 1€ pour une SAS) et dans la flexibilité statutaire de la SAS."
+    },
+    {
+      "question": "Quelle est la nature juridique d'un billet à ordre ?",
+      "optionA": "Un acte sous seing privé",
+      "optionB": "Une reconnaissance de dette",
+      "optionC": "Une promesse de paiement",
+      "optionD": "Un effet de commerce",
+      "correctAnswer": "D",
+      "explanation": "Le billet à ordre est considéré comme un effet de commerce, malgré son apparence de contrat unilatéral, en vertu de l'article L313-1 du Code monétaire et financier."
+    },
+    {
+      "question": "Quel est le délai de présentation d'une lettre de change à l'acceptation ?",
+      "optionA": "24 heures",
+      "optionB": "48 heures",
+      "optionC": "8 jours",
+      "optionD": "15 jours",
+      "correctAnswer": "C",
+      "explanation": "La lettre de change doit être présentée à l'acceptation dans un délai de 8 jours à compter de sa date d'émission, conformément à l'article L511-8 du Code de commerce."
+    },
+    {
+      "question": "Quelle est la conséquence du non-paiement d'un effet de commerce à l'échéance ?",
+      "optionA": "La dette est prescrite",
+      "optionB": "La dette est annulée",
+      "optionC": "La dette devient exigible immédiatement",
+      "optionD": "La dette est suspendue",
+      "correctAnswer": "C",
+      "explanation": "Le non-paiement d'un effet de commerce à l'échéance entraîne l'exigibilité immédiate de la dette principale et des accessoires, conformément à l'article L631-1 du Code de commerce."
+    },
+    {
+      "question": "Dans une procédure de redressement judiciaire, quel est le rôle du mandataire judiciaire ?",
+      "optionA": "Il représente les créanciers",
+      "optionB": "Il supervise la gestion de l'entreprise",
+      "optionC": "Il évalue le patrimoine de l'entreprise",
+      "optionD": "Il négocie avec les fournisseurs",
+      "correctAnswer": "B",
+      "explanation": "Le mandataire judiciaire supervise la gestion de l'entreprise en redressement judiciaire et assiste le dirigeant dans son activité, conformément à l'article L631-12 du Code de commerce."
+    },
+    {
+      "question": "Quelle est la condition pour qu'un acte de commerce soit réputé acte de commerce par accessoire ?",
+      "optionA": "Il doit être réalisé par un commerçant",
+      "optionB": "Il doit avoir un lien direct avec un acte de commerce",
+      "optionC": "Il doit être réalisé dans le cadre d'une entreprise commerciale",
+      "optionD": "Il doit être écrit",
+      "correctAnswer": "B",
+      "explanation": "Un acte est réputé acte de commerce par accessoire s'il a un lien direct avec un acte de commerce, même réalisé par un non-commerçant, conformément à l'article L110-2 du Code de commerce."
+    },
+    {
+      "question": "Dans une SA, quel est le rôle du conseil d'administration ?",
+      "optionA": "Il représente la société en justice",
+      "optionB": "Il nomme le directeur général",
+      "optionC": "Il délibère sur les questions de stratégie",
+      "optionD": "Il vérifie la comptabilité",
+      "correctAnswer": "C",
+      "explanation": "Le conseil d'administration a pour mission principale de délibérer sur les questions de stratégie et de contrôle de la gestion de la société, conformément à l'article L225-37 du Code de commerce."
+    },
+    {
+      "question": "Quelle est la durée de prescription d'une action en responsabilité du fait des produits défectueux ?",
+      "optionA": "3 ans",
+      "optionB": "5 ans",
+      "optionC": "10 ans",
+      "optionD": "30 ans",
+      "correctAnswer": "C",
+      "explanation": "L'action en responsabilité du fait des produits défectueux est prescrite par 10 ans à compter de la mise en circulation du produit, conformément à l'article L114-1 du Code civil."
+    },
+    {
+      "question": "Quelle est la différence entre une procédure de sauvegarde et une procédure de redressement judiciaire ?",
+      "optionA": "La sauvegarde s'applique aux entreprises en difficulté, le redressement aux entreprises en cessation de paiement",
+      "optionB": "La sauvegarde est une procédure amiable, le redressement est une procédure contentieuse",
+      "optionC": "La sauvegarde permet de suspendre les poursuites, le redressement permet de continuer l'activité",
+      "optionD": "La sauvegarde est une procédure préventive, le redressement est une procédure curative",
+      "correctAnswer": "D",
+      "explanation": "La sauvegarde est une procédure préventive destinée aux entreprises en difficulté, tandis que le redressement est une procédure curative destinée aux entreprises en cessation de paiement."
+    },
+    {
+      "question": "Quelle est la conséquence de la nullité d'une clause dans un contrat commercial ?",
+      "optionA": "Le contrat est annulé dans son ensemble",
+      "optionB": "Seule la clause est annulée",
+      "optionC": "Le contrat est réécrit par le juge",
+      "optionD": "Le contrat est transformé en contrat type",
+      "correctAnswer": "B",
+      "explanation": "En principe, la nullité d'une clause dans un contrat commercial n'entraîne pas la nullité du contrat dans son ensemble, conformément à l'article 1170 du Code civil."
+    },
+    {
+      "question": "Dans une SARL, quelles sont les pouvoirs du gérant ?",
+      "optionA": "Il a tous les pouvoirs de gestion",
+      "optionB": "Il a les pouvoirs dévolus aux associés",
+      "optionC": "Il a les pouvoirs nécessaires à l'accomplissement de son objet social",
+      "optionD": "Il a les pouvoirs limités aux actes courants",
+      "correctAnswer": "C",
+      "explanation": "Le gérant d'une SARL a les pouvoirs nécessaires à l'accomplissement de son objet social, conformément à l'article L223-19 du Code de commerce."
+    },
+    {
+      "question": "Quelle est la nature juridique d'un chèque ?",
+      "optionA": "Une ordre de paiement",
+      "optionB": "Une promesse de paiement",
+      "optionC": "Une reconnaissance de dette",
+      "optionD": "Une libération de dette",
+      "correctAnswer": "A",
+      "explanation": "Le chèque est un ordre de paiement donné à un banquier, conformément à l'article L311-3 du Code monétaire et financier."
+    },
+    {
+      "question": "Quelle est la différence entre une procédure de liquidation judiciaire et une procédure de redressement judiciaire ?",
+      "optionA": "La liquidation judiciaire est une procédure de prévention, le redressement est une procédure de résolution",
+      "optionB": "La liquidation judiciaire permet de continuer l'activité, le redressement permet de la stopper",
+      "optionC": "La liquidation judiciaire a pour objet la cession de l'entreprise, le redressement a pour objet sa continuation",
+      "optionD": "La liquidation judiciaire est une procédure volontaire, le redressement est une procédure forcée",
+      "correctAnswer": "C",
+      "explanation": "La liquidation judiciaire a pour objet la cession de l'entreprise et le partage des acteurs entre les créanciers, tandis que le redressement a pour objet la continuation de l'entreprise."
+    },
+    {
+      "question": "Quelle est la condition pour qu'une société puisse être qualifiée de groupe de sociétés ?",
+      "optionA": "Une société mère doit détenir plus de 50% des droits de vote d'une société fille",
+      "optionB": "Une société mère doit détenir 100% des droits de vote d'une société fille",
+      "optionC": "Une société mère doit exercer un pouvoir de direction sur une société fille",
+      "optionD": "Une société mère doit avoir une participation dans une société fille",
+      "correctAnswer": "C",
+      "explanation": "Un groupe de sociétés existe lorsqu'une société mère exerce un pouvoir de direction sur une société fille, conformément à l'article L233-16 du Code de commerce."
+    },
+    {
+      "question": "Quelle est la conséquence de la faillite d'un commerçant ?",
+      "optionA": "Il perd son droit d'exercer une activité commerciale",
+      "optionB": "Il est condamné à une peine d'emprisonnement",
+      "optionC": "Il est privé de ses droits civiques",
+      "optionD": "Il est radié du registre du commerce",
+      "correctAnswer": "A",
+      "explanation": "La faillite entraîne la déchéance du droit d'exercer une activité commerciale pour une durée de 5 à 10 ans, conformément à l'article L640-10 du Code de commerce."
+    },
+    {
+      "question": "Quelle est la caractéristique principale d'un acte de commerce selon l'article L110-1 du Code de commerce ?",
+      "optionA": "Un acte accompli par un commerçant",
+      "optionB": "Un acte qui a pour objet l'achat ou la vente de marchandises",
+      "optionC": "Un acte qui constitue l'objet d'une profession habituelle",
+      "optionD": "Un acte qui crée des obligations entre commerçants",
+      "correctAnswer": "C",
+      "explanation": "L'article L110-1 définit l'acte de commerce comme un acte qui constitue l'objet d'une profession habituelle. Cette définition repose sur le critère de l'exercice d'une activité commerciale, et non sur la qualité de l'acteur ou la nature de l'objet."
+    },
+    {
+      "question": "Quelle est la conséquence de la qualification d'un acte comme acte de commerce ?",
+      "optionA": "Il est soumis au droit commun des obligations",
+      "optionB": "Il est soumis à la procédure de sauvegarde",
+      "optionC": "Il est soumis à la compétence du tribunal de commerce",
+      "optionD": "Il est soumis à la procédure de redressement judiciaire",
+      "correctAnswer": "C",
+      "explanation": "La qualification d'un acte comme acte de commerce a plusieurs conséquences juridiques, dont la compétence du tribunal de commerce pour en connaître. En effet, le tribunal de commerce est compétent pour les litiges nés entre commerçants ou à l'occasion d'actes de commerce."
+    },
+    {
+      "question": "Quelle est la règle applicable à la nullité des statuts d'une société ?",
+      "optionA": "Elle ne peut être prononcée que par le tribunal de commerce",
+      "optionB": "Elle ne peut être invoquée que par les associés",
+      "optionC": "Elle peut être prononcée même après l'expiration du délai de prescription",
+      "optionD": "Elle ne peut être invoquée que dans les conditions du droit commun des contrats",
+      "correctAnswer": "D",
+      "explanation": "La nullité des statuts est régie par les règles du droit commun des contruits, notamment en ce qui concerne les délais de prescription (5 ans selon l'article 1104 du Code civil). Les associés peuvent invoquer la nullité, mais d'autres personnes peuvent également le faire selon les cas."
+    },
+    {
+      "question": "Dans une SARL, quelle est la nature de la responsabilité des associés ?",
+      "optionA": "Responsabilité solidaire et indéfinie",
+      "optionB": "Responsabilité limitée à leur apport",
+      "optionC": "Responsabilité subsidiaire en cas de faute de gestion",
+      "optionD": "Responsabilité illimitée",
+      "correctAnswer": "B",
+      "explanation": "Dans une SARL, la responsabilité des associés est limitée à leur apport. C'est un des principes fondamentaux de cette forme de société, qui protège le patrimoine personnel des associés."
+    },
+    {
+      "question": "Quelle est la particularité du capital social d'une SA ?",
+      "optionA": "Il doit être intégralement libéré à la constitution",
+      "optionB": "Il peut être réduit par décision de l'assemblée générale",
+      "optionC": "Il doit être d'au moins 37 000 €",
+      "optionD": "Il peut être augmenté sans respecter les droits préférentiels de souscription",
+      "correctAnswer": "C",
+      "explanation": "Le capital social d'une SA doit être d'au moins 37 000 € (article L225-1 du Code de commerce). Les autres propositions sont incorrectes : le capital n'a pas besoin d'être intégralement libéré à la constitution, sa réduction nécessite une procédure spécifique, et les droits préférentiels de souscription des actionnaires doivent être respectés lors d'une augmentation de capital."
+    },
+    {
+      "question": "Quelle est la conséquence de la déclaration de faillite d'un commerçant ?",
+      "optionA": "La continuation de l'activité commerciale sous le contrôle du tribunal",
+      "optionB": "La liquidation de l'entreprise par les associés",
+      "optionC": "La nomination d'un administrateur provisoire",
+      "optionD": "L'ouverture d'une procédure de sauvegarde",
+      "correctAnswer": "A",
+      "explanation": "La déclaration de faillite entraîne l'ouverture d'une procédure de liquidation judiciaire, qui peut être suivie d'une continuation de l'activité commerciale sous le contrôle du tribunal si cela permet de sauvegarder tout ou partie de l'entreprise."
+    },
+    {
+      "question": "Quelle est la différence entre un billet à ordre et une lettre de change ?",
+      "optionA": "Le billet à ordre est une reconnaissance de dette, la lettre de change est un ordre de paiement",
+      "optionB": "La lettre de change est toujours payable à vue, le billet à ordre est toujours payable à terme",
+      "optionC": "Seul le billet à ordre peut être endossé",
+      "optionD": "Seule la lettre de change nécessite une acceptation",
+      "correctAnswer": "A",
+      "explanation": "La principale différence entre ces deux effets de commerce est que le billet à ordre est une reconnaissance de dette émise par le souscripteur, tandis que la lettre de change est un ordre de paiement émis par le créancier (le tireur) et adressé au débiteur (le tiré)."
+    },
+    {
+      "question": "Quelle est la conséquence de la nullité d'un effet de commerce ?",
+      "optionA": "Il est nul de plein droit et ne peut être utilisé en paiement",
+      "optionB": "Il reste valable entre les parties mais ne peut être utilisé en paiement",
+      "optionC": "Il peut être utilisé en paiement mais ne peut être endossé",
+      "optionD": "Il est valable entre les parties et peut être utilisé en paiement",
+      "correctAnswer": "D",
+      "explanation": "La nullité d'un effet de commerce n'affecte pas sa valeur entre les parties. L'effet reste valable comme moyen de paiement entre les contractants, mais ne peut être utilisé contre des tiers de bonne foi."
+    },
+    {
+      "question": "Dans une SA, quel organe exerce le pouvoir de nomination et de révocation des dirigeants ?",
+      "optionA": "Le conseil d'administration",
+      "optionB": "L'assemblée générale des actionnaires",
+      "optionC": "Le directoire",
+      "optionD": "Le conseil de surveillance",
+      "correctAnswer": "D",
+      "explanation": "Dans une SA dotée d'un conseil de surveillance et d'un directoire, le conseil de surveillance nomme et révoque les membres du directoire. Dans les autres cas, c'est le conseil d'administration qui exerce cette fonction."
+    },
+    {
+      "question": "Quelle est la règle applicable à la responsabilité du gérant d'une SARL ?",
+      "optionA": "Il est responsable des dettes sociales à hauteur de ses apports",
+      "optionB": "Il est responsable des dettes sociales de manière indéfinie et solidaire",
+      "optionC": "Il est responsable des dettes sociales uniquement en cas de faute de gestion",
+      "optionD": "Il est responsable des dettes sociales à hauteur de sa participation au capital",
+      "correctAnswer": "C",
+      "explanation": "Le gérant d'une SARL n'est responsable des dettes sociales que s'il a commis une faute de gestion. Cette responsabilité est personnelle et engage son patrimoine personnel, mais elle n'est pas automatique."
+    },
+    {
+      "question": "Quelle est la conséquence de la perte de la qualité de commerçant ?",
+      "optionA": "Les actes de commerce accomplis avant la perte de qualité sont annulés",
+      "optionB": "Les dettes contractées avant la perte de qualité ne peuvent plus être poursuivies",
+      "optionC": "Les effets de commerce non échus restent valables",
+      "optionD": "Les actes de commerce accomplis après la perte de qualité sont nuls",
+      "correctAnswer": "C",
+      "explanation": "La perte de la qualité de commerçant n'affecte pas la validité des effets de commerce non échus. Les dettes contractées avant la perte de qualité restent valables et peuvent être poursuivies."
+    },
+    {
+      "question": "Dans une SA, quel est le délai de prescription pour contester une décision d'assemblée générale ?",
+      "optionA": "3 mois",
+      "optionB": "6 mois",
+      "optionC": "1 an",
+      "optionD": "5 ans",
+      "correctAnswer": "A",
+      "explanation": "Le délai de prescription pour contester une décision d'assemblée générale est de 3 mois à compter de la publication du procès-verbal (article L225-99 du Code de commerce). Ce délai est de droit commun et ne peut être modifié par les statuts."
+    },
+    {
+      "question": "Quelle est la particularité de la procédure de redressement judiciaire ?",
+      "optionA": "Elle ne s'applique qu'aux entreprises en difficulté mais non en cessation des paiements",
+      "optionB": "Elle vise à la liquidation de l'entreprise",
+      "optionC": "Elle permet au débiteur de poursuivre son activité sous contrôle",
+      "optionD": "Elle ne peut être demandée que par les créanciers",
+      "correctAnswer": "C",
+      "explanation": "La procédure de redressement judiciaire vise à permettre au débiteur de poursuivre son activité tout en étant placé sous le contrôle du tribunal, afin d'assurer sa continuation et le paiement des créanciers."
+    },
+    {
+      "question": "Quelle est la conséquence de la mise en redressement judiciaire d'une entreprise ?",
+      "optionA": "Les poursuites individuelles des créanciers sont suspendues",
+      "optionB": "Les dettes de l'entreprise sont effacées",
+      "optionC": "Les associés deviennent personnellement responsables des dettes",
+      "optionD": "L'entreprise doit être immédiatement liquidée",
+      "correctAnswer": "A",
+      "explanation": "La mise en redressement judiciaire entraîne la suspension des poursuites individuelles des créanciers, qui ne peuvent plus agir sur le patrimoine du débiteur sans l'autorisation du tribunal."
+    },
+    {
+      "question": "Quelle est la règle applicable à la transmission des parts sociales dans une SARL ?",
+      "optionA": "Elle est libre entre associés mais nécessite l'agrément des autres associés pour une transmission à un tiers",
+      "optionB": "Elle est libre sans aucune restriction",
+      "optionC": "Elle nécessite l'agrément du tribunal de commerce",
+      "optionD": "Elle est interdite sans l'accun de tous les associés",
+      "correctAnswer": "A",
+      "explanation": "Dans une SARL, la transmission des parts sociales est libre entre associés, mais nécessite l'agrément des autres associés pour une transmission à un tiers, sauf clause statutaire contraire."
+    },
+    {
+      "question": "Quelle est la particularité de la procédure de liquidation judiciaire ?",
+      "optionA": "Elle vise à permettre la continuation de l'activité",
+      "optionB": "Elle permet au débiteur de conserver la gestion de l'entreprise",
+      "optionC": "Elle vise à la vente des actifs et au paiement des créanciers",
+      "optionD": "Elle ne peut être ouverte qu'après la procédure de sauvegarde",
+      "correctAnswer": "C",
+      "explanation": "La procédure de liquidation judiciaire vise à la vente des actifs de l'entreprise et au paiement des créanciers avec le produit de cette vente. C'est la procédure de dernier recours lorsque l'entreprise ne peut être sauvée."
+    },
+    {
+      "question": "Quelle est la règle applicable à la prescription des actions en responsabilité du fait des produits défectueux ?",
+      "optionA": "10 ans à compter de la mise en circulation du produit",
+      "optionB": "30 ans à compter de la mise en circulation du produit",
+      "optionC": "5 ans à compter de la découverte du défaut",
+      "optionD": "20 ans à compter de la mise en circulation du produit",
+      "correctAnswer": "A",
+      "explanation": "La prescription des actions en responsabilité du fait des produits défectueux est de 10 ans à compter de la mise en circulation du produit (article L114-1 du Code de la consommation). Ce délai est impératif et ne peut être réduit par les parties."
+    },
+    {
+      "question": "Quelle est la particularité de la procédure de conciliation ?",
+      "optionA": "Elle ne peut être initiée que par le tribunal",
+      "optionB": "Elle vise à trouver un accord amiable entre le débiteur et ses créanciers",
+      "optionC": "Elle entraîne la suspension des poursuites individuelles",
+      "optionD": "Elle ne peut être demandée qu'après la procédure de sauvegarde",
+      "correctAnswer": "B",
+      "explanation": "La procédure de conciliation vise à trouver un accord amiable entre le débiteur et ses créanciers, sans intervention du tribunal. Elle peut être initiée par le débiteur ou par les créanciers."
+    },
+    {
+      "question": "Quelle est la règle applicable à la responsabilité des dirigeants d'une SA en cas de redressement judiciaire ?",
+      "optionA": "Ils sont responsables des dettes sociales de manière indéfinie",
+      "optionB": "Ils sont responsables des dettes sociales uniquement en cas de faute de gestion",
+      "optionC": "Ils sont responsables des dettes sociales à hauteur de leur apport",
+      "optionD": "Ils sont responsables des dettes sociales uniquement si la faillite est frauduleuse",
+      "correctAnswer": "B",
+      "explanation": "Les dirigeants d'une SA sont responsables des dettes sociales uniquement en cas de faute de gestion. Cette responsabilité est personnelle et engage leur patrimoine personnel, mais elle n'est pas automatique."
+    }
+  ]
+}

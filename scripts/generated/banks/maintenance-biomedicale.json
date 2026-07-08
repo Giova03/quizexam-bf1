@@ -1,0 +1,324 @@
+{
+  "bankKey": "maintenance-biomedicale",
+  "title": "maintenance-biomedicale",
+  "questions": [
+    {
+      "question": "La norme CEI 60601-1 concerne :",
+      "optionA": "La sécurité des équipements électromédicaux",
+      "optionB": "La stérilisation",
+      "optionC": "L'informatique",
+      "optionD": "Les bâtiments",
+      "correctAnswer": "A",
+      "explanation": "CEI 60601-1 = norme de sécurité des appareils électromédicaux (sécurité électrique, mécanique, thermique)."
+    },
+    {
+      "question": "La maintenance préventive consiste à :",
+      "optionA": "Intervenir avant la panne (planning régulier)",
+      "optionB": "Intervenir après la panne",
+      "optionC": "Acheter du nouveau matériel",
+      "optionD": "Jeter l'appareil",
+      "correctAnswer": "A",
+      "explanation": "Préventive = actions planifiées pour prévenir les pannes (étalonnage, remplacement de pièces)."
+    },
+    {
+      "question": "La maintenance corrective consiste à :",
+      "optionA": "Intervenir après la panne",
+      "optionB": "Prévenir les pannes",
+      "optionC": "Planifier",
+      "optionD": "Faire un audit",
+      "correctAnswer": "A",
+      "explanation": "Corrective = réparer après défaillance (non planifiée)."
+    },
+    {
+      "question": "Un défibrillateur sert à :",
+      "optionA": "Rétablir un rythme cardiaque normal par choc électrique",
+      "optionB": "Mesurer la tension",
+      "optionC": "Faire une perfusion",
+      "optionD": "Prendre la température",
+      "correctAnswer": "A",
+      "explanation": "Le défibrillateur délivre un choc pour stopper une fibrillation ventriculaire (FV)."
+    },
+    {
+      "question": "Un respirateur artificiel (ventilateur) sert à :",
+      "optionA": "Assister ou remplacer la ventilation pulmonaire",
+      "optionB": "Mesurer le cœur",
+      "optionC": "Prendre la tension",
+      "optionD": "Faire un scanner",
+      "correctAnswer": "A",
+      "explanation": "Le respirateur insuffle un mélange gazeux dans les poumons du patient."
+    },
+    {
+      "question": "Le courant de fuite d'un appareil médical est limité à :",
+      "optionA": "100 μA (microampères) en condition normale pour le patient",
+      "optionB": "10 A",
+      "optionC": "1 mA",
+      "optionD": "500 mA",
+      "correctAnswer": "A",
+      "explanation": "CEI 60601: courant de fuite patient ≤ 100 μA (encore moins pour applications cardiaques: 10 μA)."
+    },
+    {
+      "question": "Le microchoc électrique chez le patient est causé par :",
+      "optionA": "Un très faible courant passant par le cœur (quelques μA)",
+      "optionB": "Une chute",
+      "optionC": "Un médicament",
+      "optionD": "La lumière",
+      "correctAnswer": "A",
+      "explanation": "Le microchoc (quelques μA) peut déclencher une fibrillation si le courant traverse le cœur (cathéter)."
+    },
+    {
+      "question": "La classification des équipements médicaux selon la CEI 60601-1 est :",
+      "optionA": "Classe I, II, III (selon la protection contre les chocs)",
+      "optionB": "A, B, C",
+      "optionC": "1, 2, 3",
+      "optionD": "Rouge, jaune, vert",
+      "correctAnswer": "A",
+      "explanation": "Classe I (terre), II (double isolation), III (très basse tension)."
+    },
+    {
+      "question": "Le type BF (Body Floating) pour un équipement médical signifie :",
+      "optionA": "Contact avec le patient, isolation flottante",
+      "optionB": "Contact avec le cœur",
+      "optionC": "Aucun contact",
+      "optionD": "Type industriel",
+      "correctAnswer": "A",
+      "explanation": "Type BF = contact avec le patient (hors cœur). Type CF = contact direct avec le cœur (plus strict)."
+    },
+    {
+      "question": "L'étalonnage d'un appareil médical consiste à :",
+      "optionA": "Comparer ses mesures à un étalon de référence",
+      "optionB": "Le nettoyer",
+      "optionC": "Le jeter",
+      "optionD": "Le peindre",
+      "correctAnswer": "A",
+      "explanation": "L'étalonnage compare les indications de l'appareil à un étalon traçable (vérifie justesse et fidélité)."
+    },
+    {
+      "question": "Le pousse-seringue électrique (PSE) sert à :",
+      "optionA": "Administrer un médicament à débit constant précis",
+      "optionB": "Mesurer la tension",
+      "optionC": "Faire un scanner",
+      "optionD": "Aspirer du sang",
+      "correctAnswer": "A",
+      "explanation": "Le PSE assure une perfusion précise (ex: catécholamines, insuline) en mL/h."
+    },
+    {
+      "question": "Le moniteur multiparamétrique affiche :",
+      "optionA": "ECG, SpO₂, PA, FR",
+      "optionB": "Un scanner",
+      "optionC": "Une radiographie",
+      "optionD": "Un bilan sanguin",
+      "correctAnswer": "A",
+      "explanation": "Le moniteur affiche ECG, saturation (SpO₂), pression artérielle (PA), fréquence respiratoire (FR)."
+    },
+    {
+      "question": "La traçabilité de la maintenance comprend :",
+      "optionA": "Historique des interventions, pannes, pièces, étalonnages",
+      "optionB": "Le prix",
+      "optionC": "La couleur",
+      "optionD": "Le nom du patient",
+      "correctAnswer": "A",
+      "explanation": "La traçabilité (GMAO) enregistre toutes les interventions (préventives, correctives, étalonnages)."
+    },
+    {
+      "question": "La norme ISO 13485 concerne :",
+      "optionA": "Le système de management de la qualité des dispositifs médicaux",
+      "optionB": "La sécurité incendie",
+      "optionC": "L'informatique",
+      "optionD": "Les bâtiments",
+      "correctAnswer": "A",
+      "explanation": "ISO 13485 = SMQ spécifique aux dispositifs médicaux (fabricants, prestataires)."
+    },
+    {
+      "question": "Le testeur de sécurité électrique médicale vérifie :",
+      "optionA": "La résistance de terre, les courants de fuite, l'isolation",
+      "optionB": "La température",
+      "optionC": "La pression",
+      "optionD": "Le débit",
+      "correctAnswer": "A",
+      "explanation": "Le testeur vérifie: résistance de terre, courant de fuite (patient/châssis), solidité diélectrique."
+    },
+    {
+      "question": "Selon la norme CEI 60601-1, quel est le niveau de protection requis pour un équipement médical de Classe I en conditions de défaut unique?",
+      "optionA": "Protection contre les chocs électriques de type B",
+      "optionB": "Protection contre les chocs électriques de type BF",
+      "optionC": "Protection contre les chocs électriques de type CF",
+      "optionD": "Protection contre les chocs électriques de type BF appliquée aux parties internes",
+      "correctAnswer": "A",
+      "explanation": "La norme CEI 60601-1 exige une protection contre les chocs électriques de type B pour les équipements de Classe I en conditions de défaut unique. Les types BF et CF sont requis pour les équipements de Classe II."
+    },
+    {
+      "question": "Quelle est la différence principale entre une maintenance préventive systématique et une maintenance préventive conditionnelle?",
+      "optionA": "La systématique est basée sur le temps, la conditionnelle sur l'état de l'équipement",
+      "optionB": "La systématique est moins coûteuse que la conditionnelle",
+      "optionC": "La conditionnelle ne s'applique qu'aux équipements critiques",
+      "optionD": "La systématique nécessite plus de personnel qualifié",
+      "correctAnswer": "A",
+      "explanation": "La maintenance préventive systématique est planifiée selon un intervalle de temps fixe, tandis que la maintenance préventive conditionnelle est basée sur le monitoring de paramètres spécifiques de l'équipement."
+    },
+    {
+      "question": "Dans le cadre de la norme ISO 13485, quel document doit être émis après une maintenance corrective significative?",
+      "optionA": "Un rapport d'audit",
+      "optionB": "Un bulletin de service",
+      "optionC": "Un certificat de conformité",
+      "optionD": "Un rapport d'essai de validation",
+      "correctAnswer": "B",
+      "explanation": "La norme ISO 13485 exige qu'un bulletin de service soit émis après toute maintenance corrective significative, documentant les travaux réalisés et les pièces de rechange utilisées."
+    },
+    {
+      "question": "Quelle est la méthode d'analyse des défaillances la plus appropriée pour déterminer les causes racines d'un problème récurrent sur un équipement médical?",
+      "optionA": "Analyse Pareto",
+      "optionB": "Diagramme d'Ishikawa",
+      "optionC": "AMDEC",
+      "optionD": "Analyse des modes de défaillance et de leurs effets",
+      "correctAnswer": "C",
+      "explanation": "L'AMDEC (Analyse des Modes de Défaillance, de leurs Effets et de leur Criticité) est la méthode la plus complète pour identifier les causes racines d'un problème récurrent, en analysant les défaillances potentielles et leurs impacts."
+    },
+    {
+      "question": "Selon la CEI 60601-2-49, quelle est la tension limite de sécurité pour les parties accessibles d'un équipement médical de neurochirurgie?",
+      "optionA": "25 V efficace",
+      "optionB": "50 V efficace",
+      "optionC": "100 V efficace",
+      "optionD": "150 V efficace",
+      "correctAnswer": "A",
+      "explanation": "La norme CEI 60601-2-49 spécifie une tension limite de sécurité de 25 V efficace pour les parties accessibles d'équipements de neurochirurgie en raison du risque accru de stimulation cardiaque."
+    },
+    {
+      "question": "Quelle est la principale différence entre une maintenance corrective et une maintenance préventive?",
+      "optionA": "La corrective est planifiée, la préventive est réactive",
+      "optionB": "La préventive est moins coûteuse sur le long terme",
+      "optionC": "La corrective n'impacte pas la durée de vie de l'équipement",
+      "optionD": "La préventive ne s'applique qu'aux équipements critiques",
+      "correctAnswer": "B",
+      "explanation": "La maintenance préventive, bien que nécessitant un investissement initial, est généralement moins coûteuse sur le long terme en évitant les pannes majeures et les dommages secondaires. La maintenance corrective est réactive et intervient après une défaillance."
+    },
+    {
+      "question": "Dans le cadre de la gestion de la maintenance assistée par ordinateur (GMAO), quel indicateur mesure l'efficacité globale des équipements (OEE)?",
+      "optionA": "Taux de disponibilité × Taux de performance × Taux de qualité",
+      "optionB": "Temps de réparation / Temps de fonctionnement",
+      "optionC": "Coût de maintenance / Coût total de possession",
+      "optionD": "Nombre de pannes / Temps d'exploitation",
+      "correctAnswer": "A",
+      "explanation": "L'OEE (Overall Equipment Effectiveness) est calculée comme le produit de trois facteurs: le taux de disponibilité (disponibilité opérationnelle), le taux de performance (vitesse de production) et le taux de qualité (qualité des produits)."
+    },
+    {
+      "question": "Selon la norme ISO 13485, quel est le niveau de documentation requis pour une maintenance préventive?",
+      "optionA": "Uniquement des procédures écrites",
+      "optionB": "Des instructions de travail détaillées",
+      "optionC": "Des enregistrements de maintenance",
+      "optionD": "Un plan de maintenance validé",
+      "correctAnswer": "C",
+      "explanation": "La norme ISO 13485 exige des enregistrements de maintenance pour démontrer que les activités de maintenance ont été effectuées conformément aux procédures établies."
+    },
+    {
+      "question": "Quelle est la méthode d'essai électrique utilisée pour vérifier l'efficacité de la protection contre les chocs électriques dans un équipement médical?",
+      "optionA": "Mesure de la résistance d'isolement",
+      "optionB": "Test de fuite de courant",
+      "optionC": "Test de tension de tenue",
+      "optionD": "Test de continuité de la terre",
+      "correctAnswer": "B",
+      "explanation": "Le test de fuite de courant est spécifiquement conçu pour mesurer le courant qui pourrait traverser le corps d'un patient ou d'un utilisateur en cas de défaut, vérifiant ainsi l'efficacité des protections contre les chocs électriques."
+    },
+    {
+      "question": "Quelle est la principale différence entre une maintenance prédictive et une maintenance conditionnelle?",
+      "optionA": "La prédictive utilise des algorithmes d'IA, la conditionnelle utilise des capteurs",
+      "optionB": "La prédictive anticipe les défaillances, la conditionnelle surveille l'état actuel",
+      "optionC": "La conditionnelle est plus coûteuse que la prédictive",
+      "optionD": "La prédictive ne s'applique qu'aux équipements électroniques",
+      "correctAnswer": "B",
+      "explanation": "La maintenance prédictive utilise des données et algorithmes pour anticiper les défaillances futures, tandis que la maintenance conditionnelle surveille l'état actuel de l'équipement pour intervenir lorsque certains paramètres atteignent un seuil critique."
+    },
+    {
+      "question": "Selon la CEI 60601-1, quelle est la classification d'un équipement médical qui est alimenté par batterie et n'est pas connecté au réseau électrique?",
+      "optionA": "Classe I",
+      "optionB": "Classe II",
+      "optionC": "Classe III",
+      "optionD": "Classe IP",
+      "correctAnswer": "C",
+      "explanation": "La Classe III selon la CEI 60601-1 désigne les équipements médicaux qui sont alimentés par une source d'énergie interne (batterie) et ne sont pas connectés au réseau électrique."
+    },
+    {
+      "question": "Quelle est la principale différence entre la maintenance préventive systématique et la maintenance préventive prévisionnelle?",
+      "optionA": "La systématique est basée sur le temps, la prévisionnelle sur l'usure mesurée",
+      "optionB": "La prévisionnelle est moins coûteuse",
+      "optionC": "La systématique nécessite plus de capteurs",
+      "optionD": "La prévisionnelle ne s'applique qu'aux équipements critiques",
+      "correctAnswer": "A",
+      "explanation": "La maintenance préventive systématique est basée sur des intervalles de temps fixes, tandis que la maintenance préventive prévisionnelle est basée sur l'usure mesurée et les performances réelles de l'équipement."
+    },
+    {
+      "question": "Dans le cadre de la norme ISO 13485, quel document doit être consulté avant d'entreprendre une maintenance corrective?",
+      "optionA": "Le manuel d'utilisation",
+      "optionB": "La fiche de données de sécurité",
+      "optionC": "Les instructions de maintenance",
+      "optionD": "Le certificat de conformité CE",
+      "correctAnswer": "C",
+      "explanation": "Les instructions de maintenance fournies par le fabricant doivent être consultées avant d'entreprendre toute maintenance corrective pour garantir que les travaux sont effectués correctement et en toute sécurité."
+    },
+    {
+      "question": "Quelle est la méthode de test électrique utilisée pour vérifier l'efficacité de la protection contre les surtensions dans un équipement médical?",
+      "optionA": "Test de résistance d'isolement",
+      "optionB": "Test de fuite de courant",
+      "optionC": "Test de tension de tenue",
+      "optionD": "Test de continuité de la terre",
+      "correctAnswer": "C",
+      "explanation": "Le test de tension de tenue applique une tension élevée (généralement 1,5 fois la tension nominale) pendant une durée spécifiée pour vérifier que l'isolation électrique peut résister aux surtensions."
+    },
+    {
+      "question": "Quelle est la principale différence entre la maintenance curative et la maintenance corrective?",
+      "optionA": "La curative est planifiée, la corrective est réactive",
+      "optionB": "La curative remplace les composants, la corrective répare",
+      "optionC": "La curative est moins coûteuse",
+      "optionD": "Il n'y a pas de différence, ce sont des synonymes",
+      "correctAnswer": "D",
+      "explanation": "Dans le jargon de la maintenance, les termes 'curative' et 'corrective' sont souvent utilisés comme synonymes pour désigner l'intervention après une défaillance."
+    },
+    {
+      "question": "Selon la CEI 60601-1, quel est le niveau de protection requis pour un équipement médical de Classe II en conditions de défaut unique?",
+      "optionA": "Protection contre les chocs électriques de type B",
+      "optionB": "Protection contre les chocs électriques de type BF",
+      "optionC": "Protection contre les chocks électriques de type CF",
+      "optionD": "Protection contre les chocs électriques de type BF appliquée aux parties internes",
+      "correctAnswer": "B",
+      "explanation": "La norme CEI 60601-1 exige une protection contre les chocs électriques de type BF pour les équipements de Classe II en conditions de défaut unique. Les équipements de Classe II ont une double isolation ou un renforcement d'isolation."
+    },
+    {
+      "question": "Quelle est la méthode d'analyse des défaillances la plus appropriée pour évaluer l'impact d'une défaillance sur la sécurité des patients?",
+      "optionA": "Analyse des modes de défaillance et de leurs effets (AMDEC)",
+      "optionB": "Analyse Pareto",
+      "optionC": "Diagramme d'Ishikawa",
+      "optionD": "Analyse des arbres de défaillance",
+      "correctAnswer": "A",
+      "explanation": "L'AMDEC est particulièrement adaptée pour évaluer l'impact des défaillances sur la sécurité des patients, car elle analyse les effets potentiels de chaque mode de défaillance et leur criticité."
+    },
+    {
+      "question": "Dans le cadre de la norme ISO 13485, quel est le niveau d'information requis dans les enregistrements de maintenance?",
+      "optionA": "Seulement la date de maintenance",
+      "optionB": "La date et le technicien",
+      "optionC": "Date, technicien, nature des travaux et pièces de rechange",
+      "optionD": "Date, technicien, nature des travaux, pièces de rechange et validation par le responsable",
+      "correctAnswer": "C",
+      "explanation": "La norme ISO 13485 exige que les enregistrements de maintenance incluent au minimum la date, l'identité du technicien, la nature des travaux et les pièces de rechange utilisées."
+    },
+    {
+      "question": "Quelle est la principale différence entre une maintenance préventive systématique et une maintenance préventive conditionnelle?",
+      "optionA": "La systématique est basée sur le temps, la conditionnelle sur l'état de l'équipement",
+      "optionB": "La systématique est moins coûteuse que la conditionnelle",
+      "optionC": "La conditionnelle ne s'applique qu'aux équipements critiques",
+      "optionD": "La systématique nécessite plus de personnel qualifié",
+      "correctAnswer": "A",
+      "explanation": "La maintenance préventive systématique est planifiée selon un intervalle de temps fixe, tandis que la maintenance préventive conditionnelle est basée sur le monitoring de paramètres spécifiques de l'équipement."
+    },
+    {
+      "question": "Selon la CEI 60601-1, quelle est la définition d'un 'risque électrique' dans un équipement médical?",
+      "optionA": "Le risque de choc électrique direct",
+      "optionB": "Le risque de choc électrique direct ou indirect",
+      "optionC": "Le risque de feu électrique",
+      "optionD": "Le risque de défaillance de l'équipement",
+      "correctAnswer": "B",
+      "explanation": "La norme CEI 60601-1 définit le risque électrique comme le risque de choc électrique direct (contact avec des parties actives) ou indirect (contact avec des parties conductrices rendues dangereuses par une défaillance)."
+    }
+  ],
+  "category": "Universitaire",
+  "subcategory": "maintenance-biomedicale",
+  "description": "Équipements médicaux, maintenance, normes, sécurité électrique."
+}

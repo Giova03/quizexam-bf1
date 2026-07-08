@@ -1,0 +1,202 @@
+{
+  "bankKey": "droit-international",
+  "title": "Droit International (Licence)",
+  "description": "Traités, ONU, CIJ, droit humanitaire, droit UE/AU.",
+  "category": "Universitaire",
+  "subcategory": "Droit",
+  "icon": "Globe2",
+  "color": "violet",
+  "level": "LICENCE",
+  "subject": "Droit international: sujets (États, OI), sources (traités, coutume, principes), ONU (Charte 1945, CIJ, Conseil de sécurité), droit humanitaire (Conventions de Genève 1949), droit de l'UA, CEDEAO, Droit de la mer, droit de l'environnement, responsabilité internationale",
+  "questions": [
+    {
+      "question": "Selon la Convention de Vienne de 1969 sur le droit des traités, quelle est la règle applicable à l'interprétation des traités?",
+      "optionA": "L'interprétation doit se faire exclusivement selon l'intention des États parties",
+      "optionB": "L'interprétation doit se faire en fonction de la signification ordinaire des termes dans leur contexte et à la lumière de l'objet et du but du traité",
+      "optionC": "L'interprétation doit se faire conformément à la jurisprudence de la CIJ",
+      "optionD": "L'interprétation doit se faire en fonction des coutumes internationales antérieures à la signature du traité",
+      "correctAnswer": "B",
+      "explanation": "L'article 31 de la Convention de Vienne établit que les traités doivent être interprétés de bonne foi selon le sens ordinaire des termes dans leur contexte et à la lumière de leur objet et de leur but."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre un traité 'codificatif' et un traité 'développementaire' en droit international?",
+      "optionA": "Les traités codificatis ont force obligatoire, les autres sont simplement déclaratoires",
+      "optionB": "Les traités codificatis codifient le droit coutumier existant, tandis que les traités développementaires créent de nouvelles normes",
+      "optionC": "Seuls les traités codificatis peuvent être modifiés par protocole additionnel",
+      "optionD": "Les traités développementaires sont conclus uniquement entre États de la même région",
+      "correctAnswer": "B",
+      "explanation": "Un traité codificatif formalise et codifie des règles coutumières déjà existantes, tandis qu'un traité développementaire crée de nouvelles normes juridiques qui n'existaient pas précédemment."
+    },
+    {
+      "question": "Quelle est la nature juridique des résolutions de l'Assemblée générale de l'ONU?",
+      "optionA": "Elles ont force obligatoire pour tous les États membres",
+      "optionB": "Elles ne sont que des recommandations sans force juridique",
+      "optionC": "Elles ont valeur contraignante uniquement pour les membres du Conseil de sécurité",
+      "optionD": "Elles sont contraignantes uniquement pour les États qui ont voté en leur faveur",
+      "correctAnswer": "B",
+      "explanation": "Les résolutions de l'Assemblée générale de l'ONU sont principalement des recommandations politiques sans force juridique contraignante, sauf dans certains cas spécifiques prévus par la Charte."
+    },
+    {
+      "question": "Quelle est la procédure suivie par la Cour internationale de Justice (CIJ) dans les affaires contentieuses?",
+      "optionA": "La CIJ peut examiner une affaire même sans le consentement des États concernés",
+      "optionB": "La CIJ ne peut examiner une affaire que si les États ont accepté sa compétence par une déclaration spéciale",
+      "optionC": "La CIJ peut examiner une affaire sur la base d'un compromis ou d'une clause compromissoire",
+      "optionD": "La CIJ ne peut examiner que les affaires impliquant des États membres du Conseil de sécurité",
+      "correctAnswer": "C",
+      "explanation": "La CIJ ne peut examiner une affaire contentieuse que si les États concernés ont acceptés sa compétence, soit par un compromis (accord spécial pour l'affaire), soit par une clause compromissoire dans un traité."
+    },
+    {
+      "question": "Quel est le principe directeur de la Convention de Genève de 1949 relative à la protection des victimes de guerre?",
+      "optionA": "Le principe de la souveraineté absolue des États en temps de guerre",
+      "optionB": "Le principe de la distinction entre civils et combattants",
+      "optionC": "Le principe de la protection des intérêts économiques des États belliqueux",
+      "optionD": "Le principe de la neutralité des organisations humanitaires",
+      "correctAnswer": "B",
+      "explanation": "Le principe de distinction entre civils et combattants est fondamental dans le droit humanitaire international, visant à protéger les civils et les personnes ne participant pas directement aux hostilités."
+    },
+    {
+      "question": "Quelle est la différence entre la compétence contentieuse et la compétence consultative de la CIJ?",
+      "optionA": "La compétence contentieuse permet à la CIJ de donner des avis juridiques, tandis que la compétence consultative permet de trancher des litiges",
+      "optionB": "La compétence contentieuse concerne le règlement de litiges entre États, tandis que la compétence consultative consiste à donner des avis juridiques à des organes internationaux",
+      "optionC": "La compétence contentieuse est limitée aux seuls membres permanents du Conseil de sécurité",
+      "optionD": "La compétence consultative n'est ouverte qu'aux États membres de l'Union africaine",
+      "correctAnswer": "B",
+      "explanation": "La compétence contentieuse permet à la CIJ de trancher des litiges entre États, tandis que la compétence consultative lui permet de donner des avis juridiques à des organes et institutions internationaux."
+    },
+    {
+      "question": "Quel est le statut juridique des 'réserves' aux traités selon la Convention de Vienne?",
+      "optionA": "Les réserves sont interdites sauf accord des autres États parties",
+      "optionB": "Les réserves sont toujours permises sans restriction",
+      "optionC": "Les réserves sont nulles si elles sont contraires à l'objet et au but du traité",
+      "optionD": "Les réserves ne peuvent être formulées que par les États signataires et non les États adhérents",
+      "correctAnswer": "C",
+      "explanation": "Selon l'article 19 de la Convention de Vienne, une réserve n'est autorisée que si elle n'est pas incompatible avec l'objet et le but du traité."
+    },
+    {
+      "question": "Quel est le rôle du Conseil de sécurité de l'ONU dans le maintien de la paix et de la sécurité internationale?",
+      "optionA": "Il ne peut que recommander des mesures sans pouvoir les imposer",
+      "optionB": "Il peut prendre des décisions contraignantes pour tous les États membres de l'ONU",
+      "optionC": "Il ne peut intervenir que dans les conflits internes des États",
+      "optionD": "Son rôle est purement consultatif et ne comporte pas de pouvoir décisionnel",
+      "correctAnswer": "B",
+      "explanation": "Selon l'article 25 de la Charte de l'ONU, les décisions du Conseil de sécurité dans le cadre de ses responsabilités principales sont obligatoires pour tous les États membres de l'ONU."
+    },
+    {
+      "question": "Quelle est la différence entre la CIJ et la CPI (Cour pénale internationale)?",
+      "optionA": "La CIJ juge les États, la CPI juge les individus",
+      "optionB": "La CIJ a une compétence universelle, la CPI n'a qu'une compétence régionale",
+      "optionC": "La CIJ peut juger des crimes de guerre, la CPI ne s'occupe que de crimes contre l'humanité",
+      "optionD": "La CIJ dépend de l'Assemblée générale, la CPI dépend du Conseil de sécurité",
+      "correctAnswer": "A",
+      "explanation": "La CIJ est la principale juridiction de l'ONU qui statue sur les différends entre États, tandis que la CPI est une cour pénale indépendante qui juge des individus pour des crimes internationaux."
+    },
+    {
+      "question": "Quel est le principe de 'compétence universelle' en droit international pénal?",
+      "optionA": "Un État peut juger des crimes commis sur son territoire par des étrangers",
+      "optionB": "Un État peut juger des crimes internationaux quel que soit le lieu de leur commission et la nationalité des auteurs et victimes",
+      "optionC": "Un État peut juger uniquement les crimes commis par ses propres ressortissants à l'étranger",
+      "optionD": "Un État peut juger des crimes commis par des diplomates étrangers sur son territoire",
+      "correctAnswer": "B",
+      "explanation": "La compétence universelle permet à un État d'exercer sa juridiction sur certains crimes internationaux (comme la piraterie, le génocide, les crimes contre l'humanité) quel que soit le lieu de leur commission et la nationalité des auteurs et victimes."
+    },
+    {
+      "question": "Quelle est la différence entre la 'clause de réciprocité' et la 'clause de la nation la plus favorisée' dans les traités commerciaux?",
+      "optionA": "La clause de réciprocité s'applique uniquement aux traités militaires, la clause de la nation la plus favorisée aux traités commerciaux",
+      "optionB": "La clause de réciprocité impose des traitements identiques, la clause de la nation la plus favorisée traite les partenaires comme le partenaire le plus favorisé",
+      "optionC": "La clause de réciprocité est interdite par l'OMC, la clause de la nation la plus favorisée est obligatoire",
+      "optionD": "La clause de réciprocité s'applique uniquement entre États développés, la clause de la nation la plus favorisée entre États en développement",
+      "correctAnswer": "B",
+      "explanation": "La clause de réciprocité impose des traitements identiques mutuellement, tandis que la clause de la nation la plus favorisée garantit à un partenaire le même traitement que celui accordé au partenaire le plus favorisé."
+    },
+    {
+      "question": "Quel est le statut des 'pactes internationaux' relatifs aux droits de l'homme?",
+      "optionA": "Ils ont force obligatoire uniquement pour les États qui les ont ratifiés",
+      "optionB": "Ils sont purement déclaratoires sans force contraignante",
+      "optionC": "Ils ont force obligatoire pour tous les États membres de l'ONU",
+      "optionD": "Ils ne s'appliquent qu'aux situations de conflit armé",
+      "correctAnswer": "A",
+      "explanation": "Les pactes internationaux (Pacte international relatif aux droits civils et politiques et Pacte international relatif aux droits économiques, sociaux et culturels) ont force obligatoire uniquement pour les États qui les ont ratifiés, conformément au droit des traités."
+    },
+    {
+      "question": "Quelle est la différence entre la 'compétence d'attribution' et la 'compétence originelle' de la CIJ?",
+      "optionA": "La compétence d'attribution est conférée par la Charte de l'ONU, la compétence originelle dérive du consentement des États",
+      "optionB": "La compétence d'attribution s'applique aux affaires interétatiques, la compétence originelle aux affaires impliquant des organisations internationales",
+      "optionC": "La compétence d'attribution est limitée au contentieux, la compétence originelle au consultatif",
+      "optionD": "La compétence d'attribution est permanente, la compétence originaire est temporaire",
+      "correctAnswer": "A",
+      "explanation": "La compétence d'attribution de la CIJ découle directement de la Charte de l'ONU, tandis que la compétence originaire résulte du consentement spécifique des États pour chaque affaire."
+    },
+    {
+      "question": "Quel est le principe de 'non-refoulement' en droit des réfugiés?",
+      "optionA": "Un État ne peut refouer un réfugié vers un pays où ses droits fondamentaux seraient menacés",
+      "optionB": "Un État doit refouer tous les réfugiés vers leur pays d'origine",
+      "optionC": "Un État peut refouer des réfugiés uniquement vers des pays tiers sûrs",
+      "optionD": "Le principe de non-refoulement ne s'applique qu'aux réfugiés reconnus officiellement",
+      "correctAnswer": "A",
+      "explanation": "Le principe de non-refoulement, énoncé dans la Convention de Genève de 1951 relative au statut des réfugiés, interdit à un État d'expulser ou de refouer un réfugié vers un pays où sa vie ou sa liberté serait menacée."
+    },
+    {
+      "question": "Quelle est la différence entre la 'juridiction obligatoire' et la 'juridiction volontaire' de la CIJ?",
+      "optionA": "La juridiction obligatoire est imposée par l'Assemblée générale, la juridiction volontaire résulte de l'accord des États",
+      "optionB": "La juridiction obligatoire s'applique aux crimes internationaux, la juridiction volontaire aux différends entre États",
+      "optionC": "La juridiction obligatoire peut être exercée sans le consentement des États, la juridiction volontaire nécessite leur consentement",
+      "optionD": "La juridiction obligatoire est permanente, la juridiction volontaire est temporaire",
+      "correctAnswer": "C",
+      "explanation": "La juridiction obligatoire (hypothétique) pourrait être exercée sans consentement des États, tandis que la juridiction volontière (réelle) nécessite le consentement explicite des États concernés."
+    },
+    {
+      "question": "Quel est le rôle de la 'doctrine de la protection diplomatique' en droit international?",
+      "optionA": "Elle permet à un État de protéger ses ressortissants à l'étranger en agissant en leur nom",
+      "optionB": "Elle autorise un État d'intervenir militairement pour protéger ses ressortissants",
+      "optionC": "Elle confère aux diplomates une immunité absolue",
+      "optionD": "Elle permet aux organisations humanitaires d'intervenir dans les États en violation du droit international",
+      "correctAnswer": "A",
+      "explanation": "La doctrine de la protection diplomatique permet à un État d'exercer une action diplomatique ou judiciaire en justice pour protéger ses ressortissants qui subissent des préjudices dans un autre État."
+    },
+    {
+      "question": "Quelle est la différence entre la 'compétence matérielle' et la 'compétence territoriale' de la CIJ?",
+      "optionA": "La compétence matérielle concerne les types d'affaires, la compétence territoriale les lieux géographiques",
+      "optionB": "La compétence matérielle est limitée aux crimes internationaux, la compétence territoriale aux différends territoriaux",
+      "optionC": "La compétence matérielle s'applique uniquement aux États membres du Conseil de sécurité, la compétence territoriale à tous les États",
+      "optionD": "La compétence matérielle est permanente, la compétence territoriale est temporaire",
+      "correctAnswer": "A",
+      "explanation": "La compétence matérielle de la CIJ désigne les types d'affaires ou de questions qu'elle peut traiter, tandis que la compétence territoriale concerne les zones géographiques relevant de sa juridiction."
+    },
+    {
+      "question": "Quel est le statut juridique des 'conventions de Genève' relatives au droit humanitaire?",
+      "optionA": "Elles ne s'appliquent qu'aux conflits armés internationaux",
+      "optionB": "Elles ont force obligatoire uniquement pour les États parties aux conflits armés",
+      "optionC": "Elles s'appliquent à la fois aux conflits armés internationaux et non internationaux",
+      "optionD": "Elles sont purement déclaratoires et ne créent pas d'obligations juridiques",
+      "correctAnswer": "C",
+      "explanation": "Les conventions de Genève et leurs protocoles additionnels s'appliquent à la fois aux conflits armés internationaux et aux conflits armés non internationaux (internes), créant des obligations juridiques contraignantes pour les États parties."
+    },
+    {
+      "question": "Quelle est la différence entre la 'compétence exclusive' et la 'compétence concurrente' en droit international?",
+      "optionA": "La compétence exclusive est exercée par les seuls tribunaux internationaux, la compétence concurrente par les tribunaux nationaux",
+      "optionB": "La compétence exclusive appartient à un seul État, la compétence concurrente à plusieurs États",
+      "optionC": "La compétence exclusive signifie qu'un Ét a le droit exclusif de régler une affaire, la compétence concurrente signifie que plusieurs États peuvent la régler",
+      "optionD": "La compétence exclusive est permanente, la compétence concurrente est temporaire",
+      "correctAnswer": "C",
+      "explanation": "La compétence exclusive désigne le droit exclusif d'un État ou d'une juridiction de trancher une affaire, tandis que la compétence concurrente signifie que plusieurs États ou juridictions peuvent exercer leur compétence sur la même affaire."
+    },
+    {
+      "question": "Quel est le principe de 'l'égalité souveraine des États' dans le droit international?",
+      "optionA": "Il signifie que tous les États ont les mêmes droits et obligations, quel que soit leur pouvoir économique ou militaire",
+      "optionB": "Il signifie que les États puissants ont plus de droits que les États faibles",
+      "optionC": "Il signifie que les États membres du Conseil de sécurité ont des droits supérieurs aux autres États",
+      "optionD": "Il signifie que les États ont une souveraineté absolue sans aucune limitation",
+      "correctAnswer": "A",
+      "explanation": "Le principe de l'égalité souveraine des États, énoncé à l'article 2(1) de la Charte de l'ONU, signifie que tous les États jouent des droits égaux et ont des responsabilités égales dans la communauté internationale."
+    },
+    {
+      "question": "Quelle est la différence entre la 'responsabilité internationale des États' et la 'responsabilité internationale des organisations internationales'?",
+      "optionA": "La responsabilité des États est régie par la Convention de Vienne, celle des organisations par le droit coutumier",
+      "optionB": "La responsabilité des États engage la responsabilité personnelle de ses dirigeants, celle des organisations engage la responsabilité collective de ses membres",
+      "optionC": "La responsabilité des États est engagée par des actes illicites, celle des organisations par des actes ultraviolets ou contraires à leurs buts",
+      "optionD": "La responsabilité des États est engagée uniquement en temps de guerre, celle des organisations en temps de paix",
+      "correctAnswer": "C",
+      "explanation": "La responsabilité des États est engagée par des actes illicites (violation d'une obligation internationale), tandis que celle des organisations internationales peut être engagée par des actes ultraviolets (dépassement des pouvoirs) ou contraires à leurs buts ou principes."
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "bankKey": "genie-civil",
+  "title": "genie-civil",
+  "questions": [
+    {
+      "question": "La résistance caractéristique du béton (fc28) est mesurée à :",
+      "optionA": "28 jours",
+      "optionB": "7 jours",
+      "optionC": "14 jours",
+      "optionD": "90 jours",
+      "correctAnswer": "A",
+      "explanation": "La résistance du béton est mesurée à 28 jours (ex: C25/30 = 25 MPa à 28j)."
+    },
+    {
+      "question": "La résistance du béton est exprimée en :",
+      "optionA": "MPa (Mégapascals)",
+      "optionB": "kg",
+      "optionC": "m³",
+      "optionD": "kWh",
+      "correctAnswer": "A",
+      "explanation": "La résistance du béton s'exprime en MPa (ex: 25 MPa pour un béton courant)."
+    },
+    {
+      "question": "L'enrobage minimum des armatures dans un béton armé est :",
+      "optionA": "Typiquement 2,5 à 4 cm (selon l'environnement)",
+      "optionB": "0,5 cm",
+      "optionC": "10 cm",
+      "optionD": "1 mm",
+      "correctAnswer": "A",
+      "explanation": "L'enrobage protège l'acier de la corrosion: 2,5-4 cm selon la classe d'exposition."
+    },
+    {
+      "question": "Le module d'Young de l'acier est environ :",
+      "optionA": "200 000 MPa (200 GPa)",
+      "optionB": "30 000 MPa",
+      "optionC": "100 000 MPa",
+      "optionD": "500 MPa",
+      "correctAnswer": "A",
+      "explanation": "L'acier a un module d'Young d'environ 200 GPa (le béton: ~30 GPa)."
+    },
+    {
+      "question": "Le module d'Young du béton est environ :",
+      "optionA": "30 000 MPa (30 GPa)",
+      "optionB": "200 000 MPa",
+      "optionC": "5 000 MPa",
+      "optionD": "100 000 MPa",
+      "correctAnswer": "A",
+      "explanation": "Le béton a un module d'Young d'environ 30 GPa (plus souple que l'acier)."
+    },
+    {
+      "question": "La contrainte normale σ dans une pièce en traction simple est :",
+      "optionA": "σ = F/S (Force / Section)",
+      "optionB": "σ = F × S",
+      "optionC": "σ = S/F",
+      "optionD": "σ = F + S",
+      "correctAnswer": "A",
+      "explanation": "Contrainte normale σ = F/S (N/m² ou Pa)."
+    },
+    {
+      "question": "Le moment fléchissant Mfz est maximal dans une poutre sur 2 appuis avec charge uniformément répartie :",
+      "optionA": "Au milieu (Milieu = qL²/8)",
+      "optionB": "Aux appuis",
+      "optionC": "Aux extrémités",
+      "optionD": "Partout égal",
+      "correctAnswer": "A",
+      "explanation": "Poutre sur 2 appuis, charge uniforme q: Mfz max = qL²/8 au milieu."
+    },
+    {
+      "question": "La loi de Hooke en élasticité dit que :",
+      "optionA": "σ = E × ε (contrainte = module × déformation)",
+      "optionB": "σ = E + ε",
+      "optionC": "σ = E/ε",
+      "optionD": "σ = ε/E",
+      "correctAnswer": "A",
+      "explanation": "Loi de Hooke: σ = E × ε (E = module d'Young, ε = déformation)."
+    },
+    {
+      "question": "La résistance d'un sol (capacité portante) s'exprime en :",
+      "optionA": "MPa ou kPa",
+      "optionB": "m³",
+      "optionC": "kg",
+      "optionD": "mètres",
+      "correctAnswer": "A",
+      "explanation": "La capacité portante d'un sol s'exprime en MPa ou kPa (ex: 0,2 MPa pour un sol meuble)."
+    },
+    {
+      "question": "L'angle de talus naturel d'un sol dépend de :",
+      "optionA": "Sa cohésion, son frottement interne et sa nature",
+      "optionB": "Sa couleur",
+      "optionD": "Sa température",
+      "optionC": "Sa taille",
+      "correctAnswer": "A",
+      "explanation": "L'angle de talus naturel dépend de la cohésion (c) et de l'angle de frottement (φ)."
+    },
+    {
+      "question": "La loi de Rankine pour les poussées des terres donne :",
+      "optionA": "La pression active Ka et passive Kp",
+      "optionB": "La résistance du béton",
+      "optionC": "La charge du vent",
+      "optionD": "Le tassement",
+      "correctAnswer": "A",
+      "explanation": "Rankine: pression des terres active (Ka) et passive (Kp) sur un mur de soutènement."
+    },
+    {
+      "question": "La structure d'une chaussée comprend de bas en haut :",
+      "optionA": "Subgrade, couche de fondation, couche de base, couche de roulement",
+      "optionB": "Bitume, sable, argile",
+      "optionC": "Béton, acier, verre",
+      "optionD": "Enrobé, eau, air",
+      "correctAnswer": "A",
+      "explanation": "Chaussée: subgrade (sol naturel) → fondation → base → roulement (enrobé)."
+    },
+    {
+      "question": "Le béton armé combine :",
+      "optionA": "Béton (résiste à la compression) + acier (résiste à la traction)",
+      "optionB": "Béton + bois",
+      "optionC": "Béton + verre",
+      "optionD": "Acier + bois",
+      "correctAnswer": "A",
+      "explanation": "Le béton résiste bien à la compression mais pas à la traction. L'acier compense (traction)."
+    },
+    {
+      "question": "La fondation profonde (pieu) est utilisée quand :",
+      "optionA": "Le sol de surface est de mauvaise qualité",
+      "optionB": "Le sol est dur",
+      "optionC": "Il n'y a pas de sol",
+      "optionD": "Le budget est limité",
+      "correctAnswer": "A",
+      "explanation": "Les pieux traversent les mauvais sols pour fonder sur un sol dur en profondeur."
+    },
+    {
+      "question": "Le fluage du béton est :",
+      "optionA": "Une déformation lente dans le temps sous charge constante",
+      "optionB": "Une rupture brutale",
+      "optionC": "Un changement de couleur",
+      "optionD": "Une expansion",
+      "correctAnswer": "A",
+      "explanation": "Le fluage = déformation différée du béton sous contrainte constante (sur des mois/années)."
+    },
+    {
+      "question": "Une poutre en béton armé de section rectangaire 30x60 cm est soumise à un moment fléchissant de 150 kN.m. Calculer la hauteur utile (d) si la contrainte admissible dans le béton est de 20 MPa et dans l'acier de 400 MPa, avec un coefficient de sécurité de 1.5.",
+      "optionA": "45 cm",
+      "optionB": "52.5 cm",
+      "optionC": "55 cm",
+      "optionD": "60 cm",
+      "correctAnswer": "B",
+      "explanation": "En utilisant la formule d'équilibre des moments et la relation de compatibilité des déformations, on trouve d ≈ 52.5 cm pour équilibrer le moment fléchissant avec les contraintes données."
+    },
+    {
+      "question": "Un pieu de diamètre 60 cm est enfoncé dans un sol cohérent avec un frottement latéral unitaire de 50 kPa et une résistance de pointe de 2 MPa. Calculer la capacité portante ultime si la longueur du pieu est de 15 m.",
+      "optionA": "1800 kN",
+      "optionB": "2100 kN",
+      "optionC": "2400 kN",
+      "optionD": "2700 kN",
+      "correctAnswer": "D",
+      "explanation": "La capacité portante est la somme des résistances de pointe et de frottement latéral. Qult = qp × Ap + qs × As = (2000 × π × 0.3²) + (50 × π × 0.6 × 15) ≈ 2700 kN."
+    },
+    {
+      "question": "Une section circulaire de diamètre 100 mm est soumise à une traction axiale de 50 kN. Calculer la contrainte normale si le module d'Young du matériau est de 200 GPa.",
+      "optionA": "6.37 MPa",
+      "optionB": "10 MPa",
+      "optionC": "15.7 MPa",
+      "optionD": "20 MPa",
+      "correctAnswer": "A",
+      "explanation": "La contrainte normale σ = F/A = 50000/(π × 0.05²) ≈ 6.37 MPa. Le module d'Young n'est pas nécessaire pour ce calcul."
+    },
+    {
+      "question": "Une chaussée flexible a une structure de 5 cm de enrobé, 20 cm de graves non traités et 30 cm de sol support. Le module de réaction du sol est de 80 MPa. Calculer l'épaisée équivalente de structure (EES) selon la méthode des CAEN.",
+      "optionA": "25 cm",
+      "optionB": "30 cm",
+      "optionC": "35 cm",
+      "optionD": "40 cm",
+      "correctAnswer": "C",
+      "explanation": "L'EES est calculée par la somme des épaisseurs multipliées par leurs coefficients de contribution respectifs. EES = 5×1 + 20×0.8 + 30×0.5 = 35 cm."
+    },
+    {
+      "question": "Un sol a une teneur en eau de 20%, une densité des particules de 2.7 et une densité sèche de 1.8 t/m³. Calculer son indice des vides.",
+      "optionA": "0.5",
+      "optionB": "0.6",
+      "optionC": "0.7",
+      "optionD": "0.8",
+      "correctAnswer": "A",
+      "explanation": "L'indice des vides e = (Gs × γw/γd) - 1 = (2.7 × 1/1.8) - 1 ≈ 0.5."
+    },
+    {
+      "question": "Une poutre en béton précontraint par post-tension a une section de 40x80 cm. La force de précontrainte est de 1000 kN. Calculer la contrainte moyenne dans le béton à l'origine.",
+      "optionA": "3.125 MPa",
+      "optionB": "4.167 MPa",
+      "optionC": "5 MPa",
+      "optionD": "6.25 MPa",
+      "correctAnswer": "A",
+      "explanation": "La contrainte moyenne σ = P/A = 1000000/(0.4×0.8) = 3.125 MPa."
+    },
+    {
+      "question": "Un pieu foré de diamètre 80 cm est ancré dans un roc avec une résistance à la compression simple de 30 MPa. Calculer la capacité portante ultime si la longueur d'ancrage est de 3 m.",
+      "optionA": "12000 kN",
+      "optionB": "15000 kN",
+      "optionC": "18000 kN",
+      "optionD": "21000 kN",
+      "correctAnswer": "B",
+      "explanation": "La capacité portante ultime d'un pieu ancré dans un roc est Qult = fc × A = 30 × 10⁶ × π × 0.4² ≈ 15000 kN."
+    },
+    {
+      "question": "Une poutre en T de largeur totale 1.2 m, de hauteur totale 60 cm et de nervure de 30 cm de largeur est soumise à un moment de 800 kN.m. Calculer la hauteur utile minimale si la contrainte admissible du béton est de 20 MPa.",
+      "optionA": "45 cm",
+      "optionB": "50 cm",
+      "optionC": "55 cm",
+      "optionD": "60 cm",
+      "correctAnswer": "B",
+      "explanation": "En utilisant la formule M = fc × b × d² × (1 - 0.4α) avec α = As/(b × d) et fc = 20 MPa, on trouve d ≈ 50 cm."
+    },
+    {
+      "question": "Un sol a un angle de frottement interne de 30° et une cohésion nulle. Calculer la capacité portante ultime d'une fondation superficielle carrée de 2m×2m à une profondeur d'encastrement de 1m, avec un poids volumique du sol de 18 kN/m³.",
+      "optionA": "500 kPa",
+      "optionB": "750 kPa",
+      "optionC": "1000 kPa",
+      "optionD": "1250 kPa",
+      "correctAnswer": "B",
+      "explanation": "En utilisant la théorie de la capacité portante de Terzaghi, qult = cNc + γDfNq + 0.5γBNγ. Avec c=0, on obtient qult ≈ 750 kPa."
+    },
+    {
+      "question": "Une section en I est soumise à une flexion composée avec un effort normal de 500 kN (compression) et un moment fléchissant de 200 kN.m. La hauteur totale est 60 cm, la largeur de l'âme est 20 cm et les ailes font 30 cm de largeur et 3 cm d'épaisseur. Calculer la contrainte maximale dans la section.",
+      "optionA": "15 MPa",
+      "optionB": "20 MPa",
+      "optionC": "25 MPa",
+      "optionD": "30 MPa",
+      "correctAnswer": "C",
+      "explanation": "La contrainte maximale est la somme des contraintes dues à l'effort normal et au moment fléchistant. σmax = N/A + M×ymax/I ≈ 25 MPa."
+    },
+    {
+      "question": "Un sol a un coefficient de perméabilité de 10⁻⁶ m/s et un coefficient de consolidation Cv de 2 m²/an. Calculer le temps requis pour atteindre 90% de consolidation primaire pour une couche de sol de 5m d'épaisseur avec des drains verticaux espacés de 2m.",
+      "optionA": "6 mois",
+      "optionB": "1 an",
+      "optionC": "2 ans",
+      "optionD": "4 ans",
+      "correctAnswer": "C",
+      "explanation": "En utilis la théorie de consolidation avec drains verticaux, t = T × d²/Cv. Pour U=90%, T≈0.85, d=2m, on obtient t≈2 ans."
+    },
+    {
+      "question": "Une poutre en béton armé continue de portée 8m a une section de 30x70 cm. Elle est soumise à une charge uniforme de 25 kN/m. Calculer le moment fléchissant maximal à l'appui si le coefficient de moment à l'appui est de -0.1.",
+      "optionA": "-160 kN.m",
+      "optionB": "-200 kN.m",
+      "optionC": "-240 kN.m",
+      "optionD": "-280 kN.m",
+      "correctAnswer": "A",
+      "explanation": "Le moment à l'appui est M = coefficient × q × L² = -0.1 × 25 × 8² = -160 kN.m."
+    },
+    {
+      "question": "Un sol a un indice de plasticité de 20 et une limite de liquidité de 40%. Calculer sa limite de plasticité.",
+      "optionA": "15%",
+      "optionB": "20%",
+      "optionC": "25%",
+      "optionD": "30%",
+      "correctAnswer": "B",
+      "explanation": "L'indice de plasticité Ip = LL - PL. Donc PL = LL - Ip = 40 - 20 = 20%."
+    },
+    {
+      "question": "Une chaussée rigide a une dalle en béton de 25 cm d'épaisseur, un module de rupture de 5 MPa et un module d'élasticité de 30000 MPa. Le module de réaction du sol est de 100 MPa. Calculer le coefficient de Poisson du béton.",
+      "optionA": "0.15",
+      "optionB": "0.2",
+      "optionC": "0.25",
+      "optionD": "0.3",
+      "correctAnswer": "B",
+      "explanation": "Le coefficient de Poisson du béton est généralement pris entre 0.15 et 0.2 pour les calculs de chaussées rigides. La valeur la plus courante est 0.2."
+    },
+    {
+      "question": "Un pieu de 40 cm de diamètre est soumis à un effort de compression de 1000 kN. Le pieu est encastré dans un sol avec un frottement négatif sur 10m de hauteur. Calculer l'effort supplémentaire dû au frottement négatif si le frottement unitaire négatif est de 20 kPa.",
+      "optionA": "125.6 kN",
+      "optionB": "251.2 kN",
+      "optionC": "376.8 kN",
+      "optionD": "502.4 kN",
+      "correctAnswer": "B",
+      "explanation": "L'effort supplémentaire dû au frottement négatif est Qn = π × d × L × qs = π × 0.4 × 10 × 20 ≈ 251.2 kN."
+    },
+    {
+      "question": "Une fondation superficielle circulaire de 1.5m de diamètre est située à 1m de profondeur dans un sol avec φ=35°, c=10 kPa et γ=18 kN/m³. Calculer la capacité portante ultime.",
+      "optionA": "500 kPa",
+      "optionB": "750 kPa",
+      "optionC": "1000 kPa",
+      "optionD": "1250 kPa",
+      "correctAnswer": "B",
+      "explanation": "En utilisant la formule de capacité portante de Meyerhof, qult = cNc + γDfNq + 0.5γBNγ. Avec Nc=57.8, Nq=33.3, Nγ=37.8, on obtient qult≈750 kPa."
+    },
+    {
+      "question": "Une poutre en béton précontraint par pré-tension a une section de 25x50 cm. La force de précontrainte est de 500 kN. Calculer la perte de précontrainte due au fluage du béton si le coefficient de fluage est de 2 et le module d'Young du béton est de 30000 MPa.",
+      "optionA": "5 MPa",
+      "optionB": "10 MPa",
+      "optionC": "15 MPa",
+      "optionD": "20 MPa",
+      "correctAnswer": "B",
+      "explanation": "La perte de précontrainte due au fluage est Δσ = φ × σc = 2 × (500000/(0.25×0.5)) = 10 MPa."
+    },
+    {
+      "question": "Un sol a une teneur en eau de 18%, une densité des particules de 2.65 et une densité humide de 2.0 t/m³. Calculer son degré de saturation.",
+      "optionA": "0.6",
+      "optionB": "0.7",
+      "optionC": "0.8",
+      "optionD": "0.9",
+      "correctAnswer": "A",
+      "explanation": "Le degré de saturation Sr = (w × Gs)/e. Avec e = (Gs × γw/γd) - 1 = 0.325, on obtient Sr ≈ 0.6."
+    },
+    {
+      "question": "Une fondation profonde est composée de 9 pieux de 60 cm de diamètre, espacés de 2m en centre à centre. La capacité portante d'un pieu isolé est de 2000 kN. Calculer la capacité portante du groupe si l'efficacité du groupe est de 0.8.",
+      "optionA": "14400 kN",
+      "optionB": "16000 kN",
+      "optionC": "17600 kN",
+      "optionD": "19200 kN",
+      "correctAnswer": "A",
+      "explanation": "La capacité portante du groupe est Qg = n × Q × η = 9 × 2000 × 0.8 = 14400 kN."
+    },
+    {
+      "question": "Une poutre en béton armé est soumise à un effort tranchant de 300 kN. La largeur de la section est 30 cm et la hauteur utile est 55 cm. Calculer la contrainte de cisaillement moyenne.",
+      "optionA": "1.82 MPa",
+      "optionB": "2.73 MPa",
+      "optionC": "3.64 MPa",
+      "optionD": "4.55 MPa",
+      "correctAnswer": "A",
+      "explanation": "La contrainte de cisaillement moyenne τ = V/(b × d) = 300000/(0.3×0.55) ≈ 1.82 MPa."
+    }
+  ],
+  "category": "Universitaire",
+  "subcategory": "genie-civil",
+  "description": "RDM, béton armé, construction, routes, hydraulique."
+}

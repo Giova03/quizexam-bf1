@@ -1,0 +1,828 @@
+{
+  "bankKey": "analyse-biomedicale",
+  "title": "Analyses Biomédicales & Laboratoire",
+  "questions": [
+    {
+      "question": "Quelle est la valeur normale de la glycémie à jeun ?",
+      "optionA": "0,70 à 1,10 g/L",
+      "optionB": "2 à 3 g/L",
+      "optionC": "0,30 à 0,50 g/L",
+      "optionD": "1,50 à 2 g/L",
+      "correctAnswer": "A",
+      "explanation": "La glycémie à jeun normale est entre 0,70 et 1,10 g/L (3,9 à 6,1 mmol/L)."
+    },
+    {
+      "question": "Un taux d'hémoglobine normal chez l'homme adulte est :",
+      "optionA": "13 à 17 g/dL",
+      "optionB": "10 à 12 g/dL",
+      "optionC": "8 à 10 g/dL",
+      "optionD": "18 à 20 g/dL",
+      "correctAnswer": "A",
+      "explanation": "Hb normale: homme 13-17 g/dL, femme 12-16 g/dL."
+    },
+    {
+      "question": "Combien de plaquettes par mm³ a un adulte normal ?",
+      "optionA": "150 000 à 400 000",
+      "optionB": "50 000 à 100 000",
+      "optionC": "1 million",
+      "optionD": "10 000 à 50 000",
+      "correctAnswer": "A",
+      "explanation": "Plaquettes normales: 150 000 à 400 000/mm³."
+    },
+    {
+      "question": "Le tube EDTA (violet) sert pour :",
+      "optionA": "L'hémogramme (NFS)",
+      "optionB": "La biochimie",
+      "optionC": "La coagulation",
+      "optionD": "L'hémoculture",
+      "correctAnswer": "A",
+      "explanation": "Le tube EDTA (violet) est utilisé pour l'hémogramme (NFS)."
+    },
+    {
+      "question": "Le tube citrate (bleu) sert pour :",
+      "optionA": "La coagulation (TP, TCA)",
+      "optionB": "La glycémie",
+      "optionC": "La NFS",
+      "optionD": "La biochimie",
+      "correctAnswer": "A",
+      "explanation": "Le tube citrate (bleu) est utilisé pour les tests de coagulation."
+    },
+    {
+      "question": "Le tube sec (rouge) sert pour :",
+      "optionA": "La biochimie (sérum)",
+      "optionB": "La NFS",
+      "optionC": "La coagulation",
+      "optionD": "L'hémoglobine",
+      "correctAnswer": "A",
+      "explanation": "Le tube sec (rouge) est utilisé pour la biochimie (récupération du sérum)."
+    },
+    {
+      "question": "La coloration de Gram distingue :",
+      "optionA": "Les bactéries Gram positif (violet) et Gram négatif (rose)",
+      "optionB": "Les virus et bactéries",
+      "optionC": "Les cellules saines et cancéreuses",
+      "optionD": "Les globules rouges et blancs",
+      "correctAnswer": "A",
+      "explanation": "Gram+: violet (peptidoglycane épais), Gram-: rose (peptidoglycane fin)."
+    },
+    {
+      "question": "L'urée normale dans le sang est environ :",
+      "optionA": "0,15 à 0,45 g/L",
+      "optionB": "1 à 2 g/L",
+      "optionC": "0,01 à 0,05 g/L",
+      "optionD": "5 à 10 g/L",
+      "correctAnswer": "A",
+      "explanation": "Urée sanguine normale: 0,15 à 0,45 g/L."
+    },
+    {
+      "question": "La créatinine normale chez l'homme est environ :",
+      "optionA": "6 à 12 mg/L",
+      "optionB": "20 à 30 mg/L",
+      "optionC": "1 à 2 mg/L",
+      "optionD": "50 à 100 mg/L",
+      "correctAnswer": "A",
+      "explanation": "Créatinine normale: homme 6-12 mg/L, femme 5-10 mg/L."
+    },
+    {
+      "question": "Les transaminases ASAT et ALAT sont des marqueurs de :",
+      "optionA": "La fonction hépatique (foie)",
+      "optionB": "La fonction rénale",
+      "optionC": "La fonction cardiaque",
+      "optionD": "La fonction pulmonaire",
+      "correctAnswer": "A",
+      "explanation": "ASAT et ALAT sont des enzymes hépatiques (marqueurs de lésion du foie)."
+    },
+    {
+      "question": "La technique ELISA sert à :",
+      "optionA": "Détecter des antigènes ou anticorps",
+      "optionB": "Compter les globules",
+      "optionC": "Mesurer le pH",
+      "optionD": "Colorer les bactéries",
+      "correctAnswer": "A",
+      "explanation": "ELISA = test immunoenzymatique pour détecter antigènes/anticorps."
+    },
+    {
+      "question": "Le VGM (Volume Globulaire Moyen) normal est :",
+      "optionA": "80 à 100 fL",
+      "optionB": "50 à 70 fL",
+      "optionC": "120 à 150 fL",
+      "optionD": "20 à 40 fL",
+      "correctAnswer": "A",
+      "explanation": "VGM normal: 80-100 fL. <80 = microcytaire, >100 = macrocytaire."
+    },
+    {
+      "question": "Le TP (Taux de Prothrombine) normal est :",
+      "optionA": "70 à 100%",
+      "optionB": "20 à 40%",
+      "optionC": "10 à 20%",
+      "optionD": "200%",
+      "correctAnswer": "A",
+      "explanation": "TP normal: 70-100%. Bas = trouble de la coagulation (foie, anticoagulants)."
+    },
+    {
+      "question": "Une leucocytose (augmentation des leucocytes) est > à :",
+      "optionA": "10 000/mm³",
+      "optionB": "5 000/mm³",
+      "optionC": "20 000/mm³",
+      "optionD": "100 000/mm³",
+      "correctAnswer": "A",
+      "explanation": "Leucocytose > 10 000/mm³ (normale: 4 000-10 000/mm³)."
+    },
+    {
+      "question": "La bilirubine totale normale est :",
+      "optionA": "3 à 17 μmol/L",
+      "optionB": "50 à 100 μmol/L",
+      "optionC": "1 à 2 μmol/L",
+      "optionD": "100 à 200 μmol/L",
+      "correctAnswer": "A",
+      "explanation": "Bilirubine totale normale: 3-17 μmol/L. Élevée = ictère (jaunisse)."
+    },
+    {
+      "question": "Quelle est la principale différence entre l'immunologie humorale et l'immunologie cellulaire?",
+      "optionA": "L'immunologie humorale implique les cellules T, tandis que l'immunologie cellulaire implique les cellules B",
+      "optionB": "L'immunologie humorale concerne les anticorps produits par les cellules B, tandis que l'immunologie cellulaire implique les cellules T",
+      "optionC": "L'immunologie humorale est spécifique aux bactéries, tandis que l'immunologie cellulaire est spécifique aux virus",
+      "optionD": "L'immunologie humorale est active chez les nouveau-nés, tandis que l'immunologie cellulaire se développe plus tard",
+      "correctAnswer": "B",
+      "explanation": "L'immunologie humorale concerne les réactions médiées par les anticorps (immunoglobulines) produits par les cellules B, tandis que l'immunologie cellulaire implique les réactions médiées par les cellules T."
+    },
+    {
+      "question": "Quel tube est utilisé pour la détermination de la glycémie à jeun?",
+      "optionA": "Tube EDTA",
+      "optionB": "Tube hépariné",
+      "optionC": "Tube citrate",
+      "optionD": "Tube avec fluorure de sodium",
+      "correctAnswer": "D",
+      "explanation": "Le tube avec fluorure de sodium est utilisé pour la détermination de la glycémie car le fluorure inhibe la glycolyse qui pourrait fausser les résultats si le sang n'est pas rapidement analysé."
+    },
+    {
+      "question": "Quelle est la valeur de référence normale pour l'hémoglobine glyquée (HbA1c) chez un sujet non diabétique?",
+      "optionA": "3,5-5,7%",
+      "optionB": "4,0-6,0%",
+      "optionC": "5,0-7,0%",
+      "optionD": "6,0-8,0%",
+      "correctAnswer": "A",
+      "explanation": "La valeur de référence normale pour l'HbA1c chez un sujet non diabétique est généralement de 3,5 à 5,7%, reflétant la glycémie moyenne des 2-3 mois précédents."
+    },
+    {
+      "question": "Quel test est le plus spécifique pour la détection d'une infection à VIH?",
+      "optionA": "Test ELISA pour les anticorps anti-VIH",
+      "optionB": "Test rapide à l'or colloïdal",
+      "optionC": "Western blot",
+      "optionD": "Charge virale VIH",
+      "correctAnswer": "C",
+      "explanation": "Le Western blot est considéré comme le test le plus spécifique pour la confirmation d'une infection à VIH après un test ELISA positif, car il détecte spécifiquement les anticorps contre les protéines virales."
+    },
+    {
+      "question": "Quelle est la valeur de référence normale pour le temps de prothrombine (TP) exprimé en INR?",
+      "optionA": "0,8-1,2",
+      "optionB": "1,0-1,5",
+      "optionC": "2,0-3,0",
+      "optionD": "3,0-4,5",
+      "correctAnswer": "A",
+      "explanation": "La valeur de référence normale pour le TP exprimé en INR est de 0,8 à 1,2. Des valeurs plus élevées indiquent un allongement du temps de coagulation."
+    },
+    {
+      "question": "Quel colorant est utilisé pour la coloration de Gram?",
+      "optionA": "Bleu de méthylène",
+      "optionB": "Safranin",
+      "optionC": "Fuchsine",
+      "optionD": "Gentiane violette",
+      "correctAnswer": "D",
+      "explanation": "La gentiane violette est le principal colorant utilisé dans la coloration de Gram, qui permet de différencier les bactéries en Gram positif (violettes) et Gram négatif (rosées)."
+    },
+    {
+      "question": "Quel est le principal inconvénient de l'utilisation de l'EDTA comme anticoagulant pour les examens hématologiques?",
+      "optionA": "Il provoque une hémolyse",
+      "optionB": "Il inhibe la réaction des plaquettes",
+      "optionC": "Il provoque une légère augmentation du volume plaquettaire moyen (MPV)",
+      "optionD": "Il interagit avec les ions calcium",
+      "correctAnswer": "C",
+      "explanation": "L'EDTA provoque une légère augmentation du volume plaquettaire moyen (MPV) en raison d'un effet de gonflement des plaquettes, ce qui doit être pris en compte lors de l'interprétation."
+    },
+    {
+      "question": "Quelle est la valeur de référence normale pour le taux de créatinine sérique chez l'adulte?",
+      "optionA": "20-50 μmol/L",
+      "optionB": "50-100 μmol/L",
+      "optionC": "60-110 μmol/L",
+      "optionD": "80-120 μmol/L",
+      "correctAnswer": "C",
+      "explanation": "La valeur de référence normale pour le taux de créatinine sérique chez l'adulte est généralement de 60 à 110 μmol/L, selon le laboratoire et la méthode de dosage."
+    },
+    {
+      "question": "Quelle est la principale différence entre l'immunofluorescence directe et indirecte?",
+      "optionA": "L'immunofluorescence directe utilise un anticorps marqué, tandis que l'indirecte utilise un antigène marqué",
+      "optionB": "L'immunofluorescence directe détecte les antigènes, tandis que l'indirecte détecte les anticorps",
+      "optionC": "L'immunofluorescence directe utilise un anticorps marqué, tandis que l'indirecte utilise un anticorps non marqué suivi d'un anticorps secondaire marqué",
+      "optionD": "L'immunofluorescence directe est plus spécifique, tandis que l'indirecte est plus sensible",
+      "correctAnswer": "C",
+      "explanation": "L'immunofluorescence directe utilise un anticorps directement marqué, tandis que l'immunofluorescence indirecte utilise un anticorps non marqué suivi d'un anticorps secondaire marqué, ce qui permet une amplification du signal."
+    },
+    {
+      "question": "Quel tube est utilisé pour la détermination de la ferritine?",
+      "optionA": "Tube sérum",
+      "optionB": "Tube EDTA",
+      "optionC": "Tube hépariné",
+      "optionD": "Tube citrate",
+      "correctAnswer": "A",
+      "explanation": "La ferritine est dosée dans le sérum, donc un tube sans anticoagulant ou avec un séparateur gélatineux est utilisé."
+    },
+    {
+      "question": "Quelle est la valeur de référence normale pour le temps de céphaline activé (TCA)?",
+      "optionA": "20-30 secondes",
+      "optionB": "25-35 secondes",
+      "optionC": "30-40 secondes",
+      "optionD": "35-45 secondes",
+      "correctAnswer": "B",
+      "explanation": "La valeur de référence normale pour le TCA est de 25 à 35 secondes, selon le réactif utilisé et le laboratoire."
+    },
+    {
+      "question": "Quel est le principal avantage de la PCR quantitative (qPCR) par rapport à la PCR traditionnelle?",
+      "optionA": "Elle permet une détection plus rapide des pathogènes",
+      "optionB": "Elle permet une quantification de l'acide nucléique cible",
+      "optionC": "Elle nécessite moins d'échantillon",
+      "optionD": "Elle est moins coûteuse",
+      "correctAnswer": "B",
+      "explanation": "La qPCR permet non seulement de détecter la présence d'un acide nucléique cible, mais aussi de quantifier sa concentration, ce qui est impossible avec la PCR traditionnelle."
+    },
+    {
+      "question": "Quel est le principal inconvénient de l'utilisation du lithium héparinate comme anticoagulant?",
+      "optionA": "Il provoque une hémolyse",
+      "optionB": "Il interfère avec certains dosages électrolytiques",
+      "optionC": "Il provoque une activation des plaquettes",
+      "optionD": "Il dénature les protéines",
+      "correctAnswer": "B",
+      "explanation": "Le lithium héparinate peut interférer avec le dosage du lithium et d'autres électrolytes, ce qui limite son utilisation pour ces analyses."
+    },
+    {
+      "question": "Quelle est la valeur de référence normale pour le taux de TSH chez un adulte euthyroïdien?",
+      "optionA": "0,1-0,5 mIU/L",
+      "optionB": "0,4-4,0 mIU/L",
+      "optionC": "1,0-5,0 mIU/L",
+      "optionD": "2,0-6,0 mIU/L",
+      "correctAnswer": "B",
+      "explanation": "La valeur de référence normale pour le taux de TSH chez un adulte euthyroïdien est généralement de 0,4 à 4,0 mIU/L, selon les recommandations de la Société d'Endocrinologie."
+    },
+    {
+      "question": "Quelle est la différence principale entre l'agglutination directe et indirecte?",
+      "optionA": "L'agglutination directe utilise des antigènes, tandis que l'indirecte utilise des anticorps",
+      "optionB": "L'agglutination directe détecte les anticorps, tandis que l'indirecte détecte les antigènes",
+      "optionC": "L'agglutination directe utilise des particules antigéniques, tandis que l'indirecte utilise des particules couvertes d'anticorps",
+      "optionD": "L'agglutination directe est plus rapide que l'indirecte",
+      "correctAnswer": "C",
+      "explanation": "L'agglutination directe utilise des particules antigéniques qui réagissent avec des anticorps en suspension, tandis que l'agglutination indirecte utilise des particules couvertes d'anticorps qui réagissent avec des antigènes."
+    },
+    {
+      "question": "Quel tube est utilisé pour la détermination de la CRP ultra-sensible?",
+      "optionA": "Tube sérum",
+      "optionB": "Tube EDTA",
+      "optionC": "Tube hépariné",
+      "optionD": "Tube citrate",
+      "correctAnswer": "A",
+      "explanation": "La CRP ultra-sensible est dosée dans le sérum, donc un tube sans anticoagulant ou avec un séparateur gélatineux est utilisé."
+    },
+    {
+      "question": "Quelle est la valeur de référence normale pour le taux de fibrinogène?",
+      "optionA": "1,5-3,0 g/L",
+      "optionB": "2,0-4,0 g/L",
+      "optionC": "3,0-5,0 g/L",
+      "optionD": "4,0-6,0 g/L",
+      "correctAnswer": "B",
+      "explanation": "La valeur de référence normale pour le taux de fibrinogène est généralement de 2,0 à 4,0 g/L, selon le laboratoire et la méthode de dosage."
+    },
+    {
+      "question": "Quelle est la différence principale entre l'ELISA indirect et l'ELISA sandwich?",
+      "optionA": "L'ELISA indirect détecte les antigènes, tandis que l'ELISA sandwich détecte les anticorps",
+      "optionB": "L'ELISA indirect utilise un anticorps marqué, tandis que l'ELISA sandwich utilise deux anticorps non marqués",
+      "optionC": "L'ELISA indirect utilise un anticorps marqué, tandis que l'ELISA sandwich utilise un anticorps de capture et un anticorps détecteur marqué",
+      "optionD": "L'ELISA indirect est plus sensible que l'ELISA sandwich",
+      "correctAnswer": "C",
+      "explanation": "L'ELISA indirect utilise un anticorps marqué pour détecter des anticorps spécifiques dans l'échantillon, tandis que l'ELISA sandwich utilise un anticorps de capture et un anticorps détecteur marqué pour capturer et détecter l'antigène."
+    },
+    {
+      "question": "Quel est le principal avantage de l'utilisation de l'EDTA K2 par rapport à l'EDTA K3 comme anticoagulant?",
+      "optionA": "L'EDTA K2 provoque moins d'hémolyse",
+      "optionB": "L'EDTA K2 est plus stable à température ambiante",
+      "optionC": "L'EDTA K2 inhibe moins la réaction des plaquettes",
+      "optionD": "L'EDTA K2 est moins coûteux",
+      "correctAnswer": "C",
+      "explanation": "L'EDTA K2 inhibe moins la réaction des plaquettes que l'EDTA K3, ce qui le rend préférable pour certains examens hématologiques."
+    },
+    {
+      "question": "Quelle est la valeur de référence normale pour le taux de troponine I chez un sujet sans cardiopathie?",
+      "optionA": "<0,01 ng/mL",
+      "optionB": "<0,04 ng/mL",
+      "optionC": "<0,1 ng/mL",
+      "optionD": "<0,4 ng/mL",
+      "correctAnswer": "B",
+      "explanation": "La valeur de référence normale pour le taux de troponine I chez un sujet sans cardiopathie est généralement <0,04 ng/mL, selon les méthodes de dosage et les recommandations des sociétés de cardiologie."
+    },
+    {
+      "question": "Les déchets DASRI sont :",
+      "optionA": "Déchets d'Activités de Soins à Risques Infectieux",
+      "optionB": "Déchets ménagers",
+      "optionC": "Déchets toxiques",
+      "optionD": "Déchets radioactifs",
+      "correctAnswer": "A",
+      "explanation": "DASRI = aiguilles, sang, tubes, pansements souillés. Ils doivent être incinérés."
+    },
+    {
+      "question": "Le tri des déchets au laboratoire: les tubes de sang vont dans :",
+      "optionA": "La filière DASRI (jaune)",
+      "optionB": "La poubelle ménagère",
+      "optionC": "La filière toxique",
+      "optionD": "La filière radioactive",
+      "correctAnswer": "A",
+      "explanation": "Les tubes de sang contaminés vont dans les sacs/conteneurs DASRI (jaune)."
+    },
+    {
+      "question": "Le PSM (Post de Sécurité Microbiologique) sert à :",
+      "optionA": "Protéger l'opérateur et l'échantillon des aérosols",
+      "optionB": "Stériliser",
+      "optionC": "Réfrigérer",
+      "optionD": "Centrifuger",
+      "correctAnswer": "A",
+      "explanation": "Le PSM protège l'opérateur et prévient la contamination des échantillons (aérosols)."
+    },
+    {
+      "question": "Le tube EDTA (violet) contient un anticoagulant :",
+      "optionA": "Qui chélate le calcium (empêche la coagulation)",
+      "optionB": "Qui active la coagulation",
+      "optionC": "Qui lyse les globules",
+      "optionD": "Qui cristallise le sang",
+      "correctAnswer": "A",
+      "explanation": "EDTA chélate le Ca²⁺, empêchant la cascade de coagulation."
+    },
+    {
+      "question": "Le citrate de sodium (tube bleu) anticoagule en :",
+      "optionA": "Chélatent le calcium",
+      "optionB": "Empêchant l'agrégation plaquettaire",
+      "optionC": "Lysant les GR",
+      "optionD": "Activant le TP",
+      "correctAnswer": "A",
+      "explanation": "Le citrate chélate le Ca²⁺ (rapport 1:9 citrate:sang pour les tests de coagulation)."
+    },
+    {
+      "question": "La phase pré-analytique comprend :",
+      "optionA": "Prélèvement, identification, transport, conservation",
+      "optionB": "L'analyse",
+      "optionC": "Le rendu des résultats",
+      "optionD": "La validation",
+      "correctAnswer": "A",
+      "explanation": "Pré-analytique: du prélèvement au laboratoire (identification, acheminement, centrifugation)."
+    },
+    {
+      "question": "La phase analytique correspond à :",
+      "optionA": "La mesure proprement dite (sur l'automate)",
+      "optionB": "Le prélèvement",
+      "optionC": "Le transport",
+      "optionD": "La communication du résultat",
+      "correctAnswer": "A",
+      "explanation": "L'analytique = le test lui-même (spectrophotométrie, immunologie, etc.)."
+    },
+    {
+      "question": "La phase post-analytique inclut :",
+      "optionA": "La validation technique, biologique et le rendu du résultat",
+      "optionB": "Le prélèvement",
+      "optionC": "La centrifugation",
+      "optionD": "La collecte du spécimen",
+      "correctAnswer": "A",
+      "explanation": "Post-analytique = validation + interprétation + communication des résultats."
+    },
+    {
+      "question": "Le contrôle qualité interne (CQI) sert à :",
+      "optionA": "Vérifier la justesse et la fidélité au quotidien",
+      "optionB": "Stériliser",
+      "optionC": "Identifier les bactéries",
+      "optionD": "Prélever",
+      "correctAnswer": "A",
+      "explanation": "Le CQI utilise des matériels de référence pour surveiller la fiabilité des résultats."
+    },
+    {
+      "question": "L'évaluation externe de la qualité (EEQ) est :",
+      "optionA": "Une comparaison inter-laboratoires",
+      "optionB": "Un contrôle interne",
+      "optionC": "Un test patient",
+      "optionD": "Une inspection de sécurité",
+      "correctAnswer": "A",
+      "explanation": "L'EEQ compare les résultats avec d'autres laboratoires (ex: ProBioQual)."
+    },
+    {
+      "question": "Le fluorure de sodium (tube gris) sert pour :",
+      "optionA": "La glycémie (inhibe la glycolyse)",
+      "optionB": "La NFS",
+      "optionC": "La coagulation",
+      "optionD": "L'hémoculture",
+      "correctAnswer": "A",
+      "explanation": "Le fluorure inhibe la glycolyse, préservant la glycémie pendant le transport."
+    },
+    {
+      "question": "Une hémolyèse (lyse des globules rouges) fausse :",
+      "optionA": "Le dosage du potassium (K+), LDH, ASAT",
+      "optionB": "La glycémie",
+      "optionC": "La créatinine",
+      "optionD": "Les plaquettes",
+      "correctAnswer": "A",
+      "explanation": "L'hémolyse libère le contenu intracellulaire (K+, LDH, ASAT) faussant ces dosages."
+    },
+    {
+      "question": "L'ISO 15189 est la norme pour :",
+      "optionA": "Les laboratoires de biologie médicale (accréditation)",
+      "optionB": "Les hôpitaux",
+      "optionC": "L'informatique",
+      "optionD": "L'alimentation",
+      "correctAnswer": "A",
+      "explanation": "ISO 15189 = norme d'accréditation des laboratoires de biologie médicale."
+    },
+    {
+      "question": "Le bon d'analyse doit contenir :",
+      "optionA": "Identité patient, date, prescripteur, analyses demandées, tube",
+      "optionB": "Le prix",
+      "optionC": "Le diagnostic",
+      "optionD": "La religion",
+      "correctAnswer": "A",
+      "explanation": "Le bon d'analyse: identité, date/heure, prescripteur, analyses, tube, signes cliniques."
+    },
+    {
+      "question": "Le délai entre prélèvement et analyse doit être :",
+      "optionA": "Le plus court possible (idéal < 2h)",
+      "optionB": "1 semaine",
+      "optionC": "1 mois",
+      "optionD": "48h",
+      "correctAnswer": "A",
+      "explanation": "Idéalement l'analyse se fait < 2h. Sinon, conservation à 4°C ou congélation selon l'analyse."
+    },
+    {
+      "question": "Dans le cadre de l'accréditation ISO 15189, quelle est la principale exigence concernant la traçabilité des résultats de laboratoire ?",
+      "optionA": "La traçabilité doit être établie uniquement pour les examens en biologie médicale",
+      "optionB": "La traçabilité doit remonter à une référence internationale ou nationale si disponible",
+      "optionC": "La traçabilité n'est pas obligatoire pour les examens de routine",
+      "optionD": "La traçabilité doit être établie uniquement pour les examens à risque",
+      "correctAnswer": "B",
+      "explanation": "L'ISO 15189 exige que les résultats des examens soient traçables à des références appropriées, idéalement internationales ou nationales, lorsque celles-ci existent et sont disponibles."
+    },
+    {
+      "question": "Quelle est la durée de conservation minimale recommandée par la norme ISO 15189 pour les échantillons biologiques après analyse ?",
+      "optionA": "7 jours",
+      "optionB": "15 jours",
+      "optionC": "1 mois",
+      "optionD": "Le laboratoire doit définir une politique écrite pour la durée de conservation",
+      "correctAnswer": "D",
+      "explanation": "L'ISO 15189 exige que le laboratoire établisse et documente une politique pour la durée de conservation des échantillons biologiques, qui doit être suffisante pour permettre la répétition des examens si nécessaire."
+    },
+    {
+      "question": "Quel type de tube est le plus approprié pour la préparation d'un plasma pour la détection de la troponine cardiaque ?",
+      "optionA": "Tube sec sans anticoagulant",
+      "optionB": "Tube avec EDTA comme anticoagulant",
+      "optionC": "Tube avec héparine lithium comme anticoagulant",
+      "optionD": "Tube avec citrate de sodium comme anticoagulant",
+      "correctAnswer": "C",
+      "explanation": "Pour la troponine cardiaque, le plasma obtenu avec de l'héparine lithium est préféré car l'EDTA peut interférer avec certaines méthodes de dosage et le sang total n'est pas adapté."
+    },
+    {
+      "question": "Selon les bonnes pratiques de laboratoire, quel est le délai maximal recommandé entre la prélevement sanguin et la centrifugation pour un dosage de l'acide lactique ?",
+      "optionA": "30 minutes à température ambiante",
+      "optionB": "1 heure à température ambiante",
+      "optionC": "15 minutes à température ambiante",
+      "optionD": "2 heures à température ambiante",
+      "correctAnswer": "C",
+      "explanation": "Pour l'acide lactique, un délai de centrifugation maximal de 15 minutes est recommandé à température ambiante pour éviter une production in vitro d'acide lactique par les globules rouges."
+    },
+    {
+      "question": "Quelle est la principale mesure de sécurité à prendre lors de la manipulation d'un DASRI (Déchets d'Activités de Soins à Risque Infectieux) ?",
+      "optionA": "Stockage dans des sacs en plastique transparents",
+      "optionB": "Manipulation sans équipement de protection individuelle",
+      "optionC": "Utilisation de conteneurs rigides et étanches, jaunes ou rouges selon le risque",
+      "optionD": "Incinération directe sans traitement préalable",
+      "correctAnswer": "C",
+      "explanation": "Les DASRI doivent être collectés dans des conteneurs rigides, étanches, jaunes pour les risques modérés et rouges pour les risques élevés, conformément à la réglementation."
+    },
+    {
+      "question": "Quel est le rôle principal du Prélèvement Sécurisé de Médecine (PSM) ?",
+      "optionA": "Faciliter le transport des échantillons entre laboratoires",
+      "optionB": "Assurer la traçabilité des échantillions biologiques du prélèvement à l'analyse",
+      "optionC": "Permettre le stockage des échantillons à température ambiante",
+      "optionD": "Faciliter l'identification des patients par code-barres",
+      "correctAnswer": "B",
+      "explanation": "Le PSM vise à garantir la traçabilité des échantillons biologiques depuis leur prélèvement jusqu'à leur analyse, en sécurisant chaque étape du processus."
+    },
+    {
+      "question": "Quelle est la principale exigence de l'ISO 15189 concernant l'évaluation des performances des méthodes analytiques ?",
+      "optionA": "L'évaluation n'est nécessaire que pour les nouvelles méthodes",
+      "optionB": "L'évaluation doit être effectuée avant la mise en service et périodiquement",
+      "optionC": "L'évaluation est uniquement requise pour les examens à risque élevé",
+      "optionD": "L'évaluation n'est pas obligatoire pour les méthodes commercialisées",
+      "correctAnswer": "B",
+      "explanation": "L'ISO 15189 exige que le laboratoire évalue les performances des méthodes analytiques avant leur mise en service et régulièrement par la suite pour garantir la qualité des résultats."
+    },
+    {
+      "question": "Quel est le type de tube recommandé pour un hémogramme complet ?",
+      "optionA": "Tube sec",
+      "optionB": "Tube avec EDTA",
+      "optionC": "Tube avec héparine",
+      "optionD": "Tube avec citrate",
+      "correctAnswer": "B",
+      "explanation": "L'hémogramme complet nécessite un tube avec EDTA (K2 ou K3) comme anticoagulant pour préserver la morphologie des cellules sanguines et éviter la coagulation."
+    },
+    {
+      "question": "Dans le processus post-analytique, quelle est la principale action à entreprendre en cas de résultat critique ?",
+      "optionA": "Attendre que le patient revienne consulter",
+      "optionB": "Notifier immédiatement le prescripteur et/ou le patient selon les procédures établies",
+      "optionC": "Répéter le test sans informer le prescripteur",
+      "optionD": "Modifier le résultat pour qu'il soit dans les valeurs normales",
+      "correctAnswer": "B",
+      "explanation": "En cas de résultat critique, le laboratoire doit avoir des procédures écrites pour notifier immédiatement le prescripteur et/ou le patient afin de permettre une intervention rapide."
+    },
+    {
+      "question": "Quelle est la température de stockage recommandée pour un échantillon de sang destiné à un dosage de l'adrénaline ?",
+      "optionA": "2-8°C",
+      "optionB": "Ambiante",
+      "optionC": "-20°C",
+      "optionD": "-80°C",
+      "correctAnswer": "C",
+      "explanation": "L'adrénaline est instable et doit être rapidement séparée du sang puis congelée à -20°C pour éviter sa dégradation."
+    },
+    {
+      "question": "Selon la norme ISO 15189, quelle est la fréquence minimale recommandée pour l'audit interne du système de management de la qualité ?",
+      "optionA": "Tous les 2 ans",
+      "optionB": "Annuellement",
+      "optionC": "Tous les 6 mois",
+      "optionD": "Tous les 3 ans",
+      "correctAnswer": "B",
+      "explanation": "L'ISO 15189 recommande que les audits internes soient planifiés et réalisés à intervalles réguliers, généralement annuellement, pour vérifier la conformité du système de management de la qualité."
+    },
+    {
+      "question": "Quelle est la principale précaution à prendre lors du transport d'échantillons de sang pour un dosage de l'amylase ?",
+      "optionA": "Transport à température ambiante",
+      "optionB": "Transport sur glace",
+      "optionC": "Transport à 37°C",
+      "optionD": "Transport à -20°C",
+      "correctAnswer": "B",
+      "explanation": "L'amylase est une enzyme qui peut être libérée in vitro par les leucocytes si l'échantillon n'est pas rapidement séparé du sang. Le transport sur glace ralentit cette activité enzymatique."
+    },
+    {
+      "question": "Quel type de conteneur est recommandé pour le stockage des déchets de laboratoire contenant des produits chimiques dangereux ?",
+      "optionA": "Conteneur jaune",
+      "optionB": "Conteneur noir",
+      "optionC": "Conteneur rouge",
+      "optionD": "Conteneur vert",
+      "correctAnswer": "B",
+      "explanation": "Les déchets chimiques dangereux doivent être stockés dans des conteneurs noirs, distincts des déchets infectieux (jaunes/rouges) et des déchets non dangereux (verts)."
+    },
+    {
+      "question": "Dans le cadre de l'accréditation ISO 15189, quel document doit être consulté pour déterminer les exigences techniques spécifiques à un examen ?",
+      "optionA": "Le catalogue des examens du laboratoire",
+      "optionB": "Les recommandations du prescripteur",
+      "optionC": "La fiche de sécurité des produits chimiques",
+      "optionD": "Le manuel de procédures du laboratoire",
+      "correctAnswer": "A",
+      "explanation": "Le catalogue des examens du laboratoire doit contenir toutes les informations nécessaires sur chaque examen, y compris les exigences pré-analytiques, analytiques et post-analytiques."
+    },
+    {
+      "question": "Quelle est la principale cause d'hémolyse dans un échantillon de sang destiné à un dosage de la kaliémie ?",
+      "optionA": "Centrifugation à trop haute vitesse",
+      "optionB": "Stockage à température ambiante",
+      "optionC": "Agitation excessive du tube",
+      "optionD": "Utilisation d'un trop petit calibre d'aiguille",
+      "correctAnswer": "C",
+      "explanation": "L'agitation excessive du tube de sang peut provoquer la rupture des globules rouges, libérant le potassium intracellulaire et entraînant une hyperkaliémie artificielle."
+    },
+    {
+      "question": "Quelle est la durée de conservation minimale des enregistrements de qualité selon l'ISO 15189 ?",
+      "optionA": "2 ans",
+      "optionB": "5 ans",
+      "optionC": "Le laboratoire doit définir une durée dans sa politique de qualité",
+      "optionD": "Indéfiniment",
+      "correctAnswer": "C",
+      "explanation": "L'ISO 15189 exige que le laboratoire définisse et documente une politique pour la durée de conservation des enregistrements de qualité, qui doit être au moins égale à la période d'accréditation."
+    },
+    {
+      "question": "Quel est le rôle principal du personnel de laboratoire dans la phase pré-analytique ?",
+      "optionA": "Interpréter les résultats des examens",
+      "optionB": "S'assurer de l'adéquation de l'échantillon par rapport à la demande d'examen",
+      "optionC": "Valider les procédures analytiques",
+      "optionD": "Communiquer les résultats au prescripteur",
+      "correctAnswer": "B",
+      "explanation": "Dans la phase pré-analytique, le personnel du laboratoire doit vérifier l'adéquation de l'échantillon par rapport à la demande d'examen, incluant l'identification du patient et la qualité de l'échantillon."
+    },
+    {
+      "question": "Quelle est la température de conservation recommandée pour un échantillon de sang destiné à un dosage de la CRP ?",
+      "optionA": "2-8°C",
+      "optionB": "Ambiante",
+      "optionC": "-20°C",
+      "optionD": "-80°C",
+      "correctAnswer": "A",
+      "explanation": "La CRP est stable à 2-8°C pendant plusieurs jours, mais peut dégrader à température ambiante. Le sérum ou plasma doit être séparé rapidement du sang."
+    },
+    {
+      "question": "Selon la réglementation française, quel est le délai de conservation maximal pour les DASRI non piquants ?",
+      "optionA": "24 heures",
+      "optionB": "72 heures",
+      "optionC": "1 mois",
+      "optionD": "3 mois",
+      "correctAnswer": "B",
+      "explanation": "Les DASRI non piquants doivent être collectés dans des conteneurs jaunes et évacués dans un délai maximal de 72 heures selon la réglementation française."
+    },
+    {
+      "question": "Quelle est la principale caractéristique d'un système de management de la qualité selon l'ISO 15189 ?",
+      "optionA": "Il doit être uniquement documenté",
+      "optionB": "Il doit être basé sur le risque",
+      "optionC": "Il doit être uniquement applicable à la phase analytique",
+      "optionD": "Il doit être uniquement vérifié par l'audit externe",
+      "correctAnswer": "B",
+      "explanation": "L'ISO 15189 met l'accent sur un système de management de la qualité basé sur le risque, qui permet d'identifier et de prioriser les risques potentiels pour la qualité des résultats."
+    },
+    {
+      "question": "Quel type de tube est recommandé pour un dosage de la prothrombine (INR) ?",
+      "optionA": "Tube sec",
+      "optionB": "Tube avec EDTA",
+      "optionC": "Tube avec héparine",
+      "optionD": "Tube avec citrate de sodium",
+      "correctAnswer": "D",
+      "explanation": "Le dosage de la prothrombine (INR) nécessite un tube avec citrate de sodium comme anticoagulant, car il chélate les ions calcium nécessaires à la coagulation et permet de mesurer le temps de céphaline activé."
+    },
+    {
+      "question": "Selon la norme ISO 15189, quel élément n'est pas obligatoirement inclus dans un protocole de prélèvement sanguin?",
+      "optionA": "Le type d'anticoagulant utilisé",
+      "optionB": "La position du patient pendant le prélèvement",
+      "optionC": "Le nom de la personne réalisant le prélèvement",
+      "optionD": "La durée de conservation de l'échantillon avant analyse",
+      "correctAnswer": "C",
+      "explanation": "Bien que le protocole de prélèvement doit inclure des informations sur l'anticoagulant, la position du patient et la durée de conservation, le nom de la personne réalisant le prélèvement n'est pas systématiquement requis dans le protocole standard."
+    },
+    {
+      "question": "Dans le processus pré-analytique, quelle erreur est la plus fréquemment responsable de résultats de laboratoire erronés?",
+      "optionA": "Erreur de calibration de l'analyseur",
+      "optionB": "Détérioration de l'échantillon pendant le transport",
+      "optionC": "Mauvaise interprétation des résultats",
+      "optionD": "Défaillance du système informatique",
+      "correctAnswer": "B",
+      "explanation": "La détérioration des échantillons pendant le transport ou le stockage est une source majeure d'erreurs en phase pré-analytique, responsable d'environ 46-68% des erreurs de laboratoire selon diverses études."
+    },
+    {
+      "question": "Quel tube de prélèvement est le plus approprié pour une détermination de la glycémie à jeun?",
+      "optionA": "Tube vert (héparinate de lithium)",
+      "optionB": "Tube jaune (fluorure de sodium)",
+      "optionC": "Tube rouge sans anticoagulant",
+      "optionD": "Tube bleu (citrate de sodium)",
+      "correctAnswer": "B",
+      "explanation": "Le tube jaune contenant du fluorure de sodium inhibe la glycolyse, ce qui préserve la concentration en glucose dans le sang jusqu'à l'analyse, le rendant idéal pour les dosages de glycémie."
+    },
+    {
+      "question": "Quelle est la durée de conservation maximale recommandée pour un échantillon de sang total à température ambiante avant centrifugation pour la séparation du plasma?",
+      "optionA": "30 minutes",
+      "optionB": "2 heures",
+      "optionC": "4 heures",
+      "optionD": "24 heures",
+      "correctAnswer": "A",
+      "explanation": "Pour la plupart des analyses, le sang total doit être centrifugé dans les 30 minutes suivant le prélèvement pour éviter la dégradation cellulaire et la libération d'intracellularités dans le plasma."
+    },
+    {
+      "question": "Quelle est la principale caractéristique des DASRI (Déchets d'Activités de Soins à Risque Infectieux)?",
+      "optionA": "Ils doivent être incinérés à haute température",
+      "optionB": "Ils peuvent être jetés dans les déchets ménagers après désinfection",
+      "optionC": "Ils doivent être stockés dans des conteneurs jaunes",
+      "optionD": "Ils sont considérés comme des déchets banals après autoclavage",
+      "correctAnswer": "A",
+      "explanation": "Les DASRI doivent être collectés dans des conteneurs rigides, étanches et résistants, de couleur jaune ou identifiable par le logo DASRI, et être incinérés dans des installations spécialisées."
+    },
+    {
+      "question": "Quelle est la température de stockage recommandée pour un échantillon d'urine destiné à une cytobactériologie?",
+      "optionA": "2-8°C",
+      "optionB": "Ambiante (20-25°C)",
+      "optionC": "-20°C",
+      "optionD": "37°C",
+      "correctAnswer": "A",
+      "explanation": "Les urines pour cytobactériologie doivent être conservées entre 2-8°C si elles ne peuvent pas être analysées rapidement (idéalement dans les 2 heures) pour inhiber la croissance bactérienne."
+    },
+    {
+      "question": "Selon la norme ISO 15189, quel document doit être rédigé lors d'un incident qualité potentiel?",
+      "optionA": "Un rapport d'audit",
+      "optionB": "Un plan d'amélioration continue",
+      "optionC": "Un dossier de non-conformité",
+      "optionD": "Un procédure opérationnelle standard",
+      "correctAnswer": "C",
+      "explanation": "La norme ISO 15189 exige que le laboratoire maintienne et documente des procédures pour la gestion des non-conformités et des actions correctives."
+    },
+    {
+      "question": "Quelle est la principale fonction du système de management de la qualité (SMQ) selon ISO 15189?",
+      "optionA": "Réduire les coûts opérationnels",
+      "optionB": "Assurer la conformité réglementaire",
+      "optionC": "Améliorer continuellement l'adéquation et l'efficacité du système",
+      "optionD": "Faciliter l'accréditation du laboratoire",
+      "correctAnswer": "C",
+      "explanation": "Le SMQ selon ISO 15189 vise principalement à améliorer continuellement l'adéquation et l'efficacité du système de management qualité du laboratoire pour répondre aux besoins des patients."
+    },
+    {
+      "question": "Quelle est la durée de conservation minimale recommandée pour les échantillons biologiques dans un laboratoire accrédité selon ISO 15189?",
+      "optionA": "7 jours",
+      "optionB": "30 jours",
+      "optionC": "3 mois",
+      "optionD": "1 an",
+      "correctAnswer": "A",
+      "explanation": "Selon ISO 15189, les échantillons biologiques doivent être conservés pendant une durée minimale définie par le laboratoire, généralement au moins 7 jours, pour permettre des analyses répétées en cas de besoin."
+    },
+    {
+      "question": "Quelle est la principale différence entre les Produits de Santé Médicaux (PSM) et les Dispositifs Médicaux (DM)?",
+      "optionA": "Les PSM sont utilisés exclusivement par les médecins",
+      "optionB": "Les PSM incluent les médicaments tandis que les DM n'en sont pas",
+      "optionC": "Les DM sont réglementés par l'ANSM tandis que les PSM ne le sont pas",
+      "optionD": "Les PSM sont stériles par définition",
+      "correctAnswer": "B",
+      "explanation": "La principale différence est que les Produits de Santé Médicaux (PSM) incluent à la fois les médicaments et les dispositifs médicaux, tandis que les Dispositifs Médicaux (DM) se réfèrent spécifiquement aux produits non pharmacologiques."
+    },
+    {
+      "question": "Quel est le principe de fonctionnement d'un tube hépariné pour la collecte de sang?",
+      "optionA": "Activation de la coagulation",
+      "optionB": "Inhibition de la coagulation",
+      "optionC": "Prévention de l'hémolyse",
+      "optionD": "Conservation des cellules sanguines",
+      "correctAnswer": "B",
+      "explanation": "L'héparine est un anticoagulant qui agit en activant l'antithrombine III, inhibant ainsi la formation de caillots sanguins et permettant l'obtention de plasma ou de sang total non coagulé."
+    },
+    {
+      "question": "Dans le processus analytique, quelle est la principale fonction du contrôle de qualité interne?",
+      "optionA": "Vérifier la compétence du personnel",
+      "optionB": "Surveiller la performance de l'analyseur en temps réel",
+      "optionC": "Évaluer la conformité réglementaire",
+      "optionD": "Déterminer les coûts de fonctionnement",
+      "correctAnswer": "B",
+      "explanation": "Le contrôle de qualité interne sert à surveiller la performance de l'analyseur et du processus analytique en temps réel, en détectant les dérives avant que les résultats erronés ne soient communiqués."
+    },
+    {
+      "question": "Quelle est la durée de conservation recommandée pour un échantillon de sang total en tube EDTA pour un hémogramme?",
+      "optionA": "4 heures à température ambiante",
+      "optionB": "24 heures à 4°C",
+      "optionC": "7 jours à -20°C",
+      "optionD": "48 heures à 2-8°C",
+      "correctAnswer": "D",
+      "explanation": "Le sang total en EDTA pour un hémogramme peut être conservé jusqu'à 48 heures à 2-8°C sans altération significative des paramètres cellulaires."
+    },
+    {
+      "question": "Quelle est la principale mesure de sécurité à prendre lors du prélèvement d'un échantillon de sang chez un patient suspecté d'avoir une maladie à transmission sanguine?",
+      "optionA": "Port de gants uniquement",
+      "optionB": "Utilisation d'aiguilles à sécurité obligatoire",
+      "optionC": "Prélèvement en position assise uniquement",
+      "optionD": "Double port de gants",
+      "correctAnswer": "B",
+      "explanation": "L'utilisation d'aiguilles à sécurité est une mesure essentielle pour prévenir les piqûres accidentelles et les risques de transmission de maladies infectieuses, conformément aux recommandations de prévention des risques biologiques."
+    },
+    {
+      "question": "Quelle est la principale différence entre les déchets assimilés aux DASRI et les DASRI véritables?",
+      "optionA": "La couleur du conteneur",
+      "optionB": "Le risque infectieux",
+      "optionC": "La méthode de traitement",
+      "optionD": "La durée de conservation",
+      "correctAnswer": "B",
+      "explanation": "Les déchets assimilés aux DASRI présentent un risque infectieux potentiel mais moindre que les DASRI véritables, ce qui influence leur classification et leur traitement."
+    },
+    {
+      "question": "Quel est le rôle du responsable de la qualité dans un laboratoire médical selon ISO 15189?",
+      "optionA": "Réaliser uniquement les audits internes",
+      "optionB": "Être responsable de toutes les décisions cliniques",
+      "optionC": "Assurer la mise en œuvre et le maintien du SMQ",
+      "optionD": "Gérer uniquement les aspects financiers",
+      "correctAnswer": "C",
+      "explanation": "Le responsable de la qualité est chargé de s'assurer que le système de management qualité est mis en œuvre, maintenu et amélioré en continu conformément aux exigences de la norme ISO 15189."
+    },
+    {
+      "question": "Quelle est la caractéristique principale des tubes à gélose pour hémocultures?",
+      "optionA": "Ils contiennent un anticoagulant",
+      "optionB": "Ils sont sous atmosphère enrichie en CO2",
+      "optionC": "Ils contiennent un milieu de culture stérile et des nutriments",
+      "optionD": "Ils sont préremplis avec un antiseptique",
+      "correctAnswer": "C",
+      "explanation": "Les tubes à gélose pour hémocultures contiennent un milieu de culture stérile enrichi en nutriments pour permettre la croissance des bactéries ou champignons potentiellement présents dans le sang."
+    },
+    {
+      "question": "Quelle est la principale exigence de la norme ISO 15189 concernant la compétence du personnel?",
+      "optionA": "Un diplôme universitaire est obligatoire",
+      "optionB": "Une évaluation des compétences doit être effectuée périodiquement",
+      "optionC": "Seuls les médecins peuvent interpréter les résultats",
+      "optionD": "Aucune formation continue n'est requise",
+      "correctAnswer": "B",
+      "explanation": "La norme ISO 15189 exige que le laboratoire évalue périodiquement la compétence de son personnel et maintienne des enregistrements de cette évaluation, ainsi que des besoins en formation."
+    },
+    {
+      "question": "Quelle est la durée de conservation recommandée pour un échantillon de sang total en tube citrate pour un dosage de la D-dimère?",
+      "optionA": "2 heures à température ambiante",
+      "optionB": "24 heures à 4°C",
+      "optionC": "7 jours à -20°C",
+      "optionD": "Immédiatement analysé",
+      "correctAnswer": "A",
+      "explanation": "Le sang en citrate pour un dosage de la D-dimère doit être analysé dans les 2 heures suivant le prélèvement à température ambiante pour éviter l'artefact de libération de D-dimères par les plaquettes."
+    },
+    {
+      "question": "Quelle est la principale différence entre l'assurance qualité et le contrôle de qualité en laboratoire?",
+      "optionA": "L'assurance qualité est proactive, le contrôle de qualité est réactif",
+      "optionB": "L'assurance qualité ne s'applique qu'au processus analytique",
+      "optionC": "Le contrôle de qualité n'est nécessaire que pour les analyses non urgentes",
+      "optionD": "L'assurance qualité est réalisée par le personnel médical",
+      "correctAnswer": "A",
+      "explanation": "L'assurance qualité est un ensemble d'activités planifiées pour s'assurer que les exigences de qualité seront satisfaites (approche proactive), tandis que le contrôle de qualité consiste à surveiller les caractéristiques d'un service pour détecter les non-conformités (approche réactive)."
+    }
+  ],
+  "category": "Universitaire",
+  "subcategory": "analyse-biomedicale",
+  "description": "Biochimie, hématologie, microbiologie, immunologie, gestion de laboratoire, sécurité, contrôle qualité."
+}

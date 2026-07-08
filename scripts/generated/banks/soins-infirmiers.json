@@ -1,0 +1,495 @@
+{
+  "bankKey": "soins-infirmiers",
+  "title": "soins-infirmiers",
+  "questions": [
+    {
+      "question": "La voie intramusculaire (IM) se fait dans :",
+      "optionA": "Le muscle deltoïde, le quadrant supéro-externe de la fesse, la cuisse",
+      "optionB": "Le bras",
+      "optionC": "L'abdomen",
+      "optionD": "Le cou",
+      "correctAnswer": "A",
+      "explanation": "Les sites IM: deltoïde, quadrant supéro-externe fessier (nerf sciatique à éviter), vaste externe."
+    },
+    {
+      "question": "La voie sous-cutanée (SC) se fait typiquement dans :",
+      "optionA": "L'abdomen, la face externe du bras, la cuisse",
+      "optionB": "Le muscle",
+      "optionC": "La veine",
+      "optionD": "Le dos",
+      "correctAnswer": "A",
+      "explanation": "SC: abdomen, bras, cuisse (ex: insuline, héparine)."
+    },
+    {
+      "question": "La tension artérielle normale chez l'adulte est :",
+      "optionA": "120/80 mmHg",
+      "optionB": "150/90 mmHg",
+      "optionC": "100/60 mmHg",
+      "optionD": "90/50 mmHg",
+      "correctAnswer": "A",
+      "explanation": "TA normale: ~120/80 mmHg. HTA si ≥ 140/90 mmHg."
+    },
+    {
+      "question": "La fréquence respiratoire normale chez l'adulte est :",
+      "optionA": "12 à 20 cycles/minute",
+      "optionB": "30 à 40",
+      "optionC": "5 à 10",
+      "optionD": "60 à 80",
+      "correctAnswer": "A",
+      "explanation": "FR normale adulte: 12-20/min. Enfant: 20-30. Nouveau-né: 30-60."
+    },
+    {
+      "question": "La fréquence cardiaque normale au repos est :",
+      "optionA": "60 à 100 battements/minute",
+      "optionB": "30 à 50",
+      "optionC": "120 à 150",
+      "optionD": "100 à 120",
+      "correctAnswer": "A",
+      "explanation": "FC normale: 60-100 bpm. <60 = bradycardie, >100 = tachycardie."
+    },
+    {
+      "question": "La température corporelle normale est :",
+      "optionA": "36,5 à 37,5°C",
+      "optionB": "38 à 39°C",
+      "optionC": "35 à 36°C",
+      "optionD": "37,5 à 38,5°C",
+      "correctAnswer": "A",
+      "explanation": "Température normale: 36,5-37,5°C. Fièvre > 38°C. Hypothermie < 35°C."
+    },
+    {
+      "question": "L'asepsie consiste à :",
+      "optionA": "Prévenir l'infection (sans microbes)",
+      "optionB": "Tuer les microbes",
+      "optionC": "Stériliser",
+      "optionD": "Désinfecter",
+      "correctAnswer": "A",
+      "explanation": "Asepsie = prévenir l'infection (propres). Antisepsie = éliminer les microbes sur un tissu vivant."
+    },
+    {
+      "question": "L'antisepsie se fait avec :",
+      "optionA": "Un antiseptique sur la peau (ex: alcool, Bétadine)",
+      "optionB": "Un savon",
+      "optionC": "De l'eau",
+      "optionD": "Un antibiotique",
+      "correctAnswer": "A",
+      "explanation": "Antisepsie = application d'antiseptique sur un tissu vivant (alcool 70°, chlorhexidine, Bétadine)."
+    },
+    {
+      "question": "Les 5 droits de l'administration du médicament sont :",
+      "optionA": "Bon patient, bon médicament, bonne dose, bonne voie, bon moment",
+      "optionB": "Bon patient, bon lit, bon médecin, bon médicament, bon prix",
+      "optionC": "Bon médicament, bon flacon, bon lit, bon moment, bon patient",
+      "optionD": "Bon moment, bon patient, bon lit, bon médecin, bon débit",
+      "correctAnswer": "A",
+      "explanation": "Les 5 droits: bon patient, bon médicament, bonne dose, bonne voie, bon moment."
+    },
+    {
+      "question": "Le meilleur site pour prendre la température centrale est :",
+      "optionA": "La voie rectale ou tympanique",
+      "optionB": "La bouche",
+      "optionC": "L'aisselle",
+      "optionD": "Le front",
+      "correctAnswer": "A",
+      "explanation": "La température rectale ou tympanique est la plus proche de la température centrale."
+    },
+    {
+      "question": "Une perfusion intraveineuse permet :",
+      "optionA": "L'administration de liquides et médicaments dans la veine",
+      "optionB": "L'injection dans le muscle",
+      "optionC": "La prise de la tension",
+      "optionD": "L'administration orale",
+      "correctAnswer": "A",
+      "explanation": "La perfusion IV administre des solutés (NaCl, G5%) et médicaments directement dans la veine."
+    },
+    {
+      "question": "La saturation en oxygène (SpO₂) normale est :",
+      "optionA": "≥ 95%",
+      "optionB": "80-85%",
+      "optionC": "70-75%",
+      "optionD": "60-65%",
+      "correctAnswer": "A",
+      "explanation": "SpO₂ normale ≥ 95%. <90% = hypoxémie nécessitant O₂."
+    },
+    {
+      "question": "En cas d'arrêt cardiaque, on réalise :",
+      "optionA": "Un massage cardiaque (30:2) + défibrillation si indiquée",
+      "optionB": "Une perfusion",
+      "optionC": "Une aspiration",
+      "optionD": "Un pansement",
+      "correctAnswer": "A",
+      "explanation": "RCR: 30 compressions pour 2 insufflations. DAE si rythme choquable (FV/TV)."
+    },
+    {
+      "question": "La dose de paracétamol chez l'adulte est :",
+      "optionA": "500 mg à 1 g par prise (max 4 g/jour)",
+      "optionB": "100 mg",
+      "optionC": "5 g",
+      "optionD": "10 g",
+      "correctAnswer": "A",
+      "explanation": "Paracétamol adulte: 500 mg-1 g/prise, max 4 g/jour (toxicité hépatique au-delà)."
+    },
+    {
+      "question": "Le lavage des mains chirurgical dure :",
+      "optionA": "3 à 5 minutes",
+      "optionB": "30 secondes",
+      "optionC": "10 minutes",
+      "optionD": "1 minute",
+      "correctAnswer": "A",
+      "explanation": "Le lavage chirurgical des mains dure 3-5 minutes avec brossage des ongles."
+    },
+    {
+      "question": "Lors d'une injection intramusculaire, quelle est la profondeur d'insertion de l'aiguille chez un adulte ?",
+      "optionA": "1 à 1,5 cm",
+      "optionB": "2 à 3 cm",
+      "optionC": "3 à 4 cm",
+      "optionD": "4 à 5 cm",
+      "correctAnswer": "B",
+      "explanation": "Chez un adulte, l'aiguille doit être insérée sur 2 à 3 cm en fonction du site d'injection et de la morphologie du patient."
+    },
+    {
+      "question": "Quelle est la durée minimale de friction pour une désinfection cutanée avant une injection ?",
+      "optionA": "5 secondes",
+      "optionB": "10 secondes",
+      "optionC": "15 secondes",
+      "optionD": "30 secondes",
+      "correctAnswer": "C",
+      "explanation": "La friction d'une solution antiseptique doit durer au moins 15 secondes pour être efficace, selon les recommandations actuelles."
+    },
+    {
+      "question": "Quelle est la principale complication à surveiller lors d'une perfusion de vancomycine ?",
+      "optionA": "Hypoglycémie",
+      "optionB": "Ototoxicité et néphrotoxicité",
+      "optionC": "Hypertension artérielle",
+      "optionD": "Dépression respiratoire",
+      "correctAnswer": "B",
+      "explanation": "La vancomycine peut provoquer une ototoxicité et une néphrotoxicité, nécessitant une surveillance clinique et biologique."
+    },
+    {
+      "question": "Quelle est la fréquence de mesure de la glycémie capillaire chez un patient sous insuline avec un diabète déséquilibré ?",
+      "optionA": "2 fois par jour",
+      "optionB": "Avant chaque repas et au coucher",
+      "optionC": "Toutes les 4 heures",
+      "optionD": "Toutes les 6 heures",
+      "correctAnswer": "C",
+      "explanation": "En cas de déséquilibre glycémique, une surveillance toutes les 4 heures est recommandée pour ajuster les doses d'insuline."
+    },
+    {
+      "question": "Quel est le délai d'attente minimum avant d'administrer un médicament par voie intraveineuse après une perfusion de chlorure de potassium ?",
+      "optionA": "5 minutes",
+      "optionB": "10 minutes",
+      "optionC": "15 minutes",
+      "optionD": "30 minutes",
+      "correctAnswer": "D",
+      "explanation": "Un délai de 30 minutes est nécessaire après l'administration de chlorure de potassium pour éviter les interactions et les effets indésirables."
+    },
+    {
+      "question": "Quelle est la technique correcte pour changer un pansement sur une plaie infectée ?",
+      "optionA": "Retirer le pansement d'un seul mouvement pour ne pas contaminer l'environnement",
+      "optionB": "Porter des gants non stériles car la plaie est déjà infectée",
+      "optionC": "Commencer par la zone la plus propre pour aller vers la zone la plus contaminée",
+      "optionD": "Ne pas porter de masque si la plaie n'est purulente",
+      "correctAnswer": "C",
+      "explanation": "Le changement de pansement doit se faire de la zone la plus propre vers la zone la plus contaminée pour éviter la propagation des micro-organismes."
+    },
+    {
+      "question": "Quelle est la concentration en oxygène administrée lors d'une réanimation cardiopulmonaire (RCR) standard ?",
+      "optionA": "100%",
+      "optionB": "50%",
+      "optionC": "24%",
+      "optionD": "21%",
+      "correctAnswer": "A",
+      "explanation": "La RCR standard utilise de l'oxygène à 100% pour maximiser l'oxygénation cérébrale et myocardique."
+    },
+    {
+      "question": "Quelle est la durée d'efficacité d'une solution antiseptique après ouverture d'un flacon multidose ?",
+      "optionA": "24 heures",
+      "optionB": "48 heures",
+      "optionC": "7 jours",
+      "optionD": "28 jours",
+      "correctAnswer": "D",
+      "explanation": "Un flacon multidose d'antiseptique conserve son efficacité pendant 28 jours après ouverture selon les recommandations."
+    },
+    {
+      "question": "Quelle est la technique correcte pour administrer un médicament par voie sous-cutanée ?",
+      "optionA": "Injecter à angle droit (90°)",
+      "optionB": "Injecter à angle aigu (15-30°)",
+      "optionC": "Injecter à angle obtus (45°)",
+      "optionD": "Injecter après avoir chauffé la zone",
+      "correctAnswer": "C",
+      "explanation": "La voie sous-cutanée nécessite un angle de 45° pour atteindre le tissu sous-cutané sans risquer d'atteindre le muscle."
+    },
+    {
+      "question": "Quelle est la principale surveillance requise lors d'une perfusion de morphine ?",
+      "optionA": "Pression artérielle",
+      "optionB": "Fréquence respiratoire",
+      "optionC": "Température corporelle",
+      "optionD": "Diurèse",
+      "correctAnswer": "B",
+      "explanation": "La morphine peut déprimer le système respiratoire, nécessitant une surveillance régulière de la fréquence respiratoire."
+    },
+    {
+      "question": "Quelle est la durée minimale de massage cardiaque lors d'une RCR ?",
+      "optionA": "2 minutes",
+      "optionB": "5 minutes",
+      "optionC": "10 minutes",
+      "optionD": "15 minutes",
+      "correctAnswer": "B",
+      "explanation": "Le massage cardiaque doit être poursuivi sans interruption pendant au moins 5 minutes avant toute décision d'arrêt."
+    },
+    {
+      "question": "Quelle est la technique correcte pour mesurer la pression artérielle ?",
+      "optionA": "Le brassard doit être placé au niveau du coude avec le centre sur l'artère brachiale",
+      "optionB": "Le brassard doit être placé sur le bras avec le centre sur l'artère radiale",
+      "optionC": "Le brassard doit être placé sur le poignet",
+      "optionD": "Le brassard doit être placé sur la cuisse",
+      "correctAnswer": "A",
+      "explanation": "Le brassard doit être positionné au niveau du coude, centré sur l'artère brachiale pour une mesure précise."
+    },
+    {
+      "question": "Quelle est la durée de conservation d'une perfusion en cours dans une chambre d'hôpital ?",
+      "optionA": "4 heures",
+      "optionB": "12 heures",
+      "optionC": "24 heures",
+      "optionD": "48 heures",
+      "correctAnswer": "C",
+      "explanation": "Une perfusion en cours doit être utilisée dans les 24 heures suivant sa préparation pour garantir la stérilité."
+    },
+    {
+      "question": "Quelle est la technique correcte pour réaliser une injection intraveineuse ?",
+      "optionA": "Piquer dans la veine avec un angle de 15°",
+      "optionB": "Piquer dans la veine avec un angle de 90°",
+      "optionC": "Piquer à côté de la veine et rechercher un reflux de sang",
+      "optionD": "Piquer dans le tissu avoisinant la veine",
+      "correctAnswer": "B",
+      "explanation": "L'injection intraveineuse se fait avec un angle de 90° pour une pénétration directe dans la veine."
+    },
+    {
+      "question": "Quelle est la fréquence de changement d'un cathéter veineux central pour prévenir les infections ?",
+      "optionA": "Tous les 3 jours",
+      "optionB": "Tous les 7 jours",
+      "optionC": "Tous les 14 jours",
+      "optionD": "Tous les 21 jours",
+      "correctAnswer": "B",
+      "explanation": "Les cathéters veineux centraux doivent être changés tous les 7 jours pour réduire le risque d'infection."
+    },
+    {
+      "question": "Quelle est la technique correcte pour réaliser une désinfection des mains avant une injection ?",
+      "optionA": "Se frictionner les mains pendant 30 secondes avec une solution hydroalcoolique",
+      "optionB": "Se laver les mains avec du savon et de l'eau pendant 20 secondes",
+      "optionC": "Porter des gants uniquement si les mains sont visiblement sales",
+      "optionD": "Se frictionner les mains uniquement avec de l'eau tiède",
+      "correctAnswer": "A",
+      "explanation": "La friction hydroalcoolique doit durer au moins 30 secondes pour être efficace."
+    },
+    {
+      "question": "Quelle est la surveillance principale lors d'une perfusion de gentamicine ?",
+      "optionA": "Pression artérielle",
+      "optionB": "Fréquence cardiaque",
+      "optionC": "Créatininémie",
+      "optionD": "Saturation en oxygène",
+      "correctAnswer": "C",
+      "explanation": "La gentamicine est néphrotoxique, nécessitant une surveillance de la créatininémie pour détecter une insuffisance rénale."
+    },
+    {
+      "question": "Quelle est la durée minimale de compression après une ponction veineuse ?",
+      "optionA": "1 minute",
+      "optionB": "2 minutes",
+      "optionC": "3 minutes",
+      "optionD": "5 minutes",
+      "correctAnswer": "D",
+      "explanation": "Une compression d'au moins 5 minutes est nécessaire après une ponction veineuse pour prévenir l'hématome."
+    },
+    {
+      "question": "Quelle est la technique correcte pour administrer un médicament par voie intradermique ?",
+      "optionA": "Injecter à angle droit (90°) avec une aiguille fine",
+      "optionB": "Injecter à angle aigu (15-30°) avec une aiguille fine",
+      "optionC": "Injecter à angle obtus (45°) avec une aiguille épaisse",
+      "optionD": "Injecter après avoir chauffé la zone",
+      "correctAnswer": "B",
+      "explanation": "La voie intradermique nécessite un angle de 15-30° et une aiguille fine pour créer une bulle sous-cutanée."
+    },
+    {
+      "question": "Quelle est la durée de conservation d'une solution de perfusion en verre non ouvert ?",
+      "optionA": "6 mois",
+      "optionB": "1 an",
+      "optionC": "2 ans",
+      "optionD": "5 ans",
+      "correctAnswer": "C",
+      "explanation": "Les solutions de perfusion en verre non ouvert peuvent être conservées jusqu'à 2 ans selon leur composition et leur conditionnement."
+    },
+    {
+      "question": "Quelle est la principale différence entre l'asepsie et l'antisepsie en pratique infirmière ?",
+      "optionA": "L'asepsie concerne la désinfection des surfaces, l'antisepsie celle des tissus vivants",
+      "optionB": "L'asepsie est appliquée sur les patients, l'antisepsie sur le matériel médical",
+      "optionC": "L'asepsie prévient la contamination, l'antisepsie traite les infections établies",
+      "optionD": "L'asepsie utilise des produits chimiques, l'antisepsie utilise la chaleur",
+      "correctAnswer": "A",
+      "explanation": "L'asepsie concerne les méthodes préventives pour éliminer les micro-organismes des surfaces et du matériel médical, tandis que l'antisepsie implique l'application d'agents antimicrobiens sur les tissus vivants pour prévenir ou traiter les infections."
+    },
+    {
+      "question": "Lors d'une injection intramusculaire, quelle est la technique correcte pour prévenir la nécrose tissulaire ?",
+      "optionA": "Masser le site d'injection après l'injection",
+      "optionB": "Utiliser une aiguille plus longue pour atteindre le muscle",
+      "optionC": "Effectuer un test cutané avant l'injection",
+      "optionD": "Tourner le site d'injection avec un chiffon imbibé d'alcool",
+      "correctAnswer": "B",
+      "explanation": "L'utilisation d'une aiguille de longueur appropriée assure une injection dans le muscle et évite le risque de nécrose tissulaire en évitant le dépôt du médicament dans le tissu sous-cutané."
+    },
+    {
+      "question": "Quelle est la complication la plus fréquente lors d'une perfusion intraveineuse ?",
+      "optionA": "Embolie gazeuse",
+      "optionB": "Infection au site de ponction",
+      "optionC": "Phlébite",
+      "optionD": "Occlusion de la veine",
+      "correctAnswer": "C",
+      "explanation": "La phlébite, inflammation de la paroi veineuse, est la complication la plus fréquente des perfusions intraveineuses, souvent due à l'irritation chimique du médicament ou à la manipulation de la veine."
+    },
+    {
+      "question": "Quelle constante vitale est le meilleur indicateur de la perfusion tissulaire en situation de choc ?",
+      "optionA": "Pression artérielle",
+      "optionB": "Fréquence cardiaque",
+      "optionC": "Saturation en oxygène",
+      "optionD": "Diurèse",
+      "correctAnswer": "D",
+      "explanation": "La diurèse est un indicateur fiable de la perfusion rénale et donc de la perfusion tissulaire globale. En situation de choc, une diurèse < 0,5 mL/kg/h indique une hypoperfusion tissulaire."
+    },
+    {
+      "question": "Quel médicament ne doit JAMAIS être administré par voie intramusculaire chez un patient sous anticoagulants ?",
+      "optionA": "Insuline",
+      "optionB": "Antibiotique à large spectre",
+      "optionC": "Antalgique",
+      "optionD": "Vaccin",
+      "correctAnswer": "A",
+      "explanation": "L'insuline par voie intramusculaire chez un patient sous anticoagulants augmente considérablement le risque d'hématome au site d'injection en raison de l'effet anticoagulant."
+    },
+    {
+      "question": "Quel est le délai maximal recommandé entre la préparation d'une perfusion et son administration pour minimiser le risque de contamination ?",
+      "optionA": "1 heure",
+      "optionB": "2 heures",
+      "optionC": "4 heures",
+      "optionD": "24 heures",
+      "correctAnswer": "C",
+      "explanation": "Les perfusions doivent être préparées et administrées dans un délai maximal de 4 heures pour minimiser le risque de croissance bactérienne, surtout si elles ne contiennent pas de conservateur."
+    },
+    {
+      "question": "Quelle est la technique correcte pour mesurer la pression artérielle chez un patient en décubitus latéral ?",
+      "optionA": "Placer le brassard au niveau de l'épaule la plus haute",
+      "optionB": "Placer le brassard au niveau de l'épaule la plus basse",
+      "optionC": "Placer le brassard au niveau de l'artère radiale la plus accessible",
+      "optionD": "Changer le patient en décubitus dorsal",
+      "correctAnswer": "B",
+      "explanation": "Lors de la mesure de la pression artérielle chez un patient en décubitus latéral, le brassard doit être placé au niveau de l'épaule la plus basse pour éviter une surestimation de la pression due à la différence de pression hydrostatique."
+    },
+    {
+      "question": "Quelle est la voie d'administration la plus appropriée pour un médicule irritant pour les veines ?",
+      "optionA": "Intraveineuse directe",
+      "optionB": "Intramusculaire",
+      "optionC": "Sous-cutanée",
+      "optionD": "Intraveineuse centrale",
+      "correctAnswer": "D",
+      "explanation": "Les médicaments irritants pour les veines doivent être administrés par voie intraveineuse centrale pour minimiser le risque de phlébite et de nécrose tissulaire en cas d'extravasation."
+    },
+    {
+      "question": "Quelle est la température corporelle normale chez un adulte ?",
+      "optionA": "35,5-36,5°C",
+      "optionB": "36-37,5°C",
+      "optionC": "37-38,5°C",
+      "optionD": "38-39,5°C",
+      "correctAnswer": "B",
+      "explanation": "La température corporelle normale chez un adulte se situe généralement entre 36°C et 37,5°C, avec une légère variation diurne et individuelle."
+    },
+    {
+      "question": "Quel est le principe fondamental du 'droit à l'information' dans le cadre des 5 droits du patient ?",
+      "optionA": "Le patient doit recevoir toutes les informations disponibles sur son état",
+      "optionB": "Le patient doit recevoir des informations adaptées à sa compréhension",
+      "optionC": "Le patient doit être informé uniquement des risques graves",
+      "optionD": "Le patient peut refuser d'être informé",
+      "correctAnswer": "B",
+      "explanation": "Le principe du droit à l'implique que le patient doit recevoir des informations claires, adaptées à sa compréhension et à son niveau d'éducation, pour pouvoir prendre des décisions éclairées."
+    },
+    {
+      "question": "Quelle est la compression recommandée lors de la réanimation cardiopulmonaire (RCR) chez l'adulte ?",
+      "optionA": "Compression à une profondeur de 2-3 cm",
+      "optionB": "Compression à une profondeur de 4-5 cm",
+      "optionC": "Compression à une profondeur de 5-6 cm",
+      "optionD": "Compression à une profondeur de 7-8 cm",
+      "correctAnswer": "C",
+      "explanation": "Les recommandations actuelles pour la RCR chez l'adulte préconisent des compressions d'une profondeur de 5 à 6 cm, soit environ 5-6 cm de pénétration du sternum."
+    },
+    {
+      "question": "Quelle est la fréquence recommandée pour les compressions thoraciques lors d'une RCR standard ?",
+      "optionA": "60-80 compressions par minute",
+      "optionB": "80-100 compressions par minute",
+      "optionC": "100-120 compressions par minute",
+      "optionD": "120-140 compressions par minute",
+      "correctAnswer": "C",
+      "explanation": "La fréquence recommandée pour les compressions thoraciques lors d'une RCR standard est de 100 à 120 compressions par minute pour optimiser la circulation sanguine cérébrale."
+    },
+    {
+      "question": "Quel type de pansement est le plus approprié pour une plaie avec exsudat modéré ?",
+      "optionA": "Pansement hydrocolloïde",
+      "optionB": "Pansement alginate",
+      "optionC": "Pansement hydrofibre",
+      "optionD": "Pansement film",
+      "correctAnswer": "C",
+      "explanation": "Les pansements hydrofibres sont conçus pour absorber les exsudats modérés à importants tout en maintenant un environnement humide idéal pour la cicatrisation."
+    },
+    {
+      "question": "Quelle est la durée de conservation maximale d'une perfusion préparée en pharmacie hospitalière ?",
+      "optionA": "12 heures",
+      "optionB": "24 heures",
+      "optionC": "48 heures",
+      "optionD": "72 heures",
+      "correctAnswer": "B",
+      "explanation": "Les perfusions préparées en pharmacie hospitalière doivent être administrées dans un délai maximal de 24 heures après leur préparation pour garantir leur stérilité et leur efficacité."
+    },
+    {
+      "question": "Quel est le mécanisme d'action des anticoagulants de type héparine ?",
+      "optionA": "Inhibition de la synthèse de la vitamine K",
+      "optionB": "Activation de l'antithrombine III",
+      "optionC": "Inhibition directe du facteur Xa",
+      "optionD": "Chélation du calcium",
+      "correctAnswer": "B",
+      "explanation": "L'héparine agit en activant l'antithrombine III, qui inhibe alors les facteurs de la coagulation, notamment le facteur Xa et la thrombine."
+    },
+    {
+      "question": "Quelle est la durée minimale de massage cardiaque à effectuer avant d'interrompre pour un choc électrique lors d'un arrêt cardiaque ?",
+      "optionA": "30 secondes",
+      "optionB": "1 minute",
+      "optionC": "2 minutes",
+      "optionD": "5 minutes",
+      "correctAnswer": "C",
+      "explanation": "Les recommandations actuelles préconisent d'effectuer un massage cardiaque ininterrompu pendant au moins 2 minutes avant de procéder à un choc électrique lors d'un arrêt cardiaque."
+    },
+    {
+      "question": "Quel est le principe du 'droit au refus de traitement' dans le cadre des 5 droits du patient ?",
+      "optionA": "Le patient peut refuser tout traitement sans conséquence",
+      "optionB": "Le patient peut refuser un traitement après en avoir compris les conséquences",
+      "optionC": "Le patient ne peut refuser un traitement vital",
+      "optionD": "Le refus de traitement doit être documenté par un médecin",
+      "correctAnswer": "B",
+      "explanation": "Le patient a le droit de refuser un traitement après en avoir compris les conséquences, même si ce refus met sa vie en danger, à condition qu'il soit capable de discernement."
+    },
+    {
+      "question": "Quelle est la voie d'administration la plus rapide pour un médicament d'urgence ?",
+      "optionA": "Oral",
+      "optionB": "Sous-cutanée",
+      "optionC": "Intraveineuse",
+      "optionD": "Intramusculaire",
+      "correctAnswer": "C",
+      "explanation": "La voie intraveineuse assure la distribution la plus rapide du médicament dans l'organisme, car le produit est directement injecté dans la circulation sanguine sans passer par les barrières digestives ou musculaires."
+    },
+    {
+      "question": "Quelle est la technique correcte pour mesurer la fréquence respiratoire ?",
+      "optionA": "Compter les mouvements thoraciques pendant 15 secondes et multiplier par 4",
+      "optionB": "Observer discrètement le patient pendant 1 minute sans lui dire",
+      "optionC": "Demander au patient de respirer normalement pendant 30 secondes",
+      "optionD": "Placer une main sur le thorax du patient pour sentir les mouvements",
+      "correctAnswer": "B",
+      "explanation": "La fréquence respiratoire doit être mesurée discrètement sans que le patient ne s'en rende compte, car la conscience de la mesure modifie généralement le rythme respiratoire. L'observation dure 1 minute pour une précision optimale."
+    }
+  ],
+  "category": "Universitaire",
+  "subcategory": "soins-infirmiers",
+  "description": "Soins, asepsie, pharmacologie, prise en charge du patient."
+}

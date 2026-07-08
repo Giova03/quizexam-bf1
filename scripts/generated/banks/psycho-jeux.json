@@ -1,0 +1,777 @@
+{
+  "bankKey": "psycho-jeux",
+  "title": "Psychotechnique - Jeux & Mots",
+  "description": "Rubik's cube, Scrabble, anagrammes, mots croisés, énigmes verbales.",
+  "category": "Psychotechnique",
+  "subcategory": "Jeux & Mots",
+  "icon": "Gamepad2",
+  "color": "amber",
+  "level": "TOUS",
+  "questions": [
+    {
+      "question": "Combien de petites facettes (cubies) comporte un Rubik's cube 3x3 ?",
+      "optionA": "26 (8 coins + 12 arêtes + 6 centres)",
+      "optionB": "27",
+      "optionC": "54",
+      "optionD": "9",
+      "correctAnswer": "A",
+      "explanation": "Un Rubik's cube 3x3 a 26 cubies visibles (8 coins, 12 arêtes, 6 centres). Le 27e est le noyau central invisible."
+    },
+    {
+      "question": "Combien de couleurs a un Rubik's cube standard ?",
+      "optionA": "6 (blanc, jaune, rouge, orange, bleu, vert)",
+      "optionB": "4",
+      "optionC": "8",
+      "optionD": "5",
+      "correctAnswer": "A",
+      "explanation": "6 couleurs, une par face: blanc, jaune, rouge, orange, bleu, vert."
+    },
+    {
+      "question": "Au Scrabble français, combien de points vaut la lettre K ?",
+      "optionA": "10",
+      "optionB": "8",
+      "optionC": "5",
+      "optionD": "4",
+      "correctAnswer": "A",
+      "explanation": "K vaut 10 points au Scrabble français (lettre rare)."
+    },
+    {
+      "question": "Au Scrabble français, combien de points vaut la lettre E ?",
+      "optionA": "1",
+      "optionB": "2",
+      "optionC": "3",
+      "optionD": "0",
+      "correctAnswer": "A",
+      "explanation": "E vaut 1 point (lettre la plus fréquente en français)."
+    },
+    {
+      "question": "Au Scrabble français, quelle lettre vaut le plus de points ?",
+      "optionA": "W et Y (10 points chacun)",
+      "optionB": "K",
+      "optionC": "J",
+      "optionD": "Q",
+      "correctAnswer": "A",
+      "explanation": "W et Y valent 10 points, tout comme K. Mais W et Y sont les plus rares."
+    },
+    {
+      "question": "Au Scrabble, combien de jetons y a-t-il au total dans la version française ?",
+      "optionA": "102",
+      "optionB": "100",
+      "optionC": "104",
+      "optionD": "108",
+      "correctAnswer": "A",
+      "explanation": "La version française du Scrabble compte 102 jetons."
+    },
+    {
+      "question": "Quel mot peut-on former avec les lettres CHIEN (anagramme) ?",
+      "optionA": "NICHE",
+      "optionB": "CHENE",
+      "optionC": "CHINO",
+      "optionD": "CHENE",
+      "correctAnswer": "A",
+      "explanation": "CHIEN → NICHE (anagramme: mêmes lettres réarrangées)."
+    },
+    {
+      "question": "Quel mot peut-on former avec les lettres POSTE (anagramme) ?",
+      "optionA": "POETS (non), TOPEST (non) → POTES",
+      "optionB": "POTIN",
+      "optionC": "POST",
+      "optionD": "POTAGE",
+      "correctAnswer": "A",
+      "explanation": "POSTE → POTES (anagramme)."
+    },
+    {
+      "question": "Quel est le palindrome le plus connu en français ?",
+      "optionA": "Esope reste ici et se repose",
+      "optionB": "Engage le jeu que je le gagne",
+      "optionC": "À Cuba, Anna a bu ça",
+      "optionD": "Tous ces exemples",
+      "correctAnswer": "D",
+      "explanation": "Tous ces exemples sont des palindromes (se lisent dans les deux sens)."
+    },
+    {
+      "question": "Combien de mouvements minimum faut-il pour résoudre un Rubik's cube 3x3 ?",
+      "optionA": "20 (le nombre de Dieu)",
+      "optionB": "15",
+      "optionC": "25",
+      "optionD": "30",
+      "correctAnswer": "A",
+      "explanation": "Le 'nombre de Dieu' est 20: n'importe quelle configuration peut être résolue en 20 mouvements maximum."
+    },
+    {
+      "question": "Au Rubik's cube, quelle est la couleur opposée au blanc (standard) ?",
+      "optionA": "Jaune",
+      "optionB": "Vert",
+      "optionC": "Rouge",
+      "optionD": "Bleu",
+      "correctAnswer": "A",
+      "explanation": "Blanc opposé à jaune, rouge opposé à orange, bleu opposé à vert."
+    },
+    {
+      "question": "Quel mot peut-on former avec les lettres MARINE ?",
+      "optionA": "RAMIEN (non) → RANIME",
+      "optionB": "MARIN",
+      "optionC": "MARE",
+      "optionD": "MAIN",
+      "correctAnswer": "A",
+      "explanation": "MARINE → RANIME (anagramme)."
+    },
+    {
+      "question": "Au Scrabble, combien de fois apparaît la lettre A dans la version française ?",
+      "optionA": "9",
+      "optionB": "10",
+      "optionC": "8",
+      "optionD": "7",
+      "correctAnswer": "A",
+      "explanation": "La lettre A apparaît 9 fois dans la version française du Scrabble."
+    },
+    {
+      "question": "Qu'est-ce qu'un mot-valise ?",
+      "optionA": "Un mot formé en fusionnant deux mots",
+      "optionB": "Un mot court",
+      "optionC": "Un mot étranger",
+      "optionD": "Un mot rare",
+      "correctAnswer": "A",
+      "explanation": "Un mot-valise fusionne deux mots: ex: franglais (français+anglais), informatique (information+automatique)."
+    },
+    {
+      "question": "Quel mot peut-on former avec les lettres GARE ?",
+      "optionA": "RAGE",
+      "optionB": "GARAGE",
+      "optionC": "GARDER",
+      "optionD": "GARER",
+      "correctAnswer": "A",
+      "explanation": "GARE → RAGE (anagramme)."
+    },
+    {
+      "question": "Combien de combinaisons possibles a un Rubik's cube 3x3 ?",
+      "optionA": "43 trillions (43×10¹⁸)",
+      "optionB": "1 million",
+      "optionC": "1 milliard",
+      "optionD": "1 trillion",
+      "correctAnswer": "A",
+      "explanation": "Le Rubik's cube 3x3 a environ 43×10¹⁸ combinaisons possibles."
+    },
+    {
+      "question": "Au Scrabble, que signifie le mot '_scrabble_' en anglais ?",
+      "optionA": "Griffer, fouiller",
+      "optionB": "Jouer",
+      "optionC": "Écrire",
+      "optionD": "Compter",
+      "correctAnswer": "A",
+      "explanation": "Scrabble signifie 'griffer' ou 'fouiller' en anglais."
+    },
+    {
+      "question": "Quel mot peut-on former avec les lettres TIRAGE ?",
+      "optionA": "GITERA (non) → AGITER, GITARE (non) → AGITER",
+      "optionB": "TIRER",
+      "optionC": "TIGE",
+      "optionD": "GARE",
+      "correctAnswer": "A",
+      "explanation": "TIRAGE → AGITER (anagramme)."
+    },
+    {
+      "question": "Au Rubik's cube, que signifie la notation F ?",
+      "optionA": "Face avant (Front)",
+      "optionB": "Face arrière",
+      "optionC": "Face droite",
+      "optionD": "Face gauche",
+      "correctAnswer": "A",
+      "explanation": "F = Front (face avant). R = Right, L = Left, U = Up, D = Down, B = Back."
+    },
+    {
+      "question": "Quel mot peut-on former avec les lettres LISTE ?",
+      "optionA": "LITEST (non) → STELIE (non) → LISÉTÉ (non) → SILET (non) → LUTIES (non) → LISÉTÉ (non) → aucune anagramme courante",
+      "optionB": "LIRE",
+      "optionC": "LIST",
+      "optionD": "LIT",
+      "correctAnswer": "A",
+      "explanation": "LISTE n'a pas d'anagramme courante en français. La réponse A indique qu'aucune anagramme simple n'existe."
+    },
+    {
+      "question": "Au Scrabble français, combien vaut la lettre J ?",
+      "optionA": "8",
+      "optionB": "10",
+      "optionC": "4",
+      "optionD": "5",
+      "correctAnswer": "A",
+      "explanation": "J vaut 8 points au Scrabble français."
+    },
+    {
+      "question": "Quel est le mot le plus long possible au Scrabble français (sans joker) ?",
+      "optionA": "OXYPÉRATIFS (11 lettres)",
+      "optionB": "ANTICONSTITUTIONNELLEMENT",
+      "optionC": "BONJOUR",
+      "optionD": "MAILLONS",
+      "correctAnswer": "A",
+      "explanation": "Les mots les plus longs au Scrabble français frôlent les 8-9 lettres en pratique, mais certains mots valides comme OXYPÉRATIFS font 11 lettres."
+    },
+    {
+      "question": "Quel mot peut-on former avec les lettres CHANT ?",
+      "optionA": "CHANT → N'AUCUN (non) → RIEN (non) → TACHE (non) → ANCHT (non) → aucune anagramme",
+      "optionB": "CANIF",
+      "optionC": "CHIEN",
+      "optionD": "CHAT",
+      "correctAnswer": "A",
+      "explanation": "CHANT n'a pas d'anagramme parfaite en français courant. La réponse A l'indique."
+    },
+    {
+      "question": "Au Rubik's cube, combien y a-t-il de coins (corner cubies) ?",
+      "optionA": "8",
+      "optionB": "6",
+      "optionC": "12",
+      "optionD": "4",
+      "correctAnswer": "A",
+      "explanation": "Il y a 8 coins (3 couleurs chacun) sur un Rubik's cube 3x3."
+    },
+    {
+      "question": "Au Rubik's cube, combien y a-t-il d'arêtes (edge cubies) ?",
+      "optionA": "12",
+      "optionB": "8",
+      "optionC": "6",
+      "optionD": "4",
+      "correctAnswer": "A",
+      "explanation": "Il y a 12 arêtes (2 couleurs chacune) sur un Rubik's cube 3x3."
+    },
+    {
+      "question": "Quel mot peut-on former avec les lettres TREIZE ?",
+      "optionA": "RETIZE (non) → aucune anagramme parfaite",
+      "optionB": "TROIS",
+      "optionC": "TREIZE",
+      "optionD": "TIZE",
+      "correctAnswer": "A",
+      "explanation": "TREIZE n'a pas d'anagramme parfaite en français. La réponse A l'indique."
+    },
+    {
+      "question": "Au Scrabble, que se passe-t-il quand on place un mot sur une case 'mot compte triple' ?",
+      "optionA": "Le score du mot est multiplié par 3",
+      "optionB": "Le mot rapporte 3 points",
+      "optionC": "Le mot est triple",
+      "optionD": "On perd 3 points",
+      "correctAnswer": "A",
+      "explanation": "Une case 'mot compte triple' multiplie par 3 le score total du mot placé."
+    },
+    {
+      "question": "Quel mot peut-on former avec les lettres GESTE ?",
+      "optionA": "GESTE → aucune anagramme simple",
+      "optionB": "GITE",
+      "optionC": "GESTES",
+      "optionD": "GESE",
+      "correctAnswer": "A",
+      "explanation": "GESTE n'a pas d'anagramme simple en français."
+    },
+    {
+      "question": "Combien de lettres a l'alphabet français ?",
+      "optionA": "26",
+      "optionB": "25",
+      "optionC": "27",
+      "optionD": "24",
+      "correctAnswer": "A",
+      "explanation": "L'alphabet français compte 26 lettres (A à Z)."
+    },
+    {
+      "question": "Quel mot peut-on former avec les lettres PARIS ?",
+      "optionA": "PRIAS (non) → SPRIA (non) → SPARI (non) → RAPIS (non) → AUCUNE → SPAIR (non) → PRIAS (non)",
+      "optionB": "PAR",
+      "optionC": "RIS",
+      "optionD": "PAI",
+      "correctAnswer": "A",
+      "explanation": "PARIS n'a pas d'anagramme parfaite en français standard."
+    },
+    {
+      "question": "Au Scrabble, combien de jokers (lettres blanches) y a-t-il ?",
+      "optionA": "2",
+      "optionB": "1",
+      "optionC": "3",
+      "optionD": "0",
+      "correctAnswer": "A",
+      "explanation": "Le Scrabble français contient 2 jokers (lettres blanches) qui valent 0 point."
+    },
+    {
+      "question": "Qu'est-ce qu'un lipogramme ?",
+      "optionA": "Un texte écrit sans une lettre précise",
+      "optionB": "Un poème",
+      "optionC": "Une devinette",
+      "optionD": "Un palindrome",
+      "correctAnswer": "A",
+      "explanation": "Un lipogramme est un texte qui omet délibérément une lettre (ex: 'La Disparition' de Perec sans la lettre E)."
+    },
+    {
+      "question": "Quel mot peut-on former avec les lettres AMOUR ?",
+      "optionA": "AMOUR → ROMAU (non) → MOURA (non) → MAOUR (non) → RUMAO (non) → aucune anagramme parfaite",
+      "optionB": "AMU",
+      "optionC": "MUR",
+      "optionD": "OUR",
+      "correctAnswer": "A",
+      "explanation": "AMOUR n'a pas d'anagramme parfaite en français standard."
+    },
+    {
+      "question": "Combien de lettres différentes a le mot ANTICONSTITUTIONNELLEMENT ?",
+      "optionA": "10 lettres différentes",
+      "optionB": "12",
+      "optionC": "8",
+      "optionD": "15",
+      "correctAnswer": "A",
+      "explanation": "ANTICONSTITUTIONNELLEMENT (25 lettres) contient les lettres A,C,E,I,L,M,N,O,T,U soit 10 lettres différentes."
+    },
+    {
+      "question": "Quel mot se cache dans l'anagramme RAGE ?",
+      "optionA": "GARE",
+      "optionB": "GARAGE",
+      "optionC": "RAGER",
+      "optionD": "RAGE",
+      "correctAnswer": "A",
+      "explanation": "RAGE → GARE (anagramme)."
+    },
+    {
+      "question": "Quel mot se cache dans l'anagramme OPÉRA ?",
+      "optionA": "PARÉO, POIRE (non, P/O/I/R/E)",
+      "optionB": "OPTER",
+      "optionC": "OR",
+      "optionD": "PAR",
+      "correctAnswer": "A",
+      "explanation": "OPÉRA → PARÉO (tissu) est une anagramme."
+    },
+    {
+      "question": "Au Rubik's cube, que signifie OLL ?",
+      "optionA": "Orient Last Layer (orienter la dernière face)",
+      "optionB": "Only Last Layer",
+      "optionC": "Order Last Layer",
+      "optionD": "Open Last Layer",
+      "correctAnswer": "A",
+      "explanation": "OLL = Orient Last Layer, étape qui oriente tous les cubies de la dernière face. La suivante est PLL (Permute Last Layer)."
+    },
+    {
+      "question": "Combien d'algorithmes différents existe-t-il pour l'OLL du Rubik's cube ?",
+      "optionA": "57",
+      "optionB": "21",
+      "optionC": "78",
+      "optionD": "100",
+      "correctAnswer": "A",
+      "explanation": "Il y a 57 cas OLL différents au Rubik's cube (orientations possibles de la dernière face)."
+    },
+    {
+      "question": "Au Scrabble, que signifie le bingo ?",
+      "optionA": "Placer 7 lettres en un seul coup (50 points bonus)",
+      "optionB": "Gagner la partie",
+      "optionC": "Faire un mot de 5 lettres",
+      "optionD": "Trouver un mot rare",
+      "correctAnswer": "A",
+      "explanation": "Un bingo (ou scrabble) consiste à poser ses 7 lettres d'un coup, ce qui rapporte un bonus de 50 points."
+    },
+    {
+      "question": "Quel mot se cache dans l'anagramme SOIN ?",
+      "optionA": "IONS, SION",
+      "optionB": "SON",
+      "optionC": "SOI",
+      "optionD": "SINON",
+      "correctAnswer": "A",
+      "explanation": "SOIN → IONS ou SION (anagrammes)."
+    },
+    {
+      "question": "Quel mot se cache dans l'anagramme VIE ?",
+      "optionA": "Aucune (VIE a 3 lettres: V-I-E, pas d'anagramme)",
+      "optionB": "VIF",
+      "optionC": "VUES",
+      "optionD": "VIL",
+      "correctAnswer": "A",
+      "explanation": "VIE (V-I-E) n'a pas d'anagramme en français standard."
+    },
+    {
+      "question": "Quel mot se cache dans l'anagramme MARI ?",
+      "optionA": "RIMAIT (non, 6 lettres) → RIAM (non) → RAMI (non) → AIMÉ (non, manque le R) → IRMA (prénom)",
+      "optionB": "MARS",
+      "optionC": "MAIRE",
+      "optionD": "MARIE",
+      "correctAnswer": "A",
+      "explanation": "MARI → IRMA (prénom) est la seule anagramme courante."
+    },
+    {
+      "question": "Au Rubik's cube, que signifie PLL ?",
+      "optionA": "Permute Last Layer (permuter la dernière face)",
+      "optionB": "Place Last Layer",
+      "optionC": "Push Last Layer",
+      "optionD": "Play Last Layer",
+      "correctAnswer": "A",
+      "explanation": "PLL = Permute Last Layer, dernière étape qui déplace les cubies de la dernière face sans changer leur orientation."
+    },
+    {
+      "question": "Combien de cas PLL existe-t-il au Rubik's cube ?",
+      "optionA": "21",
+      "optionB": "57",
+      "optionC": "10",
+      "optionD": "78",
+      "correctAnswer": "A",
+      "explanation": "Il y a 21 cas PLL différents au Rubik's cube."
+    },
+    {
+      "question": "Au Scrabble, combien de fois la lettre O apparaît-elle ?",
+      "optionA": "6",
+      "optionB": "5",
+      "optionC": "7",
+      "optionD": "8",
+      "correctAnswer": "A",
+      "explanation": "La lettre O apparaît 6 fois dans la version française du Scrabble."
+    },
+    {
+      "question": "Au Scrabble, combien de fois la lettre I apparaît-elle ?",
+      "optionA": "8",
+      "optionB": "6",
+      "optionC": "9",
+      "optionD": "7",
+      "correctAnswer": "A",
+      "explanation": "La lettre I apparaît 8 fois dans la version française du Scrabble."
+    },
+    {
+      "question": "Dans un Rubik's cube standard 3x3x3, combien de pièces se déplacent lorsque vous faites un quart de tour sur une face ?",
+      "optionA": "8",
+      "optionB": "9",
+      "optionC": "12",
+      "optionD": "16",
+      "correctAnswer": "B",
+      "explanation": "Un quart de tour sur une face déplace 9 pièces : 8 pièces de la seule face (4 coins et 4 arêtes) et 1 pièce centrale qui reste fixe mais change de position relative."
+    },
+    {
+      "question": "Au Scrabble, si vous avez les lettres A, E, I, O, U, R, S, T, quel mot de 7 lettres obtenez-vous avec le maximum de points en utilisant toutes les lettres ?",
+      "optionA": "ARTISTE",
+      "optionB": "TRUANDS",
+      "optionC": "RATITES",
+      "optionD": "URANIES",
+      "correctAnswer": "C",
+      "explanation": "RATITES est le seul mot utilisant toutes les lettres (A,E,I,O,U,R,S,T) et vaut 12 points (1+1+1+1+1+1+1+1+1+1+1+1)."
+    },
+    {
+      "question": "Quel est le plus long palindrome français composé uniquement de voyelles ?",
+      "optionA": "EIAIOIE",
+      "optionB": "AIEIAIAIE",
+      "optionC": "OUIOUIUO",
+      "optionD": "AIAIAIA",
+      "correctAnswer": "B",
+      "explanation": "AIEIAIAIE est le plus long palindrome français composé uniquement de voyelles, avec 9 lettres."
+    },
+    {
+      "question": "Dans un Rubik's cube, combien de configurations différentes sont possibles ?",
+      "optionA": "4.3 × 10^19",
+      "optionB": "8.9 × 10^21",
+      "optionC": "2.3 × 10^18",
+      "optionD": "1.1 × 10^20",
+      "correctAnswer": "A",
+      "explanation": "Un Rubik's cube standard 3x3x3 a environ 4.3 × 10^19 configurations différentes, ce qui représente environ 43 quintillions de combinaisons possibles."
+    },
+    {
+      "question": "Si vous formez un carré avec 9 mots de 3 lettres dans une grille de mots croisés, combien de mots devez-vous trouver pour compléter la grille ?",
+      "optionA": "6",
+      "optionB": "9",
+      "optionC": "12",
+      "optionD": "15",
+      "correctAnswer": "B",
+      "explanation": "Dans une grille de mots croisés carrée 3x3, vous devez trouver 9 mots : 3 mots horizontaux et 3 mots verticaux, chacun de 3 lettres."
+    },
+    {
+      "question": "Au Scrabble, quel mot peut être formé avec les lettres A, C, D, E, I, M, N, R en utilisant toutes les lettres ?",
+      "optionA": "CRIMINEL",
+      "optionB": "MACARONI",
+      "optionC": "MÉDICAL",
+      "optionD": "RADIANCE",
+      "correctAnswer": "A",
+      "explanation": "Seul CRIMINEL utilise toutes les lettres (A,C,D,E,I,M,N,R) et est un mot valide au Scrabble."
+    },
+    {
+      "question": "Quel est le plus petit nombre palindrome qui est aussi un carré parfait ?",
+      "optionA": "121",
+      "optionB": "484",
+      "optionC": "676",
+      "optionD": "10201",
+      "correctAnswer": "A",
+      "explanation": "121 est le plus petit nombre palindrome qui est aussi un carré parfait (11² = 121)."
+    },
+    {
+      "question": "Dans un Rubik's cube, combien de pièces arêtes y a-t-il ?",
+      "optionA": "8",
+      "optionB": "12",
+      "optionC": "6",
+      "optionD": "10",
+      "correctAnswer": "B",
+      "explanation": "Un Rubik's cube standard 3x3x3 a 12 pièces arêtes (une par arête du cube)."
+    },
+    {
+      "question": "Si vous avez les lettres E, L, M, N, O, R, S, T, quel mot de 8 lettres obtenez-vous avec le maximum de points en utilisant toutes les lettres ?",
+      "optionA": "MONSTRES",
+      "optionB": "ORMESLNT",
+      "optionC": "TREMLOES",
+      "optionD": "ORMELENTS",
+      "correctAnswer": "A",
+      "explanation": "Seul MONSTRES est un mot valide français utilisant toutes les lettres (E,L,M,N,O,R,S,T)."
+    },
+    {
+      "question": "Quel est le plus long palindrome français composé uniquement de consonnes ?",
+      "optionA": "RGRGRGRG",
+      "optionB": "RSTSRSTSR",
+      "optionC": "RSTSRSTS",
+      "optionD": "RSTSRTSR",
+      "correctAnswer": "C",
+      "explanation": "RSTSRSTS est le plus long palindrome français composé uniquement de consonnes, avec 8 lettres."
+    },
+    {
+      "question": "Dans une grille de mots croisés standard, combien de cases y a-t-il dans une grille 15x15 ?",
+      "optionA": "200",
+      "optionB": "225",
+      "optionC": "250",
+      "optionD": "300",
+      "correctAnswer": "B",
+      "explanation": "Une grille de mots croisés standard 15x15 contient 15 × 15 = 225 cases."
+    },
+    {
+      "question": "Au Scrabble, si vous avez les lettres A, B, E, I, L, N, R, quel mot de 7 lettres obtenez-vous avec le maximum de points en utilisant toutes les lettres ?",
+      "optionA": "BANALIER",
+      "optionB": "LIBRAINE",
+      "optionC": "RABINEL",
+      "optionD": "BRAILLE",
+      "correctAnswer": "D",
+      "explanation": "Seul BRAILLE est un mot valide français utilisant toutes les lettres (A,B,E,I,L,N,R)."
+    },
+    {
+      "question": "Quel est le plus petit nombre palindrome qui est aussi un cube parfait ?",
+      "optionA": "1331",
+      "optionB": "8008",
+      "optionC": "343",
+      "optionD": "121",
+      "correctAnswer": "A",
+      "explanation": "1331 est le plus petit nombre palindrome qui est aussi un cube parfait (11³ = 1331)."
+    },
+    {
+      "question": "Dans un Rubik's cube, combien de pièces centrales y a-t-il ?",
+      "optionA": "6",
+      "optionB": "8",
+      "optionC": "12",
+      "optionD": "4",
+      "correctAnswer": "A",
+      "explanation": "Un Rubik's cube standard 3x3x3 a 6 pièces centrales (une par face du cube), chacune fixe en position mais pouvant tourner."
+    },
+    {
+      "question": "Si vous avez les lettres A, C, E, I, L, M, N, R, quel mot de 8 lettres obtenez-vous avec le maximum de points en utilisant toutes les lettres ?",
+      "optionA": "CRIMINEL",
+      "optionB": "MARINELEC",
+      "optionC": "CALMINER",
+      "optionD": "RACEMINE",
+      "correctAnswer": "A",
+      "explanation": "Seul CRIMINEL est un mot valide français utilisant toutes les lettres (A,C,E,I,L,M,N,R)."
+    },
+    {
+      "question": "Quel est le plus long palindrome français composé de lettres toutes différentes ?",
+      "optionA": "ESPRITSSES",
+      "optionB": "RÉALISATION",
+      "optionC": "ÉLÉPHANT",
+      "optionD": "SAVAS",
+      "correctAnswer": "A",
+      "explanation": "ESPRITSSES est le plus long palindrome français composé de lettres toutes différentes, avec 10 lettres."
+    },
+    {
+      "question": "Dans une grille de mots croisés, combien de mots y a-t-il minimum dans une grille 5x5 ?",
+      "optionA": "5",
+      "optionB": "8",
+      "optionC": "10",
+      "optionD": "12",
+      "correctAnswer": "C",
+      "explanation": "Une grille de mots croisés 5x5 minimum contient 10 mots : 5 mots horizontaux et 5 mots verticaux."
+    },
+    {
+      "question": "Au Scrabble, si vous avez les lettres A, E, I, L, M, N, R, quel mot de 7 lettres obtenez-vous avec le maximum de points en utilisant toutes les lettres ?",
+      "optionA": "MARINELE",
+      "optionB": "ARMENIEN",
+      "optionC": "LIRAINE",
+      "optionD": "MINERALE",
+      "correctAnswer": "B",
+      "explanation": "Seul ARMENIEN est un mot valide français utilisant toutes les lettres (A,E,I,L,M,N,R)."
+    },
+    {
+      "question": "Quel est le plus petit nombre palindrome qui est aussi un nombre premier ?",
+      "optionA": "2",
+      "optionB": "11",
+      "optionC": "101",
+      "optionD": "131",
+      "correctAnswer": "A",
+      "explanation": "2 est le plus petit nombre palindrome qui est aussi un nombre premier."
+    },
+    {
+      "question": "Dans un Rubik's cube, combien de pièces coins y a-t-il ?",
+      "optionA": "6",
+      "optionB": "8",
+      "optionC": "12",
+      "optionD": "4",
+      "correctAnswer": "B",
+      "explanation": "Un Rubik's cube standard 3x3x3 a 8 pièces coins (une par coin du cube)."
+    },
+    {
+      "question": "Un Rubik's cube standard 3x3x3 a été mélangé aléatoirement. Quelle est la probabilité qu'il soit résolu en moins de 20 coups en utilisant l'algorithme de God's Number?",
+      "optionA": "1 sur 43 252 003 274 489 856 000",
+      "optionB": "1 sur 2 000",
+      "optionC": "1 sur 1 000 000",
+      "optionD": "1 sur 10 000 000",
+      "correctAnswer": "A",
+      "explanation": "Il existe exactement 43 252 003 274 489 856 000 configurations possibles d'un Rubik's cube 3x3x3, et seulement une est résolue. God's Number est 20, ce qui signifie que n'importe quelle configuration peut être résolue en 20 coups ou moins."
+    },
+    {
+      "question": "Dans une partie de Scrabble, vous avez les lettres A, E, I, O, U, X, Z. Combien de mots de 7 lettres différents pouvez-vous former avec ces lettres sans répéter de lettre?",
+      "optionA": "0",
+      "optionB": "6",
+      "optionC": "12",
+      "optionD": "24",
+      "correctAnswer": "A",
+      "explanation": "Avec ces lettres, il est impossible de former un mot valide de 7 lettres en français. Les mots valides comme 'AIOUEUX' n'existent pas, et la combinaison 'ZOXIAEU' n'est pas un mot."
+    },
+    {
+      "question": "Quel est le nombre minimal de lettres à déplacer pour transformer le palindrome 'ELLE' en 'LELE'?",
+      "optionA": "0",
+      "optionB": "1",
+      "optionC": "2",
+      "optionD": "3",
+      "correctAnswer": "B",
+      "explanation": "Il suffit de déplacer la première 'E' à la fin pour transformer 'ELLE' en 'LELE'. C'est une seule opération de déplacement."
+    },
+    {
+      "question": "Dans une grille de mots croisés, un mot horizontal de 5 lettres croise un mot vertical de 5 lettres. Si le mot horizontal est 'RIVER' et la lettre de croisement est la troisième lettre de chaque mot, quel est le mot vertical si le mot complet est 'REVERE'?",
+      "optionA": "REVERE",
+      "optionB": "REVIVE",
+      "optionC": "REPUTE",
+      "optionD": "REPOSE",
+      "correctAnswer": "A",
+      "explanation": "Le mot vertical est 'REVERE' car la troisième lettre 'V' de 'RIVER' croise la troisième lettre 'V' de 'REVERE'."
+    },
+    {
+      "question": "Quel est le plus grand palindrome en français qui soit aussi un carré numérique (un nombre qui est le carré d'un autre nombre)?",
+      "optionA": "698896",
+      "optionB": "69696",
+      "optionC": "12321",
+      "optionD": "10201",
+      "correctAnswer": "A",
+      "explanation": "698896 est un palindrome (se lit à l'identique dans les deux sens) et est le carré de 836 (836² = 698896). C'est le plus grand palindrome carré numérique en français."
+    },
+    {
+      "question": "Dans une partie de Scrabble, vous avez les lettres A, B, C, D, E, F, G. Combien de mots de 3 lettres différents pouvez-vous former avec ces lettres sans répéter de lettre?",
+      "optionA": "210",
+      "optionB": "35",
+      "optionC": "84",
+      "optionD": "120",
+      "correctAnswer": "B",
+      "explanation": "Le nombre de combinaisons de 3 lettres parmi 7 est calculé par C(7,3) = 7!/(3!×4!) = 35. Cependant, seules certaines de ces combinaisons forment des mots valides en français."
+    },
+    {
+      "question": "Un Rubik's cube a été résolu en 18 coups. Que peut-on dire de sa configuration initiale?",
+      "optionA": "Elle était dans l'état résolu",
+      "optionB": "Elle était à une distance de God's Number",
+      "optionC": "Elle était dans une position impossible",
+      "optionD": "Elle était nécessairement dans une position symétrique",
+      "correctAnswer": "B",
+      "explanation": "God's Number pour un Rubik's cube 3x3x3 est 20, ce qui signifie que n'importe quelle configuration peut être résolue en 20 coups ou moins. Une résolution en 18 coups indique que la configuration initiale était à une distance de 18 coups de la résolution."
+    },
+    {
+      "question": "Quel mot français peut être formé en réarrangeant les lettres de 'ANALOGIE'?",
+      "optionA": "LOGANIE",
+      "optionB": "GALOISE",
+      "optionC": "AGONAL",
+      "optionD": "LOGIQUE",
+      "correctAnswer": "C",
+      "explanation": "AGONAL est un mot valide en français qui peut être formé en réarrangeant les lettres de 'ANALOGIE'. Les autres options ne sont pas des anagrammes valides."
+    },
+    {
+      "question": "Dans une grille de mots croisés, un mot horizontal de 4 lettres croise un mot vertical de 4 lettres. Si le mot horizontal est 'CUBE' et la lettre de croisement est la deuxième lettre de chaque mot, quel est le mot vertical si le mot complet est 'ACIDE'?",
+      "optionA": "ACIDE",
+      "optionB": "AGILE",
+      "optionC": "ABLEU",
+      "optionD": "AVALE",
+      "correctAnswer": "A",
+      "explanation": "Le mot vertical est 'ACIDE' car la deuxième lettre 'U' de 'CUBE' croise la deuxième lettre 'C' de 'ACIDE'."
+    },
+    {
+      "question": "Quel est le plus long palindrome en français connu?",
+      "optionA": "Élu par cette crapule",
+      "optionB": "La mariée ira mal",
+      "optionC": "Tu l'as trop écrasé César ce Port-Salut",
+      "optionD": "Ésothélame de l'améthoses",
+      "correctAnswer": "C",
+      "explanation": "'Tu l'as trop écrasé César ce Port-Salut' est l'un des plus longs palindromes en français connu, avec 25 lettres."
+    },
+    {
+      "question": "Dans une partie de Scrabble, vous avez les lettres A, A, B, C, D, E, F. Combien de mots de 4 lettres différents pouvez-vous former avec ces lettres en utilisant au plus deux 'A'?",
+      "optionA": "15",
+      "optionB": "30",
+      "optionC": "60",
+      "optionD": "120",
+      "correctAnswer": "A",
+      "explanation": "Le nombre de combinaisons est calculé en considérant les cas avec 0, 1 ou 2 'A'. Cependant, seules certaines de ces combinaisons forment des mots valides en français."
+    },
+    {
+      "question": "Un Rubik's cube a été mélangé en effectuant 15 rotations de 90° sur les axes. Que peut-on dire de sa configuration?",
+      "optionA": "Elle est résolue",
+      "optionB": "Elle est à une distance de 15 coups de la résolution",
+      "optionC": "Elle est dans une position impossible",
+      "optionD": "Elle est nécessairement dans une position symétrique",
+      "correctAnswer": "B",
+      "explanation": "Chaque rotation de 90° compte comme un coup. Une séquence de 15 rotations signifie que le cube est à une distance de 15 coups de la résolution."
+    },
+    {
+      "question": "Quel mot français peut être formé en réarrangeant les lettres de 'SCIENCE'?",
+      "optionA": "CINÉASTE",
+      "optionB": "INCISES",
+      "optionC": "SCÈNE",
+      "optionD": "INSECTE",
+      "correctAnswer": "B",
+      "explanation": "INCISES est un mot valide en français qui peut être formé en réarrangeant les lettres de 'SCIENCE'. Les autres options ne sont pas des anagrammes valides."
+    },
+    {
+      "question": "Dans une grille de mots croisés, un mot horizontal de 6 lettres croise un mot vertical de 6 lettres. Si le mot horizontal est 'RUBIKS' et la lettre de croisement est la quatrième lettre de chaque mot, quel est le mot vertical si le mot complet est 'BREVET'?",
+      "optionA": "BREVET",
+      "optionB": "BRANET",
+      "optionC": "BROUET",
+      "optionD": "BRISET",
+      "correctAnswer": "A",
+      "explanation": "Le mot vertical est 'BREVET' car la quatrième lettre 'I' de 'RUBIKS' croise la quatrième lettre 'E' de 'BREVET'."
+    },
+    {
+      "question": "Quel est le plus grand nombre premier palindrome en français?",
+      "optionA": "929",
+      "optionB": "919",
+      "optionC": "999",
+      "optionD": "989",
+      "correctAnswer": "B",
+      "explanation": "919 est un nombre premier palindrome. 929 est aussi un nombre premier palindrome, mais 919 est le plus petit des deux. 999 et 989 ne sont pas premiers."
+    },
+    {
+      "question": "Dans une partie de Scrabble, vous avez les lettres A, B, C, D, E, F, G. Combien de mots de 4 lettres différents pouvez-vous former avec ces lettres en utilisant chaque lettre exactement une fois?",
+      "optionA": "840",
+      "optionB": "210",
+      "optionC": "35",
+      "optionD": "24",
+      "correctAnswer": "A",
+      "explanation": "Le nombre de permutations de 4 lettres parmi 7 est calculé par P(7,4) = 7!/(7-4)! = 7×6×5×4 = 840. Cependant, seules certaines de ces permutations forment des mots valides en français."
+    },
+    {
+      "question": "Un Rubik's cube a été résolu en 22 coups. Que peut-on dire de sa configuration initiale?",
+      "optionA": "Elle était dans l'état résolu",
+      "optionB": "Elle était à une distance de God's Number",
+      "optionC": "Elle était dans une position impossible",
+      "optionD": "Elle était nécessairement dans une position symétrique",
+      "correctAnswer": "C",
+      "explanation": "God's Number pour un Rubik's cube 3x3x3 est 20, ce qui signifie que n'importe quelle configuration peut être résolue en 20 coups ou moins. Une résolution en 22 coups indique que la configuration initiale était dans une position impossible."
+    },
+    {
+      "question": "Quel mot français peut être formé en réarrangeant les lettres de 'MÉTROPOLE'?",
+      "optionA": "PELOTEUR",
+      "optionB": "POMMELOT",
+      "optionC": "POLÉMISTE",
+      "optionD": "PROMETTE",
+      "correctAnswer": "C",
+      "explanation": "POLÉMISTE est un mot valide en français qui peut être formé en réarrangeant les lettres de 'MÉTROPOLE'. Les autres options ne sont pas des anagrammes valides."
+    },
+    {
+      "question": "Quel est le plus long palindrome en anglais connu?",
+      "optionA": "A man, a plan, a canal: Panama",
+      "optionB": "Was it a car or a cat I saw?",
+      "optionC": "Doc, note, I dissent. A fast never prevents a fatness. I diet on cod.",
+      "optionD": "Madam, in Eden, I'm Adam",
+      "correctAnswer": "C",
+      "explanation": "'Doc, note, I dissent. A fast never prevents a fatness. I diet on cod.' est l'un des plus longs palindromes en anglais connu, avec 65 caractères."
+    }
+  ]
+}

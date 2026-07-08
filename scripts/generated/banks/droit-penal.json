@@ -1,0 +1,697 @@
+{
+  "bankKey": "droit-penal",
+  "title": "Droit Pénal (Licence)",
+  "description": "Infractions, peines, procédure pénale, principes.",
+  "category": "Universitaire",
+  "subcategory": "Droit",
+  "icon": "Gavel",
+  "color": "rose",
+  "level": "LICENCE",
+  "subject": "Droit pénal: principes (légalité, non-rétroactivité), infractions (crimes, délits, contraventions), peines (emprisonnement, amende), circonstances atténuantes/aggravantes, tentative, complicité, récidive, procédure pénale (enquête, instruction, jugement), présomption d'innocence",
+  "questions": [
+    {
+      "question": "Selon le principe de légalité pénale, qu'énonce l'article 111-3 du Code pénal français ?",
+      "optionA": "Nul ne peut être puni pour une action qui n'était pas constitutive d'une infraction au moment où elle a été commise",
+      "optionB": "La loi ne dispose que pour l'avenir et ne peut s'appliquer rétroactivement",
+      "optionC": "La loi pénale est d'interprétation stricte",
+      "optionD": "Nul ne peut être condamné pour une infraction si la loi n'a pas défini la peine correspondante",
+      "correctAnswer": "C",
+      "explanation": "L'article 111-3 du Code pénal énonce que la loi pénale est d'interprétation stricte, ce qui signifie que les termes de la loi doivent être compris dans leur sens littéral et restrictif."
+    },
+    {
+      "question": "Quelle est la classification des infractions en droit pénal français selon leur gravité ?",
+      "optionA": "Crimes, délits et contraventions",
+      "optionB": "Délits simples et délits aggravés",
+      "optionC": "Infractions intentionnelles et infractions non intentionnelles",
+      "optionD": "Infractions patrimoniales et infractions non patrimoniales",
+      "correctAnswer": "A",
+      "explanation": "Le droit pénal français distingue trois catégories d'infractions selon leur gravité : les crimes (les plus graves), les délits (de gravité moyenne) et les contraventions (les moins graves)."
+    },
+    {
+      "question": "Quelle est la peine maximale prévue pour une contravention de 5ème classe ?",
+      "optionA": "1 an d'emprisonnement et 15 000 € d'amende",
+      "optionB": "2 mois d'emprisonnement et 1 500 € d'amende",
+      "optionC": "7 jours d'emprisonnement et 1 500 € d'amende",
+      "optionD": "Pas de peine d'emprisonnement, 1 500 € d'amende",
+      "correctAnswer": "D",
+      "explanation": "Les contraventions de 5ème classe sont les moins graves et ne sont pas passibles de prison. La peine maximale est une amende de 1 500 €."
+    },
+    {
+      "question": "Quelle est la nature juridique de la tentative d'infraction ?",
+      "optionA": "Un délit spécifique puni indépendamment de l'infraction accomplie",
+      "optionB": "Une circonstance aggravante de l'infraction principale",
+      "optionC": "Une infraction autonome punie même lorsque l'infraction n'est pas accomplie",
+      "optionD": "Une cause d'irresponsabilité pénale",
+      "correctAnswer": "C",
+      "explanation": "La tentative est une infraction autonome punie même lorsque l'infraction principale n'est pas accomplie, dès lors que le coupable a commencé à l'exécuter par un acte d'exécution."
+    },
+    {
+      "question": "Quelle est la différence entre la complicité par provocation et la complicité par aide ou assistance ?",
+      "optionA": "La première est toujours punie plus lourdement que la seconde",
+      "optionB": "La première consiste à inciter à commettre l'infraction, la seconde à faciliter son exécution",
+      "optionC": "La première n'est punie que si l'infraction est commise, la seconde est punie même en cas de tentative",
+      "optionD": "La première ne concerne que les crimes, la seconde concerne les délits et contraventions",
+      "correctAnswer": "B",
+      "explanation": "La complicité par provocation consiste à inciter quelqu'un à commettre une infraction, tandis que la complicité par aide ou assistance consiste à faciliter l'exécution de cette infraction."
+    },
+    {
+      "question": "Quelle est la durée de la période de sûreté pour une condamnation à perpétuité pour un crime commis avec une circonstance aggravante particulière ?",
+      "optionA": "15 ans",
+      "optionB": "22 ans",
+      "optionC": "30 ans",
+      "optionD": "Aucune période de sûreté n'est prévue",
+      "correctAnswer": "A",
+      "explanation": "Pour une condamnation à perpétuité pour un crime commis avec une circonstance aggravante particulière, la période de sûreté est de 15 ans, pendant laquelle le condamné ne peut bénéficier d'aucune mesure de libération conditionnelle."
+    },
+    {
+      "question": "Quelle est la règle concernant la récidive en droit pénal français ?",
+      "optionA": "Elle ne concerne que les condamnations à des peines d'emprisonnement",
+      "optionB": "Elle peut être légale ou judiciaire",
+      "optionC": "Elle entraîne automatiquement une aggravation de la peine",
+      "optionD": "Elle n'est applicable qu'aux crimes et délits intentionnels",
+      "correctAnswer": "B",
+      "explanation": "La récidive peut être légale (quand la loi le prévoit expressément) ou judiciaire (déclarée par le juge). Elle peut concerner toutes les infractions et n'entraîne pas systématiquement une aggravation."
+    },
+    {
+      "question": "Quelle est la nature juridique de la peine de travail d'intérêt général (TIG) ?",
+      "optionA": "Une peine principale",
+      "optionB": "Une peine de substitution à l'emprisonnement",
+      "optionC": "Une mesure de sûreté",
+      "optionD": "Une peine complémentaire",
+      "correctAnswer": "B",
+      "explanation": "Le TIG est une peine de substitution à l'emprisonnement qui peut être prononcée par le juge à la place d'une peine de prison inférieure à un an."
+    },
+    {
+      "question": "Quelle est la règle concernant la non-rétroactivité de la loi pénale ?",
+      "optionA": "Elle s'applique uniquement aux lois plus clémentes",
+      "optionB": "Elle s'applique uniquement aux lois plus sévères",
+      "optionC": "Elle s'applique à toutes les lois pénales, qu'elles soient plus clémentes ou plus sévères",
+      "optionD": "Elle ne s'applique qu'aux crimes et non aux délits et contraventions",
+      "correctAnswer": "C",
+      "explanation": "Le principe de non-rétroactivité de la loi pénal (article 112-1 du Code pénal) s'applique à toutes les lois pénales, qu'elles soient plus clémentes ou plus sévères."
+    },
+    {
+      "question": "Quelle est la différence entre la circonstance atténuante et la circonstance aggravante ?",
+      "optionA": "La première est toujours légale, la seconde est toujours judiciaire",
+      "optionB": "La première diminue la peine, la seconde l'augmente",
+      "optionC": "La première ne s'applique qu'aux crimes, la seconde s'applique à toutes les infractions",
+      "optionD": "La première est obligatoire, la seconde est facultative",
+      "correctAnswer": "B",
+      "explanation": "Les circonstances atténuantes diminuent la peine, tandis que les circonstances aggravantes l'augmentent. Elles peuvent être légales ou judiciaires."
+    },
+    {
+      "question": "Quelle est la condition de la tentative d'infraction selon l'article 121-5 du Code pénal ?",
+      "optionA": "L'auteur doit avoir eu l'intention de commettre l'infraction",
+      "optionB": "L'auteur doit avoir accompli un acte d'exécution",
+      "optionC": "L'infraction doit avoir été partiellement accomplie",
+      "optionD": "L'auteur doit avoir commis un acte préparatoire",
+      "correctAnswer": "B",
+      "explanation": "La tentative d'infraction suppose que l'auteur ait commencé à l'exécuter par un acte d'exécution, qui ne doit pas être nécessairement suivi d'un résultat."
+    },
+    {
+      "question": "Quelle est la durée maximale de la période de sûreté pour une condamnation à perpétuité pour un crime contre l'humanité ?",
+      "optionA": "15 ans",
+      "optionB": "22 ans",
+      "optionC": "30 ans",
+      "optionD": "Aucune période de sûreté n'est prévue",
+      "correctAnswer": "C",
+      "explanation": "Pour les crimes contre l'humanité, la période de sûreté est de 30 ans, pendant laquelle le condamné ne peut bénéficier d'aucune mesure de libération conditionnelle."
+    },
+    {
+      "question": "Quelle est la nature de la peine de confiscation ?",
+      "optionA": "Une peine principale",
+      "optionB": "Une peine complémentaire",
+      "optionC": "Une mesure de sûreté",
+      "optionD": "Une peine alternative",
+      "correctAnswer": "B",
+      "explanation": "La confiscation est une peine complémentaire qui peut être prononcée en plus d'une peine principale, consistant à retirer au condamné un bien qui a servi ou était destiné à commettre l'infraction."
+    },
+    {
+      "question": "Quelle est la règle concernant la responsabilité pénale des personnes morales ?",
+      "optionA": "Les personnes morales ne peuvent être pénalement responsables que pour les délits",
+      "optionB": "Les personnes morales ne peuvent être pénalement responsables que pour les crimes",
+      "optionC": "Les personnes morales peuvent être pénalement responsables pour tous les crimes et délits",
+      "optionD": "Les personnes morales ne peuvent jamais être pénalement responsables",
+      "correctAnswer": "C",
+      "explanation": "Les personnes morales peuvent être pénalement responsables pour tous les crimes et délits, à l'exception de ceux commis par les personnes physiques en leur qualité d'organes ou de représentants de la personne morale."
+    },
+    {
+      "question": "Quelle est la différence entre la récidive légale et la récidive judiciaire ?",
+      "optionA": "La première est automatique, la seconde nécessite une déclaration par le juge",
+      "optionB": "La première concerne les crimes, la seconde concerne les délits",
+      "optionC": "La première est une circonstance aggravante, la seconde est une peine",
+      "optionD": "La première est prévue par la loi, la seconde est prévue par le juge",
+      "correctAnswer": "A",
+      "explanation": "La récidive légale est automatique lorsque la loi le prévoit, tandis que la récidive judiciaire nécessite une déclaration par le juge."
+    },
+    {
+      "question": "Quelle est la nature juridique de la peine de sursis ?",
+      "optionA": "Une peine principale",
+      "optionB": "Une peine complémentaire",
+      "optionC": "Une mesure de probation",
+      "optionD": "Une peine de substitution",
+      "correctAnswer": "C",
+      "explanation": "Le sursis est une mesure de probation qui consiste à différer l'exécution de la peine d'emprisonnement, sous réserve que le condamné respecte certaines obligations."
+    },
+    {
+      "question": "Quelle est la règle concernant la non-rétroactivité de la loi pénale plus douce ?",
+      "optionA": "Elle ne s'applique que si la nouvelle loi est explicitement rétroactive",
+      "optionB": "Elle s'applique de plein droit à toutes les lois pénales plus douces",
+      "optionC": "Elle ne s'applique qu'aux lois pénales plus douces concernant les crimes",
+      "optionD": "Elle ne s'applique qu'aux lois pénales plus douces concernant les délits",
+      "correctAnswer": "B",
+      "explanation": "Selon l'article 112-1 du Code pénal, la loi pénale s'applique à l'avenir, mais la loi plus douce s'applique de plein droit, même si elle est postérieure à l'infraction."
+    },
+    {
+      "question": "Quelle est la différence entre la complicité par provocation et la provocation directe et publique à commettre une infraction ?",
+      "optionA": "La première est un délit, la seconde est une contravention",
+      "optionB": "La première nécessite un lien avec l'auteur de l'infraction, la seconde est indépendante",
+      "optionC": "La première est punie même si l'infraction n'est pas commise, la seconde n'est punie que si l'infraction est commise",
+      "optionD": "La première concerne les crimes, la seconde concerne les délits",
+      "correctAnswer": "B",
+      "explanation": "La complicité par provocation nécessite un lien avec l'auteur de l'infraction, tandis que la provocation directe et publique est une infraction autonome qui ne nécessite pas ce lien."
+    },
+    {
+      "question": "Quelle est la nature juridique de la peine d'interdiction des droits civiques ?",
+      "optionA": "Une peine principale",
+      "optionB": "Une peine complémentaire",
+      "optionC": "Une mesure de sûreté",
+      "optionD": "Une peine alternative",
+      "correctAnswer": "B",
+      "explanation": "L'interdiction des droits civiques est une peine complémentaire qui peut être prononcée en plus d'une peine principale."
+    },
+    {
+      "question": "Quelle est la règle concernant la tentative d'infraction impossible ?",
+      "optionA": "Elle n'est jamais punie",
+      "optionB": "Elle est punie comme une tentative d'infraction accomplie",
+      "optionC": "Elle est punie comme une complicité",
+      "optionD": "Elle est punie comme une tentative d'infraction commise",
+      "correctAnswer": "B",
+      "explanation": "Selon l'article 121-5 du Code pénal, la tentative d'infraction impossible est punie comme une tentative d'infraction accomplie, dès lors que l'auteur a cru pouvoir l'accomplir."
+    },
+    {
+      "question": "Selon le principe de légalité en droit pénal français, quelle est la source exclusive du droit pénal ?",
+      "optionA": "La jurisprudence de la Cour de cassation",
+      "optionB": "Les coutumes juridiques",
+      "optionC": "La loi pénale",
+      "optionD": "La doctrine des auteurs",
+      "correctAnswer": "C",
+      "explanation": "Le principe de légalité énonce que seul le législateur peut définir les infractions et les peines. La loi pénale est donc la source exclusive du droit pénal, conformément à l'article 6 du Code pénal."
+    },
+    {
+      "question": "Quelle est la nature juridique de la contravention en droit pénal français ?",
+      "optionA": "Une infraction punie d'une peine d'emprisonnement maximale de 5 ans",
+      "optionB": "Une infraction punie d'une amende uniquement",
+      "optionC": "Une infraction punie d'une peine de prison ferme obligatoire",
+      "optionD": "Une infraction punie d'une peine de prison avec sursis",
+      "correctAnswer": "B",
+      "explanation": "Les contraventions sont les infractions les moins graves, punies uniquement d'amendes (classe 1 à 5). Elles ne peuvent entraîner de peine de prison ferme."
+    },
+    {
+      "question": "Quelle est la caractéristique principale de la peine d'amende ?",
+      "optionA": "Elle est toujours assortie d'un sursis",
+      "optionB": "Son montant est fixé sans considération des ressources du condamné",
+      "optionC": "Elle peut être journalière ou forfaitaire",
+      "optionD": "Elle ne peut jamais être complétée par une peine de confiscation",
+      "correctAnswer": "C",
+      "explanation": "L'amende peut être de deux types : forfaitaire (montant fixe) ou journalière (montant calculé par jour de retard). Les autres options sont incorrectes."
+    },
+    {
+      "question": "En matière de récidive, quelle est la condition pour qu'une personne soit considérée comme récidiviste ?",
+      "optionA": "Avoir commis deux infractions quelles qu'elles soient",
+      "optionB": "Avoir été condamné à une peine d'emprisonnement sans sursis d'au moins un an",
+      "optionC": "Avoir commis une nouvelle infraction dans un délai de 10 ans après une condamnation définitive",
+      "optionD": "Avoir été relaxé dans une procédure antérieure",
+      "correctAnswer": "C",
+      "explanation": "La récidive est constituée lorsque l'auteur d'une infraction commet une nouvelle infraction dans un délai de 10 ans (ou 20 ans pour certains crimes) après une condamnation définitive."
+    },
+    {
+      "question": "Quelle est la condition de la tentative d'infraction ?",
+      "optionA": "L'auteur doit avoir exprimé son intention de commettre l'infraction",
+      "optionB": "L'auteur doit avoir commencé l'exécution de l'infraction et ne l'a pas menée à son terme",
+      "optionC": "L'infraction doit avoir causé un dommage partiel",
+      "optionD": "L'auteur doit avoir commis une autre infraction antérieure",
+      "correctAnswer": "B",
+      "explanation": "La tentative d'infraction est constituée lorsque l'auteur a commencé l'exécution de l'infraction, directement par des actes, et qu'il n'a pas abouti par lui-même."
+    },
+    {
+      "question": "Quelle est la nature juridique de la complicité ?",
+      "optionA": "Elle constitue une cause d'irresponsabilité pénale",
+      "optionB": "Elle est une forme d'infraction autonome",
+      "optionC": "Elle suppose une participation volontaire à l'infraction commise par autrui",
+      "optionD": "Elle ne s'applique qu'aux crimes et délits",
+      "correctAnswer": "C",
+      "explanation": "La complicité suppose que la personne ait sciemment facilité la préparation ou l'exécution d'une infraction commise par un autre, avec l'intention de participer à cette infraction."
+    },
+    {
+      "question": "Quelle est la peine complémentaire qui peut être prononcée en cas de crime ?",
+      "optionA": "L'interdiction des droits civiques",
+      "optionB": "La confiscation du véhicule ayant servi à commettre l'infraction",
+      "optionC": "L'obligation de suivre un traitement médical",
+      "optionD": "La déchéance de l'autorité parentale",
+      "correctAnswer": "A",
+      "explanation": "L'interdiction des droits civiques (électoraux, d'éligibilité, de porter une arme) peut être prononcée comme peine complémentaire en cas de crime ou de délit."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre la peine de prison avec sursis et la peine de prison avec sursis avec mise à l'épreuve ?",
+      "optionA": "La première ne comporte aucune obligation, la seconde implique des obligations à respecter",
+      "optionB": "La première est prononcée pour les contraventions, la seconde pour les crimes",
+      "optionC": "La première est une peine principale, la seconde est une peine complémentaire",
+      "optionD": "La première est toujours définitive, la seconde peut être révoquée",
+      "correctAnswer": "A",
+      "explanation": "La peine de prison avec sursis simple ne comporte aucune obligation, tandis que la mise à l'épreuve implique des obligations (signalement, suivi, travail, etc.) que le condamné doit respecter."
+    },
+    {
+      "question": "Quelle est la condition de la circonstance atténuante de la provocation non préméditée ?",
+      "optionA": "La victime doit avoir agi sous l'emprise d'une altération mentale",
+      "optionB": "L'auteur doit avoir agi sous l'emprise d'une peur ou d'une surprise légitime",
+      "optionC": "La victime doit avoir commis une faute grave",
+      "optionD": "L'auteur doit avoir agi pour défaut de légitime défense",
+      "correctAnswer": "B",
+      "explanation": "La provocation non préméditée constitue une circonstance atténuante lorsque l'auteur a agi sous l'emprise d'une peur ou d'une surprise légitime, provoquée par la victime."
+    },
+    {
+      "question": "Quelle est la règle concernant la prescription des poursuites en cas de crime ?",
+      "optionA": "La prescription est de 20 ans à compter des faits",
+      "optionB": "La prescription est de 10 ans à compter de la condamnation définitive",
+      "optionC": "La prescription est de 30 ans à compter des faits",
+      "optionD": "La prescription est de 5 ans à compter de la condamnation définitive",
+      "correctAnswer": "A",
+      "explanation": "Pour les crimes, la prescription des poursuites est de 20 ans à compter des faits. Pour les délits, c'est 10 ans, et pour les contraventions, 1, 3 ou 5 ans selon la classe."
+    },
+    {
+      "question": "Quelle est la nature juridique de la peine de confiscation ?",
+      "optionA": "C'est une peine principale qui peut être prononcée seule",
+      "optionB": "C'est une peine complémentaire qui s'ajoute à une autre peine",
+      "optionC": "C'est une peine de substitution à l'emprisonnement",
+      "optionD": "C'est une peine prononcée uniquement en cas de récidive",
+      "correctAnswer": "B",
+      "explanation": "La confiscation est une peine complémentaire qui s'ajoute à une peine principale (prison, amende, etc.). Elle peut concerner des choses ou des produits d'infraction."
+    },
+    {
+      "question": "Quelle est la condition de la circonstance aggravante de la récidive légale ?",
+      "optionA": "L'auteur doit avoir commis trois infractions dans les 10 ans",
+      "optionB": "L'auteur doit avoir été condamné à une peine d'emprisonnement sans sursis d'au moins 5 ans",
+      "optionC": "L'auteur doit avoir commis une nouvelle infraction dans un délai de 10 ans après une condamnation définitive",
+      "optionD": "L'auteur doit avoir commis une infraction similaire à la précédente",
+      "correctAnswer": "C",
+      "explanation": "La récidive légale est constituée lorsque l'auteur d'une infraction commet une nouvelle infraction dans un délai de 10 ans après une condamnation définitive."
+    },
+    {
+      "question": "Quelle est la règle concernant la tentative d'infraction en cas de crime impossible ?",
+      "optionA": "La tentative est toujours constituée",
+      "optionB": "La tentative est exclue lorsque l'infraction est matériellement impossible à commettre",
+      "optionC": "La tentative est constituée uniquement si l'auteur ignorait l'impossibilité",
+      "optionD": "La tentative est constituée uniquement si l'infraction aurait pu être commise dans des conditions différentes",
+      "correctAnswer": "B",
+      "explanation": "La tentative d'infraction est exclue lorsque l'infraction est matériellement impossible à commettre, même si l'auteur l'ignorait (arrêt de la Cour de cassation, 1975)."
+    },
+    {
+      "question": "Quelle est la différence entre la peine de prison avec sursis simple et la peine de prison avec sursis avec mise à l'épreuve ?",
+      "optionA": "La première est prononcée pour les contraventions, la seconde pour les crimes",
+      "optionB": "La première comporte des obligations, la seconde n'en comporte aucune",
+      "optionC": "La première est une peine principale, la seconde est une peine complémentaire",
+      "optionD": "La première n'implique aucune obligation, la seconde implique des obligations à respecter",
+      "correctAnswer": "D",
+      "explanation": "La peine de prison avec sursis simple ne comporte aucune obligation, tandis que la mise à l'épreuve implique des obligations (signalement, suivi, travail, etc.) que le condamné doit respecter."
+    },
+    {
+      "question": "Quelle est la condition de la complicité par instigation ?",
+      "optionA": "Elle suppose que l'auteur ait directement participé à l'exécution de l'infraction",
+      "optionB": "Elle suppose que l'auteur ait incité un autre à commettre l'infraction",
+      "optionC": "Elle suppose que l'auteur ait aidé matériellement à l'exécution de l'infraction",
+      "optionD": "Elle suppose que l'auteur ait commis l'infraction en même temps que le principal auteur",
+      "correctAnswer": "B",
+      "explanation": "La complicité par instigation (ou provocation) suppose que l'auteur ait incité un autre à commettre l'infraction, sans y participer directement."
+    },
+    {
+      "question": "Quelle est la règle concernant la prescription des peines en cas de crime ?",
+      "optionA": "La prescription est de 20 ans à compter de la condamnation définitive",
+      "optionB": "La prescription est de 10 ans à compter de la condamnation définitive",
+      "optionC": "La prescription est de 30 ans à compter de la condamnation définitive",
+      "optionD": "La prescription est de 5 ans à compter de la condamnation définitive",
+      "correctAnswer": "A",
+      "explanation": "Pour les crimes, la prescription des peines est de 20 ans à compter de la condamnation définitive. Pour les délits, c'est 10 ans, et pour les contraventions, 1, 3 ou 5 ans selon la classe."
+    },
+    {
+      "question": "Quelle est la nature juridique de la peine de travail d'intérêt général ?",
+      "optionA": "C'est une peine principale qui peut être prononcée seule",
+      "optionB": "C'est une peine complémentaire qui s'ajoute à une autre peine",
+      "optionC": "C'est une peine de substitution à l'emprisonnement",
+      "optionD": "C'est une peine prononcée uniquement en cas de récidive",
+      "correctAnswer": "C",
+      "explanation": "Le travail d'intérêt général (TIG) est une peine de substitution à l'emprisonnement. Elle peut être prononcée en remplacement d'une peine de prison de moins d'un an."
+    },
+    {
+      "question": "Quelle est la condition de la légitime défense ?",
+      "optionA": "L'agression doit être matérielle et non verbale",
+      "optionB": "La défense doit être proportionnée à l'agression",
+      "optionC": "La défense doit avoir lieu après l'agression",
+      "optionD": "La défense doit avoir été préparée à l'avance",
+      "correctAnswer": "B",
+      "explanation": "La légitime défense est constituée lorsque la défense est proportionnée à l'agression, que celle-ci soit actuelle ou immédiate, et que l'agresseur ait agi sciemment."
+    },
+    {
+      "question": "Quelle est la nature juridique de la peine de prison ?",
+      "optionA": "Une peine principale",
+      "optionB": "Une peine complémentaire",
+      "optionC": "Une peine de substitution",
+      "optionD": "Une mesure de sécurité",
+      "correctAnswer": "A",
+      "explanation": "La peine de prison est une peine principale prévue par le Code pénal, contrairement aux peines complémentaires (comme l'interdiction des droits civiques) ou aux mesures de sécurité."
+    },
+    {
+      "question": "Quelle est la condition de fond de l'infraction en droit pénal français ?",
+      "optionA": "La matérialité du fait",
+      "optionB": "L'élément moral",
+      "optionC": "L'élément matériel",
+      "optionD": "L'élément légal",
+      "correctAnswer": "D",
+      "explanation": "L'élément légal est la condition de fond de l'infraction, qui exige que le fait soit prévu et puni par la loi. Les autres éléments (matériel, moral) sont nécessaires mais pas suffisants."
+    },
+    {
+      "question": "Quelle est la durée maximale de la détention provisoire en France ?",
+      "optionA": "1 an",
+      "optionB": "2 ans",
+      "optionC": "3 ans",
+      "optionD": "4 ans",
+      "correctAnswer": "A",
+      "explanation": "La détention provisoire ne peut excéder 1 an, sauf cas exceptionnels prévus par la loi où elle peut être prolongée à 2 ans."
+    },
+    {
+      "question": "Quelle est la peine principale la plus severe prévue par le Code pénal français ?",
+      "optionA": "La réclusion criminelle à perpétuité",
+      "optionB": "La réclusion criminelle",
+      "optionC": "La prison à perpétuité",
+      "optionD": "La mort",
+      "correctAnswer": "A",
+      "explanation": "La peine la plus sévere est la réclusion criminelle à perpétuité, la peine de mort ayant été abolie en France depuis 1981."
+    },
+    {
+      "question": "Quelle est la condition de procédure nécessaire à l'exercice de l'action publique ?",
+      "optionA": "La plainte",
+      "optionB": "La constitution de partie civile",
+      "optionC": "L'information judiciaire",
+      "optionD": "La saisine du juge d'instruction",
+      "correctAnswer": "C",
+      "explanation": "L'information judiciaire est la procédure nécessaire à l'exercice de l'action publique dans les cas les plus graves, permettant une investigation approfondie."
+    },
+    {
+      "question": "Quelle est la nature du principe de légalité des délits et des peines ?",
+      "optionA": "Un principe constitutionnel",
+      "optionB": "Un principe conventionnel",
+      "optionC": "Un principe à valeur législative",
+      "optionD": "Un principe jurisprudentiel",
+      "correctAnswer": "C",
+      "explanation": "Le principe de légalité des délits et des peines est un principe à valeur législative, inscrit à l'article 6 du Code civil et réaffirmé par la jurisprudence constitutionnelle."
+    },
+    {
+      "question": "Quelle est la règle applicable à la récidive ?",
+      "optionA": "Elle augmente automatiquement la peine",
+      "optionB": "Elle nécessite une condamnation définitive antérieure",
+      "optionC": "Elle ne concerne que les crimes",
+      "optionD": "Elle est abolie depuis 2014",
+      "correctAnswer": "B",
+      "explanation": "La récidive nécessite une condamnation définitive antérieure et entraîne des peines plus lourdes, mais elle n'est pas automatique et concerne aussi les délits."
+    },
+    {
+      "question": "Quelle est la nature de la peine d'amende ?",
+      "optionA": "Une peine principale",
+      "optionB": "Une peine complémentaire",
+      "optionC": "Une peine de substitution",
+      "optionD": "Une peine de confiscation",
+      "correctAnswer": "A",
+      "explanation": "L'amende est une peine principale prévue par le Code pénal, contrairement à la confiscation qui est une peine complémentaire."
+    },
+    {
+      "question": "Quelle est la compétence matérielle du tribunal correctionnel ?",
+      "optionA": "Les contraventions",
+      "optionB": "Les délits",
+      "optionC": "Les crimes",
+      "optionD": "Les délits et les crimes",
+      "correctAnswer": "B",
+      "explanation": "Le tribunal correctionnel juge les délits, tandis que les contraventions sont jugées par le tribunal de police et les crimes par la cour d'assises."
+    },
+    {
+      "question": "Quelle est la nature du principe de culpabilité ?",
+      "optionA": "Un principe absolu",
+      "optionB": "Un principe relatif",
+      "optionC": "Un principe dérogatoire",
+      "optionD": "Un optionnel",
+      "correctAnswer": "B",
+      "explanation": "Le principe de culpabilité est un principe relatif, qui admet des exceptions comme la responsabilité objective ou la responsabilité du fait d'autrui."
+    },
+    {
+      "question": "Quelle est la peine principale qui ne peut être prononcée que pour les crimes ?",
+      "optionA": "La prison",
+      "optionB": "La réclusion criminelle",
+      "optionC": "La détention",
+      "optionD": "La surveillance électronique",
+      "correctAnswer": "B",
+      "explanation": "La réclusion criminelle est une peine principale qui ne peut être prononcée que pour les crimes, contrairement à la prison qui peut être prononcée pour les délits."
+    },
+    {
+      "question": "Quelle est la nature de la peine de travail d'intérêt général (TIG) ?",
+      "optionA": "Une peine principale",
+      "optionB": "Une peine complémentaire",
+      "optionC": "Une peine de substitution",
+      "optionD": "Une mesure de sécurité",
+      "correctAnswer": "C",
+      "explanation": "Le TIG est une peine de substitution à l'emprisonnement, qui peut être prononcée en remplacement d'une peine de prison de moins d'un an."
+    },
+    {
+      "question": "Quelle est la règle applicable à la prescription de l'action publique ?",
+      "optionA": "Elle court à compter des faits",
+      "optionB": "Elle court à compter de la condamnation",
+      "optionC": "Elle court à compter de la découverte des faits",
+      "optionD": "Elle court à compter de la plainte",
+      "correctAnswer": "A",
+      "explanation": "La prescription de l'action publique court à compter des faits, avec des délais différents selon la gravité de l'infraction (5 ans pour les délits, 10 ans pour les crimes)."
+    },
+    {
+      "question": "Quelle est la nature du principe de légalité des peines ?",
+      "optionA": "Un principe absolu",
+      "optionB": "Un principe relatif",
+      "optionC": "Un principe dérogatoire",
+      "optionD": "Un optionnel",
+      "correctAnswer": "A",
+      "explanation": "Le principe de légalité des peines est un principe absolu, qui interdit au juge de prononcer des peines non prévues par la loi."
+    },
+    {
+      "question": "Quelle est la nature de la peine d'interdiction des droits civiques ?",
+      "optionA": "Une peine principale",
+      "optionB": "Une peine complémentaire",
+      "optionC": "Une peine de substitution",
+      "optionD": "Une mesure de sécurité",
+      "correctAnswer": "B",
+      "explanation": "L'interdiction des droits civiques est une peine complémentaire qui peut être prononcée en plus des peines principales, pour restreindre les droits politiques du condamné."
+    },
+    {
+      "question": "Quelle est la nature du principe de nécessité des peines ?",
+      "optionA": "Un principe absolu",
+      "optionB": "Un principe relatif",
+      "optionC": "Un principe dérogatoire",
+      "optionD": "Un optionnel",
+      "correctAnswer": "B",
+      "explanation": "Le principe de nécessité des peines est un principe relatif, qui admet que la peine soit proportionnée à la gravité de l'infraction."
+    },
+    {
+      "question": "Quelle est la nature de la peine de sursis ?",
+      "optionA": "Une peine principale",
+      "optionB": "Une peine complémentaire",
+      "optionC": "Une peine de suspension",
+      "optionD": "Une mesure de sécurité",
+      "correctAnswer": "C",
+      "explanation": "Le sursis est une peine de suspension du prononcé de l'emprisonnement, qui peut être assorti d'un sursis avec mise à l'épreuve ou d'un sursis simple."
+    },
+    {
+      "question": "Quelle est la nature du principe de personnalité des peines ?",
+      "optionA": "Un principe absolu",
+      "optionB": "Un principe relatif",
+      "optionC": "Un principe dérogatoire",
+      "optionD": "Un optionnel",
+      "correctAnswer": "B",
+      "explanation": "Le principe de personnalité des peines est un principe relatif, qui admet que la peine soit adaptée à la personnalité du condamné."
+    },
+    {
+      "question": "Quelle est la nature de la peine de surveillance judiciaire ?",
+      "optionA": "Une peine principale",
+      "optionB": "Une peine complémentaire",
+      "optionC": "Une peine de substitution",
+      "optionD": "Une mesure de sécurité",
+      "correctAnswer": "D",
+      "explanation": "La surveillance judiciaire est une mesure de sécurité qui peut être prononcée en plus des peines principales, pour contrôler le comportement du condamné."
+    },
+    {
+      "question": "En droit pénal français, quel principe interdit de juger une personne deux fois pour les mêmes faits ?",
+      "optionA": "Principe de légalité des délits et des peines",
+      "optionB": "Principe de la non-rétroactivité des lois pénales",
+      "optionC": "Principe de l'individualisation des peines",
+      "optionD": "Principe de non bis in idem",
+      "correctAnswer": "D",
+      "explanation": "Le principe de non bis in idem (ne pas juger deux fois pour les mêmes faits) est une garantie constitutionnelle qui interdit de condamner une personne deux fois pour les mêmes infractions."
+    },
+    {
+      "question": "Quelle est la peine principale la plus lourde prévue par le Code pénal français ?",
+      "optionA": "La réclusion criminelle à perpétuité",
+      "optionB": "La réclusion criminelle",
+      "optionC": "L'emprisonnement",
+      "optionD": "La détention criminelle",
+      "correctAnswer": "A",
+      "explanation": "La réclusion criminelle à perpétuité est la peine principale la plus lourde prévue par le Code pénal français, bien que sa prononciation soit soumise à des conditions très strictes."
+    },
+    {
+      "question": "Quelle est la nature juridique de la contrainte par corps ?",
+      "optionA": "Une peine complémentaire",
+      "optionB": "Une mesure de sûreté",
+      "optionC": "Une peine d'amende",
+      "optionD": "Une peine principale",
+      "correctAnswer": "A",
+      "explanation": "La contrainte par corps est une peine complémentaire qui peut être prononcée en cas de non-paiement d'une amende ou d'une partie des frais de justice."
+    },
+    {
+      "question": "En matière de procédure pénale, quel juge est compétent pour juger les délits ?",
+      "optionA": "Le juge de l'application des peines",
+      "optionB": "Le tribunal correctionnel",
+      "optionC": "Le tribunal de police",
+      "optionD": "La cour d'assises",
+      "correctAnswer": "B",
+      "explanation": "Le tribunal correctionnel est compétent pour juger les délits, qui sont des infractions punies d'une peine d'emprisonnement de dix ans au plus."
+    },
+    {
+      "question": "Quelle est la différence fondamentale entre la composition pénale et la transaction pénale ?",
+      "optionA": "La composition pénale est une peine, la transaction pénale est une mesure",
+      "optionB": "La composition pénale est une peine principale, la transaction pénale est une peine complémentaire",
+      "optionC": "La composition pénale suppose une reconnaissance des faits, la transaction pénale ne la suppose pas",
+      "optionD": "La composition pénale est une procédure de jugement, la transaction pénale est une procédure de poursuite",
+      "correctAnswer": "C",
+      "explanation": "La composition pénale suppose une reconnaissance des faits par la personne mise en cause, contrairement à la transaction pénale qui peut être proposée même si les faits sont contestés."
+    },
+    {
+      "question": "Quelle est la peine complémentaire qui interdit d'exercer une fonction publique ?",
+      "optionA": "L'interdiction des droits civiques",
+      "optionB": "L'interdiction d'exercer une profession ou une activité",
+      "optionC": "La confiscation",
+      "optionD": "L'affichage ou la diffusion du jugement",
+      "correctAnswer": "A",
+      "explanation": "L'interdiction des droits civiques, civils et de famille peut comprendre l'interdiction d'exercer une fonction publique ou une activité professionnelle ou sociale."
+    },
+    {
+      "question": "En matière de procédure pénale, qu'est-ce que le 'contrôle de la légalité' ?",
+      "optionA": "Une vérification de la conformité de la procédure aux règles de droit",
+      "optionB": "Une vérification de la culpabilité de la personne mise en cause",
+      "optionC": "Une vérification de la proportionnalité de la peine",
+      "optionD": "Une vérification de l'identité de la personne mise en cause",
+      "correctAnswer": "A",
+      "explanation": "Le contrôle de la légalité consiste à vérifier que la procédure suivie par les autorités judiciaires est conforme aux règles de droit."
+    },
+    {
+      "question": "Quelle est la peine principale qui consiste à placer une personne sous surveillance électronique ?",
+      "optionA": "Le placement sous surveillance électronique",
+      "optionB": "La semi-liberté",
+      "optionC": "Le placement à l'extérieur",
+      "optionD": "La libération sous condition",
+      "correctAnswer": "A",
+      "explanation": "Le placement sous surveillance électronique est une peine principale qui permet de purger une partie de la peine de prison à domicile avec un bracelet électronique."
+    },
+    {
+      "question": "Quelle est la nature juridique de la mise en examen ?",
+      "optionA": "Une mesure de sûreté",
+      "optionB": "Une procédure de jugement",
+      "optionC": "Une phase de l'instruction",
+      "optionD": "Une peine principale",
+      "correctAnswer": "C",
+      "explanation": "La mise en examen est une phase de l'instruction qui intervient après le réquisitoire définitif du procureur de la République et avant le renvoi devant le tribunal."
+    },
+    {
+      "question": "Quelle est la peine principale qui consiste à interdire à une personne de séjourner dans un lieu déterminé ?",
+      "optionA": "L'interdiction de séjour",
+      "optionB": "L'assignation à résidence",
+      "optionC": "L'expulsion",
+      "optionD": "L'interdiction d'entrer en contact avec certaines personnes",
+      "correctAnswer": "A",
+      "explanation": "L'interdiction de séjour est une peine principale qui peut être prononcée à l'encontre d'une personne condamnée pour certaines infractions."
+    },
+    {
+      "question": "En matière de procédure pénale, qu'est-ce que le 'délai de prescription' ?",
+      "optionA": "Le délai pendant lequel une peine doit être exécutée",
+      "optionB": "Le délai pendant lequel une infraction peut être poursuivie",
+      "optionC": "Le délai pendant lequel une personne peut être détenue provisoirement",
+      "optionD": "Le délai pendant lequel une peine peut être contestée",
+      "correctAnswer": "B",
+      "explanation": "Le délai de prescription est le délai pendant lequel une infraction peut être poursuivie judiciairement. Ce délai varie selon la gravité de l'infraction."
+    },
+    {
+      "question": "Quelle est la peine principale qui consiste à placer une personne sous la surveillance d'un service social ou médical ?",
+      "optionA": "La mise à l'épreuve",
+      "optionB": "La semi-liberté",
+      "optionC": "Le placement sous surveillance électronique",
+      "optionD": "La libération sous condition",
+      "correctAnswer": "A",
+      "explanation": "La mise à l'épreuve est une peine principale qui consiste à placer la personne sous la surveillance d'un service social ou médical."
+    },
+    {
+      "question": "En matière de procédure pénale, qu'est-ce que le 'dossier de procédure' ?",
+      "optionA": "Le document qui contient les éléments de la défense",
+      "optionB": "Le document qui contient les éléments de l'accusation",
+      "optionC": "L'ensemble des documents relatifs à la procédure",
+      "optionD": "Le document qui contient la décision de justice",
+      "correctAnswer": "C",
+      "explanation": "Le dossier de procédure est l'ensemble des documents relatifs à la procédure pénale, y compris les éléments de l'accusation, de la défense et les décisions de justice."
+    },
+    {
+      "question": "Quelle est la peine principale qui consiste à interdire à une personne d'exercer une activité professionnelle ?",
+      "optionA": "L'interdiction des droits civiques",
+      "optionB": "L'interdiction d'exercer une profession ou une activité",
+      "optionC": "La confiscation",
+      "optionD": "L'affichage ou la diffusion du jugement",
+      "correctAnswer": "B",
+      "explanation": "L'interdiction d'exercer une profession ou une activité est une peine principale qui peut être prononcée à l'encontre d'une personne condamnée pour certaines infractions."
+    },
+    {
+      "question": "En matière de procédure pénale, qu'est-ce que le 'contradictoire' ?",
+      "optionA": "Le principe selon lequel les parties peuvent s'opposer à la décision de justice",
+      "optionB": "Le principe selon lequel les parties peuvent présenter leurs arguments",
+      "optionC": "Le principe selon lequel les parties ont accès à tous les éléments de la procédure",
+      "optionD": "Le principe selon lequel les parties peuvent contester la culpabilité",
+      "correctAnswer": "C",
+      "explanation": "Le principe du contradictoire garantit que les parties ont accès à tous les éléments de la procédure et peuvent présenter leurs arguments."
+    },
+    {
+      "question": "Quelle est la peine principale qui consiste à confisquer un bien appartenant à la personne condamnée ?",
+      "optionA": "L'interdiction des droits civiques",
+      "optionB": "L'interdiction d'exercer une profession ou une activité",
+      "optionC": "La confiscation",
+      "optionD": "L'affichage ou la diffusion du jugement",
+      "correctAnswer": "C",
+      "explanation": "La confiscation est une peine principale qui consiste à confisquer un bien appartenant à la personne condamnée."
+    },
+    {
+      "question": "En matière de procédure pénale, qu'est-ce que le 'délai de carence' ?",
+      "optionA": "Le délai pendant lequel une personne ne peut pas être poursuivie pour une infraction",
+      "optionB": "Le délai pendant lequel une peine ne peut pas être exécutée",
+      "optionC": "Le délai pendant lequel une personne peut être détenue provisoirement",
+      "optionD": "Le délai pendant lequel une peine peut être contestée",
+      "correctAnswer": "A",
+      "explanation": "Le délai de carence est le délai pendant lequel une personne ne peut pas être poursuivie pour une infraction, même si les faits sont avérés."
+    },
+    {
+      "question": "Quelle est la peine principale qui consiste à placer une personne en semi-liberté ?",
+      "optionA": "La mise à l'épreuve",
+      "optionB": "La semi-liberté",
+      "optionC": "Le placement sous surveillance électronique",
+      "optionD": "La libération sous condition",
+      "correctAnswer": "B",
+      "explanation": "La semi-liberté est une peine principale qui consiste à placer une personne en liberté sous condition qu'elle retourne en prison chaque soir."
+    },
+    {
+      "question": "En matière de procédure pénale, qu'est-ce que le 'délai de prescription' des peines ?",
+      "optionA": "Le délai pendant lequel une peine doit être exécutée",
+      "optionB": "Le délai pendant lequel une infraction peut être poursuivie",
+      "optionC": "Le délai pendant lequel une peine peut être exécutée",
+      "optionD": "Le délai pendant lequel une peine peut être contestée",
+      "correctAnswer": "C",
+      "explanation": "Le délai de prescription des peines est le délai pendant lequel une peine peut être exécutée. Ce délai varie selon la nature de la peine."
+    }
+  ]
+}

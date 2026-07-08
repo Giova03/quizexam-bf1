@@ -1,0 +1,12 @@
+{
+  "bankKey": "economie-licence",
+  "title": "Sciences Économiques - Modules Licence",
+  "description": "Microéconomie avancée, macroéconomie, économie du développement, économétrie.",
+  "category": "Universitaire",
+  "subcategory": "Sciences Économiques",
+  "icon": "TrendingUp",
+  "color": "teal",
+  "level": "LICENCE",
+  "subject": "Sciences économiques licence: microéconomie (théorie du consommateur, producteur, marché en équilibre partiel/général, externalités), macroéconomie (IS-LM, solow, Phillips, politiques), économie du développement (croissance, pauvreté, inégalités), économétrie (régression, MCO, hétéroscédasticité)",
+  "questions": []
+}

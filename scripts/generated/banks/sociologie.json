@@ -1,0 +1,513 @@
+{
+  "bankKey": "sociologie",
+  "title": "sociologie",
+  "questions": [
+    {
+      "question": "Qui a introduit le concept de 'fait social' ?",
+      "optionA": "Émile Durkheim",
+      "optionB": "Karl Marx",
+      "optionC": "Max Weber",
+      "optionD": "Pierre Bourdieu",
+      "correctAnswer": "A",
+      "explanation": "Durkheim définit le fait social comme extérieur, contraignant et général."
+    },
+    {
+      "question": "Qui a théorisé la 'lutte des classes' ?",
+      "optionA": "Karl Marx",
+      "optionB": "Émile Durkheim",
+      "optionC": "Max Weber",
+      "optionD": "Auguste Comte",
+      "correctAnswer": "A",
+      "explanation": "Marx: la lutte des classes est le moteur de l'histoire (bourgeoisie vs prolétariat)."
+    },
+    {
+      "question": "Qui a introduit la 'bureaucratie' comme idéal-type ?",
+      "optionA": "Max Weber",
+      "optionB": "Karl Marx",
+      "optionC": "Émile Durkheim",
+      "optionD": "Pierre Bourdieu",
+      "correctAnswer": "A",
+      "explanation": "Weber a défini la bureaucratie comme forme rationnelle-légale de domination."
+    },
+    {
+      "question": "Qui a conceptualisé 'l'habitus' et les 'champs' ?",
+      "optionA": "Pierre Bourdieu",
+      "optionB": "Émile Durkheim",
+      "optionC": "Michel Foucault",
+      "optionD": "Bruno Latour",
+      "correctAnswer": "A",
+      "explanation": "Bourdieu: habitus (dispositions), champ (espace social), capital (économique, culturel, social)."
+    },
+    {
+      "question": "Qui a écrit 'Le Suicide' (1897) ?",
+      "optionA": "Émile Durkheim",
+      "optionB": "Karl Marx",
+      "optionC": "Max Weber",
+      "optionD": "Auguste Comte",
+      "correctAnswer": "A",
+      "explanation": "Durkheim a étudié le suicide comme fait social (anomie, intégration)."
+    },
+    {
+      "question": "Auguste Comte est le fondateur de :",
+      "optionA": "La sociologie (et du positivisme)",
+      "optionB": "La psychologie",
+      "optionC": "L'anthropologie",
+      "optionD": "L'économie",
+      "correctAnswer": "A",
+      "explanation": "Auguste Comte a inventé le terme 'sociologie' et fondé le positivisme."
+    },
+    {
+      "question": "Qui a écrit 'L'Éthique protestante et l'esprit du capitalisme' ?",
+      "optionA": "Max Weber",
+      "optionB": "Karl Marx",
+      "optionC": "Émile Durkheim",
+      "optionD": "Norbert Elias",
+      "correctAnswer": "A",
+      "explanation": "Weber a montré le lien entre protestantisme (éthique) et capitalisme."
+    },
+    {
+      "question": "La 'loi des trois états' de Comte est :",
+      "optionA": "Théologique, métaphysique, positif",
+      "optionB": "Sauvage, barbare, civilisé",
+      "optionC": "Primitif, moderne, postmoderne",
+      "optionD": "Ancien, nouveau, futur",
+      "correctAnswer": "A",
+      "explanation": "Comte: l'humanité passe de l'état théologique au métaphysique puis positif (scientifique)."
+    },
+    {
+      "question": "Le concept d'aliénation est central chez :",
+      "optionA": "Karl Marx",
+      "optionB": "Émile Durkheim",
+      "optionC": "Max Weber",
+      "optionD": "Talcott Parsons",
+      "correctAnswer": "A",
+      "explanation": "Marx: l'aliénation du travailleur (séparé du produit de son travail, de lui-même)."
+    },
+    {
+      "question": "Qui a théorisé le 'panoptique' comme métaphore du pouvoir ?",
+      "optionA": "Michel Foucault",
+      "optionB": "Pierre Bourdieu",
+      "optionC": "Jacques Derrida",
+      "optionD": "Jean Baudrillard",
+      "correctAnswer": "A",
+      "explanation": "Foucault a utilisé le panoptique de Bentham pour analyser le pouvoir disciplinaire (Surveiller et punir)."
+    },
+    {
+      "question": "Le concept d'anomie chez Durkheim désigne :",
+      "optionA": "Une perte de normes sociales",
+      "optionB": "Un type de gouvernement",
+      "optionC": "Une maladie",
+      "optionD": "Une classe sociale",
+      "correctAnswer": "A",
+      "explanation": "L'anomie = absence/affaiblissement des normes (crise, transition, désintégration)."
+    },
+    {
+      "question": "La socialisation primaire se fait principalement dans :",
+      "optionA": "La famille",
+      "optionB": "L'entreprise",
+      "optionC": "Le parti politique",
+      "optionD": "L'armée",
+      "correctAnswer": "A",
+      "explanation": "La socialisation primaire (enfant) se fait dans la famille, puis l'école."
+    },
+    {
+      "question": "La socialisation secondaire se fait par :",
+      "optionA": "L'école, les pairs, le travail, les médias",
+      "optionB": "La famille seule",
+      "optionC": "La génétique",
+      "optionD": "La religion uniquement",
+      "correctAnswer": "A",
+      "explanation": "La socialisation secondaire (adolescent/adulte) = école, amis, profession, médias."
+    },
+    {
+      "question": "La mobilité sociale intra-générationnelle est :",
+      "optionA": "L'évolution de la position d'une personne au cours de sa vie",
+      "optionB": "L'évolution entre générations",
+      "optionC": "L'immigration",
+      "optionD": "Le chômage",
+      "correctAnswer": "A",
+      "explanation": "Mobilité intra = parcours d'un individu. Inter = comparaison parents-enfants."
+    },
+    {
+      "question": "Le fonctionnalisme en sociologie est associé à :",
+      "optionA": "Talcott Parsons et Robert Merton",
+      "optionB": "Karl Marx",
+      "optionC": "Michel Foucault",
+      "optionD": "Pierre Bourdieu",
+      "correctAnswer": "A",
+      "explanation": "Parsons et Merton: la société est un système où chaque élément a une fonction."
+    },
+    {
+      "question": "Selon Durkheim, quelle est la définition correcte du 'fait social'?",
+      "optionA": "Un phénomène individuel qui résulte des actions personnelles",
+      "optionB": "Un mode d'action extérieur à l'individu et doté d'un pouvoir de contrainte",
+      "optionC": "Une manifestation de la volonté collective sans existence matérielle",
+      "optionD": "Un concept abstrait sans réalité empirique observable",
+      "correctAnswer": "B",
+      "explanation": "Durkheim définit le fait social comme un mode d'action extérieur à l'individu et doté d'un pouvoir de contrainte, existant indépendamment des individus mais ayant une existence objective."
+    },
+    {
+      "question": "Pour Durkheim, l'anomie correspond à:",
+      "optionA": "Un état de conformité excessive aux normes sociales",
+      "optionB": "Une situation où les normes sociales sont floues ou absentes",
+      "optionC": "Le processus d'intégration d'un individu à la société",
+      "optionD": "La division du travail dans les sociétés modernes",
+      "correctAnswer": "B",
+      "explanation": "L'anomie, selon Durkheim, est un état de désorganisation sociale caractérisé par un affaiblissement ou une disparition des normes régulatrices, conduisant à une absence de repères pour les individus."
+    },
+    {
+      "question": "Pour Marx, la lutte des classes est principalement motivée par:",
+      "optionA": "Des différences culturelles et religieuses",
+      "optionB": "La possession des moyens de production",
+      "optionC": "Des différences biologiques entre les groupes",
+      "optionD": "La compétition pour les ressources naturelles",
+      "correctAnswer": "B",
+      "explanation": "Selon Marx, la lutte des classes trouve son origine dans la possession ou l'absession des moyens de production, qui créent des intérêts contradictoires entre les classes sociales."
+    },
+    {
+      "question": "Weber distingue trois types de domination sauf:",
+      "optionA": "La domination traditionnelle",
+      "optionB": "La domination charismatique",
+      "optionC": "La domination légale-rationnelle",
+      "optionD": "La domination économique",
+      "correctAnswer": "D",
+      "explanation": "Weber identifie trois types légitimes de domination: traditionnelle, charismatique et légale-rationnelle. La domination économique n'est pas l'un de ces types selon sa typologie."
+    },
+    {
+      "question": "Le concept d'habitus chez Bourdieu désigne:",
+      "optionA": "Les règles formelles d'une institution sociale",
+      "optionB": "Le système de dispositions incorporées qui structurent la pratique",
+      "optionC": "Les hiérarchies sociales visibles dans une société",
+      "optionD": "Le processus d'apprentissage des normes sociales",
+      "correctAnswer": "B",
+      "explanation": "L'habitus est un concept central chez Bourdieu qui désigne le système de dispositions durables et transposables qui structurent les pratiques et les perceptions d'un agent social."
+    },
+    {
+      "question": "Selon Comte, la sociologie doit se développer selon quel principe méthodologique?",
+      "optionA": "L'empirisme pur sans théorie préalable",
+      "optionB": "Le positivisme, en s'inspirant des méthodes des sciences de la nature",
+      "optionC": "L'herméneutique, par l'interprétation des significations",
+      "optionD": "Le phénoménologie, par l'étude de la conscience subjective",
+      "correctAnswer": "B",
+      "explanation": "Comte est considéré comme le père du positivisme en sociologie, prônant une approche scientifique qui s'inspire des méthodes des sciences de la nature pour étudier la société."
+    },
+    {
+      "question": "Pour Durkheim, la fonction de la peine dans la société est:",
+      "optionA": "Principalement répressive et punitive",
+      "optionB": "Uniquement dissuasive pour prévenir les crimes futurs",
+      "optionC": "Réaffirmation collective de la conscience commune",
+      "optionD": "Exclusivement une mesure de protection sociale",
+      "correctAnswer": "C",
+      "explanation": "Selon Durkheim, la peine a une fonction sociale réaffirmatrice: elle exprime la condamnation collective et renforce la conscience commune en réaffirmant les valeurs violées."
+    },
+    {
+      "question": "Chez Marx, la plus-value est:",
+      "optionA": "La valeur ajoutée par le travailleur au-delà de sa propre valeur de reproduction",
+      "optionB": "Le bénéfice réalisé par le capitaliste grâce à la technologie",
+      "optionC": "La différence entre le prix de vente et le coût de production",
+      "optionD": "La valeur des biens produits par le travailleur",
+      "correctAnswer": "A",
+      "explanation": "La plus-value, concept central de la théorie marxiste, désigne la valeur créée par le travailleur au-delà de ce qui est nécessaire pour sa propre subsistance, qui est appropriée par le capitaliste."
+    },
+    {
+      "question": "Weber introduit le concept de 'désenchantement du monde' pour décrire:",
+      "optionA": "La perte de la magie dans la société contemporaine",
+      "optionB": "Le processus de rationalisation et de bureaucratisation",
+      "optionC": "La sécularisation des valeurs religieuses",
+      "optionD": "L'érosion des traditions folkloriques",
+      "correctAnswer": "B",
+      "explanation": "Le 'désenchantement du monde' chez Weber fait référence au processus de rationalisation qui entraîne la disparition des explications magiques et religieuses au profit d'une rationalité instrumentale et bureaucratique."
+    },
+    {
+      "question": "Pour Bourdieu, le concept de 'capital culturel' désigne:",
+      "optionA": "Les ressources économiques détenues par les individus",
+      "optionB": "Les connaissances, compétences et titres valorisés par le système éducatif",
+      "optionC": "Le pouvoir politique exercé par les élites",
+      "optionD": "Les relations sociales et les réseaux d'influence",
+      "correctAnswer": "B",
+      "explanation": "Le capital culturel, chez Bourdieu, désigne les connaissances, compétences, titres et biens culturels qui sont valorisés par le système éducatif et social, et qui contribuent à la reproduction des inégalités."
+    },
+    {
+      "question": "Selon Foucault, le pouvoir fonctionne principalement comme:",
+      "optionA": "Une relation verticale et unilatérale du sommet vers la base",
+      "optionB": "Un réseau de relations productives qui traverse toute la société",
+      "optionC": "Un instrument exclusif détenu par l'État",
+      "optionD": "Une force coercitive exercée par les dominants",
+      "correctAnswer": "B",
+      "explanation": "Foucault conceptualise le pouvoir non comme une chose possédée mais comme un réseau de relations productives qui circule dans toute la société, s'exerçant à travers des stratégies et des savoirs."
+    },
+    {
+      "question": "Pour Durkheim, la division du social dans les sociétés modernes est:",
+      "optionA": "Un signe de décadence sociale",
+      "optionB": "Une pathologie à corriger",
+      "optionC": "Une forme d'organisation organique basée sur la différenciation",
+      "optionD": "Le résultat de l'anomie généralisée",
+      "correctAnswer": "C",
+      "explanation": "Durkheim distingue les sociétés par division du travail mécanique (similitude des fonctions) des sociétés organiques (complémentarité des fonctions différenciées), cette dernière caractérisant les sociétés modernes."
+    },
+    {
+      "question": "Chez Marx, l'aliénation du travailleur comprend sauf:",
+      "optionA": "L'aliénation par rapport au produit de son travail",
+      "optionB": "L'aliénation par rapport à sa propre nature humaine",
+      "optionC": "L'aliénation par rapport à l'État",
+      "optionD": "L'aliénation par rapport à l'espèce humaine",
+      "correctAnswer": "C",
+      "explanation": "Marx identifie quatre formes d'aliénation: par rapport au produit du travail, à l'acte de travail, à la nature humaine et à l'espèce humaine. L'aliénation par rapport à l'État n'est pas explicitement mentionnée dans sa théorie de l'aliénation."
+    },
+    {
+      "question": "Pour Weber, l'éthique protestante a contribué au développement du capitalisme en:",
+      "optionA": "Prônant la recherche du plaisir matériel",
+      "optionB": "Valorisant l'aumône et la charité comme vertu principale",
+      "optionC": "Associant le travail assidu et l'ascétisme à la prédestination",
+      "optionD": "Encourageant la dépense ostentatoire des richesses",
+      "correctAnswer": "C",
+      "explanation": "Dans 'L'Éthique protestante et l'esprit du capitalisme', Weber explique comment l'éthique calviniste, notamment la doctrine de la prédestination et l'ascétisme, a favorisé l'accumulation capitaliste en valorisant le travail assidu et la frugalité."
+    },
+    {
+      "question": "Chez Bourdieu, le concept d'illusio désigne:",
+      "optionA": "L'illusion que les inégalités sociales sont naturelles",
+      "optionB": "La croyance en la légitimité des hiérarchies sociales",
+      "optionC": "Le fait de prendre au sérieux les enjeux du jeu social",
+      "optionD": "L'ignorance des mécanismes de domination",
+      "correctAnswer": "C",
+      "explanation": "L'illusio est un concept central chez Bourdieu qui désigne la disposition à prendre au sérieux les enjeux du jeu social, à croire à l'importance des gains symboliques en jeu dans les champs sociaux."
+    },
+    {
+      "question": "Selon Foucault, le panoptique est une métaphore pour décrire:",
+      "optionA": "Le modèle architectural des prisons modernes",
+      "optionB": "Un dispositif de surveillance qui internalise le contrôle",
+      "optionC": "La structure des hôpitaux psychiatriques",
+      "optionD": "Le système de surveillance de masse dans les démocraties",
+      "correctAnswer": "B",
+      "explanation": "Foucault utilise le panoptique (prison où le détenu peut être vu à tout moment sans voir celui qui observe) comme métaphore des dispositifs de pouvoir modernes où la surveillance se fait de manière à ce que l'individu se surveille lui-même, internalisant le contrôle."
+    },
+    {
+      "question": "Pour Comte, la loi des trois états décrit:",
+      "optionA": "Les trois grandes périodes de l'histoire humaine",
+      "optionB": "Les trois formes de connaissance humaine",
+      "optionC": "Les trois types de sociétés",
+      "optionD": "Les trois fonctions de la sociologie",
+      "correctAnswer": "B",
+      "explanation": "La loi des trois états de Comte décrit les trois formes de connaissance humaine: théologique (explications par des forces surnaturelles), métaphysique (abstractions) et positif (scientifique)."
+    },
+    {
+      "question": "Pour Durkheim, la solidarité mécanique caractérise:",
+      "optionA": "Les sociétés industrielles complexes",
+      "optionB": "Les sociétés basées sur la division du travail",
+      "optionC": "Les sociétés où l'individuel prime sur le collectif",
+      "optionD": "Les sociétés avec conscience commune et forte similitude",
+      "correctAnswer": "D",
+      "explanation": "La solidarité mécanique, selon Durkheim, caractérise les sociétés traditionnelles où l'unité sociale repose sur la conscience commune et la similitude des individus, contrairement à la solidarité organique des sociétés modernes basée sur la division du travail."
+    },
+    {
+      "question": "Chez Marx, la superstructure comprend:",
+      "optionA": "Les moyens de production et les forces productives",
+      "optionB": "Les institutions religieuses, juridiques, politiques et culturelles",
+      "optionC": "Les rapports de production et la classe dominante",
+      "optionD": "Le prolétariat et la bourgeoisie",
+      "correctAnswer": "B",
+      "explanation": "Dans la théorie marxiste de la base et de la superstructure, la superstructure comprend les institutions, idéologies et pratiques culturelles (religion, droit, politique, art) qui émergent de la base économique (rapports de production)."
+    },
+    {
+      "question": "Pour Bourdieu, la reproduction sociale s'effectue principalement à travers:",
+      "optionA": "La violence symbolique et l'inconscient",
+      "optionB": "Le système éducatif et l'inculcation de l'habitus",
+      "optionC": "Les médias et la culture de masse",
+      "optionD": "La coercition physique et l'État",
+      "correctAnswer": "B",
+      "explanation": "Bourdieu montre comment le système éducatif, en inculquant l'habitus des classes dominantes, contribue à la reproduction des inégalités sociales en légitimant un ordre culturel qui avantage les enfants des dominés."
+    },
+    {
+      "question": "Selon Foucault, la biopolitique désigne:",
+      "optionA": "La politique des États sur les populations",
+      "optionB": "La régulation des corps individuels",
+      "optionC": "Le pouvoir sur la vie à travers des dispositifs de masse",
+      "optionD": "La médecine préventive et l'hygiène publique",
+      "correctAnswer": "C",
+      "explanation": "La biopolitique, chez Foucault, désigne le pouvoir qui s'exerce sur la vie elle-même, à la fois à l'échelle du corps individuel (anatomo-politique) et à l'échelle de la population (biopolitique proprement dite), régulant les processus de vie."
+    },
+    {
+      "question": "Selon Durkheim, que définit le concept de 'fait social' ?",
+      "optionA": "Les actions individuelles volontaires",
+      "optionB": "Les manières de penser et d'agir qui existent indépendamment des individus",
+      "optionC": "Les normes morales religieuses",
+      "optionD": "Les lois promulguées par l'État",
+      "correctAnswer": "B",
+      "explanation": "Pour Durkheim, le fait social est tout mode de faire, de penser ou d'agir existant en dehors de l'individu et qui possède une puissance d'imposition propre."
+    },
+    {
+      "question": "Quelle est la définition de l'anomie selon Durkheim ?",
+      "optionA": "Un état de déséquilibre entre les désirs illimités et les moyens légitimes pour les satisfaire",
+      "optionB": "La division excessive du travail dans les sociétés industrielles",
+      "optionC": "Un état de normes sociales floues ou inadaptées dans une période de transition",
+      "optionD": "La crise des valeurs religieuses dans les sociétés modernes",
+      "correctAnswer": "C",
+      "explanation": "L'anomie, pour Durkheim, est un état de désorganisation sociale où les normes sont faibles ou contradictoires, particulièrement dans les périodes de rapide changement social."
+    },
+    {
+      "question": "Pour Marx, la lutte des classes est principalement motivée par :",
+      "optionA": "Des différences culturelles et religieuses",
+      "optionB": "La possession des moyens de production",
+      "optionC": "Des différences biologiques entre les groupes",
+      "optionD": "La compétition pour les ressources naturelles",
+      "correctAnswer": "B",
+      "explanation": "Selon Marx, la lutte des classes découle de la relation conflictuelle entre ceux qui possèdent les moyens de production (bourgeoisie) et ceux qui n'ont que leur force de travail (prolétariat)."
+    },
+    {
+      "question": "Le concept d'habitus chez Bourdieu désigne :",
+      "optionA": "Les règles formelles d'une institution sociale",
+      "optionB": "Le système de dispositions acquises par l'individu à travers son histoire sociale",
+      "optionC": "Les structures objectives de la société",
+      "optionD": "Les interactions symboliques entre les individus",
+      "correctAnswer": "B",
+      "explanation": "L'habitus est un système de dispositions durables et transposables qui structurent les pensées, les perceptions et les actions d'un individu, forgées par son expérience sociale."
+    },
+    {
+      "question": "Weber distingue quatre types de domination sauf :",
+      "optionA": "La domination traditionnelle",
+      "optionB": "La domination charismatique",
+      "optionC": "La domination légale-rationnelle",
+      "optionD": "La domination économique",
+      "correctAnswer": "D",
+      "explanation": "Weber identifie trois types légitimes de domination : traditionnelle, charismatique et légale-rationnelle. La domination économique n'est pas l'un de ses types de domination légitime."
+    },
+    {
+      "question": "Selon Comte, la sociologie doit être une science positive car :",
+      "optionA": "Elle permet de comprendre les volontés divines",
+      "optionB": "Elle s'appuie sur l'observation et l'expérimentation pour découvrir les lois sociales",
+      "optionC": "Elle préserve les traditions et coutumes ancestrales",
+      "optionD": "Elle critique les structures politiques existantes",
+      "correctAnswer": "B",
+      "explanation": "Pour Comte, la sociologie doit être positive, c'est-à-dire basée sur la méthode scientifique pour découvrir les lois naturelles qui régissent les phénomènes sociaux."
+    },
+    {
+      "question": "Chez Foucault, le concept de 'discipline' est associé à :",
+      "optionA": "La liberté individuelle dans les sociétés modernes",
+      "optionB": "Les mécanismes de pouvoir qui normalisent les individus",
+      "optionC": "La résistance contre les institutions totalitaires",
+      "optionD": "La critique de l'idéologie dominante",
+      "correctAnswer": "B",
+      "explanation": "Foucault analyse la discipline comme un ensemble de techniques de pouvoir qui agissent sur les individus pour les normaliser, notamment à travers des institutions comme les écoles, les hôpitaux et les prisons."
+    },
+    {
+      "question": "Pour Durkheim, la fonction de la punition dans la société est :",
+      "optionA": "Purement répressive et dissuasive",
+      "optionB": "Réaffirmation des valeurs collectives et réparation du sentiment social",
+      "optionC": "Principalement économique et matérielle",
+      "optionD": "Individuelle et psychologique",
+      "correctAnswer": "B",
+      "explanation": "Selon Durkheim, la punition a une fonction sociale essentielle : elle réaffirme les valeurs collectives violées et répare le sentiment social affaibli par le crime."
+    },
+    {
+      "question": "Selon Marx, la plus-value est :",
+      "optionA": "La valeur ajoutée par le travailleur au-delà de sa propre force de travail",
+      "optionB": "Le profit obtenu par la vente des produits",
+      "optionC": "La valeur des matières premières utilisées dans la production",
+      "optionD": "La part du capital investie par le bourgeois",
+      "correctAnswer": "A",
+      "explanation": "La plus-value est le surplus de valeur créé par le travailleur qui n'est pas rémunéré, constituant la source du profit capitaliste selon Marx."
+    },
+    {
+      "question": "Le concept de 'capital culturel' chez Bourdieu inclut :",
+      "optionA": "Seulement les biens matériels de luxe",
+      "optionB": "Les connaissances, compétences et titres scolaires",
+      "optionC": "Uniquement les savoirs académiques formels",
+      "optionD": "Les traditions familiales uniquement",
+      "correctAnswer": "B",
+      "explanation": "Le capital culturel désigne les ressources culturelle (savoirs, compétences, titres) qui peuvent être converties en d'autres formes de capital social ou économique."
+    },
+    {
+      "question": "Weber introduit le concept de 'désenchantement du monde' pour décrire :",
+      "optionA": "La perte de la magie dans la vie quotidienne",
+      "optionB": "La rationalisation croissante et la diminution de la pensée magique et religieuse",
+      "optionC": "La sécularisation des fêtes traditionnelles",
+      "optionD": "La critique de l'irrationalité des croyances populaires",
+      "correctAnswer": "B",
+      "explanation": "Le 'désenchantement du monde' désigne le processus par lequel la rationalisation et la bureaucratisation modernes réduisent l'emprise des explications magiques et religieuses sur la compréhension du monde."
+    },
+    {
+      "question": "Pour Durkheim, la religion est :",
+      "optionA": "Une simple illusion collective",
+      "optionB": "Un système de croyances et de rites unissant les individus en une communauté morale",
+      "optionC": "La survivance des sociétés primitives",
+      "optionD": "Une institution en déclin dans les sociétés modernes",
+      "correctAnswer": "B",
+      "explanation": "Selon Durkheim, la religion est un fait social total qui exprime et renforce la conscience collective en unissant les individus autour de croyances et de rites communs."
+    },
+    {
+      "question": "Chez Foucault, le 'biopouvoir' fait référence à :",
+      "optionA": "Le pouvoir sur la vie biologique des populations",
+      "optionB": "Le pouvoir exclusif des biologistes et médecins",
+      "optionC": "La libération des contraintes biologiques",
+      "optionD": "La critique des sciences de la vie",
+      "correctAnswer": "A",
+      "explanation": "Le biopouvoir désigne les mécanismes de pouvoir qui s'exercent sur la vie des individus et des populations, notamment à travers des disciplines comme la médecine, la démographie et l'hygiène."
+    },
+    {
+      "question": "Selon Bourdieu, la 'reproduction sociale' est principalement assurée par :",
+      "optionA": "La coercition physique",
+      "optionB": "Les institutions éducatives qui transmettent le capital culturel dominant",
+      "optionC": "La force militaire",
+      "optionD": "La persuasion idéologique directe",
+      "correctAnswer": "B",
+      "explanation": "Bourdieu montre comment le système éducatif, en donnant une valeur supérieure au capital culturel des classes dominantes, contribue à reproduire les inégalités sociales."
+    },
+    {
+      "question": "Pour Marx, l'aliénation du travailleur comprend sauf :",
+      "optionA": "L'aliénation par rapport au produit de son travail",
+      "optionB": "L'aliénation par rapport à son essence humaine",
+      "optionC": "L'aliénation par rapport à la nature",
+      "optionD": "L'aliénation par rapport à l'espèce humaine",
+      "correctAnswer": "C",
+      "explanation": "Marx identifie quatre formes d'aliénation : par rapport au produit du travail, par rapport à l'acte de travail, par rapport à l'espèce humaine, et par rapport aux autres êtres humains. L'aliénation par rapport à la nature n'est pas explicitement mentionnée dans sa théorie."
+    },
+    {
+      "question": "Weber distingue trois types d'autorité légitime sauf :",
+      "optionA": "L'autorité traditionnelle",
+      "optionB": "L'autorité charismatique",
+      "optionC": "L'autorité légale-rationnelle",
+      "optionD": "L'autorité technocratique",
+      "correctAnswer": "D",
+      "explanation": "Weber identifie trois types d'autorité légitime : traditionnelle, charismatique et légale-rationnelle. L'autorité technocratique n'est pas l'un de ses types."
+    },
+    {
+      "question": "Pour Durkheim, le suicide est :",
+      "optionA": "Un acte purement individuel et psychologique",
+      "optionB": "Un fait social qui varie selon les niveaux d'intégration et de régulation sociale",
+      "optionC": "La conséquence inévitable du développement des sociétés modernes",
+      "optionD": "Un phénomène marginal dans toutes les sociétés",
+      "correctAnswer": "B",
+      "explanation": "Dans son ouvrage 'Le Suicide', Durkheim démontre que le taux de suicide varie selon l'intégration sociale et la régulation morale, en montrant qu'il s'agit d'un fait social."
+    },
+    {
+      "question": "Chez Bourdieu, le concept de 'champ' désigne :",
+      "optionA": "Un espace physique de socialisation",
+      "optionB": "Un espace social de positions et de relations de force",
+      "optionC": "Le domaine de l'État",
+      "optionD": "La sphère privée de l'individu",
+      "correctAnswer": "B",
+      "explanation": "Un 'champ' est un espace social autonome avec ses règles spécifiques, où les agents occupent des positions et luttent pour accumuler des formes spécifiques de capital."
+    },
+    {
+      "question": "Pour Foucault, le 'panoptisme' est un modèle de pouvoir qui :",
+      "optionA": "Assure la transparence totale de l'individu",
+      "optionB": "Fait que l'individu se surveille lui-même par crainte d'être observé",
+      "optionC": "Supprime toute forme de contrôle social",
+      "optionD": "Renforce la résistance individuelle contre l'oppression",
+      "correctAnswer": "B",
+      "explanation": "Le panoptisme, décrit par Foucault à partir du modèle de Bentham, est un dispositif de pouvoir où l'individu, sachant qu'il pourrait être observé à tout moment, se met à se surveiller lui-même."
+    },
+    {
+      "question": "Selon Comte, la loi des trois états décrit :",
+      "optionA": "Les trois phases du développement de l'individu",
+      "optionB": "Les trois formes de la connaissance humaine : théologique, métaphysique et positif",
+      "optionC": "Les trois types de société : militaire, industrielle et scientifique",
+      "optionD": "Les trois formes de domination politique",
+      "correctAnswer": "B",
+      "explanation": "La loi des trois états de Comte décrit l'évolution de l'esprit humain à travers trois stades : théologique (explications par des forces divines), métaphysique (explications par des entités abstraites) et positif (explications scientifiques)."
+    }
+  ],
+  "category": "Universitaire",
+  "subcategory": "sociologie",
+  "description": "Penseurs, théories, méthodes, structures sociales."
+}

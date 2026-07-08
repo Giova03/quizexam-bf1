@@ -1,0 +1,202 @@
+{
+  "bankKey": "droit-affaires",
+  "title": "Droit des Affaires (Licence)",
+  "description": "Droit commercial, sociétés, effets de commerce, concurrence.",
+  "category": "Universitaire",
+  "subcategory": "Droit",
+  "icon": "Briefcase",
+  "color": "cyan",
+  "level": "LICENCE",
+  "subject": "Droit des affaires: actes de commerce, commerçants, fonds de commerce, sociétés (SARL, SA, SNC, SCS), effets de commerce (lettre de change, billet à ordre, chèque), procédures collectives (faillite, redressement), droit de la concurrence, propriété intellectuelle",
+  "questions": [
+    {
+      "question": "Quelle est la caractéristique essentielle d'un acte de commerce au sens du Code de commerce ?",
+      "optionA": "Il doit être accompli par un commerçant",
+      "optionB": "Il doit avoir un objet pécuniaire",
+      "optionC": "Il doit être accompli avec l'intention de spéculer",
+      "optionD": "Il doit être accompli dans le cadre d'une activité professionnelle habituelle",
+      "correctAnswer": "C",
+      "explanation": "Un acte de commerce se distingue par l'intention de spéculer, c'est-à-dire de tirer un profit économique immédiat, même s'il est accompli par un non-commerçant."
+    },
+    {
+      "question": "Quelle est la conséquence de l'immatriculation d'un commerçant au Registre du Commerce et des Sociétés (RCS) ?",
+      "optionA": "Elle confère la qualité de commerçant",
+      "optionB": "Elle est une condition de validité des actes de commerce",
+      "optionC": "Elle crée une présomption de capacité commerciale",
+      "optionD": "Elle dispense de l'affichage de la raison sociale",
+      "correctAnswer": "A",
+      "explanation": "L'immatriculation au RCS est une condition essentielle pour obtenir la qualité de commerçant, selon l'article L123-1 du Code de commerce."
+    },
+    {
+      "question": "Quelle est la nature juridique du fonds de commerce ?",
+      "optionA": "Un bien meuble corporel",
+      "optionB": "Un bien meuble incorporel",
+      "optionC": "Un bien immeuble",
+      "optionD": "Un droit personnel",
+      "correctAnswer": "B",
+      "explanation": "Le fonds de commerce est un bien meuble incorporel composé d'éléments corporels (stocks, matériel) et incorporels (clientèle, droit au bail, marque)."
+    },
+    {
+      "question": "Dans une SARL, quel organe exerce la fonction de gérance ?",
+      "optionA": "Le conseil d'administration",
+      "optionB": "Le directoire",
+      "optionC": "Un ou plusieurs gérants",
+      "optionD": "L'assemblée générale des associés",
+      "correctAnswer": "C",
+      "explanation": "Dans une SARL, la gérance est exercée par un ou plusieurs gérants personnes physiques, désignés dans les statuts ou par décision des associés."
+    },
+    {
+      "question": "Quelle est la caractéristique principale d'une société anonyme (SA) ?",
+      "optionA": "La responsabilité des associés est illimitée",
+      "optionB": "Le capital est divisé en actions négociables",
+      "optionC": "Le nombre d'associés est limité à 50",
+      "optionD": "La gestion est assurée par tous les associés",
+      "correctAnswer": "B",
+      "explanation": "La SA se caractérise par un capital divisé en actions, négociables librement, et une responsabilité des actionnaires limitée à leur apport."
+    },
+    {
+      "question": "Quelle est la particularité d'une société en nom collectif (SNC) ?",
+      "optionA": "Les associés ont une responsabilité limitée à leurs apports",
+      "optionB": "Les associés ont une responsabilité solidaire et indéfinie",
+      "optionC": "Elle ne peut être constituée que par des personnes morales",
+      "optionD": "Elle ne peut pas transformer son statut",
+      "correctAnswer": "B",
+      "explanation": "Dans une SNC, les associés ont une responsabilité solidaire et indéfinie, engageant leur patrimoine personnel pour les dettes sociales."
+    },
+    {
+      "question": "Quelle est la durée de validité maximale d'une lettre de trait ?",
+      "optionA": "8 jours",
+      "optionB": "10 jours",
+      "optionC": "15 jours",
+      "optionD": "30 jours",
+      "correctAnswer": "A",
+      "explanation": "La lettre de trait, qui est une lettre de change émise à l'échéance, a une durée de validité maximale de 8 jours à compter de sa date d'émission."
+    },
+    {
+      "question": "Quelle est la particularité du chèque par rapport à la lettre de change ?",
+      "optionA": "Il peut être présenté à l'échéance",
+      "optionB": "Il est payable à vue",
+      "optionC": "Il nécessite l'acceptation du tiré",
+      "optionD": "Il peut être endossé plusieurs fois",
+      "correctAnswer": "B",
+      "explanation": "Le chèque est un effet de commerce payable à vue, contrairement à la lettre de change qui est généralement payable à une éché déterminée."
+    },
+    {
+      "question": "Quelle est la conséquence principale de l'ouverture d'une procédure de redressement judiciaire ?",
+      "optionA": "La dissolution immédiate de la société",
+      "optionB": "La suspension des poursuites individuelles",
+      "optionC": "La nomination d'un liquidateur",
+      "optionD": "La radiation du RCS",
+      "correctAnswer": "B",
+      "explanation": "L'ouverture d'une procédure de redressement judiciaire entraîne la suspension des poursuites individuelles et des saisies conservatoires."
+    },
+    {
+      "question": "Quelle est la différence essentielle entre la procédure de liquidation judiciaire et le redressement judiciaire ?",
+      "optionA": "La liquidation judiciaire concerne uniquement les personnes physiques",
+      "optionB": "Le redressement judiciaire vise à sauvegarder l'entreprise, la liquidation à la dissoudre",
+      "optionC": "La liquidation judiciaire est toujours initiée par le débiteur",
+      "optionD": "Le redressement judiciaire ne concerne que les grandes entreprises",
+      "correctAnswer": "B",
+      "explanation": "Le redressement judiciaire a pour objectif la sauvegarde et la continuation de l'activité, tandis que la liquidation judiciaire prévoit la cessation d'activité et la vente des actifs."
+    },
+    {
+      "question": "Quelle est la condition de fond essentielle pour qu'un acte constitue un acte de commerce ?",
+      "optionA": "Il doit être écrit",
+      "optionB": "Il doit être accompli dans un cadre professionnel",
+      "optionC": "Il doit avoir pour objet une opération spéculative",
+      "optionD": "Il doit être enregistré",
+      "correctAnswer": "C",
+      "explanation": "La condition de fond essentielle d'un acte de commerce est qu'il ait pour objet une opération spéculative, c'est-à-dire visant un profit économique immédiat."
+    },
+    {
+      "question": "Dans une SA, quel organe est chargé de la direction de la société ?",
+      "optionA": "Le conseil d'administration",
+      "optionB": "L'assemblée générale des actionnaires",
+      "optionC": "Le directoire",
+      "optionD": "Le conseil de surveillance",
+      "correctAnswer": "C",
+      "explanation": "Dans une SA à conseil d'administration, le directoire est chargé de la direction de la société. Dans une SA à directoire et conseil de surveillance, c'est le directoire qui assure la direction."
+    },
+    {
+      "question": "Quelle est la conséquence du défaut de publicité d'un fonds de commerce ?",
+      "optionA": "La nullité de la vente",
+      "optionB": "L'inefficacité à l'égard des tiers",
+      "optionC": "La résolution du contrat de vente",
+      "optionD": "La responsabilité pénale du vendeur",
+      "correctAnswer": "B",
+      "explanation": "Le défaut de publicité d'un fonds de commerce (non-inscription au RCS) rend la vente inopposable aux tiers, mais n'entraîne pas la nullité du contrat entre les parties."
+    },
+    {
+      "question": "Quelle est la règle concernant la responsabilité des associés dans une SARL ?",
+      "optionA": "Ils sont responsables solidairement des dettes sociales",
+      "optionB": "Ils répondent des dettes sociales dans la limite de leurs apports",
+      "optionC": "Ils ont une responsabilité indéfinie",
+      "optionD": "Seuls les gérants sont responsables des dettes sociales",
+      "correctAnswer": "B",
+      "explanation": "Dans une SARL, les associés ne sont responsables des dettes sociales qu'à concurrence de leurs apports, sauf en cas de faute de gestion."
+    },
+    {
+      "question": "Quelle est la particularité de la procédure de sauvegarde ?",
+      "optionA": "Elle ne peut être ouverte que pour les entreprises en redressement judiciaire",
+      "optionB": "Elle permet d'obtenir un moratoire sur les dettes",
+      "optionC": "Elle ne concerne que les artisans",
+      "optionD": "Elle entraîne automatiquement la cessation d'activité",
+      "correctAnswer": "B",
+      "explanation": "La procédure de sauvegarde permet à l'entreprise d'obtenir un moratoire sur ses dettes et de négocier un plan de continuation avec ses créanciers."
+    },
+    {
+      "question": "Quelle est la condition de forme pour qu'un acte soit considéré comme un acte de commerce ?",
+      "optionA": "Il doit être écrit",
+      "optionB": "Il doit être enregistré",
+      "optionC": "Il doit être accompli par un commerçant",
+      "optionD": "Il doit être accompli dans un cadre professionnel",
+      "correctAnswer": "C",
+      "explanation": "La condition de forme pour qu'un acte soit considéré comme un acte de commerce est qu'il soit accompli par un commerçant dans l'exercice de son commerce."
+    },
+    {
+      "question": "Quelle est la règle concernant l'endossement d'un chèque ?",
+      "optionA": "Il peut être translatif de propriété",
+      "optionB": "Il doit être nominatif",
+      "optionC": "Il ne peut pas être porté en blanc",
+      "optionD": "Il doit être obligatoirement garanti",
+      "correctAnswer": "A",
+      "explanation": "L'endossement d'un chèque peut être translatif de propriété, permettant au porteur du chèque d'exercer les droits attachés au titre."
+    },
+    {
+      "question": "Quelle est la sanction en cas de pratique de concurrence déloyale ?",
+      "optionA": "Une amende administrative",
+      "optionB": "Une peine d'emprisonnement",
+      "optionC": "Des dommages-intérêts",
+      "optionD": "La radiation du RCS",
+      "correctAnswer": "C",
+      "explanation": "La pratique de concurrence déloyale expose le responsable à des dommages-intérêts en réparation du préjudice subi par la victime."
+    },
+    {
+      "question": "Quelle est la caractéristique d'une entente illicite en droit de la concurrence ?",
+      "optionA": "Elle doit être écrite",
+      "optionB": "Elle doit porter sur les prix",
+      "optionC": "Elle doit avoir pour objet ou effet d'empêcher, de restreindre ou de fausser le jeu de la concurrence",
+      "optionD": "Elle doit être notifiée à l'autorité de la concurrence",
+      "correctAnswer": "C",
+      "explanation": "Une entente est illicite si elle a pour objet ou effet d'empêcher, de restreindre ou de fausser le jeu de la concurrence, peu importe sa forme ou son contenu."
+    },
+    {
+      "question": "Quelle est la règle concernant la nullité d'une clause de non-concurrence dans un contrat de travail ?",
+      "optionA": "Elle est toujours nulle",
+      "optionB": "Elle est nulle si elle n'est pas indispensable à la protection de l'entreprise",
+      "optionC": "Elle est nulle si elle excède 2 ans",
+      "optionD": "Elle est nulle si elle est limitée géographiquement",
+      "correctAnswer": "B",
+      "explanation": "Une clause de non-concurrence est nulle si elle n'est pas justifiée par l'intérêt légitime de l'entreprise et si elle excède ce qui est nécessaire pour protéger cet intérêt."
+    },
+    {
+      "question": "Quelle est la nature de la procédure de conciliation préalable à l'ouverture d'une procédure collective ?",
+      "optionA": "Une procédure obligatoire",
+      "optionB": "Une procédure confidentielle",
+      "optionC": "Une procédure judiciaire",
+      "optionD": "Une procédure facultative",
+      "correctAnswer": "D",
+      "explanation": "La conciliation préalable est une procédure facultative qui permet à l'entreprise et à ses créanciers de négocier un accord amiable avant d'engager une procédure collective."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "bankKey": "laboratoire-medical",
+  "title": "Laboratoire Médical & Analyses",
+  "description": "Pré-analytique, analytique, post-analytique, sécurité.",
+  "category": "Universitaire",
+  "subcategory": "Laboratoire",
+  "icon": "TestTube",
+  "color": "amber",
+  "level": "LICENCE",
+  "subject": "Laboratoire médical: phase pré-analytique (prélèvement, identification, transport, conservation), phase analytique (centrifugation, automates, contrôle qualité interne/externe), phase post-analytique (validation, rendu), sécurité au laboratoire (EPI, PSM, déchets DASRI), accréditation, tubes ( EDTA, citrate, sec, fluorure)",
+  "questions": []
+}
