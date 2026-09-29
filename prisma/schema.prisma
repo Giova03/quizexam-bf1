@@ -31,6 +31,14 @@ model User {
   // upload PDFs, cannot use the AI tutor, and cannot download certificates.
   // Premium users get unlimited questions + all features. Admin bypasses.
   subscription String        @default("free")
+  // V3 — Google OAuth identity (NextAuth GoogleProvider). Null for
+  // credentials-only accounts. Set automatically on first Google sign-in.
+  googleId     String?       @unique
+  // V3 — onboarding wizard state. educationLevel mirrors the bank levels
+  // ("BEPC" | "BAC" | "LICENCE" | "CONCOURS"); null until the wizard runs.
+  // onboardingDone flips to true once the wizard completes or is skipped.
+  educationLevel String?
+  onboardingDone Boolean     @default(false)
   createdAt     DateTime      @default(now())
   sessions      QuizSession[]
   posts         Post[]

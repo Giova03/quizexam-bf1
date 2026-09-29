@@ -68,6 +68,7 @@ import {
   TrendingUp,
   Award,
   ChevronRight,
+  LibraryBig,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -91,6 +92,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
     setLoadingExams,
     openBank,
     openExam,
+    openBanks,
     openDashboard,
     openLeaderboard,
     openSpacedRepetition,
@@ -420,6 +422,41 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
             </motion.div>
           );
         })}
+      </section>
+
+      {/* ===== V3 — Library CTA banner: deep reorganised banks hub ===== */}
+      <section>
+        <button
+          type="button"
+          onClick={openBanks}
+          className="group relative flex w-full items-center gap-4 overflow-hidden rounded-2xl border border-emerald-200/70 bg-gradient-to-r from-[#04140f] via-[#064e3b] to-[#0f766e] p-4 text-left shadow-lg transition-transform hover:-translate-y-0.5 sm:gap-5 sm:p-5 dark:border-emerald-800/60"
+          aria-label="Ouvrir la bibliothèque de banques de questions"
+        >
+          <div className="absolute inset-0 bg-grid-dark opacity-50" aria-hidden="true" />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-amber-400/20 blur-3xl"
+          />
+          <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 text-white shadow-md sm:h-14 sm:w-14">
+            <LibraryBig className="h-6 w-6 sm:h-7 sm:w-7" />
+          </div>
+          <div className="relative min-w-0 flex-1">
+            <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
+              <Sparkles className="h-3 w-3" />
+              Nouveau
+            </p>
+            <p className="mt-0.5 truncate font-display text-base font-bold text-white sm:text-lg">
+              Bibliothèque de banques, réorganisée
+            </p>
+            <p className="mt-0.5 hidden text-xs text-emerald-100/70 sm:block">
+              Niveaux, recherche instantanée et tri — trouvez la bonne banque en deux clics.
+            </p>
+          </div>
+          <span className="relative inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-white/10 px-3 py-2 text-xs font-semibold text-white transition-colors group-hover:bg-white/20 sm:text-sm">
+            Explorer
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </span>
+        </button>
       </section>
 
       {/* ===== Quick Actions Grid — 4 gradient cards ===== */}

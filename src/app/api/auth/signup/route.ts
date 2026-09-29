@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createVisitorAccount } from "@/lib/auth";
+import { sendWelcomeEmail } from "@/lib/email-service";
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
@@ -10,6 +11,15 @@ export async function POST(request: Request) {
     if (password.length < 6) return NextResponse.json({ error: "Mot de passe min. 6 caractères." }, { status: 400 });
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return NextResponse.json({ error: "Email invalide." }, { status: 400 });
     const user = await createVisitorAccount(email, name, password, referralCode);
+
+    // V3 — send the branded welcome/confirmation email (Brevo). Best-effort:
+    // a mailing outage must never block account creation.
+    try {
+      await sendWelcomeEmail(user.email, user.name);
+    } catch (mailError) {
+      console.error("signup: welcome email failed (non-blocking):", mailError);
+    }
+
     return NextResponse.json({ success: true, user: { id: user.id, email: user.email, name: user.name, role: user.role, referralCode: user.referralCode, referredBy: user.referredBy } });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Erreur lors de l'inscription.";

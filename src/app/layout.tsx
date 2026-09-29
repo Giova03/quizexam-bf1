@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Providers } from "@/components/providers";
@@ -15,6 +15,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// V3 — display face for headings (landing, view heroes, marketing cards).
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "QuizExam BF — Plateforme de Quiz & Examens Blancs",
   description:
@@ -25,10 +32,18 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   openGraph: {
     title: "QuizExam BF — Plateforme de Quiz & Examens Blancs",
-    description: "Préparation aux concours du Burkina Faso.",
+    description:
+      "Préparez vos concours et examens au Burkina Faso : banques de questions QCM, examens blancs, correction immédiate et suivi intelligent.",
     siteName: "QuizExam BF",
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#064e3b" },
+    { media: "(prefers-color-scheme: dark)", color: "#062b22" },
+  ],
 };
 
 export default function RootLayout({
@@ -37,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-background text-foreground`}
       >
         <Providers>
           {children}

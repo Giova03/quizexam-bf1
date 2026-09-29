@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useQuizStore } from "@/shared/stores/quiz-store";
+import { GoogleButton } from "@/components/quiz/google-button";
 import {
   LogIn,
   UserPlus,
@@ -42,13 +43,16 @@ export function AuthDialog({
   open,
   onOpenChange,
   initialReferralCode,
+  initialMode,
 }: {
   open: boolean;
   onOpenChange: (v: boolean) => void;
   /** Optional referral code to pre-fill the signup form (e.g. from ?ref=CODE). */
   initialReferralCode?: string;
+  /** Optional tab to pre-select — used by the landing CTA buttons. */
+  initialMode?: "login" | "signup";
 }) {
-  const [mode, setMode] = useState<"login" | "signup">("login");
+  const [mode, setMode] = useState<"login" | "signup">(initialMode ?? "login");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -64,6 +68,12 @@ export function AuthDialog({
       setMode("signup");
     }
   }, [initialReferralCode]);
+
+  // Landing CTA pre-selection: when the dialog opens with an explicit mode,
+  // honour it (e.g. "Créer mon compte" opens directly on the signup tab).
+  useEffect(() => {
+    if (open && initialMode) setMode(initialMode);
+  }, [open, initialMode]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -211,6 +221,17 @@ export function AuthDialog({
                   Se connecter
                 </Button>
               </DialogFooter>
+              <div className="relative py-1" role="separator" aria-label="ou">
+                <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                  <span className="w-full border-t" />
+                </div>
+                <span className="relative flex justify-center">
+                  <span className="bg-background px-3 text-xs uppercase tracking-wider text-muted-foreground">
+                    ou
+                  </span>
+                </span>
+              </div>
+              <GoogleButton onRedirectStart={() => onOpenChange(false)} />
             </form>
           </TabsContent>
 
@@ -299,6 +320,17 @@ export function AuthDialog({
                   Créer mon compte
                 </Button>
               </DialogFooter>
+              <div className="relative py-1" role="separator" aria-label="ou">
+                <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                  <span className="w-full border-t" />
+                </div>
+                <span className="relative flex justify-center">
+                  <span className="bg-background px-3 text-xs uppercase tracking-wider text-muted-foreground">
+                    ou
+                  </span>
+                </span>
+              </div>
+              <GoogleButton label="S'inscrire avec Google" onRedirectStart={() => onOpenChange(false)} />
             </form>
           </TabsContent>
         </Tabs>

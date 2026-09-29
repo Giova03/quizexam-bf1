@@ -2501,3 +2501,18 @@ Stage Summary:
 - Aucune migration Prisma requise (aucun changement de schéma).
 - ROADMAP.md à jour : tableau phases 100 % (P0→P7), variables FedaPay/ERROR_WEBHOOK_URL, comportements documentés (sessions anonymes, activation premium webhook-only), §3 avec test:e2e, runbook « prochaines pistes » (activation FedaPay, reçus email, Sentry, CI E2E).
 - Architecture V2 TERMINÉE. Prochaines étapes = opérationnelles (compte marchand FedaPay, Sentry DSN, reçus email).
+
+---
+
+## V3 — Refonte design + landing + bibliothèque + onboarding + Google + Brevo (2025-09-30)
+
+- **Design system V3** (`globals.css` + `layout.tsx`) : palette émeraude/or premium (light ivoire chaud, dark vert-noir), police display Space Grotesk (`font-display`), utilitaires animés (aurora-blob, marquee, fade-up, float-slow, text-gradient-mint/gold, bg-grid, card-glow, confetti).
+- **Landing publique animée** (`landing-view.tsx`, ~900 lignes) : nav glass, hero aurora + carte dashboard flottante animée (framer-motion + compteurs), stats band, 6 features, 3 étapes, 4 niveaux, témoignages marquee, FAQ, CTA final, footer. Remplace l'ancienne carte de login des visiteurs (`page.tsx` bloc unauthenticated).
+- **Bibliothèque de banques** (`banks-library-view.tsx`) — réorganisation profonde : nouvelle vue `bank-list` (ViewName existant réactivé + `openBanks` dans quiz-store), hero sombre avec totaux, toolbar sticky (pills niveaux `EducationLevelSelector` + recherche instantanée + tri), **groupement par catégorie**, cartes riches (chip icône colorée, badge niveau, nb questions, CTA Réviser), skeletons + empty states, animations stagger. Nav desktop + mobile + render case branchés dans `page.tsx`.
+- **Onboarding wizard** (`onboarding-wizard.tsx`) : overlay 4 étapes animé (Bienvenue → Niveau → Matières → Objectif), progress bar, confetti CSS, déclenché une seule fois (GET/POST `/api/profile/onboarding`, flags `onboardingDone`/`educationLevel` sur User + localStorage fail-open).
+- **Google OAuth via NextAuth + Supabase** : `GoogleProvider` conditionnel (env GOOGLE_CLIENT_ID/SECRET), `allowDangerousEmailAccountLinking` + `findOrCreateGoogleUser` (rattachement par email → récupération du compte existant, sinon création VISITOR + hash aléatoire), colonne `googleId` (unique, nullable), bouton `GoogleButton` auto-masqué si provider absent (probe `/api/auth/providers`), intégré à AuthDialog (2 tabs) + landing.
+- **Brevo prêt pour les clés** : `lib/brevo.ts` (API v3, timeout 10 s, jamais bloquant, journal EmailLog `logged_no_brevo`/`sent`/`failed_*`), `lib/email-templates.ts` (email de confirmation HTML brandé + texte), `email-service.ts` routé via Brevo, branché sur `/api/auth/signup` + première connexion Google.
+- **HomeView** : bandeau CTA « Bibliothèque de banques, réorganisée » vers la nouvelle vue.
+- **Docs** : `docs/google-auth-setup.md`, `docs/brevo-configuration.md`, `.env.example` versionné (exception `!.env.example` dans .gitignore).
+- **Validation** : prisma generate OK · tsc 0 err · eslint 0 err · vitest 158/158 · build prod OK · vérification navigateur agent-browser (landing hero/features/niveaux/CTA/footer + dialog auth login/signup + masquage conditionnel du bouton Google) — screenshots dans /home/z/my-project/screenshots/.
+- **Actions utilisateur requises pour activer** : (1) Google : créer l'ID client OAuth (redirect `/api/auth/callback/google`) + poser GOOGLE_CLIENT_ID/SECRET sur Vercel + `npx prisma db push` ; (2) Brevo : poser BREVO_API_KEY/BREVO_SENDER_EMAIL (voir docs/).

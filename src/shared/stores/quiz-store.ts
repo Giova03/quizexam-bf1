@@ -47,6 +47,7 @@ interface QuizState {
   setLoadingSession: (v: boolean) => void;
 
   goHome: () => void;
+  openBanks: () => void;
   openBank: (id: string) => void;
   openExam: (id: string) => void;
   startSession: (sessionId: string, difficulty?: SessionDifficulty) => void;
@@ -148,6 +149,7 @@ export const useQuizStore = create<QuizState>((set) => ({
       profileUserId: null,
       session: null,
     }),
+  openBanks: () => set({ view: "bank-list" }),
   openBank: (id) => set({ selectedBankId: id, view: "bank-detail" }),
   openExam: (id) => set({ selectedExamId: id, view: "exam-detail" }),
   startSession: (sessionId, difficulty) =>

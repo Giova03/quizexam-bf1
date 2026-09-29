@@ -1,7 +1,62 @@
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
 import bcrypt from "bcryptjs";
+import { randomUUID } from "crypto";
 import { db } from "./db";
+
+// V3 — Google OAuth is only registered when its credentials are present, so
+// deployments without GOOGLE_CLIENT_ID/GOOGLE_CLIENT_SECRET keep working
+// exactly as before (the "Continuer avec Google" button hides itself client-
+// side by probing GET /api/auth/providers).
+const googleCredentials =
+  process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET
+    ? { clientId: process.env.GOOGLE_CLIENT_ID, clientSecret: process.env.GOOGLE_CLIENT_SECRET }
+    : null;
+
+/**
+ * V3 — find or create the local User row for a Google sign-in.
+ *
+ * Account recovery: if an account already exists with the same email
+ * (created via credentials), it is REUSED and linked — the visitor keeps
+ * their sessions, XP, badges and referral code. Otherwise a fresh VISITOR
+ * account is created with an unguessable random password (the user logs in
+ * via Google; the password hash is never a usable credential).
+ */
+async function findOrCreateGoogleUser(params: {
+  email: string;
+  name?: string | null;
+  googleId?: string | null;
+}): Promise<{ user: NonNullable<Awaited<ReturnType<typeof db.user.findUnique>>>; created: boolean }> {
+  const cleanEmail = params.email.trim().toLowerCase();
+  const existing = await db.user.findUnique({ where: { email: cleanEmail } });
+
+  if (existing) {
+    // Link the Google identity if it changed or was missing.
+    if (params.googleId && existing.googleId !== params.googleId) {
+      const updated = await db.user.update({
+        where: { id: existing.id },
+        data: { googleId: params.googleId },
+      });
+      return { user: updated, created: false };
+    }
+    return { user: existing, created: false };
+  }
+
+  const hash = await bcrypt.hash(`${randomUUID()}${randomUUID()}`, 10);
+  const referralCode = await generateUniqueReferralCode();
+  const created = await db.user.create({
+    data: {
+      email: cleanEmail,
+      name: params.name?.trim() || cleanEmail.split("@")[0],
+      passwordHash: hash,
+      role: "VISITOR",
+      referralCode,
+      googleId: params.googleId ?? null,
+    },
+  });
+  return { user: created, created: true };
+}
 
 export const authOptions: NextAuthOptions = {
   // P2: the fallback secret is public (repo history) — it must NEVER be the
@@ -9,6 +64,18 @@ export const authOptions: NextAuthOptions = {
   // working without .env; production now logs a loud warning.
   secret: process.env.NEXTAUTH_SECRET || "quizexam-bf-fallback-secret-2025-aZ7xK9",
   providers: [
+    ...(googleCredentials
+      ? [
+          GoogleProvider({
+            ...googleCredentials,
+            // allowDangerousEmailAccountLinking is required by NextAuth v4
+            // whenever an OAuth login shares an email with an existing
+            // account. Our own findOrCreateGoogleUser() performs the safe
+            // email-based link/recovery below, so this flag is intentional.
+            allowDangerousEmailAccountLinking: true,
+          }),
+        ]
+      : []),
     CredentialsProvider({
       name: "credentials",
       credentials: {
@@ -28,6 +95,39 @@ export const authOptions: NextAuthOptions = {
   ],
   session: { strategy: "jwt" },
   callbacks: {
+    async signIn({ user, account, profile }) {
+      // V3 — Google flow: resolve (or create + link) the local account.
+      if (account?.provider === "google") {
+        const email = profile?.email ?? user.email;
+        if (!email) return false;
+        try {
+          const { user: dbUser, created } = await findOrCreateGoogleUser({
+            email,
+            name: profile?.name ?? user.name,
+            googleId: account.providerAccountId,
+          });
+          // Overwrite the OAuth user identity with the LOCAL account so the
+          // jwt callback below stores the right id + role.
+          user.id = dbUser.id;
+          (user as { role?: string }).role = dbUser.role;
+          // V3 — first-time Google visitors get the branded confirmation
+          // email too (best-effort, never blocks the sign-in).
+          if (created) {
+            try {
+              const { sendWelcomeEmail } = await import("@/lib/email-service");
+              await sendWelcomeEmail(dbUser.email, dbUser.name);
+            } catch (mailError) {
+              console.error("Google sign-in: welcome email failed (non-blocking):", mailError);
+            }
+          }
+          return true;
+        } catch (error) {
+          console.error("Google sign-in: account link/create failed:", error);
+          return false; // shows a generic "Sign in failed" to the user
+        }
+      }
+      return true;
+    },
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;

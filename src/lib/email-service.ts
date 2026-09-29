@@ -1,16 +1,20 @@
 /**
- * Email service — thin logging wrapper that mimics a real SMTP gateway.
+ * Email service — V3: routes every outgoing message through the Brevo
+ * transactional gateway (see src/lib/brevo.ts) while keeping the EmailLog
+ * audit trail that admins browse via /api/email/send (GET).
  *
- * In production you would swap `deliverEmail` for an actual provider call
- * (Resend, Postmark, SendGrid, etc.). For now we persist every outgoing
- * message in the EmailLog table so admins can audit them via /api/email/send
- * (GET) and the broadcast history.
+ * Behaviour matrix:
+ *  - BREVO_API_KEY set  → real delivery via Brevo; EmailLog row records the
+ *    final status ("sent" / "failed_http_*" / "failed_network").
+ *  - No key             → EmailLog row status "logged_no_brevo" (dev-friendly:
+ *    nothing breaks, messages stay inspectable in the admin history).
  *
- * The functions exposed here are intentionally small and side-effectful
- * (they write to the DB) so callers can `await sendWelcomeEmail(...)` from
- * either API routes or server actions.
+ * All functions are best-effort and never throw so callers (signup, forum
+ * replies, broadcast…) keep working even when the mail stack is degraded.
  */
 import { db } from "@/lib/db";
+import { sendBrevoEmail } from "@/lib/brevo";
+import { welcomeConfirmationEmail } from "@/lib/email-templates";
 
 export interface SendEmailOptions {
   /** Recipient email address. */
@@ -19,6 +23,10 @@ export interface SendEmailOptions {
   subject: string;
   /** Plain-text body. */
   body: string;
+  /** Optional rendered HTML body (used by branded templates). */
+  html?: string;
+  /** Recipient display name (optional). */
+  toName?: string;
   /** Optional type tag stored on the EmailLog row (default "info"). */
   type?: string;
 }
@@ -34,6 +42,8 @@ export async function sendEmail({
   to,
   subject,
   body,
+  html,
+  toName,
   type = "info",
 }: SendEmailOptions): Promise<{ logId: string; delivered: boolean }> {
   // Basic validation — refuse to send to an empty / whitespace-only address.
@@ -45,6 +55,19 @@ export async function sendEmail({
     return { logId: "", delivered: false };
   }
 
+  // 1) Attempt real delivery through Brevo (no-op + explicit status when the
+  //    API key is absent). skipLog: we own the EmailLog row here.
+  const result = await sendBrevoEmail({
+    to: cleanTo,
+    toName,
+    subject: cleanSubject,
+    html,
+    text: cleanBody,
+    type,
+    skipLog: true,
+  });
+
+  // 2) Persist the full message in the EmailLog audit trail.
   try {
     const log = await db.emailLog.create({
       data: {
@@ -52,49 +75,33 @@ export async function sendEmail({
         subject: cleanSubject,
         body: cleanBody,
         type,
-        status: "sent",
+        status: result.delivered ? "sent" : result.provider === "none" ? "logged_no_brevo" : "failed",
       },
     });
-    console.log(
-      `📧 Email [${type}] → ${cleanTo}\n   Sujet: ${cleanSubject}\n   Aperçu: ${cleanBody.slice(0, 120)}${cleanBody.length > 120 ? "…" : ""}`
-    );
-    return { logId: log.id, delivered: true };
+    return { logId: log.id, delivered: result.delivered };
   } catch (err) {
     console.error("📧 sendEmail: failed to persist EmailLog", err);
-    return { logId: "", delivered: false };
+    return { logId: "", delivered: result.delivered };
   }
 }
 
 /**
- * Welcome email — sent right after a visitor creates their account.
+ * Welcome / confirmation email — sent right after a visitor creates their
+ * account (credentials signup or first Google sign-in). Uses the branded
+ * Brevo-ready HTML template.
  */
 export async function sendWelcomeEmail(
   userEmail: string,
   userName: string
 ): Promise<void> {
+  const template = welcomeConfirmationEmail(userName);
   await sendEmail({
     to: userEmail,
-    subject: "Bienvenue sur QuizExam BF 🎓",
-    body: `Bonjour ${userName},
-
-Bienvenue sur QuizExam BF — votre plateforme de préparation aux concours du Burkina Faso !
-
-Vous avez désormais accès à :
-• Des dizaines de banques de questions (culture générale, droit, sciences, langues…)
-• Des examens blancs complets de 50 questions
-• Un mode correction immédiate pour apprendre en temps réel
-• Un suivi de progression, badges et classements
-• Le forum communautaire pour échanger entre candidats
-
-Pour bien démarrer :
-1. Connectez-vous avec votre email et mot de passe
-2. Visitez la section "Banques" pour explorer les matières
-3. Lancez votre premier quiz en mode immédiate
-4. Consultez votre tableau de bord pour suivre votre progression
-
-Bonne préparation et bonne chance pour vos concours !
-L'équipe QuizExam BF 🇧🇫`,
-    type: "welcome",
+    toName: userName,
+    subject: template.subject,
+    body: template.text,
+    html: template.html,
+    type: "welcome_confirmation",
   });
 }
 

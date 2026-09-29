@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, lazy, Suspense, type ReactNode } from "react";
+import { useState, useEffect, useCallback, lazy, Suspense, type ReactNode } from "react";
 import { useSession } from "next-auth/react";
 import { useQuizStore } from "@/shared/stores/quiz-store";
 import { usePrefs } from "@/shared/stores/prefs-store";
@@ -10,6 +10,23 @@ import { useTranslation } from "@/lib/use-translation";
 // fallbacks show shimmer skeletons while the chunk downloads.
 const HomeView = lazy(() =>
   import("@/components/quiz/home-view").then((m) => ({ default: m.HomeView })),
+);
+// V3 — public marketing landing (unauthenticated visitors) + the dedicated
+// banks library + the post-signup onboarding wizard (all code-split).
+const LandingView = lazy(() =>
+  import("@/components/quiz/landing-view").then((m) => ({
+    default: m.LandingView,
+  })),
+);
+const BanksLibraryView = lazy(() =>
+  import("@/components/quiz/banks-library-view").then((m) => ({
+    default: m.BanksLibraryView,
+  })),
+);
+const OnboardingWizard = lazy(() =>
+  import("@/components/quiz/onboarding-wizard").then((m) => ({
+    default: m.OnboardingWizard,
+  })),
 );
 const BankDetailView = lazy(() =>
   import("@/components/quiz/bank-detail-view").then((m) => ({
@@ -95,6 +112,7 @@ import {
 } from "@/components/ui/tooltip";
 import {
   GraduationCap,
+  LibraryBig,
   LayoutDashboard,
   Info,
   Bell,
@@ -336,6 +354,7 @@ export default function Home() {
   const {
     view,
     goHome,
+    openBanks,
     openDashboard,
     openAbout,
     openAdmin,
@@ -381,6 +400,12 @@ export default function Home() {
   // Auto-open the auth dialog when arriving from a referral link so the user
   // immediately sees the prefilled signup form.
   const [authOpen, setAuthOpen] = useState<boolean>(!!prefilledReferral);
+  // V3 — which tab the auth dialog should open on (driven by landing CTAs).
+  const [authMode, setAuthMode] = useState<"login" | "signup">("login");
+  const openAuth = useCallback((mode: "login" | "signup" = "login") => {
+    setAuthMode(mode);
+    setAuthOpen(true);
+  }, []);
 
   // Clean the URL (avoid accidentally sharing the referral code in links).
   // This effect does NOT call setState — it only updates an external system
@@ -473,57 +498,18 @@ export default function Home() {
     return <SplashScreen />;
   }
 
-  // If not authenticated, show login screen
+  // If not authenticated, show the V3 marketing landing page
   if (status === "unauthenticated") {
     return (
-      <div className="flex min-h-screen flex-col bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700">
-        <SplashScreen />
-        <div className="flex flex-1 items-center justify-center p-4">
-          <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-2xl dark:bg-card">
-            <div className="mb-6 flex flex-col items-center text-center">
-              <img
-                src="/logo-quizexam.svg"
-                alt="QuizExam BF"
-                className="h-20 w-20 rounded-2xl"
-                width={80}
-                height={80}
-              />
-              <h1 className="mt-4 text-2xl font-bold text-foreground">
-                QuizExam BF
-              </h1>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Plateforme de Quiz &amp; Examens Blancs
-              </p>
-              <p className="mt-2 text-xs text-muted-foreground">
-                Connectez-vous pour accéder à la plateforme
-              </p>
-            </div>
-
-            <Button
-              className="w-full gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
-              onClick={() => setAuthOpen(true)}
-            >
-              <GraduationCap className="h-4 w-4" />
-              Se connecter / S&apos;inscrire
-            </Button>
-
-            <div className="mt-6 space-y-2 text-center text-xs text-muted-foreground">
-              <p>
-                Pas encore de compte ? Créez un compte visiteur gratuit en
-                un clic.
-              </p>
-              <p className="font-medium">
-                Créateur : BAMOGO Pingdwendé Giovanni · giobamos03@gmail.com
-              </p>
-            </div>
-          </div>
-        </div>
+      <ErrorBoundary>
+        <LandingView onAuthOpen={openAuth} />
         <AuthDialog
           open={authOpen}
           onOpenChange={setAuthOpen}
+          initialMode={authMode}
           initialReferralCode={prefilledReferral ?? undefined}
         />
-      </div>
+      </ErrorBoundary>
     );
   }
 
@@ -632,6 +618,24 @@ export default function Home() {
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>{t("nav.dashboard")}</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              {/* V3 — banks library */}
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={view === "bank-list" ? "secondary" : "ghost"}
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={openBanks}
+                      data-tour="banks-nav"
+                    >
+                      <LibraryBig className="h-4 w-4" />
+                      <span className="hidden lg:inline">Banques</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Banques de questions</TooltipContent>
                 </Tooltip>
               </TooltipProvider>
               {/* AI custom exam */}
@@ -1131,6 +1135,15 @@ export default function Home() {
                   }}
                 />
                 <MobileNavItem
+                  icon={<LibraryBig className="h-5 w-5" />}
+                  label="Banques de questions"
+                  active={view === "bank-list"}
+                  onClick={() => {
+                    openBanks();
+                    setMobileNavOpen(false);
+                  }}
+                />
+                <MobileNavItem
                   icon={<Sparkles className="h-5 w-5 text-violet-600" />}
                   label="Examen IA"
                   highlight="violet"
@@ -1271,6 +1284,7 @@ export default function Home() {
               shows while the chunk downloads. */}
           <Suspense fallback={<ViewSkeleton />}>
             {view === "home" && <HomeView onOpenCustomExam={() => setCustomExamOpen(true)} />}
+            {view === "bank-list" && <BanksLibraryView />}
             {view === "bank-detail" && <BankDetailView />}
             {view === "exam-detail" && <ExamDetailView />}
             {view === "session" && <SessionView />}
@@ -1414,6 +1428,9 @@ export default function Home() {
 
       {/* Tour guidé au premier login */}
       <OnboardingTourContainer isAuthenticated={status === "authenticated"} />
+
+      {/* V3 — onboarding wizard post-inscription (une seule fois) */}
+      <OnboardingWizard active={status === "authenticated"} />
     </div>
   );
 }
