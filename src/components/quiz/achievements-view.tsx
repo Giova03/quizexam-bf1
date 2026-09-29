@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { usePrefs, getBadgeProgress, type Badge as BadgeType } from "@/lib/prefs-store";
-import { useQuizStore } from "@/lib/quiz-store";
+import { usePrefs, getBadgeProgress, type Badge as BadgeType } from "@/shared/stores/prefs-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 import {
   Trophy,
   Lock,

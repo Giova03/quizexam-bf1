@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Progress } from "@/components/ui/progress";
-import { useSpacedRepetition } from "@/lib/spaced-repetition-store";
-import { useQuizStore } from "@/lib/quiz-store";
-import { usePrefs } from "@/lib/prefs-store";
+import { useSpacedRepetition } from "@/shared/stores/spaced-repetition-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
 import { toast } from "sonner";
 import {
   ArrowLeft,

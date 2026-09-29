@@ -2459,3 +2459,27 @@ Stage Summary:
 - Variables Vercel requises : NEXTAUTH_SECRET (recommandé), ADMIN_PASSWORD (pour toute création d'admin sur base neuve).
 - Prochaine phase : P3 (migration des ~43 routes restantes, state machine stricte sur sessions terminées, unification des runners de tests).
 - Ce fichier + ROADMAP.md = source de vérité en cas de perte de conversation.
+
+---
+Task ID: P3
+Agent: Super Z (assistant principal)
+Task: P3 — Routes content+subscription sur la couche application, state machine stricte, stores réorganisés, tests unifiés
+
+Work Log:
+- Reprise post-incident : fichiers P3 déjà écrits sur disque vérifiés intacts (bank-domain, question-view, quiz-domain enrichi), puis complétion intégrale de la phase.
+- Domaine : question-view.ts (masquage correctAnswer/correctAnswer2/explanation aux non-staff, immuable, JSON identique au legacy), bank-domain.ts (resolveLevelFilter avec joker TOUS, valeurs invalides → pas de filtre comme le legacy), quiz-domain.ts enrichi (deriveSessionStatus + canAcceptAnswer — l'état est dérivé de completedAt, pas de colonne status).
+- Repositories (infrastructure) : question-repository (select legacy conservé), bank-repository (filtre niveau + backfill raw-SQL imageUrl/audioUrl déplacé de la route), exam-repository (liste + détail), subscription-repository (tier typé, comptage questions UTC du jour, setUserSubscriptionTier typé remplace le raw SQL).
+- Application : content/ (list-questions-for-actor, list-banks avec cache, get-bank, list-exams avec cache, get-exam) ; subscription/ (get-overview — contrat GET identique, set-tier — contrat POST identique, check-quota qui remplace checkLimit/getUserTier de lib) ; start-session rebranché sur checkDailyQuota.
+- lib/subscription-limits.ts allégé : constants + types uniquement (plus d'import db dans lib — client-safe).
+- Routes rebranchées (minces) : GET /api/questions, GET /api/banks, GET /api/banks/[id], GET /api/exams, GET /api/exams/[id], GET+POST /api/subscription ; imports getUserTier swappés dans ai-tutor + certificate.
+- State machine stricte : submitAnswer rejette les sessions terminées (kind session_completed → HTTP 409 « Session déjà terminée ») ; completeSession utilise canTransition du domaine. Synchro offline vérifiée sûre (crée toujours une session neuve avant PATCH).
+- Stores déplacés : 5 stores client zustand (quiz, prefs, quests, favorites, spaced-repetition) → src/shared/stores/ (délibéré : infrastructure = serveur) ; competition-store (serveur) → src/server/infrastructure/ ; 47 imports @/lib/* réécrits + 2 imports relatifs internes corrigés.
+- Tests : cache.test, spaced-repetition.test, favorites-store.test convertis vitest (harness maison traduit 1:1) ; vitest.setup.ts (shim localStorage, remplace celui du runner) ; suite déplacée à côté des stores ; vitest.config unifié (plus d'exclusion) ; scripts/run-tests.ts, test-framework.ts supprimés ; favorites.test.ts et sm2.test.ts (morts, jamais exécutés par l'ancien runner) supprimés ; CI : étape legacy retirée.
+- Découvertes : double implémentation SM-2 (store ISO-strings vs domaine Dates) — conservées, unification planifiée P4 ; le hardcode staff legacy omettait SUPER_ADMIN — aligné sur isStaff RBAC.
+
+Stage Summary:
+- Validations : prisma generate OK · tsc --noEmit 0 erreur · ESLint 0 erreur · vitest 136/136 (9 fichiers) · next build prod OK.
+- Aucune migration Prisma requise pour cette phase (aucun changement de schéma).
+- Contrats HTTP conservés à l'identique SAUF : PATCH answers sur session terminée → 409 (changement voulu, documenté ROADMAP §2).
+- Prochaine phase : P4 (audit trail sur mutations staff + onglet admin Journal d'audit + adaptateur SM-2).
+- ROADMAP.md à jour (arbre d'architecture, tableau des phases, §3 qualité 4 checks, comportements documentés).

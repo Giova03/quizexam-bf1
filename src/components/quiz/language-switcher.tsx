@@ -1,6 +1,6 @@
 "use client";
 
-import { usePrefs } from "@/lib/prefs-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
 import { LOCALES, type Locale } from "@/lib/i18n";
 import {
   Select,

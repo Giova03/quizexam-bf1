@@ -1,29 +1,19 @@
 import { NextResponse } from "next/server";
-import { db } from "@/lib/db";
-import { cacheGet, cacheSet, cacheInvalidate, CACHE_KEYS } from "@/lib/cache";
+import { listExams } from "@/server/application/content/list-exams";
+import { cacheInvalidate, CACHE_KEYS } from "@/lib/cache";
 
 export const dynamic = "force-dynamic";
 
-const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
-
+/**
+ * GET /api/exams — list of official exams (5-minute in-memory cache,
+ * invalidated by the admin mutation endpoints).
+ *
+ * P3: logic moved to the application layer. Response contract unchanged.
+ */
 export async function GET() {
   try {
-    // Cache the exams list for 5 minutes (default TTL). Invalidated by the
-    // admin mutation endpoints (create/delete exam).
-    const cached = cacheGet<unknown>(CACHE_KEYS.examsList);
-    if (cached) {
-      return NextResponse.json(cached);
-    }
-
-    const exams = await db.exam.findMany({
-      orderBy: { createdAt: "asc" },
-      include: {
-        _count: { select: { examQuestions: true } },
-      },
-    });
-
-    cacheSet(CACHE_KEYS.examsList, exams);
-    return NextResponse.json(exams);
+    const result = await listExams();
+    return NextResponse.json(result.exams);
   } catch (error) {
     console.error("Failed to list exams:", error);
     return NextResponse.json(

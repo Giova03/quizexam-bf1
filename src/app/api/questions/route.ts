@@ -2,25 +2,23 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { listQuestionsForActor } from "@/server/application/content/list-questions-for-actor";
 
 export const dynamic = "force-dynamic";
 
 /**
- * GET /api/questions?bankId=X
+ * GET /api/questions?bankId=X — questions for revision mode. Auth required.
  *
- * Returns questions for revision mode. Requires authentication.
- *
- * P0 SECURITY: The correctAnswer and explanation are ONLY returned to:
- * - ADMIN, EDITOR, REVIEWER, MODERATOR roles (for content management)
- * - Regular users ONLY when the session is completed (revision mode)
- *
- * For regular users viewing a bank without a completed session,
- * we return the question text and options but OMIT the correctAnswer
- * and explanation to prevent cheating.
+ * P3: business logic moved to the application layer. Visibility of the
+ * answer key (correctAnswer / correctAnswer2 / explanation) is decided by
+ * the QUESTION DOMAIN (`questionViewForActor`): staff roles (EDITOR and
+ * above, per the shared RBAC — now including SUPER_ADMIN) see everything,
+ * students get the questions stripped of the answer key to prevent
+ * cheating. Client contract unchanged.
  */
 export async function GET(request: Request) {
   try {
-    // P0: Authentication required
+    // Authentication required
     const authSession = await getServerSession(authOptions);
     if (!authSession?.user?.email) {
       return NextResponse.json({ error: "Authentification requise" }, { status: 401 });
@@ -38,40 +36,8 @@ export async function GET(request: Request) {
     const bankId = searchParams.get("bankId");
     if (!bankId) return NextResponse.json({ error: "bankId required" }, { status: 400 });
 
-    // P0: Staff roles can see full question data (for content management)
-    const isStaff = ["ADMIN", "EDITOR", "REVIEWER", "MODERATOR"].includes(user.role);
-
-    const questions = await db.question.findMany({
-      where: { bankId },
-      select: {
-        id: true,
-        question: true,
-        optionA: true,
-        optionB: true,
-        optionC: true,
-        optionD: true,
-        correctAnswer: true,
-        correctAnswer2: true,
-        explanation: true,
-        difficulty: true,
-      },
-      orderBy: { order: "asc" },
-    });
-
-    // P0: For non-staff users, strip correctAnswer and explanation
-    // to prevent answer key leakage. They get these only after completing a quiz.
-    if (!isStaff) {
-      return NextResponse.json({
-        questions: questions.map((q) => ({
-          ...q,
-          correctAnswer: undefined,
-          correctAnswer2: undefined,
-          explanation: undefined,
-        })),
-      });
-    }
-
-    return NextResponse.json({ questions });
+    const result = await listQuestionsForActor(bankId, user.role);
+    return NextResponse.json({ questions: result.questions });
   } catch (error) {
     console.error("Failed to load questions:", error);
     return NextResponse.json({ error: "Failed to load questions" }, { status: 500 });

@@ -11,7 +11,12 @@
  *    legacy route).
  */
 
-import { calculateScore, type Answer } from "@/server/domain/quiz/quiz-domain";
+import {
+  calculateScore,
+  canTransition,
+  deriveSessionStatus,
+  type Answer,
+} from "@/server/domain/quiz/quiz-domain";
 import { PermissionError, requireOwnershipOrAdmin } from "@/shared/security/rbac";
 import {
   finalizeSession,
@@ -38,8 +43,12 @@ export async function completeSession(
   // P0 rule, now enforced through the shared RBAC helper.
   requireOwnershipOrAdmin(session.userId, actor.id, actor.role);
 
-  // P0 rule: prevent double-completion.
-  if (session.completedAt) return { kind: "already_completed" };
+  // P0 rule: prevent double-completion — now expressed through the QUIZ
+  // DOMAIN state machine (in_progress → completed is the only valid path;
+  // completed is terminal). Behavior identical, single source of truth.
+  if (!canTransition(deriveSessionStatus(session.completedAt), "completed")) {
+    return { kind: "already_completed" };
+  }
 
   const correctCount = calculateScore(
     session.answers.map((a) => ({

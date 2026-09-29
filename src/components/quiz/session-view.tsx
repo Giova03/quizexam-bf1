@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState, useCallback, useRef } from "react";
-import { useQuizStore } from "@/lib/quiz-store";
-import { usePrefs } from "@/lib/prefs-store";
-import { useQuests } from "@/lib/quests-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
+import { useQuests } from "@/shared/stores/quests-store";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";

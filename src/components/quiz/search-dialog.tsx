@@ -28,7 +28,7 @@ import {
   User as UserIcon,
   ChevronRight,
 } from "lucide-react";
-import { useQuizStore } from "@/lib/quiz-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 import { getColor } from "@/lib/types";
 
 // ---------- Question result type (existing) ----------

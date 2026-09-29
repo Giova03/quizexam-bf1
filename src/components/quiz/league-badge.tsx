@@ -11,7 +11,7 @@ import {
   getLeagueInfo,
   type LeagueInfo,
 } from "@/lib/league-system";
-import { usePrefs } from "@/lib/prefs-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
 import {
   Trophy,
   TrendingUp,

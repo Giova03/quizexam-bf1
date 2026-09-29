@@ -13,8 +13,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { usePrefs } from "@/lib/prefs-store";
-import { useQuizStore } from "@/lib/quiz-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 import { toast } from "sonner";
 import {
   Coins,

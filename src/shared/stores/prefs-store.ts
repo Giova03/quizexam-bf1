@@ -2,7 +2,7 @@
 
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { Locale } from "./i18n";
+import type { Locale } from "@/lib/i18n";
 
 export interface Badge {
   id: string;

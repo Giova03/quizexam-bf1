@@ -10,13 +10,19 @@
  * 4. Returns the full session (unchanged client contract), including the
  *    exam durationMin for exam-backed sessions.
  *
- * Behavior note (documented in ROADMAP, P3): the legacy route allowed
- * answering on completed sessions and that is preserved here — enforcing the
- * strict session state machine on this path is deferred to P3 to avoid any
- * regression in the client flows.
+ * Behavior change (P3): the strict session state machine is now enforced —
+ * answering on a COMPLETED session is rejected ({@link SubmitAnswerResult}
+ * kind "session_completed", mapped to HTTP 409 by the route). This was
+ * deferred from P2 to avoid client regressions; the offline sync path is
+ * safe (it always creates a fresh session before PATCHing answers).
  */
 
-import { checkAnswer, type Answer } from "@/server/domain/quiz/quiz-domain";
+import {
+  canAcceptAnswer,
+  checkAnswer,
+  deriveSessionStatus,
+  type Answer,
+} from "@/server/domain/quiz/quiz-domain";
 import { PermissionError, requireOwnershipOrAdmin } from "@/shared/security/rbac";
 import {
   findExamDuration,
@@ -34,7 +40,8 @@ export type SubmitAnswerResult =
   | { kind: "ok"; session: SessionWithAnswers; durationMin: number | null }
   | { kind: "session_not_found" }
   | { kind: "answer_not_found" }
-  | { kind: "invalid_answer" };
+  | { kind: "invalid_answer" }
+  | { kind: "session_completed" };
 
 /**
  * @throws PermissionError when the actor is neither the owner nor admin-level.
@@ -54,6 +61,12 @@ export async function submitAnswer(
 
   // P0 rule, now enforced through the shared RBAC helper.
   requireOwnershipOrAdmin(session.userId, actor.id, actor.role);
+
+  // P3 strict state machine: completed sessions are frozen. The status is
+  // derived from completedAt by the QUIZ DOMAIN (no status column in DB).
+  if (!canAcceptAnswer(deriveSessionStatus(session.completedAt))) {
+    return { kind: "session_completed" };
+  }
 
   const existing = await findSessionAnswer(answerId);
   if (!existing || existing.sessionId !== sessionId) {

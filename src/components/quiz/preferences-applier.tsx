@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePrefs } from "@/lib/prefs-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
 
 export function PreferencesApplier() {
   const highContrast = usePrefs((s) => s.highContrast);

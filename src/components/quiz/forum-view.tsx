@@ -36,7 +36,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { toast } from "sonner";
-import { useQuizStore } from "@/lib/quiz-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 import {
   MessageSquare,
   MessagesSquare,

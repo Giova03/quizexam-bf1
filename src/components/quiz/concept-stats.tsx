@@ -14,7 +14,7 @@ import {
   Radar,
   Tooltip,
 } from "recharts";
-import { useQuizStore } from "@/lib/quiz-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 import { Grid3x3, Radar as RadarIcon, TrendingUp, AlertTriangle } from "lucide-react";
 
 /**

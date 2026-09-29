@@ -23,7 +23,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { useQuizStore } from "@/lib/quiz-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 import {
   LogIn,
   UserPlus,

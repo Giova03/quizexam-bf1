@@ -34,7 +34,7 @@ import {
   Sparkles,
   Trophy,
 } from "lucide-react";
-import { useQuizStore } from "@/lib/quiz-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 
 // ---------- Types ----------
 

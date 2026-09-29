@@ -5,8 +5,8 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Bell, Clock, CalendarClock, Sparkles, RefreshCw, Lightbulb } from "lucide-react";
-import { usePrefs } from "@/lib/prefs-store";
-import { useQuizStore } from "@/lib/quiz-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 
 interface Reminder {
   id: string;

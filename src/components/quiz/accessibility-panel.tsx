@@ -1,6 +1,6 @@
 "use client";
 
-import { usePrefs } from "@/lib/prefs-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";

@@ -20,8 +20,8 @@ import {
   LogIn,
 } from "lucide-react";
 import { toast } from "sonner";
-import { usePrefs } from "@/lib/prefs-store";
-import { useQuests } from "@/lib/quests-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
+import { useQuests } from "@/shared/stores/quests-store";
 
 interface Post {
   id: string;

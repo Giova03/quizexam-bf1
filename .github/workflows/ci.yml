@@ -33,8 +33,5 @@ jobs:
       - name: Lint (ESLint)
         run: bun run lint
 
-      - name: Unit tests (Vitest — domain & security)
+      - name: Unit tests (Vitest — domain, security & lib stores)
         run: bun run test
-
-      - name: Legacy unit tests (lib stores)
-        run: bun run scripts/run-tests.ts

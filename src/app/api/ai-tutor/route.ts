@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import ZAI from "z-ai-web-dev-sdk";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { getUserTier } from "@/lib/subscription-limits";
+import { getUserTier } from "@/server/application/subscription/check-quota";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;

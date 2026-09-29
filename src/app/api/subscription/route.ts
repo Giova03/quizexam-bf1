@@ -1,14 +1,8 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { db } from "@/lib/db";
-import {
-  checkLimit,
-  FREE_LIMIT,
-  PREMIUM_LIMIT,
-  PLAN_FEATURES,
-  type SubscriptionTier,
-} from "@/lib/subscription-limits";
+import { getSubscriptionOverview } from "@/server/application/subscription/get-overview";
+import { setSubscriptionTier } from "@/server/application/subscription/set-tier";
 
 export const dynamic = "force-dynamic";
 
@@ -18,6 +12,9 @@ export const dynamic = "force-dynamic";
  * Returns the current user's subscription tier, daily quota usage, and the
  * list of features allowed by their plan. Used by the pricing modal and by
  * the "Améliorer" badge in the header.
+ *
+ * P3: logic moved to the application layer (quota + tier resolution out of
+ * lib). Response contract unchanged.
  */
 export async function GET() {
   try {
@@ -26,20 +23,9 @@ export async function GET() {
       return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
     }
     const userId = (session.user as { id?: string }).id ?? null;
-    const check = await checkLimit(userId);
-    return NextResponse.json({
-      tier: check.tier,
-      isPremium: check.isPremium,
-      usedToday: check.usedToday,
-      remaining: Number.isFinite(check.remaining) ? check.remaining : null,
-      limit: Number.isFinite(check.limit) ? check.limit : null,
-      canStartMore: check.canStartMore,
-      features: check.isPremium ? PREMIUM_LIMIT : FREE_LIMIT,
-      planFeatures:
-        check.tier === "premium" || check.tier === "admin"
-          ? PLAN_FEATURES.premium
-          : PLAN_FEATURES.free,
-    });
+
+    const overview = await getSubscriptionOverview(userId);
+    return NextResponse.json(overview);
   } catch (error) {
     console.error("subscription GET error:", error);
     return NextResponse.json(
@@ -53,9 +39,10 @@ export async function GET() {
  * POST /api/subscription
  *
  * Mock upgrade — flips the calling user's `subscription` column to
- * "premium". No real payment processor is invoked. The column is updated
- * via raw SQL so we don't depend on the dev server's HMR-cached Prisma
- * client knowing about the new column (added in F5).
+ * "premium". No real payment processor is invoked yet (FedaPay arrives in
+ * P5). P3: logic moved to the application layer; the column update uses the
+ * typed Prisma client (the legacy raw-SQL workaround is obsolete). Contract
+ * unchanged.
  *
  * Body: { tier?: "premium" | "free" }   (default: "premium")
  */
@@ -71,21 +58,13 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json().catch(() => ({}));
-    const requestedTier: SubscriptionTier =
-      body?.tier === "free" ? "free" : "premium";
-
-    await db.$executeRaw`
-      UPDATE "User" SET subscription = ${requestedTier} WHERE id = ${userId}
-    `;
+    const result = await setSubscriptionTier(userId, body?.tier);
 
     return NextResponse.json({
       success: true,
-      tier: requestedTier,
-      isPremium: requestedTier === "premium",
-      message:
-        requestedTier === "premium"
-          ? "Abonnement Premium activé (mode démo)."
-          : "Abonnement rétrogradé en Free.",
+      tier: result.tier,
+      isPremium: result.isPremium,
+      message: result.message,
     });
   } catch (error) {
     console.error("subscription POST error:", error);
@@ -95,4 +74,3 @@ export async function POST(request: Request) {
     );
   }
 }
-

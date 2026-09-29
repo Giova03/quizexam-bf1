@@ -19,8 +19,8 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
-import { usePrefs, type Badge as BadgeType } from "@/lib/prefs-store";
-import { useQuizStore } from "@/lib/quiz-store";
+import { usePrefs, type Badge as BadgeType } from "@/shared/stores/prefs-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 import * as LucideIcons from "lucide-react";
 import {
   ArrowLeft,

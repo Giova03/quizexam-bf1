@@ -28,9 +28,9 @@ import {
   Bookmark,
   Bot,
 } from "lucide-react";
-import { usePrefs } from "@/lib/prefs-store";
-import { useFavorites } from "@/lib/favorites-store";
-import { useQuizStore } from "@/lib/quiz-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
+import { useFavorites } from "@/shared/stores/favorites-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 import { StatsComparison } from "./stats-comparison";
 import { ReferralCard } from "./referral-card";
 import { AdvancedCharts } from "./advanced-charts";

@@ -21,7 +21,7 @@ import {
   CheckCheck,
   Inbox,
 } from "lucide-react";
-import { usePrefs } from "@/lib/prefs-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
 
 const ICONS: Record<string, typeof Trophy> = {
   result: Trophy,

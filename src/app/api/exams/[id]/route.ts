@@ -1,32 +1,28 @@
 import { NextResponse } from "next/server";
-import { db } from "@/lib/db";
+import { getExam } from "@/server/application/content/get-exam";
 
 export const dynamic = "force-dynamic";
 
+/**
+ * GET /api/exams/[id] — one exam with its questions (via the join table,
+ * ordered). P3: logic moved to the application layer. Contract unchanged.
+ */
 export async function GET(
   _request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { id } = await params;
-    const exam = await db.exam.findUnique({
-      where: { id },
-      include: {
-        examQuestions: {
-          include: {
-            question: true,
-          },
-          orderBy: { order: "asc" },
-        },
-      },
-    });
-    if (!exam) {
+
+    const result = await getExam(id);
+    if (result.kind === "not_found") {
       return NextResponse.json(
         { error: "Exam not found" },
         { status: 404 }
       );
     }
-    return NextResponse.json(exam);
+
+    return NextResponse.json(result.exam);
   } catch (error) {
     console.error("Failed to load exam:", error);
     return NextResponse.json(

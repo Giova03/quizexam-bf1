@@ -5,6 +5,8 @@ import {
   calculatePercentage,
   isPassed,
   canTransition,
+  deriveSessionStatus,
+  canAcceptAnswer,
   transitionSession,
   shuffle,
   selectQuestions,
@@ -304,5 +306,35 @@ describe("getMasteryLevel", () => {
 
   it("maintenance au-delà de 85 %", () => {
     expect(getMasteryLevel(0.95, 5)).toBe("maintenance");
+  });
+});
+
+// ===== P3 : dérivation d'état + règle stricte de réponse =====
+
+describe("deriveSessionStatus", () => {
+  it("completedAt renseigné → completed", () => {
+    expect(deriveSessionStatus(new Date("2026-09-30T10:00:00Z"))).toBe("completed");
+  });
+
+  it("completedAt null → in_progress", () => {
+    expect(deriveSessionStatus(null)).toBe("in_progress");
+  });
+});
+
+describe("canAcceptAnswer (P3 state machine stricte)", () => {
+  it("accepte une réponse sur session ouverte", () => {
+    expect(canAcceptAnswer("created")).toBe(true);
+    expect(canAcceptAnswer("in_progress")).toBe(true);
+  });
+
+  it("refuse une réponse sur session figée", () => {
+    expect(canAcceptAnswer("completed")).toBe(false);
+    expect(canAcceptAnswer("abandoned")).toBe(false);
+  });
+
+  it("règle bout-en-bout : une session terminée n'accepte plus de réponses", () => {
+    const completedAt = new Date();
+    expect(canAcceptAnswer(deriveSessionStatus(completedAt))).toBe(false);
+    expect(canAcceptAnswer(deriveSessionStatus(null))).toBe(true);
   });
 });

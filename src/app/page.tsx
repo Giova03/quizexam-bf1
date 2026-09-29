@@ -2,8 +2,8 @@
 
 import { useState, useEffect, lazy, Suspense, type ReactNode } from "react";
 import { useSession } from "next-auth/react";
-import { useQuizStore } from "@/lib/quiz-store";
-import { usePrefs } from "@/lib/prefs-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
 import { useTranslation } from "@/lib/use-translation";
 // E6: All views are now lazy-loaded (code splitting complet).
 // Each view is its own JS chunk fetched on first navigation. Suspense

@@ -3,7 +3,7 @@
 > **Objectif de ce document** : qu'aucune session de travail ne démarre jamais
 > à zéro. Si vous perdez une conversation avec votre assistant IA, relisez ce
 > fichier + `worklog.md` + `git log --oneline -20` : vous avez tout l'état du
-> projet. Mis à jour le **2026-09-30** (session P2).
+> projet. Mis à jour le **2026-09-30** (session P3).
 
 ---
 
@@ -51,16 +51,23 @@ des routes API, la rendre testable, et uniformiser sécurité & audit.
 src/
 ├── app/api/...                    # Routes HTTP minces (auth, rate-limit, mapping HTTP)
 ├── server/
-│   ├── application/quiz/          # ✅ P2 — cas d'usage (get/submit/complete/start session)
-│   ├── domain/                    # ✅ P1 — logique métier PURE (zéro framework)
-│   │   ├── quiz/quiz-domain.ts            # scoring, state machine, SM-2, XP, mastery
+│   ├── application/
+│   │   ├── quiz/                  # ✅ P2 — cas d'usage session (get/submit/complete/start)
+│   │   ├── content/               # ✅ P3 — list/get questions, banks, exams (+ cache listes)
+│   │   └── subscription/          # ✅ P3 — overview, set-tier, check-quota (quota quotidien)
+│   ├── domain/                    # ✅ P1/P3 — logique métier PURE (zéro framework)
+│   │   ├── quiz/quiz-domain.ts            # scoring, state machine (derive/canAcceptAnswer P3), SM-2, XP
 │   │   ├── questions/question-domain.ts   # lifecycle statuts, qualité, détection doublons
+│   │   ├── questions/question-view.ts     # ✅ P3 — visibilité réponse/explication par rôle
+│   │   ├── banks/bank-domain.ts           # ✅ P3 — filtre niveaux (joker TOUS)
 │   │   └── subscription/subscription-domain.ts  # tiers, quotas freemium
-│   └── infrastructure/repositories/       # ✅ P2 — accès Prisma
-│       ├── audit-log-repository.ts
-│       └── quiz-session-repository.ts
-├── shared/security/               # ✅ P1/P2 — RBAC (6 rôles, 25+ permissions) + audit
-└── lib/                           # services transverses (auth, db, limits, stores…)
+│   └── infrastructure/
+│       ├── repositories/          # ✅ P2/P3 — accès Prisma (sessions, audit, questions, banks, exams, subscription)
+│       └── competition-store.ts   # ✅ P3 — store serveur (mode compétition)
+├── shared/
+│   ├── security/                  # ✅ P1/P2 — RBAC (6 rôles, 25+ permissions) + audit
+│   └── stores/                    # ✅ P3 — stores CLIENT zustand (quiz, prefs, quests, favorites, spaced-repetition)
+└── lib/                           # services transverses (auth, db, cache, limits-constants…)
 ```
 
 ### Phases
@@ -70,8 +77,8 @@ src/
 | **P0** | Sécurisation immédiate : ownership sessions, masquage des corrections aux non-staff, export Anki protégé, seed désactivé en prod, admin-init protégé, checks TS/ESLint réactivés au build | ✅ 29/09 |
 | **P1** | Domain layer pur (quiz, questions, subscription) + RBAC 6 rôles + module audit (localStorage, provisoire) | ✅ 29/09 |
 | **P2** | **Audit log migré en base** (modèle `AuditLog` + API `/api/audit-log` + façade isomorphe) · **Couche application** (4 cas d'usage session) · **4 routes session rebranchées** · fix `correctAnswer2` · mot de passe admin hors du code · tests vitest (81) · CI GitHub · hygiène dépôt | ✅ 30/09 |
-| **P3** | Migrer les ~43 routes API restantes vers application/domain (priorité : questions, banks, exams, admin, subscription) · appliquer la state machine stricte sur les sessions terminées · migrer `src/lib/*-store` vers `infrastructure/` · unifier les 2 runners de tests vers vitest | ⏳ prochaine |
-| **P4** | Audit trail branché sur TOUTES les mutations staff (questions, banks, users, reports) + onglet « Journal d'audit » dans l'admin (lecture `GET /api/audit-log`) | ⏳ |
+| **P3** | **Routes content rebranchées** (questions, banks, banks/[id], exams, exams/[id] — 5 routes) · **subscription rebranchée** (GET overview + POST tier, quota quotidien déplacé de lib vers application) · **state machine stricte** : réponses sur session terminée → 409 · domain : `question-view` (masquage réponse), `bank-domain` (joker TOUS), `deriveSessionStatus`/`canAcceptAnswer` · 4 nouveaux repositories Prisma · **stores déplacés** (zustand → `shared/stores/`, compétition → `infrastructure/`) · **unification des tests** : suite lib migrée vers vitest (136 tests), runner maison supprimé · fix alignement RBAC (SUPER_ADMIN visible staff) · tests morts supprimés (favorites.test, sm2.test) | ✅ 30/09 |
+| **P4** | Audit trail branché sur TOUTES les mutations staff (questions, banks, users, reports) + onglet « Journal d'audit » dans l'admin (lecture `GET /api/audit-log`) · unifier les 2 implémentations SM-2 (store ISO-strings vs domaine Dates) via un adaptateur | ⏳ prochaine |
 | **P5** | Paiement réel du premium : **FedaPay** (Orange/Moov Money BF) — webhook HMAC, passage `subscription: "premium"`, reçus email. Alternatives : Stripe (cartes) | ⏳ |
 | **P6** | Observabilité prod : Sentry (erreurs), analytics sans données de santé/personnelles, healthcheck | ⏳ |
 | **P7** | E2E (Playwright) sur les parcours critiques : signup → quiz → résultat → certificat | ⏳ |
@@ -103,9 +110,16 @@ src/
 - `selectQuestions()` : si le pool filtré par difficulté est plus petit que
   `count`, on pioche `count` questions dans **tout** le pool (mélange de
   difficultés). Comportement historique, testé.
-- `PATCH .../answers` accepte encore les réponses sur session terminée
-  (comportement pré-existant conservé) → application de la state machine
-  stricte planifiée en P3.
+- **State machine stricte (P3)** : `PATCH .../answers` sur une session
+  terminée renvoie désormais **409** `Session déjà terminée` (avant P3 :
+  accepté). La synchro hors-ligne est sûre — elle crée toujours une session
+  neuve avant de PATCHer. Côté serveur, la règle vit dans le domaine
+  (`canAcceptAnswer(deriveSessionStatus(completedAt))`).
+- `GET /api/questions` : le staff inclut désormais SUPER_ADMIN (alignement
+  RBAC — le hardcode legacy l'omettait par oubli).
+- Deux implémentations SM-2 coexistent (store ISO-strings pour
+  localStorage, domaine Dates) — algorithmiquement identiques, unification
+  prévue P4.
 
 ---
 
@@ -115,15 +129,14 @@ src/
 bun install                    # deps
 bun run typecheck              # tsc --noEmit (0 erreur exigée)
 bun run lint                   # ESLint (0 erreur exigée)
-bun run test                   # vitest — domaine + sécurité (81 tests)
-bun run scripts/run-tests.ts   # suite legacy lib/ (runner maison, sans dépendance)
+bun run test                   # vitest — domaine + sécurité + stores (136 tests)
 bun run build                  # build prod (doit passer avant tout push)
 ```
 
 - **CI GitHub Actions** (`.github/workflows/ci.yml`) : bun install →
-  prisma generate → typecheck → lint → vitest → suite legacy, sur chaque
-  push/PR vers `main`.
-- **Règle de push** : les 5 vérifications ci-dessus doivent passer localement
+  prisma generate → typecheck → lint → vitest, sur chaque push/PR vers
+  `main`.
+- **Règle de push** : les 4 vérifications ci-dessus doivent passer localement
   avant `git push`.
 
 ---
@@ -145,9 +158,9 @@ bun run build                  # build prod (doit passer avant tout push)
 2. Lire ce fichier (§2 pour la phase en cours, §3 pour valider).
 3. Lire `worklog.md` (journal détaillé des sessions, en bas = plus récent).
 4. Relancer l'environnement : `bun install && bunx prisma generate`,
-   puis les 5 vérifications du §3.
+   puis les 4 vérifications du §3.
 5. Reprendre la phase ⏳ suivante du tableau §2 — une phase = un lot committé
-   avec un message structuré (voir les commits P0/P1/P2 comme modèles).
+   avec un message structuré (voir les commits P0/P1/P2/P3 comme modèles).
 6. Après un changement de schéma Prisma : **`prisma db push` contre Supabase**
    AVANT de déployer le code qui l'utilise (sinon dégradation gracieuse pour
    l'audit, erreur pour le reste).

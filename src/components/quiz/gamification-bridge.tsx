@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { usePrefs } from "@/lib/prefs-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
 import {
   useQuests,
   registerQuestRewardCallback,
-} from "@/lib/quests-store";
+} from "@/shared/stores/quests-store";
 import { useLeague } from "@/lib/league-system";
 import { useSeasons } from "@/lib/seasons";
 

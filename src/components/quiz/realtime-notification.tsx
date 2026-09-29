@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePrefs } from "@/lib/prefs-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { X, Bell, Trophy, TrendingUp, CalendarClock, Info, CheckCircle2 } from "lucide-react";

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Download, Loader2, Layers } from "lucide-react";
-import { useFavorites } from "@/lib/favorites-store";
+import { useFavorites } from "@/shared/stores/favorites-store";
 
 interface AnkiExportButtonProps {
   /** When provided, exports all questions from this bank (GET ?bankId=xxx). */

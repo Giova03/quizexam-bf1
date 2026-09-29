@@ -12,7 +12,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { BankIcon } from "./bank-icon";
-import { useQuizStore } from "@/lib/quiz-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 import { getColor, type QuestionBank } from "@/lib/types";
 import { toast } from "sonner";
 import {

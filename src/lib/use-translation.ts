@@ -1,6 +1,6 @@
 "use client";
 
-import { usePrefs } from "./prefs-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
 import { translate, type Locale } from "./i18n";
 
 export function useTranslation() {

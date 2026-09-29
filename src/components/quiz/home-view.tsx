@@ -26,7 +26,7 @@ import {
 } from "react";
 import { useSession } from "next-auth/react";
 import { motion } from "framer-motion";
-import { useQuizStore } from "@/lib/quiz-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";

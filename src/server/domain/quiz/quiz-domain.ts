@@ -112,6 +112,25 @@ export function canTransition(from: SessionStatus, to: SessionStatus): boolean {
 }
 
 /**
+ * Derive the session status from persisted fields. The QuizSession table
+ * has no `status` column — the state is derived from `completedAt`:
+ * a session with a completion timestamp is "completed", anything else is
+ * "in_progress" (answering is allowed).
+ */
+export function deriveSessionStatus(completedAt: Date | null): SessionStatus {
+  return completedAt ? "completed" : "in_progress";
+}
+
+/**
+ * P3 strict state machine rule: an answer may only be recorded while the
+ * session is still open ("created" / "in_progress"). Completed and abandoned
+ * sessions are frozen — the client sees HTTP 409 via the route mapping.
+ */
+export function canAcceptAnswer(status: SessionStatus): boolean {
+  return status === "created" || status === "in_progress";
+}
+
+/**
  * Transition a session to a new state.
  * Throws if the transition is invalid.
  */

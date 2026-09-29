@@ -26,7 +26,7 @@ import {
   Info,
   RefreshCw,
 } from "lucide-react";
-import { useQuizStore } from "@/lib/quiz-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 import { restartOnboarding } from "./onboarding-tour";
 
 interface FaqItem {

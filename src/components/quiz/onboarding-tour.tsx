@@ -15,7 +15,7 @@ import {
   Swords,
   Sparkles,
 } from "lucide-react";
-import { useQuizStore } from "@/lib/quiz-store";
+import { useQuizStore } from "@/shared/stores/quiz-store";
 
 const STORAGE_KEY = "onboarding-completed";
 

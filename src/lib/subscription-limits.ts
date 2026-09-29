@@ -1,7 +1,10 @@
-import { db } from "./db";
-
 /**
  * Freemium plan limits (added in F5).
+ *
+ * P3: this module is now CLIENT-SAFE CONSTANTS ONLY (no DB import). The
+ * quota logic (tier resolution, daily counting, limit checks) moved to the
+ * application layer — see src/server/application/subscription/check-quota.ts
+ * and the subscription repository for the data access.
  *
  * The actual `subscription` column lives on the User table ("free" |
  * "premium" | "admin"). FREE_LIMIT caps the number of *questions answered*
@@ -47,90 +50,3 @@ export const PLAN_FEATURES = {
     "Support prioritaire",
   ],
 } as const;
-
-export interface LimitCheck {
-  tier: SubscriptionTier;
-  isPremium: boolean;
-  usedToday: number;
-  remaining: number;
-  limit: number;
-  canStartMore: boolean;
-}
-
-/**
- * Resolve the effective subscription tier for a user id. Falls back to
- * "free" if the user does not exist or the column is missing.
- */
-export async function getUserTier(
-  userId: string | null | undefined
-): Promise<SubscriptionTier> {
-  if (!userId) return "free";
-  try {
-    const rows = await db.$queryRaw<{ subscription: string | null }[]>`
-      SELECT subscription FROM "User" WHERE id = ${userId}
-    `;
-    const sub = rows[0]?.subscription;
-    if (sub === "premium" || sub === "admin") return sub;
-    return "free";
-  } catch {
-    return "free";
-  }
-}
-
-/**
- * Count how many questions the user has already "consumed" today across
- * all sessions started in the current UTC day. Sessions without a user id
- * (anonymous) are not counted — those are rate-limited at the IP layer
- * by the public API instead.
- */
-export async function countQuestionsToday(
-  userId: string
-): Promise<number> {
-  const startOfDay = new Date();
-  startOfDay.setUTCHours(0, 0, 0, 0);
-  try {
-    const rows = await db.$queryRaw<{ total: bigint }[]>`
-      SELECT COALESCE(SUM("totalQuestions"), 0) AS total
-      FROM "QuizSession"
-      WHERE "userId" = ${userId}
-        AND "startedAt" >= ${startOfDay}
-    `;
-    const n = rows[0]?.total;
-    if (typeof n === "bigint") return Number(n);
-    if (typeof n === "number") return n;
-    return 0;
-  } catch {
-    return 0;
-  }
-}
-
-/**
- * Full limit check for the given user. Premium/admin users get unlimited
- * remaining (canStartMore always true). Free users see their remaining
- * daily quota.
- */
-export async function checkLimit(
-  userId: string | null | undefined
-): Promise<LimitCheck> {
-  const tier = await getUserTier(userId);
-  if (tier === "premium" || tier === "admin") {
-    return {
-      tier,
-      isPremium: true,
-      usedToday: 0,
-      remaining: Number.POSITIVE_INFINITY,
-      limit: Number.POSITIVE_INFINITY,
-      canStartMore: true,
-    };
-  }
-  const usedToday = userId ? await countQuestionsToday(userId) : 0;
-  const remaining = Math.max(0, FREE_DAILY_LIMIT - usedToday);
-  return {
-    tier: "free",
-    isPremium: false,
-    usedToday,
-    remaining,
-    limit: FREE_DAILY_LIMIT,
-    canStartMore: remaining > 0,
-  };
-}

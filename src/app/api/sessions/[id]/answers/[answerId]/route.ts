@@ -46,6 +46,13 @@ export async function PATCH(
         });
       case "invalid_answer":
         return NextResponse.json({ error: "Invalid userAnswer value" }, { status: 400 });
+      case "session_completed":
+        // P3 strict state machine: completed sessions are frozen. 409 tells
+        // the client the resource is in a state that forbids this change.
+        return NextResponse.json(
+          { error: "Session déjà terminée" },
+          { status: 409 },
+        );
       case "session_not_found":
         return NextResponse.json({ error: "Session not found" }, { status: 404 });
       case "answer_not_found":

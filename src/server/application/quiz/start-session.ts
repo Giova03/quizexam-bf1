@@ -14,9 +14,9 @@
  */
 
 import {
-  checkLimit,
-  FREE_DAILY_LIMIT,
-} from "@/lib/subscription-limits";
+  checkDailyQuota,
+} from "@/server/application/subscription/check-quota";
+import { FREE_DAILY_LIMIT } from "@/lib/subscription-limits";
 import {
   createSessionWithAnswers,
   loadSourceQuestions,
@@ -67,9 +67,10 @@ export async function startSession(
   }
 
   // Freemium daily limit — authenticated users only (anonymous sessions are
-  // rate-limited at the IP layer by the public API instead).
+  // rate-limited at the IP layer by the public API instead). P3: the check
+  // lives in the application/subscription layer (DB access out of lib).
   if (actor) {
-    const check = await checkLimit(actor.id);
+    const check = await checkDailyQuota(actor.id);
     if (!check.canStartMore) {
       return {
         kind: "daily_limit_reached",

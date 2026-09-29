@@ -5,7 +5,7 @@ import {
   getRoom,
   serializeRoom,
   type Participant,
-} from "@/lib/competition-store";
+} from "@/server/infrastructure/competition-store";
 
 export const dynamic = "force-dynamic";
 

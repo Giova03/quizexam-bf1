@@ -7,7 +7,7 @@ import type {
   QuestionBank,
   Exam,
   QuizSession,
-} from "./types";
+} from "@/lib/types";
 
 /** Difficulty levels supported by the start-dialog. */
 export type SessionDifficulty = "easy" | "medium" | "hard" | "all";

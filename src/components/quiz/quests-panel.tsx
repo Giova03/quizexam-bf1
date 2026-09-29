@@ -11,7 +11,7 @@ import {
 import {
   useQuests,
   type Quest,
-} from "@/lib/quests-store";
+} from "@/shared/stores/quests-store";
 import {
   Sparkles,
   CalendarDays,

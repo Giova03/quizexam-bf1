@@ -10,7 +10,7 @@ import {
   TIER_META,
   type TrophyTier,
 } from "@/lib/seasons";
-import { usePrefs } from "@/lib/prefs-store";
+import { usePrefs } from "@/shared/stores/prefs-store";
 import { Trophy, CalendarClock, Crown, Medal, Award, Hourglass } from "lucide-react";
 
 /**

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { applySm2, type SpacedCard } from "@/lib/spaced-repetition-store";
+import { applySm2, type SpacedCard } from "@/shared/stores/spaced-repetition-store";
 
 /**
  * GET /api/spaced-repetition?ids=id1,id2,...
