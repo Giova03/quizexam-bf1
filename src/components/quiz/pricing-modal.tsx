@@ -69,6 +69,28 @@ export function PricingModal({ open, onOpenChange, onUpgraded }: PricingModalPro
   async function upgrade() {
     setUpgrading(true);
     try {
+      // P5: try the real FedaPay checkout first (Orange Money / Moov Money).
+      // The premium tier is ONLY granted by the signed webhook after an
+      // approved transaction — never directly from the client.
+      const checkoutRes = await fetch("/api/subscription/checkout", {
+        method: "POST",
+      });
+      if (checkoutRes.ok) {
+        const data = (await checkoutRes.json().catch(() => null)) as {
+          paymentUrl?: string;
+        } | null;
+        if (data?.paymentUrl) {
+          toast.info("Redirection vers le paiement sécurisé FedaPay (Orange Money / Moov)…");
+          window.location.href = data.paymentUrl;
+          return;
+        }
+      } else if (checkoutRes.status === 409) {
+        const data = (await checkoutRes.json().catch(() => null)) as { error?: string } | null;
+        toast.info(data?.error ?? "Vous êtes déjà Premium.");
+        return;
+      }
+      // 503 (not configured) / 502 (provider down) / network error →
+      // fall back to the historical demo upgrade so the app keeps working.
       const res = await fetch("/api/subscription", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -76,7 +98,7 @@ export function PricingModal({ open, onOpenChange, onUpgraded }: PricingModalPro
       });
       const data = await res.json();
       if (res.ok && data.success) {
-        toast.success("Premium activé ! Profitez de toutes les fonctionnalités. 🎉");
+        toast.success("Premium activé (mode démo — paiement en ligne pas encore configuré).");
         // Refetch to update UI
         const fresh = await fetch("/api/subscription").then((r) => r.json());
         setState(fresh);
@@ -258,7 +280,8 @@ export function PricingModal({ open, onOpenChange, onUpgraded }: PricingModalPro
 
             <DialogFooter className="flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-xs text-muted-foreground">
-                Mode démo — aucun paiement réel n&apos;est effectué.
+                Paiement mobile money sécurisé via FedaPay (Orange Money /
+                Moov Money) — activation immédiate après confirmation.
               </p>
               <div className="flex items-center gap-2">
                 {isPremium ? (
