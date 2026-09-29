@@ -2483,3 +2483,21 @@ Stage Summary:
 - Contrats HTTP conservés à l'identique SAUF : PATCH answers sur session terminée → 409 (changement voulu, documenté ROADMAP §2).
 - Prochaine phase : P4 (audit trail sur mutations staff + onglet admin Journal d'audit + adaptateur SM-2).
 - ROADMAP.md à jour (arbre d'architecture, tableau des phases, §3 qualité 4 checks, comportements documentés).
+
+## Session P4→P7 — 2026-09-30 (Architecture V2 terminée)
+
+Task: livrer les 4 phases restantes de la ROADMAP (P4 audit staff, P5 FedaPay, P6 observabilité, P7 E2E) en autonomie, avec validation complète à chaque phase.
+
+Work Log:
+- P4 (commit 2d2cfa0) : helper `logStaffAction` (server/application/audit) — identité dérivée de la session NextAuth (jamais du body), payloads tronqués comme /api/audit-log, best-effort. Branché sur 10 routes staff : questions POST/PATCH/DELETE (oldValue capturé avant update/delete), import-questions, generate-questions (IA), banks POST/PATCH/DELETE, users/role (old→new + email cible), reports/[id], exams POST/DELETE, broadcast. GET /api/audit-log : filtres ?entity= & ?action= (préfixe), repository étendu. Onglet « Journal d'audit » dans admin-view (TABS + AuditLogPanel : liste newest-first, filtres pill par entité, filtre action, résumé top actions, refresh, Skeleton/sonner). SM-2 unifié : domaine = source unique ; adaptateur `spaced-repetition-adapter.ts` (toDomainCard/fromDomainCard, clamp conservé) ; le store délègue (API publique inchangée) ; /api/spaced-repetition utilise le domaine (plus d'import d'un module "use client" côté serveur).
+- P5 (commit e45a75b) : domaine pur `webhook-domain.ts` — verifyFedapaySignature (t=,s= + fenêtre anti-replay 5 min + fallback hex nu, comparaison constant-time), parseFedapayEvent, resolvePremiumActivation (approuvé + custom_metadata.userId maison uniquement). lib/fedapay.ts : createPremiumCheckout (POST /v1/transactions puis /tokens, Basic auth, sandbox|live, 2000 FCFA = prix du modal). POST /api/subscription/checkout (401/404/409 déjà premium/503 non configuré/502 provider). POST /api/webhooks/fedapay (signature obligatoire sinon 401, idempotent, audit subscription.activated, 503 si secret absent). pricing-modal : bouton → checkout réel → redirection FedaPay ; fallback mock si 503/502 (message explicite « mode démo »).
+- P6 (commit a5e2f33) : GET /api/health (public, { ok, db, uptimeSec, ts }, SELECT 1 timeout 3s, zéro fuite d'info). lib/observability.ts : captureError/captureMessage (JSON une ligne pour log drains + ERROR_WEBHOOK_URL Slack/Discord fire-and-forget, zero-dep, Sentry-ready). Branché sur checkout + webhook FedaPay.
+- P7 (commit 70b752b) : @playwright/test + playwright.config.ts (webServer auto next dev, chromium, E2E_BASE_URL pour cible externe). e2e/smoke.spec.ts read-only sans DB : titre home, /api/health, CSRF NextAuth — 3/3 verts en local. e2e/critical-path.spec.ts (E2E_FULL=1 obligatoire car écrit en DB) : signup API → login credentials (CSRF) → /api/subscription → banques seedées → POST session → PATCH réponses → POST complete → vérifie 409 post-complétion (state machine P3). Script test:e2e ; test-results/ ignorés.
+- Découverte P7 : POST /api/sessions autorise les sessions anonymes (historique, mode démo) — documenté ROADMAP §2, le smoke ne le considère pas comme une erreur.
+- Fix mineur en vol : newValue d'audit doit être string (JSON.stringify) dans le webhook.
+
+Stage Summary:
+- Validations par phase : tsc --noEmit 0 erreur · ESLint 0 erreur · vitest 158/158 (11 fichiers) · next build prod OK · smoke E2E 3/3 · CI GitHub success sur les 4 commits.
+- Aucune migration Prisma requise (aucun changement de schéma).
+- ROADMAP.md à jour : tableau phases 100 % (P0→P7), variables FedaPay/ERROR_WEBHOOK_URL, comportements documentés (sessions anonymes, activation premium webhook-only), §3 avec test:e2e, runbook « prochaines pistes » (activation FedaPay, reçus email, Sentry, CI E2E).
+- Architecture V2 TERMINÉE. Prochaines étapes = opérationnelles (compte marchand FedaPay, Sentry DSN, reçus email).
