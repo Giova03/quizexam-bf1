@@ -51,7 +51,7 @@ const LEVEL_OPTIONS: LevelOption[] = [
     hint: "Tous niveaux",
     icon: Layers,
     activeCls:
-      "bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-500/20",
+      "bg-gradient-to-r from-blue-600 to-sky-500 text-white shadow-md shadow-blue-500/20",
     iconActiveCls: "text-white",
   },
   {
@@ -60,7 +60,7 @@ const LEVEL_OPTIONS: LevelOption[] = [
     hint: "Collège",
     icon: School,
     activeCls:
-      "bg-gradient-to-r from-sky-500 to-cyan-600 text-white shadow-md shadow-sky-500/20",
+      "bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-md shadow-emerald-500/20",
     iconActiveCls: "text-white",
   },
   {
@@ -69,7 +69,7 @@ const LEVEL_OPTIONS: LevelOption[] = [
     hint: "Lycée",
     icon: BookOpen,
     activeCls:
-      "bg-gradient-to-r from-violet-500 to-purple-600 text-white shadow-md shadow-violet-500/20",
+      "bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-md shadow-blue-500/20",
     iconActiveCls: "text-white",
   },
   {
@@ -78,7 +78,7 @@ const LEVEL_OPTIONS: LevelOption[] = [
     hint: "Université",
     icon: Building2,
     activeCls:
-      "bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-md shadow-amber-500/20",
+      "bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md shadow-orange-500/20",
     iconActiveCls: "text-white",
   },
   {
@@ -87,7 +87,7 @@ const LEVEL_OPTIONS: LevelOption[] = [
     hint: "Examens",
     icon: Trophy,
     activeCls:
-      "bg-gradient-to-r from-rose-500 to-pink-600 text-white shadow-md shadow-rose-500/20",
+      "bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white shadow-md shadow-violet-500/20",
     iconActiveCls: "text-white",
   },
 ];
@@ -185,10 +185,10 @@ export function EducationLevelSelector({
               aria-selected={isActive}
               onClick={() => onChange(opt.value)}
               className={cn(
-                "group relative flex flex-col items-center gap-1.5 rounded-xl border-2 px-3 py-3 text-center transition-all hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-1",
+                "group relative flex flex-col items-center gap-1.5 rounded-xl border-2 px-3 py-3 text-center transition-all hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1",
                 isActive
                   ? cn(opt.activeCls, "border-transparent")
-                  : "border-border bg-card text-card-foreground hover:border-emerald-300 hover:bg-muted/40",
+                  : "border-border bg-card text-card-foreground hover:border-blue-300 hover:bg-muted/40",
               )}
             >
               <Icon
@@ -196,7 +196,7 @@ export function EducationLevelSelector({
                   "h-5 w-5 transition-colors",
                   isActive
                     ? opt.iconActiveCls
-                    : "text-muted-foreground group-hover:text-emerald-600",
+                    : "text-muted-foreground group-hover:text-blue-600",
                 )}
               />
               <span className="text-sm font-semibold leading-none">
@@ -251,7 +251,7 @@ export function EducationLevelSelector({
               onClick={() => onChange(opt.value)}
               title={`${opt.label} — ${opt.hint}`}
               className={cn(
-                "group relative flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-3 py-2 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-1",
+                "group relative flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-3 py-2 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1",
                 isActive
                   ? cn(opt.activeCls, "scale-[1.02]")
                   : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",

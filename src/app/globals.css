@@ -46,73 +46,73 @@
 
 :root {
   --radius: 0.75rem;
-  /* V3 design refresh — warm ivory base tinted with the brand emerald. */
-  --background: oklch(0.982 0.007 155);
-  --foreground: oklch(0.24 0.03 165);
+  /* V4 "Aurora Light 2026" — crisp white base with blue / green / orange energy. */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.26 0.035 262);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.03 165);
+  --card-foreground: oklch(0.26 0.035 262);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.03 165);
-  --primary: oklch(0.56 0.128 163);
-  --primary-foreground: oklch(0.985 0.01 155);
-  --secondary: oklch(0.955 0.016 155);
-  --secondary-foreground: oklch(0.3 0.04 165);
-  --muted: oklch(0.95 0.013 155);
-  --muted-foreground: oklch(0.51 0.022 162);
-  --accent: oklch(0.945 0.035 102);
-  --accent-foreground: oklch(0.36 0.06 95);
+  --popover-foreground: oklch(0.26 0.035 262);
+  --primary: oklch(0.55 0.21 262);
+  --primary-foreground: oklch(0.985 0.005 250);
+  --secondary: oklch(0.95 0.022 250);
+  --secondary-foreground: oklch(0.32 0.05 262);
+  --muted: oklch(0.96 0.01 250);
+  --muted-foreground: oklch(0.5 0.028 258);
+  --accent: oklch(0.955 0.035 65);
+  --accent-foreground: oklch(0.38 0.09 55);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.905 0.016 158);
-  --input: oklch(0.905 0.016 158);
-  --ring: oklch(0.6 0.115 163);
-  --chart-1: oklch(0.62 0.15 162);
-  --chart-2: oklch(0.75 0.14 95);
-  --chart-3: oklch(0.5 0.1 190);
-  --chart-4: oklch(0.68 0.16 45);
-  --chart-5: oklch(0.55 0.12 300);
-  --sidebar: oklch(0.975 0.01 155);
-  --sidebar-foreground: oklch(0.24 0.03 165);
-  --sidebar-primary: oklch(0.56 0.128 163);
-  --sidebar-primary-foreground: oklch(0.985 0.01 155);
-  --sidebar-accent: oklch(0.945 0.02 155);
-  --sidebar-accent-foreground: oklch(0.3 0.04 165);
-  --sidebar-border: oklch(0.905 0.016 158);
-  --sidebar-ring: oklch(0.6 0.115 163);
+  --border: oklch(0.905 0.018 255);
+  --input: oklch(0.905 0.018 255);
+  --ring: oklch(0.6 0.19 262);
+  --chart-1: oklch(0.58 0.2 262);
+  --chart-2: oklch(0.66 0.16 163);
+  --chart-3: oklch(0.72 0.17 55);
+  --chart-4: oklch(0.62 0.18 305);
+  --chart-5: oklch(0.64 0.14 220);
+  --sidebar: oklch(0.975 0.012 250);
+  --sidebar-foreground: oklch(0.26 0.035 262);
+  --sidebar-primary: oklch(0.55 0.21 262);
+  --sidebar-primary-foreground: oklch(0.985 0.005 250);
+  --sidebar-accent: oklch(0.945 0.025 250);
+  --sidebar-accent-foreground: oklch(0.32 0.05 262);
+  --sidebar-border: oklch(0.905 0.018 255);
+  --sidebar-ring: oklch(0.6 0.19 262);
 }
 
 .dark {
-  /* V3 dark premium — deep emerald-black with glowing mint accents. */
-  --background: oklch(0.175 0.02 168);
-  --foreground: oklch(0.955 0.012 155);
-  --card: oklch(0.22 0.022 168);
-  --card-foreground: oklch(0.955 0.012 155);
-  --popover: oklch(0.22 0.022 168);
-  --popover-foreground: oklch(0.955 0.012 155);
-  --primary: oklch(0.79 0.135 163);
-  --primary-foreground: oklch(0.2 0.03 168);
-  --secondary: oklch(0.275 0.024 168);
-  --secondary-foreground: oklch(0.955 0.012 155);
-  --muted: oklch(0.265 0.022 168);
-  --muted-foreground: oklch(0.72 0.025 160);
-  --accent: oklch(0.3 0.03 165);
-  --accent-foreground: oklch(0.955 0.012 155);
+  /* V4 dark — deep midnight navy with glowing blue / mint / orange accents. */
+  --background: oklch(0.18 0.03 262);
+  --foreground: oklch(0.95 0.012 250);
+  --card: oklch(0.225 0.033 262);
+  --card-foreground: oklch(0.95 0.012 250);
+  --popover: oklch(0.225 0.033 262);
+  --popover-foreground: oklch(0.95 0.012 250);
+  --primary: oklch(0.74 0.14 255);
+  --primary-foreground: oklch(0.18 0.04 262);
+  --secondary: oklch(0.28 0.035 260);
+  --secondary-foreground: oklch(0.95 0.012 250);
+  --muted: oklch(0.27 0.03 260);
+  --muted-foreground: oklch(0.72 0.025 255);
+  --accent: oklch(0.31 0.045 255);
+  --accent-foreground: oklch(0.95 0.012 250);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 16%);
-  --ring: oklch(0.62 0.1 162);
-  --chart-1: oklch(0.72 0.14 162);
-  --chart-2: oklch(0.8 0.13 95);
-  --chart-3: oklch(0.65 0.12 190);
-  --chart-4: oklch(0.72 0.15 45);
-  --chart-5: oklch(0.65 0.13 300);
-  --sidebar: oklch(0.21 0.022 168);
-  --sidebar-foreground: oklch(0.955 0.012 155);
-  --sidebar-primary: oklch(0.79 0.135 163);
-  --sidebar-primary-foreground: oklch(0.2 0.03 168);
-  --sidebar-accent: oklch(0.28 0.024 168);
-  --sidebar-accent-foreground: oklch(0.955 0.012 155);
+  --ring: oklch(0.65 0.13 255);
+  --chart-1: oklch(0.72 0.14 255);
+  --chart-2: oklch(0.75 0.14 163);
+  --chart-3: oklch(0.78 0.15 60);
+  --chart-4: oklch(0.7 0.15 305);
+  --chart-5: oklch(0.68 0.13 220);
+  --sidebar: oklch(0.21 0.03 262);
+  --sidebar-foreground: oklch(0.95 0.012 250);
+  --sidebar-primary: oklch(0.74 0.14 255);
+  --sidebar-primary-foreground: oklch(0.18 0.04 262);
+  --sidebar-accent: oklch(0.29 0.035 260);
+  --sidebar-accent-foreground: oklch(0.95 0.012 250);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.62 0.1 162);
+  --sidebar-ring: oklch(0.65 0.13 255);
 }
 
 @layer base {
@@ -347,15 +347,15 @@ html.reduce-motion *::after {
     inset -4px -4px 8px rgba(255, 255, 255, 0.03);
 }
 
-/* --- Gradient mesh background --- */
+/* --- Gradient mesh background (V4 — white · blue · green · orange) --- */
 .gradient-mesh {
   background: linear-gradient(
     135deg,
-    #ecfdf5 0%,
-    #f0fdfa 25%,
-    #ecfeff 50%,
-    #f0fdf4 75%,
-    #ecfdf5 100%
+    #ffffff 0%,
+    #eff6ff 25%,
+    #ecfdf5 50%,
+    #fff7ed 75%,
+    #ffffff 100%
   );
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
@@ -363,11 +363,11 @@ html.reduce-motion *::after {
 .dark .gradient-mesh {
   background: linear-gradient(
     135deg,
-    #042f2e 0%,
-    #083344 25%,
-    #0c4a6e 50%,
-    #064e3b 75%,
-    #042f2e 100%
+    #0b1226 0%,
+    #10203f 25%,
+    #0a2a3f 50%,
+    #231133 75%,
+    #0b1226 100%
   );
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
@@ -425,24 +425,197 @@ html.reduce-motion *::after {
 .animate-marquee:hover { animation-play-state: paused; }
 
 @keyframes ticker-glow {
-  0%, 100% { box-shadow: 0 0 24px rgba(16, 185, 129, 0.25); }
-  50% { box-shadow: 0 0 56px rgba(245, 197, 66, 0.35); }
+  0%, 100% { box-shadow: 0 8px 30px -6px rgba(37, 99, 235, 0.45); }
+  50% { box-shadow: 0 8px 42px -4px rgba(16, 185, 129, 0.55); }
 }
 .animate-ticker-glow { animation: ticker-glow 4s ease-in-out infinite; }
 
+/* V4 gradient text — orange/amber (kept name for compatibility). */
 .text-gradient-gold {
-  background: linear-gradient(120deg, #f5c542 0%, #ffe9a8 40%, #e8a820 80%);
+  background: linear-gradient(120deg, #f97316 0%, #fdba74 45%, #ea580c 90%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+/* V4 gradient text — blue → green (kept name for compatibility). */
 .text-gradient-mint {
-  background: linear-gradient(120deg, #34d399 0%, #a7f3d0 45%, #2dd4bf 90%);
+  background: linear-gradient(120deg, #2563eb 0%, #0ea5e9 40%, #10b981 85%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+
+/* ============================================================
+ * V4 "Aurora Light 2026" — new animation & effect utilities
+ * ============================================================ */
+
+/* Brand gradient text: blue → sky → emerald. */
+.text-gradient-brand {
+  background: linear-gradient(115deg, #2563eb 0%, #0ea5e9 38%, #10b981 72%, #22c55e 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 6s ease-in-out infinite;
+}
+
+/* Sun gradient text: amber → orange. */
+.text-gradient-sun {
+  background: linear-gradient(115deg, #f59e0b 0%, #f97316 55%, #ef4444 110%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 6s ease-in-out infinite;
+}
+
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+/* Animated gradient background for CTA buttons (needs bg-size). */
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 5s ease infinite;
+}
+
+/* Shine sweep on hover — wrap in an overflow-hidden rounded element. */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.45) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+}
+.btn-shine:hover::after {
+  transform: translateX(120%);
+}
+
+/* Spotlight card — highlight follows the cursor via --mx / --my CSS vars
+   (set from JS onMouseMove). Falls back to centre. */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    340px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(37, 99, 235, 0.1),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* Simple hover lift. */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px -14px rgba(37, 99, 235, 0.25);
+}
+
+/* Slow rotation (logo ornaments, decorative shapes). */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 14s linear infinite; }
+
+/* Gentle wobble for icons / badges. */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.animate-wiggle { animation: wiggle 2.4s ease-in-out infinite; }
+
+/* Dashed connector draw-in (how-it-works timeline). */
+@keyframes dash-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Pulsing dot (live indicators). */
+@keyframes ping-soft {
+  0% { transform: scale(1); opacity: 0.7; }
+  80%, 100% { transform: scale(2.4); opacity: 0; }
+}
+.animate-ping-soft { animation: ping-soft 1.8s cubic-bezier(0, 0, 0.2, 1) infinite; }
+
+/* Gradient border card (via double background trick). */
+.gradient-border {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--card, #fff), var(--card, #fff)) padding-box,
+    linear-gradient(135deg, rgba(37, 99, 235, 0.45), rgba(16, 185, 129, 0.35), rgba(249, 115, 22, 0.35)) border-box;
+}
+.dark .gradient-border {
+  background:
+    linear-gradient(var(--card, #10182e), var(--card, #10182e)) padding-box,
+    linear-gradient(135deg, rgba(96, 165, 250, 0.4), rgba(52, 211, 153, 0.3), rgba(251, 146, 60, 0.3)) border-box;
+}
+
+/* Light dotted pattern. */
+.dot-grid-light {
+  background-image: radial-gradient(rgba(37, 99, 235, 0.14) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* Scroll progress bar (fixed top). */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 60;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, #2563eb, #10b981, #f97316, #2563eb);
+  background-size: 300% 100%;
+  animation: gradient-x 6s linear infinite;
+}
+
+/* Word rotator (hero rotating keywords). */
+.word-rotator {
+  display: inline-grid;
+  vertical-align: bottom;
+}
+.word-rotator > span {
+  grid-area: 1 / 1;
+}
+
+/* Stagger-reveal helper (children get animated by framer-motion). */
+@keyframes float-x {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+.animate-float-x { animation: float-x 5s ease-in-out infinite; }
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+.animate-bob { animation: bob 5s ease-in-out infinite; }
 
 .bg-grid-dark {
   background-image:
@@ -453,8 +626,8 @@ html.reduce-motion *::after {
 
 .bg-grid-light {
   background-image:
-    linear-gradient(rgba(6, 78, 59, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(6, 78, 59, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(37, 99, 235, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.055) 1px, transparent 1px);
   background-size: 44px 44px;
 }
 
@@ -463,8 +636,8 @@ html.reduce-motion *::after {
 }
 .card-glow:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px -12px rgba(16, 185, 129, 0.35);
-  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 14px 40px -14px rgba(37, 99, 235, 0.3);
+  border-color: rgba(37, 99, 235, 0.4);
 }
 
 .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
@@ -486,8 +659,8 @@ html.reduce-motion *::after {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+  0%, 100% { box-shadow: 0 0 18px rgba(124, 58, 237, 0.35); }
+  50% { box-shadow: 0 0 38px rgba(124, 58, 237, 0.6); }
 }
 .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
 
@@ -566,7 +739,7 @@ html {
 /* --- Custom scrollbar (premium feel) --- */
 .custom-scroll {
   scrollbar-width: thin;
-  scrollbar-color: rgba(16, 185, 129, 0.4) transparent;
+  scrollbar-color: rgba(37, 99, 235, 0.4) transparent;
 }
 .custom-scroll::-webkit-scrollbar {
   width: 6px;
@@ -576,11 +749,11 @@ html {
   background: transparent;
 }
 .custom-scroll::-webkit-scrollbar-thumb {
-  background: rgba(16, 185, 129, 0.4);
+  background: rgba(37, 99, 235, 0.4);
   border-radius: 3px;
 }
 .custom-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(16, 185, 129, 0.6);
+  background: rgba(37, 99, 235, 0.6);
 }
 
 /* --- Gradient text utility --- */

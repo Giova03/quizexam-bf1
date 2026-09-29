@@ -44,28 +44,28 @@ const LEVELS = [
     label: "BEPC",
     hint: "Collège · 3e",
     icon: School,
-    gradient: "from-emerald-400 to-teal-500",
+    gradient: "from-emerald-500 to-teal-400",
   },
   {
     id: "BAC",
     label: "Baccalauréat",
     hint: "Lycée · Terminale",
     icon: GraduationCap,
-    gradient: "from-cyan-400 to-sky-500",
+    gradient: "from-blue-500 to-sky-400",
   },
   {
     id: "LICENCE",
     label: "Licence",
     hint: "Enseignement supérieur",
     icon: Building2,
-    gradient: "from-amber-400 to-orange-500",
+    gradient: "from-orange-500 to-amber-400",
   },
   {
     id: "CONCOURS",
     label: "Concours",
     hint: "ENA, Douanes, Police…",
     icon: Target,
-    gradient: "from-rose-400 to-pink-500",
+    gradient: "from-violet-500 to-fuchsia-400",
   },
 ] as const;
 
@@ -213,7 +213,7 @@ export function OnboardingWizard({ active }: OnboardingWizardProps) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-[#04140f]/80 p-4 backdrop-blur-md"
+        className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-slate-900/70 p-4 backdrop-blur-md"
         role="dialog"
         aria-modal="true"
         aria-label="Bienvenue sur QuizExam BF"
@@ -228,18 +228,23 @@ export function OnboardingWizard({ active }: OnboardingWizardProps) {
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-white/10 bg-background shadow-2xl"
         >
-          {/* Header */}
-          <div className="relative overflow-hidden bg-[#04140f] px-6 pb-6 pt-7 text-emerald-50">
-            <div className="absolute inset-0 bg-grid-dark" aria-hidden="true" />
+          {/* Header — V4 brand gradient band */}
+          <div className="animate-gradient-x relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-emerald-500 px-6 pb-6 pt-7 text-white">
+            <div className="dot-grid-light absolute inset-0 opacity-20" aria-hidden="true" />
             <div
-              className="aurora-blob h-40 w-40 bg-emerald-500/30"
+              className="aurora-blob h-40 w-40 bg-white/20"
               style={{ top: "-40%", left: "-5%" }}
+              aria-hidden="true"
+            />
+            <div
+              className="aurora-blob h-28 w-28 bg-orange-400/30"
+              style={{ bottom: "-45%", right: "10%", animationDelay: "-7s" }}
               aria-hidden="true"
             />
             <button
               type="button"
               onClick={() => finish(true)}
-              className="absolute right-4 top-4 rounded-lg p-1.5 text-emerald-100/60 transition-colors hover:bg-white/10 hover:text-white"
+              className="absolute right-4 top-4 rounded-lg p-1.5 text-blue-100/80 transition-colors hover:bg-white/15 hover:text-white"
               aria-label="Passer l'onboarding"
             >
               <X className="h-4 w-4" />
@@ -250,20 +255,20 @@ export function OnboardingWizard({ active }: OnboardingWizardProps) {
                   <span
                     key={i}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
-                      i <= step ? "w-7 bg-gradient-to-r from-emerald-400 to-teal-400" : "w-3 bg-white/15"
+                      i <= step ? "w-7 bg-gradient-to-r from-orange-400 to-amber-300" : "w-3 bg-white/25"
                     }`}
                   />
                 ))}
               </div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-200">
                 Étape {step + 1} / 4
               </p>
-              <p className="mt-1 text-sm text-emerald-100/70">
+              <p className="mt-1 text-sm text-blue-100/85">
                 Personnalisez votre expérience
               </p>
-              <div className="mt-4 h-1 overflow-hidden rounded-full bg-white/10">
+              <div className="mt-4 h-1 overflow-hidden rounded-full bg-white/20">
                 <motion.div
-                  className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-amber-300"
+                  className="h-full rounded-full bg-gradient-to-r from-orange-400 to-amber-300"
                   animate={{ width: `${progress}%` }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 />
@@ -283,7 +288,7 @@ export function OnboardingWizard({ active }: OnboardingWizardProps) {
               >
                 {step === 0 && (
                   <div className="flex flex-col items-center py-6 text-center">
-                    <div className="animate-float flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-emerald-400 to-teal-500 shadow-xl shadow-emerald-500/25">
+                    <div className="animate-float flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-500 to-emerald-500 shadow-xl shadow-blue-500/25">
                       <PartyPopper className="h-10 w-10 text-white" />
                     </div>
                     <h2 className="mt-6 font-display text-2xl font-bold tracking-tight">
@@ -304,7 +309,7 @@ export function OnboardingWizard({ active }: OnboardingWizardProps) {
                           key={f.label}
                           className="flex flex-col items-center gap-1.5 rounded-xl border bg-muted/40 p-3"
                         >
-                          <f.icon className="h-5 w-5 text-emerald-500" />
+                          <f.icon className="h-5 w-5 text-blue-500" />
                           <span className="text-[11px] font-medium text-muted-foreground">
                             {f.label}
                           </span>
@@ -404,7 +409,7 @@ export function OnboardingWizard({ active }: OnboardingWizardProps) {
                           <span
                             className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${
                               goal === g.id
-                                ? "bg-gradient-to-br from-emerald-400 to-teal-500 text-white"
+                                ? "bg-gradient-to-br from-blue-500 to-emerald-500 text-white"
                                 : "bg-muted text-muted-foreground"
                             }`}
                           >
@@ -447,7 +452,7 @@ export function OnboardingWizard({ active }: OnboardingWizardProps) {
             {step < 3 ? (
               <Button
                 size="sm"
-                className="min-w-32 gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white"
+                className="min-w-32 gap-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 text-white shadow-md shadow-blue-500/20"
                 onClick={() => setStep((s) => s + 1)}
               >
                 {step === 0 ? "C'est parti" : "Continuer"}
@@ -456,7 +461,7 @@ export function OnboardingWizard({ active }: OnboardingWizardProps) {
             ) : (
               <Button
                 size="sm"
-                className="min-w-32 gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white"
+                className="btn-shine min-w-32 gap-1.5 bg-gradient-to-r from-orange-500 to-amber-400 text-white shadow-md shadow-orange-500/20"
                 onClick={() => finish(false)}
                 disabled={saving}
               >

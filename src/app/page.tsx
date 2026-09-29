@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, lazy, Suspense, type ReactNode } from "react";
+import { motion } from "framer-motion";
 import { useSession } from "next-auth/react";
 import { useQuizStore } from "@/shared/stores/quiz-store";
 import { usePrefs } from "@/shared/stores/prefs-store";
@@ -94,8 +95,6 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
 import {
   Sheet,
@@ -350,6 +349,139 @@ const MobileNavSection = ({ title }: { title: string }) => {
   );
 }
 
+/**
+ * V4 — AppNavItem
+ *
+ * Desktop header nav entry with an animated gradient pill: the active item
+ * wears a shared framer-motion pill (layoutId) that slides between items
+ * with a spring. Hover gets a soft blue tint.
+ */
+const APP_NAV_SPRING = { type: "spring" as const, stiffness: 420, damping: 34 };
+function AppNavItem({
+  active,
+  onClick,
+  icon,
+  label,
+  testId,
+}: {
+  active?: boolean;
+  onClick: () => void;
+  icon: ReactNode;
+  label: string;
+  testId?: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      data-tour={testId}
+      aria-current={active ? "page" : undefined}
+      className={`relative flex h-9 items-center gap-1.5 rounded-full px-3 text-sm font-medium transition-colors ${
+        active
+          ? "text-white"
+          : "text-muted-foreground hover:bg-blue-50 hover:text-foreground dark:hover:bg-white/5"
+      }`}
+    >
+      {active && (
+        <motion.span
+          layoutId="app-nav-pill"
+          className="animate-gradient-x absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 shadow-md shadow-blue-500/25"
+          transition={APP_NAV_SPRING}
+          aria-hidden="true"
+        />
+      )}
+      <span className="relative z-10 flex items-center gap-1.5">
+        {icon}
+        <span className="hidden lg:inline">{label}</span>
+      </span>
+    </button>
+  );
+}
+
+/* Tone maps for the Explorer mega-panel (V4). */
+const EXPLORER_SECTION_TONES: Record<string, string> = {
+  blue: "bg-blue-100 text-blue-600 dark:bg-blue-500/15 dark:text-blue-300",
+  emerald: "bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-300",
+  orange: "bg-orange-100 text-orange-600 dark:bg-orange-500/15 dark:text-orange-300",
+  violet: "bg-violet-100 text-violet-600 dark:bg-violet-500/15 dark:text-violet-300",
+};
+
+const EXPLORER_ITEM_TONES: Record<string, string> = {
+  blue: "bg-blue-50 text-blue-600 group-hover/item:bg-blue-100 dark:bg-blue-500/10 dark:text-blue-300 dark:group-hover/item:bg-blue-500/20",
+  emerald:
+    "bg-emerald-50 text-emerald-600 group-hover/item:bg-emerald-100 dark:bg-emerald-500/10 dark:text-emerald-300 dark:group-hover/item:bg-emerald-500/20",
+  orange:
+    "bg-orange-50 text-orange-600 group-hover/item:bg-orange-100 dark:bg-orange-500/10 dark:text-orange-300 dark:group-hover/item:bg-orange-500/20",
+  violet:
+    "bg-violet-50 text-violet-600 group-hover/item:bg-violet-100 dark:bg-violet-500/10 dark:text-violet-300 dark:group-hover/item:bg-violet-500/20",
+  rose: "bg-rose-50 text-rose-600 group-hover/item:bg-rose-100 dark:bg-rose-500/10 dark:text-rose-300 dark:group-hover/item:bg-rose-500/20",
+  sky: "bg-sky-50 text-sky-600 group-hover/item:bg-sky-100 dark:bg-sky-500/10 dark:text-sky-300 dark:group-hover/item:bg-sky-500/20",
+};
+
+/**
+ * V4 — ExplorerSection / ExplorerItem
+ *
+ * Building blocks of the "Explorer" mega dropdown: a bordered section card
+ * with a coloured header chip, and a compact item with a coloured icon chip
+ * that deepens on hover and nudges the label.
+ */
+function ExplorerSection({
+  title,
+  icon: Icon,
+  tone,
+  children,
+}: {
+  title: string;
+  icon: React.ComponentType<{ className?: string }>;
+  tone: keyof typeof EXPLORER_SECTION_TONES;
+  children: ReactNode;
+}) {
+  return (
+    <div className="rounded-2xl border bg-background/60 p-2.5">
+      <p className="mb-1.5 flex items-center gap-2 px-1">
+        <span
+          className={`flex h-6 w-6 items-center justify-center rounded-lg ${EXPLORER_SECTION_TONES[tone]}`}
+        >
+          <Icon className="h-3.5 w-3.5" />
+        </span>
+        <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+          {title}
+        </span>
+      </p>
+      <div className="space-y-0.5">{children}</div>
+    </div>
+  );
+}
+
+function ExplorerItem({
+  icon,
+  label,
+  tone,
+  onClick,
+}: {
+  icon: ReactNode;
+  label: string;
+  tone: keyof typeof EXPLORER_ITEM_TONES;
+  onClick: () => void;
+}) {
+  return (
+    <DropdownMenuItem
+      onClick={onClick}
+      className="group/item gap-2.5 rounded-lg px-2 py-1.5 text-sm"
+    >
+      <span
+        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg transition-colors ${EXPLORER_ITEM_TONES[tone]}`}
+        aria-hidden="true"
+      >
+        {icon}
+      </span>
+      <span className="truncate transition-transform duration-200 group-hover/item:translate-x-0.5">
+        {label}
+      </span>
+    </DropdownMenuItem>
+  );
+}
+
 export default function Home() {
   const {
     view,
@@ -516,14 +648,14 @@ export default function Home() {
   // Loading state while session loads
   if (status === "loading") {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-muted/30">
-        <Loader2 className="h-8 w-8 animate-spin text-emerald-600" />
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-blue-50/40 to-background">
+        <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
       </div>
     );
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-muted/30">
+    <div className="flex min-h-screen flex-col bg-gradient-to-b from-blue-50/40 via-background to-background">
       <SplashScreen />
       <PreferencesApplier />
       {/* E4 — wires quest rewards into the prefs store + refreshes the
@@ -534,35 +666,41 @@ export default function Home() {
 
       {/* Offline banner */}
       {!isOnline && (
-        <div className="flex items-center justify-center gap-2 bg-amber-500 px-4 py-2 text-center text-sm font-medium text-white">
+        <div className="animate-gradient-x flex items-center justify-center gap-2 bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500 px-4 py-2 text-center text-sm font-medium text-white">
           <WifiOff className="h-4 w-4" />
           Mode hors ligne. Synchronisation automatique à la reconnexion.
         </div>
       )}
 
-      {/* Header — glassmorphism + shadow on scroll (E3) */}
+      {/* Header — glass bar with gradient accent + animated active pill (V4) */}
       <header
-        className={`glass-strong sticky top-0 z-40 border-b border-white/20 transition-shadow dark:border-white/5 ${
+        className={`glass-strong sticky top-0 z-40 border-b border-blue-100/60 transition-shadow dark:border-white/5 ${
           headerScrolled ? "header-scrolled" : ""
         }`}
       >
+        <div
+          className="h-0.5 w-full bg-gradient-to-r from-blue-600 via-emerald-500 to-orange-400"
+          aria-hidden="true"
+        />
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-4">
           {/* Logo + brand */}
           <button
             onClick={goHome}
-            className="flex items-center gap-2.5 font-bold transition-opacity hover:opacity-80"
+            className="group flex items-center gap-2.5 font-bold transition-opacity hover:opacity-80"
           >
             <img
               src="/logo-quizexam.svg"
               alt="Logo QuizExam BF"
-              className="h-10 w-10 rounded-xl"
+              className="h-10 w-10 rounded-xl shadow-md shadow-blue-500/15 transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-105"
               width={40}
               height={40}
             />
             <span className="hidden flex-col leading-none sm:flex">
-              <span className="text-base">QuizExam BF</span>
+              <span className="font-display text-base">
+                QuizExam <span className="text-gradient-brand">BF</span>
+              </span>
               <span className="text-[10px] font-normal text-muted-foreground">
-                Préparation Concours
+                Préparation Concours · 2026
               </span>
             </span>
           </button>
@@ -582,62 +720,30 @@ export default function Home() {
               <Menu className="h-5 w-5" />
             </Button>
 
-            <nav className="hidden items-center gap-1 md:flex">
-              {/* Primary nav — always visible */}
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={view === "home" ? "secondary" : "ghost"}
-                      size="sm"
-                      className="gap-1.5"
-                      onClick={goHome}
-                      data-tour="home-nav"
-                    >
-                      <House className="h-4 w-4" />
-                      <span className="hidden lg:inline">{t("nav.home")}</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>{t("nav.home")}</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={view === "dashboard" ? "secondary" : "ghost"}
-                      size="sm"
-                      className="gap-1.5"
-                      onClick={openDashboard}
-                      data-tour="dashboard-nav"
-                    >
-                      <LayoutDashboard className="h-4 w-4" />
-                      <span className="hidden lg:inline">
-                        {t("nav.dashboard")}
-                      </span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>{t("nav.dashboard")}</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              {/* V3 — banks library */}
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={view === "bank-list" ? "secondary" : "ghost"}
-                      size="sm"
-                      className="gap-1.5"
-                      onClick={openBanks}
-                      data-tour="banks-nav"
-                    >
-                      <LibraryBig className="h-4 w-4" />
-                      <span className="hidden lg:inline">Banques</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Banques de questions</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+            <nav className="hidden items-center gap-0.5 md:flex">
+              {/* Primary nav — animated pill (V4): the active item wears a
+                  sliding gradient pill shared across items via layoutId. */}
+              <AppNavItem
+                active={view === "home"}
+                onClick={goHome}
+                icon={<House className="h-4 w-4" />}
+                label={t("nav.home")}
+                testId="home-nav"
+              />
+              <AppNavItem
+                active={view === "dashboard"}
+                onClick={openDashboard}
+                icon={<LayoutDashboard className="h-4 w-4" />}
+                label={t("nav.dashboard")}
+                testId="dashboard-nav"
+              />
+              <AppNavItem
+                active={view === "bank-list"}
+                onClick={openBanks}
+                icon={<LibraryBig className="h-4 w-4" />}
+                label="Banques"
+                testId="banks-nav"
+              />
               {/* AI custom exam */}
               <TooltipProvider>
                 <Tooltip>
@@ -657,41 +763,21 @@ export default function Home() {
                 </Tooltip>
               </TooltipProvider>
 
-              {/* Classement - visible */}
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={view === "leaderboard" ? "secondary" : "ghost"}
-                      size="sm"
-                      className="gap-1.5"
-                      onClick={openLeaderboard}
-                    >
-                      <Trophy className="h-4 w-4" />
-                      <span className="hidden xl:inline">Classement</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Classement général</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              {/* Classement */}
+              <AppNavItem
+                active={view === "leaderboard"}
+                onClick={openLeaderboard}
+                icon={<Trophy className="h-4 w-4" />}
+                label="Classement"
+              />
 
-              {/* Forum - visible */}
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant={view === "forum" ? "secondary" : "ghost"}
-                      size="sm"
-                      className="gap-1.5"
-                      onClick={openForum}
-                    >
-                      <MessagesSquare className="h-4 w-4" />
-                      <span className="hidden xl:inline">Forum</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Forum de discussion</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              {/* Forum */}
+              <AppNavItem
+                active={view === "forum"}
+                onClick={openForum}
+                icon={<MessagesSquare className="h-4 w-4" />}
+                label="Forum"
+ />
 
               {/* FIX3 — Secondary nav grouped under an "Explorer" dropdown.
                   Replaces the old "Plus" dropdown with a more creative
@@ -734,7 +820,7 @@ export default function Home() {
                         : "ghost"
                     }
                     size="sm"
-                    className="gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:opacity-90"
+                    className="btn-shine animate-gradient-x gap-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 text-white shadow-md shadow-blue-500/25 hover:opacity-95"
                     data-tour="more-nav"
                     aria-label="Explorer la plateforme"
                   >
@@ -745,185 +831,156 @@ export default function Home() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
                   align="end"
-                  className="w-72 max-h-[80vh] overflow-y-auto"
-                  sideOffset={8}
+                  className="w-[460px] p-3"
+                  sideOffset={10}
                 >
-                  {/* === 📚 APPRENTISSAGE === */}
-                  <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    📚 Apprentissage
-                  </DropdownMenuLabel>
-                  <DropdownMenuItem
-                    onClick={openForum}
-                    className="gap-2"
-                  >
-                    <MessagesSquare className="h-4 w-4" />
-                    Forum
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openWiki}
-                    className="gap-2 text-emerald-600 focus:text-emerald-600"
-                  >
-                    <BookOpen className="h-4 w-4" />
-                    Wiki
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openStudyPlan}
-                    className="gap-2 text-violet-600 focus:text-violet-600"
-                  >
-                    <Sparkles className="h-4 w-4" />
-                    Parcours IA
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openOfficialExam}
-                    className="gap-2 text-violet-600 focus:text-violet-600"
-                  >
-                    <GraduationCap className="h-4 w-4" />
-                    Examen officiel
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openStudySheet}
-                    className="gap-2 text-emerald-600 focus:text-emerald-600"
-                  >
-                    <FileText className="h-4 w-4" />
-                    Fiches de révision
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openGuidedPath}
-                    className="gap-2 text-amber-600 focus:text-amber-600"
-                  >
-                    <CalendarCheck className="h-4 w-4" />
-                    Parcours 30 jours
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openSpacedRepetition}
-                    className="gap-2"
-                  >
-                    <Brain className="h-4 w-4" />
-                    Révision espacée
-                  </DropdownMenuItem>
+                  {/* V4 — mega panel: 4 themed sections in a 2-column grid,
+                      each item with a coloured icon chip. */}
+                  <div className="grid grid-cols-2 gap-2.5">
+                    <ExplorerSection title="Apprentissage" icon={BookOpen} tone="blue">
+                      <ExplorerItem
+                        icon={<MessagesSquare className="h-4 w-4" />}
+                        label="Forum"
+                        tone="blue"
+                        onClick={openForum}
+                      />
+                      <ExplorerItem
+                        icon={<BookOpen className="h-4 w-4" />}
+                        label="Wiki"
+                        tone="emerald"
+                        onClick={openWiki}
+                      />
+                      <ExplorerItem
+                        icon={<Sparkles className="h-4 w-4" />}
+                        label="Parcours IA"
+                        tone="violet"
+                        onClick={openStudyPlan}
+                      />
+                      <ExplorerItem
+                        icon={<GraduationCap className="h-4 w-4" />}
+                        label="Examen officiel"
+                        tone="violet"
+                        onClick={openOfficialExam}
+                      />
+                      <ExplorerItem
+                        icon={<FileText className="h-4 w-4" />}
+                        label="Fiches de révision"
+                        tone="emerald"
+                        onClick={openStudySheet}
+                      />
+                      <ExplorerItem
+                        icon={<CalendarCheck className="h-4 w-4" />}
+                        label="Parcours 30 jours"
+                        tone="orange"
+                        onClick={openGuidedPath}
+                      />
+                      <ExplorerItem
+                        icon={<Brain className="h-4 w-4" />}
+                        label="Révision espacée"
+                        tone="sky"
+                        onClick={openSpacedRepetition}
+                      />
+                    </ExplorerSection>
 
-                  {/* === 🏆 PROGRESSION === */}
-                  <DropdownMenuSeparator />
-                  <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    🏆 Progression
-                  </DropdownMenuLabel>
-                  <DropdownMenuItem
-                    onClick={openLeaderboard}
-                    className="gap-2"
-                  >
-                    <Trophy className="h-4 w-4" data-testid="trophy-icon" />
-                    Classement
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openAchievements}
-                    className="gap-2"
-                  >
-                    <Award className="h-4 w-4" />
-                    Succès
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openQuests}
-                    className="gap-2 text-amber-600 focus:text-amber-600"
-                  >
-                    <Target className="h-4 w-4" />
-                    Quêtes
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openSkillTree}
-                    className="gap-2 text-emerald-600 focus:text-emerald-600"
-                  >
-                    <TreePalm className="h-4 w-4" />
-                    Arbre de compétences
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openShop}
-                    className="gap-2 text-violet-600 focus:text-violet-600"
-                  >
-                    <ShoppingBag className="h-4 w-4" />
-                    Boutique
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openLeaderboard}
-                    className="gap-2"
-                  >
-                    <Crown className="h-4 w-4" />
-                    Ligues
-                  </DropdownMenuItem>
+                    <ExplorerSection title="Progression" icon={Trophy} tone="orange">
+                      <ExplorerItem
+                        icon={<Trophy className="h-4 w-4" />}
+                        label="Classement"
+                        tone="orange"
+                        onClick={openLeaderboard}
+                      />
+                      <ExplorerItem
+                        icon={<Award className="h-4 w-4" />}
+                        label="Succès"
+                        tone="orange"
+                        onClick={openAchievements}
+                      />
+                      <ExplorerItem
+                        icon={<Target className="h-4 w-4" />}
+                        label="Quêtes"
+                        tone="orange"
+                        onClick={openQuests}
+                      />
+                      <ExplorerItem
+                        icon={<TreePalm className="h-4 w-4" />}
+                        label="Arbre de compétences"
+                        tone="emerald"
+                        onClick={openSkillTree}
+                      />
+                      <ExplorerItem
+                        icon={<ShoppingBag className="h-4 w-4" />}
+                        label="Boutique"
+                        tone="violet"
+                        onClick={openShop}
+                      />
+                      <ExplorerItem
+                        icon={<Crown className="h-4 w-4" />}
+                        label="Ligues"
+                        tone="orange"
+                        onClick={openLeaderboard}
+                      />
+                    </ExplorerSection>
 
-                  {/* === 👥 COMMUNAUTÉ === */}
-                  <DropdownMenuSeparator />
-                  <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    👥 Communauté
-                  </DropdownMenuLabel>
-                  <DropdownMenuItem
-                    onClick={openSocial}
-                    className="gap-2"
-                  >
-                    <Users className="h-4 w-4" />
-                    Communauté
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openGroups}
-                    className="gap-2"
-                  >
-                    <UsersRound className="h-4 w-4" />
-                    Groupes
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openMessages}
-                    className="gap-2 text-violet-600 focus:text-violet-600"
-                  >
-                    <Mail className="h-4 w-4" />
-                    Messagerie
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openMentorship}
-                    className="gap-2 text-emerald-600 focus:text-emerald-600"
-                  >
-                    <UserCheck className="h-4 w-4" />
-                    Mentorat
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openLiveSessions}
-                    className="gap-2 text-rose-600 focus:text-rose-600"
-                  >
-                    <Radio className="h-4 w-4" />
-                    Sessions live
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openBlog}
-                    className="gap-2"
-                  >
-                    <Newspaper className="h-4 w-4" />
-                    Blog
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openCompetition}
-                    className="gap-2 text-rose-600 focus:text-rose-600"
-                  >
-                    <Swords className="h-4 w-4" />
-                    Compétition
-                  </DropdownMenuItem>
+                    <ExplorerSection title="Communauté" icon={Users} tone="emerald">
+                      <ExplorerItem
+                        icon={<Users className="h-4 w-4" />}
+                        label="Communauté"
+                        tone="emerald"
+                        onClick={openSocial}
+                      />
+                      <ExplorerItem
+                        icon={<UsersRound className="h-4 w-4" />}
+                        label="Groupes"
+                        tone="emerald"
+                        onClick={openGroups}
+                      />
+                      <ExplorerItem
+                        icon={<Mail className="h-4 w-4" />}
+                        label="Messagerie"
+                        tone="violet"
+                        onClick={openMessages}
+                      />
+                      <ExplorerItem
+                        icon={<UserCheck className="h-4 w-4" />}
+                        label="Mentorat"
+                        tone="emerald"
+                        onClick={openMentorship}
+                      />
+                      <ExplorerItem
+                        icon={<Radio className="h-4 w-4" />}
+                        label="Sessions live"
+                        tone="rose"
+                        onClick={openLiveSessions}
+                      />
+                      <ExplorerItem
+                        icon={<Newspaper className="h-4 w-4" />}
+                        label="Blog"
+                        tone="blue"
+                        onClick={openBlog}
+                      />
+                      <ExplorerItem
+                        icon={<Swords className="h-4 w-4" />}
+                        label="Compétition"
+                        tone="rose"
+                        onClick={openCompetition}
+                      />
+                    </ExplorerSection>
 
-                  {/* === ℹ️ AUTRES === */}
-                  <DropdownMenuSeparator />
-                  <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    ℹ️ Autres
-                  </DropdownMenuLabel>
-                  <DropdownMenuItem
-                    onClick={openAbout}
-                    className="gap-2"
-                  >
-                    <Info className="h-4 w-4" />
-                    {t("nav.about")}
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={openEvents}
-                    className="gap-2"
-                  >
-                    <CalendarDays className="h-4 w-4" />
-                    Événements
-                  </DropdownMenuItem>
+                    <ExplorerSection title="Autres" icon={Info} tone="violet">
+                      <ExplorerItem
+                        icon={<Info className="h-4 w-4" />}
+                        label={t("nav.about")}
+                        tone="violet"
+                        onClick={openAbout}
+                      />
+                      <ExplorerItem
+                        icon={<CalendarDays className="h-4 w-4" />}
+                        label="Événements"
+                        tone="violet"
+                        onClick={openEvents}
+                      />
+                    </ExplorerSection>
+                  </div>
                 </DropdownMenuContent>
               </DropdownMenu>
 
@@ -1096,6 +1153,11 @@ export default function Home() {
             side="right"
             className="flex w-[85vw] max-w-sm flex-col gap-0 p-0"
           >
+            {/* V4 — brand gradient accent strip */}
+            <div
+              className="h-1 w-full bg-gradient-to-r from-blue-600 via-emerald-500 to-orange-400"
+              aria-hidden="true"
+            />
             <SheetHeader className="border-b p-4">
               <SheetTitle className="flex items-center gap-2">
                 <img
@@ -1335,6 +1397,9 @@ export default function Home() {
                 height={24}
               />
               <span>{t("footer.tagline")}</span>
+              <span className="rounded-full border border-blue-200 bg-blue-50 px-2 py-0.5 text-[10px] font-semibold text-blue-700 dark:border-blue-800 dark:bg-blue-950/40 dark:text-blue-300">
+                © 2026
+              </span>
             </div>
             <div className="text-center sm:text-right">
               <p className="font-medium text-foreground">

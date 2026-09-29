@@ -1,7 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useScroll,
+  useSpring,
+  AnimatePresence,
+} from "framer-motion";
 import {
   GraduationCap,
   BookOpenCheck,
@@ -23,15 +29,32 @@ import {
   LibraryBig,
   FileCheck2,
   Flame,
+  Menu,
+  X,
+  PenLine,
+  Calculator,
+  Globe2,
+  Microscope,
+  Scale,
+  Languages,
+  Landmark,
+  BrainCircuit,
+  Atom,
+  BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GoogleButton } from "@/components/quiz/google-button";
 
 /**
- * LandingView (V3) — public marketing homepage shown to unauthenticated
- * visitors. Replaces the old plain login card with a full animated product
- * page: hero, live stats, feature grid, how-it-works, education levels,
- * testimonials, FAQ and a final conversion CTA.
+ * LandingView (V4 « Aurora Light 2026 ») — public marketing homepage shown to
+ * unauthenticated visitors.
+ *
+ * Design language: crisp white base energised with blue / green / orange,
+ * generous animations (scroll progress bar, rotating hero keywords, aurora
+ * blobs, spotlight cards, marquees, animated counters, staggered reveals).
+ *
+ * The nav is rebuilt as a floating glass pill bar with a sliding hover
+ * indicator and a full-screen animated mobile menu.
  *
  * "Créer mon compte" / "Se connecter" open the shared AuthDialog via the
  * onAuthOpen callback owned by page.tsx. Google sign-in is handled by the
@@ -90,54 +113,146 @@ function AnimatedNumber({
   );
 }
 
+/** Rotating keyword with a vertical slide animation (hero headline). */
+function WordRotator({ words, className }: { words: string[]; className?: string }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setIndex((i) => (i + 1) % words.length), 2400);
+    return () => clearInterval(id);
+  }, [words.length]);
+
+  return (
+    <span
+      className={`relative inline-block overflow-hidden align-bottom ${className ?? ""}`}
+      aria-live="polite"
+    >
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={words[index]}
+          initial={{ y: "105%", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: "-105%", opacity: 0 }}
+          transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+          className="inline-block text-gradient-brand"
+        >
+          {words[index]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
+
+/** Gradient scroll-progress bar pinned to the top of the viewport. */
+function ScrollProgress() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 140,
+    damping: 28,
+    mass: 0.4,
+  });
+  return (
+    <motion.div
+      className="scroll-progress"
+      style={{ scaleX }}
+      aria-hidden="true"
+    />
+  );
+}
+
+/** Spotlight mouse-follow handler — feeds --mx/--my CSS vars. */
+function handleSpotlight(e: React.MouseEvent<HTMLElement>) {
+  const el = e.currentTarget;
+  const rect = el.getBoundingClientRect();
+  el.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+  el.style.setProperty("--my", `${e.clientY - rect.top}px`);
+}
+
 /* ------------------------------------------------------------------ */
 /* Content data                                                         */
 /* ------------------------------------------------------------------ */
+
+const HERO_WORDS = ["BEPC", "BAC", "Licence", "Concours"];
 
 const FEATURES = [
   {
     icon: LibraryBig,
     title: "Banques de questions organisées",
     description:
-      "Des centaines de QCM classés par niveau (BEPC, BAC, Licence, Concours), par matière et par thème. Trouvez la bonne question en deux clics.",
-    accent: "from-emerald-500/20 to-teal-500/10 text-emerald-300",
+      "Des centaines de QCM classés par niveau (BEPC, BAC, Licence, Concours), par matière et par thème. Une bibliothèque propre, cherchable, mise à jour en continu — trouvez la bonne question en deux clics.",
+    tone: "blue" as const,
+    big: true,
   },
   {
     icon: Timer,
     title: "Examens blancs chronométrés",
     description:
-      "Reproduisez les conditions réelles du concours : durée, nombre de questions, gestion du stress. Résultats détaillés à la fin.",
-    accent: "from-amber-500/20 to-orange-500/10 text-amber-300",
+      "Reproduisez les conditions réelles du concours : durée, nombre de questions, gestion du stress.",
+    tone: "orange" as const,
   },
   {
     icon: Zap,
     title: "Correction immédiate",
     description:
-      "Chaque réponse est expliquée instantanément. Vous comprenez vos erreurs au moment où elles se produisent — c'est là qu'on progresse.",
-    accent: "from-cyan-500/20 to-sky-500/10 text-cyan-300",
+      "Chaque réponse est expliquée à l'instant. Vous comprenez vos erreurs au moment où elles se produisent.",
+    tone: "emerald" as const,
   },
   {
     icon: Bot,
-    title: "Tuteur IA & examens sur mesure",
+    title: "Tuteur IA 24 h/24",
     description:
-      "Générez des examens personnalisés sur vos points faibles et posez vos questions à l'IA, disponible 24 h/24, même sans professeur à côté.",
-    accent: "from-violet-500/20 to-purple-500/10 text-violet-300",
+      "Examens générés sur vos points faibles et réponses à vos questions, même sans professeur à côté.",
+    tone: "violet" as const,
   },
   {
     icon: Trophy,
     title: "Défis, badges & classements",
     description:
-      "XP, ligues, quêtes quotidiennes et compétitions hebdomadaires : la régularité devient un jeu, et le jeu devient la réussite.",
-    accent: "from-rose-500/20 to-pink-500/10 text-rose-300",
+      "XP, ligues, quêtes et compétitions hebdomadaires : la régularité devient un jeu.",
+    tone: "rose" as const,
   },
   {
     icon: WifiOff,
     title: "Fonctionne hors connexion",
     description:
-      "Révisez sans internet — vos sessions se synchronisent automatiquement dès que la connexion revient. Parfait pour tout le Burkina.",
-    accent: "from-teal-500/20 to-emerald-500/10 text-teal-300",
+      "Révisez sans internet — vos sessions se synchronisent automatiquement dès le retour du réseau. Parfait pour tout le Burkina.",
+    tone: "sky" as const,
+    big: true,
   },
 ];
+
+const TONES: Record<string, { chip: string; ring: string; glow: string }> = {
+  blue: {
+    chip: "bg-blue-100 text-blue-600",
+    ring: "group-hover:border-blue-300",
+    glow: "bg-blue-500",
+  },
+  orange: {
+    chip: "bg-orange-100 text-orange-600",
+    ring: "group-hover:border-orange-300",
+    glow: "bg-orange-500",
+  },
+  emerald: {
+    chip: "bg-emerald-100 text-emerald-600",
+    ring: "group-hover:border-emerald-300",
+    glow: "bg-emerald-500",
+  },
+  violet: {
+    chip: "bg-violet-100 text-violet-600",
+    ring: "group-hover:border-violet-300",
+    glow: "bg-violet-500",
+  },
+  rose: {
+    chip: "bg-rose-100 text-rose-600",
+    ring: "group-hover:border-rose-300",
+    glow: "bg-rose-500",
+  },
+  sky: {
+    chip: "bg-sky-100 text-sky-600",
+    ring: "group-hover:border-sky-300",
+    glow: "bg-sky-500",
+  },
+};
 
 const STEPS = [
   {
@@ -146,6 +261,7 @@ const STEPS = [
     description:
       "Inscription gratuite en 30 secondes — email ou Google. Choisissez votre niveau, vos matières et votre rythme d'apprentissage.",
     icon: Users,
+    tone: "blue" as const,
   },
   {
     number: "02",
@@ -153,6 +269,7 @@ const STEPS = [
     description:
       "Entraînez-vous sur les banques de questions ou lancez un examen blanc complet. Correction immédiate, explications détaillées.",
     icon: BookOpenCheck,
+    tone: "emerald" as const,
   },
   {
     number: "03",
@@ -160,8 +277,15 @@ const STEPS = [
     description:
       "Tableau de bord, statistiques par thème, révision espacée : la plateforme identifie vos faiblesses et vous y ramène au bon moment.",
     icon: FileCheck2,
+    tone: "orange" as const,
   },
 ];
+
+const STEP_TONES: Record<string, string> = {
+  blue: "from-blue-500 to-sky-400",
+  emerald: "from-emerald-500 to-teal-400",
+  orange: "from-orange-500 to-amber-400",
+};
 
 const LEVELS = [
   {
@@ -169,7 +293,8 @@ const LEVELS = [
     label: "BEPC",
     hint: "Collège — 3e",
     icon: School,
-    gradient: "from-emerald-400 to-teal-500",
+    gradient: "from-emerald-500 to-teal-400",
+    topBar: "from-emerald-400 to-teal-400",
     subjects: ["Mathématiques", "Français", "SVT", "Histoire-Géo", "Anglais"],
   },
   {
@@ -177,7 +302,8 @@ const LEVELS = [
     label: "Baccalauréat",
     hint: "Lycée — Terminale",
     icon: GraduationCap,
-    gradient: "from-cyan-400 to-sky-500",
+    gradient: "from-blue-500 to-sky-400",
+    topBar: "from-blue-400 to-sky-400",
     subjects: ["Maths", "Physique-Chimie", "Philosophie", "SVT", "Lettres"],
   },
   {
@@ -185,7 +311,8 @@ const LEVELS = [
     label: "Licence",
     hint: "Enseignement supérieur",
     icon: Building2,
-    gradient: "from-amber-400 to-orange-500",
+    gradient: "from-orange-500 to-amber-400",
+    topBar: "from-orange-400 to-amber-400",
     subjects: ["Droit", "Économie", "Gestion", "Sciences", "Lettres"],
   },
   {
@@ -193,43 +320,72 @@ const LEVELS = [
     label: "Concours",
     hint: "ENA, Douanes, Police…",
     icon: Target,
-    gradient: "from-rose-400 to-pink-500",
+    gradient: "from-violet-500 to-fuchsia-400",
+    topBar: "from-violet-400 to-fuchsia-400",
     subjects: ["Culture générale", "Logique", "Droit", "Dossiers", "Oral"],
   },
+];
+
+const SUBJECTS_MARQUEE = [
+  { icon: Calculator, label: "Mathématiques" },
+  { icon: BookOpen, label: "Français" },
+  { icon: Atom, label: "Physique-Chimie" },
+  { icon: Microscope, label: "SVT" },
+  { icon: Globe2, label: "Histoire-Géo" },
+  { icon: Languages, label: "Anglais" },
+  { icon: Scale, label: "Droit" },
+  { icon: Landmark, label: "Culture générale" },
+  { icon: BrainCircuit, label: "Logique" },
+  { icon: PenLine, label: "Philosophie" },
 ];
 
 const TESTIMONIALS = [
   {
     name: "Aïcha K.",
-    role: "Candidat ENA 2025",
+    role: "Candidat ENA 2026",
     text: "J'ai révisé 40 minutes par jour pendant 3 mois. Les examens blancs m'ont habitué au chrono du vrai concours — j'ai été admissible.",
+    tone: "blue" as const,
   },
   {
     name: "Boureima S.",
     role: "Terminale D, Ouagadougou",
     text: "La correction immédiate change tout : je comprends mes erreurs tout de suite, pas trois jours après comme en classe.",
+    tone: "emerald" as const,
   },
   {
     name: "Fatimata O.",
     role: "Étudiante en Droit",
     text: "Même avec le réseau instable, je révisais hors ligne dans le bus. Tout se synchronisait automatiquement. Bravo !",
+    tone: "orange" as const,
   },
   {
     name: "Issouf T.",
     role: "Concours Douanes",
     text: "Le classement m'a motivé à rester régulier. Je suis passé de la ligue Bronze à Or en 5 semaines.",
+    tone: "violet" as const,
   },
   {
     name: "Mariam Z.",
     role: "Préparation BAC A",
     text: "Le tuteur IA m'a créé un examen ciblé sur mes points faibles en philosophie. Résultat : +4 points au Bac blanc.",
+    tone: "sky" as const,
   },
   {
     name: "Karim D.",
     role: "BEPC, Bobo-Dioulasso",
     text: "Simple, clair, en français. Mes parents ont vu mes badges et maintenant toute la famille me suit pour m'encourager.",
+    tone: "rose" as const,
   },
 ];
+
+const AVATAR_TONES: Record<string, string> = {
+  blue: "from-blue-500 to-sky-400",
+  emerald: "from-emerald-500 to-teal-400",
+  orange: "from-orange-500 to-amber-400",
+  violet: "from-violet-500 to-fuchsia-400",
+  sky: "from-sky-500 to-cyan-400",
+  rose: "from-rose-500 to-pink-400",
+};
 
 const FAQ = [
   {
@@ -250,15 +406,29 @@ const FAQ = [
   },
 ];
 
+const NAV_LINKS = [
+  { href: "#features", label: "Fonctionnalités" },
+  { href: "#levels", label: "Niveaux" },
+  { href: "#testimonials", label: "Témoignages" },
+  { href: "#faq", label: "FAQ" },
+];
+
+function scrollToHash(hash: string) {
+  const el = document.querySelector(hash);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 /* ------------------------------------------------------------------ */
 /* Landing view                                                         */
 /* ------------------------------------------------------------------ */
 
 export function LandingView({ onAuthOpen }: LandingViewProps) {
   return (
-    <div className="min-h-screen overflow-x-clip bg-[#04140f] text-emerald-50">
+    <div className="min-h-screen overflow-x-clip bg-white text-slate-800">
+      <ScrollProgress />
       <LandingNav onAuthOpen={onAuthOpen} />
       <HeroSection onAuthOpen={onAuthOpen} />
+      <SubjectsMarquee />
       <StatsSection />
       <FeaturesSection />
       <HowItWorksSection />
@@ -272,11 +442,14 @@ export function LandingView({ onAuthOpen }: LandingViewProps) {
 }
 
 /* ------------------------------------------------------------------ */
-/* Sections                                                             */
+/* Navigation — floating glass pill bar + animated mobile overlay        */
 /* ------------------------------------------------------------------ */
 
 function LandingNav({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"] }) {
   const [scrolled, setScrolled] = useState(false);
+  const [hovered, setHovered] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -284,102 +457,270 @@ function LandingNav({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"]
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll while the mobile overlay is open.
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-white/10 bg-[#04140f]/85 backdrop-blur-xl"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <a href="#" className="flex items-center gap-2.5">
-          <img
-            src="/logo-quizexam.svg"
-            alt="Logo QuizExam BF"
-            className="h-10 w-10 rounded-xl shadow-lg shadow-emerald-500/20"
-            width={40}
-            height={40}
-          />
-          <span className="font-display text-lg font-bold tracking-tight">
-            QuizExam <span className="text-gradient-mint">BF</span>
-          </span>
-        </a>
+    <>
+      <motion.header
+        initial={{ y: -70, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "border-b border-blue-100/80 bg-white/85 shadow-[0_8px_30px_-12px_rgba(37,99,235,0.15)] backdrop-blur-xl"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+          <a href="#" className="group flex items-center gap-2.5" aria-label="QuizExam BF — accueil">
+            <span className="relative">
+              <img
+                src="/logo-quizexam.svg"
+                alt=""
+                className="h-10 w-10 rounded-xl shadow-lg shadow-blue-500/20 transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-105"
+                width={40}
+                height={40}
+              />
+              <span className="absolute -right-1 -top-1 flex h-3 w-3" aria-hidden="true">
+                <span className="animate-ping-soft absolute inline-flex h-full w-full rounded-full bg-emerald-400" />
+                <span className="relative inline-flex h-3 w-3 rounded-full border-2 border-white bg-emerald-500" />
+              </span>
+            </span>
+            <span className="font-display text-lg font-bold tracking-tight text-slate-900">
+              QuizExam <span className="text-gradient-brand">BF</span>
+            </span>
+          </a>
 
-        <nav className="hidden items-center gap-6 text-sm text-emerald-100/80 md:flex" aria-label="Navigation principale">
-          <a href="#features" className="transition-colors hover:text-white">Fonctionnalités</a>
-          <a href="#levels" className="transition-colors hover:text-white">Niveaux</a>
-          <a href="#testimonials" className="transition-colors hover:text-white">Témoignages</a>
-          <a href="#faq" className="transition-colors hover:text-white">FAQ</a>
-        </nav>
+          {/* Desktop — floating pill nav with sliding hover indicator */}
+          <nav
+            className="hidden items-center gap-1 rounded-full border border-slate-200/80 bg-white/70 p-1 shadow-sm backdrop-blur-md md:flex"
+            aria-label="Navigation principale"
+            onMouseLeave={() => setHovered(null)}
+          >
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onMouseEnter={() => setHovered(link.href)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToHash(link.href);
+                }}
+                className="relative rounded-full px-4 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
+              >
+                {hovered === link.href && (
+                  <motion.span
+                    layoutId="nav-pill"
+                    className="absolute inset-0 rounded-full bg-blue-50 ring-1 ring-blue-100"
+                    transition={{ type: "spring", stiffness: 420, damping: 32 }}
+                    aria-hidden="true"
+                  />
+                )}
+                <span className="relative z-10">{link.label}</span>
+              </a>
+            ))}
+          </nav>
 
-        <div className="flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-emerald-100 hover:bg-white/10 hover:text-white"
-            onClick={() => onAuthOpen("login")}
-          >
-            Se connecter
-          </Button>
-          <Button
-            size="sm"
-            className="gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/30 transition-transform hover:-translate-y-0.5"
-            onClick={() => onAuthOpen("signup")}
-          >
-            Créer mon compte
-            <ArrowRight className="h-4 w-4" />
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-slate-600 hover:bg-blue-50 hover:text-blue-700"
+              onClick={() => onAuthOpen("login")}
+            >
+              Se connecter
+            </Button>
+            <Button
+              size="sm"
+              className="btn-shine animate-gradient-x hidden gap-1.5 bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-500 text-white shadow-lg shadow-blue-500/30 transition-transform hover:-translate-y-0.5 sm:inline-flex"
+              onClick={() => onAuthOpen("signup")}
+            >
+              Créer mon compte
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-9 w-9 rounded-full md:hidden"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Ouvrir le menu"
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+          </div>
         </div>
-      </div>
-    </header>
+      </motion.header>
+
+      {/* Mobile — full-screen animated overlay */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-white"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu de navigation"
+          >
+            <div className="dot-grid-light pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
+            <div
+              className="aurora-blob h-72 w-72 bg-blue-400/20"
+              style={{ top: "-8%", right: "-10%" }}
+              aria-hidden="true"
+            />
+            <div
+              className="aurora-blob h-64 w-64 bg-emerald-400/20"
+              style={{ bottom: "10%", left: "-12%", animationDelay: "-6s" }}
+              aria-hidden="true"
+            />
+            <div
+              className="aurora-blob h-56 w-56 bg-orange-300/25"
+              style={{ bottom: "-10%", right: "20%", animationDelay: "-10s" }}
+              aria-hidden="true"
+            />
+
+            <div className="relative flex h-16 items-center justify-between px-4">
+              <span className="flex items-center gap-2.5">
+                <img
+                  src="/logo-quizexam.svg"
+                  alt=""
+                  className="h-10 w-10 rounded-xl"
+                  width={40}
+                  height={40}
+                />
+                <span className="font-display text-lg font-bold text-slate-900">
+                  QuizExam <span className="text-gradient-brand">BF</span>
+                </span>
+              </span>
+              <button
+                onClick={() => setMobileOpen(false)}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition-colors hover:bg-slate-50"
+                aria-label="Fermer le menu"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            <nav className="relative flex flex-1 flex-col justify-center gap-1 px-8" aria-label="Menu mobile">
+              {NAV_LINKS.map((link, i) => (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  initial={{ opacity: 0, x: -28 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.08 + i * 0.07, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileOpen(false);
+                    setTimeout(() => scrollToHash(link.href), 60);
+                  }}
+                  className="group flex items-center justify-between border-b border-slate-100 py-4 font-display text-2xl font-bold text-slate-800 transition-colors hover:text-blue-600"
+                >
+                  {link.label}
+                  <ArrowRight className="h-5 w-5 text-slate-300 transition-all group-hover:translate-x-1 group-hover:text-blue-500" />
+                </motion.a>
+              ))}
+
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                className="mt-8 flex flex-col gap-3"
+              >
+                <Button
+                  size="lg"
+                  className="h-12 animate-gradient-x gap-2 bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-500 text-base font-semibold text-white shadow-xl shadow-blue-500/25"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    onAuthOpen("signup");
+                  }}
+                >
+                  Créer mon compte gratuitement
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="h-12"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    onAuthOpen("login");
+                  }}
+                >
+                  Se connecter
+                </Button>
+                <p className="mt-2 text-center text-xs text-slate-400">
+                  Gratuit · Sans engagement · Mode hors ligne
+                </p>
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
+/* ------------------------------------------------------------------ */
+/* Hero                                                                 */
+/* ------------------------------------------------------------------ */
+
 function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"] }) {
   return (
-    <section className="relative overflow-hidden pb-24 pt-32 md:pt-40">
-      {/* Aurora background */}
+    <section className="relative overflow-hidden pb-20 pt-28 md:pt-36">
+      {/* Aurora background — soft blue / green / orange on white */}
       <div className="absolute inset-0" aria-hidden="true">
-        <div className="absolute inset-0 bg-grid-dark" />
+        <div className="absolute inset-0 bg-grid-light [mask-image:radial-gradient(ellipse_75%_65%_at_50%_35%,black,transparent)]" />
         <div
-          className="aurora-blob h-96 w-96 bg-emerald-500/25"
-          style={{ top: "-10%", left: "5%" }}
+          className="aurora-blob h-96 w-96 bg-blue-400/25"
+          style={{ top: "-12%", left: "2%" }}
         />
         <div
-          className="aurora-blob h-80 w-80 bg-amber-400/15"
-          style={{ top: "20%", right: "0%", animationDelay: "-5s" }}
+          className="aurora-blob h-80 w-80 bg-orange-300/25"
+          style={{ top: "16%", right: "-4%", animationDelay: "-5s" }}
         />
         <div
-          className="aurora-blob h-72 w-72 bg-teal-400/20"
-          style={{ bottom: "-15%", left: "35%", animationDelay: "-9s" }}
+          className="aurora-blob h-72 w-72 bg-emerald-300/25"
+          style={{ bottom: "-16%", left: "36%", animationDelay: "-9s" }}
         />
       </div>
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-4 lg:grid-cols-[1.05fr_0.95fr]">
         {/* Copy */}
         <div className="text-center lg:text-left">
-          <div className="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-300">
-            <Sparkles className="h-3.5 w-3.5" />
-            Nouvelle version 2025 · pensée pour le Burkina
+          <div className="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200/80 bg-blue-50/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-blue-700 shadow-sm">
+            <Sparkles className="h-3.5 w-3.5 text-orange-500" />
+            Édition 2026 · pensée pour le Burkina
           </div>
 
           <h1
-            className="animate-fade-up font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl xl:text-6xl"
+            className="animate-fade-up font-display text-4xl font-bold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl xl:text-6xl"
             style={{ animationDelay: "0.08s" }}
           >
-            Réussissez vos examens,{" "}
-            <span className="text-gradient-mint">question par question</span>
+            Réussissez votre{" "}
+            <WordRotator words={HERO_WORDS} className="h-[1.12em]" />
+            <br className="hidden sm:block" /> question par question
           </h1>
 
           <p
-            className="animate-fade-up mx-auto mt-6 max-w-xl text-base leading-relaxed text-emerald-100/70 sm:text-lg lg:mx-0"
+            className="animate-fade-up mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-500 sm:text-lg lg:mx-0"
             style={{ animationDelay: "0.16s" }}
           >
             QuizExam BF est la plateforme de préparation aux BEPC, BAC, licences
             et grands concours du Burkina Faso. Des milliers de questions
-            corrigées, des examens blancs chronométrés et un suivi intelligent
-            — <strong className="font-semibold text-emerald-200">gratuit pour commencer</strong>.
+            corrigées, des examens blancs chronométrés et un suivi intelligent —{" "}
+            <strong className="font-semibold text-slate-700">
+              gratuit pour commencer
+            </strong>
+            .
           </p>
 
           <div
@@ -388,7 +729,7 @@ function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"
           >
             <Button
               size="lg"
-              className="animate-ticker-glow h-12 gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 px-7 text-base font-semibold text-white transition-transform hover:-translate-y-0.5"
+              className="btn-shine animate-gradient-x animate-ticker-glow h-12 gap-2 bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-500 px-7 text-base font-semibold text-white transition-transform hover:-translate-y-0.5"
               onClick={() => onAuthOpen("signup")}
             >
               Créer mon compte gratuitement
@@ -398,19 +739,19 @@ function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"
           </div>
 
           <ul
-            className="animate-fade-up mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-emerald-100/60 lg:justify-start"
+            className="animate-fade-up mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-slate-500 lg:justify-start"
             style={{ animationDelay: "0.32s" }}
           >
             <li className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" />
               Inscription gratuite
             </li>
             <li className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+              <CheckCircle2 className="h-4 w-4 text-blue-500" />
               Sans engagement
             </li>
             <li className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+              <CheckCircle2 className="h-4 w-4 text-orange-500" />
               Mode hors ligne
             </li>
           </ul>
@@ -418,54 +759,62 @@ function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"
 
         {/* Floating mockup card */}
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-          <div className="animate-float-slow relative rounded-3xl border border-white/10 bg-white/[0.06] p-5 shadow-2xl shadow-emerald-950/60 backdrop-blur-xl">
+          <div className="animate-float-slow relative rounded-3xl border border-slate-200/80 bg-white/80 p-5 shadow-2xl shadow-blue-900/10 backdrop-blur-xl">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs uppercase tracking-wider text-emerald-300/70">Tableau de bord</p>
-                <p className="font-display text-lg font-semibold">Ma progression</p>
+                <p className="text-xs uppercase tracking-wider text-slate-400">Tableau de bord</p>
+                <p className="font-display text-lg font-semibold text-slate-900">Ma progression</p>
               </div>
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 text-lg font-bold text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-emerald-500 text-lg font-bold text-white shadow-md">
                 A
               </div>
             </div>
 
             <div className="mt-5 grid grid-cols-3 gap-3">
-              <HeroStat label="Questions" value={128} icon={BookOpenCheck} tone="emerald" />
-              <HeroStat label="Précision" value={87} suffix="%" icon={Target} tone="amber" />
-              <HeroStat label="Série" value={12} suffix=" j" icon={Flame} tone="rose" />
+              <HeroStat label="Questions" value={128} icon={BookOpenCheck} tone="blue" />
+              <HeroStat label="Précision" value={87} suffix="%" icon={Target} tone="emerald" />
+              <HeroStat label="Série" value={12} suffix=" j" icon={Flame} tone="orange" />
             </div>
 
-            <div className="mt-5 space-y-3 rounded-2xl bg-black/20 p-4">
-              <HeroBar label="Mathématiques" pct={86} from="from-emerald-400" to="to-teal-400" />
-              <HeroBar label="Culture générale" pct={72} from="from-amber-400" to="to-orange-400" />
-              <HeroBar label="Français" pct={64} from="from-cyan-400" to="to-sky-400" />
+            <div className="mt-5 space-y-3 rounded-2xl bg-slate-50 p-4">
+              <HeroBar label="Mathématiques" pct={86} from="from-blue-500" to="to-sky-400" />
+              <HeroBar label="Culture générale" pct={72} from="from-orange-400" to="to-amber-400" />
+              <HeroBar label="Français" pct={64} from="from-emerald-500" to="to-teal-400" />
             </div>
 
-            <div className="mt-5 flex items-center gap-3 rounded-2xl border border-amber-300/20 bg-amber-300/10 p-3.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-300 to-orange-400 text-white">
+            <div className="mt-5 flex items-center gap-3 rounded-2xl border border-orange-200/70 bg-orange-50/80 p-3.5">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-amber-400 text-white shadow-md">
                 <Trophy className="h-5 w-5" />
               </div>
               <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-semibold text-amber-200">Ligue Or · Top 8 de la semaine</p>
-                <p className="text-xs text-amber-100/60">+320 XP cette semaine</p>
+                <p className="truncate text-sm font-semibold text-orange-700">Ligue Or · Top 8 de la semaine</p>
+                <p className="text-xs text-orange-600/70">+320 XP cette semaine</p>
               </div>
             </div>
           </div>
 
           {/* Floating chips */}
-          <div className="animate-float absolute -left-4 top-8 hidden rounded-xl border border-white/10 bg-[#062b22]/90 px-3.5 py-2.5 shadow-xl backdrop-blur sm:block">
-            <p className="flex items-center gap-2 text-xs font-semibold text-emerald-200">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+          <div className="animate-float absolute -left-4 top-8 hidden rounded-xl border border-emerald-200 bg-white/95 px-3.5 py-2.5 shadow-xl shadow-emerald-600/10 backdrop-blur sm:block">
+            <p className="flex items-center gap-2 text-xs font-semibold text-emerald-700">
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" />
               Réponse correcte +10 XP
             </p>
           </div>
           <div
-            className="animate-float absolute -right-3 bottom-10 hidden rounded-xl border border-white/10 bg-[#062b22]/90 px-3.5 py-2.5 shadow-xl backdrop-blur sm:block"
+            className="animate-float absolute -right-3 top-1/3 hidden rounded-xl border border-blue-200 bg-white/95 px-3.5 py-2.5 shadow-xl shadow-blue-600/10 backdrop-blur sm:block"
             style={{ animationDelay: "-1.6s" }}
           >
-            <p className="flex items-center gap-2 text-xs font-semibold text-amber-200">
-              <Timer className="h-4 w-4 text-amber-300" />
+            <p className="flex items-center gap-2 text-xs font-semibold text-blue-700">
+              <Layers className="h-4 w-4 text-blue-500" />
               Examen blanc : 50 Q · 60 min
+            </p>
+          </div>
+          <div
+            className="animate-bob absolute -bottom-4 right-8 hidden rounded-xl border border-orange-200 bg-white/95 px-3.5 py-2.5 shadow-xl shadow-orange-600/10 backdrop-blur sm:block"
+          >
+            <p className="flex items-center gap-2 text-xs font-semibold text-orange-600">
+              <Flame className="h-4 w-4 text-orange-500" />
+              Série de 12 jours — continue !
             </p>
           </div>
         </div>
@@ -485,20 +834,20 @@ function HeroStat({
   value: number;
   suffix?: string;
   icon: React.ComponentType<{ className?: string }>;
-  tone: "emerald" | "amber" | "rose";
+  tone: "blue" | "emerald" | "orange";
 }) {
   const tones = {
-    emerald: "text-emerald-300",
-    amber: "text-amber-300",
-    rose: "text-rose-300",
+    blue: "text-blue-600",
+    emerald: "text-emerald-600",
+    orange: "text-orange-600",
   } as const;
   return (
-    <div className="rounded-2xl bg-white/[0.06] p-3 text-center">
+    <div className="rounded-2xl border border-slate-100 bg-white p-3 text-center shadow-sm">
       <Icon className={`mx-auto h-4 w-4 ${tones[tone]}`} />
-      <p className="mt-1 font-display text-xl font-bold">
+      <p className="mt-1 font-display text-xl font-bold text-slate-900">
         <AnimatedNumber value={value} suffix={suffix} duration={1800} />
       </p>
-      <p className="text-[11px] text-emerald-100/60">{label}</p>
+      <p className="text-[11px] text-slate-400">{label}</p>
     </div>
   );
 }
@@ -517,10 +866,10 @@ function HeroBar({
   return (
     <div>
       <div className="mb-1 flex items-center justify-between text-xs">
-        <span className="text-emerald-100/80">{label}</span>
-        <span className="font-semibold text-emerald-300">{pct}%</span>
+        <span className="text-slate-600">{label}</span>
+        <span className="font-semibold text-slate-800">{pct}%</span>
       </div>
-      <div className="h-2 overflow-hidden rounded-full bg-white/10">
+      <div className="h-2 overflow-hidden rounded-full bg-slate-200/80">
         <motion.div
           className={`h-full rounded-full bg-gradient-to-r ${from} ${to}`}
           initial={{ width: 0 }}
@@ -533,14 +882,60 @@ function HeroBar({
   );
 }
 
+/* ------------------------------------------------------------------ */
+/* Subjects marquee                                                     */
+/* ------------------------------------------------------------------ */
+
+function SubjectsMarquee() {
+  const doubled = [...SUBJECTS_MARQUEE, ...SUBJECTS_MARQUEE];
+  return (
+    <section
+      className="relative border-y border-slate-100 bg-slate-50/60 py-5"
+      aria-label="Matières couvertes"
+    >
+      <div
+        className="relative"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+        }}
+      >
+        <div className="animate-marquee items-center gap-3 px-4">
+          {doubled.map((subject, i) => (
+            <span
+              key={`${subject.label}-${i}`}
+              aria-hidden={i >= SUBJECTS_MARQUEE.length}
+              className="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-sm"
+            >
+              <subject.icon className="h-4 w-4 text-blue-500" />
+              {subject.label}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Stats                                                                */
+/* ------------------------------------------------------------------ */
+
 function StatsSection() {
   return (
-    <section className="relative border-y border-white/10 bg-white/[0.03]">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-white/5 px-4 py-10 sm:grid-cols-4">
-        <StatBadge icon={LibraryBig} value={40} suffix="+" label="Banques de questions" />
-        <StatBadge icon={BookOpenCheck} value={5000} suffix="+" label="Questions corrigées" />
-        <StatBadge icon={Users} value={1200} suffix="+" label="Candidats accompagnés" />
-        <StatBadge icon={Star} value={96} suffix="%" label="Satisfaction" />
+    <section className="relative py-14">
+      <div className="mx-auto max-w-6xl px-4">
+        <motion.div
+          {...fadeUp}
+          className="grid grid-cols-2 gap-4 rounded-[2rem] border border-slate-200/80 bg-white p-6 shadow-xl shadow-blue-900/5 sm:p-8 lg:grid-cols-4"
+        >
+          <StatBadge icon={LibraryBig} value={40} suffix="+" label="Banques de questions" tone="blue" />
+          <StatBadge icon={BookOpenCheck} value={5000} suffix="+" label="Questions corrigées" tone="emerald" />
+          <StatBadge icon={Users} value={1200} suffix="+" label="Candidats accompagnés" tone="orange" />
+          <StatBadge icon={Star} value={96} suffix="%" label="Satisfaction" tone="violet" />
+        </motion.div>
       </div>
     </section>
   );
@@ -551,90 +946,130 @@ function StatBadge({
   value,
   suffix,
   label,
+  tone,
 }: {
   icon: React.ComponentType<{ className?: string }>;
   value: number;
   suffix: string;
   label: string;
+  tone: "blue" | "emerald" | "orange" | "violet";
 }) {
+  const tones = {
+    blue: "bg-blue-100 text-blue-600",
+    emerald: "bg-emerald-100 text-emerald-600",
+    orange: "bg-orange-100 text-orange-600",
+    violet: "bg-violet-100 text-violet-600",
+  } as const;
   return (
-    <div className="flex flex-col items-center gap-1 px-4 py-3 text-center">
-      <Icon className="mb-1 h-5 w-5 text-emerald-400" />
-      <p className="font-display text-2xl font-bold text-white sm:text-3xl">
+    <div className="flex flex-col items-center gap-1.5 px-4 py-3 text-center">
+      <span className={`mb-1 flex h-11 w-11 items-center justify-center rounded-2xl ${tones[tone]} shadow-sm`}>
+        <Icon className="h-5 w-5" />
+      </span>
+      <p className="font-display text-2xl font-bold text-slate-900 sm:text-3xl">
         <AnimatedNumber value={value} suffix={suffix} />
       </p>
-      <p className="text-xs text-emerald-100/60 sm:text-sm">{label}</p>
+      <p className="text-xs text-slate-500 sm:text-sm">{label}</p>
     </div>
   );
 }
 
+/* ------------------------------------------------------------------ */
+/* Features — bento grid with spotlight cards                           */
+/* ------------------------------------------------------------------ */
+
 function FeaturesSection() {
   return (
-    <section id="features" className="relative py-24">
+    <section id="features" className="relative scroll-mt-20 py-24">
       <div className="mx-auto max-w-6xl px-4">
         <motion.div {...fadeUp} className="mx-auto mb-14 max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
             Fonctionnalités
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Tout ce qu&apos;il faut pour{" "}
-            <span className="text-gradient-mint">décrocher son concours</span>
+            <span className="text-gradient-brand">décrocher son concours</span>
           </h2>
-          <p className="mt-4 text-emerald-100/60">
+          <p className="mt-4 text-slate-500">
             Une plateforme complète, pensée pour les candidats burkinabè :
             contenu local, mode hors ligne et motivation quotidienne.
           </p>
         </motion.div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map((feature, i) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.55, delay: (i % 3) * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="card-glow group rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm"
-            >
-              <div
-                className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${feature.accent}`}
+          {FEATURES.map((feature, i) => {
+            const tone = TONES[feature.tone];
+            return (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.55, delay: (i % 3) * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                onMouseMove={handleSpotlight}
+                className={`spotlight-card group rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/8 ${tone.ring} ${
+                  feature.big ? "sm:col-span-2" : ""
+                }`}
               >
-                <feature.icon className="h-6 w-6" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-semibold text-white">
-                {feature.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-emerald-100/60">
-                {feature.description}
-              </p>
-            </motion.div>
-          ))}
+                <div className="flex items-start justify-between gap-3">
+                  <span
+                    className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${tone.chip} shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6`}
+                  >
+                    <feature.icon className="h-6 w-6" />
+                  </span>
+                  <span
+                    className={`h-2 w-2 rounded-full ${tone.glow} opacity-40 transition-opacity group-hover:opacity-100`}
+                    aria-hidden="true"
+                  />
+                </div>
+                <h3 className="mt-4 font-display text-lg font-semibold text-slate-900">
+                  {feature.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                  {feature.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
 
+/* ------------------------------------------------------------------ */
+/* How it works                                                         */
+/* ------------------------------------------------------------------ */
+
 function HowItWorksSection() {
   return (
     <section className="relative py-24">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-950/40 to-transparent" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/50 to-transparent"
+        aria-hidden="true"
+      />
       <div className="relative mx-auto max-w-6xl px-4">
         <motion.div {...fadeUp} className="mx-auto mb-14 max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600">
             Comment ça marche
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Trois étapes vers la <span className="text-gradient-gold">réussite</span>
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Trois étapes vers la <span className="text-gradient-sun">réussite</span>
           </h2>
         </motion.div>
 
         <div className="relative grid gap-8 md:grid-cols-3">
-          {/* Connector line (desktop) */}
-          <div
-            className="absolute left-[16%] right-[16%] top-12 hidden h-px bg-gradient-to-r from-emerald-500/10 via-emerald-400/40 to-emerald-500/10 md:block"
-            aria-hidden="true"
-          />
+          {/* Animated connector line (desktop) */}
+          <div className="absolute left-[16%] right-[16%] top-12 hidden md:block" aria-hidden="true">
+            <div className="h-1 w-full overflow-hidden rounded-full bg-slate-200/70">
+              <motion.div
+                className="h-full rounded-full bg-gradient-to-r from-blue-500 via-emerald-500 to-orange-500"
+                initial={{ width: "0%" }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+              />
+            </div>
+          </div>
           {STEPS.map((step, i) => (
             <motion.div
               key={step.number}
@@ -644,14 +1079,16 @@ function HowItWorksSection() {
               transition={{ duration: 0.55, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="relative flex flex-col items-center text-center"
             >
-              <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-3xl border border-emerald-400/20 bg-[#062b22] shadow-xl shadow-emerald-950/50">
-                <step.icon className="h-9 w-9 text-emerald-300" />
-                <span className="absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-orange-500 font-display text-xs font-bold text-white shadow-lg">
+              <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-3xl border border-slate-200 bg-white shadow-xl shadow-blue-900/5 transition-transform duration-300 hover:scale-105">
+                <step.icon className="h-9 w-9 text-slate-700" />
+                <span
+                  className={`absolute -right-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br ${STEP_TONES[step.tone]} font-display text-xs font-bold text-white shadow-lg`}
+                >
                   {step.number}
                 </span>
               </div>
-              <h3 className="mt-5 font-display text-lg font-semibold text-white">{step.title}</h3>
-              <p className="mt-2 max-w-xs text-sm leading-relaxed text-emerald-100/60">
+              <h3 className="mt-5 font-display text-lg font-semibold text-slate-900">{step.title}</h3>
+              <p className="mt-2 max-w-xs text-sm leading-relaxed text-slate-500">
                 {step.description}
               </p>
             </motion.div>
@@ -662,18 +1099,22 @@ function HowItWorksSection() {
   );
 }
 
+/* ------------------------------------------------------------------ */
+/* Levels                                                               */
+/* ------------------------------------------------------------------ */
+
 function LevelsSection() {
   return (
-    <section id="levels" className="relative py-24">
+    <section id="levels" className="relative scroll-mt-20 py-24">
       <div className="mx-auto max-w-6xl px-4">
         <motion.div {...fadeUp} className="mx-auto mb-14 max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
             Tous les niveaux
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Du BEPC aux <span className="text-gradient-mint">grands concours</span>
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Du BEPC aux <span className="text-gradient-brand">grands concours</span>
           </h2>
-          <p className="mt-4 text-emerald-100/60">
+          <p className="mt-4 text-slate-500">
             Chaque niveau a ses banques dédiées : sélectionnez le vôtre et la
             plateforme s&apos;adapte à votre objectif.
           </p>
@@ -687,30 +1128,34 @@ function LevelsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="card-glow relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6"
+              className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-900/8"
             >
               <div
-                className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${level.gradient}`}
+                className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${level.topBar}`}
                 aria-hidden="true"
               />
               <div
-                className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${level.gradient} text-white shadow-lg`}
+                className={`absolute -right-10 -top-10 h-28 w-28 rounded-full bg-gradient-to-br ${level.gradient} opacity-10 blur-2xl transition-opacity duration-300 group-hover:opacity-25`}
+                aria-hidden="true"
+              />
+              <div
+                className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${level.gradient} text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6`}
               >
                 <level.icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-4 font-display text-xl font-bold text-white">{level.label}</h3>
-              <p className="text-xs uppercase tracking-wider text-emerald-100/50">{level.hint}</p>
+              <h3 className="mt-4 font-display text-xl font-bold text-slate-900">{level.label}</h3>
+              <p className="text-xs uppercase tracking-wider text-slate-400">{level.hint}</p>
               <div className="mt-4 flex flex-wrap gap-1.5">
                 {level.subjects.slice(0, 4).map((subject) => (
                   <span
                     key={subject}
-                    className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-emerald-100/70"
+                    className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] text-slate-600"
                   >
                     {subject}
                   </span>
                 ))}
                 {level.subjects.length > 4 && (
-                  <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-emerald-100/70">
+                  <span className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] text-slate-600">
                     +{level.subjects.length - 4}
                   </span>
                 )}
@@ -723,17 +1168,21 @@ function LevelsSection() {
   );
 }
 
+/* ------------------------------------------------------------------ */
+/* Testimonials                                                         */
+/* ------------------------------------------------------------------ */
+
 function TestimonialsSection() {
   const doubled = [...TESTIMONIALS, ...TESTIMONIALS];
   return (
-    <section id="testimonials" className="relative overflow-hidden py-24">
+    <section id="testimonials" className="relative scroll-mt-20 overflow-hidden py-24">
       <div className="mx-auto max-w-6xl px-4">
         <motion.div {...fadeUp} className="mx-auto mb-12 max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600">
             Témoignages
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Ils révisent déjà <span className="text-gradient-gold">avec nous</span>
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Ils révisent déjà <span className="text-gradient-sun">avec nous</span>
           </h2>
         </motion.div>
       </div>
@@ -751,7 +1200,7 @@ function TestimonialsSection() {
           {doubled.map((t, i) => (
             <figure
               key={`${t.name}-${i}`}
-              className="w-[320px] shrink-0 rounded-2xl border border-white/10 bg-white/[0.04] p-6"
+              className="w-[320px] shrink-0 rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm transition-shadow hover:shadow-lg"
               aria-hidden={i >= TESTIMONIALS.length}
             >
               <div className="flex gap-0.5" aria-label="5 étoiles sur 5">
@@ -759,16 +1208,19 @@ function TestimonialsSection() {
                   <Star key={s} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <blockquote className="mt-3 text-sm leading-relaxed text-emerald-100/80">
+              <blockquote className="mt-3 text-sm leading-relaxed text-slate-600">
                 « {t.text} »
               </blockquote>
               <figcaption className="mt-4 flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 text-sm font-bold text-white">
+                <span
+                  className={`flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br ${AVATAR_TONES[t.tone]} text-sm font-bold text-white`}
+                  aria-hidden="true"
+                >
                   {t.name.charAt(0)}
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-white">{t.name}</p>
-                  <p className="text-xs text-emerald-100/50">{t.role}</p>
+                  <p className="text-sm font-semibold text-slate-900">{t.name}</p>
+                  <p className="text-xs text-slate-400">{t.role}</p>
                 </div>
               </figcaption>
             </figure>
@@ -779,15 +1231,19 @@ function TestimonialsSection() {
   );
 }
 
+/* ------------------------------------------------------------------ */
+/* FAQ                                                                  */
+/* ------------------------------------------------------------------ */
+
 function FaqSection() {
   return (
-    <section id="faq" className="relative py-24">
+    <section id="faq" className="relative scroll-mt-20 py-24">
       <div className="mx-auto max-w-3xl px-4">
         <motion.div {...fadeUp} className="mb-12 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
             FAQ
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Questions fréquentes
           </h2>
         </motion.div>
@@ -798,13 +1254,15 @@ function FaqSection() {
               key={item.q}
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: i * 0.07 }}
-              className="group rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 open:border-emerald-400/30"
+              className="group rounded-2xl border border-slate-200/80 bg-white px-5 py-4 shadow-sm transition-colors open:border-blue-200"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-display text-base font-semibold text-white [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-display text-base font-semibold text-slate-900 [&::-webkit-details-marker]:hidden">
                 {item.q}
-                <ChevronDown className="h-4 w-4 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" />
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-50 transition-colors group-open:bg-blue-100">
+                  <ChevronDown className="h-4 w-4 text-blue-600 transition-transform group-open:rotate-180" />
+                </span>
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-emerald-100/60">{item.a}</p>
+              <p className="mt-3 text-sm leading-relaxed text-slate-500">{item.a}</p>
             </motion.details>
           ))}
         </div>
@@ -813,35 +1271,43 @@ function FaqSection() {
   );
 }
 
+/* ------------------------------------------------------------------ */
+/* Final CTA                                                            */
+/* ------------------------------------------------------------------ */
+
 function FinalCtaSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"] }) {
   return (
     <section className="relative py-24">
       <div className="mx-auto max-w-5xl px-4">
         <motion.div
           {...fadeUp}
-          className="relative overflow-hidden rounded-[2rem] border border-emerald-400/20 bg-gradient-to-br from-emerald-900/60 via-[#062b22] to-teal-900/40 px-6 py-14 text-center sm:px-14"
+          className="animate-gradient-x relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-blue-700 via-blue-600 to-emerald-500 px-6 py-14 text-center shadow-2xl shadow-blue-700/30 sm:px-14"
         >
-          <div className="absolute inset-0 bg-grid-dark opacity-60" aria-hidden="true" />
+          <div className="dot-grid-light absolute inset-0 opacity-20" aria-hidden="true" />
           <div
-            className="aurora-blob h-64 w-64 bg-emerald-400/20"
+            className="aurora-blob h-64 w-64 bg-white/25"
             style={{ top: "-30%", left: "10%" }}
             aria-hidden="true"
           />
           <div
-            className="aurora-blob h-56 w-56 bg-amber-300/15"
+            className="aurora-blob h-56 w-56 bg-orange-400/30"
             style={{ bottom: "-25%", right: "5%", animationDelay: "-6s" }}
+            aria-hidden="true"
+          />
+          <div
+            className="animate-spin-slow absolute -right-16 -top-16 h-48 w-48 rounded-full border-[3px] border-dashed border-white/25"
             aria-hidden="true"
           />
 
           <div className="relative">
-            <div className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 shadow-xl shadow-emerald-500/30">
+            <div className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 shadow-xl backdrop-blur-sm">
               <GraduationCap className="h-7 w-7 text-white" />
             </div>
             <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Votre concours commence{" "}
               <span className="text-gradient-gold">aujourd&apos;hui</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-emerald-100/70">
+            <p className="mx-auto mt-4 max-w-xl text-blue-50/90">
               Rejoignez les centaines de candidats qui révisent chaque jour sur
               QuizExam BF. Créez votre compte gratuit et faites votre premier
               quiz en moins de deux minutes.
@@ -849,7 +1315,7 @@ function FinalCtaSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthO
             <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
               <Button
                 size="lg"
-                className="h-12 gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 px-8 text-base font-semibold text-white shadow-xl shadow-emerald-500/30 transition-transform hover:-translate-y-0.5"
+                className="btn-shine h-12 gap-2 bg-gradient-to-r from-orange-500 to-amber-400 px-8 text-base font-semibold text-white shadow-xl shadow-orange-600/30 transition-transform hover:-translate-y-0.5"
                 onClick={() => onAuthOpen("signup")}
               >
                 Créer mon compte gratuitement
@@ -857,7 +1323,7 @@ function FinalCtaSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthO
               </Button>
               <GoogleButton className="h-12 sm:w-auto" />
             </div>
-            <p className="mt-5 text-xs text-emerald-100/40">
+            <p className="mt-5 text-xs text-blue-100/70">
               Gratuit · Sans carte bancaire · Annulable à tout moment
             </p>
           </div>
@@ -867,36 +1333,63 @@ function FinalCtaSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthO
   );
 }
 
+/* ------------------------------------------------------------------ */
+/* Footer                                                               */
+/* ------------------------------------------------------------------ */
+
 function LandingFooter() {
   return (
-    <footer className="border-t border-white/10 bg-black/20">
-      <div className="mx-auto max-w-6xl px-4 py-10">
-        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+    <footer className="border-t border-slate-100 bg-slate-50/60">
+      <div className="mx-auto max-w-6xl px-4 py-12">
+        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div className="flex items-center gap-2.5">
             <img
               src="/logo-quizexam.svg"
               alt=""
-              className="h-8 w-8 rounded-lg"
-              width={32}
-              height={32}
+              className="h-10 w-10 rounded-xl shadow-md shadow-blue-500/15"
+              width={40}
+              height={40}
             />
             <div>
-              <p className="font-display text-sm font-bold text-white">QuizExam BF</p>
-              <p className="text-xs text-emerald-100/50">
+              <p className="font-display text-sm font-bold text-slate-900">
+                QuizExam <span className="text-gradient-brand">BF</span>
+              </p>
+              <p className="text-xs text-slate-400">
                 La préparation aux concours, accessible à tous.
               </p>
             </div>
           </div>
-          <div className="text-center text-xs text-emerald-100/50 sm:text-right">
-            <p className="font-medium text-emerald-100/70">
-              BAMOGO Pingdwendé Giovanni — Créateur
+
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-500" aria-label="Liens de pied de page">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToHash(link.href);
+                }}
+                className="transition-colors hover:text-blue-600"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="text-left text-xs text-slate-400 md:text-right">
+            <p className="font-medium text-slate-500">
+              © 2026 QuizExam BF — Tous droits réservés
             </p>
-            <p>
-              <a href="mailto:giobamos03@gmail.com" className="transition-colors hover:text-emerald-300">
+            <p className="mt-1">
+              BAMOGO Pingdwendé Giovanni — Créateur ·{" "}
+              <a
+                href="mailto:giobamos03@gmail.com"
+                className="transition-colors hover:text-blue-600"
+              >
                 giobamos03@gmail.com
-              </a>{" "}
-              · Ouagadougou, Burkina Faso 🇧🇫
+              </a>
             </p>
+            <p className="mt-1">Ouagadougou, Burkina Faso 🇧🇫</p>
           </div>
         </div>
       </div>

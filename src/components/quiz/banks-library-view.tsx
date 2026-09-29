@@ -93,11 +93,11 @@ function levelBadgeCls(level: string) {
     case "BEPC":
       return "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300";
     case "BAC":
-      return "bg-cyan-100 text-cyan-700 dark:bg-cyan-500/15 dark:text-cyan-300";
+      return "bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300";
     case "LICENCE":
-      return "bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300";
+      return "bg-orange-100 text-orange-700 dark:bg-orange-500/15 dark:text-orange-300";
     case "CONCOURS":
-      return "bg-rose-100 text-rose-700 dark:bg-rose-500/15 dark:text-rose-300";
+      return "bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300";
     default:
       return "bg-muted text-muted-foreground";
   }
@@ -226,32 +226,40 @@ export function BanksLibraryView() {
 
   return (
     <div className="-mx-4 -mt-8">
-      {/* ---------- Hero header (dark premium band) ---------- */}
-      <div className="relative overflow-hidden bg-[#04140f] pb-10 pt-12 text-emerald-50">
-        <div className="absolute inset-0 bg-grid-dark" aria-hidden="true" />
+      {/* ---------- Hero header (V4 — light aurora band) ---------- */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-emerald-50 pb-10 pt-12 text-slate-800">
         <div
-          className="aurora-blob h-64 w-64 bg-emerald-500/25"
+          className="absolute inset-0 bg-grid-light [mask-image:radial-gradient(ellipse_70%_70%_at_50%_30%,black,transparent)]"
+          aria-hidden="true"
+        />
+        <div
+          className="aurora-blob h-64 w-64 bg-blue-400/25"
           style={{ top: "-40%", left: "8%" }}
           aria-hidden="true"
         />
         <div
-          className="aurora-blob h-56 w-56 bg-amber-400/15"
+          className="aurora-blob h-56 w-56 bg-orange-300/25"
           style={{ bottom: "-50%", right: "5%", animationDelay: "-7s" }}
           aria-hidden="true"
         />
+        <div
+          className="aurora-blob h-48 w-48 bg-emerald-300/25"
+          style={{ top: "10%", right: "30%", animationDelay: "-11s" }}
+          aria-hidden="true"
+        />
         <div className="relative mx-auto max-w-6xl px-4">
-          <div className="animate-fade-up flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+          <div className="animate-fade-up flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
             <LibraryBig className="h-4 w-4" />
             Bibliothèque
           </div>
           <h1
-            className="animate-fade-up mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl"
+            className="animate-fade-up mt-2 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
             style={{ animationDelay: "0.08s" }}
           >
-            Banques de <span className="text-gradient-mint">questions</span>
+            Banques de <span className="text-gradient-brand">questions</span>
           </h1>
           <p
-            className="animate-fade-up mt-3 max-w-2xl text-sm leading-relaxed text-emerald-100/70 sm:text-base"
+            className="animate-fade-up mt-3 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base"
             style={{ animationDelay: "0.16s" }}
           >
             Tout le contenu de la plateforme, organisé par niveau et par
@@ -263,28 +271,28 @@ export function BanksLibraryView() {
             className="animate-fade-up mt-6 flex flex-wrap items-center gap-3"
             style={{ animationDelay: "0.24s" }}
           >
-            <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm">
-              <LayoutGrid className="h-4 w-4 text-emerald-400" />
-              <span className="font-semibold">{banks.length}</span>
-              <span className="text-emerald-100/60">banques</span>
+            <div className="flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 text-sm shadow-sm backdrop-blur-sm">
+              <LayoutGrid className="h-4 w-4 text-blue-600" />
+              <span className="font-semibold text-slate-900">{banks.length}</span>
+              <span className="text-slate-500">banques</span>
             </div>
-            <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm">
-              <BookOpen className="h-4 w-4 text-amber-400" />
-              <span className="font-semibold">
+            <div className="flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 text-sm shadow-sm backdrop-blur-sm">
+              <BookOpen className="h-4 w-4 text-orange-500" />
+              <span className="font-semibold text-slate-900">
                 {banks.reduce((s, b) => s + (b._count?.questions ?? 0), 0).toLocaleString("fr-FR")}
               </span>
-              <span className="text-emerald-100/60">questions</span>
+              <span className="text-slate-500">questions</span>
             </div>
-            <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm">
-              <Sparkles className="h-4 w-4 text-cyan-400" />
-              <span className="text-emerald-100/60">Mise à jour continue</span>
+            <div className="flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 text-sm shadow-sm backdrop-blur-sm">
+              <Sparkles className="h-4 w-4 text-emerald-500" />
+              <span className="text-slate-500">Mise à jour continue</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* ---------- Sticky toolbar ---------- */}
-      <div className="sticky top-16 z-30 border-b bg-background/90 backdrop-blur-xl">
+      <div className="sticky top-[4.5rem] z-30 border-b border-blue-100/60 bg-background/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 lg:flex-row lg:items-center lg:justify-between">
           <EducationLevelSelector
             value={level}

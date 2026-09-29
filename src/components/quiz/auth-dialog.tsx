@@ -1,15 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
-  DialogTitle,
   DialogDescription,
-  DialogFooter,
+  DialogTitle,
 } from "@/components/ui/dialog";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -37,7 +35,25 @@ import {
   AlertCircle,
   Gift,
   UserCircle,
+  Eye,
+  EyeOff,
+  Sparkles,
+  Trophy,
+  WifiOff,
+  CheckCircle2,
 } from "lucide-react";
+
+/**
+ * AuthDialog (V4 redesign) — animated login/signup dialog.
+ *
+ * Design: brand gradient header with floating shapes, a sliding-pill
+ * login/signup switcher (framer-motion layoutId), icon inputs with a
+ * password visibility toggle and a shimmering gradient submit button.
+ * All authentication logic is unchanged: credentials signup + signIn,
+ * referral pre-fill, Google OAuth via the shared GoogleButton.
+ */
+
+type AuthMode = "login" | "signup";
 
 export function AuthDialog({
   open,
@@ -52,10 +68,11 @@ export function AuthDialog({
   /** Optional tab to pre-select — used by the landing CTA buttons. */
   initialMode?: "login" | "signup";
 }) {
-  const [mode, setMode] = useState<"login" | "signup">(initialMode ?? "login");
+  const [mode, setMode] = useState<AuthMode>(initialMode ?? "login");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [referralCode, setReferralCode] = useState(initialReferralCode ?? "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -109,7 +126,6 @@ export function AuthDialog({
           password,
           redirect: false,
         });
-        console.log("signIn result:", result);
         if (result?.error) {
           throw new Error("Email ou mot de passe incorrect.");
         }
@@ -142,200 +158,366 @@ export function AuthDialog({
         if (!v) reset();
       }}
     >
-      <DialogContent className="max-h-[90vh] max-w-[95vw] overflow-y-auto sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
-            <ShieldCheck className="h-5 w-5 text-emerald-600" />
-            Accès à votre espace
-          </DialogTitle>
-          <DialogDescription>
-            Connectez-vous pour accéder à la plateforme ou créez un compte
-            visiteur gratuit.
-          </DialogDescription>
-        </DialogHeader>
+      <DialogContent className="max-h-[92vh] max-w-[95vw] gap-0 overflow-y-auto p-0 sm:max-w-md">
+        <DialogTitle className="sr-only">
+          {mode === "login" ? "Connexion à QuizExam BF" : "Créer un compte QuizExam BF"}
+        </DialogTitle>
+        <DialogDescription className="sr-only">
+          Connectez-vous ou créez un compte gratuit pour accéder à la plateforme.
+        </DialogDescription>
 
-        <Tabs
-          value={mode}
-          onValueChange={(v) => {
-            setMode(v as "login" | "signup");
-            setError(null);
-          }}
-        >
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="login" className="gap-1.5">
-              <LogIn className="h-4 w-4" />
-              Connexion
-            </TabsTrigger>
-            <TabsTrigger value="signup" className="gap-1.5">
-              <UserPlus className="h-4 w-4" />
-              Inscription
-            </TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="login">
-            <form onSubmit={handleSubmit} className="space-y-3 pt-2">
-              <div className="space-y-1.5">
-                <Label htmlFor="login-email">Email</Label>
-                <div className="relative">
-                  <Mail className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    id="login-email"
-                    type="email"
-                    placeholder="vous@exemple.com"
-                    className="pl-9"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    autoComplete="email"
-                  />
-                </div>
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="login-password">Mot de passe</Label>
-                <div className="relative">
-                  <Lock className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    id="login-password"
-                    type="password"
-                    placeholder="••••••••"
-                    className="pl-9"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    autoComplete="current-password"
-                  />
-                </div>
-              </div>
-              {error && <ErrorAlert message={error} />}
-              <DialogFooter>
-                <Button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full gap-2"
-                >
-                  {loading ? (
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                  ) : (
-                    <LogIn className="h-4 w-4" />
-                  )}
-                  Se connecter
-                </Button>
-              </DialogFooter>
-              <div className="relative py-1" role="separator" aria-label="ou">
-                <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                  <span className="w-full border-t" />
-                </div>
-                <span className="relative flex justify-center">
-                  <span className="bg-background px-3 text-xs uppercase tracking-wider text-muted-foreground">
-                    ou
-                  </span>
-                </span>
-              </div>
-              <GoogleButton onRedirectStart={() => onOpenChange(false)} />
-            </form>
-          </TabsContent>
-
-          <TabsContent value="signup">
-            <form onSubmit={handleSubmit} className="space-y-3 pt-2">
-              <div className="space-y-1.5">
-                <Label htmlFor="signup-name">Nom complet</Label>
-                <div className="relative">
-                  <User className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    id="signup-name"
-                    type="text"
-                    placeholder="Votre nom"
-                    className="pl-9"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                    autoComplete="name"
-                  />
-                </div>
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="signup-email">Email</Label>
-                <div className="relative">
-                  <Mail className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    id="signup-email"
-                    type="email"
-                    placeholder="vous@exemple.com"
-                    className="pl-9"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    autoComplete="email"
-                  />
-                </div>
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="signup-password">Mot de passe</Label>
-                <div className="relative">
-                  <Lock className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    id="signup-password"
-                    type="password"
-                    placeholder="Min. 6 caractères"
-                    className="pl-9"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    minLength={6}
-                    autoComplete="new-password"
-                  />
-                </div>
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="signup-referral" className="flex items-center gap-1.5">
-                  <Gift className="h-3.5 w-3.5 text-violet-600" />
-                  Code de parrainage <span className="text-xs text-muted-foreground">(optionnel)</span>
-                </Label>
-                <Input
-                  id="signup-referral"
-                  type="text"
-                  placeholder="ABCD1234"
-                  className="font-mono tracking-widest"
-                  value={referralCode}
-                  onChange={(e) => setReferralCode(e.target.value.toUpperCase())}
-                  maxLength={8}
-                  autoComplete="off"
-                />
-                <p className="text-[11px] text-muted-foreground">
-                  Si un ami vous a invité, entrez son code pour le créditer.
+        {/* ---- Brand header (gradient band + floating shapes) ---- */}
+        <div className="animate-gradient-x relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-emerald-500 px-6 pb-8 pt-7 text-white">
+          <div className="dot-grid-light absolute inset-0 opacity-20" aria-hidden="true" />
+          <div
+            className="aurora-blob h-32 w-32 bg-white/20"
+            style={{ top: "-40%", right: "-6%" }}
+            aria-hidden="true"
+          />
+          <div
+            className="aurora-blob h-28 w-28 bg-orange-400/30"
+            style={{ bottom: "-50%", left: "10%", animationDelay: "-6s" }}
+            aria-hidden="true"
+          />
+          <div className="relative">
+            <div className="flex items-center gap-2.5">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 shadow-lg backdrop-blur-sm">
+                <ShieldCheck className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="font-display text-base font-bold leading-tight">
+                  QuizExam <span className="text-gradient-gold">BF</span>
+                </p>
+                <p className="text-[11px] text-blue-100/80">
+                  {mode === "login"
+                    ? "Content de vous revoir !"
+                    : "Rejoignez la communauté 2026"}
                 </p>
               </div>
-              {error && <ErrorAlert message={error} />}
-              <DialogFooter>
-                <Button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full gap-2"
+            </div>
+            <ul className="mt-4 flex flex-wrap gap-1.5">
+              <li className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-medium text-blue-50 backdrop-blur-sm">
+                <Sparkles className="h-3 w-3 text-amber-300" />
+                Examen IA
+              </li>
+              <li className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-medium text-blue-50 backdrop-blur-sm">
+                <Trophy className="h-3 w-3 text-amber-300" />
+                Classements
+              </li>
+              <li className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-medium text-blue-50 backdrop-blur-sm">
+                <WifiOff className="h-3 w-3 text-amber-300" />
+                Hors ligne
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* ---- Sliding pill tabs ---- */}
+        <div className="relative z-10 -mt-5 px-6">
+          <div
+            className="grid grid-cols-2 rounded-2xl border border-slate-200 bg-white p-1 shadow-lg shadow-blue-900/5"
+            role="tablist"
+            aria-label="Connexion ou inscription"
+          >
+            {(
+              [
+                { value: "login", label: "Connexion", icon: LogIn },
+                { value: "signup", label: "Inscription", icon: UserPlus },
+              ] as const
+            ).map((tab) => {
+              const active = mode === tab.value;
+              return (
+                <button
+                  key={tab.value}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  onClick={() => {
+                    setMode(tab.value);
+                    setError(null);
+                  }}
+                  className={`relative flex items-center justify-center gap-1.5 rounded-xl py-2 text-sm font-semibold transition-colors ${
+                    active ? "text-white" : "text-slate-500 hover:text-slate-800"
+                  }`}
                 >
-                  {loading ? (
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                  ) : (
-                    <UserPlus className="h-4 w-4" />
+                  {active && (
+                    <motion.span
+                      layoutId="auth-tab-pill"
+                      className="animate-gradient-x absolute inset-0 rounded-xl bg-gradient-to-r from-blue-600 to-emerald-500 shadow-md"
+                      transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                      aria-hidden="true"
+                    />
                   )}
-                  Créer mon compte
-                </Button>
-              </DialogFooter>
-              <div className="relative py-1" role="separator" aria-label="ou">
-                <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                  <span className="w-full border-t" />
-                </div>
-                <span className="relative flex justify-center">
-                  <span className="bg-background px-3 text-xs uppercase tracking-wider text-muted-foreground">
-                    ou
-                  </span>
-                </span>
-              </div>
-              <GoogleButton label="S'inscrire avec Google" onRedirectStart={() => onOpenChange(false)} />
-            </form>
-          </TabsContent>
-        </Tabs>
+                  <tab.icon className="relative z-10 h-4 w-4" />
+                  <span className="relative z-10">{tab.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* ---- Forms ---- */}
+        <div className="px-6 pb-6 pt-5">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={mode}
+              initial={{ opacity: 0, x: mode === "login" ? -18 : 18 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: mode === "login" ? 18 : -18 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+            >
+              {mode === "login" ? (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <IconField
+                    id="login-email"
+                    label="Email"
+                    icon={<Mail className="h-4 w-4" />}
+                  >
+                    <Input
+                      id="login-email"
+                      type="email"
+                      placeholder="vous@exemple.com"
+                      className="border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      autoComplete="email"
+                    />
+                  </IconField>
+                  <IconField
+                    id="login-password"
+                    label="Mot de passe"
+                    icon={<Lock className="h-4 w-4" />}
+                    suffix={
+                      <button
+                        type="button"
+                        tabIndex={-1}
+                        onClick={() => setShowPassword((v) => !v)}
+                        className="text-slate-400 transition-colors hover:text-slate-600"
+                        aria-label={
+                          showPassword ? "Masquer le mot de passe" : "Afficher le mot de passe"
+                        }
+                      >
+                        {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                      </button>
+                    }
+                  >
+                    <Input
+                      id="login-password"
+                      type={showPassword ? "text" : "password"}
+                      placeholder="••••••••"
+                      className="border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                      autoComplete="current-password"
+                    />
+                  </IconField>
+
+                  {error && <ErrorAlert message={error} />}
+
+                  <Button
+                    type="submit"
+                    disabled={loading}
+                    className="btn-shine h-11 w-full gap-2 animate-gradient-x bg-gradient-to-r from-blue-600 to-emerald-500 text-base font-semibold shadow-lg shadow-blue-500/25"
+                  >
+                    {loading ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <LogIn className="h-4 w-4" />
+                    )}
+                    Se connecter
+                  </Button>
+                </form>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <IconField
+                    id="signup-name"
+                    label="Nom complet"
+                    icon={<User className="h-4 w-4" />}
+                  >
+                    <Input
+                      id="signup-name"
+                      type="text"
+                      placeholder="Votre nom"
+                      className="border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                      autoComplete="name"
+                    />
+                  </IconField>
+                  <IconField
+                    id="signup-email"
+                    label="Email"
+                    icon={<Mail className="h-4 w-4" />}
+                  >
+                    <Input
+                      id="signup-email"
+                      type="email"
+                      placeholder="vous@exemple.com"
+                      className="border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      autoComplete="email"
+                    />
+                  </IconField>
+                  <IconField
+                    id="signup-password"
+                    label="Mot de passe"
+                    icon={<Lock className="h-4 w-4" />}
+                    suffix={
+                      <button
+                        type="button"
+                        tabIndex={-1}
+                        onClick={() => setShowPassword((v) => !v)}
+                        className="text-slate-400 transition-colors hover:text-slate-600"
+                        aria-label={
+                          showPassword ? "Masquer le mot de passe" : "Afficher le mot de passe"
+                        }
+                      >
+                        {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                      </button>
+                    }
+                  >
+                    <Input
+                      id="signup-password"
+                      type={showPassword ? "text" : "password"}
+                      placeholder="Min. 6 caractères"
+                      className="border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                      minLength={6}
+                      autoComplete="new-password"
+                    />
+                  </IconField>
+
+                  <div className="space-y-1.5">
+                    <Label
+                      htmlFor="signup-referral"
+                      className="flex items-center gap-1.5 text-xs text-slate-500"
+                    >
+                      <Gift className="h-3.5 w-3.5 text-orange-500" />
+                      Code de parrainage <span className="font-normal">(optionnel)</span>
+                    </Label>
+                    <Input
+                      id="signup-referral"
+                      type="text"
+                      placeholder="ABCD1234"
+                      className="h-10 border-slate-200 font-mono tracking-widest focus-visible:ring-blue-400"
+                      value={referralCode}
+                      onChange={(e) => setReferralCode(e.target.value.toUpperCase())}
+                      maxLength={8}
+                      autoComplete="off"
+                    />
+                  </div>
+
+                  {error && <ErrorAlert message={error} />}
+
+                  <Button
+                    type="submit"
+                    disabled={loading}
+                    className="btn-shine h-11 w-full gap-2 animate-gradient-x bg-gradient-to-r from-orange-500 to-amber-400 text-base font-semibold shadow-lg shadow-orange-500/25"
+                  >
+                    {loading ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <UserPlus className="h-4 w-4" />
+                    )}
+                    Créer mon compte
+                  </Button>
+                </form>
+              )}
+            </motion.div>
+          </AnimatePresence>
+
+          {/* ---- Separator + Google ---- */}
+          <div className="relative py-4" role="separator" aria-label="ou">
+            <div className="absolute inset-0 flex items-center" aria-hidden="true">
+              <span className="w-full border-t border-slate-200" />
+            </div>
+            <span className="relative flex justify-center">
+              <span className="bg-white px-3 text-xs uppercase tracking-wider text-slate-400">
+                ou
+              </span>
+            </span>
+          </div>
+
+          {mode === "login" ? (
+            <GoogleButton onRedirectStart={() => onOpenChange(false)} />
+          ) : (
+            <GoogleButton label="S'inscrire avec Google" onRedirectStart={() => onOpenChange(false)} />
+          )}
+
+          <p className="mt-4 text-center text-[11px] leading-relaxed text-slate-400">
+            {mode === "login" ? (
+              <>
+                Pas encore de compte ?{" "}
+                <button
+                  type="button"
+                  className="font-semibold text-blue-600 hover:underline"
+                  onClick={() => {
+                    setMode("signup");
+                    setError(null);
+                  }}
+                >
+                  Inscrivez-vous gratuitement
+                </button>
+              </>
+            ) : (
+              <>
+                Déjà inscrit ?{" "}
+                <button
+                  type="button"
+                  className="font-semibold text-blue-600 hover:underline"
+                  onClick={() => {
+                    setMode("login");
+                    setError(null);
+                  }}
+                >
+                  Connectez-vous
+                </button>
+              </>
+            )}
+          </p>
+
+          <p className="mt-3 flex items-center justify-center gap-1 text-center text-[10px] text-slate-400">
+            <CheckCircle2 className="h-3 w-3 text-emerald-500" />
+            Gratuit · Sans carte bancaire · Vos données restent les vôtres
+          </p>
+        </div>
       </DialogContent>
     </Dialog>
+  );
+}
+
+/** Wrapper input: rounded field with an icon chip inside and optional suffix. */
+function IconField({
+  id,
+  label,
+  icon,
+  suffix,
+  children,
+}: {
+  id: string;
+  label: string;
+  icon: React.ReactNode;
+  suffix?: React.ReactNode;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="space-y-1.5">
+      <Label htmlFor={id} className="text-xs text-slate-500">
+        {label}
+      </Label>
+      <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50/60 pl-3 transition-all focus-within:border-blue-400 focus-within:bg-white focus-within:ring-4 focus-within:ring-blue-500/10">
+        <span className="text-slate-400 [&>svg]:h-4 [&>svg]:w-4">{icon}</span>
+        <div className="min-w-0 flex-1">{children}</div>
+        {suffix && <span className="pr-3">{suffix}</span>}
+      </div>
+    </div>
   );
 }
 
@@ -366,7 +548,7 @@ export function UserMenuButton() {
       <>
         <Button
           size="sm"
-          className="gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:opacity-90"
+          className="btn-shine animate-gradient-x gap-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 text-white shadow-md shadow-blue-500/25 hover:opacity-95"
           onClick={() => setAuthOpen(true)}
         >
           <LogIn className="h-4 w-4" />
@@ -393,10 +575,10 @@ export function UserMenuButton() {
             aria-label="Menu utilisateur"
           >
             <span
-              className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-white ${
+              className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-white shadow-sm ${
                 isAdmin
                   ? "bg-gradient-to-br from-amber-500 to-orange-600"
-                  : "bg-gradient-to-br from-emerald-500 to-teal-600"
+                  : "bg-gradient-to-br from-blue-500 to-emerald-500"
               }`}
             >
               {initial}
@@ -417,7 +599,7 @@ export function UserMenuButton() {
               className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-white ${
                 isAdmin
                   ? "bg-gradient-to-br from-amber-500 to-orange-600"
-                  : "bg-gradient-to-br from-emerald-500 to-teal-600"
+                  : "bg-gradient-to-br from-blue-500 to-emerald-500"
               }`}
             >
               {initial}

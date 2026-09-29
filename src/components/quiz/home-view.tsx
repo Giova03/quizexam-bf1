@@ -284,7 +284,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
         title: "Mon tableau de bord",
         desc: "Suivez votre progression et statistiques",
         icon: LayoutDashboard,
-        gradient: "from-emerald-500 to-teal-600",
+        gradient: "from-blue-500 to-sky-600",
         badge: null,
         onClick: openDashboard,
       },
@@ -300,7 +300,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
         title: "Révision espacée",
         desc: "Mémorisez sur le long terme (SM-2)",
         icon: Repeat,
-        gradient: "from-sky-500 to-cyan-600",
+        gradient: "from-emerald-500 to-teal-600",
         badge: null,
         onClick: openSpacedRepetition,
       },
@@ -323,9 +323,9 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
         icon: FileQuestion,
         label: "Questions",
         value: totalQuestions,
-        gradient: "from-violet-500 to-purple-600",
+        gradient: "from-blue-500 to-sky-600",
         iconBg:
-          "bg-violet-100 text-violet-700 dark:bg-violet-950/40 dark:text-violet-300",
+          "bg-blue-100 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300",
       },
       {
         icon: Trophy,
@@ -341,45 +341,49 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
 
   return (
     <div className="space-y-8 sm:space-y-10">
-      {/* ===== Hero — gradient-mesh + glassmorphism + floating badge ===== */}
-      <section className="gradient-mesh relative overflow-hidden rounded-3xl border border-emerald-100/60 p-6 shadow-xl sm:p-8 md:p-12 dark:border-emerald-900/40">
+      {/* ===== Hero — gradient-mesh + glassmorphism + floating badge (V4) ===== */}
+      <section className="gradient-mesh relative overflow-hidden rounded-3xl border border-blue-100/70 p-6 shadow-xl sm:p-8 md:p-12 dark:border-white/10">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-emerald-400/20 blur-3xl"
+          className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-blue-400/25 blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-20 left-1/4 h-56 w-56 rounded-full bg-cyan-400/20 blur-3xl"
+          className="pointer-events-none absolute -bottom-20 left-1/4 h-56 w-56 rounded-full bg-orange-300/25 blur-3xl"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.4),transparent_50%)]" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-10 top-1/3 h-44 w-44 rounded-full bg-emerald-300/25 blur-3xl"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.5),transparent_50%)]" />
         <div className="relative z-10 max-w-2xl space-y-3 sm:space-y-4">
           <FloatingBadge icon={<Sparkles className="h-3 w-3" />}>
-            Préparation Concours Burkina Faso
+            Préparation Concours Burkina Faso · 2026
           </FloatingBadge>
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
             <GradientText>Plateforme de Quiz &amp; Examens Blancs</GradientText>
           </h1>
-          <p className="text-sm text-emerald-950/80 sm:text-base md:text-lg dark:text-emerald-50/80">
+          <p className="text-sm text-slate-600 sm:text-base md:text-lg dark:text-slate-300">
             Révisez avec des banques de questions à choix multiples générées à
             partir de vos documents de cours. Choisissez votre niveau, votre
             mode de correction et entraînez-vous comme à l&apos;examen réel.
           </p>
           <div className="flex flex-wrap gap-2 pt-1 sm:gap-3 sm:pt-2">
             <div className="glass flex items-center gap-2 rounded-xl px-3 py-1.5 shadow-sm sm:px-4 sm:py-2">
-              <BookOpen className="h-4 w-4 text-emerald-600 sm:h-5 sm:w-5" />
-              <span className="text-xs font-medium text-emerald-950 sm:text-sm dark:text-emerald-50">
+              <BookOpen className="h-4 w-4 text-blue-600 sm:h-5 sm:w-5" />
+              <span className="text-xs font-medium text-slate-800 sm:text-sm dark:text-slate-100">
                 {banks.length} banques
               </span>
             </div>
             <div className="glass flex items-center gap-2 rounded-xl px-3 py-1.5 shadow-sm sm:px-4 sm:py-2">
-              <FileQuestion className="h-4 w-4 text-emerald-600 sm:h-5 sm:w-5" />
-              <span className="text-xs font-medium text-emerald-950 sm:text-sm dark:text-emerald-50">
+              <FileQuestion className="h-4 w-4 text-orange-500 sm:h-5 sm:w-5" />
+              <span className="text-xs font-medium text-slate-800 sm:text-sm dark:text-slate-100">
                 {totalQuestions} questions
               </span>
             </div>
             <div className="glass flex items-center gap-2 rounded-xl px-3 py-1.5 shadow-sm sm:px-4 sm:py-2">
               <Trophy className="h-4 w-4 text-emerald-600 sm:h-5 sm:w-5" />
-              <span className="text-xs font-medium text-emerald-950 sm:text-sm dark:text-emerald-50">
+              <span className="text-xs font-medium text-slate-800 sm:text-sm dark:text-slate-100">
                 {exams.length} examens blancs
               </span>
             </div>
@@ -424,35 +428,35 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
         })}
       </section>
 
-      {/* ===== V3 — Library CTA banner: deep reorganised banks hub ===== */}
+      {/* ===== V4 — Library CTA banner: reorganised banks hub ===== */}
       <section>
         <button
           type="button"
           onClick={openBanks}
-          className="group relative flex w-full items-center gap-4 overflow-hidden rounded-2xl border border-emerald-200/70 bg-gradient-to-r from-[#04140f] via-[#064e3b] to-[#0f766e] p-4 text-left shadow-lg transition-transform hover:-translate-y-0.5 sm:gap-5 sm:p-5 dark:border-emerald-800/60"
+          className="group relative flex w-full items-center gap-4 overflow-hidden rounded-2xl border border-blue-200/60 bg-gradient-to-r from-blue-700 via-blue-600 to-emerald-500 p-4 text-left shadow-lg shadow-blue-600/20 transition-transform hover:-translate-y-0.5 sm:gap-5 sm:p-5 dark:border-white/10"
           aria-label="Ouvrir la bibliothèque de banques de questions"
         >
-          <div className="absolute inset-0 bg-grid-dark opacity-50" aria-hidden="true" />
+          <div className="dot-grid-light absolute inset-0 opacity-20" aria-hidden="true" />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-amber-400/20 blur-3xl"
+            className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-orange-400/30 blur-3xl"
           />
-          <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 text-white shadow-md sm:h-14 sm:w-14">
+          <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white shadow-md backdrop-blur-sm sm:h-14 sm:w-14">
             <LibraryBig className="h-6 w-6 sm:h-7 sm:w-7" />
           </div>
           <div className="relative min-w-0 flex-1">
-            <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
+            <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-orange-200">
               <Sparkles className="h-3 w-3" />
               Nouveau
             </p>
             <p className="mt-0.5 truncate font-display text-base font-bold text-white sm:text-lg">
               Bibliothèque de banques, réorganisée
             </p>
-            <p className="mt-0.5 hidden text-xs text-emerald-100/70 sm:block">
+            <p className="mt-0.5 hidden text-xs text-blue-100/80 sm:block">
               Niveaux, recherche instantanée et tri — trouvez la bonne banque en deux clics.
             </p>
           </div>
-          <span className="relative inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-white/10 px-3 py-2 text-xs font-semibold text-white transition-colors group-hover:bg-white/20 sm:text-sm">
+          <span className="relative inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-white/15 px-3 py-2 text-xs font-semibold text-white backdrop-blur-sm transition-colors group-hover:bg-white/25 sm:text-sm">
             Explorer
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </span>
@@ -462,7 +466,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
       {/* ===== Quick Actions Grid — 4 gradient cards ===== */}
       <section className="space-y-3 sm:space-y-4">
         <div className="flex items-center gap-2">
-          <Zap className="h-5 w-5 shrink-0 text-emerald-600" />
+          <Zap className="h-5 w-5 shrink-0 text-blue-600" />
           <h2 className="text-lg font-semibold sm:text-xl">Actions rapides</h2>
         </div>
         <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
@@ -639,7 +643,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
           className="h-11 justify-start gap-2 sm:h-9"
           onClick={() => setSearchOpen(true)}
         >
-          <Search className="h-4 w-4 text-emerald-600" />
+          <Search className="h-4 w-4 text-blue-600" />
           <span className="flex-1 truncate text-left">
             Rechercher une question...
           </span>
@@ -656,7 +660,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
       <section className="space-y-3 sm:space-y-4">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2">
-            <BookOpen className="h-5 w-5 shrink-0 text-emerald-600" />
+            <BookOpen className="h-5 w-5 shrink-0 text-blue-600" />
             <h2 className="text-lg font-semibold sm:text-xl">
               Banques de questions
             </h2>
