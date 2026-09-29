@@ -67,3 +67,9 @@ db/*.db
 /screenshots/
 /marketing-video/
 /download/
+
+# playwright (P7)
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
