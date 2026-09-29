@@ -1,7 +1,13 @@
 import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
+
+// P0 SECURITY: Anki export requires authentication.
+// The export contains correct answers and explanations —
+// it must not be publicly accessible.
 
 // ============================================================================
 // Anki CSV export — produces a semicolon-separated CSV (Anki's default for
@@ -118,6 +124,12 @@ function buildCsv(
 // ----------------------------------------------------------------------------
 export async function GET(request: Request) {
   try {
+    // P0: Auth required — this endpoint exposes correct answers
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.email) {
+      return NextResponse.json({ error: "Authentification requise" }, { status: 401 });
+    }
+
     const { searchParams } = new URL(request.url);
     const bankId = searchParams.get("bankId");
 
@@ -201,6 +213,12 @@ interface FavoritePayload {
 
 export async function POST(request: Request) {
   try {
+    // P0: Auth required
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.email) {
+      return NextResponse.json({ error: "Authentification requise" }, { status: 401 });
+    }
+
     const body = (await request.json().catch(() => null)) as
       | { favorites?: FavoritePayload[] }
       | null;

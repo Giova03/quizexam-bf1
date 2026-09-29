@@ -181,6 +181,13 @@ function shuffle<T>(arr: T[]): T[] {
 
 export async function POST(request: Request) {
   try {
+    // P0: Disable seed in production — only allow in development
+    if (process.env.NODE_ENV === "production") {
+      return NextResponse.json(
+        { error: "Le seed est désactivé en production. Utilisez le panneau admin." },
+        { status: 403 }
+      );
+    }
     const body = (await request.json().catch(() => ({}))) as {
       reset?: boolean;
     };
