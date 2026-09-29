@@ -63,22 +63,29 @@ async function main() {
       log("✓ Base de données synchronisée avec le schéma.");
       process.exit(0);
     }
-    console.error(
-      "[migrate-on-build] ✗ Échec de la synchronisation du schéma (code " + code + ").\n" +
+    // NON BLOQUANT : un échec de push au build (pooler :6543, variables limitées
+    // au runtime, base injoignable…) ne doit JAMAIS empêcher le déploiement du
+    // code — sinon l'app reste sur l'ancienne version et la panne persiste.
+    // Réparation runtime disponible : GET /api/admin/db-migrate (DDL idempotent
+    // additif) et prisma/manual-migration-2026-09.sql (Supabase → SQL Editor).
+    console.warn(
+      "[migrate-on-build] ⚠ Échec de la synchronisation du schéma (code " + code + ") — build continué.\n" +
         "  Causes fréquentes :\n" +
-        "  1) DATABASE_URL pointe vers le pooler Supabase (:6543) — utilisez l'URL\n" +
-        "     directe (:5432) pour les migrations, ou exécutez le plan B :\n" +
-        "     prisma/manual-migration-2026-09.sql dans Supabase → SQL Editor.\n" +
-        "  2) Le schéma exigerait une perte de données — refusé volontairement.\n" +
+        "  1) DATABASE_URL non exposée au build (variable 'Runtime only' sur Vercel).\n" +
+        "  2) URL pooler Supabase (:6543) — préférer l'URL directe (:5432).\n" +
         "  3) Base injoignable (IP restreinte / credentials).\n" +
-        "  Le build est arrêté pour éviter de déployer une version cassée.",
+        "  Réparation à chaud : GET https://<votre-domaine>/api/admin/db-migrate",
     );
-    process.exit(code);
+    process.exit(0);
   });
 
   child.on("error", (err) => {
-    console.error("[migrate-on-build] ✗ Impossible de lancer prisma db push :", err.message);
-    process.exit(1);
+    console.warn(
+      "[migrate-on-build] ⚠ Impossible de lancer prisma db push :",
+      err.message,
+      "— build continué (réparation runtime : /api/admin/db-migrate).",
+    );
+    process.exit(0);
   });
 }
 

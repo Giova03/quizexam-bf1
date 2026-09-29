@@ -55,6 +55,15 @@ import {
 
 type AuthMode = "login" | "signup";
 
+/**
+ * Shown when next-auth returns no result at all — i.e. the credentials
+ * callback crashed server-side (typically: database unreachable or schema
+ * out of sync). Much more actionable than the former "Réponse
+ * d'authentification vide."
+ */
+const SERVER_AUTH_ERROR =
+  "Erreur côté serveur pendant l'authentification (base de données). Rechargez la page ; si le problème persiste, l'administrateur doit synchroniser la base (GET /api/admin/db-migrate).";
+
 export function AuthDialog({
   open,
   onOpenChange,
@@ -117,7 +126,9 @@ export function AuthDialog({
           redirect: false,
         });
         if (result?.error)
-          throw new Error("Inscription réussie mais connexion échouée.");
+          throw new Error("Inscription réussie mais connexion échouée. Essayez de vous connecter manuellement.");
+        if (!result)
+          throw new Error(SERVER_AUTH_ERROR);
         onOpenChange(false);
         reset();
       } else {
@@ -130,7 +141,7 @@ export function AuthDialog({
           throw new Error("Email ou mot de passe incorrect.");
         }
         if (!result) {
-          throw new Error("Réponse d'authentification vide.");
+          throw new Error(SERVER_AUTH_ERROR);
         }
         onOpenChange(false);
         reset();
