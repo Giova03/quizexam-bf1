@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { completeSession, PermissionError } from "@/server/application/quiz/complete-session";
 
 export const dynamic = "force-dynamic";
 
@@ -26,41 +27,21 @@ export async function POST(
       return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
     }
 
-    const session = await db.quizSession.findUnique({
-      where: { id },
-      include: { answers: true },
-    });
+    // P2: business logic moved to the application layer (use case).
+    const result = await completeSession(id, { id: user.id, role: user.role });
 
-    if (!session) {
-      return NextResponse.json({ error: "Session not found" }, { status: 404 });
+    switch (result.kind) {
+      case "ok":
+        return NextResponse.json(result.session);
+      case "not_found":
+        return NextResponse.json({ error: "Session not found" }, { status: 404 });
+      case "already_completed":
+        return NextResponse.json({ error: "Session déjà terminée" }, { status: 400 });
     }
-
-    // P0: Ownership check
-    if (session.userId && session.userId !== user.id && user.role !== "ADMIN") {
+  } catch (error) {
+    if (error instanceof PermissionError) {
       return NextResponse.json({ error: "Accès refusé" }, { status: 403 });
     }
-
-    // P0: Prevent double-completion
-    if (session.completedAt) {
-      return NextResponse.json({ error: "Session déjà terminée" }, { status: 400 });
-    }
-
-    // Compute the final score
-    const correctCount = session.answers.filter(
-      (a) => a.isCorrect === true
-    ).length;
-
-    const updated = await db.quizSession.update({
-      where: { id },
-      data: {
-        score: correctCount,
-        completedAt: new Date(),
-      },
-      include: { answers: { orderBy: { id: "asc" } } },
-    });
-
-    return NextResponse.json(updated);
-  } catch (error) {
     console.error("Failed to complete session:", error);
     return NextResponse.json({ error: "Failed to complete session" }, { status: 500 });
   }

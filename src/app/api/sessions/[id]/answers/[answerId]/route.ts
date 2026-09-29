@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { submitAnswer, PermissionError } from "@/server/application/quiz/submit-answer";
 
 export const dynamic = "force-dynamic";
 
@@ -30,67 +31,33 @@ export async function PATCH(
       return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
     }
 
-    // P0: Verify session ownership
-    const quizSession = await db.quizSession.findUnique({
-      where: { id },
-      select: { id: true, userId: true },
-    });
-    if (!quizSession) {
-      return NextResponse.json({ error: "Session not found" }, { status: 404 });
+    const body = (await request.json()) as PatchAnswerBody;
+
+    // P2: business logic moved to the application layer (use case).
+    // Bonus fix: correctness now handles dual-answer questions (correctAnswer2)
+    // via the quiz domain's checkAnswer.
+    const result = await submitAnswer(id, answerId, { id: user.id, role: user.role }, body.userAnswer);
+
+    switch (result.kind) {
+      case "ok":
+        return NextResponse.json({
+          ...result.session,
+          durationMin: result.durationMin,
+        });
+      case "invalid_answer":
+        return NextResponse.json({ error: "Invalid userAnswer value" }, { status: 400 });
+      case "session_not_found":
+        return NextResponse.json({ error: "Session not found" }, { status: 404 });
+      case "answer_not_found":
+        return NextResponse.json(
+          { error: "Answer not found in this session" },
+          { status: 404 },
+        );
     }
-    if (quizSession.userId && quizSession.userId !== user.id && user.role !== "ADMIN") {
+  } catch (error) {
+    if (error instanceof PermissionError) {
       return NextResponse.json({ error: "Accès refusé" }, { status: 403 });
     }
-
-    const body = (await request.json()) as PatchAnswerBody;
-    const { userAnswer } = body;
-
-    if (!["A", "B", "C", "D"].includes(userAnswer)) {
-      return NextResponse.json({ error: "Invalid userAnswer value" }, { status: 400 });
-    }
-
-    // Verify the answer belongs to this session
-    const existing = await db.sessionAnswer.findUnique({
-      where: { id: answerId },
-    });
-    if (!existing || existing.sessionId !== id) {
-      return NextResponse.json({ error: "Answer not found in this session" }, { status: 404 });
-    }
-
-    const isCorrect = existing.correctAnswer === userAnswer;
-
-    await db.sessionAnswer.update({
-      where: { id: answerId },
-      data: {
-        userAnswer,
-        isCorrect,
-        answeredAt: new Date(),
-      },
-    });
-
-    // Return the FULL session with all answers
-    const fullSession = await db.quizSession.findUnique({
-      where: { id },
-      include: {
-        answers: { orderBy: { id: "asc" } },
-      },
-    });
-
-    if (!fullSession) {
-      return NextResponse.json({ error: "Session not found after update" }, { status: 404 });
-    }
-
-    let durationMin: number | null = null;
-    if (fullSession.sourceType === "exam") {
-      const exam = await db.exam.findUnique({
-        where: { id: fullSession.sourceId },
-        select: { durationMin: true },
-      });
-      durationMin = exam?.durationMin ?? null;
-    }
-
-    return NextResponse.json({ ...fullSession, durationMin });
-  } catch (error) {
     console.error("Failed to submit answer:", error);
     return NextResponse.json({ error: "Failed to submit answer" }, { status: 500 });
   }

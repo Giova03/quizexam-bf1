@@ -1,11 +1,20 @@
 /**
- * Audit Log — P1
+ * Audit Log — P2 (migration DB).
  *
- * Tracks all administrative actions for accountability.
- * Stored in the AuditLog table (to be added to Prisma schema).
+ * Isomorphic facade over the audit trail:
+ * - BROWSER: `logAction` posts to /api/audit-log, where the server derives
+ *   the actor identity from the NextAuth session (never from the body) and
+ *   persists via the AuditLog Prisma model. Fire-and-forget: an audit
+ *   failure must never break the user's action.
+ * - SERVER (API routes / use cases): `logAction` logs to the console; for
+ *   durable storage import `recordAuditLog` from the infrastructure
+ *   repository directly (`@/server/infrastructure/repositories/audit-log-repository`).
  *
- * For now, uses a simple in-memory + localStorage approach.
- * Will be migrated to a proper DB table in the schema update.
+ * `getAuditLog` is now async and reads from the database through
+ * GET /api/audit-log (permission VIEW_ANALYTICS, i.e. ADMIN+).
+ *
+ * This module must stay importable from client components: no Prisma,
+ * no Next.js server APIs here.
  */
 
 export interface AuditEntry {
@@ -22,51 +31,62 @@ export interface AuditEntry {
   metadata?: Record<string, unknown>;
 }
 
-const AUDIT_KEY = "quizexam-audit-log";
-const MAX_ENTRIES = 500;
+/** Input of `logAction` — identity fields are optional and server-derived. */
+export interface AuditLogInput {
+  userId?: string;
+  userEmail?: string;
+  action: string;
+  entity: string;
+  entityId: string;
+  oldValue?: string;
+  newValue?: string;
+  ip?: string;
+  metadata?: Record<string, unknown>;
+}
+
+function isBrowser(): boolean {
+  return typeof window !== "undefined";
+}
 
 /**
  * Log an administrative action.
+ * Browser → durable DB write via POST /api/audit-log (fire-and-forget).
+ * Server  → console trace (use `recordAuditLog` for durable storage).
  */
-export function logAction(entry: Omit<AuditEntry, "id" | "timestamp">): void {
-  const fullEntry: AuditEntry = {
-    ...entry,
-    id: `audit-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
-    timestamp: new Date().toISOString(),
-  };
-
-  // In browser: store in localStorage
-  if (typeof window !== "undefined") {
-    try {
-      const existing = JSON.parse(localStorage.getItem(AUDIT_KEY) || "[]");
-      existing.unshift(fullEntry);
-      localStorage.setItem(AUDIT_KEY, JSON.stringify(existing.slice(0, MAX_ENTRIES)));
-    } catch {
-      // localStorage might be full or unavailable
-    }
+export function logAction(entry: AuditLogInput): void {
+  if (isBrowser()) {
+    // The server derives userId/userEmail from the NextAuth session —
+    // whatever the client sends for identity is ignored server-side.
+    void fetch("/api/audit-log", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(entry),
+      keepalive: true,
+    }).catch(() => {
+      // Audit must never break the user's action.
+    });
+    return;
   }
 
-  // Always log to console for server-side visibility
-  console.log(`[AUDIT] ${entry.userEmail} → ${entry.action} on ${entry.entity}:${entry.entityId}`);
+  console.log(
+    `[AUDIT] ${entry.userEmail ?? "?"} → ${entry.action} on ${entry.entity}:${entry.entityId}`,
+  );
 }
 
 /**
- * Get recent audit entries.
+ * Get recent audit entries (newest first).
+ * Browser → GET /api/audit-log (ADMIN+ only; returns [] on any refusal).
  */
-export function getAuditLog(limit = 50): AuditEntry[] {
-  if (typeof window === "undefined") return [];
+export async function getAuditLog(limit = 50): Promise<AuditEntry[]> {
+  if (!isBrowser()) return [];
   try {
-    const entries = JSON.parse(localStorage.getItem(AUDIT_KEY) || "[]");
-    return entries.slice(0, limit);
+    const res = await fetch(
+      `/api/audit-log?limit=${encodeURIComponent(String(limit))}`,
+    );
+    if (!res.ok) return [];
+    const data = (await res.json()) as { entries?: AuditEntry[] };
+    return Array.isArray(data.entries) ? data.entries : [];
   } catch {
     return [];
   }
-}
-
-/**
- * Clear the audit log.
- */
-export function clearAuditLog(): void {
-  if (typeof window === "undefined") return;
-  localStorage.removeItem(AUDIT_KEY);
 }

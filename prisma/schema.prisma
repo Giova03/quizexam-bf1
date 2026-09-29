@@ -320,3 +320,33 @@ model Report {
   status     String   @default("pending") // "pending" | "resolved" | "dismissed"
   createdAt  DateTime @default(now())
 }
+
+// === Audit log (P2 — migration DB de l'audit P1) ===
+// Trace durable de toutes les actions d'administration. Remplace le
+// stockage localStorage du P1 (perte à chaque nettoyage du navigateur,
+// invisible serveur, non requêtable).
+// - Écritures : POST /api/audit-log (staff uniquement, identité dérivée de
+//   la session NextAuth — jamais du body) ou appel direct du repository
+//   depuis les use cases applicatifs.
+// - Lectures : GET /api/audit-log (permission VIEW_ANALYTICS, i.e. ADMIN+).
+// - `metadata` est une chaîne JSON (même convention que User.emailPreferences
+//   pour rester compatible avec le chemin de migration existant).
+// - Résilience : une écriture d'audit en échec ne fait JAMAIS échouer la
+//   requête appelante (dégradation gracieuse en console serveur).
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String
+  userEmail String
+  action    String
+  entity    String
+  entityId  String
+  oldValue  String?
+  newValue  String?
+  ip        String?
+  metadata  String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([entity, entityId])
+  @@index([userId])
+}

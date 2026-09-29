@@ -4,6 +4,9 @@ import bcrypt from "bcryptjs";
 import { db } from "./db";
 
 export const authOptions: NextAuthOptions = {
+  // P2: the fallback secret is public (repo history) — it must NEVER be the
+  // effective secret in production. It is kept only so local dev keeps
+  // working without .env; production now logs a loud warning.
   secret: process.env.NEXTAUTH_SECRET || "quizexam-bf-fallback-secret-2025-aZ7xK9",
   providers: [
     CredentialsProvider({
@@ -42,6 +45,15 @@ export const authOptions: NextAuthOptions = {
   },
   pages: { signIn: "/" },
 };
+
+// P2: loud production warning when only the public fallback secret is used.
+// Action required: set NEXTAUTH_SECRET in the Vercel environment variables.
+if (process.env.NODE_ENV === "production" && !process.env.NEXTAUTH_SECRET) {
+  console.warn(
+    "⚠ SÉCURITÉ : NEXTAUTH_SECRET n'est pas défini — le fallback public du dépôt est utilisé. " +
+      "Définissez NEXTAUTH_SECRET dans les variables d'environnement de production.",
+  );
+}
 
 /**
  * Generate a random 8-character alphanumeric referral code.
@@ -86,7 +98,18 @@ async function generateUniqueReferralCode(): Promise<string> {
 
 export async function ensureAdminAccount() {
   const adminEmail = process.env.ADMIN_EMAIL || "giobamos03@gmail.com";
-  const adminPassword = "Giov@12342005";
+  // P2 SECURITY FIX: the admin password used to be hardcoded in this file
+  // (public on GitHub → anyone could recreate/login as admin on a fresh DB).
+  // It now MUST come from the ADMIN_PASSWORD environment variable; if unset,
+  // account creation is skipped with a loud warning instead.
+  const adminPassword = process.env.ADMIN_PASSWORD;
+  if (!adminPassword) {
+    console.warn(
+      "⚠ ADMIN_PASSWORD manquant — création du compte admin ignorée. " +
+        "Définissez ADMIN_EMAIL et ADMIN_PASSWORD dans les variables d'environnement.",
+    );
+    return;
+  }
   const existing = await db.user.findUnique({ where: { email: adminEmail } });
   if (!existing) {
     const hash = await bcrypt.hash(adminPassword, 10);
