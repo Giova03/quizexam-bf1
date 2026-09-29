@@ -2434,3 +2434,28 @@ Stage Summary:
   cross-tab dialogs preserved, all home-view sections preserved, all
   responsive patterns from FIX3 preserved).
 - Work record: /home/z/my-project/agent-ctx/FIX5-admin-home-redesign.md
+
+---
+Task ID: P2
+Agent: Super Z (assistant principal)
+Task: P2 — Audit log en base + couche application + branchement routes sessions + CI + tests + hygiène + ROADMAP
+
+Work Log:
+- Reprise après perte de conversation : état des lieux reconstruit depuis GitHub (repos clonés, commits, worklog, agent-ctx).
+- Audit Log migré en base : modèle AuditLog (schema.prisma, 3 index), repository serveur (écriture résiliente — jamais d'échec bloquant), façade isomorphe src/shared/security/audit-log.ts réécrite (client → POST /api/audit-log, identité dérivée de la session NextAuth, jamais du body), route /api/audit-log (POST staff-only, GET ADMIN+/VIEW_ANALYTICS).
+- Couche application (src/server/application/quiz/) : 4 cas d'usage — getSessionForActor, submitAnswer, completeSession, startSession — avec unions discriminées typées et ownership via RBAC partagé.
+- Couche infrastructure (src/server/infrastructure/repositories/) : quiz-session-repository.ts (find/finalize/loadSourceQuestions/createSessionWithAnswers) + audit-log-repository.ts.
+- 4 routes session rebranchées sur les cas d'usage, contrats HTTP conservés à l'identique : GET/POST /api/sessions, GET /api/sessions/[id], PATCH .../answers/[answerId], POST .../complete.
+- FIX bug : isCorrect ignorant correctAnswer2 (questions à double réponse) → passe par checkAnswer() du domaine.
+- FIX sécurité : mot de passe admin en dur retiré de src/lib/auth.ts (ADMIN_PASSWORD requis, création ignorée sinon) + warning prod si NEXTAUTH_SECRET absent.
+- Tests : vitest ajouté (bun add -d vitest, scripts test/test:watch/typecheck), 81 tests (quiz-domain 36, question-domain 17, subscription-domain 14, rbac 14). Suite legacy src/lib/__tests__ conservée sous son runner maison (exclue de vitest), documentée.
+- CI : .github/workflows/ci.yml — bun install (frozen), prisma generate, tsc --noEmit, lint, vitest, suite legacy.
+- Hygiène : .gitignore (/*.png, /screenshots/, /marketing-video/, /download/), 58 fichiers (~16 Mo) retirés du suivi git (git rm --cached, conservés en local). bun.lock reste versionné (CI --frozen-lockfile).
+- ROADMAP.md créé à la racine : état du projet, phases P0→P7, décisions d'architecture, runbook reprise après perte de conversation.
+
+Stage Summary:
+- Validations : prisma generate OK · tsc --noEmit 0 erreur · ESLint 0 erreur · vitest 81/81 · suite legacy PASS · next build prod OK (compilé en ~32s).
+- Modèle AuditLog à pousser sur Supabase AVANT le déploiement : DATABASE_URL="..." npx prisma db push.
+- Variables Vercel requises : NEXTAUTH_SECRET (recommandé), ADMIN_PASSWORD (pour toute création d'admin sur base neuve).
+- Prochaine phase : P3 (migration des ~43 routes restantes, state machine stricte sur sessions terminées, unification des runners de tests).
+- Ce fichier + ROADMAP.md = source de vérité en cas de perte de conversation.
