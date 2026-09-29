@@ -41,6 +41,7 @@ import {
   Trophy,
   WifiOff,
   CheckCircle2,
+  ExternalLink,
 } from "lucide-react";
 
 /**
@@ -533,10 +534,24 @@ function IconField({
 }
 
 function ErrorAlert({ message }: { message: string }) {
+  // Erreur serveur (base manquante/hors service) → proposer le diagnostic.
+  const isServerError = message === SERVER_AUTH_ERROR;
   return (
     <Alert variant="destructive" className="py-2">
       <AlertCircle className="h-4 w-4" />
-      <AlertDescription className="text-xs">{message}</AlertDescription>
+      <AlertDescription className="text-xs">
+        {message}
+        {isServerError && (
+          <a
+            href="/setup"
+            target="_blank"
+            rel="noreferrer"
+            className="ml-1 inline-flex items-center gap-0.5 font-semibold underline underline-offset-2"
+          >
+            Ouvrir le diagnostic <ExternalLink className="inline h-3 w-3" />
+          </a>
+        )}
+      </AlertDescription>
     </Alert>
   );
 }

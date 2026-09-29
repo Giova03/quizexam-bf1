@@ -5,13 +5,13 @@
  * BUILD (variables "Runtime only"), donc `prisma db push` au build peut être
  * sauté → la base de production peut manquer de colonnes récentes
  * (ex. User.googleId) et casser connexion + inscription.
- * Cet endpoint permet de réparer la base AU RUNTIME, là où DATABASE_URL est
- * garantie présente.
+ * L'auto-réparation au boot (instrumentation.ts + db-bootstrap) couvre le cas
+ * standard ; cet endpoint permet de forcer la réparation à chaud et de
+ * vérifier l'état (page /setup).
  *
  * Actions :
- * - GET ?action=migrate (défaut) — exécute un DDL 100% idempotent et additif
- *   (ADD COLUMN IF NOT EXISTS / CREATE TABLE IF NOT EXISTS). Aucune lecture ni
- *   modification de données utilisateur : sûr à appeler, sans secret.
+ * - GET ?action=migrate (défaut) — exécute le DDL 100% idempotent et additif.
+ *   Aucune lecture ni modification de données utilisateur : sûr à appeler.
  * - GET ?action=status — présence des colonnes/tables attendues
  *   (INFORMATION_SCHEMA, métadonnées seulement).
  * - POST { action: "reset-admin", token, email?, newPassword? } — réinitialise
@@ -28,36 +28,13 @@ import { NextResponse } from "next/server";
 import { createHash, timingSafeEqual } from "crypto";
 import bcrypt from "bcryptjs";
 import { db } from "@/lib/db";
+import {
+  readSchemaStatus,
+  runSchemaMigration,
+} from "@/lib/db-bootstrap";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-
-// --- DDL idempotent additif (miroir de prisma/manual-migration-2026-09.sql) ---
-const MIGRATION_STATEMENTS: string[] = [
-  `ALTER TABLE "User" ADD COLUMN IF NOT EXISTS "googleId" TEXT`,
-  `ALTER TABLE "User" ADD COLUMN IF NOT EXISTS "educationLevel" TEXT`,
-  `ALTER TABLE "User" ADD COLUMN IF NOT EXISTS "onboardingDone" BOOLEAN NOT NULL DEFAULT false`,
-  `CREATE UNIQUE INDEX IF NOT EXISTS "User_googleId_key" ON "User"("googleId")`,
-  `CREATE TABLE IF NOT EXISTS "AuditLog" (
-    "id"        TEXT        NOT NULL,
-    "userId"    TEXT        NOT NULL,
-    "userEmail" TEXT        NOT NULL,
-    "action"    TEXT        NOT NULL,
-    "entity"    TEXT        NOT NULL,
-    "entityId"  TEXT        NOT NULL,
-    "oldValue"  TEXT,
-    "newValue"  TEXT,
-    "ip"        TEXT,
-    "metadata"  TEXT,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT "AuditLog_pkey" PRIMARY KEY ("id")
-  )`,
-  `CREATE INDEX IF NOT EXISTS "AuditLog_createdAt_idx" ON "AuditLog"("createdAt")`,
-  `CREATE INDEX IF NOT EXISTS "AuditLog_entity_entityId_idx" ON "AuditLog"("entity", "entityId")`,
-  `CREATE INDEX IF NOT EXISTS "AuditLog_userId_idx" ON "AuditLog"("userId")`,
-];
-
-const EXPECTED_USER_COLUMNS = ["googleId", "educationLevel", "onboardingDone"] as const;
 
 // auth.ts P2 : fallback public → jamais utilisé pour dériver un token.
 const FALLBACK_SECRET_MARKER = "quizexam-bf-fallback-secret-2025-aZ7xK9";
@@ -83,67 +60,19 @@ function isTokenValid(token: unknown): boolean {
   return false;
 }
 
-async function runMigration(): Promise<{
-  ok: boolean;
-  applied: string[];
-  failed: number;
-}> {
-  const applied: string[] = [];
-  let failed = 0;
-  for (const statement of MIGRATION_STATEMENTS) {
-    try {
-      await db.$executeRawUnsafe(statement);
-      applied.push(statement.split("\n")[0].slice(0, 72));
-    } catch (error) {
-      failed += 1;
-      console.error("[db-migrate] statement failed:", (error as Error).name);
-    }
-  }
-  return { ok: failed === 0, applied, failed };
-}
-
-async function readStatus(): Promise<{
-  database: "connected" | "unreachable";
-  userColumns: Record<string, boolean>;
-  auditLogTable: boolean;
-}> {
-  try {
-    const columns = await db.$queryRaw<{ column_name: string }[]>`
-      SELECT column_name FROM information_schema.columns
-      WHERE table_name = 'User'`;
-    const tables = await db.$queryRaw<{ table_name: string }[]>`
-      SELECT table_name FROM information_schema.tables
-      WHERE table_name = 'AuditLog'`;
-    const present = new Set(columns.map((c) => c.column_name));
-    const userColumns: Record<string, boolean> = {};
-    for (const col of EXPECTED_USER_COLUMNS) userColumns[col] = present.has(col);
-    return {
-      database: "connected",
-      userColumns,
-      auditLogTable: tables.length > 0,
-    };
-  } catch {
-    return {
-      database: "unreachable",
-      userColumns: {},
-      auditLogTable: false,
-    };
-  }
-}
-
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const action = url.searchParams.get("action") ?? "migrate";
 
   if (action === "status") {
-    return NextResponse.json(await readStatus(), {
+    return NextResponse.json(await readSchemaStatus(), {
       headers: { "Cache-Control": "no-store" },
     });
   }
 
   if (action === "migrate") {
-    const result = await runMigration();
-    const status = await readStatus();
+    const result = await runSchemaMigration();
+    const status = await readSchemaStatus();
     return NextResponse.json(
       { action: "migrate", ...result, status },
       { headers: { "Cache-Control": "no-store" } },
@@ -173,8 +102,8 @@ export async function POST(request: Request) {
     // Idempotent/inoffensif : traité comme en GET (voir route GET).
     const result =
       action === "migrate"
-        ? { action, ...(await runMigration()), status: await readStatus() }
-        : { action, ...(await readStatus()) };
+        ? { action, ...(await runSchemaMigration()), status: await readSchemaStatus() }
+        : { action, ...(await readSchemaStatus()) };
     return NextResponse.json(result, { headers: { "Cache-Control": "no-store" } });
   }
 
