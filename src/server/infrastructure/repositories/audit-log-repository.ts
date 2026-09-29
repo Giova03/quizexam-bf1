@@ -81,9 +81,21 @@ export async function recordAuditLog(input: AuditRecordInput): Promise<void> {
 
 /**
  * List the most recent audit entries (newest first).
+ *
+ * P4: optional filters for the admin "Journal d'audit" tab — entity
+ * (e.g. "Question") and/or action prefix (e.g. "question."). Both are
+ * exact/prefix matches on indexed-ish columns; the take stays clamped.
  */
-export async function listAuditLogs(limit = 50): Promise<AuditEntry[]> {
+export async function listAuditLogs(
+  limit = 50,
+  filters?: { entity?: string; actionPrefix?: string },
+): Promise<AuditEntry[]> {
+  const where: { entity?: string; action?: { startsWith: string } } = {};
+  if (filters?.entity) where.entity = filters.entity;
+  if (filters?.actionPrefix) where.action = { startsWith: filters.actionPrefix };
+
   const rows = await db.auditLog.findMany({
+    where,
     orderBy: { createdAt: "desc" },
     take: Math.min(Math.max(limit, 1), 200),
   });

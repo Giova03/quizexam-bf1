@@ -110,7 +110,14 @@ export async function GET(request: Request) {
     const parsed = Number.parseInt(url.searchParams.get("limit") ?? "50", 10);
     const limit = Number.isFinite(parsed) ? parsed : 50;
 
-    const entries = await listAuditLogs(limit);
+    // P4: optional filters for the admin journal tab.
+    const entity = url.searchParams.get("entity")?.trim() || undefined;
+    const action = url.searchParams.get("action")?.trim() || undefined;
+
+    const entries = await listAuditLogs(limit, {
+      entity,
+      actionPrefix: action,
+    });
     return NextResponse.json({ entries });
   } catch (error) {
     console.error("Failed to load audit log:", error);

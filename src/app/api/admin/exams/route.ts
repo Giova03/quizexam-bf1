@@ -3,6 +3,10 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { cacheInvalidate, CACHE_KEYS } from "@/lib/cache";
+import {
+  logStaffAction,
+  staffActorFromSession,
+} from "@/server/application/audit/log-staff-action";
 
 export const dynamic = "force-dynamic";
 
@@ -80,6 +84,19 @@ export async function POST(request: Request) {
     });
 
     cacheInvalidate(CACHE_KEYS.examsList);
+
+    // P4 audit trail — staff mutations are traceable (best-effort).
+    await logStaffAction(staffActorFromSession(session), {
+      action: "exam.create",
+      entity: "Exam",
+      entityId: exam.id,
+      newValue: { id: exam.id, title: exam.title, durationMin: exam.durationMin },
+      metadata: {
+        questionCount: allQuestions.length,
+        mode: Array.isArray(questionIds) && questionIds.length > 0 ? "ids" : "distributions",
+      },
+    });
+
     return NextResponse.json(exam);
   } catch (error) {
     console.error("Failed to create exam:", error);
@@ -97,8 +114,21 @@ export async function DELETE(request: Request) {
     const { searchParams } = new URL(request.url);
     const examId = searchParams.get("id");
     if (!examId) return NextResponse.json({ error: "id required" }, { status: 400 });
+    // P4 audit trail — capture the exam BEFORE deleting it.
+    const before = await db.exam.findUnique({
+      where: { id: examId },
+      select: { id: true, title: true, durationMin: true },
+    });
     await db.exam.delete({ where: { id: examId } });
     cacheInvalidate(CACHE_KEYS.examsList);
+
+    await logStaffAction(staffActorFromSession(session), {
+      action: "exam.delete",
+      entity: "Exam",
+      entityId: examId,
+      oldValue: before ?? undefined,
+    });
+
     return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json({ error: "Failed to delete exam" }, { status: 500 });

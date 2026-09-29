@@ -3,6 +3,10 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { cacheInvalidate, invalidateBanksListCache } from "@/lib/cache";
+import {
+  logStaffAction,
+  staffActorFromSession,
+} from "@/server/application/audit/log-staff-action";
 
 export const dynamic = "force-dynamic";
 
@@ -169,6 +173,19 @@ export async function POST(request: Request) {
       invalidateBanksListCache();
       cacheInvalidate(`bank:${bankId}`);
     }
+
+    // P4 audit trail — bulk imports are traceable (best-effort).
+    await logStaffAction(staffActorFromSession(session), {
+      action: "question.import",
+      entity: "Question",
+      entityId: bankId,
+      metadata: {
+        bankTitle: bank.title,
+        total: questions.length,
+        imported: success,
+        failed: failure,
+      },
+    });
 
     return NextResponse.json({
       bankId,

@@ -2,7 +2,15 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { applySm2, type SpacedCard } from "@/shared/stores/spaced-repetition-store";
+import {
+  applySm2 as applySm2Domain,
+  type SpacedCard as DomainCard,
+  type ReviewQuality,
+} from "@/server/domain/quiz/quiz-domain";
+import { toDomainCard, fromDomainCard } from "@/shared/stores/spaced-repetition-adapter";
+// P4: the SERVER path now delegates to the quiz domain (single SM-2 source
+// of truth). Type-only import for the client card shape (ISO strings).
+import type { SpacedCard } from "@/shared/stores/spaced-repetition-store";
 
 /**
  * GET /api/spaced-repetition?ids=id1,id2,...
@@ -125,24 +133,29 @@ export async function POST(request: Request) {
       );
     }
 
-    // Apply SM-2 either to a supplied card or to a fresh one.
-    const base: SpacedCard = body.card ?? {
-      questionId,
-      bankId: question.bankId,
-      ease: 2.5,
-      interval: 1,
-      repetitions: 0,
-      nextReview: new Date().toISOString(),
-      lastReview: null,
-    };
+    // Apply SM-2 either to a supplied card or to a fresh one (domain math).
+    const base: DomainCard = body.card
+      ? toDomainCard(body.card)
+      : {
+          questionId,
+          ease: 2.5,
+          interval: 1,
+          repetitions: 0,
+          nextReview: new Date(),
+          lastReview: null,
+        };
 
-    const updated = applySm2(base, quality);
+    const updated = applySm2Domain(base, quality as ReviewQuality);
+
+    // Respond with the CLIENT card shape (ISO strings), refreshed against
+    // the bank currently owning the question in the database.
+    const card = fromDomainCard(updated, question.bankId);
 
     return NextResponse.json({
       success: true,
       questionId,
       quality,
-      card: updated,
+      card,
     });
   } catch (error) {
     console.error("Failed to record spaced-repetition review:", error);

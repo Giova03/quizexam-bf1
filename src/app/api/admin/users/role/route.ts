@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
+import {
+  logStaffAction,
+  staffActorFromSession,
+} from "@/server/application/audit/log-staff-action";
 
 export const dynamic = "force-dynamic";
 
@@ -51,7 +55,10 @@ export async function PATCH(req: Request) {
     );
   }
 
-  const target = await db.user.findUnique({ where: { id: userId }, select: { id: true } });
+  const target = await db.user.findUnique({
+    where: { id: userId },
+    select: { id: true, role: true },
+  });
   if (!target) {
     return NextResponse.json({ error: "Utilisateur introuvable" }, { status: 404 });
   }
@@ -60,6 +67,16 @@ export async function PATCH(req: Request) {
     where: { id: userId },
     data: { role },
     select: { id: true, name: true, email: true, role: true },
+  });
+
+  // P4 audit trail — role changes are the most sensitive staff action.
+  await logStaffAction(staffActorFromSession(session), {
+    action: "user.role_change",
+    entity: "User",
+    entityId: userId,
+    oldValue: { role: target.role },
+    newValue: { role: updated.role },
+    metadata: { targetEmail: updated.email },
   });
 
   return NextResponse.json(updated);

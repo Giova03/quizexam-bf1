@@ -3,6 +3,10 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { invalidateBanksListCache } from "@/lib/cache";
+import {
+  logStaffAction,
+  staffActorFromSession,
+} from "@/server/application/audit/log-staff-action";
 
 /** Valid education levels (added in E1). */
 const VALID_EDUCATION_LEVELS = new Set([
@@ -48,6 +52,15 @@ export async function POST(request: Request) {
     },
   });
   invalidateBanksListCache();
+
+  // P4 audit trail — staff mutations are traceable (best-effort).
+  await logStaffAction(staffActorFromSession(session), {
+    action: "bank.create",
+    entity: "QuestionBank",
+    entityId: bank.id,
+    newValue: bank,
+  });
+
   return NextResponse.json(bank);
 }
 
@@ -57,6 +70,8 @@ export async function PATCH(request: Request) {
   const body = await request.json();
   const { id, title, description, category, subcategory, icon, color, level, educationLevel } = body;
   if (!id) return NextResponse.json({ error: "ID requis" }, { status: 400 });
+  // P4 audit trail — capture the state BEFORE the update.
+  const before = await db.questionBank.findUnique({ where: { id } });
   const bank = await db.questionBank.update({
     where: { id },
     data: {
@@ -75,6 +90,15 @@ export async function PATCH(request: Request) {
     },
   });
   invalidateBanksListCache();
+
+  await logStaffAction(staffActorFromSession(session), {
+    action: "bank.update",
+    entity: "QuestionBank",
+    entityId: id,
+    oldValue: before ?? undefined,
+    newValue: bank,
+  });
+
   return NextResponse.json(bank);
 }
 
@@ -84,7 +108,17 @@ export async function DELETE(request: Request) {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get("id");
   if (!id) return NextResponse.json({ error: "ID requis" }, { status: 400 });
+  // P4 audit trail — capture the row BEFORE deleting it.
+  const before = await db.questionBank.findUnique({ where: { id } });
   await db.questionBank.delete({ where: { id } });
   invalidateBanksListCache();
+
+  await logStaffAction(staffActorFromSession(session), {
+    action: "bank.delete",
+    entity: "QuestionBank",
+    entityId: id,
+    oldValue: before ?? undefined,
+  });
+
   return NextResponse.json({ success: true });
 }

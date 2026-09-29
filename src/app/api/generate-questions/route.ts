@@ -3,6 +3,10 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import ZAI from "z-ai-web-dev-sdk";
+import {
+  logStaffAction,
+  staffActorFromSession,
+} from "@/server/application/audit/log-staff-action";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
@@ -301,6 +305,19 @@ export async function POST(request: Request) {
         );
       }
     }
+
+    // P4 audit trail — AI generations (and bank additions) are traceable.
+    await logStaffAction(staffActorFromSession(session), {
+      action: "question.generate",
+      entity: "Question",
+      entityId: bankId ?? "generated",
+      metadata: {
+        subject,
+        requested: count,
+        generated: questions.length,
+        addedToBank: addedCount,
+      },
+    });
 
     return NextResponse.json({
       count: questions.length,

@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
+import {
+  logStaffAction,
+  staffActorFromSession,
+} from "@/server/application/audit/log-staff-action";
 
 export const dynamic = "force-dynamic";
 
@@ -44,6 +48,16 @@ export async function PATCH(
   const updated = await db.report.update({
     where: { id },
     data: { status },
+  });
+
+  // P4 audit trail — moderation decisions are traceable (best-effort).
+  await logStaffAction(staffActorFromSession(session), {
+    action: "report.status_change",
+    entity: "Report",
+    entityId: id,
+    oldValue: { status: existing.status },
+    newValue: { status: updated.status },
+    metadata: { targetType: existing.targetType },
   });
 
   return NextResponse.json(updated);

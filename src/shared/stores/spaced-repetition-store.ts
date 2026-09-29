@@ -2,6 +2,7 @@
 
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { applySm2WithDomain } from "./spaced-repetition-adapter";
 
 /**
  * SpacedCard — a single question tracked by the SM-2 spaced-repetition
@@ -67,6 +68,10 @@ function dayKey(iso: string): string {
 /**
  * Apply the SM-2 algorithm to a card given a quality rating (0-5).
  *
+ * P4: this is now a thin DELEGATION to the quiz domain implementation
+ * (see spaced-repetition-adapter.ts) — the domain is the single source of
+ * truth for the algorithm. The public contract is unchanged:
+ *
  *  - quality 0-2 (incorrect / forgotten): reset repetitions to 0, interval = 1
  *  - quality 3-5 (correct):
  *      repetitions == 0  → interval = 1
@@ -74,46 +79,10 @@ function dayKey(iso: string): string {
  *      repetitions >= 2  → interval = round(interval * ease)
  *  - ease = max(1.3, ease + 0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02))
  *
- * Returns the updated card.
+ * Returns the updated card (input never mutated).
  */
 export function applySm2(card: SpacedCard, quality: number): SpacedCard {
-  // Clamp quality into [0, 5].
-  const q = Math.max(0, Math.min(5, quality));
-
-  let ease = card.ease;
-  let interval = card.interval;
-  let repetitions = card.repetitions;
-
-  if (q < 3) {
-    // Lapse — forget the card.
-    repetitions = 0;
-    interval = 1;
-  } else {
-    if (repetitions === 0) {
-      interval = 1;
-    } else if (repetitions === 1) {
-      interval = 6;
-    } else {
-      interval = Math.round(interval * ease);
-    }
-    repetitions += 1;
-  }
-
-  // Update ease (only the formula — guard against going below 1.3).
-  ease = ease + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02));
-  if (ease < 1.3) ease = 1.3;
-
-  const next = new Date();
-  next.setDate(next.getDate() + interval);
-
-  return {
-    ...card,
-    ease,
-    interval,
-    repetitions,
-    nextReview: next.toISOString(),
-    lastReview: nowIso(),
-  };
+  return applySm2WithDomain(card, quality);
 }
 
 export const useSpacedRepetition = create<SpacedRepetitionState>()(

@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
+import {
+  logStaffAction,
+  staffActorFromSession,
+} from "@/server/application/audit/log-staff-action";
 
 export const dynamic = "force-dynamic";
 
@@ -21,6 +25,15 @@ export async function POST(request: Request) {
         db.emailLog.create({ data: { toEmail: u.email, subject, body, type: "broadcast", status: "pending" } })
       )
     );
+
+    // P4 audit trail — mass mailings are traceable (best-effort).
+    await logStaffAction(staffActorFromSession(session), {
+      action: "broadcast.send",
+      entity: "Broadcast",
+      entityId: new Date().toISOString(),
+      newValue: { subject },
+      metadata: { recipients: logs.length },
+    });
 
     return NextResponse.json({ sent: logs.length, message: `Message programmé pour ${logs.length} utilisateur(s)` });
   } catch (error) {

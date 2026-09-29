@@ -46,6 +46,7 @@ import {
   Zap,
   X,
   Clock,
+  ScrollText,
   type LucideIcon,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -72,6 +73,7 @@ import { ExportsPanel } from "@/components/quiz/admin/admin-exports";
 import { ImportsPanel } from "@/components/quiz/admin/admin-import";
 import { BroadcastPanel } from "@/components/quiz/admin/admin-broadcast";
 import { ModerationPanel } from "@/components/quiz/admin/admin-moderation";
+import { AuditLogPanel } from "@/components/quiz/admin/admin-audit";
 
 import type {
   AdminStats,
@@ -247,6 +249,7 @@ export function AdminView() {
       { id: "exports", label: "Export", short: "Export", icon: Download, desc: "Export CSV" },
       { id: "analytics", label: "Analytics", short: "Analy.", icon: LineChart, desc: "Statistiques avancées" },
       { id: "moderation", label: "Modération", short: "Mod.", icon: ShieldAlert, badge: pendingReports, desc: "Signalements" },
+      { id: "audit", label: "Journal d'audit", short: "Audit", icon: ScrollText, desc: "Traçabilité des actions staff" },
       { id: "broadcast", label: "Broadcast", short: "Mail", icon: Mail, desc: "Email de masse" },
       { id: "ai-generator", label: "Générateur IA", short: "IA", icon: Bot, desc: "Générer des QCM" },
       { id: "errors", label: "Erreurs", short: "Err.", icon: AlertTriangle, badge: recentErrorCount, desc: "Journal d'erreurs" },
@@ -497,6 +500,7 @@ export function AdminView() {
                 {activeTab === "exports" && <ExportsPanel />}
                 {activeTab === "analytics" && <AdminAnalytics />}
                 {activeTab === "moderation" && <ModerationPanel />}
+                {activeTab === "audit" && <AuditLogPanel />}
                 {activeTab === "broadcast" && <BroadcastPanel open={true} onOpenChange={() => {}} />}
                 {activeTab === "ai-generator" && <AiQuestionGenerator />}
                 {activeTab === "errors" && (

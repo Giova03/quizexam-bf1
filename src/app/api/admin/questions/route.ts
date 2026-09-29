@@ -3,6 +3,10 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { invalidateBanksListCache } from "@/lib/cache";
+import {
+  logStaffAction,
+  staffActorFromSession,
+} from "@/server/application/audit/log-staff-action";
 export const dynamic = "force-dynamic";
 
 async function requireAdmin() {
@@ -112,6 +116,16 @@ export async function POST(request: Request) {
   }
   // Question count for this bank changed — invalidate the cached banks list.
   invalidateBanksListCache();
+
+  // P4 audit trail — staff mutations are traceable (best-effort).
+  await logStaffAction(staffActorFromSession(session), {
+    action: "question.create",
+    entity: "Question",
+    entityId: q.id,
+    newValue: q,
+    metadata: { bankId },
+  });
+
   return NextResponse.json({ ...q, imageUrl: validImageUrl, audioUrl: validAudioUrl });
 }
 
@@ -129,6 +143,9 @@ export async function PATCH(request: Request) {
     }
     difficultyUpdate = { difficulty };
   }
+  // P4 audit trail — capture the state BEFORE the update for the trail.
+  const before = await db.question.findUnique({ where: { id } });
+
   // Update the question WITHOUT imageUrl/audioUrl via the Prisma client.
   // Media URLs are handled separately via raw SQL below.
   const updated = await db.question.update({
@@ -174,6 +191,16 @@ export async function PATCH(request: Request) {
   // Invalidate so /api/banks (which only returns counts) stays accurate for
   // the count field — and future endpoints that inline questions stay fresh.
   invalidateBanksListCache();
+
+  // P4 audit trail — before/after states (best-effort).
+  await logStaffAction(staffActorFromSession(session), {
+    action: "question.update",
+    entity: "Question",
+    entityId: id,
+    oldValue: before ?? undefined,
+    newValue: updated,
+  });
+
   return NextResponse.json(updated);
 }
 
@@ -183,7 +210,17 @@ export async function DELETE(request: Request) {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get("id");
   if (!id) return NextResponse.json({ error: "ID requis" }, { status: 400 });
+  // P4 audit trail — capture the row BEFORE deleting it.
+  const before = await db.question.findUnique({ where: { id } });
   await db.question.delete({ where: { id } });
   invalidateBanksListCache();
+
+  await logStaffAction(staffActorFromSession(session), {
+    action: "question.delete",
+    entity: "Question",
+    entityId: id,
+    oldValue: before ?? undefined,
+  });
+
   return NextResponse.json({ success: true });
 }
