@@ -17,6 +17,7 @@
 
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { captureError, captureMessage } from "@/lib/observability";
 import { fedapayWebhookSecret } from "@/lib/fedapay";
 import {
   verifyFedapaySignature,
@@ -46,7 +47,9 @@ export async function POST(request: Request) {
 
   const valid = verifyFedapaySignature(secret, rawBody, signatureHeader);
   if (!valid) {
-    console.warn("[FEDAPAY] Webhook rejeté — signature invalide");
+    captureMessage("Webhook FedaPay rejeté — signature invalide", {
+      scope: "api/webhooks/fedapay",
+    });
     return NextResponse.json({ error: "Signature invalide" }, { status: 401 });
   }
 
@@ -105,7 +108,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ received: true, activated: true });
   } catch (error) {
-    console.error("[FEDAPAY] Échec du traitement du webhook:", error);
+    captureError(error, { scope: "api/webhooks/fedapay" });
     // 500 lets FedaPay retry — appropriate for a real DB failure.
     return NextResponse.json({ error: "Erreur interne" }, { status: 500 });
   }

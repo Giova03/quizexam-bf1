@@ -19,6 +19,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { captureError } from "@/lib/observability";
 import {
   createPremiumCheckout,
   isFedaPayConfigured,
@@ -86,7 +87,7 @@ export async function POST(request: Request) {
       transactionId: checkout.transactionId,
     });
   } catch (error) {
-    console.error("subscription checkout error:", error);
+    captureError(error, { scope: "api/subscription/checkout" });
     return NextResponse.json(
       { error: "Le service de paiement est momentanément indisponible." },
       { status: 502 },
