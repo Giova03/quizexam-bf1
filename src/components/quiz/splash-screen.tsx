@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslation } from "@/lib/use-translation";
 
 export function SplashScreen() {
   const [hidden, setHidden] = useState(false);
   const [fading, setFading] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fadeTimer = setTimeout(() => setFading(true), 1200);
@@ -37,7 +39,7 @@ export function SplashScreen() {
         QuizExam BF
       </h1>
       <p className="mt-1 text-sm text-white/80">
-        Préparation Concours Burkina Faso
+        {t("brand.slogan")}
       </p>
       <div className="mt-6 flex gap-2">
         <span className="h-2.5 w-2.5 animate-bounce rounded-full bg-white [animation-delay:-0.3s]" />

@@ -67,7 +67,7 @@ export function SettingsPanel({
             {t("settings.title")}
           </SheetTitle>
           <SheetDescription className="text-white/80">
-            Personnalisez votre expérience QuizExam BF
+            {t("settings.subtitle")}
           </SheetDescription>
         </SheetHeader>
 
@@ -84,7 +84,7 @@ export function SettingsPanel({
                     <p className="text-sm font-semibold">
                       {t("settings.level")} {level}
                     </p>
-                    <p className="text-xs text-white/80">{xp} XP total</p>
+                    <p className="text-xs text-white/80">{xp} {t("common.xpTotal")}</p>
                   </div>
                 </div>
                 <Badge className="border-white/30 bg-white/20 text-white backdrop-blur">
@@ -117,7 +117,7 @@ export function SettingsPanel({
               <div className="p-3 text-center">
                 <Trophy className="mx-auto h-5 w-5 text-emerald-500" />
                 <p className="mt-1 text-lg font-bold">{successRate}%</p>
-                <p className="text-[10px] text-muted-foreground">Réussite</p>
+                <p className="text-[10px] text-muted-foreground">{t("settings.success")}</p>
               </div>
             </div>
           </Card>
@@ -163,7 +163,7 @@ export function SettingsPanel({
           <section className="space-y-2.5">
             <div className="flex items-center gap-2 text-sm font-semibold">
               <Bell className="h-4 w-4 text-emerald-600" />
-              Notifications push
+              {t("settings.push")}
             </div>
             <PushNotificationSettings />
           </section>
@@ -179,7 +179,7 @@ export function SettingsPanel({
           <section className="space-y-2.5">
             <div className="flex items-center gap-2 text-sm font-semibold">
               <WifiOff className="h-4 w-4 text-orange-600" />
-              Mode hors ligne
+              {t("settings.offline")}
             </div>
             <OfflineManagerPanel />
           </section>
@@ -238,7 +238,7 @@ export function SettingsPanel({
                 <div className="flex-1">
                   <p className="font-semibold">QuizExam BF Mobile</p>
                   <p className="text-xs text-white/80">
-                    Mode hors ligne · Notifications push · Toutes vos banques
+                    {t("settings.offline")} · {t("settings.push")} · {t("menu.banks")}
                   </p>
                 </div>
               </div>
@@ -248,13 +248,13 @@ export function SettingsPanel({
                   const event = new Event("beforeinstallprompt");
                   window.dispatchEvent(event);
                   alert(
-                    "Pour installer l'app : menu du navigateur → 'Installer l'application' ou 'Ajouter à l'écran d'accueil'."
+                    t("settings.installHint")
                   );
                 }}
                 className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg bg-white/20 px-4 py-2 text-sm font-medium backdrop-blur transition-colors hover:bg-white/30"
               >
                 <Download className="h-4 w-4" />
-                Télécharger l&apos;application
+                {t("settings.install")}
               </button>
             </Card>
           </section>

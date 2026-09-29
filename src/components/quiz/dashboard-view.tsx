@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
+import { useTranslation } from "@/lib/use-translation";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -66,6 +67,7 @@ interface SessionSummary {
 }
 
 export function DashboardView() {
+  const { t } = useTranslation();
   const [sessions, setSessions] = useState<SessionSummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [exporting, setExporting] = useState(false);
@@ -209,12 +211,11 @@ export function DashboardView() {
   if (totalSessions === 0)
     return (
       <div className="space-y-6">
-        <h1 className="text-2xl font-bold">Tableau de bord</h1>
+        <h1 className="text-2xl font-bold">{t("dash.title")}</h1>
         <Card className="flex flex-col items-center gap-3 p-12 text-center">
           <Activity className="h-12 w-12 text-muted-foreground/50" />
           <p className="text-sm text-muted-foreground">
-            Aucune session terminée. Commencez un quiz pour voir vos
-            statistiques.
+            {t("dash.noSession")}
           </p>
         </Card>
         {/* Upcoming events widget — visible even before any quiz session */}
@@ -232,9 +233,9 @@ export function DashboardView() {
       {/* FIX2: stacks on mobile, button full-width on mobile with 44px touch target. */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
-          <h1 className="text-xl font-bold sm:text-2xl">Tableau de bord analytique</h1>
+          <h1 className="text-xl font-bold sm:text-2xl">{t("dash.titleAnalytics")}</h1>
           <p className="text-sm text-muted-foreground sm:text-base">
-            Suivez votre progression et vos statistiques détaillées
+            {t("dash.subtitle")}
           </p>
         </div>
         <Button
@@ -243,7 +244,7 @@ export function DashboardView() {
           className="h-11 gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white sm:h-9"
         >
           <FileDown className="h-4 w-4" />
-          Exporter en PDF
+          {t("dash.exportPdf")}
         </Button>
       </div>
 
@@ -254,13 +255,13 @@ export function DashboardView() {
           <TabsList className="flex min-w-max grid-cols-5 sm:grid sm:w-full sm:grid-cols-5">
             <TabsTrigger value="overview" className="gap-1.5">
               <BarChart3 className="h-4 w-4" />
-              <span className="hidden sm:inline">Vue d&apos;ensemble</span>
-              <span className="sm:hidden">Vue</span>
+              <span className="hidden sm:inline">{t("dash.tab.overview")}</span>
+              <span className="sm:hidden">{t("dash.tab.overviewShort")}</span>
             </TabsTrigger>
             <TabsTrigger value="per-quiz" className="gap-1.5">
               <Target className="h-4 w-4" />
-              <span className="hidden sm:inline">Par quiz</span>
-              <span className="sm:hidden">Quiz</span>
+              <span className="hidden sm:inline">{t("dash.tab.perQuiz")}</span>
+              <span className="sm:hidden">{t("dash.tab.quizShort")}</span>
             </TabsTrigger>
             <TabsTrigger value="history" className="gap-1.5">
               <Clock className="h-4 w-4" />
@@ -451,7 +452,7 @@ export function DashboardView() {
         <TabsContent value="per-quiz" className="space-y-3">
           {quizStats.length === 0 ? (
             <Card className="p-8 text-center text-muted-foreground">
-              Aucune donnée par quiz pour le moment.
+              {t("dash.noQuizData")}
             </Card>
           ) : (
             quizStats
@@ -617,6 +618,7 @@ export function DashboardView() {
 
 // === Weekly chart component ===
 function WeeklyChart({ sessions }: { sessions: SessionSummary[] }) {
+  const { t } = useTranslation();
   const last7Days = Array.from({ length: 7 }, (_, i) => {
     const d = new Date();
     d.setDate(d.getDate() - (6 - i));
@@ -653,9 +655,9 @@ function WeeklyChart({ sessions }: { sessions: SessionSummary[] }) {
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <CalendarDays className="h-4 w-4 text-emerald-600" />
-          <h3 className="text-sm font-semibold">Activité des 7 derniers jours</h3>
+          <h3 className="text-sm font-semibold">{t("dash.weekActivity")}</h3>
         </div>
-        <Badge variant="secondary">{last7Days.reduce((sum, d) => sum + d.count, 0)} sessions</Badge>
+        <Badge variant="secondary">{last7Days.reduce((sum, d) => sum + d.count, 0)} {t("dash.sessions")}</Badge>
       </div>
       <div className="flex h-32 items-end justify-between gap-2">
         {last7Days.map((day, i) => (

@@ -22,6 +22,8 @@ import {
   Inbox,
 } from "lucide-react";
 import { usePrefs } from "@/shared/stores/prefs-store";
+import { useTranslation } from "@/lib/use-translation";
+import { localeTag } from "@/lib/i18n";
 
 const ICONS: Record<string, typeof Trophy> = {
   result: Trophy,
@@ -48,6 +50,7 @@ export function NotificationsPanel({
 }) {
   const notifications = usePrefs((s) => s.notifications);
   const markAllRead = usePrefs((s) => s.markAllRead);
+  const { t, locale } = useTranslation();
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
@@ -55,17 +58,17 @@ export function NotificationsPanel({
         <SheetHeader className="shrink-0 border-b px-5 py-4">
           <SheetTitle className="flex items-center gap-2">
             <Bell className="h-5 w-5" />
-            Notifications
+            {t("notifs.title")}
             {notifications.length > 0 && (
               <Badge variant="secondary">{notifications.length}</Badge>
             )}
           </SheetTitle>
-          <SheetDescription className="sr-only">Notifications</SheetDescription>
+          <SheetDescription className="sr-only">{t("notifs.title")}</SheetDescription>
         </SheetHeader>
 
         <div className="shrink-0 flex items-center justify-between px-5 pb-2 pt-2">
           <p className="text-xs text-muted-foreground">
-            Rappels d&apos;examens, résultats et alertes de progression
+            {t("notifs.subtitle")}
           </p>
           {notifications.length > 0 && (
             <Button
@@ -75,7 +78,7 @@ export function NotificationsPanel({
               onClick={markAllRead}
             >
               <CheckCheck className="h-3.5 w-3.5" />
-              Tout lu
+              {t("notifs.markAllShort")}
             </Button>
           )}
         </div>
@@ -85,7 +88,7 @@ export function NotificationsPanel({
             {notifications.length === 0 ? (
               <div className="flex flex-col items-center justify-center gap-3 py-16 text-center text-muted-foreground">
                 <Inbox className="h-12 w-12 opacity-40" />
-                <p className="text-sm">Aucune notification pour le moment.</p>
+                <p className="text-sm">{t("notifs.emptyLong")}</p>
               </div>
             ) : (
               <div className="space-y-2 p-4">
@@ -113,7 +116,7 @@ export function NotificationsPanel({
                           {n.message}
                         </p>
                         <p className="mt-1 text-[10px] text-muted-foreground/70">
-                          {new Date(n.date).toLocaleString("fr-FR", {
+                          {new Date(n.date).toLocaleString(localeTag(locale), {
                             day: "2-digit",
                             month: "short",
                             hour: "2-digit",
@@ -136,7 +139,7 @@ export function NotificationsPanel({
           <div className="flex items-center gap-2 rounded-lg p-2 text-xs text-muted-foreground">
             <Mail className="h-3.5 w-3.5 shrink-0" />
             <span>
-              Les notifications importantes sont aussi envoyées par e-mail.
+              {t("notifs.emailNote")}
             </span>
           </div>
         </div>

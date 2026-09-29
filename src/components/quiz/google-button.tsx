@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { signIn } from "next-auth/react";
+import { useTranslation } from "@/lib/use-translation";
 
 /**
  * GoogleButton (V3) — "Continuer avec Google" sign-in button.
@@ -50,11 +51,13 @@ export function useGoogleEnabled() {
 }
 
 export function GoogleButton({
-  label = "Continuer avec Google",
+  label,
   className = "",
   onRedirectStart,
 }: GoogleButtonProps) {
   const googleEnabled = useGoogleEnabled();
+  const { t } = useTranslation();
+  const text = label ?? t("auth.google.continue");
 
   if (!googleEnabled) return null;
 
@@ -66,7 +69,7 @@ export function GoogleButton({
         signIn("google", { callbackUrl: "/" });
       }}
       className={`inline-flex min-h-11 w-full items-center justify-center gap-3 rounded-lg border border-input bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 dark:bg-white/95 dark:hover:bg-white ${className}`}
-      aria-label={label}
+      aria-label={text}
     >
       {/* Official Google "G" logo (4-color) */}
       <svg
@@ -93,7 +96,7 @@ export function GoogleButton({
           d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571.001-.001.002-.001.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"
         />
       </svg>
-      {label}
+      {text}
     </button>
   );
 }

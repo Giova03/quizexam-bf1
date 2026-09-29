@@ -44,6 +44,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GoogleButton } from "@/components/quiz/google-button";
+import { useTranslation } from "@/lib/use-translation";
+import { LanguageSwitcher } from "@/components/quiz/language-switcher";
 
 /**
  * LandingView (V4 « Aurora Light 2026 ») — public marketing homepage shown to
@@ -172,54 +174,52 @@ function handleSpotlight(e: React.MouseEvent<HTMLElement>) {
 /* Content data                                                         */
 /* ------------------------------------------------------------------ */
 
-const HERO_WORDS = ["BEPC", "BAC", "Licence", "Concours"];
+// V5 — les mots tournants du hero viennent de t("land.hero.words").
 
-const FEATURES = [
-  {
-    icon: LibraryBig,
-    title: "Banques de questions organisées",
-    description:
-      "Des centaines de QCM classés par niveau (BEPC, BAC, Licence, Concours), par matière et par thème. Une bibliothèque propre, cherchable, mise à jour en continu — trouvez la bonne question en deux clics.",
-    tone: "blue" as const,
-    big: true,
-  },
-  {
-    icon: Timer,
-    title: "Examens blancs chronométrés",
-    description:
-      "Reproduisez les conditions réelles du concours : durée, nombre de questions, gestion du stress.",
-    tone: "orange" as const,
-  },
-  {
-    icon: Zap,
-    title: "Correction immédiate",
-    description:
-      "Chaque réponse est expliquée à l'instant. Vous comprenez vos erreurs au moment où elles se produisent.",
-    tone: "emerald" as const,
-  },
-  {
-    icon: Bot,
-    title: "Tuteur IA 24 h/24",
-    description:
-      "Examens générés sur vos points faibles et réponses à vos questions, même sans professeur à côté.",
-    tone: "violet" as const,
-  },
-  {
-    icon: Trophy,
-    title: "Défis, badges & classements",
-    description:
-      "XP, ligues, quêtes et compétitions hebdomadaires : la régularité devient un jeu.",
-    tone: "rose" as const,
-  },
-  {
-    icon: WifiOff,
-    title: "Fonctionne hors connexion",
-    description:
-      "Révisez sans internet — vos sessions se synchronisent automatiquement dès le retour du réseau. Parfait pour tout le Burkina.",
-    tone: "sky" as const,
-    big: true,
-  },
-];
+type Translate = (k: string) => string;
+
+function getFeatures(t: Translate) {
+  return [
+    {
+      icon: LibraryBig,
+      title: t("land.f1.title"),
+      description: t("land.f1.desc"),
+      tone: "blue" as const,
+      big: true,
+    },
+    {
+      icon: Timer,
+      title: t("land.f2.title"),
+      description: t("land.f2.desc"),
+      tone: "orange" as const,
+    },
+    {
+      icon: Zap,
+      title: t("land.f3.title"),
+      description: t("land.f3.desc"),
+      tone: "emerald" as const,
+    },
+    {
+      icon: Bot,
+      title: t("land.f4.title"),
+      description: t("land.f4.desc"),
+      tone: "violet" as const,
+    },
+    {
+      icon: Trophy,
+      title: t("land.f5.title"),
+      description: t("land.f5.desc"),
+      tone: "rose" as const,
+    },
+    {
+      icon: WifiOff,
+      title: t("land.f6.title"),
+      description: t("land.f6.desc"),
+      tone: "sky" as const,
+      big: true,
+    },
+  ];
+}
 
 const TONES: Record<string, { chip: string; ring: string; glow: string }> = {
   blue: {
@@ -254,32 +254,31 @@ const TONES: Record<string, { chip: string; ring: string; glow: string }> = {
   },
 };
 
-const STEPS = [
-  {
-    number: "01",
-    title: "Créez votre compte",
-    description:
-      "Inscription gratuite en 30 secondes — email ou Google. Choisissez votre niveau, vos matières et votre rythme d'apprentissage.",
-    icon: Users,
-    tone: "blue" as const,
-  },
-  {
-    number: "02",
-    title: "Révisez & testez-vous",
-    description:
-      "Entraînez-vous sur les banques de questions ou lancez un examen blanc complet. Correction immédiate, explications détaillées.",
-    icon: BookOpenCheck,
-    tone: "emerald" as const,
-  },
-  {
-    number: "03",
-    title: "Suivez votre progression",
-    description:
-      "Tableau de bord, statistiques par thème, révision espacée : la plateforme identifie vos faiblesses et vous y ramène au bon moment.",
-    icon: FileCheck2,
-    tone: "orange" as const,
-  },
-];
+function getSteps(t: Translate) {
+  return [
+    {
+      number: "01",
+      title: t("land.steps.s1.title"),
+      description: t("land.steps.s1.desc"),
+      icon: Users,
+      tone: "blue" as const,
+    },
+    {
+      number: "02",
+      title: t("land.steps.s2.title"),
+      description: t("land.steps.s2.desc"),
+      icon: BookOpenCheck,
+      tone: "emerald" as const,
+    },
+    {
+      number: "03",
+      title: t("land.steps.s3.title"),
+      description: t("land.steps.s3.desc"),
+      icon: FileCheck2,
+      tone: "orange" as const,
+    },
+  ];
+}
 
 const STEP_TONES: Record<string, string> = {
   blue: "from-blue-500 to-sky-400",
@@ -287,96 +286,72 @@ const STEP_TONES: Record<string, string> = {
   orange: "from-orange-500 to-amber-400",
 };
 
-const LEVELS = [
-  {
-    id: "BEPC",
-    label: "BEPC",
-    hint: "Collège — 3e",
-    icon: School,
-    gradient: "from-emerald-500 to-teal-400",
-    topBar: "from-emerald-400 to-teal-400",
-    subjects: ["Mathématiques", "Français", "SVT", "Histoire-Géo", "Anglais"],
-  },
-  {
-    id: "BAC",
-    label: "Baccalauréat",
-    hint: "Lycée — Terminale",
-    icon: GraduationCap,
-    gradient: "from-blue-500 to-sky-400",
-    topBar: "from-blue-400 to-sky-400",
-    subjects: ["Maths", "Physique-Chimie", "Philosophie", "SVT", "Lettres"],
-  },
-  {
-    id: "LICENCE",
-    label: "Licence",
-    hint: "Enseignement supérieur",
-    icon: Building2,
-    gradient: "from-orange-500 to-amber-400",
-    topBar: "from-orange-400 to-amber-400",
-    subjects: ["Droit", "Économie", "Gestion", "Sciences", "Lettres"],
-  },
-  {
-    id: "CONCOURS",
-    label: "Concours",
-    hint: "ENA, Douanes, Police…",
-    icon: Target,
-    gradient: "from-violet-500 to-fuchsia-400",
-    topBar: "from-violet-400 to-fuchsia-400",
-    subjects: ["Culture générale", "Logique", "Droit", "Dossiers", "Oral"],
-  },
-];
+function getLevels(t: Translate) {
+  return [
+    {
+      id: "BEPC",
+      label: "BEPC",
+      hint: t("land.levels.bepc.hint"),
+      icon: School,
+      gradient: "from-emerald-500 to-teal-400",
+      topBar: "from-emerald-400 to-teal-400",
+      subjects: [t("subject.math"), t("subject.french"), t("subject.svt"), t("subject.histgeo"), t("subject.english")],
+    },
+    {
+      id: "BAC",
+      label: "Baccalauréat",
+      hint: t("land.levels.bac.hint"),
+      icon: GraduationCap,
+      gradient: "from-blue-500 to-sky-400",
+      topBar: "from-blue-400 to-sky-400",
+      subjects: [t("subject.maths"), t("subject.physics"), t("subject.philosophy"), t("subject.svt"), t("subject.letters")],
+    },
+    {
+      id: "LICENCE",
+      label: "Licence",
+      hint: t("land.levels.licence.hint"),
+      icon: Building2,
+      gradient: "from-orange-500 to-amber-400",
+      topBar: "from-orange-400 to-amber-400",
+      subjects: [t("subject.law"), t("subject.economics"), t("subject.management"), t("subject.sciences"), t("subject.letters")],
+    },
+    {
+      id: "CONCOURS",
+      label: "Concours",
+      hint: t("land.levels.concours.hint"),
+      icon: Target,
+      gradient: "from-violet-500 to-fuchsia-400",
+      topBar: "from-violet-400 to-fuchsia-400",
+      subjects: [t("subject.cultureGen"), t("subject.logic"), t("subject.law"), t("subject.dossiers"), t("subject.oral")],
+    },
+  ];
+}
 
-const SUBJECTS_MARQUEE = [
-  { icon: Calculator, label: "Mathématiques" },
-  { icon: BookOpen, label: "Français" },
-  { icon: Atom, label: "Physique-Chimie" },
-  { icon: Microscope, label: "SVT" },
-  { icon: Globe2, label: "Histoire-Géo" },
-  { icon: Languages, label: "Anglais" },
-  { icon: Scale, label: "Droit" },
-  { icon: Landmark, label: "Culture générale" },
-  { icon: BrainCircuit, label: "Logique" },
-  { icon: PenLine, label: "Philosophie" },
-];
+function getSubjectsMarquee(t: Translate) {
+  return [
+    { icon: Calculator, label: t("subject.math") },
+    { icon: BookOpen, label: t("subject.french") },
+    { icon: Atom, label: t("subject.physics") },
+    { icon: Microscope, label: t("subject.svt") },
+    { icon: Globe2, label: t("subject.histgeo") },
+    { icon: Languages, label: t("subject.english") },
+    { icon: Scale, label: t("subject.law") },
+    { icon: Landmark, label: t("subject.cultureGen") },
+    { icon: BrainCircuit, label: t("subject.logic") },
+    { icon: PenLine, label: t("subject.philosophy") },
+  ];
+}
 
-const TESTIMONIALS = [
-  {
-    name: "Aïcha K.",
-    role: "Candidat ENA 2026",
-    text: "J'ai révisé 40 minutes par jour pendant 3 mois. Les examens blancs m'ont habitué au chrono du vrai concours — j'ai été admissible.",
-    tone: "blue" as const,
-  },
-  {
-    name: "Boureima S.",
-    role: "Terminale D, Ouagadougou",
-    text: "La correction immédiate change tout : je comprends mes erreurs tout de suite, pas trois jours après comme en classe.",
-    tone: "emerald" as const,
-  },
-  {
-    name: "Fatimata O.",
-    role: "Étudiante en Droit",
-    text: "Même avec le réseau instable, je révisais hors ligne dans le bus. Tout se synchronisait automatiquement. Bravo !",
-    tone: "orange" as const,
-  },
-  {
-    name: "Issouf T.",
-    role: "Concours Douanes",
-    text: "Le classement m'a motivé à rester régulier. Je suis passé de la ligue Bronze à Or en 5 semaines.",
-    tone: "violet" as const,
-  },
-  {
-    name: "Mariam Z.",
-    role: "Préparation BAC A",
-    text: "Le tuteur IA m'a créé un examen ciblé sur mes points faibles en philosophie. Résultat : +4 points au Bac blanc.",
-    tone: "sky" as const,
-  },
-  {
-    name: "Karim D.",
-    role: "BEPC, Bobo-Dioulasso",
-    text: "Simple, clair, en français. Mes parents ont vu mes badges et maintenant toute la famille me suit pour m'encourager.",
-    tone: "rose" as const,
-  },
-];
+function getTestimonials(t: Translate) {
+  return [
+    { name: "Aïcha K.", role: t("land.t1.role"), text: t("land.t1.text"), tone: "blue" as const },
+    { name: "Boureima S.", role: t("land.t2.role"), text: t("land.t2.text"), tone: "emerald" as const },
+    { name: "Fatimata O.", role: t("land.t3.role"), text: t("land.t3.text"), tone: "orange" as const },
+    { name: "Issouf T.", role: t("land.t4.role"), text: t("land.t4.text"), tone: "violet" as const },
+    { name: "Mariam Z.", role: t("land.t5.role"), text: t("land.t5.text"), tone: "sky" as const },
+    { name: "Karim D.", role: t("land.t6.role"), text: t("land.t6.text"), tone: "rose" as const },
+  ];
+}
 
 const AVATAR_TONES: Record<string, string> = {
   blue: "from-blue-500 to-sky-400",
@@ -387,31 +362,23 @@ const AVATAR_TONES: Record<string, string> = {
   rose: "from-rose-500 to-pink-400",
 };
 
-const FAQ = [
-  {
-    q: "La plateforme est-elle gratuite ?",
-    a: "Oui. La création de compte, les banques de questions et les quiz quotidiens sont gratuits. Un pass Premium débloque les examens illimités, le tuteur IA et les certificats — mais l'essentiel reste accessible sans payer.",
-  },
-  {
-    q: "Puis-je réviser sans connexion internet ?",
-    a: "Oui. QuizExam BF fonctionne hors ligne : vos sessions sont enregistrées localement puis synchronisées automatiquement au retour du réseau. Conçu pour les réalités de la connectivité au Burkina Faso.",
-  },
-  {
-    q: "Comment se connecter avec Google ?",
-    a: "Cliquez sur « Continuer avec Google ». Si vous avez déjà un compte avec le même email, il est automatiquement retrouvé et relié — vous ne perdez ni votre progression, ni vos badges.",
-  },
-  {
-    q: "Les questions correspondent-elles aux programmes officiels ?",
-    a: "Les banques couvrent les programmes du BEPC, du BAC, de la Licence et les épreuves de culture générale des grands concours (ENA, Douanes, Police…), avec des mises à jour régulières.",
-  },
-];
+function getFaq(t: Translate) {
+  return [
+    { q: t("land.faq.q1"), a: t("land.faq.a1") },
+    { q: t("land.faq.q2"), a: t("land.faq.a2") },
+    { q: t("land.faq.q3"), a: t("land.faq.a3") },
+    { q: t("land.faq.q4"), a: t("land.faq.a4") },
+  ];
+}
 
-const NAV_LINKS = [
-  { href: "#features", label: "Fonctionnalités" },
-  { href: "#levels", label: "Niveaux" },
-  { href: "#testimonials", label: "Témoignages" },
-  { href: "#faq", label: "FAQ" },
-];
+function getNavLinks(t: Translate) {
+  return [
+    { href: "#features", label: t("land.nav.features") },
+    { href: "#levels", label: t("land.nav.levels") },
+    { href: "#testimonials", label: t("land.nav.testimonials") },
+    { href: "#faq", label: t("land.nav.faq") },
+  ];
+}
 
 function scrollToHash(hash: string) {
   const el = document.querySelector(hash);
@@ -449,6 +416,8 @@ function LandingNav({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"]
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { t } = useTranslation();
+  const NAV_LINKS = getNavLinks(t);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -478,7 +447,7 @@ function LandingNav({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"]
         }`}
       >
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-          <a href="#" className="group flex items-center gap-2.5" aria-label="QuizExam BF — accueil">
+          <a href="#" className="group flex items-center gap-2.5" aria-label={t("land.brand.aria")}>
             <span className="relative">
               <img
                 src="/logo-quizexam.svg"
@@ -500,7 +469,7 @@ function LandingNav({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"]
           {/* Desktop — floating pill nav with sliding hover indicator */}
           <nav
             className="hidden items-center gap-1 rounded-full border border-slate-200/80 bg-white/70 p-1 shadow-sm backdrop-blur-md md:flex"
-            aria-label="Navigation principale"
+            aria-label={t("land.nav.aria")}
             onMouseLeave={() => setHovered(null)}
           >
             {NAV_LINKS.map((link) => (
@@ -528,20 +497,21 @@ function LandingNav({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"]
           </nav>
 
           <div className="flex items-center gap-2">
+            <LanguageSwitcher />
             <Button
               variant="ghost"
               size="sm"
               className="text-slate-600 hover:bg-blue-50 hover:text-blue-700"
               onClick={() => onAuthOpen("login")}
             >
-              Se connecter
+              {t("land.nav.login")}
             </Button>
             <Button
               size="sm"
               className="btn-shine animate-gradient-x hidden gap-1.5 bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-500 text-white shadow-lg shadow-blue-500/30 transition-transform hover:-translate-y-0.5 sm:inline-flex"
               onClick={() => onAuthOpen("signup")}
             >
-              Créer mon compte
+              {t("land.nav.signup")}
               <ArrowRight className="h-4 w-4" />
             </Button>
             <Button
@@ -549,7 +519,7 @@ function LandingNav({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"]
               size="icon"
               className="h-9 w-9 rounded-full md:hidden"
               onClick={() => setMobileOpen(true)}
-              aria-label="Ouvrir le menu"
+              aria-label={t("land.menu.open")}
             >
               <Menu className="h-5 w-5" />
             </Button>
@@ -568,7 +538,7 @@ function LandingNav({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"]
             className="fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-white"
             role="dialog"
             aria-modal="true"
-            aria-label="Menu de navigation"
+            aria-label={t("land.menu.aria")}
           >
             <div className="dot-grid-light pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
             <div
@@ -603,7 +573,7 @@ function LandingNav({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"]
               <button
                 onClick={() => setMobileOpen(false)}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition-colors hover:bg-slate-50"
-                aria-label="Fermer le menu"
+                aria-label={t("land.menu.close")}
               >
                 <X className="h-5 w-5" />
               </button>
@@ -643,7 +613,7 @@ function LandingNav({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"]
                     onAuthOpen("signup");
                   }}
                 >
-                  Créer mon compte gratuitement
+                  {t("land.menu.signup")}
                   <ArrowRight className="h-5 w-5" />
                 </Button>
                 <Button
@@ -655,10 +625,13 @@ function LandingNav({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"]
                     onAuthOpen("login");
                   }}
                 >
-                  Se connecter
+                  {t("land.nav.login")}
                 </Button>
+                <div className="flex justify-center">
+                  <LanguageSwitcher />
+                </div>
                 <p className="mt-2 text-center text-xs text-slate-400">
-                  Gratuit · Sans engagement · Mode hors ligne
+                  {t("land.menu.trust")}
                 </p>
               </motion.div>
             </nav>
@@ -674,6 +647,8 @@ function LandingNav({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"]
 /* ------------------------------------------------------------------ */
 
 function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"] }) {
+  const { t } = useTranslation();
+  const HERO_WORDS = t("land.hero.words").split(",");
   return (
     <section className="relative overflow-hidden pb-20 pt-28 md:pt-36">
       {/* Aurora background — soft blue / green / orange on white */}
@@ -698,27 +673,25 @@ function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"
         <div className="text-center lg:text-left">
           <div className="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200/80 bg-blue-50/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-blue-700 shadow-sm">
             <Sparkles className="h-3.5 w-3.5 text-orange-500" />
-            Édition 2026 · pensée pour le Burkina
+            {t("land.hero.badge")}
           </div>
 
           <h1
             className="animate-fade-up font-display text-4xl font-bold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl xl:text-6xl"
             style={{ animationDelay: "0.08s" }}
           >
-            Réussissez votre{" "}
+            {t("land.hero.titlePre")}{" "}
             <WordRotator words={HERO_WORDS} className="h-[1.12em]" />
-            <br className="hidden sm:block" /> question par question
+            <br className="hidden sm:block" /> {t("land.hero.titlePost")}
           </h1>
 
           <p
             className="animate-fade-up mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-500 sm:text-lg lg:mx-0"
             style={{ animationDelay: "0.16s" }}
           >
-            QuizExam BF est la plateforme de préparation aux BEPC, BAC, licences
-            et grands concours du Burkina Faso. Des milliers de questions
-            corrigées, des examens blancs chronométrés et un suivi intelligent —{" "}
+            {t("land.hero.subtitle")}{" "}
             <strong className="font-semibold text-slate-700">
-              gratuit pour commencer
+              {t("land.hero.subtitleStrong")}
             </strong>
             .
           </p>
@@ -732,7 +705,7 @@ function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"
               className="btn-shine animate-gradient-x animate-ticker-glow h-12 gap-2 bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-500 px-7 text-base font-semibold text-white transition-transform hover:-translate-y-0.5"
               onClick={() => onAuthOpen("signup")}
             >
-              Créer mon compte gratuitement
+              {t("land.hero.cta")}
               <ArrowRight className="h-5 w-5" />
             </Button>
             <GoogleButton className="h-12 sm:w-auto" onRedirectStart={() => {}} />
@@ -744,15 +717,15 @@ function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"
           >
             <li className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-              Inscription gratuite
+              {t("land.hero.trust1")}
             </li>
             <li className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-blue-500" />
-              Sans engagement
+              {t("land.hero.trust2")}
             </li>
             <li className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-orange-500" />
-              Mode hors ligne
+              {t("land.hero.trust3")}
             </li>
           </ul>
         </div>
@@ -762,8 +735,8 @@ function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"
           <div className="animate-float-slow relative rounded-3xl border border-slate-200/80 bg-white/80 p-5 shadow-2xl shadow-blue-900/10 backdrop-blur-xl">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs uppercase tracking-wider text-slate-400">Tableau de bord</p>
-                <p className="font-display text-lg font-semibold text-slate-900">Ma progression</p>
+                <p className="text-xs uppercase tracking-wider text-slate-400">{t("land.hero.dashTitle")}</p>
+                <p className="font-display text-lg font-semibold text-slate-900">{t("land.hero.dashProgress")}</p>
               </div>
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-emerald-500 text-lg font-bold text-white shadow-md">
                 A
@@ -771,15 +744,15 @@ function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"
             </div>
 
             <div className="mt-5 grid grid-cols-3 gap-3">
-              <HeroStat label="Questions" value={128} icon={BookOpenCheck} tone="blue" />
-              <HeroStat label="Précision" value={87} suffix="%" icon={Target} tone="emerald" />
-              <HeroStat label="Série" value={12} suffix=" j" icon={Flame} tone="orange" />
+              <HeroStat label={t("land.hero.statQuestions")} value={128} icon={BookOpenCheck} tone="blue" />
+              <HeroStat label={t("land.hero.statAccuracy")} value={87} suffix="%" icon={Target} tone="emerald" />
+              <HeroStat label={t("land.hero.statStreak")} value={12} suffix={t("land.hero.streakUnit")} icon={Flame} tone="orange" />
             </div>
 
             <div className="mt-5 space-y-3 rounded-2xl bg-slate-50 p-4">
-              <HeroBar label="Mathématiques" pct={86} from="from-blue-500" to="to-sky-400" />
-              <HeroBar label="Culture générale" pct={72} from="from-orange-400" to="to-amber-400" />
-              <HeroBar label="Français" pct={64} from="from-emerald-500" to="to-teal-400" />
+              <HeroBar label={t("subject.math")} pct={86} from="from-blue-500" to="to-sky-400" />
+              <HeroBar label={t("subject.cultureGen")} pct={72} from="from-orange-400" to="to-amber-400" />
+              <HeroBar label={t("subject.french")} pct={64} from="from-emerald-500" to="to-teal-400" />
             </div>
 
             <div className="mt-5 flex items-center gap-3 rounded-2xl border border-orange-200/70 bg-orange-50/80 p-3.5">
@@ -787,8 +760,8 @@ function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"
                 <Trophy className="h-5 w-5" />
               </div>
               <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-semibold text-orange-700">Ligue Or · Top 8 de la semaine</p>
-                <p className="text-xs text-orange-600/70">+320 XP cette semaine</p>
+                <p className="truncate text-sm font-semibold text-orange-700">{t("land.hero.leagueLine")}</p>
+                <p className="text-xs text-orange-600/70">{t("land.hero.leagueXp")}</p>
               </div>
             </div>
           </div>
@@ -797,7 +770,7 @@ function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"
           <div className="animate-float absolute -left-4 top-8 hidden rounded-xl border border-emerald-200 bg-white/95 px-3.5 py-2.5 shadow-xl shadow-emerald-600/10 backdrop-blur sm:block">
             <p className="flex items-center gap-2 text-xs font-semibold text-emerald-700">
               <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-              Réponse correcte +10 XP
+              {t("land.hero.chipCorrect")}
             </p>
           </div>
           <div
@@ -806,7 +779,7 @@ function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"
           >
             <p className="flex items-center gap-2 text-xs font-semibold text-blue-700">
               <Layers className="h-4 w-4 text-blue-500" />
-              Examen blanc : 50 Q · 60 min
+              {t("land.hero.chipMock")}
             </p>
           </div>
           <div
@@ -814,7 +787,7 @@ function HeroSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"
           >
             <p className="flex items-center gap-2 text-xs font-semibold text-orange-600">
               <Flame className="h-4 w-4 text-orange-500" />
-              Série de 12 jours — continue !
+              {t("land.hero.chipStreak")}
             </p>
           </div>
         </div>
@@ -887,11 +860,13 @@ function HeroBar({
 /* ------------------------------------------------------------------ */
 
 function SubjectsMarquee() {
-  const doubled = [...SUBJECTS_MARQUEE, ...SUBJECTS_MARQUEE];
+  const { t } = useTranslation();
+  const marquee = getSubjectsMarquee(t);
+  const doubled = [...marquee, ...marquee];
   return (
     <section
       className="relative border-y border-slate-100 bg-slate-50/60 py-5"
-      aria-label="Matières couvertes"
+      aria-label={t("land.subjects.aria")}
     >
       <div
         className="relative"
@@ -906,7 +881,7 @@ function SubjectsMarquee() {
           {doubled.map((subject, i) => (
             <span
               key={`${subject.label}-${i}`}
-              aria-hidden={i >= SUBJECTS_MARQUEE.length}
+              aria-hidden={i >= marquee.length}
               className="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-sm"
             >
               <subject.icon className="h-4 w-4 text-blue-500" />
@@ -924,6 +899,7 @@ function SubjectsMarquee() {
 /* ------------------------------------------------------------------ */
 
 function StatsSection() {
+  const { t } = useTranslation();
   return (
     <section className="relative py-14">
       <div className="mx-auto max-w-6xl px-4">
@@ -931,10 +907,10 @@ function StatsSection() {
           {...fadeUp}
           className="grid grid-cols-2 gap-4 rounded-[2rem] border border-slate-200/80 bg-white p-6 shadow-xl shadow-blue-900/5 sm:p-8 lg:grid-cols-4"
         >
-          <StatBadge icon={LibraryBig} value={40} suffix="+" label="Banques de questions" tone="blue" />
-          <StatBadge icon={BookOpenCheck} value={5000} suffix="+" label="Questions corrigées" tone="emerald" />
-          <StatBadge icon={Users} value={1200} suffix="+" label="Candidats accompagnés" tone="orange" />
-          <StatBadge icon={Star} value={96} suffix="%" label="Satisfaction" tone="violet" />
+          <StatBadge icon={LibraryBig} value={40} suffix="+" label={t("land.stats.banks")} tone="blue" />
+          <StatBadge icon={BookOpenCheck} value={5000} suffix="+" label={t("land.stats.questions")} tone="emerald" />
+          <StatBadge icon={Users} value={1200} suffix="+" label={t("land.stats.candidates")} tone="orange" />
+          <StatBadge icon={Star} value={96} suffix="%" label={t("land.stats.satisfaction")} tone="violet" />
         </motion.div>
       </div>
     </section>
@@ -978,20 +954,21 @@ function StatBadge({
 /* ------------------------------------------------------------------ */
 
 function FeaturesSection() {
+  const { t } = useTranslation();
+  const FEATURES = getFeatures(t);
   return (
     <section id="features" className="relative scroll-mt-20 py-24">
       <div className="mx-auto max-w-6xl px-4">
         <motion.div {...fadeUp} className="mx-auto mb-14 max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
-            Fonctionnalités
+            {t("land.nav.features")}
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Tout ce qu&apos;il faut pour{" "}
-            <span className="text-gradient-brand">décrocher son concours</span>
+            {t("land.features.titlePre")}{" "}
+            <span className="text-gradient-brand">{t("land.features.titleHighlight")}</span>
           </h2>
           <p className="mt-4 text-slate-500">
-            Une plateforme complète, pensée pour les candidats burkinabè :
-            contenu local, mode hors ligne et motivation quotidienne.
+            {t("land.features.subtitle")}
           </p>
         </motion.div>
 
@@ -1041,6 +1018,8 @@ function FeaturesSection() {
 /* ------------------------------------------------------------------ */
 
 function HowItWorksSection() {
+  const { t } = useTranslation();
+  const STEPS = getSteps(t);
   return (
     <section className="relative py-24">
       <div
@@ -1050,10 +1029,10 @@ function HowItWorksSection() {
       <div className="relative mx-auto max-w-6xl px-4">
         <motion.div {...fadeUp} className="mx-auto mb-14 max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600">
-            Comment ça marche
+            {t("land.steps.title")}
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Trois étapes vers la <span className="text-gradient-sun">réussite</span>
+            {t("land.steps.h2Pre")} <span className="text-gradient-sun">{t("land.steps.h2Highlight")}</span>
           </h2>
         </motion.div>
 
@@ -1104,19 +1083,20 @@ function HowItWorksSection() {
 /* ------------------------------------------------------------------ */
 
 function LevelsSection() {
+  const { t } = useTranslation();
+  const LEVELS = getLevels(t);
   return (
     <section id="levels" className="relative scroll-mt-20 py-24">
       <div className="mx-auto max-w-6xl px-4">
         <motion.div {...fadeUp} className="mx-auto mb-14 max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
-            Tous les niveaux
+            {t("land.levels.title")}
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Du BEPC aux <span className="text-gradient-brand">grands concours</span>
+            {t("land.levels.h2Pre")} <span className="text-gradient-brand">{t("land.levels.h2Highlight")}</span>
           </h2>
           <p className="mt-4 text-slate-500">
-            Chaque niveau a ses banques dédiées : sélectionnez le vôtre et la
-            plateforme s&apos;adapte à votre objectif.
+            {t("land.levels.desc")}
           </p>
         </motion.div>
 
@@ -1173,16 +1153,18 @@ function LevelsSection() {
 /* ------------------------------------------------------------------ */
 
 function TestimonialsSection() {
+  const { t } = useTranslation();
+  const TESTIMONIALS = getTestimonials(t);
   const doubled = [...TESTIMONIALS, ...TESTIMONIALS];
   return (
     <section id="testimonials" className="relative scroll-mt-20 overflow-hidden py-24">
       <div className="mx-auto max-w-6xl px-4">
         <motion.div {...fadeUp} className="mx-auto mb-12 max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600">
-            Témoignages
+            {t("land.nav.testimonials")}
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Ils révisent déjà <span className="text-gradient-sun">avec nous</span>
+            {t("land.testimonials.h2Pre")} <span className="text-gradient-sun">{t("land.testimonials.h2Highlight")}</span>
           </h2>
         </motion.div>
       </div>
@@ -1197,30 +1179,30 @@ function TestimonialsSection() {
         }}
       >
         <div className="animate-marquee gap-5 px-4">
-          {doubled.map((t, i) => (
+          {doubled.map((tm, i) => (
             <figure
-              key={`${t.name}-${i}`}
+              key={`${tm.name}-${i}`}
               className="w-[320px] shrink-0 rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm transition-shadow hover:shadow-lg"
               aria-hidden={i >= TESTIMONIALS.length}
             >
-              <div className="flex gap-0.5" aria-label="5 étoiles sur 5">
+              <div className="flex gap-0.5" aria-label={t("land.stars.aria")}>
                 {Array.from({ length: 5 }).map((_, s) => (
                   <Star key={s} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
               <blockquote className="mt-3 text-sm leading-relaxed text-slate-600">
-                « {t.text} »
+                « {tm.text} »
               </blockquote>
               <figcaption className="mt-4 flex items-center gap-3">
                 <span
-                  className={`flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br ${AVATAR_TONES[t.tone]} text-sm font-bold text-white`}
+                  className={`flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br ${AVATAR_TONES[tm.tone]} text-sm font-bold text-white`}
                   aria-hidden="true"
                 >
-                  {t.name.charAt(0)}
+                  {tm.name.charAt(0)}
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-slate-900">{t.name}</p>
-                  <p className="text-xs text-slate-400">{t.role}</p>
+                  <p className="text-sm font-semibold text-slate-900">{tm.name}</p>
+                  <p className="text-xs text-slate-400">{tm.role}</p>
                 </div>
               </figcaption>
             </figure>
@@ -1236,6 +1218,8 @@ function TestimonialsSection() {
 /* ------------------------------------------------------------------ */
 
 function FaqSection() {
+  const { t } = useTranslation();
+  const FAQ = getFaq(t);
   return (
     <section id="faq" className="relative scroll-mt-20 py-24">
       <div className="mx-auto max-w-3xl px-4">
@@ -1244,7 +1228,7 @@ function FaqSection() {
             FAQ
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Questions fréquentes
+            {t("land.faq.title")}
           </h2>
         </motion.div>
 
@@ -1276,6 +1260,7 @@ function FaqSection() {
 /* ------------------------------------------------------------------ */
 
 function FinalCtaSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"] }) {
+  const { t } = useTranslation();
   return (
     <section className="relative py-24">
       <div className="mx-auto max-w-5xl px-4">
@@ -1304,13 +1289,11 @@ function FinalCtaSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthO
               <GraduationCap className="h-7 w-7 text-white" />
             </div>
             <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Votre concours commence{" "}
-              <span className="text-gradient-gold">aujourd&apos;hui</span>
+              {t("land.cta.h2Pre")}{" "}
+              <span className="text-gradient-gold">{t("land.cta.h2Highlight")}</span>
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-blue-50/90">
-              Rejoignez les centaines de candidats qui révisent chaque jour sur
-              QuizExam BF. Créez votre compte gratuit et faites votre premier
-              quiz en moins de deux minutes.
+              {t("land.cta.subtitle")}
             </p>
             <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
               <Button
@@ -1318,13 +1301,13 @@ function FinalCtaSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthO
                 className="btn-shine h-12 gap-2 bg-gradient-to-r from-orange-500 to-amber-400 px-8 text-base font-semibold text-white shadow-xl shadow-orange-600/30 transition-transform hover:-translate-y-0.5"
                 onClick={() => onAuthOpen("signup")}
               >
-                Créer mon compte gratuitement
+                {t("land.cta.button")}
                 <ArrowRight className="h-5 w-5" />
               </Button>
               <GoogleButton className="h-12 sm:w-auto" />
             </div>
             <p className="mt-5 text-xs text-blue-100/70">
-              Gratuit · Sans carte bancaire · Annulable à tout moment
+              {t("land.cta.note2")}
             </p>
           </div>
         </motion.div>
@@ -1338,6 +1321,8 @@ function FinalCtaSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthO
 /* ------------------------------------------------------------------ */
 
 function LandingFooter() {
+  const { t } = useTranslation();
+  const NAV_LINKS = getNavLinks(t);
   return (
     <footer className="border-t border-slate-100 bg-slate-50/60">
       <div className="mx-auto max-w-6xl px-4 py-12">
@@ -1355,12 +1340,12 @@ function LandingFooter() {
                 QuizExam <span className="text-gradient-brand">BF</span>
               </p>
               <p className="text-xs text-slate-400">
-                La préparation aux concours, accessible à tous.
+                {t("land.footer.sub")}
               </p>
             </div>
           </div>
 
-          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-500" aria-label="Liens de pied de page">
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-500" aria-label={t("land.footerLinks.aria")}>
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -1378,10 +1363,10 @@ function LandingFooter() {
 
           <div className="text-left text-xs text-slate-400 md:text-right">
             <p className="font-medium text-slate-500">
-              © 2026 QuizExam BF — Tous droits réservés
+              {t("land.footer.rights")}
             </p>
             <p className="mt-1">
-              BAMOGO Pingdwendé Giovanni — Créateur ·{" "}
+              BAMOGO Pingdwendé Giovanni — {t("land.footer.creator")} ·{" "}
               <a
                 href="mailto:giobamos03@gmail.com"
                 className="transition-colors hover:text-blue-600"

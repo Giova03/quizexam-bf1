@@ -141,8 +141,8 @@ import {
   Coins,
   // FIX2 — added Menu icon for the mobile nav (Grid removed in FIX3 in favour of Compass).
   Menu,
-  // FIX3 — Compass icon for the new "Explorer" dropdown trigger.
-  Compass,
+  // V5 — overflow menu icon.
+  MoreHorizontal,
   // E5 — social feature icons:
   Mail,
   UserCheck,
@@ -453,14 +453,22 @@ function ExplorerSection({
   );
 }
 
-function ExplorerItem({
+/**
+ * V5 — MegaItem : entrée de méga-menu avec pastille d'icône colorée, libellé
+ * et (optionnel) une description d'une ligne qui explique la destination.
+ * La description est ce qui rend le menu « organisé » : on sait où on va
+ * avant de cliquer.
+ */
+function MegaItem({
   icon,
   label,
+  desc,
   tone,
   onClick,
 }: {
   icon: ReactNode;
   label: string;
+  desc?: string;
   tone: keyof typeof EXPLORER_ITEM_TONES;
   onClick: () => void;
 }) {
@@ -475,8 +483,15 @@ function ExplorerItem({
       >
         {icon}
       </span>
-      <span className="truncate transition-transform duration-200 group-hover/item:translate-x-0.5">
-        {label}
+      <span className="min-w-0">
+        <span className="block truncate transition-transform duration-200 group-hover/item:translate-x-0.5">
+          {label}
+        </span>
+        {desc && (
+          <span className="block truncate text-xs text-muted-foreground">
+            {desc}
+          </span>
+        )}
       </span>
     </DropdownMenuItem>
   );
@@ -668,7 +683,7 @@ export default function Home() {
       {!isOnline && (
         <div className="animate-gradient-x flex items-center justify-center gap-2 bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500 px-4 py-2 text-center text-sm font-medium text-white">
           <WifiOff className="h-4 w-4" />
-          Mode hors ligne. Synchronisation automatique à la reconnexion.
+          {t("nav.offlineBanner")}
         </div>
       )}
 
@@ -700,7 +715,7 @@ export default function Home() {
                 QuizExam <span className="text-gradient-brand">BF</span>
               </span>
               <span className="text-[10px] font-normal text-muted-foreground">
-                Préparation Concours · 2026
+                {t("brand.slogan")}
               </span>
             </span>
           </button>
@@ -715,7 +730,7 @@ export default function Home() {
               size="icon"
               className="h-11 w-11 shrink-0 md:hidden"
               onClick={() => setMobileNavOpen(true)}
-              aria-label="Ouvrir le menu de navigation"
+              aria-label={t("nav.openMenu")}
             >
               <Menu className="h-5 w-5" />
             </Button>
@@ -741,7 +756,7 @@ export default function Home() {
                 active={view === "bank-list"}
                 onClick={openBanks}
                 icon={<LibraryBig className="h-4 w-4" />}
-                label="Banques"
+                label={t("menu.banks")}
                 testId="banks-nav"
               />
               {/* AI custom exam */}
@@ -754,233 +769,152 @@ export default function Home() {
                       onClick={() => setCustomExamOpen(true)}
                     >
                       <Sparkles className="h-4 w-4" />
-                      <span className="hidden lg:inline">Examen IA</span>
+                      <span className="hidden lg:inline">{t("nav.aiExam")}</span>
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
-                    Créer un examen personnalisé avec l&apos;IA
+                    {t("nav.aiExam.tip")}
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
 
-              {/* Classement */}
-              <AppNavItem
-                active={view === "leaderboard"}
-                onClick={openLeaderboard}
-                icon={<Trophy className="h-4 w-4" />}
-                label="Classement"
-              />
+              {/* V5 — Classement et Forum déménagent dans les méga-menus
+                  « Progresser » et « Communauté » : le premier niveau ne
+                  garde que les destinations essentielles. */}
 
-              {/* Forum */}
-              <AppNavItem
-                active={view === "forum"}
-                onClick={openForum}
-                icon={<MessagesSquare className="h-4 w-4" />}
-                label="Forum"
- />
-
-              {/* FIX3 — Secondary nav grouped under an "Explorer" dropdown.
-                  Replaces the old "Plus" dropdown with a more creative
-                  "Explorer" button (Compass icon, emerald-to-teal gradient).
-                  The dropdown is wider (w-72) and groups items by 4 themed
-                  categories with emoji labels:
-                    📚 APPRENTISSAGE — Forum, Wiki, Parcours IA, Examen officiel,
-                       Fiches de révision, Parcours 30 jours, Révision espacée
-                    🏆 PROGRESSION — Classement, Succès, Quêtes, Arbre compétences,
-                       Boutique, Ligues
-                    👥 COMMUNAUTÉ — Communauté, Groupes, Messagerie, Mentorat,
-                       Sessions live, Blog, Compétition
-                    ℹ️ AUTRES — À propos, Événements */}
+              {/* V5 — Méga-menus organisés par objectif. L'ancien fourre-tout
+                  « Explorer » (19 entrées) est remplacé par trois familles
+                  claires : Réviser (apprendre), Progresser (se mesurer) et
+                  Communauté (échanger). Chaque entrée porte une description. */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    variant={
-                      view === "social" ||
-                      view === "forum" ||
-                      view === "competition" ||
-                      view === "leaderboard" ||
-                      view === "achievements" ||
-                      view === "spaced-repetition" ||
-                      view === "groups" ||
-                      view === "events" ||
-                      view === "blog" ||
-                      view === "study-plan" ||
-                      view === "quests" ||
-                      view === "skill-tree" ||
-                      view === "shop" ||
-                      view === "messages" ||
-                      view === "mentorship" ||
-                      view === "wiki" ||
-                      view === "live-sessions" ||
-                      view === "official-exam" ||
-                      view === "study-sheet" ||
-                      view === "guided-path" ||
-                      view === "about"
-                        ? "secondary"
-                        : "ghost"
-                    }
+                    variant={["official-exam","study-plan","guided-path","study-sheet","spaced-repetition","wiki"].includes(view) ? "secondary" : "ghost"}
                     size="sm"
-                    className="btn-shine animate-gradient-x gap-1.5 bg-gradient-to-r from-blue-600 to-emerald-500 text-white shadow-md shadow-blue-500/25 hover:opacity-95"
+                    className="gap-1.5"
                     data-tour="more-nav"
-                    aria-label="Explorer la plateforme"
+                    aria-label={t("nav.revise")}
                   >
-                    <Compass className="h-4 w-4" />
-                    <span className="hidden sm:inline">Explorer</span>
+                    <BookOpen className="h-4 w-4 text-blue-600" />
+                    <span className="hidden lg:inline">{t("nav.revise")}</span>
                     <ChevronDown className="h-3.5 w-3.5" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
                   align="end"
-                  className="w-[460px] p-3"
+                  className="w-[420px] p-3"
                   sideOffset={10}
                 >
-                  {/* V4 — mega panel: 4 themed sections in a 2-column grid,
-                      each item with a coloured icon chip. */}
-                  <div className="grid grid-cols-2 gap-2.5">
-                    <ExplorerSection title="Apprentissage" icon={BookOpen} tone="blue">
-                      <ExplorerItem
-                        icon={<MessagesSquare className="h-4 w-4" />}
-                        label="Forum"
-                        tone="blue"
-                        onClick={openForum}
-                      />
-                      <ExplorerItem
-                        icon={<BookOpen className="h-4 w-4" />}
-                        label="Wiki"
-                        tone="emerald"
-                        onClick={openWiki}
-                      />
-                      <ExplorerItem
-                        icon={<Sparkles className="h-4 w-4" />}
-                        label="Parcours IA"
-                        tone="violet"
-                        onClick={openStudyPlan}
-                      />
-                      <ExplorerItem
-                        icon={<GraduationCap className="h-4 w-4" />}
-                        label="Examen officiel"
-                        tone="violet"
-                        onClick={openOfficialExam}
-                      />
-                      <ExplorerItem
-                        icon={<FileText className="h-4 w-4" />}
-                        label="Fiches de révision"
-                        tone="emerald"
-                        onClick={openStudySheet}
-                      />
-                      <ExplorerItem
-                        icon={<CalendarCheck className="h-4 w-4" />}
-                        label="Parcours 30 jours"
-                        tone="orange"
-                        onClick={openGuidedPath}
-                      />
-                      <ExplorerItem
-                        icon={<Brain className="h-4 w-4" />}
-                        label="Révision espacée"
-                        tone="sky"
-                        onClick={openSpacedRepetition}
-                      />
-                    </ExplorerSection>
+                  <ExplorerSection title={t("nav.revise")} icon={BookOpen} tone="blue">
+                    <MegaItem
+                      icon={<GraduationCap className="h-4 w-4" />}
+                      label={t("menu.officialExam")}
+                      desc={t("menu.officialExam.desc")}
+                      tone="violet"
+                      onClick={openOfficialExam}
+                    />
+                    <MegaItem
+                      icon={<Sparkles className="h-4 w-4" />}
+                      label={t("menu.aiPath")}
+                      desc={t("menu.aiPath.desc")}
+                      tone="violet"
+                      onClick={openStudyPlan}
+                    />
+                    <MegaItem
+                      icon={<CalendarCheck className="h-4 w-4" />}
+                      label={t("menu.thirtyDays")}
+                      desc={t("menu.thirtyDays.desc")}
+                      tone="orange"
+                      onClick={openGuidedPath}
+                    />
+                    <MegaItem
+                      icon={<FileText className="h-4 w-4" />}
+                      label={t("menu.studySheets")}
+                      desc={t("menu.studySheets.desc")}
+                      tone="emerald"
+                      onClick={openStudySheet}
+                    />
+                    <MegaItem
+                      icon={<Brain className="h-4 w-4" />}
+                      label={t("menu.spacedRepetition")}
+                      desc={t("menu.spacedRepetition.desc")}
+                      tone="sky"
+                      onClick={openSpacedRepetition}
+                    />
+                    <MegaItem
+                      icon={<BookOpen className="h-4 w-4" />}
+                      label={t("menu.wiki")}
+                      desc={t("menu.wiki.desc")}
+                      tone="emerald"
+                      onClick={openWiki}
+                    />
+                  </ExplorerSection>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-                    <ExplorerSection title="Progression" icon={Trophy} tone="orange">
-                      <ExplorerItem
-                        icon={<Trophy className="h-4 w-4" />}
-                        label="Classement"
-                        tone="orange"
-                        onClick={openLeaderboard}
-                      />
-                      <ExplorerItem
-                        icon={<Award className="h-4 w-4" />}
-                        label="Succès"
-                        tone="orange"
-                        onClick={openAchievements}
-                      />
-                      <ExplorerItem
-                        icon={<Target className="h-4 w-4" />}
-                        label="Quêtes"
-                        tone="orange"
-                        onClick={openQuests}
-                      />
-                      <ExplorerItem
-                        icon={<TreePalm className="h-4 w-4" />}
-                        label="Arbre de compétences"
-                        tone="emerald"
-                        onClick={openSkillTree}
-                      />
-                      <ExplorerItem
-                        icon={<ShoppingBag className="h-4 w-4" />}
-                        label="Boutique"
-                        tone="violet"
-                        onClick={openShop}
-                      />
-                      <ExplorerItem
-                        icon={<Crown className="h-4 w-4" />}
-                        label="Ligues"
-                        tone="orange"
-                        onClick={openLeaderboard}
-                      />
-                    </ExplorerSection>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant={["leaderboard","achievements","quests","skill-tree","shop"].includes(view) ? "secondary" : "ghost"}
+                    size="sm"
+                    className="gap-1.5"
+                    aria-label={t("nav.progress")}
+                  >
+                    <Trophy className="h-4 w-4 text-orange-500" />
+                    <span className="hidden lg:inline">{t("nav.progress")}</span>
+                    <ChevronDown className="h-3.5 w-3.5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  align="end"
+                  className="w-[420px] p-3"
+                  sideOffset={10}
+                >
+                  <ExplorerSection title={t("nav.progress")} icon={Trophy} tone="orange">
+                    <div className="grid grid-cols-2 gap-x-1">
+                      <MegaItem icon={<Trophy className="h-4 w-4" />} label={t("menu.leaderboard")} desc={t("menu.leaderboard.desc")} tone="orange" onClick={openLeaderboard} />
+                      <MegaItem icon={<Award className="h-4 w-4" />} label={t("menu.achievements")} desc={t("menu.achievements.desc")} tone="orange" onClick={openAchievements} />
+                      <MegaItem icon={<Target className="h-4 w-4" />} label={t("menu.quests")} desc={t("menu.quests.desc")} tone="orange" onClick={openQuests} />
+                      <MegaItem icon={<Crown className="h-4 w-4" />} label={t("menu.leagues")} desc={t("menu.leagues.desc")} tone="orange" onClick={openLeaderboard} />
+                      <MegaItem icon={<TreePalm className="h-4 w-4" />} label={t("menu.skillTree")} desc={t("menu.skillTree.desc")} tone="emerald" onClick={openSkillTree} />
+                      <MegaItem icon={<ShoppingBag className="h-4 w-4" />} label={t("menu.shop")} desc={t("menu.shop.desc")} tone="violet" onClick={openShop} />
+                    </div>
+                  </ExplorerSection>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-                    <ExplorerSection title="Communauté" icon={Users} tone="emerald">
-                      <ExplorerItem
-                        icon={<Users className="h-4 w-4" />}
-                        label="Communauté"
-                        tone="emerald"
-                        onClick={openSocial}
-                      />
-                      <ExplorerItem
-                        icon={<UsersRound className="h-4 w-4" />}
-                        label="Groupes"
-                        tone="emerald"
-                        onClick={openGroups}
-                      />
-                      <ExplorerItem
-                        icon={<Mail className="h-4 w-4" />}
-                        label="Messagerie"
-                        tone="violet"
-                        onClick={openMessages}
-                      />
-                      <ExplorerItem
-                        icon={<UserCheck className="h-4 w-4" />}
-                        label="Mentorat"
-                        tone="emerald"
-                        onClick={openMentorship}
-                      />
-                      <ExplorerItem
-                        icon={<Radio className="h-4 w-4" />}
-                        label="Sessions live"
-                        tone="rose"
-                        onClick={openLiveSessions}
-                      />
-                      <ExplorerItem
-                        icon={<Newspaper className="h-4 w-4" />}
-                        label="Blog"
-                        tone="blue"
-                        onClick={openBlog}
-                      />
-                      <ExplorerItem
-                        icon={<Swords className="h-4 w-4" />}
-                        label="Compétition"
-                        tone="rose"
-                        onClick={openCompetition}
-                      />
-                    </ExplorerSection>
-
-                    <ExplorerSection title="Autres" icon={Info} tone="violet">
-                      <ExplorerItem
-                        icon={<Info className="h-4 w-4" />}
-                        label={t("nav.about")}
-                        tone="violet"
-                        onClick={openAbout}
-                      />
-                      <ExplorerItem
-                        icon={<CalendarDays className="h-4 w-4" />}
-                        label="Événements"
-                        tone="violet"
-                        onClick={openEvents}
-                      />
-                    </ExplorerSection>
-                  </div>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant={["social","forum","groups","messages","mentorship","live-sessions","blog","competition","events","about"].includes(view) ? "secondary" : "ghost"}
+                    size="sm"
+                    className="gap-1.5"
+                    aria-label={t("nav.community")}
+                  >
+                    <Users className="h-4 w-4 text-emerald-600" />
+                    <span className="hidden lg:inline">{t("nav.community")}</span>
+                    <ChevronDown className="h-3.5 w-3.5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  align="end"
+                  className="w-[430px] p-3"
+                  sideOffset={10}
+                >
+                  <ExplorerSection title={t("nav.community")} icon={Users} tone="emerald">
+                    <div className="grid grid-cols-2 gap-x-1">
+                      <MegaItem icon={<MessagesSquare className="h-4 w-4" />} label={t("menu.forum")} desc={t("menu.forum.desc")} tone="blue" onClick={openForum} />
+                      <MegaItem icon={<Users className="h-4 w-4" />} label={t("menu.social")} desc={t("menu.social.desc")} tone="emerald" onClick={openSocial} />
+                      <MegaItem icon={<UsersRound className="h-4 w-4" />} label={t("menu.groups")} desc={t("menu.groups.desc")} tone="emerald" onClick={openGroups} />
+                      <MegaItem icon={<Mail className="h-4 w-4" />} label={t("menu.messages")} desc={t("menu.messages.desc")} tone="violet" onClick={openMessages} />
+                      <MegaItem icon={<UserCheck className="h-4 w-4" />} label={t("menu.mentorship")} desc={t("menu.mentorship.desc")} tone="emerald" onClick={openMentorship} />
+                      <MegaItem icon={<Radio className="h-4 w-4" />} label={t("menu.liveSessions")} desc={t("menu.liveSessions.desc")} tone="rose" onClick={openLiveSessions} />
+                      <MegaItem icon={<Newspaper className="h-4 w-4" />} label={t("menu.blog")} desc={t("menu.blog.desc")} tone="blue" onClick={openBlog} />
+                      <MegaItem icon={<Swords className="h-4 w-4" />} label={t("menu.competition")} desc={t("menu.competition.desc")} tone="rose" onClick={openCompetition} />
+                      <MegaItem icon={<CalendarDays className="h-4 w-4" />} label={t("menu.events")} desc={t("menu.events.desc")} tone="violet" onClick={openEvents} />
+                      <MegaItem icon={<Info className="h-4 w-4" />} label={t("menu.about")} desc={t("menu.about.desc")} tone="violet" onClick={openAbout} />
+                    </div>
+                  </ExplorerSection>
                 </DropdownMenuContent>
               </DropdownMenu>
 
@@ -995,11 +929,11 @@ export default function Home() {
                         onClick={openAdmin}
                       >
                         <ShieldCheck className="h-4 w-4" />
-                        <span className="hidden lg:inline">Admin</span>
+                        <span className="hidden lg:inline">{t("nav.admin")}</span>
                       </Button>
                     </TooltipTrigger>
                     <TooltipContent>
-                      Panneau d&apos;administration
+                      {t("nav.admin.tip")}
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -1018,7 +952,7 @@ export default function Home() {
               <button
                 onClick={openShop}
                 className="inline-flex items-center gap-1 rounded-full border border-amber-300 bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-700 transition-all hover:scale-105 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-300"
-                aria-label="QuizCoins — ouvrir la boutique"
+                aria-label={t("nav.coins.aria")}
               >
                 <Coins className="h-3.5 w-3.5" />
                 <span className="tabular-nums">
@@ -1036,13 +970,13 @@ export default function Home() {
                     size="icon"
                     className="hidden h-9 w-9 md:inline-flex"
                     onClick={() => setSearchOpen(true)}
-                    aria-label="Rechercher"
+                    aria-label={t("nav.search")}
                     data-tour="search-btn"
                   >
                     <Search className="h-4.5 w-4.5" />
                   </Button>
                 </TooltipTrigger>
-                <TooltipContent>Rechercher (Ctrl+K)</TooltipContent>
+                <TooltipContent>{t("nav.search.tip")}</TooltipContent>
               </Tooltip>
             </TooltipProvider>
 
@@ -1079,68 +1013,45 @@ export default function Home() {
               </Tooltip>
             </TooltipProvider>
 
-            {/* Help - restart onboarding tour — FIX2: hidden on < md (also in the mobile Sheet). */}
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="hidden h-9 w-9 md:inline-flex"
-                    onClick={() => restartOnboarding()}
-                    aria-label="Aide / Visite guidée"
+            {/* V5 — Menu « ⋯ » : les réglages secondaires (aide, préférences,
+                Premium) sont regroupés pour garder le header épuré. */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="hidden h-9 w-9 md:inline-flex"
+                  aria-label={t("nav.settings")}
+                >
+                  <MoreHorizontal className="h-4.5 w-4.5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuItem
+                  className="gap-2 cursor-pointer"
+                  onClick={() => restartOnboarding()}
+                >
+                  <HelpCircle className="h-4 w-4" />
+                  {t("nav.help")}
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="gap-2 cursor-pointer"
+                  onClick={() => setSettingsOpen(true)}
+                >
+                  <Settings className="h-4 w-4" />
+                  {t("nav.settings")}
+                </DropdownMenuItem>
+                {status === "authenticated" && !isAdmin && (
+                  <DropdownMenuItem
+                    className="gap-2 cursor-pointer text-amber-600 focus:text-amber-700"
+                    onClick={() => setPricingOpen(true)}
                   >
-                    <HelpCircle className="h-4.5 w-4.5" />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>Revoir la visite guidée</TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-
-            {/* Settings — FIX2: hidden on < md (also in the mobile Sheet). */}
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="hidden h-9 w-9 md:inline-flex"
-                    onClick={() => setSettingsOpen(true)}
-                    aria-label={t("nav.settings")}
-                  >
-                    <Settings className="h-4.5 w-4.5" />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>{t("nav.settings")}</TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-
-            {/* User menu — always visible (auth state is essential). */}
-            <UserMenuButton />
-
-            {/* Upgrade to Premium — only for authenticated non-admin users.
-                FIX2: hidden on < md (also in the mobile Sheet). */}
-            {status === "authenticated" && !isAdmin && (
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="hidden gap-1.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:opacity-90 md:inline-flex"
-                      onClick={() => setPricingOpen(true)}
-                      aria-label="Passer à Premium"
-                    >
-                      <Crown className="h-4 w-4" />
-                      <span className="hidden lg:inline">Améliorer</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    Passer à Premium — illimité, IA, certificats
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            )}
+                    <Crown className="h-4 w-4" />
+                    {t("nav.premium")}
+                  </DropdownMenuItem>
+                )}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
 
@@ -1170,7 +1081,7 @@ export default function Home() {
                 <span>QuizExam BF</span>
               </SheetTitle>
               <SheetDescription className="sr-only">
-                Navigation principale
+                {t("land.menu.aria")}
               </SheetDescription>
             </SheetHeader>
 
@@ -1180,7 +1091,7 @@ export default function Home() {
               <div className="space-y-1">
                 <MobileNavItem
                   icon={<House className="h-5 w-5" />}
-                  label="Accueil"
+                  label={t("nav.home")}
                   active={view === "home"}
                   onClick={() => {
                     goHome();
@@ -1189,7 +1100,7 @@ export default function Home() {
                 />
                 <MobileNavItem
                   icon={<LayoutDashboard className="h-5 w-5" />}
-                  label="Tableau de bord"
+                  label={t("nav.dashboard")}
                   active={view === "dashboard"}
                   onClick={() => {
                     openDashboard();
@@ -1198,7 +1109,7 @@ export default function Home() {
                 />
                 <MobileNavItem
                   icon={<LibraryBig className="h-5 w-5" />}
-                  label="Banques de questions"
+                  label={t("menu.banks")}
                   active={view === "bank-list"}
                   onClick={() => {
                     openBanks();
@@ -1207,7 +1118,7 @@ export default function Home() {
                 />
                 <MobileNavItem
                   icon={<Sparkles className="h-5 w-5 text-violet-600" />}
-                  label="Examen IA"
+                  label={t("nav.aiExam")}
                   highlight="violet"
                   onClick={() => {
                     setCustomExamOpen(true);
@@ -1217,55 +1128,55 @@ export default function Home() {
               </div>
 
               {/* Social */}
-              <MobileNavSection title="👥 Communauté" />
+              <MobileNavSection title={`👥 ${t("nav.section.community")}`} />
               <div className="space-y-1">
-                <MobileNavItem icon={<Users className="h-5 w-5" />} label="Communauté" active={view === "social"} onClick={() => { openSocial(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<UsersRound className="h-5 w-5" />} label="Groupes" active={view === "groups"} onClick={() => { openGroups(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Mail className="h-5 w-5 text-violet-600" />} label="Messagerie" active={view === "messages"} onClick={() => { openMessages(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<UserCheck className="h-5 w-5 text-emerald-600" />} label="Mentorat" active={view === "mentorship"} onClick={() => { openMentorship(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Radio className="h-5 w-5 text-rose-600" />} label="Sessions live" active={view === "live-sessions"} onClick={() => { openLiveSessions(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Newspaper className="h-5 w-5" />} label="Blog" active={view === "blog"} onClick={() => { openBlog(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Swords className="h-5 w-5 text-rose-600" />} label="Compétition" active={view === "competition"} onClick={() => { openCompetition(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Users className="h-5 w-5" />} label={t("menu.social")} active={view === "social"} onClick={() => { openSocial(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<UsersRound className="h-5 w-5" />} label={t("menu.groups")} active={view === "groups"} onClick={() => { openGroups(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Mail className="h-5 w-5 text-violet-600" />} label={t("menu.messages")} active={view === "messages"} onClick={() => { openMessages(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<UserCheck className="h-5 w-5 text-emerald-600" />} label={t("menu.mentorship")} active={view === "mentorship"} onClick={() => { openMentorship(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Radio className="h-5 w-5 text-rose-600" />} label={t("menu.liveSessions")} active={view === "live-sessions"} onClick={() => { openLiveSessions(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Newspaper className="h-5 w-5" />} label={t("menu.blog")} active={view === "blog"} onClick={() => { openBlog(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Swords className="h-5 w-5 text-rose-600" />} label={t("menu.competition")} active={view === "competition"} onClick={() => { openCompetition(); setMobileNavOpen(false); }} />
               </div>
 
               {/* Apprentissage */}
-              <MobileNavSection title="📚 Apprentissage" />
+              <MobileNavSection title={`📚 ${t("nav.section.revise")}`} />
               <div className="space-y-1">
-                <MobileNavItem icon={<MessagesSquare className="h-5 w-5" />} label="Forum" active={view === "forum"} onClick={() => { openForum(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<BookOpen className="h-5 w-5 text-emerald-600" />} label="Wiki" active={view === "wiki"} onClick={() => { openWiki(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Sparkles className="h-5 w-5 text-violet-600" />} label="Parcours IA" active={view === "study-plan"} onClick={() => { openStudyPlan(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<GraduationCap className="h-5 w-5 text-violet-600" />} label="Examen officiel" active={view === "official-exam"} onClick={() => { openOfficialExam(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<FileText className="h-5 w-5 text-emerald-600" />} label="Fiches de révision" active={view === "study-sheet"} onClick={() => { openStudySheet(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<CalendarCheck className="h-5 w-5 text-amber-600" />} label="Parcours 30 jours" active={view === "guided-path"} onClick={() => { openGuidedPath(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Brain className="h-5 w-5" />} label="Révision espacée" active={view === "spaced-repetition"} onClick={() => { openSpacedRepetition(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<MessagesSquare className="h-5 w-5" />} label={t("menu.forum")} active={view === "forum"} onClick={() => { openForum(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<BookOpen className="h-5 w-5 text-emerald-600" />} label={t("menu.wiki")} active={view === "wiki"} onClick={() => { openWiki(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Sparkles className="h-5 w-5 text-violet-600" />} label={t("menu.aiPath")} active={view === "study-plan"} onClick={() => { openStudyPlan(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<GraduationCap className="h-5 w-5 text-violet-600" />} label={t("menu.officialExam")} active={view === "official-exam"} onClick={() => { openOfficialExam(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<FileText className="h-5 w-5 text-emerald-600" />} label={t("menu.studySheets")} active={view === "study-sheet"} onClick={() => { openStudySheet(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<CalendarCheck className="h-5 w-5 text-amber-600" />} label={t("menu.thirtyDays")} active={view === "guided-path"} onClick={() => { openGuidedPath(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Brain className="h-5 w-5" />} label={t("menu.spacedRepetition")} active={view === "spaced-repetition"} onClick={() => { openSpacedRepetition(); setMobileNavOpen(false); }} />
               </div>
 
               {/* Progression */}
-              <MobileNavSection title="🏆 Progression" />
+              <MobileNavSection title={`🏆 ${t("nav.section.progress")}`} />
               <div className="space-y-1">
-                <MobileNavItem icon={<Trophy className="h-5 w-5" />} label="Classement" active={view === "leaderboard"} onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Award className="h-5 w-5" />} label="Succès" active={view === "achievements"} onClick={() => { openAchievements(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Target className="h-5 w-5 text-amber-600" />} label="Quêtes" active={view === "quests"} onClick={() => { openQuests(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<TreePalm className="h-5 w-5 text-emerald-600" />} label="Arbre de compétences" active={view === "skill-tree"} onClick={() => { openSkillTree(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<ShoppingBag className="h-5 w-5 text-violet-600" />} label="Boutique" active={view === "shop"} onClick={() => { openShop(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Crown className="h-5 w-5 text-amber-600" />} label="Ligues" active={view === "leaderboard"} onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Trophy className="h-5 w-5" />} label={t("menu.leaderboard")} active={view === "leaderboard"} onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Award className="h-5 w-5" />} label={t("menu.achievements")} active={view === "achievements"} onClick={() => { openAchievements(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Target className="h-5 w-5 text-amber-600" />} label={t("menu.quests")} active={view === "quests"} onClick={() => { openQuests(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<TreePalm className="h-5 w-5 text-emerald-600" />} label={t("menu.skillTree")} active={view === "skill-tree"} onClick={() => { openSkillTree(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<ShoppingBag className="h-5 w-5 text-violet-600" />} label={t("menu.shop")} active={view === "shop"} onClick={() => { openShop(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<Crown className="h-5 w-5 text-amber-600" />} label={t("menu.leagues")} active={view === "leaderboard"} onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
               </div>
 
               {/* Autres */}
-              <MobileNavSection title="ℹ️ Autres" />
+              <MobileNavSection title={`ℹ️ ${t("menu.about")}`} />
               <div className="space-y-1">
                 <MobileNavItem icon={<Info className="h-5 w-5" />} label={t("nav.about")} active={view === "about"} onClick={() => { openAbout(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<CalendarDays className="h-5 w-5" />} label="Événements" active={view === "events"} onClick={() => { openEvents(); setMobileNavOpen(false); }} />
+                <MobileNavItem icon={<CalendarDays className="h-5 w-5" />} label={t("menu.events")} active={view === "events"} onClick={() => { openEvents(); setMobileNavOpen(false); }} />
               </div>
 
               {/* Admin (admin only) */}
               {isAdmin && (
                 <>
-                  <MobileNavSection title="Administration" />
+                  <MobileNavSection title={t("nav.section.admin")} />
                   <div className="space-y-1">
                     <MobileNavItem
                       icon={<ShieldCheck className="h-5 w-5 text-amber-600" />}
-                      label="Panneau d'administration"
+                      label={t("nav.section.admin") + " — " + t("nav.admin")}
                       active={view === "admin"}
                       onClick={() => {
                         openAdmin();
@@ -1277,11 +1188,11 @@ export default function Home() {
               )}
 
               {/* Utilities (search, settings, help, premium) */}
-              <MobileNavSection title="Réglages" />
+              <MobileNavSection title={t("nav.section.settings")} />
               <div className="space-y-1">
                 <MobileNavItem
                   icon={<Search className="h-5 w-5" />}
-                  label="Rechercher"
+                  label={t("nav.search")}
                   onClick={() => {
                     setSearchOpen(true);
                     setMobileNavOpen(false);
@@ -1289,7 +1200,7 @@ export default function Home() {
                 />
                 <MobileNavItem
                   icon={<Bell className="h-5 w-5" />}
-                  label={`Notifications${unreadCount > 0 ? ` (${unreadCount > 9 ? "9+" : unreadCount})` : ""}`}
+                  label={`${t("nav.notifications")}${unreadCount > 0 ? ` (${unreadCount > 9 ? "9+" : unreadCount})` : ""}`}
                   onClick={() => {
                     setNotifOpen(true);
                     setMobileNavOpen(false);
@@ -1305,7 +1216,7 @@ export default function Home() {
                 />
                 <MobileNavItem
                   icon={<HelpCircle className="h-5 w-5" />}
-                  label="Aide / Visite guidée"
+                  label={t("nav.help")}
                   onClick={() => {
                     restartOnboarding();
                     setMobileNavOpen(false);
@@ -1314,7 +1225,7 @@ export default function Home() {
                 {status === "authenticated" && !isAdmin && (
                   <MobileNavItem
                     icon={<Crown className="h-5 w-5 text-amber-600" />}
-                    label="Passer à Premium"
+                    label={t("nav.premium.aria")}
                     highlight="amber"
                     onClick={() => {
                       setPricingOpen(true);
@@ -1423,10 +1334,10 @@ export default function Home() {
                 <button
                   onClick={() => setApiDocsOpen(true)}
                   className="inline-flex items-center gap-1 hover:text-emerald-600"
-                  aria-label="Documentation API"
+                  aria-label={t("footer.apiDocs")}
                 >
                   <Code2 className="h-3 w-3" />
-                  API Docs
+                  {t("footer.apiDocs")}
                 </button>
               </p>
             </div>
@@ -1437,7 +1348,7 @@ export default function Home() {
               className="inline-flex items-center gap-1 hover:text-emerald-600"
             >
               <Code2 className="h-3 w-3" />
-              API Docs
+              {t("footer.apiDocs")}
             </button>
             <span aria-hidden="true">·</span>
             <button
@@ -1445,7 +1356,7 @@ export default function Home() {
               className="inline-flex items-center gap-1 hover:text-amber-600"
             >
               <Crown className="h-3 w-3" />
-              Tarifs
+              {t("footer.pricing")}
             </button>
             <span aria-hidden="true">·</span>
             <button

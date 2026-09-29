@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useQuizStore } from "@/shared/stores/quiz-store";
+import { useTranslation } from "@/lib/use-translation";
 import { GoogleButton } from "@/components/quiz/google-button";
 import {
   LogIn,
@@ -56,15 +57,6 @@ import {
 
 type AuthMode = "login" | "signup";
 
-/**
- * Shown when next-auth returns no result at all — i.e. the credentials
- * callback crashed server-side (typically: database unreachable or schema
- * out of sync). Much more actionable than the former "Réponse
- * d'authentification vide."
- */
-const SERVER_AUTH_ERROR =
-  "Erreur côté serveur pendant l'authentification (base de données). Rechargez la page ; si le problème persiste, l'administrateur doit synchroniser la base (GET /api/admin/db-migrate).";
-
 export function AuthDialog({
   open,
   onOpenChange,
@@ -86,6 +78,11 @@ export function AuthDialog({
   const [referralCode, setReferralCode] = useState(initialReferralCode ?? "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { t } = useTranslation();
+
+  // Message when next-auth returns no result at all — i.e. the credentials
+  // callback crashed server-side (database unreachable / schema out of sync).
+  const SERVER_AUTH_ERROR = t("auth.error.server");
 
   // If a referral code is provided later (e.g. via URL param after mount),
   // update the field and switch to signup mode so the user can complete it.
@@ -120,14 +117,14 @@ export function AuthDialog({
         });
         const data = await res.json();
         if (!res.ok)
-          throw new Error(data.error || "Échec de l'inscription.");
+          throw new Error(data.error || t("auth.error.signupFailed"));
         const result = await signIn("credentials", {
           email,
           password,
           redirect: false,
         });
         if (result?.error)
-          throw new Error("Inscription réussie mais connexion échouée. Essayez de vous connecter manuellement.");
+          throw new Error(t("auth.error.loginAfterSignup"));
         if (!result)
           throw new Error(SERVER_AUTH_ERROR);
         onOpenChange(false);
@@ -139,7 +136,7 @@ export function AuthDialog({
           redirect: false,
         });
         if (result?.error) {
-          throw new Error("Email ou mot de passe incorrect.");
+          throw new Error(t("auth.error.invalid"));
         }
         if (!result) {
           throw new Error(SERVER_AUTH_ERROR);
@@ -148,7 +145,7 @@ export function AuthDialog({
         reset();
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Une erreur est survenue.");
+      setError(err instanceof Error ? err.message : t("common.error"));
     } finally {
       setLoading(false);
     }
@@ -172,10 +169,10 @@ export function AuthDialog({
     >
       <DialogContent className="max-h-[92vh] max-w-[95vw] gap-0 overflow-y-auto p-0 sm:max-w-md">
         <DialogTitle className="sr-only">
-          {mode === "login" ? "Connexion à QuizExam BF" : "Créer un compte QuizExam BF"}
+          {mode === "login" ? t("auth.login.title") : t("auth.signup.title")}
         </DialogTitle>
         <DialogDescription className="sr-only">
-          Connectez-vous ou créez un compte gratuit pour accéder à la plateforme.
+          {t("auth.dialog.desc")}
         </DialogDescription>
 
         {/* ---- Brand header (gradient band + floating shapes) ---- */}
@@ -201,24 +198,22 @@ export function AuthDialog({
                   QuizExam <span className="text-gradient-gold">BF</span>
                 </p>
                 <p className="text-[11px] text-blue-100/80">
-                  {mode === "login"
-                    ? "Content de vous revoir !"
-                    : "Rejoignez la communauté 2026"}
+                  {mode === "login" ? t("auth.login.sub") : t("auth.signup.sub")}
                 </p>
               </div>
             </div>
             <ul className="mt-4 flex flex-wrap gap-1.5">
               <li className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-medium text-blue-50 backdrop-blur-sm">
                 <Sparkles className="h-3 w-3 text-amber-300" />
-                Examen IA
+                {t("auth.chip.ai")}
               </li>
               <li className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-medium text-blue-50 backdrop-blur-sm">
                 <Trophy className="h-3 w-3 text-amber-300" />
-                Classements
+                {t("auth.chip.boards")}
               </li>
               <li className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-medium text-blue-50 backdrop-blur-sm">
                 <WifiOff className="h-3 w-3 text-amber-300" />
-                Hors ligne
+                {t("auth.chip.offline")}
               </li>
             </ul>
           </div>
@@ -229,12 +224,12 @@ export function AuthDialog({
           <div
             className="grid grid-cols-2 rounded-2xl border border-slate-200 bg-white p-1 shadow-lg shadow-blue-900/5"
             role="tablist"
-            aria-label="Connexion ou inscription"
+            aria-label={t("auth.tabs.aria")}
           >
             {(
               [
-                { value: "login", label: "Connexion", icon: LogIn },
-                { value: "signup", label: "Inscription", icon: UserPlus },
+                { value: "login", label: t("auth.tab.login"), icon: LogIn },
+                { value: "signup", label: t("auth.tab.signup"), icon: UserPlus },
               ] as const
             ).map((tab) => {
               const active = mode === tab.value;
@@ -282,13 +277,13 @@ export function AuthDialog({
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <IconField
                     id="login-email"
-                    label="Email"
+                    label={t("auth.field.email")}
                     icon={<Mail className="h-4 w-4" />}
                   >
                     <Input
                       id="login-email"
                       type="email"
-                      placeholder="vous@exemple.com"
+                      placeholder={t("auth.field.emailPlaceholder")}
                       className="border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -298,7 +293,7 @@ export function AuthDialog({
                   </IconField>
                   <IconField
                     id="login-password"
-                    label="Mot de passe"
+                    label={t("auth.field.password")}
                     icon={<Lock className="h-4 w-4" />}
                     suffix={
                       <button
@@ -307,7 +302,7 @@ export function AuthDialog({
                         onClick={() => setShowPassword((v) => !v)}
                         className="text-slate-400 transition-colors hover:text-slate-600"
                         aria-label={
-                          showPassword ? "Masquer le mot de passe" : "Afficher le mot de passe"
+                          showPassword ? t("auth.hidePassword") : t("auth.showPassword")
                         }
                       >
                         {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
@@ -317,7 +312,7 @@ export function AuthDialog({
                     <Input
                       id="login-password"
                       type={showPassword ? "text" : "password"}
-                      placeholder="••••••••"
+                      placeholder={t("auth.field.passwordPlaceholder")}
                       className="border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
@@ -326,7 +321,7 @@ export function AuthDialog({
                     />
                   </IconField>
 
-                  {error && <ErrorAlert message={error} />}
+                  {error && <ErrorAlert message={error} showDiagnostic={error === SERVER_AUTH_ERROR} />}
 
                   <Button
                     type="submit"
@@ -338,20 +333,20 @@ export function AuthDialog({
                     ) : (
                       <LogIn className="h-4 w-4" />
                     )}
-                    Se connecter
+                    {t("auth.login.button")}
                   </Button>
                 </form>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <IconField
                     id="signup-name"
-                    label="Nom complet"
+                    label={t("auth.field.name")}
                     icon={<User className="h-4 w-4" />}
                   >
                     <Input
                       id="signup-name"
                       type="text"
-                      placeholder="Votre nom"
+                      placeholder={t("auth.field.namePlaceholder")}
                       className="border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
@@ -361,13 +356,13 @@ export function AuthDialog({
                   </IconField>
                   <IconField
                     id="signup-email"
-                    label="Email"
+                    label={t("auth.field.email")}
                     icon={<Mail className="h-4 w-4" />}
                   >
                     <Input
                       id="signup-email"
                       type="email"
-                      placeholder="vous@exemple.com"
+                      placeholder={t("auth.field.emailPlaceholder")}
                       className="border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -377,7 +372,7 @@ export function AuthDialog({
                   </IconField>
                   <IconField
                     id="signup-password"
-                    label="Mot de passe"
+                    label={t("auth.field.password")}
                     icon={<Lock className="h-4 w-4" />}
                     suffix={
                       <button
@@ -386,7 +381,7 @@ export function AuthDialog({
                         onClick={() => setShowPassword((v) => !v)}
                         className="text-slate-400 transition-colors hover:text-slate-600"
                         aria-label={
-                          showPassword ? "Masquer le mot de passe" : "Afficher le mot de passe"
+                          showPassword ? t("auth.hidePassword") : t("auth.showPassword")
                         }
                       >
                         {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
@@ -396,7 +391,7 @@ export function AuthDialog({
                     <Input
                       id="signup-password"
                       type={showPassword ? "text" : "password"}
-                      placeholder="Min. 6 caractères"
+                      placeholder={t("auth.field.passwordMin")}
                       className="border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
@@ -412,7 +407,7 @@ export function AuthDialog({
                       className="flex items-center gap-1.5 text-xs text-slate-500"
                     >
                       <Gift className="h-3.5 w-3.5 text-orange-500" />
-                      Code de parrainage <span className="font-normal">(optionnel)</span>
+                      {t("auth.referral")} <span className="font-normal">{t("auth.referral.optional")}</span>
                     </Label>
                     <Input
                       id="signup-referral"
@@ -426,7 +421,7 @@ export function AuthDialog({
                     />
                   </div>
 
-                  {error && <ErrorAlert message={error} />}
+                  {error && <ErrorAlert message={error} showDiagnostic={error === SERVER_AUTH_ERROR} />}
 
                   <Button
                     type="submit"
@@ -438,7 +433,7 @@ export function AuthDialog({
                     ) : (
                       <UserPlus className="h-4 w-4" />
                     )}
-                    Créer mon compte
+                    {t("auth.signup.button")}
                   </Button>
                 </form>
               )}
@@ -446,13 +441,13 @@ export function AuthDialog({
           </AnimatePresence>
 
           {/* ---- Separator + Google ---- */}
-          <div className="relative py-4" role="separator" aria-label="ou">
+          <div className="relative py-4" role="separator" aria-label={t("auth.or")}>
             <div className="absolute inset-0 flex items-center" aria-hidden="true">
               <span className="w-full border-t border-slate-200" />
             </div>
             <span className="relative flex justify-center">
               <span className="bg-white px-3 text-xs uppercase tracking-wider text-slate-400">
-                ou
+                {t("auth.or")}
               </span>
             </span>
           </div>
@@ -460,13 +455,13 @@ export function AuthDialog({
           {mode === "login" ? (
             <GoogleButton onRedirectStart={() => onOpenChange(false)} />
           ) : (
-            <GoogleButton label="S'inscrire avec Google" onRedirectStart={() => onOpenChange(false)} />
+            <GoogleButton label={t("auth.google.signup")} onRedirectStart={() => onOpenChange(false)} />
           )}
 
           <p className="mt-4 text-center text-[11px] leading-relaxed text-slate-400">
             {mode === "login" ? (
               <>
-                Pas encore de compte ?{" "}
+                {t("auth.noAccount")}{" "}
                 <button
                   type="button"
                   className="font-semibold text-blue-600 hover:underline"
@@ -475,12 +470,12 @@ export function AuthDialog({
                     setError(null);
                   }}
                 >
-                  Inscrivez-vous gratuitement
+                  {t("auth.signup.free")}
                 </button>
               </>
             ) : (
               <>
-                Déjà inscrit ?{" "}
+                {t("auth.hasAccount")}{" "}
                 <button
                   type="button"
                   className="font-semibold text-blue-600 hover:underline"
@@ -489,7 +484,7 @@ export function AuthDialog({
                     setError(null);
                   }}
                 >
-                  Connectez-vous
+                  {t("auth.login.link")}
                 </button>
               </>
             )}
@@ -497,7 +492,7 @@ export function AuthDialog({
 
           <p className="mt-3 flex items-center justify-center gap-1 text-center text-[10px] text-slate-400">
             <CheckCircle2 className="h-3 w-3 text-emerald-500" />
-            Gratuit · Sans carte bancaire · Vos données restent les vôtres
+            {t("auth.trust")}
           </p>
         </div>
       </DialogContent>
@@ -533,22 +528,22 @@ function IconField({
   );
 }
 
-function ErrorAlert({ message }: { message: string }) {
+function ErrorAlert({ message, showDiagnostic }: { message: string; showDiagnostic?: boolean }) {
+  const { t } = useTranslation();
   // Erreur serveur (base manquante/hors service) → proposer le diagnostic.
-  const isServerError = message === SERVER_AUTH_ERROR;
   return (
     <Alert variant="destructive" className="py-2">
       <AlertCircle className="h-4 w-4" />
       <AlertDescription className="text-xs">
         {message}
-        {isServerError && (
+        {showDiagnostic && (
           <a
             href="/setup"
             target="_blank"
             rel="noreferrer"
             className="ml-1 inline-flex items-center gap-0.5 font-semibold underline underline-offset-2"
           >
-            Ouvrir le diagnostic <ExternalLink className="inline h-3 w-3" />
+            {t("auth.openDiagnostics")} <ExternalLink className="inline h-3 w-3" />
           </a>
         )}
       </AlertDescription>
@@ -560,6 +555,7 @@ export function UserMenuButton() {
   const { data: session, status } = useSession();
   const [authOpen, setAuthOpen] = useState(false);
   const openProfile = useQuizStore((s) => s.openProfile);
+  const { t } = useTranslation();
 
   if (status === "loading") {
     return (
@@ -578,7 +574,7 @@ export function UserMenuButton() {
           onClick={() => setAuthOpen(true)}
         >
           <LogIn className="h-4 w-4" />
-          <span className="hidden sm:inline">Connexion</span>
+          <span className="hidden sm:inline">{t("user.loginCta")}</span>
         </Button>
         <AuthDialog open={authOpen} onOpenChange={setAuthOpen} />
       </>
@@ -598,7 +594,7 @@ export function UserMenuButton() {
             variant="ghost"
             size="sm"
             className="gap-2"
-            aria-label="Menu utilisateur"
+            aria-label={t("user.menu")}
           >
             <span
               className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold text-white shadow-sm ${
@@ -638,7 +634,7 @@ export function UserMenuButton() {
             onClick={() => openProfile()}
           >
             <UserCircle className="h-4 w-4" />
-            Mon profil
+            {t("user.profile")}
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
@@ -646,7 +642,7 @@ export function UserMenuButton() {
             onClick={() => signOut()}
           >
             <LogOut className="h-4 w-4" />
-            Se déconnecter
+            {t("user.logout")}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

@@ -1,60 +1,53 @@
-// Multilingual dictionary for QuizExam BF
-export type Locale = "fr" | "en" | "moor" | "dioula";
+/**
+ * i18n — QuizExam BF multilingual system (V5).
+ *
+ * Three fully translated locales:
+ *  - fr   : Français (default, source of truth)
+ *  - en   : English
+ *  - moor : Mooré (Mossi, Burkina Faso)
+ *
+ * Flat dictionary keys ("nav.home", "auth.error.invalid"…). A missing key in
+ * a non-French dictionary transparently falls back to French, then to the
+ * key itself (so the UI never breaks).
+ *
+ * Usage (client components):
+ *   const { t, locale } = useTranslation();
+ *   t("nav.home");
+ */
+import { fr } from "./i18n-dicts/fr";
+import { en } from "./i18n-dicts/en";
+import { moor } from "./i18n-dicts/moor";
+
+export type Locale = "fr" | "en" | "moor";
 
 export const LOCALES: Array<{ code: Locale; label: string; flag: string }> = [
-  { code: "fr", label: "Français", flag: "🇫🇷" },
+  { code: "fr", label: "Français", flag: "🇧🇫" },
   { code: "en", label: "English", flag: "🇬🇧" },
-  { code: "moor", label: "Moore", flag: "🇧🇫" },
-  { code: "dioula", label: "Dioula", flag: "🇧🇫" },
+  { code: "moor", label: "Mooré", flag: "🇧🇫" },
 ];
 
 type Dict = Record<string, string>;
 
-const fr: Dict = {
-  "app.name": "QuizExam BF",
-  "nav.home": "Accueil",
-  "nav.dashboard": "Tableau de bord",
-  "nav.about": "À propos",
-  "nav.notifications": "Notifications",
-  "nav.settings": "Préférences",
-  "footer.tagline": "Plateforme de Quiz & Examens Blancs — Burkina Faso",
-  "settings.title": "Préférences",
-  "settings.language": "Langue de l'interface",
-  "settings.accessibility": "Accessibilité",
-  "settings.highContrast": "Contraste élevé",
-  "settings.largeText": "Texte agrandi",
-  "settings.reduceMotion": "Réduire les animations",
-  "settings.gamification": "Gamification & Progression",
-  "settings.xp": "Points XP",
-  "settings.level": "Niveau",
-  "settings.streak": "Série de jours",
-  "settings.badges": "Badges débloqués",
-  "gamif.badges": "Badges",
-  "notifs.title": "Notifications",
-  "notifs.empty": "Aucune notification.",
-  "notifs.markRead": "Tout marquer comme lu",
-};
+const DICTS: Record<Locale, Dict> = { fr, en, moor };
 
-const en: Dict = {
-  ...fr,
-  "nav.home": "Home",
-  "nav.dashboard": "Dashboard",
-  "nav.about": "About",
-  "nav.notifications": "Notifications",
-  "nav.settings": "Settings",
-  "settings.title": "Settings",
-  "settings.language": "Interface language",
-  "settings.accessibility": "Accessibility",
-  "settings.highContrast": "High contrast",
-  "settings.largeText": "Large text",
-  "settings.reduceMotion": "Reduce motion",
-};
+/** Normalize any persisted/stored locale value to a valid Locale. */
+export function normalizeLocale(value: unknown): Locale {
+  return value === "en" || value === "moor" ? value : "fr";
+}
 
-const moor: Dict = { ...en, "app.name": "QuizExam BF" };
-const dioula: Dict = { ...en, "app.name": "QuizExam BF" };
+/** BCP-47 tag for <html lang> / date formatting. */
+export function localeTag(locale: Locale | string): string {
+  switch (normalizeLocale(locale)) {
+    case "en":
+      return "en";
+    case "moor":
+      return "mos";
+    default:
+      return "fr";
+  }
+}
 
-export const DICTS: Record<Locale, Dict> = { fr, en, moor, dioula };
-
-export function translate(locale: Locale, key: string): string {
-  return DICTS[locale]?.[key] ?? DICTS.fr[key] ?? key;
+export function translate(locale: Locale | string, key: string): string {
+  const loc = normalizeLocale(locale);
+  return DICTS[loc]?.[key] ?? DICTS.fr[key] ?? key;
 }

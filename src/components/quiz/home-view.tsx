@@ -27,6 +27,7 @@ import {
 import { useSession } from "next-auth/react";
 import { motion } from "framer-motion";
 import { useQuizStore } from "@/shared/stores/quiz-store";
+import { useTranslation } from "@/lib/use-translation";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -98,6 +99,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
     openSpacedRepetition,
   } = useQuizStore();
   const { data: session } = useSession();
+  const { t } = useTranslation();
 
   const [searchOpen, setSearchOpen] = useState(false);
   const [revisionBank, setRevisionBank] = useState<{
@@ -273,39 +275,39 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
   const quickActions = useMemo(
     () => [
       {
-        title: "Examen IA personnalisé",
-        desc: "Génère un examen sur-mesure avec l'IA",
+        title: t("home.qa.aiTitle"),
+        desc: t("home.qa.aiDesc"),
         icon: Target,
         gradient: "from-violet-500 to-purple-600",
         badge: "IA",
         onClick: () => onOpenCustomExam?.(),
       },
       {
-        title: "Mon tableau de bord",
-        desc: "Suivez votre progression et statistiques",
+        title: t("home.qa.dashTitle"),
+        desc: t("home.qa.dashDesc"),
         icon: LayoutDashboard,
         gradient: "from-blue-500 to-sky-600",
         badge: null,
         onClick: openDashboard,
       },
       {
-        title: "Classement",
-        desc: "Comparez-vous aux autres apprenants",
+        title: t("home.qa.leadTitle"),
+        desc: t("home.qa.leadDesc"),
         icon: Crown,
         gradient: "from-amber-500 to-orange-600",
         badge: "Top",
         onClick: openLeaderboard,
       },
       {
-        title: "Révision espacée",
-        desc: "Mémorisez sur le long terme (SM-2)",
+        title: t("home.qa.srTitle"),
+        desc: t("home.qa.srDesc"),
         icon: Repeat,
         gradient: "from-emerald-500 to-teal-600",
         badge: null,
         onClick: openSpacedRepetition,
       },
     ],
-    [onOpenCustomExam, openDashboard, openLeaderboard, openSpacedRepetition],
+    [onOpenCustomExam, openDashboard, openLeaderboard, openSpacedRepetition, t],
   );
 
   /* ----- Stats Bar items — spec: 48 Banques | 3497 Questions | 9 Examens ----- */
@@ -313,7 +315,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
     () => [
       {
         icon: BookOpen,
-        label: "Banques",
+        label: t("home.stat.banks"),
         value: banks.length,
         gradient: "from-emerald-500 to-teal-600",
         iconBg:
@@ -321,7 +323,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
       },
       {
         icon: FileQuestion,
-        label: "Questions",
+        label: t("home.stat.questions"),
         value: totalQuestions,
         gradient: "from-blue-500 to-sky-600",
         iconBg:
@@ -329,14 +331,14 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
       },
       {
         icon: Trophy,
-        label: "Examens",
+        label: t("home.stat.exams"),
         value: exams.length,
         gradient: "from-amber-500 to-orange-600",
         iconBg:
           "bg-amber-100 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300",
       },
     ],
-    [banks.length, totalQuestions, exams.length],
+    [banks.length, totalQuestions, exams.length, t],
   );
 
   return (
@@ -358,33 +360,31 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.5),transparent_50%)]" />
         <div className="relative z-10 max-w-2xl space-y-3 sm:space-y-4">
           <FloatingBadge icon={<Sparkles className="h-3 w-3" />}>
-            Préparation Concours Burkina Faso · 2026
+            {t("brand.slogan")}
           </FloatingBadge>
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
-            <GradientText>Plateforme de Quiz &amp; Examens Blancs</GradientText>
+            <GradientText>{t("home.hero.title")}</GradientText>
           </h1>
           <p className="text-sm text-slate-600 sm:text-base md:text-lg dark:text-slate-300">
-            Révisez avec des banques de questions à choix multiples générées à
-            partir de vos documents de cours. Choisissez votre niveau, votre
-            mode de correction et entraînez-vous comme à l&apos;examen réel.
+            {t("home.hero.subtitle")}
           </p>
           <div className="flex flex-wrap gap-2 pt-1 sm:gap-3 sm:pt-2">
             <div className="glass flex items-center gap-2 rounded-xl px-3 py-1.5 shadow-sm sm:px-4 sm:py-2">
               <BookOpen className="h-4 w-4 text-blue-600 sm:h-5 sm:w-5" />
               <span className="text-xs font-medium text-slate-800 sm:text-sm dark:text-slate-100">
-                {banks.length} banques
+                {banks.length} {t("home.stat.banksUnit")}
               </span>
             </div>
             <div className="glass flex items-center gap-2 rounded-xl px-3 py-1.5 shadow-sm sm:px-4 sm:py-2">
               <FileQuestion className="h-4 w-4 text-orange-500 sm:h-5 sm:w-5" />
               <span className="text-xs font-medium text-slate-800 sm:text-sm dark:text-slate-100">
-                {totalQuestions} questions
+                {totalQuestions} {t("home.stat.questionsUnit")}
               </span>
             </div>
             <div className="glass flex items-center gap-2 rounded-xl px-3 py-1.5 shadow-sm sm:px-4 sm:py-2">
               <Trophy className="h-4 w-4 text-emerald-600 sm:h-5 sm:w-5" />
               <span className="text-xs font-medium text-slate-800 sm:text-sm dark:text-slate-100">
-                {exams.length} examens blancs
+                {exams.length} {t("home.stat.examsUnit")}
               </span>
             </div>
           </div>
@@ -434,7 +434,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
           type="button"
           onClick={openBanks}
           className="group relative flex w-full items-center gap-4 overflow-hidden rounded-2xl border border-blue-200/60 bg-gradient-to-r from-blue-700 via-blue-600 to-emerald-500 p-4 text-left shadow-lg shadow-blue-600/20 transition-transform hover:-translate-y-0.5 sm:gap-5 sm:p-5 dark:border-white/10"
-          aria-label="Ouvrir la bibliothèque de banques de questions"
+          aria-label={t("home.banksAria")}
         >
           <div className="dot-grid-light absolute inset-0 opacity-20" aria-hidden="true" />
           <div
