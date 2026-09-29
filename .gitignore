@@ -56,3 +56,14 @@ start-dev.sh
 tool-results/
 tool-results/
 db/*.db
+
+# === Hygiène du dépôt (P2, 2026-09-30) ===
+# Artefacts lourds qui ne doivent plus être versionnés (le dépôt dépassait
+# 400 Mo). Les captures d'écran / vidéos de démo restent en local, hors git.
+# NB : bun.lock reste versionné (reproductibilité + CI --frozen-lockfile).
+/bun-install.log
+/.bun-install.log
+/*.png
+/screenshots/
+/marketing-video/
+/download/
