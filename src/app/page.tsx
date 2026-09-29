@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, lazy, Suspense, type ReactNode } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useSession } from "next-auth/react";
 import { useQuizStore } from "@/shared/stores/quiz-store";
 import { usePrefs } from "@/shared/stores/prefs-store";
@@ -139,6 +139,8 @@ import {
   TreePalm,
   ShoppingBag,
   Coins,
+  // V6 — Bento mobile nav + radial admin menu.
+  ChevronRight,
   // FIX2 — added Menu icon for the mobile nav (Grid removed in FIX3 in favour of Compass).
   Menu,
   // V5 — overflow menu icon.
@@ -289,63 +291,331 @@ function CoinsBalance() {
   return <>{coins}</>;
 }
 
+/* ============================================================================
+ * V6 — BENTO GRID : la barre latérale mobile devient une grille de tuiles
+ * asymétriques (« Bento Grid »). Chaque fonctionnalité existante garde exactement
+ * la même action (mêmes handlers du quiz-store), seule la disposition change :
+ * des tuiles visuelles distinctes et interactives au lieu d'une liste plate.
+ * Les options d'administration sont extraites du bas du menu et isolées dans
+ * un bouton flottant dédié (AdminRadialMenu) qui déploie un menu radial.
+ * ========================================================================== */
+
+/** Tonalités couleur des tuiles Bento : chip d'icône + dégradé « wide ». */
+const BENTO_TONES: Record<
+  string,
+  { chip: string; wideBg: string }
+> = {
+  blue: {
+    chip: "bg-blue-100 text-blue-600 dark:bg-blue-500/15 dark:text-blue-300",
+    wideBg: "bg-gradient-to-br from-blue-600 via-blue-500 to-emerald-500 shadow-lg shadow-blue-500/25",
+  },
+  emerald: {
+    chip: "bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-300",
+    wideBg: "bg-gradient-to-br from-emerald-600 to-teal-500 shadow-lg shadow-emerald-500/25",
+  },
+  orange: {
+    chip: "bg-orange-100 text-orange-600 dark:bg-orange-500/15 dark:text-orange-300",
+    wideBg: "bg-gradient-to-br from-orange-500 to-amber-400 shadow-lg shadow-orange-500/25",
+  },
+  violet: {
+    chip: "bg-violet-100 text-violet-600 dark:bg-violet-500/15 dark:text-violet-300",
+    wideBg: "bg-gradient-to-br from-violet-600 to-purple-500 shadow-lg shadow-violet-500/25",
+  },
+  rose: {
+    chip: "bg-rose-100 text-rose-600 dark:bg-rose-500/15 dark:text-rose-300",
+    wideBg: "bg-gradient-to-br from-rose-500 to-pink-500 shadow-lg shadow-rose-500/25",
+  },
+  sky: {
+    chip: "bg-sky-100 text-sky-600 dark:bg-sky-500/15 dark:text-sky-300",
+    wideBg: "bg-gradient-to-br from-sky-600 to-blue-500 shadow-lg shadow-sky-500/25",
+  },
+  amber: {
+    chip: "bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300",
+    wideBg: "bg-gradient-to-br from-amber-500 to-orange-500 shadow-lg shadow-amber-500/25",
+  },
+};
+
+type BentoTone = keyof typeof BENTO_TONES;
+
 /**
- * FIX2 — MobileNavItem
+ * V6 — BentoTile : une tuile de la grille Bento du menu mobile.
  *
- * Single navigation entry inside the mobile slide-out Sheet. A full-width
- * button with a 44px minimum touch target, leading icon, label, and active
- * state styling. Clicking calls the supplied onClick (which usually navigates
- * and closes the sheet).
+ * Deux variantes :
+ *  - standard (1 colonne) : chip d'icône colorée + libellé, zoom léger au
+ *    survol, compression au toucher, anneau actif quand la vue correspond.
+ *  - wide (2 colonnes) : tuile majeure avec dégradé de fond, description,
+ *    lueur décorative et flèche — pour les destinations essentielles.
  */
-interface MobileNavItemProps {
+function BentoTile({
+  icon,
+  label,
+  desc,
+  tone = "blue",
+  active,
+  wide,
+  onClick,
+}: {
   icon: ReactNode;
   label: string;
+  desc?: string;
+  tone?: BentoTone;
   active?: boolean;
-  highlight?: "violet" | "amber" | "emerald" | "rose";
+  wide?: boolean;
   onClick: () => void;
-}
-const MobileNavItem = ({ icon, label, active, highlight, onClick }: MobileNavItemProps) => {
-  const highlightCls =
-    highlight === "violet"
-      ? "bg-violet-50 text-violet-700 hover:bg-violet-100 dark:bg-violet-950/40 dark:text-violet-300"
-      : highlight === "amber"
-        ? "bg-amber-50 text-amber-700 hover:bg-amber-100 dark:bg-amber-950/40 dark:text-amber-300"
-        : highlight === "emerald"
-          ? "bg-emerald-50 text-emerald-700 hover:bg-emerald-100 dark:bg-emerald-950/40 dark:text-emerald-300"
-          : highlight === "rose"
-            ? "bg-rose-50 text-rose-700 hover:bg-rose-100 dark:bg-rose-950/40 dark:text-rose-300"
-            : "";
-  const activeCls = active
-    ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300"
-    : "text-foreground hover:bg-muted";
+}) {
+  const toneCls = BENTO_TONES[tone] ?? BENTO_TONES.blue;
+
+  if (wide) {
+    return (
+      <motion.button
+        type="button"
+        onClick={onClick}
+        aria-current={active ? "page" : undefined}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ type: "spring", stiffness: 400, damping: 26 }}
+        className={`group relative col-span-2 flex items-center gap-3 overflow-hidden rounded-2xl p-3.5 text-left text-white ${toneCls.wideBg}`}
+      >
+        {/* Lueurs décoratives (halos diffus) */}
+        <span
+          aria-hidden="true"
+          className="absolute -right-7 -top-9 h-24 w-24 rounded-full bg-white/20 blur-xl transition-transform duration-500 group-hover:scale-125"
+        />
+        <span
+          aria-hidden="true"
+          className="absolute -bottom-10 -left-6 h-20 w-20 rounded-full bg-white/10 blur-lg"
+        />
+        <span className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm">
+          {icon}
+        </span>
+        <span className="relative min-w-0 flex-1">
+          <span className="block truncate font-display text-sm font-bold">
+            {label}
+          </span>
+          {desc && (
+            <span className="block truncate text-[11px] text-white/85">
+              {desc}
+            </span>
+          )}
+        </span>
+        <ChevronRight className="relative h-4 w-4 shrink-0 opacity-70 transition-transform duration-300 group-hover:translate-x-1" />
+      </motion.button>
+    );
+  }
+
   return (
-    <button
+    <motion.button
       type="button"
       onClick={onClick}
-      className={`flex min-h-11 w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm font-medium transition-colors ${
-        highlight ? highlightCls : activeCls
+      aria-current={active ? "page" : undefined}
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 0.94 }}
+      transition={{ type: "spring", stiffness: 420, damping: 26 }}
+      className={`group relative flex min-h-[72px] flex-col items-start justify-between gap-2.5 rounded-2xl border p-3 text-left transition-colors duration-200 ${
+        active
+          ? "border-emerald-300 bg-emerald-50 dark:border-emerald-500/40 dark:bg-emerald-950/30"
+          : "border-border/70 bg-card hover:border-blue-200 hover:bg-blue-50/60 dark:border-white/5 dark:hover:border-blue-500/30 dark:hover:bg-blue-500/5"
       }`}
     >
-      <span className="flex h-5 w-5 shrink-0 items-center justify-center">
+      {active && (
+        <span
+          className="absolute right-2.5 top-2.5 h-1.5 w-1.5 rounded-full bg-emerald-500"
+          aria-hidden="true"
+        />
+      )}
+      <span
+        className={`flex h-9 w-9 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110 ${toneCls.chip}`}
+      >
         {icon}
       </span>
-      <span className="flex-1 truncate">{label}</span>
-    </button>
+      <span className="line-clamp-2 text-xs font-semibold leading-tight text-foreground">
+        {label}
+      </span>
+    </motion.button>
   );
 }
 
 /**
- * FIX2 — MobileNavSection
- *
- * A small section heading used between groups of MobileNavItem entries
- * inside the mobile Sheet (mirrors the DropdownMenuLabel groups in the
- * desktop "Plus" dropdown).
+ * V6 — BentoSectionLabel : petit titre de groupe entre les rangées de tuiles
+ * Bento (équivalent des anciennes sections, plus compact).
  */
-const MobileNavSection = ({ title }: { title: string }) => {
+const BentoSectionLabel = ({
+  title,
+  icon: Icon,
+}: {
+  title: string;
+  icon?: React.ComponentType<{ className?: string }>;
+}) => (
+  <p className="mb-2 mt-5 flex items-center gap-1.5 px-1 text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+    {Icon && <Icon className="h-3 w-3" aria-hidden="true" />}
+    {title}
+  </p>
+);
+
+/**
+ * V6 — AdminRadialMenu : bouton flottant dédié à l'espace administration.
+ *
+ * Toutes les options d'administration (et les réglages associés) sont
+ * extraites du bas du menu et isolées ici. Au clic, le bouton déploie les
+ * actions en arc de cercle (menu radial / orbital) : chaque action est une
+ * bulle qui s'éloigne du bouton avec un ressort et une légère cascade.
+ * Le halo « ping » attire l'œil tant que le menu est fermé.
+ */
+function AdminRadialMenu({
+  openAdmin,
+  openSearch,
+  openNotifications,
+  openSettings,
+  openHelp,
+  unreadCount,
+  onAfterAction,
+}: {
+  openAdmin: () => void;
+  openSearch: () => void;
+  openNotifications: () => void;
+  openSettings: () => void;
+  openHelp: () => void;
+  unreadCount: number;
+  onAfterAction: () => void;
+}) {
+  const { t } = useTranslation();
+  const [open, setOpen] = useState(false);
+
+  // Bulles en arc de cercle : angles en degrés (180° = gauche, 90° = haut).
+  // Le bouton vit en bas à droite du panneau → l'arc balaye le quart
+  // supérieur gauche, toujours à l'intérieur du panneau.
+  const items = [
+    {
+      icon: <ShieldCheck className="h-5 w-5 text-amber-600 dark:text-amber-300" />,
+      label: t("nav.admin"),
+      angle: 180,
+      radius: 104,
+      onClick: openAdmin,
+    },
+    {
+      icon: <Search className="h-5 w-5 text-blue-600 dark:text-blue-300" />,
+      label: t("nav.search"),
+      angle: 157.5,
+      radius: 106,
+      onClick: openSearch,
+    },
+    {
+      icon: <Bell className="h-5 w-5 text-rose-600 dark:text-rose-300" />,
+      label: t("nav.notifications"),
+      angle: 135,
+      radius: 106,
+      onClick: openNotifications,
+      badge: unreadCount,
+    },
+    {
+      icon: <Settings className="h-5 w-5 text-sky-600 dark:text-sky-300" />,
+      label: t("nav.settings"),
+      angle: 112.5,
+      radius: 106,
+      onClick: openSettings,
+    },
+    {
+      icon: <HelpCircle className="h-5 w-5 text-violet-600 dark:text-violet-300" />,
+      label: t("nav.help"),
+      angle: 90,
+      radius: 104,
+      onClick: openHelp,
+    },
+  ];
+
+  const run = (action: () => void) => {
+    action();
+    setOpen(false);
+    onAfterAction();
+  };
+
   return (
-    <p className="mb-1 mt-4 px-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-      {title}
-    </p>
+    <>
+      {/* Voile cliquable : ferme le menu radial au clic extérieur */}
+      <AnimatePresence>
+        {open && (
+          <motion.button
+            key="radial-veil"
+            type="button"
+            aria-label={t("banks.cta.close")}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setOpen(false)}
+            className="absolute inset-0 z-40 cursor-default rounded-none bg-black/25 backdrop-blur-[2px]"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Conteneur ancré sur le bouton flottant (même boîte que le FAB) */}
+      <div className="pointer-events-none absolute bottom-5 right-5 z-50 h-14 w-14">
+        <AnimatePresence>
+          {open &&
+            items.map((item, i) => {
+              const rad = (item.angle * Math.PI) / 180;
+              const dx = Math.cos(rad) * item.radius;
+              const dy = -Math.sin(rad) * item.radius;
+              return (
+                <motion.button
+                  key={item.label}
+                  type="button"
+                  onClick={() => run(item.onClick)}
+                  initial={{ opacity: 0, x: 0, y: 0, scale: 0.3 }}
+                  animate={{ opacity: 1, x: dx, y: dy, scale: 1 }}
+                  exit={{ opacity: 0, x: 0, y: 0, scale: 0.3 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 380,
+                    damping: 24,
+                    delay: open ? i * 0.045 : 0,
+                  }}
+                  whileHover={{ scale: 1.12 }}
+                  whileTap={{ scale: 0.92 }}
+                  className="pointer-events-auto absolute left-1/2 top-1/2 -ml-6 -mt-6 flex h-12 w-12 items-center justify-center"
+                >
+                  <span className="relative flex h-12 w-12 items-center justify-center rounded-full border bg-card shadow-xl ring-1 ring-black/5 dark:ring-white/10">
+                    {item.icon}
+                    {typeof item.badge === "number" && item.badge > 0 && (
+                      <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-rose-500 px-1 text-[10px] font-bold text-white">
+                        {item.badge > 9 ? "9+" : item.badge}
+                      </span>
+                    )}
+                  </span>
+                  <span className="pointer-events-none absolute top-full mt-1 max-w-24 truncate rounded-full border bg-background/95 px-2 py-0.5 text-[10px] font-semibold shadow-sm">
+                    {item.label}
+                  </span>
+                </motion.button>
+              );
+            })}
+        </AnimatePresence>
+      </div>
+
+      {/* Bouton flottant dédié (FAB) */}
+      <motion.button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        whileTap={{ scale: 0.9 }}
+        aria-label={t("nav.admin.menu")}
+        aria-expanded={open}
+        className="absolute bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-orange-600 text-white shadow-xl shadow-orange-500/30 transition-transform hover:scale-105"
+      >
+        {!open && (
+          <span
+            className="absolute inset-0 rounded-full bg-orange-500/40 animate-ping"
+            aria-hidden="true"
+          />
+        )}
+        <motion.span
+          animate={{ rotate: open ? 135 : 0 }}
+          transition={{ type: "spring", stiffness: 400, damping: 22 }}
+          className="relative flex"
+          aria-hidden="true"
+        >
+          <ShieldCheck className="h-6 w-6" />
+        </motion.span>
+      </motion.button>
+    </>
   );
 }
 
@@ -1085,41 +1355,50 @@ export default function Home() {
               </SheetDescription>
             </SheetHeader>
 
-            {/* Scrollable body — all nav items, grouped. */}
+            {/* V6 — Scrollable body : Bento Grid de toutes les destinations.
+                Mêmes actions du quiz-store qu'avant ; seule la disposition
+                change — tuiles asymétriques interactives au lieu d'une liste. */}
             <div className="flex-1 overflow-y-auto p-3">
-              {/* Primary actions */}
-              <div className="space-y-1">
-                <MobileNavItem
+              {/* — Essentiels — */}
+              <div className="grid grid-cols-2 gap-2">
+                <BentoTile
                   icon={<House className="h-5 w-5" />}
                   label={t("nav.home")}
+                  tone="blue"
                   active={view === "home"}
                   onClick={() => {
                     goHome();
                     setMobileNavOpen(false);
                   }}
                 />
-                <MobileNavItem
+                <BentoTile
                   icon={<LayoutDashboard className="h-5 w-5" />}
                   label={t("nav.dashboard")}
+                  tone="emerald"
                   active={view === "dashboard"}
                   onClick={() => {
                     openDashboard();
                     setMobileNavOpen(false);
                   }}
                 />
-                <MobileNavItem
+                <BentoTile
+                  wide
                   icon={<LibraryBig className="h-5 w-5" />}
                   label={t("menu.banks")}
+                  desc={t("menu.banks.desc")}
+                  tone="blue"
                   active={view === "bank-list"}
                   onClick={() => {
                     openBanks();
                     setMobileNavOpen(false);
                   }}
                 />
-                <MobileNavItem
-                  icon={<Sparkles className="h-5 w-5 text-violet-600" />}
+                <BentoTile
+                  wide
+                  icon={<Sparkles className="h-5 w-5" />}
                   label={t("nav.aiExam")}
-                  highlight="violet"
+                  desc={t("menu.aiExam.desc")}
+                  tone="violet"
                   onClick={() => {
                     setCustomExamOpen(true);
                     setMobileNavOpen(false);
@@ -1127,120 +1406,102 @@ export default function Home() {
                 />
               </div>
 
-              {/* Social */}
-              <MobileNavSection title={`👥 ${t("nav.section.community")}`} />
-              <div className="space-y-1">
-                <MobileNavItem icon={<Users className="h-5 w-5" />} label={t("menu.social")} active={view === "social"} onClick={() => { openSocial(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<UsersRound className="h-5 w-5" />} label={t("menu.groups")} active={view === "groups"} onClick={() => { openGroups(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Mail className="h-5 w-5 text-violet-600" />} label={t("menu.messages")} active={view === "messages"} onClick={() => { openMessages(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<UserCheck className="h-5 w-5 text-emerald-600" />} label={t("menu.mentorship")} active={view === "mentorship"} onClick={() => { openMentorship(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Radio className="h-5 w-5 text-rose-600" />} label={t("menu.liveSessions")} active={view === "live-sessions"} onClick={() => { openLiveSessions(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Newspaper className="h-5 w-5" />} label={t("menu.blog")} active={view === "blog"} onClick={() => { openBlog(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Swords className="h-5 w-5 text-rose-600" />} label={t("menu.competition")} active={view === "competition"} onClick={() => { openCompetition(); setMobileNavOpen(false); }} />
+              {/* — Réviser — */}
+              <BentoSectionLabel icon={BookOpen} title={t("nav.section.revise")} />
+              <div className="grid grid-cols-2 gap-2">
+                <BentoTile icon={<Sparkles className="h-5 w-5" />} label={t("menu.aiPath")} tone="violet" active={view === "study-plan"} onClick={() => { openStudyPlan(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<GraduationCap className="h-5 w-5" />} label={t("menu.officialExam")} tone="violet" active={view === "official-exam"} onClick={() => { openOfficialExam(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<CalendarCheck className="h-5 w-5" />} label={t("menu.thirtyDays")} tone="orange" active={view === "guided-path"} onClick={() => { openGuidedPath(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<FileText className="h-5 w-5" />} label={t("menu.studySheets")} tone="emerald" active={view === "study-sheet"} onClick={() => { openStudySheet(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<Brain className="h-5 w-5" />} label={t("menu.spacedRepetition")} tone="sky" active={view === "spaced-repetition"} onClick={() => { openSpacedRepetition(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<BookOpen className="h-5 w-5" />} label={t("menu.wiki")} tone="emerald" active={view === "wiki"} onClick={() => { openWiki(); setMobileNavOpen(false); }} />
               </div>
 
-              {/* Apprentissage */}
-              <MobileNavSection title={`📚 ${t("nav.section.revise")}`} />
-              <div className="space-y-1">
-                <MobileNavItem icon={<MessagesSquare className="h-5 w-5" />} label={t("menu.forum")} active={view === "forum"} onClick={() => { openForum(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<BookOpen className="h-5 w-5 text-emerald-600" />} label={t("menu.wiki")} active={view === "wiki"} onClick={() => { openWiki(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Sparkles className="h-5 w-5 text-violet-600" />} label={t("menu.aiPath")} active={view === "study-plan"} onClick={() => { openStudyPlan(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<GraduationCap className="h-5 w-5 text-violet-600" />} label={t("menu.officialExam")} active={view === "official-exam"} onClick={() => { openOfficialExam(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<FileText className="h-5 w-5 text-emerald-600" />} label={t("menu.studySheets")} active={view === "study-sheet"} onClick={() => { openStudySheet(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<CalendarCheck className="h-5 w-5 text-amber-600" />} label={t("menu.thirtyDays")} active={view === "guided-path"} onClick={() => { openGuidedPath(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Brain className="h-5 w-5" />} label={t("menu.spacedRepetition")} active={view === "spaced-repetition"} onClick={() => { openSpacedRepetition(); setMobileNavOpen(false); }} />
+              {/* — Progresser — */}
+              <BentoSectionLabel icon={Trophy} title={t("nav.section.progress")} />
+              <div className="grid grid-cols-2 gap-2">
+                <BentoTile icon={<Trophy className="h-5 w-5" />} label={t("menu.leaderboard")} tone="orange" active={view === "leaderboard"} onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<Award className="h-5 w-5" />} label={t("menu.achievements")} tone="orange" active={view === "achievements"} onClick={() => { openAchievements(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<Target className="h-5 w-5" />} label={t("menu.quests")} tone="amber" active={view === "quests"} onClick={() => { openQuests(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<TreePalm className="h-5 w-5" />} label={t("menu.skillTree")} tone="emerald" active={view === "skill-tree"} onClick={() => { openSkillTree(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<ShoppingBag className="h-5 w-5" />} label={t("menu.shop")} tone="violet" active={view === "shop"} onClick={() => { openShop(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<Crown className="h-5 w-5" />} label={t("menu.leagues")} tone="orange" onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
               </div>
 
-              {/* Progression */}
-              <MobileNavSection title={`🏆 ${t("nav.section.progress")}`} />
-              <div className="space-y-1">
-                <MobileNavItem icon={<Trophy className="h-5 w-5" />} label={t("menu.leaderboard")} active={view === "leaderboard"} onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Award className="h-5 w-5" />} label={t("menu.achievements")} active={view === "achievements"} onClick={() => { openAchievements(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Target className="h-5 w-5 text-amber-600" />} label={t("menu.quests")} active={view === "quests"} onClick={() => { openQuests(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<TreePalm className="h-5 w-5 text-emerald-600" />} label={t("menu.skillTree")} active={view === "skill-tree"} onClick={() => { openSkillTree(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<ShoppingBag className="h-5 w-5 text-violet-600" />} label={t("menu.shop")} active={view === "shop"} onClick={() => { openShop(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<Crown className="h-5 w-5 text-amber-600" />} label={t("menu.leagues")} active={view === "leaderboard"} onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
+              {/* — Communauté — */}
+              <BentoSectionLabel icon={Users} title={t("nav.section.community")} />
+              <div className="grid grid-cols-2 gap-2">
+                <BentoTile icon={<MessagesSquare className="h-5 w-5" />} label={t("menu.forum")} tone="blue" active={view === "forum"} onClick={() => { openForum(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<Users className="h-5 w-5" />} label={t("menu.social")} tone="emerald" active={view === "social"} onClick={() => { openSocial(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<UsersRound className="h-5 w-5" />} label={t("menu.groups")} tone="emerald" active={view === "groups"} onClick={() => { openGroups(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<Mail className="h-5 w-5" />} label={t("menu.messages")} tone="violet" active={view === "messages"} onClick={() => { openMessages(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<UserCheck className="h-5 w-5" />} label={t("menu.mentorship")} tone="emerald" active={view === "mentorship"} onClick={() => { openMentorship(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<Radio className="h-5 w-5" />} label={t("menu.liveSessions")} tone="rose" active={view === "live-sessions"} onClick={() => { openLiveSessions(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<Newspaper className="h-5 w-5" />} label={t("menu.blog")} tone="blue" active={view === "blog"} onClick={() => { openBlog(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<Swords className="h-5 w-5" />} label={t("menu.competition")} tone="rose" active={view === "competition"} onClick={() => { openCompetition(); setMobileNavOpen(false); }} />
               </div>
 
-              {/* Autres */}
-              <MobileNavSection title={`ℹ️ ${t("menu.about")}`} />
-              <div className="space-y-1">
-                <MobileNavItem icon={<Info className="h-5 w-5" />} label={t("nav.about")} active={view === "about"} onClick={() => { openAbout(); setMobileNavOpen(false); }} />
-                <MobileNavItem icon={<CalendarDays className="h-5 w-5" />} label={t("menu.events")} active={view === "events"} onClick={() => { openEvents(); setMobileNavOpen(false); }} />
+              {/* — Plus — */}
+              <BentoSectionLabel icon={Info} title={t("menu.about")} />
+              <div className="grid grid-cols-2 gap-2">
+                <BentoTile icon={<CalendarDays className="h-5 w-5" />} label={t("menu.events")} tone="violet" active={view === "events"} onClick={() => { openEvents(); setMobileNavOpen(false); }} />
+                <BentoTile icon={<Info className="h-5 w-5" />} label={t("nav.about")} tone="sky" active={view === "about"} onClick={() => { openAbout(); setMobileNavOpen(false); }} />
               </div>
 
-              {/* Admin (admin only) */}
-              {isAdmin && (
+              {/* — Réglages (non-admins uniquement) : pour les admins, ces
+                  options sont extraites dans le menu radial du bouton
+                  flottant « Espace admin » ci-dessous. */}
+              {!isAdmin && (
                 <>
-                  <MobileNavSection title={t("nav.section.admin")} />
-                  <div className="space-y-1">
-                    <MobileNavItem
-                      icon={<ShieldCheck className="h-5 w-5 text-amber-600" />}
-                      label={t("nav.section.admin") + " — " + t("nav.admin")}
-                      active={view === "admin"}
-                      onClick={() => {
-                        openAdmin();
-                        setMobileNavOpen(false);
-                      }}
-                    />
+                  <BentoSectionLabel icon={Settings} title={t("nav.section.settings")} />
+                  <div className="grid grid-cols-2 gap-2">
+                    <BentoTile icon={<Search className="h-5 w-5" />} label={t("nav.search")} tone="blue" onClick={() => { setSearchOpen(true); setMobileNavOpen(false); }} />
+                    <BentoTile icon={<Bell className="h-5 w-5" />} label={`${t("nav.notifications")}${unreadCount > 0 ? ` (${unreadCount > 9 ? "9+" : unreadCount})` : ""}`} tone="rose" onClick={() => { setNotifOpen(true); setMobileNavOpen(false); }} />
+                    <BentoTile icon={<Settings className="h-5 w-5" />} label={t("nav.settings")} tone="sky" onClick={() => { setSettingsOpen(true); setMobileNavOpen(false); }} />
+                    <BentoTile icon={<HelpCircle className="h-5 w-5" />} label={t("nav.help")} tone="violet" onClick={() => { restartOnboarding(); setMobileNavOpen(false); }} />
+                    {status === "authenticated" && (
+                      <BentoTile icon={<Crown className="h-5 w-5" />} label={t("nav.premium.aria")} tone="amber" onClick={() => { setPricingOpen(true); setMobileNavOpen(false); }} />
+                    )}
                   </div>
                 </>
               )}
 
-              {/* Utilities (search, settings, help, premium) */}
-              <MobileNavSection title={t("nav.section.settings")} />
-              <div className="space-y-1">
-                <MobileNavItem
-                  icon={<Search className="h-5 w-5" />}
-                  label={t("nav.search")}
-                  onClick={() => {
-                    setSearchOpen(true);
-                    setMobileNavOpen(false);
-                  }}
-                />
-                <MobileNavItem
-                  icon={<Bell className="h-5 w-5" />}
-                  label={`${t("nav.notifications")}${unreadCount > 0 ? ` (${unreadCount > 9 ? "9+" : unreadCount})` : ""}`}
-                  onClick={() => {
-                    setNotifOpen(true);
-                    setMobileNavOpen(false);
-                  }}
-                />
-                <MobileNavItem
-                  icon={<Settings className="h-5 w-5" />}
-                  label={t("nav.settings")}
-                  onClick={() => {
-                    setSettingsOpen(true);
-                    setMobileNavOpen(false);
-                  }}
-                />
-                <MobileNavItem
-                  icon={<HelpCircle className="h-5 w-5" />}
-                  label={t("nav.help")}
-                  onClick={() => {
-                    restartOnboarding();
-                    setMobileNavOpen(false);
-                  }}
-                />
-                {status === "authenticated" && !isAdmin && (
-                  <MobileNavItem
-                    icon={<Crown className="h-5 w-5 text-amber-600" />}
-                    label={t("nav.premium.aria")}
-                    highlight="amber"
-                    onClick={() => {
-                      setPricingOpen(true);
-                      setMobileNavOpen(false);
-                    }}
-                  />
-                )}
-              </div>
-
-              {/* Compact row of small toggles: dark mode + language */}
               <div className="mt-4 flex items-center gap-2 border-t pt-3">
                 <DarkModeToggle />
                 <LanguageSwitcher />
               </div>
             </div>
+
+            {/* V6 — Espace Admin : toutes les options d'administration sont
+                extraites du bas du menu et isolées dans ce bouton flottant
+                dédié. Au clic, il déploie les actions en menu radial/orbital
+                (bulles en arc de cercle). */}
+            {isAdmin && (
+              <AdminRadialMenu
+                openAdmin={() => {
+                  openAdmin();
+                  setMobileNavOpen(false);
+                }}
+                openSearch={() => {
+                  setSearchOpen(true);
+                  setMobileNavOpen(false);
+                }}
+                openNotifications={() => {
+                  setNotifOpen(true);
+                  setMobileNavOpen(false);
+                }}
+                openSettings={() => {
+                  setSettingsOpen(true);
+                  setMobileNavOpen(false);
+                }}
+                openHelp={() => {
+                  restartOnboarding();
+                  setMobileNavOpen(false);
+                }}
+                unreadCount={unreadCount}
+                onAfterAction={() => setMobileNavOpen(false)}
+              />
+            )}
           </SheetContent>
         </Sheet>
       </header>
