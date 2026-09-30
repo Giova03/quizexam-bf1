@@ -45,6 +45,25 @@ function sha256(value: string): string {
   return createHash("sha256").update(value).digest("hex");
 }
 
+/**
+ * V7 — exécute `fn` ; si Prisma signale que la table PasswordResetToken
+ * n'existe pas encore (déploiement sur une base non migrée), lance la
+ * migration DDL idempotente puis rejoue `fn` une seule fois. Garantit que
+ * la PREMIÈRE demande de réinitialisation s'auto-répare au lieu d'échouer.
+ */
+async function withTokenSchemaRepair<T>(fn: () => Promise<T>): Promise<T> {
+  try {
+    return await fn();
+  } catch (error) {
+    const msg = (error as { message?: string }).message ?? "";
+    if (/does not exist in the current database|P2021|P2022/i.test(msg)) {
+      await runSchemaMigration();
+      return fn();
+    }
+    throw error;
+  }
+}
+
 export async function POST(request: Request) {
   try {
     const { email } = await request.json().catch(() => ({ email: "" }));
@@ -91,17 +110,20 @@ export async function POST(request: Request) {
     }
 
     // Invalide les anciens jetons du compte, puis crée le nouveau.
-    await db.passwordResetToken.updateMany({
-      where: { userId: user.id, usedAt: null },
-      data: { usedAt: new Date() },
-    });
+    // (Autoréparant : crée la table PasswordResetToken si absente.)
     const rawToken = randomBytes(32).toString("hex");
-    await db.passwordResetToken.create({
-      data: {
-        userId: user.id,
-        tokenHash: sha256(rawToken),
-        expiresAt: new Date(Date.now() + TOKEN_TTL_MS),
-      },
+    await withTokenSchemaRepair(async () => {
+      await db.passwordResetToken.updateMany({
+        where: { userId: user.id, usedAt: null },
+        data: { usedAt: new Date() },
+      });
+      await db.passwordResetToken.create({
+        data: {
+          userId: user.id,
+          tokenHash: sha256(rawToken),
+          expiresAt: new Date(Date.now() + TOKEN_TTL_MS),
+        },
+      });
     });
 
     const origin = new URL(request.url).origin;
