@@ -224,7 +224,7 @@ export function SettingsPanel({
           <section className="space-y-2.5">
             <div className="flex items-center gap-2 text-sm font-semibold">
               <Smartphone className="h-4 w-4 text-sky-600" />
-              Application mobile
+              {t("settings.mobileApp")}
             </div>
             <Card className="overflow-hidden border-0 bg-gradient-to-br from-sky-500 to-cyan-600 p-4 text-white shadow-md">
               <div className="flex items-center gap-3">
@@ -265,7 +265,7 @@ export function SettingsPanel({
           <section className="space-y-2.5">
             <div className="flex items-center gap-2 text-sm font-semibold">
               <Palette className="h-4 w-4 text-violet-600" />
-              Accessibilité avancée
+              {t("settings.accessibilityAdvanced")}
             </div>
             <AccessibilityPanel />
           </section>
@@ -276,7 +276,7 @@ export function SettingsPanel({
           <section className="space-y-2.5">
             <div className="flex items-center gap-2 text-sm font-semibold">
               <Smartphone className="h-4 w-4 text-amber-600" />
-              Notifications push
+              {t("settings.push")}
             </div>
             <PushNotificationSettings />
           </section>

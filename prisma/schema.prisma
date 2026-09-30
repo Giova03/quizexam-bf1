@@ -52,6 +52,23 @@ model User {
   studyGroupMembers   StudyGroupMember[]  @relation("StudyGroupMember")
   eventsCreated       Event[]             @relation("EventCreator")
   articles            Article[]           @relation("ArticleAuthor")
+  // V7 — jetons "mot de passe oublié" émis pour ce compte.
+  passwordResetTokens PasswordResetToken[]
+}
+
+// V7 — "Mot de passe oublié" : jetons de réinitialisation à usage unique.
+// Le token brut n'est JAMAIS stocké — seule son empreinte SHA-256 est
+// conservée ; il expire après 1 h et est invalidé dès utilisation.
+model PasswordResetToken {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([userId])
 }
 
 model Document {

@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Trophy, Medal, Crown, Star } from "lucide-react";
+import { useTranslation } from "@/lib/use-translation";
 
 interface LeaderboardEntry {
   id: string;
@@ -22,6 +23,7 @@ interface LeaderboardEntry {
 export function LeaderboardView() {
   const [entries, setEntries] = useState<LeaderboardEntry[]>([]);
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
 
   useEffect(() => {
     fetch("/api/leaderboard")
@@ -46,7 +48,7 @@ export function LeaderboardView() {
       <Card className="flex flex-col items-center gap-3 p-12 text-center">
         <Trophy className="h-12 w-12 text-muted-foreground/50" />
         <p className="text-sm text-muted-foreground">
-          Aucun classement disponible. Soyez le premier à terminer un quiz !
+          {t("lb.empty")}
         </p>
       </Card>
     );
@@ -58,10 +60,10 @@ export function LeaderboardView() {
         <div>
           <h2 className="flex items-center gap-2 text-xl font-bold">
             <Trophy className="h-5 w-5 text-amber-500" />
-            Classement général
+            {t("lb.title")}
           </h2>
           <p className="text-sm text-muted-foreground">
-            Les meilleurs visiteurs basés sur l&apos;XP gagnée
+            {t("lb.subtitle")}
           </p>
         </div>
       </div>
@@ -94,8 +96,8 @@ export function LeaderboardView() {
                 <p className="mt-2 truncate text-sm font-bold">{e.name}</p>
                 <p className="text-xs text-muted-foreground">{e.xp} XP</p>
                 <div className="mt-2 flex justify-center gap-2 text-xs">
-                  <Badge variant="secondary" className="text-[10px]">{e.avgPct}% moy</Badge>
-                  <Badge variant="outline" className="text-[10px]">{e.sessionCount} sess.</Badge>
+                  <Badge variant="secondary" className="text-[10px]">{e.avgPct}% {t("lb.avg")}</Badge>
+                  <Badge variant="outline" className="text-[10px]">{e.sessionCount} {t("lb.sessionsShort")}</Badge>
                 </div>
               </Card>
             );
@@ -143,7 +145,7 @@ export function LeaderboardView() {
                 </div>
                 <div className="hidden sm:block">
                   <p className={`text-sm font-bold ${e.avgPct >= 50 ? "text-emerald-600" : "text-rose-600"}`}>{e.avgPct}%</p>
-                  <p className="text-[10px] text-muted-foreground">{e.sessionCount} sess.</p>
+                  <p className="text-[10px] text-muted-foreground">{e.sessionCount} {t("lb.sessionsShort")}</p>
                 </div>
               </div>
             </div>

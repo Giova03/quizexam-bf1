@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Globe, Check } from "lucide-react";
+import { useTranslation } from "@/lib/use-translation";
 
 /**
  * LanguageSwitcher (V5) — compact globe dropdown listing every fully
@@ -22,6 +23,7 @@ import { Globe, Check } from "lucide-react";
 export function LanguageSwitcher() {
   const locale = usePrefs((s) => s.locale);
   const setLocale = usePrefs((s) => s.setLocale);
+  const { t } = useTranslation();
 
   // Reflect the current language onto <html lang> (a11y + spellcheck).
   useEffect(() => {
@@ -34,7 +36,7 @@ export function LanguageSwitcher() {
         <button
           type="button"
           className="inline-flex h-9 items-center gap-1.5 rounded-full border border-slate-200/80 bg-white/70 px-2.5 text-xs font-semibold text-slate-600 shadow-sm transition-colors hover:bg-blue-50 hover:text-blue-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10"
-          aria-label="Changer de langue / Change language"
+          aria-label={t("nav.language")}
         >
           <Globe className="h-3.5 w-3.5" />
           <span className="uppercase tabular-nums">{locale === "moor" ? "mos" : locale}</span>
@@ -42,7 +44,7 @@ export function LanguageSwitcher() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-52">
         <DropdownMenuLabel className="text-xs text-muted-foreground">
-          Langue · Language · Bʋʋr
+          {t("settings.language")}
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         {LOCALES.map((l) => {

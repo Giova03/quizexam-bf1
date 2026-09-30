@@ -11,6 +11,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/lib/use-translation";
 
 /**
  * EducationLevelSelector (added in E1)
@@ -35,8 +36,12 @@ export type EducationLevel = "TOUS" | "BEPC" | "BAC" | "LICENCE" | "CONCOURS";
 interface LevelOption {
   value: EducationLevel;
   label: string;
+  /** i18n key of the displayed label (translated at render time). */
+  labelKey: string;
   /** Short description shown under the label on wider screens. */
   hint: string;
+  /** i18n key of the short description. */
+  hintKey: string;
   icon: LucideIcon;
   /** Tailwind classes for the active pill (background + text). */
   activeCls: string;
@@ -48,7 +53,9 @@ const LEVEL_OPTIONS: LevelOption[] = [
   {
     value: "TOUS",
     label: "Tous",
+    labelKey: "edu.label.TOUS",
     hint: "Tous niveaux",
+    hintKey: "edu.hint.TOUS",
     icon: Layers,
     activeCls:
       "bg-gradient-to-r from-blue-600 to-sky-500 text-white shadow-md shadow-blue-500/20",
@@ -57,7 +64,9 @@ const LEVEL_OPTIONS: LevelOption[] = [
   {
     value: "BEPC",
     label: "BEPC",
+    labelKey: "edu.label.BEPC",
     hint: "Collège",
+    hintKey: "edu.hint.BEPC",
     icon: School,
     activeCls:
       "bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-md shadow-emerald-500/20",
@@ -66,7 +75,9 @@ const LEVEL_OPTIONS: LevelOption[] = [
   {
     value: "BAC",
     label: "BAC",
+    labelKey: "edu.label.BAC",
     hint: "Lycée",
+    hintKey: "edu.hint.BAC",
     icon: BookOpen,
     activeCls:
       "bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-md shadow-blue-500/20",
@@ -75,7 +86,9 @@ const LEVEL_OPTIONS: LevelOption[] = [
   {
     value: "LICENCE",
     label: "Licence",
+    labelKey: "edu.label.LICENCE",
     hint: "Université",
+    hintKey: "edu.hint.LICENCE",
     icon: Building2,
     activeCls:
       "bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md shadow-orange-500/20",
@@ -84,7 +97,9 @@ const LEVEL_OPTIONS: LevelOption[] = [
   {
     value: "CONCOURS",
     label: "Concours",
+    labelKey: "edu.label.CONCOURS",
     hint: "Examens",
+    hintKey: "edu.hint.CONCOURS",
     icon: Trophy,
     activeCls:
       "bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white shadow-md shadow-violet-500/20",
@@ -150,6 +165,8 @@ export function EducationLevelSelector({
   className,
   variant = "pills",
 }: EducationLevelSelectorProps) {
+  const { t } = useTranslation();
+
   // Pre-compute the effective counts so we don't recompute on every render
   // of each tab button.
   const effectiveCounts = useMemo(() => {
@@ -171,7 +188,7 @@ export function EducationLevelSelector({
           className,
         )}
         role="tablist"
-        aria-label="Niveau d'éducation"
+        aria-label={t("edu.aria")}
       >
         {LEVEL_OPTIONS.map((opt) => {
           const Icon = opt.icon;
@@ -200,7 +217,7 @@ export function EducationLevelSelector({
                 )}
               />
               <span className="text-sm font-semibold leading-none">
-                {opt.label}
+                {t(opt.labelKey)}
               </span>
               <span
                 className={cn(
@@ -208,7 +225,7 @@ export function EducationLevelSelector({
                   isActive ? "text-white/80" : "text-muted-foreground",
                 )}
               >
-                {opt.hint}
+                {t(opt.hintKey)}
               </span>
               <span
                 className={cn(
@@ -235,7 +252,7 @@ export function EducationLevelSelector({
         className,
       )}
       role="tablist"
-      aria-label="Niveau d'éducation"
+      aria-label={t("edu.aria")}
     >
       <div className="inline-flex min-w-full gap-1.5 rounded-2xl border bg-card p-1.5 shadow-sm sm:min-w-0">
         {LEVEL_OPTIONS.map((opt) => {
@@ -249,7 +266,7 @@ export function EducationLevelSelector({
               role="tab"
               aria-selected={isActive}
               onClick={() => onChange(opt.value)}
-              title={`${opt.label} — ${opt.hint}`}
+              title={`${t(opt.labelKey)} — ${t(opt.hintKey)}`}
               className={cn(
                 "group relative flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-3 py-2 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1",
                 isActive
@@ -264,14 +281,14 @@ export function EducationLevelSelector({
                 )}
               />
               <span className="flex flex-col items-start leading-tight">
-                <span className="font-semibold">{opt.label}</span>
+                <span className="font-semibold">{t(opt.labelKey)}</span>
                 <span
                   className={cn(
                     "text-[10px] leading-none",
                     isActive ? "text-white/80" : "text-muted-foreground/70",
                   )}
                 >
-                  {opt.hint}
+                  {t(opt.hintKey)}
                 </span>
               </span>
               <span
@@ -290,6 +307,16 @@ export function EducationLevelSelector({
       </div>
     </div>
   );
+}
+
+/**
+ * Helper: i18n key of the translated label for a given level.
+ * Callers with access to `t` use it to render a localised badge
+ * (e.g. t(educationLevelLabelKey(bank.educationLevel)) ).
+ */
+export function educationLevelLabelKey(level: string): string {
+  const upper = (level || "TOUS").toUpperCase();
+  return `edu.label.${upper}`;
 }
 
 /**

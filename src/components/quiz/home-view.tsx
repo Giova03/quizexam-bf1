@@ -39,6 +39,7 @@ import { StudyReminders } from "./study-reminders";
 import {
   EducationLevelSelector,
   getEducationLevelMeta,
+  educationLevelLabelKey,
   type EducationLevel,
 } from "./education-level-selector";
 import {
@@ -447,17 +448,17 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
           <div className="relative min-w-0 flex-1">
             <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-orange-200">
               <Sparkles className="h-3 w-3" />
-              Nouveau
+              {t("home.library.new")}
             </p>
             <p className="mt-0.5 truncate font-display text-base font-bold text-white sm:text-lg">
-              Bibliothèque de banques, réorganisée
+              {t("home.library.title")}
             </p>
             <p className="mt-0.5 hidden text-xs text-blue-100/80 sm:block">
-              Niveaux, recherche instantanée et tri — trouvez la bonne banque en deux clics.
+              {t("home.library.desc")}
             </p>
           </div>
           <span className="relative inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-white/15 px-3 py-2 text-xs font-semibold text-white backdrop-blur-sm transition-colors group-hover:bg-white/25 sm:text-sm">
-            Explorer
+            {t("banks.cta.explore")}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </span>
         </button>
@@ -467,7 +468,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
       <section className="space-y-3 sm:space-y-4">
         <div className="flex items-center gap-2">
           <Zap className="h-5 w-5 shrink-0 text-blue-600" />
-          <h2 className="text-lg font-semibold sm:text-xl">Actions rapides</h2>
+          <h2 className="text-lg font-semibold sm:text-xl">{t("home.quickActions")}</h2>
         </div>
         <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
           {quickActions.map((action, i) => {
@@ -580,7 +581,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
                     <div className="absolute right-3 top-3">
                       <Badge className="gap-1 bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:from-amber-500 hover:to-orange-600">
                         <TrendingUp className="h-3 w-3" />
-                        Populaire
+                        {t("home.card.popular")}
                       </Badge>
                     </div>
                     <div className="flex items-start gap-3 pt-2">
@@ -604,10 +605,10 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
                             <Badge
                               variant="secondary"
                               className="gap-1"
-                              title={`Niveau : ${lvlMeta.label}`}
+                              title={`${t("dash.level")} : ${t(educationLevelLabelKey(bank.educationLevel ?? "TOUS"))}`}
                             >
                               <LvlIcon className="h-3 w-3" />
-                              {lvlMeta.label}
+                              {t(educationLevelLabelKey(bank.educationLevel ?? "TOUS"))}
                             </Badge>
                           )}
                         </div>
@@ -619,12 +620,12 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
                     <div className="mt-4 flex items-center justify-between gap-2">
                       <span className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
                         <FileQuestion className="h-4 w-4" />
-                        {count} questions
+                        {count} {t("home.stat.questionsUnit")}
                       </span>
                       <span
                         className={`flex items-center gap-1 text-sm font-medium ${color.text} transition-transform group-hover:translate-x-0.5`}
                       >
-                        Explorer
+                        {t("banks.cta.explore")}
                         <ArrowRight className="h-4 w-4" />
                       </span>
                     </div>
@@ -645,7 +646,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
         >
           <Search className="h-4 w-4 text-blue-600" />
           <span className="flex-1 truncate text-left">
-            Rechercher une question...
+            {t("home.search.placeholder")}
           </span>
           <Badge variant="secondary" className="text-[10px]">
             Ctrl+K
@@ -662,17 +663,17 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
           <div className="flex items-center gap-2">
             <BookOpen className="h-5 w-5 shrink-0 text-blue-600" />
             <h2 className="text-lg font-semibold sm:text-xl">
-              Banques de questions
+              {t("menu.banks")}
             </h2>
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="secondary" className="gap-1">
               <Filter className="h-3 w-3" />
-              {visibleBanks.length} affichées
+              {visibleBanks.length} {t("home.banks.shown")}
             </Badge>
             <Badge variant="outline" className="gap-1">
               <FileQuestion className="h-3 w-3" />
-              {visibleQuestions} questions
+              {visibleQuestions} {t("home.stat.questionsUnit")}
             </Badge>
           </div>
         </div>
@@ -692,9 +693,9 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
           </div>
         ) : visibleBanks.length === 0 ? (
           <Card className="glass p-6 text-center text-muted-foreground sm:p-8">
-            Aucune banque de questions pour le niveau{" "}
-            <strong>{getEducationLevelMeta(level).label}</strong>. Choisissez un
-            autre niveau ou revenez à « Tous ».
+            {t("home.banks.emptyPre")}{" "}
+            <strong>{t(educationLevelLabelKey(level))}</strong>.{" "}
+            {t("home.banks.emptyPost")}
           </Card>
         ) : (
           <StaggerList className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -738,10 +739,10 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
                             <Badge
                               variant="secondary"
                               className="gap-1"
-                              title={`Niveau : ${lvlMeta.label}`}
+                              title={`${t("dash.level")} : ${t(educationLevelLabelKey(bank.educationLevel ?? "TOUS"))}`}
                             >
                               <LvlIcon className="h-3 w-3" />
-                              {lvlMeta.label}
+                              {t(educationLevelLabelKey(bank.educationLevel ?? "TOUS"))}
                             </Badge>
                           )}
                         </div>
@@ -753,7 +754,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
                     <div className="mt-4 flex items-center justify-between gap-2">
                       <span className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
                         <FileQuestion className="h-4 w-4" />
-                        {count} questions
+                        {count} {t("home.stat.questionsUnit")}
                       </span>
                       <div className="flex items-center gap-1">
                         <Button
@@ -769,12 +770,12 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
                           }}
                         >
                           <Layers3 className="h-3 w-3" />
-                          <span className="hidden sm:inline">Réviser</span>
+                          <span className="hidden sm:inline">{t("nav.revise")}</span>
                         </Button>
                         <span
                           className={`flex items-center gap-1 text-sm font-medium ${color.text} transition-transform group-hover:translate-x-0.5`}
                         >
-                          Explorer
+                          {t("banks.cta.explore")}
                           <ArrowRight className="h-4 w-4" />
                         </span>
                       </div>
@@ -792,10 +793,10 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
         <div className="flex items-center justify-between gap-2">
           <div className="flex min-w-0 items-center gap-2">
             <GraduationCap className="h-5 w-5 shrink-0 text-violet-600" />
-            <h2 className="text-lg font-semibold sm:text-xl">Examens blancs</h2>
+            <h2 className="text-lg font-semibold sm:text-xl">{t("home.exams.title")}</h2>
           </div>
           <Badge variant="secondary" className="shrink-0">
-            {exams.length} disponibles
+            {exams.length} {t("home.exams.available")}
           </Badge>
         </div>
 
@@ -807,8 +808,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
           </div>
         ) : exams.length === 0 ? (
           <Card className="glass p-6 text-center text-sm text-muted-foreground sm:p-8">
-            Aucun examen blanc disponible pour le moment. Utilisez l&apos;action
-            « Examen IA » ci-dessus pour générer un examen personnalisé.
+            {t("home.exams.empty")}
           </Card>
         ) : (
           <StaggerList className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -840,7 +840,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
                             variant="outline"
                             className="border-violet-200 text-violet-700 dark:border-violet-800 dark:text-violet-300"
                           >
-                            {count} questions
+                            {count} {t("home.stat.questionsUnit")}
                           </Badge>
                         </div>
                       </div>
@@ -850,7 +850,7 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
                     </p>
                     <div className="mt-4 flex items-center justify-end">
                       <span className="flex items-center gap-1 text-sm font-medium text-violet-700 transition-transform group-hover:translate-x-0.5 dark:text-violet-300">
-                        Démarrer l&apos;examen
+                        {t("home.exams.start")}
                         <ArrowRight className="h-4 w-4" />
                       </span>
                     </div>
@@ -894,6 +894,7 @@ function ProgressSummaryCard({
   progress: ProgressData;
   onContinue: () => void;
 }) {
+  const { t } = useTranslation();
   // XP needed for current level = level * 500.
   // XP needed for next level = (level + 1) * 500.
   // Progress to next level = (xp - (level-1)*500) / 500.
@@ -928,10 +929,10 @@ function ProgressSummaryCard({
             </div>
             <div>
               <h2 className="text-base font-bold sm:text-lg">
-                Votre progression
+                {t("home.progress.title")}
               </h2>
               <p className="text-xs text-muted-foreground">
-                Reprenez là où vous vous êtes arrêté
+                {t("home.progress.subtitle")}
               </p>
             </div>
           </div>
@@ -940,10 +941,10 @@ function ProgressSummaryCard({
           <div className="space-y-1">
             <div className="flex items-center justify-between text-xs">
               <span className="font-medium text-muted-foreground">
-                Niveau {progress.level}
+                {t("dash.level")} {progress.level}
               </span>
               <span className="font-medium text-muted-foreground">
-                Niveau {progress.level + 1}
+                {t("dash.level")} {progress.level + 1}
               </span>
             </div>
             <div className="h-2.5 overflow-hidden rounded-full bg-muted">
@@ -955,7 +956,7 @@ function ProgressSummaryCard({
               />
             </div>
             <p className="text-[11px] text-muted-foreground">
-              {xpIntoLevel} / {xpForNext} XP pour le niveau suivant
+              {xpIntoLevel} / {xpForNext} {t("home.progress.xpToNext")}
             </p>
           </div>
         </div>
@@ -972,21 +973,21 @@ function ProgressSummaryCard({
             />
             <Pill
               icon={TrendingUp}
-              label="Niveau"
+              label={t("dash.level")}
               value={String(progress.level)}
               color="text-emerald-600"
               bg="bg-emerald-50 dark:bg-emerald-950/40"
             />
             <Pill
               icon={Flame}
-              label="Série"
+              label={t("land.hero.statStreak")}
               value={`${progress.streak} j`}
               color="text-rose-600"
               bg="bg-rose-50 dark:bg-rose-950/40"
             />
             <Pill
               icon={Crown}
-              label="Rang"
+              label={t("common.rank")}
               value={
                 progress.rank && progress.totalUsers
                   ? `${progress.rank}/${progress.totalUsers}`
@@ -1000,7 +1001,7 @@ function ProgressSummaryCard({
             onClick={onContinue}
             className="h-11 gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-500/20 hover:opacity-95 sm:h-10"
           >
-            Continuer où vous vous êtes arrêté
+            {t("home.progress.continue")}
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>

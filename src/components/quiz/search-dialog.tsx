@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import { useQuizStore } from "@/shared/stores/quiz-store";
 import { getColor } from "@/lib/types";
+import { useTranslation } from "@/lib/use-translation";
 
 // ---------- Question result type (existing) ----------
 interface SearchResult {
@@ -109,6 +110,7 @@ export function SearchDialog({
   const openBank = useQuizStore((s) => s.openBank);
   const openForum = useQuizStore((s) => s.openForum);
   const openProfile = useQuizStore((s) => s.openProfile);
+  const { t } = useTranslation();
 
   // ---------- Search functions ----------
   const searchQuestions = useCallback(async (q: string) => {
@@ -240,7 +242,7 @@ export function SearchDialog({
       <div className="flex flex-col items-center gap-2 py-12 text-center text-muted-foreground">
         <Search className="h-8 w-8 opacity-50" />
         <p className="text-sm">
-          Tapez au moins 2 caractères pour rechercher
+          {t("search.minChars")}
         </p>
       </div>
     ) : null;
@@ -259,7 +261,7 @@ export function SearchDialog({
         <DialogHeader className="border-b px-4 py-3 sm:px-6">
           <DialogTitle className="flex items-center gap-2 text-base">
             <Search className="h-4 w-4 text-emerald-600" />
-            Recherche globale
+            {t("search.title")}
           </DialogTitle>
         </DialogHeader>
 
@@ -271,14 +273,14 @@ export function SearchDialog({
               autoFocus
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Rechercher questions, banques, sujets, utilisateurs…"
+              placeholder={t("search.placeholder")}
               className="h-10 pl-9 pr-9"
             />
             {query && (
               <button
                 onClick={() => setQuery("")}
                 className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                aria-label="Effacer"
+                aria-label={t("search.clear")}
               >
                 <X className="h-4 w-4" />
               </button>
@@ -300,28 +302,28 @@ export function SearchDialog({
                   className="gap-1.5 data-[state=active]:bg-muted"
                 >
                   <BookOpen className="h-3.5 w-3.5" />
-                  Questions
+                  {t("home.stat.questions")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="banks"
                   className="gap-1.5 data-[state=active]:bg-muted"
                 >
                   <BookOpen className="h-3.5 w-3.5" />
-                  Banques
+                  {t("home.stat.banks")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="forum"
                   className="gap-1.5 data-[state=active]:bg-muted"
                 >
                   <MessageSquare className="h-3.5 w-3.5" />
-                  Forum
+                  {t("menu.forum")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="users"
                   className="gap-1.5 data-[state=active]:bg-muted"
                 >
                   <UserIcon className="h-3.5 w-3.5" />
-                  Utilisateurs
+                  {t("search.tab.users")}
                 </TabsTrigger>
               </TabsList>
             </div>
@@ -333,7 +335,7 @@ export function SearchDialog({
                 {showLoading}
                 {!loading && query.trim().length >= 2 && questions.length === 0 && (
                   <div className="py-12 text-center text-sm text-muted-foreground">
-                    Aucune question trouvée pour &quot;{query}&quot;
+                    {t("search.empty.question")} &quot;{query}&quot;
                   </div>
                 )}
                 {!loading && questions.length > 0 && (
@@ -373,7 +375,7 @@ export function SearchDialog({
                   query.trim().length >= 2 &&
                   banks.length === 0 && (
                     <div className="py-12 text-center text-sm text-muted-foreground">
-                      Aucune banque trouvée pour &quot;{query}&quot;
+                      {t("search.empty.bank")} &quot;{query}&quot;
                     </div>
                   )}
                 {!loading && banks.length > 0 && (
@@ -411,7 +413,7 @@ export function SearchDialog({
                                 {b.description || b.category}
                               </p>
                               <div className="mt-1.5 flex items-center gap-1 text-xs text-emerald-600">
-                                Ouvrir la banque
+                                {t("banks.aria.card")}
                                 <ChevronRight className="h-3 w-3" />
                               </div>
                             </div>
@@ -431,14 +433,14 @@ export function SearchDialog({
                   query.trim().length >= 2 &&
                   forum.length === 0 && (
                     <div className="py-12 text-center text-sm text-muted-foreground">
-                      Aucun sujet trouvé pour &quot;{query}&quot;
+                      {t("search.empty.topic")} &quot;{query}&quot;
                     </div>
                   )}
                 {!loading && forum.length > 0 && (
                   <div className="space-y-2">
-                    {forum.map((t) => (
+                    {forum.map((topic) => (
                       <Card
-                        key={t.id}
+                        key={topic.id}
                         className="cursor-pointer p-3 transition-all hover:border-emerald-400 hover:shadow-sm sm:p-4"
                         onClick={() => {
                           openForum();
@@ -447,27 +449,27 @@ export function SearchDialog({
                       >
                         <div className="flex items-start justify-between gap-2">
                           <p className="line-clamp-2 flex-1 text-sm font-medium">
-                            {t.title}
+                            {topic.title}
                           </p>
                           <Badge
                             variant="outline"
                             className="shrink-0 text-[10px]"
                           >
-                            {t.category}
+                            {topic.category}
                           </Badge>
                         </div>
-                        {t.content && (
+                        {topic.content && (
                           <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">
-                            {t.content}
+                            {topic.content}
                           </p>
                         )}
                         <div className="mt-2 flex items-center gap-3 text-xs text-muted-foreground">
                           <span className="flex items-center gap-1">
                             <MessageSquare className="h-3 w-3" />
-                            {t.repliesCount} réponse
-                            {t.repliesCount > 1 ? "s" : ""}
+                            {topic.repliesCount} {" "}
+                            {topic.repliesCount > 1 ? t("search.replies") : t("search.reply")}
                           </span>
-                          {t.author && <span>· {t.author.name}</span>}
+                          {topic.author && <span>· {topic.author.name}</span>}
                         </div>
                       </Card>
                     ))}
@@ -483,7 +485,7 @@ export function SearchDialog({
                   query.trim().length >= 2 &&
                   users.length === 0 && (
                     <div className="py-12 text-center text-sm text-muted-foreground">
-                      Aucun utilisateur trouvé pour &quot;{query}&quot;
+                      {t("search.empty.user")} &quot;{query}&quot;
                     </div>
                   )}
                 {!loading && users.length > 0 && (
@@ -522,7 +524,7 @@ export function SearchDialog({
                                 {u.name}
                               </p>
                               <p className="text-xs text-muted-foreground">
-                                {isAdmin ? "Administrateur" : "Membre"}
+                                {isAdmin ? t("search.role.admin") : t("search.role.member")}
                               </p>
                             </div>
                             <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
@@ -581,7 +583,7 @@ export function SearchDialog({
               </div>
 
               <div className="rounded-lg bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-950/30 dark:text-amber-200">
-                <span className="font-semibold">Explication: </span>
+                <span className="font-semibold">{t("common.explanation")} </span>
                 <span className="break-words">{selected.explanation}</span>
               </div>
 
@@ -597,7 +599,7 @@ export function SearchDialog({
                   }}
                 >
                   <BookOpen className="h-3.5 w-3.5" />
-                  Ouvrir la banque
+                  {t("banks.aria.card")}
                 </Button>
               </div>
             </DialogContent>

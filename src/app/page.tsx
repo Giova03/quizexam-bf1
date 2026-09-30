@@ -68,7 +68,7 @@ import { LanguageSwitcher } from "@/components/quiz/language-switcher";
 import { NotificationsPanel } from "@/components/quiz/notifications-panel";
 import { SettingsPanel } from "@/components/quiz/settings-panel";
 import { PreferencesApplier } from "@/components/quiz/preferences-applier";
-import { UserMenuButton, AuthDialog } from "@/components/quiz/auth-dialog";
+import { UserMenuButton, AuthDialog, ResetPasswordDialog } from "@/components/quiz/auth-dialog";
 import { Chatbot } from "@/components/quiz/chatbot";
 import { SplashScreen } from "@/components/quiz/splash-screen";
 import { InstallPrompt } from "@/components/quiz/install-prompt";
@@ -139,8 +139,16 @@ import {
   TreePalm,
   ShoppingBag,
   Coins,
-  // V6 — Bento mobile nav + radial admin menu.
+  // V7 — Bento mobile nav premium + tour de contrôle admin.
   ChevronRight,
+  Radar,
+  RadioTower,
+  Zap,
+  Flame,
+  Signal,
+  Crosshair,
+  LogIn,
+  X,
   // FIX2 — added Menu icon for the mobile nav (Grid removed in FIX3 in favour of Compass).
   Menu,
   // V5 — overflow menu icon.
@@ -292,59 +300,88 @@ function CoinsBalance() {
 }
 
 /* ============================================================================
- * V6 — BENTO GRID : la barre latérale mobile devient une grille de tuiles
- * asymétriques (« Bento Grid »). Chaque fonctionnalité existante garde exactement
- * la même action (mêmes handlers du quiz-store), seule la disposition change :
- * des tuiles visuelles distinctes et interactives au lieu d'une liste plate.
- * Les options d'administration sont extraites du bas du menu et isolées dans
- * un bouton flottant dédié (AdminRadialMenu) qui déploie un menu radial.
+ * V7 — SIDEBAR PREMIUM : la barre latérale mobile devient un tableau de bord
+ * de navigation animé. Trois couches d'effets :
+ *
+ *   1. ENTRÉE EN CASCADE : chaque tuile descend en ressort avec un délai
+ *      indexé (cascade rapide) à chaque ouverture du panneau.
+ *   2. SPOTLIGHT INTERACTIF : un halo lumineux suit le doigt/curseur sur
+ *      chaque tuile (variables CSS --spot-x/--spot-y).
+ *   3. INDICATEUR ACTIF PARTAGÉ : un anneau framer-motion (layoutId) glisse
+ *      d'une tuile active à l'autre avec un ressort.
+ *
+ * Les actions restent EXACTEMENT les mêmes handlers du quiz-store — seule la
+ * présentation change. L'espace d'administration est isolé dans le bouton
+ * flottant « Tour de contrôle » (AdminControlTower) : un radar animé qui
+ * déploie ses sondes autour d'un écran radar orbital.
  * ========================================================================== */
 
-/** Tonalités couleur des tuiles Bento : chip d'icône + dégradé « wide ». */
+/** Tonalités des tuiles Bento : dégradé du chip, lueur, spotlight, bande. */
 const BENTO_TONES: Record<
   string,
-  { chip: string; wideBg: string }
+  { chip: string; grad: string; wideBg: string; spot: string; shadow: string }
 > = {
   blue: {
     chip: "bg-blue-100 text-blue-600 dark:bg-blue-500/15 dark:text-blue-300",
+    grad: "from-blue-500 to-blue-600",
     wideBg: "bg-gradient-to-br from-blue-600 via-blue-500 to-emerald-500 shadow-lg shadow-blue-500/25",
+    spot: "rgba(59,130,246,0.18)",
+    shadow: "shadow-blue-500/40",
   },
   emerald: {
     chip: "bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-300",
+    grad: "from-emerald-500 to-teal-500",
     wideBg: "bg-gradient-to-br from-emerald-600 to-teal-500 shadow-lg shadow-emerald-500/25",
+    spot: "rgba(16,185,129,0.18)",
+    shadow: "shadow-emerald-500/40",
   },
   orange: {
     chip: "bg-orange-100 text-orange-600 dark:bg-orange-500/15 dark:text-orange-300",
+    grad: "from-orange-500 to-amber-500",
     wideBg: "bg-gradient-to-br from-orange-500 to-amber-400 shadow-lg shadow-orange-500/25",
+    spot: "rgba(249,115,22,0.18)",
+    shadow: "shadow-orange-500/40",
   },
   violet: {
     chip: "bg-violet-100 text-violet-600 dark:bg-violet-500/15 dark:text-violet-300",
+    grad: "from-violet-500 to-purple-500",
     wideBg: "bg-gradient-to-br from-violet-600 to-purple-500 shadow-lg shadow-violet-500/25",
+    spot: "rgba(139,92,246,0.18)",
+    shadow: "shadow-violet-500/40",
   },
   rose: {
     chip: "bg-rose-100 text-rose-600 dark:bg-rose-500/15 dark:text-rose-300",
+    grad: "from-rose-500 to-pink-500",
     wideBg: "bg-gradient-to-br from-rose-500 to-pink-500 shadow-lg shadow-rose-500/25",
+    spot: "rgba(244,63,94,0.18)",
+    shadow: "shadow-rose-500/40",
   },
   sky: {
     chip: "bg-sky-100 text-sky-600 dark:bg-sky-500/15 dark:text-sky-300",
+    grad: "from-sky-500 to-blue-500",
     wideBg: "bg-gradient-to-br from-sky-600 to-blue-500 shadow-lg shadow-sky-500/25",
+    spot: "rgba(14,165,233,0.18)",
+    shadow: "shadow-sky-500/40",
   },
   amber: {
     chip: "bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300",
+    grad: "from-amber-500 to-orange-500",
     wideBg: "bg-gradient-to-br from-amber-500 to-orange-500 shadow-lg shadow-amber-500/25",
+    spot: "rgba(245,158,11,0.18)",
+    shadow: "shadow-amber-500/40",
   },
 };
 
 type BentoTone = keyof typeof BENTO_TONES;
 
 /**
- * V6 — BentoTile : une tuile de la grille Bento du menu mobile.
+ * V7 — BentoTile : tuile premium de la grille Bento.
  *
- * Deux variantes :
- *  - standard (1 colonne) : chip d'icône colorée + libellé, zoom léger au
- *    survol, compression au toucher, anneau actif quand la vue correspond.
- *  - wide (2 colonnes) : tuile majeure avec dégradé de fond, description,
- *    lueur décorative et flèche — pour les destinations essentielles.
+ * - `index` pilote le délai d'entrée (cascade descendante à l'ouverture).
+ * - Le halo « spotlight » suit le pointeur (CSS vars mises à jour au vol).
+ * - Le chip d'icône prend un dégradé plein et pivote légèrement au survol.
+ * - `active` affiche un anneau partagé (layoutId) qui glisse entre tuiles.
+ * - `wide` (2 colonnes) : tuile majeure dégradée avec balayage lumineux.
  */
 function BentoTile({
   icon,
@@ -353,6 +390,7 @@ function BentoTile({
   tone = "blue",
   active,
   wide,
+  index = 0,
   onClick,
 }: {
   icon: ReactNode;
@@ -361,9 +399,21 @@ function BentoTile({
   tone?: BentoTone;
   active?: boolean;
   wide?: boolean;
+  index?: number;
   onClick: () => void;
 }) {
   const toneCls = BENTO_TONES[tone] ?? BENTO_TONES.blue;
+  const entrance = {
+    initial: { opacity: 0, y: 18, scale: 0.94 },
+    animate: { opacity: 1, y: 0, scale: 1 },
+    transition: { type: "spring" as const, stiffness: 380, damping: 26, delay: 0.03 * index },
+  };
+
+  const trackSpotlight = (e: React.PointerEvent<HTMLButtonElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--spot-x", `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty("--spot-y", `${e.clientY - rect.top}px`);
+  };
 
   if (wide) {
     return (
@@ -371,12 +421,20 @@ function BentoTile({
         type="button"
         onClick={onClick}
         aria-current={active ? "page" : undefined}
-        whileHover={{ scale: 1.02 }}
+        onPointerMove={trackSpotlight}
         whileTap={{ scale: 0.97 }}
-        transition={{ type: "spring", stiffness: 400, damping: 26 }}
+        {...entrance}
         className={`group relative col-span-2 flex items-center gap-3 overflow-hidden rounded-2xl p-3.5 text-left text-white ${toneCls.wideBg}`}
       >
-        {/* Lueurs décoratives (halos diffus) */}
+        {/* Balayage lumineux périodique (shine sweep) */}
+        <motion.span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent"
+          initial={{ x: "-140%" }}
+          animate={{ x: "460%" }}
+          transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 3.6, ease: "easeInOut" }}
+        />
+        {/* Lueurs décoratives */}
         <span
           aria-hidden="true"
           className="absolute -right-7 -top-9 h-24 w-24 rounded-full bg-white/20 blur-xl transition-transform duration-500 group-hover:scale-125"
@@ -385,20 +443,24 @@ function BentoTile({
           aria-hidden="true"
           className="absolute -bottom-10 -left-6 h-20 w-20 rounded-full bg-white/10 blur-lg"
         />
-        <span className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm">
+        {/* Spotlight */}
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          style={{
+            backgroundImage: `radial-gradient(150px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(255,255,255,0.28), transparent 70%)`,
+          }}
+        />
+        <span className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/20 shadow-inner backdrop-blur-sm transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
           {icon}
         </span>
         <span className="relative min-w-0 flex-1">
-          <span className="block truncate font-display text-sm font-bold">
-            {label}
-          </span>
-          {desc && (
-            <span className="block truncate text-[11px] text-white/85">
-              {desc}
-            </span>
-          )}
+          <span className="block truncate font-display text-sm font-bold">{label}</span>
+          {desc && <span className="block truncate text-[11px] text-white/85">{desc}</span>}
         </span>
-        <ChevronRight className="relative h-4 w-4 shrink-0 opacity-70 transition-transform duration-300 group-hover:translate-x-1" />
+        <span className="relative flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/15 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-white/25">
+          <ChevronRight className="h-4 w-4" />
+        </span>
       </motion.button>
     );
   }
@@ -408,60 +470,204 @@ function BentoTile({
       type="button"
       onClick={onClick}
       aria-current={active ? "page" : undefined}
-      whileHover={{ scale: 1.04 }}
-      whileTap={{ scale: 0.94 }}
-      transition={{ type: "spring", stiffness: 420, damping: 26 }}
-      className={`group relative flex min-h-[72px] flex-col items-start justify-between gap-2.5 rounded-2xl border p-3 text-left transition-colors duration-200 ${
+      onPointerMove={trackSpotlight}
+      whileHover={{ scale: 1.05, y: -2 }}
+      whileTap={{ scale: 0.93 }}
+      {...entrance}
+      className={`group relative flex min-h-[76px] flex-col items-start justify-between gap-2.5 overflow-hidden rounded-2xl border p-3 text-left transition-[background-color,border-color,box-shadow] duration-200 ${
         active
-          ? "border-emerald-300 bg-emerald-50 dark:border-emerald-500/40 dark:bg-emerald-950/30"
-          : "border-border/70 bg-card hover:border-blue-200 hover:bg-blue-50/60 dark:border-white/5 dark:hover:border-blue-500/30 dark:hover:bg-blue-500/5"
+          ? "border-emerald-300 bg-emerald-50/80 shadow-sm shadow-emerald-500/10 dark:border-emerald-500/40 dark:bg-emerald-950/30"
+          : "border-border/70 bg-card/90 hover:border-blue-200 hover:shadow-md hover:shadow-blue-500/5 dark:border-white/5 dark:hover:border-blue-500/30"
       }`}
     >
+      {/* Halo spotlight suivant le pointeur */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{
+          backgroundImage: `radial-gradient(130px circle at var(--spot-x, 50%) var(--spot-y, 50%), ${toneCls.spot}, transparent 70%)`,
+        }}
+      />
+      {/* Anneau actif partagé : glisse d'une tuile à l'autre (layoutId) */}
       {active && (
-        <span
-          className="absolute right-2.5 top-2.5 h-1.5 w-1.5 rounded-full bg-emerald-500"
+        <motion.span
+          layoutId="bento-active-ring"
+          transition={{ type: "spring", stiffness: 420, damping: 32 }}
+          className="pointer-events-none absolute inset-0 rounded-2xl ring-2 ring-emerald-400/70"
           aria-hidden="true"
         />
       )}
       <span
-        className={`flex h-9 w-9 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110 ${toneCls.chip}`}
+        className={`relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-md transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6 ${toneCls.grad} ${toneCls.shadow}`}
       >
         {icon}
       </span>
-      <span className="line-clamp-2 text-xs font-semibold leading-tight text-foreground">
+      <span className="relative line-clamp-2 text-xs font-semibold leading-tight text-foreground">
         {label}
       </span>
+      {active && (
+        <span
+          className="absolute right-2.5 top-2.5 flex h-2 w-2"
+          aria-hidden="true"
+        >
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+        </span>
+      )}
     </motion.button>
   );
 }
 
 /**
- * V6 — BentoSectionLabel : petit titre de groupe entre les rangées de tuiles
- * Bento (équivalent des anciennes sections, plus compact).
+ * V7 — BentoSectionLabel : titre de section avec filet dégradé.
  */
 const BentoSectionLabel = ({
   title,
   icon: Icon,
+  index = 0,
 }: {
   title: string;
   icon?: React.ComponentType<{ className?: string }>;
+  index?: number;
 }) => (
-  <p className="mb-2 mt-5 flex items-center gap-1.5 px-1 text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-    {Icon && <Icon className="h-3 w-3" aria-hidden="true" />}
-    {title}
-  </p>
+  <motion.div
+    initial={{ opacity: 0, x: -14 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.3, delay: 0.028 * index, ease: "easeOut" }}
+    className="mb-2 mt-5 flex items-center gap-2 px-1"
+  >
+    <span
+      className="h-4 w-1 rounded-full bg-gradient-to-b from-blue-500 to-emerald-400"
+      aria-hidden="true"
+    />
+    {Icon && <Icon className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />}
+    <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+      {title}
+    </p>
+    <span
+      className="ml-1 h-px flex-1 bg-gradient-to-r from-border to-transparent"
+      aria-hidden="true"
+    />
+  </motion.div>
 );
 
 /**
- * V6 — AdminRadialMenu : bouton flottant dédié à l'espace administration.
- *
- * Toutes les options d'administration (et les réglages associés) sont
- * extraites du bas du menu et isolées ici. Au clic, le bouton déploie les
- * actions en arc de cercle (menu radial / orbital) : chaque action est une
- * bulle qui s'éloigne du bouton avec un ressort et une légère cascade.
- * Le halo « ping » attire l'œil tant que le menu est fermé.
+ * V7 — SidebarProfileCard : carte d'identité en haut du menu mobile.
+ * Affiche l'avatar, le nom, le rôle et deux compteurs (pièces, réponses).
+ * Pour un visiteur non connecté, propose un CTA de connexion (même
+ * AuthDialog qu'avant — aucune nouvelle logique d'authentification).
  */
-function AdminRadialMenu({
+function SidebarProfileCard({
+  name,
+  email,
+  isAdmin,
+  coins,
+  answers,
+  onLogin,
+}: {
+  name?: string | null;
+  email?: string | null;
+  isAdmin: boolean;
+  coins: number;
+  answers: number;
+  onLogin: () => void;
+}) {
+  const { t } = useTranslation();
+  const initial = (name ?? email ?? "?").charAt(0).toUpperCase();
+
+  if (!name && !email) {
+    return (
+      <motion.button
+        type="button"
+        onClick={onLogin}
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, ease: "easeOut" }}
+        whileTap={{ scale: 0.98 }}
+        className="group flex w-full items-center gap-3 rounded-2xl border border-blue-200/70 bg-gradient-to-r from-blue-50 via-white to-emerald-50 p-3 text-left dark:border-blue-500/20 dark:from-blue-950/40 dark:via-card dark:to-emerald-950/30"
+      >
+        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-emerald-500 text-white shadow-md shadow-blue-500/25 transition-transform duration-300 group-hover:scale-105">
+          <LogIn className="h-4 w-4" />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-sm font-bold text-foreground">
+            {t("sidebar.profile.guest")}
+          </span>
+          <span className="block text-xs text-muted-foreground">
+            {t("sidebar.profile.signin")}
+          </span>
+        </span>
+        <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1" />
+      </motion.button>
+    );
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+      className="rounded-2xl bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 p-[1.5px] shadow-md shadow-blue-500/15"
+    >
+      <div className="rounded-[calc(1rem-1px)] bg-card p-3">
+        <div className="flex items-center gap-3">
+          <span
+            className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-sm font-bold text-white shadow-md ${
+              isAdmin
+                ? "bg-gradient-to-br from-amber-500 to-orange-600 shadow-orange-500/25"
+                : "bg-gradient-to-br from-blue-500 to-emerald-500 shadow-blue-500/25"
+            }`}
+          >
+            {initial}
+            <span
+              className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-card bg-emerald-400"
+              aria-hidden="true"
+            />
+          </span>
+          <div className="min-w-0 flex-1">
+            <p className="flex items-center gap-1.5 truncate text-sm font-bold text-foreground">
+              {name}
+              {isAdmin && (
+                <span className="rounded bg-amber-100 px-1 py-0.5 text-[9px] font-bold text-amber-700 dark:bg-amber-950 dark:text-amber-300">
+                  ADMIN
+                </span>
+              )}
+            </p>
+            <p className="truncate text-[11px] text-muted-foreground">{email}</p>
+          </div>
+        </div>
+        <div className="mt-2.5 grid grid-cols-2 gap-1.5">
+          <span className="flex items-center justify-center gap-1.5 rounded-lg bg-amber-50 py-1 text-[11px] font-semibold text-amber-700 dark:bg-amber-950/40 dark:text-amber-300">
+            <Coins className="h-3 w-3" />
+            {coins.toLocaleString("fr-FR")}
+            <span className="font-normal opacity-70">{t("sidebar.stat.coins")}</span>
+          </span>
+          <span className="flex items-center justify-center gap-1.5 rounded-lg bg-blue-50 py-1 text-[11px] font-semibold text-blue-700 dark:bg-blue-950/40 dark:text-blue-300">
+            <Zap className="h-3 w-3" />
+            {answers.toLocaleString("fr-FR")}
+            <span className="font-normal opacity-70">{t("sidebar.stat.answers")}</span>
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+/**
+ * V7 — AdminControlTower : bouton flottant « Tour de contrôle ».
+ *
+ * État fermé : un émetteur radar (RadioTower) ceint d'un anneau-sweep conique
+ * en rotation continue et d'un halo ping.
+ *
+ * État ouvert : l'intérieur du panneau se transforme en salle de contrôle —
+ * écran radar (anneaux concentriques + faisceau rotatif + réticule), noyau
+ * central pulsant, et les 5 sondes d'administration disposées en orbite,
+ * reliées au noyau par des lignes SVG qui se dessinent (pathLength).
+ * Chaque sonde conserve EXACTEMENT l'action qu'elle avait dans l'ancien
+ * menu radial (openAdmin / openSearch / openNotifications / openSettings /
+ * openHelp), déclenchée au clic puis refermée (onAfterAction).
+ */
+function AdminControlTower({
   openAdmin,
   openSearch,
   openNotifications,
@@ -481,47 +687,63 @@ function AdminRadialMenu({
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
 
-  // Bulles en arc de cercle : angles en degrés (180° = gauche, 90° = haut).
-  // Le bouton vit en bas à droite du panneau → l'arc balaye le quart
-  // supérieur gauche, toujours à l'intérieur du panneau.
+  // Sondes en orbite : angles répartis uniformément (72° d'écart, départ au
+  // sommet). 90° = haut, sens antihoraire, coordonnées écran (y inversé).
   const items = [
     {
-      icon: <ShieldCheck className="h-5 w-5 text-amber-600 dark:text-amber-300" />,
+      icon: <ShieldCheck className="h-5 w-5" />,
       label: t("nav.admin"),
-      angle: 180,
-      radius: 104,
+      angle: 90,
+      chip: "from-amber-500 to-orange-600",
+      shadow: "shadow-orange-500/40",
       onClick: openAdmin,
     },
     {
-      icon: <Search className="h-5 w-5 text-blue-600 dark:text-blue-300" />,
+      icon: <Search className="h-5 w-5" />,
       label: t("nav.search"),
-      angle: 157.5,
-      radius: 106,
+      angle: 162,
+      chip: "from-blue-500 to-blue-600",
+      shadow: "shadow-blue-500/40",
       onClick: openSearch,
     },
     {
-      icon: <Bell className="h-5 w-5 text-rose-600 dark:text-rose-300" />,
+      icon: <Bell className="h-5 w-5" />,
       label: t("nav.notifications"),
-      angle: 135,
-      radius: 106,
+      angle: 234,
+      chip: "from-rose-500 to-pink-600",
+      shadow: "shadow-rose-500/40",
       onClick: openNotifications,
       badge: unreadCount,
     },
     {
-      icon: <Settings className="h-5 w-5 text-sky-600 dark:text-sky-300" />,
+      icon: <Settings className="h-5 w-5" />,
       label: t("nav.settings"),
-      angle: 112.5,
-      radius: 106,
+      angle: 306,
+      chip: "from-sky-500 to-cyan-600",
+      shadow: "shadow-sky-500/40",
       onClick: openSettings,
     },
     {
-      icon: <HelpCircle className="h-5 w-5 text-violet-600 dark:text-violet-300" />,
+      icon: <HelpCircle className="h-5 w-5" />,
       label: t("nav.help"),
-      angle: 90,
-      radius: 104,
+      angle: 18,
+      chip: "from-violet-500 to-purple-600",
+      shadow: "shadow-violet-500/40",
       onClick: openHelp,
     },
   ];
+
+  const RADIUS = 118;
+
+  // Échap referme la tour de contrôle.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
 
   const run = (action: () => void) => {
     action();
@@ -531,88 +753,232 @@ function AdminRadialMenu({
 
   return (
     <>
-      {/* Voile cliquable : ferme le menu radial au clic extérieur */}
+      {/* ===== Overlay « salle de contrôle » (plein panneau) ===== */}
       <AnimatePresence>
         {open && (
-          <motion.button
-            key="radial-veil"
-            type="button"
-            aria-label={t("banks.cta.close")}
+          <motion.div
+            key="control-tower"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={() => setOpen(false)}
-            className="absolute inset-0 z-40 cursor-default rounded-none bg-black/25 backdrop-blur-[2px]"
-          />
+            transition={{ duration: 0.22 }}
+            className="absolute inset-0 z-50 flex flex-col overflow-hidden rounded-none bg-slate-950/95 backdrop-blur-md"
+            role="dialog"
+            aria-modal="true"
+            aria-label={t("nav.controlTower")}
+          >
+            {/* Trame de fond (grille de points) */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 opacity-[0.13]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(rgba(52,211,153,0.9) 1px, transparent 1.5px)",
+                backgroundSize: "22px 22px",
+              }}
+            />
+
+            {/* ---- Bandeau HUD supérieur ---- */}
+            <motion.div
+              initial={{ opacity: 0, y: -14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.3 }}
+              className="relative flex items-center justify-between border-b border-emerald-400/15 px-4 py-3"
+            >
+              <div className="flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-emerald-300">
+                <Signal className="h-3.5 w-3.5" />
+                {t("nav.controlTower.hud")}
+              </div>
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label={t("banks.cta.close")}
+                className="rounded-lg border border-emerald-400/20 bg-emerald-400/5 p-1.5 text-emerald-300 transition-colors hover:bg-emerald-400/15"
+              >
+                <X className="h-4 w-4" aria-hidden="true" />
+              </button>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.25 }}
+              className="relative flex items-center gap-2 px-4 pt-2 font-mono text-[9px] uppercase tracking-[0.3em] text-emerald-400/60"
+            >
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" />
+                <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              </span>
+              {t("nav.controlTower.status")}
+            </motion.p>
+
+            {/* ---- Écran radar + sondes orbitales ---- */}
+            <div className="relative flex flex-1 items-center justify-center">
+              <div className="relative h-[300px] w-[300px]">
+                {/* Écran radar */}
+                <div
+                  aria-hidden="true"
+                  className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-emerald-400/20"
+                >
+                  <div className="absolute inset-5 rounded-full border border-emerald-400/15" />
+                  <div className="absolute inset-11 rounded-full border border-emerald-400/10" />
+                  {/* Réticule */}
+                  <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-emerald-400/10" />
+                  <div className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-emerald-400/10" />
+                  {/* Faisceau rotatif */}
+                  <motion.div
+                    className="absolute inset-0 rounded-full"
+                    style={{
+                      background:
+                        "conic-gradient(from 0deg, transparent 0deg, transparent 300deg, rgba(52,211,153,0.35) 350deg, rgba(52,211,153,0.55) 358deg, transparent 360deg)",
+                    }}
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 3.4, repeat: Infinity, ease: "linear" }}
+                  />
+                </div>
+
+                {/* Lignes SVG qui relient le noyau aux sondes */}
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 300 300"
+                  className="absolute inset-0 h-full w-full"
+                >
+                  {items.map((item, i) => {
+                    const rad = (item.angle * Math.PI) / 180;
+                    const x2 = 150 + Math.cos(rad) * 96;
+                    const y2 = 150 - Math.sin(rad) * 96;
+                    return (
+                      <motion.line
+                        key={`line-${item.label}`}
+                        x1="150"
+                        y1="150"
+                        x2={x2}
+                        y2={y2}
+                        stroke="rgba(52,211,153,0.35)"
+                        strokeWidth="1"
+                        strokeDasharray="3 3"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ pathLength: 1, opacity: 1 }}
+                        transition={{ delay: 0.35 + i * 0.06, duration: 0.4, ease: "easeOut" }}
+                      />
+                    );
+                  })}
+                </svg>
+
+                {/* Noyau central pulsant */}
+                <motion.div
+                  className="absolute left-1/2 top-1/2 -ml-8 -mt-8"
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.15 }}
+                >
+                  <motion.span
+                    aria-hidden="true"
+                    className="absolute inset-0 rounded-full bg-amber-400/30"
+                    animate={{ scale: [1, 1.7], opacity: [0.6, 0] }}
+                    transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
+                  />
+                  <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-orange-600 text-white shadow-xl shadow-orange-500/50 ring-2 ring-amber-300/40">
+                    <ShieldCheck className="h-7 w-7" />
+                  </span>
+                </motion.div>
+
+                {/* Sondes orbitales */}
+                {items.map((item, i) => {
+                  const rad = (item.angle * Math.PI) / 180;
+                  const dx = Math.cos(rad) * RADIUS;
+                  const dy = -Math.sin(rad) * RADIUS;
+                  return (
+                    <motion.button
+                      key={item.label}
+                      type="button"
+                      onClick={() => run(item.onClick)}
+                      initial={{ opacity: 0, x: 0, y: 0, scale: 0.2 }}
+                      animate={{ opacity: 1, x: dx, y: dy, scale: 1 }}
+                      exit={{ opacity: 0, x: 0, y: 0, scale: 0.2 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 320,
+                        damping: 22,
+                        delay: 0.3 + i * 0.07,
+                      }}
+                      whileHover={{ scale: 1.14 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="group absolute left-1/2 top-1/2 -ml-7 -mt-7 flex h-14 w-14 flex-col items-center"
+                      aria-label={item.label}
+                    >
+                      <span
+                        className={`relative flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-lg ring-1 ring-white/10 ${item.chip} ${item.shadow}`}
+                      >
+                        {item.icon}
+                        {typeof item.badge === "number" && item.badge > 0 && (
+                          <span className="absolute -right-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-slate-950 px-1 text-[10px] font-bold text-emerald-300 ring-1 ring-emerald-400/40">
+                            {item.badge > 9 ? "9+" : item.badge}
+                          </span>
+                        )}
+                      </span>
+                      <span className="pointer-events-none absolute top-full mt-1.5 max-w-24 truncate rounded-full border border-emerald-400/20 bg-slate-950/90 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-emerald-200">
+                        {item.label}
+                      </span>
+                    </motion.button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* ---- Bandeau HUD inférieur ---- */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.55 }}
+              className="relative flex items-center justify-center gap-2 pb-5 font-mono text-[9px] uppercase tracking-[0.28em] text-slate-500"
+            >
+              <Crosshair className="h-3 w-3" />
+              {t("nav.controlTower.hint")}
+            </motion.p>
+          </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Conteneur ancré sur le bouton flottant (même boîte que le FAB) */}
-      <div className="pointer-events-none absolute bottom-5 right-5 z-50 h-14 w-14">
-        <AnimatePresence>
-          {open &&
-            items.map((item, i) => {
-              const rad = (item.angle * Math.PI) / 180;
-              const dx = Math.cos(rad) * item.radius;
-              const dy = -Math.sin(rad) * item.radius;
-              return (
-                <motion.button
-                  key={item.label}
-                  type="button"
-                  onClick={() => run(item.onClick)}
-                  initial={{ opacity: 0, x: 0, y: 0, scale: 0.3 }}
-                  animate={{ opacity: 1, x: dx, y: dy, scale: 1 }}
-                  exit={{ opacity: 0, x: 0, y: 0, scale: 0.3 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 380,
-                    damping: 24,
-                    delay: open ? i * 0.045 : 0,
-                  }}
-                  whileHover={{ scale: 1.12 }}
-                  whileTap={{ scale: 0.92 }}
-                  className="pointer-events-auto absolute left-1/2 top-1/2 -ml-6 -mt-6 flex h-12 w-12 items-center justify-center"
-                >
-                  <span className="relative flex h-12 w-12 items-center justify-center rounded-full border bg-card shadow-xl ring-1 ring-black/5 dark:ring-white/10">
-                    {item.icon}
-                    {typeof item.badge === "number" && item.badge > 0 && (
-                      <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-rose-500 px-1 text-[10px] font-bold text-white">
-                        {item.badge > 9 ? "9+" : item.badge}
-                      </span>
-                    )}
-                  </span>
-                  <span className="pointer-events-none absolute top-full mt-1 max-w-24 truncate rounded-full border bg-background/95 px-2 py-0.5 text-[10px] font-semibold shadow-sm">
-                    {item.label}
-                  </span>
-                </motion.button>
-              );
-            })}
-        </AnimatePresence>
-      </div>
-
-      {/* Bouton flottant dédié (FAB) */}
+      {/* ===== Bouton flottant « émetteur radar » (FAB) ===== */}
       <motion.button
         type="button"
         onClick={() => setOpen((o) => !o)}
         whileTap={{ scale: 0.9 }}
-        aria-label={t("nav.admin.menu")}
+        whileHover={{ scale: 1.06 }}
+        aria-label={t("nav.controlTower")}
         aria-expanded={open}
-        className="absolute bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-orange-600 text-white shadow-xl shadow-orange-500/30 transition-transform hover:scale-105"
+        className="absolute bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-800 via-slate-900 to-black text-emerald-300 shadow-xl shadow-emerald-950/40 ring-1 ring-emerald-400/25 transition-colors"
       >
+        {/* Anneau-sweep conique en rotation */}
+        <motion.span
+          aria-hidden="true"
+          className="absolute inset-1 rounded-xl"
+          style={{
+            background:
+              "conic-gradient(from 0deg, transparent 0deg, transparent 280deg, rgba(52,211,153,0.6) 340deg, transparent 360deg)",
+          }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        />
+        <span
+          aria-hidden="true"
+          className="absolute inset-[3px] rounded-[10px] bg-gradient-to-br from-slate-800 via-slate-900 to-black"
+        />
+        {/* Halo ping quand fermé */}
         {!open && (
           <span
-            className="absolute inset-0 rounded-full bg-orange-500/40 animate-ping"
+            className="absolute inset-0 rounded-2xl bg-emerald-400/20 animate-ping"
             aria-hidden="true"
+            style={{ animationDuration: "2.2s" }}
           />
         )}
         <motion.span
-          animate={{ rotate: open ? 135 : 0 }}
-          transition={{ type: "spring", stiffness: 400, damping: 22 }}
+          animate={{ rotate: open ? 180 : 0, scale: open ? 0.85 : 1 }}
+          transition={{ type: "spring", stiffness: 320, damping: 20 }}
           className="relative flex"
           aria-hidden="true"
         >
-          <ShieldCheck className="h-6 w-6" />
+          {open ? <X className="h-6 w-6" /> : <RadioTower className="h-6 w-6" />}
         </motion.span>
       </motion.button>
     </>
@@ -814,6 +1180,26 @@ export default function Home() {
     return ref && /^[A-Za-z0-9]{4,12}$/.test(ref) ? ref.toUpperCase() : null;
   });
 
+  // V7 — "mot de passe oublié" : lien email (?reset=<token>) → ouvre le
+  // ResetPasswordDialog. Lazy init + nettoyage d'URL comme pour ?ref=.
+  const [resetToken] = useState<string | null>(() => {
+    if (typeof window === "undefined") return null;
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("reset");
+    return token && /^[a-f0-9]{64}$/i.test(token) ? token : null;
+  });
+  const [resetOpen, setResetOpen] = useState<boolean>(!!resetToken);
+  useEffect(() => {
+    if (!resetToken) return;
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.delete("reset");
+      window.history.replaceState({}, "", url.toString());
+    } catch {
+      // ignore (SSR / non-browser)
+    }
+  }, [resetToken]);
+
   // Auto-open the auth dialog when arriving from a referral link so the user
   // immediately sees the prefilled signup form.
   const [authOpen, setAuthOpen] = useState<boolean>(!!prefilledReferral);
@@ -847,6 +1233,9 @@ export default function Home() {
   const unreadCount = usePrefs((s) =>
     s.notifications.filter((n) => !n.read).length
   );
+  // V7 — compteurs de la carte profil de la sidebar mobile.
+  const sidebarCoins = usePrefs((s) => s.quizCoins);
+  const sidebarAnswers = usePrefs((s) => s.totalAnswered);
   const { isOnline } = useOfflineMode();
 
   const isAdmin =
@@ -925,6 +1314,12 @@ export default function Home() {
           onOpenChange={setAuthOpen}
           initialMode={authMode}
           initialReferralCode={prefilledReferral ?? undefined}
+        />
+        {/* V7 — définition du nouveau mot de passe (lien email) */}
+        <ResetPasswordDialog
+          open={resetOpen}
+          onOpenChange={setResetOpen}
+          token={resetToken ?? ""}
         />
       </ErrorBoundary>
     );
@@ -1332,14 +1727,38 @@ export default function Home() {
         <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
           <SheetContent
             side="right"
-            className="flex w-[85vw] max-w-sm flex-col gap-0 p-0"
+            className="relative flex w-[86vw] max-w-sm flex-col gap-0 overflow-hidden p-0"
           >
+            {/* V7 — décor : lueurs aurora + trame de points derrière le contenu */}
+            <div
+              className="pointer-events-none absolute inset-0"
+              aria-hidden="true"
+            >
+              <span className="aurora-blob absolute -left-16 -top-16 h-48 w-48 bg-blue-400/20" />
+              <span
+                className="aurora-blob absolute -bottom-20 -right-14 h-44 w-44 bg-emerald-400/20"
+                style={{ animationDelay: "-8s" }}
+              />
+              <span
+                className="aurora-blob absolute right-10 top-24 h-28 w-28 bg-orange-300/15"
+                style={{ animationDelay: "-14s" }}
+              />
+              <div
+                className="absolute inset-0 opacity-[0.5]"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(var(--border) 0.5px, transparent 0.5px)",
+                  backgroundSize: "18px 18px",
+                }}
+              />
+            </div>
+
             {/* V4 — brand gradient accent strip */}
             <div
-              className="h-1 w-full bg-gradient-to-r from-blue-600 via-emerald-500 to-orange-400"
+              className="relative h-1 w-full bg-gradient-to-r from-blue-600 via-emerald-500 to-orange-400"
               aria-hidden="true"
             />
-            <SheetHeader className="border-b p-4">
+            <SheetHeader className="relative space-y-3 border-b p-4 pb-3">
               <SheetTitle className="flex items-center gap-2">
                 <img
                   src="/logo-quizexam.svg"
@@ -1349,10 +1768,25 @@ export default function Home() {
                   height={32}
                 />
                 <span>QuizExam BF</span>
+                <span
+                  className="ml-auto rounded-full border border-blue-200 bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-700 dark:border-blue-500/30 dark:bg-blue-950/40 dark:text-blue-300"
+                  aria-hidden="true"
+                >
+                  2026
+                </span>
               </SheetTitle>
               <SheetDescription className="sr-only">
                 {t("land.menu.aria")}
               </SheetDescription>
+              {/* V7 — carte profil animée (identité + compteurs) */}
+              <SidebarProfileCard
+                name={session?.user?.name}
+                email={session?.user?.email}
+                isAdmin={isAdmin}
+                coins={sidebarCoins}
+                answers={sidebarAnswers}
+                onLogin={() => setAuthOpen(true)}
+              />
             </SheetHeader>
 
             {/* V6 — Scrollable body : Bento Grid de toutes les destinations.
@@ -1362,6 +1796,7 @@ export default function Home() {
               {/* — Essentiels — */}
               <div className="grid grid-cols-2 gap-2">
                 <BentoTile
+                  index={0}
                   icon={<House className="h-5 w-5" />}
                   label={t("nav.home")}
                   tone="blue"
@@ -1372,6 +1807,7 @@ export default function Home() {
                   }}
                 />
                 <BentoTile
+                  index={1}
                   icon={<LayoutDashboard className="h-5 w-5" />}
                   label={t("nav.dashboard")}
                   tone="emerald"
@@ -1382,6 +1818,7 @@ export default function Home() {
                   }}
                 />
                 <BentoTile
+                  index={2}
                   wide
                   icon={<LibraryBig className="h-5 w-5" />}
                   label={t("menu.banks")}
@@ -1394,6 +1831,7 @@ export default function Home() {
                   }}
                 />
                 <BentoTile
+                  index={3}
                   wide
                   icon={<Sparkles className="h-5 w-5" />}
                   label={t("nav.aiExam")}
@@ -1407,60 +1845,60 @@ export default function Home() {
               </div>
 
               {/* — Réviser — */}
-              <BentoSectionLabel icon={BookOpen} title={t("nav.section.revise")} />
+              <BentoSectionLabel index={4} icon={BookOpen} title={t("nav.section.revise")} />
               <div className="grid grid-cols-2 gap-2">
-                <BentoTile icon={<Sparkles className="h-5 w-5" />} label={t("menu.aiPath")} tone="violet" active={view === "study-plan"} onClick={() => { openStudyPlan(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<GraduationCap className="h-5 w-5" />} label={t("menu.officialExam")} tone="violet" active={view === "official-exam"} onClick={() => { openOfficialExam(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<CalendarCheck className="h-5 w-5" />} label={t("menu.thirtyDays")} tone="orange" active={view === "guided-path"} onClick={() => { openGuidedPath(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<FileText className="h-5 w-5" />} label={t("menu.studySheets")} tone="emerald" active={view === "study-sheet"} onClick={() => { openStudySheet(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<Brain className="h-5 w-5" />} label={t("menu.spacedRepetition")} tone="sky" active={view === "spaced-repetition"} onClick={() => { openSpacedRepetition(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<BookOpen className="h-5 w-5" />} label={t("menu.wiki")} tone="emerald" active={view === "wiki"} onClick={() => { openWiki(); setMobileNavOpen(false); }} />
+                <BentoTile index={5} icon={<Sparkles className="h-5 w-5" />} label={t("menu.aiPath")} tone="violet" active={view === "study-plan"} onClick={() => { openStudyPlan(); setMobileNavOpen(false); }} />
+                <BentoTile index={6} icon={<GraduationCap className="h-5 w-5" />} label={t("menu.officialExam")} tone="violet" active={view === "official-exam"} onClick={() => { openOfficialExam(); setMobileNavOpen(false); }} />
+                <BentoTile index={7} icon={<CalendarCheck className="h-5 w-5" />} label={t("menu.thirtyDays")} tone="orange" active={view === "guided-path"} onClick={() => { openGuidedPath(); setMobileNavOpen(false); }} />
+                <BentoTile index={8} icon={<FileText className="h-5 w-5" />} label={t("menu.studySheets")} tone="emerald" active={view === "study-sheet"} onClick={() => { openStudySheet(); setMobileNavOpen(false); }} />
+                <BentoTile index={9} icon={<Brain className="h-5 w-5" />} label={t("menu.spacedRepetition")} tone="sky" active={view === "spaced-repetition"} onClick={() => { openSpacedRepetition(); setMobileNavOpen(false); }} />
+                <BentoTile index={10} icon={<BookOpen className="h-5 w-5" />} label={t("menu.wiki")} tone="emerald" active={view === "wiki"} onClick={() => { openWiki(); setMobileNavOpen(false); }} />
               </div>
 
               {/* — Progresser — */}
-              <BentoSectionLabel icon={Trophy} title={t("nav.section.progress")} />
+              <BentoSectionLabel index={11} icon={Trophy} title={t("nav.section.progress")} />
               <div className="grid grid-cols-2 gap-2">
-                <BentoTile icon={<Trophy className="h-5 w-5" />} label={t("menu.leaderboard")} tone="orange" active={view === "leaderboard"} onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<Award className="h-5 w-5" />} label={t("menu.achievements")} tone="orange" active={view === "achievements"} onClick={() => { openAchievements(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<Target className="h-5 w-5" />} label={t("menu.quests")} tone="amber" active={view === "quests"} onClick={() => { openQuests(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<TreePalm className="h-5 w-5" />} label={t("menu.skillTree")} tone="emerald" active={view === "skill-tree"} onClick={() => { openSkillTree(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<ShoppingBag className="h-5 w-5" />} label={t("menu.shop")} tone="violet" active={view === "shop"} onClick={() => { openShop(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<Crown className="h-5 w-5" />} label={t("menu.leagues")} tone="orange" onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
+                <BentoTile index={12} icon={<Trophy className="h-5 w-5" />} label={t("menu.leaderboard")} tone="orange" active={view === "leaderboard"} onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
+                <BentoTile index={13} icon={<Award className="h-5 w-5" />} label={t("menu.achievements")} tone="orange" active={view === "achievements"} onClick={() => { openAchievements(); setMobileNavOpen(false); }} />
+                <BentoTile index={14} icon={<Target className="h-5 w-5" />} label={t("menu.quests")} tone="amber" active={view === "quests"} onClick={() => { openQuests(); setMobileNavOpen(false); }} />
+                <BentoTile index={15} icon={<TreePalm className="h-5 w-5" />} label={t("menu.skillTree")} tone="emerald" active={view === "skill-tree"} onClick={() => { openSkillTree(); setMobileNavOpen(false); }} />
+                <BentoTile index={16} icon={<ShoppingBag className="h-5 w-5" />} label={t("menu.shop")} tone="violet" active={view === "shop"} onClick={() => { openShop(); setMobileNavOpen(false); }} />
+                <BentoTile index={17} icon={<Crown className="h-5 w-5" />} label={t("menu.leagues")} tone="orange" onClick={() => { openLeaderboard(); setMobileNavOpen(false); }} />
               </div>
 
               {/* — Communauté — */}
-              <BentoSectionLabel icon={Users} title={t("nav.section.community")} />
+              <BentoSectionLabel index={18} icon={Users} title={t("nav.section.community")} />
               <div className="grid grid-cols-2 gap-2">
-                <BentoTile icon={<MessagesSquare className="h-5 w-5" />} label={t("menu.forum")} tone="blue" active={view === "forum"} onClick={() => { openForum(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<Users className="h-5 w-5" />} label={t("menu.social")} tone="emerald" active={view === "social"} onClick={() => { openSocial(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<UsersRound className="h-5 w-5" />} label={t("menu.groups")} tone="emerald" active={view === "groups"} onClick={() => { openGroups(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<Mail className="h-5 w-5" />} label={t("menu.messages")} tone="violet" active={view === "messages"} onClick={() => { openMessages(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<UserCheck className="h-5 w-5" />} label={t("menu.mentorship")} tone="emerald" active={view === "mentorship"} onClick={() => { openMentorship(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<Radio className="h-5 w-5" />} label={t("menu.liveSessions")} tone="rose" active={view === "live-sessions"} onClick={() => { openLiveSessions(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<Newspaper className="h-5 w-5" />} label={t("menu.blog")} tone="blue" active={view === "blog"} onClick={() => { openBlog(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<Swords className="h-5 w-5" />} label={t("menu.competition")} tone="rose" active={view === "competition"} onClick={() => { openCompetition(); setMobileNavOpen(false); }} />
+                <BentoTile index={19} icon={<MessagesSquare className="h-5 w-5" />} label={t("menu.forum")} tone="blue" active={view === "forum"} onClick={() => { openForum(); setMobileNavOpen(false); }} />
+                <BentoTile index={20} icon={<Users className="h-5 w-5" />} label={t("menu.social")} tone="emerald" active={view === "social"} onClick={() => { openSocial(); setMobileNavOpen(false); }} />
+                <BentoTile index={21} icon={<UsersRound className="h-5 w-5" />} label={t("menu.groups")} tone="emerald" active={view === "groups"} onClick={() => { openGroups(); setMobileNavOpen(false); }} />
+                <BentoTile index={22} icon={<Mail className="h-5 w-5" />} label={t("menu.messages")} tone="violet" active={view === "messages"} onClick={() => { openMessages(); setMobileNavOpen(false); }} />
+                <BentoTile index={23} icon={<UserCheck className="h-5 w-5" />} label={t("menu.mentorship")} tone="emerald" active={view === "mentorship"} onClick={() => { openMentorship(); setMobileNavOpen(false); }} />
+                <BentoTile index={24} icon={<Radio className="h-5 w-5" />} label={t("menu.liveSessions")} tone="rose" active={view === "live-sessions"} onClick={() => { openLiveSessions(); setMobileNavOpen(false); }} />
+                <BentoTile index={25} icon={<Newspaper className="h-5 w-5" />} label={t("menu.blog")} tone="blue" active={view === "blog"} onClick={() => { openBlog(); setMobileNavOpen(false); }} />
+                <BentoTile index={26} icon={<Swords className="h-5 w-5" />} label={t("menu.competition")} tone="rose" active={view === "competition"} onClick={() => { openCompetition(); setMobileNavOpen(false); }} />
               </div>
 
               {/* — Plus — */}
-              <BentoSectionLabel icon={Info} title={t("menu.about")} />
+              <BentoSectionLabel index={27} icon={Info} title={t("menu.about")} />
               <div className="grid grid-cols-2 gap-2">
-                <BentoTile icon={<CalendarDays className="h-5 w-5" />} label={t("menu.events")} tone="violet" active={view === "events"} onClick={() => { openEvents(); setMobileNavOpen(false); }} />
-                <BentoTile icon={<Info className="h-5 w-5" />} label={t("nav.about")} tone="sky" active={view === "about"} onClick={() => { openAbout(); setMobileNavOpen(false); }} />
+                <BentoTile index={28} icon={<CalendarDays className="h-5 w-5" />} label={t("menu.events")} tone="violet" active={view === "events"} onClick={() => { openEvents(); setMobileNavOpen(false); }} />
+                <BentoTile index={29} icon={<Info className="h-5 w-5" />} label={t("nav.about")} tone="sky" active={view === "about"} onClick={() => { openAbout(); setMobileNavOpen(false); }} />
               </div>
 
               {/* — Réglages (non-admins uniquement) : pour les admins, ces
-                  options sont extraites dans le menu radial du bouton
-                  flottant « Espace admin » ci-dessous. */}
+                  options sont extraites dans la Tour de contrôle (bouton
+                  flottant « Espace admin » ci-dessous). */}
               {!isAdmin && (
                 <>
-                  <BentoSectionLabel icon={Settings} title={t("nav.section.settings")} />
+                  <BentoSectionLabel index={30} icon={Settings} title={t("nav.section.settings")} />
                   <div className="grid grid-cols-2 gap-2">
-                    <BentoTile icon={<Search className="h-5 w-5" />} label={t("nav.search")} tone="blue" onClick={() => { setSearchOpen(true); setMobileNavOpen(false); }} />
-                    <BentoTile icon={<Bell className="h-5 w-5" />} label={`${t("nav.notifications")}${unreadCount > 0 ? ` (${unreadCount > 9 ? "9+" : unreadCount})` : ""}`} tone="rose" onClick={() => { setNotifOpen(true); setMobileNavOpen(false); }} />
-                    <BentoTile icon={<Settings className="h-5 w-5" />} label={t("nav.settings")} tone="sky" onClick={() => { setSettingsOpen(true); setMobileNavOpen(false); }} />
-                    <BentoTile icon={<HelpCircle className="h-5 w-5" />} label={t("nav.help")} tone="violet" onClick={() => { restartOnboarding(); setMobileNavOpen(false); }} />
+                    <BentoTile index={31} icon={<Search className="h-5 w-5" />} label={t("nav.search")} tone="blue" onClick={() => { setSearchOpen(true); setMobileNavOpen(false); }} />
+                    <BentoTile index={32} icon={<Bell className="h-5 w-5" />} label={`${t("nav.notifications")}${unreadCount > 0 ? ` (${unreadCount > 9 ? "9+" : unreadCount})` : ""}`} tone="rose" onClick={() => { setNotifOpen(true); setMobileNavOpen(false); }} />
+                    <BentoTile index={33} icon={<Settings className="h-5 w-5" />} label={t("nav.settings")} tone="sky" onClick={() => { setSettingsOpen(true); setMobileNavOpen(false); }} />
+                    <BentoTile index={34} icon={<HelpCircle className="h-5 w-5" />} label={t("nav.help")} tone="violet" onClick={() => { restartOnboarding(); setMobileNavOpen(false); }} />
                     {status === "authenticated" && (
-                      <BentoTile icon={<Crown className="h-5 w-5" />} label={t("nav.premium.aria")} tone="amber" onClick={() => { setPricingOpen(true); setMobileNavOpen(false); }} />
+                      <BentoTile index={35} icon={<Crown className="h-5 w-5" />} label={t("nav.premium.aria")} tone="amber" onClick={() => { setPricingOpen(true); setMobileNavOpen(false); }} />
                     )}
                   </div>
                 </>
@@ -1472,12 +1910,13 @@ export default function Home() {
               </div>
             </div>
 
-            {/* V6 — Espace Admin : toutes les options d'administration sont
+            {/* V7 — Espace Admin : toutes les options d'administration sont
                 extraites du bas du menu et isolées dans ce bouton flottant
-                dédié. Au clic, il déploie les actions en menu radial/orbital
-                (bulles en arc de cercle). */}
+                dédié « Tour de contrôle ». Au clic, le panneau se transforme
+                en salle de contrôle : écran radar animé, faisceau rotatif et
+                sondes d'administration en orbite reliées au noyau. */}
             {isAdmin && (
-              <AdminRadialMenu
+              <AdminControlTower
                 openAdmin={() => {
                   openAdmin();
                   setMobileNavOpen(false);
@@ -1634,6 +2073,13 @@ export default function Home() {
       {/* Panels */}
       <NotificationsPanel open={notifOpen} onOpenChange={setNotifOpen} />
       <SettingsPanel open={settingsOpen} onOpenChange={setSettingsOpen} />
+
+      {/* V7 — définition du nouveau mot de passe (lien email ?reset=) */}
+      <ResetPasswordDialog
+        open={resetOpen}
+        onOpenChange={setResetOpen}
+        token={resetToken ?? ""}
+      />
 
       {/* Custom exam dialog */}
       <CustomExamDialog

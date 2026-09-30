@@ -147,7 +147,7 @@ export function DashboardView() {
       const rows = completed
         .map(
           (s, i) => `<tr><td>${i + 1}</td><td>${s.title}</td><td>${
-            s.mode === "immediate" ? "Immédiate" : "Finale"
+            s.mode === "immediate" ? t("dash.mode.immediate") : t("dash.mode.final")
           }</td><td>${s.score}/${s.totalQuestions}</td><td>${Math.round(
             (s.score / Math.max(1, s.totalQuestions)) * 100
           )}%</td><td>${new Date(
@@ -161,7 +161,7 @@ export function DashboardView() {
         )
         .join("");
       win.document.write(
-        `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Rapport QuizExam BF — ${dateStr}</title>
+        `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>QuizExam BF — ${t("dash.pdf.title")} (${dateStr})</title>
         <style>body{font-family:sans-serif;margin:40px;color:#1a1a1a}
         h1{color:#059669}.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
         .kpi div{border:1px solid #e5e7eb;border-radius:8px;padding:14px;text-align:center}
@@ -171,20 +171,20 @@ export function DashboardView() {
         td{padding:8px;border-bottom:1px solid #e5e7eb}
         .footer{margin-top:40px;border-top:1px solid #e5e7eb;padding-top:12px;font-size:11px;color:#888;text-align:center}
         </style></head><body>
-        <h1>QuizExam BF — Rapport de progression (${dateStr})</h1>
+        <h1>QuizExam BF — ${t("dash.pdf.title")} (${dateStr})</h1>
         <div class="kpi">
-        <div><div class="v">${totalSessions}</div><div class="l">Sessions</div></div>
-        <div><div class="v">${avgScore}%</div><div class="l">Score moyen</div></div>
-        <div><div class="v">${totalAnswered}</div><div class="l">Questions</div></div>
-        <div><div class="v">${successRate}%</div><div class="l">Réussite</div></div>
+        <div><div class="v">${totalSessions}</div><div class="l">${t("dash.sessions")}</div></div>
+        <div><div class="v">${avgScore}%</div><div class="l">${t("common.avgScore")}</div></div>
+        <div><div class="v">${totalAnswered}</div><div class="l">${t("home.stat.questions")}</div></div>
+        <div><div class="v">${successRate}%</div><div class="l">${t("settings.success")}</div></div>
         </div>
-        <h2>Statistiques par quiz</h2>
-        <table><thead><tr><th>Quiz</th><th>Sessions</th><th>Score moyen</th><th>Meilleur score</th></tr></thead><tbody>${
-          quizRows || "<tr><td colspan=4>Aucune donnée</td></tr>"
+        <h2>${t("dash.pdf.perQuiz")}</h2>
+        <table><thead><tr><th>${t("dash.pdf.colQuiz")}</th><th>${t("dash.sessions")}</th><th>${t("common.avgScore")}</th><th>${t("dash.pdf.colBest")}</th></tr></thead><tbody>${
+          quizRows || `<tr><td colspan=4>${t("dash.pdf.noData")}</td></tr>`
         }</tbody></table>
-        <h2>Sessions détaillées</h2>
-        <table><thead><tr><th>#</th><th>Quiz</th><th>Mode</th><th>Score</th><th>%</th><th>Date</th></tr></thead><tbody>${
-          rows || "<tr><td colspan=6>Aucune session</td></tr>"
+        <h2>${t("dash.pdf.detailed")}</h2>
+        <table><thead><tr><th>#</th><th>${t("dash.pdf.colQuiz")}</th><th>${t("dash.pdf.colMode")}</th><th>${t("dash.pdf.colScore")}</th><th>%</th><th>${t("dash.pdf.colDate")}</th></tr></thead><tbody>${
+          rows || `<tr><td colspan=6>${t("dash.pdf.noSession")}</td></tr>`
         }</tbody></table>
         <div class="footer">QuizExam BF — BAMOGO Pingdwendé Giovanni</div>
         <script>window.onload=()=>setTimeout(()=>window.print(),400)</script>
@@ -265,18 +265,18 @@ export function DashboardView() {
             </TabsTrigger>
             <TabsTrigger value="history" className="gap-1.5">
               <Clock className="h-4 w-4" />
-              <span className="hidden sm:inline">Historique</span>
-              <span className="sm:hidden">Hist.</span>
+              <span className="hidden sm:inline">{t("dash.tab.history")}</span>
+              <span className="sm:hidden">{t("dash.tab.historyShort")}</span>
             </TabsTrigger>
             <TabsTrigger value="favorites" className="gap-1.5">
               <Bookmark className="h-4 w-4" />
-              <span className="hidden sm:inline">Favoris</span>
-              <span className="sm:hidden">Fav.</span>
+              <span className="hidden sm:inline">{t("dash.tab.favorites")}</span>
+              <span className="sm:hidden">{t("dash.tab.favoritesShort")}</span>
             </TabsTrigger>
             <TabsTrigger value="ai-tutor" className="gap-1.5">
               <Bot className="h-4 w-4" />
-              <span className="hidden sm:inline">Tuteur IA</span>
-              <span className="sm:hidden">IA</span>
+              <span className="hidden sm:inline">{t("dash.tab.aiTutor")}</span>
+              <span className="sm:hidden">{t("dash.tab.aiShort")}</span>
             </TabsTrigger>
           </TabsList>
         </div>
@@ -289,7 +289,7 @@ export function DashboardView() {
               <div className="flex items-center justify-between">
                 <div className="min-w-0">
                   <p className="text-xs font-medium text-muted-foreground">
-                    Sessions terminées
+                    {t("dash.card.sessionsCompleted")}
                   </p>
                   <p className="mt-1 text-2xl font-bold sm:text-3xl">{totalSessions}</p>
                 </div>
@@ -302,7 +302,7 @@ export function DashboardView() {
               <div className="flex items-center justify-between">
                 <div className="min-w-0">
                   <p className="text-xs font-medium text-muted-foreground">
-                    Score moyen
+                    {t("common.avgScore")}
                   </p>
                   <p className="mt-1 text-2xl font-bold sm:text-3xl">{avgScore}%</p>
                 </div>
@@ -315,7 +315,7 @@ export function DashboardView() {
               <div className="flex items-center justify-between">
                 <div className="min-w-0">
                   <p className="text-xs font-medium text-muted-foreground">
-                    Questions répondues
+                    {t("dash.card.answered")}
                   </p>
                   <p className="mt-1 text-2xl font-bold sm:text-3xl">{totalAnswered}</p>
                 </div>
@@ -328,7 +328,7 @@ export function DashboardView() {
               <div className="flex items-center justify-between">
                 <div className="min-w-0">
                   <p className="text-xs font-medium text-muted-foreground">
-                    Taux de réussite
+                    {t("dash.card.successRate")}
                   </p>
                   <p className="mt-1 text-2xl font-bold sm:text-3xl">{successRate}%</p>
                 </div>
@@ -348,7 +348,7 @@ export function DashboardView() {
                 </div>
                 <div>
                   <p className="text-lg font-bold">{xp} XP</p>
-                  <p className="text-xs text-muted-foreground">Niveau {level}</p>
+                  <p className="text-xs text-muted-foreground">{t("dash.level")} {level}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 border-b p-4 sm:border-b-0 sm:border-r">
@@ -356,8 +356,8 @@ export function DashboardView() {
                   <Flame className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-lg font-bold">{streak} jours</p>
-                  <p className="text-xs text-muted-foreground">Série actuelle</p>
+                  <p className="text-lg font-bold">{streak} {t("dash.days")}</p>
+                  <p className="text-xs text-muted-foreground">{t("dash.streakCurrent")}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 border-b p-4 sm:border-b-0 sm:border-r">
@@ -368,7 +368,7 @@ export function DashboardView() {
                   <p className="text-lg font-bold">
                     {unlockedBadges.length}/{badges.length}
                   </p>
-                  <p className="text-xs text-muted-foreground">Badges</p>
+                  <p className="text-xs text-muted-foreground">{t("gamif.badges")}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4">
@@ -377,7 +377,7 @@ export function DashboardView() {
                 </div>
                 <div>
                   <p className="text-lg font-bold">{totalCorrect}</p>
-                  <p className="text-xs text-muted-foreground">Bonnes réponses</p>
+                  <p className="text-xs text-muted-foreground">{t("dash.correctAnswers")}</p>
                 </div>
               </div>
             </div>
@@ -394,7 +394,7 @@ export function DashboardView() {
           {/* Badges */}
           <Card className="p-4">
             <p className="mb-3 text-sm font-semibold">
-              Badges ({unlockedBadges.length}/{badges.length})
+              {t("gamif.badges")} ({unlockedBadges.length}/{badges.length})
             </p>
             {/* FIX2: 3 cols on mobile (was 4 — too tight for tiny badge labels). */}
             <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-8">
@@ -464,7 +464,7 @@ export function DashboardView() {
                     <div className="min-w-0 flex-1">
                       <p className="truncate font-semibold">{q.title}</p>
                       <p className="text-xs text-muted-foreground">
-                        {q.total} session(s) • Dernière:{" "}
+                        {q.total} {t("dash.sessionsUnit")} • {t("dash.perQuiz.last")}{" "}
                         {q.lastDate
                           ? new Date(q.lastDate).toLocaleDateString("fr-FR")
                           : "N/A"}
@@ -473,7 +473,7 @@ export function DashboardView() {
                     {/* FIX2: stats wrap on mobile so the avg + best never overflow. */}
                     <div className="flex items-center gap-3 self-end sm:self-auto sm:gap-4">
                       <div className="text-center">
-                        <p className="text-xs text-muted-foreground">Moyenne</p>
+                        <p className="text-xs text-muted-foreground">{t("dash.perQuiz.avg")}</p>
                         <p
                           className={`text-lg font-bold sm:text-xl ${
                             q.avgPct >= 50 ? "text-emerald-600" : "text-rose-600"
@@ -483,7 +483,7 @@ export function DashboardView() {
                         </p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-muted-foreground">Meilleur</p>
+                        <p className="text-xs text-muted-foreground">{t("dash.perQuiz.best")}</p>
                         <p className="text-lg font-bold text-emerald-600 sm:text-xl">
                           {q.best}%
                         </p>
@@ -529,7 +529,7 @@ export function DashboardView() {
                           { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" }
                         )}{" "}
                         • <Badge variant="outline" className="text-[10px]">
-                          {s.mode === "immediate" ? "Immédiate" : "Finale"}
+                          {s.mode === "immediate" ? t("dash.mode.immediate") : t("dash.mode.final")}
                         </Badge>
                       </p>
                     </div>
@@ -561,15 +561,15 @@ export function DashboardView() {
                       <div className="mb-3 flex flex-wrap gap-3 text-xs sm:gap-4">
                         <span className="flex items-center gap-1 text-emerald-600">
                           <CheckCircle2 className="h-3.5 w-3.5" />
-                          {correctCount} correctes
+                          {correctCount} {t("common.correct")}
                         </span>
                         <span className="flex items-center gap-1 text-rose-600">
                           <XCircle className="h-3.5 w-3.5" />
-                          {wrongCount} fausses
+                          {wrongCount} {t("dash.wrong")}
                         </span>
                         {skippedCount > 0 && (
                           <span className="text-muted-foreground">
-                            {skippedCount} omises
+                            {skippedCount} {t("dash.skipped")}
                           </span>
                         )}
                       </div>
@@ -589,8 +589,8 @@ export function DashboardView() {
                               {idx + 1}. {a.questionText}
                             </p>
                             <p className="mt-1 text-muted-foreground">
-                              Bonne réponse: {a.correctAnswer}
-                              {a.userAnswer && ` • Votre réponse: ${a.userAnswer}`}
+                              {t("common.correctAnswer")} {a.correctAnswer}
+                              {a.userAnswer && ` • ${t("dash.answer.yours")} ${a.userAnswer}`}
                             </p>
                           </div>
                         ))}
@@ -668,7 +668,7 @@ function WeeklyChart({ sessions }: { sessions: SessionSummary[] }) {
                   day.count > 0 ? "bg-gradient-to-t from-emerald-500 to-teal-400" : "bg-muted"
                 }`}
                 style={{ height: `${Math.max(8, (day.count / maxCount) * 100)}%` }}
-                title={`${day.count} session(s) · ${day.avgPct}%`}
+                title={`${day.count} ${t("dash.sessionsUnit")} · ${day.avgPct}%`}
               />
             </div>
             <span className="text-[10px] text-muted-foreground">{day.label}</span>
@@ -688,13 +688,14 @@ function FavoritesList() {
   const removeFavorite = useFavorites((s) => s.removeFavorite);
   const clearAll = useFavorites((s) => s.clearAll);
   const openBank = useQuizStore((s) => s.openBank);
+  const { t } = useTranslation();
 
   if (favorites.length === 0) {
     return (
       <Card className="flex flex-col items-center gap-3 p-12 text-center">
         <Bookmark className="h-12 w-12 text-muted-foreground/50" />
         <p className="text-sm text-muted-foreground">
-          Aucun favori pour le moment. Marquez des questions pendant vos sessions pour les retrouver ici.
+          {t("dash.fav.empty")}
         </p>
       </Card>
     );
@@ -704,13 +705,13 @@ function FavoritesList() {
     <div className="space-y-3">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm text-muted-foreground">
-          {favorites.length} question(s) marquée(s) comme favorite(s)
+          {favorites.length} {t("dash.fav.count")}
         </p>
         <div className="flex items-center gap-2">
           <AnkiExportButton favorites />
           <Button variant="outline" size="sm" className="gap-1.5" onClick={clearAll}>
             <Trash2 className="h-3.5 w-3.5" />
-            Tout effacer
+            {t("dash.fav.clearAll")}
           </Button>
         </div>
       </div>
@@ -732,10 +733,10 @@ function FavoritesList() {
             </div>
             <div className="mt-2 flex flex-col gap-1 text-xs">
               <p className="text-muted-foreground">
-                <span className="font-semibold text-emerald-600">Bonne réponse:</span> {f.correctAnswer}
+                <span className="font-semibold text-emerald-600">{t("common.correctAnswer")}</span> {f.correctAnswer}
               </p>
               <p className="break-words text-muted-foreground">
-                <span className="font-semibold text-amber-600">Explication:</span> {f.explanation}
+                <span className="font-semibold text-amber-600">{t("common.explanation")}</span> {f.explanation}
               </p>
             </div>
             <div className="mt-2 flex items-center justify-between gap-2 border-t pt-2">
@@ -748,7 +749,7 @@ function FavoritesList() {
                 className="h-7 gap-1 px-2 text-xs"
                 onClick={() => openBank(f.bankId)}
               >
-                Ouvrir la banque
+                {t("banks.aria.card")}
                 <ChevronRight className="h-3 w-3" />
               </Button>
             </div>
@@ -762,6 +763,7 @@ function FavoritesList() {
 // === Anki bank exporter (bank selector + export button) ===
 function AnkiBankExporter() {
   const banks = useQuizStore((s) => s.banks);
+  const { t } = useTranslation();
   // Only store the user's *explicit* choice. The displayed value falls back
   // to the first available bank — this avoids setState-in-effect.
   const [explicitChoice, setExplicitChoice] = useState<string>("");
@@ -789,7 +791,7 @@ function AnkiBankExporter() {
         onChange={(e) => setExplicitChoice(e.target.value)}
         className="h-9 flex-1 rounded-md border bg-background px-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
       >
-        {banks.length === 0 && <option value="">Chargement…</option>}
+        {banks.length === 0 && <option value="">{t("common.loading")}</option>}
         {banks.map((b) => (
           <option key={b.id} value={b.id}>
             {b.title}

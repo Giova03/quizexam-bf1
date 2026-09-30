@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import {
   Search,
@@ -11,6 +11,7 @@ import {
   Sparkles,
   Compass,
   ChevronRight,
+  Layers,
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -25,73 +26,54 @@ import { useTranslation } from "@/lib/use-translation";
 import type { QuestionBank } from "@/lib/types";
 
 /**
- * BanksLibraryView (V6) — refonte UI/UX de la bibliothèque de banques.
+ * BanksLibraryView (V7) — refonte spectaculaire de la bibliothèque de banques.
  *
- * La logique de données est STRICTEMENT identique à la V3/V4 (même fetch,
- * mêmes filtres niveau/recherche/tri, même openBank du quiz-store) — seule
- * la disposition visuelle change :
+ * La logique de données est STRICTEMENT identique à la V3/V4/V6 (même fetch,
+ * mêmes filtres niveau/recherche/tri, même openBank du quiz-store, même
+ * persistance localStorage) — seule la présentation change :
  *
- *   1. REGROUPEMENT EN LOTS : les banques ne s'affichent plus à plat. Elles
- *      sont regroupées dynamiquement par catégorie dans des « lots » : une
- *      carte principale par catégorie avec icône moderne, titre, total de
- *      questions et une petite barre de progression (part du contenu).
- *   2. EFFET D'OUVERTURE (concept 2) : au clic, le lot s'agrandit de manière
- *      théâtrale au premier plan via une animation de layout partagé
- *      (framer-motion layoutId), et les banques du lot apparaissent en
- *      cascade rapide (staggered animation).
- *   3. STYLE INTERACTIF « BOOSTER » : zoom léger + lueur colorée diffuse au
- *      survol des lots, sous-cartes très épurées avec micro-tags cliquables
- *      (le tag de niveau applique le filtre de niveau) et bouton de
- *      démarrage brillant (balayage lumineux) au survol.
+ *   1. REGROUPEMENT EN LOTS : chaque catégorie devient un grand panneau à
+ *      en-tête dégradé, médaillon géant, compteurs animés (count-up) et
+ *      double barre de progression. Le premier lot est mis en avant (large).
+ *   2. EFFET D'OUVERTURE (concept 2) : le lot s'agrandit théâtralement au
+ *      premier plan via layoutId partagé, et ses banques arrivent en
+ *      cascade rapide (stagger 45 ms).
+ *   3. STYLE « BOOSTER » : zoom + lueur colorée diffuse au survol, balayage
+ *      lumineux, sous-cartes épurées avec micro-tags cliquables (le tag de
+ *      niveau applique le filtre) et bouton de démarrage brillant.
+ *   4. CAS UNE SEULE CATÉGORIE : le lot s'affiche déjà « ouvert » en ligne,
+ *      jamais une simple liste plate.
  */
 
 type SortMode = "popular" | "alpha" | "questions";
 
-/** Local colour styles per QuestionBank.color name (safe fallback = emerald). */
-const COLOR_STYLES: Record<string, { chip: string; bar: string }> = {
-  emerald: {
-    chip: "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300",
-    bar: "from-emerald-400 to-teal-500",
-  },
-  teal: {
-    chip: "bg-teal-100 text-teal-700 dark:bg-teal-500/15 dark:text-teal-300",
-    bar: "from-teal-400 to-cyan-500",
-  },
-  cyan: {
-    chip: "bg-cyan-100 text-cyan-700 dark:bg-cyan-500/15 dark:text-cyan-300",
-    bar: "from-cyan-400 to-sky-500",
-  },
-  sky: {
-    chip: "bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-300",
-    bar: "from-sky-400 to-blue-500",
-  },
-  amber: {
-    chip: "bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300",
-    bar: "from-amber-400 to-orange-500",
-  },
-  orange: {
-    chip: "bg-orange-100 text-orange-700 dark:bg-orange-500/15 dark:text-orange-300",
-    bar: "from-orange-400 to-red-500",
-  },
-  rose: {
-    chip: "bg-rose-100 text-rose-700 dark:bg-rose-500/15 dark:text-rose-300",
-    bar: "from-rose-400 to-pink-500",
-  },
-  violet: {
-    chip: "bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300",
-    bar: "from-violet-400 to-purple-500",
-  },
-  lime: {
-    chip: "bg-lime-100 text-lime-700 dark:bg-lime-500/15 dark:text-lime-300",
-    bar: "from-lime-400 to-green-500",
-  },
-};
+/* ------------------------------------------------------------------ */
+/* Outils visuels                                                      */
+/* ------------------------------------------------------------------ */
 
-function colorStyle(color: string) {
-  return COLOR_STYLES[color] ?? COLOR_STYLES.emerald;
+/** style coloré d'une banque (champ QuestionBank.color). */
+function colorStyle(color?: string): { chip: string } {
+  switch (color) {
+    case "blue":
+      return { chip: "bg-blue-100 text-blue-600 dark:bg-blue-500/15 dark:text-blue-300" };
+    case "rose":
+      return { chip: "bg-rose-100 text-rose-600 dark:bg-rose-500/15 dark:text-rose-300" };
+    case "violet":
+      return { chip: "bg-violet-100 text-violet-600 dark:bg-violet-500/15 dark:text-violet-300" };
+    case "sky":
+      return { chip: "bg-sky-100 text-sky-600 dark:bg-sky-500/15 dark:text-sky-300" };
+    case "amber":
+      return { chip: "bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300" };
+    case "cyan":
+      return { chip: "bg-cyan-100 text-cyan-600 dark:bg-cyan-500/15 dark:text-cyan-300" };
+    case "orange":
+      return { chip: "bg-orange-100 text-orange-600 dark:bg-orange-500/15 dark:text-orange-300" };
+    default:
+      return { chip: "bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-300" };
+  }
 }
 
-function levelBadgeCls(level: string) {
+function levelBadgeCls(level: string): string {
   switch (level) {
     case "BEPC":
       return "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300";
@@ -107,63 +89,63 @@ function levelBadgeCls(level: string) {
 }
 
 /**
- * Tonalités couleur des lots — stable par catégorie (hash simple) pour que
- * chaque catégorie garde la même identité visuelle d'une visite à l'autre,
- * quel que soit le tri ou la recherche.
+ * Tonalités des lots — identité visuelle stable par catégorie (hash).
+ * `header` : bandeau dégradé du lot ; `glow` : lueur diffuse au survol ;
+ * `bar` : barre de progression ; `medal` : médaillon translucide.
  */
 const LOT_TONES: Array<{
-  chip: string;
-  bar: string;
-  glow: string;
   header: string;
+  glow: string;
+  bar: string;
+  chip: string;
 }> = [
   {
-    chip: "bg-blue-100 text-blue-600 dark:bg-blue-500/15 dark:text-blue-300",
+    header: "from-blue-700 via-blue-600 to-cyan-500",
+    glow: "from-blue-600 to-cyan-400",
     bar: "from-blue-500 to-cyan-400",
-    glow: "from-blue-500 to-cyan-400",
-    header: "from-blue-600 via-blue-500 to-cyan-500",
+    chip: "bg-blue-100 text-blue-600 dark:bg-blue-500/15 dark:text-blue-300",
   },
   {
-    chip: "bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-300",
+    header: "from-emerald-700 via-emerald-600 to-teal-500",
+    glow: "from-emerald-600 to-teal-400",
     bar: "from-emerald-500 to-teal-400",
-    glow: "from-emerald-500 to-teal-400",
-    header: "from-emerald-600 via-emerald-500 to-teal-500",
+    chip: "bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-300",
   },
   {
-    chip: "bg-orange-100 text-orange-600 dark:bg-orange-500/15 dark:text-orange-300",
-    bar: "from-orange-500 to-amber-400",
-    glow: "from-orange-500 to-amber-400",
     header: "from-orange-600 via-orange-500 to-amber-500",
+    glow: "from-orange-500 to-amber-400",
+    bar: "from-orange-500 to-amber-400",
+    chip: "bg-orange-100 text-orange-600 dark:bg-orange-500/15 dark:text-orange-300",
   },
   {
-    chip: "bg-violet-100 text-violet-600 dark:bg-violet-500/15 dark:text-violet-300",
+    header: "from-violet-700 via-violet-600 to-purple-500",
+    glow: "from-violet-600 to-purple-400",
     bar: "from-violet-500 to-purple-400",
-    glow: "from-violet-500 to-purple-400",
-    header: "from-violet-600 via-violet-500 to-purple-500",
+    chip: "bg-violet-100 text-violet-600 dark:bg-violet-500/15 dark:text-violet-300",
   },
   {
-    chip: "bg-rose-100 text-rose-600 dark:bg-rose-500/15 dark:text-rose-300",
-    bar: "from-rose-500 to-pink-400",
-    glow: "from-rose-500 to-pink-400",
     header: "from-rose-600 via-rose-500 to-pink-500",
+    glow: "from-rose-500 to-pink-400",
+    bar: "from-rose-500 to-pink-400",
+    chip: "bg-rose-100 text-rose-600 dark:bg-rose-500/15 dark:text-rose-300",
   },
   {
-    chip: "bg-sky-100 text-sky-600 dark:bg-sky-500/15 dark:text-sky-300",
+    header: "from-sky-700 via-sky-600 to-blue-500",
+    glow: "from-sky-600 to-blue-400",
     bar: "from-sky-500 to-blue-400",
-    glow: "from-sky-500 to-blue-400",
-    header: "from-sky-600 via-sky-500 to-blue-500",
+    chip: "bg-sky-100 text-sky-600 dark:bg-sky-500/15 dark:text-sky-300",
   },
   {
-    chip: "bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300",
-    bar: "from-amber-500 to-orange-400",
-    glow: "from-amber-500 to-orange-400",
     header: "from-amber-500 via-amber-400 to-orange-500",
+    glow: "from-amber-500 to-orange-400",
+    bar: "from-amber-500 to-orange-400",
+    chip: "bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300",
   },
   {
-    chip: "bg-cyan-100 text-cyan-600 dark:bg-cyan-500/15 dark:text-cyan-300",
+    header: "from-cyan-700 via-cyan-600 to-teal-500",
+    glow: "from-cyan-600 to-teal-400",
     bar: "from-cyan-500 to-teal-400",
-    glow: "from-cyan-500 to-teal-400",
-    header: "from-cyan-600 via-cyan-500 to-teal-500",
+    chip: "bg-cyan-100 text-cyan-600 dark:bg-cyan-500/15 dark:text-cyan-300",
   },
 ];
 
@@ -188,6 +170,43 @@ const STAGGER_ITEM: Variants = {
   },
 };
 
+/** Compteur animé (count-up) pour les grands chiffres des lots. */
+function AnimatedNumber({
+  value,
+  duration = 900,
+  className,
+}: {
+  value: number;
+  duration?: number;
+  className?: string;
+}) {
+  const [display, setDisplay] = useState(0);
+  const raf = useRef<number | null>(null);
+  useEffect(() => {
+    const start = performance.now();
+    const from = 0;
+    const tick = (now: number) => {
+      const p = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      setDisplay(Math.round(from + (value - from) * eased));
+      if (p < 1) raf.current = requestAnimationFrame(tick);
+    };
+    raf.current = requestAnimationFrame(tick);
+    return () => {
+      if (raf.current) cancelAnimationFrame(raf.current);
+    };
+  }, [value, duration]);
+  return (
+    <span className={className} aria-label={String(value)}>
+      {display.toLocaleString("fr-FR")}
+    </span>
+  );
+}
+
+/* ================================================================== */
+/* Composant principal                                                 */
+/* ================================================================== */
+
 export function BanksLibraryView() {
   const openBank = useQuizStore((s) => s.openBank);
   const { t } = useTranslation();
@@ -203,7 +222,7 @@ export function BanksLibraryView() {
   });
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<SortMode>("popular");
-  /* V6 — lot actuellement ouvert (catégorie) ; null = grille de lots. */
+  /* V7 — lot actuellement ouvert (catégorie) ; null = grille de lots. */
   const [activeLot, setActiveLot] = useState<string | null>(null);
 
   useEffect(() => {
@@ -343,25 +362,20 @@ export function BanksLibraryView() {
 
   return (
     <div className="-mx-4 -mt-8">
-      {/* ---------- Hero header (V4 — light aurora band) ---------- */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-emerald-50 pb-10 pt-12 text-slate-800">
+      {/* ---------- Hero header (compact V7 — les lots sont la vedette) ---------- */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-emerald-50 pb-8 pt-10 text-slate-800">
         <div
-          className="absolute inset-0 bg-grid-light [mask-image:radial-gradient(ellipse_70%_70%_at_50%_30%,black,transparent)]"
+          className="absolute inset-0 bg-grid-light"
           aria-hidden="true"
         />
         <div
-          className="aurora-blob h-64 w-64 bg-blue-400/25"
+          className="aurora-blob h-56 w-56 bg-blue-400/25"
           style={{ top: "-40%", left: "8%" }}
           aria-hidden="true"
         />
         <div
-          className="aurora-blob h-56 w-56 bg-orange-300/25"
+          className="aurora-blob h-48 w-48 bg-orange-300/25"
           style={{ bottom: "-50%", right: "5%", animationDelay: "-7s" }}
-          aria-hidden="true"
-        />
-        <div
-          className="aurora-blob h-48 w-48 bg-emerald-300/25"
-          style={{ top: "10%", right: "30%", animationDelay: "-11s" }}
           aria-hidden="true"
         />
         <div className="relative mx-auto max-w-6xl px-4">
@@ -377,32 +391,40 @@ export function BanksLibraryView() {
             <span className="text-gradient-brand">{t("banks.title.hl")}</span>
           </h1>
           <p
-            className="animate-fade-up mt-3 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base"
+            className="animate-fade-up mt-2 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base"
             style={{ animationDelay: "0.16s" }}
           >
             {t("banks.subtitle")}
           </p>
 
           <div
-            className="animate-fade-up mt-6 flex flex-wrap items-center gap-3"
+            className="animate-fade-up mt-5 flex flex-wrap items-center gap-2.5"
             style={{ animationDelay: "0.24s" }}
           >
-            <div className="flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 text-sm shadow-sm backdrop-blur-sm">
-              <LayoutGrid className="h-4 w-4 text-blue-600" />
-              <span className="font-semibold text-slate-900">{banks.length}</span>
+            <span className="flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 text-sm shadow-sm backdrop-blur-sm">
+              <Layers className="h-4 w-4 text-blue-600" />
+              <span className="font-bold text-slate-900">{groups.length}</span>
+              <span className="text-slate-500">{t("banks.stat.lots")}</span>
+            </span>
+            <span className="flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 text-sm shadow-sm backdrop-blur-sm">
+              <LayoutGrid className="h-4 w-4 text-emerald-600" />
+              <span className="font-bold text-slate-900">{banks.length}</span>
               <span className="text-slate-500">{t("banks.stat.banks")}</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 text-sm shadow-sm backdrop-blur-sm">
+            </span>
+            <span className="flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 text-sm shadow-sm backdrop-blur-sm">
               <BookOpen className="h-4 w-4 text-orange-500" />
-              <span className="font-semibold text-slate-900">
+              <span className="font-bold text-slate-900">
                 {banks.reduce((s, b) => s + (b._count?.questions ?? 0), 0).toLocaleString("fr-FR")}
               </span>
               <span className="text-slate-500">{t("banks.stat.questions")}</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 text-sm shadow-sm backdrop-blur-sm">
-              <Sparkles className="h-4 w-4 text-emerald-500" />
-              <span className="text-slate-500">{t("banks.stat.updated")}</span>
-            </div>
+            </span>
+            <span className="flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 text-xs shadow-sm backdrop-blur-sm">
+              <span className="relative flex h-2 w-2" aria-hidden="true">
+                <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                <span className="relative h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              <span className="font-medium text-slate-500">{t("banks.stat.updated")}</span>
+            </span>
           </div>
         </div>
       </div>
@@ -448,9 +470,8 @@ export function BanksLibraryView() {
         </div>
       </div>
 
-      {/* ---------- Body : grille de LOTS ---------- */}
+      {/* ---------- Body : grille de LOTS spectaculaires ---------- */}
       <div className="mx-auto max-w-6xl px-4 py-8">
-        {/* Result summary */}
         {!loading && (
           <p className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
             <ArrowUpDown className="h-3.5 w-3.5" />
@@ -473,36 +494,57 @@ export function BanksLibraryView() {
               setQuery("");
               setLevel("TOUS");
             }}
-            levelLabel={levelLabel}
           />
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {groups.map(([category, categoryBanks], i) => (
-              <LotCard
-                key={category}
-                category={category}
-                banks={categoryBanks}
-                tone={toneFor(category)}
-                featured={i === 0 && groups.length > 2}
-                share={
-                  totalQuestions > 0
-                    ? Math.max(
-                        4,
-                        Math.round(
-                          (categoryBanks.reduce(
-                            (s, b) => s + (b._count?.questions ?? 0),
-                            0
-                          ) /
-                            totalQuestions) *
-                            100
-                        )
+          <div className="grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {groups.map(([category, categoryBanks], i) => {
+              const share =
+                totalQuestions > 0
+                  ? Math.max(
+                      4,
+                      Math.round(
+                        (categoryBanks.reduce(
+                          (s, b) => s + (b._count?.questions ?? 0),
+                          0
+                        ) /
+                          totalQuestions) *
+                          100
                       )
-                    : 0
-                }
-                onOpen={() => setActiveLot(category)}
-                levelLabel={levelLabel}
-              />
-            ))}
+                    )
+                  : 0;
+              /* CAS UNE SEULE CATÉGORIE : le lot est rendu déjà « ouvert »
+                 en ligne (jamais une liste plate en dessous d'un lot seul). */
+              if (groups.length === 1) {
+                return (
+                  <LotCard
+                    key={category}
+                    category={category}
+                    banks={categoryBanks}
+                    tone={toneFor(category)}
+                    featured
+                    share={share}
+                    index={i}
+                    inlineBanks
+                    onOpenBank={openBank}
+                    onTagLevel={(lvl) => setLevel(lvl as EducationLevel)}
+                    levelLabel={levelLabel}
+                  />
+                );
+              }
+              return (
+                <LotCard
+                  key={category}
+                  category={category}
+                  banks={categoryBanks}
+                  tone={toneFor(category)}
+                  featured={i === 0 && groups.length > 2}
+                  share={share}
+                  index={i}
+                  onOpen={() => setActiveLot(category)}
+                  levelLabel={levelLabel}
+                />
+              );
+            })}
           </div>
         )}
       </div>
@@ -514,7 +556,7 @@ export function BanksLibraryView() {
             {/* Voile de fond */}
             <motion.div
               key="lot-backdrop"
-              className="fixed inset-0 z-50 bg-slate-950/50 backdrop-blur-sm"
+              className="fixed inset-0 z-50 bg-slate-950/55 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -522,7 +564,7 @@ export function BanksLibraryView() {
               onClick={() => setActiveLot(null)}
               aria-hidden="true"
             />
-            {/* Panneau qui s'agrandit depuis la carte cliquée (layoutId partagé) */}
+            {/* Panneau agrandi depuis la carte cliquée (layoutId partagé) */}
             <motion.div
               key={`lot-panel-${activeLotData.category}`}
               layoutId={`lot-${activeLotData.category}`}
@@ -532,7 +574,7 @@ export function BanksLibraryView() {
               exit={{ opacity: 0, transition: { duration: 0.15 } }}
               className="fixed inset-0 z-50 m-auto flex h-fit max-h-[85vh] w-[calc(100%-1.5rem)] max-w-2xl flex-col overflow-hidden rounded-3xl border bg-card shadow-2xl"
             >
-              {/* En-tête dégradé du lot ouvert */}
+              {/* En-tête dégradé */}
               <div
                 className={`relative overflow-hidden bg-gradient-to-br ${activeTone.header} p-5 text-white`}
               >
@@ -558,9 +600,12 @@ export function BanksLibraryView() {
                       </h2>
                       <p className="mt-0.5 text-xs font-medium text-white/85">
                         {activeLotData.banks.length} {t("banks.stat.banks")} ·{" "}
-                        {activeLotData.banks
-                          .reduce((s, b) => s + (b._count?.questions ?? 0), 0)
-                          .toLocaleString("fr-FR")}{" "}
+                        <AnimatedNumber
+                          value={activeLotData.banks.reduce(
+                            (s, b) => s + (b._count?.questions ?? 0),
+                            0
+                          )}
+                        />{" "}
                         {t("banks.stat.questions")}
                       </p>
                     </div>
@@ -647,7 +692,9 @@ export function BanksLibraryView() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Lot principal (carte collapsed) — zoom + lueur au survol            */
+/* Lot principal (carte collapsed V7) — bandeau dégradé, médaillon     */
+/* géant, compteurs animés, glow + zoom au survol, shine sweep.        */
+/* `inlineBanks` : rend le lot déjà ouvert (cas une seule catégorie).  */
 /* ------------------------------------------------------------------ */
 
 function LotCard({
@@ -656,15 +703,23 @@ function LotCard({
   tone,
   featured,
   share,
+  index = 0,
+  inlineBanks = false,
   onOpen,
+  onOpenBank,
+  onTagLevel,
   levelLabel,
 }: {
   category: string;
   banks: QuestionBank[];
   tone: (typeof LOT_TONES)[number];
-  featured: boolean;
+  featured?: boolean;
   share: number;
-  onOpen: () => void;
+  index?: number;
+  inlineBanks?: boolean;
+  onOpen?: () => void;
+  onOpenBank?: (bankId: string) => void;
+  onTagLevel?: (lvl: string) => void;
   levelLabel: (lvl: string) => string;
 }) {
   const { t } = useTranslation();
@@ -673,109 +728,209 @@ function LotCard({
   const levels = Array.from(
     new Set(banks.map((b) => (b.educationLevel ?? "TOUS").toUpperCase()))
   ).slice(0, 3);
+  const previewTitles = banks.slice(0, featured ? 4 : 3).map((b) => b.title);
 
+  const header = (
+    <div
+      className={`relative overflow-hidden bg-gradient-to-br ${tone.header} ${
+        featured ? "px-5 py-6" : "px-5 py-5"
+      } text-white`}
+    >
+      {/* Balayage lumineux périodique */}
+      <motion.span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 w-1/4 bg-gradient-to-r from-transparent via-white/25 to-transparent"
+        initial={{ x: "-160%" }}
+        animate={{ x: "520%" }}
+        transition={{ duration: 2.6, repeat: Infinity, repeatDelay: 4.2, ease: "easeInOut" }}
+      />
+      <span
+        aria-hidden="true"
+        className="absolute -right-10 -top-12 h-36 w-36 rounded-full bg-white/15 blur-2xl"
+      />
+      <span
+        aria-hidden="true"
+        className="absolute -bottom-14 -left-10 h-28 w-28 rounded-full bg-white/10 blur-xl"
+      />
+      <div className="relative flex items-center gap-4">
+        {/* Médaillon géant */}
+        <motion.span
+          className={`flex shrink-0 items-center justify-center rounded-2xl bg-white/20 shadow-inner backdrop-blur-sm ${
+            featured ? "h-16 w-16" : "h-14 w-14"
+          }`}
+          whileHover={{ rotate: -8, scale: 1.12 }}
+          transition={{ type: "spring", stiffness: 300, damping: 16 }}
+          aria-hidden="true"
+        >
+          <BankIcon name={firstIcon} className={featured ? "h-8 w-8" : "h-7 w-7"} />
+        </motion.span>
+        <div className="min-w-0 flex-1">
+          <h3
+            className={`font-display font-extrabold leading-tight tracking-tight ${
+              featured ? "text-xl sm:text-2xl" : "text-lg"
+            }`}
+          >
+            {category}
+          </h3>
+          <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs font-medium text-white/85">
+            <span className="inline-flex items-center gap-1">
+              <LayoutGrid className="h-3.5 w-3.5" />
+              {banks.length} {t("banks.stat.banks")}
+            </span>
+            <span className="inline-flex items-center gap-1">
+              <BookOpen className="h-3.5 w-3.5" />
+              <AnimatedNumber value={questions} /> {t("banks.stat.questions")}
+            </span>
+          </p>
+        </div>
+        {!inlineBanks && (
+          <motion.span
+            aria-hidden="true"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm"
+            whileHover={{ x: 3 }}
+          >
+            <ChevronRight className="h-4.5 w-4.5" />
+          </motion.span>
+        )}
+      </div>
+      {/* Double barre de progression (part du contenu) */}
+      <div className="relative mt-4">
+        <div className="mb-1.5 flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-white/80">
+          <span>
+            {share}% {t("banks.share.of")}
+          </span>
+          {!inlineBanks && (
+            <span className="inline-flex items-center gap-0.5 rounded-full bg-white/15 px-2 py-0.5">
+              {t("banks.cta.explore")}
+              <ChevronRight className="h-3 w-3" />
+            </span>
+          )}
+        </div>
+        <div className="h-2 w-full overflow-hidden rounded-full bg-white/25">
+          <motion.div
+            className="h-full rounded-full bg-white/90"
+            initial={{ width: 0 }}
+            animate={{ width: `${share}%` }}
+            transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+
+  const body = (
+    <>
+      {/* Micro-tags de niveaux présents dans le lot */}
+      {levels.length > 0 && (
+        <div className="flex flex-wrap gap-1.5">
+          {levels.map((lvl) => (
+            <span
+              key={lvl}
+              className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${levelBadgeCls(lvl)}`}
+            >
+              {levelLabel(lvl)}
+            </span>
+          ))}
+        </div>
+      )}
+      {/* Aperçu des banques du lot */}
+      <ul className="space-y-1">
+        {previewTitles.map((title) => (
+          <li
+            key={title}
+            className="flex items-center gap-2 truncate text-xs text-muted-foreground"
+          >
+            <span
+              className={`h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r ${tone.bar}`}
+              aria-hidden="true"
+            />
+            <span className="truncate font-medium text-foreground/80">{title}</span>
+          </li>
+        ))}
+        {banks.length > (featured ? 4 : 3) && (
+          <li className="pl-3.5 text-[11px] font-semibold text-blue-600 dark:text-blue-300">
+            +{banks.length - (featured ? 4 : 3)} {t("banks.lot.others")}
+          </li>
+        )}
+      </ul>
+      {!inlineBanks && (
+        <span className="btn-shine mt-1 inline-flex items-center justify-center gap-1.5 self-start rounded-xl bg-gradient-to-r from-blue-600 to-emerald-500 px-4 py-2 text-xs font-bold text-white shadow-md shadow-blue-500/25 transition-shadow duration-300 hover:shadow-lg hover:shadow-emerald-500/30">
+          <Sparkles className="h-3.5 w-3.5" />
+          {t("banks.cta.explore")}
+        </span>
+      )}
+    </>
+  );
+
+  /* --- Variante en ligne (une seule catégorie) : panneau ouvert --- */
+  if (inlineBanks && onOpenBank && onTagLevel) {
+    return (
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.45, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+        className={`group/lot relative sm:col-span-2 lg:col-span-3 ${featured ? "rounded-3xl" : "rounded-3xl"}`}
+        aria-label={`${t("banks.aria.lot")} — ${category}`}
+      >
+        <span
+          aria-hidden="true"
+          className={`absolute -inset-3 rounded-[2.4rem] bg-gradient-to-br ${tone.glow} opacity-20 blur-2xl`}
+        />
+        <div className="relative overflow-hidden rounded-3xl border bg-card shadow-xl">
+          {header}
+          <motion.div
+            variants={STAGGER_CONTAINER}
+            initial="hidden"
+            animate="show"
+            className="grid gap-3 p-4 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {banks.map((bank) => (
+              <LotBankCard
+                key={bank.id}
+                bank={bank}
+                onOpen={() => onOpenBank(bank.id)}
+                onTagLevel={onTagLevel}
+                levelLabel={levelLabel}
+              />
+            ))}
+            {banks.length === 0 && (
+              <p className="col-span-full py-10 text-center text-sm text-muted-foreground">
+                {t("banks.lot.empty")}
+              </p>
+            )}
+          </motion.div>
+        </div>
+      </motion.section>
+    );
+  }
+
+  /* --- Variante carte (grille de lots) --- */
   return (
-    <div className="group relative">
+    <motion.div
+      initial={{ opacity: 0, y: 26, scale: 0.96 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ type: "spring", stiffness: 260, damping: 24, delay: index * 0.06 }}
+      className={`group/lot relative ${featured ? "sm:col-span-2" : ""}`}
+    >
       {/* Lueur colorée diffuse en arrière-plan (survol) */}
       <span
         aria-hidden="true"
-        className={`absolute -inset-3 rounded-[2.2rem] bg-gradient-to-br ${tone.glow} opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-30`}
+        className={`absolute -inset-3 rounded-[2.4rem] bg-gradient-to-br ${tone.glow} opacity-0 blur-2xl transition-opacity duration-500 group-hover/lot:opacity-40`}
       />
       <motion.button
         layoutId={`lot-${category}`}
         type="button"
         onClick={onOpen}
-        whileHover={{ scale: 1.02, y: -3 }}
-        whileTap={{ scale: 0.98 }}
+        whileHover={{ scale: 1.025, y: -4 }}
+        whileTap={{ scale: 0.985 }}
         transition={{ type: "spring", stiffness: 320, damping: 26 }}
         aria-label={`${t("banks.aria.lot")} — ${category}`}
-        className={`relative flex flex-col overflow-hidden rounded-3xl border bg-card p-5 text-left shadow-sm transition-colors duration-300 hover:border-transparent ${
-          featured ? "sm:col-span-2" : ""
-        }`}
+        className="relative flex w-full flex-col overflow-hidden rounded-3xl border bg-card text-left shadow-sm transition-shadow duration-300 hover:shadow-xl"
       >
-        {/* Halo décoratif interne */}
-        <span
-          aria-hidden="true"
-          className={`absolute -right-8 -top-10 h-28 w-28 rounded-full bg-gradient-to-br ${tone.glow} opacity-[0.07] blur-xl transition-opacity duration-500 group-hover:opacity-20`}
-        />
-
-        <div
-          className={`relative flex gap-4 ${
-            featured ? "flex-row items-center" : "flex-col"
-          }`}
-        >
-          <div className={featured ? "flex flex-1 items-start gap-4" : "contents"}>
-            <span
-              className={`flex shrink-0 items-center justify-center rounded-2xl ${tone.chip} ${
-                featured ? "h-14 w-14" : "h-12 w-12"
-              }`}
-            >
-              <BankIcon name={firstIcon} className={featured ? "h-7 w-7" : "h-6 w-6"} />
-            </span>
-            <div className="min-w-0 flex-1">
-              <div className="flex items-start justify-between gap-3">
-                <h3
-                  className={`font-display font-bold leading-snug tracking-tight ${
-                    featured ? "text-xl" : "text-lg"
-                  }`}
-                >
-                  {category}
-                </h3>
-                <span className="shrink-0 rounded-full bg-muted px-2.5 py-1 text-[11px] font-bold text-muted-foreground">
-                  {banks.length} {t("banks.stat.banks")}
-                </span>
-              </div>
-              <p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
-                <BookOpen className="h-3.5 w-3.5" />
-                {questions.toLocaleString("fr-FR")} {t("banks.stat.questions")}
-              </p>
-              {/* Micro-tags de niveaux présents dans le lot */}
-              {!featured && levels.length > 0 && (
-                <div className="mt-2.5 flex flex-wrap gap-1.5">
-                  {levels.map((lvl) => (
-                    <span
-                      key={lvl}
-                      className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${levelBadgeCls(lvl)}`}
-                    >
-                      {levelLabel(lvl)}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-          {featured && (
-            <span
-              aria-hidden="true"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border bg-background/60 transition-transform duration-300 group-hover:translate-x-1"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </span>
-          )}
-        </div>
-
-        {/* Petite barre de progression (part du contenu) */}
-        <div className="relative mt-4">
-          <div className="mb-1.5 flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-            <span>
-              {share}% {t("banks.share.of")}
-            </span>
-            <span className="inline-flex items-center gap-0.5 transition-colors group-hover:text-foreground">
-              {t("banks.cta.explore")}
-              <ChevronRight className="h-3 w-3" />
-            </span>
-          </div>
-          <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
-            <motion.div
-              className={`h-full rounded-full bg-gradient-to-r ${tone.bar}`}
-              initial={{ width: 0 }}
-              animate={{ width: `${share}%` }}
-              transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            />
-          </div>
-        </div>
+        {header}
+        <div className="flex flex-1 flex-col gap-3 p-4">{body}</div>
       </motion.button>
-    </div>
+    </motion.div>
   );
 }
 
@@ -816,7 +971,7 @@ function LotBankCard({
     >
       <div className="flex items-start gap-2.5">
         <span
-          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${style.chip}`}
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${style.chip} transition-transform duration-300 group-hover/card:scale-110`}
         >
           <BankIcon name={bank.icon} className="h-4.5 w-4.5" />
         </span>
@@ -865,17 +1020,24 @@ function LotBankCard({
 /* ------------------------------------------------------------------ */
 
 function LibrarySkeleton() {
+  const { t } = useTranslation();
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-busy="true" aria-label="Chargement des banques">
+    <div
+      className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+      aria-busy="true"
+      aria-label={t("common.loading")}
+    >
       {Array.from({ length: 6 }).map((_, i) => (
         <div
           key={i}
-          className={`rounded-3xl border bg-card p-5 ${i === 0 ? "sm:col-span-2" : ""}`}
+          className={`overflow-hidden rounded-3xl border bg-card ${i === 0 ? "sm:col-span-2" : ""}`}
         >
-          <div className="shimmer h-12 w-12 rounded-2xl bg-muted" />
-          <div className="shimmer mt-4 h-6 w-3/4 rounded bg-muted" />
-          <div className="shimmer mt-2 h-4 w-1/2 rounded bg-muted" />
-          <div className="shimmer mt-5 h-1.5 w-full rounded-full bg-muted" />
+          <div className="shimmer h-24 w-full bg-muted" />
+          <div className="space-y-3 p-4">
+            <div className="shimmer h-6 w-3/4 rounded bg-muted" />
+            <div className="shimmer h-4 w-1/2 rounded bg-muted" />
+            <div className="shimmer h-2 w-full rounded-full bg-muted" />
+          </div>
         </div>
       ))}
     </div>
@@ -885,14 +1047,11 @@ function LibrarySkeleton() {
 function EmptyState({
   hasQuery,
   onReset,
-  levelLabel,
 }: {
   hasQuery: boolean;
   onReset: () => void;
-  levelLabel: (lvl: string) => string;
 }) {
   const { t } = useTranslation();
-  void levelLabel;
   return (
     <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed py-20 text-center">
       <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-muted">

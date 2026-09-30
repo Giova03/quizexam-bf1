@@ -21,6 +21,7 @@ import {
 import { toast } from "sonner";
 import { usePrefs, type Badge as BadgeType } from "@/shared/stores/prefs-store";
 import { useQuizStore } from "@/shared/stores/quiz-store";
+import { useTranslation } from "@/lib/use-translation";
 import * as LucideIcons from "lucide-react";
 import {
   ArrowLeft,
@@ -133,6 +134,7 @@ function Icon({ name, className }: { name: string; className?: string }) {
 
 export function ProfileView() {
   const { data: session } = useSession();
+  const { t } = useTranslation();
   const profileUserId = useQuizStore((s) => s.profileUserId);
   const goHome = useQuizStore((s) => s.goHome);
   const openForum = useQuizStore((s) => s.openForum);
@@ -170,14 +172,14 @@ export function ProfileView() {
         const data: ProfileData = await res.json();
         setProfile(data);
       } else if (res.status === 401) {
-        toast.error("Connexion requise");
+        toast.error(t("profile.toast.authRequired"));
       } else if (res.status === 404) {
-        toast.error("Utilisateur introuvable");
+        toast.error(t("profile.toast.userNotFound"));
       } else {
-        toast.error("Échec du chargement du profil");
+        toast.error(t("profile.toast.loadFailed"));
       }
     } catch {
-      toast.error("Erreur réseau");
+      toast.error(t("profile.toast.network"));
     } finally {
       setLoading(false);
     }
@@ -215,7 +217,7 @@ export function ProfileView() {
       });
       const data = await res.json();
       if (res.ok) {
-        toast.success("Profil mis à jour");
+        toast.success(t("profile.toast.updated"));
         setEditOpen(false);
         // Reload the profile + refresh the session display name.
         loadProfile();
@@ -223,10 +225,10 @@ export function ProfileView() {
         // next-auth won't refetch the JWT automatically — but the UI will
         // update the next time the user reloads. We accept that trade-off.
       } else {
-        toast.error(data.error || "Échec de la mise à jour");
+        toast.error(data.error || t("profile.toast.updateFailed"));
       }
     } catch {
-      toast.error("Erreur réseau");
+      toast.error(t("profile.toast.network"));
     } finally {
       setSaving(false);
     }
@@ -252,12 +254,12 @@ export function ProfileView() {
       <div className="space-y-4">
         <Button variant="ghost" size="sm" className="gap-2" onClick={goHome}>
           <ArrowLeft className="h-4 w-4" />
-          Retour à l&apos;accueil
+          {t("profile.backHome")}
         </Button>
         <Card className="flex flex-col items-center gap-3 p-12 text-center">
           <UserIcon className="h-12 w-12 text-muted-foreground/50" />
           <p className="text-sm text-muted-foreground">
-            Profil indisponible. Connectez-vous pour voir votre profil.
+            {t("profile.unavailable")}
           </p>
         </Card>
       </div>
@@ -277,7 +279,7 @@ export function ProfileView() {
     <div className="space-y-6">
       <Button variant="ghost" size="sm" className="gap-2" onClick={goHome}>
         <ArrowLeft className="h-4 w-4" />
-        Retour à l&apos;accueil
+        {t("profile.backHome")}
       </Button>
 
       {/* Profile header */}
@@ -313,7 +315,7 @@ export function ProfileView() {
                 {!isOwnProfile && (
                   <Badge variant="outline" className="gap-1">
                     <UserIcon className="h-3 w-3" />
-                    Profil public
+                    {t("profile.public")}
                   </Badge>
                 )}
               </div>
@@ -325,7 +327,7 @@ export function ProfileView() {
               )}
               <p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
                 <CalendarDays className="h-3 w-3" />
-                Membre depuis le{" "}
+                {t("profile.memberSince")}{" "}
                 {new Date(profile.createdAt).toLocaleDateString("fr-FR", {
                   day: "numeric",
                   month: "long",
@@ -341,7 +343,7 @@ export function ProfileView() {
                 onClick={openEdit}
               >
                 <Pencil className="h-3.5 w-3.5" />
-                Modifier le profil
+                {t("profile.editButton")}
               </Button>
             )}
           </div>
@@ -353,43 +355,45 @@ export function ProfileView() {
           ) : (
             isOwnProfile && (
               <p className="mt-4 text-sm italic text-muted-foreground">
-                Aucune bio. Cliquez sur « Modifier le profil » pour vous
-                présenter à la communauté.
+                {t("profile.noBio")}
               </p>
             )
           )}
         </div>
       </Card>
 
+      {/* V7 — Sécurité : changement de mot de passe (comptes connectés) */}
+      {isOwnProfile && <SecurityCard />}
+
       {/* Stats grid */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard
           icon={<Trophy className="h-5 w-5 text-amber-500" />}
-          label="Rang"
+          label={t("common.rank")}
           value={stats.totalUsers > 0 ? `#${stats.rank}` : "—"}
           sub={
             stats.totalUsers > 0
-              ? `sur ${stats.totalUsers} utilisateurs`
-              : "Aucun classement"
+              ? `${t("profile.stat.rankOf")} ${stats.totalUsers} ${t("profile.stat.users")}`
+              : t("profile.stat.noRank")
           }
         />
         <StatCard
           icon={<BarChart3 className="h-5 w-5 text-emerald-500" />}
-          label="Sessions"
+          label={t("dash.sessions")}
           value={String(stats.totalSessions)}
-          sub="terminées"
+          sub={t("profile.stat.completed")}
         />
         <StatCard
           icon={<Target className="h-5 w-5 text-violet-500" />}
-          label="Score moyen"
+          label={t("common.avgScore")}
           value={`${stats.avgScore}%`}
-          sub="par session"
+          sub={t("profile.stat.perSession")}
         />
         <StatCard
           icon={<TrendingUp className="h-5 w-5 text-sky-500" />}
-          label="Questions"
+          label={t("home.stat.questions")}
           value={String(stats.totalQuestions)}
-          sub={`${stats.totalCorrect} correctes`}
+          sub={`${stats.totalCorrect} ${t("common.correct")}`}
         />
       </div>
 
@@ -398,14 +402,14 @@ export function ProfileView() {
         <div className="mb-4 flex items-center justify-between">
           <h2 className="flex items-center gap-2 text-lg font-semibold">
             <Award className="h-5 w-5 text-amber-500" />
-            Badges
+            {t("gamif.badges")}
             <Badge variant="secondary" className="text-xs">
               {unlockedBadges.length} / {displayBadges.length}
             </Badge>
           </h2>
           {isOwnProfile && (
             <Button variant="ghost" size="sm" onClick={openForum} className="gap-1.5">
-              Voir le forum
+              {t("profile.viewForum")}
             </Button>
           )}
         </div>
@@ -414,14 +418,14 @@ export function ProfileView() {
           <div className="flex flex-col items-center gap-2 py-8 text-center text-muted-foreground">
             <Award className="h-10 w-10 text-muted-foreground/40" />
             <p className="text-sm">
-              Les badges de cet utilisateur ne sont pas visibles publiquement.
+              {t("profile.badges.hidden")}
             </p>
           </div>
         ) : unlockedBadges.length === 0 && lockedBadges.length === 0 ? (
           <div className="flex flex-col items-center gap-2 py-8 text-center text-muted-foreground">
             <Award className="h-10 w-10 text-muted-foreground/40" />
             <p className="text-sm">
-              Aucun badge encore. Jouez des quiz pour en débloquer !
+              {t("profile.badges.none")}
             </p>
           </div>
         ) : (
@@ -470,7 +474,7 @@ export function ProfileView() {
                       {badge.label}
                     </p>
                     <p className="truncate text-[10px] text-muted-foreground">
-                      {badge.description ?? "Verrouillé"}
+                      {badge.description ?? t("profile.badges.locked")}
                     </p>
                   </div>
                 </div>
@@ -483,16 +487,16 @@ export function ProfileView() {
       <Card className="p-5">
         <h2 className="mb-4 flex items-center gap-2 text-lg font-semibold">
           <Clock className="h-5 w-5 text-emerald-500" />
-          Activité récente
+          {t("dash.recent")}
           <Badge variant="secondary" className="text-xs">
-            {profile.recentActivity.length} sessions
+            {profile.recentActivity.length} {t("profile.sessionsUnit")}
           </Badge>
         </h2>
         {profile.recentActivity.length === 0 ? (
           <div className="flex flex-col items-center gap-2 py-8 text-center text-muted-foreground">
             <BookOpen className="h-10 w-10 text-muted-foreground/40" />
             <p className="text-sm">
-              Aucune activité récente. Les sessions terminées apparaîtront ici.
+              {t("profile.activity.empty")}
             </p>
           </div>
         ) : (
@@ -516,8 +520,8 @@ export function ProfileView() {
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-sm font-medium">{a.title}</p>
                   <p className="text-xs text-muted-foreground">
-                    {a.score} / {a.total} correctes ·{" "}
-                    {a.sourceType === "exam" ? "Examen" : "Quiz"}
+                    {a.score} / {a.total} {t("common.correct")} ·{" "}
+                    {a.sourceType === "exam" ? t("profile.typeExam") : t("profile.typeQuiz")}
                   </p>
                 </div>
                 <span className="shrink-0 text-xs text-muted-foreground">
@@ -540,16 +544,15 @@ export function ProfileView() {
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <Pencil className="h-5 w-5 text-emerald-600" />
-              Modifier mon profil
+              {t("profile.edit.title")}
             </DialogTitle>
             <DialogDescription>
-              Ces informations sont publiques : tout utilisateur consultant
-              votre profil les verra.
+              {t("profile.edit.desc")}
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-3 py-2">
             <div className="space-y-1.5">
-              <Label htmlFor="edit-name">Nom affiché</Label>
+              <Label htmlFor="edit-name">{t("profile.edit.name")}</Label>
               <Input
                 id="edit-name"
                 value={editName}
@@ -561,12 +564,12 @@ export function ProfileView() {
               </p>
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="edit-establishment">Établissement</Label>
+              <Label htmlFor="edit-establishment">{t("profile.edit.establishment")}</Label>
               <Input
                 id="edit-establishment"
                 value={editEstablishment}
                 onChange={(e) => setEditEstablishment(e.target.value)}
-                placeholder="Ex: Université Joseph Ki-Zerbo"
+                placeholder={t("profile.edit.establishmentPlaceholder")}
                 maxLength={200}
               />
               <p className="text-[11px] text-muted-foreground">
@@ -574,12 +577,12 @@ export function ProfileView() {
               </p>
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="edit-bio">Bio</Label>
+              <Label htmlFor="edit-bio">{t("profile.edit.bio")}</Label>
               <Textarea
                 id="edit-bio"
                 value={editBio}
                 onChange={(e) => setEditBio(e.target.value)}
-                placeholder="Présentez-vous en quelques mots..."
+                placeholder={t("profile.edit.bioPlaceholder")}
                 rows={4}
                 maxLength={500}
                 className="resize-y"
@@ -591,7 +594,7 @@ export function ProfileView() {
           </div>
           <DialogFooter className="gap-2">
             <Button variant="outline" onClick={() => setEditOpen(false)}>
-              Annuler
+              {t("profile.edit.cancel")}
             </Button>
             <Button
               onClick={saveEdit}
@@ -603,7 +606,7 @@ export function ProfileView() {
               ) : (
                 <CheckCircle2 className="h-4 w-4" />
               )}
-              Enregistrer
+              {t("profile.edit.save")}
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -635,6 +638,113 @@ function StatCard({
       </div>
       <p className="mt-2 text-2xl font-bold text-foreground">{value}</p>
       {sub && <p className="text-xs text-muted-foreground">{sub}</p>}
+    </Card>
+  );
+}
+
+// ---------- V7 — Security card: change password ----------
+
+function SecurityCard() {
+  const { t } = useTranslation();
+  const { data: session } = useSession();
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [saving, setSaving] = useState(false);
+
+  const submit = async () => {
+    if (newPassword.length < 6) {
+      toast.error(t("profile.security.errorShort"));
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      toast.error(t("profile.security.errorMismatch"));
+      return;
+    }
+    setSaving(true);
+    try {
+      const res = await fetch("/api/auth/change-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          currentPassword,
+          newPassword,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || t("profile.security.errorGeneric"));
+      toast.success(t("profile.security.success"));
+      setCurrentPassword("");
+      setNewPassword("");
+      setConfirmPassword("");
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : t("profile.security.errorGeneric"));
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <Card className="p-5" data-tour="security">
+      <div className="mb-1 flex items-center gap-2">
+        <LucideIcons.ShieldCheck className="h-5 w-5 text-emerald-600" />
+        <h2 className="text-lg font-semibold">{t("profile.security.title")}</h2>
+      </div>
+      <p className="mb-4 text-xs leading-relaxed text-muted-foreground">
+        {t("profile.security.desc")}
+      </p>
+      <div className="grid gap-3 sm:grid-cols-3">
+        <div className="space-y-1.5">
+          <Label htmlFor="security-current">
+            {t("profile.security.current")}
+          </Label>
+          <Input
+            id="security-current"
+            type="password"
+            value={currentPassword}
+            onChange={(e) => setCurrentPassword(e.target.value)}
+            autoComplete="current-password"
+            placeholder="••••••••"
+          />
+        </div>
+        <div className="space-y-1.5">
+          <Label htmlFor="security-new">{t("profile.security.new")}</Label>
+          <Input
+            id="security-new"
+            type="password"
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+            autoComplete="new-password"
+            placeholder="••••••••"
+          />
+        </div>
+        <div className="space-y-1.5">
+          <Label htmlFor="security-confirm">
+            {t("profile.security.confirm")}
+          </Label>
+          <Input
+            id="security-confirm"
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            autoComplete="new-password"
+            placeholder="••••••••"
+          />
+        </div>
+      </div>
+      <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-[11px] leading-relaxed text-muted-foreground">
+          {t("profile.security.googleHint")}
+        </p>
+        <Button
+          onClick={submit}
+          disabled={saving || newPassword.length === 0 || confirmPassword.length === 0}
+          className="btn-shine gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white"
+        >
+          <LucideIcons.KeyRound className="h-4 w-4" />
+          {saving ? t("profile.security.saving") : t("profile.security.submit")}
+        </Button>
+      </div>
     </Card>
   );
 }

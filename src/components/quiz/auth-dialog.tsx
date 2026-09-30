@@ -43,6 +43,9 @@ import {
   WifiOff,
   CheckCircle2,
   ExternalLink,
+  MailCheck,
+  KeyRound,
+  ArrowLeft,
 } from "lucide-react";
 
 /**
@@ -55,7 +58,7 @@ import {
  * referral pre-fill, Google OAuth via the shared GoogleButton.
  */
 
-type AuthMode = "login" | "signup";
+type AuthMode = "login" | "signup" | "forgot";
 
 export function AuthDialog({
   open,
@@ -78,6 +81,11 @@ export function AuthDialog({
   const [referralCode, setReferralCode] = useState(initialReferralCode ?? "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // V7 — flux "mot de passe oublié" (mode forgot).
+  const [forgotEmail, setForgotEmail] = useState("");
+  const [forgotLoading, setForgotLoading] = useState(false);
+  const [forgotSent, setForgotSent] = useState(false);
+  const [ownerLink, setOwnerLink] = useState<string | null>(null);
   const { t } = useTranslation();
 
   // Message when next-auth returns no result at all — i.e. the credentials
@@ -157,6 +165,32 @@ export function AuthDialog({
     setPassword("");
     setReferralCode("");
     setError(null);
+    setForgotEmail("");
+    setForgotSent(false);
+    setOwnerLink(null);
+  }
+
+  /** V7 — demande de lien de réinitialisation (envoi Brevo côté serveur). */
+  async function handleForgotSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setForgotLoading(true);
+    setError(null);
+    setOwnerLink(null);
+    try {
+      const res = await fetch("/api/auth/forgot-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: forgotEmail }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || t("auth.forgot.error"));
+      setForgotSent(true);
+      if (data.ownerLink) setOwnerLink(data.ownerLink);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : t("common.error"));
+    } finally {
+      setForgotLoading(false);
+    }
   }
 
   return (
@@ -169,7 +203,11 @@ export function AuthDialog({
     >
       <DialogContent className="max-h-[92vh] max-w-[95vw] gap-0 overflow-y-auto p-0 sm:max-w-md">
         <DialogTitle className="sr-only">
-          {mode === "login" ? t("auth.login.title") : t("auth.signup.title")}
+          {mode === "login"
+            ? t("auth.login.title")
+            : mode === "signup"
+              ? t("auth.signup.title")
+              : t("auth.forgot.title")}
         </DialogTitle>
         <DialogDescription className="sr-only">
           {t("auth.dialog.desc")}
@@ -219,7 +257,8 @@ export function AuthDialog({
           </div>
         </div>
 
-        {/* ---- Sliding pill tabs ---- */}
+        {/* ---- Sliding pill tabs (masquées en mode forgot) ---- */}
+        {mode !== "forgot" && (
         <div className="relative z-10 -mt-5 px-6">
           <div
             className="grid grid-cols-2 rounded-2xl border border-slate-200 bg-white p-1 shadow-lg shadow-blue-900/5"
@@ -262,6 +301,7 @@ export function AuthDialog({
             })}
           </div>
         </div>
+        )}
 
         {/* ---- Forms ---- */}
         <div className="px-6 pb-6 pt-5">
@@ -323,6 +363,18 @@ export function AuthDialog({
 
                   {error && <ErrorAlert message={error} showDiagnostic={error === SERVER_AUTH_ERROR} />}
 
+                  {/* V7 — accès direct au flux "mot de passe oublié" */}
+                  <button
+                    type="button"
+                    className="-mt-1 self-end text-xs font-semibold text-blue-600 transition-colors hover:text-blue-800 hover:underline dark:text-blue-300"
+                    onClick={() => {
+                      setMode("forgot");
+                      setError(null);
+                    }}
+                  >
+                    {t("auth.forgot.link")}
+                  </button>
+
                   <Button
                     type="submit"
                     disabled={loading}
@@ -336,6 +388,94 @@ export function AuthDialog({
                     {t("auth.login.button")}
                   </Button>
                 </form>
+              ) : mode === "forgot" ? (
+                /* ---------- V7 — Mot de passe oublié ---------- */
+                <div>
+                  {forgotSent ? (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="flex flex-col items-center py-4 text-center"
+                    >
+                      <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 dark:bg-emerald-950/60">
+                        <MailCheck className="h-7 w-7 text-emerald-600 dark:text-emerald-300" />
+                      </span>
+                      <h3 className="mt-4 font-display text-base font-bold text-foreground">
+                        {t("auth.forgot.sentTitle")}
+                      </h3>
+                      <p className="mt-1.5 max-w-xs text-xs leading-relaxed text-muted-foreground">
+                        {t("auth.forgot.sentDesc")} {" "}
+                        <span className="font-semibold text-foreground">{forgotEmail}</span>
+                      </p>
+                      {ownerLink && (
+                        <a
+                          href={ownerLink}
+                          className="mt-4 inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-blue-600 to-emerald-500 px-4 py-2 text-xs font-bold text-white shadow-md"
+                        >
+                          {t("auth.forgot.ownerLink")}
+                        </a>
+                      )}
+                      <button
+                        type="button"
+                        className="mt-5 text-xs font-semibold text-blue-600 hover:underline"
+                        onClick={() => {
+                          setMode("login");
+                          setError(null);
+                        }}
+                      >
+                        {t("auth.forgot.backToLogin")}
+                      </button>
+                    </motion.div>
+                  ) : (
+                    <form onSubmit={handleForgotSubmit} className="space-y-4">
+                      <p className="text-xs leading-relaxed text-muted-foreground">
+                        {t("auth.forgot.desc")}
+                      </p>
+                      <IconField
+                        id="forgot-email"
+                        label={t("auth.field.email")}
+                        icon={<Mail className="h-4 w-4" />}
+                      >
+                        <Input
+                          id="forgot-email"
+                          type="email"
+                          placeholder={t("auth.field.emailPlaceholder")}
+                          className="border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
+                          value={forgotEmail}
+                          onChange={(e) => setForgotEmail(e.target.value)}
+                          required
+                          autoComplete="email"
+                        />
+                      </IconField>
+
+                      {error && <ErrorAlert message={error} />}
+
+                      <Button
+                        type="submit"
+                        disabled={forgotLoading}
+                        className="btn-shine h-11 w-full gap-2 animate-gradient-x bg-gradient-to-r from-blue-600 to-emerald-500 text-base font-semibold shadow-lg shadow-blue-500/25"
+                      >
+                        {forgotLoading ? (
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                        ) : (
+                          <KeyRound className="h-4 w-4" />
+                        )}
+                        {t("auth.forgot.submit")}
+                      </Button>
+                      <button
+                        type="button"
+                        className="mx-auto flex items-center gap-1 text-xs font-semibold text-blue-600 hover:underline"
+                        onClick={() => {
+                          setMode("login");
+                          setError(null);
+                        }}
+                      >
+                        <ArrowLeft className="h-3.5 w-3.5" />
+                        {t("auth.forgot.backToLogin")}
+                      </button>
+                    </form>
+                  )}
+                </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <IconField
@@ -647,5 +787,168 @@ export function UserMenuButton() {
         </DropdownMenuContent>
       </DropdownMenu>
     </>
+  );
+}
+
+/**
+ * ResetPasswordDialog (V7) — formulaire de définition d'un nouveau mot de
+ * passe après le clic sur le lien de l'email "mot de passe oublié"
+ * (ouvert via l'URL ?reset=<token> interceptée par page.tsx).
+ */
+export function ResetPasswordDialog({
+  open,
+  onOpenChange,
+  token,
+}: {
+  open: boolean;
+  onOpenChange: (v: boolean) => void;
+  token: string;
+}) {
+  const { t } = useTranslation();
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [done, setDone] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setError(null);
+    if (password.length < 6) {
+      setError(t("auth.reset.errorShort"));
+      return;
+    }
+    if (password !== confirm) {
+      setError(t("auth.reset.errorMismatch"));
+      return;
+    }
+    setLoading(true);
+    try {
+      const res = await fetch("/api/auth/reset-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, password }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || t("auth.reset.errorGeneric"));
+      setDone(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : t("common.error"));
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-h-[92vh] max-w-[95vw] gap-0 overflow-y-auto p-0 sm:max-w-md">
+        <DialogTitle className="sr-only">{t("auth.reset.title")}</DialogTitle>
+        <DialogDescription className="sr-only">
+          {t("auth.reset.desc")}
+        </DialogDescription>
+
+        <div className="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-emerald-500 px-6 pb-7 pt-7 text-white">
+          <div className="dot-grid-light absolute inset-0 opacity-20" aria-hidden="true" />
+          <div className="relative flex items-center gap-2.5">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 shadow-lg backdrop-blur-sm">
+              <KeyRound className="h-5 w-5" />
+            </span>
+            <div>
+              <p className="font-display text-base font-bold leading-tight">
+                {t("auth.reset.title")}
+              </p>
+              <p className="text-[11px] text-blue-100/80">{t("auth.reset.sub")}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="px-6 pb-6 pt-5">
+          {done ? (
+            <div className="flex flex-col items-center py-4 text-center">
+              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 dark:bg-emerald-950/60">
+                <CheckCircle2 className="h-7 w-7 text-emerald-600 dark:text-emerald-300" />
+              </span>
+              <h3 className="mt-4 font-display text-base font-bold">
+                {t("auth.reset.doneTitle")}
+              </h3>
+              <p className="mt-1.5 max-w-xs text-xs leading-relaxed text-muted-foreground">
+                {t("auth.reset.doneDesc")}
+              </p>
+              <Button
+                className="btn-shine mt-5 h-10 w-full gap-2 animate-gradient-x bg-gradient-to-r from-blue-600 to-emerald-500 font-semibold"
+                onClick={() => onOpenChange(false)}
+              >
+                <LogIn className="h-4 w-4" />
+                {t("auth.reset.backToLogin")}
+              </Button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <IconField
+                id="reset-password"
+                label={t("auth.reset.newPassword")}
+                icon={<Lock className="h-4 w-4" />}
+                suffix={
+                  <button
+                    type="button"
+                    tabIndex={-1}
+                    onClick={() => setShow((v) => !v)}
+                    className="text-slate-400 transition-colors hover:text-slate-600"
+                    aria-label={show ? t("auth.hidePassword") : t("auth.showPassword")}
+                  >
+                    {show ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                  </button>
+                }
+              >
+                <Input
+                  id="reset-password"
+                  type={show ? "text" : "password"}
+                  placeholder={t("auth.field.passwordMin")}
+                  className="border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  minLength={6}
+                  autoComplete="new-password"
+                />
+              </IconField>
+              <IconField
+                id="reset-confirm"
+                label={t("auth.reset.confirm")}
+                icon={<Lock className="h-4 w-4" />}
+              >
+                <Input
+                  id="reset-confirm"
+                  type={show ? "text" : "password"}
+                  placeholder={t("auth.reset.confirmPlaceholder")}
+                  className="border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
+                  value={confirm}
+                  onChange={(e) => setConfirm(e.target.value)}
+                  required
+                  minLength={6}
+                  autoComplete="new-password"
+                />
+              </IconField>
+
+              {error && <ErrorAlert message={error} />}
+
+              <Button
+                type="submit"
+                disabled={loading}
+                className="btn-shine h-11 w-full gap-2 animate-gradient-x bg-gradient-to-r from-blue-600 to-emerald-500 text-base font-semibold shadow-lg shadow-blue-500/25"
+              >
+                {loading ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <KeyRound className="h-4 w-4" />
+                )}
+                {t("auth.reset.submit")}
+              </Button>
+            </form>
+          )}
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
