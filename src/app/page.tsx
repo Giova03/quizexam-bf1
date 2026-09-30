@@ -1727,7 +1727,11 @@ export default function Home() {
         <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
           <SheetContent
             side="right"
-            className="relative flex w-[86vw] max-w-sm flex-col gap-0 overflow-hidden p-0"
+            /* FIX — pas de classe "relative" ici : elle écrase le "fixed"
+               de base (ordre d'émission CSS Tailwind) et le panneau tombait
+               en bas du flux du document → overlay sombre sans menu visible.
+               Le décor interne en absolute s'ancre sur l'ancêtre fixed. */
+            className="flex w-[86vw] max-w-sm flex-col gap-0 overflow-hidden p-0"
           >
             {/* V7 — décor : lueurs aurora + trame de points derrière le contenu */}
             <div

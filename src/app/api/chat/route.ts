@@ -7,9 +7,20 @@ import { applyUserRateLimit } from "@/lib/api-rate-limit";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
-const SYSTEM_PROMPT = `Tu es QuizExam Assistant, le chatbot intelligent de la plateforme QuizExam BF — une plateforme burkinabè de préparation aux concours.
+const SYSTEM_PROMPT = `Tu es QuizExam Assistant, le coach IA (GLM) de la plateforme QuizExam BF — une plateforme burkinabè de préparation aux concours.
 
-TON RÔLE: Aider les visiteurs, expliquer des notions de cours, donner des conseils de révision, répondre sur le fonctionnement de la plateforme, et analyser la progression de l'utilisateur.
+TON RÔLE: Tu réponds à TOUT TYPE DE QUESTION, sans exception :
+- Culture générale (Burkina Faso, Afrique, monde, histoire, géographie, actualité)
+- Sciences (maths, physique, chimie, SVT, informatique), droit, économie, lettres
+- Langues (français, anglais...), calculs, raisonnement logique, traductions
+- Coaching: méthodes de révision, organisation, motivation, orientation
+- Plateforme QuizExam BF: banques, modes de correction, fonctionnalités
+- Discussions générales, conseils pratiques, questions de vie courante
+
+MÉTHODE: Réponds toujours de façon utile et directe. Pour une question de cours,
+structure la réponse (définition → explication → exemple). Pour un calcul, détaille
+les étapes. Si une question est ambiguë, propose l'interprétation la plus probable
+et réponds quand même. Tu ne refuses jamais d'aider sur un sujet scolaire ou général.
 
 INFORMATIONS VÉRIFIÉES (juin 2025):
 - Président du Faso: Capitaine Ibrahim Traoré
@@ -21,6 +32,249 @@ INFORMATIONS VÉRIFIÉES (juin 2025):
 
 STYLE: Français, amical, concis, encourageant. Si tu ne sais pas, dis-le.
 PERSONNALISATION: Quand tu reçois du contexte utilisateur (zones de faiblesse, progression, sessions récentes), utilise-le pour donner des conseils personnalisés et concrets.`;
+
+/**
+ * Mode « QCM d'apprentissage » : l'IA génère une question à la fois, sous
+ * forme de JSON strict, et s'adapte EN AUTONOMIE au fil de la conversation
+ * (historique fourni) : montée/descente en difficulté, sujets variés,
+ * enchaînement sans intervention hors du chat.
+ */
+const QCM_SYSTEM_PROMPT = `Tu es QuizExam Coach, un générateur autonome de QCM d'apprentissage (GLM) pour des candidats aux concours du Burkina Faso.
+
+RÈGLES ABSOLUES:
+1. Tu réponds UNIQUEMENT avec un objet JSON valide, sans texte autour, sans balises markdown.
+2. Format EXACT:
+{"question":"...","options":["...","...","...","..."],"answerIndex":0,"explanation":"...","topic":"...","difficulty":"facile|moyenne|difficile"}
+3. exactement 4 options, une seule correcte (answerIndex = 0, 1, 2 ou 3).
+4. explanation: 1 à 3 phrases pédagogiques qui justifient la bonne réponse.
+5. topic: nom court du thème (ex: "Culture générale BF", "Maths", "Droit constitutionnel", "Anglais", "SVT", "Logique").
+
+ADAPTATION AUTONOME (crucial):
+- Analyse l'historique de la conversation (questions déjà posées + réponses du candidat).
+- Ne répète JAMAIS une question déjà posée (ni quasi identique).
+- Si le candidat vient de réussir: augmente progressivement la difficulté ou durcis les distracteurs.
+- S'il vient d'échouer: reste sur le même thème avec une question plus accessible qui consolide la notion ratée.
+- Varie les thèmes toutes les 2-3 questions SAUF si l'utilisateur a demandé un thème précis (alors reste-y).
+- Si aucune indication: commence par un mélange équilibré culture générale Burkina / maths / français / logique, niveau moyenne.`;
+
+/* ------------------------------------------------------------------ */
+/* Mode QCM d'apprentissage (généré par GLM, adaptation autonome)      */
+/* ------------------------------------------------------------------ */
+
+interface QcmQuestion {
+  question: string;
+  options: string[];
+  answerIndex: number;
+  explanation: string;
+  topic: string;
+  difficulty: "facile" | "moyenne" | "difficile";
+}
+
+/** Retire les fences ```json éventuelles autour de la réponse du modèle. */
+function stripFences(s: string): string {
+  let t = s.trim();
+  if (t.startsWith("```")) {
+    t = t.replace(/^```(?:json|JSON)?\s*/, "").replace(/```\s*$/, "");
+  }
+  return t.trim();
+}
+
+/** Parse + valide la réponse JSON du modèle. Retourne null si invalide. */
+function parseQcm(content: string): QcmQuestion | null {
+  if (!content) return null;
+  const cleaned = stripFences(content);
+  let raw: unknown = null;
+  try {
+    raw = JSON.parse(cleaned);
+  } catch {
+    const m = cleaned.match(/\{[\s\S]*\}/);
+    if (!m) return null;
+    try {
+      raw = JSON.parse(m[0]);
+    } catch {
+      return null;
+    }
+  }
+  if (!raw || typeof raw !== "object") return null;
+  const o = raw as Record<string, unknown>;
+  if (typeof o.question !== "string" || o.question.trim().length < 5) return null;
+  if (!Array.isArray(o.options) || o.options.length !== 4) return null;
+  const options = o.options.map((x) => String(x).trim());
+  if (options.some((x) => x.length === 0)) return null;
+  if (new Set(options.map((x) => x.toLowerCase())).size !== 4) return null;
+  const answerIndex = Number(o.answerIndex);
+  if (!Number.isInteger(answerIndex) || answerIndex < 0 || answerIndex > 3) return null;
+  const difficultyRaw = String(o.difficulty ?? "moyenne").toLowerCase();
+  const difficulty: QcmQuestion["difficulty"] =
+    difficultyRaw === "facile" || difficultyRaw === "difficile"
+      ? (difficultyRaw as QcmQuestion["difficulty"])
+      : "moyenne";
+  return {
+    question: o.question.trim(),
+    options,
+    answerIndex,
+    explanation:
+      typeof o.explanation === "string" && o.explanation.trim()
+        ? o.explanation.trim()
+        : "La bonne réponse est soulignée dans la correction.",
+    topic:
+      typeof o.topic === "string" && o.topic.trim()
+        ? o.topic.trim()
+        : "Culture générale",
+    difficulty,
+  };
+}
+
+/**
+ * Banque de secours : si GLM est indisponible, le mode QCM continue de
+ * fonctionner avec ces questions statiques (servies dans l'ordre, sans
+ * répétition grâce à l'historique de conversation).
+ */
+const FALLBACK_QCMS: QcmQuestion[] = [
+  {
+    question: "Qui est l'actuel Président du Faso (Burkina Faso) ?",
+    options: ["Capitaine Ibrahim Traoré", "Dr Ousmane Bougma", "Blaise Compaoré", "Roch Marc Christian Kaboré"],
+    answerIndex: 0,
+    explanation: "Le Capitaine Ibrahim Traoré est au pouvoir depuis le 30 septembre 2022, suite au coup d'État du 30 septembre.",
+    topic: "Culture générale BF",
+    difficulty: "facile",
+  },
+  {
+    question: "Combien de régions compte le Burkina Faso depuis juillet 2025 ?",
+    options: ["13", "17", "45", "47"],
+    answerIndex: 1,
+    explanation: "Le Burkina compte 17 régions et 47 provinces depuis juillet 2025.",
+    topic: "Culture générale BF",
+    difficulty: "facile",
+  },
+  {
+    question: "Quelle est la devise de l'Alliance des États du Sahel (AES) ?",
+    options: ["Un peuple, un but, une foi", "Un espace, un peuple, un destin", "Force, honneur, justice", "Unité, progrès, justice"],
+    answerIndex: 1,
+    explanation: "La devise de l'AES (Mali, Burkina Faso, Niger) est « Un espace, un peuple, un destin ». La confédération a été signée le 9 juillet 2024.",
+    topic: "Culture générale BF",
+    difficulty: "moyenne",
+  },
+  {
+    question: "Quel est le résultat de 15% de 480 ?",
+    options: ["62", "72", "48", "75"],
+    answerIndex: 1,
+    explanation: "10% de 480 = 48 ; 5% = 24 ; donc 15% = 48 + 24 = 72.",
+    topic: "Maths",
+    difficulty: "facile",
+  },
+  {
+    question: "Quelle est la racine carrée de 169 ?",
+    options: ["12", "13", "14", "17"],
+    answerIndex: 1,
+    explanation: "13 × 13 = 169. La racine carrée de 169 est donc 13.",
+    topic: "Maths",
+    difficulty: "facile",
+  },
+  {
+    question: "Si 3 ouvriers creusent un puits en 12 jours, combien de jours faut-il à 6 ouvriers (même rythme) ?",
+    options: ["3 jours", "6 jours", "9 jours", "24 jours"],
+    answerIndex: 1,
+    explanation: "C'est une proportionnalité inverse : doubler le nombre d'ouvriers divise le temps par 2 → 6 jours.",
+    topic: "Logique",
+    difficulty: "moyenne",
+  },
+  {
+    question: "Quel mot est un synonyme de « éphémère » ?",
+    options: ["Éternel", "Passager", "Robuste", "Latent"],
+    answerIndex: 1,
+    explanation: "« Éphémère » désigne ce qui dure très peu de temps, comme « passager ». « Éternel » est l'antonyme.",
+    topic: "Français",
+    difficulty: "facile",
+  },
+  {
+    question: "Dans quelle ville se tient le FESPACO ?",
+    options: ["Bobo-Dioulasso", "Ouagadougou", "Koudougou", "Banfora"],
+    answerIndex: 1,
+    explanation: "Le FESPACO, plus grand festival de cinéma d'Afrique, se tient à Ouagadougou tous les deux ans depuis 1969.",
+    topic: "Culture générale BF",
+    difficulty: "facile",
+  },
+  {
+    question: "Quel organe de l'État burkinabè adopte les lois pendant la transition ?",
+    options: ["Le Conseil constitutionnel", "L'Assemblée Législative de Transition (ALT)", "Le Conseil des ministres", "La Cour de cassation"],
+    answerIndex: 1,
+    explanation: "L'ALT, présidée par le Dr Ousmane Bougma, exerce le pouvoir législatif pendant la transition.",
+    topic: "Droit constitutionnel",
+    difficulty: "moyenne",
+  },
+  {
+    question: "Choose the correct English sentence:",
+    options: ["She don't like mangoes.", "She doesn't likes mangoes.", "She doesn't like mangoes.", "She not like mangoes."],
+    answerIndex: 2,
+    explanation: "À la 3e personne du singulier au présent simple, on utilise « doesn't » + base verbale : « She doesn't like mangoes. »",
+    topic: "Anglais",
+    difficulty: "moyenne",
+  },
+  {
+    question: "Quel est l'organe principal de la circulation sanguine ?",
+    options: ["Le foie", "Les poumons", "Le cœur", "Les reins"],
+    answerIndex: 2,
+    explanation: "Le cœur est la pompe musculaire qui propulse le sang dans tout le corps via le réseau artériel et veineux.",
+    topic: "SVT",
+    difficulty: "facile",
+  },
+  {
+    question: "Quelle est la capitale administrative du Burkina Faso (deuxième ville) ?",
+    options: ["Bobo-Dioulasso", "Ouahigouya", "Kaya", "Tenkodogo"],
+    answerIndex: 0,
+    explanation: "Bobo-Dioulasso est la capitale économique et la deuxième ville du pays ; Ouagadougou reste la capitale politique.",
+    topic: "Culture générale BF",
+    difficulty: "facile",
+  },
+  {
+    question: "Un article coûte 2 500 F. Il bénéficie d'une remise de 20 %. Quel est le nouveau prix ?",
+    options: ["2 000 F", "2 100 F", "2 250 F", "1 800 F"],
+    answerIndex: 0,
+    explanation: "Remise = 2 500 × 0,20 = 500 F. Nouveau prix = 2 500 − 500 = 2 000 F.",
+    topic: "Maths",
+    difficulty: "moyenne",
+  },
+  {
+    question: "Complete the series: 2, 6, 12, 20, 30, ?",
+    options: ["36", "40", "42", "44"],
+    answerIndex: 2,
+    explanation: "Les écarts augmentent de 2 en 2 : +4, +6, +8, +10, +12 → 30 + 12 = 42. (Formule : n×(n+1).)",
+    topic: "Logique",
+    difficulty: "difficile",
+  },
+  {
+    question: "Quelle figure de style utilise « cette femme est un dragon » ?",
+    options: ["La comparaison", "La métaphore", "L'hyperbole", "L'euphémisme"],
+    answerIndex: 1,
+    explanation: "Il n'y a pas d'outil de comparaison (« comme ») : l'assimilation directe est une métaphore.",
+    topic: "Français",
+    difficulty: "moyenne",
+  },
+  {
+    question: "En quelle année la Confédération de l'AES a-t-elle été signée ?",
+    options: ["16 septembre 2023", "9 juillet 2024", "30 septembre 2022", "1er janvier 2025"],
+    answerIndex: 1,
+    explanation: "L'AES créée le 16/09/2023 est devenue Confédération le 9 juillet 2024.",
+    topic: "Culture générale BF",
+    difficulty: "moyenne",
+  },
+];
+
+/**
+ * Choisit une question de secours non encore posée (en comparant les
+ * énoncés présents dans l'historique de la conversation).
+ */
+function pickFallbackQcm(history: { role: string; content: string }[]): QcmQuestion {
+  const asked = history
+    .filter((m) => m.role === "assistant")
+    .map((m) => m.content.toLowerCase());
+  const unused = FALLBACK_QCMS.filter(
+    (q) => !asked.some((a) => a.includes(q.question.toLowerCase().slice(0, 40)))
+  );
+  const pool = unused.length > 0 ? unused : FALLBACK_QCMS;
+  return pool[Math.floor(Math.random() * pool.length)];
+}
 
 interface SessionAnswerRow {
   questionText: string;
@@ -300,9 +554,60 @@ export async function POST(request: Request) {
     if (!limit.allowed && limit.response) return limit.response;
 
     const body = await request.json();
-    const { messages } = body;
+    const { messages, mode } = body as {
+      messages?: { role: string; content: string }[];
+      mode?: "general" | "qcm";
+    };
     if (!messages || !Array.isArray(messages) || messages.length === 0)
       return NextResponse.json({ error: "Messages requis" }, { status: 400 });
+
+    /* ================================================================
+     * MODE QCM D'APPRENTISSAGE (autonome)
+     * Le client renvoie l'historique complet (questions générées +
+     * réponses/corrections du candidat encodées en messages user). GLM
+     * s'adapte à partir de cet historique : difficulté, thème, non-répétition.
+     * ================================================================ */
+    if (mode === "qcm") {
+      const history = messages.slice(-24); // garde-fou de contexte
+      try {
+        const zai = await ZAI.create();
+        const completion = await zai.chat.completions.create({
+          messages: [
+            { role: "assistant", content: QCM_SYSTEM_PROMPT },
+            ...history.map((m) => ({
+              role: (m.role === "user" ? "user" : "assistant") as
+                | "user"
+                | "assistant",
+              content: m.content,
+            })),
+            {
+              role: "user",
+              content:
+                "Génère MAINTENANT la prochaine question de QCM en respectant strictement le format JSON.",
+            },
+          ],
+          thinking: { type: "disabled" },
+        });
+        const content = completion?.choices?.[0]?.message?.content ?? "";
+        const qcm = parseQcm(content);
+        if (qcm) {
+          return NextResponse.json({ qcm, role: "assistant" });
+        }
+        // JSON invalide → question de secours (fonctionne hors-ligne IA).
+        return NextResponse.json({
+          qcm: pickFallbackQcm(history),
+          degraded: true,
+          role: "assistant",
+        });
+      } catch (aiError) {
+        console.error("QCM AI error, using static fallback:", aiError);
+        return NextResponse.json({
+          qcm: pickFallbackQcm(history),
+          degraded: true,
+          role: "assistant",
+        });
+      }
+    }
 
     // --- Build personalized context (if the user is signed in) ----------
     const user = await resolveUser();

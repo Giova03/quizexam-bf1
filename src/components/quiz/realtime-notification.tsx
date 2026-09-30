@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePrefs } from "@/shared/stores/prefs-store";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -25,15 +25,29 @@ const COLORS: Record<string, string> = {
 /**
  * Affiche une notification flottante temps réel quand une nouvelle notification est ajoutée.
  * Se ferme automatiquement après 5 secondes ou au clic.
+ *
+ * FIX — « Badge débloqué » qui réapparaissait à chaque rafraîchissement :
+ * seules les notifications CRÉÉES PENDANT LA SESSION COURANTE (date >
+ * montage du composant) déclenchent une pop-up. Les anciennes non lues
+ * restent accessibles via la cloche (panneau Notifications) mais ne
+ * s'affichent plus en overlay au chargement de la page.
  */
 export function RealtimeNotification() {
   const notifications = usePrefs((s) => s.notifications);
   const [current, setCurrent] = useState<string | null>(null);
   const [dismissed, setDismissed] = useState<Set<string>>(new Set());
+  // Instant de montage : les notifications antérieures n'ouvrent pas de pop-up.
+  const mountedAtRef = useRef<number>(Date.now());
 
   // Show the most recent unread notification (that hasn't been shown yet)
   useEffect(() => {
-    const latest = notifications.find((n) => !n.read && !dismissed.has(n.id));
+    const mountedAt = mountedAtRef.current;
+    const latest = notifications.find(
+      (n) =>
+        !n.read &&
+        !dismissed.has(n.id) &&
+        new Date(n.date).getTime() > mountedAt
+    );
     if (latest && current !== latest.id) {
       // Use setTimeout to avoid calling setState synchronously in effect
       const showTimer = setTimeout(() => setCurrent(latest.id), 0);

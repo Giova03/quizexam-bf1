@@ -498,6 +498,10 @@ export function BanksLibraryView() {
         ) : (
           <div className="grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {groups.map(([category, categoryBanks], i) => {
+              // FIX CHEVAUCHEMENT : le lot ouvert est masqué proprement
+              // (visibility, layout préservé) pendant que son panneau est
+              // ouvert — aucun double rendu du même contenu à l'écran.
+              const hiddenWhileOpen = activeLot === category;
               const share =
                 totalQuestions > 0
                   ? Math.max(
@@ -540,6 +544,7 @@ export function BanksLibraryView() {
                   featured={i === 0 && groups.length > 2}
                   share={share}
                   index={i}
+                  hidden={hiddenWhileOpen}
                   onOpen={() => setActiveLot(category)}
                   levelLabel={levelLabel}
                 />
@@ -549,7 +554,13 @@ export function BanksLibraryView() {
         )}
       </div>
 
-      {/* ---------- Lot ouvert (effet d'expansion layoutId) ---------- */}
+      {/* ---------- Lot ouvert (expansion modale déterminée) ----------
+          FIX CHEVAUCHEMENT : l'ancien layoutId partagé carte/panneau montait
+          DEUX éléments avec le même layoutId simultanément (la carte restait
+          rendue dans la grille) → Framer Motion croisait les deux rendus et
+          empilait texte + boutons sur plusieurs couches. On utilise désormais
+          une entrée/sortie déterminée (ressort scale + fade) : zéro doublon,
+          même sensation d'expansion théâtrale. */}
       <AnimatePresence>
         {activeLotData && activeTone && (
           <>
@@ -564,14 +575,16 @@ export function BanksLibraryView() {
               onClick={() => setActiveLot(null)}
               aria-hidden="true"
             />
-            {/* Panneau agrandi depuis la carte cliquée (layoutId partagé) */}
+            {/* Panneau agrandi (modal centré, ressort d'ouverture) */}
             <motion.div
               key={`lot-panel-${activeLotData.category}`}
-              layoutId={`lot-${activeLotData.category}`}
               role="dialog"
               aria-modal="true"
               aria-label={activeLotData.category}
-              exit={{ opacity: 0, transition: { duration: 0.15 } }}
+              initial={{ opacity: 0, scale: 0.9, y: 34 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 18, transition: { duration: 0.16 } }}
+              transition={{ type: "spring", stiffness: 340, damping: 30 }}
               className="fixed inset-0 z-50 m-auto flex h-fit max-h-[85vh] w-[calc(100%-1.5rem)] max-w-2xl flex-col overflow-hidden rounded-3xl border bg-card shadow-2xl"
             >
               {/* En-tête dégradé */}
@@ -705,6 +718,7 @@ function LotCard({
   share,
   index = 0,
   inlineBanks = false,
+  hidden = false,
   onOpen,
   onOpenBank,
   onTagLevel,
@@ -717,6 +731,8 @@ function LotCard({
   share: number;
   index?: number;
   inlineBanks?: boolean;
+  /** FIX — masque la carte (visibility) pendant que son panneau est ouvert. */
+  hidden?: boolean;
   onOpen?: () => void;
   onOpenBank?: (bankId: string) => void;
   onTagLevel?: (lvl: string) => void;
@@ -910,15 +926,17 @@ function LotCard({
       initial={{ opacity: 0, y: 26, scale: 0.96 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ type: "spring", stiffness: 260, damping: 24, delay: index * 0.06 }}
-      className={`group/lot relative ${featured ? "sm:col-span-2" : ""}`}
+      className={`group/lot relative ${featured ? "sm:col-span-2" : ""} ${hidden ? "invisible" : ""}`}
+      aria-hidden={hidden || undefined}
     >
       {/* Lueur colorée diffuse en arrière-plan (survol) */}
       <span
         aria-hidden="true"
         className={`absolute -inset-3 rounded-[2.4rem] bg-gradient-to-br ${tone.glow} opacity-0 blur-2xl transition-opacity duration-500 group-hover/lot:opacity-40`}
       />
+      {/* FIX CHEVAUCHEMENT : plus de layoutId ici (il était dupliqué avec
+          le panneau ouvert) — la carte reste une simple carte animée. */}
       <motion.button
-        layoutId={`lot-${category}`}
         type="button"
         onClick={onOpen}
         whileHover={{ scale: 1.025, y: -4 }}
