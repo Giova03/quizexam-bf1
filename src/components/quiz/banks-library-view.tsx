@@ -12,7 +12,9 @@ import {
   Compass,
   ChevronRight,
   Layers,
-  X,
+  ArrowLeft,
+  Crosshair,
+  ScanLine,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -160,6 +162,75 @@ const STAGGER_CONTAINER: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.045, delayChildren: 0.16 } },
 };
+
+/**
+ * V9 — Mini-radar décoratif (motif « tour de contrôle »).
+ * Écran circulaire : anneaux concentriques + faisceau conique rotatif + blips
+ * clignotants. Purement décoratif (aria-hidden), aucune interaction.
+ */
+function RadarDish({ className = "" }: { className?: string }) {
+  const blips = [
+    { x: "30%", y: "34%", delay: 0 },
+    { x: "64%", y: "26%", delay: 0.9 },
+    { x: "56%", y: "66%", delay: 1.7 },
+  ];
+  return (
+    <span
+      aria-hidden="true"
+      className={`pointer-events-none relative block aspect-square overflow-hidden rounded-full border border-white/25 ${className}`}
+    >
+      <span className="absolute inset-[18%] rounded-full border border-white/15" />
+      <span className="absolute inset-[36%] rounded-full border border-white/10" />
+      <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/10" />
+      <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-white/10" />
+      {/* Faisceau rotatif */}
+      <motion.span
+        className="absolute inset-0 rounded-full"
+        style={{
+          background:
+            "conic-gradient(from 0deg, transparent 0deg, transparent 290deg, rgba(255,255,255,0.38) 350deg, transparent 360deg)",
+        }}
+        animate={{ rotate: 360 }}
+        transition={{ duration: 3.2, repeat: Infinity, ease: "linear" }}
+      />
+      {/* Blips ping */}
+      {blips.map((b, i) => (
+        <motion.span
+          key={i}
+          className="absolute h-1.5 w-1.5 rounded-full bg-white"
+          style={{ left: b.x, top: b.y }}
+          animate={{ opacity: [0, 1, 0], scale: [0.6, 1.15, 0.6] }}
+          transition={{
+            duration: 1.4,
+            repeat: Infinity,
+            delay: b.delay,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </span>
+  );}
+
+/** Placage HUD : étiquette coin façon salle de contrôle. */
+function HudChip({
+  children,
+  tone = "white",
+}: {
+  children: React.ReactNode;
+  tone?: "white" | "slate";
+}) {
+  return (
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.22em] ${
+        tone === "white"
+          ? "border border-white/25 bg-white/10 text-white/85"
+          : "border border-slate-200 bg-slate-950/5 text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-400"
+      }`}
+    >
+      {children}
+    </span>
+  );
+}
 const STAGGER_ITEM: Variants = {
   hidden: { opacity: 0, y: 16, scale: 0.97 },
   show: {
@@ -224,6 +295,8 @@ export function BanksLibraryView() {
   const [sort, setSort] = useState<SortMode>("popular");
   /* V7 — lot actuellement ouvert (catégorie) ; null = grille de lots. */
   const [activeLot, setActiveLot] = useState<string | null>(null);
+  /* V9 — ancre du corps de bibliothèque (défilement doux vers le panneau). */
+  const bodyRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -249,18 +322,21 @@ export function BanksLibraryView() {
     window.localStorage.setItem("library:level", level);
   }, [level]);
 
-  /* Lot ouvert : verrouille le scroll de fond + Échap pour fermer. */
+  /* Lot ouvert : Échap pour fermer + défilement doux vers le panneau.
+     V9 — plus de verrouillage du scroll : le panneau focus vit DANS le flux
+     de la page (fini la modale fixe et ses problèmes de superposition). */
   useEffect(() => {
     if (!activeLot) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setActiveLot(null);
     };
     window.addEventListener("keydown", onKey);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const id = window.setTimeout(() => {
+      bodyRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
     return () => {
       window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prev;
+      window.clearTimeout(id);
     };
   }, [activeLot]);
 
@@ -470,21 +546,12 @@ export function BanksLibraryView() {
         </div>
       </div>
 
-      {/* ---------- Body : grille de LOTS spectaculaires ---------- */}
-      <div className="mx-auto max-w-6xl px-4 py-8">
-        {!loading && (
-          <p className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
-            <ArrowUpDown className="h-3.5 w-3.5" />
-            {sorted.length}{" "}
-            {t(sorted.length > 1 ? "banks.unit.banks" : "banks.unit.bank")} ·{" "}
-            {totalQuestions.toLocaleString("fr-FR")}{" "}
-            {t(totalQuestions > 1 ? "banks.unit.questions" : "banks.unit.question")}
-            {level !== "TOUS" &&
-              ` · ${t("banks.level.word")} ${levelLabel(level).toLowerCase()}`}
-            {query && ` · « ${query} »`}
-          </p>
-        )}
-
+      {/* ---------- Body : grille de LOTS spectaculaires + panneau focus V9 ----------
+          FIX DISPOSITION : plus AUCUNE modale fixe. Cliquer un lot bascule
+          proprement la zone de contenu vers un panneau plein-flux (mode="wait")
+          — un seul rendu à l'écran à la fois, scroll naturel, grille large
+          organisée (1 / 2 / 3 colonnes selon l'écran), zéro chevauchement. */}
+      <div ref={bodyRef} className="mx-auto max-w-6xl scroll-mt-24 px-4 py-8">
         {loading ? (
           <LibrarySkeleton />
         ) : sorted.length === 0 ? (
@@ -496,210 +563,95 @@ export function BanksLibraryView() {
             }}
           />
         ) : (
-          <div className="grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {groups.map(([category, categoryBanks], i) => {
-              // FIX CHEVAUCHEMENT : le lot ouvert est masqué proprement
-              // (visibility, layout préservé) pendant que son panneau est
-              // ouvert — aucun double rendu du même contenu à l'écran.
-              const hiddenWhileOpen = activeLot === category;
-              const share =
-                totalQuestions > 0
-                  ? Math.max(
-                      4,
-                      Math.round(
-                        (categoryBanks.reduce(
-                          (s, b) => s + (b._count?.questions ?? 0),
-                          0
-                        ) /
-                          totalQuestions) *
-                          100
-                      )
-                    )
-                  : 0;
-              /* CAS UNE SEULE CATÉGORIE : le lot est rendu déjà « ouvert »
-                 en ligne (jamais une liste plate en dessous d'un lot seul). */
-              if (groups.length === 1) {
-                return (
-                  <LotCard
-                    key={category}
-                    category={category}
-                    banks={categoryBanks}
-                    tone={toneFor(category)}
-                    featured
-                    share={share}
-                    index={i}
-                    inlineBanks
-                    onOpenBank={openBank}
-                    onTagLevel={(lvl) => setLevel(lvl as EducationLevel)}
-                    levelLabel={levelLabel}
-                  />
-                );
-              }
-              return (
-                <LotCard
-                  key={category}
-                  category={category}
-                  banks={categoryBanks}
-                  tone={toneFor(category)}
-                  featured={i === 0 && groups.length > 2}
-                  share={share}
-                  index={i}
-                  hidden={hiddenWhileOpen}
-                  onOpen={() => setActiveLot(category)}
-                  levelLabel={levelLabel}
-                />
-              );
-            })}
-          </div>
+          <AnimatePresence mode="wait" initial={false}>
+            {activeLotData && activeTone ? (
+              <LotFocusPanel
+                key="lot-focus"
+                category={activeLotData.category}
+                banks={activeLotData.banks}
+                tone={activeTone}
+                totalQuestions={totalQuestions}
+                onBack={() => setActiveLot(null)}
+                onOpenBank={openBank}
+                onTagLevel={(lvl) => setLevel(lvl as EducationLevel)}
+                levelLabel={levelLabel}
+              />
+            ) : (
+              <motion.div
+                key="lots-grid"
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -14, transition: { duration: 0.16 } }}
+                transition={{ duration: 0.32, ease: "easeOut" }}
+              >
+                {!loading && (
+                  <p className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
+                    <ArrowUpDown className="h-3.5 w-3.5" />
+                    {sorted.length}{" "}
+                    {t(sorted.length > 1 ? "banks.unit.banks" : "banks.unit.bank")} ·{" "}
+                    {totalQuestions.toLocaleString("fr-FR")}{" "}
+                    {t(totalQuestions > 1 ? "banks.unit.questions" : "banks.unit.question")}
+                    {level !== "TOUS" &&
+                      ` · ${t("banks.level.word")} ${levelLabel(level).toLowerCase()}`}
+                    {query && ` · « ${query} »`}
+                  </p>
+                )}
+                <div className="grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {groups.map(([category, categoryBanks], i) => {
+                    const share =
+                      totalQuestions > 0
+                        ? Math.max(
+                            4,
+                            Math.round(
+                              (categoryBanks.reduce(
+                                (s, b) => s + (b._count?.questions ?? 0),
+                                0
+                              ) /
+                                totalQuestions) *
+                                100
+                            )
+                          )
+                        : 0;
+                    /* CAS UNE SEULE CATÉGORIE : le lot est rendu déjà « ouvert »
+                       en ligne (jamais une liste plate en dessous d'un lot seul). */
+                    if (groups.length === 1) {
+                      return (
+                        <LotCard
+                          key={category}
+                          category={category}
+                          banks={categoryBanks}
+                          tone={toneFor(category)}
+                          featured
+                          share={share}
+                          index={i}
+                          inlineBanks
+                          onOpenBank={openBank}
+                          onTagLevel={(lvl) => setLevel(lvl as EducationLevel)}
+                          levelLabel={levelLabel}
+                        />
+                      );
+                    }
+                    return (
+                      <LotCard
+                        key={category}
+                        category={category}
+                        banks={categoryBanks}
+                        tone={toneFor(category)}
+                        featured={i === 0 && groups.length > 2}
+                        share={share}
+                        index={i}
+                        onOpen={() => setActiveLot(category)}
+                        levelLabel={levelLabel}
+                      />
+                    );
+                  })}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         )}
       </div>
 
-      {/* ---------- Lot ouvert (expansion modale déterminée) ----------
-          FIX CHEVAUCHEMENT : l'ancien layoutId partagé carte/panneau montait
-          DEUX éléments avec le même layoutId simultanément (la carte restait
-          rendue dans la grille) → Framer Motion croisait les deux rendus et
-          empilait texte + boutons sur plusieurs couches. On utilise désormais
-          une entrée/sortie déterminée (ressort scale + fade) : zéro doublon,
-          même sensation d'expansion théâtrale. */}
-      <AnimatePresence>
-        {activeLotData && activeTone && (
-          <>
-            {/* Voile de fond */}
-            <motion.div
-              key="lot-backdrop"
-              className="fixed inset-0 z-50 bg-slate-950/55 backdrop-blur-sm"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => setActiveLot(null)}
-              aria-hidden="true"
-            />
-            {/* Panneau agrandi (modal centré, ressort d'ouverture) */}
-            <motion.div
-              key={`lot-panel-${activeLotData.category}`}
-              role="dialog"
-              aria-modal="true"
-              aria-label={activeLotData.category}
-              initial={{ opacity: 0, scale: 0.9, y: 34 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 18, transition: { duration: 0.16 } }}
-              transition={{ type: "spring", stiffness: 340, damping: 30 }}
-              className="fixed inset-0 z-50 m-auto flex h-fit max-h-[85vh] w-[calc(100%-1.5rem)] max-w-2xl flex-col overflow-hidden rounded-3xl border bg-card shadow-2xl"
-            >
-              {/* En-tête dégradé */}
-              <div
-                className={`relative overflow-hidden bg-gradient-to-br ${activeTone.header} p-5 text-white`}
-              >
-                <span
-                  aria-hidden="true"
-                  className="absolute -right-8 -top-10 h-32 w-32 rounded-full bg-white/15 blur-2xl"
-                />
-                <span
-                  aria-hidden="true"
-                  className="absolute -bottom-12 -left-8 h-28 w-28 rounded-full bg-white/10 blur-xl"
-                />
-                <div className="relative flex items-start justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-sm">
-                      <BankIcon
-                        name={activeLotData.banks[0]?.icon ?? "Landmark"}
-                        className="h-6 w-6"
-                      />
-                    </span>
-                    <div className="min-w-0">
-                      <h2 className="truncate font-display text-lg font-bold leading-tight">
-                        {activeLotData.category}
-                      </h2>
-                      <p className="mt-0.5 text-xs font-medium text-white/85">
-                        {activeLotData.banks.length} {t("banks.stat.banks")} ·{" "}
-                        <AnimatedNumber
-                          value={activeLotData.banks.reduce(
-                            (s, b) => s + (b._count?.questions ?? 0),
-                            0
-                          )}
-                        />{" "}
-                        {t("banks.stat.questions")}
-                      </p>
-                    </div>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => setActiveLot(null)}
-                    aria-label={t("banks.cta.close")}
-                    className="rounded-full bg-white/20 p-2 text-white transition-colors hover:bg-white/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-                  >
-                    <X className="h-4 w-4" />
-                  </button>
-                </div>
-                {/* Barre de progression (part du contenu) */}
-                <div className="relative mt-4">
-                  <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-white/80">
-                    {Math.max(
-                      4,
-                      Math.round(
-                        (activeLotData.banks.reduce(
-                          (s, b) => s + (b._count?.questions ?? 0),
-                          0
-                        ) /
-                          Math.max(1, totalQuestions)) *
-                          100
-                      )
-                    )}
-                    % {t("banks.share.of")}
-                  </p>
-                  <div className="h-1.5 overflow-hidden rounded-full bg-white/25">
-                    <motion.div
-                      className="h-full rounded-full bg-white"
-                      initial={{ width: 0 }}
-                      animate={{
-                        width: `${Math.max(
-                          4,
-                          Math.round(
-                            (activeLotData.banks.reduce(
-                              (s, b) => s + (b._count?.questions ?? 0),
-                              0
-                            ) /
-                              Math.max(1, totalQuestions)) *
-                              100
-                          )
-                        )}%`,
-                      }}
-                      transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Banques du lot — cascade rapide (staggered) */}
-              <motion.div
-                variants={STAGGER_CONTAINER}
-                initial="hidden"
-                animate="show"
-                className="grid flex-1 gap-3 overflow-y-auto p-4 sm:grid-cols-2"
-              >
-                {activeLotData.banks.map((bank) => (
-                  <LotBankCard
-                    key={bank.id}
-                    bank={bank}
-                    onOpen={() => openBank(bank.id)}
-                    onTagLevel={(lvl) => {
-                      setLevel(lvl as EducationLevel);
-                      setActiveLot(null);
-                    }}
-                    levelLabel={levelLabel}
-                  />
-                ))}
-                {activeLotData.banks.length === 0 && (
-                  <p className="col-span-full py-10 text-center text-sm text-muted-foreground">
-                    {t("banks.lot.empty")}
-                  </p>
-                )}
-              </motion.div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
     </div>
   );
 }
@@ -718,7 +670,6 @@ function LotCard({
   share,
   index = 0,
   inlineBanks = false,
-  hidden = false,
   onOpen,
   onOpenBank,
   onTagLevel,
@@ -731,8 +682,6 @@ function LotCard({
   share: number;
   index?: number;
   inlineBanks?: boolean;
-  /** FIX — masque la carte (visibility) pendant que son panneau est ouvert. */
-  hidden?: boolean;
   onOpen?: () => void;
   onOpenBank?: (bankId: string) => void;
   onTagLevel?: (lvl: string) => void;
@@ -767,6 +716,12 @@ function LotCard({
       <span
         aria-hidden="true"
         className="absolute -bottom-14 -left-10 h-28 w-28 rounded-full bg-white/10 blur-xl"
+      />
+      {/* V9 — mini-radar « tour de contrôle » en filigrane à droite */}
+      <RadarDish
+        className={`absolute -right-5 top-1/2 hidden -translate-y-1/2 opacity-45 sm:block ${
+          featured ? "w-32" : "w-24"
+        }`}
       />
       <div className="relative flex items-center gap-4">
         {/* Médaillon géant */}
@@ -926,16 +881,13 @@ function LotCard({
       initial={{ opacity: 0, y: 26, scale: 0.96 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ type: "spring", stiffness: 260, damping: 24, delay: index * 0.06 }}
-      className={`group/lot relative ${featured ? "sm:col-span-2" : ""} ${hidden ? "invisible" : ""}`}
-      aria-hidden={hidden || undefined}
+      className={`group/lot relative ${featured ? "sm:col-span-2" : ""}`}
     >
       {/* Lueur colorée diffuse en arrière-plan (survol) */}
       <span
         aria-hidden="true"
         className={`absolute -inset-3 rounded-[2.4rem] bg-gradient-to-br ${tone.glow} opacity-0 blur-2xl transition-opacity duration-500 group-hover/lot:opacity-40`}
       />
-      {/* FIX CHEVAUCHEMENT : plus de layoutId ici (il était dupliqué avec
-          le panneau ouvert) — la carte reste une simple carte animée. */}
       <motion.button
         type="button"
         onClick={onOpen}
@@ -949,6 +901,169 @@ function LotCard({
         <div className="flex flex-1 flex-col gap-3 p-4">{body}</div>
       </motion.button>
     </motion.div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* V9 — LotFocusPanel : panneau focus plein-flux « tour de contrôle »  */
+/* Remplace la modale fixe : un seul rendu à l'écran, scroll naturel,  */
+/* grille large 1/2/3 colonnes, en-tête HUD avec radar rotatif.        */
+/* ------------------------------------------------------------------ */
+
+function LotFocusPanel({
+  category,
+  banks,
+  tone,
+  totalQuestions,
+  onBack,
+  onOpenBank,
+  onTagLevel,
+  levelLabel,
+}: {
+  category: string;
+  banks: QuestionBank[];
+  tone: (typeof LOT_TONES)[number];
+  totalQuestions: number;
+  onBack: () => void;
+  onOpenBank: (bankId: string) => void;
+  onTagLevel: (lvl: string) => void;
+  levelLabel: (lvl: string) => string;
+}) {
+  const { t } = useTranslation();
+  const questions = banks.reduce((s, b) => s + (b._count?.questions ?? 0), 0);
+  const share = Math.max(
+    4,
+    Math.round((questions / Math.max(1, totalQuestions)) * 100),
+  );
+  const firstIcon = banks[0]?.icon ?? "Landmark";
+
+  return (
+    <motion.section
+      initial={{ opacity: 0, y: 26, scale: 0.985 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -16, scale: 0.99, transition: { duration: 0.16 } }}
+      transition={{ type: "spring", stiffness: 260, damping: 27 }}
+      className="relative"
+      aria-label={`${t("banks.aria.lot")} — ${category}`}
+    >
+      {/* Lueur colorée diffuse autour du panneau */}
+      <span
+        aria-hidden="true"
+        className={`absolute -inset-3 rounded-[2.4rem] bg-gradient-to-br ${tone.glow} opacity-25 blur-2xl`}
+      />
+      <div className="relative overflow-hidden rounded-3xl border bg-card shadow-xl">
+        {/* ===== En-tête HUD façon tour de contrôle ===== */}
+        <div
+          className={`relative overflow-hidden bg-gradient-to-br ${tone.header} px-5 py-6 text-white sm:px-7`}
+        >
+          {/* Trame de points */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 opacity-[0.14]"
+            style={{
+              backgroundImage:
+                "radial-gradient(rgba(255,255,255,0.95) 1px, transparent 1.5px)",
+              backgroundSize: "20px 20px",
+            }}
+          />
+          {/* Balayage lumineux périodique */}
+          <motion.span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 w-1/4 bg-gradient-to-r from-transparent via-white/25 to-transparent"
+            initial={{ x: "-160%" }}
+            animate={{ x: "520%" }}
+            transition={{ duration: 2.6, repeat: Infinity, repeatDelay: 4.6, ease: "easeInOut" }}
+          />
+          {/* Radar décoratif à droite */}
+          <RadarDish className="absolute -right-8 top-1/2 hidden w-40 -translate-y-1/2 opacity-50 sm:block" />
+
+          <div className="relative flex flex-wrap items-center gap-x-4 gap-y-3">
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/20 shadow-inner backdrop-blur-sm">
+              <BankIcon name={firstIcon} className="h-7 w-7" />
+            </span>
+            <div className="min-w-0 flex-1">
+              <HudChip>
+                <ScanLine className="h-3 w-3" />
+                {t("banks.focus.scan")}
+              </HudChip>
+              <h2 className="mt-1.5 truncate font-display text-xl font-extrabold tracking-tight sm:text-2xl">
+                {category}
+              </h2>
+              <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs font-medium text-white/85">
+                <span className="inline-flex items-center gap-1">
+                  <LayoutGrid className="h-3.5 w-3.5" />
+                  {banks.length} {t("banks.stat.banks")}
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <BookOpen className="h-3.5 w-3.5" />
+                  <AnimatedNumber value={questions} /> {t("banks.stat.questions")}
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <Crosshair className="h-3.5 w-3.5" />
+                  {share}% {t("banks.share.of")}
+                </span>
+              </p>
+            </div>
+            <motion.button
+              type="button"
+              onClick={onBack}
+              whileHover={{ x: -3 }}
+              whileTap={{ scale: 0.96 }}
+              className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-4 py-2 text-xs font-bold backdrop-blur-sm transition-colors hover:bg-white/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              {t("banks.focus.back")}
+            </motion.button>
+          </div>
+
+          {/* Barre de progression (part du contenu) */}
+          <div className="relative mt-5">
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/25">
+              <motion.div
+                className="h-full rounded-full bg-white/90"
+                initial={{ width: 0 }}
+                animate={{ width: `${share}%` }}
+                transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* ===== Corps : banques du lot en grille organisée ===== */}
+        <motion.div
+          variants={STAGGER_CONTAINER}
+          initial="hidden"
+          animate="show"
+          className="grid items-stretch gap-3 p-4 sm:grid-cols-2 sm:p-5 lg:grid-cols-3"
+        >
+          {banks.map((bank) => (
+            <LotBankCard
+              key={bank.id}
+              bank={bank}
+              onOpen={() => onOpenBank(bank.id)}
+              onTagLevel={onTagLevel}
+              levelLabel={levelLabel}
+            />
+          ))}
+          {banks.length === 0 && (
+            <p className="col-span-full py-14 text-center text-sm text-muted-foreground">
+              {t("banks.lot.empty")}
+            </p>
+          )}
+        </motion.div>
+
+        {/* ===== Pied HUD ===== */}
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t px-4 py-3 sm:px-5">
+          <HudChip tone="slate">
+            <Crosshair className="h-3 w-3" />
+            {t("banks.focus.hint")}
+          </HudChip>
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
+            {category}
+          </span>
+        </div>
+      </div>
+    </motion.section>
   );
 }
 
@@ -975,7 +1090,7 @@ function LotBankCard({
   return (
     <motion.div
       variants={STAGGER_ITEM}
-      className="group/card flex cursor-pointer flex-col rounded-2xl border border-border/70 bg-background/60 p-3.5 transition-colors duration-200 hover:border-blue-200 hover:bg-blue-50/40 dark:border-white/5 dark:hover:border-blue-500/30 dark:hover:bg-blue-500/5"
+      className="group/card flex h-full cursor-pointer flex-col rounded-2xl border border-border/70 bg-background/60 p-3.5 transition-colors duration-200 hover:border-blue-200 hover:bg-blue-50/40 dark:border-white/5 dark:hover:border-blue-500/30 dark:hover:bg-blue-500/5"
       onClick={onOpen}
       role="button"
       tabIndex={0}

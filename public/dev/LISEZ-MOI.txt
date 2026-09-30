@@ -1,0 +1,5 @@
+Placez ici la photo du développeur sous le nom : giovanni-bamos.webp
+Elle s'affichera automatiquement dans « À propos > Le développeur ».
+Formats acceptés : .webp (recommandé), sinon modifier DEV_PHOTO dans
+src/components/quiz/about-view.tsx (.jpg/.png). Si le fichier est absent,
+un avatar à initiales « BG » s'affiche à la place.

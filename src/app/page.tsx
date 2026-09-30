@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, lazy, Suspense, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import { useQuizStore } from "@/shared/stores/quiz-store";
 import { usePrefs } from "@/shared/stores/prefs-store";
 import { useTranslation } from "@/lib/use-translation";
@@ -95,6 +95,8 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import {
   Sheet,
@@ -130,7 +132,6 @@ import {
   Brain,
   ChevronDown,
   Crown,
-  Code2,
   UsersRound,
   CalendarDays,
   Newspaper,
@@ -148,6 +149,8 @@ import {
   Signal,
   Crosshair,
   LogIn,
+  LogOut,
+  Code2,
   X,
   // FIX2 — added Menu icon for the mobile nav (Grid removed in FIX3 in favour of Compass).
   Menu,
@@ -556,6 +559,8 @@ const BentoSectionLabel = ({
  * Affiche l'avatar, le nom, le rôle et deux compteurs (pièces, réponses).
  * Pour un visiteur non connecté, propose un CTA de connexion (même
  * AuthDialog qu'avant — aucune nouvelle logique d'authentification).
+ * V9 — bouton « Se déconnecter » toujours visible pour l'utilisateur
+ * connecté (demande explicite : il doit être immédiatement trouvable).
  */
 function SidebarProfileCard({
   name,
@@ -564,6 +569,7 @@ function SidebarProfileCard({
   coins,
   answers,
   onLogin,
+  onLogout,
 }: {
   name?: string | null;
   email?: string | null;
@@ -571,6 +577,7 @@ function SidebarProfileCard({
   coins: number;
   answers: number;
   onLogin: () => void;
+  onLogout: () => void;
 }) {
   const { t } = useTranslation();
   const initial = (name ?? email ?? "?").charAt(0).toUpperCase();
@@ -648,6 +655,17 @@ function SidebarProfileCard({
             <span className="font-normal opacity-70">{t("sidebar.stat.answers")}</span>
           </span>
         </div>
+        {/* V9 — Déconnexion : bouton dédié, toujours visible, action directe. */}
+        <motion.button
+          type="button"
+          onClick={onLogout}
+          whileTap={{ scale: 0.98 }}
+          className="mt-2 flex w-full items-center justify-center gap-2 rounded-lg border border-rose-200 bg-rose-50/70 py-2 text-xs font-bold text-rose-600 transition-colors hover:bg-rose-100 hover:text-rose-700 dark:border-rose-500/25 dark:bg-rose-950/30 dark:text-rose-300 dark:hover:bg-rose-950/60"
+          aria-label={t("sidebar.profile.logout")}
+        >
+          <LogOut className="h-3.5 w-3.5" />
+          {t("sidebar.profile.logout")}
+        </motion.button>
       </div>
     </motion.div>
   );
@@ -686,6 +704,20 @@ function AdminControlTower({
 }) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  /* V9 — sonde ciblée (réticule de visée) + télémétrie animée du radar. */
+  const [target, setTarget] = useState<number | null>(null);
+  const [telemetry, setTelemetry] = useState({ az: 214.6, el: 42.1 });
+
+  useEffect(() => {
+    if (!open) return;
+    const id = window.setInterval(() => {
+      setTelemetry((prev) => ({
+        az: (prev.az + 7.3 + Math.random() * 5) % 360,
+        el: 30 + Math.random() * 55,
+      }));
+    }, 900);
+    return () => window.clearInterval(id);
+  }, [open]);
 
   // Sondes en orbite : angles répartis uniformément (72° d'écart, départ au
   // sommet). 90° = haut, sens antihoraire, coordonnées écran (y inversé).
@@ -777,6 +809,25 @@ function AdminControlTower({
                 backgroundSize: "22px 22px",
               }}
             />
+            {/* V9 — scanlines CRT subtiles */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 opacity-[0.07]"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(0deg, rgba(52,211,153,0.7) 0px, rgba(52,211,153,0.7) 1px, transparent 1px, transparent 4px)",
+              }}
+            />
+            {/* V9 — équerres HUD aux quatre coins */}
+            {["left-3 top-3 border-l-2 border-t-2", "right-3 top-3 border-r-2 border-t-2", "bottom-3 left-3 border-b-2 border-l-2", "bottom-3 right-3 border-b-2 border-r-2"].map(
+              (pos) => (
+                <span
+                  key={pos}
+                  aria-hidden="true"
+                  className={`absolute h-6 w-6 rounded-[3px] border-emerald-400/40 ${pos}`}
+                />
+              ),
+            )}
 
             {/* ---- Bandeau HUD supérieur ---- */}
             <motion.div
@@ -834,6 +885,41 @@ function AdminControlTower({
                     animate={{ rotate: 360 }}
                     transition={{ duration: 3.4, repeat: Infinity, ease: "linear" }}
                   />
+                  {/* V9 — blips radar : contacts qui s'estompent au passage du faisceau */}
+                  {[
+                    { x: "31%", y: "38%", d: 0.4 },
+                    { x: "68%", y: "30%", d: 1.5 },
+                    { x: "58%", y: "70%", d: 2.4 },
+                    { x: "26%", y: "64%", d: 2.9 },
+                  ].map((b, i) => (
+                    <span
+                      key={`blip-${i}`}
+                      aria-hidden="true"
+                      className="absolute"
+                      style={{ left: b.x, top: b.y }}
+                    >
+                      <motion.span
+                        className="block h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-[0_0_6px_rgba(52,211,153,0.9)]"
+                        animate={{ opacity: [0.15, 1, 0.15], scale: [0.8, 1.25, 0.8] }}
+                        transition={{
+                          duration: 3.4,
+                          repeat: Infinity,
+                          delay: b.d,
+                          ease: "easeInOut",
+                        }}
+                      />
+                      <motion.span
+                        className="absolute inset-0 -m-1 rounded-full border border-emerald-300/50"
+                        animate={{ scale: [0.6, 2.2], opacity: [0.7, 0] }}
+                        transition={{
+                          duration: 1.8,
+                          repeat: Infinity,
+                          delay: b.d,
+                          ease: "easeOut",
+                        }}
+                      />
+                    </span>
+                  ))}
                 </div>
 
                 {/* Lignes SVG qui relient le noyau aux sondes */}
@@ -846,6 +932,7 @@ function AdminControlTower({
                     const rad = (item.angle * Math.PI) / 180;
                     const x2 = 150 + Math.cos(rad) * 96;
                     const y2 = 150 - Math.sin(rad) * 96;
+                    const isTarget = target === i;
                     return (
                       <motion.line
                         key={`line-${item.label}`}
@@ -853,8 +940,10 @@ function AdminControlTower({
                         y1="150"
                         x2={x2}
                         y2={y2}
-                        stroke="rgba(52,211,153,0.35)"
-                        strokeWidth="1"
+                        stroke={
+                          isTarget ? "rgba(52,211,153,0.85)" : "rgba(52,211,153,0.35)"
+                        }
+                        strokeWidth={isTarget ? 1.6 : 1}
                         strokeDasharray="3 3"
                         initial={{ pathLength: 0, opacity: 0 }}
                         animate={{ pathLength: 1, opacity: 1 }}
@@ -863,6 +952,34 @@ function AdminControlTower({
                     );
                   })}
                 </svg>
+
+                {/* V9 — réticule de visée verrouillé sur la sonde survolée */}
+                <AnimatePresence>
+                  {target !== null && items[target] && (
+                    <motion.div
+                      key="probe-reticle"
+                      initial={{ opacity: 0, scale: 1.7 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 1.7 }}
+                      transition={{ duration: 0.18 }}
+                      className="pointer-events-none absolute left-1/2 top-1/2 -ml-10 -mt-10 h-20 w-20"
+                      style={{
+                        x: Math.cos((items[target].angle * Math.PI) / 180) * RADIUS,
+                        y: -Math.sin((items[target].angle * Math.PI) / 180) * RADIUS,
+                      }}
+                    >
+                      <motion.span
+                        className="absolute inset-0 rounded-full border-2 border-dashed border-emerald-300/70"
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                      />
+                      <span
+                        aria-hidden="true"
+                        className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-300/50"
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
                 {/* Noyau central pulsant */}
                 <motion.div
@@ -892,6 +1009,10 @@ function AdminControlTower({
                       key={item.label}
                       type="button"
                       onClick={() => run(item.onClick)}
+                      onMouseEnter={() => setTarget(i)}
+                      onMouseLeave={() => setTarget(null)}
+                      onFocus={() => setTarget(i)}
+                      onBlur={() => setTarget(null)}
                       initial={{ opacity: 0, x: 0, y: 0, scale: 0.2 }}
                       animate={{ opacity: 1, x: dx, y: dy, scale: 1 }}
                       exit={{ opacity: 0, x: 0, y: 0, scale: 0.2 }}
@@ -925,15 +1046,18 @@ function AdminControlTower({
               </div>
             </div>
 
-            {/* ---- Bandeau HUD inférieur ---- */}
+            {/* ---- Bandeau HUD inférieur : télémétrie animée + aide ---- */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.55 }}
-              className="relative flex items-center justify-center gap-2 pb-5 font-mono text-[9px] uppercase tracking-[0.28em] text-slate-500"
+              className="relative flex flex-wrap items-center justify-center gap-x-4 gap-y-1 pb-5 font-mono text-[9px] uppercase tracking-[0.28em] text-slate-500"
             >
-              <Crosshair className="h-3 w-3" />
-              {t("nav.controlTower.hint")}
+              <span className="inline-flex items-center gap-1.5 tabular-nums text-emerald-400/85">
+                <Crosshair className="h-3 w-3" />
+                AZ {telemetry.az.toFixed(1)}° · EL {telemetry.el.toFixed(1)}°
+              </span>
+              <span>{t("nav.controlTower.hint")}</span>
             </motion.p>
           </motion.div>
         )}
@@ -1717,6 +1841,68 @@ export default function Home() {
                 )}
               </DropdownMenuContent>
             </DropdownMenu>
+
+            {/* V9 — Menu compte (desktop) : avatar + identité + déconnexion.
+                Le bouton « Se déconnecter » est désormais visible et accessible
+                depuis n'importe quelle vue sur grand écran aussi. */}
+            {status === "authenticated" && (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    type="button"
+                    aria-label={t("nav.account")}
+                    className="relative hidden h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 text-xs font-bold text-white shadow-md shadow-blue-500/25 transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 md:inline-flex"
+                  >
+                    {(session?.user?.name || session?.user?.email || "?")
+                      .charAt(0)
+                      .toUpperCase()}
+                    {isAdmin && (
+                      <span
+                        className="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 border-background bg-amber-400 text-[7px] font-black text-amber-950"
+                        aria-hidden="true"
+                      >
+                        A
+                      </span>
+                    )}
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-60">
+                  <DropdownMenuLabel className="flex flex-col gap-0.5">
+                    <span className="truncate text-sm font-bold">
+                      {session?.user?.name ?? "—"}
+                    </span>
+                    <span className="truncate text-xs font-normal text-muted-foreground">
+                      {session?.user?.email ?? ""}
+                    </span>
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem
+                    className="gap-2 cursor-pointer"
+                    onClick={() => setSettingsOpen(true)}
+                  >
+                    <Settings className="h-4 w-4" />
+                    {t("nav.settings")}
+                  </DropdownMenuItem>
+                  {status === "authenticated" && !isAdmin && (
+                    <DropdownMenuItem
+                      className="gap-2 cursor-pointer text-amber-600 focus:text-amber-700"
+                      onClick={() => setPricingOpen(true)}
+                    >
+                      <Crown className="h-4 w-4" />
+                      {t("nav.premium")}
+                    </DropdownMenuItem>
+                  )}
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem
+                    className="gap-2 cursor-pointer text-rose-600 focus:bg-rose-50 focus:text-rose-700 dark:focus:bg-rose-950/40"
+                    onClick={() => signOut({ callbackUrl: "/" })}
+                  >
+                    <LogOut className="h-4 w-4" />
+                    {t("sidebar.profile.logout")}
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )}
           </div>
         </div>
 
@@ -1790,6 +1976,7 @@ export default function Home() {
                 coins={sidebarCoins}
                 answers={sidebarAnswers}
                 onLogin={() => setAuthOpen(true)}
+                onLogout={() => signOut({ callbackUrl: "/" })}
               />
             </SheetHeader>
 
@@ -1888,6 +2075,7 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-2">
                 <BentoTile index={28} icon={<CalendarDays className="h-5 w-5" />} label={t("menu.events")} tone="violet" active={view === "events"} onClick={() => { openEvents(); setMobileNavOpen(false); }} />
                 <BentoTile index={29} icon={<Info className="h-5 w-5" />} label={t("nav.about")} tone="sky" active={view === "about"} onClick={() => { openAbout(); setMobileNavOpen(false); }} />
+                <BentoTile index={30} icon={<Code2 className="h-5 w-5" />} label={t("menu.developer")} tone="amber" active={view === "about"} onClick={() => { openAbout(); setMobileNavOpen(false); }} />
               </div>
 
               {/* — Réglages (non-admins uniquement) : pour les admins, ces
