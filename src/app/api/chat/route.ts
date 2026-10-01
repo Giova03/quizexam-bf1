@@ -914,6 +914,26 @@ export async function POST(request: Request) {
       });
     }
 
+    // Fallback V14c — SOURCES WEB : si l'IA est indisponible mais que la
+    // recherche web a trouvé des sources, on compose une réponse documentée
+    // à partir des extraits (l'utilisateur obtient une vraie information
+    // sourcée au lieu d'un message générique).
+    if (webSources.length > 0) {
+      const body = webSources
+        .map(
+          (s, i) =>
+            `• ${s.snippet}\n  (source [S${i + 1}] : ${s.url})`,
+        )
+        .join("\n\n");
+      return NextResponse.json({
+        response:
+          `Voici ce que j'ai trouvé sur le web à propos de ta question :\n\n${body}\n\n` +
+          `Si tu veux, je peux approfondir un point précis — ou lance « lance un QCM » pour t'entraîner. 📚`,
+        role: "assistant",
+        engine: "web-fallback",
+      });
+    }
+
     // Fallback: use contextual responses
     const fallbackResponse = getFallbackResponse(lastUserMessage, fallbackCtx);
     return NextResponse.json({
