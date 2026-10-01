@@ -43,6 +43,20 @@ import {
   BookOpen,
   Signal,
   Activity,
+  CalendarCheck,
+  Brain,
+  FileText,
+  Award,
+  TreePalm,
+  ShoppingBag,
+  MessagesSquare,
+  UsersRound,
+  Mail,
+  UserCheck,
+  Radio,
+  Newspaper,
+  Swords,
+  CalendarDays,
 } from "lucide-react";
 import { RadarDish } from "./lot-visuals";
 import { Button } from "@/components/ui/button";
@@ -402,6 +416,7 @@ export function LandingView({ onAuthOpen }: LandingViewProps) {
       <SubjectsMarquee />
       <ControlTowerSection onAuthOpen={onAuthOpen} />
       <FeaturesSection />
+      <CatalogueSection onAuthOpen={onAuthOpen} />
       <HowItWorksSection />
       <LevelsSection />
       <TestimonialsSection />
@@ -1195,6 +1210,127 @@ function FeaturesSection() {
               </motion.div>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* V16 — Catalogue complet : « beaucoup de fonctionnalités sont cachées »
+/* selon l'utilisateur — cette section révèle TOUTES les capacités de la
+/* plateforme dès la page d'accueil publique, réutilisant les libellés
+/* i18n existants du menu (menu.* / menu.*.desc) : zéro nouvelle
+/* traduction par item.
+/* ------------------------------------------------------------------ */
+
+function CatalogueSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"] }) {
+  const { t } = useTranslation();
+
+  const families: Array<{
+    key: string;
+    icon: typeof BookOpen;
+    chip: string;
+    items: Array<{ icon: typeof BookOpen; label: string; desc: string }>;
+  }> = [
+    {
+      key: "revise",
+      icon: BookOpen,
+      chip: "bg-blue-100 text-blue-600",
+      items: [
+        { icon: LibraryBig, label: t("menu.banks"), desc: t("menu.banks.desc") },
+        { icon: GraduationCap, label: t("menu.officialExam"), desc: t("menu.officialExam.desc") },
+        { icon: Sparkles, label: t("menu.aiPath"), desc: t("menu.aiPath.desc") },
+        { icon: CalendarCheck, label: t("menu.thirtyDays"), desc: t("menu.thirtyDays.desc") },
+        { icon: FileText, label: t("menu.studySheets"), desc: t("menu.studySheets.desc") },
+        { icon: Brain, label: t("menu.spacedRepetition"), desc: t("menu.spacedRepetition.desc") },
+        { icon: BookOpen, label: t("menu.wiki"), desc: t("menu.wiki.desc") },
+      ],
+    },
+    {
+      key: "progress",
+      icon: Target,
+      chip: "bg-violet-100 text-violet-600",
+      items: [
+        { icon: Trophy, label: t("menu.leaderboard"), desc: t("menu.leaderboard.desc") },
+        { icon: Swords, label: t("menu.competition"), desc: t("menu.competition.desc") },
+        { icon: Award, label: t("menu.achievements"), desc: t("menu.achievements.desc") },
+        { icon: Target, label: t("menu.quests"), desc: t("menu.quests.desc") },
+        { icon: TreePalm, label: t("menu.skillTree"), desc: t("menu.skillTree.desc") },
+        { icon: Flame, label: t("menu.leagues"), desc: t("menu.leagues.desc") },
+        { icon: ShoppingBag, label: t("menu.shop"), desc: t("menu.shop.desc") },
+      ],
+    },
+    {
+      key: "community",
+      icon: Users,
+      chip: "bg-emerald-100 text-emerald-600",
+      items: [
+        { icon: MessagesSquare, label: t("menu.forum"), desc: t("menu.forum.desc") },
+        { icon: Users, label: t("menu.social"), desc: t("menu.social.desc") },
+        { icon: UsersRound, label: t("menu.groups"), desc: t("menu.groups.desc") },
+        { icon: Mail, label: t("menu.messages"), desc: t("menu.messages.desc") },
+        { icon: UserCheck, label: t("menu.mentorship"), desc: t("menu.mentorship.desc") },
+        { icon: Radio, label: t("menu.liveSessions"), desc: t("menu.liveSessions.desc") },
+        { icon: Newspaper, label: t("menu.blog"), desc: t("menu.blog.desc") },
+        { icon: CalendarDays, label: t("menu.events"), desc: t("menu.events.desc") },
+      ],
+    },
+  ];
+
+  return (
+    <section id="catalogue" className="relative scroll-mt-20 py-24">
+      <div className="mx-auto max-w-6xl px-4">
+        <motion.div {...fadeUp} className="mx-auto mb-14 max-w-2xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">
+            {t("land.catalog.kicker")}
+          </p>
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            {t("land.catalog.title")}
+          </h2>
+          <p className="mt-4 text-slate-500">{t("land.catalog.subtitle")}</p>
+        </motion.div>
+
+        <div className="grid gap-5 lg:grid-cols-3">
+          {families.map((family, fi) => (
+            <motion.div
+              key={family.key}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.55, delay: fi * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-3xl border border-slate-200/80 bg-white p-5 shadow-sm sm:p-6"
+            >
+              <div className="flex items-center gap-2.5">
+                <span className={`inline-flex h-9 w-9 items-center justify-center rounded-xl ${family.chip}`}>
+                  <family.icon className="h-4.5 w-4.5" />
+                </span>
+                <h3 className="font-display text-base font-semibold text-slate-900">
+                  {t(`land.catalog.${family.key}`)}
+                </h3>
+              </div>
+              <ul className="mt-4 space-y-1">
+                {family.items.map((item) => (
+                  <li key={item.label}>
+                    <button
+                      type="button"
+                      onClick={() => onAuthOpen()}
+                      title={item.desc}
+                      className="group flex w-full items-start gap-2.5 rounded-xl px-2.5 py-2 text-left transition-colors hover:bg-slate-50"
+                    >
+                      <item.icon className="mt-0.5 h-4 w-4 shrink-0 text-slate-400 transition-colors group-hover:text-emerald-600" />
+                      <span className="min-w-0">
+                        <span className="block text-sm font-medium text-slate-800">{item.label}</span>
+                        <span className="mt-0.5 block line-clamp-1 text-xs text-slate-400 group-hover:text-slate-500">
+                          {item.desc}
+                        </span>
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

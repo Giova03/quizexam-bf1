@@ -268,13 +268,13 @@ export function ImportCsvDialog({ open, onOpenChange, onImported }: Props) {
       const opts = [q.optionA, q.optionB, q.optionC, q.optionD].map((s) =>
         s.trim().toLowerCase()
       );
+      // V16 — explication facultative (source n°1 de refus d'import).
       return (
         q.question.trim() &&
         q.optionA.trim() &&
         q.optionB.trim() &&
         q.optionC.trim() &&
         q.optionD.trim() &&
-        q.explanation.trim() &&
         ["A", "B", "C", "D"].includes(q.correctAnswer) &&
         new Set(opts).size === 4
       );
@@ -330,7 +330,6 @@ export function ImportCsvDialog({ open, onOpenChange, onImported }: Props) {
           q.optionB.trim() &&
           q.optionC.trim() &&
           q.optionD.trim() &&
-          q.explanation.trim() &&
           new Set(opts).size === 4
         );
       });
@@ -350,7 +349,19 @@ export function ImportCsvDialog({ open, onOpenChange, onImported }: Props) {
         toast.error(data.error ?? "Échec import");
         return;
       }
-      toast.success(`${data.success} question(s) importée(s) ✓`);
+      if (data.failure > 0 && Array.isArray(data.results)) {
+        // V16 — raisons exactes des refus serveur.
+        const reasons = data.results
+          .filter((r: { ok: boolean }) => !r.ok)
+          .map((r: { error?: string }) => r.error)
+          .filter(Boolean);
+        const uniq = [...new Set(reasons)].slice(0, 3).join(" · ");
+        toast.warning(
+          `${data.success} importée(s), ${data.failure} refusée(s)${uniq ? ` — ${uniq}` : ""}`
+        );
+      } else {
+        toast.success(`${data.success} question(s) importée(s) ✓`);
+      }
       onImported?.();
       onOpenChange(false);
     } catch {

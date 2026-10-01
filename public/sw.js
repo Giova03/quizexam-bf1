@@ -5,7 +5,7 @@
 //   - API POST/PATCH/DELETE (mutations): passthrough; queued for background sync
 //   - Navigation requests: network-first, fall back to cached "/" (offline shell)
 
-const CACHE_VERSION = "v2";
+const CACHE_VERSION = "v3";
 const STATIC_CACHE = `quizexam-static-${CACHE_VERSION}`;
 const API_CACHE = `quizexam-api-${CACHE_VERSION}`;
 const BG_SYNC_QUEUE = "quizexam-bg-sync-queue";
@@ -15,6 +15,10 @@ const PRE_CACHE_URLS = [
   "/",
   "/manifest.json",
   "/logo-quizexam.svg",
+  "/icons/icon-192.png",
+  "/icons/icon-512.png",
+  "/icons/maskable-192.png",
+  "/icons/maskable-512.png",
   "/api/banks",
   "/api/exams",
 ];

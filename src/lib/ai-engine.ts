@@ -33,6 +33,9 @@ export interface ChatOptions {
   timeoutMs?: number;
   /** Activer le raisonnement étendu (GLM thinking). Défaut : false. */
   thinking?: boolean;
+  /** V16 — effort de raisonnement du tier anonyme Pollinations (gpt-oss).
+   * "low" divise la latence par 3+ sur les tâches structurées (8 s vs 26 s+). */
+  reasoningEffort?: "low" | "medium" | "high";
 }
 
 export interface ChatResult {
@@ -233,21 +236,61 @@ async function tryFreeProvider(
     role: m.role === "system" ? "assistant" : m.role,
     content: m.content,
   }));
+  // V16 — FIX CRITIQUE : Pollinations exige désormais un champ `referrer`
+  // (ou un header Referer) sinon il répond `{}` (HTTP 200, corps vide).
+  // C'était la cause racine de « l'IA ne génère rien » en production :
+  // générateur de QCM, extraction IA et chat retombaient tous sur leurs
+  // replis car le provider « free » renvoyait null silencieusement.
   const data = await fetchJsonWithTimeout(
     "https://text.pollinations.ai/openai",
     {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Referer: "https://quizexam-bf1-5tlh.vercel.app/",
+      },
       body: JSON.stringify({
         model: "openai",
         messages: mapped,
         temperature: opts.temperature ?? 0.6,
+        referrer: "quizexam-bf",
+        // gpt-oss est un modèle de raisonnement : sans effort borné, la
+        // génération JSON structurée dépassait 26 s (voire le timeout).
+        reasoning_effort: opts.reasoningEffort ?? "low",
       }),
     },
-    Math.min(opts.timeoutMs ?? DEFAULT_TIMEOUT, 14_000),
+    // Le plafond de 14 s tuaient les générations structurées (10 questions
+    // JSON = 20-40 s sur le tier anonyme) : on respecte le timeout demandé
+    // avec un plafond haussier ; le chat reste borné par son propre budget.
+    Math.min(opts.timeoutMs ?? DEFAULT_TIMEOUT, 50_000),
   );
   const content = pickContent(data);
   return content ? { content, engine: "free" } : null;
+}
+
+/** Repli GET Pollinations (texte brut) — utilisé quand le POST échoue.
+ * Utile pour les appels one-shot : le prompt est passé dans l'URL. */
+export async function freeCompletion(
+  prompt: string,
+  timeoutMs = 25_000,
+): Promise<ChatResult | null> {
+  const url = `https://text.pollinations.ai/${encodeURIComponent(
+    prompt.slice(0, 3500),
+  )}?model=openai&referrer=quizexam-bf`;
+  const { signal, clear } = timeoutSignal(timeoutMs);
+  try {
+    const res = await fetch(url, { signal });
+    if (!res.ok) return null;
+    const text = await res.text();
+    if (text.trim() && !text.trim().startsWith("{}")) {
+      return { content: text, engine: "free-get" };
+    }
+    return null;
+  } catch {
+    return null;
+  } finally {
+    clear();
+  }
 }
 
 /* ------------------------------------------------------------------ */

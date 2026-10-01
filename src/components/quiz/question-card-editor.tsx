@@ -139,14 +139,14 @@ export function QuestionCardEditor({ index, q, onChange, onRemove }: Props) {
 
         <div>
           <Label className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
-            Explication
+            Explication <span className="font-normal normal-case">(facultative)</span>
           </Label>
           <Textarea
             value={q.explanation}
             onChange={(e) => set("explanation", e.target.value)}
             rows={2}
             className="mt-0.5 resize-none text-sm"
-            placeholder="Explication de la réponse correcte..."
+            placeholder="Explication de la réponse correcte (peut rester vide)..."
           />
         </div>
 

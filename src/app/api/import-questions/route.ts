@@ -69,9 +69,9 @@ function validate(q: ImportQuestion): {
   if (!correctAnswer) {
     return { ok: false, error: "Réponse correcte invalide (A, B, C ou D)" };
   }
-  if (!explanation) {
-    return { ok: false, error: "Explication manquante" };
-  }
+  // V16 — l'explication n'est PLUS obligatoire : elle était la cause n°1 de
+  // refus d'imports en masse (textes sans corrigé commenté = 0 question
+  // valide). On importe avec une explication vide, éditable ensuite.
   const opts = [optionA, optionB, optionC, optionD].map((s) => s.toLowerCase());
   if (new Set(opts).size < 4) {
     return { ok: false, error: "Options dupliquées" };

@@ -109,10 +109,14 @@ function coerceAiQuestions(content: string): ParsedQuestion[] {
 
 async function extractWithAi(text: string): Promise<ParsedQuestion[]> {
   // Découpage en tronçons (~4000 caractères) aux frontières de paragraphes.
+  // V16 — budget : 2 tronçons × 25 s ≈ 51 s < limite serverless 60 s
+  // (avant : 3 × 35 s = 105 s → FUNCTION_INVOCATION_TIMEOUT systématique
+  // sur les longs textes, donc « l'extraction IA sans faille » échouait).
   const CHUNK = 4000;
+  const MAX_CHUNKS = 2;
   const chunks: string[] = [];
   let rest = text.trim();
-  while (rest.length > 0 && chunks.length < 3) {
+  while (rest.length > 0 && chunks.length < MAX_CHUNKS) {
     if (rest.length <= CHUNK) {
       chunks.push(rest);
       break;
@@ -134,7 +138,7 @@ async function extractWithAi(text: string): Promise<ParsedQuestion[]> {
           content: `Extrais les QCM de ce texte :\n\n${chunk}`,
         },
       ],
-      { temperature: 0.2, timeoutMs: 35_000 },
+      { temperature: 0.2, timeoutMs: 25_000 },
     );
     if (!result) continue;
     for (const q of coerceAiQuestions(result.content)) {

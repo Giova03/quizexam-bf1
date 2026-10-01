@@ -28,7 +28,13 @@ export const metadata: Metadata = {
     "Plateforme de préparation aux concours du Burkina Faso : banques de questions QCM et examens blancs.",
   keywords: ["quiz", "examen blanc", "QCM", "concours", "Burkina Faso", "préparation"],
   authors: [{ name: "BAMOGO Pingdwendé Giovanni" }],
-  icons: { icon: "/logo-quizexam.svg" },
+  icons: {
+    icon: [
+      { url: "/logo-quizexam.svg", type: "image/svg+xml" },
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/icons/apple-touch-icon.png",
+  },
   manifest: "/manifest.json",
   openGraph: {
     title: "QuizExam BF — Plateforme de Quiz & Examens Blancs",

@@ -695,7 +695,11 @@ export function SessionView() {
                           "✗ Incorrect"
                         )}
                       </p>
-                      <p className="mt-1">{current.explanation}</p>
+                      {/* V16 — explication facultative : on n'affiche le
+                          paragraphe que si elle existe. */}
+                      {current.explanation?.trim() && (
+                        <p className="mt-1">{current.explanation}</p>
+                      )}
                     </div>
                   </motion.div>
                 )}

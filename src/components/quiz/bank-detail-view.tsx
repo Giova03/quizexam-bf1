@@ -11,11 +11,13 @@ import { toast } from "sonner";
 import { BankIcon } from "./bank-icon";
 import { StartDialog, type DifficultyFilter } from "./start-dialog";
 import { AnkiExportButton } from "./anki-export-button";
+import { QRShareDialog } from "./qr-share-dialog";
 import { getColor, type QuestionBank, type CorrectionMode } from "@/lib/types";
 import {
   ArrowLeft,
   FileQuestion,
   Play,
+  QrCode,
   ChevronRight,
   BarChart3,
 } from "lucide-react";
@@ -56,6 +58,7 @@ export function BankDetailView() {
   const [bank, setBank] = useState<QuestionBank | null>(null);
   const [loading, setLoading] = useState(true);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [qrOpen, setQrOpen] = useState(false);
   const [difficulty, setDifficulty] = useState<DifficultyFilter>("all");
 
   const loadBank = useCallback(async () => {
@@ -211,6 +214,18 @@ export function BankDetailView() {
                     size="lg"
                     label="Exporter vers Anki"
                   />
+                  {/* V16 — QRShareDialog (ex-orphelin) enfin exposé : partage
+                      d'une banque par QR code (scannable depuis un téléphone,
+                      idéal pour les formateurs en salle). */}
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    aria-label="Partager par QR code"
+                    onClick={() => setQrOpen(true)}
+                  >
+                    <QrCode className="h-4 w-4" />
+                    <span className="hidden sm:inline">Partager</span>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -336,6 +351,17 @@ export function BankDetailView() {
         educationLevel={bank?.educationLevel ?? "TOUS"}
         educationLevelCounts={educationLevelCounts}
         onStart={handleStart}
+      />
+
+      <QRShareDialog
+        open={qrOpen}
+        onOpenChange={setQrOpen}
+        title={bank?.title ?? "Banque de questions"}
+        content={
+          typeof window !== "undefined"
+            ? `${window.location.origin}/?bank=${bank?.id ?? ""}`
+            : ""
+        }
       />
     </div>
   );

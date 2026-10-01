@@ -130,7 +130,9 @@ async function generateQuestions(
   const seen = new Set<string>();
   const collected: GeneratedQuestion[] = [];
 
-  const MAX_ATTEMPTS = 3;
+  // V16 — budget temps : 2 tentatives × 24 s ≈ 49 s < limite serverless 60 s
+  // (avant : 3 × 30 s = 93 s → FUNCTION_INVOCATION_TIMEOUT).
+  const MAX_ATTEMPTS = 2;
   for (let attempt = 1; attempt <= MAX_ATTEMPTS && collected.length < count; attempt++) {
     const remaining = count - collected.length;
     const prompt = `Génère ${remaining} questions QCM à choix multiples basées sur ce texte${subjectPart}: ${text}\n\nFormat JSON: {questions: [{question, optionA, optionB, optionC, optionD, correctAnswer, explanation}]}
@@ -152,7 +154,7 @@ EXIGENCES:
           },
           { role: "user", content: prompt },
         ],
-        { temperature: 0.6, timeoutMs: 30_000 },
+        { temperature: 0.6, timeoutMs: 24_000 },
       );
 
       const content = result?.content ?? "";

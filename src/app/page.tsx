@@ -72,6 +72,7 @@ import { UserMenuButton, AuthDialog, ResetPasswordDialog } from "@/components/qu
 import { Chatbot } from "@/components/quiz/chatbot";
 import { SplashScreen } from "@/components/quiz/splash-screen";
 import { InstallPrompt } from "@/components/quiz/install-prompt";
+import { LegalConsentBanner } from "@/components/quiz/legal-consent-banner";
 import { ErrorBoundary } from "@/components/quiz/error-boundary";
 import { OnboardingTourContainer, restartOnboarding } from "@/components/quiz/onboarding-tour";
 import { HelpButton } from "@/components/quiz/help-button";
@@ -2294,6 +2295,10 @@ export default function Home() {
 
       {/* PWA install banner (mobile / non-installed only) */}
       <InstallPrompt />
+
+      {/* V16 — bannière de consentement légal (première visite, 12 mois) :
+          avertit l'utilisateur des CGU + politique de confidentialité. */}
+      <LegalConsentBanner />
 
       {/* Chatbot IA flottant */}
       <Chatbot />

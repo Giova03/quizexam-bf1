@@ -1,0 +1,11 @@
+[
+  {
+    "comment": "TEMPLATE — Digital Asset Links pour l'APK (TWA) QuizExam BF. Remplacez package_name par le package final (ex: bf.quizexam.app) et la valeur sha256_fingerprint par l'empreinte SHA-256 du keystore de signature (obtenue via: keytool -list -v -keystore upload-keystore.jks). Re-générez ensuite ce fichier avec Bubblewrap (npx @bubblewrap/cli update) ou à la main, puis redéployez. Tant que les valeurs sont des placeholders, Android ne validera simplement PAS l'association site↔app (aucun impact sur le site).",
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "CHANGE_ME_bf.quizexam.app",
+      "sha256_fingerprint": "CHANGE_ME:AA:BB:CC:..."
+    }
+  }
+]

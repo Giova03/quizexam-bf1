@@ -58,8 +58,12 @@ export async function POST(request: Request) {
   if (!session) return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
   const body = await request.json();
   const { bankId, question, optionA, optionB, optionC, optionD, correctAnswer, correctAnswer2, explanation, difficulty, imageUrl, audioUrl, educationLevel, tags, chapter, subject } = body;
-  if (!bankId || !question || !optionA || !optionB || !optionC || !optionD || !correctAnswer || !explanation)
+  // V16 — explication facultative (les questions générées/importées peuvent
+  // ne pas en avoir ; le champ reste éditable ensuite dans l'admin).
+  if (!bankId || !question || !optionA || !optionB || !optionC || !optionD || !correctAnswer)
     return NextResponse.json({ error: "Tous les champs sont requis" }, { status: 400 });
+  const validExplanation =
+    typeof explanation === "string" ? explanation.trim() : "";
   if (!["A", "B", "C", "D"].includes(correctAnswer))
     return NextResponse.json({ error: "Réponse correcte invalide" }, { status: 400 });
   // Validate difficulty (default to "medium" if absent or invalid).
@@ -94,7 +98,7 @@ export async function POST(request: Request) {
       optionD,
       correctAnswer,
       correctAnswer2: correctAnswer2 || null,
-      explanation,
+      explanation: validExplanation,
       difficulty: validDifficulty,
       imageUrl: validImageUrl,
       audioUrl: validAudioUrl,

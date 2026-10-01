@@ -123,7 +123,10 @@ async function generateQuestions(
 ): Promise<GeneratedQuestion[]> {
   const seen = new Set<string>();
   const collected: GeneratedQuestion[] = [];
-  const MAX_ATTEMPTS = 3;
+  // V16 — budget temps : 2 tentatives × 24 s ≈ 49 s < limite serverless 60 s.
+  // (Avant : 3 × 30 s + délais = 93 s → FUNCTION_INVOCATION_TIMEOUT.) 
+  const MAX_ATTEMPTS = 2;
+  const ATTEMPT_TIMEOUT_MS = 24_000;
 
   for (let attempt = 1; attempt <= MAX_ATTEMPTS && collected.length < count; attempt++) {
     const remaining = count - collected.length;
@@ -149,7 +152,7 @@ EXIGENCES:
           },
           { role: "user", content: prompt },
         ],
-        { temperature: 0.7, timeoutMs: 30_000 },
+        { temperature: 0.7, timeoutMs: ATTEMPT_TIMEOUT_MS },
       );
 
       const content = result?.content ?? "";
@@ -259,7 +262,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           error:
-            "L'IA n'a pas pu générer de questions valides sur ce sujet. Reformulez le sujet ou réessayez.",
+            "L'IA n'a pas pu générer de questions valides sur ce sujet (service momentanément saturé ou sujet trop vague). Reformulez le sujet ou réessayez dans quelques instants.",
         },
         { status: 422 }
       );
