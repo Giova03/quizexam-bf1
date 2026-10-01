@@ -403,7 +403,12 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
   },
-  pages: { signIn: "/" },
+  // V12 — Toutes les pages NextAuth vivent dans la SPA : en cas d'erreur
+  // (CredentialsSignin, OAuth callback…), l'utilisateur est renvoyé vers la
+  // landing de l'app au lieu de /api/auth/error (page brute hors du design,
+  // et — pire — résolue contre NEXTAUTH_URL qui peut pointer vers un ancien
+  // déploiement supprimé → 404 DEPLOYMENT_NOT_FOUND).
+  pages: { signIn: "/", error: "/" },
 };
 
 // P2: loud production warning when only the public fallback secret is used.

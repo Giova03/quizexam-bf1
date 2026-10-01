@@ -184,16 +184,26 @@ export function GoogleButton({
           setPending(true);
           setErrorMessage(null);
           onRedirectStart?.();
-          signIn("credentials", {
+          // V12 — FIX 1 : le provider est "google-idtoken" (déclaré dans
+          // src/lib/auth.ts), PAS "credentials" — envoyer l'ID Token au mauvais
+          // provider provoquait CredentialsSignin.
+          // FIX 2 : redirect:false — NextAuth construit son URL d'erreur à
+          // partir de NEXTAUTH_URL, qui peut pointer vers un déploiement mort
+          // (404 DEPLOYMENT_NOT_FOUND). On gère donc le succès/échec nous-même
+          // et on ne redirige JAMAIS vers une URL absolue serveur.
+          signIn("google-idtoken", {
             idToken: credential,
-            callbackUrl: "/",
+            redirect: false,
           })
             .then((res) => {
-              if (res?.error) {
+              if (res?.error || !res?.ok) {
                 setErrorMessage(t("auth.google.failed"));
                 setPending(false);
+                return;
               }
-              // succès : redirection plein écran gérée par NextAuth
+              // Succès : redirection RELATIVE — le domaine courant reste le
+              // bon quel que soit NEXTAUTH_URL côté serveur.
+              window.location.assign("/");
             })
             .catch(() => {
               setErrorMessage(t("auth.google.failed"));
