@@ -17,6 +17,13 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import type { QuizSession, SessionAnswer } from "@/lib/types";
+import { toast } from "sonner";
+import {
+  loadOfflineActiveSession,
+  answerOfflineQuiz,
+  completeOfflineQuiz,
+  clearOfflineActiveSession,
+} from "@/lib/offline-manager";
 import { Confetti, ProgressRing } from "./animated-components";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
@@ -31,6 +38,7 @@ import {
   Timer,
   Sparkles,
   Keyboard,
+  WifiOff,
 } from "lucide-react";
 
 const OPTION_LETTERS = ["A", "B", "C", "D"] as const;
@@ -113,7 +121,8 @@ const optionVariants = {
  *   - respect de prefers-reduced-motion partout.
  */
 export function SessionView() {
-  const { currentSessionId, viewResults, goHome } = useQuizStore();
+  const { currentSessionId, viewResults, goHome, setSession: storeSetSession } =
+    useQuizStore();
   const recordSessionPref = usePrefs((s) => s.recordSession);
   const recordSessionQuest = useQuests((s) => s.recordSession);
   const [session, setSession] = useState<QuizSession | null>(null);
@@ -134,10 +143,27 @@ export function SessionView() {
   const [elapsedSec, setElapsedSec] = useState(0);
   const questionCardRef = useRef<HTMLDivElement | null>(null);
 
+  // v19 — true when the quiz runs entirely from the local cache (id prefix
+  // "offline-"): answers are graded locally, results queued for server sync.
+  const isOfflineSession = (currentSessionId ?? "").startsWith("offline-");
+
   const loadSession = useCallback(async () => {
     if (!currentSessionId) return;
     setLoading(true);
     setError(null);
+    // v19 — offline session: hydrate from the local cache, no fetch.
+    if (isOfflineSession) {
+      const local = loadOfflineActiveSession();
+      if (local && local.id === currentSessionId) {
+        setSession(local);
+        const firstUnanswered = local.answers.findIndex((a) => a.userAnswer === null);
+        setCurrentIdx(firstUnanswered >= 0 ? firstUnanswered : 0);
+      } else {
+        setError("Session hors ligne introuvable sur cet appareil.");
+      }
+      setLoading(false);
+      return;
+    }
     try {
       const res = await fetch(`/api/sessions/${currentSessionId}`);
       if (res.ok) {
@@ -156,7 +182,7 @@ export function SessionView() {
     } finally {
       setLoading(false);
     }
-  }, [currentSessionId]);
+  }, [currentSessionId, isOfflineSession]);
 
   useEffect(() => {
     loadSession();
@@ -199,6 +225,31 @@ export function SessionView() {
     if (!session) return;
     setSubmitting(true);
     setError(null);
+    // v19 — offline session: grade locally (no network), same UX.
+    if (isOfflineSession) {
+      const updated = answerOfflineQuiz(session, answerId, choice);
+      setSession(updated);
+      if (session.mode === "immediate") {
+        const justAnswered = updated.answers.find(
+          (a) => a.id === answerId,
+        );
+        if (justAnswered?.isCorrect === true) {
+          setFeedbackAnim("correct");
+          setConfettiFire((n) => n + 1);
+        } else if (justAnswered?.isCorrect === false) {
+          setFeedbackAnim("wrong");
+          if (!reduceMotion) {
+            if (shakeTimerRef.current) clearTimeout(shakeTimerRef.current);
+            shakeTimerRef.current = setTimeout(
+              () => setFeedbackAnim(null),
+              600
+            );
+          }
+        }
+      }
+      setSubmitting(false);
+      return;
+    }
     try {
       const res = await fetch(
         `/api/sessions/${session.id}/answers/${answerId}`,
@@ -247,6 +298,44 @@ export function SessionView() {
     if (!session) return;
     setSubmitting(true);
     setError(null);
+    // v19 — offline session: finalize locally + queue the answer sheet for
+    // server sync, then push the completed session through the store so
+    // ResultsView renders it without any fetch.
+    if (isOfflineSession) {
+      const completed = completeOfflineQuiz(session);
+      setSession(completed);
+      storeSetSession(completed);
+
+      if (!isSessionRecorded(completed.id)) {
+        markSessionRecorded(completed.id);
+        const correct = (completed.answers ?? []).filter(
+          (a) => a.isCorrect === true,
+        ).length;
+        recordSessionPref(correct, completed.totalQuestions, {
+          bankId: completed.sourceId,
+          isExam: false,
+          isDailyChallenge: false,
+          completedAt: completed.completedAt ?? new Date().toISOString(),
+          startedAt: completed.startedAt,
+        });
+        recordSessionQuest({
+          correct,
+          total: completed.totalQuestions,
+          bankId: completed.sourceId,
+          isDailyChallenge: false,
+        });
+      }
+
+      clearOfflineActiveSession();
+      setConfirmOpen(false);
+      toast.info(
+        "Résultats enregistrés localement — ils seront synchronisés au retour du réseau.",
+        { icon: "📥" }
+      );
+      viewResults(completed.id);
+      setSubmitting(false);
+      return;
+    }
     try {
       const res = await fetch(`/api/sessions/${session.id}/complete`, {
         method: "POST",
@@ -472,6 +561,17 @@ export function SessionView() {
           <Badge variant="secondary">
             {answeredCount}/{answers.length} répondues
           </Badge>
+          {/* v19 — indicateur de session hors ligne (correction locale,
+              synchronisation différée). */}
+          {isOfflineSession && (
+            <Badge
+              variant="outline"
+              className="gap-1.5 border-amber-300 bg-amber-50 text-[11px] text-amber-700 dark:border-amber-700 dark:bg-amber-950/30 dark:text-amber-300"
+            >
+              <WifiOff className="h-3 w-3" />
+              Mode hors ligne
+            </Badge>
+          )}
           <ProgressRing
             value={progress / 100}
             size={48}

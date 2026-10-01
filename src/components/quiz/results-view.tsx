@@ -24,6 +24,7 @@ import {
   Zap,
   Flag,
   Award,
+  WifiOff,
 } from "lucide-react";
 
 const OPTION_LETTERS = ["A", "B", "C", "D"] as const;
@@ -115,10 +116,26 @@ export function ResultsView() {
     ? "from-emerald-500 to-teal-600"
     : "from-rose-500 to-orange-600";
 
-  const eligibleForCertificate = percentage >= CERTIFICATE_THRESHOLD;
+  // v19 — offline sessions live only in the local cache: hide the premium
+  // certificate (it requires the server) and surface the sync notice instead.
+  const isOfflineResult = session.id.startsWith("offline-");
+  const eligibleForCertificate =
+    percentage >= CERTIFICATE_THRESHOLD && !isOfflineResult;
 
   return (
     <div className="space-y-6">
+      {/* v19 — notice for offline-completed quizzes (sync pending). */}
+      {isOfflineResult && (
+        <div className="flex items-start gap-3 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800 dark:border-amber-700 dark:bg-amber-950/30 dark:text-amber-300">
+          <WifiOff className="mt-0.5 h-4 w-4 shrink-0" />
+          <span>
+            Quiz terminé hors ligne : vos réponses sont enregistrées sur cet
+            appareil et seront synchronisées automatiquement dès le retour du
+            réseau (score, XP et statistiques mis à jour à ce moment).
+          </span>
+        </div>
+      )}
+
       {/* Confetti on success */}
       <Confetti fire={confettiFire} count={120} duration={4500} />
 

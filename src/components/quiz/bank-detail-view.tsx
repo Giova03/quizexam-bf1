@@ -14,12 +14,22 @@ import { AnkiExportButton } from "./anki-export-button";
 import { QRShareDialog } from "./qr-share-dialog";
 import { getColor, type QuestionBank, type CorrectionMode } from "@/lib/types";
 import {
+  downloadBankForOffline,
+  isBankAvailableOffline,
+  startOfflineQuiz,
+  getOfflineBanks,
+} from "@/lib/offline-manager";
+import {
   ArrowLeft,
   FileQuestion,
   Play,
   QrCode,
   ChevronRight,
   BarChart3,
+  WifiOff,
+  Download,
+  CheckCircle2,
+  Loader2,
 } from "lucide-react";
 
 const DIFFICULTY_OPTIONS: Array<{
@@ -54,7 +64,7 @@ const DIFFICULTY_OPTIONS: Array<{
 ];
 
 export function BankDetailView() {
-  const { selectedBankId, startSession, banks } = useQuizStore();
+  const { selectedBankId, startSession, setSession, banks } = useQuizStore();
   const [bank, setBank] = useState<QuestionBank | null>(null);
   const [loading, setLoading] = useState(true);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -69,9 +79,16 @@ export function BankDetailView() {
       if (res.ok) {
         const data = await res.json();
         setBank(data);
+      } else {
+        // Offline / server error: fall back to the cached bank if available.
+        const cached = getOfflineBanks().find((b) => b.bank.id === selectedBankId);
+        if (cached) setBank({ ...cached.bank, questions: cached.questions });
       }
     } catch (e) {
       console.error("Failed to load bank", e);
+      // Offline fallback from the local cache.
+      const cached = getOfflineBanks().find((b) => b.bank.id === selectedBankId);
+      if (cached) setBank({ ...cached.bank, questions: cached.questions });
     } finally {
       setLoading(false);
     }
@@ -112,8 +129,57 @@ export function BankDetailView() {
     return all.filter((q) => q.difficulty === difficulty);
   }, [bank, difficulty]);
 
+  // v19 — offline readiness state for this bank.
+  const [offlineReady, setOfflineReady] = useState(false);
+  const [preparing, setPreparing] = useState(false);
+  useEffect(() => {
+    setOfflineReady(isBankAvailableOffline(selectedBankId ?? ""));
+  }, [selectedBankId, bank]);
+
+  async function handlePrepareOffline() {
+    if (!selectedBankId || preparing) return;
+    setPreparing(true);
+    try {
+      const cached = await downloadBankForOffline(selectedBankId);
+      if (cached) {
+        setOfflineReady(true);
+        toast.success(
+          `Banque prête pour l'usage hors ligne (${cached.questions.length} questions).`
+        );
+      } else {
+        toast.error("Téléchargement hors ligne impossible pour le moment.");
+      }
+    } finally {
+      setPreparing(false);
+    }
+  }
+
+  /** Launch the quiz against the LOCAL cache (no server round-trip). */
+  function startOfflineFlow(mode: CorrectionMode, diff: DifficultyFilter) {
+    const started = startOfflineQuiz(selectedBankId ?? "", mode, diff);
+    if (!started) {
+      toast.error(
+        "Quiz hors ligne indisponible. Téléchargez la banque depuis une connexion active."
+      );
+      return false;
+    }
+    setDialogOpen(false);
+    setSession(started.session);
+    startSession(started.session.id, diff);
+    toast.info(
+      "Mode hors ligne — vos résultats seront synchronisés au retour du réseau.",
+      { icon: "📥" }
+    );
+    return true;
+  }
+
   async function handleStart(mode: CorrectionMode, diff: DifficultyFilter) {
     if (!bank) return;
+    // v19 — offline launch: no server round-trip at all.
+    if (typeof navigator !== "undefined" && !navigator.onLine) {
+      startOfflineFlow(mode, diff);
+      return;
+    }
     try {
       const res = await fetch("/api/sessions", {
         method: "POST",
@@ -137,9 +203,18 @@ export function BankDetailView() {
           data?.error ??
             "Limite quotidienne atteinte. Passez à Premium pour continuer."
         );
+      } else {
+        // Server rejected (auth, limits…): offer the offline path if ready.
+        if (offlineReady && startOfflineFlow(mode, diff)) return;
+        toast.error("Impossible de démarrer le quiz pour le moment.");
       }
     } catch (e) {
       console.error("Failed to create session", e);
+      // Network failure mid-flight: fall back to the offline quiz.
+      if (offlineReady && startOfflineFlow(mode, diff)) return;
+      toast.error(
+        "Connexion impossible. Préparez la banque pour l'usage hors ligne depuis le bouton dédié."
+      );
     }
   }
 
@@ -196,6 +271,12 @@ export function BankDetailView() {
                         <FileQuestion className="mr-1 h-3 w-3" />
                         {bank.questions?.length ?? 0} questions
                       </Badge>
+                      {offlineReady && (
+                        <Badge className="gap-1 border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-300">
+                          <WifiOff className="h-3 w-3" />
+                          Disponible hors ligne
+                        </Badge>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -207,6 +288,25 @@ export function BankDetailView() {
                   >
                     <Play className="h-4 w-4" />
                     Démarrer le quiz
+                  </Button>
+                  {/* v19 — préparation hors ligne : cache la banque complète
+                      (questions + réponses) pour réviser sans réseau. */}
+                  <Button
+                    size="lg"
+                    variant={offlineReady ? "outline" : "secondary"}
+                    className="gap-2"
+                    disabled={preparing}
+                    onClick={handlePrepareOffline}
+                    title="Télécharger cette banque pour réviser sans connexion"
+                  >
+                    {preparing ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : offlineReady ? (
+                      <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                    ) : (
+                      <Download className="h-4 w-4" />
+                    )}
+                    {offlineReady ? "Prête hors ligne" : "Préparer hors ligne"}
                   </Button>
                   <AnkiExportButton
                     bankId={bank.id}

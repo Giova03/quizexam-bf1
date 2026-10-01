@@ -5,7 +5,7 @@
 //   - API POST/PATCH/DELETE (mutations): passthrough; queued for background sync
 //   - Navigation requests: network-first, fall back to cached "/" (offline shell)
 
-const CACHE_VERSION = "v3";
+const CACHE_VERSION = "v4";
 const STATIC_CACHE = `quizexam-static-${CACHE_VERSION}`;
 const API_CACHE = `quizexam-api-${CACHE_VERSION}`;
 const BG_SYNC_QUEUE = "quizexam-bg-sync-queue";
@@ -52,6 +52,15 @@ self.addEventListener("install", (event) => {
             .catch((err) => console.warn("[SW] Pre-cache miss:", url, err))
         )
       );
+      // v4 — warm the lazy view chunks from the app shell HTML.
+      try {
+        const shell = await fetch("/", { cache: "reload" });
+        if (shell.ok) {
+          await precacheAssetsFromHtml(await shell.text());
+        }
+      } catch (e) {
+        console.warn("[SW] Shell pre-cache skipped:", e);
+      }
       await self.skipWaiting();
     })()
   );
@@ -78,6 +87,30 @@ function isStaticAsset(url) {
   const pathname = url.pathname.toLowerCase();
   if (url.pathname.startsWith("/_next/static/")) return true;
   return STATIC_ASSET_EXTENSIONS.some((ext) => pathname.endsWith(ext));
+}
+
+// v4 — extract every locally-served asset URL from an HTML document and
+// cache it. Next.js lazy-loads view bundles (session, results, bank detail,
+// dashboard…); a user who only visited the landing would miss those chunks
+// when going offline. Parsing the served HTML at install time and after each
+// successful navigation keeps the full app shell warm for offline use.
+const HTML_ASSET_RE = /(?:src|href)="(\/[^"]*?\.(?:js|css|woff2?|png|svg|ico))"/g;
+async function precacheAssetsFromHtml(htmlText) {
+  const cache = await caches.open(STATIC_CACHE);
+  const urls = new Set();
+  let match;
+  HTML_ASSET_RE.lastIndex = 0;
+  while ((match = HTML_ASSET_RE.exec(htmlText)) !== null) {
+    urls.add(match[1]);
+  }
+  await Promise.all(
+    Array.from(urls).map((u) =>
+      cache
+        .add(new Request(u, { cache: "reload" }))
+        .catch(() => {})
+    )
+  );
+  return urls.size;
 }
 
 // Helper: detect navigation (page) requests.
@@ -298,6 +331,17 @@ self.addEventListener("fetch", (event) => {
           const cache = await caches.open(STATIC_CACHE);
           if (networkResponse && networkResponse.ok) {
             cache.put(request, networkResponse.clone()).catch(() => {});
+            // v4 — opportunistically warm lazy chunks referenced by the
+            // freshly served HTML (best-effort, non-blocking for the page).
+            if (networkResponse.headers.get("content-type")?.includes("text/html")) {
+              event.waitUntil(
+                networkResponse
+                  .clone()
+                  .text()
+                  .then((html) => precacheAssetsFromHtml(html))
+                  .catch(() => {})
+              );
+            }
           }
           return networkResponse;
         } catch (err) {
