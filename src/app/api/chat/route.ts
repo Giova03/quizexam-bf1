@@ -4,7 +4,7 @@ import { chatComplete, type ChatMessage } from "@/lib/ai-engine";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { applyUserRateLimit } from "@/lib/api-rate-limit";
-import { searchWebContext, formatWebContext } from "@/lib/web-context";
+import { searchWebContext, formatWebContext, type WebSource } from "@/lib/web-context";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
@@ -741,6 +741,43 @@ function getFallbackResponse(
 }
 
 export async function POST(request: Request) {
+  /**
+   * V14f — FILET DE SÉCURITÉ TEMPOREL : chaque étape a un deadline strict.
+   * Une requête Prisma ou un fetch sans réponse ne peut plus bloquer la
+   * fonction au-delà du budget (la limite serverless Vercel est de 60 s —
+   * on répond toujours avant ~30 s, en mode dégradé si nécessaire).
+   */
+  const T0 = Date.now();
+  const elapsed = () => Date.now() - T0;
+  const timings: Record<string, number> = {};
+  function withDeadline<T>(
+    label: string,
+    p: Promise<T>,
+    ms: number,
+    onTimeout: () => T,
+  ): Promise<T> {
+    const startedAt = elapsed();
+    return Promise.race([
+      p.then(
+        (v) => {
+          timings[label] = elapsed() - startedAt;
+          return v;
+        },
+        (e) => {
+          timings[label] = elapsed() - startedAt;
+          console.error(`[chat] ${label} failed:`, e);
+          return onTimeout();
+        },
+      ),
+      new Promise<T>((resolve) =>
+        setTimeout(() => {
+          timings[`${label}_TIMEOUT_AT`] = elapsed();
+          resolve(onTimeout());
+        }, ms),
+      ),
+    ]);
+  }
+
   try {
     // E6.7 — per-user rate limiting (100 req/min).
     const limit = await applyUserRateLimit(request);
@@ -814,7 +851,12 @@ export async function POST(request: Request) {
     }
 
     // --- Build personalized context (if the user is signed in) ----------
-    const user = await resolveUser(limit.userId);
+    const user = await withDeadline(
+      "resolveUser",
+      resolveUser(limit.userId),
+      5_000,
+      () => null,
+    );
     let contextInfo = "";
     let fallbackCtx: {
       avgPct: number;
@@ -825,7 +867,12 @@ export async function POST(request: Request) {
 
     if (user) {
       // V14d — UNE SEULE requête sessions pour le prompt ET le fallback.
-      const userCtx = await fetchUserContext(user.id);
+      const userCtx = await withDeadline(
+        "userContext",
+        fetchUserContext(user.id),
+        8_000,
+        () => ({ text: "", fallbackCtx: null }),
+      );
       if (userCtx.text) contextInfo = `\n\n${userCtx.text}`;
       fallbackCtx = userCtx.fallbackCtx;
     } else {
@@ -848,14 +895,16 @@ export async function POST(request: Request) {
       }
     }
 
-    // --- V14b : TOUS LES CONTEXTES EN PARALLÈLE -------------------------
-    // Plateforme (DB) + web (recherche) en simultané : le total coûte le
-    // temps du plus lent (~3,5 s) au lieu d'un cumul séquentiel qui faisait
-    // dépasser la limite serverless de 60 s.
-    const [platformCtx, webSources] = await Promise.all([
-      fetchPlatformContext(),
-      searchWebContext(lastUserMessage, "fr"),
-    ]);
+    // --- V14b/V14f : TOUS LES CONTEXTES EN PARALLÈLE + DEADLINE ----------
+    const [platformCtx, webSources] = await withDeadline(
+      "contexts",
+      Promise.all([
+        fetchPlatformContext(),
+        searchWebContext(lastUserMessage, "fr"),
+      ]),
+      10_000,
+      () => ["", [] as WebSource[]] as [string, WebSource[]],
+    );
     if (platformCtx) contextInfo += `\n\n${platformCtx}`;
 
     const conversation: ChatMessage[] = [
@@ -885,15 +934,18 @@ export async function POST(request: Request) {
     }
 
     // --- IA (chaîne complète : sandbox → env → custom → gratuit) ---------
-    const result = await chatComplete(conversation, {
-      temperature: 0.7,
-      timeoutMs: 25_000,
-    });
+    const result = await withDeadline(
+      "aiCall",
+      chatComplete(conversation, { temperature: 0.7, timeoutMs: 25_000 }),
+      20_000,
+      () => null,
+    );
     if (result && result.content.trim()) {
       return NextResponse.json({
         response: result.content,
         role: "assistant",
         engine: result.engine,
+        debug: timings,
       });
     }
 
@@ -914,6 +966,7 @@ export async function POST(request: Request) {
           `Si tu veux, je peux approfondir un point précis — ou lance « lance un QCM » pour t'entraîner. 📚`,
         role: "assistant",
         engine: "web-fallback",
+        debug: timings,
       });
     }
 
@@ -923,6 +976,7 @@ export async function POST(request: Request) {
       response: fallbackResponse,
       role: "assistant",
       engine: "scripted",
+      debug: timings,
     });
   } catch (error) {
     console.error("Chat API error:", error);
