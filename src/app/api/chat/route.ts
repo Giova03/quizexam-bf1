@@ -4,10 +4,11 @@ import { chatComplete, type ChatMessage } from "@/lib/ai-engine";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { applyUserRateLimit } from "@/lib/api-rate-limit";
+import { searchWebContext, formatWebContext } from "@/lib/web-context";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
-const SYSTEM_PROMPT = `Tu es QuizExam Assistant — surnommé « GLM Coach » — le copilote intelligent de la plateforme QuizExam BF (préparation aux concours et examens du Burkina Faso). Tu es propulsé par GLM.
+const SYSTEM_PROMPT = `Tu es QuizExam Assistant — le copilote intelligent de la plateforme QuizExam BF (préparation aux concours et examens du Burkina Faso).
 
 RÈGLE N°1 — TU RÉPONDS À TOUT, JAMAIS DE REFUS
 Tu es une conversation à part entière, pas un simple FAQ. Tu gères SANS EXCEPTION :
@@ -24,7 +25,7 @@ MÉTHODE DE RÉPONSE :
 - Question de cours → structure : définition → explication → exemple.
 - Calcul → détaille les étapes numérotées.
 - Question ambiguë → choisis l'interprétation la plus probable et réponds quand même.
-- Hors de tes connaissances ou évènement très récent → dis-le honnêtement et donne ce que tu sais.
+- Hors de tes connaissances ou évènement très récent → appuie-toi sur le CONTEXTE WEB fourni si présent ; sinon dis-le honnêtement et donne ce que tu sais.
 - Réponds DANS LA LANGUE de l'utilisateur (français par défaut).
 
 INFORMATIONS VÉRIFIÉES (à jour juin 2025) :
@@ -35,7 +36,8 @@ INFORMATIONS VÉRIFIÉES (à jour juin 2025) :
 - FESPACO et SIAO à Ouagadougou ; SNC à Bobo-Dioulasso
 
 STYLE : amical, valorisant, emojis avec modération (1-3 par message), réponses concises mais complètes (jamais une seule ligne sèche pour une vraie question).
-PERSONNALISATION : quand un contexte utilisateur est fourni (faiblesses, progression), sers-t'en pour des conseils concrets et nomme les matières.`;
+PERSONNALISATION : quand un contexte utilisateur est fourni (faiblesses, progression), sers-t'en pour des conseils concrets et nomme les matières.
+PLATEFORME : quand un CONTEXTE PLATEFORME est fourni (banques réelles, statistiques à jour), cite des noms de banques précis et invite l'utilisateur à les ouvrir.`;
 
 /**
  * Mode « QCM d'apprentissage » : l'IA génère une question à la fois, sous
@@ -43,7 +45,7 @@ PERSONNALISATION : quand un contexte utilisateur est fourni (faiblesses, progres
  * (historique fourni) : montée/descente en difficulté, sujets variés,
  * enchaînement sans intervention hors du chat.
  */
-const QCM_SYSTEM_PROMPT = `Tu es QuizExam Coach, un générateur autonome de QCM d'apprentissage (GLM) pour des candidats aux concours du Burkina Faso.
+const QCM_SYSTEM_PROMPT = `Tu es QuizExam Coach, un générateur autonome de QCM d'apprentissage pour des candidats aux concours du Burkina Faso.
 
 RÈGLES ABSOLUES:
 1. Tu réponds UNIQUEMENT avec un objet JSON valide, sans texte autour, sans balises markdown.
@@ -59,10 +61,11 @@ ADAPTATION AUTONOME (crucial):
 - Si le candidat vient de réussir: augmente progressivement la difficulté ou durcis les distracteurs.
 - S'il vient d'échouer: reste sur le même thème avec une question plus accessible qui consolide la notion ratée.
 - Varie les thèmes toutes les 2-3 questions SAUF si l'utilisateur a demandé un thème précis (alors reste-y).
+- Si un ENTRAÎNEMENT PLATEFORME est fourni (banques réelles de la plateforme), puise ta matière dans ces thèmes réels : les questions doivent préparer aux banques proposées sur QuizExam BF.
 - Si aucune indication: commence par un mélange équilibré culture générale Burkina / maths / français / logique, niveau moyenne.`;
 
 /* ------------------------------------------------------------------ */
-/* Mode QCM d'apprentissage (généré par GLM, adaptation autonome)      */
+/* Mode QCM d'apprentissage (généré par l'IA, adaptation autonome)     */
 /* ------------------------------------------------------------------ */
 
 interface QcmQuestion {
@@ -130,7 +133,7 @@ function parseQcm(content: string): QcmQuestion | null {
 }
 
 /**
- * Banque de secours : si GLM est indisponible, le mode QCM continue de
+ * Banque de secours : si l'IA est indisponible, le mode QCM continue de
  * fonctionner avec ces questions statiques (servies dans l'ordre, sans
  * répétition grâce à l'historique de conversation).
  */
@@ -413,6 +416,87 @@ async function fetchUserContext(userId: string): Promise<string> {
 }
 
 /**
+ * V14 — CONTEXTE PLATEFORME : un coup d'œil sur TOUTE la plateforme,
+ * reconstruit À CHAQUE REQUÊTE à partir de la base de données (données
+ * actualisées en temps réel) : banques réelles (titre, catégorie, niveau,
+ * nombre de questions), compteurs d'utilisateurs et de sessions.
+ * L'assistant s'entraîne et recommande ainsi sur des données vivantes,
+ * jamais sur une liste figée dans le code.
+ */
+async function fetchPlatformContext(): Promise<string> {
+  try {
+    const [banks, userCount, sessionCount] = await Promise.all([
+      db.questionBank.findMany({
+        select: {
+          title: true,
+          category: true,
+          educationLevel: true,
+          _count: { select: { questions: true } },
+        },
+      }),
+      db.user.count().catch(() => 0),
+      db.quizSession.count().catch(() => 0),
+    ]);
+
+    const totalQuestions = banks.reduce((s, b) => s + b._count.questions, 0);
+    const topBanks = [...banks]
+      .sort((a, b) => b._count.questions - a._count.questions)
+      .slice(0, 6)
+      .map(
+        (b) =>
+          `• ${b.title} — ${b.category ?? "général"}${
+            b.educationLevel ? ` (${b.educationLevel})` : ""
+          } — ${b._count.questions} questions`,
+      )
+      .join("\n");
+    const categories = Array.from(
+      new Set(banks.map((b) => b.category).filter(Boolean)),
+    ).slice(0, 10);
+
+    return [
+      `[CONTEXTE PLATEFORME — données actualisées de QuizExam BF]`,
+      `- ${banks.length} banques de questions, ${totalQuestions} questions au total`,
+      `- ${categories.length} catégories : ${categories.join(", ")}`,
+      userCount ? `- ${userCount} utilisateurs inscrits` : "",
+      sessionCount ? `- ${sessionCount} sessions de quiz réalisées` : "",
+      `- Banques les plus riches (à recommander en priorité) :`,
+      topBanks,
+    ]
+      .filter(Boolean)
+      .join("\n");
+  } catch {
+    return ""; // DB indisponible → l'assistant fonctionne sans contexte plateforme
+  }
+}
+
+/**
+ * V14 — ENTRAÎNEMENT PLATEFORME (mode QCM) : thèmes réels des banques de la
+ * plateforme, pour que le coach s'entraîne sur les données actualisées et
+ * prépare le candidat aux banques réellement disponibles.
+ */
+async function fetchTrainingContext(): Promise<string> {
+  try {
+    const banks = await db.questionBank.findMany({
+      select: {
+        title: true,
+        category: true,
+        educationLevel: true,
+        _count: { select: { questions: true } },
+      },
+      orderBy: { createdAt: "desc" },
+      take: 12,
+    });
+    if (banks.length === 0) return "";
+    const themes = banks
+      .map((b) => `${b.title} (${b.category ?? "général"}${b.educationLevel ? `, ${b.educationLevel}` : ""})`)
+      .join(" ; ");
+    return `\n\n[ENTRAÎNEMENT PLATEFORME — banques réelles récentes de QuizExam BF, puise tes thèmes dedans] :\n${themes}`;
+  } catch {
+    return "";
+  }
+}
+
+/**
  * Réponses instantanées (sans appel IA) pour les messages sociaux simples :
  * salutations, remerciements, identité, humeur, au revoir. Latence ~0 ms,
  * fonctionne même si tous les providers IA sont indisponibles.
@@ -438,7 +522,7 @@ function getInstantResponse(
     const hour = new Date().getHours();
     const timeWord =
       hour < 12 ? "Bonjour" : hour < 18 ? "Bon après-midi" : "Bonsoir";
-    return `${timeWord} ! 👋 Je suis **GLM Coach**, ton assistant QuizExam BF.\n\nJe réponds à TOUT : culture générale, maths, droit, langues, conseils de révision, blagues, ou juste papoter. Pose-moi ta question, ou dis « lance un QCM » pour t'entraîner ! 🚀`;
+    return `${timeWord} ! 👋 Je suis **QuizExam Assistant**, ton copilote de révision.\n\nJe réponds à TOUT : culture générale, maths, droit, langues, conseils de révision, blagues, ou juste papoter. Pose-moi ta question, ou dis « lance un QCM » pour t'entraîner ! 🚀`;
   }
 
   if (/^(ça va|ca va|comment vas[- ]tu|comment ça va|comment vas tu|cv)\b/.test(clean)) {
@@ -455,7 +539,7 @@ function getInstantResponse(
   }
 
   if (/\b(qui es[- ]tu|tu es qui|c'est quoi ton nom|ton nom|tu peux faire quoi|tu sais faire quoi)\b/.test(clean)) {
-    return "Je suis **GLM Coach**, le copilote IA de QuizExam BF, propulsé par GLM. 🤖\n\nCe que je sais faire :\n• Répondre à toutes tes questions (cours, culture G., logique, langues…)\n• Te générer des QCM d'entraînement adaptés à ton niveau (dis « lance un QCM »)\n• Analyser ta progression et tes zones de faiblesse\n• Te coacher : méthode, motivation, organisation\n\nVas-y, teste-moi ! 💪";
+    return "Je suis **QuizExam Assistant**, le copilote IA de QuizExam BF. 🤖\n\nCe que je sais faire :\n• Répondre à toutes tes questions (cours, culture G., logique, langues…), en cherchant au besoin des infos actualisées sur le web\n• Te générer des QCM d'entraînement adaptés à ton niveau (dis « lance un QCM »)\n• Connaître les banques réelles de la plateforme et te guider dessus\n• Analyser ta progression et tes zones de faiblesse\n• Te coacher : méthode, motivation, organisation\n\nVas-y, teste-moi ! 💪";
   }
 
   if (/^(au revoir|bye|à \+|a \+|salut ça va|bonne nuit|ciao|à bientôt|a bientot)\b/.test(clean)) {
@@ -630,14 +714,15 @@ export async function POST(request: Request) {
     /* ================================================================
      * MODE QCM D'APPRENTISSAGE (autonome)
      * Le client renvoie l'historique complet (questions générées +
-     * réponses/corrections du candidat encodées en messages user). GLM
+     * réponses/corrections du candidat encodées en messages user). L'IA
      * s'adapte à partir de cet historique : difficulté, thème, non-répétition.
      * ================================================================ */
     if (mode === "qcm") {
       const history = messages.slice(-24); // garde-fou de contexte
+      const training = await fetchTrainingContext();
       const result = await chatComplete(
         [
-          { role: "system", content: QCM_SYSTEM_PROMPT },
+          { role: "system", content: QCM_SYSTEM_PROMPT + training },
           ...history.map((m) => ({
             role: (m.role === "user" ? "user" : "assistant") as
               | "user"
@@ -762,6 +847,11 @@ export async function POST(request: Request) {
       }
     }
 
+    // --- V14 : CONTEXTE PLATEFORME (données actualisées à chaque requête) -
+    // Un coup d'œil sur toute la plateforme : banques réelles, stats.
+    const platformCtx = await fetchPlatformContext();
+    if (platformCtx) contextInfo += `\n\n${platformCtx}`;
+
     const conversation: ChatMessage[] = [
       { role: "system", content: SYSTEM_PROMPT + contextInfo },
       ...messages.map(
@@ -781,13 +871,30 @@ export async function POST(request: Request) {
       messages.filter((m: { role: string }) => m.role === "user").pop()
         ?.content || "";
 
+    // --- V14 : CONTEXTE WEB (recherche actualisée, best-effort) ----------
+    // L'assistant peut s'appuyer sur des informations trouvées sur le web
+    // (encyclopédie, actualité) pour répondre à tout type de question.
+    // Échec → aucune injection, l'IA répond avec ses connaissances.
+    try {
+      const webSources = await searchWebContext(lastUserMessage, "fr");
+      if (webSources.length > 0) {
+        const webBlock = formatWebContext(webSources);
+        conversation[0] = {
+          role: "system",
+          content: (conversation[0].content ?? "") + webBlock,
+        };
+      }
+    } catch {
+      /* best-effort — jamais bloquant */
+    }
+
     // --- Salutations & politesses : réponse instantanée (pas d'IA) ------
     const instant = getInstantResponse(lastUserMessage, fallbackCtx);
     if (instant) {
       return NextResponse.json({ response: instant, role: "assistant", engine: "instant" });
     }
 
-    // --- IA (chaîne complète : GLM → env → custom → gratuit) ------------
+    // --- IA (chaîne complète : sandbox → env → custom → gratuit) ---------
     const result = await chatComplete(conversation, {
       temperature: 0.7,
       timeoutMs: 30_000,

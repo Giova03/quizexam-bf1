@@ -238,14 +238,29 @@ export function FeaturedBanksCarousel({
   const [activeDot, setActiveDot] = useState(0);
   const lastDotRef = useRef(0);
   const pausedRef = useRef(false);
+  /** V14 — reprise différée : timestamp avant lequel le défilement reste
+   *  en pause (évite le redémarrage brutal au mouseleave/touchend). */
+  const resumeAtRef = useRef(0);
 
   useEffect(() => {
     pausedRef.current = paused;
   }, [paused]);
 
+  /** Pause temporaire avec reprise douce après `delayMs`. */
+  const pauseSoftly = useCallback((delayMs = 1_400) => {
+    resumeAtRef.current = Date.now() + delayMs;
+  }, []);
+
   // Défilement automatique : rAF + vitesse constante, boucle infinie sur
-  // la moitié du scrollWidth (liste dupliquée). Pause : survol, toucher,
-  // bouton, prefers-reduced-motion.
+  // la moitié du scrollWidth (liste dupliquée).
+  // V14 FIX BUG « ne défile pas seul » :
+  //  1. CAUSE RACINE — la classe CSS `snap-x snap-mandatory` du scroller
+  //     forçait le navigateur à re-accrocher chaque incrément rAF (~1 px) à
+  //     la position d'accroche la plus proche : déplacement net ≈ 0, le
+  //     carrousel restait figé sur la première carte. Le snap est retiré.
+  //  2. Pause quand l'onglet est masqué (économie CPU/batterie).
+  //  3. Reprise douce après interaction (1,4 s) au lieu d'un redémarrage
+  //     instantané qui faisait « sauter » le carrousel sous le doigt.
   useEffect(() => {
     if (reduceMotion) return;
     const el = scrollerRef.current;
@@ -257,7 +272,11 @@ export function FeaturedBanksCarousel({
     const tick = (now: number) => {
       const dt = Math.min(48, now - last);
       last = now;
-      if (!pausedRef.current) {
+      if (
+        !pausedRef.current &&
+        !document.hidden &&
+        Date.now() >= resumeAtRef.current
+      ) {
         const half = el.scrollWidth / 2;
         if (half > 0) {
           el.scrollLeft += SPEED * dt;
@@ -282,15 +301,15 @@ export function FeaturedBanksCarousel({
     (i: number) => {
       const el = scrollerRef.current;
       if (!el) return;
-      const half = el.scrollWidth / 2;
       // largeur moyenne d'une carte + gap
       const card = el.scrollWidth / (banks.length * 2);
       el.scrollTo({ left: i * card, behavior: "smooth" });
-      void half;
       setActiveDot(i);
       lastDotRef.current = i;
+      // reprise douce après un saut manuel (sinon le rAF l'écrase aussitôt)
+      pauseSoftly(2_500);
     },
-    [banks.length],
+    [banks.length, pauseSoftly],
   );
 
   if (banks.length === 0) return null;
@@ -319,6 +338,7 @@ export function FeaturedBanksCarousel({
             onClick={() => setPaused((p) => !p)}
             className="flex h-8 w-8 items-center justify-center rounded-full border bg-background text-muted-foreground transition-colors hover:bg-muted"
             aria-label={paused ? t("home.featured.play") : t("home.featured.pause")}
+            aria-pressed={paused}
           >
             {paused ? <Play className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}
           </button>
@@ -337,11 +357,17 @@ export function FeaturedBanksCarousel({
         />
         <div
           ref={scrollerRef}
-          className="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 sm:gap-4"
+          className="no-scrollbar flex gap-3 overflow-x-auto pb-2 sm:gap-4"
           onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
+          onMouseLeave={() => {
+            setPaused(false);
+            pauseSoftly(1_400); // V14 — reprise douce, pas de « saut »
+          }}
           onTouchStart={() => setPaused(true)}
-          onTouchEnd={() => setPaused(false)}
+          onTouchEnd={() => {
+            setPaused(false);
+            pauseSoftly(1_800); // V14 — laisse l'utilisateur regarder sa carte
+          }}
           onFocus={() => setPaused(true)}
           onBlur={() => setPaused(false)}
           aria-live="off"

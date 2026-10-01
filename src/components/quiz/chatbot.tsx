@@ -79,7 +79,7 @@ export function Chatbot() {
       role: "assistant",
       kind: "text",
       content:
-        "Bonjour ! 👋 Je suis QuizExam Assistant (GLM). Je réponds à TOUTES vos questions : cours, calculs, culture générale, langues, coaching… Et je peux aussi vous entraîner avec des QCM d'apprentissage adaptés à votre niveau. Comment puis-je vous aider ?",
+        "Bonjour ! 👋 Je suis QuizExam Assistant. Je réponds à TOUTES vos questions : cours, calculs, culture générale, langues, actualité — je vais même chercher des infos récentes sur le web si besoin. Et je peux vous entraîner avec des QCM adaptés à votre niveau. Comment puis-je vous aider ?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -87,7 +87,7 @@ export function Chatbot() {
   const [qcmLoading, setQcmLoading] = useState(false);
   const [qcmDegraded, setQcmDegraded] = useState(false);
 
-  // État de la session QCM (adaptation autonome côté GLM via l'historique).
+  // État de la session QCM (adaptation autonome côté IA via l'historique).
   const [quizActive, setQuizActive] = useState(false);
   const [quizTopic, setQuizTopic] = useState("");
   const [quizAnswered, setQuizAnswered] = useState(0);
@@ -260,7 +260,7 @@ export function Chatbot() {
       if (correct) setQuizScore((s) => s + 1);
       setQuizAnswered((a) => a + 1);
 
-      // Alimente l'historique GLM pour l'adaptation autonome (difficulté,
+      // Alimente l'historique IA pour l'adaptation autonome (difficulté,
       // thème, non-répétition) : la question générée + le résultat du candidat.
       qcmHistoryRef.current.push({
         role: "assistant",
@@ -358,11 +358,11 @@ export function Chatbot() {
                   QuizExam Assistant
                   <span className="flex items-center gap-0.5 rounded-full bg-white/20 px-1.5 py-0.5 text-[9px] font-bold uppercase">
                     <Sparkles className="h-2.5 w-2.5" />
-                    GLM
+                    IA
                   </span>
                 </span>
                 <p className="text-[11px] text-white/80">
-                  Répond à tout · Coach QCM autonome
+                  Répond à tout · Infos web actualisées · Coach QCM
                 </p>
               </div>
             </SheetTitle>
@@ -403,6 +403,36 @@ export function Chatbot() {
                   Score {quizScore}/{answeredTotal}
                 </span>
               )}
+              {/* V14 — bouton « nouvelle conversation » : repart d'une page
+                  blanche (messages, session QCM, historique adaptatif). */}
+              <button
+                type="button"
+                onClick={() => {
+                  setMessages([
+                    {
+                      id: `welcome-${Date.now()}`,
+                      role: "assistant",
+                      kind: "text",
+                      content:
+                        "Nouvelle conversation prête ✨ Pose-moi n'importe quelle question, ou dis « lance un QCM » pour t'entraîner.",
+                    },
+                  ]);
+                  setInput("");
+                  setQuizActive(false);
+                  setQuizTopic("");
+                  setQuizAnswered(0);
+                  setQuizScore(0);
+                  setQcmDegraded(false);
+                  qcmHistoryRef.current = [];
+                }}
+                className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border bg-background text-muted-foreground transition-colors hover:bg-muted hover:text-foreground ${
+                  quizActive ? "" : "ml-auto"
+                }`}
+                aria-label="Nouvelle conversation"
+                title="Nouvelle conversation"
+              >
+                <RotateCcw className="h-3.5 w-3.5" />
+              </button>
             </div>
           </div>
 
@@ -502,17 +532,76 @@ export function Chatbot() {
 /* Bulle « en train de réfléchir »                                     */
 /* ================================================================== */
 
+/**
+ * V14 — Animation de « réflexion » de l'IA : une orbe multi-couches
+ * (anneaux en rotation dans des sens opposés, pulsation du cœur, onde de
+ * halo) qui donne clairement l'impression que l'assistant TRAVAILLE — au
+ * lieu d'un simple spinner qui faisait croire à un blocage.
+ */
+function ThinkingOrb() {
+  return (
+    <motion.div
+      className="relative h-9 w-9 shrink-0"
+      animate={{ scale: [1, 1.06, 1] }}
+      transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+      aria-hidden="true"
+    >
+      {/* Halo pulsant (onde qui s'étend) */}
+      <motion.span
+        className="absolute inset-0 rounded-full bg-emerald-400/25"
+        animate={{ scale: [1, 1.7], opacity: [0.55, 0] }}
+        transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
+      />
+      {/* Anneau extérieur — rotation horaire, arc discontinu */}
+      <motion.span
+        className="absolute inset-0 rounded-full border-2 border-transparent border-t-emerald-500 border-r-emerald-400/60"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 1.4, repeat: Infinity, ease: "linear" }}
+      />
+      {/* Anneau intérieur — rotation anti-horaire, plus rapide */}
+      <motion.span
+        className="absolute inset-[5px] rounded-full border-2 border-transparent border-b-teal-500 border-l-teal-400/70"
+        animate={{ rotate: -360 }}
+        transition={{ duration: 0.9, repeat: Infinity, ease: "linear" }}
+      />
+      {/* Cœur lumineux */}
+      <motion.span
+        className="absolute inset-[11px] rounded-full bg-gradient-to-br from-emerald-400 to-teal-500"
+        animate={{ opacity: [0.75, 1, 0.75] }}
+        transition={{ duration: 1.1, repeat: Infinity, ease: "easeInOut" }}
+      />
+    </motion.div>
+  );
+}
+
+/** Trois points qui dansent pendant la « réflexion ». */
+function ThinkingDots() {
+  return (
+    <span className="inline-flex items-center gap-0.5" aria-hidden="true">
+      {[0, 1, 2].map((i) => (
+        <motion.span
+          key={i}
+          className="h-1 w-1 rounded-full bg-emerald-500"
+          animate={{ y: [0, -3, 0], opacity: [0.4, 1, 0.4] }}
+          transition={{
+            duration: 0.9,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: i * 0.15,
+          }}
+        />
+      ))}
+    </span>
+  );
+}
+
 function ThinkingBubble({ label }: { label: string }) {
   return (
     <div className="flex items-center gap-2 text-sm text-muted-foreground">
-      <Avatar className="h-7 w-7 shrink-0">
-        <AvatarFallback className="bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-300">
-          <Bot className="h-4 w-4" />
-        </AvatarFallback>
-      </Avatar>
-      <div className="flex items-center gap-1 rounded-2xl rounded-bl-sm bg-card px-3 py-2.5">
-        <Loader2 className="h-3.5 w-3.5 animate-spin" />
-        <span className="text-xs">{label}</span>
+      <ThinkingOrb />
+      <div className="flex items-center gap-1.5 rounded-2xl rounded-bl-sm bg-card px-3 py-2.5 shadow-sm">
+        <span className="text-xs font-medium">{label}</span>
+        <ThinkingDots />
       </div>
     </div>
   );
@@ -537,7 +626,7 @@ function QcmLauncher({ onStart }: { onStart: (topic: string) => void }) {
         QCM d&apos;apprentissage autonome
       </p>
       <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
-        Le coach GLM vous pose {QCM_SERIES} questions l&apos;une après l&apos;autre et
+        Le coach IA vous pose {QCM_SERIES} questions l&apos;une après l&apos;autre et
         s&apos;adapte en temps réel : difficulté progressive, thèmes variés,
         correction expliquée après chaque réponse. Laissez le champ vide pour
         un mélange équilibré.
@@ -651,7 +740,7 @@ function QcmCard({
           {degraded && (
             <span
               className="ml-auto rounded-full bg-muted px-2 py-0.5 text-[9px] font-semibold text-muted-foreground"
-              title="GLM momentanément indisponible — questions de secours"
+              title="IA momentanément indisponible — questions de secours"
             >
               mode secours
             </span>
