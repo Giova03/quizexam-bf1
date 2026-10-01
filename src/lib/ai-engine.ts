@@ -85,10 +85,43 @@ async function fetchJsonWithTimeout(
 /* Provider 1 — GLM via SDK ZAI (fichier .z-ai-config)                 */
 /* ------------------------------------------------------------------ */
 
+/**
+ * V14b — GUARD FILESYSTEM : n'importe le SDK QUE si le fichier de config
+ * `.z-ai-config` existe. Sur Vercel il n'existe jamais : `ZAI.create()` y
+ * traînait (lecture de multiples chemins + tentatives internes) AVANT de
+ * lever, à CHAQUE requête chat — contributeur direct du dépassement de la
+ * limite serverless de 60 s (FUNCTION_INVOCATION_TIMEOUT).
+ */
+import { existsSync } from "fs";
+import { homedir } from "os";
+import path from "path";
+
+let zaiConfigChecked = false;
+let zaiConfigPresent = false;
+
+function hasZaiConfig(): boolean {
+  if (!zaiConfigChecked) {
+    zaiConfigChecked = true;
+    try {
+      const candidates = [
+        path.join(process.cwd(), ".z-ai-config"),
+        path.join(homedir(), ".z-ai-config"),
+        "/etc/.z-ai-config",
+      ];
+      zaiConfigPresent = candidates.some((p) => existsSync(p));
+    } catch {
+      zaiConfigPresent = false;
+    }
+  }
+  return zaiConfigPresent;
+}
+
 async function tryGlmSandbox(
   messages: ChatMessage[],
   opts: ChatOptions,
 ): Promise<ChatResult | null> {
+  // Sans fichier de config, le SDK ne peut PAS fonctionner : skip immédiat.
+  if (!hasZaiConfig()) return null;
   try {
     const mod = await import("z-ai-web-dev-sdk");
     const ZAI = (mod as { default?: unknown }).default ?? mod;
