@@ -18,6 +18,15 @@ async function requireAdmin() {
   return session;
 }
 
+const VALID_EDUCATION_LEVELS = new Set(["BEPC", "BAC", "LICENCE", "CONCOURS", "TOUS"]);
+
+function normalizeEducationLevel(v: unknown): string {
+  if (typeof v === "string" && VALID_EDUCATION_LEVELS.has(v.trim().toUpperCase())) {
+    return v.trim().toUpperCase();
+  }
+  return "TOUS";
+}
+
 interface ImportQuestion {
   question?: string;
   optionA?: string;
@@ -29,6 +38,7 @@ interface ImportQuestion {
   answer?: string;
   explanation?: string;
   level?: string;
+  educationLevel?: string;
 }
 
 function pickCorrectAnswer(q: ImportQuestion): string | null {
@@ -50,7 +60,7 @@ function validate(q: ImportQuestion): {
     optionD: string;
     correctAnswer: string;
     explanation: string;
-    level: string;
+    educationLevel: string;
   };
 } {
   const question = (q.question ?? "").trim();
@@ -60,7 +70,11 @@ function validate(q: ImportQuestion): {
   const optionD = (q.optionD ?? "").trim();
   const correctAnswer = pickCorrectAnswer(q);
   const explanation = (q.explanation ?? "").trim();
-  const level = (q.level ?? "TOUS").trim() || "TOUS";
+  // V16b — FIX CRITIQUE « import en masse refusé » : la route construisait
+  // des lignes avec un champ `level` qui N'EXISTE PAS dans le modèle Prisma
+  // (la colonne s'appelle `educationLevel`) → PrismaClientValidationError →
+  // 500 systématique sur CHAQUE import, même avec 5 questions parfaites.
+  const educationLevel = normalizeEducationLevel(q.educationLevel ?? q.level);
 
   if (!question) return { ok: false, error: "Question vide" };
   if (!optionA || !optionB || !optionC || !optionD) {
@@ -86,7 +100,7 @@ function validate(q: ImportQuestion): {
       optionD,
       correctAnswer,
       explanation,
-      level,
+      educationLevel,
     },
   };
 }
@@ -144,7 +158,7 @@ export async function POST(request: Request) {
       optionD: string;
       correctAnswer: string;
       explanation: string;
-      level: string;
+      educationLevel: string;
       order: number;
     }> = [];
 
