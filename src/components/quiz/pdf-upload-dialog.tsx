@@ -144,15 +144,19 @@ export function PdfUploadDialog({
     }
   }, [step]);
 
-  /** Handle a selected File (from input or drag&drop) — upload to API. */
+  /** Handle a selected File (from input or drag&drop) — upload to API.
+   *  V10 : accepte aussi les documents Word (.docx) via /api/upload-word. */
   const handleFile = useCallback(
     async (file: File) => {
       // Basic client-side guards (the server re-checks too).
+      const lower = file.name.toLowerCase();
       const isPdf =
-        file.type === "application/pdf" ||
-        file.name.toLowerCase().endsWith(".pdf");
-      if (!isPdf) {
-        toast.error("Le fichier doit être au format PDF.");
+        file.type === "application/pdf" || lower.endsWith(".pdf");
+      const isDocx = lower.endsWith(".docx");
+      if (!isPdf && !isDocx) {
+        toast.error(
+          "Le fichier doit être un PDF ou un document Word (.docx)."
+        );
         return;
       }
       if (file.size > 10 * 1024 * 1024) {
@@ -168,13 +172,21 @@ export function PdfUploadDialog({
       try {
         const fd = new FormData();
         fd.append("file", file);
-        const res = await fetch("/api/upload-pdf", {
-          method: "POST",
-          body: fd,
-        });
+        const res = await fetch(
+          isDocx ? "/api/upload-word" : "/api/upload-pdf",
+          {
+            method: "POST",
+            body: fd,
+          }
+        );
         const data = await res.json();
         if (!res.ok) {
-          toast.error(data?.error || "Échec de l'extraction du PDF.");
+          toast.error(
+            data?.error ||
+              (isDocx
+                ? "Échec de l'extraction du document Word."
+                : "Échec de l'extraction du PDF.")
+          );
           return;
         }
         setPdfInfo(data as PdfUploadResponse);
@@ -185,7 +197,7 @@ export function PdfUploadDialog({
         );
       } catch (err) {
         console.error(err);
-        toast.error("Erreur réseau lors de l'envoi du PDF.");
+        toast.error("Erreur réseau lors de l'envoi du document.");
       } finally {
         setUploading(false);
       }
@@ -500,7 +512,7 @@ export function PdfUploadDialog({
                     </div>
                     <div>
                       <p className="text-sm font-semibold">
-                        Glissez-déposez un PDF ici
+                        Glissez-déposez un PDF ou un Word (.docx) ici
                       </p>
                       <p className="text-xs text-muted-foreground">
                         ou cliquez pour parcourir · taille max 10 Mo
@@ -518,7 +530,7 @@ export function PdfUploadDialog({
                     <input
                       ref={fileInputRef}
                       type="file"
-                      accept="application/pdf,.pdf"
+                      accept="application/pdf,.pdf,.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                       className="hidden"
                       onChange={(e) => {
                         const f = e.target.files?.[0];

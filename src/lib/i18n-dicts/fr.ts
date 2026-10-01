@@ -655,4 +655,13 @@ export const fr: Record<string, string> = {
   "about.footer.pre": "QuizExam BF — Conçu avec",
   "about.footer.post": "pour les candidats aux concours du Burkina Faso",
   "about.rights": "Tous droits réservés",
+
+  // V10 — accueil : carrousel à la une + lots par sujet
+  "home.featured.title": "Banques à la une",
+  "home.featured.pause": "Mettre le défilement en pause",
+  "home.featured.play": "Reprendre le défilement",
+  "home.lots.kicker": "Sujet",
+  "home.lots.back": "Tous les sujets",
+  "home.lots.library": "Ouvrir la bibliothèque",
+  "home.lots.hint": "Astuce : Ctrl+K pour chercher une question en un instant",
 };

@@ -1,20 +1,20 @@
 "use client";
 
 /**
- * HomeView — FIX5 fresh modern redesign.
+ * HomeView — V10 « lots par sujet » (design bibliothèque appliqué à l'accueil).
  *
  * Sections (top → bottom):
  *   1. Hero — gradient-mesh banner with floating glass stat pills
  *   2. Stats Bar — 3 animated counters (Banques · Questions · Examens)
- *   3. Quick Actions Grid — 4 gradient cards (Examen IA, Tableau de bord,
- *      Classement, Révision espacée)
- *   4. Progress Summary — XP / level / streak / rank + progress bar
- *      (returning users only)
- *   5. Daily Challenge — themed 10-question sprint
- *   6. Featured Banks — top 6 by question count (horizontal snap on mobile)
- *   7. Search bar (Ctrl+K)
- *   8. Study Reminders
- *   9. Banks section — EducationLevelSelector + full grid (filtered by level)
+ *   3. Library CTA banner
+ *   4. Quick Actions Grid — 4 gradient cards
+ *   5. Progress Summary (returning users)
+ *   6. Daily Challenge
+ *   7. Featured Banks — CARROUSEL À DÉFILEMENT AUTOMATIQUE (V10)
+ *   8. Search bar (Ctrl+K) + Study Reminders
+ *   9. Banks — EducationLevelSelector + LOTS regroupés par SUJET SIMILAIRE
+ *      (design tour de contrôle / bibliothèque : cartes dégradées, radar,
+ *      compteurs animés, panneau focus plein-flux au clic)
  *  10. Exams section — exam cards
  */
 
@@ -31,15 +31,11 @@ import { useTranslation } from "@/lib/use-translation";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BankIcon } from "./bank-icon";
-import { getColor } from "@/lib/types";
 import { SearchDialog } from "./search-dialog";
 import { RevisionDialog } from "./revision-dialog";
 import { StudyReminders } from "./study-reminders";
 import {
   EducationLevelSelector,
-  getEducationLevelMeta,
-  educationLevelLabelKey,
   type EducationLevel,
 } from "./education-level-selector";
 import {
@@ -51,6 +47,10 @@ import {
 import { StaggerList, StaggerItem } from "./page-transitions";
 import { DailyChallengeCard } from "./daily-challenge-card";
 import {
+  FeaturedBanksCarousel,
+  HomeBanksLots,
+} from "./home-banks-lots";
+import {
   GraduationCap,
   FileQuestion,
   Clock,
@@ -59,8 +59,6 @@ import {
   Trophy,
   Sparkles,
   Search,
-  Layers3,
-  Filter,
   Target,
   LayoutDashboard,
   Crown,
@@ -200,15 +198,6 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
       return lvl === level || lvl === "TOUS";
     });
   }, [banks, level]);
-
-  const visibleQuestions = useMemo(
-    () =>
-      visibleBanks.reduce(
-        (sum, b) => sum + (b._count?.questions ?? 0),
-        0,
-      ),
-    [visibleBanks],
-  );
 
   const totalQuestions = useMemo(
     () => banks.reduce((sum, b) => sum + (b._count?.questions ?? 0), 0),
@@ -539,103 +528,8 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
       {/* ===== Daily Challenge ===== */}
       <DailyChallengeCard />
 
-      {/* ===== Featured Banks Section ===== */}
-      {featuredBanks.length > 0 && (
-        <section className="space-y-3 sm:space-y-4">
-          <div className="flex items-center justify-between gap-2">
-            <div className="flex items-center gap-2">
-              <Sparkles className="h-5 w-5 shrink-0 text-amber-500" />
-              <h2 className="text-lg font-semibold sm:text-xl">
-                Banques à la une
-              </h2>
-            </div>
-            <Badge variant="outline" className="shrink-0 gap-1">
-              <TrendingUp className="h-3 w-3" />
-              Populaire
-            </Badge>
-          </div>
-          <div className="flex snap-x gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:overflow-visible">
-            {featuredBanks.map((bank, i) => {
-              const color = getColor(bank.color);
-              const count = bank._count?.questions ?? 0;
-              const lvlMeta = getEducationLevelMeta(
-                bank.educationLevel ?? "TOUS",
-              );
-              const LvlIcon = lvlMeta.icon;
-              return (
-                <motion.div
-                  key={bank.id}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.05, duration: 0.35 }}
-                  whileHover={{ y: -3 }}
-                  className="snap-start"
-                >
-                  <Card
-                    className="glass-strong card-3d group relative h-full min-w-[260px] cursor-pointer overflow-hidden p-5 shadow-md hover:shadow-xl sm:min-w-0"
-                    onClick={() => openBank(bank.id)}
-                  >
-                    <div
-                      className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${color.gradient}`}
-                    />
-                    <div className="absolute right-3 top-3">
-                      <Badge className="gap-1 bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:from-amber-500 hover:to-orange-600">
-                        <TrendingUp className="h-3 w-3" />
-                        {t("home.card.popular")}
-                      </Badge>
-                    </div>
-                    <div className="flex items-start gap-3 pt-2">
-                      <div
-                        className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${color.bgSoft} ${color.text} transition-transform group-hover:scale-110`}
-                      >
-                        <BankIcon name={bank.icon} className="h-6 w-6" />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <h3 className="line-clamp-2 font-bold leading-tight">
-                          {bank.title}
-                        </h3>
-                        <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-                          <Badge
-                            variant="outline"
-                            className={`${color.border} ${color.text}`}
-                          >
-                            {bank.category}
-                          </Badge>
-                          {(bank.educationLevel ?? "TOUS") !== "TOUS" && (
-                            <Badge
-                              variant="secondary"
-                              className="gap-1"
-                              title={`${t("dash.level")} : ${t(educationLevelLabelKey(bank.educationLevel ?? "TOUS"))}`}
-                            >
-                              <LvlIcon className="h-3 w-3" />
-                              {t(educationLevelLabelKey(bank.educationLevel ?? "TOUS"))}
-                            </Badge>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                    <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">
-                      {bank.description}
-                    </p>
-                    <div className="mt-4 flex items-center justify-between gap-2">
-                      <span className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
-                        <FileQuestion className="h-4 w-4" />
-                        {count} {t("home.stat.questionsUnit")}
-                      </span>
-                      <span
-                        className={`flex items-center gap-1 text-sm font-medium ${color.text} transition-transform group-hover:translate-x-0.5`}
-                      >
-                        {t("banks.cta.explore")}
-                        <ArrowRight className="h-4 w-4" />
-                      </span>
-                    </div>
-                  </Card>
-                </motion.div>
-              );
-            })}
-          </div>
-        </section>
-      )}
+      {/* ===== Featured Banks — carrousel à défilement automatique (V10) ===== */}
+      <FeaturedBanksCarousel banks={featuredBanks} onOpenBank={openBank} />
 
       {/* ===== Quick actions bar (search) ===== */}
       <section className="flex flex-col gap-3 sm:flex-row">
@@ -657,135 +551,20 @@ export function HomeView({ onOpenCustomExam }: HomeViewProps) {
       {/* Study reminders */}
       <StudyReminders />
 
-      {/* ===== Banks section ===== */}
+      {/* ===== Banks section — LOTS par sujet similaire (design bibliothèque V10) ===== */}
       <section className="space-y-3 sm:space-y-4">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-2">
-            <BookOpen className="h-5 w-5 shrink-0 text-blue-600" />
-            <h2 className="text-lg font-semibold sm:text-xl">
-              {t("menu.banks")}
-            </h2>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            <Badge variant="secondary" className="gap-1">
-              <Filter className="h-3 w-3" />
-              {visibleBanks.length} {t("home.banks.shown")}
-            </Badge>
-            <Badge variant="outline" className="gap-1">
-              <FileQuestion className="h-3 w-3" />
-              {visibleQuestions} {t("home.stat.questionsUnit")}
-            </Badge>
-          </div>
-        </div>
-
-        {/* Education level selector (E1) */}
+        {/* Filtre niveau (E1) — conserve la logique existante */}
         <EducationLevelSelector
           value={level}
           onChange={setLevel}
           counts={levelCounts}
         />
 
-        {loadingBanks ? (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <ShimmerSkeleton key={i} className="h-40 rounded-2xl" />
-            ))}
-          </div>
-        ) : visibleBanks.length === 0 ? (
-          <Card className="glass p-6 text-center text-muted-foreground sm:p-8">
-            {t("home.banks.emptyPre")}{" "}
-            <strong>{t(educationLevelLabelKey(level))}</strong>.{" "}
-            {t("home.banks.emptyPost")}
-          </Card>
-        ) : (
-          <StaggerList className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {visibleBanks.map((bank) => {
-              const color = getColor(bank.color);
-              const count = bank._count?.questions ?? 0;
-              const lvlMeta = getEducationLevelMeta(
-                bank.educationLevel ?? "TOUS",
-              );
-              const LvlIcon = lvlMeta.icon;
-              return (
-                <StaggerItem key={bank.id} className="h-full">
-                  <Card
-                    className="glass card-3d group relative h-full cursor-pointer overflow-hidden p-4 shadow-sm hover:shadow-xl sm:p-5"
-                    onClick={() => openBank(bank.id)}
-                  >
-                    <div
-                      className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${color.gradient}`}
-                    />
-                    <div className="flex items-start gap-3">
-                      <div
-                        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${color.bgSoft} ${color.text} transition-transform group-hover:scale-110 sm:h-12 sm:w-12`}
-                      >
-                        <BankIcon
-                          name={bank.icon}
-                          className="h-5 w-5 sm:h-6 sm:w-6"
-                        />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <h3 className="line-clamp-2 font-semibold leading-tight">
-                          {bank.title}
-                        </h3>
-                        <div className="mt-1 flex flex-wrap items-center gap-1.5">
-                          <Badge
-                            variant="outline"
-                            className={`${color.border} ${color.text}`}
-                          >
-                            {bank.category}
-                          </Badge>
-                          {(bank.educationLevel ?? "TOUS") !== "TOUS" && (
-                            <Badge
-                              variant="secondary"
-                              className="gap-1"
-                              title={`${t("dash.level")} : ${t(educationLevelLabelKey(bank.educationLevel ?? "TOUS"))}`}
-                            >
-                              <LvlIcon className="h-3 w-3" />
-                              {t(educationLevelLabelKey(bank.educationLevel ?? "TOUS"))}
-                            </Badge>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                    <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">
-                      {bank.description}
-                    </p>
-                    <div className="mt-4 flex items-center justify-between gap-2">
-                      <span className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
-                        <FileQuestion className="h-4 w-4" />
-                        {count} {t("home.stat.questionsUnit")}
-                      </span>
-                      <div className="flex items-center gap-1">
-                        <Button
-                          size="sm"
-                          variant="ghost"
-                          className="h-9 gap-1 px-2 text-xs sm:h-7"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setRevisionBank({
-                              id: bank.id,
-                              title: bank.title,
-                            });
-                          }}
-                        >
-                          <Layers3 className="h-3 w-3" />
-                          <span className="hidden sm:inline">{t("nav.revise")}</span>
-                        </Button>
-                        <span
-                          className={`flex items-center gap-1 text-sm font-medium ${color.text} transition-transform group-hover:translate-x-0.5`}
-                        >
-                          {t("banks.cta.explore")}
-                          <ArrowRight className="h-4 w-4" />
-                        </span>
-                      </div>
-                    </div>
-                  </Card>
-                </StaggerItem>
-              );
-            })}
-          </StaggerList>
-        )}
+        <HomeBanksLots
+          banks={visibleBanks}
+          loading={loadingBanks}
+          onOpenLibrary={openBanks}
+        />
       </section>
 
       {/* ===== Exams section ===== */}

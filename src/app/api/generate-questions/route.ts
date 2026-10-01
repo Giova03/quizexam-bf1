@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
-import ZAI from "z-ai-web-dev-sdk";
+import { chatComplete } from "@/lib/ai-engine";
 import {
   logStaffAction,
   staffActorFromSession,
@@ -121,8 +121,6 @@ async function generateQuestions(
   subject: string,
   count: number
 ): Promise<GeneratedQuestion[]> {
-  const zai = await ZAI.create();
-
   const seen = new Set<string>();
   const collected: GeneratedQuestion[] = [];
   const MAX_ATTEMPTS = 3;
@@ -142,19 +140,19 @@ EXIGENCES:
 - Réponds en JSON valide uniquement, sans markdown, sans texte avant ou après.`;
 
     try {
-      const completion = await zai.chat.completions.create({
-        messages: [
+      const result = await chatComplete(
+        [
           {
-            role: "assistant",
+            role: "system",
             content:
               "Tu es un générateur expert de QCM pédagogiques. Tu réponds STRICTEMENT en JSON valide, sans markdown ni commentaire.",
           },
           { role: "user", content: prompt },
         ],
-        thinking: { type: "disabled" },
-      });
+        { temperature: 0.7, timeoutMs: 30_000 },
+      );
 
-      const content = completion?.choices?.[0]?.message?.content ?? "";
+      const content = result?.content ?? "";
       const parsed = parseQuestions(content);
       for (const q of parsed) {
         const c = cleanQuestion(q);

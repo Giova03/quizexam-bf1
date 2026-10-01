@@ -1,37 +1,41 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import ZAI from "z-ai-web-dev-sdk";
+import { chatComplete, type ChatMessage } from "@/lib/ai-engine";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { applyUserRateLimit } from "@/lib/api-rate-limit";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
-const SYSTEM_PROMPT = `Tu es QuizExam Assistant, le coach IA (GLM) de la plateforme QuizExam BF — une plateforme burkinabè de préparation aux concours.
+const SYSTEM_PROMPT = `Tu es QuizExam Assistant — surnommé « GLM Coach » — le copilote intelligent de la plateforme QuizExam BF (préparation aux concours et examens du Burkina Faso). Tu es propulsé par GLM.
 
-TON RÔLE: Tu réponds à TOUT TYPE DE QUESTION, sans exception :
-- Culture générale (Burkina Faso, Afrique, monde, histoire, géographie, actualité)
-- Sciences (maths, physique, chimie, SVT, informatique), droit, économie, lettres
-- Langues (français, anglais...), calculs, raisonnement logique, traductions
-- Coaching: méthodes de révision, organisation, motivation, orientation
-- Plateforme QuizExam BF: banques, modes de correction, fonctionnalités
-- Discussions générales, conseils pratiques, questions de vie courante
+RÈGLE N°1 — TU RÉPONDS À TOUT, JAMAIS DE REFUS
+Tu es une conversation à part entière, pas un simple FAQ. Tu gères SANS EXCEPTION :
+- Salutations et convivialité : « salut », « bonjour », « ça va ? », « qui es-tu ? », « merci », au revoir, blagues, encouragements...
+- Culture générale : Burkina Faso, Afrique, monde, histoire, géographie, arts, sport, actualité
+- Scolaire & concours : maths, physique, chimie, SVT, informatique, droit, économie, lettres, philosophie
+- Langues : français, anglais, mooré, dioula... traductions, grammaire, conjugaison
+- Calculs, logique, énigmes, dictées, analyses de texte
+- Vie pratique : motivation, stress des examens, organisation,orientation, conseils du quotidien
+- La plateforme QuizExam BF : banques, modes de correction, XP, classements
 
-MÉTHODE: Réponds toujours de façon utile et directe. Pour une question de cours,
-structure la réponse (définition → explication → exemple). Pour un calcul, détaille
-les étapes. Si une question est ambiguë, propose l'interprétation la plus probable
-et réponds quand même. Tu ne refuses jamais d'aider sur un sujet scolaire ou général.
+MÉTHODE DE RÉPONSE :
+- Salutation/simple politesse → réponse chaleureuse et courte (1-3 phrases), puis propose une aide concrète.
+- Question de cours → structure : définition → explication → exemple.
+- Calcul → détaille les étapes numérotées.
+- Question ambiguë → choisis l'interprétation la plus probable et réponds quand même.
+- Hors de tes connaissances ou évènement très récent → dis-le honnêtement et donne ce que tu sais.
+- Réponds DANS LA LANGUE de l'utilisateur (français par défaut).
 
-INFORMATIONS VÉRIFIÉES (juin 2025):
-- Président du Faso: Capitaine Ibrahim Traoré
-- Président ALT: Dr Ousmane Bougma (installée le 11 novembre 2022)
-- 17 régions et 47 provinces (depuis juillet 2025)
-- AES: Mali, Burkina Faso, Niger — créée 16/09/2023, Confédération 09/07/2024
-- Devise AES: "Un espace, un peuple, un destin"
-- FESPACO, SIAO à Ouagadougou; SNC à Bobo-Dioulasso
+INFORMATIONS VÉRIFIÉES (à jour juin 2025) :
+- Président du Faso : Capitaine Ibrahim Traoré (depuis le 30/09/2022)
+- Président de l'ALT : Dr Ousmane Bougma (installé le 11/11/2022)
+- 17 régions et 47 provinces depuis juillet 2025
+- AES : Mali, Burkina Faso, Niger — créée 16/09/2023, Confédération le 09/07/2024, devise « Un espace, un peuple, un destin »
+- FESPACO et SIAO à Ouagadougou ; SNC à Bobo-Dioulasso
 
-STYLE: Français, amical, concis, encourageant. Si tu ne sais pas, dis-le.
-PERSONNALISATION: Quand tu reçois du contexte utilisateur (zones de faiblesse, progression, sessions récentes), utilise-le pour donner des conseils personnalisés et concrets.`;
+STYLE : amical, valorisant, emojis avec modération (1-3 par message), réponses concises mais complètes (jamais une seule ligne sèche pour une vraie question).
+PERSONNALISATION : quand un contexte utilisateur est fourni (faiblesses, progression), sers-t'en pour des conseils concrets et nomme les matières.`;
 
 /**
  * Mode « QCM d'apprentissage » : l'IA génère une question à la fois, sous
@@ -408,6 +412,68 @@ async function fetchUserContext(userId: string): Promise<string> {
   }
 }
 
+/**
+ * Réponses instantanées (sans appel IA) pour les messages sociaux simples :
+ * salutations, remerciements, identité, humeur, au revoir. Latence ~0 ms,
+ * fonctionne même si tous les providers IA sont indisponibles.
+ */
+function getInstantResponse(
+  message: string,
+  ctx: { avgPct: number; total: number } | null,
+): string | null {
+  const msg = message.toLowerCase().trim();
+  // Normalisation légère (accents répétés, ponctuation).
+  const clean = msg
+    .replace(/[!?.]+$/, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const isGreeting =
+    /^(salut|slt|bonjour|bonsoir|hello|hi|hey|coucou|yo|bjr|bsr|waguan|nanga def|fofo)\b/.test(
+      clean,
+    ) ||
+    clean === "salut" ||
+    clean === "hello";
+  if (isGreeting) {
+    const hour = new Date().getHours();
+    const timeWord =
+      hour < 12 ? "Bonjour" : hour < 18 ? "Bon après-midi" : "Bonsoir";
+    return `${timeWord} ! 👋 Je suis **GLM Coach**, ton assistant QuizExam BF.\n\nJe réponds à TOUT : culture générale, maths, droit, langues, conseils de révision, blagues, ou juste papoter. Pose-moi ta question, ou dis « lance un QCM » pour t'entraîner ! 🚀`;
+  }
+
+  if (/^(ça va|ca va|comment vas[- ]tu|comment ça va|comment vas tu|cv)\b/.test(clean)) {
+    return "Je roule parfaitement, merci ! 😄 Et toi, ta préparation avance bien ?\n\nDis-moi ce dont tu as besoin : une explication, un QCM d'entraînement, ou un bilan de tes points forts — je suis là.";
+  }
+
+  if (
+    /^(merci|thanks|thx|merci beaucoup|c'est bon|ok merci|nickel|parfait)\b/.test(
+      clean,
+    ) ||
+    clean === "merci"
+  ) {
+    return "Avec grand plaisir ! 😊 Je reste dispo pour t'aider à réviser, t'expliquer une notion ou te lancer un défi QCM. Bon courage ! 🎓🇧🇫";
+  }
+
+  if (/\b(qui es[- ]tu|tu es qui|c'est quoi ton nom|ton nom|tu peux faire quoi|tu sais faire quoi)\b/.test(clean)) {
+    return "Je suis **GLM Coach**, le copilote IA de QuizExam BF, propulsé par GLM. 🤖\n\nCe que je sais faire :\n• Répondre à toutes tes questions (cours, culture G., logique, langues…)\n• Te générer des QCM d'entraînement adaptés à ton niveau (dis « lance un QCM »)\n• Analyser ta progression et tes zones de faiblesse\n• Te coacher : méthode, motivation, organisation\n\nVas-y, teste-moi ! 💪";
+  }
+
+  if (/^(au revoir|bye|à \+|a \+|salut ça va|bonne nuit|ciao|à bientôt|a bientot)\b/.test(clean)) {
+    return "À très vite ! 👋 Reviens quand tu veux — tes banques de questions et moi, on t'attend. Bonne révision ! 🎯";
+  }
+
+  if (/\b(blague|fais[- ]moi rire|rigoler|drôle|drole)\b/.test(clean)) {
+    return "Une petite, alors : Pourquoi les élèves du Burkina n'aiment pas les mauvaises herbes ? Parce qu'elles prennent la place des bonnes réponses ! 😄🌱\n\nBon, plus sérieusement — une question de révision ? 😉";
+  }
+
+  // Personnalisation légère si l'utilisateur a de l'historique.
+  if (ctx && ctx.total > 0 && /\b(je suis (nul|faible)|je vais échouer|j'y arrive pas|j'y arriverai jamais)\b/.test(clean)) {
+    return `Ne te décourage pas ! 💪 Sur tes ${ctx.total} dernière(s) session(s), ton score moyen est de ${ctx.avgPct}%. La régularité bat le talent : 15 minutes par jour suffisent pour progresser. Je peux te préparer un QCM adapté — dis « lance un QCM » !`;
+  }
+
+  return null;
+}
+
 // Fallback responses when AI is unavailable.
 // Built dynamically using the user's session history when available.
 function getFallbackResponse(
@@ -569,44 +635,37 @@ export async function POST(request: Request) {
      * ================================================================ */
     if (mode === "qcm") {
       const history = messages.slice(-24); // garde-fou de contexte
-      try {
-        const zai = await ZAI.create();
-        const completion = await zai.chat.completions.create({
-          messages: [
-            { role: "assistant", content: QCM_SYSTEM_PROMPT },
-            ...history.map((m) => ({
-              role: (m.role === "user" ? "user" : "assistant") as
-                | "user"
-                | "assistant",
-              content: m.content,
-            })),
-            {
-              role: "user",
-              content:
-                "Génère MAINTENANT la prochaine question de QCM en respectant strictement le format JSON.",
-            },
-          ],
-          thinking: { type: "disabled" },
-        });
-        const content = completion?.choices?.[0]?.message?.content ?? "";
-        const qcm = parseQcm(content);
-        if (qcm) {
-          return NextResponse.json({ qcm, role: "assistant" });
-        }
-        // JSON invalide → question de secours (fonctionne hors-ligne IA).
+      const result = await chatComplete(
+        [
+          { role: "system", content: QCM_SYSTEM_PROMPT },
+          ...history.map((m) => ({
+            role: (m.role === "user" ? "user" : "assistant") as
+              | "user"
+              | "assistant",
+            content: m.content,
+          })),
+          {
+            role: "user",
+            content:
+              "Génère MAINTENANT la prochaine question de QCM en respectant strictement le format JSON.",
+          },
+        ],
+        { temperature: 0.8, timeoutMs: 30_000 },
+      );
+      const qcm = result ? parseQcm(result.content) : null;
+      if (qcm && result) {
         return NextResponse.json({
-          qcm: pickFallbackQcm(history),
-          degraded: true,
-          role: "assistant",
-        });
-      } catch (aiError) {
-        console.error("QCM AI error, using static fallback:", aiError);
-        return NextResponse.json({
-          qcm: pickFallbackQcm(history),
-          degraded: true,
+          qcm,
+          degraded: result.engine === "free",
           role: "assistant",
         });
       }
+      // IA indisponible ou JSON invalide → question de secours (hors-ligne).
+      return NextResponse.json({
+        qcm: pickFallbackQcm(history),
+        degraded: true,
+        role: "assistant",
+      });
     }
 
     // --- Build personalized context (if the user is signed in) ----------
@@ -703,11 +762,8 @@ export async function POST(request: Request) {
       }
     }
 
-    const conversation: Array<{
-      role: "system" | "user" | "assistant";
-      content: string;
-    }> = [
-      { role: "assistant", content: SYSTEM_PROMPT + contextInfo },
+    const conversation: ChatMessage[] = [
+      { role: "system", content: SYSTEM_PROMPT + contextInfo },
       ...messages.map(
         (m: { role: string; content: string }) => ({
           role: (m.role === "user"
@@ -725,24 +781,32 @@ export async function POST(request: Request) {
       messages.filter((m: { role: string }) => m.role === "user").pop()
         ?.content || "";
 
-    // Try AI first
-    try {
-      const zai = await ZAI.create();
-      const completion = await zai.chat.completions.create({
-        messages: conversation,
-        thinking: { type: "disabled" },
+    // --- Salutations & politesses : réponse instantanée (pas d'IA) ------
+    const instant = getInstantResponse(lastUserMessage, fallbackCtx);
+    if (instant) {
+      return NextResponse.json({ response: instant, role: "assistant", engine: "instant" });
+    }
+
+    // --- IA (chaîne complète : GLM → env → custom → gratuit) ------------
+    const result = await chatComplete(conversation, {
+      temperature: 0.7,
+      timeoutMs: 30_000,
+    });
+    if (result && result.content.trim()) {
+      return NextResponse.json({
+        response: result.content,
+        role: "assistant",
+        engine: result.engine,
       });
-      const response = completion?.choices?.[0]?.message?.content;
-      if (response && response.length > 0) {
-        return NextResponse.json({ response, role: "assistant" });
-      }
-    } catch (aiError) {
-      console.error("AI error, using fallback:", aiError);
     }
 
     // Fallback: use contextual responses
     const fallbackResponse = getFallbackResponse(lastUserMessage, fallbackCtx);
-    return NextResponse.json({ response: fallbackResponse, role: "assistant" });
+    return NextResponse.json({
+      response: fallbackResponse,
+      role: "assistant",
+      engine: "scripted",
+    });
   } catch (error) {
     console.error("Chat API error:", error);
     return NextResponse.json({

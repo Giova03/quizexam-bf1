@@ -1,251 +1,230 @@
 import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { chatComplete } from "@/lib/ai-engine";
+import { applyUserRateLimit } from "@/lib/api-rate-limit";
+import { parseQcmTextSmart, type ParsedQuestion } from "@/lib/qcm-parser";
 
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 /**
- * Parse pasted QCM text and return a structured array of questions.
+ * POST /api/parse-qcm-text
+ * Body: { text, engine?: "local" | "ai" | "auto" }
  *
- * Supported formats:
- *  - Question numbers: "1.", "1)", "1-", "Question 1:"
- *  - Options: "a)", "a.", "(a)", "A.", "A)", "A-"  (case-insensitive)
- *  - Correct answer markers:
- *      • "Réponse: a" / "Rép: a" / "Réponse : A" / "Bonne réponse: A"
- *      • ✅ emoji placed inline at the end of an option
- *      • ✔ check mark inline at the end of an option
- *      • "*" or "(correct)" / "(vrai)" / "(juste)" placed after an option
- *  - Explanation markers: "Explication:", "Justification:", "✔", "Raisonnement:"
+ * Analyse un texte brut (copier-coller, PDF, Word) et retourne un tableau
+ * structuré de questions QCM.
+ *
+ *   - "local" (défaut) : parseur déterministe sans failles (formats
+ *     multiples : numéros, romains, options multi-par-ligne, corrigé
+ *     global en fin de document, marquage inline ✅/✔/étoile/gras…).
+ *   - "ai"    : extraction par LLM (GLM) — gère n'importe quel texte libre.
+ *   - "auto"  : parseur local d'abord ; si 0 question détectée → IA.
+ *
+ * Réponse: { questions, count, engine, notes? }
  */
+
+const AI_EXTRACT_PROMPT = `Tu es un extracteur de QCM ultra-précis. On te fournit un texte brut (issu d'un PDF, d'un Word ou d'un copier-coller) qui contient des questions à choix multiples, dans un format potentiellement chaotique.
+
+TA MISSION :
+1. Identifie CHAQUE question et ses options (a-d / A-D / 1-4 / I-IV / puces).
+2. Identifie la bonne réponse depuis : marqueurs inline (✅ ✔ ✓ * (x) gras), lignes « Réponse : ... », corrigé global en fin de texte.
+3. Si aucune réponse n'est identifiable pour une question, choisis la lettre la plus plausible et ajoute dans l'explication « (réponse proposée par l'IA, à vérifier) ».
+4. Reconstitue les énoncés/options coupés par les sauts de ligne ou la pagination.
+5. IGNORE les en-têtes, numéros de page, consignes et textes hors QCM.
+
+FORMAT DE SORTIE — STRICTEMENT ce JSON, sans markdown ni commentaire :
+{"questions":[{"question":"...","optionA":"...","optionB":"...","optionC":"...","optionD":"...","correctAnswer":"A|B|C|D","explanation":"..."}]}
+
+RÈGLES :
+- exactement 4 options par question (A, B, C, D), distinctes.
+- correctAnswer : une seule lettre majuscule parmi A, B, C, D.
+- explanation : justification courte ; si le texte n'en fournit pas, résume pourquoi la réponse est correcte.
+- N'invente pas de questions absentes du texte ; extrais celles qui existent.`;
+
+interface RawAiQuestion {
+  question?: unknown;
+  optionA?: unknown;
+  optionB?: unknown;
+  optionC?: unknown;
+  optionD?: unknown;
+  correctAnswer?: unknown;
+  explanation?: unknown;
+}
+
+function coerceAiQuestions(content: string): ParsedQuestion[] {
+  if (!content) return [];
+  let cleaned = content.trim();
+  if (cleaned.startsWith("```")) {
+    cleaned = cleaned
+      .replace(/^```(?:json|JSON)?\s*/, "")
+      .replace(/```\s*$/, "");
+  }
+  let data: unknown = null;
+  try {
+    data = JSON.parse(cleaned);
+  } catch {
+    const m =
+      cleaned.match(/\{[\s\S]*\}/) ?? cleaned.match(/\[[\s\S]*\]/);
+    if (!m) return [];
+    try {
+      data = JSON.parse(m[0]);
+    } catch {
+      return [];
+    }
+  }
+  const list: unknown[] = Array.isArray(data)
+    ? data
+    : Array.isArray((data as { questions?: unknown[] })?.questions)
+      ? ((data as { questions: unknown[] }).questions)
+      : [];
+  const out: ParsedQuestion[] = [];
+  for (const item of list) {
+    if (!item || typeof item !== "object") continue;
+    const o = item as RawAiQuestion;
+    const str = (v: unknown) => (typeof v === "string" ? v.trim() : "");
+    const question = str(o.question);
+    const options = [str(o.optionA), str(o.optionB), str(o.optionC), str(o.optionD)];
+    if (!question || options.some((x) => !x)) continue;
+    const ca = str(o.correctAnswer).toUpperCase().replace(/[^A-D]/g, "");
+    const warnings: string[] = [];
+    let correctAnswer = ["A", "B", "C", "D"].includes(ca) ? ca : "";
+    if (!correctAnswer) {
+      correctAnswer = "A";
+      warnings.push("Réponse reconstruite par l'IA — à vérifier");
+    }
+    out.push({
+      question,
+      optionA: options[0],
+      optionB: options[1],
+      optionC: options[2],
+      optionD: options[3],
+      correctAnswer,
+      explanation: str(o.explanation),
+      warnings,
+    });
+  }
+  return out;
+}
+
+async function extractWithAi(text: string): Promise<ParsedQuestion[]> {
+  // Découpage en tronçons (~4000 caractères) aux frontières de paragraphes.
+  const CHUNK = 4000;
+  const chunks: string[] = [];
+  let rest = text.trim();
+  while (rest.length > 0 && chunks.length < 3) {
+    if (rest.length <= CHUNK) {
+      chunks.push(rest);
+      break;
+    }
+    let cut = rest.lastIndexOf("\n", CHUNK);
+    if (cut < CHUNK * 0.5) cut = CHUNK;
+    chunks.push(rest.slice(0, cut));
+    rest = rest.slice(cut).trim();
+  }
+
+  const seen = new Set<string>();
+  const merged: ParsedQuestion[] = [];
+  for (const chunk of chunks) {
+    const result = await chatComplete(
+      [
+        { role: "system", content: AI_EXTRACT_PROMPT },
+        {
+          role: "user",
+          content: `Extrais les QCM de ce texte :\n\n${chunk}`,
+        },
+      ],
+      { temperature: 0.2, timeoutMs: 35_000 },
+    );
+    if (!result) continue;
+    for (const q of coerceAiQuestions(result.content)) {
+      const key = q.question.toLowerCase().replace(/\s+/g, " ").slice(0, 120);
+      if (!seen.has(key)) {
+        seen.add(key);
+        merged.push(q);
+      }
+    }
+  }
+  return merged;
+}
+
 export async function POST(request: Request) {
   try {
-    const { text } = await request.json();
-    if (!text || typeof text !== "string") {
+    // Protection anti-abus (le chemin IA consomme des tokens).
+    const limit = await applyUserRateLimit(request);
+    if (!limit.allowed && limit.response) return limit.response;
+
+    const body = (await request.json()) as {
+      text?: unknown;
+      engine?: unknown;
+    };
+    const text = typeof body.text === "string" ? body.text : "";
+    const engine =
+      body.engine === "ai" || body.engine === "auto" ? body.engine : "local";
+
+    if (!text.trim()) {
+      return NextResponse.json({ error: "Texte requis" }, { status: 400 });
+    }
+
+    /* ---- Moteur local (déterministe) ---- */
+    const localQuestions = parseQcmTextSmart(text);
+
+    if (engine === "ai") {
+      const aiQuestions = await extractWithAi(text);
+      if (aiQuestions.length > 0) {
+        return NextResponse.json({
+          questions: aiQuestions,
+          count: aiQuestions.length,
+          engine: "ai",
+          notes:
+            localQuestions.length > 0
+              ? `${localQuestions.length} question(s) également détectée(s) par le parseur local.`
+              : undefined,
+        });
+      }
       return NextResponse.json(
-        { error: "Texte requis" },
-        { status: 400 }
+        {
+          error:
+            "L'IA n'a détecté aucune question exploitable. Vérifiez que le texte contient bien des QCM.",
+        },
+        { status: 422 },
       );
     }
 
-    const questions = parseQcmText(text);
-    return NextResponse.json({ questions, count: questions.length });
+    if (engine === "auto" && localQuestions.length === 0) {
+      const aiQuestions = await extractWithAi(text);
+      return NextResponse.json({
+        questions: aiQuestions,
+        count: aiQuestions.length,
+        engine: aiQuestions.length > 0 ? "ai-fallback" : "local",
+        notes:
+          aiQuestions.length > 0
+            ? "Le parseur local n'a rien détecté — extraction IA utilisée."
+            : undefined,
+      });
+    }
+
+    return NextResponse.json({
+      questions: localQuestions,
+      count: localQuestions.length,
+      engine: "local",
+    });
   } catch (error) {
     console.error("QCM text parse error:", error);
     return NextResponse.json(
       { error: "Échec de l'analyse du texte" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
 
-export interface ParsedQuestion {
-  question: string;
-  optionA: string;
-  optionB: string;
-  optionC: string;
-  optionD: string;
-  correctAnswer: string; // "A" | "B" | "C" | "D"
-  explanation: string;
-  warnings: string[];
-}
-
-const OPTION_RE =
-  /^\s*(?:\(?([a-dA-D])[\)\.\-:])\s*(.+?)\s*$/u;
-const QUESTION_RE =
-  /^\s*(?:Q(?:uestion)?[\s.:]*)?(\d+)[\)\.\-:]\s*(.+)$/i;
-const ANSWER_RE =
-  /^\s*(?:r(?:é|e)ponse\s*[:\-]?\s*|r(?:é|e)p\s*[:\-]?\s*|bonne\s+r(?:é|e)ponse\s*[:\-]?\s*|correct\s*answer\s*[:\-]?\s*)?([a-dA-D])\b\.?\s*$/i;
-const EXPL_RE =
-  /^\s*(?:explication|justification|raisonnement|raison|explanation)\s*[:\-]?\s*(.*)$/i;
-
-function stripInlineMarker(s: string): { text: string; marked: boolean } {
-  let marked = false;
-  let out = s.trimEnd();
-  const trailingMarkers = [
-    /\s*\u2705\s*$/,
-    /\s*\u2714\uFE0F?\s*$/,
-    /\s*\u2713\s*$/,
-    /\s*\u2714\s*$/,
-    /\s*\*\s*$/,
-    /\s*\(correct\)\s*$/i,
-    /\s*\(vrai\)\s*$/i,
-    /\s*\(juste\)\s*$/i,
-    /\s*\(bonne\)\s*$/i,
-  ];
-  for (const re of trailingMarkers) {
-    if (re.test(out)) {
-      marked = true;
-      out = out.replace(re, "").trimEnd();
-    }
-  }
-  return { text: out.trim(), marked };
-}
-
-function normalizeLetter(letter: string): string {
-  return letter.toUpperCase();
-}
-
-function parseQcmText(text: string): ParsedQuestion[] {
-  const lines = text.replace(/\r\n?/g, "\n").split("\n");
-
-  const questions: ParsedQuestion[] = [];
-  let current: ParsedQuestion | null = null;
-  let currentOptions: Record<string, string> = {};
-  let pendingExplanation = false;
-  let explanationBuffer = "";
-
-  function pushCurrent() {
-    if (!current) return;
-    if (explanationBuffer.trim()) {
-      current.explanation = explanationBuffer.trim();
-      explanationBuffer = "";
-    }
-    pendingExplanation = false;
-
-    const letters = ["A", "B", "C", "D"];
-    let correctAnswer = current.correctAnswer;
-    if (!correctAnswer) {
-      for (const L of letters) {
-        const raw = currentOptions[L];
-        if (!raw) continue;
-        const { marked } = stripInlineMarker(raw);
-        if (marked) {
-          correctAnswer = L;
-          break;
-        }
-      }
-    }
-    if (!correctAnswer) {
-      correctAnswer = "A";
-      current.warnings.push(
-        "Réponse correcte non détectée — définie sur A par défaut"
-      );
-    }
-
-    const cleanedOptions: Record<string, string> = {};
-    for (const L of letters) {
-      const raw = currentOptions[L] ?? "";
-      const { text: clean } = stripInlineMarker(raw);
-      cleanedOptions[L] = clean;
-    }
-
-    current.optionA = cleanedOptions.A;
-    current.optionB = cleanedOptions.B;
-    current.optionC = cleanedOptions.C;
-    current.optionD = cleanedOptions.D;
-    current.correctAnswer = normalizeLetter(correctAnswer);
-
-    const optValues = [
-      current.optionA,
-      current.optionB,
-      current.optionC,
-      current.optionD,
-    ];
-    if (optValues.some((v) => !v || !v.trim())) {
-      current.warnings.push("Une ou plusieurs options sont vides");
-    }
-    const uniqueOpts = new Set(
-      optValues.map((v) => v.trim().toLowerCase()).filter(Boolean)
-    );
-    if (uniqueOpts.size < 4 && optValues.every((v) => v.trim())) {
-      current.warnings.push("Options dupliquées détectées");
-    }
-    if (!current.explanation.trim()) {
-      current.warnings.push("Explication manquante");
-    }
-
-    questions.push(current);
-    current = null;
-    currentOptions = {};
-  }
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    if (!line.trim()) {
-      if (pendingExplanation && explanationBuffer.trim()) {
-        if (current) {
-          current.explanation = explanationBuffer.trim();
-        }
-        explanationBuffer = "";
-        pendingExplanation = false;
-      }
-      continue;
-    }
-
-    const qMatch = line.match(QUESTION_RE);
-    if (qMatch) {
-      pushCurrent();
-      current = {
-        question: qMatch[2].trim(),
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        optionD: "",
-        correctAnswer: "",
-        explanation: "",
-        warnings: [],
-      };
-      currentOptions = {};
-      pendingExplanation = false;
-      explanationBuffer = "";
-      continue;
-    }
-
-    const oMatch = line.match(OPTION_RE);
-    if (oMatch && current) {
-      if (pendingExplanation && explanationBuffer.trim()) {
-        current.explanation = explanationBuffer.trim();
-        explanationBuffer = "";
-        pendingExplanation = false;
-      }
-      const letter = normalizeLetter(oMatch[1]);
-      const text = oMatch[2].trim();
-      currentOptions[letter] = text;
-      continue;
-    }
-
-    const aMatch = line.match(ANSWER_RE);
-    if (aMatch && current) {
-      current.correctAnswer = normalizeLetter(aMatch[1]);
-      continue;
-    }
-
-    const eMatch = line.match(EXPL_RE);
-    if (eMatch && current) {
-      pendingExplanation = true;
-      explanationBuffer = eMatch[1].trim();
-      continue;
-    }
-
-    if (pendingExplanation && current) {
-      explanationBuffer += " " + line.trim();
-      continue;
-    }
-
-    if (
-      current &&
-      Object.keys(currentOptions).length === 0 &&
-      !current.explanation
-    ) {
-      current.question += " " + line.trim();
-      continue;
-    }
-
-    if (
-      current &&
-      Object.keys(currentOptions).length > 0 &&
-      !current.explanation
-    ) {
-      pendingExplanation = true;
-      explanationBuffer = line.trim();
-      continue;
-    }
-
-    if (pendingExplanation && current) {
-      explanationBuffer += " " + line.trim();
-      continue;
-    }
-  }
-
-  pushCurrent();
-
-  return questions;
+/** Session requise non-admin acceptée : l'extraction locale reste ouverte
+ * aux connectés (cohérent avec l'ancien comportement). L'extraction IA
+ * est réservée aux admins via /api/extract-qcm-ai. */
+export async function GET() {
+  const session = await getServerSession(authOptions);
+  return NextResponse.json({
+    engine: "local+ai",
+    authenticated: Boolean(session?.user),
+  });
 }

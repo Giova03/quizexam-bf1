@@ -658,4 +658,13 @@ export const moor: Record<string, string> = {
   "about.footer.pre": "QuizExam BF — Maala ne",
   "about.footer.post": "Burkina Faso concours kandidaat yelle",
   "about.rights": "Yɛlse fãa gũudga",
+
+  // V10 — accueil : carrousel à la une + lots par sujet
+  "home.featured.title": "Yɛlgre sõma",
+  "home.featured.pause": "Bas zãng-Zãnga",
+  "home.featured.play": "Lebs zãng-Zãnga",
+  "home.lots.kicker": "Gõore",
+  "home.lots.back": "Gõore fãa",
+  "home.lots.library": "Lebg yɛlgre tigse roogo",
+  "home.lots.hint": "Noore: Ctrl+K na yõnde yɛlgre sɩpa",
 };

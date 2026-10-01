@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import ZAI from "z-ai-web-dev-sdk";
+import { chatComplete } from "@/lib/ai-engine";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { getUserTier } from "@/server/application/subscription/check-quota";
@@ -431,12 +431,8 @@ Réponds à la question en tenant compte de ce contexte. Si la question porte su
 
     let answer: string | null = null;
     try {
-      const zai = await ZAI.create();
-      const completion = await zai.chat.completions.create({
-        messages,
-        thinking: { type: "disabled" },
-      });
-      answer = completion?.choices?.[0]?.message?.content ?? null;
+      const result = await chatComplete(messages, { temperature: 0.5 });
+      answer = result?.content ?? null;
     } catch (aiError) {
       console.error("AI Tutor error:", aiError);
     }
