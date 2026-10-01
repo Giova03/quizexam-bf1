@@ -218,10 +218,13 @@ export function ResultsView() {
           )}
         </Badge>
         <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-2">
-          {percentage >= 80 && (
+          {/* V15 — FIX : le bouton Certificat s'affichait EN DOUBLE quand le
+              score ≥ 80 % (deux blocs redondants percentage>=80 ET
+              eligibleForCertificate). Fusionné en un seul bouton. */}
+          {eligibleForCertificate && (
             <Button
               variant="outline"
-              className="h-11 gap-2 border-amber-300 text-amber-700 hover:bg-amber-50 sm:h-9 dark:border-amber-700 dark:text-amber-300"
+              className="h-11 gap-2 border-amber-400 bg-amber-50 text-amber-700 hover:bg-amber-100 sm:h-9 dark:border-amber-600 dark:bg-amber-950/30 dark:text-amber-300"
               onClick={() => setCertOpen(true)}
             >
               <Award className="h-4 w-4" />
@@ -242,16 +245,6 @@ export function ResultsView() {
             <RefreshCw className="h-4 w-4" />
             Refaire
           </Button>
-          {eligibleForCertificate && (
-            <Button
-              variant="outline"
-              className="h-11 gap-2 border-amber-400 bg-amber-50 text-amber-700 hover:bg-amber-100 sm:h-9 dark:border-amber-600 dark:bg-amber-950/30 dark:text-amber-300"
-              onClick={() => setCertOpen(true)}
-            >
-              <Award className="h-4 w-4" />
-              <span className="truncate">Certificat</span>
-            </Button>
-          )}
           <Button onClick={goHome} className="h-11 gap-2 sm:h-9">
             <Home className="h-4 w-4" />
             Accueil
@@ -259,7 +252,8 @@ export function ResultsView() {
         </div>
       </div>
 
-      {/* Progress summary — glass card */}
+      {/* Progress summary — V15 : barres animées en ressort + dégradés,
+          pourcentage affiché au survol. */}
       <Card className="glass p-5 shadow-sm">
         <div className="mb-2 flex items-center justify-between text-sm">
           <span className="font-medium">Répartition des réponses</span>
@@ -267,19 +261,30 @@ export function ResultsView() {
             {total} questions au total
           </span>
         </div>
-        <div className="flex h-3 overflow-hidden rounded-full">
-          <div
-            className="bg-emerald-500 transition-all duration-700"
-            style={{ width: `${(correct / total) * 100}%` }}
+        <div className="flex h-3 gap-0.5 overflow-hidden rounded-full" role="img" aria-label={`${correct} correctes, ${wrong} fausses, ${skipped} omises`}>
+          <motion.div
+            className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400"
+            initial={reduceMotion ? false : { width: 0 }}
+            animate={{ width: `${(correct / total) * 100}%` }}
+            transition={{ type: "spring", stiffness: 120, damping: 20, delay: 0.2 }}
           />
-          <div
-            className="bg-rose-500 transition-all duration-700"
-            style={{ width: `${(wrong / total) * 100}%` }}
+          <motion.div
+            className="h-full rounded-full bg-gradient-to-r from-rose-500 to-orange-400"
+            initial={reduceMotion ? false : { width: 0 }}
+            animate={{ width: `${(wrong / total) * 100}%` }}
+            transition={{ type: "spring", stiffness: 120, damping: 20, delay: 0.35 }}
           />
-          <div
-            className="bg-muted-foreground/40 transition-all duration-700"
-            style={{ width: `${(skipped / total) * 100}%` }}
+          <motion.div
+            className="h-full rounded-full bg-muted-foreground/40"
+            initial={reduceMotion ? false : { width: 0 }}
+            animate={{ width: `${(skipped / total) * 100}%` }}
+            transition={{ type: "spring", stiffness: 120, damping: 20, delay: 0.5 }}
           />
+        </div>
+        <div className="mt-2 flex justify-between text-[11px] font-medium text-muted-foreground">
+          <span className="text-emerald-600 dark:text-emerald-400">{correct} correctes</span>
+          <span className="text-rose-600 dark:text-rose-400">{wrong} fausses</span>
+          <span>{skipped} omises</span>
         </div>
       </Card>
 
@@ -303,7 +308,14 @@ export function ResultsView() {
             const isCorrect = a.isCorrect === true;
             const isSkipped = a.userAnswer === null;
             return (
-              <div key={a.id} className="px-3 py-3 sm:px-6 sm:py-5">
+              <motion.div
+                key={a.id}
+                initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: Math.min(idx, 6) * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                className="px-3 py-3 sm:px-6 sm:py-5"
+              >
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
                   <span
                     className={`flex h-8 w-8 shrink-0 items-center justify-center self-start rounded-lg text-sm font-bold ${
@@ -407,7 +419,7 @@ export function ResultsView() {
                     )}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

@@ -41,7 +41,10 @@ import {
   BrainCircuit,
   Atom,
   BookOpen,
+  Signal,
+  Activity,
 } from "lucide-react";
+import { RadarDish } from "./lot-visuals";
 import { Button } from "@/components/ui/button";
 import { GoogleButton } from "@/components/quiz/google-button";
 import { useTranslation } from "@/lib/use-translation";
@@ -373,6 +376,7 @@ function getFaq(t: Translate) {
 
 function getNavLinks(t: Translate) {
   return [
+    { href: "#tower", label: t("land.tower.nav") },
     { href: "#features", label: t("land.nav.features") },
     { href: "#levels", label: t("land.nav.levels") },
     { href: "#testimonials", label: t("land.nav.testimonials") },
@@ -396,7 +400,7 @@ export function LandingView({ onAuthOpen }: LandingViewProps) {
       <LandingNav onAuthOpen={onAuthOpen} />
       <HeroSection onAuthOpen={onAuthOpen} />
       <SubjectsMarquee />
-      <StatsSection />
+      <ControlTowerSection onAuthOpen={onAuthOpen} />
       <FeaturesSection />
       <HowItWorksSection />
       <LevelsSection />
@@ -898,54 +902,238 @@ function SubjectsMarquee() {
 /* Stats                                                                */
 /* ------------------------------------------------------------------ */
 
-function StatsSection() {
+/**
+ * V15 — LiveStats shape served by /api/public/stats (aggregate only, no PII).
+ * `available: false` means the DB is asleep (cold start) — the panel then
+ * falls back to the marketing values so the section never looks broken.
+ */
+interface TowerStats {
+  banks: number;
+  questions: number;
+  exams: number;
+  users: number;
+  sessions: number;
+  completedSessions: number;
+  available: boolean;
+}
+
+const TOWER_FALLBACK: TowerStats = {
+  banks: 40,
+  questions: 5000,
+  exams: 12,
+  users: 1200,
+  sessions: 3400,
+  completedSessions: 2100,
+  available: false,
+};
+
+/**
+ * V15 — ControlTowerSection : « semblant de la tour de contrôle » admin,
+ * reproduit sur la page d'accueil public pour la moderniser.
+ *
+ * Reprend l'identité visuelle de la salle de contrôle (AdminControlTower de
+ * page.tsx) : écran radar (anneaux + faisceau rotatif + blips), trame de
+ * points, scanlines CRT, équerres HUD, bandeau mono « LIVE », télémétrie
+ * azimut/élévation qui tourne — mais alimentée par de VRAIES données
+ * agrégées de la plateforme via /api/public/stats (cache 60 s, sans PII,
+ * repli gracieux si la base est en cold start).
+ */
+function ControlTowerSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onAuthOpen"] }) {
   const { t } = useTranslation();
+  const [stats, setStats] = useState<TowerStats>(TOWER_FALLBACK);
+  const [telemetry, setTelemetry] = useState({ az: 214.6, el: 42.1 });
+
+  // Télémétrie animée — même cadence que la tour de contrôle admin (900 ms).
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setTelemetry((prev) => ({
+        az: (prev.az + 7.3 + Math.random() * 5) % 360,
+        el: 30 + Math.random() * 55,
+      }));
+    }, 900);
+    return () => window.clearInterval(id);
+  }, []);
+
+  // Stats réelles : chargement immédiat puis rafraîchissement toutes les 45 s.
+  useEffect(() => {
+    let cancelled = false;
+    const load = () =>
+      fetch("/api/public/stats")
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => {
+          if (!cancelled && d && typeof d.banks === "number") setStats(d as TowerStats);
+        })
+        .catch(() => {
+          /* repli silencieux sur les valeurs marketing */
+        });
+    load();
+    const id = window.setInterval(load, 45_000);
+    return () => {
+      cancelled = true;
+      window.clearInterval(id);
+    };
+  }, []);
+
+  const kpis = [
+    { icon: LibraryBig, value: stats.banks, fallback: 40, suffix: "+", label: t("land.tower.banks"), tone: "text-emerald-300 bg-emerald-400/10 ring-emerald-400/20" },
+    { icon: BookOpenCheck, value: stats.questions, fallback: 5000, suffix: "+", label: t("land.tower.questions"), tone: "text-sky-300 bg-sky-400/10 ring-sky-400/20" },
+    { icon: Users, value: stats.users, fallback: 1200, suffix: "+", label: t("land.tower.users"), tone: "text-orange-300 bg-orange-400/10 ring-orange-400/20" },
+    { icon: Trophy, value: stats.completedSessions, fallback: 2100, suffix: "+", label: t("land.tower.sessions"), tone: "text-violet-300 bg-violet-400/10 ring-violet-400/20" },
+  ];
+
   return (
-    <section className="relative py-14">
+    <section id="tower" className="relative scroll-mt-20 py-14">
       <div className="mx-auto max-w-6xl px-4">
         <motion.div
           {...fadeUp}
-          className="grid grid-cols-2 gap-4 rounded-[2rem] border border-slate-200/80 bg-white p-6 shadow-xl shadow-blue-900/5 sm:p-8 lg:grid-cols-4"
+          className="relative overflow-hidden rounded-[2rem] bg-slate-950 shadow-2xl shadow-emerald-900/20 ring-1 ring-slate-900"
         >
-          <StatBadge icon={LibraryBig} value={40} suffix="+" label={t("land.stats.banks")} tone="blue" />
-          <StatBadge icon={BookOpenCheck} value={5000} suffix="+" label={t("land.stats.questions")} tone="emerald" />
-          <StatBadge icon={Users} value={1200} suffix="+" label={t("land.stats.candidates")} tone="orange" />
-          <StatBadge icon={Star} value={96} suffix="%" label={t("land.stats.satisfaction")} tone="violet" />
+          {/* Trame de fond (grille de points) — même motif que l'admin */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 opacity-[0.13]"
+            style={{
+              backgroundImage:
+                "radial-gradient(rgba(52,211,153,0.9) 1px, transparent 1.5px)",
+              backgroundSize: "22px 22px",
+            }}
+          />
+          {/* Scanlines CRT subtiles */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 opacity-[0.07]"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(0deg, rgba(52,211,153,0.7) 0px, rgba(52,211,153,0.7) 1px, transparent 1px, transparent 4px)",
+            }}
+          />
+          {/* Halo d'ambiance */}
+          <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-emerald-500/15 blur-3xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -bottom-28 -left-20 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
+          {/* Équerres HUD aux quatre coins — signature de la tour */}
+          {["left-3 top-3 border-l-2 border-t-2", "right-3 top-3 border-r-2 border-t-2", "bottom-3 left-3 border-b-2 border-l-2", "bottom-3 right-3 border-b-2 border-r-2"].map(
+            (pos) => (
+              <span
+                key={pos}
+                aria-hidden="true"
+                className={`absolute h-6 w-6 rounded-[3px] border-emerald-400/40 ${pos}`}
+              />
+            ),
+          )}
+
+          <div className="relative grid gap-8 p-6 sm:p-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-10">
+            {/* ===== Colonne gauche : HUD + KPI live ===== */}
+            <div>
+              {/* Bandeau HUD — LIVE */}
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-emerald-300">
+                  <Signal className="h-3.5 w-3.5" />
+                  {t("land.tower.hud")}
+                </span>
+                <span className="inline-flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-rose-400">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="absolute h-full w-full animate-ping rounded-full bg-rose-500 opacity-70" />
+                    <span className="relative h-1.5 w-1.5 rounded-full bg-rose-500" />
+                  </span>
+                  {t("land.tower.live")}
+                </span>
+              </div>
+
+              <h2 className="mt-5 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                {t("land.tower.title")}
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
+                {t("land.tower.subtitle")}
+              </p>
+
+              {/* Statut nominal — ligne pulsante comme dans l'admin */}
+              <p className="mt-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-emerald-400/70">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" />
+                  <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                </span>
+                {t("land.tower.status")}
+              </p>
+
+              {/* KPI live — compteurs animés sur données réelles */}
+              <div className="mt-7 grid grid-cols-2 gap-3">
+                {kpis.map((kpi, i) => (
+                  <motion.div
+                    key={kpi.label}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.5, delay: 0.1 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-sm transition-colors hover:border-emerald-400/30 hover:bg-white/[0.07]"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className={`flex h-8 w-8 items-center justify-center rounded-lg ring-1 ${kpi.tone}`}>
+                        <kpi.icon className="h-4 w-4" />
+                      </span>
+                      <Activity className="h-3.5 w-3.5 text-emerald-400/50" aria-hidden="true" />
+                    </div>
+                    <p className="mt-3 font-display text-2xl font-bold text-white sm:text-3xl">
+                      <AnimatedNumber value={kpi.value || kpi.fallback} suffix={kpi.suffix} />
+                    </p>
+                    <p className="mt-0.5 text-[11px] font-medium uppercase tracking-wider text-slate-400 sm:text-xs">
+                      {kpi.label}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-7 flex flex-wrap items-center gap-3">
+                <Button
+                  onClick={() => onAuthOpen("signup")}
+                  className="h-12 gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 px-6 text-sm font-semibold text-white shadow-lg shadow-emerald-900/40 transition-transform hover:scale-[1.03]"
+                >
+                  {t("land.tower.cta")}
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+                <button
+                  type="button"
+                  onClick={() => scrollToHash("#features")}
+                  className="text-sm font-semibold text-slate-300 underline-offset-4 transition-colors hover:text-emerald-300 hover:underline"
+                >
+                  {t("land.tower.more")}
+                </button>
+              </div>
+            </div>
+
+            {/* ===== Colonne droite : écran radar + télémétrie ===== */}
+            <div className="relative mx-auto flex w-full max-w-sm flex-col items-center">
+              <div className="relative w-full max-w-[300px]">
+                <RadarDish className="w-full text-emerald-300" />
+                {/* Noyau central pulsant — comme l'écran admin */}
+                <span className="pointer-events-none absolute left-1/2 top-1/2 flex h-3 w-3 -translate-x-1/2 -translate-y-1/2">
+                  <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                  <span className="relative h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_16px_rgba(52,211,153,0.9)]" />
+                </span>
+              </div>
+              {/* Télémétrie mono — azimut/élévation + source */}
+              <div className="mt-5 w-full rounded-xl border border-white/10 bg-black/30 p-3 font-mono text-[10px] leading-relaxed tracking-[0.14em] text-emerald-300/80 backdrop-blur-sm" aria-live="off">
+                <div className="flex items-center justify-between">
+                  <span>AZ {telemetry.az.toFixed(1)}°</span>
+                  <span>EL {telemetry.el.toFixed(1)}°</span>
+                </div>
+                <div className="mt-1 flex items-center justify-between text-emerald-400/50">
+                  <span>SRC {stats.available ? "DB-LIVE" : "CACHE"}</span>
+                  <span className="text-emerald-400/80">SIGNAL ■■■■□</span>
+                </div>
+                <div className="mt-2 h-1 overflow-hidden rounded-full bg-emerald-900/50">
+                  <motion.div
+                    className="h-full w-1/3 rounded-full bg-gradient-to-r from-transparent via-emerald-400 to-transparent"
+                    animate={{ x: ["-120%", "340%"] }}
+                    transition={{ duration: 2.4, repeat: Infinity, ease: "linear" }}
+                  />
+                </div>
+                <p className="mt-2 text-emerald-400/60">{t("land.tower.scan")}</p>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
-  );
-}
-
-function StatBadge({
-  icon: Icon,
-  value,
-  suffix,
-  label,
-  tone,
-}: {
-  icon: React.ComponentType<{ className?: string }>;
-  value: number;
-  suffix: string;
-  label: string;
-  tone: "blue" | "emerald" | "orange" | "violet";
-}) {
-  const tones = {
-    blue: "bg-blue-100 text-blue-600",
-    emerald: "bg-emerald-100 text-emerald-600",
-    orange: "bg-orange-100 text-orange-600",
-    violet: "bg-violet-100 text-violet-600",
-  } as const;
-  return (
-    <div className="flex flex-col items-center gap-1.5 px-4 py-3 text-center">
-      <span className={`mb-1 flex h-11 w-11 items-center justify-center rounded-2xl ${tones[tone]} shadow-sm`}>
-        <Icon className="h-5 w-5" />
-      </span>
-      <p className="font-display text-2xl font-bold text-slate-900 sm:text-3xl">
-        <AnimatedNumber value={value} suffix={suffix} />
-      </p>
-      <p className="text-xs text-slate-500 sm:text-sm">{label}</p>
-    </div>
   );
 }
 

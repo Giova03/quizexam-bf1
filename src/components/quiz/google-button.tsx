@@ -23,8 +23,11 @@ import { useTranslation } from "@/lib/use-translation";
  *      custom déclenche le flux OAuth classique via signIn("google").
  *
  *   3. Si ni GIS ni le provider serveur ne sont disponibles : encart
- *      informatif dépliable avec les instructions exactes (au lieu d'un
- *      bouton fantôme).
+ *      informatif discret (au lieu d'un bouton fantôme). V15 : l'ancien
+ *      encart « origin_mismatch » (instructions Authorized JavaScript
+ *      origins) a été RETIRÉ de l'accueil — il affichait en permanence un
+ *      message technique qui polluait l'interface ; la configuration se
+ *      vérifie désormais via /setup uniquement.
  *
  * Après la connexion (n'importe quel chemin), NextAuth crée ou lie le compte
  * local par email (voir findOrCreateGoogleUser dans src/lib/auth.ts) : les
@@ -245,16 +248,10 @@ export function GoogleButton({
             className="flex min-h-11 w-full justify-center"
             aria-label={text}
           />
-          {/* V13 — aide permanente : si Google affiche « origin_mismatch »
-              (Erreur 400), l'utilisateur dispose immédiatement des instructions
-              exactes au lieu de rester bloqué devant un popup qui se ferme. */}
-          <button
-            type="button"
-            onClick={() => setShowHint((v) => !v)}
-            className="text-[11px] font-medium text-slate-400 underline underline-offset-2 transition-colors hover:text-blue-600"
-          >
-            {t("legal.help")}
-          </button>
+          {/* V15 — l'encart d'aide « origin_mismatch » a été retiré : ce
+              message technique en permanence sous le bouton polluait
+              l'accueil. En cas de problème, l'utilisateur et l'admin disposent
+              de /setup (diagnostics) et du guide docs/google-auth-setup.md. */}
         </div>
       ) : (
         <button
@@ -329,31 +326,7 @@ export function GoogleButton({
         </motion.div>
       )}
 
-      {/* Encart affiché quand GIS est prêt mais que Google refuse l'origine
-          (popup « origin not allowed ») — instructions exactes. */}
-      {gisReady && showHint && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          className="mt-2 overflow-hidden"
-        >
-          <p className="rounded-lg border border-blue-200 bg-blue-50/70 p-2.5 text-[11px] leading-relaxed text-blue-800 dark:border-blue-500/30 dark:bg-blue-950/40 dark:text-blue-200">
-            {t("auth.google.origins")}{" "}
-            <code className="rounded bg-blue-100 px-1 py-0.5 text-[10px] dark:bg-blue-900/60">
-              https://quizexam-bf1-5tlh.vercel.app
-            </code>{" "}
-            {t("auth.google.origins2")}{" "}
-            <a
-              href="/setup"
-              target="_blank"
-              rel="noreferrer"
-              className="font-semibold underline underline-offset-2"
-            >
-              {t("auth.openDiagnostics")}
-            </a>
-          </p>
-        </motion.div>
-      )}
+
     </div>
   );
 }
