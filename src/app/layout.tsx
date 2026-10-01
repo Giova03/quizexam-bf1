@@ -36,6 +36,13 @@ export const metadata: Metadata = {
     apple: "/icons/apple-touch-icon.png",
   },
   manifest: "/manifest.json",
+  // iOS — application web installable via Safari (« Sur l'écran d'accueil »)
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "QuizExam BF",
+  },
+  formatDetection: { telephone: false },
   openGraph: {
     title: "QuizExam BF — Plateforme de Quiz & Examens Blancs",
     description:
@@ -50,6 +57,7 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#0b1226" },
   ],
+  // (iOS appleWebApp + formatDetection déclarés dans metadata)
 };
 
 export default function RootLayout({

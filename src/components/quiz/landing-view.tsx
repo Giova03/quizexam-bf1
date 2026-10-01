@@ -60,6 +60,9 @@ import {
   Download,
   Smartphone,
   ShieldCheck,
+  Apple,
+  Share2,
+  PlusSquare,
 } from "lucide-react";
 import { RadarDish } from "./lot-visuals";
 import { Button } from "@/components/ui/button";
@@ -1165,6 +1168,7 @@ const APK_URL = "/apk/quizexam-bf-v1.0.0.apk";
 
 function ApkSection() {
   const { t } = useTranslation();
+  const [iosOpen, setIosOpen] = useState(false);
   const perks: { icon: typeof WifiOff; title: string; desc: string }[] = [
     { icon: WifiOff, title: t("land.apk.offline.title"), desc: t("land.apk.offline.desc") },
     { icon: Smartphone, title: t("land.apk.native.title"), desc: t("land.apk.native.desc") },
@@ -1204,11 +1208,59 @@ function ApkSection() {
                 <Download className="h-4.5 w-4.5 transition-transform group-hover:translate-y-0.5" />
                 {t("land.apk.download")}
               </a>
+              <button
+                type="button"
+                onClick={() => setIosOpen((v) => !v)}
+                aria-expanded={iosOpen}
+                className="inline-flex h-12 items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-5 text-sm font-semibold text-slate-200 backdrop-blur-sm transition-colors hover:border-white/30 hover:text-white"
+              >
+                <Apple className="h-4.5 w-4.5" />
+                {t("land.apk.ios.button")}
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${iosOpen ? "rotate-180" : ""}`}
+                />
+              </button>
               <div className="text-xs leading-relaxed text-slate-400">
                 <p className="font-mono text-emerald-300">Android 5.0+ · v1.0.0 · ~2 Mo</p>
                 <p>{t("land.apk.install.hint")}</p>
               </div>
             </div>
+
+            {/* Instructions iOS (PWA via Safari) */}
+            <AnimatePresence>
+              {iosOpen && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                  animate={{ opacity: 1, height: "auto", marginTop: 20 }}
+                  exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="max-w-xl rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-sm">
+                    <p className="flex items-center gap-2 text-sm font-semibold text-white">
+                      <Apple className="h-4 w-4 text-slate-300" />
+                      {t("land.apk.ios.title")}
+                    </p>
+                    <ol className="mt-3 space-y-2.5">
+                      {([
+                        [Globe2, t("land.apk.ios.step1")],
+                        [Share2, t("land.apk.ios.step2")],
+                        [PlusSquare, t("land.apk.ios.step3")],
+                      ] as const).map(([Icon, label], i) => (
+                        <li key={i} className="flex items-start gap-3 text-xs leading-relaxed text-slate-300">
+                          <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-400/15 font-mono text-[10px] font-bold text-emerald-300">
+                            {i + 1}
+                          </span>
+                          <span className="flex-1">{label}</span>
+                          <Icon className="mt-0.5 h-4 w-4 shrink-0 text-slate-500" />
+                        </li>
+                      ))}
+                    </ol>
+                    <p className="mt-3 text-[11px] text-slate-500">{t("land.apk.ios.note")}</p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Colonne atouts */}

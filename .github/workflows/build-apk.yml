@@ -1,0 +1,145 @@
+name: Build APK Android (QuizExam BF)
+
+# Construit, signe et publie l'application Android (TWA) en téléchargement cloud.
+# - Push sur main (si mobile/ ou ce workflow change) → release roulante « mobile-latest »
+# - Tag v* → release de version associée au tag
+# - Déclenchement manuel (workflow_dispatch) toujours possible
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "mobile/**"
+      - ".github/workflows/build-apk.yml"
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-apk-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-apk:
+    name: Compiler, signer et publier l'APK
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    env:
+      APK_PROJECT_DIR: mobile
+      # Mots de passe du keystore de signature (documentés dans INSTALLATION-APK.md).
+      # ⚠️ En production, préférer les secrets GitHub ANDROID_KEYSTORE_PASSWORD /
+      # ANDROID_KEY_PASSWORD (voir mobile/setup-github-secrets.sh) : s'ils sont
+      # définis, ils prennent automatiquement le dessus sur ces valeurs de repli.
+      KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD || 'QuizExamAPK@2026' }}
+      KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS || 'quizexam' }}
+      KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD || 'QuizExamAPK@2026' }}
+
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer JDK 21 (Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Lire la version de l'application
+        id: version
+        run: |
+          APP_VERSION=$(jq -r '.appVersion // "1.0.0"' "$APK_PROJECT_DIR/twa-manifest.json")
+          APP_VERSION_CODE=$(jq -r '.appVersionCode // 1' "$APK_PROJECT_DIR/twa-manifest.json")
+          APK_NAME="quizexam-bf-v${APP_VERSION}.apk"
+          echo "app_version=${APP_VERSION}" >> "$GITHUB_OUTPUT"
+          echo "app_version_code=${APP_VERSION_CODE}" >> "$GITHUB_OUTPUT"
+          echo "apk_name=${APK_NAME}" >> "$GITHUB_OUTPUT"
+          echo "Version ${APP_VERSION} (${APP_VERSION_CODE}) → ${APK_NAME}"
+
+      - name: Préparer le keystore de signature
+        id: keystore
+        run: |
+          KEYSTORE_PATH="${APK_PROJECT_DIR}/release-signing.jks"
+          if [ -n "${ANDROID_KEYSTORE_BASE64:-}" ]; then
+            echo "Keystore fourni via le secret ANDROID_KEYSTORE_BASE64."
+            echo "${ANDROID_KEYSTORE_BASE64}" | base64 -d > "$KEYSTORE_PATH"
+          elif [ -f "${APK_PROJECT_DIR}/keystore/quizexam-release.jks" ]; then
+            echo "⚠️ Repli : keystore committé dans le dépôt (préférable : exécuter mobile/setup-github-secrets.sh pour migrer vers les secrets GitHub)."
+            cp "${APK_PROJECT_DIR}/keystore/quizexam-release.jks" "$KEYSTORE_PATH"
+          else
+            echo "::error::Aucun keystore disponible (secret ANDROID_KEYSTORE_BASE64 absent et mobile/keystore/quizexam-release.jks introuvable)."
+            exit 1
+          fi
+          echo "path=${KEYSTORE_PATH}" >> "$GITHUB_OUTPUT"
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+
+      - name: Compiler l'APK (Gradle assembleRelease)
+        run: |
+          cd "$APK_PROJECT_DIR"
+          chmod +x gradlew
+          ./gradlew :app:assembleRelease --no-daemon --stacktrace
+
+      - name: Aligner et signer l'APK (zipalign + apksigner)
+        run: |
+          BT_DIR="$(ls -d "${ANDROID_HOME}/build-tools"/* | sort -V | tail -1)"
+          echo "Build-tools utilisés : ${BT_DIR}"
+          UNSIGNED="${APK_PROJECT_DIR}/app/build/outputs/apk/release/app-release-unsigned.apk"
+          ALIGNED="${RUNNER_TEMP}/app-release-aligned.apk"
+          SIGNED="${RUNNER_TEMP}/${{ steps.version.outputs.apk_name }}"
+          "$BT_DIR/zipalign" -f -p 4 "$UNSIGNED" "$ALIGNED"
+          "$BT_DIR/apksigner" sign \
+            --ks "${{ steps.keystore.outputs.path }}" \
+            --ks-key-alias "$KEY_ALIAS" \
+            --ks-pass "pass:${KEYSTORE_PASSWORD}" \
+            --key-pass "pass:${KEY_PASSWORD}" \
+            --out "$SIGNED" "$ALIGNED"
+          "$BT_DIR/apksigner" verify --print-certs "$SIGNED"
+          cp "$SIGNED" "${{ steps.version.outputs.apk_name }}"
+          ls -la "${{ steps.version.outputs.apk_name }}"
+
+      - name: Publier l'artefact de build (téléchargement depuis Actions)
+        uses: actions/upload-artifact@v4
+        with:
+          name: quizexam-bf-apk-${{ steps.version.outputs.app_version }}
+          path: ${{ steps.version.outputs.apk_name }}
+          if-no-files-found: error
+
+      - name: Publier la release de version (tag v*)
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          gh release create "$TAG" "${{ steps.version.outputs.apk_name }}" \
+            --title "QuizExam BF — ${TAG}" \
+            --notes "Application Android officielle (${TAG}).
+
+          Installation : télécharger quizexam-bf-v${{ steps.version.outputs.app_version }}.apk, ouvrir le fichier sur Android 5.0+, accepter l'installation.
+          Plateforme : https://quizexam-bf1-5tlh.vercel.app" \
+            || gh release upload "$TAG" "${{ steps.version.outputs.apk_name }}" --clobber
+
+      - name: Publier la release roulante (mobile-latest)
+        if: "!startsWith(github.ref, 'refs/tags/v')"
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          DATE=$(date -u +"%Y-%m-%d %H:%M UTC")
+          NOTES="Dernière application Android QuizExam BF — construction automatique.
+
+          - Version : ${{ steps.version.outputs.app_version }} (code ${{ steps.version.outputs.app_version_code }})
+          - Commit : ${GITHUB_SHA::7}
+          - Date : ${DATE}
+
+          Installation : télécharger l'APK ci-dessous, l'ouvrir sur Android 5.0+, accepter l'installation (« sources inconnues » si demandé).
+          La même application est téléchargeable depuis la page d'accueil du site (section « Application Android ») : https://quizexam-bf1-5tlh.vercel.app"
+          gh release delete mobile-latest --yes --cleanup-tag 2>/dev/null || true
+          gh release create mobile-latest "${{ steps.version.outputs.apk_name }}" \
+            --title "QuizExam BF — APK (dernière version)" \
+            --notes "$NOTES" \
+            --prerelease

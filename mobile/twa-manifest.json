@@ -1,0 +1,82 @@
+{
+  "packageId": "bf.quizexam.app",
+  "host": "quizexam-bf1-5tlh.vercel.app",
+  "name": "QuizExam BF",
+  "launcherName": "QuizExam BF",
+  "display": "standalone",
+  "themeColor": "#059669",
+  "themeColorDark": "#064e3b",
+  "navigationColor": "#022c22",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#022c22",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#10b981",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "https://quizexam-bf1-5tlh.vercel.app/icons/icon-512.png",
+  "maskableIconUrl": "https://quizexam-bf1-5tlh.vercel.app/icons/maskable-512.png",
+  "monochromeIconUrl": "https://quizexam-bf1-5tlh.vercel.app/icons/maskable-512.png",
+  "webManifestUrl": "https://quizexam-bf1-5tlh.vercel.app/manifest.json",
+  "shortcuts": [
+    {
+      "name": "Quiz rapide",
+      "url": "/?action=quiz",
+      "icons": [
+        {
+          "url": "https://quizexam-bf1-5tlh.vercel.app/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ],
+      "chosenIconUrl": "https://quizexam-bf1-5tlh.vercel.app/icons/icon-192.png",
+      "chosenShortName": "Quiz",
+      "shortName": "Quiz"
+    },
+    {
+      "name": "Tableau de bord",
+      "url": "/?view=dashboard",
+      "icons": [
+        {
+          "url": "https://quizexam-bf1-5tlh.vercel.app/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ],
+      "chosenIconUrl": "https://quizexam-bf1-5tlh.vercel.app/icons/icon-192.png",
+      "chosenShortName": "Dashboard",
+      "shortName": "Dashboard"
+    },
+    {
+      "name": "Forum",
+      "url": "/?view=forum",
+      "icons": [
+        {
+          "url": "https://quizexam-bf1-5tlh.vercel.app/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ],
+      "chosenIconUrl": "https://quizexam-bf1-5tlh.vercel.app/icons/icon-192.png",
+      "chosenShortName": "Forum",
+      "shortName": "Forum"
+    }
+  ],
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "keystore/quizexam-release.jks",
+    "alias": "quizexam",
+    "password": "QuizExamAPK@2026",
+    "keyPassword": "QuizExamAPK@2026"
+  },
+  "appVersionCode": 1,
+  "fallbackType": "customtabs",
+  "features": {
+    "locationDelegation": {
+      "enabled": false
+    },
+    "playBilling": {
+      "enabled": false
+    }
+  },
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "appVersion": "1.0.0"
+}
