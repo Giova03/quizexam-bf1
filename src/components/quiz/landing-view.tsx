@@ -57,6 +57,9 @@ import {
   Newspaper,
   Swords,
   CalendarDays,
+  Download,
+  Smartphone,
+  ShieldCheck,
 } from "lucide-react";
 import { RadarDish } from "./lot-visuals";
 import { Button } from "@/components/ui/button";
@@ -391,6 +394,7 @@ function getFaq(t: Translate) {
 function getNavLinks(t: Translate) {
   return [
     { href: "#tower", label: t("land.tower.nav") },
+    { href: "#app", label: t("land.nav.app") },
     { href: "#features", label: t("land.nav.features") },
     { href: "#levels", label: t("land.nav.levels") },
     { href: "#testimonials", label: t("land.nav.testimonials") },
@@ -415,6 +419,7 @@ export function LandingView({ onAuthOpen }: LandingViewProps) {
       <HeroSection onAuthOpen={onAuthOpen} />
       <SubjectsMarquee />
       <ControlTowerSection onAuthOpen={onAuthOpen} />
+      <ApkSection />
       <FeaturesSection />
       <CatalogueSection onAuthOpen={onAuthOpen} />
       <HowItWorksSection />
@@ -1145,6 +1150,89 @@ function ControlTowerSection({ onAuthOpen }: { onAuthOpen: LandingViewProps["onA
                 <p className="mt-2 text-emerald-400/60">{t("land.tower.scan")}</p>
               </div>
             </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* ApkSection — téléchargement de l'application Android (APK TWA)       */
+/* ------------------------------------------------------------------ */
+
+const APK_URL = "/apk/quizexam-bf-v1.0.0.apk";
+
+function ApkSection() {
+  const { t } = useTranslation();
+  const perks: { icon: typeof WifiOff; title: string; desc: string }[] = [
+    { icon: WifiOff, title: t("land.apk.offline.title"), desc: t("land.apk.offline.desc") },
+    { icon: Smartphone, title: t("land.apk.native.title"), desc: t("land.apk.native.desc") },
+    { icon: ShieldCheck, title: t("land.apk.safe.title"), desc: t("land.apk.safe.desc") },
+  ];
+  return (
+    <section id="app" className="relative scroll-mt-20 overflow-hidden bg-gradient-to-b from-emerald-950 via-slate-950 to-slate-950 py-20 text-white">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-emerald-500/15 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-16 bottom-0 h-80 w-80 rounded-full bg-teal-500/10 blur-3xl"
+      />
+      <div className="relative mx-auto max-w-6xl px-4">
+        <motion.div {...fadeUp} className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          {/* Colonne texte */}
+          <div>
+            <p className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">
+              <Smartphone className="h-3.5 w-3.5" />
+              {t("land.apk.kicker")}
+            </p>
+            <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+              {t("land.apk.title")}
+            </h2>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-300">
+              {t("land.apk.desc")}
+            </p>
+
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <a
+                href={APK_URL}
+                download="quizexam-bf-v1.0.0.apk"
+                className="group inline-flex h-12 items-center gap-2.5 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 px-6 text-sm font-semibold text-white shadow-lg shadow-emerald-900/40 transition-transform hover:scale-[1.03]"
+              >
+                <Download className="h-4.5 w-4.5 transition-transform group-hover:translate-y-0.5" />
+                {t("land.apk.download")}
+              </a>
+              <div className="text-xs leading-relaxed text-slate-400">
+                <p className="font-mono text-emerald-300">Android 5.0+ · v1.0.0 · ~2 Mo</p>
+                <p>{t("land.apk.install.hint")}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Colonne atouts */}
+          <div className="grid gap-3">
+            {perks.map((perk, i) => (
+              <motion.div
+                key={perk.title}
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="flex items-start gap-3.5 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-sm transition-colors hover:border-emerald-400/30"
+              >
+                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-400/15 text-emerald-300">
+                  <perk.icon className="h-4.5 w-4.5" />
+                </span>
+                <span>
+                  <span className="block text-sm font-semibold text-white">{perk.title}</span>
+                  <span className="mt-0.5 block text-xs leading-relaxed text-slate-400">
+                    {perk.desc}
+                  </span>
+                </span>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
