@@ -307,7 +307,19 @@ interface UserSessionRow {
  * visitors — the chat endpoint still works without auth, it just won't
  * include personalized context.
  */
-async function resolveUser() {
+async function resolveUser(userIdHint?: string | null) {
+  // V14d — réutilise le userId déjà résolu par le rate limiter : évite un
+  // 2e getServerSession + un 2e lookup DB à chaque requête chat.
+  if (userIdHint) {
+    try {
+      return await db.user.findUnique({
+        where: { id: userIdHint },
+        select: { id: true, name: true },
+      });
+    } catch {
+      return null;
+    }
+  }
   const session = await getServerSession(authOptions);
   if (!session?.user?.email) return null;
   const user = await db.user.findUnique({
@@ -320,8 +332,18 @@ async function resolveUser() {
 /**
  * Fetch the user's recent completed sessions (with answers) so we can
  * build a compact personalized context for the system prompt.
+ * V14d — retourne AUSSI le fallbackCtx structuré : le handler n'exécute plus
+ * la MÊME requête une seconde fois (une requête DB au lieu de deux).
  */
-async function fetchUserContext(userId: string): Promise<string> {
+async function fetchUserContext(
+  userId: string,
+): Promise<{ text: string; fallbackCtx: {
+  avgPct: number;
+  total: number;
+  weakBanks: string[];
+  recentCount: number;
+} | null }> {
+  const empty = { text: "", fallbackCtx: null };
   try {
     const sessions = (await db.quizSession.findMany({
       where: { userId, completedAt: { not: null } },
@@ -349,7 +371,10 @@ async function fetchUserContext(userId: string): Promise<string> {
     })) as UserSessionRow[];
 
     if (sessions.length === 0) {
-      return "[Contexte utilisateur: aucune session terminée pour le moment]";
+      return {
+        text: "[Contexte utilisateur: aucune session terminée pour le moment]",
+        fallbackCtx: null,
+      };
     }
 
     const total = sessions.length;
@@ -397,6 +422,23 @@ async function fetchUserContext(userId: string): Promise<string> {
       (s) => new Date(s.startedAt) >= last7Days,
     ).length;
 
+    const weakBanks = Array.from(wrongByBank.entries())
+      .map(([bank, { wrong, total }]) => ({
+        bank,
+        wrongRate: total > 0 ? wrong / total : 0,
+      }))
+      .filter((r) => r.wrongRate >= 0.3)
+      .sort((a, b) => b.wrongRate - a.wrongRate)
+      .slice(0, 3)
+      .map((r) => `${r.bank} (${Math.round(r.wrongRate * 100)}% d'erreur)`);
+
+    const structuredCtx: {
+      avgPct: number;
+      total: number;
+      weakBanks: string[];
+      recentCount: number;
+    } = { avgPct, total, weakBanks, recentCount };
+
     const parts: string[] = [
       `[Contexte utilisateur]`,
       `- Sessions terminées: ${total}`,
@@ -408,10 +450,10 @@ async function fetchUserContext(userId: string): Promise<string> {
     } else {
       parts.push("- Zones de faiblesse: aucune banque avec > 30% d'erreur");
     }
-    return parts.join("\n");
+    return { text: parts.join("\n"), fallbackCtx: structuredCtx };
   } catch (e) {
     console.error("fetchUserContext error:", e);
-    return "";
+    return empty;
   }
 }
 
@@ -703,6 +745,7 @@ export async function POST(request: Request) {
     // E6.7 — per-user rate limiting (100 req/min).
     const limit = await applyUserRateLimit(request);
     if (!limit.allowed && limit.response) return limit.response;
+    // V14d — userId déjà résolu par le rate limiter, réutilisé ci-dessous.
 
     const body = await request.json();
     const { messages, mode } = body as {
@@ -771,7 +814,7 @@ export async function POST(request: Request) {
     }
 
     // --- Build personalized context (if the user is signed in) ----------
-    const user = await resolveUser();
+    const user = await resolveUser(limit.userId);
     let contextInfo = "";
     let fallbackCtx: {
       avgPct: number;
@@ -781,70 +824,10 @@ export async function POST(request: Request) {
     } | null = null;
 
     if (user) {
-      const userCtxStr = await fetchUserContext(user.id);
-      if (userCtxStr) contextInfo = `\n\n${userCtxStr}`;
-
-      // Also build a compact ctx for the fallback path.
-      try {
-        const sessions = await db.quizSession.findMany({
-          where: { userId: user.id, completedAt: { not: null } },
-          orderBy: { startedAt: "desc" },
-          take: 10,
-          select: {
-            score: true,
-            totalQuestions: true,
-            startedAt: true,
-            title: true,
-            answers: {
-              select: { isCorrect: true, userAnswer: true },
-              take: 30,
-            },
-          },
-        });
-        if (sessions.length > 0) {
-          const avgPct = Math.round(
-            sessions.reduce(
-              (acc, s) =>
-                acc + (s.score / Math.max(1, s.totalQuestions)) * 100,
-              0,
-            ) / sessions.length,
-          );
-          const wrongByBank = new Map<string, { wrong: number; total: number }>();
-          for (const s of sessions) {
-            const key = s.title ?? "Banque inconnue";
-            const cur = wrongByBank.get(key) ?? { wrong: 0, total: 0 };
-            cur.total += s.answers.length;
-            for (const a of s.answers) {
-              if (a.isCorrect === false || a.userAnswer === null) cur.wrong++;
-            }
-            wrongByBank.set(key, cur);
-          }
-          const weakBanks = Array.from(wrongByBank.entries())
-            .map(([bank, { wrong, total }]) => ({
-              bank,
-              wrongRate: total > 0 ? wrong / total : 0,
-            }))
-            .filter((r) => r.wrongRate >= 0.3)
-            .sort((a, b) => b.wrongRate - a.wrongRate)
-            .slice(0, 3)
-            .map(
-              (r) =>
-                `${r.bank} (${Math.round(r.wrongRate * 100)}% d'erreur)`,
-            );
-          const last7Days = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-          const recentCount = sessions.filter(
-            (s) => new Date(s.startedAt) >= last7Days,
-          ).length;
-          fallbackCtx = {
-            avgPct,
-            total: sessions.length,
-            weakBanks,
-            recentCount,
-          };
-        }
-      } catch {
-        // ignore — fallback context stays null
-      }
+      // V14d — UNE SEULE requête sessions pour le prompt ET le fallback.
+      const userCtx = await fetchUserContext(user.id);
+      if (userCtx.text) contextInfo = `\n\n${userCtx.text}`;
+      fallbackCtx = userCtx.fallbackCtx;
     } else {
       // Anonymous fallback: include bank catalogue summary as context.
       try {
