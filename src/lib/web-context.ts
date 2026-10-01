@@ -185,6 +185,11 @@ export async function searchWebContext(
   const cached = cacheGet(cacheKey);
   if (cached) return cached;
 
+  // V14b — SOURCES EN PARALLÈLE (Promise.allSettled) : le contexte web ne
+  // coûte au maximum que le temps d'une seule source (~3,5 s) au lieu d'un
+  // cumul séquentiel qui, ajouté à la chaîne IA, faisait dépasser la limite
+  // serverless de 60 s (FUNCTION_INVOCATION_TIMEOUT).
+  const parallelLang: "fr" | "en" = lang === "fr" ? "fr" : "en";
   const results: WebSource[] = [];
   const tryAdd = (sources: WebSource[]) => {
     for (const s of sources) {
@@ -199,25 +204,15 @@ export async function searchWebContext(
     }
   };
 
-  // Wikipedia dans la langue de l'utilisateur, puis l'autre en repli.
-  try {
-    tryAdd(await searchWikipedia(keywords, lang));
-  } catch {
-    /* best-effort */
-  }
-  if (results.length < 2 && lang !== "en") {
-    try {
-      tryAdd(await searchWikipedia(keywords, "en"));
-    } catch {
-      /* best-effort */
-    }
-  }
-  // DuckDuckGo complète (définitions, sujets liés).
-  try {
-    tryAdd(await searchDuckDuckGo(keywords));
-  } catch {
-    /* best-effort */
-  }
+  const [wikiPrimary, wikiFallback, ddg] = await Promise.allSettled([
+    searchWikipedia(keywords, parallelLang),
+    searchWikipedia(keywords, parallelLang === "fr" ? "en" : "fr"),
+    searchDuckDuckGo(keywords),
+  ]);
+  if (wikiPrimary.status === "fulfilled") tryAdd(wikiPrimary.value);
+  if (results.length < 2 && wikiFallback.status === "fulfilled")
+    tryAdd(wikiFallback.value);
+  if (ddg.status === "fulfilled") tryAdd(ddg.value);
 
   cacheSet(cacheKey, results);
   return results;

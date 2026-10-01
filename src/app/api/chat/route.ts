@@ -427,6 +427,7 @@ async function fetchPlatformContext(): Promise<string> {
   try {
     const [banks, userCount, sessionCount] = await Promise.all([
       db.questionBank.findMany({
+        take: 100,
         select: {
           title: true,
           category: true,
@@ -753,6 +754,22 @@ export async function POST(request: Request) {
       });
     }
 
+    // --- V14b : RÉPONSES INSTANTANÉES EN PREMIER -----------------------
+    // Salutations, merci, identité… répondent en ~0 ms SANT attendre la DB,
+    // la recherche web ou l'IA. C'est le correctif du timeout serverless :
+    // le travail lourd ne démarre que si une vraie réponse est nécessaire.
+    const lastUserMessage =
+      messages.filter((m: { role: string }) => m.role === "user").pop()
+        ?.content || "";
+    const instantEarly = getInstantResponse(lastUserMessage, null);
+    if (instantEarly) {
+      return NextResponse.json({
+        response: instantEarly,
+        role: "assistant",
+        engine: "instant",
+      });
+    }
+
     // --- Build personalized context (if the user is signed in) ----------
     const user = await resolveUser();
     let contextInfo = "";
@@ -832,6 +849,7 @@ export async function POST(request: Request) {
       // Anonymous fallback: include bank catalogue summary as context.
       try {
         const banks = await db.questionBank.findMany({
+          take: 100,
           select: {
             title: true,
             _count: { select: { questions: true } },
@@ -847,9 +865,14 @@ export async function POST(request: Request) {
       }
     }
 
-    // --- V14 : CONTEXTE PLATEFORME (données actualisées à chaque requête) -
-    // Un coup d'œil sur toute la plateforme : banques réelles, stats.
-    const platformCtx = await fetchPlatformContext();
+    // --- V14b : TOUS LES CONTEXTES EN PARALLÈLE -------------------------
+    // Plateforme (DB) + web (recherche) en simultané : le total coûte le
+    // temps du plus lent (~3,5 s) au lieu d'un cumul séquentiel qui faisait
+    // dépasser la limite serverless de 60 s.
+    const [platformCtx, webSources] = await Promise.all([
+      fetchPlatformContext(),
+      searchWebContext(lastUserMessage, "fr"),
+    ]);
     if (platformCtx) contextInfo += `\n\n${platformCtx}`;
 
     const conversation: ChatMessage[] = [
@@ -866,38 +889,22 @@ export async function POST(request: Request) {
       ),
     ];
 
-    // Get last user message for fallback
-    const lastUserMessage =
-      messages.filter((m: { role: string }) => m.role === "user").pop()
-        ?.content || "";
-
     // --- V14 : CONTEXTE WEB (recherche actualisée, best-effort) ----------
     // L'assistant peut s'appuyer sur des informations trouvées sur le web
     // (encyclopédie, actualité) pour répondre à tout type de question.
     // Échec → aucune injection, l'IA répond avec ses connaissances.
-    try {
-      const webSources = await searchWebContext(lastUserMessage, "fr");
-      if (webSources.length > 0) {
-        const webBlock = formatWebContext(webSources);
-        conversation[0] = {
-          role: "system",
-          content: (conversation[0].content ?? "") + webBlock,
-        };
-      }
-    } catch {
-      /* best-effort — jamais bloquant */
-    }
-
-    // --- Salutations & politesses : réponse instantanée (pas d'IA) ------
-    const instant = getInstantResponse(lastUserMessage, fallbackCtx);
-    if (instant) {
-      return NextResponse.json({ response: instant, role: "assistant", engine: "instant" });
+    if (webSources.length > 0) {
+      const webBlock = formatWebContext(webSources);
+      conversation[0] = {
+        role: "system",
+        content: (conversation[0].content ?? "") + webBlock,
+      };
     }
 
     // --- IA (chaîne complète : sandbox → env → custom → gratuit) ---------
     const result = await chatComplete(conversation, {
       temperature: 0.7,
-      timeoutMs: 30_000,
+      timeoutMs: 25_000,
     });
     if (result && result.content.trim()) {
       return NextResponse.json({
