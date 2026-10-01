@@ -83,6 +83,79 @@ async function findUserByEmail(email: string): Promise<DbUser | null> {
   return withSchemaRepair(() => db.user.findUnique({ where: { email } }));
 }
 
+/**
+ * V8 — GOOGLE IDENTITY SERVICES (GIS) : connexion Google SANS client secret.
+ *
+ * Le Client ID OAuth n'est PAS un secret : il figure en clair dans toute page
+ * web qui affiche le bouton Google. Le flow GIS (bouton officiel + popup) ne
+ * nécessite QUE le Client ID ; le serveur reçoit un ID Token (JWT signé par
+ * Google) dont la validité est vérifiée côté serveur via l'endpoint officiel
+ * `tokeninfo` + des vérifications locales strictes (audience, émetteur,
+ * expiration, email vérifié). Le GOOGLE_CLIENT_SECRET reste utile uniquement
+ * pour le flux OAuth « redirect » classique de NextAuth — les DEUX chemins
+ * sont actifs en parallèle.
+ *
+ * Priorité de configuration :
+ *   1. NEXT_PUBLIC_GOOGLE_CLIENT_ID (variable d'environnement Vercel)
+ *   2. Valeur fournie par le propriétaire du projet (fallback public, sûr).
+ */
+const GOOGLE_CLIENT_ID_FALLBACK =
+  "447645518029-6kv7hant8ogjo9lbto888hfimidp9mus.apps.googleusercontent.com";
+
+export const GOOGLE_CLIENT_ID =
+  process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || GOOGLE_CLIENT_ID_FALLBACK;
+
+interface GoogleIdTokenPayload {
+  sub: string;
+  email?: string;
+  email_verified?: string | boolean;
+  name?: string;
+  exp?: string | number;
+  aud?: string;
+  iss?: string;
+}
+
+/**
+ * V8 — Valide un ID Token Google (JWT) émis par Google Identity Services.
+ *
+ * La SIGNATURE est vérifiée par l'endpoint officiel de Google (tokeninfo) —
+ * Google seul possède les clés publiques à jour. On complète par des checks
+ * stricts locaux : le token est bien destiné à NOTRE application (aud), émis
+ * par Google (iss), non expiré (exp), avec un email VÉRIFIÉ (email_verified).
+ * Renvoie null si la moindre vérification échoue (fail-closed).
+ */
+async function verifyGoogleIdToken(
+  idToken: string,
+): Promise<GoogleIdTokenPayload | null> {
+  try {
+    const res = await fetch(
+      `https://oauth2.googleapis.com/tokeninfo?id_token=${encodeURIComponent(idToken)}`,
+      { cache: "no-store", signal: AbortSignal.timeout(8000) }
+    );
+    if (!res.ok) return null;
+    const payload = (await res.json()) as GoogleIdTokenPayload;
+
+    if (payload.aud !== GOOGLE_CLIENT_ID) return null; // token pour une autre app
+    if (
+      !payload.iss ||
+      !["accounts.google.com", "https://accounts.google.com"].includes(payload.iss)
+    ) {
+      return null; // émetteur non-Google
+    }
+    if (!payload.exp || Number(payload.exp) * 1000 < Date.now()) return null; // expiré
+    if (
+      payload.email_verified !== "true" &&
+      payload.email_verified !== true
+    ) {
+      return null; // email Google non vérifié
+    }
+    if (!payload.email || !payload.sub) return null;
+    return payload;
+  } catch {
+    return null; // réseau indisponible, timeout, JSON invalide → fail-closed
+  }
+}
+
 // V3 — Google OAuth is only registered when its credentials are present, so
 // deployments without GOOGLE_CLIENT_ID/GOOGLE_CLIENT_SECRET keep working
 // exactly as before (the "Continuer avec Google" button hides itself client-
@@ -91,6 +164,21 @@ const googleCredentials =
   process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET
     ? { clientId: process.env.GOOGLE_CLIENT_ID, clientSecret: process.env.GOOGLE_CLIENT_SECRET }
     : null;
+
+/**
+ * V8 — Email de bienvenue best-effort pour un NOUVEAU compte Google.
+ * Jamais bloquant : un échec d'envoi n'empêche pas la connexion.
+ */
+async function sendGoogleWelcomeEmailBestEffort(
+  dbUser: NonNullable<Awaited<ReturnType<typeof db.user.findUnique>>>
+): Promise<void> {
+  try {
+    const { sendWelcomeEmail } = await import("@/lib/email-service");
+    await sendWelcomeEmail(dbUser.email, dbUser.name);
+  } catch (mailError) {
+    console.error("Google sign-in: welcome email failed (non-blocking):", mailError);
+  }
+}
 
 /**
  * V3 — find or create the local User row for a Google sign-in.
@@ -158,6 +246,43 @@ export const authOptions: NextAuthOptions = {
           }),
         ]
       : []),
+    /**
+     * V8 — Connexion Google SANS client secret (Google Identity Services).
+     * Le navigateur obtient un ID Token via le bouton officiel Google, on le
+     * vérifie serveur-side puis on réutilise EXACTEMENT la même logique de
+     * liaison par email que le flux OAuth (findOrCreateGoogleUser) : un
+     * visiteur existant conserve ses sessions, XP, badges et code de parrainage.
+     */
+    CredentialsProvider({
+      id: "google-idtoken",
+      name: "Google",
+      credentials: {
+        idToken: { label: "Google ID Token", type: "text" },
+      },
+      async authorize(credentials) {
+        const idToken = credentials?.idToken;
+        if (typeof idToken !== "string" || idToken.length < 50) return null;
+        const payload = await verifyGoogleIdToken(idToken);
+        if (!payload || !payload.email) return null;
+        try {
+          const { user: dbUser, created } = await findOrCreateGoogleUser({
+            email: payload.email,
+            name: payload.name ?? null,
+            googleId: payload.sub,
+          });
+          if (created) await sendGoogleWelcomeEmailBestEffort(dbUser);
+          return {
+            id: dbUser.id,
+            email: dbUser.email,
+            name: dbUser.name,
+            role: dbUser.role,
+          };
+        } catch (error) {
+          console.error("Google ID-token sign-in: link/create failed:", error);
+          return null;
+        }
+      },
+    }),
     CredentialsProvider({
       name: "credentials",
       credentials: {
@@ -252,16 +377,9 @@ export const authOptions: NextAuthOptions = {
           // jwt callback below stores the right id + role.
           user.id = dbUser.id;
           (user as { role?: string }).role = dbUser.role;
-          // V3 — first-time Google visitors get the branded confirmation
+          // V3/V8 — first-time Google visitors get the branded confirmation
           // email too (best-effort, never blocks the sign-in).
-          if (created) {
-            try {
-              const { sendWelcomeEmail } = await import("@/lib/email-service");
-              await sendWelcomeEmail(dbUser.email, dbUser.name);
-            } catch (mailError) {
-              console.error("Google sign-in: welcome email failed (non-blocking):", mailError);
-            }
-          }
+          if (created) await sendGoogleWelcomeEmailBestEffort(dbUser);
           return true;
         } catch (error) {
           console.error("Google sign-in: account link/create failed:", error);
