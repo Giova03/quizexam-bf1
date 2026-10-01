@@ -239,11 +239,23 @@ export function GoogleButton({
     <div className={className}>
       {/* Chemin 1 : bouton officiel Google (GIS) — prioritaire */}
       {gisReady ? (
-        <div
-          ref={gisContainerRef}
-          className="flex min-h-11 w-full justify-center"
-          aria-label={text}
-        />
+        <div className="flex flex-col items-center gap-1.5">
+          <div
+            ref={gisContainerRef}
+            className="flex min-h-11 w-full justify-center"
+            aria-label={text}
+          />
+          {/* V13 — aide permanente : si Google affiche « origin_mismatch »
+              (Erreur 400), l'utilisateur dispose immédiatement des instructions
+              exactes au lieu de rester bloqué devant un popup qui se ferme. */}
+          <button
+            type="button"
+            onClick={() => setShowHint((v) => !v)}
+            className="text-[11px] font-medium text-slate-400 underline underline-offset-2 transition-colors hover:text-blue-600"
+          >
+            {t("legal.help")}
+          </button>
+        </div>
       ) : (
         <button
           type="button"

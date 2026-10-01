@@ -1359,6 +1359,13 @@ function LandingFooter() {
                 {link.label}
               </a>
             ))}
+            {/* V13 — pages légales (exigées par l'écran de consentement OAuth Google) */}
+            <a href="/terms" className="font-medium transition-colors hover:text-blue-600">
+              {t("legal.terms")}
+            </a>
+            <a href="/privacy" className="font-medium transition-colors hover:text-blue-600">
+              {t("legal.privacy")}
+            </a>
           </nav>
 
           <div className="text-left text-xs text-slate-400 md:text-right">

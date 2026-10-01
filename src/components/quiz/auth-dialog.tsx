@@ -107,6 +107,26 @@ export function AuthDialog({
     if (open && initialMode) setMode(initialMode);
   }, [open, initialMode]);
 
+  // V13 — filet de sécurité anti-« spinner infini » : la toute première
+  // requête du jour peut réveiller la base de données (cold start Supabase,
+  // 10-30 s). Au-delà de 25 s, on rend la main à l'utilisateur avec un
+  // message clair au lieu de le laisser devant un spinner muet.
+  const SIGNIN_TIMEOUT_MS = 25_000;
+
+  function signInWithTimeout(params: {
+    email: string;
+    password: string;
+  }): Promise<{ error?: string | null; ok?: boolean } | undefined> {
+    return Promise.race([
+      signIn("credentials", { ...params, redirect: false }) as Promise<
+        { error?: string | null; ok?: boolean } | undefined
+      >,
+      new Promise<undefined>((resolve) =>
+        window.setTimeout(() => resolve(undefined), SIGNIN_TIMEOUT_MS)
+      ),
+    ]);
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
@@ -126,11 +146,9 @@ export function AuthDialog({
         const data = await res.json();
         if (!res.ok)
           throw new Error(data.error || t("auth.error.signupFailed"));
-        const result = await signIn("credentials", {
-          email,
-          password,
-          redirect: false,
-        });
+        const result = await signInWithTimeout({ email, password });
+        if (result === undefined)
+          throw new Error(t("auth.error.timeout"));
         if (result?.error)
           throw new Error(t("auth.error.loginAfterSignup"));
         if (!result)
@@ -138,11 +156,9 @@ export function AuthDialog({
         onOpenChange(false);
         reset();
       } else {
-        const result = await signIn("credentials", {
-          email,
-          password,
-          redirect: false,
-        });
+        const result = await signInWithTimeout({ email, password });
+        if (result === undefined)
+          throw new Error(t("auth.error.timeout"));
         if (result?.error) {
           throw new Error(t("auth.error.invalid"));
         }
